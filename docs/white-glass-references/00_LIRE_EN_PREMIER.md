@@ -1,6 +1,6 @@
 # BellumAI — dossier visuel et motion pour Claude Code
 
-Ce ZIP accompagne le paquet **BellumAI White Glass complet** livré séparément. Il rassemble les **17 captures originales envoyées dans ce fil** et explique pourquoi elles ont été données, ce qu'il faut en tirer pour le produit et comment vérifier les interactions. Les fichiers image gardent leurs noms et leur résolution. Huit captures anciennes ont été retrouvées dans les fichiers du projet ; les neuf dernières étaient déjà disponibles. Aucune capture n'a été recréée.
+Ce dossier accompagne le code BellumAI et la prévisualisation White Glass dans le même dépôt. Il rassemble les **17 captures originales envoyées dans ce fil** et explique pourquoi elles ont été données, ce qu'il faut en tirer pour le produit et comment vérifier les interactions. Les fichiers image gardent leurs noms et leur résolution. Huit captures anciennes ont été retrouvées dans les fichiers du projet ; les neuf dernières étaient déjà disponibles. Aucune capture n'a été recréée.
 
 ## Lire dans cet ordre
 
@@ -9,7 +9,7 @@ Ce ZIP accompagne le paquet **BellumAI White Glass complet** livré séparément
 3. `02_MOTION_19_PRINCIPES.md` : les **19 intitulés de la capture UX & Animation**, leur application prudente, puis des scénarios de chargement, scroll, filtres, graphiques, carte, Laura et formulaires.
 4. `03_BRIEF_CLAUDE_SKILLS.md` : compétences et outils à découvrir dans l'environnement de Claude Code, orchestration, preuves à produire.
 5. `04_PROMPT_SYSTEME_CLAUDE_CODE.md` : prompt complet, actualisé pour les 17 originaux. Il peut être donné au démarrage de la session ; les instructions du dépôt et les contraintes de sécurité restent à respecter.
-6. `05_TRANSMETTRE_A_CLAUDE_CODE.md` : deux voies concrètes pour que Claude lise le code sans pièce jointe trop lourde, en local ou par dépôt GitHub privé.
+6. `05_TRANSMETTRE_A_CLAUDE_CODE.md` : reprise depuis ce dépôt GitHub et lancement de Claude Code.
 
 ## Les images
 
@@ -34,6 +34,6 @@ Le comportement compte autant que l'image fixe : chargement lisible dès le prem
 
 ## Source de vérité et limites
 
-Fournir aussi à Claude le paquet White Glass complet, ou mieux le **dépôt extrait** du dernier monorepo fourni. Sa version `(17)` est la dernière source applicative de ce dossier ; Claude doit vérifier s'il existe un état Git plus récent. La prévisualisation White Glass `dist/` est un Site statique alimenté par des données d'exploration et `localStorage`. Elle ne prouve ni intégration CRM/ATS réelle, ni envoi de mail, ni partage entre ESN. Lire `docs/INTEGRATION_PLAN.md` du paquet source, réutiliser les services existants et tester les droits et la provenance. Une image fixe ne contient pas les animations qu'on imagine : l'atlas distingue toujours observation et proposition.
+Le monorepo extrait du dernier export fourni est à la racine de ce dépôt. Sa version `(17)` est la dernière source applicative de ce dossier ; Claude doit vérifier s'il existe un état Git plus récent. La prévisualisation White Glass `design/white-glass-preview/dist/` est un Site statique alimenté par des données d'exploration et `localStorage`. Elle ne prouve ni intégration CRM/ATS réelle, ni envoi de mail, ni partage entre ESN. Lire `design/white-glass-preview/docs/INTEGRATION_PLAN.md`, réutiliser les services existants et tester les droits et la provenance. Une image fixe ne contient pas les animations qu'on imagine : l'atlas distingue toujours observation et proposition.
 
-Le ZIP contient les fichiers graphiques de **ce fil**. Les autres discussions du projet ne sont pas reproduites ici ; Claude doit les consulter si son environnement y donne réellement accès. Ne pas prétendre qu'une capacité, une donnée ou une synchronisation existe sans vérification.
+Ce dossier contient les fichiers graphiques de **ce fil**. Les autres discussions du projet ne sont pas reproduites ici ; Claude doit les consulter si son environnement y donne réellement accès. Ne pas prétendre qu'une capacité, une donnée ou une synchronisation existe sans vérification.

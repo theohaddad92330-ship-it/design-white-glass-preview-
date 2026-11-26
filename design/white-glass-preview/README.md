@@ -1,21 +1,16 @@
 # BellumAI White Glass — livraison source et références
 
-Version du 26 novembre 2026, issue du Site White Glass publié (commit 05a6f85cc267dc528a170fb8ea4a2f0f591a3e3c). Ce dossier est destiné à la revue de conception et à la poursuite du développement. Lien de la version publiée : https://bellum-white-glass-operations-2026.theohaddad92330.chatgpt.site. Le thème sombre n’a pas été validé ni retravaillé dans cette livraison.
+Version du 26 novembre 2026, issue du Site White Glass publié (commit 05a6f85cc267dc528a170fb8ea4a2f0f591a3e3c). Ce dossier est destiné à la revue de conception et à la poursuite du développement. Lien de la version publiée : https://bellum-white-glass-operations-2026.theohaddad92330.chatgpt.site. Le thème sombre n’a pas été validé ni retravaillé dans cette livraison. Dans ce dépôt, le monorepo applicatif est extrait à la racine, les 17 captures et le prompt Claude Code sont dans `../../docs/white-glass-references/`.
 
 ## Contenu
 
 - `dist/` : prévisualisation statique navigable White Glass, scripts, styles, cartes, avatars et données d’exploration. `index.html` importe aussi `premium-dark.css` comme dépendance passive de l’ancienne base ; seul le thème blanc est livré comme résultat validé.
 - `docs/` : décisions de design, parcours, recettes et `INTEGRATION_PLAN.md` qui mappe les vues aux modules réels du monorepo.
 - `scripts/` : tests de parcours, composants, libellés, droits locaux, finance et Laura.
-- `.openai/hosting.json` : identité et format de déploiement du Site existant. Ne réutiliser son `project_id` que pour modifier le Site du propriétaire.
-- `references/design_screenshots/` : neuf captures reçues le 26 novembre, conservées pour analyse visuelle.
-- `references/source_uploads/03-belllum-monorepo-main-17-.zip` : code du produit le plus récent fourni ; c’est la référence pour les composants, tokens et services existants.
-- `references/source_uploads/02-belllum-monorepo-main-13-.zip` : état plus ancien conservé pour comparaison.
-- `references/source_uploads/01-NEW-DESIGN-20261028T160317Z-1-001.zip` : autre référence design fournie.
-- `references/prior_iteration/` : itération White/Dark antérieure conservée comme archive, pas comme résultat courant.
-- `FICHIERS_SHA256.txt` : taille et empreinte de chaque fichier.
+- `../../docs/white-glass-references/` : 17 captures originales, Word illustré, atlas visuel, principes de motion et `04_PROMPT_SYSTEME_CLAUDE_CODE.md`.
+- `../../docs/WHITE_GLASS_HANDOFF.md` : ordre de lecture et limites du raccordement.
 
-À la racine : `Retours_Theo_BellumAI_Integrale.docx` (messages chronologiques et captures disponibles), sa transcription texte `.md`, et `SYSTEM_PROMPT_CLAUDE_CODE_BELLUMAI.md` prêt pour Claude Code. Les anciens visuels dont les fichiers ne sont pas disponibles restent signalés à leur emplacement dans le Word.
+Les archives historiques du paquet initial ne sont pas recopiées dans Git ; l’export applicatif le plus récent fourni, `(17)`, est extrait à la racine. Vérifier s’il existe une version plus récente dans le véritable dépôt produit avant de fusionner du code.
 
 ## Exécuter la prévisualisation
 
