@@ -1,0 +1,9 @@
+{
+  "extends": "@bellum/tooling/typescript/lib.json",
+  "compilerOptions": {
+    "rootDir": "src",
+    "jsx": "react-jsx"
+  },
+  "include": ["src/**/*.ts", "src/**/*.tsx"],
+  "exclude": ["src/**/*.test.ts", "src/**/*.test.tsx", "src/preview-urls.ts"]
+}

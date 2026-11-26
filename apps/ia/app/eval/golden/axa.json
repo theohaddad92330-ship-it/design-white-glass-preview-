@@ -1,0 +1,33 @@
+{
+  "slug": "axa",
+  "company": "AXA",
+  "fixture": "axa.analysis.json",
+  "_source": "Attentes STRUCTURELLES. Le SIREN est la seule valeur factuelle affirmée, relevée sur recherche-entreprises.api.gouv.fr (DINUM, adossé à INSEE Sirene) le 20/09/2026 : siren 572093920, dénomination AXA, catégorie GE, NAF 64.30Z (fonds de placement et entités financières similaires), tranche d'effectif 02 (3 à 5 salariés, effectif de la HOLDING de tête — pas du groupe consolidé, dont AXA France IARD/Vie sont des filiales distinctes), siège à Paris (75008). `isPublic` et `hasSubsidiaries` sont volontairement ABSENTS — non vérifiables depuis cette source, donc non affirmés.",
+  "expect": {
+    "siren": "572093920",
+    "sectorPresent": true,
+    "minEntities": 2,
+    "minPlays": 1,
+    "requiredFacts": [
+      "sector",
+      "siren",
+      "employees",
+      "headquarters",
+      "businessDescription"
+    ],
+    "committeeRoles": [
+      "technical_buyer",
+      "procurement"
+    ],
+    "headRoles": [
+      "dsi"
+    ],
+    "headRolesTarget": [
+      "data",
+      "achats",
+      "dsi"
+    ]
+  },
+  "_roleFloor": "Plancher de rôles #2631.1 (décision Louis 21/09/2026, doctrine c77_gate_qualite_ia_bloque_sur_role_cle) : les sièges du comité d'achat qui doivent RESTER couverts sur ce compte nommé. Relevé sur le corpus committé le 21/09/2026 via assemble_buying_committee — on déclare ce que le dossier DONNE, jamais un rôle inventé pour faire passer le compte. Un siège qui disparaît fait échouer la CI même si la moyenne du banc monte ; un dossier SANS contact est « non évaluable », pas « perdu ».",
+  "_headRecall": "Rappel des têtes #4923.14 (retour Julien Laszlo 30/10/2026) : headRolesTarget = familles de tête attendues (data = CDO / Head of Data / Head of AI, achats, dsi) ; headRoles = plancher que le corpus committé donne déjà. Seuil du rappel posé avant mesure dans app/eval/head_recall.py."
+}

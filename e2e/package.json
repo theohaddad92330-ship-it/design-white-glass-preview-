@@ -1,0 +1,21 @@
+{
+  "name": "@bellum/e2e",
+  "version": "0.0.1",
+  "private": true,
+  "type": "module",
+  "scripts": {
+    "e2e": "pnpm run e2e:build && playwright test",
+    "e2e:build": "VITE_API_URL=http://127.0.0.1:4599 API_URL=http://127.0.0.1:4599 pnpm -w exec turbo build --filter=@bellum/website --filter=@bellum/web",
+    "e2e:website": "pnpm run e2e:build && playwright test --project=website",
+    "e2e:web": "pnpm run e2e:build && playwright test --project=web",
+    "e2e:web-mobile": "pnpm run e2e:build && playwright test --project=web-mobile",
+    "e2e:ui": "playwright test --ui",
+    "e2e:report": "playwright show-report",
+    "check-types": "tsc --noEmit"
+  },
+  "devDependencies": {
+    "@playwright/test": "^1.64.1",
+    "@types/node": "^20.11.0",
+    "typescript": "^5.8.3"
+  }
+}

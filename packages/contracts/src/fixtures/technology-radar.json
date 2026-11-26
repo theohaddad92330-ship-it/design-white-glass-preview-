@@ -1,0 +1,65 @@
+{
+  "_doc": "#4282 (décision Louis 19/10 n°16) — le contrat COMMUN du radar par technologie entre Laura et Découvrir. `technologies` : la liste FERMÉE (code, libellé, alias repliés sans accent), seule source des deux côtés — lue par packages/contracts/src/schemas/technology-radar.test.ts (TS) et apps/ia/tests/test_technology_radar.py (Python, `RADAR_TECHNOLOGIES`). `phrases` : ce qu'une saisie résout (fermée, ou repli libre). `detect` : ce qu'un texte d'offre ou de besoin porte comme technologies. `pockets` : l'ordre des trois poches, identique dans les deux surfaces.",
+  "technologies": [
+    {
+      "code": "SAP",
+      "label": "SAP",
+      "aliases": [
+        "sap",
+        "s/4hana",
+        "s4hana",
+        "s/4",
+        "sap ecc",
+        "abap",
+        "sap fiori",
+        "sap hana",
+        "successfactors",
+        "sap ariba",
+        "rise with sap",
+        "bw/4hana"
+      ]
+    },
+    { "code": "SALESFORCE", "label": "Salesforce", "aliases": ["salesforce", "sfdc", "sales cloud", "service cloud"] },
+    { "code": "SERVICENOW", "label": "ServiceNow", "aliases": ["servicenow", "service now"] },
+    { "code": "WORKDAY", "label": "Workday", "aliases": ["workday"] },
+    {
+      "code": "ORACLE_ERP",
+      "label": "Oracle ERP",
+      "aliases": [
+        "oracle ebs",
+        "oracle e-business suite",
+        "oracle fusion",
+        "jd edwards",
+        "peoplesoft",
+        "netsuite",
+        "oracle erp"
+      ]
+    },
+    {
+      "code": "DYNAMICS",
+      "label": "Microsoft Dynamics",
+      "aliases": ["dynamics 365", "microsoft dynamics", "d365", "dynamics ax", "navision", "business central"]
+    },
+    { "code": "GUIDEWIRE", "label": "Guidewire", "aliases": ["guidewire"] },
+    { "code": "MUREX", "label": "Murex", "aliases": ["murex"] },
+    { "code": "PEGA", "label": "Pega", "aliases": ["pega", "pegasystems"] },
+    { "code": "SNOWFLAKE", "label": "Snowflake", "aliases": ["snowflake"] },
+    { "code": "DATABRICKS", "label": "Databricks", "aliases": ["databricks"] }
+  ],
+  "phrases": [
+    { "input": "SAP", "expected": { "kind": "closed", "code": "SAP", "label": "SAP" } },
+    { "input": "radar SAP France", "expected": { "kind": "closed", "code": "SAP", "label": "SAP" } },
+    { "input": "S/4HANA", "expected": { "kind": "closed", "code": "SAP", "label": "SAP" } },
+    { "input": "servicenow", "expected": { "kind": "closed", "code": "SERVICENOW", "label": "ServiceNow" } },
+    { "input": "Dynamics 365", "expected": { "kind": "closed", "code": "DYNAMICS", "label": "Microsoft Dynamics" } },
+    { "input": "Mainframe COBOL", "expected": { "kind": "free", "code": null, "label": "Mainframe COBOL" } },
+    { "input": "   ", "expected": null }
+  ],
+  "detect": [
+    { "text": "Consultant SAP FI/CO — migration ECC vers S/4HANA", "codes": ["SAP"] },
+    { "text": "Chef de projet Salesforce et ServiceNow", "codes": ["SALESFORCE", "SERVICENOW"] },
+    { "text": "Sapeur-pompier volontaire", "codes": [] },
+    { "text": "Développeur Java Spring", "codes": [] }
+  ],
+  "pockets": ["immediate", "programs", "rank_2"]
+}

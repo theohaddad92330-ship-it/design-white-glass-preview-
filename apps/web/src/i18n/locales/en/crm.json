@@ -1,0 +1,354 @@
+{
+  "notes": {
+    "title": "Notes",
+    "add": "Add note",
+    "placeholder": "What you learned: a budget, a decision, a contact moving on…",
+    "aria": "New note",
+    "sharedHint": "Visible to your team. Every note keeps its author and date.",
+    "empty": "No notes yet. The first line written here will be readable by the whole team, with its date.",
+    "added": "Note added",
+    "addError": "The note could not be added",
+    "saveError": "The note could not be updated",
+    "deleted": "Note deleted",
+    "deleteError": "The note could not be deleted",
+    "unknownAuthor": "Unknown author",
+    "pin": "Pin to top",
+    "unpin": "Unpin",
+    "delete": "Delete note",
+    "loadError": "Notes could not be loaded. They still exist — it is the read that failed.",
+    "sharedHintAccount": "Visible to your team. Every note keeps its author and date — and this account's next analysis will read them back, quoted as written, so it won't suggest a cold approach on what you already know.",
+    "draftKept": "Draft kept on this device until it is saved.",
+    "showAll": "See all {{count}} notes",
+    "editScope": "Edit scope",
+    "scopeEditAria": "Note scope",
+    "scopeSave": "Save scope",
+    "scopeCancel": "Cancel",
+    "scopeLegend": "This note also applies to (same group):",
+    "inheritedFrom": "Written on {{name}} (same group)",
+    "alsoAppliesTo": "Also applies to: {{names}}"
+  },
+  "field": {
+    "empty": "Not set",
+    "edit": "Edit {{field}}",
+    "confirm": "Save",
+    "cancel": "Cancel"
+  },
+  "record": {
+    "saved": "Change saved",
+    "saveError": "The change could not be saved",
+    "editHint": "Your corrections are kept: the next analysis will not overwrite them.",
+    "complete": "Complete the record",
+    "completeBenefit": "Name the sponsor, the users, the legal entity and the end client: {{copilot}} and the plan rely on them.",
+    "completeDone": "Done"
+  },
+  "history": {
+    "title": "Change history",
+    "empty": "No change recorded on this record.",
+    "importedFrom": "Imported on {{date}} from {{source}}",
+    "blank": "(empty)",
+    "scope": "Your correction only applies to this field, on this record — never a cascade.",
+    "protects": "It now outranks “{{source}}” for this field: that source can no longer overwrite it silently.",
+    "protectsNothing": "The field was empty before: your correction had nothing to override.",
+    "doesNotBlock": "It does not stop the rest of the analysis — score, plan, {{copilot}}… — from continuing to evolve with new data.",
+    "surfacesTitle": "Where your correction landed",
+    "surfacesCount": "{{reached}} of {{total}} surfaces re-read your correction. The others are named below.",
+    "surfaceReached": "re-reads your correction",
+    "surfaceNotReached": "does not re-read it",
+    "surfaceNotMeasurable": "not measured"
+  },
+  "correctionSurfaces": {
+    "laura": {
+      "name": "{{copilot}}",
+      "why": "The copilot's context is rebuilt from the live record on every turn."
+    },
+    "account_file": {
+      "name": "Account file",
+      "why": "The record is re-read every time it is opened."
+    },
+    "contacts": {
+      "name": "Contacts",
+      "why": "The list is re-read every time it is opened, with no frozen copy."
+    },
+    "influence_map": {
+      "name": "Influence map",
+      "why": "It is built from the stored graph alone: a corrected name or title stays invisible there until the next analysis."
+    },
+    "coverage": {
+      "name": "Coverage",
+      "why": "It counts contacts read live."
+    },
+    "score": {
+      "name": "Account score",
+      "why": "The score has no human author: no correction recomputes it. It stays the one from the last analysis."
+    },
+    "plan": {
+      "name": "Action plan",
+      "why": "The plan is written once by the analysis: a correction does not rewrite text already drafted."
+    },
+    "meetings": {
+      "name": "Meetings",
+      "why": "The brief re-reads contacts every time it is opened."
+    },
+    "future_research": {
+      "name": "Future research",
+      "why": "The company name and registration number go out corrected, but the context steering the next search is still the one from the last analysis."
+    }
+  },
+  "sources": {
+    "human": "Entered by hand",
+    "connector": "Connected tool",
+    "pipeline": "{{brand}} analysis",
+    "model": "AI suggestion"
+  },
+  "fields": {
+    "business_unit_id": "Owning BU",
+    "companyName": "Legal name",
+    "account_id": "Account",
+    "label": "Title",
+    "started_on": "Start date",
+    "ends_on": "End date",
+    "daily_rate": "Daily rate",
+    "tradeName": "Trade name",
+    "sector": "Industry",
+    "employees": "Headcount",
+    "revenue": "Revenue",
+    "headquarters": "Headquarters",
+    "website": "Website",
+    "phone": "Phone",
+    "address": "Address",
+    "siren": "Company number",
+    "nafCode": "Industry code",
+    "subsidiaries": "Subsidiaries",
+    "fullName": "Name",
+    "title": "Job title",
+    "entity": "Business unit",
+    "email": "Email",
+    "linkedinUrl": "Professional profile",
+    "locale": "Language",
+    "family": "Family",
+    "declaredPersonCompanyRelation": "Relationship with the company",
+    "decisionRole": "Decision role",
+    "assignedTo": "Owner",
+    "priority": "Priority",
+    "profileSummary": "Profile",
+    "whyContact": "Why reach out",
+    "careerLevers": "Career drivers",
+    "implicitFears": "Implicit concerns",
+    "deletedAt": "Deletion",
+    "declaredInternalSponsor": "Internal sponsor",
+    "declaredInternalUsers": "Users",
+    "declaredLegalEntity": "Legal entity",
+    "declaredEndClient": "End client",
+    "declaredInternalClientMode": "Internal department or direct client",
+    "declaredRouteScope": "Mission scope",
+    "declaredRouteObjectives": "Account objectives",
+    "declaredRouteAvailableRoles": "Roles available on the client side",
+    "declaredRoutePartners": "Partners already identified",
+    "declaredRouteHistory": "Relationship history",
+    "declaredRouteTiming": "Time window",
+    "declaredRouteBudget": "Client budget",
+    "declaredRouteAvailability": "Availability (consultants, time)",
+    "declaredRouteNetwork": "Existing network on the account",
+    "declaredRouteEvent": "Event or community",
+    "declaredRouteInbound": "Content that brought the contact"
+  },
+  "personCompanyRelations": {
+    "employee_current": "Current employee",
+    "employee_former": "Former employee",
+    "contractor_current": "Current contractor",
+    "contractor_historical": "Former contractor",
+    "freelancer": "Freelancer",
+    "manager": "Manager",
+    "buyer": "Buyer",
+    "technical_reviewer": "Technical reviewer",
+    "sponsor": "Sponsor",
+    "user": "User",
+    "recruiter": "Recruiter",
+    "consultant_presented": "Presented consultant"
+  },
+  "internalClientModes": {
+    "internal_service": "Internal department serving business units",
+    "external_buyer": "Direct client"
+  },
+  "locales": {
+    "fr": "French",
+    "en": "English",
+    "de": "German"
+  },
+  "createContact": {
+    "accountCreate": "Create “{{name}}”",
+    "accountCreateError": "The company could not be created",
+    "accountCreateLabel": "Name of the company to create",
+    "accountCreated": "Company created",
+    "accountHint": "Not in your list yet? Create it here — no analysis is started.",
+    "accountLabel": "Company",
+    "accountPlaceholder": "Pick the company to attach it to",
+    "accountSwitchToCreate": "Create a company",
+    "accountSwitchToPick": "Pick an existing company",
+    "accountUnknown": "I don't know the company yet",
+    "accountUnknownHint": "The contact will be created as “to qualify”. You can attach a company later, from their record.",
+    "created": "Contact created",
+    "description": "A name is enough. The rest can be filled in later, or by enrichment.",
+    "error": "The contact could not be created",
+    "importCta": "Import contacts",
+    "importDescription": "A CSV or Excel file imports with its preview, column mapping and duplicate detection.",
+    "importTitle": "Several contacts at once?",
+    "open": "Add a contact",
+    "submit": "Create contact",
+    "title": "Add a contact"
+  },
+  "delete": {
+    "action": "Delete contact",
+    "done": "Contact deleted",
+    "undo": "Undo",
+    "restored": "Contact restored",
+    "error": "The contact could not be deleted"
+  },
+  "writeRequests": {
+    "title": "Writes to approve",
+    "subtitle": "What the product wants to write into your CRM without anyone having read it. Nothing goes out before you agree.",
+    "movedToActionCenter": "These decisions now happen in the Action Centre, alongside your other approvals →",
+    "kind": {
+      "export_contact": "Send a contact",
+      "create_note": "Add a note",
+      "create_task": "Create a task",
+      "log_meeting": "Log a meeting",
+      "create_company": "Create a company",
+      "create_list": "Create a list",
+      "enroll_sequence": "Enrol in a sequence",
+      "update_deal_stage": "Move a deal",
+      "export_need": "File a need",
+      "send_chat_message": "Send a Beeper reply"
+    },
+    "bySystem": "Requested automatically",
+    "byUser": "Requested by a teammate",
+    "noPreview": "No field was recorded for this request.",
+    "expiresAt": "Expires on {{date}} — after that, the request has to be made again.",
+    "approve": "Approve",
+    "reject": "Reject",
+    "approved": "Write approved",
+    "rejected": "Write rejected",
+    "decisionFailed": "The decision could not be saved",
+    "empty": {
+      "title": "Nothing is waiting for you",
+      "body": "No automatic write is pending. Your own actions go out without passing through here: the click is the decision."
+    },
+    "notConnected": {
+      "title": "No CRM connected",
+      "body": "With no CRM connected nothing can be written — this queue will stay empty, and that is not the same as “everything is approved”.",
+      "cta": "Connect my CRM"
+    },
+    "autoWrites": {
+      "title": "What goes out without a click",
+      "body": "Sync fills in empty fields on its own — email and phone — on a contact in your CRM, without a click from you; it never overwrites a value already entered. Any other write (replacing a value, creating a record, a note, a task…) waits for a preview and your approval."
+    },
+    "notConfigured": {
+      "title": "CRM writing unavailable",
+      "body": "This capability is not open on this environment. Nothing is pending, and nothing can be."
+    },
+    "failed": {
+      "title": "The read failed",
+      "body": "This is not “nothing is waiting”: the queue could not be read. Reload the screen in a moment."
+    }
+  },
+  "confrontation": {
+    "button": "Confront with my CRM",
+    "title": "Confront with the CRM",
+    "description": "What your CRM already knows, compared with what {{brand}} found — on the last snapshot already in the database, no call to the CRM.",
+    "snapshotAt": "Snapshot from {{date}}",
+    "snapshotUnknown": "Freshness not measured",
+    "importedSource": "No CRM is connected: the comparison covers the contacts imported from your CRM that are already in this account.",
+    "notConnected": {
+      "title": "No CRM connected",
+      "body": "With no CRM connected nothing can be confronted — this comparison stays empty until a CRM is connected to this workspace."
+    },
+    "empty": "No duplicate detected against the CRM on this snapshot.",
+    "hint": "A proposal, never an automatic merge — you choose which record to keep. No field is ever overwritten: a hand-made correction is never replaced.",
+    "reason": {
+      "same_email": "Same address",
+      "same_name": "Same name"
+    },
+    "crmSide": "CRM record",
+    "bellumSide": "Record found by {{brand}}",
+    "keepCrm": "Keep the CRM record",
+    "keepBellum": "Keep the record found by {{brand}}",
+    "loadError": "The confrontation could not be read. Try again in a moment."
+  },
+  "provenance": {
+    "inCrm": "Already in your CRM",
+    "inCrmHint": "This contact was in your CRM before the analysis.",
+    "brought": "Brought by {{brand}}",
+    "broughtHint": "Found by the analysis: this contact was not in your CRM.",
+    "summaryInCrm_one": "{{count}} in your CRM",
+    "summaryInCrm_other": "{{count}} in your CRM",
+    "summaryBrought_one": "{{count}} found by the analysis",
+    "summaryBrought_other": "{{count}} found by the analysis",
+    "summaryAria": "Contacts on this account: what was in your CRM, what the analysis brought",
+    "complete": {
+      "title": "Complete the account in your CRM",
+      "description": "Contacts the analysis found that are not in your CRM. Untick the ones you don’t want to send.",
+      "listLabel": "Contacts to add to your CRM",
+      "send_one": "Add {{count}} contact to your CRM",
+      "send_other": "Add {{count}} contacts to your CRM",
+      "sendNone": "Tick at least one contact",
+      "sending": "Sending…",
+      "nothing": "Nothing to add: every contact the analysis brought is already in your CRM.",
+      "impersonating": "While impersonating, nothing is sent to the customer’s CRM: writing stays blocked.",
+      "close": "Close"
+    }
+  },
+  "push": {
+    "title": "Send to your CRM",
+    "titleTo": "Send to {{destination}}",
+    "description": "Nothing leaves before you confirm. A record already in your CRM is matched, never duplicated.",
+    "withAccountContacts": "With all contacts of these accounts",
+    "loading": "Preparing the preview…",
+    "listLabel": "What will be sent",
+    "entity": {
+      "account": "account",
+      "contact": "contact"
+    },
+    "field": {
+      "name": "Name",
+      "domain": "Website",
+      "email": "Email",
+      "firstName": "First name",
+      "lastName": "Last name",
+      "company": "Company",
+      "jobTitle": "Job title",
+      "phone": "Phone",
+      "linkedinUrl": "Professional profile"
+    },
+    "fieldsLabel": "Fields written",
+    "fieldsNotRead": "Values already entered in your CRM are not re-read before sending: only a record already linked is flagged.",
+    "existsInCrm": "Record already linked in your CRM",
+    "verdict": {
+      "create": "Will be created",
+      "update": "Will be updated",
+      "already_present": "Already there",
+      "refused": "Refused"
+    },
+    "outcome": {
+      "created": "Created",
+      "updated": "Updated",
+      "already_present": "Already there",
+      "pending": "Awaiting approval",
+      "refused": "Refused",
+      "failed": "Failed",
+      "unknown": "No answer — check it"
+    },
+    "openRecord": "Open {{name}} in your CRM",
+    "send": "Send",
+    "sending": "Sending…",
+    "done": "Close",
+    "close": "Close",
+    "inCrm": "In {{destination}}",
+    "yourCrm": "your CRM",
+    "sendAccount": "Send to my CRM",
+    "updateAccount": "Update in my CRM",
+    "titleMany": "Send to {{count}} CRMs",
+    "targetsLegend": "Which CRMs?",
+    "noTarget": "No CRM is connected to your workspace: connect one in Settings › Integrations.",
+    "noAnswer": "Sent without an answer from this CRM: check the record in your CRM before sending again."
+  }
+}

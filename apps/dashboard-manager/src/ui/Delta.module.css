@@ -1,0 +1,29 @@
+/* #1642 — Delta : badge coloré + flèche. La couleur ne porte jamais le signe
+   seule (accessibilité) : `Delta.tsx` rend toujours la flèche ET le texte. */
+.delta {
+  display: inline-flex;
+  align-items: center;
+  gap: 3px;
+  font-size: 12px;
+  font-weight: 600;
+  font-variant-numeric: tabular-nums;
+  white-space: nowrap;
+}
+
+.up {
+  color: var(--green);
+}
+
+.down {
+  color: var(--red);
+}
+
+.flat {
+  color: var(--muted);
+}
+
+.unknown {
+  color: var(--muted);
+  font-weight: 400;
+  font-style: italic;
+}

@@ -1,0 +1,305 @@
+{
+  "_why": "#2257.38-43 — le corpus de RECETTE du compilateur d'intention (LAU-FINAL-002). Aucun classificateur déterministe n'extrait aujourd'hui l'intention, le périmètre ou le format d'une demande (mesuré au registre .claude/notes/registre-2026-09-17-lau-002-2257.md) : ce corpus FIGE l'intention ATTENDUE sur un échantillon réaliste, pour le jour où une capacité la produira — il ne l'évalue pas lui-même contre un modèle (le ticket l'exige explicitement : « sans appel de modèle »). `expected_intention_principale` est une étiquette écrite à la main, jamais devinée par un appel réseau. Contrôleur du corpus : `apps/ia/tests/test_intent_corpus.py` (structure et diversité, pas de jugement sémantique).",
+  "cases": [
+    {
+      "id": "banque-01",
+      "message": "Peux-tu me faire un point sur BNP Paribas, je veux savoir si on a une carte à jouer sur la conformité réglementaire ?",
+      "sector": "banque",
+      "profile": "expert",
+      "tags": [],
+      "expected_intention_principale": "conseil_sur_compte",
+      "expected_intention_router": "information_client"
+    },
+    {
+      "id": "assurance-01",
+      "message": "j'ai un rdv demain avec AXA c'est pour quoi déjà cette boite tu peux me refaire un topo vite fait",
+      "sector": "assurance",
+      "profile": "novice",
+      "tags": ["voice"],
+      "expected_intention_principale": "brief_avant_rdv",
+      "expected_intention_router": "information_client"
+    },
+    {
+      "id": "retail-01",
+      "message": "Prépare-moi une liste de contacts décisionnaires achats IT chez Carrefour, format court.",
+      "sector": "distribution",
+      "profile": "expert",
+      "tags": [],
+      "expected_intention_principale": "recherche_contacts",
+      "expected_intention_router": "autre"
+    },
+    {
+      "id": "industrie-01",
+      "message": "euh ouais donc alors le compte Michelin est-ce que on peut avoir un plan d'action là genre concret quoi",
+      "sector": "industrie_manufacturiere",
+      "profile": "novice",
+      "tags": ["voice"],
+      "expected_intention_principale": "plan_action",
+      "expected_intention_router": "autre"
+    },
+    {
+      "id": "energie-01",
+      "message": "Fais-moi une comparaison entre TotalEnergies et Engie sur leur exposition à la transition bas-carbone.",
+      "sector": "energie",
+      "profile": "expert",
+      "tags": [],
+      "expected_intention_principale": "comparaison_comptes",
+      "expected_intention_router": "autre"
+    },
+    {
+      "id": "aeronautique-01",
+      "message": "je veux absolument qu'on cible Airbus mais surtout pas leurs filiales de maintenance, tu vois ce que je veux dire",
+      "sector": "aeronautique",
+      "profile": "expert",
+      "tags": ["contradictory"],
+      "expected_intention_principale": "definition_exclusions",
+      "expected_intention_router": "autre"
+    },
+    {
+      "id": "automobile-01",
+      "message": "Je cherche à comprendre pourquoi Renault ne répond plus à nos relances depuis deux mois.",
+      "sector": "automobile",
+      "profile": "expert",
+      "tags": [],
+      "expected_intention_principale": "diagnostic_relation",
+      "expected_intention_router": "autre"
+    },
+    {
+      "id": "sante-01",
+      "message": "prépare un message pour relancer Sanofi mais sans que ça ressemble à une relance",
+      "sector": "sante_pharma",
+      "profile": "novice",
+      "tags": ["contradictory"],
+      "expected_intention_principale": "redaction_message",
+      "expected_intention_router": "autre"
+    },
+    {
+      "id": "telecom-01",
+      "message": "Shortlist de consultants Java disponibles sous 15 jours pour une mission chez Orange.",
+      "sector": "telecom",
+      "profile": "expert",
+      "tags": [],
+      "expected_intention_principale": "shortlist_vivier",
+      "expected_intention_router": "proposer"
+    },
+    {
+      "id": "secteur_public-01",
+      "message": "c'est pour un appel d'offres du ministère on doit répondre avant vendredi tu peux regarder si on est en phase",
+      "sector": "secteur_public",
+      "profile": "novice",
+      "tags": ["voice"],
+      "expected_intention_principale": "diagnostic_rfp",
+      "expected_intention_router": "besoin"
+    },
+    {
+      "id": "transport-01",
+      "message": "Quel est le verdict sur SNCF Réseau : on y va ou pas sur le lot cybersécurité ?",
+      "sector": "transport_logistique",
+      "profile": "expert",
+      "tags": [],
+      "expected_intention_principale": "verdict_tranche",
+      "expected_intention_router": "autre"
+    },
+    {
+      "id": "agroalimentaire-01",
+      "message": "Danone, jamais entendu parler, c'est quoi comme secteur et pourquoi on les suit ?",
+      "sector": "agroalimentaire",
+      "profile": "novice",
+      "tags": [],
+      "expected_intention_principale": "decouverte_compte",
+      "expected_intention_router": "information_client"
+    },
+    {
+      "id": "luxe-01",
+      "message": "Objectif : entrer chez LVMH sur la data. Angle d'accroche et cas d'usage, s'il te plaît.",
+      "sector": "luxe",
+      "profile": "expert",
+      "tags": [],
+      "expected_intention_principale": "preparation_approche",
+      "expected_intention_router": "autre"
+    },
+    {
+      "id": "media-01",
+      "message": "bon alors le compte Canal+ j'ai zéro info aide moi steuplé je sais même pas par où commencer",
+      "sector": "media",
+      "profile": "novice",
+      "tags": ["voice"],
+      "expected_intention_principale": "orientation_generale",
+      "expected_intention_router": "diagnostic"
+    },
+    {
+      "id": "btp-01",
+      "message": "Vinci a un besoin ouvert sur la maîtrise d'œuvre, mais exclus tout ce qui touche au nucléaire.",
+      "sector": "btp_construction",
+      "profile": "expert",
+      "tags": [],
+      "expected_intention_principale": "definition_exclusions",
+      "expected_intention_router": "autre"
+    },
+    {
+      "id": "immobilier-01",
+      "message": "Fais un plan de prospection sur Nexity, horizon un trimestre, en restant uniquement sur l'Île-de-France.",
+      "sector": "immobilier",
+      "profile": "expert",
+      "tags": [],
+      "expected_intention_principale": "plan_prospection",
+      "expected_intention_router": "autre"
+    },
+    {
+      "id": "education-01",
+      "message": "c urgent, faut une réponse à l'université de Lyon avant ce soir sinon on perd le lot",
+      "sector": "education",
+      "profile": "novice",
+      "tags": ["voice"],
+      "expected_intention_principale": "action_urgente",
+      "expected_intention_router": "autre"
+    },
+    {
+      "id": "ecommerce-01",
+      "message": "Cdiscount : je veux le même niveau de détail qu'avant mais version courte cette fois.",
+      "sector": "e_commerce",
+      "profile": "expert",
+      "tags": [],
+      "expected_intention_principale": "reformulation_niveau_detail",
+      "expected_intention_router": "autre"
+    },
+    {
+      "id": "cybersecurite-01",
+      "message": "Peux-tu vérifier si Thales a un budget cybersécurité ouvert, et si oui qui décide ?",
+      "sector": "cybersecurite",
+      "profile": "expert",
+      "tags": [],
+      "expected_intention_principale": "qualification_besoin",
+      "expected_intention_router": "besoin"
+    },
+    {
+      "id": "biotech-01",
+      "message": "Sur Ipsen je veux du concret pas un roman, juste les 3 trucs qui bloquent",
+      "sector": "biotech",
+      "profile": "novice",
+      "tags": [],
+      "expected_intention_principale": "identification_blocages",
+      "expected_intention_router": "information_client"
+    },
+    {
+      "id": "agriculture-01",
+      "message": "InVivo, c'est un compte agricole, mais je veux aussi savoir leur volet data/IT, les deux à la fois.",
+      "sector": "agriculture",
+      "profile": "expert",
+      "tags": ["contradictory"],
+      "expected_intention_principale": "perimetre_double",
+      "expected_intention_router": "information_client"
+    },
+    {
+      "id": "tourisme-01",
+      "message": "Accor, franchement j'y crois pas trop mais bon vas-y fais quand même un topo",
+      "sector": "tourisme_hotellerie",
+      "profile": "novice",
+      "tags": ["contradictory"],
+      "expected_intention_principale": "conseil_sur_compte",
+      "expected_intention_router": "information_client"
+    },
+    {
+      "id": "assurance-conversation-01",
+      "message": "Et sur ce point précis, quel serait le prochain geste concret ?",
+      "sector": "assurance",
+      "profile": "expert",
+      "tags": ["real_conversation"],
+      "history": [
+        { "role": "user", "content": "On a un souci avec MAIF, ils ne rappellent plus depuis trois semaines." },
+        { "role": "assistant", "content": "Verdict : la relation est en train de se refroidir, sans qu'on sache pourquoi." }
+      ],
+      "expected_intention_principale": "action_suivante",
+      "expected_intention_router": "diagnostic"
+    },
+    {
+      "id": "banque-conversation-01",
+      "message": "Ok et si on regardait plutôt leur filiale assurance du coup ?",
+      "sector": "banque",
+      "profile": "expert",
+      "tags": ["real_conversation"],
+      "history": [
+        { "role": "user", "content": "Fais-moi un plan de prospection sur Société Générale." },
+        { "role": "assistant", "content": "Voici un plan de prospection en trois étapes sur Société Générale." }
+      ],
+      "expected_intention_principale": "changement_de_perimetre",
+      "expected_intention_router": "autre"
+    },
+    {
+      "id": "industrie-conversation-01",
+      "message": "Non en fait je parlais du site de Clermont, pas du siège.",
+      "sector": "industrie_manufacturiere",
+      "profile": "novice",
+      "tags": ["real_conversation"],
+      "history": [
+        { "role": "user", "content": "Michelin a une usine qui embauche, tu peux regarder ?" },
+        { "role": "assistant", "content": "Je vois une ouverture de poste au siège de Clermont-Ferrand." }
+      ],
+      "expected_intention_principale": "correction_perimetre",
+      "expected_intention_router": "autre"
+    },
+    {
+      "id": "energie-02",
+      "message": "on va dire que c urgent mais en vrai ça peut attendre la semaine prochaine si besoin",
+      "sector": "energie",
+      "profile": "novice",
+      "tags": ["voice", "contradictory"],
+      "expected_intention_principale": "action_a_planifier",
+      "expected_intention_router": "autre"
+    },
+    {
+      "id": "telecom-02",
+      "message": "Bouygues Telecom : je veux uniquement les décideurs data, pas les RH, pas les achats généraux.",
+      "sector": "telecom",
+      "profile": "expert",
+      "tags": [],
+      "expected_intention_principale": "recherche_contacts",
+      "expected_intention_router": "autre"
+    },
+    {
+      "id": "public-02",
+      "message": "franchement g pas compris la reponse davant tu peux refaire mais en plus simple",
+      "sector": "secteur_public",
+      "profile": "novice",
+      "tags": ["voice"],
+      "expected_intention_principale": "reformulation_niveau_detail",
+      "expected_intention_router": "autre"
+    },
+    {
+      "id": "retail-02",
+      "message": "Décris-moi le besoin métier réel derrière la demande de Leroy Merlin sur la logistique dernier kilomètre.",
+      "sector": "distribution",
+      "profile": "expert",
+      "tags": [],
+      "expected_intention_principale": "besoin_metier_sous_jacent",
+      "expected_intention_router": "besoin"
+    },
+    {
+      "id": "sante-02",
+      "message": "Bayer, on est censé les exclure du périmètre agro mais les garder sur le pharma, confirme-moi ça.",
+      "sector": "sante_pharma",
+      "profile": "expert",
+      "tags": [],
+      "expected_intention_principale": "definition_exclusions",
+      "expected_intention_router": "autre"
+    },
+    {
+      "id": "aeronautique-02",
+      "message": "Dassault Aviation : format exécutif, une page, rien de plus.",
+      "sector": "aeronautique",
+      "profile": "expert",
+      "tags": [],
+      "expected_intention_principale": "reformulation_niveau_detail",
+      "expected_intention_router": "autre"
+    },
+    {
+      "id": "immobilier-02",
+      "message": "franchement jss pas expert du tout mais Bouygues Immobilier ils cherchent quoi la genre en 2 mots",
+      "sector": "immobilier",
+      "profile": "novice",
+      "tags": ["voice"],
+      "expected_intention_principale": "decouverte_compte",
+      "expected_intention_router": "information_client"
+    }
+  ]
+}

@@ -1,0 +1,59 @@
+{
+  "_source": "BellumAI_Meta_Analyse_Besoins_Workflows_Requetes.pdf (extrait Drive 25/09/2026, anonymisé)",
+  "_section": "12. Protocole de tests PASS/FAIL",
+  "_anonymise": "\"Theo\" et \"Jonathan\" sont les prenoms d'exemple du document (destinataires des specs/tests) — le document source dit explicitement garder \"Jonathan\" tel quel, ce n'est pas un repondant de l'audit anonymise en [repondant n].",
+  "_1948": "1948.7 — Corpus existant : questions des beta-testeurs (Theo teste, avec ce protocole, les 60 requetes de requetes_prio1_2026.json + les 30 de requetes_conseil_2026.json + les 25 triggers de triggers_2026.json) ; 1948.8 — Corpus existant : transcripts de recette",
+  "_note_1948_8": "NON PROUVE au-dela du protocole : les deux sources lues pour #2796 donnent le FORMAT attendu d'un transcript de recette (les 8 champs ci-dessous et les 4 verdicts), pas un seul transcript REMPLI (pas de ligne Requete/Verdict/Preuves observee). Importer un transcript rempli a partir de ce protocole serait fabriquer la donnee que CLAUDE.md interdit — ce fichier importe donc le protocole, pas des transcripts inventes.",
+  "champs": [
+    {
+      "champ": "Requête",
+      "definition": "Copier/coller exact de la commande utilisateur."
+    },
+    {
+      "champ": "Verdict",
+      "definition": "PASS / FAIL / PARTIAL / BLOCKED."
+    },
+    {
+      "champ": "Message BellumAI observé",
+      "definition": "Ce que l'app a affiché à l'utilisateur."
+    },
+    {
+      "champ": "Résultat outil observé",
+      "definition": "Ce qui a été créé/modifié dans Gmail, Agenda, HubSpot, Boond ou Drive."
+    },
+    {
+      "champ": "Écart",
+      "definition": "Ce qui manque: objet, destinataire, association CRM, PJ, statut, latence, hallucination, doublon."
+    },
+    {
+      "champ": "Preuves",
+      "definition": "Screenshots, object_id HubSpot, event_id, draft_id, file_id Drive, log error."
+    },
+    {
+      "champ": "Correction attendue",
+      "definition": "Workflow attendu en 3-5 étapes pour Jonathan."
+    },
+    {
+      "champ": "Priorité bug",
+      "definition": "P0 bloquant demo/client, P1 important, P2 amélioration."
+    }
+  ],
+  "verdicts": [
+    {
+      "verdict": "PASS",
+      "definition": "résultat conforme; les objets attendus sont créés/maj; liens, champs, associations et contenu OK."
+    },
+    {
+      "verdict": "FAIL",
+      "definition": "l'agent déclare un succès mais l'objet est absent/incorrect, ou l'action est inutilisable."
+    },
+    {
+      "verdict": "PARTIAL",
+      "definition": "une partie marche mais il manque champs, associations, idempotence, PJ, mise en forme, ou une action secondaire."
+    },
+    {
+      "verdict": "BLOCKED",
+      "definition": "permissions/scopes/quotas/secrets/webhooks manquants rendent l'exécution impossible."
+    }
+  ]
+}

@@ -1,0 +1,43 @@
+dist
+node_modules
+.venv
+*.py
+pnpm-lock.yaml
+.DS_Store
+apps/api/dist
+apps/web/dist
+packages/shared/dist
+
+# Python service — handled by ruff/black, not prettier
+apps/ia/
+
+# Generated files
+**/*.gen.ts
+**/*.generated.ts
+**/.pytest_cache/
+**/__pycache__/
+# #3386 — généré par role_playbook.render_matrix_markdown (parité testée)
+agent_docs/roles-stades-matrice.md
+
+# Notes de chantier — elles sortent de l'ignore git depuis le 15/09/2026 pour
+# qu'un agent en worktree puisse les LIRE, mais ce sont des notes de travail,
+# pas du source : prettier n'a rien à y dire, et 14 d'entre elles le faisaient
+# echouer des la premiere minute.
+.claude/notes/
+
+# ⚠️ Les worktrees d'agents — la cause d'un effondrement machine mesuré le
+# 16/09/2026 : load average 179 sur 12 cœurs, CPU quasi IDLE, tous les
+# `git push` expirés. Le hook `pre-push` lance `format:check`, c'est-à-dire
+# `prettier --check .` DEPUIS LA RACINE — et `.claude/worktrees/` contenait
+# **182 copies complètes du dépôt**. Chaque push parcourait donc ~182 × 9 000
+# fichiers. `node_modules` était déjà exclu, mais pas le SOURCE des copies.
+# Ce sont des checkouts, jamais la source de vérité : rien à formater ici.
+.claude/worktrees/
+# Sortie du convertisseur convert:commercial-brief (générée, forme canonique testée)
+apps/api/src/modules/demo/data/commercial-briefs/*.json
+apps/api/src/modules/demo/data/commercial-briefs/README.md
+# Sortie du convertisseur convert:market-brief (générée, forme canonique : un élément par ligne)
+apps/api/src/modules/demo/data/market-briefs/*.json
+apps/api/src/modules/demo/data/market-briefs/README.md
+# Sortie du script generate-demo-analysed-accounts.mjs (générée, JSON compact sur une ligne)
+apps/api/src/modules/demo/data/analysed-accounts/*.json

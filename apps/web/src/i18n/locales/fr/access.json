@@ -1,0 +1,473 @@
+{
+  "banner": {
+    "plan_locked": {
+      "title": "Cet écran fait partie d’une autre offre",
+      "description": "Il reste visible pour que tu saches qu’il existe. Le propriétaire de l’espace peut l’ouvrir depuis Facturation.",
+      "action": "Voir les offres"
+    },
+    "permission": {
+      "title": "Ton rôle n’ouvre pas cet écran",
+      "description": "Demande l’accès à un responsable de ton espace : il peut te l’accorder sans changer ton rôle."
+    },
+    "no_integration": {
+      "title": "Aucun outil connecté ne fournit ces données",
+      "description": "Connecte l’outil concerné dans Réglages › Intégrations. Rien n’est perdu : l’écran se remplira dès la connexion.",
+      "action": "Connecter un outil"
+    },
+    "degraded": {
+      "title": "Une partie de cet écran est indisponible",
+      "description": "Le reste fonctionne normalement. Les actions concernées sont grisées tant que l’outil n’est pas connecté.",
+      "action": "Connecter {{capability}}",
+      "actionContinue": "Continuer sans {{capability}}"
+    },
+    "stillPossible": "Ce qui reste possible sans ça : {{value}}.",
+    "missing": "Ce qui manque : {{items}}",
+    "capability": {
+      "crm": "ton CRM",
+      "email": "ta messagerie",
+      "calendar": "ton agenda",
+      "documents": "tes documents",
+      "ats": "ton ATS",
+      "generic": "cet outil"
+    },
+    "missingName": {
+      "exports": "les exports PDF / CSV",
+      "chat_ai": "{{copilot}}",
+      "discover": "Découvrir",
+      "watchlist": "la Veille",
+      "knowledge_base": "la base de connaissance",
+      "team_workspace": "l’espace partagé",
+      "needs": "les Besoins",
+      "talent_pool": "le Vivier de talents",
+      "crm_native": "le CRM {{brand}}",
+      "ats_native": "l’ATS {{brand}}",
+      "manager_cockpit": "le Pilotage",
+      "crm_sync": "l’export CRM",
+      "mcp_assistant": "l’assistant IA (MCP)",
+      "public_api": "l’API publique",
+      "rfp": "les appels d’offres",
+      "generic": "une fonction de ton offre"
+    },
+    "missingPermission": "un droit sur ton espace"
+  },
+  "loading": "Chargement…",
+  "declared": "Enregistré.",
+  "declareFailed": "L’enregistrement a échoué",
+  "freshOn": "{{source}} · {{date}}",
+  "staleOn": "{{source}} · information du {{date}}, à revérifier",
+  "undated": "{{source}} · sans date connue",
+  "status": {
+    "title": "Ton état d’accès sur ce compte",
+    "value": {
+      "inconnu": "Inconnu",
+      "referenced": "Référencé",
+      "to_build": "À bâtir"
+    },
+    "help": {
+      "none": "Rien n’est posé. Dis si une ESN est déjà référencée ici, ou si l’accès est à bâtir : les interlocuteurs sont rangés en conséquence.",
+      "inconnu": "Tu as posé « inconnu » : l’ordre des interlocuteurs reste celui des critères habituels.",
+      "referenced": "Accès référencé : les interlocuteurs opérationnels et les acheteurs passent devant. Personne n’est retiré, la liste est seulement rangée autrement.",
+      "to_build": "Accès à bâtir : les décideurs et les sponsors passent devant. Personne n’est retiré, la liste est seulement rangée autrement."
+    }
+  },
+  "level": {
+    "title": "Accès au compte",
+    "state": {
+      "direct": "Accès direct",
+      "rang2": "Accès en rang 2",
+      "rang3_plus": "Rang 3 ou plus",
+      "inconnu": "Accès inconnu"
+    },
+    "help": {
+      "direct": "Aucun rang 1 n’est en place sur ce compte : le chemin direct est ouvert.",
+      "rang2": "Un rang 1 est en place, et un partenaire est déclaré sur ce compte — la porte se prend par lui.",
+      "rang3_plus": "Un rang 1 concurrent est en place et aucun partenaire n’est déclaré sur ce compte — pas de porte connue aujourd’hui.",
+      "inconnu": "On ne sait pas encore si un rang 1 est en place sur ce compte."
+    },
+    "fact": {
+      "no_incumbent": "Fondé sur {{entities}} : aucun rang 1 n’y est en place.",
+      "incumbent_with_partner": "Fondé sur {{entities}} : un rang 1 y est en place, et {{partner}} y est déclaré partenaire.",
+      "incumbent_without_partner": "Fondé sur {{entities}} : un rang 1 y est en place, sans partenaire déclaré."
+    }
+  },
+  "personalPaths": {
+    "title": "Voies d’accès personnelles",
+    "help": "Par qui, dans ton équipe ou ton réseau, une porte est déjà entrouverte chez ce compte.",
+    "voie": {
+      "consultant_en_place": "Consultant déjà en poste",
+      "ancien_collegue": "Ancien collègue",
+      "relation_commune": "Relation commune",
+      "client_existant": "Client existant",
+      "partenaire_rang2": "Partenaire en rang 2",
+      "esn_referencee": "Partenaire déjà référencé",
+      "ancien_manager": "Ancien manager",
+      "personne_changement_poste": "Personne ayant changé de poste",
+      "evenement_rencontre": "Rencontré lors d’un événement",
+      "reseau_alumni": "Réseau alumni",
+      "recommandation_directe": "Recommandation directe"
+    },
+    "certainty": {
+      "verified_access": "Accès vérifié",
+      "probable_relation": "Relation probable",
+      "simple_affinity": "Simple affinité",
+      "historic_observation": "Historique observé"
+    },
+    "risk": {
+      "stale": "À revérifier — information ancienne.",
+      "unconfirmed": "Non confirmé — à qualifier avant de s’en prévaloir.",
+      "undeclared_detection": "Détecté automatiquement, jamais déclaré par quelqu’un de l’équipe."
+    },
+    "proof": "Preuve : {{proof}}",
+    "warmth": "Chaleur du lien : {{level}}",
+    "warmthLevel": {
+      "distant": "distant",
+      "cordial": "cordial",
+      "close": "proche"
+    },
+    "source": {
+      "workspace_declared_link": "Déclaré par ton équipe",
+      "partner_registry_proven": "Placements réels constatés",
+      "partner_registry_declared": "Déclarée par ton équipe",
+      "partner_registry_observed": "Source actuelle",
+      "crm_relationship": "Relation CRM active",
+      "detected_signal": "Signal détecté"
+    },
+    "sourceSince": "{{source}} · depuis le {{date}}",
+    "sourceUndated": "{{source}} · sans date connue",
+    "ask": {
+      "consultant_en_place": "Demande acceptable : un avis sur le terrain, avant toute présentation commerciale.",
+      "ancien_collegue": "Demande acceptable : un échange informel pour comprendre qui décide.",
+      "relation_commune": "Demande acceptable : une mise en relation, si la personne en a envie.",
+      "client_existant": "Demande acceptable : élargir le périmètre auprès d’un interlocuteur déjà acquis.",
+      "partenaire_rang2": "Demande acceptable : un point sur le cadre de la relation, avant de citer quiconque.",
+      "esn_referencee": "Demande acceptable : comprendre comment passer par son référencement, pas le contourner.",
+      "ancien_manager": "Demande acceptable : un conseil sur la meilleure porte d’entrée.",
+      "personne_changement_poste": "Demande acceptable : un message de félicitations avec une question ouverte, sans proposition.",
+      "evenement_rencontre": "Demande acceptable : rappeler la rencontre et proposer un court échange.",
+      "reseau_alumni": "Demande acceptable : un échange entre pairs, sans pitch.",
+      "recommandation_directe": "Demande acceptable : se présenter avec le nom de la personne qui recommande, après son accord."
+    },
+    "action": {
+      "verified_access": "Action : t’appuyer sur cette voie dès maintenant.",
+      "probable_relation": "Action : la confirmer auprès de la personne avant de t’en prévaloir.",
+      "simple_affinity": "Action : un point commun, pas une relation — ne pas t’en prévaloir sans la renforcer.",
+      "historic_observation": "Action : revérifier qu’elle tient encore, sinon ne pas l’utiliser."
+    }
+  },
+  "lock": {
+    "title": "Ce qui verrouille",
+    "state": {
+      "ouvert": "Aucun référencement détecté",
+      "semi_ouvert": "Accessible via un intermédiaire",
+      "verrouille": "Panel fermé",
+      "inconnu": "Je ne sais pas"
+    },
+    "help": {
+      "ouvert": "Rien ne semble bloquer l’entrée. À vérifier au premier contact.",
+      "semi_ouvert": "Un prestataire est en place. L’entrée passe par lui, ou par la prochaine consultation.",
+      "verrouille": "Le panel est fermé. Ne pas investir sans partenaire de rang 1 — ou viser la fenêtre de renouvellement, quand elle est connue.",
+      "inconnu": "Je ne sais pas si ce compte est référencé. Aucune source publique ne le dit pour une entreprise privée — c’est une question à poser au premier contact."
+    }
+  },
+  "barrier": {
+    "title": "Comment ce compte achète",
+    "help": "Estimée sur six indicateurs publics, jamais déclarée par le compte. Ce n’est pas une promesse : c’est ce qui explique pourquoi la porte s’ouvre plus ou moins vite.",
+    "badge": "{{label}} · barrière {{value}}/10",
+    "class": {
+      "A": "Ouvert probable",
+      "B": "Ouvert par une entité",
+      "C": "Semi-ouvert",
+      "D": "Verrouillage probable"
+    },
+    "provenance": "Registre public · estimée le {{date}}",
+    "provenanceUndated": "Registre public · sans date connue",
+    "unmeasurable": "Barrière non estimable. Il manque : {{proxies}}.",
+    "unmeasurableHelp": "Sous trois indicateurs mesurés, aucune classe n’est produite. « Non estimable » ne veut pas dire « ouvert ».",
+    "absent": "Barrière non estimée sur ce compte.",
+    "absentHelp": "Elle est calculée à chaque analyse, à partir du registre public. Un dossier analysé avant qu’elle existe n’en porte pas.",
+    "headcountStale": "effectif à revérifier — lu avant la correction de sa lecture ; l’en-tête porte la valeur courante",
+    "notMeasured": "non mesuré",
+    "proxies": {
+      "statut": "Statut de l’entreprise",
+      "effectif": "Effectif",
+      "cotation": "Cotation en bourse",
+      "commande_publique": "Exposition à la commande publique",
+      "decentralisation": "Nombre d’établissements",
+      "anciennete": "Ancienneté"
+    },
+    "corrections": {
+      "echeance_proche": "Le marché en place arrive à échéance"
+    }
+  },
+  "addressability": {
+    "title": "Adressabilité",
+    "help": "Peux-tu entrer chez ce compte ? Cinq axes, jamais fondus dans le score d’intérêt : « intéressant » et « accessible » sont deux questions distinctes.",
+    "badge": "{{value}}/{{max}}",
+    "measuredOn_one": "établi sur {{count}} axe sur {{total}}",
+    "measuredOn_other": "établi sur {{count}} axes sur {{total}}",
+    "notMeasured": "Aucun axe n’a pu être mesuré sur ce compte.",
+    "unmeasuredTitle": "Ce qu’on n’a pas pu regarder — ces axes sortent du dénominateur, ils ne valent pas zéro :",
+    "absent": "Adressabilité non disponible pour ce compte.",
+    "absentHelp": "Ce compte n’a pas été analysé depuis que l’adressabilité est calculée. Relance une analyse pour l’obtenir.",
+    "declarative": "Déclaratif",
+    "pathCta": "Explorer les partenaires",
+    "axes": {
+      "lock": "Verrou",
+      "proportion": "Proportion",
+      "path": "Chemin",
+      "relation": "Relation",
+      "access_cost": "Coût d’accès"
+    },
+    "unmeasuredReason": {
+      "lock": "aucune trace de commande publique à son nom, et pas assez de données publiques pour estimer la barrière d’achat.",
+      "proportion": "il manque un des deux côtés : la tranche d’effectif du compte, ou la taille de ton ESN dans ton profil.",
+      "path": "aucune route d’accès agrégée n’alimente encore cet axe.",
+      "relation": "aucun rapprochement possible : ton CRM n’est pas connecté, ou il n’a rien retrouvé sur ce compte.",
+      "relationKnown_one": "{{count}} contact connu de ton équipe est déjà rattaché à ce compte (import de ton CRM) : la relation n’a pas encore été recalculée avec lui.",
+      "relationKnown_other": "{{count}} contacts connus de ton équipe sont déjà rattachés à ce compte (import de ton CRM) : la relation n’a pas encore été recalculée avec eux.",
+      "access_cost": "le coût d’accès se déclare, il ne s’estime jamais — il se renseigne plus bas sur cet onglet."
+    }
+  },
+  "modes": {
+    "title": "Par où entrer",
+    "help": "Sept portes, dont cinq indirectes. Aucune n’est fermée faute de donnée : l’ignorance n’est pas un obstacle.",
+    "direct_reference": "En direct, en étant référencé",
+    "direct_hors_panel": "En direct, hors panel",
+    "filiale_bu": "Par une filiale ou une entité",
+    "rang2_soustraitance": "En rang 2, sous une ESN en place",
+    "portage_marketplace": "Par un porteur ou une place de marché",
+    "cotraitance": "En cotraitance, avec un mandataire",
+    "introduction_relation": "Par une introduction",
+    "openDetailAria": "Voir le détail de la voie « {{mode}} »",
+    "dialogDescription": "Le détail de cette voie d’entrée : comment elle se joue en général, à qui parler, et quoi vérifier ensuite.",
+    "previousMode": "Voie précédente",
+    "nextMode": "Voie suivante",
+    "detailLabels": {
+      "recommendedPath": "Voie recommandée",
+      "prerequisite": "Prérequis",
+      "firstPerson": "Première personne à voir",
+      "questionToAsk": "Question à poser",
+      "nextCondition": "Condition suivante",
+      "fallback": "Repli",
+      "notRecommended": "Route déconseillée",
+      "notRecommendedMissing": "Aucune route n’est aujourd’hui déconseillée dans le catalogue."
+    },
+    "detail": {
+      "direct_reference": {
+        "recommendedPath": "Approcher directement l’acheteur ou la DSI en t’appuyant sur ton référencement déjà acquis — panel, accord-cadre ou contrat existant.",
+        "prerequisite": "Être déjà référencé sur ce compte (panel, accord-cadre ou marché public actif).",
+        "firstPerson": "L’acheteur ou le sponsor métier qui gère le référencement en cours.",
+        "questionToAsk": "Quel est le prochain appel d’offres ou la prochaine vague de commande sur ce référencement ?",
+        "nextCondition": "Obtenir une date ou un périmètre pour la prochaine consultation.",
+        "fallback": "Si le référencement stagne, vérifie s’il est toujours actif ou explore une entrée hors panel.",
+        "notRecommended": "Si le besoin ne relève pas de ce que traitent la DSI ou l’acheteur référencé, cette voie ne s’applique pas."
+      },
+      "direct_hors_panel": {
+        "recommendedPath": "Approcher directement un sponsor métier, en dehors du circuit d’achat référencé, sur un besoin ponctuel ou urgent.",
+        "prerequisite": "Un besoin réel non couvert par le panel en place — un point de tension mesurable.",
+        "firstPerson": "Un responsable opérationnel confronté au besoin, plutôt que l’acheteur.",
+        "questionToAsk": "Ce besoin peut-il être traité hors du cadre d’achat habituel, en direct ?",
+        "nextCondition": "Faire valider par ce sponsor la possibilité d’une dérogation ou d’un achat direct.",
+        "fallback": "Si le circuit d’achat impose le panel, bascule vers une entrée par une filiale ou une introduction."
+      },
+      "filiale_bu": {
+        "recommendedPath": "Entrer par une filiale ou une entité moins verrouillée que le siège.",
+        "prerequisite": "Une filiale identifiée, dont le verrouillage diffère de celui du groupe.",
+        "firstPerson": "Le responsable IT ou achats de cette filiale, pas celui du siège.",
+        "questionToAsk": "Cette filiale a-t-elle son propre budget et sa propre décision d’achat ?",
+        "nextCondition": "Confirmer l’autonomie budgétaire de la filiale avant d’investir du temps commercial.",
+        "fallback": "Si toutes les filiales connues renvoient au siège, reviens vers une introduction ou une cotraitance.",
+        "notRecommended": "Si la filiale visée n’a pas de budget ni de décision d’achat propres, cette voie remonte au siège et perd son intérêt."
+      },
+      "rang2_soustraitance": {
+        "recommendedPath": "Te positionner en sous-traitance auprès d’une ESN déjà en place sur ce compte.",
+        "prerequisite": "Une ESN en rang 1 identifiée, dont l’ouverture au rang 2 est déclarée ou observée.",
+        "firstPerson": "Le responsable de compte ou de delivery de l’ESN en place.",
+        "questionToAsk": "As-tu un pic de charge ou une compétence qui te manque sur ce compte ?",
+        "nextCondition": "Obtenir un besoin précis en sous-traitance, avec un périmètre et un volume.",
+        "fallback": "Si l’ESN en place n’est pas ouverte au rang 2, cherche une autre ESN en place ou une entrée directe."
+      },
+      "portage_marketplace": {
+        "recommendedPath": "Passer par un porteur ou une place de marché déjà référencé sur ce compte.",
+        "prerequisite": "Un porteur identifié, actif sur ce compte ou ce secteur.",
+        "firstPerson": "Le référent du porteur ou de la place de marché sur ce compte.",
+        "questionToAsk": "Quels profils ou quelles missions ce porteur place-t-il déjà sur ce compte ?",
+        "nextCondition": "Être inscrit ou référencé auprès du porteur pour ce compte précis.",
+        "fallback": "Si aucun porteur actif n’est identifié, explore une cotraitance ou une introduction."
+      },
+      "cotraitance": {
+        "recommendedPath": "Répondre à une consultation en groupement, aux côtés d’un mandataire déjà légitime sur ce compte.",
+        "prerequisite": "Un mandataire identifié, en position de porter la réponse, avec une complémentarité réelle d’offre.",
+        "firstPerson": "Le dirigeant ou le responsable d’offre du mandataire pressenti.",
+        "questionToAsk": "Cherches-tu un co-traitant sur les prochains appels d’offres de ce compte ?",
+        "nextCondition": "Formaliser l’accord de groupement avant la publication de la consultation.",
+        "fallback": "Sans mandataire partant, reviens vers une entrée directe hors panel ou une introduction."
+      },
+      "introduction_relation": {
+        "recommendedPath": "Passer par une relation existante — personnelle, collègue ou ancienne — pour obtenir une mise en contact.",
+        "prerequisite": "Une relation active ou réactivable avec quelqu’un côté client (CRM, historique, réseau de l’équipe).",
+        "firstPerson": "La personne qui détient la relation — toi-même ou un collègue, sans jamais la nommer si elle ne t’est pas visible.",
+        "questionToAsk": "Cette relation accepte-t-elle une introduction, et auprès de qui ?",
+        "nextCondition": "Obtenir la mise en relation effective avec un interlocuteur côté client.",
+        "fallback": "Si la relation ne peut pas t’introduire, cherche une entrée directe ou par une filiale."
+      }
+    }
+  },
+  "feasibility": {
+    "available": "identifiée",
+    "possible": "à explorer",
+    "blocked": "fermée"
+  },
+  "cost": {
+    "title": "Ce que l’entrée coûte",
+    "unknown": "Coût d’accès inconnu.",
+    "placeholder": "ex. 3 % de commission via le porteur",
+    "estimateBasis": "Déclaré par ton espace sur {{company}} le {{date}}, même verrou — à confirmer ici.",
+    "declare": "Déclarer"
+  },
+  "history": {
+    "title": "Ce qu’on sait, et depuis quand"
+  },
+  "kind": {
+    "lock": "Verrouillage",
+    "mode": "Mode d’entrée",
+    "cost": "Coût d’accès",
+    "path": "Chemin"
+  },
+  "entities": {
+    "absentKnown_one": "{{count}} entité repérée par l’analyse, elle n’est pas déclarée : sans déclaration, on ne la classe pas.",
+    "absentKnown_other": "{{count}} entités repérées par l’analyse, aucune n’est déclarée : sans déclaration, on ne les classe pas.",
+    "absentNone": "Aucune entité n’est connue pour ce compte : le groupe est la seule porte lisible pour l’instant.",
+    "title": "Par quelle entité entrer",
+    "help": "Le groupe peut être fermé sans que ses entités le soient. Sur un compte trop grand pour ta taille, c’est souvent la seule porte.",
+    "rank1UnknownAll": "Rang 1 non établi sur les {{count}} entités connues : aucune porte à classer pour l’instant.",
+    "rank1UnknownSome": "Rang 1 non établi sur {{count}} autre(s) entité(s).",
+    "rank1": {
+      "yes": "un rang 1 est installé",
+      "no": "aucun rang 1 connu",
+      "unknown": "rang 1 inconnu"
+    },
+    "avoidGroup": "Sur ce compte, ne vise pas le siège : la barrière estimée est haute. Entre par une entité.",
+    "reasons": {
+      "none": "aucun fait connu sur ce périmètre",
+      "kind": {
+        "bu": "business unit identifiée",
+        "subsidiary": "filiale identifiée",
+        "division": "division identifiée",
+        "unknown": "périmètre identifié"
+      },
+      "contacts_one": "{{count}} contact déjà identifié",
+      "contacts_other": "{{count}} contacts déjà identifiés",
+      "sites_one": "{{count}} site retenu",
+      "sites_other": "{{count}} sites retenus",
+      "rank1": "rang 1 installé",
+      "rank1Named": "rang 1 connu : {{value}}"
+    },
+    "scoreFact": "{{label}} +{{points}}",
+    "scoreAxesCount_one": "{{count}} axe sur {{total}} évalué",
+    "scoreAxesCount_other": "{{count}} axes sur {{total}} évalués",
+    "scoreLine": "{{value}} points, {{axesCount}} : {{axes}}.",
+    "scoreMissing": "Non renseigné : {{axes}}.",
+    "axes": {
+      "kind": "nature",
+      "contacts": "contacts",
+      "sites": "sites",
+      "rank1": "rang 1"
+    }
+  },
+  "ecosystem": {
+    "title": "Densité d’écosystème",
+    "dense": "Écosystème de services dense",
+    "help": "Plusieurs relations ESN↔environnement ont été observées. Une approche directe peut mériter davantage de qualification.",
+    "cta": "Explorer les partenaires"
+  },
+  "community": {
+    "title": "Ce que la communauté en dit",
+    "confirmed_one": "{{count}} espace confirme : {{value}}.",
+    "confirmed_other": "{{count}} espaces distincts confirment : {{value}}. Aucun ne sait qui sont les autres.",
+    "locked": "Cette information est connue de la communauté. Active le partage dans les réglages de l’espace pour y accéder — un espace qui ne contribue pas ne consomme pas.",
+    "conflict": "Les espaces ne disent pas la même chose : {{values}}. Tant qu’ils divergent, l’information reste inconnue.",
+    "value_one": "{{value}} ({{count}} espace)",
+    "value_other": "{{value}} ({{count}} espaces)"
+  },
+  "question": {
+    "ask": {
+      "after_refusal": "Ce refus portait sur le fond, ou sur un problème de référencement ?",
+      "mission_end": "Ce client passe-t-il par un panel de fournisseurs ?",
+      "first_contact": "Ce compte t’a-t-il parlé de référencement ?",
+      "sprint3_qualification": "Ce compte est en qualification au volume : sais-tu si son référencement est ouvert ?"
+    },
+    "answer": {
+      "panel_ferme": "Oui, panel fermé",
+      "panel_ouvert": "Oui, ouvert",
+      "refus_fond": "Sur le fond",
+      "refus_referencement": "Référencement",
+      "skip": "Pas abordé"
+    },
+    "thanksRecorded": "Noté. Trois espaces qui le disent, et l’information devient fiable pour tout le monde.",
+    "thanksNothing": "Noté. On ne te reposera pas la question sur ce compte.",
+    "failed": "La réponse n’a pas pu être enregistrée"
+  },
+  "contradiction": {
+    "line": "« {{name}} » est déclaré concurrent dans Partenaires, mais le compte est verrouillé sur cette entité dans Accès.",
+    "help": "Les deux informations ne peuvent pas être vraies ensemble : vérifie laquelle est à jour (corrige l’une ou l’autre)."
+  },
+  "warning": {
+    "procedure_collective": {
+      "dated": "Procédure collective publiée le {{date}}",
+      "undated": "Procédure collective publiée (date inconnue)",
+      "help": "Ce n'est pas une porte fermée — une entreprise en difficulté est souvent joignable. C'est un risque : à vérifier avant d'engager du temps.",
+      "openAnnouncement": "Voir l'annonce"
+    }
+  },
+  "gate": {
+    "fallback": "Cette action a besoin d'un outil que tu n'as pas encore branché. Va dans Réglages › Intégrations.",
+    "mailbox_send": "Connecte ta messagerie pour que je puisse préparer et envoyer les brouillons.",
+    "mailbox_read": "Connecte ta messagerie pour que je puisse lire les fils sans réponse.",
+    "agenda_write": "Connecte ton agenda pour que je puisse poser les rendez-vous et les rappels.",
+    "crm_write": "Connecte ton CRM pour exporter les contacts et journaliser les échanges.",
+    "documents_read": "Connecte ton espace documentaire pour que je puisse retrouver les CV et les propositions.",
+    "mailbox_write": "Connecte ta messagerie pour rédiger depuis {{brand}} — sans elle, le brouillon n'a pas d'où partir."
+  },
+  "axes": {
+    "lockTenderOpen": "Consultation ouverte — la porte l'est aussi",
+    "lockAwardIncumbent": "Un prestataire est déjà en place — l'entrée passe par lui",
+    "lockEstimateA": "Ouvert probable — estimation de registre",
+    "lockEstimateB": "Ouvert par une entité — estimation de registre",
+    "lockEstimateC": "Semi-ouvert — estimation de registre",
+    "lockEstimateD": "Verrouillage probable — estimation de registre",
+    "proportion": "Proportion — {{tier}} pour une ESN de {{size}}",
+    "relation": "Une relation existe déjà — l'entrée n'est pas froide",
+    "pathStrong": "Chemin partenaire documenté — preuve forte, à qualifier",
+    "pathIntermediate": "Chemin partenaire émergent — preuve intermédiaire, à qualifier"
+  },
+  "dataforge_access": {
+    "title": "Accès au compte · Base commune",
+    "lead": "Comment entrer chez ce compte, d’après ce que la base commune a observé sur le marché.",
+    "accessibility": {
+      "label": "Accessibilité",
+      "high": "Facilement accessible",
+      "medium": "Moyennement accessible",
+      "low": "Difficile d’accès"
+    },
+    "barriers": {
+      "label": "Barrières",
+      "platform": "Plateforme d’achat",
+      "public_procurement": "Marché public",
+      "referencing": "Référencement"
+    },
+    "route": {
+      "label": "Route d’achat recommandée",
+      "platform": "Plateforme d’achat",
+      "tender": "Appel d’offres",
+      "referencing": "Référencement",
+      "supplier_portal": "Portail fournisseurs"
+    },
+    "priority": {
+      "label": "Niveau de priorité",
+      "high": "Priorité haute",
+      "medium": "Priorité moyenne",
+      "low": "Priorité basse"
+    }
+  }
+}

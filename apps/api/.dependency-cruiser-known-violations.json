@@ -1,0 +1,203 @@
+[
+  {
+    "type": "cycle",
+    "from": "src/modules/accounts/accounts.module.ts",
+    "to": "src/modules/analysis/analysis.module.ts",
+    "unresolvedTo": "../analysis/analysis.module",
+    "dependencyTypes": ["local", "require"],
+    "rule": {
+      "severity": "error",
+      "name": "no-circular"
+    },
+    "cycle": [
+      {
+        "name": "src/modules/analysis/analysis.module.ts",
+        "dependencyTypes": ["local", "require"]
+      },
+      {
+        "name": "src/modules/accounts/accounts.module.ts",
+        "dependencyTypes": ["local", "require"]
+      }
+    ]
+  },
+  {
+    "type": "cycle",
+    "from": "src/modules/accounts/accounts.module.ts",
+    "to": "src/modules/pilotage/pilotage.module.ts",
+    "unresolvedTo": "../pilotage/pilotage.module",
+    "dependencyTypes": ["local", "require"],
+    "rule": {
+      "severity": "error",
+      "name": "no-circular"
+    },
+    "cycle": [
+      {
+        "name": "src/modules/pilotage/pilotage.module.ts",
+        "dependencyTypes": ["local", "require"]
+      },
+      {
+        "name": "src/modules/projects/projects.module.ts",
+        "dependencyTypes": ["local", "require"]
+      },
+      {
+        "name": "src/modules/accounts/accounts.module.ts",
+        "dependencyTypes": ["local", "require"]
+      }
+    ]
+  },
+  {
+    "type": "cycle",
+    "from": "src/modules/activities/activities.module.ts",
+    "to": "src/modules/mailbox/mailbox.module.ts",
+    "unresolvedTo": "../mailbox/mailbox.module",
+    "dependencyTypes": ["local", "require"],
+    "rule": {
+      "severity": "error",
+      "name": "no-circular"
+    },
+    "cycle": [
+      {
+        "name": "src/modules/mailbox/mailbox.module.ts",
+        "dependencyTypes": ["local", "require"]
+      },
+      {
+        "name": "src/modules/activities/activities.module.ts",
+        "dependencyTypes": ["local", "require"]
+      }
+    ]
+  },
+  {
+    "type": "cycle",
+    "from": "src/modules/analysis/analysis.module.ts",
+    "to": "src/modules/coverage-gaps/coverage.module.ts",
+    "unresolvedTo": "../coverage-gaps/coverage.module",
+    "dependencyTypes": ["local", "require"],
+    "rule": {
+      "severity": "error",
+      "name": "no-circular"
+    },
+    "cycle": [
+      {
+        "name": "src/modules/coverage-gaps/coverage.module.ts",
+        "dependencyTypes": ["local", "require"]
+      },
+      {
+        "name": "src/modules/accounts/accounts.module.ts",
+        "dependencyTypes": ["local", "require"]
+      },
+      {
+        "name": "src/modules/analysis/analysis.module.ts",
+        "dependencyTypes": ["local", "require"]
+      }
+    ]
+  },
+  {
+    "type": "cycle",
+    "from": "src/modules/analysis/analysis.module.ts",
+    "to": "src/modules/projects/projects.module.ts",
+    "unresolvedTo": "../projects/projects.module",
+    "dependencyTypes": ["local", "require"],
+    "rule": {
+      "severity": "error",
+      "name": "no-circular"
+    },
+    "cycle": [
+      {
+        "name": "src/modules/projects/projects.module.ts",
+        "dependencyTypes": ["local", "require"]
+      },
+      {
+        "name": "src/modules/analysis/analysis.module.ts",
+        "dependencyTypes": ["local", "require"]
+      }
+    ]
+  },
+  {
+    "type": "cycle",
+    "from": "src/modules/auth/auth.module.ts",
+    "to": "src/modules/profile-context/profile-context.module.ts",
+    "unresolvedTo": "../profile-context/profile-context.module",
+    "dependencyTypes": ["local", "require"],
+    "rule": {
+      "severity": "error",
+      "name": "no-circular"
+    },
+    "cycle": [
+      {
+        "name": "src/modules/profile-context/profile-context.module.ts",
+        "dependencyTypes": ["local", "require"]
+      },
+      {
+        "name": "src/modules/auth/auth.module.ts",
+        "dependencyTypes": ["local", "require"]
+      }
+    ]
+  },
+  {
+    "type": "cycle",
+    "from": "src/modules/coverage-gaps/chat-coverage-map.ts",
+    "to": "src/modules/coverage-gaps/coverage.service.ts",
+    "unresolvedTo": "./coverage.service",
+    "dependencyTypes": ["local", "require"],
+    "rule": {
+      "severity": "error",
+      "name": "no-circular"
+    },
+    "cycle": [
+      {
+        "name": "src/modules/coverage-gaps/coverage.service.ts",
+        "dependencyTypes": ["local", "require"]
+      },
+      {
+        "name": "src/modules/coverage-gaps/chat-coverage-map.ts",
+        "dependencyTypes": ["local", "require"]
+      }
+    ]
+  },
+  {
+    "type": "cycle",
+    "from": "src/modules/ia-proxy/chat-deepen-resume-turn.ts",
+    "to": "src/modules/ia-proxy/ia-proxy.controller.ts",
+    "unresolvedTo": "./ia-proxy.controller",
+    "dependencyTypes": ["local", "require"],
+    "rule": {
+      "severity": "error",
+      "name": "no-circular"
+    },
+    "cycle": [
+      {
+        "name": "src/modules/ia-proxy/ia-proxy.controller.ts",
+        "dependencyTypes": ["local", "require"]
+      },
+      {
+        "name": "src/modules/ia-proxy/chat-deepen-resume-turn.ts",
+        "dependencyTypes": ["local", "require"]
+      }
+    ]
+  },
+  {
+    "type": "cycle",
+    "from": "src/modules/projects/projects.module.ts",
+    "to": "src/modules/accounts/accounts.module.ts",
+    "unresolvedTo": "../accounts/accounts.module",
+    "dependencyTypes": ["local", "require"],
+    "rule": {
+      "severity": "error",
+      "name": "no-circular"
+    },
+    "cycle": [
+      {
+        "name": "src/modules/accounts/accounts.module.ts",
+        "dependencyTypes": ["local", "require"]
+      },
+      {
+        "name": "src/modules/analysis/analysis.module.ts",
+        "dependencyTypes": ["local", "require"]
+      },
+      {
+        "name": "src/modules/projects/projects.module.ts",
+        "dependencyTypes": ["local", "require"]
+      }
+    ]
+  }
+]

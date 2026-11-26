@@ -1,0 +1,9 @@
+# #5010 — site de publication d'une offre (rapport)
+
+- **Déjà sur main** (d4bbdccb44, #5010.1) : `origin` = hôte de l'URL sur liste fermée, rendu par `AccountJobOffersPanel.tsx:86` (via `AccountOpportunityScreen.tsx:173`) et par la ligne Recrutement `SignalLineBody.tsx` (méta `signal-meta`, « Tout lire » = dépli du titre long, même composant).
+- **Appelant réel de la recette** : `SignalLineBody.tsx` ← `AccountSignalTable.tsx`, lignes bâties par `account-signal-lines.ts` (`toLine`/`absorb`) depuis `account-signal-lines.sources.ts` (`it_job_signals`).
+- **Cause probable du FAIL** : l'origine ne venait QUE de l'hôte de l'URL. URL d'agrégateur ou absente ⇒ rien, alors que la collecte (Mantiks) range déjà `board` (job_board) sur l'offre (`job_aggregators.py:1545`) et que `sources.ts` ne le lisait pas.
+- **Correctif** : `offerOriginLabel(url, board?)` — hôte d'abord, sinon `board` replié sur la MÊME liste fermée (LinkedIn, France Travail, Indeed, WTTJ, APEC, HelloWork, Monster, Glassdoor). Inconnu ⇒ rien. Le champ `source` (fournisseur) n'est jamais lu. `board` ajouté à `SignalLineCandidate` et lu dans `sources.ts` ; `toAccountJobOffer` le lit aussi. i18n : aucune chaîne nouvelle (nom propre).
+- **Démo (règle 9)** : `board` semé sur les 2 offres Société Générale (`demo-dataset.ts`), noté dans `demo-coverage.ts`.
+- **Tests** (rouge → vert) : `account-job-offers.test.ts`, `account-signal-lines.test.ts` (contrats, 29 verts) ; `demo-coverage.spec.ts` + `demo-job-offer-enrichment-coverage.spec.ts` (95 verts) ; `tsc --noEmit` contrats propre.
+- **Limites** : non vérifié en base prod que `board` survit jusqu'à `raw_analysis.it_job_signals` (aucun filtre trouvé côté IA, mais pas de donnée prod ici) ; offres sans URL connue ni `board` = rien, à dessein. TheirStack/autres sources sans `board` ne sont pas couvertes. Valeurs de `board` hors liste : rien. Ligne « résumé N offres » : aucune origine propre.

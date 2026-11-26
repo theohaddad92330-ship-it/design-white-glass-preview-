@@ -1,0 +1,1478 @@
+{
+  "page": {
+    "title": "Pilotage",
+    "introTitle": "Voici où ton système décroche, {{firstName}}.",
+    "introTitleWithoutName": "Voici où ton système décroche.",
+    "introSubtitle": "{{brand}} suit toute la chaîne commerciale et te montre uniquement les endroits où une décision est nécessaire.",
+    "introSubtitleMeasuredNone": "{{brand}} suit {{total}} maillons de ta chaîne commerciale : aucun ne décroche aujourd’hui.",
+    "introSubtitleMeasured_one": "{{brand}} suit {{total}} maillons de ta chaîne commerciale : {{count}} décroche.",
+    "introSubtitleMeasured_other": "{{brand}} suit {{total}} maillons de ta chaîne commerciale : {{count}} décrochent.",
+    "askLauraLabel": "Demander à {{copilot}} quoi corriger",
+    "askLauraQuestion": "Où ma chaîne commerciale décroche-t-elle, pourquoi, quels dossiers sont concernés, et quelle décision prendre en premier ?"
+  },
+  "laura": {
+    "purpose": "Repérer où le système commercial décroche et ce qui attend une décision.",
+    "actionOpen": "Ouvrir le dossier concerné",
+    "actionAssign": "Attribuer l'intervention à un membre de l'équipe"
+  },
+  "intro": "La chaîne commerciale, maillon par maillon. Chaque étape a un seuil d'alerte : un maillon qui décroche se voit avant le résultat.",
+  "glossary": {
+    "trigger": "Qu'est-ce qu'un maillon ?",
+    "title": "Maillon",
+    "definition": "Une étape mesurée de la chaîne commerciale (Acquisition, Conversation, Qualification…), avec son propre seuil d'alerte : un maillon qui décroche se voit avant le résultat."
+  },
+  "coverageOf": "maillons",
+  "coverageWhy": "Les autres attendent de la donnée : ils restent gris, jamais rouges.",
+  "coverageNone": "C'est normal sur un espace qui démarre : les cases se remplissent au fur et à mesure, et rien ne s'affiche en rouge tant que rien n'a coulé.",
+  "loading": "Chargement des indicateurs…",
+  "alerts": "{{count}} alerte",
+  "alerts_other": "{{count}} alertes",
+  "alertsGoTo": "{{count}} alerte — aller au maillon qui décroche",
+  "alertsGoTo_other": "{{count}} alertes — aller aux maillons qui décrochent, un par un",
+  "notMeasured": "non mesuré",
+  "rate": {
+    "exact": "{{value}} %",
+    "belowOne": "< 1 %",
+    "aboveNinetyNine": "> 99 %"
+  },
+  "over": {
+    "replyRate": "sur {{formattedCount}} email envoyé",
+    "replyRate_other": "sur {{formattedCount}} emails envoyés",
+    "qualificationRate": "sur {{formattedCount}} besoin pris en charge",
+    "qualificationRate_other": "sur {{formattedCount}} besoins pris en charge",
+    "conversionRate": "sur {{formattedCount}} besoin tranché",
+    "conversionRate_other": "sur {{formattedCount}} besoins tranchés",
+    "correctionRate": "sur {{formattedCount}} contact",
+    "correctionRate_other": "sur {{formattedCount}} contacts"
+  },
+  "status": {
+    "ok": "au-dessus du seuil",
+    "alerte": "sous le seuil d'alerte",
+    "nothingToJudge": "lu, rien à juger",
+    "unread": "non mesuré"
+  },
+  "population": {
+    "openAria": "{{label}} — ouvrir la liste",
+    "actions": {
+      "signals": "{{label}} : {{value}} — voir les comptes qui viennent de signaler",
+      "meetings": "{{label}} : {{value}} — voir les contacts rencontrés",
+      "needsQualified": "{{label}} : {{value}} — voir les besoins qualifiés",
+      "benchAvailable": "{{label}} : {{value}} — voir le vivier disponible",
+      "activeClients": "{{label}} : {{value}} — voir les comptes actifs"
+    }
+  },
+  "levels": {
+    "acquisition": {
+      "title": "Acquisition",
+      "subtitle": "contacts ciblés, signaux, profils poussés"
+    },
+    "conversation": {
+      "title": "Conversation",
+      "subtitle": "emails envoyés, taux de réponse"
+    },
+    "qualification": {
+      "title": "Qualification",
+      "subtitle": "RDV, besoins qualifiés (qualification)"
+    },
+    "sourcing": {
+      "title": "Sourcing",
+      "subtitle": "profils disponibles au vivier"
+    },
+    "conversion": {
+      "title": "Conversion",
+      "subtitle": "besoins convertis"
+    },
+    "economie": {
+      "title": "Économie",
+      "subtitle": "TJM, marge, DSO"
+    },
+    "expansion": {
+      "title": "Expansion",
+      "subtitle": "clients actifs"
+    },
+    "qualite": {
+      "title": "Qualité {{brand}}",
+      "subtitle": "corrections, faux contacts"
+    }
+  },
+  "metrics": {
+    "contactsTargeted": "Contacts ciblés",
+    "signals": "Signaux",
+    "profilesPushed": "Profils poussés",
+    "emailsSent": "Emails envoyés",
+    "replyRate": "Taux de réponse",
+    "meetings": "Rendez-vous",
+    "needsQualified": "Besoins qualifiés",
+    "qualificationRate": "Taux de qualification",
+    "benchAvailable": "Vivier disponible",
+    "conversions": "Conversions",
+    "conversionRate": "Taux de conversion",
+    "tjm": "TJM",
+    "margin": "Marge",
+    "dso": "DSO",
+    "marginBand": "Bande de marge",
+    "activeClients": "Clients actifs",
+    "correctionRate": "Taux de correction",
+    "rejectedItems": "Éléments corrigés"
+  },
+  "learning": {
+    "title": "Ce qui fonctionne le mieux chez toi",
+    "intro": "Ce que ton équipe a fait de ses besoins passés. Ces comptages priorisent tes prochaines analyses — à faits égaux, les offres qui ont déjà converti chez toi passent devant.",
+    "empty": "Rien encore : aucun besoin n'a été déplacé (converti, transformé en action ou déclaré obsolète). La boucle reste muette tant qu'il n'y a rien à apprendre.",
+    "unlabelled": "Sans secteur ni offre rattachés",
+    "converted": "{{count}} converti",
+    "converted_other": "{{count}} convertis",
+    "transformed": "{{count}} transformé en action",
+    "transformed_other": "{{count}} transformés en action",
+    "obsolete": "{{count}} déclaré obsolète",
+    "obsolete_other": "{{count}} déclarés obsolètes",
+    "dataUsed": "Sur les besoins que ton équipe a déplacés à la main — convertis, transformés en action ou déclarés obsolètes. Depuis l’ouverture de ton espace : ce comptage ne se limite à aucune fenêtre.",
+    "occurrences": "{{count}} besoin déplacé",
+    "occurrences_other": "{{count}} besoins déplacés",
+    "tooFewMoves": "Trop peu de mouvements pour en tirer une tendance : il en faut au moins {{count}} sur un même motif. Ces comptages restent vrais, ils ne disent pas encore ce qui marche.",
+    "seeSimilar": "Voir les comptes similaires",
+    "seeSimilarAria": "Voir les comptes du secteur {{sector}} dans Découvrir"
+  },
+  "pipeline": {
+    "title": "Pipeline du CRM",
+    "subtitle": "Calculé sur l'historique de ton CRM, pas sur une estimation.",
+    "loading": "Lecture du pipeline…",
+    "notConnected": "Aucun CRM n’est connecté à cet espace. Rien n'est affiché plutôt qu'un pipeline vide.",
+    "scopeMissing": "Je n'ai pas le droit de lire ton CRM. Reconnecte-le : un accès déjà donné ne s'élargit pas tout seul.",
+    "authorizationExpired": "Ton CRM est bien connecté, mais son autorisation a expiré. Reconnecte-le depuis Réglages › Intégrations : elle ne se renouvellera pas toute seule.",
+    "failed": "Ton CRM n'a pas répondu. Ce n'est pas « ton pipeline est vide » : c'est la lecture qui a échoué.",
+    "openIntegrations": "Ouvrir Réglages › Intégrations",
+    "periodAria": "Période du pipeline",
+    "period": {
+      "month": "Mois",
+      "quarter": "Trimestre",
+      "year": "Année"
+    },
+    "open": "Affaires ouvertes",
+    "won": "Gagnées sur la période",
+    "winRate": "Taux de réussite",
+    "noClosedDeal": "aucune affaire close",
+    "onDecided": "sur {{count}} affaire tranchée",
+    "onDecided_other": "sur {{count}} affaires tranchées",
+    "cycle": "Cycle moyen",
+    "notMeasurable": "non mesurable",
+    "days": "{{count}} jour",
+    "days_other": "{{count}} jours",
+    "cycleExcluded": "{{count}} affaire mal datée, exclue",
+    "cycleExcluded_other": "{{count}} affaires mal datées, exclues",
+    "byStage": "Par étape",
+    "dealsCount": "{{count}} affaire",
+    "dealsCount_other": "{{count}} affaires",
+    "amountUnknown": "{{count}} sans montant",
+    "outcomeUnknown": "{{count}} affaire close sans issue lisible — ni gagnée, ni perdue",
+    "outcomeUnknown_other": "{{count}} affaires closes sans issue lisible — ni gagnées, ni perdues",
+    "coverage": "{{count}} affaire lue · synchronisé le {{date}}",
+    "coverage_other": "{{count}} affaires lues · synchronisé le {{date}}",
+    "neverSynced": "Jamais synchronisé.",
+    "truncated": "lecture arrêtée sur sa borne, le pipeline est plus grand que ce qui est affiché"
+  },
+  "finance": {
+    "title": "Finance et capacité",
+    "subtitle": "Cinq lectures, jamais fondues en un seul chiffre. L'écart entre elles est l'information.",
+    "forbidden": "Ces chiffres relèvent du périmètre finance. Ils existent, mais ton siège ne les lit pas.",
+    "unavailable": "Lecture impossible. Rien n'est affiché plutôt qu'un chiffre à zéro.",
+    "floor": "{{count}} ligne sans montant — le total est un plancher",
+    "floor_other": "{{count}} lignes sans montant — le total est un plancher",
+    "noAmount": "{{count}} ligne existe, et elle ne porte pas de montant. Ce n’est pas « zéro euro ».",
+    "noAmount_other": "{{count}} lignes existent, aucune ne porte de montant. Ce n’est pas « zéro euro ».",
+    "lines": "{{count}} ligne",
+    "lines_other": "{{count}} lignes",
+    "detail": "Voir le détail",
+    "detailAria": "{{title}} — voir le détail",
+    "export": {
+      "button": "Exporter",
+      "generatedAt": "Exporté le {{date}}",
+      "period": "Période : {{month}}",
+      "currentView": "Vue courante, sans période sélectionnée",
+      "columns": {
+        "block": "Bloc",
+        "metric": "Indicateur",
+        "value": "Valeur"
+      },
+      "entity": "Société : {{name}}",
+      "allEntities": "Société : toutes"
+    },
+    "revenue": {
+      "title": "Chiffre d'affaires",
+      "hint": "Quatre chiffres qui disent quatre choses. Les additionner n'aurait aucun sens.",
+      "signed": "Signé",
+      "produced": "Produit",
+      "invoiced": "Facturé",
+      "collected": "Encaissé",
+      "collectedCaption": "sur {{month}} · source : suivi de facturation",
+      "tooltip": {
+        "signed": "Compte les missions SIGNÉES sur la période, à leur montant contractuel. Exclut les jours produits, ce qui a été facturé et ce qui a été encaissé — ce sont les trois autres lignes.",
+        "produced": "Jours réellement travaillés × TJM, sur la période affichée. Exclut les missions sans TJM, qui sortent du calcul et sont comptées à part.",
+        "invoiced": "Ce qui est sorti vers l'outil comptable sur la période. Exclut les mois non encore facturés.",
+        "collected": "Ce que le client a réellement payé sur la période. Exclut les factures encore en attente de règlement."
+      },
+      "reasons": {
+        "no_source": "Aucune source pour ce chiffre sur la période choisie — le suivi de facturation n’a rien enregistré pour ce mois. Ce n’est pas « zéro euro ».",
+        "no_source_screen": "Aucune source pour ce chiffre sur la période choisie — le suivi de facturation n’a rien enregistré pour ce mois. Ce n’est pas « zéro euro » : la carte Encaissements, plus bas, lit ce même suivi sur les douze derniers mois.",
+        "no_amount": "Des lignes existent, aucune ne porte de montant. Le chiffre reste inconnu.",
+        "unavailable": "Lecture impossible. Rien n’est affiché plutôt qu’un chiffre à zéro."
+      }
+    },
+    "forecast": {
+      "title": "Prévisionnel",
+      "hint": "Trois lignes, sans pondération : le CA probable du trimestre, calibré affaire par affaire, se lit sur le pipe.",
+      "secured": "Acquis",
+      "likely": "Probable",
+      "hoped": "Espéré",
+      "tooltip": {
+        "secured": "Les missions en cours, jusqu'à leur date de fin connue. Exclut le pipe commercial et les renouvellements pas encore engagés.",
+        "likely": "Les renouvellements où un geste a eu lieu (proposition envoyée, accord verbal). Exclut le pipe pas encore engagé, et n'est pondéré par aucune probabilité.",
+        "hoped": "Le pipe commercial, à son montant nominal. Exclut toute pondération liée à une éventuelle signature — jamais un chiffre pondéré.",
+        "contractedMargin": "La marge des missions DÉJÀ SIGNÉES de l’horizon — leur TJM et leur coût chargé sont saisis, rien n’est deviné. Exclut entièrement la ligne « espéré » : une affaire du pipe n’a pas de coût, et lui prêter la marge des autres serait une hypothèse. Aucune pondération d’aucune sorte : chaque mission contractualisée compte à son taux réel."
+      },
+      "contractedMargin": "Marge des lignes contractualisées",
+      "contractedMarginScope": "acquis et probable seulement",
+      "contractedMarginAbsent": "non servie par cette version du serveur",
+      "contractedMarginNotEnough_one": "calculée sur {{have}} mission, il en faut {{need}}",
+      "contractedMarginNotEnough_other": "calculée sur {{have}} missions, il en faut {{need}}",
+      "contractedMarginUnmeasured_one": "{{count}} mission sans coût saisi, écartée",
+      "contractedMarginUnmeasured_other": "{{count}} missions sans coût saisi, écartées"
+    },
+    "capacity": {
+      "title": "Capacité",
+      "hint": "Combien de jours l'équipe peut encore vendre ce mois-ci.",
+      "capacityDays": "Jours disponibles au total",
+      "committedDays": "Jours déjà engagés",
+      "availableDays": "Jours restant à vendre",
+      "unmeasured": "{{count}} personne non comptée",
+      "unmeasured_other": "{{count}} personnes non comptées",
+      "benchRate": "Taux d'intercontrat",
+      "onBench": "{{count}} consultant sans mission",
+      "onBench_other": "{{count}} consultants sans mission",
+      "benchNotMeasurable": "non mesurable — {{have}} consultant sur les {{need}} nécessaires",
+      "tooltip": {
+        "capacityDays": "Jours ouvrés du mois × nombre de personnes de l'équipe. Exclut les personnes dont l'affectation n'a pas pu être lue, comptées à part.",
+        "committedDays": "Jours déjà engagés sur des missions signées ce mois-ci. Exclut le pipe commercial, qui n'est pas encore vendu.",
+        "benchRate": "Consultants sans affectation active, ÷ consultants comptés, sous réserve du seuil de mesurabilité. Exclut les consultants non comptés.",
+        "availableDays": "Ce qu'il reste à vendre = jours disponibles − jours engagés. Exclut le calcul entier dès qu'un des deux termes manque."
+      }
+    },
+    "margin": {
+      "title": "Marge",
+      "hint": "Pondérée par les jours : une mission d'un jour ne pèse pas comme une mission d'un an.",
+      "aggregate": "Marge de l'espace",
+      "threshold": "Seuil d'alerte",
+      "thresholdOff": "non réglé",
+      "unmeasured": "{{count}} mission non chiffrée",
+      "unmeasured_other": "{{count}} missions non chiffrées",
+      "below": "{{count}} mission sous le seuil",
+      "below_other": "{{count}} missions sous le seuil",
+      "unmeasuredShare": "Marge non mesurée",
+      "unmeasuredShareValue": "{{value}} %",
+      "unmeasuredShareNone": "aucune mission à mesurer ce mois-ci",
+      "unmeasuredShareNote": "part des missions dont la marge ne peut pas être calculée",
+      "notEnough": "cible non comparée — {{have}} mission sur les {{need}} nécessaires",
+      "notEnough_other": "cible non comparée — {{have}} missions sur les {{need}} nécessaires",
+      "tooltip": {
+        "aggregate": "La marge pondérée par les jours déclarés, sur la période affichée. Exclut les missions sans TJM ou sans coût chargé, comptées à part.",
+        "unmeasuredShare": "La part des missions dont la marge n'a pas pu être calculée, en pourcentage de l'ensemble. Exclut la marge elle-même — c'est une mesure de notre propre ignorance, pas de la santé financière.",
+        "threshold": "Le seuil sous lequel une mission déclenche une alerte de marge COMMERCIALE — réglable depuis Réglages › Finance. Exclut les missions sans coût connu, qui ne peuvent jamais être comparées à ce seuil.",
+        "base": "Le nombre de missions sur lesquelles la marge ci-dessus est calculée, sur la période affichée. Exclut les missions sans TJM ou sans coût chargé : elles sont comptées à part."
+      },
+      "base": "Base de la marge",
+      "baseValue": "{{count}} mission mesurée",
+      "baseValue_other": "{{count}} missions mesurées"
+    },
+    "dso": {
+      "title": "Délai de paiement",
+      "hint": "Une médiane, sur les seules factures payées : une facture réglée après relance judiciaire ne déplace pas le portefeuille. Un litige n’est pas un retard — les factures contestées en sortent, et sont comptées à part.",
+      "days": "Délai moyen",
+      "value": "{{count}} jour",
+      "value_other": "{{count}} jours",
+      "needMore": "non mesurable — {{count}} facture sur les {{need}} nécessaires",
+      "needMore_other": "non mesurable — {{count}} factures sur les {{need}} nécessaires",
+      "undatable": "{{count}} facture écartée faute de dates",
+      "undatable_other": "{{count}} factures écartées faute de dates",
+      "disputed": "{{count}} facture contestée, hors du calcul",
+      "disputed_other": "{{count}} factures contestées, hors du calcul",
+      "disputedNone": "aucune facture contestée",
+      "disputedUnknown": "factures contestées : non comptées",
+      "tooltip": {
+        "days": "La médiane du délai de paiement, sur les factures payées de TOUT l'historique. Exclut les factures contestées et les factures encore impayées, comptées à part."
+      }
+    },
+    "channels": {
+      "title": "Marge par canal",
+      "hint": "L'écart entre le direct et le passage par un intermédiaire : c'est lui qui justifie ou non un chantier de référencement.",
+      "direct": "Direct",
+      "partner": "Via partenaire",
+      "subcontracting": "Sous-traitance",
+      "unknown": "Canal non renseigné",
+      "portage": "Portage salarial",
+      "missions": "{{count}} mission",
+      "missions_other": "{{count}} missions",
+      "unmeasured": "{{count}} mission non chiffrée",
+      "unmeasured_other": "{{count}} missions non chiffrées",
+      "gap": "Coût de l'intermédiation",
+      "gapUnknown": "il manque une des deux marges",
+      "tooltip": {
+        "margin": "La marge moyenne des missions de ce canal, pondérée par leurs jours, sur la période affichée. Exclut les missions sans TJM ou sans coût chargé, comptées à part.",
+        "gap": "L'écart de marge entre le canal direct et le canal intermédié, en points. Exclut la comparaison dès qu'une des deux marges n'est pas mesurable."
+      }
+    },
+    "scope": {
+      "own": "Ton périmètre : tes comptes et tes missions.",
+      "outside_one": "{{count}} mission n’est rattachée à personne et n’entre dans aucun total.",
+      "outside_other": "{{count}} missions ne sont rattachées à personne et n’entrent dans aucun total."
+    },
+    "restricted": "Réservé aux responsables : ce chiffre décrit l’espace entier.",
+    "screen": {
+      "period": "Période",
+      "outOfPeriod": "Le prévisionnel, la capacité et le délai de paiement ne suivent pas cette période : ils regardent devant, le mois en cours, et tout l’historique."
+    },
+    "alerts": {
+      "title": "Ce qui bloque de l’argent",
+      "hint": "Ce qu’il y a à faire aujourd’hui, du plus bloquant au moins bloquant. Ces montants ne s’additionnent pas : c’est le même argent vu sous plusieurs empêchements.",
+      "empty": "Rien ne bloque la facturation de {{month}}.",
+      "missions_one": "{{count}} mission",
+      "missions_other": "{{count}} missions",
+      "amountUnknown": "montant non chiffré",
+      "floor_one": "dont {{count}} sans montant — le total est un plancher",
+      "floor_other": "dont {{count}} sans montant — le total est un plancher",
+      "folded_one": "{{count}} autre file repliée.",
+      "folded_other": "{{count}} autres files repliées.",
+      "see": "Voir"
+    },
+    "target": {
+      "title": "Taux de réalisation",
+      "reading": "Marge {{margin}} · objectif {{target}}",
+      "aria": "{{label}} : {{value}} de l’objectif",
+      "none": "Objectif non défini. Aucun pourcentage tant que personne n’a fixé de cible — « 0 % » serait une affirmation.",
+      "marginUnknown": "La marge du mois n’a pas pu être calculée : rien à comparer.",
+      "marginNotEnough": "Trop peu de missions chiffrées pour comparer : deux missions n’ont pas l’autorité d’un verdict.",
+      "field": "Objectif de marge (%)",
+      "placeholder": "ex. 30",
+      "save": "Enregistrer",
+      "saved": "Objectif enregistré.",
+      "saveFailed": "Enregistrement impossible. Rien n’a été modifié.",
+      "invalid": "Un objectif se situe entre 1 et {{max}} %. Vide efface l’objectif du mois.",
+      "hint": "Un objectif par mois. Le laisser vide efface la cible : l’anneau se tait plutôt que d’afficher une cible que personne n’assume."
+    },
+    "introducers": {
+      "title": "Apports d’affaires",
+      "hint": "Ce que coûte le passage par un apporteur, en points de marge.",
+      "line": "Ligne",
+      "realised": "Réalisé",
+      "gross": "Marge totale (vente directe)",
+      "commission": "− commission d’apport",
+      "net": "= marge nette (via apporteur)",
+      "forecastAbsent": "Prévisionnel : non mesuré. Aucun calcul du produit ne rend une marge prévisionnelle — le prévisionnel est un chiffre d’affaires, volontairement non pondéré. L’inventer ici serait un chiffre fabriqué."
+    },
+    "timesheets": {
+      "title": "Relevés d’activité",
+      "hint": "Trois états, pas huit : sur un tableau de bord, la seule question est ce qui bloque un mois de facturation.",
+      "validated": "Validés",
+      "pending": "En attente",
+      "conflict": "En conflit",
+      "countOnly": "{{count}}",
+      "countAndShare": "{{count}} ({{share}} %)",
+      "population_one": "sur {{count}} relevé attendu",
+      "population_other": "sur {{count}} relevés attendus",
+      "notRequired_one": "{{count}} au forfait, hors calcul",
+      "notRequired_other": "{{count}} au forfait, hors calcul",
+      "unclassified_one": "{{count}} dans un état non classé ici",
+      "unclassified_other": "{{count}} dans des états non classés ici"
+    },
+    "adv": {
+      "title": "Administration des ventes",
+      "hint": "Les dossiers du mois et ce qui les empêche d’être facturables.",
+      "starts": "Nouveaux démarrages",
+      "renewals": "Renouvellements",
+      "renewalsNoDelta": "Aucune comparaison possible : les renouvellements à traiter se calculent par rapport à aujourd’hui, pas par rapport à un mois.",
+      "queue": "La file, par motif",
+      "queueEmpty": "Aucun motif ne bloque un dossier ce mois-ci.",
+      "reserved_one": "{{count}} motif non encore mesuré — il n’est pas compté à zéro.",
+      "reserved_other": "{{count}} motifs non encore mesurés — ils ne sont pas comptés à zéro.",
+      "startsNoDelta": "Aucune comparaison : le mois de référence n’a pas pu être compté. Ce n’est pas « autant qu’avant »."
+    },
+    "activity": {
+      "title": "Activité récente",
+      "hint": "Ce qui a bougé, du plus récent au plus ancien. La bande au-dessus dit ce qu’il y a à faire ; celle-ci dit si ça avance.",
+      "seeAll": "Voir toute l’activité ({{count}})",
+      "empty": "Rien n’a bougé sur la période lue.",
+      "folded_one": "{{count}} autre événement replié.",
+      "folded_other": "{{count}} autres événements repliés.",
+      "kinds": {
+        "mission_started": "Mission démarrée",
+        "timesheet_validated": "Relevé validé par le client",
+        "timesheet_rejected": "Relevé renvoyé à son auteur"
+      },
+      "notDated": {
+        "invoice_sent": "« Facture envoyée » n’apparaîtra pas : le produit n’émet aucune facture.",
+        "payment_received": "« Paiement reçu » n’apparaît pas : les encaissements sont connus en montants mensuels, sans date d’événement."
+      },
+      "seeLess": "Ne montrer que les 5 dernières"
+    },
+    "entities": {
+      "label": "Société",
+      "all": "Toutes les sociétés",
+      "hint_one": "{{count}} société déclarée. Choisis-la pour ne garder que ce qu’elle porte.",
+      "hint_other": "{{count}} sociétés déclarées. Choisis-en une pour ne garder que ce qu’elle porte.",
+      "blind": "Trois blocs ne suivent pas cette société et gardent l’espace entier : {{blocks}}.",
+      "blindReads": {
+        "capacity": "la capacité (elle compte des personnes, pas des missions)",
+        "dso": "le délai de paiement (une médiane qui a besoin de tout l’historique)",
+        "forecastHoped": "la ligne « espéré » du prévisionnel (une opportunité n’a pas encore de mission)",
+        "forecastHorizons": "le prévisionnel par horizon (une vue d’équipe, toutes sociétés)"
+      }
+    },
+    "snapshot": {
+      "title": "Ce que la photo mensuelle compare",
+      "hint": "Deux chiffres photographiés chaque mois. La marge, elle, n’est pas photographiée : sa variation n’existe donc pas ici plutôt que d’être recalculée.",
+      "activeClients": "Clients actifs",
+      "missions_without_cost": "Missions sans coût saisi"
+    },
+    "missionRevenue": {
+      "title": "CA par mission",
+      "hint": "Ce qui a été livré et facturable ce mois-ci ({{month}}), mission par mission.",
+      "empty": "Aucune mission n’a de mois lu sur cette période.",
+      "preparedUnknown": "aucun TJM ou aucun relevé ne permet de chiffrer ce mois",
+      "notInvoiced": "pas encore facturé",
+      "columns": {
+        "mission": "Mission",
+        "period": "Période",
+        "prepared": "Livré et facturable",
+        "invoiced": "Facturé"
+      }
+    },
+    "collections": {
+      "title": "Encaissements",
+      "paidCaption": "sur 12 mois · suivi de facturation",
+      "hint": "Ce qui est rentré, ce qui est attendu, ce qui est en retard — les douze derniers mois, lus dans le même suivi de facturation que le chiffre d’affaires (qui, lui, suit la période choisie).",
+      "period": "Période : factures des 12 derniers mois, état à ce jour — ne suit pas le sélecteur",
+      "toTreat": {
+        "title": "À traiter, par client",
+        "lines": "{{count}} facture à traiter",
+        "lines_other": "{{count}} factures à traiter",
+        "overdue": "{{count}} en retard",
+        "overdue_other": "{{count}} en retard",
+        "oldest": "plus ancien : {{count}} jour de retard",
+        "oldest_other": "plus ancien : {{count}} jours de retard",
+        "withoutClient": "{{count}} facture à traiter sans client rattaché.",
+        "withoutClient_other": "{{count}} factures à traiter sans client rattaché.",
+        "amountUnknown": "reste dû non saisi"
+      }
+    },
+    "managementTool": {
+      "title": "Ton outil de gestion",
+      "hint": "Ce que {{brand}} sait de l’outil de gestion que tu as connecté.",
+      "connected": "{{name}} est connecté.",
+      "notConnected": "Aucun outil de gestion n’est connecté.",
+      "noReadYet": "{{brand}} ne lit pas encore de chiffres financiers depuis cet outil : ce que tu vois sur cet écran vient uniquement de ce que {{brand}} calcule.",
+      "connect": "Connecter (Réglages › Intégrations)"
+    },
+    "notMeasured": "Non mesuré",
+    "forecastHorizons": {
+      "absentLegend": "aucune donnée ne permet de le chiffrer pour l’instant",
+      "title": "Prévisionnel par horizon",
+      "hint": "Des montants classés par statut déclaré, jamais pondérés par une probabilité. Chaque scénario écrit ses hypothèses.",
+      "horizonLabel": "Horizon",
+      "horizons": {
+        "week": "Semaine",
+        "month": "Mois",
+        "quarter": "Trimestre",
+        "semester": "Semestre"
+      },
+      "viewLabel": "Vue",
+      "view": {
+        "full": "Complète",
+        "manager": "Manager (5 lignes)"
+      },
+      "window": "Du {{from}} au {{until}} (exclu)",
+      "money": {
+        "revenue": "CA prévisionnel",
+        "invoicing": "Facture prévue",
+        "cash": "Cash prévu"
+      },
+      "components": {
+        "title": "Du carnet au cash",
+        "backlog": "Carnet signé",
+        "renewal": "Renouvellements déclarés",
+        "pipeline": "Pipe daté (montant nominal)",
+        "toInvoice": "Produit, à facturer",
+        "receivable": "Facturé, à encaisser dans l’horizon",
+        "overdue": "Facturé, échéance dépassée",
+        "disputed": "Facturé, en litige"
+      },
+      "withoutAmount_one": "{{count}} ligne sans montant",
+      "withoutAmount_other": "{{count}} lignes sans montant",
+      "assumedCurrency_one": "{{count}} ligne sans devise, lue en euros",
+      "assumedCurrency_other": "{{count}} lignes sans devise, lues en euros",
+      "confidence": {
+        "basis": {
+          "contract": "Contrat signé",
+          "declaration": "Déclaration",
+          "nominal": "Montant nominal",
+          "invoice": "Facture émise"
+        },
+        "axis": {
+          "contract": "Contrat",
+          "source": "Source",
+          "history": "Historique"
+        },
+        "state": {
+          "yes": "oui",
+          "no": "non",
+          "not_measured": "non évalué"
+        }
+      },
+      "scenarios": {
+        "title": "Quatre scénarios",
+        "committed": "Engagé",
+        "baseline": "Référence",
+        "upside": "Haut",
+        "downside": "Bas",
+        "deduplicated_one": "{{count}} doublon retiré",
+        "deduplicated_other": "{{count}} doublons retirés",
+        "excluded_one": "{{count}} mission bloquée ou à risque retirée",
+        "excluded_other": "{{count}} missions bloquées ou à risque retirées"
+      },
+      "hypotheses": {
+        "signedOnly": "Seules les missions signées comptent.",
+        "knownEndDate": "Jusqu’à la date de fin connue : une mission sans fin n’est pas prolongée.",
+        "weekdaysFullTime": "Chaque jour ouvré est facturé (jours fériés non retirés).",
+        "renewalsDeclared": "Les renouvellements déclarés (signés ou annoncés par le client) s’exécutent.",
+        "pipelineNominal": "Tout le pipe daté dans l’horizon signe, à son montant nominal.",
+        "blockedStops": "Les missions déclarées bloquées ou à risque s’arrêtent aujourd’hui.",
+        "currencyAssumedEur": "Des montants sans devise sont lus en euros.",
+        "deduplicated": "Une opportunité devenue mission n’est comptée qu’une fois."
+      },
+      "gap": {
+        "title": "Pourquoi le cash n’est pas le CA",
+        "empty": "Rien à expliquer : aucun montant chiffrable sur cet horizon.",
+        "invoicingDelay": "Délai de facturation : la production de l’horizon se facture en fin de mois et s’encaisse à l’échéance",
+        "notYetInvoiced": "Produit, pas encore facturé",
+        "overdue": "Facturé, échéance dépassée",
+        "disputed": "Facturé, contesté"
+      },
+      "capacity": {
+        "title": "Capacité",
+        "available": "Disponible",
+        "reserved": "Réservée",
+        "bench": "Trous (sans affectation)",
+        "uncoveredNeeds": "Besoins non couverts",
+        "days": "{{value}} j"
+      },
+      "amendments": {
+        "title": "Dont avenants",
+        "empty": "Aucun avenant à effet dans cet horizon.",
+        "accepted_one": "{{count}} accepté",
+        "accepted_other": "{{count}} acceptés",
+        "simulated_one": "{{count}} simulé",
+        "simulated_other": "{{count}} simulés",
+        "hint": "Comptés, jamais chiffrés — le nouveau terme d’un avenant n’a pas de forme fixe à convertir en montant sans le deviner."
+      },
+      "decisions": {
+        "title": "Décisions proposées",
+        "empty": "Aucune décision à proposer sur cet horizon.",
+        "count_one": "{{count}} ligne",
+        "count_other": "{{count}} lignes",
+        "folded_one": "{{count}} autre décision dans la vue complète",
+        "folded_other": "{{count}} autres décisions dans la vue complète",
+        "see": "Voir",
+        "seeAria": "Voir : {{title}}",
+        "secureRenewal": "Sécuriser le renouvellement",
+        "unblockMission": "Débloquer la mission",
+        "accelerateInvoicing": "Accélérer la facturation",
+        "chaseOverdue": "Relancer les retards",
+        "resolveDispute": "Traiter le litige",
+        "completePipeline": "Dater et chiffrer le pipe",
+        "staffBench": "Positionner les intercontrats"
+      }
+    },
+    "poOverview": {
+      "title": "Bons de commande",
+      "hint": "Combien de missions suivies par bon de commande sont ok, à surveiller ou dépassées — et combien d'avenants touchent ces mêmes missions.",
+      "empty": "Aucune mission ne suit encore de bon de commande.",
+      "buckets": {
+        "ok": "Ok",
+        "approaching": "À surveiller",
+        "overrun": "Dépassées",
+        "unmeasured": "Non mesurées"
+      },
+      "amendments": {
+        "accepted_one": "{{count}} avenant accepté",
+        "accepted_other": "{{count}} avenants acceptés",
+        "simulated_one": "{{count}} avenant simulé",
+        "simulated_other": "{{count}} avenants simulés"
+      }
+    },
+    "period": {
+      "month": "Période : {{month}}",
+      "versus": "Période : {{month}}, comparé à {{previous}}",
+      "ahead": "Période : à venir — ne suit pas le sélecteur",
+      "currentMonth": "Période : mois en cours — ne suit pas le sélecteur",
+      "allHistory": "Période : tout l’historique payé — ne suit pas le sélecteur",
+      "today": "Période : état à ce jour — ne suit pas le sélecteur"
+    },
+    "rows": {
+      "collections": {
+        "title": "Encaissements",
+        "hint": "Ce qui est rentré, ce qui reste dû, ce qui est en retard — et les clients à relancer."
+      },
+      "billing": {
+        "title": "Facturation",
+        "hint": "Ce qui est préparé, ce qui est facturé (et d’où on le sait), ce qui reste à préparer. Une facture est préparée ici, jamais émise."
+      },
+      "margin": {
+        "title": "Marge et chiffre d’affaires",
+        "hint": "Le chiffre d’affaires par mission et par client, la marge avec sa base, le TJM moyen."
+      },
+      "detail": {
+        "title": "Détail",
+        "hint": "Tout le reste, replié : capacité, prévisionnel, relevés, ADV, alertes, activité."
+      }
+    },
+    "billing": {
+      "title": "Préparé, facturé, à préparer",
+      "hint": "Lu dans le même suivi que le chiffre d’affaires par mission.",
+      "prepared": "Préparé",
+      "preparedNote": "Prêt à émettre dans ton outil — rien n’est envoyé.",
+      "invoiced": "Facturé",
+      "provenBy": "{{count}} confirmée par {{tool}}",
+      "provenBy_other": "{{count}} confirmées par {{tool}}",
+      "provenNoTool": "{{count}} confirmée par le connecteur",
+      "provenNoTool_other": "{{count}} confirmées par le connecteur",
+      "declared": "{{count}} déclarée par l’équipe, sans preuve",
+      "declared_other": "{{count}} déclarées par l’équipe, sans preuve",
+      "toPrepare": "À préparer",
+      "toPrepareNote": "Temps validés, non facturés : un autre élément manque (tarif, bon de commande, contact).",
+      "lines": "{{count}} ligne",
+      "lines_other": "{{count}} lignes",
+      "amountUnknown": "montant non chiffré"
+    },
+    "revenueByClient": {
+      "title": "CA par client",
+      "hint": "La somme du chiffre d’affaires par mission ci-dessus, regroupée par client.",
+      "missions": "{{count}} mission",
+      "missions_other": "{{count}} missions",
+      "withoutClient": "{{count}} mission sans client rattaché, non listée.",
+      "withoutClient_other": "{{count}} missions sans client rattaché, non listées.",
+      "averageRate": "TJM moyen",
+      "rateBase": "sur {{measured}} mission au TJM connu, {{count}} au total",
+      "rateBase_other": "sur {{measured}} missions au TJM connu, {{count}} au total"
+    },
+    "tabs": {
+      "carnet": "Du carnet au cash",
+      "encaissements": "Encaissements à traiter",
+      "marge": "Marge et réalisation",
+      "adv": "Administration des ventes"
+    }
+  },
+  "catalogue": {
+    "owner": "Propriétaire",
+    "threshold": "Seuil",
+    "cause": "Cause probable",
+    "decision": "Décision",
+    "owners": {
+      "direction": "Direction",
+      "business": "Commerce",
+      "recruitment": "Recrutement",
+      "delivery": "Delivery",
+      "finance": "Finance",
+      "product": "Produit"
+    }
+  },
+  "hygiene": {
+    "title": "Qualité des données",
+    "subtitle": "Ce qui empêche de travailler. Chaque ligne ouvre la liste des objets concernés.",
+    "unavailable": "Lecture impossible. Ce n'est pas « tout est propre ».",
+    "notRead": "non lu",
+    "ratio": "{{count}} sur {{total}}",
+    "checks": {
+      "accounts_without_next_action": "Comptes suivis sans prochaine action",
+      "contacts_without_email": "Contacts sans adresse",
+      "projects_without_amount": "Projets ouverts sans montant",
+      "missions_without_end_date": "Missions actives sans date de fin",
+      "needs_without_skills": "Besoins sans compétence typée",
+      "talents_unknown_availability": "Consultants à disponibilité inconnue",
+      "unresolved_duplicates": "Doublons non tranchés",
+      "missions_without_cost": "Missions sans coût chargé",
+      "contacts_flagged_incorrect": "Contacts marqués incorrects"
+    }
+  },
+  "quality": {
+    "state": {
+      "breached": "À traiter",
+      "ok": "Tenu",
+      "unknown": "Non lu"
+    },
+    "ratio": "sur {{total}}",
+    "emptyPopulation": "{{population}} dans ton espace — rien à mesurer",
+    "population": {
+      "accounts_without_next_action": "aucun compte suivi",
+      "contacts_without_email": "aucun contact",
+      "projects_without_amount": "aucun projet ouvert",
+      "missions_without_end_date": "aucune mission active",
+      "needs_without_skills": "aucun besoin ouvert",
+      "talents_unknown_availability": "aucun consultant",
+      "unresolved_duplicates": "aucun doublon repéré",
+      "missions_without_cost": "aucune mission active",
+      "contacts_flagged_incorrect": "aucun contact marqué incorrect"
+    },
+    "noDestination": "L'écran qui le corrige n'existe pas dans cette version.",
+    "openAria": "{{action}} — {{check}}",
+    "checks": {
+      "accounts_without_next_action": {
+        "says": "Du travail que personne n'a planifié.",
+        "action": "Ouvrir la liste"
+      },
+      "contacts_without_email": {
+        "says": "Rien ne part vers eux tant qu'on n'a pas d'adresse.",
+        "action": "Enrichir"
+      },
+      "projects_without_amount": {
+        "says": "Ils ne pèsent dans aucun pipe.",
+        "action": "Saisir le montant"
+      },
+      "missions_without_end_date": {
+        "says": "Aucune alerte de renouvellement ne se déclenchera jamais dessus.",
+        "action": "Dater la fin"
+      },
+      "needs_without_skills": {
+        "says": "Le rapprochement ne peut pas les traiter.",
+        "action": "Typer les compétences"
+      },
+      "talents_unknown_availability": {
+        "says": "Ni saisie, ni dérivable d'une affectation.",
+        "action": "Confirmer la disponibilité"
+      },
+      "unresolved_duplicates": {
+        "says": "Repérés, et jamais arbitrés.",
+        "action": "Arbitrer"
+      },
+      "missions_without_cost": {
+        "says": "Leur marge est non mesurable.",
+        "action": "Saisir le coût"
+      },
+      "contacts_flagged_incorrect": {
+        "says": "La fiche désigne la mauvaise personne — elle reste au dossier, mais ne sert plus tant que personne ne l'a reprise.",
+        "action": "Reprendre la fiche"
+      }
+    }
+  },
+  "rituals": {
+    "title": "Rituels d'équipe",
+    "subtitle": "L'ordre du jour de chaque réunion, avec sa durée et les chiffres à ouvrir. C'est ce qui rend le système reprenable par quelqu'un d'autre.",
+    "unavailable": "Rituels indisponibles.",
+    "minutes": "{{count}} min",
+    "minutes_other": "{{count}} min",
+    "open": "Ouvrir l'écran",
+    "owner": {
+      "manager": "Porté par le manager",
+      "sales_ops": "Porté par sales ops",
+      "team": "Porté par l'équipe"
+    },
+    "roles": {
+      "manager": "Manager",
+      "sales_ops": "Sales ops",
+      "team": "Équipe"
+    },
+    "participants": "Participants",
+    "expectedDecisions": "Décision attendue",
+    "hide": "Masquer",
+    "show": "Réafficher",
+    "hiddenTitle": "Rituels masqués ({{count}})",
+    "hiddenTitle_other": "Rituels masqués ({{count}})",
+    "noEffect": "Aucun effet mesurable récemment",
+    "noEffectSince": "Aucun effet mesurable depuis {{month}}",
+    "proposeHide": "Aucun indicateur observé n’a bougé : ce rituel a-t-il encore sa place ?",
+    "proposeHideSince": "Rien n’a bougé depuis {{month}} : ce rituel a-t-il encore sa place ?",
+    "proposeHideAction": "Masquer ce rituel",
+    "notEvaluable": "Mesure en cours ({{monthsCovered}}/3 mois)",
+    "lastHeld": "Dernière tenue",
+    "neverHeld": "jamais marqué comme tenu",
+    "nextDate": "Prochaine session prévue le {{date}}",
+    "markHeld": "Marquer comme tenu aujourd’hui",
+    "createAction": "Créer une action",
+    "actionsCreated_one": "{{count}} action créée depuis ce rituel",
+    "actionsCreated_other": "{{count}} actions créées depuis ce rituel"
+  },
+  "contribution": {
+    "title": "Impact mesurable de {{brand}}",
+    "line": {
+      "accounts_opened_one": "{{count}} compte ouvert via Découvrir",
+      "accounts_opened_other": "{{count}} comptes ouverts via Découvrir",
+      "needs_from_signal_one": "{{count}} besoin détecté par un signal",
+      "needs_from_signal_other": "{{count}} besoins détectés par un signal",
+      "submissions_from_matching_one": "{{count}} positionnement issu d’un matching",
+      "submissions_from_matching_other": "{{count}} positionnements issus d’un matching",
+      "missions_signed_one": "{{count}} mission signée sur ces comptes",
+      "missions_signed_other": "{{count}} missions signées sur ces comptes"
+    },
+    "population": {
+      "accounts_opened": "comptes ouverts via Découvrir",
+      "needs_from_signal": "besoins détectés par un signal",
+      "submissions_from_matching": "positionnements issus d’un matching",
+      "missions_signed": "missions signées sur ces comptes"
+    },
+    "unattributed_one": "{{count}} compte plus ancien, dont l’origine n’est pas enregistrée.",
+    "unattributed_other": "{{count}} comptes plus anciens, dont l’origine n’est pas enregistrée.",
+    "unattributedPopulation": "comptes plus anciens, dont l’origine n’est pas enregistrée",
+    "method": "Uniquement ce que {{brand}} peut relier avec certitude à une action ou à une origine enregistrée.",
+    "since": "Depuis le {{date}}",
+    "groups": {
+      "direct": "Attribution directe",
+      "directHint": "L’origine est enregistrée : ces objets existent parce qu’un geste de {{brand}} les a produits.",
+      "partial": "Attribution partielle",
+      "partialHint": "Le lien est réel, l’issue ne lui est pas imputable : c’est un commercial qui a gagné.",
+      "unattributed": "Historique non attribuable",
+      "unattributedHint": "Ce que personne ne peut rattacher — ni à {{brand}}, ni à autre chose. C’est ce qui donne leur échelle aux deux groupes du dessus."
+    },
+    "unattributedNone": "Aucun : l’origine de tous tes comptes est enregistrée."
+  },
+  "rex": {
+    "subtitle": "Ce que les missions terminées ont appris, et ce que les pertes nous disent.",
+    "tabsLabel": "Retours d’expérience",
+    "tabs": {
+      "pending": "À recueillir",
+      "collected": "Retours recueillis",
+      "losses": "Pertes documentées",
+      "rules": "Règles apprises"
+    },
+    "question_one": "Quel retour recueillir pendant qu’il est chaud ? Celui de « {{mission}} » attend depuis {{count}} jour.",
+    "question_other": "Quel retour recueillir pendant qu’il est chaud ? Celui de « {{mission}} » attend depuis {{count}} jours.",
+    "questionNoDate": "Quel retour recueillir pendant qu’il est chaud ? Celui de « {{mission}} » attend.",
+    "questionCta": "Recueillir ce retour",
+    "col": { "mission": "Mission", "end": "Fin", "waiting": "Attend" },
+    "waitingDays_one": "depuis {{count}} jour",
+    "waitingDays_other": "depuis {{count}} jours",
+    "formTitle": "Retour sur « {{mission}} »",
+    "title": "Retours d’expérience",
+    "metaDescription": "Ce que les missions terminées ont appris, et celles dont le retour n’a pas encore été recueilli.",
+    "intro": "Un retour se recueille à chaud, en deux minutes. Trois mois plus tard il est introuvable, et avec lui la seule matière d’où une preuve peut sortir.",
+    "loading": "Lecture des missions terminées…",
+    "unavailable": "Lecture impossible. Ce n’est pas « aucun retour » : la liste n’a pas pu être lue.",
+    "unnamedAccount": "compte non retrouvé dans cet espace",
+    "unnamedMission": "mission non retrouvée dans cet espace",
+    "empty": {
+      "title": "Aucune mission terminée dans cet espace.",
+      "description": "Un retour se recueille quand une mission s’achève. Elles apparaîtront ici dès qu’une première se termine.",
+      "action": "Voir les missions"
+    },
+    "pending": {
+      "title": "À recueillir",
+      "count_one": "{{count}} mission terminée attend son retour",
+      "count_other": "{{count}} missions terminées attendent leur retour",
+      "none": "Aucune mission terminée n’attend son retour.",
+      "endedOn": "terminée le {{date}}",
+      "noEndDate": "sans date de fin",
+      "collect": "Recueillir le retour",
+      "noRight": "Ton rôle n’a pas le droit d’écrire dans les dossiers : un responsable de l’espace peut recueillir ces retours."
+    },
+    "collected": {
+      "title": "Retours recueillis",
+      "count_one": "{{count}} retour recueilli",
+      "count_other": "{{count}} retours recueillis",
+      "none": "Aucun retour recueilli pour l’instant. Les missions ci-dessus attendent le leur.",
+      "on": "recueilli le {{date}}",
+      "worked": "Ce qui a marché",
+      "failed": "Ce qui a coincé",
+      "team": "Équipe",
+      "skills": "Compétences",
+      "constraints": "Contraintes",
+      "offer": "Offre",
+      "expertise": "Expertise",
+      "access_path": "Voie d’accès",
+      "first_door": "Première porte",
+      "proof_used": "Preuve mobilisée",
+      "cycle_duration": "Durée du cycle",
+      "partner": "Partenaire"
+    },
+    "form": {
+      "legend": "Retour sur {{mission}}",
+      "summary": "Ce que la mission a appris",
+      "summaryPlaceholder": "Le sponsor a changé au bout de deux mois…",
+      "worked": "Ce qui a bien fonctionné",
+      "workedPlaceholder": "Le binôme architecte et développeur…",
+      "failed": "Ce qui a posé problème",
+      "failedPlaceholder": "Les accès à l’environnement de test…",
+      "team": "Équipe impliquée",
+      "teamPlaceholder": "Julie (lead), Marc (dev)…",
+      "skills": "Compétences mobilisées",
+      "skillsPlaceholder": "React, PostgreSQL…",
+      "constraints": "Contraintes rencontrées",
+      "constraintsPlaceholder": "Budget serré, accès VPN limité…",
+      "offer": "Offre proposée",
+      "offerPlaceholder": "Audit de l’existant puis TMA…",
+      "expertise": "Expertise mobilisée",
+      "expertisePlaceholder": "Architecture cloud, DevOps…",
+      "access_path": "Voie d’accès",
+      "access_pathPlaceholder": "Référencement panel, mise en relation par un partenaire…",
+      "first_door": "Première porte",
+      "first_doorPlaceholder": "DSI, direction des achats…",
+      "proof_used": "Preuve mobilisée",
+      "proof_usedPlaceholder": "Référence client comparable, chiffrage antérieur…",
+      "cycle_duration": "Durée du cycle",
+      "cycle_durationPlaceholder": "4 mois entre le premier contact et la signature…",
+      "partner": "Partenaire impliqué",
+      "partnerPlaceholder": "Nom du partenaire, s’il y en a un…",
+      "save": "Enregistrer",
+      "cancel": "Annuler",
+      "saved": "Retour enregistré.",
+      "saveFailed": "Je n’ai pas pu enregistrer ce retour.",
+      "strategy": "Stratégie d’approche",
+      "buying_model": "Modèle d’achat",
+      "organisation": "Organisation de la décision",
+      "choicePlaceholder": "Choisir…",
+      "choiceNone": "Non renseigné"
+    },
+    "learning": {
+      "title": "Règles apprises des pertes",
+      "intro": "Une règle ne naît que d’au moins deux pertes documentées. Un responsable la tranche ; adopter ne l’active pas — l’activation est un second geste, et la désactiver la retire de ce que {{copilot}} sait.",
+      "unavailable": "Lecture impossible. Ce n’est pas « aucune règle » : les règles apprises n’ont pas pu être lues.",
+      "needTwoRex": "Aucune règle apprise : il faut au moins deux pertes documentées pour en proposer une.",
+      "none": "Aucune règle apprise pour l’instant. Cite au moins deux pertes qui se ressemblent pour en proposer une.",
+      "cancel": "Annuler",
+      "adoptedToast": "Proposition adoptée — la règle est créée, désactivée, en attente de revue d’activation.",
+      "rejectedToast": "Proposition rejetée.",
+      "decideFailed": "La décision n’a pas été enregistrée",
+      "activationFailed": "L’activation n’a pas été enregistrée",
+      "proposeFailed": "La proposition n’a pas été enregistrée",
+      "proposed": "Proposition enregistrée — un responsable doit la trancher.",
+      "propose": {
+        "open": "Proposer une règle",
+        "pick": "Pertes citées (au moins deux)",
+        "rexLabel": "Perte du {{date}}",
+        "needTwo": "Choisis au moins deux pertes qui se ressemblent.",
+        "domain": "Domaine",
+        "observation": "Ce que ces pertes ont en commun (une phrase)",
+        "submit": "Proposer"
+      },
+      "proposals": {
+        "supportedBy_one": "Appuyée par {{count}} perte",
+        "supportedBy_other": "Appuyée par {{count}} pertes",
+        "adopt": "Adopter",
+        "reject": "Rejeter",
+        "status": {
+          "pending": "À trancher",
+          "adopted": "Adoptée",
+          "rejected": "Rejetée"
+        }
+      },
+      "rules": {
+        "active": "Active — {{copilot}} la connaît",
+        "pendingReview": "En attente de revue d’activation",
+        "disabled": "Désactivée",
+        "disabledReason": "Désactivée : {{reason}}",
+        "activate": "Activer",
+        "deactivate": "Désactiver",
+        "reasonLabel": "Pourquoi la désactiver ?",
+        "confirmDeactivate": "Désactiver la règle"
+      },
+      "follow": {
+        "open": "Suivre sur une action",
+        "account": "Compte",
+        "label": "Action à mener",
+        "submit": "Ajouter au plan",
+        "reason": "Appliquer la règle apprise de l’espace et en mesurer l’issue.",
+        "expectedOutcome": "La règle est appliquée et son issue est mesurée.",
+        "done": "Action ajoutée au plan, rattachée à la règle.",
+        "error": "L’action n’a pas pu être ajoutée.",
+        "measure_one": "{{count}} action suivie · {{positive}} positive · {{negative}} négative · {{open}} sans issue déclarée",
+        "measure_other": "{{count}} actions suivies · {{positive}} positive · {{negative}} négative · {{open}} sans issue déclarée",
+        "contradicted": "Tes résultats la contredisent : aucune issue positive sur plusieurs actions. À toi de la désactiver ou non."
+      },
+      "lost": {
+        "intro": "Une perte documentée dit ce qui s’est passé, ce que le client a dit, et ce qu’on en soupçonne — chaque phrase porte sa nature (fait confirmé, retour client, hypothèse).",
+        "none": "Aucune perte documentée pour l’instant. Une perte se documente depuis l’affaire, quand elle se ferme.",
+        "title": "Pertes documentées",
+        "declared": "Motif déclaré : {{motif}}",
+        "suspected": "Hypothèse (non confirmée) : {{motif}}"
+      }
+    },
+    "strategies": {
+      "conquete_directe": "Conquête directe",
+      "extension_de_compte": "Extension de compte",
+      "via_partenaire": "Via un partenaire",
+      "defense_de_base": "Défense de la base installée"
+    },
+    "buyingModels": {
+      "appel_offres": "Appel d’offres",
+      "accord_cadre": "Accord-cadre",
+      "referencement": "Référencement",
+      "gre_a_gre": "Gré à gré"
+    },
+    "organisations": {
+      "decideur_unique": "Décideur unique",
+      "comite_restreint": "Comité restreint",
+      "comite_elargi": "Comité élargi"
+    }
+  },
+  "target": {
+    "label": "Cible {{bound}}",
+    "completeness": "complétude",
+    "zero": "0",
+    "below": "< {{value}}",
+    "above": "> {{value}}",
+    "band": "{{min}} – {{max}}",
+    "units": {
+      "percent": "{{value}} %",
+      "days": "{{value}} j",
+      "count": "{{value}}"
+    },
+    "status": {
+      "on_target": "dans la cible",
+      "off_target": "hors cible",
+      "unmeasured": "non comparée, faute de mesure"
+    },
+    "completenessHint": "Deux cibles ne mesurent pas l'ESN mais ce qu'on ignore d'elle : elles disent à quel point les autres chiffres méritent d'être crus.",
+    "notComparable": "cible non comparée — {{have}} sur les {{need}} nécessaires"
+  },
+  "delta": {
+    "notMeasured": "non mesuré",
+    "firstMonth": "premier mois — la comparaison arrive le mois prochain",
+    "noPrevious": "aucune photo du mois de référence",
+    "noCurrent": "aucune photo de ce mois",
+    "denominatorMissing": "population inconnue — aucun taux ne peut être calculé",
+    "notOrdered": "périodes non comparables",
+    "vsPreviousMonth": "vs mois dernier",
+    "vsYearAgo": "vs N-1",
+    "points": "{{value}} pts",
+    "countThisMonth": "{{value}} ce mois",
+    "versus": "vs {{month}}",
+    "withPeriod": "{{change}} {{period}}",
+    "percentAside": "({{sign}}{{value}} %)",
+    "stable": "stable {{period}}",
+    "outOf_one": "sur {{count}}",
+    "outOf_other": "sur {{count}}"
+  },
+  "decisions": {
+    "title": "Ce qui attend une décision",
+    "alerts_one": "1 maillon décroche",
+    "alerts_other": "{{count}} maillons décrochent",
+    "alertsHint": "Voir lequel dans la chaîne ci-dessous.",
+    "needs_one": "1 piste à revoir",
+    "needs_other": "{{count}} pistes à revoir",
+    "needsHint": "Détecté par un signal — personne ne l’a encore exprimé.",
+    "unmeasured_one": "1 maillon sans mesure",
+    "unmeasured_other": "{{count}} maillons sans mesure",
+    "unmeasuredHint": "Il manque un branchement, pas une correction.",
+    "staleFocus_one": "1 compte en Focus depuis plus de 30 jours",
+    "staleFocus_other": "{{count}} comptes en Focus depuis plus de 30 jours",
+    "staleFocusHint": "L’effort maximum s’essouffle — à revoir.",
+    "noGoToRevisit_one": "1 compte écarté à revisiter",
+    "noGoToRevisit_other": "{{count}} comptes écartés à revisiter",
+    "noGoToRevisitHint": "Le délai de réexamen du motif d’écart est écoulé.",
+    "accountsWithoutOwner_one": "1 compte sans propriétaire",
+    "accountsWithoutOwner_other": "{{count}} comptes sans propriétaire",
+    "accountsWithoutOwnerHint": "Personne n’est assigné à ce compte.",
+    "accountsWithoutDate_one": "1 compte sans prochaine revue",
+    "accountsWithoutDate_other": "{{count}} comptes sans prochaine revue",
+    "accountsWithoutDateHint": "Aucune date de revue n’a été posée.",
+    "strategyNoGo_one": "1 compte NO-GO sur sa stratégie",
+    "strategyNoGo_other": "{{count}} comptes NO-GO sur leur stratégie",
+    "strategyNoGoHint": "Les cinq dimensions (Périmètre, Problème, Personnes, Preuve, Passage) sont vides.",
+    "strategyBlocked_one": "1 compte bloqué sur sa stratégie",
+    "strategyBlocked_other": "{{count}} comptes bloqués sur leur stratégie",
+    "strategyBlockedHint": "Quatre des cinq dimensions restent à combler.",
+    "accountsWithoutMovement_one": "1 compte actif sans mouvement depuis plus de 30 jours",
+    "accountsWithoutMovement_other": "{{count}} comptes actifs sans mouvement depuis plus de 30 jours",
+    "accountsWithoutMovementHint": "En exécution (extension/volume), mais aucune activité récente.",
+    "watchToWake_one": "1 compte en veille a reçu un signal",
+    "watchToWake_other": "{{count}} comptes en veille ont reçu un signal",
+    "watchToWakeHint": "Un signal est arrivé depuis l’entrée en veille — à rouvrir ou à laisser dormir.",
+    "open": "Ouvrir"
+  },
+  "chain": {
+    "title": "La chaîne commerciale",
+    "secondaryTitle": "Lectures transverses — elles portent sur toute la chaîne, pas sur une étape",
+    "linkAria": "{{label}} — étape {{position}} sur {{total}}"
+  },
+  "provenance": {
+    "source": "Source : {{tables}}",
+    "sourceNone": "Aucune source lue",
+    "window": "État courant, pas une période",
+    "denominator_one": "Sur {{formattedCount}}",
+    "denominator_other": "Sur {{formattedCount}}",
+    "computedAt": "Calculé à {{time}}",
+    "tables": {
+      "contacts": "contacts",
+      "accounts": "comptes",
+      "activities": "activités",
+      "project_needs": "besoins",
+      "consultants": "vivier",
+      "missions": "missions",
+      "mission_commercial_terms": "conditions commerciales",
+      "record_field_audits": "corrections de fiches",
+      "mission_timesheets": "Feuilles de temps des missions",
+      "invoice_readiness": "état de préparation des factures"
+    }
+  },
+  "accroche": {
+    "title": "Le pilotage, en trois chiffres",
+    "alerting_one": "{{count}} maillon de chaîne décroche",
+    "alerting_other": "{{count}} maillons de chaîne décrochent",
+    "unmeasured_one": "{{count}} maillon non mesuré",
+    "unmeasured_other": "{{count}} maillons non mesurés",
+    "healthy_one": "{{count}} maillon tient",
+    "healthy_other": "{{count}} maillons tiennent",
+    "link": "Ouvrir le pilotage"
+  },
+  "interestPenetrabilityPortfolio": {
+    "title": "Portefeuille — intérêt × pénétrabilité",
+    "subtitle": "Où chaque compte se situe sur la matrice intérêt × pénétrabilité de sa fiche — une projection en plus, jamais un second score.",
+    "empty": "Aucun compte dans ce périmètre.",
+    "accountCount_one": "{{count}} compte",
+    "accountCount_other": "{{count}} comptes",
+    "moreCount_one": "+{{count}} autre",
+    "moreCount_other": "+{{count}} autres",
+    "unavailable_one": "{{count}} compte dont la position n'est pas encore déterminée (facteurs insuffisants)",
+    "unavailable_other": "{{count}} comptes dont la position n'est pas encore déterminée (facteurs insuffisants)",
+    "truncated": "Lecture limitée aux {{limit}} premiers comptes sur {{total}} — le portefeuille est trop grand pour être lu en entier ici."
+  },
+  "partnerGovernance": {
+    "title": "Rang 2 : le cadre de tes partenaires",
+    "intro_one": "{{count}} relation partenaire. Ce qui est cadré, et ce qu'il faut valider avant d'envoyer un profil.",
+    "intro_other": "{{count}} relations partenaires. Ce qui est cadré, et ce qu'il faut valider avant d'envoyer un profil.",
+    "allFramed": "Rien à cadrer : aucune relation active n'a de règle manquante.",
+    "more_one": "+ {{count}} autre relation à cadrer",
+    "more_other": "+ {{count}} autres relations à cadrer",
+    "open": "Ouvrir Partenaires"
+  },
+  "toComplete": {
+    "title": "Données à compléter",
+    "hint": "Ce qui empêche de travailler. Chaque ligne ouvre la liste à corriger.",
+    "unavailable": "Lecture impossible. Ce n'est pas « tout est propre » : les contrôles n'ont pas pu être lus.",
+    "noBaseline": "pas de photo le mois dernier pour ces listes — les tendances apparaîtront à la prochaine photo mensuelle"
+  },
+  "staffing": {
+    "title": "Staffing",
+    "subtitle": "Qui est disponible, qui est sur le banc, quelles missions finissent, et à quel taux les consultants produisent. Rien n'est pondéré.",
+    "loading": "Chargement du staffing…",
+    "error": "Le staffing est indisponible pour le moment.",
+    "capacity": {
+      "title": "Capacité et demande · 12 semaines",
+      "intro": "Par semaine : la capacité en jours (consultants × jours ouvrés, congés et fériés retirés) face aux jours demandés par les missions signées et, séparément, par les besoins ouverts datés. Les deux demandes ne s'additionnent pas et ne sont pas pondérées.",
+      "empty": "Aucun consultant ni aucune demande à comparer sur les 12 prochaines semaines.",
+      "undated_one": "{{count}} besoin ouvert sans date de début n'est pas compté.",
+      "undated_other": "{{count}} besoins ouverts sans date de début ne sont pas comptés.",
+      "week": "Semaine du {{date}}",
+      "legendCapacity": "Capacité",
+      "legendSigned": "Missions signées",
+      "legendNeeds": "Besoins ouverts",
+      "days": "{{value}} j",
+      "workingDays": "{{count}} jours ouvrés · {{consultants}} consultants",
+      "columns": {
+        "week": "Semaine",
+        "capacity": "Capacité",
+        "signed": "Missions signées",
+        "needs": "Besoins ouverts"
+      }
+    },
+    "bench": {
+      "title": "Intercontrat",
+      "intro": "Consultants sans mission aujourd'hui. Jours cumulés : jours ouvrés du mois en cours, du 1er au {{date}}, hors congés.",
+      "empty": "Aucun consultant en intercontrat aujourd'hui.",
+      "costKnown": "Coût de l'intercontrat sur le mois : {{amount}} (jours × coût journalier, consultants dont le coût est renseigné).",
+      "costNone": "Coût non renseigné : aucun consultant en intercontrat n'a de coût journalier saisi, aucun montant n'est calculé.",
+      "withoutCost_one": "{{count}} consultant sans coût journalier renseigné n'est pas chiffré.",
+      "withoutCost_other": "{{count}} consultants sans coût journalier renseigné ne sont pas chiffrés.",
+      "columns": {
+        "name": "Consultant",
+        "since": "Depuis",
+        "days": "Jours ce mois",
+        "skills": "Compétences",
+        "cost": "Coût du mois"
+      },
+      "sinceUnknown": "Aucune mission connue",
+      "costUnknown": "Coût non renseigné",
+      "costRestricted": "Réservé à la finance"
+    },
+    "endings": {
+      "title": "Fins de mission",
+      "intro": "Missions en cours qui se terminent dans les 30, 60 ou 90 prochains jours, avec la prolongation connue ou non.",
+      "within30": "Sous 30 jours",
+      "within60": "31 à 60 jours",
+      "within90": "61 à 90 jours",
+      "empty": "Aucune fin de mission sur cette période.",
+      "endsOn": "Fin le {{date}} (dans {{count}} j)",
+      "renewal": {
+        "known": "Prolongation connue",
+        "in_discussion": "Prolongation en discussion",
+        "unknown": "Prolongation non connue"
+      },
+      "noConsultant": "Consultant non renseigné",
+      "noAccount": "Client non renseigné"
+    },
+    "tace": {
+      "title": "TACE · taux d'activité",
+      "intro": "Jours facturés ÷ jours ouvrés disponibles. Les week-ends, jours fériés et congés sont retirés du dénominateur.",
+      "formula": "TACE = jours facturés ÷ jours ouvrés disponibles. Jours ouvrés disponibles = jours du mois hors week-ends, jours fériés français et congés/absences du consultant. Planifié : jours des affectations (charge en %). Réel : jours saisis dans les relevés de temps.",
+      "formulaLabel": "Formule du TACE",
+      "period": "{{month}} · du {{from}} au {{to}}",
+      "global": "Global",
+      "planned": "Planifié",
+      "actual": "Réel",
+      "notMeasured": "Non mesuré : aucun temps saisi",
+      "value": "{{percent}} %",
+      "base": "{{days}} j sur {{available}} j disponibles",
+      "belowThreshold": "Sous le seuil de {{threshold}} %",
+      "noThreshold": "Aucun seuil d'alerte saisi : aucune alerte tant que l'ESN n'en définit pas.",
+      "threshold": {
+        "label": "Seuil d'alerte TACE (%)",
+        "hint": "Réglage d'espace. Vide = aucune alerte.",
+        "save": "Enregistrer",
+        "reset": "Remettre à non réglé",
+        "invalid": "Entre 1 et 100.",
+        "current": "Seuil actuel : {{value}} %",
+        "saved": "Seuil enregistré",
+        "failed": "Enregistrement impossible"
+      },
+      "columns": {
+        "name": "Consultant",
+        "planned": "Planifié",
+        "actual": "Réel"
+      },
+      "empty": "Aucun consultant à afficher pour ce mois."
+    },
+    "laura": {
+      "purpose": "Capacité contre demande, intercontrat, fins de mission et TACE de l'ESN.",
+      "bench": "Consultants en intercontrat",
+      "endings": "Fins de mission sous 30 jours",
+      "threshold": "Seuil d'alerte TACE",
+      "thresholdMissing": "Seuil d'alerte TACE non saisi : aucune alerte",
+      "actualMissing": "TACE réel non mesuré : aucun temps saisi ce mois-ci",
+      "action": "Saisir le seuil d'alerte TACE"
+    },
+    "facts": {
+      "region": "Les chiffres du staffing",
+      "bench": "Intercontrat",
+      "benchMeta": "profils mobilisables ce mois",
+      "endings": "Fins de mission",
+      "endingsMeta": "à 30, 60 et 90 jours",
+      "tace": "TACE du mois",
+      "taceMeta": "jours facturés sur jours ouvrés",
+      "missing": "Expertises manquantes",
+      "missingMeta": "demandées, aucun profil"
+    }
+  },
+  "weekDelta": {
+    "lostList": "Voir les affaires perdues",
+    "lostRex": "Voir les retours d’expérience (REX)",
+    "title": "Ce qui a bougé",
+    "period_one": "sur le dernier jour",
+    "period_other": "sur les {{count}} derniers jours",
+    "periodMissions": "à venir sous {{count}} jours",
+    "unweighted": "Sommes non pondérées, montants saisis uniquement.",
+    "amount": "{{amount}} non pondéré",
+    "amountUnknown": "montant non saisi",
+    "countLabel": "{{label}} : {{count}}",
+    "unreadAll": "Ce qui a bougé n’a pas pu être lu.",
+    "loading": "Lecture de la semaine…",
+    "open": "Voir la liste",
+    "close": "Replier la liste",
+    "listLabel": "{{label}} — liste",
+    "noAccount": "compte non renseigné",
+    "noConsultant": "consultant non renseigné",
+    "counters": {
+      "created": "créées",
+      "advanced": "avancées",
+      "regressed": "reculées",
+      "lost": "perdues",
+      "won": "signées",
+      "missionsEnding": "missions qui finissent",
+      "cashIn": "encaissé"
+    },
+    "formulas": {
+      "created": "Affaires créées sur la période (date de première détection). Les signaux d’achat et les pistes repérées par une analyse, jamais prises en main, ne sont pas comptés.",
+      "advanced": "Opportunités dont l’étape est passée plus loin dans le pipe sur la période. Un passage en perdu, signé ou en sommeil se compte à part.",
+      "regressed": "Opportunités revenues à une étape plus en amont du pipe sur la période.",
+      "lost": "Opportunités passées à l’étape « perdu » sur la période.",
+      "won": "Opportunités passées à l’étape « signé » sur la période.",
+      "missionsEnding": "Missions en cours dont la fin prévue tombe dans les {{days}} prochains jours.",
+      "cashIn": "Règlements enregistrés sur la période, montant réglé, groupés par client."
+    },
+    "cashLine_one": "1 règlement",
+    "cashLine_other": "{{count}} règlements",
+    "summaryCash": "{{amount}} encaissés"
+  },
+  "stages": {
+    "detected": "Détecté",
+    "potential": "Potentiel",
+    "qualified": "Qualifié",
+    "confirmed": "Besoin exprimé",
+    "profiles_submitted": "Profils présentés",
+    "negotiation": "Négociation",
+    "won": "Signé",
+    "lost": "Perdu",
+    "dormant": "En sommeil"
+  },
+  "objective": {
+    "title": "Objectif du mois",
+    "month": "{{month}}",
+    "none": "Aucun objectif saisi",
+    "noneLink": "Saisir un objectif dans Équipe",
+    "target": "Cible déclarée",
+    "targetHint": "Somme des objectifs de chiffre d’affaires saisis pour {{month}}.",
+    "realised": "Réalisé",
+    "realisedHint": "Signé en {{month}} (opportunités passées à « signé » et clôturées dans le mois).",
+    "remaining": "Reste à signer",
+    "remainingHint": "Objectif − réalisé, sans valeur négative.",
+    "coverage": "Couverture du pipe",
+    "coverageValue": "× {{ratio}}",
+    "coverageHint": "Pipe ouvert non pondéré ({{pipe}}) ÷ reste à signer ({{remaining}}).",
+    "coverageNone": "Rien à couvrir : l’objectif est atteint.",
+    "pace": "Rythme attendu",
+    "paceValue": "{{amount}} par jour ouvré",
+    "paceHint": "Reste à signer ÷ {{days}} jours ouvrés restants en {{month}}, aujourd’hui compris.",
+    "notMeasured": "Non mesuré",
+    "unread": "L’objectif du mois n’a pas pu être lu.",
+    "loading": "Lecture de l’objectif…",
+    "capTitle": "Le cap {{preposition}}{{month}}",
+    "signedThisMonth": "Signé ce mois",
+    "ringLabel": "{{percent}} % de l’objectif signé",
+    "ringCaption": "de l’objectif signé",
+    "coverageLine": "Couverture du pipe × {{ratio}} · rythme attendu {{pace}}",
+    "coverageUnknown": "Couverture du pipe : non mesurée",
+    "toReach": "{{amount}} pour atteindre le cap",
+    "reached": "Le cap est atteint",
+    "edit": "Ajuster mon objectif",
+    "detail": "Détail"
+  },
+  "cockpit": {
+    "chainTitle": "La chaîne",
+    "chainOpen": "Voir le détail de la chaîne",
+    "chainClose": "Replier le détail de la chaîne",
+    "chainRowLabel": "Les huit maillons de la chaîne",
+    "title": "Piloter ton activité",
+    "subtitle": "Les décisions commerciales avant les compteurs",
+    "chainFoldTitle": "La chaîne commerciale · {{count}} maillons",
+    "chainFoldAlerts_one": "1 maillon décroche",
+    "chainFoldAlerts_other": "{{count}} maillons décrochent",
+    "chainFoldMeta": "Calculé sur {{measured}} maillons · {{unmeasured}} non mesuré",
+    "detailFoldTitle": "Détail · ce que {{copilot}} a apporté, ce qui marche chez toi",
+    "detailFoldMeta": "Quatre lectures",
+    "export": {
+      "label": "Exporter la synthèse",
+      "title": "Synthèse du pilotage",
+      "file": "synthese-pilotage"
+    },
+    "tiles": {
+      "region": "Les chiffres du jour",
+      "pipe": "Pipe ouvert",
+      "pipeMeta": "Non pondéré",
+      "won": "Affaires gagnées",
+      "wonMeta": "Signées en {{month}}",
+      "bench": "Profils disponibles",
+      "benchMeta": "Mobilisables ce mois",
+      "actions": "Actions à faire",
+      "actionsMeta": "Sur tout l’espace"
+    },
+    "cash": {
+      "title": "De la mission à l’encaissement",
+      "period": "Factures de {{month}}.",
+      "none": "Aucune facture sur {{month}} : rien à suivre pour l’instant.",
+      "collected": "encaissés",
+      "toFollow": "à suivre",
+      "drafts": "en brouillon",
+      "separate": "Le pipe commercial n’est pas un encaissement. Les deux restent séparés.",
+      "invoices": "Retrouver les factures"
+    },
+    "stages": {
+      "title": "Où se situe la décision ?",
+      "advice": "Commence par les affaires dont la prochaine décision est connue, puis qualifie les zones encore floues."
+    },
+    "decisions": {
+      "region": "Décisions à prendre",
+      "title_one": "Une décision à prendre",
+      "title_other": "{{count}} décisions à prendre",
+      "all": "Voir toutes les décisions",
+      "dialogTitle": "Toutes les décisions",
+      "dialogDescription": "Les décisions ouvertes, classées par gravité. Tu peux les attribuer ou les écarter ici : rien ne part sans ton geste."
+    },
+    "evolution": {
+      "title": "Évolution du pipe",
+      "unit": "Valeur des affaires ouvertes · non pondérée",
+      "opening": "Au {{date}}",
+      "closing": "Au {{date}}",
+      "moves": {
+        "created": "{{amount}} créés",
+        "signed": "{{amount}} signés",
+        "lost": "{{amount}} perdus"
+      },
+      "withoutAmount_one": "1 affaire sans montant, hors des barres.",
+      "withoutAmount_other": "{{count}} affaires sans montant, hors des barres.",
+      "legend": "Pipe non pondéré",
+      "notCash": "Les montants ne sont pas une prévision d’encaissement.",
+      "open": "Voir le mouvement du pipe"
+    }
+  },
+  "pipe": {
+    "title": "Pipe",
+    "purpose": "Lire le chiffre d'affaires probable du trimestre, affaire par affaire."
+  },
+  "theo": {
+    "page": {
+      "title": "Piloter ton activité",
+      "subtitle": "Les décisions commerciales avant les compteurs."
+    },
+    "anchors": {
+      "label": "Sections de Pilotage"
+    },
+    "sections": {
+      "cockpit": "Cockpit",
+      "pipe": "Pipe",
+      "staffing": "Staffing",
+      "finance": "Finance"
+    },
+    "period": {
+      "label": "Période : {{month}}"
+    },
+    "cap": {
+      "title": "Le cap du mois",
+      "percent": "{{percent}} % de l’objectif signé",
+      "ringLabel": "{{percent}} % de l’objectif signé",
+      "signed": "Signé ce mois",
+      "target": "Cible déclarée",
+      "toGo": "{{amount}} pour atteindre le cap",
+      "reached": "Cap atteint",
+      "detail": "Détail",
+      "coverageLine": "Couverture du pipe {{coverage}} · rythme attendu {{pace}}"
+    },
+    "decisions": {
+      "title": "Trois décisions à prendre",
+      "seeAll": "Voir toutes les décisions · {{count}}",
+      "fold": "Replier les décisions"
+    },
+    "section": {
+      "pipe": {
+        "title": "Pipe",
+        "intro": "Les affaires ouvertes en détail. Le CA probable vit ici, et seulement ici.",
+        "access": "Direction et opérations commerciales",
+        "own": "Tes affaires",
+        "open": "Ouvrir les affaires"
+      },
+      "staffing": {
+        "title": "Staffing",
+        "intro": "La capacité face à la demande, et les fins de mission avant qu’elles ne deviennent de l’intercontrat.",
+        "access": "Direction et opérations commerciales",
+        "open": "Ouvrir Talents"
+      },
+      "finance": {
+        "title": "Finance",
+        "intro": "{{brand}} suit le financier, il ne le comptabilise pas. « Facturé » se lit sur la preuve de ton outil de facturation.",
+        "access": "Direction · droit finance"
+      },
+      "locked": "Cette section n’est pas ouverte à ton rôle.",
+      "lockedPipe": "Ton activité et tes affaires restent visibles dans Affaires et dans Ma journée.",
+      "lockedStaffing": "Les profils et les missions que tu suis restent visibles dans Talents et Missions.",
+      "lockedFinance": "Ton chiffre signé reste dans le cockpit ci-dessus ; la finance de l’espace demande le droit finance.",
+      "lockedCockpit": "Le cockpit de l’espace est réservé aux rôles de direction. Ton pipe et ton parcours restent juste en dessous."
+    },
+    "rex": {
+      "line": "Les retours d’expérience sur les affaires perdues vivent dans Missions.",
+      "link": "Ouvrir les retours d’expérience"
+    }
+  }
+}

@@ -1,0 +1,35 @@
+lot: vieilles-l5b-apercu-recherche
+issues: [2157, 2152]
+
+changelog:
+  id: 2026-11-01-recherche-apercu-besoin
+  comment: 'Vieilles L5-bis (#2157.57, #2152.13) — aperçu avant versement d’une recherche enregistrée ; besoin à qualifier à la confirmation d’une piste'
+  fr:
+    date: 1 novembre 2026
+    title: Une recherche enregistrée se relit avant de devenir une cible
+    items:
+      - 'Depuis Découvrir, « Créer une cible » sur une recherche enregistrée montre d’abord les entreprises trouvées, celles que tu écartes et celles sans secteur renseigné.'
+      - 'Tu retires une entreprise avant de verser ; rien n’est créé tant que tu ne cliques pas sur « Créer la cible ».'
+      - 'Confirmer une piste détectée ouvre aussi un besoin à qualifier sur le compte, une seule fois.'
+  en:
+    date: November 1, 2026
+    title: A saved search is reviewed before it becomes a target
+    items:
+      - 'In Discover, “Create target” on a saved search first shows the companies found, those you set aside and those with no sector on file.'
+      - 'You can remove a company before adding; nothing is created until you click “Create target”.'
+      - 'Confirming a detected lead also opens a need to qualify on the account, once only.'
+
+inserts:
+  - file: apps/api/src/modules/demo/demo-coverage.ts
+    text: |
+      /**
+       * #2157.57 / #2152.13 — APERÇU D'UNE RECHERCHE ENREGISTRÉE + BESOIN À LA CONFIRMATION D'UNE PISTE : SEEDÉ (aucune ligne neuve).
+       *
+       * L'aperçu rejoue une recherche enregistrée DÉJÀ semée (Découvrir en démo) ; le besoin `to_qualify` naît au clic du
+       * visiteur sur la piste « intérêt » déjà semée dans `pipeline_detections` — jamais à la détection seule.
+       */
+      export const DEMO_RECHERCHE_APERCU_COVERAGE: Readonly<{ state: 'seede'; reason: string }> = {
+        state: 'seede',
+        reason:
+          '#2157.57 / #2152.13 — l’aperçu relit les recherches enregistrées semées ; le besoin à qualifier est créé par la confirmation (clic) de la piste « intérêt » semée par seedPipelineDetections, jamais au semis.',
+      }

@@ -1,0 +1,37 @@
+# #4347.2 — le message à un consultant du vivier TUTOIE, sur tous les canaux (régénérer E-mail -> Réseau
+# professionnel basculait au vouvoiement). Le prompt est CHARGÉ depuis le code (provider.py), rien n'est copié.
+description: Laura — message au consultant, tutoiement sur tous les canaux (promptfoo, #4347.2)
+
+prompts:
+  - '{{channel}}'
+
+providers:
+  - id: file://provider.py
+    label: talent-message
+    config:
+      mode: talent_message
+
+tests:
+  - description: e-mail -> tutoiement
+    vars:
+      channel: email
+    assert:
+      - type: python
+        metric: informal
+        value: file://asserts.py:talent_message_informal
+
+  - description: réseau professionnel -> tutoiement
+    vars:
+      channel: linkedin
+    assert:
+      - type: python
+        metric: informal
+        value: file://asserts.py:talent_message_informal
+
+  - description: téléphone -> tutoiement
+    vars:
+      channel: phone
+    assert:
+      - type: python
+        metric: informal
+        value: file://asserts.py:talent_message_informal

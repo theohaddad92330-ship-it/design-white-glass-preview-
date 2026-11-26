@@ -1,0 +1,22 @@
+/* #1642 — Stat : label + valeur, pour les grilles denses (pas de bordure ni
+   de padding propre : c'est la grille parente qui espace). */
+.stat {
+  display: grid;
+  gap: 2px;
+}
+
+.label {
+  color: var(--muted);
+  /* #1642.5 — 13px de base : `Stat` n'est pas un tableau (le 11px de
+     DataTable ne le concerne pas), et son étiquette jouait le même rôle que
+     celle de KpiTile à une taille différente. */
+  font-size: 13px;
+  text-transform: uppercase;
+  letter-spacing: 0.04em;
+}
+
+.value {
+  font-size: 16px;
+  font-weight: 600;
+  font-variant-numeric: tabular-nums;
+}

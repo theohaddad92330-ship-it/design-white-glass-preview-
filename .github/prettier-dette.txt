@@ -1,0 +1,17 @@
+0
+
+# Le nombre de fichiers que `prettier --check .` signale encore, depuis la racine.
+# Mesuré le vingt-neuf octobre deux mille vingt-six, dans le worktree d'intégration, sur origin/main :
+# `./node_modules/.bin/prettier --check .` rend « All matched files use Prettier code style! »,
+# code de sortie zéro, aucune ligne `[warn]`. La veille (vingt-huit octobre, run de la PR du chantier
+# formatage) le compte était de cent quatre-vingt-treize ; la dette a été payée dans la nuit
+# (très probablement le `--write` de la migration zod).
+# Contrôle négatif, qui rend la mesure crédible : un fichier volontairement mal formaté
+# (une déclaration `const` aux espaces désordonnés) ressort bien en `[warn]` avec le code de sortie un — la mesure sait dire NON.
+#
+# CE NOMBRE NE PEUT QUE BAISSER (job `dette-formatage` de ci.yml). Il ne remonte
+# pas « parce qu'un lot pressait » : un fichier qu'on touche, on le formate.
+#
+# ⚠️ AUCUN CHIFFRE DANS CES COMMENTAIRES : le job lit ce fichier par `tr -cd` sur la classe des chiffres, qui garde TOUS
+# les chiffres, commentaires compris. Un chiffre ajouté ici s'accole au plafond et le fausse
+# (la version précédente, avec ses dates en chiffres, se lisait comme un plafond démesuré).

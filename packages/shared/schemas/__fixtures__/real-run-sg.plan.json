@@ -1,0 +1,409 @@
+{
+  "actionPlan": {
+    "phases": [
+      {
+        "name": "IMMEDIAT",
+        "title": "Semaine 1 — Préparation et amorçage sandwich multi-thread",
+        "actions": [
+          {
+            "kpi": "Taux de reponse cible 20-30% (benchmark N-1)",
+            "action": "Contacter Karim (DSI SGTM) par email avec message J1 court (5 lignes) evoquant la conformite DORA et le staffing IT tendu, termine par une question d'aiguillage.",
+            "channel": "email",
+            "contact": "Karim - Directeur des Systemes d'Information, SGTM",
+            "deadline": "J+1",
+            "action_id": "action_immediate_1",
+            "expectedOutcome": "Reponse ou accuse de lecture ouvrant un echange sur la gouvernance SI"
+          },
+          {
+            "kpi": "Taux de reponse cible 20-30% (benchmark N-1)",
+            "action": "Contacter Khalil (Head of IT Business Analysis CBS, SG Liban) par email pour ouvrir un thread operationnel sur la conformite DORA du core banking T24, avec question ouverte sur les priorites de remediation.",
+            "channel": "email",
+            "contact": "Khalil - IT Department Head Business Analysis and CBS Maintenance, SG Liban",
+            "deadline": "J+1",
+            "action_id": "action_immediate_2",
+            "expectedOutcome": "Premier echange qualifiant les blocages CBS/DORA"
+          },
+          {
+            "kpi": "Taux de reponse cible 10-15% (benchmark C-level)",
+            "action": "Envoyer un message LinkedIn a Pierre Pallier (DG delegue groupe) mentionnant le contexte tension RH IT post-plan social pour amorcer le thread sponsor top-down.",
+            "channel": "linkedin",
+            "contact": "Pierre Pallier - Directeur general delegue, SG Groupe",
+            "deadline": "J+3",
+            "action_id": "action_immediate_3",
+            "expectedOutcome": "Ouverture d'un canal de legitimation top-down pour les threads operationnels"
+          },
+          {
+            "kpi": "Taux de reponse cumule apres relance >=25%",
+            "action": "Envoyer relance courte (J3, 3 lignes) a Karim et Khalil si non-reponse, terminee par une question directe sur le bon interlocuteur.",
+            "channel": "email",
+            "contact": "Karim (SGTM) et Khalil (SG Liban)",
+            "deadline": "J+3",
+            "action_id": "action_immediate_4",
+            "expectedOutcome": "Relance des threads sans reponse initiale, identification d'un contact alternatif si besoin"
+          }
+        ],
+        "objective": "Activer 2 threads simultanés (sponsor haut niveau + opérationnels IT/data) sur les BU prioritaires (ITIM groupe, SGTM Maroc, SG Liban) et lancer la cadence 10 jours pour générer les premiers signaux de réponse."
+      },
+      {
+        "name": "MOIS 1",
+        "title": "Prise de contact et qualification multi-thread",
+        "actions": [
+          {
+            "kpi": "Taux de reponse (cible 20-30%) et nb de RDV decroches",
+            "action": "Envoyer un email de cadrage a Karim pour proposer un audit flash gouvernance SI de 4 semaines sur SGTM.",
+            "channel": "email",
+            "contact": "Karim (DSI SGTM)",
+            "deadline": "S+2",
+            "action_id": "action_month1_1",
+            "expectedOutcome": "RDV de qualification 45 min obtenu"
+          },
+          {
+            "kpi": "Taux de reponse (cible 20-30%), 1 call qualifie",
+            "action": "Contacter Khalil par email pour positionner un diagnostic DORA/resilience CBS chiffre sur SG Liban.",
+            "channel": "email",
+            "contact": "Khalil (Head of IT Business Analysis & CBS, SG Liban)",
+            "deadline": "S+2",
+            "action_id": "action_month1_2",
+            "expectedOutcome": "Echange telephonique de qualification programme"
+          },
+          {
+            "kpi": "Nb de reponses positives / nb de messages envoyes",
+            "action": "Relancer Nadia sur LinkedIn en mentionnant la fragmentation data multi-metiers comme angle d'entree pour un audit flash digital.",
+            "channel": "linkedin",
+            "contact": "Nadia (Responsable Pole Digital, SG Nouvelle-Caledonie)",
+            "deadline": "S+3",
+            "action_id": "action_month1_3",
+            "expectedOutcome": "Premier RDV de decouverte programme"
+          },
+          {
+            "kpi": "Document de cadrage process achats obtenu (oui/non)",
+            "action": "Identifier et contacter par email le contact achats/procurement (Joel a SG Cote d'Ivoire ou equivalent groupe) pour cartographier le process panel fournisseurs avant validation metier.",
+            "channel": "email",
+            "contact": "Joel (Responsable G.A., SG Cote d'Ivoire)",
+            "deadline": "S+3",
+            "action_id": "action_month1_4",
+            "expectedOutcome": "Comprehension du process de referencement vendor et des delais associes"
+          }
+        ],
+        "objective": "Qualifier l'entree sandwich (sponsor legitimant + operationnels en tension) et lancer en parallele le thread achats/panel fournisseurs pour ne pas partir 10 semaines en retard."
+      },
+      {
+        "name": "MOIS 2-3",
+        "title": "Engagement multi-BU et lancement des audits flash / POC pilotes",
+        "actions": [
+          {
+            "kpi": "1 atelier realise + 1 perimetre signe",
+            "action": "Organiser un atelier de cadrage de 45 min avec Karim (DSI SGTM) et Anasse (Directeur Lots Techniques) pour prioriser le perimetre de l'audit flash gouvernance SI/staffing.",
+            "channel": "meeting",
+            "contact": "Karim",
+            "deadline": "M+2 S1",
+            "action_id": "action_month2_1",
+            "expectedOutcome": "Perimetre d'audit flash valide et sponsor identifie cote SGTM"
+          },
+          {
+            "kpi": "Devis signe + date de kickoff fixee",
+            "action": "Proposer a Khalil (SG Liban) et Josiane un audit flash conformite DORA/resilience CBS de 2-3 semaines avec restitution devant le CIO filiale.",
+            "channel": "meeting",
+            "contact": "Khalil",
+            "deadline": "M+2 S2",
+            "action_id": "action_month2_2",
+            "expectedOutcome": "Audit flash DORA lance sur perimetre CBS restreint"
+          },
+          {
+            "kpi": "Statut panel obtenu (accepte/en cours/refuse)",
+            "action": "Envoyer a Meriem et Joel (procurement Maroc/Cote d'Ivoire) le dossier de qualification panel fournisseur (assurances, references, conformite) par email pour securiser le thread achats en parallele des threads metier.",
+            "channel": "email",
+            "contact": "Meriem",
+            "deadline": "M+2 S3",
+            "action_id": "action_month2_3",
+            "expectedOutcome": "Dossier fournisseur deposé et en cours d'instruction achats"
+          },
+          {
+            "kpi": "1 squad pilote demarree (2-3 consultants) + 1 cas d'usage identifie",
+            "action": "Organiser une session de restitution intermediaire avec Yasmine, Hachem et Serine (SG Algerie) pour presenter les premiers resultats du diagnostic MLOps et cadrer la squad pilote.",
+            "channel": "meeting",
+            "contact": "Yasmine",
+            "deadline": "M+3 S1",
+            "action_id": "action_month2_4",
+            "expectedOutcome": "Squad MLOps pilote validee sur un cas d'usage documentaire prioritaire"
+          }
+        ],
+        "objective": "Transformer les threads ouverts en engagements concrets (audit flash signe ou squad pilote demarree) sur au moins 2 BU/filiales en parallele, tout en avancant en tandem le dossier referencement achats, pour atteindre l'objectif 30/60/90 d'un premier consultant place a J60."
+      },
+      {
+        "name": "MOIS 3-6",
+        "title": "Negociation, referencement panel et closing du premier deal pilote",
+        "actions": [
+          {
+            "kpi": "1 proposition commerciale envoyee sous 5 jours suite reunion",
+            "action": "Organiser une reunion de restitution du POC/audit flash avec Karim (DSI SGTM) et Anasse (Directeur Lots Techniques) pour presenter les resultats chiffres et proposer l'extension en squad staffing 3-6 mois.",
+            "channel": "meeting",
+            "contact": "Karim (DSI SGTM)",
+            "deadline": "M+3",
+            "action_id": "action_month3_1",
+            "expectedOutcome": "Validation du perimetre d'extension et accord verbal sur budget squad"
+          },
+          {
+            "kpi": "Statut 'en cours d'evaluation' obtenu dans le panel sous 3 semaines",
+            "action": "Envoyer a Joel (Responsable G.A. Cote d'Ivoire) et Meriem (CTB Maroc) le dossier de qualification fournisseur (references, assurances, conformite ACPR) pour lancer le process de referencement panel achats en parallele du deal operationnel.",
+            "channel": "email",
+            "contact": "Joel / Meriem",
+            "deadline": "M+3 S+2",
+            "action_id": "action_month3_2",
+            "expectedOutcome": "Dossier fournisseur depose et accuse de reception du service achats"
+          },
+          {
+            "kpi": "1 reponse ou intro obtenue sous 10 jours",
+            "action": "Presenter a Pierre Pallier (DG delegue groupe) une synthese executive du pilote reussi (1 filiale) avec proposition d'extension multi-BU, via un one-pager envoye par email puis relance telephonique.",
+            "channel": "email",
+            "contact": "Pierre Pallier",
+            "deadline": "M+4",
+            "action_id": "action_month3_3",
+            "expectedOutcome": "Sponsor C-level identifie pour appuyer l'extension groupe"
+          },
+          {
+            "kpi": "Signature contrat + 1 consultant demarre en mission sous 60-90 jours",
+            "action": "Negocier et faire signer le contrat de mission pilote (staffing ou forfait) avec Khalil (IT Dept Head SG Liban) ou Karim (DSI SGTM), en boucle avec le service achats identifie precedemment.",
+            "channel": "meeting",
+            "contact": "Khalil / Karim",
+            "deadline": "M+6",
+            "action_id": "action_month3_4",
+            "expectedOutcome": "Premier contrat signe sur au moins 1 filiale avec 1-3 consultants places"
+          }
+        ],
+        "objective": "Transformer les audits flash/POC engages en mission signee (staffing ou forfait) sur au moins 1 BU/filiale, tout en securisant le referencement fournisseur formel pour debloquer des deals futurs plus larges."
+      },
+      {
+        "name": "MOIS 6-12",
+        "title": "Expansion multi-BU et referencement panel fournisseurs officiel",
+        "actions": [
+          {
+            "kpi": "1 case study valide + 1 extension de contrat signee",
+            "action": "Organiser une revue de succes (business review) avec Karim pour presenter les KPI de la squad SGTM et obtenir une reference exploitable.",
+            "channel": "meeting",
+            "contact": "Karim (Directeur des Systemes d'Information, SGTM)",
+            "deadline": "M+7",
+            "action_id": "action_month6_12_1",
+            "expectedOutcome": "Reference client signee + extension du perimetre de mission (2e squad ou nouveau lot technique)"
+          },
+          {
+            "kpi": "1 RDV obtenu avec un sponsor groupe/ITIM",
+            "action": "Envoyer a Pierre Pallier une synthese chiffree des resultats obtenus sur les filiales pilotes pour ouvrir la voie a un accord-cadre groupe.",
+            "channel": "email",
+            "contact": "Pierre Pallier (Directeur general delegue, SG groupe)",
+            "deadline": "M+8",
+            "action_id": "action_month6_12_2",
+            "expectedOutcome": "Introduction vers ITIM groupe ou CFO groupe pour lancer le process de referencement panel"
+          },
+          {
+            "kpi": "1 dossier de referencement valide",
+            "action": "Deposer le dossier de qualification fournisseur (panel achats/securite/MSA) aupres du service Achats IT groupe identifie via Joel ou Meriem.",
+            "channel": "email",
+            "contact": "Joel (Responsable G.A., SG Cote d'Ivoire) / Meriem (CTB, SG Maroc)",
+            "deadline": "M+9",
+            "action_id": "action_month6_12_3",
+            "expectedOutcome": "Statut de fournisseur referencie sur au moins une entite groupe, ouvrant la voie a des appels d'offres directs"
+          },
+          {
+            "kpi": "1 nouvelle mission signee ou 1 introduction qualifiee obtenue",
+            "action": "Presenter a Nadia une proposition d'audit flash gouvernance digitale etendu suite au succes du diagnostic initial pour ouvrir un second thread sur Boursorama ou une autre filiale digitale.",
+            "channel": "meeting",
+            "contact": "Nadia (Responsable du Pole Digital, SG Nouvelle-Caledonie)",
+            "deadline": "M+10",
+            "action_id": "action_month6_12_4",
+            "expectedOutcome": "Signature d'une 2e mission ou introduction croisee vers une filiale digitale du groupe (Boursorama, Shine, Treezor)"
+          }
+        ],
+        "objective": "Transformer la mission pilote signee (SGTM/SG Liban/SG Nouvelle-Caledonie) en accord-cadre groupe et dupliquer le succes sur au moins 2 nouvelles entites (ITIM groupe, Boursorama) pour atteindre 3 consultants places d'ici M+12."
+      }
+    ],
+    "strategy": "Adopter une strategie de GRANDE ESN en double entree (sandwich + multi-filiales), sans jamais viser un deal direct au siege groupe en premiere intention. Thread 1 (siege/groupe, legitimation lente) : construire une legitimite via du content-sharing tres soft aupres des administrateurs (Olivier Clement, Diane Robert) sur les themes DORA/gouvernance IT post-reorganisation, et tenter une entree evenementielle indirecte vers Pierre Pallier (DGD) comme sponsor potentiel d'un audit flash gouvernance/staffing agile - sans cold-call direct, car ce niveau ne repond pas a une approche ESN classique. Thread 2 (filiales EMOA, quick wins operationnels) : prioriser les filiales ou l'accessibilite est haute et la chaine de decision courte - SGTM Maroc (Karim, DSI, decideur direct + Nadia + Anasse), SG Liban (Khalil + Josiane, duo decideur/technique sur le CBS T24), SG Nouvelle-Caledonie (Nadia, Responsable Digital, decideur economique unique) - en les attaquant en sandwich local : le decideur IT (N-1) est sponsorise par la preuve terrain remontee par les data scientists/executors (N-2 : Yasmine, Hachem, Serine, Mohamed en Algerie ; Soumahoro, Meledje, Mirabelle en Cote d'Ivoire) qui expriment la douleur concrete (PoC IA bloques, fragmentation data, charge post-reduction d'effectifs). Objectif chiffre 30/60/90 : signer un premier audit flash ou une premiere mission de staffing (1-2 consultants) sur UNE filiale prioritaire (SGTM ou SG Liban) sous 60 jours, pour ensuite s'en servir de reference interne groupe et enclencher le referencement fournisseur formel (thread Achats/Procurement - Meriem au Maroc, Joel en Cote d'Ivoire) en parallele des la semaine 2, condition sine qua non pour tout deal ulterieur au niveau groupe.",
+    "justification": "Le score de priorite modere (6/10) et le commentaire d'ouverture de compte sont sans ambiguite : Societe Generale est un compte CAC40 tres centralise (DSI groupe ITIM, process achats/panel fournisseurs formalise) ou l'accessibilite est faible au sommet (Pallier, administrateurs) malgre une influence tres forte. A l'inverse, les filiales EMOA (SGTM, SG Liban, SG Cote d'Ivoire, SG Algerie, SG Nouvelle-Caledonie) offrent une accessibilite haute avec des decideurs identifies et nommes (Karim DSI SGTM priorite 1, Khalil priorite 2, Nadia priorite 1) et des equipes operationnelles nombreuses exprimant deja la douleur cible (PoC IA non industrialises, fragmentation data, tension RH post-plan social IT, echeance DORA). Attaquer directement le siege sans preuve terrain serait perdant face aux concurrents deja references (Capgemini, Sopra Steria, Accenture) qui dominent le panel groupe. La logique sandwich adaptee ici n'est donc pas verticale au sein d'une meme BU mais transverse : bas (filiales operationnelles accessibles, cycle court) et haut (legitimation groupe lente via contenu et evenementiel) convergent vers un objectif commun - obtenir une premiere reference signee en filiale sous 60-90 jours pour ensuite remonter vers le referencement fournisseur groupe, seule voie credible pour debloquer des volumes significatifs sur ITIM ou les BU digitales (Boursorama, Forge, Treezor) a moyen terme. Cette approche respecte aussi la contrainte grande ESN (8-15 contacts, referencement prealable indispensable) tout en limitant le risque d'un cycle de vente bloque par la lourdeur du process achats central des le depart."
+  },
+  "evaluation": {
+    "risks": [
+      {
+        "risk": "Absence de referencement au panel fournisseurs achats groupe bloquant toute signature meme si l'interet technique est valide",
+        "impact": "critique",
+        "mitigation": "Lancer en parallele des le M1 une demarche de qualification aupres du sourcing/achats IT et prioriser les entrees filiales (SGTM, SG Liban) moins contraintes par le panel groupe France",
+        "probability": "haute"
+      },
+      {
+        "risk": "Cycle de decision tres long et dilue via de multiples strates de gouvernance (comite, administrateurs, DG delegue) sans sponsor operationnel identifie au siege",
+        "impact": "important",
+        "mitigation": "Concentrer l'effort sandwich sur les DSI filiales identifies (Karim SGTM, Khalil SG Liban) plutot que sur le C-level groupe, et utiliser un succes filiale comme preuve pour remonter vers ITIM groupe",
+        "probability": "haute"
+      },
+      {
+        "risk": "Donnees de contact incompletes/douteuses (emails non verifies, doublons administrateurs, profils 'Autre' non qualifies) fragilisant l'execution de la cadence 10 jours",
+        "impact": "modere",
+        "mitigation": "Prioriser une phase de qualification LinkedIn/verification email avant lancement des sequences, et concentrer les premiers efforts sur les contacts a email verifie ou fonction claire (Karim, Khalil, Josiane)",
+        "probability": "moyenne"
+      }
+    ],
+    "goNoGo": "CONDITIONNEL",
+    "globalScore": 5,
+    "justification": "Compte CAC40 a fort potentiel (transformation IA/cloud, tension RH post-plan social, echeance DORA) mais accessibilite faible sans reference etablie ni referencement panel achats confirme ; approche multi-BU/multi-filiale (SGTM, SG Liban, SG CI) offre des points d'entree plus rapides que le siege France pour construire une preuve avant d'attaquer le groupe."
+  },
+  "quick_wins": [
+    {
+      "action": "Envoyer un message LinkedIn felicitant Karim pour son role de DSI a SGTM et mentionnant l'enjeu DORA/gouvernance SI comme accroche (pas de pitch, question d'aiguillage sur sa feuille de route)",
+      "channel": "linkedin",
+      "contact": "Karim - Directeur des Systemes d'Information, SGTM",
+      "time_required": "< 15 minutes",
+      "expected_impact": "Ouvrir un thread decideur P1 chez SGTM, taux de reponse attendu 20-30% (N-1/DSI filiale)"
+    },
+    {
+      "action": "Envoyer un message LinkedIn a Khalil en reference a son role de pilotage du CBS T24 chez SG Liban et l'echeance DORA sur les systemes critiques bancaires",
+      "channel": "linkedin",
+      "contact": "Khalil - Head of IT Business Analysis & CBS Maintenance, Societe Generale de Banque au Liban",
+      "time_required": "< 15 minutes",
+      "expected_impact": "Amorcer un thread operationnel decideur, valider l'interet pour un audit flash DORA/resilience CBS"
+    },
+    {
+      "action": "Envoyer un email court a Yasmine mentionnant la problematique connue des PoC IA/data qui ne passent pas a l'echelle chez SG et proposant un partage de retour d'experience MLOps",
+      "channel": "email",
+      "contact": "Yasmine - Data Scientist, Societe Generale Algerie",
+      "time_required": "< 15 minutes",
+      "expected_impact": "Activer le thread bottom-up N-2 (benchmark reponse 30-40%), remonter la douleur industrialisation PoC vers le sandwich"
+    }
+  ],
+  "_api_metrics": {
+    "token_usage": {
+      "cost_usd": 0.66559005,
+      "input_tokens": 9359,
+      "output_tokens": 15955,
+      "cache_read_input_tokens": 650706,
+      "cache_creation_input_tokens": 54127
+    }
+  },
+  "if_no_response": {
+    "trigger": "Aucune reponse de Karim (DSI SGTM) ou Khalil (Head IT SGBL) apres 3 relances sur 3 semaines (J1/J3/J6/J9 sans retour).",
+    "different_angle": "Basculer du pitch gouvernance/audit flash vers l'angle staffing agile terrain : proposer un push de 2-3 profils testables sur 4-6 semaines pour absorber une charge identifiee, angle plus concret et moins strategique donc plus facile a faire avancer sans comite.",
+    "escalation_option": "Solliciter une introduction chaude via Yasmine (Data Scientist SG Algerie) ou Koffi (Auditeur DORA SG Cote d'Ivoire) pour remonter en interne vers un sponsor operationnel, plutot que de recontacter directement le meme decideur silencieux.",
+    "alternative_contact": {
+      "name": "Nadia",
+      "title": "Responsable du Pole Digital, SG Nouvelle-Caledonie",
+      "reason": "Decideur economique C-level operationnel plus accessible qu'un DSI groupe, en charge direct des budgets digital/data/cyber, moins sollicite que les contacts siege Paris."
+    },
+    "reengagement_pretext": "Utiliser une actualite fraiche du compte (nomination, annonce IA generative documentaire, plan social IT) comme pretexte de relance neutre : \"J'ai vu [actualite] - est-ce que ca change vos priorites sur le sujet dont on parlait ?\""
+  },
+  "contactMessages": [
+    {
+      "persona": "manager",
+      "emailBody": "J'espère que vous allez bien.\n\nJe me penche sur les enjeux de digitalisation des filiales SG dans les DOM-TOM/international, où la disponibilité de compétences tech locales est souvent un point de tension.\n\nSur votre périmètre, est-ce que le manque de ressources qualifiées sur place ralentit certains projets du pôle digital en ce moment ?",
+      "contactName": "Nadia",
+      "phoneOpener": "Bonjour Nadia, j'espère que vous allez bien. Je vous appelle car je m'intéresse à la façon dont les filiales SG comme celle de Nouvelle-Calédonie arrivent à mener leurs projets digitaux avec des équipes locales forcément plus réduites qu'en métropole — c'est un vrai sujet en ce moment ?",
+      "emailSubject": "Pôle Digital SG Nouvelle-Calédonie : ressources locales",
+      "linkedinMessage": "J'espère que vous allez bien. Je m'intéresse à la stratégie de digitalisation de Société Générale Nouvelle-Calédonie, un marché avec des contraintes bien spécifiques par rapport à la maison mère (éloignement, ressources tech locales limitées, dépendance à des partenaires distants). Piloter un pôle digital dans ce contexte doit demander un vrai numéro d'équilibriste entre les priorités du groupe et les réalités locales. Je serais curieux de savoir comment vous gérez la charge de projets digitaux avec une équipe forcément plus restreinte qu'en métropole : est-ce que le sujet ressources/compétences disponibles localement est aujourd'hui un frein sur certains projets en cours ?"
+    },
+    {
+      "persona": "opérationnel",
+      "emailBody": "J'espère que vous allez bien.\n\nJe m'intéresse aux DSI de filiales comme la SGTM, qui doivent souvent jongler entre systèmes historiques et exigences du groupe SG en matière de sécurité/gouvernance.\n\nUne modernisation d'applications legacy est-elle au programme cette année sur votre périmètre ?",
+      "contactName": "Karim",
+      "phoneOpener": "Bonjour Karim, j'espère que vous allez bien. Je vous contacte car je m'intéresse à la manière dont la DSI de la SGTM concilie systèmes existants et standards groupe SG — la modernisation applicative fait-elle partie de vos priorités actuelles ?",
+      "emailSubject": "SI SGTM : legacy vs standards groupe SG",
+      "linkedinMessage": "J'espère que vous allez bien. La SGTM opère dans un secteur (BTP/travaux) où le SI doit souvent composer avec des outils métiers spécifiques et des systèmes hérités, tout en s'alignant sur les standards groupe Société Générale en matière de sécurité et de gouvernance data. Piloter cette DSI dans un groupe bancaire international doit impliquer pas mal d'arbitrages entre autonomie locale et cadre groupe. Une question simple : est-ce que la migration ou la modernisation d'applications legacy fait partie de vos chantiers prioritaires cette année ?"
+    },
+    {
+      "persona": "décideur",
+      "emailBody": "J'espère que vous allez bien.\n\nJe suis la stratégie de Société Générale sur le passage des PoC IA/data à une intégration industrielle dans les métiers, dans un contexte de legacy hérité des fusions (Crédit du Nord notamment).\n\nJe serais curieux d'avoir votre lecture sur la tension entre ambition data-driven et capacité réelle des équipes à absorber ce rythme.\n\nAucune démarche commerciale derrière ce message.",
+      "contactName": "Pierre Pallier",
+      "phoneOpener": "Bonjour Monsieur Pallier, j'espère que vous allez bien. Je me permets de vous appeler simplement par curiosité sur la façon dont Société Générale arbitre entre l'ambition affichée sur l'IA générative et la data, et la capacité réelle des équipes à absorber cette transformation, notamment avec l'héritage Crédit du Nord. Aucune démarche commerciale derrière cet appel.",
+      "emailSubject": "Industrialisation IA/data chez SG : votre arbitrage",
+      "linkedinMessage": "J'espère que vous allez bien. Je suis avec intérêt la trajectoire de Société Générale sur l'industrialisation de l'IA générative et du ML prédictif, après plusieurs années de PoC menés en interne et via les filiales digitales du groupe (Forge, Shine...). Le passage du stade expérimental à l'intégration réelle dans les métiers de banque de détail et de BGC me semble être un exercice délicat, tant les legacy issus des fusions successives (Crédit du Nord notamment) peuvent freiner cette bascule. Je me demandais comment vous arbitrez, à votre niveau, entre l'ambition affichée sur la data-driven bank et la capacité réelle des équipes à absorber ce rythme de transformation.\n\nAucune démarche commerciale derrière ce message."
+    },
+    {
+      "persona": "opérationnel",
+      "emailBody": "J'espère que vous allez bien.\n\nJe m'intéresse à la gestion du CBS T24 chez Société Générale de Banque au Liban, un système souvent gourmand en maintenance évolutive.\n\nSur votre périmètre, la maintenance du T24 représente-t-elle actuellement votre plus grosse charge par rapport aux nouveaux projets ?",
+      "contactName": "Khalil",
+      "phoneOpener": "Bonjour Khalil, j'espère que vous allez bien. Je vous appelle car je m'intéresse à la charge de maintenance du CBS T24 à la SGBL — est-ce que ça représente aujourd'hui l'essentiel du temps de votre équipe par rapport aux nouveaux développements ?",
+      "emailSubject": "T24 CBS SGBL : charge maintenance vs projets",
+      "linkedinMessage": "J'espère que vous allez bien. Le Core Banking System T24 est un socle critique et sa maintenance/évolution chez Société Générale de Banque au Liban doit générer un volume de demandes métier important à absorber en continu, entre corrections, adaptations réglementaires et nouvelles fonctionnalités. Piloter la Business Analysis et la maintenance sur un tel système, avec les contraintes spécifiques du marché libanais, doit demander une organisation bien rodée. Une question simple : la maintenance évolutive du CBS T24 représente-t-elle aujourd'hui votre plus gros poste de charge par rapport aux nouveaux projets ?"
+    },
+    {
+      "persona": "opérationnel",
+      "emailBody": "J'espère que vous allez bien.\n\nJe m'intéresse au volet paiements du CBS T24 chez Société Générale de Banque au Liban, souvent complexe entre normes locales et standards groupe.\n\nL'évolution des canaux de paiement fait-elle partie de vos chantiers T24 prioritaires actuellement ?",
+      "contactName": "Josiane",
+      "phoneOpener": "Bonjour Josiane, j'espère que vous allez bien. Je vous contacte car je m'intéresse au périmètre Payments Channels du T24 à la SGBL — est-ce un chantier particulièrement actif pour votre équipe en ce moment ?",
+      "emailSubject": "Payments Channels T24 chez SGBL",
+      "linkedinMessage": "J'espère que vous allez bien. Sur le volet paiements du CBS T24 chez Société Générale de Banque au Liban, les canaux de paiement doivent être un point sensible, entre exigences réglementaires locales et standards groupe SG. Piloter la business analysis sur ce périmètre, en tant que Head of Unit, doit impliquer beaucoup d'allers-retours entre besoins métier et contraintes techniques du T24. Une question simple : l'évolution des canaux de paiement fait-elle partie de vos chantiers T24 les plus actifs en ce moment ?"
+    },
+    {
+      "persona": "opérationnel",
+      "emailBody": "J'espère que vous allez bien.\n\nJe m'intéresse à l'usage de la data science au sein de l'audit interne de Société Générale Côte d'Ivoire, un cas d'usage assez spécifique.\n\nVos modèles d'analyse pour les missions d'audit sont-ils développés en interne ou basés sur des outils groupe adaptés localement ?",
+      "contactName": "Koffi",
+      "phoneOpener": "Bonjour Koffi, j'espère que vous allez bien. Je vous appelle car votre rôle d'auditeur Data Scientist à l'Inspection Générale de SG Côte d'Ivoire m'intrigue — vos modèles data pour l'audit sont-ils développés en interne ou issus d'outils groupe adaptés localement ?",
+      "emailSubject": "Data Science appliquée à l'audit interne SGCI",
+      "linkedinMessage": "J'espère que vous allez bien. Le rôle d'auditeur Data Scientist au sein de l'Inspection Générale de l'Audit Interne de Société Générale Côte d'Ivoire est assez singulier : appliquer des méthodes data/ML à des missions d'audit interne dans un contexte bancaire africain doit demander un vrai travail d'adaptation des modèles aux données locales disponibles. Je suis curieux de la maturité de ces sujets sur votre périmètre. Une question simple : les modèles data que vous utilisez pour vos missions d'audit sont-ils aujourd'hui développés en interne ou reposent-ils sur des outils/modèles du groupe adaptés localement ?"
+    }
+  ],
+  "offersToPropose": [
+    {
+      "pitch": "Cartographier en 4 semaines les zones de risque applicatif et les dependances fournisseurs pour securiser la feuille de route du nouveau Group CIO, avec plan d'action priorise a S+6.",
+      "title": "Audit flash gouvernance SI post-nomination Group CIO",
+      "estimatedTJM": "900-1100 EUR (hypothese, a valider)",
+      "painAddressed": "Reorganisation recente de la gouvernance IT groupe creant une fenetre d'opportunite pour un audit de rassurance",
+      "targetContact": "Pierre Pallier (DGD) en sponsor, relai operationnel ITIM a identifier",
+      "differentiator": "Livrable actionnable en 6 semaines vs approche staffing volumetrique classique des concurrents (Capgemini, Accenture)",
+      "estimatedDuration": "4 semaines",
+      "estimatedTeamSize": "2-3 consultants seniors"
+    },
+    {
+      "pitch": "Transformer un PoC IA generative documentaire existant en service production en 6 semaines, avec objectif de diviser par 3 le temps de traitement documentaire.",
+      "title": "Squad MLOps industrialisation PoC IA generative",
+      "estimatedTJM": "800-1000 EUR (hypothese, a valider)",
+      "painAddressed": "PoC IA/data qui ne passent pas a l'echelle industrielle",
+      "targetContact": "Yasmine / Hachem / Serine / Mohamed (Data Scientists SG Algerie) via coalition, remonte vers Head of IT filiale",
+      "differentiator": "Reference chiffree sur cas similaire (banque europeenne, PoC bloque 18 mois -> prod en 8 semaines)",
+      "estimatedDuration": "6 a 8 semaines",
+      "estimatedTeamSize": "3 consultants (ML engineer, data engineer, DevOps)"
+    },
+    {
+      "pitch": "Livrer en 6 semaines un plan de remediation DORA priorise sur les applications critiques d'une BU/filiale, avant les prochains controles ACPR.",
+      "title": "Mission flash conformite DORA sur perimetre applicatif critique",
+      "estimatedTJM": "950-1150 EUR (hypothese, a valider)",
+      "painAddressed": "Risque reglementaire et cyber accru par la digitalisation des canaux et l'echeance DORA",
+      "targetContact": "Koffi (Auditeur Data Scientist, Inspection Generale SG CI) ; Khalil (Head of IT, SG Liban) pour perimetre CBS",
+      "differentiator": "Approche diagnostic co-construite avec l'audit interne (Koffi) plutot qu'imposee, facilite l'adoption",
+      "estimatedDuration": "6 semaines",
+      "estimatedTeamSize": "2-3 consultants (RSSI/auditeur, architecte applicatif)"
+    },
+    {
+      "pitch": "Fournir sous 4 semaines une squad de 3-5 consultants operationnels immediatement sur un projet en tension, sans rupture de sprint, testable sur mission courte avant extension.",
+      "title": "Squad staffing agile post-plan social IT",
+      "estimatedTJM": "750-950 EUR (hypothese, a valider)",
+      "painAddressed": "Tension ressources IT internes suite aux plans de reduction d'effectifs couplee a une ambition digitale accrue",
+      "targetContact": "Pierre Pallier (sponsor budgetaire) ; Karim (DSI SGTM) ; Nadia (Responsable Pole Digital SG Nouvelle-Caledonie)",
+      "differentiator": "Engagement de continuite de service garanti, sans substitution des equipes internes, positionnement complementaire vs panel existant",
+      "estimatedDuration": "4-6 semaines test, extension possible 6-12 mois",
+      "estimatedTeamSize": "3-5 consultants (profils Java/Cloud senior, chef de projet)"
+    }
+  ],
+  "competitiveStrategy": {
+    "vsCompetitors": [
+      {
+        "competitor": "Capgemini / Sogeti",
+        "talkingPoint": "Vous n'avez pas besoin d'un programme de transformation de 18 mois pour industrialiser un PoC IA générative documentaire : notre squad MLOps livre un cas d'usage en production en 6-8 semaines.",
+        "differentiator": "Plus agile et rapide sur des missions courtes et ciblées (audit flash 2-4 sem.) là où Capgemini mobilise des dispositifs lourds et coûteux, difficiles à activer pour un besoin urgent et localisé."
+      },
+      {
+        "competitor": "Sopra Steria",
+        "talkingPoint": "Pendant que vos partenaires historiques sécurisent le legacy, nous embarquons vos équipes data sur l'industrialisation des PoC IA et la conformité DORA, sans redondance de périmètre.",
+        "differentiator": "Positionnement complémentaire sur l'innovation (IA, MLOps) et non concurrentiel frontal sur le legacy/infra où Sopra est historiquement fort, ce qui facilite une entrée en coexistence plutôt qu'en substitution."
+      },
+      {
+        "competitor": "Accenture",
+        "talkingPoint": "Un diagnostic actionnable en 3-4 semaines à fraction du coût d'un cadrage stratégique Accenture, avec un livrable concret pour le comité de risques ou le nouveau Group CIO.",
+        "differentiator": "Coût et flexibilité : offre calibrée sur des missions courtes et mesurables (audit flash, squad pilote) plutôt que sur des dispositifs stratégiques onéreux et longs à déclencher."
+      },
+      {
+        "competitor": "Inetum / Logica",
+        "talkingPoint": "Au-delà du renfort de capacité, nous apportons une expertise pointue sur l'industrialisation IA et la remédiation DORA, pas seulement des CV en régie.",
+        "differentiator": "Valeur ajoutée sur l'expertise IA générative/MLOps et la conformité DORA, au-delà du simple staffing volumétrique où Inetum est traditionnellement positionné."
+      }
+    ],
+    "positioningStatement": "Face aux généralistes déjà référencés chez SG, se positionner non pas comme un 5e prestataire volumétrique mais comme un accélérateur ciblé : audits flash (2-4 semaines) et squads pilotes mesurables sur les angles IA générative, DORA et staffing agile post-plan social, pour construire la preuve avant le référencement panel officiel."
+  },
+  "prioritySubAccounts": []
+}

@@ -1,0 +1,16 @@
+lot: fix-zoho-multi-dc-4380
+issues: [4380]
+
+changelog:
+  id: 2026-11-01-fix-zoho-multi-dc-4380
+  comment: 'Zoho Multi-DC (#4380.2) : api_domain en liste blanche par région'
+  fr:
+    date: 1 novembre 2026
+    title: 'Zoho : connexion fiabilisée hors du centre de données par défaut'
+    items:
+      - 'La connexion Zoho utilise le centre de données de ton organisation (Europe, États-Unis, Inde, Australie, Japon…) pour l’échange, les appels et le rafraîchissement ; un domaine inconnu est refusé.'
+  en:
+    date: November 1, 2026
+    title: 'Zoho: more reliable connection outside the default data centre'
+    items:
+      - 'The Zoho connection uses your organisation’s data centre (Europe, US, India, Australia, Japan…) for the exchange, API calls and token refresh; an unknown domain is refused.'

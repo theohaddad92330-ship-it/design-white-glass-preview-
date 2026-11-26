@@ -1,0 +1,140 @@
+{
+  "common": {
+    "loading": "Loading…",
+    "cancel": "Cancel"
+  },
+  "playbooks": {
+    "title": "Automatic follow-ups",
+    "intro": "The only automations that reach a client without you clicking. Nothing goes out until you arm it.",
+    "guardrails": "Guardrails, always on: a reply stops everything for good · one follow-up per target, never an escalation · opt-out checked on every send · Monday to Friday only, between {{start}}:00 and {{end}}:00 · at most {{cap}} sends a day for the whole workspace.",
+    "on": "Armed",
+    "off": "Off",
+    "arm": "Arm",
+    "stop": "Turn off",
+    "silenceLabel": "Days of silence before following up",
+    "silenceUnit": "days of silence",
+    "silenceInvalid": "Between 1 and 90 days.",
+    "loadError": "Could not read the follow-up settings. Nothing was changed.",
+    "keys": {
+      "submission_no_reply": {
+        "title": "CV sent, no reply",
+        "description": "Follows up once when a submitted profile gets no answer."
+      },
+      "mission_renewal": {
+        "title": "Mission coming to an end",
+        "description": "Follows up once when a mission ends and no renewal is open."
+      },
+      "proposal_no_reply": {
+        "title": "Proposal with no reply",
+        "description": "Follows up once when a commercial proposal gets no answer."
+      }
+    },
+    "toast": {
+      "armed": "Follow-up armed. It will go out during working hours, once per target.",
+      "stopped": "Follow-up turned off. No more automatic sends for this rule.",
+      "error": "Nothing was changed."
+    },
+    "dryRun": {
+      "show": "Simulate",
+      "hide": "Hide simulation",
+      "summary": "{{count}} follow-up(s) would go out now, out of {{total}} target(s) examined.",
+      "noSend": "Simulation: nothing is sent, nothing is recorded.",
+      "empty": "No target to examine for this playbook.",
+      "would": "Would send",
+      "noRecipient": "No address",
+      "error": "Simulation unavailable — we cannot conclude that nothing would go out.",
+      "reasons": {
+        "not_enabled": "Not armed",
+        "replied": "Replied",
+        "already_sent": "Already followed up",
+        "opted_out": "Opted out",
+        "quiet_hours": "Outside sending hours",
+        "daily_cap": "Daily cap reached",
+        "not_silent_enough": "Silence too short",
+        "no_recipient": "No address",
+        "null": "—"
+      }
+    }
+  },
+  "interventions": {
+    "title": "Needs a decision",
+    "intro": "What the product cannot decide on its own and is waiting on a person.",
+    "empty": "Nothing needs your arbitration right now.",
+    "loadError": "Could not read the queue. This is not \"nothing to handle\".",
+    "noOwner": "Nobody owns this",
+    "acknowledge": "I'll take it",
+    "resolve": "Done",
+    "states": {
+      "open": "To handle",
+      "acknowledged": "In progress",
+      "resolved": "Done",
+      "stale": "Stale"
+    },
+    "kinds": {
+      "submission_stalled": "Submitted profile with no feedback",
+      "renewal_at_risk": "Renewal at risk",
+      "invoicing_blocked": "Invoicing blocked",
+      "account_untouched": "Tracked account nobody has touched",
+      "rep_inactive": "Sales rep with no activity",
+      "credits_exhausted": "Sustained usage",
+      "account_no_next_action": "Account with no next action",
+      "project_no_decision": "Project with no decision",
+      "need_without_shortlist": "Need without a shortlist",
+      "timesheet_missing": "Missing timesheet",
+      "payment_overdue": "Payment overdue",
+      "mission_without_end_date": "Assignment with no end date",
+      "staffing_collision": "Team collision"
+    },
+    "showAll": "Show {{count}} more",
+    "showAll_other": "Show {{count}} more",
+    "reasonPrompt": "Say what was done. An item closed without a reason cannot be read back three weeks later.",
+    "reasonPlaceholder": "Invoiced on 20/08, follow-up sent…",
+    "confirmResolve": "Close",
+    "open": "Open",
+    "openAria": "{{label}} — open the record concerned",
+    "assignAria": "{{label}} — assign to a team member",
+    "openedFor": "opened {{age}}",
+    "consequences": {
+      "submission_stalled": "Without a follow-up, the profile drops off the client shortlist and the seat is taken.",
+      "renewal_at_risk": "Without a decision, the mission stops at its term and the consultant goes back on the bench.",
+      "invoicing_blocked": "While the blocker stands, the month is not invoiced and cash-in slips by as much.",
+      "account_untouched": "Without renewed contact, the account goes cold and everything has to be reopened.",
+      "rep_inactive": "Without a check-in, their portfolio moves on with nobody knowing.",
+      "credits_exhausted": "Allowance reached: analyses and enrichments are blocked for your whole workspace.",
+      "account_no_next_action": "With no next action set, nobody will pick this account up — it surfaces in no queue.",
+      "project_no_decision": "While the need stays still, it takes up a slot in the pipeline without contributing to it.",
+      "need_without_shortlist": "With no profile submitted, the client will decide on other firms’ proposals.",
+      "timesheet_missing": "Without a signed timesheet, the month cannot be invoiced, whatever work was actually done.",
+      "payment_overdue": "Every extra day late lowers the odds of collecting without formal proceedings.",
+      "mission_without_end_date": "With no end date, the mission counts in neither the forecast nor the capacity figure.",
+      "staffing_collision": "Until someone decides, both needs are counting on the same consultant — one of the two clients will be let down."
+    },
+    "causes": {
+      "submission_stalled": "A profile was submitted to the client and has had no reply for too long.",
+      "renewal_at_risk": "No renewal has been opened before the mission's end date.",
+      "invoicing_blocked": "A worked month has not yet been cleared for invoicing.",
+      "account_untouched": "No action has been logged on this account for too long.",
+      "rep_inactive": "The rep has not validated any action for too long.",
+      "credits_exhausted": "The workspace has used the product heavily this month.",
+      "account_no_next_action": "No next action has been planned on this tracked account.",
+      "project_no_decision": "The need has not moved for longer than its stage's typical duration.",
+      "need_without_shortlist": "No profile has been submitted on this open need for too long.",
+      "timesheet_missing": "The expected timesheet still has not arrived despite the reminders sent.",
+      "payment_overdue": "The invoice's payment due date has passed with no cash-in.",
+      "mission_without_end_date": "The mission has never been given an end date.",
+      "staffing_collision": "The same consultant is submitted, open, on two distinct needs."
+    }
+  },
+  "approvals": {
+    "sent": "Follow-up sent.",
+    "rejected": "Follow-up cancelled. It will not be offered again.",
+    "failed": "The follow-up did not go out."
+  },
+  "summary": {
+    "title": "Automations",
+    "manage": "Manage",
+    "counts": "{{armed}} armed · {{idle}} not armed",
+    "hint": "What goes out on its own. The settings — silence delay, dry run, arming — live in Settings › Routines.",
+    "unreadable": "Automation status could not be read. This is not \"none armed\": go and check before concluding."
+  }
+}

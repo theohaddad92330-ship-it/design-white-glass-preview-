@@ -1,0 +1,150 @@
+{
+  "route": {
+    "title": "Cessions",
+    "description": "Les créances cédées à ton factor, leur encours et le rapprochement de ses règlements."
+  },
+  "title": "Cessions",
+  "banner": "Une cession porte sur une créance déjà facturée. {{brand}} prépare le dossier et rapproche ce que le factor a versé : la transmission au factor reste ton geste.",
+  "financeHidden": "Les montants par cession ne sont pas affichés : ton rôle ne donne pas accès aux données financières détaillées. Les nombres, les statuts et les totaux de l'entête, eux, restent lisibles.",
+  "loadError": "Les cessions n'ont pas pu être lues. Réessaie dans un instant.",
+  "tiles": {
+    "outstanding": "Encours cédé",
+    "awaiting": "En attente de règlement",
+    "missing": "Cession manquante",
+    "variance": "Écart de réconciliation",
+    "assignmentCount_one": "{{count}} cession",
+    "assignmentCount_other": "{{count}} cessions",
+    "receivableCount_one": "{{count}} créance",
+    "receivableCount_other": "{{count}} créances",
+    "withoutAmount_one": "{{count}} sans montant",
+    "withoutAmount_other": "{{count}} sans montant",
+    "unmeasurable_one": "{{count}} cession non rapprochable",
+    "unmeasurable_other": "{{count}} cessions non rapprochables",
+    "noAmount": "Non mesuré",
+    "noVariance": "Aucun écart mesurable",
+    "limitShare": "sur un plafond de {{value}}",
+    "overLimit": "Dépassement de {{value}} par rapport au plafond"
+  },
+  "contracts": {
+    "title": "Contrats d'affacturage",
+    "empty": "Aucun contrat d'affacturage. Ajoute celui de ton factor pour pouvoir céder une créance.",
+    "add": "Ajouter un contrat",
+    "factorName": "Nom du factor",
+    "factorNamePlaceholder": "Le nom qui figure sur ton contrat",
+    "reference": "Référence du contrat",
+    "referencePlaceholder": "La référence chez le factor",
+    "rate": "Taux de commission",
+    "ratePlaceholder": "2,5",
+    "rateUnit": "%",
+    "limit": "Plafond d'encours",
+    "limitPlaceholder": "500000",
+    "limitUnit": "€",
+    "noRate": "Taux non renseigné",
+    "noLimit": "Plafond non renseigné",
+    "noReference": "Référence non renseignée",
+    "save": "Enregistrer le contrat",
+    "cancel": "Annuler",
+    "bankNote": "Aucune coordonnée bancaire n'est demandée ni conservée : le virement du factor arrive sur ton compte, il ne passe pas par ici.",
+    "status": {
+      "active": "En cours",
+      "suspended": "Suspendu",
+      "ended": "Terminé"
+    }
+  },
+  "assignments": {
+    "title": "Cessions",
+    "empty": "Aucune cession pour l'instant.",
+    "emptyWhy": "Une cession se prépare depuis une créance facturée et non encaissée, dans la liste ci-dessous.",
+    "columns": {
+      "account": "Client",
+      "mission": "Mission",
+      "month": "Mois",
+      "factor": "Factor",
+      "amount": "Montant cédé",
+      "rate": "Taux",
+      "status": "Statut",
+      "reconciliation": "Rapprochement",
+      "variance": "Écart",
+      "actions": "Actions"
+    },
+    "unknownAccount": "Aucun client rattaché à cette mission",
+    "unknownMission": "Cette mission n'a pas de libellé",
+    "noAmount": "Montant cédé non renseigné",
+    "noRate": "Aucun taux sur cette cession ni sur son contrat",
+    "derogatedRate": "Taux négocié sur cette créance",
+    "rowMenu": "Actions sur cette cession",
+    "markAssigned": "Marquer transmise au factor",
+    "markSettled": "Marquer réglée",
+    "reject": "Le factor a refusé cette créance",
+    "recall": "Le factor a repris cette créance",
+    "status": {
+      "prepared": "Préparée",
+      "assigned": "Transmise",
+      "settled": "Réglée",
+      "rejected": "Refusée",
+      "recalled": "Reprise"
+    },
+    "reconciliation": {
+      "not_due": "Rien attendu",
+      "unmeasurable": "Non rapprochable",
+      "awaiting": "En attente",
+      "matched": "Compte juste",
+      "short": "Versement insuffisant",
+      "over": "Versement excédentaire"
+    },
+    "expected": "Net attendu : {{value}}",
+    "settled": "Reçu : {{value}}",
+    "closeTitle": "Pourquoi le factor rend-il cette créance ?",
+    "closeHint": "Écris ce que le factor t'a répondu. Sans ce motif, personne ne saura dans six mois pourquoi cette créance est restée à ta charge.",
+    "closePlaceholder": "Encours client saturé, litige en cours…",
+    "closeConfirm": "Enregistrer",
+    "closeAbort": "Annuler"
+  },
+  "missing": {
+    "title": "Cession manquante",
+    "hint": "Des créances facturées et non encaissées qu'aucune cession ne couvre. Toutes n'ont pas vocation à être cédées : c'est un écart à regarder, pas une faute.",
+    "empty": "Aucune créance facturée sans cession.",
+    "columns": {
+      "account": "Client",
+      "mission": "Mission",
+      "month": "Mois",
+      "amount": "Montant facturé",
+      "dueOn": "Échéance",
+      "actions": "Actions"
+    },
+    "noAmount": "Montant facturé non renseigné",
+    "noDueDate": "Échéance non renseignée",
+    "prepare": "Préparer la cession",
+    "prepareTitle": "Préparer la cession de {{month}}",
+    "prepareHint": "Le dossier est préparé ici ; la transmission au factor reste ton geste.",
+    "chooseContract": "Contrat d'affacturage",
+    "amountLabel": "Montant cédé",
+    "amountHint": "Laisse vide si tu ne le connais pas encore : l'écran le dira plutôt que d'afficher zéro.",
+    "prepareConfirm": "Préparer",
+    "prepareAbort": "Annuler"
+  },
+  "settlements": {
+    "title": "Règlements à rapprocher",
+    "hint": "Des versements du factor qu'aucune cession ne solde encore.",
+    "empty": "Tous les règlements reçus sont rapprochés.",
+    "columns": {
+      "receivedOn": "Reçu le",
+      "amount": "Montant",
+      "reference": "Référence",
+      "actions": "Actions"
+    },
+    "noReference": "Référence non renseignée",
+    "reconcile": "Rapprocher",
+    "reconcileMenu": "Rapprocher ce règlement d'une cession",
+    "noCandidate": "Aucune cession transmise à rapprocher"
+  },
+  "toast": {
+    "contractSaved": "Contrat d'affacturage enregistré.",
+    "prepared": "Cession préparée. Transmets-la à ton factor, puis reviens la marquer transmise.",
+    "assigned": "Cession marquée transmise.",
+    "settled": "Cession marquée réglée.",
+    "closed": "Décision du factor enregistrée.",
+    "reconciled": "Règlement rapproché.",
+    "error": "L'enregistrement a échoué."
+  }
+}

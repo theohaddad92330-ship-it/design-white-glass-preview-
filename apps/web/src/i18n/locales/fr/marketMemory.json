@@ -1,0 +1,57 @@
+{
+  "coverage": {
+    "title": "Couverture des observations du marché",
+    "intro": "Ce que les observations du marché disent de tes comptes — et sur combien d'entre eux elles disent quelque chose.",
+    "meaning": "Ce taux mesure ce que NOUS savons de tes comptes. Il ne dit rien de ce qu'ils font, ni de leurs pratiques d'achat.",
+    "headline_one": "{{covered}} compte sur {{total}} dispose d'un contexte d'observations du marché exploitable.",
+    "headline_other": "{{covered}} comptes sur {{total}} disposent d'un contexte d'observations du marché exploitable.",
+    "population": "comptes du portefeuille",
+    "tiles": {
+      "covered": "Comptes couverts",
+      "coveredSays": "assez de parcours observés pour en dire quelque chose",
+      "insufficient": "Observations insuffisantes",
+      "insufficientSays": "l'entreprise est dans le corpus, mais pas assez de parcours",
+      "ambiguous": "Résolutions ambiguës",
+      "ambiguousSays": "plusieurs entreprises répondent, aucune ne tranche",
+      "unresolved": "Comptes non résolus",
+      "unresolvedSays": "le corpus ne connaît pas cette entreprise",
+      "homonyms": "Homonymies signalées",
+      "homonymsSays": "deux entreprises portent le même nom"
+    },
+    "unavailable": "Les observations du marché n'ont pas pu être lues. Aucun compteur n'est affiché : un zéro se lirait comme une mesure.",
+    "empty": "Ton portefeuille ne contient encore aucun compte : il n'y a rien à rapprocher du corpus."
+  },
+  "review": {
+    "title": "À départager",
+    "intro": "Plusieurs entreprises du corpus répondent pour ces comptes. Tant qu'aucune ne tranche, aucune mémoire ne s'affiche sur eux — une mauvaise jointure est pire qu'une absence.",
+    "reason": {
+      "ambiguous_name_one": "Homonymie — {{count}} entreprise porte ce nom",
+      "ambiguous_name_other": "Homonymie — {{count}} entreprises portent ce nom",
+      "ambiguous_domain_one": "{{count}} entreprise partage ce domaine",
+      "ambiguous_domain_other": "{{count}} entreprises partagent ce domaine"
+    },
+    "empty": "Aucun compte à départager.",
+    "truncated": "Les {{shown}} arbitrages les plus lourds ; {{total}} au total.",
+    "decide": {
+      "open": "Départager",
+      "close": "Fermer",
+      "question": "Laquelle de ces entreprises est {{account}} ?",
+      "dismiss": "Aucune de ces entreprises",
+      "noteLabel": "Ce qui t'a fait trancher (facultatif)",
+      "notePlaceholder": "Ce qui t'a fait trancher (facultatif)",
+      "confirmed": "Rapprochement enregistré. Ce compte sort de la file.",
+      "dismissed": "Écarté. Ce compte sort de la file, et rien n'est affirmé sur lui.",
+      "failed": "La décision n'a pas pu être enregistrée. Rien n'a changé."
+    }
+  },
+  "fit": {
+    "title": "Fit structurel de ton portefeuille",
+    "headline_one": "{{count}} compte couvert dont la pile observée recoupe une de tes expertises déclarées.",
+    "headline_other": "{{count}} comptes couverts dont la pile observée recoupe une de tes expertises déclarées.",
+    "criterion": "Recoupé avec : {{expertises}}",
+    "noGrade": "Pas de gradation, et pas de score : dire « forte affinité » demanderait de comparer chaque compte à des entreprises de taille et de secteur voisins, ce qu'on ne sait pas encore faire. Un grand groupe cite mécaniquement plus de technologies qu'une PME.",
+    "undeclared": "Renseigne tes expertises dans ton profil pour lire cette section — sans critère, un nombre ne voudrait rien dire.",
+    "excluded_one": "{{count}} compte sans observation du marché",
+    "excluded_other": "{{count}} comptes sans observation du marché"
+  }
+}

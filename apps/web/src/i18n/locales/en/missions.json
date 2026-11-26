@@ -1,0 +1,3157 @@
+{
+  "page": {
+    "title": "Missions",
+    "subtitle": "What is running today, and what is coming up for renewal. Sorted by urgency, not by creation date.",
+    "introTitle": "Your missions, {{firstName}}.",
+    "introTitleWithoutName": "Your missions.",
+    "introSubtitle": "Secure the starts, deadlines and renewals before they become urgent.",
+    "newMission": "New mission"
+  },
+  "filtersSection": {
+    "title": "Filters",
+    "more": "More filters"
+  },
+  "unknownAccount": "Unknown account",
+  "endsOn": "Planned end {{date}}",
+  "noEndDate": "No end date — no renewal window can trigger on it.",
+  "status": {
+    "onboarding": "Onboarding",
+    "active": "Running",
+    "paused": "Paused",
+    "ended": "Ended",
+    "terminated": "Terminated",
+    "renewed": "Renewed",
+    "draft": "Draft",
+    "ready_to_start": "Ready to start",
+    "at_risk": "At risk",
+    "renewal_pending": "Renewal pending",
+    "ending": "Ending",
+    "completed": "Completed",
+    "cancelled": "Cancelled",
+    "archived": "Archived"
+  },
+  "renewal": {
+    "far": "Far off",
+    "j60": "D-60",
+    "j45": "D-45",
+    "j30": "D-30",
+    "j15": "D-15",
+    "withinDays": "D-{{count}}",
+    "imminent": "Imminent",
+    "overdue": "Overdue",
+    "unknown": "No end date"
+  },
+  "staffing": {
+    "title": "Who is on it",
+    "empty": "Nobody assigned. Bench availability is derived from assignments: without them it stays whatever the record declares.",
+    "unknownTalent": "Unknown talent",
+    "until": "until {{date}}",
+    "openEnded": "no known end",
+    "loadError": "Assignments could not be loaded.",
+    "assignmentStatus": {
+      "planned": "Planned",
+      "confirmed": "Confirmed",
+      "active": "Active",
+      "absent": "Absent",
+      "paused": "Paused",
+      "ending": "Ending",
+      "extended": "Extended",
+      "completed": "Completed",
+      "terminated": "Terminated",
+      "replaced": "Replaced"
+    },
+    "loadPercentLabel": "Load rate (%)",
+    "startsOnLabel": "Assignment start",
+    "endsOnLabel": "Assignment end",
+    "consent": "Consent",
+    "consentGiven": "given on {{date}}",
+    "consentDeclined": "declined on {{date}}",
+    "consentUnknown": "not provided",
+    "documentsExpected": "Expected documents",
+    "documentsReceived": "Received documents",
+    "documentsUnknown": "not provided",
+    "risks": "Declared risks",
+    "risksUnknown": "not declared"
+  },
+  "finance": {
+    "title": "Commercial terms",
+    "noAccess": "Margin and loaded cost are outside your scope. This is not missing data: it is a right your role does not hold.",
+    "notMeasured": "Margin not measured: the loaded cost is not set. No formula guesses it — it depends on status, collective agreement and your own policy.",
+    "margin": "{{percent}} % margin",
+    "marginAmount": "{{value}} € per day",
+    "marginNote": "before expenses",
+    "marginWithExpenses": "{{percent}} % net margin",
+    "marginWithExpensesAmount": "{{value}} € per day, expenses and supplier invoices amortised in",
+    "expensesUnamortized": "{{value}} € of expenses and supplier invoices entered, not yet reflected in the margin: the mission has no known start date.",
+    "costLabel": "Loaded daily cost",
+    "costPlaceholder": "in euros",
+    "costHint": "Entered by hand, deliberately. An average cost applied to everyone would produce a false margin — more dangerous than no margin at all.",
+    "save": "Save",
+    "loadError": "Terms could not be loaded.",
+    "channelLabel": "Mission channel",
+    "channelHint": "Direct, through an intermediary, or our consultants lent out.",
+    "quickLinks": {
+      "cra": "View timesheets",
+      "billing": "View billing",
+      "payments": "View payments"
+    },
+    "noticeDaysLabel": "Notice period (days)",
+    "noticeDaysPlaceholder": "in days",
+    "noticeDaysSave": "Save the notice period",
+    "noticeDaysHint": "The notice period to give before ending the mission.",
+    "requiresPoLabel": "Purchase order required",
+    "requiresPoHint": "The client will not pay an invoice without a purchase order. Once ticked, the month stays blocked for invoicing until the number is entered.",
+    "commissionLabel": "Intermediary commission (€ per day)",
+    "commissionPlaceholder": "in euros",
+    "commissionHint": "The share the intermediary takes, per day worked. Left empty it is UNKNOWN, and so is the mission’s real cost — an intermediary does not work for free. Zero is an answer: a partner who takes nothing does exist.",
+    "commissionSave": "Save commission",
+    "commissionStale": "An intermediary commission of €{{value}} per day is still recorded on this mission, which did not go through an intermediary. It counts towards its real cost.",
+    "commissionClear": "Clear commission",
+    "engine": {
+      "title": "Mission margin",
+      "confidence": {
+        "measured": "Measured",
+        "partial": "Partial",
+        "not_measured": "Not measured"
+      },
+      "levels": {
+        "commercial": "Commercial margin",
+        "gross": "Gross margin",
+        "contribution": "Contribution (after internal allocations)",
+        "atCompletion": "At completion (estimate)"
+      },
+      "amountPerDay": "{{value}} per day",
+      "amountTotal": "{{value}} on the contract",
+      "basis": "Measured on: {{list}}.",
+      "deductions": "Deducted for the gross margin: {{list}}.",
+      "validatedDays_one": "{{count}} validated day",
+      "validatedDays_other": "{{count}} validated days",
+      "period_one": "{{month}}: {{value}} commercial margin over {{count}} validated day.",
+      "period_other": "{{month}}: {{value}} commercial margin over {{count}} validated days.",
+      "periodNotMeasured": "{{month}}: no timesheet counted, the period margin is not measured.",
+      "excludes": "Does not include: {{list}}.",
+      "assumes": "Assumptions: {{list}}.",
+      "lacks": "Missing: {{list}}.",
+      "formula": "Formula {{version}} · cost source: {{source}} · currency: {{currency}}",
+      "revenues": {
+        "daily_rate": "Client day rate",
+        "partner_sale_price": "Sale price to the partner",
+        "fixed_price_amount": "Fixed-price amount"
+      },
+      "costs": {
+        "loaded_daily_cost": "Entered loaded cost",
+        "supplier_daily_rate": "Supplier day rate",
+        "supplier_commission": "Supplier commission",
+        "supplier_taxes": "Taxes",
+        "standard_daily_cost": "Validated standard cost",
+        "period_cost": "Spread period cost",
+        "hourly_cost": "Hourly cost × hours",
+        "partner_purchase_price": "Purchase price from the partner",
+        "partner_fee": "Partner fee",
+        "partner_split": "Partner share",
+        "amortized_expenses": "Amortised expenses",
+        "amortized_supplier_invoices": "Amortised supplier invoices",
+        "specific_costs": "Specific costs",
+        "other_validated_costs": "Other validated costs",
+        "internal_allocations": "Internal allocations",
+        "team_time": "Team time",
+        "subcontracting": "Subcontracting",
+        "mission_expenses": "Expenses",
+        "supplier_invoices": "Supplier invoices"
+      },
+      "exclusions": {
+        "payment_delays": "payment delays",
+        "invoicing_status": "invoicing status",
+        "internal_allocations": "internal allocations",
+        "expenses_not_amortizable": "entered expenses (the assignment has no start date)",
+        "supplier_invoices_covered_by_supplier_rate": "supplier invoices (already covered by the supplier day rate)",
+        "supplier_taxes": "supplier taxes (not entered)",
+        "unvalidated_days": "days not yet validated"
+      },
+      "assumptions": {
+        "standard_cost_is_an_estimate": "the validated standard cost is an estimate",
+        "period_cost_spread_over_worked_days": "the period cost is spread over the days worked",
+        "hourly_cost_times_hours_per_day": "the hourly cost is multiplied by hours per day",
+        "expenses_amortized_over_elapsed_days": "expenses are amortised over elapsed days",
+        "expenses_counted_as_not_rebilled": "expenses are counted as not re-invoiced",
+        "at_completion_uses_remaining_work_estimate": "the projection relies on the estimated remaining work",
+        "currency_not_specified_eur_by_default": "currency not entered, read as euros",
+        "scenario_simulation": "simulation"
+      },
+      "missing": {
+        "revenue": "the revenue",
+        "direct_cost": "the direct cost",
+        "exchange_rate": "an exchange rate (the cost is in another currency)",
+        "supplier_commission": "the supplier commission",
+        "partner_terms": "the partner terms (fee or share)",
+        "fixed_price_subcontracting": "the fixed-price subcontracting cost",
+        "expenses_start_date": "the start date, to amortise expenses"
+      },
+      "sources": {
+        "unspecified": "not declared",
+        "freelance": "freelancer",
+        "employee": "employee",
+        "partner": "partner",
+        "fixed_price": "fixed price"
+      },
+      "alerts": {
+        "below_threshold": "Commercial margin below threshold: {{percent}} against a {{threshold}} threshold.",
+        "cost_missing": "The direct cost is not entered: the margin cannot be computed.",
+        "rate_changed": "Rate changed: the cost was entered when the day rate was {{previous}}, it is now {{current}}.",
+        "unvalidated_days_one": "{{count}} day is not validated yet this month.",
+        "unvalidated_days_other": "{{count}} days are not validated yet this month.",
+        "unrebilled_expenses": "{{value}} of expenses counted as not re-invoiced.",
+        "partner_missing": "Assignment through an intermediary with no fee or share entered.",
+        "currency_mismatch": "The cost is in {{costCurrency}}, the day rate in {{currency}}: no conversion is made up."
+      },
+      "diagnostic": {
+        "title": "{{copilot}}’s diagnosis on the commercial margin",
+        "costShare": "The direct cost represents {{value}} of revenue.",
+        "deductions": "What weighs next: {{list}}.",
+        "levers": "To reach {{threshold}}, the day rate would need to be at least {{rate}}, or the direct cost at most {{cost}}.",
+        "costLever": "To reach {{threshold}}, the direct cost would need to be at most {{cost}}.",
+        "noAction": "No renegotiation is started: this is a suggestion, the decision stays yours."
+      },
+      "scenario": {
+        "title": "Simulate a scenario",
+        "kindLabel": "Scenario",
+        "kinds": {
+          "current_rate": "Current rate",
+          "renewed_rate": "Renewed rate",
+          "future_cost": "Future cost",
+          "extension": "Extension",
+          "expected_days": "Expected days",
+          "different_volume": "Other volume"
+        },
+        "rateLabel": "Considered day rate (€)",
+        "costLabel": "Considered cost (€)",
+        "daysLabel": "Days",
+        "run": "Simulate",
+        "result": "Simulated commercial margin: {{percent}}.",
+        "resultWithTotal_one": "Simulated commercial margin: {{percent}}, i.e. {{value}} over {{count}} day.",
+        "resultWithTotal_other": "Simulated commercial margin: {{percent}}, i.e. {{value}} over {{count}} days.",
+        "notMeasured": "Simulation not measured: the direct cost is missing.",
+        "revenueTotal_one": "Simulated revenue (billing): {{value}} over {{count}} day.",
+        "revenueTotal_other": "Simulated revenue (billing): {{value}} over {{count}} days.",
+        "poImpact": {
+          "after_one": "Purchase order after extension: {{percent}}, {{count}} day left.",
+          "after_other": "Purchase order after extension: {{percent}}, {{count}} days left.",
+          "overrun_one": "Purchase order exceeded by {{count}} day after extension.",
+          "overrun_other": "Purchase order exceeded by {{count}} days after extension.",
+          "unmeasured": "Purchase order impact not measurable."
+        },
+        "disclaimer": "Simulation: nothing is saved."
+      },
+      "form": {
+        "title": "Cost source",
+        "sourceLabel": "Cost source",
+        "currencyLabel": "Day rate currency",
+        "costCurrencyLabel": "Cost currency (if different)",
+        "hint": "Each empty field stays unknown — never zero. Zero is an answer.",
+        "noSalary": "No salary is asked for or rebuilt: only a provided, imported or validated loaded cost is used.",
+        "save": "Save the cost source",
+        "fields": {
+          "supplierDailyRateCents": "Supplier day rate (€)",
+          "supplierCommissionDailyCents": "Supplier commission (€/day)",
+          "supplierTaxesDailyCents": "Taxes (€/day)",
+          "standardDailyCostCents": "Standard cost (€/day)",
+          "standardCostValidatedOn": "Standard cost validated on",
+          "periodCostCents": "Period cost (€)",
+          "periodWorkedDays": "Days worked in the period",
+          "hourlyCostCents": "Hourly cost (€)",
+          "hoursPerDay": "Hours per day",
+          "partnerPurchaseDailyCents": "Purchase price (€/day)",
+          "partnerSaleDailyCents": "Sale price (€/day)",
+          "partnerSplitPercent": "Partner share (%)",
+          "fixedPriceTeamTimeCostCents": "Valued team time (€)",
+          "fixedPriceSubcontractingCostCents": "Subcontracting (€)",
+          "fixedPriceBudgetConsumedCents": "Budget consumed (€)",
+          "fixedPriceRemainingWorkCents": "Remaining work (€)",
+          "specificDailyCostCents": "Specific costs (€/day)",
+          "otherValidatedDailyCostCents": "Other validated costs (€/day)",
+          "internalAllocationDailyCents": "Internal allocations (€/day)"
+        },
+        "origins": {
+          "provided": "Provided cost",
+          "imported": "Imported cost",
+          "validated_standard": "Validated standard"
+        },
+        "originLabel": "Loaded cost origin"
+      }
+    },
+    "channels": {
+      "direct": "Direct",
+      "partner": "Through a partner",
+      "subcontracting": "Subcontracting",
+      "unknown": "Not set",
+      "portage": "Umbrella company"
+    },
+    "expenses": {
+      "title": "Expenses",
+      "empty": "No expense entered on this mission.",
+      "total": "{{value}} € in expenses, total",
+      "loadError": "Expenses could not be loaded.",
+      "labelLabel": "Expense label",
+      "labelPlaceholder": "Train tickets, hotel…",
+      "amountLabel": "Amount",
+      "amountPlaceholder": "in euros",
+      "dateLabel": "Expense date",
+      "add": "Add",
+      "edit": "Edit",
+      "save": "Save"
+    },
+    "timesheets": {
+      "empty": "No time record on this mission this month.",
+      "emptyWhy": "The month isn’t covered yet, or nobody has submitted a record yet."
+    },
+    "supplierInvoices": {
+      "title": "Supplier invoices",
+      "empty": "No supplier invoice entered on this mission.",
+      "loadError": "Supplier invoices could not be loaded.",
+      "referenceLabel": "Invoice reference",
+      "referencePlaceholder": "Number issued by the subcontractor",
+      "amountLabel": "Invoice amount",
+      "amountPlaceholder": "in euros",
+      "dateLabel": "Invoice date",
+      "add": "Add invoice",
+      "statusLabel": "Invoice status",
+      "statuses": {
+        "pending": "Received",
+        "validated": "Verified",
+        "paid": "Paid",
+        "disputed": "Disputed"
+      }
+    },
+    "po": {
+      "title": "Purchase order",
+      "numberLabel": "Purchase order number",
+      "numberPlaceholder": "e.g. PO-2026-0418",
+      "issuedOnLabel": "Purchase order date",
+      "validUntilLabel": "Valid until",
+      "amountLabel": "Purchase order amount",
+      "amountPlaceholder": "in euros",
+      "volumeLabel": "Day volume",
+      "volumePlaceholder": "in days",
+      "save": "Save purchase order",
+      "consumedLabel": "{{percent}} % consumed",
+      "volumeUnknown": "Volume not set. Without it, there is no way to tell what is left — enter it above to see consumption.",
+      "consumptionUnmeasured": "Consumption not measured: no counted timesheet for this mission.",
+      "overrun_one": "Purchase order exceeded by {{count}} day.",
+      "overrun_other": "Purchase order exceeded by {{count}} days.",
+      "approaching_one": "Purchase order {{threshold}} % consumed or more — {{count}} day left.",
+      "approaching_other": "Purchase order {{threshold}} % consumed or more — {{count}} days left.",
+      "amendment": {
+        "prepare": "Request the amendment",
+        "hide": "Hide the request",
+        "hint": "{{brand}} drafts the text; you send it. Nothing leaves from here.",
+        "copy": "Copy the text",
+        "copied": "Text copied",
+        "line1": "To date, {{consumed}} days out of the {{volume}} on the purchase order have been used, i.e. {{percent}} %.",
+        "line2": "Purchase order concerned: {{poNumber}}.",
+        "line2NoNumber": "The purchase order reference is not recorded in {{brand}}.",
+        "line3_one": "{{count}} covered day is left.",
+        "line3_other": "{{count}} covered days are left.",
+        "line3Overrun_one": "The purchase order is exceeded by {{count}} day.",
+        "line3Overrun_other": "The purchase order is exceeded by {{count}} days.",
+        "line4": "Could you confirm that an amendment will be issued to cover the rest of the mission?"
+      },
+      "otherMissions": {
+        "title": "This purchase order also covers",
+        "item": "{{missionLabel}} — {{accountName}}"
+      }
+    }
+  },
+  "history": {
+    "title": "Account history"
+  },
+  "documents": {
+    "title": "Documents",
+    "empty": "No document tracked on this mission yet.",
+    "readError": "Documents could not be loaded.",
+    "kind": {
+      "contract": "Contract",
+      "amendment": "Amendment",
+      "nda": "NDA",
+      "other": "Other document"
+    },
+    "status": {
+      "draft": "Draft",
+      "sent": "Sent",
+      "pending": "Pending",
+      "signed": "Signed",
+      "refused": "Refused"
+    },
+    "statusAria": "Status of {{name}}",
+    "kindAria": "Document kind",
+    "addPlaceholder": "File name",
+    "addAria": "Document name",
+    "add": "Track this document",
+    "createError": "The document could not be tracked.",
+    "updateError": "The status did not change."
+  },
+  "states": {
+    "emptyTitle": "You have no active mission.",
+    "emptyDescription": "Missions appear here as soon as a project is signed.",
+    "emptySignedDescription_one": "A mission comes from a signed project. {{count}} project is already signed in your pipeline.",
+    "emptySignedDescription_other": "A mission comes from a signed project. {{count}} projects are already signed in your pipeline.",
+    "emptyNoneSignedDescription": "A mission comes from a signed project: it is created the moment the project moves to “Signed”. None of yours has yet.",
+    "emptyNoProjectDescription": "A mission comes from a signed project, and projects come out of account analyses. Run a first analysis to feed your pipeline.",
+    "emptyProjectsCta": "Open projects",
+    "emptyAnalyseCta": "Run an analysis",
+    "emptyCreateCta": "New mission",
+    "allFinishedTitle": "No running mission",
+    "allFinishedDescription_one": "{{count}} finished mission is not listed here: this tab only shows what is running.",
+    "allFinishedDescription_other": "{{count}} finished missions are not listed here: this tab only shows what is running.",
+    "errorTitle": "Missions could not be loaded",
+    "errorDescription": "They are still there — it is the read that failed."
+  },
+  "odooSales": {
+    "title": "Sales in {{tool}}",
+    "intro": "Confirmed sales from {{tool}}, read without writing anything there. A sale there is a mission or a contract: pick up the ones that do not exist here yet.",
+    "demoNote": "Demo — fictional sales, no tool is read.",
+    "unknown": "{{tool}} did not answer in time — we do not know yet what it holds.",
+    "error": "Could not read sales from {{tool}}: {{message}}",
+    "retry": "Retry",
+    "reference": "Reference",
+    "client": "Client",
+    "dates": "Dates",
+    "lines": "Service",
+    "amount": "Amount excl. tax",
+    "billing": "Billing",
+    "status": "In {{brand}}",
+    "orderedOn": "Ordered on {{date}}",
+    "startsOn": "Starts {{date}}",
+    "lineQuantity": "{{quantity}} × {{price}}",
+    "invoice": {
+      "invoiced": "Invoiced",
+      "to_invoice": "To invoice",
+      "upselling": "Upsell possible",
+      "no": "Nothing to invoice"
+    },
+    "alreadyMission": "Already a mission: {{label}}",
+    "matchBy": {
+      "link": "picked up from this sale",
+      "reference": "matched by reference",
+      "label": "matched by service",
+      "dates": "matched by dates"
+    },
+    "accountNotFound": "No {{brand}} account is named “{{name}}”",
+    "accountAmbiguous": "Several {{brand}} accounts share this name — nothing is chosen for you",
+    "noClient": "Client not set in {{tool}}",
+    "reprendre": "Turn into a mission",
+    "reprendreAll": "Turn all into missions ({{count}})",
+    "previewTitle": "What will be created",
+    "previewDescription": "Exactly these missions, as shown. Nothing is written to {{tool}}.",
+    "previewAccount": "Account: {{name}}",
+    "previewStart": "Start: {{date}}",
+    "previewRate": "Daily rate: {{rate}}",
+    "previewNoRate": "Daily rate not carried over (several prices on the sale)",
+    "previewNoStart": "Start not set",
+    "skipped": {
+      "already_mission": "{{reference}} — already a mission",
+      "not_found": "{{reference}} — not found or no {{brand}} account",
+      "ambiguous": "{{reference}} — several accounts share this name"
+    },
+    "confirm_one": "Create {{count}} mission",
+    "confirm_other": "Create {{count}} missions",
+    "cancel": "Cancel",
+    "close": "Close",
+    "nothingToCreate": "Nothing to create: these sales are already missions, or their client has no account.",
+    "created_one": "{{count}} mission created from {{tool}}",
+    "created_other": "{{count}} missions created from {{tool}}",
+    "partial": "{{count}} sale(s) not picked up — check the list.",
+    "previewError": "The preview failed."
+  },
+  "crmReprisal": {
+    "title": "Pick up from your connected tool",
+    "correspondence": "In {{tool}}, these records are called “deals”.",
+    "correspondenceUnknownTool": "In your connected tool, these records are called “deals”.",
+    "unknownName": "Deal name not set",
+    "unknownStage": "Stage not set",
+    "chooseAccount": "Choose the account",
+    "createCta": "Create this mission",
+    "fallbackLabel": "Mission picked up from CRM",
+    "createError": "Creating the mission failed."
+  },
+  "toast": {
+    "missionCreated": "Mission created.",
+    "missionCreateError": "The mission could not be created.",
+    "assigned": "Assignment saved.",
+    "assignError": "The assignment failed.",
+    "termsSaved": "Terms saved.",
+    "termsError": "Terms could not be saved.",
+    "expenseSaved": "Expense saved.",
+    "expenseError": "The expense could not be saved.",
+    "feedbackSaved": "Feedback saved.",
+    "feedbackError": "The feedback could not be saved.",
+    "supplierInvoiceSaved": "Supplier invoice saved.",
+    "supplierInvoiceError": "The supplier invoice could not be saved.",
+    "supplierInvoiceStatusSaved": "Invoice status updated.",
+    "invoicedMarked": "Month marked as invoiced elsewhere.",
+    "invoicedError": "Marking failed.",
+    "moved": "Card moved",
+    "moveError": "The card could not be moved",
+    "gapExplained": "Gap explained",
+    "gapError": "The explanation could not be saved",
+    "clientValidated": "Client approval recorded",
+    "clientValidationError": "The approval could not be recorded",
+    "internalReviewed": "Internal review recorded",
+    "internalReviewError": "The internal review could not be recorded",
+    "timesheetRejected": "Timesheet rejected — its author can correct it and submit it again",
+    "timesheetRejectError": "The rejection could not be recorded",
+    "timesheetNotApplicable": "Month marked not applicable — the record is in the mission log",
+    "timesheetNotApplicableError": "The exception could not be saved",
+    "timesheetNotApplicableRevoked": "Exception cancelled — the timesheet is expected again",
+    "timesheetNotApplicableRevokeError": "The cancellation could not be saved",
+    "timesheetsOpened_one": "{{count}} timesheet opened",
+    "timesheetsOpened_other": "{{count}} timesheets opened",
+    "timesheetReminderRecorded": "Reminder logged",
+    "timesheetReminderError": "The reminder could not be logged",
+    "movePerformed_one": "{{count}} action carried out",
+    "movePerformed_other": "{{count}} actions carried out",
+    "movePending_one": "{{count}} action left for you",
+    "movePending_other": "{{count}} actions left for you",
+    "moveFailed_one": "{{count}} action did not go through",
+    "moveFailed_other": "{{count}} actions did not go through"
+  },
+  "unknownMission": "Unknown mission",
+  "lens": {
+    "running": "Running",
+    "readiness": "Ready to invoice"
+  },
+  "sourceFilter": {
+    "account": "Missions for {{name}}",
+    "accountUnnamed": "Missions for a single account",
+    "consultant": "Missions for a single consultant",
+    "hint": "This list is filtered: it does not show every mission in your workspace.",
+    "remove": "Remove the filter and see every mission",
+    "removeShort": "Remove the filter",
+    "emptyTitle": "No mission in this scope",
+    "emptyDescription": "The source link returns nothing here. This is not “no mission”: your workspace may have some elsewhere.",
+    "emptyCta": "See every mission",
+    "consultantNamed": "{{name}}’s missions"
+  },
+  "readiness": {
+    "title": "Invoicing — {{month}}",
+    "counts": "{{ready}} ready · {{blocked}} blocked · {{invoiced}} invoiced elsewhere · {{invoicedDeclared}} declared invoiced",
+    "prepared": "{{value}} € prepared",
+    "financeHidden": "Amounts restricted — ask for finance access to see them",
+    "withoutAmount_one": "{{count}} not priced",
+    "withoutAmount_other": "{{count}} not priced",
+    "disclaimer": "{{brand}} issues no invoice. This amount is PREPARATORY: computed from declared days and the daily rate, it is neither a due nor an invoice.",
+    "empty": "Nothing to watch for this month.",
+    "emptyWhy": "No mission covers this month: they ended before it, have not started yet, or are still drafts.",
+    "emptyCta": "Open missions",
+    "loadError": "The invoicing state could not be loaded.",
+    "noTimesheet": "No timesheet",
+    "days_one": "{{count}} day",
+    "days_other": "{{count}} days",
+    "amount": "{{value}} €",
+    "rate": "€{{value}}/day",
+    "rateUnknown": "Daily rate not set",
+    "markInvoiced": "Prepare the invoice",
+    "reminders_one": "{{count}} reminder logged",
+    "reminders_other": "{{count}} reminders logged",
+    "remindersSent_one": "{{count}} reminder sent",
+    "remindersSent_other": "{{count}} reminders sent",
+    "states": {
+      "blocked": "Blocked",
+      "ready": "Ready",
+      "invoiced": "Invoiced elsewhere",
+      "not_due": "Not due this month",
+      "invoiced_declared": "Declared invoiced"
+    },
+    "declaredBy": "Declared invoiced by {{name}} on {{date}}, unconfirmed",
+    "declaredByUnknown": "Declared invoiced, author not found — unconfirmed",
+    "blockers": {
+      "missing_timesheet": "No timesheet",
+      "timesheet_not_submitted": "Timesheet not submitted",
+      "timesheet_not_validated": "Timesheet not validated by the client",
+      "timesheet_disputed": "Timesheet disputed",
+      "timesheet_rejected": "Timesheet rejected, awaiting correction",
+      "timesheet_anomalies": "Unexplained anomalies",
+      "missing_rate": "No daily rate on the mission",
+      "missing_po": "Purchase order missing",
+      "missing_billing_contact": "Billing contact unknown",
+      "missing_start_date": "Start date unknown",
+      "unexplained_gap": "Unexplained day gap",
+      "missing_cost": "Charged cost missing",
+      "po_period_mismatch": "Purchase order expired for this month",
+      "legal_contract_inactive": "No active contract for this legal entity"
+    },
+    "poBlockerOwner": "For {{name}} to handle",
+    "blockedAmount": "€{{value}} held up",
+    "preparedInvoicesCount_one": "{{count}} invoice prepared",
+    "preparedInvoicesCount_other": "{{count}} invoices prepared",
+    "unexplainedGapCount_one": "{{count}} unexplained period gap",
+    "unexplainedGapCount_other": "{{count}} unexplained period gaps",
+    "amendments": {
+      "accepted_one": "{{count}} amendment accepted",
+      "accepted_other": "{{count}} amendments accepted",
+      "simulated_one": "{{count}} amendment simulated",
+      "simulated_other": "{{count}} amendments simulated"
+    },
+    "export": "Export",
+    "lauraQuestion": "On this month's invoicing, what should I prioritise first?",
+    "lauraCta": "Ask {{copilot}} what to prioritise",
+    "markInvoicedHelp": "{{brand}} issues nothing: you are DECLARING that an invoice went out elsewhere, with no connector proof — the screen will say “declared” everywhere, never “invoiced”. All three fields are optional and stay empty if you leave them so.",
+    "markInvoicedSetLegalEntity": "Set the billing entity",
+    "reference": "Invoice reference",
+    "referencePlaceholder": "INV-2026-0142",
+    "amountLabel": "Invoiced amount, in euros",
+    "amountPlaceholder": "Amount in euros",
+    "dueOn": "Payment due date",
+    "confirmInvoiced": "Record",
+    "recordPayment": "Check the payment",
+    "cancelInvoiced": "Undo “invoiced”",
+    "recordReminder": "Log a reminder",
+    "paymentRecorded": "Payment recorded.",
+    "paymentFailed": "The payment could not be recorded.",
+    "invoiceCancelled": "“Invoiced” undone. The month returns to the reminder list.",
+    "cancelFailed": "The undo did not go through.",
+    "reminderRecorded": "Reminder logged.",
+    "reminderFailed": "The reminder could not be logged.",
+    "cancelInvoicedTitle": "Undo the “invoiced” mark",
+    "cancelInvoicedHint": "The mark is not erased: it is undone, with its reason. Without one, nobody will know in six months why this month was never collected.",
+    "cancelInvoicedPlaceholder": "Why? (required)",
+    "cancelInvoicedConfirm": "Undo the mark",
+    "cancelInvoicedAbort": "Leave it",
+    "disputed": "Disputed",
+    "disputeNote": "Dispute: {{reason}}",
+    "openDispute": "Raise a dispute",
+    "resolveDispute": "Close the dispute",
+    "disputeTitle": "Raise a dispute on this invoice",
+    "disputeHint": "A dispute is not a late payment: reminders stop, the line stays, and this delay no longer counts towards the average payment time. Write down what the client is disputing — without a reason, nobody will know what it was about.",
+    "disputePlaceholder": "What is the client disputing? (required)",
+    "disputeConfirm": "Record the dispute",
+    "disputeAbort": "Leave it",
+    "disputeOpened": "Dispute recorded. Reminders stop on this month.",
+    "disputeFailed": "The dispute could not be recorded.",
+    "disputeResolved": "Dispute closed. Reminders can resume.",
+    "resolveDisputeFailed": "The dispute could not be closed.",
+    "actions": {
+      "open_timesheet": "open the timesheet",
+      "remind_consultant": "remind the consultant",
+      "remind_client": "remind the client",
+      "resolve_dispute": "close the dispute",
+      "resubmit_timesheet": "resubmit the corrected timesheet",
+      "explain_gap": "explain the gap",
+      "set_rate": "set the daily rate",
+      "ask_po": "request the purchase order",
+      "set_billing_contact": "set the billing contact",
+      "set_start_date": "set the start date",
+      "set_cost": "enter the charged cost",
+      "renew_po": "renew the purchase order",
+      "review_contract": "review the contract"
+    },
+    "craStatus": {
+      "label": "Timesheet status",
+      "all": "All statuses",
+      "not_submitted": "To complete",
+      "to_validate": "To validate",
+      "validated": "Validated",
+      "conflict": "Conflict"
+    },
+    "tiles": {
+      "supplierInvoiceMissing": "Missing invoice",
+      "readyToSend": "To send",
+      "craBlocked": "Timesheet blocked",
+      "notMeasured": "Not measured"
+    },
+    "table": {
+      "mission": "Mission",
+      "client": "Client",
+      "legalEntity": "Billing entity",
+      "legalEntityUnknown": "No billing entity on record",
+      "period": "Period",
+      "days": "Days",
+      "dailyRate": "Daily rate",
+      "amount": "Amount excl. tax",
+      "craStatus": "Timesheet status",
+      "status": "Invoice status / Action",
+      "openDetail": "Open the mission file",
+      "selectRow": "Select this row",
+      "selectAll": "Select all visible rows",
+      "supplierInvoiceMissing": "Missing supplier invoice",
+      "supplierInvoiceReceived": "Supplier invoice received",
+      "noResults": "No row matches this filter.",
+      "financeHiddenShort": "Restricted",
+      "orderCoverage": "Order coverage",
+      "orderMissing": "Order missing",
+      "orderOutOfPeriod": "Period outside the order",
+      "orderUnknown": "No order entered",
+      "base": "Month basis",
+      "controls": "Checks",
+      "moreActions": "More actions for {{label}}"
+    },
+    "search": {
+      "placeholder": "Search a freelancer, client, invoice…",
+      "label": "Search"
+    },
+    "month": {
+      "label": "Month"
+    },
+    "refresh": "Refresh",
+    "bulk": {
+      "selected_one": "{{count}} row selected",
+      "selected_other": "{{count}} rows selected",
+      "missingTimesheets": "Missing timesheets",
+      "remindTimesheets": "Follow up on timesheet entry/validation",
+      "remindConfirm_one": "{{count}} reminder logged.",
+      "remindConfirm_other": "{{count}} reminders logged.",
+      "remindNone": "None of the selected rows have a timesheet to follow up on.",
+      "remindPartial": "{{done}} reminder(s) logged · {{skipped}} row(s) with no timesheet to follow up on."
+    },
+    "pagination": {
+      "perPage": "{{count}} / page",
+      "page": "Page {{page}} of {{pages}}",
+      "previous": "Previous page",
+      "next": "Next page",
+      "range": "{{from}}–{{to}} of {{total}} results"
+    },
+    "connector": {
+      "toolGeneric": "your management tool",
+      "cta": "File a draft invoice in {{tool}}",
+      "noWriteRight": "Filing is reserved — ask for finance write access to do it yourself.",
+      "retry": "Retry",
+      "inProgress": "Filing in progress: the request went out, the reply hasn’t arrived yet.",
+      "unknown": "We don’t know whether the draft was filed — check your management tool.",
+      "invoiced": "Draft filed in {{tool}} — reference {{reference}}. Confirm it yourself in {{tool}}.",
+      "failedDetail": "Nothing went out: {{detail}}",
+      "loadError": "The write status couldn’t be read.",
+      "sendError": "The write couldn’t be sent.",
+      "previewTitle": "Check the draft before filing it",
+      "previewHint": "Clicking “Confirm” files a DRAFT invoice in {{tool}}. Nothing is confirmed or sent to your client: you review it and confirm it yourself in {{tool}}.",
+      "previewMission": "Mission",
+      "previewAccount": "Client",
+      "previewMonth": "Covered month",
+      "previewAmount": "Amount excl. tax",
+      "amountUnknown": "Amount not priced",
+      "previewReference": "Reference",
+      "previewReferenceUnknown": "No reference on file",
+      "attachments": {
+        "title": "Attachments",
+        "hint": "Signed purchase order, approved timesheet, sign-off: attached to the prepared invoice, never sent from here. {{formats}} · 10 MB max.",
+        "empty": "No attachment on this invoice.",
+        "loadError": "The attachments could not be read. They are still there — the read failed.",
+        "add": "Attach a file",
+        "working": "Uploading…",
+        "open": "Open {{name}}",
+        "openShort": "Open",
+        "remove": "Remove {{name}}",
+        "openError": "This attachment could not be opened.",
+        "removeError": "This attachment could not be removed.",
+        "failedUnknown": "The upload did not go through, and the server did not say why. Try again.",
+        "demoReadOnly": "Demo: attachments can be opened, none can be added or removed.",
+        "refusal": {
+          "empty": "This file is empty: it holds no bytes, there is nothing to store.",
+          "too_large": "This file is over 10 MB. Compress it, or upload a lighter version.",
+          "type_refused": "This file type is not accepted. Upload a PDF, an image, a document or a spreadsheet.",
+          "name_missing": "This file has no name: rename it before uploading.",
+          "quota_exceeded": "The storage space is full. Delete expired files, or ask for an extension.",
+          "content_mismatch": "This file’s content does not match its extension."
+        }
+      },
+      "previewLine": "Line",
+      "lineValue": "{{days}} d × {{rate}}",
+      "lineUnknown": "Line not priced",
+      "previewTaxes": "Excluding tax: {{tool}} applies its default taxes, which you check before confirming.",
+      "demoNotice": "Demo: nothing is written to any tool. This is exactly what would be sent.",
+      "cancel": "Cancel",
+      "confirm": "Confirm"
+    },
+    "theoTiles": {
+      "ready": {
+        "label": "Ready to prepare",
+        "amount": "€{{value}} excl. VAT",
+        "hint_one": "{{count}} file",
+        "hint_other": "{{count}} files"
+      },
+      "blocked": {
+        "label": "To unblock",
+        "hint": "Activity, validation or order"
+      },
+      "prepared": {
+        "label": "Prepared",
+        "hint": "To review before creation in your tool"
+      },
+      "issued": {
+        "label": "Already issued",
+        "hint": "Read or declared · no double invoicing"
+      }
+    },
+    "filters": {
+      "account": "Account",
+      "owner": "Owner",
+      "period": "Activity period"
+    }
+  },
+  "billing": {
+    "title": "Fixed-price milestones",
+    "empty": "No milestone declared",
+    "emptyWhy": "A fixed-price assignment is billed by milestone, never by timesheet — no milestone has been entered for this assignment yet.",
+    "loadError": "The milestones could not be loaded.",
+    "amount": "€{{value}}"
+  },
+  "board": {
+    "title": "Assignment board",
+    "subtitle": "Twelve columns, from a signed need to a finished assignment. Each card carries the state of its own object.",
+    "errorTitle": "The board could not be loaded",
+    "errorDescription": "Try again shortly. This is not “no assignments”: the read failed.",
+    "emptyTitle": "No cards on the board",
+    "emptyDescription": "Cards appear here as soon as a need is signed or an assignment starts.",
+    "intake_one": "{{count}} detected signal, kept off the board",
+    "intake_other": "{{count}} detected signals, kept off the board",
+    "remaining": "{{value}} € remaining",
+    "withoutEndDate_one": "{{count}} without an end date",
+    "withoutEndDate_other": "{{count}} without an end date",
+    "toStaff": "To staff",
+    "daysInColumn_one": "{{count}} day in this column",
+    "daysInColumn_other": "{{count}} days in this column",
+    "moveTo": "Move to…",
+    "originScreen": "Origin state: {{state}}",
+    "columns": {
+      "a_creer": "To create",
+      "qualification": "Qualification",
+      "matching": "Matching",
+      "shortlist_prete": "Shortlist ready",
+      "profil_propose": "Profile submitted",
+      "validation_client": "Client approval",
+      "gagnee": "Signed",
+      "en_cours": "Running",
+      "renouvellement": "Renewal",
+      "terminee": "Finished",
+      "perdue": "Lost",
+      "en_veille": "On hold"
+    },
+    "alerts": {
+      "invoicing_blocked": "Invoicing blocked",
+      "timesheet_missing": "Timesheet missing",
+      "renewal_due": "Renewal due",
+      "no_end_date": "No end date",
+      "unstaffed": "Nobody assigned",
+      "stale": "No movement"
+    },
+    "move": {
+      "title": "Move to “{{column}}”",
+      "createsMission": "This move creates an assignment. Going back will leave it behind.",
+      "proposals": "What {{brand}} offers to do",
+      "checks": "Worth checking",
+      "reason": "Reason",
+      "confirm": "Move",
+      "requires": {
+        "mailbox": "Mailbox not connected",
+        "calendar": "Calendar not connected",
+        "crm": "CRM not connected"
+      },
+      "proposal": {
+        "arm_t60_alert": "Arm the D-60 alert",
+        "ask_client_feedback": "Ask the client for feedback",
+        "ask_client_scope": "Ask the client for scope",
+        "ask_consultant_availability": "Ask the consultant about availability",
+        "ask_interview_date": "Ask for an interview date",
+        "ask_purchase_order": "Ask for the purchase order",
+        "ask_testimonial": "Ask for a testimonial",
+        "check_invoicing": "Check invoicing",
+        "check_last_timesheet": "Check the last timesheet",
+        "collect_loss_rex": "Collect the loss retrospective",
+        "collect_rex": "Collect the retrospective",
+        "create_mission": "Create the assignment",
+        "create_mission_from_project": "Create the project’s assignment",
+        "create_submissions": "Create the submissions",
+        "defence_brief": "Prepare the defence brief",
+        "generate_dossiers": "Generate the skill dossiers",
+        "launch_matching": "Run matching",
+        "launch_repositioning": "Start repositioning",
+        "park_account": "Set the account aside",
+        "plan_j30_review": "Schedule the D+30 review",
+        "prepare_client_message": "Draft the client message",
+        "prepare_extension": "Prepare the extension",
+        "prepare_onboarding": "Prepare onboarding",
+        "schedule_followups": "Schedule follow-ups",
+        "search_repositioning": "Look for a repositioning",
+        "set_review_date": "Set a review date",
+        "set_timesheet_cadence": "Set the timesheet cadence",
+        "structure_need": "Structure the need",
+        "tell_consultant": "Tell the consultant",
+        "widen_external_sourcing": "Widen the search"
+      },
+      "check": {
+        "amount_known": "Is the amount known?",
+        "at_most_five_profiles": "Five profiles at most",
+        "billing_contact_known": "Is the billing contact known?",
+        "consent_valid": "Is the profile’s consent valid?",
+        "dates_known": "Are the dates known?",
+        "decision_contact_known": "Is a decision-maker identified?",
+        "dossier_attached": "Is a skill dossier attached?",
+        "end_date_known": "Is the end date known?",
+        "everything_invoiced": "Is everything invoiced?",
+        "interview_scheduled": "Is an interview scheduled?",
+        "need_has_one_skill": "Does the need carry at least one skill?",
+        "none_rejected_here": "No profile already rejected at this client",
+        "sold_rate_known": "Is the sold rate known?"
+      },
+      "refused": "This move skips a step or swaps two endings: the mission status cannot go straight here.",
+      "backwardReason": "Reason for moving back (logged)"
+    }
+  },
+  "cra": {
+    "notApplicable": {
+      "mark": "Mark not applicable",
+      "title": "This month expects no timesheet",
+      "hint": "The exception overrides the contract for this month only. Who, when and why stay on record, and “Cancel the exception” removes it.",
+      "label": "Reason for the exception",
+      "placeholder": "E.g. unpaid leave for the whole month",
+      "confirm": "Confirm the exception",
+      "markedBy": "Marked not applicable on {{date}} by {{name}}",
+      "markedOn": "Marked not applicable on {{date}}",
+      "revoke": "Cancel the exception"
+    },
+    "missionGroup": {
+      "ready": "Ready for billing preparation",
+      "notReady": "Not ready for billing yet"
+    },
+    "title": "Timesheets",
+    "multiConsultantGroup_one": "{{count}} consultant on this assignment this month",
+    "multiConsultantGroup_other": "{{count}} consultants on this assignment this month",
+    "heading": "Close the activity without chasing documents",
+    "subtitle": "“Expected” is not “missing”, and “no timesheet” is not “zero days”.",
+    "monthLabel": "Month",
+    "blockingOnly": "What is blocking",
+    "openExpected": "Open expected timesheets",
+    "counts": "{{awaiting}} awaited · {{validated}} validated",
+    "submittedCount_one": "{{count}} timesheet received",
+    "submittedCount_other": "{{count}} timesheets received",
+    "lateCount_one": "{{count}} timesheet overdue",
+    "lateCount_other": "{{count}} timesheets overdue",
+    "escalatedCount_one": "{{count}} timesheet escalated",
+    "escalatedCount_other": "{{count}} timesheets escalated",
+    "blockingCount_one": "{{count}} unexplained gap",
+    "blockingCount_other": "{{count}} unexplained gaps",
+    "declaredDays_one": "{{count}} day declared",
+    "declaredDays_other": "{{count}} days declared",
+    "noDeclaredDays": "No day declared yet",
+    "errorTitle": "Timesheets could not be loaded",
+    "errorDescription": "Try again shortly. This is not “no timesheets”.",
+    "emptyTitle": "No assignment on this month",
+    "emptyDescription": "No assignment covers this month — or none expects a timesheet.",
+    "emptyMissionsCta": "Open missions",
+    "emptyBlockingTitle": "No timesheet is blocking this month",
+    "emptyBlockingDescription_one": "The “What is blocking” filter hides the month’s only row.",
+    "emptyBlockingDescription_other": "The “What is blocking” filter hides the month’s {{count}} rows.",
+    "emptyBlockingCta": "Show every timesheet",
+    "noConsultant": "Nobody assigned",
+    "days_one": "{{count}} day",
+    "days_other": "{{count}} days",
+    "expected_one": "{{count}} expected",
+    "expected_other": "{{count}} expected",
+    "gapUnknown": "Gap not measurable",
+    "gap": {
+      "under_one": "{{count}} day missing",
+      "under_other": "{{count}} days missing",
+      "over_one": "{{count}} extra day",
+      "over_other": "{{count}} extra days"
+    },
+    "explainGap": "Explain the gap",
+    "explainPlaceholder": "Time off, partial month, public holiday…",
+    "recordClientValidation": "Record client approval",
+    "validatedByClient": "Approved by the client on {{date}}",
+    "approvedBy": "Recorded by {{name}}",
+    "submittedBy": "Declared by {{name}}",
+    "recordInternalReview": "Mark as reviewed internally",
+    "internalReviewedBy": "Reviewed internally by {{name}}",
+    "reject": "Reject timesheet",
+    "rejectTitle": "Reject this timesheet",
+    "rejectHint": "The timesheet is not deleted: it goes back to its author, who can correct it and submit it again.",
+    "rejectLabel": "Reason for rejection",
+    "rejectPlaceholder": "What is wrong (required): days booked to the wrong month…",
+    "rejectContestedDaysLabel": "Contested days (required)",
+    "rejectContestedDaysPlaceholder": "How many days are the issue",
+    "rejectCorrectionDeadlineLabel": "Correction deadline (required)",
+    "rejectConfirm": "Reject",
+    "rejectAbort": "Leave unchanged",
+    "rejectedCount_one": "{{count}} timesheet rejected",
+    "rejectedCount_other": "{{count}} timesheets rejected",
+    "rejectedOn": "Rejected on {{date}}",
+    "rejectedThenResubmitted": "Rejected on {{date}}, then submitted again",
+    "rejectedContestedDays_one": "{{count}} contested day",
+    "rejectedContestedDays_other": "{{count}} contested days",
+    "rejectedCorrectionDeadline": "Correction expected by {{date}}",
+    "states": {
+      "draft": "Draft",
+      "submitted": "Approved by consultant",
+      "validated": "Validated",
+      "disputed": "Disputed",
+      "expected": "Expected",
+      "missing": "Missing",
+      "not_required": "No timesheet",
+      "rejected": "Rejected",
+      "escalated": "Escalated"
+    },
+    "nextAction": {
+      "awaitingDeposit": "Follow up for submission",
+      "awaitingValidation": "Validate with the client",
+      "awaitingResubmission": "Waiting for resubmission",
+      "resolveDispute": "Resolve the dispute",
+      "needsHuman": "Needs a human"
+    },
+    "escalation": {
+      "notify": "Flag to {{name}}",
+      "notifyManager": "Client manager: {{name}}",
+      "notifyAdv": "Sales admin: {{name}}",
+      "notifyPartner": "Partner: {{name}}",
+      "level": "Escalation level {{level}}",
+      "delay_one": "Escalated {{count}} day ago",
+      "delay_other": "Escalated {{count}} days ago"
+    },
+    "reminders": {
+      "prepare": "Prepare a reminder",
+      "rank_one": "Reminder #{{count}} due",
+      "rank_other": "Reminder #{{count}} due",
+      "overdue_one": "{{count}} day overdue",
+      "overdue_other": "{{count}} days overdue",
+      "nothingIsSent": "Nothing goes out on its own. You send the reminder from your own tool, then log it here.",
+      "beforeDeadline_one": "The month ends in {{count}} day",
+      "beforeDeadline_other": "The month ends in {{count}} days",
+      "dueToday": "The month ends today"
+    },
+    "review": {
+      "open": "Open the file",
+      "eyebrow": "Timesheet",
+      "loading": "Loading the file…",
+      "errorTitle": "The file could not be loaded",
+      "errorDescription": "Try again in a moment. This is not “empty timesheet”.",
+      "check": {
+        "title": "Automatic check",
+        "clean_one": "The only check that could run passed.",
+        "clean_other": "All {{count}} checks that could run passed.",
+        "found_one": "{{count}} point to look at.",
+        "found_other": "{{count}} points to look at.",
+        "nothingVerified": "No check could run. This is not “nothing to report”: nothing was checked.",
+        "unverified_one": "{{count}} check could not run — see the detail below.",
+        "unverified_other": "{{count}} checks could not run — see the detail below."
+      },
+      "checks": {
+        "working_days": "Working days",
+        "zero_days": "Declared days",
+        "day_fraction": "Day fraction",
+        "overlapping_mission": "Parallel mission",
+        "duplicate_validated": "Duplicate timesheet",
+        "public_holidays": "Public holidays"
+      },
+      "passed": {
+        "working_days": "no gap with the month.",
+        "zero_days": "days are declared.",
+        "day_fraction": "half a day is the unit.",
+        "overlapping_mission": "no other mission on this month.",
+        "duplicate_validated": "no other timesheet already validated on this month.",
+        "public_holidays": "checked."
+      },
+      "flagged": {
+        "workingDaysOver_one": "{{count}} day more than the month holds.",
+        "workingDaysOver_other": "{{count}} days more than the month holds.",
+        "workingDaysUnder_one": "{{count}} day fewer than the month holds.",
+        "workingDaysUnder_other": "{{count}} days fewer than the month holds.",
+        "zeroDays": "no day declared for the period.",
+        "dayFraction": "unusual fraction — half a day is the usual unit.",
+        "overlappingMission": "also staffed on “{{subject}}” this month: check the days are not split.",
+        "duplicateValidated": "another timesheet for this month is already validated ({{subject}}): check it is not a duplicate."
+      },
+      "notVerified": {
+        "no_declaration": "not checked — nothing was submitted.",
+        "no_expected_days": "not checked — the month’s expected load is unknown.",
+        "no_consultant": "not checked — nobody is staffed, so there is nobody to cross-check.",
+        "no_holiday_calendar": "not checked — {{brand}} holds no public-holiday calendar.",
+        "read_failed": "not checked — the read failed. This is not “nothing found”."
+      },
+      "days": {
+        "title": "Day detail",
+        "declared": "Declared",
+        "expected": "Expected",
+        "gap": "Gap",
+        "noDeclaration": "No timesheet",
+        "noExpected": "Unknown",
+        "gapValue_one": "{{count}} day",
+        "gapValue_other": "{{count}} days",
+        "explained": "Gap explained: {{explanation}}",
+        "recordedTitle": "Recorded at submission (archive):"
+      },
+      "attachments": {
+        "title": "Attachments",
+        "noFiles": "{{brand}} stores no file on a timesheet. What follows is what the product does hold.",
+        "noTraces": "No trace yet: no client validation, no rejection, no reminder.",
+        "reminders_one": "{{count}} reminder sent, the last one on {{date}}.",
+        "reminders_other": "{{count}} reminders sent, the last one on {{date}}.",
+        "remindersUndated_one": "{{count}} reminder sent, on an unrecorded date.",
+        "remindersUndated_other": "{{count}} reminders sent, on unrecorded dates."
+      },
+      "recommended": {
+        "title": "Recommended action",
+        "not_required": "This contract does not run on timesheets — there is nothing to decide here.",
+        "await_declaration": "Nothing was submitted: what comes next is a submission, not a decision.",
+        "not_measurable": "No opinion: no check could run on this timesheet.",
+        "fix": "Have the timesheet corrected before validating it — the points above are the ones to revisit.",
+        "validate": "Everything that could be checked passed: this timesheet can be validated.",
+        "decided": "This timesheet is already decided. We do not re-decide it.",
+        "blocksInvoicing": "As it stands, this timesheet blocks invoicing for the month."
+      }
+    },
+    "stillPossible": "reviewing timesheets, validating them and fixing gaps",
+    "intro": "One timesheet per consultant, mission and period. Client validation is a recorded proof, not an invented signature.",
+    "export": "Export the selection",
+    "notApplicableCount_one": "of which {{count}} not applicable",
+    "notApplicableCount_other": "of which {{count}} not applicable",
+    "emptyStateTitle": "No timesheet in this state",
+    "emptyStateDescription_one": "This filter hides the only line of the month.",
+    "emptyStateDescription_other": "This filter hides the {{count}} lines of the month.",
+    "state": {
+      "label": "State",
+      "all": "All timesheets",
+      "blocking": "What is blocking",
+      "toReceive": "To receive",
+      "toCheck": "To check",
+      "clientWait": "Awaiting client",
+      "clientValidated": "Client-validated",
+      "rejected": "Rejected"
+    },
+    "tiles": {
+      "toReceive": {
+        "label": "To receive",
+        "hint": "Timesheet missing or days not filled in"
+      },
+      "toCheck": {
+        "label": "To check",
+        "hint": "Internal review needed"
+      },
+      "clientWait": {
+        "label": "Awaiting client",
+        "hint": "Internal validation done"
+      },
+      "clientValidated": {
+        "label": "Client-validated",
+        "hint": "Proof recorded",
+        "days_one": "{{count}} day declared",
+        "days_other": "{{count}} days declared"
+      }
+    },
+    "exportHeader": {
+      "consultant": "Consultant",
+      "mission": "Mission",
+      "account": "Account",
+      "period": "Period",
+      "status": "State",
+      "days": "Days declared"
+    },
+    "filters": {
+      "account": "Account",
+      "search": "Search a timesheet",
+      "searchPlaceholder": "Client, mission, consultant…",
+      "period": "Activity period"
+    },
+    "blockingGroup": "What blocks",
+    "blockingWithCount": "What blocks · {{count}}",
+    "table": {
+      "label": "Timesheets",
+      "who": "Consultant / mission",
+      "activity": "Activity",
+      "internalHeader": "Internal review",
+      "clientHeader": "Client approval",
+      "follow": "Follow-up",
+      "toReceive": "To receive",
+      "noInvented": "No activity assumed",
+      "internal": {
+        "validated": "Reviewed",
+        "toCheck": "To check"
+      },
+      "client": {
+        "proof": "Proof on file",
+        "waiting": "Waiting",
+        "rejected": "Rejected"
+      },
+      "reminderToPrepare": "Reminder to prepare",
+      "remindersSent_one": "{{count}} reminder sent",
+      "remindersSent_other": "{{count}} reminders sent",
+      "open": "Open",
+      "openLine": "Open {{name}}’s timesheet",
+      "selectLine": "Select {{name}}’s timesheet",
+      "selectAll": "Select the displayed timesheets",
+      "dialogTitle": "Timesheet · {{name}}",
+      "dialogIntro": "Declared, reviewed internally, client approval: three distinct pieces of information. A correction after validation requires a reason and puts the validations back on hold."
+    },
+    "after": {
+      "chainTitle": "One validation chain",
+      "chainBody1": "Declared days, internal approval and client approval are distinct. A correction after approval needs a reason and puts approvals back on hold.",
+      "chainBody2": "A source already invoiced stays frozen. Its correction goes through a corrective document, never an invisible rewrite.",
+      "nextTitle": "After approvals",
+      "nextBody": "The file moves into preparation checks: rate, order, entity and proof. A missing cost is flagged for the margin, without becoming a zero cost.",
+      "nextCta": "Check ready-to-invoice"
+    }
+  },
+  "invoicing": {
+    "title": "Invoicing",
+    "banner": "{{brand}} issues no invoice. This screen says what is BLOCKING invoicing, and prepares an indicative amount — neither a debt nor an invoice.",
+    "overdue30": {
+      "text_one": "{{count}} issued invoice is more than {{days}} days past its due date and nothing has come in. Longest delay: {{oldest}} days.",
+      "text_other": "{{count}} issued invoices are more than {{days}} days past their due date and nothing has come in. Longest delay: {{oldest}} days.",
+      "action": "See collections"
+    },
+    "administration": "Administration",
+    "heading": "Turn validated activity into reliable invoices",
+    "intro": "Handle the blockers that matter, without confusing ready to invoice, prepared invoice and invoice issued in your tool.",
+    "adv": {
+      "title": "Admin checks",
+      "lead": "An invoice traces back to its proof of service.",
+      "body": "The prepared invoice keeps the period, the days or milestones, the rate and the order. If the source changes before creation in your tool, a review is required. “Invoiced” is written on the proof from your tool.",
+      "cta": "Open this month’s admin checks"
+    }
+  },
+  "collections": {
+    "title": "Collections",
+    "banner": "{{brand}} issues no invoice. This screen tracks what was invoiced elsewhere and what came in — due date, delay, dispute, payment.",
+    "window": "The last {{count}} months. An older invoice is in none of these totals.",
+    "partialWindow_one": "{{count}} month of the window did not answer: these totals are partial.",
+    "partialWindow_other": "{{count}} months of the window did not answer: these totals are partial.",
+    "buckets": {
+      "paid": "Collected",
+      "pending": "Awaiting",
+      "overdue": "Overdue",
+      "disputed": "Disputed",
+      "invoiced": "Invoiced",
+      "unmatched": "Unmatched"
+    },
+    "unmatchedHint": "Payments recorded, awaiting a match to an invoice",
+    "invoiceCount_one": "{{count}} invoice",
+    "invoiceCount_other": "{{count}} invoices",
+    "withoutAmount_one": "{{count}} without an amount",
+    "withoutAmount_other": "{{count}} without an amount",
+    "withoutDueDate_one": "{{count}} unpaid with no due date entered",
+    "withoutDueDate_other": "{{count}} unpaid with no due date entered",
+    "noAmount": "no amount was entered on this invoice",
+    "noDueDate": "no payment due date was entered — the reminder cadence cannot start",
+    "unknownAccountReason": "the mission is not attached to any readable account",
+    "unknownContactReason": "no billing contact entered on this mission",
+    "unknownMissionReason": "the mission has no label",
+    "settledPart": "Settled: {{value}}",
+    "outstanding": "Outstanding: {{value}}",
+    "paymentTitle": "Record a payment",
+    "paymentHint": "The amount is optional — left blank, the payment is recorded without a measured amount, and nothing is guessed. An amount below the invoiced total keeps the invoice in the reminder queue, with its outstanding balance.",
+    "paymentAmount": "Amount received, in euros",
+    "paymentPlaceholder": "5000",
+    "paymentConfirm": "Record the payment",
+    "paymentAbort": "Cancel",
+    "empty": "No invoice issued within this window.",
+    "emptyWhy": "Whatever is not invoiced yet is fixed on the invoicing screen, with its blockers. Only months marked as invoiced elsewhere live here.",
+    "filteredEmpty": "No invoice carries this status within this window.",
+    "clearStatusFilter": "Clear filter",
+    "rowMenu": "Actions on this invoice",
+    "markPaid": "Mark as settled",
+    "columns": {
+      "account": "Client",
+      "contact": "Contact",
+      "mission": "Mission",
+      "month": "Month",
+      "amount": "Amount",
+      "dueOn": "Due date",
+      "status": "Status",
+      "overdue": "Delay",
+      "reminders": "Reminders",
+      "lastAction": "Last action",
+      "nextAction": "Next action",
+      "actions": "Actions"
+    },
+    "status": {
+      "paid": "Settled",
+      "pending": "Not yet due",
+      "overdue": "Past due",
+      "disputed": "Disputed"
+    },
+    "lastAction": {
+      "reminder": "Reminder on {{date}}",
+      "paid": "Payment on {{date}}",
+      "disputed": "Dispute opened on {{date}}",
+      "dispute_resolved": "Dispute closed on {{date}}"
+    },
+    "actions": {
+      "resolve_dispute": "Close the dispute",
+      "set_due_date": "Enter the due date",
+      "escalate_to_human": "Three reminders, no answer — escalate",
+      "wait": "Nothing to do before the due date"
+    },
+    "invoicedDeclared_one": "incl. {{count}} declared without proof from the connected tool",
+    "invoicedDeclared_other": "incl. {{count}} declared without proof from the connected tool",
+    "export": "Export balances",
+    "exportFailed": "The export could not be produced.",
+    "receivables": {
+      "label": "Receivables",
+      "remaining": "Still to receive",
+      "overdue": "Of which overdue",
+      "toMatch": "To match",
+      "toMatchCount_one": "{{count}} unallocated payment",
+      "toMatchCount_other": "{{count}} unallocated payments",
+      "nothingToMatch": "No payment to match",
+      "disputed": "Disputed amount",
+      "disputedNote": "included in receivables, not added",
+      "remainingNote": "Invoices net of allocated payments",
+      "overdueNote": "As of {{date}}"
+    },
+    "aging": {
+      "title": "Receivables ageing",
+      "hint": "Disputes stay inside the receivables. Dates are not reset by a reminder.",
+      "not_due": "Not yet due",
+      "d1_30": "1 to 30 days",
+      "d31_60": "31 to 60 days",
+      "d61_90": "61 to 90 days",
+      "d90_plus": "Over 90 days",
+      "no_due_date": "No due date",
+      "count_one": "{{count}} invoice",
+      "count_other": "{{count}} invoices",
+      "asOf": "As of {{date}} · still due",
+      "toEnter_one": "{{count}} invoice, due date to enter",
+      "toEnter_other": "{{count}} invoices, due date to enter"
+    },
+    "rules": {
+      "title": "Follow-up rules",
+      "sameClient": "One payment can cover several invoices of the same client.",
+      "creditNote": "A credit note corrects a document: it creates no incoming money.",
+      "overpayment": "An overpayment stays a client credit, it does not clear another invoice.",
+      "noAuto": "No reminder is sent automatically: you prepare it and you send it.",
+      "dispute": "A dispute stays in receivables and needs a resolution."
+    },
+    "outgoing": {
+      "title": "Money going out",
+      "hint": "Payments to consultants and subcontractors, and receivable assignments, are followed in the financial view.",
+      "open": "Payments and assignments"
+    },
+    "headline": "Know what comes in. And what is waiting.",
+    "lede": "Logged payments, matching and disputes. A promise is never a collection.",
+    "guide": {
+      "heading": "Knowing what is collected, expected or disputed",
+      "intro": "The client balance counts allocated payments, without mistaking a promise for money in.",
+      "stepsTitle": "The useful path",
+      "step1": "Log the movement, then match it to the same client’s invoices.",
+      "step2": "Handle disputes and prepare the follow-ups to review.",
+      "step3": "Keep overpayments and unallocated sums as separate items.",
+      "keepTitle": "Worth remembering",
+      "keep": "A follow-up prepared by {{copilot}} sends nothing: you are the one who sends."
+    },
+    "record": {
+      "open": "Log a payment",
+      "title": "Log a payment received",
+      "intro": "Enter the movement as your bank received it. It stays to be matched until you allocate it to an invoice.",
+      "date": "Payment date",
+      "amount": "Amount received (€)",
+      "payer": "Payer",
+      "reference": "Movement reference",
+      "confirm": "Log the payment"
+    },
+    "fromAccount": {
+      "title": "Filtered from the {{name}} account.",
+      "body": "Only {{name}}’s invoices and payments are shown.",
+      "clear": "See all accounts"
+    },
+    "noDueNotice_one": "{{count}} invoice without a due date ({{accounts}}) falls in no overdue band.",
+    "noDueNotice_other": "{{count}} invoices without a due date ({{accounts}}) fall in no overdue band.",
+    "noDueAmount": "Left to pay: {{value}}.",
+    "queue": {
+      "title": "Due dates to handle",
+      "search": "Search a client, a mission, a number, a contact",
+      "filter": "Follow-up queue",
+      "all": "All receivables",
+      "option": "{{label}} · {{count}}",
+      "keys": {
+        "overdue": "Overdue",
+        "disputed": "Disputed",
+        "pending": "Not yet due",
+        "no_due": "No due date",
+        "paid": "Paid"
+      }
+    },
+    "followUp": {
+      "close": "Close",
+      "follow": "Follow up",
+      "title": "Follow-up prepared by {{copilot}} · {{reference}}",
+      "draftTitle": "{{copilot}} drafted the reminder.",
+      "draftBody": "Read it and edit it: nothing goes out without your action.",
+      "escalateTitle_one": "{{count}} reminder unanswered — escalate.",
+      "escalateTitle_other": "{{count}} reminders unanswered — escalate.",
+      "escalateBody": "{{copilot}} suggests going through another contact rather than chasing the same one again. Nothing goes out without your action.",
+      "to": "To",
+      "subject": "Subject",
+      "message": "Message",
+      "regenerate": "Regenerate",
+      "cancel": "Cancel",
+      "openMail": "Open in my mail app",
+      "draft": {
+        "greeting": "Hello {{name}},",
+        "greetingNoName": "Hello,",
+        "overdue": "Invoice {{reference}} ({{month}}) has been overdue since {{due}}, that is {{days}} days.",
+        "upcoming": "Invoice {{reference}} ({{month}}) falls due on {{due}}.",
+        "noDue": "Invoice {{reference}} ({{month}}) has no payment due date known on my side yet.",
+        "amount": "Left to pay: {{amount}} excl. VAT.",
+        "ask": "Could you tell me where it stands on your side?",
+        "escalate": "My earlier reminders went unanswered: could you tell me who I should contact?",
+        "thanks": "Thanks in advance.",
+        "subject": "Invoice {{reference}} — {{month}}"
+      }
+    },
+    "toMatch": {
+      "title": "Payments to match",
+      "columns": {
+        "payment": "Payment",
+        "received": "Received on",
+        "action": "Action"
+      },
+      "unknownPayer": "payer not filled in",
+      "allocate": "Allocate",
+      "close": "Close",
+      "dialogTitle": "Match the payment of {{date}}",
+      "dialogIntro": "{{payer}} · {{amount}} available. Only invoices whose balance equals this payment are suggested.",
+      "noCandidate": "No invoice has a balance equal to this payment: nothing is suggested, and nothing is allocated without your choice.",
+      "chooseInvoice": "Allocate to which invoice?",
+      "rule": "Matching is your action: it is never validated on its own.",
+      "cancel": "Cancel",
+      "validate": "Confirm the match",
+      "credit": "Note an overpayment, owed to the client",
+      "creditNote": "Why? (required) — an internal note, never an issued corrective invoice",
+      "creditConfirm": "Note the amount owed to the client",
+      "ambiguous": "several possible invoices"
+    },
+    "toast": {
+      "paymentRecorded": "Payment logged: it still has to be allocated to an invoice.",
+      "paymentRecordError": "The payment could not be logged.",
+      "matched": "Match confirmed.",
+      "matchError": "The match failed.",
+      "creditNoted": "Overpayment noted as an amount owed to the client. No corrective invoice is issued.",
+      "creditError": "The amount owed to the client could not be noted."
+    },
+    "journal": {
+      "title": "Payment journal",
+      "columns": {
+        "amount": "Amount received",
+        "date": "Date",
+        "invoice": "Invoice"
+      },
+      "see": "See",
+      "partial": "partial payment"
+    },
+    "toolbar": "Filter collections",
+    "situation": "Position on {{date}} · all due dates",
+    "alerts": {
+      "reminders_one": "{{count}} reminder due",
+      "reminders_other": "{{count}} reminders due",
+      "remindLine": "{{account}}: reminder #{{index}} to prepare.",
+      "escalateLine": "{{account}}: reminders without reply, escalate.",
+      "longOverdue_one": "{{count}} invoice overdue for more than 30 days",
+      "longOverdue_other": "{{count}} invoices overdue for more than 30 days",
+      "disputedSince": "disputed since {{date}}"
+    },
+    "treat": {
+      "open": "Handle the dispute",
+      "title": "Dispute · {{reference}}",
+      "keep": "Change nothing"
+    },
+    "row": {
+      "due": "due {{date}}",
+      "declared": "declared invoiced, not confirmed",
+      "contact": "Contact:",
+      "noReminder": "no reminder recorded",
+      "reminders_one": "{{count}} reminder recorded",
+      "reminders_other": "{{count}} reminders recorded"
+    }
+  },
+  "renewals": {
+    "windows": {
+      "overdue": "Overdue",
+      "imminent": "Imminent",
+      "j15": "Within 15 days",
+      "withinDays": "Within {{count}} days",
+      "j30": "Within 30 days",
+      "j45": "Within 45 days",
+      "j60": "Within 60 days",
+      "unknown": "No end date",
+      "far": "Beyond 60 days"
+    },
+    "windowHints": {
+      "overdue": "The end date has passed",
+      "imminent": "The mission ends within ten days",
+      "j15": "The mission ends within a fortnight",
+      "withinDays": "The mission ends within {{count}} days",
+      "j30": "The mission ends within the month",
+      "j45": "The mission ends within six weeks",
+      "j60": "The mission ends within two months",
+      "unknown": "No end date — the renewal cannot be triggered in time",
+      "far": "The end date is beyond the renewal window — nothing to prepare yet"
+    },
+    "status": {
+      "title": "Where the renewal stands",
+      "hint": "A finding entered by hand: what the client said, or what is settled. Never a likelihood of renewal — the product computes none.",
+      "postedOn": "Recorded on {{date}}",
+      "none": "Not recorded",
+      "unread": "Status not read — the app is newer than the server.",
+      "groups": {
+        "open": "What is under way",
+        "close": "Close out"
+      },
+      "values": {
+        "non_engage": "Nothing started",
+        "feedback_demande": "Feedback requested",
+        "discussion_en_cours": "Discussion under way",
+        "reconduction_annoncee": "Renewal announced by the client",
+        "renouvele": "Renewed",
+        "fin_confirmee": "End confirmed",
+        "repositionnement_lance": "Repositioning started",
+        "bloque": "Blocked"
+      },
+      "requestFeedback": "Request feedback",
+      "feedbackAlreadyAsked": "Feedback has already been requested: the date above says how long we have been waiting. Clicking again would reset it to today.",
+      "feedbackPointless": "This renewal is closed out: asking for feedback now no longer leads to a decision.",
+      "closeHint": "Closing out says WHICH of the two paths happened. The row stops being chased, it does not disappear.",
+      "decidedNotice": "This renewal is closed out: no decision is pending. The row stays readable.",
+      "clear": "Reset to “not recorded”"
+    }
+  },
+  "channel": {
+    "mailDraft": {
+      "action": "Create the drafts",
+      "confirmation": "I will create {{count}} draft(s) in your mailbox. Nothing is sent: you read them and send."
+    },
+    "teamChat": {
+      "action": "Prepare the messages",
+      "confirmation": "I will send {{count}} message(s) to your team chat. They go out immediately and it is IRREVERSIBLE — a team chat has no draft."
+    },
+    "crmTask": {
+      "action": "Create the tasks",
+      "confirmation": "I will create {{count}} task(s) in your CRM. No message is sent."
+    },
+    "inApp": {
+      "action": "Create the tasks",
+      "confirmation": "No sending channel is connected: I will list {{count}} reminder(s) here, for you to handle."
+    }
+  },
+  "invoiceReadiness": {
+    "reminders": {
+      "rank": "Reminder #{{index}} due",
+      "dueSince": "due since {{date}}",
+      "overdue_one": "{{count}} day overdue",
+      "overdue_other": "{{count}} days overdue",
+      "tones": {
+        "neutral": "Neutral tone",
+        "firm": "Firm tone",
+        "escalate": "Escalation"
+      },
+      "escalationGap": "Escalation: {{brand}} knows of no account manager and no sponsor on this invoice. Copy the right people in yourself — the product cannot do it for you.",
+      "nothingIsSent": "Nothing goes out on its own. You send from your own tool, then log the reminder here.",
+      "suspendedByDispute": "Reminders suspended: a dispute is open on this invoice. The cadence resumes once it is closed, and this delay does not count towards the average payment time.",
+      "noDueDate": "Invoice sent, unpaid, with no payment due date: no reminder can be scheduled. Enter the due date to start the cadence."
+    }
+  },
+  "supervisedForfait": {
+    "label": "Supervised fixed price",
+    "labelWithRole": "Supervised fixed price · {{role}}",
+    "roles": {
+      "framing": "Framing",
+      "supervision": "Supervision",
+      "both": "Framing and supervision"
+    }
+  },
+  "table": {
+    "mission": "Mission",
+    "account": "Account",
+    "accountUnknown": "the owning account is outside your scope",
+    "role": "Role",
+    "roleUnknown": "no role was entered on this mission",
+    "staffing": "Consultant",
+    "staffingUnread": "assignments could not be read",
+    "unstaffed": "Nobody assigned",
+    "status": "Status",
+    "endsOn": "End date",
+    "contractKind": "Type",
+    "contractKinds": {
+      "regie": "Time and materials",
+      "forfait": "Fixed price",
+      "recrutement": "Permanent placement",
+      "inconnu": "Type not stated"
+    },
+    "risks": "Risks",
+    "noRisk": "Nothing to report",
+    "risksNotComputed": "risks are only computed on a running or onboarding mission",
+    "billingAlert": {
+      "invoice_blocked": "Invoice blocked",
+      "invoice_overdue": "Invoice overdue",
+      "payment_late": "Payment late"
+    },
+    "riskKinds": {
+      "renewal_not_started": "Renewal not started",
+      "timesheet_disputed": "Timesheet disputed",
+      "timesheet_missing": "Timesheet missing",
+      "margin_at_risk": "Margin at risk",
+      "margin_unknown": "Margin not measured",
+      "no_end_date": "No end date",
+      "missing_po": "Purchase order missing",
+      "ending_soon": "Deadline imminent",
+      "missing_owner": "No account owner assigned",
+      "invoice_blocked": "Invoicing blocked this month",
+      "low_satisfaction": "Low satisfaction",
+      "relationship_threatened": "Relationship at risk",
+      "prolonged_absence": "Extended absence",
+      "consultant_unsecured": "Consultant not secured",
+      "action_without_owner": "Action without owner"
+    },
+    "startedOn": "Start",
+    "startedOnUnknown": "no start date was entered",
+    "remoteKinds": {
+      "sur_site": "On-site",
+      "hybride": "Hybrid",
+      "full_remote": "Fully remote",
+      "indifferent": "No preference"
+    },
+    "remotePreferenceUnknown": "not carried over from the need",
+    "location": "Location",
+    "locationUnknown": "not carried over from the need",
+    "objectiveUnknown": "not filled in",
+    "perimeterUnknown": "not filled in",
+    "originOpportunityUnknown": "no originating need is linked to this mission",
+    "originSubmissionUnknown": "no originating submission is linked to this mission",
+    "stageAge": "In this status",
+    "stageAgeValue_one": "for {{count}} day",
+    "stageAgeValue_other": "for {{count}} days",
+    "stageAgeUnknown": "the status change was not timestamped",
+    "margin": "Margin",
+    "marginValue": "{{percent}}%",
+    "marginNotMeasured": "the loaded cost is not set",
+    "marginNoAccess": "margin is outside your scope",
+    "columnsLabel": "Visible columns",
+    "columnsCta": "Columns",
+    "columnsPinned": "Always shown — without the name, you no longer know what the row is about.",
+    "columnsReset": "Restore default columns",
+    "columnsCount_one": "{{count}} column shown",
+    "columnsCount_other": "{{count}} columns shown",
+    "daysLeft": "D-{{count}}",
+    "overdue": "Past due",
+    "endsToday": "Ends today",
+    "endsOnUnreadable": "End date unreadable",
+    "nextAction": "Next action",
+    "nextActionUnread": "the next action has not been returned by the server yet",
+    "risksMore_one": "+{{count}} more",
+    "risksMore_other": "+{{count}} more",
+    "marginNotMeasuredTitle": "Margin not measured",
+    "marginNotMeasuredShort": "not measured",
+    "marginMissingCost": "Loaded cost missing",
+    "marginComplete": "Complete",
+    "marginCompleteHint": "Open the mission’s commercial terms",
+    "assigneesMore_one": "+{{count}} more",
+    "assigneesMore_other": "+{{count}} more",
+    "open": "Open",
+    "openMission": "Open mission {{label}}",
+    "rowActions": "Actions for {{label}}",
+    "actions": {
+      "prepareRenewal": "Prepare the renewal",
+      "requestCra": "Request the timesheet",
+      "prepareInvoice": "Prepare the invoice",
+      "checkPayment": "Check the payment",
+      "repositionConsultant": "Reposition the consultant",
+      "requestFeedback": "Request feedback",
+      "fillMissingData": "Fill in missing data"
+    },
+    "askLauraAboutMission": "On the mission “{{mission}}”: is there anything to do?",
+    "askLauraShort": "Ask {{copilot}}",
+    "renewalStatus": "Renewal",
+    "owner": "Owner",
+    "ownerUnknown": "no owner on record",
+    "manager": "Manager",
+    "managerUnknown": "not on record",
+    "columnsLocked": "This column is what this screen is about: it cannot be unchecked here.",
+    "satisfaction": "Satisfaction",
+    "legalEntity": "Legal entity"
+  },
+  "tabs": {
+    "terms": "Terms & finance",
+    "overview": "Overview",
+    "staffing": "Team & next steps",
+    "scores": "Points of attention",
+    "history": "Documents & follow-up"
+  },
+  "overview": {
+    "title": "What you need to know",
+    "role": "Role sought",
+    "deliveryMode": "Delivery",
+    "clientTeam": "Client-side team",
+    "clientTeamUnknown": "Not set",
+    "clientTeamCount_one": "{{count}} person",
+    "clientTeamCount_other": "{{count}} people",
+    "clientTeamNamed_one": "{{count}} person · {{names}}",
+    "clientTeamNamed_other": "{{count}} people · {{names}}",
+    "originOpportunity": "Originating need",
+    "originSubmission": "Originating submission",
+    "contractKind": "Contract type",
+    "startedOn": "Started on",
+    "endsOn": "Planned end",
+    "remotePreference": "Remote work",
+    "location": "Location",
+    "objective": "Objective",
+    "objectiveAria": "Mission objective",
+    "perimeter": "Scope",
+    "perimeterAria": "Mission scope",
+    "editObjectivePerimeter": "Edit objective and scope",
+    "saveObjectivePerimeter": "Save",
+    "cancelObjectivePerimeter": "Cancel",
+    "risks": "What is off",
+    "feedback": {
+      "title": "The mission’s pulse",
+      "clientRail": "Client",
+      "consultantRail": "Consultant",
+      "empty": "No feedback yet",
+      "loadError": "Feedback could not be loaded.",
+      "notePlaceholder": "Write a feedback note…",
+      "privateLabel": "Visible to me only",
+      "privateBadge": "private",
+      "teamBadge": "visible to the team",
+      "submit": "Save feedback",
+      "noWriteRight": "You don’t have the right to add feedback on this mission."
+    },
+    "tracking": {
+      "title": "Tracking — client points, consultant points, decisions, issues, adjacent needs, actions"
+    },
+    "businessUnit": "Owning BU",
+    "deliveryModeStaffed": "With consultants",
+    "changeDeliveryMode": "Change the delivery mode",
+    "saveDeliveryMode": "Save the mode",
+    "cancelDeliveryMode": "Cancel"
+  },
+  "scores": {
+    "title": "Risk & opportunity",
+    "riskTitle": "Risk",
+    "opportunityTitle": "Opportunity",
+    "hint": "Two scores and never one: “high risk, high opportunity” is a mission to work on urgently, “high risk, low opportunity” one to let go.",
+    "noAccess": "Risk and opportunity scores are outside your scope. This is not missing data: it is a permission your role does not have.",
+    "notComputed": "No score yet: fewer than three axes could be evaluated on this mission.",
+    "axes": {
+      "renewal": "Renewal",
+      "timesheets": "Timesheets",
+      "margin": "Margin",
+      "payment": "Payment",
+      "concentration": "Concentration",
+      "longevity": "Longevity",
+      "expansion": "Expansion",
+      "footprint": "Footprint on the account"
+    },
+    "level": {
+      "low": "Low",
+      "medium": "Medium",
+      "high": "High"
+    },
+    "levelLower": {
+      "low": "low",
+      "medium": "medium",
+      "high": "high"
+    },
+    "axisLevel": "{{axis}}: {{level}}",
+    "notEvaluable": "Not assessable: {{axes}}"
+  },
+  "planning": {
+    "title": "Planning",
+    "subtitle": "Who is on which mission, and until when. An end we do not know is not drawn as an end.",
+    "previousWindow": "Previous window",
+    "nextWindow": "Next window",
+    "today": "Today",
+    "todayMarker": "Today",
+    "search": "Search a mission, an account, a consultant…",
+    "includeFinished": "Include finished missions",
+    "finishedHidden_one": "{{count}} finished mission is not drawn.",
+    "finishedHidden_other": "{{count}} finished missions are not drawn.",
+    "summary": {
+      "visible_one": "{{count}} mission in this window",
+      "visible_other": "{{count}} missions in this window",
+      "starts_one": "{{count}} start",
+      "starts_other": "{{count}} starts",
+      "ends_one": "{{count}} end date",
+      "ends_other": "{{count}} end dates",
+      "openEnded_one": "{{count}} with no end date",
+      "openEnded_other": "{{count}} with no end date",
+      "why": "“No end date” is counted separately: those missions have no deadline to anticipate, and filing them with the end dates would invent one.",
+      "endingSoon_one": "{{count}} ending within 30 days",
+      "endingSoon_other": "{{count}} ending within 30 days",
+      "soonAvailable_one": "{{count}} consultant freeing up soon",
+      "soonAvailable_other": "{{count}} consultants freeing up soon",
+      "intercontract_one": "Talent pool: {{count}} consultant between missions →",
+      "intercontract_other": "Talent pool: {{count}} consultants between missions →",
+      "conflicts_one": "{{count}} conflict",
+      "conflicts_other": "{{count}} conflicts",
+      "conflictKinds": {
+        "overlap_one": "{{count}} overlap",
+        "overlap_other": "{{count}} overlaps",
+        "gap_one": "{{count}} gap",
+        "gap_other": "{{count}} gaps",
+        "unstaffedStart_one": "{{count}} start with no consultant",
+        "unstaffedStart_other": "{{count}} starts with no consultant",
+        "undated_one": "{{count}} mission with no date",
+        "undated_other": "{{count}} missions with no date",
+        "overallocation_one": "{{count}} overallocation",
+        "overallocation_other": "{{count}} overallocations"
+      }
+    },
+    "bar": {
+      "openEnd": "No end date — the right edge of the bar is not a deadline.",
+      "openStart": "No start date — the left edge of the bar is not a date.",
+      "clippedStart": "Started before the window.",
+      "clippedEnd": "Continues after the window.",
+      "shortOpenStart": "Start unknown",
+      "shortClippedStart": "Starts before window",
+      "shortOpenEnd": "End unknown",
+      "shortClippedEnd": "Ends after window",
+      "dragHandle": "Drag to move {{label}}",
+      "dragBlockedHandle": "Drag blocked for {{label}}",
+      "dragBlocked": "Can't drag: {{reason}}",
+      "dragPreview": "New dates: {{start}} → {{end}}",
+      "confirmShift": "Move",
+      "cancelShift": "Cancel",
+      "overallocated": "Overallocated · {{percent}} %"
+    },
+    "undated": {
+      "title": "No usable date",
+      "description": "Neither a start nor an end. Putting them at the left of the timeline would give them a date nobody entered."
+    },
+    "outside": {
+      "title": "Outside the window",
+      "description_one": "{{count}} mission is dated outside these months.",
+      "description_other": "{{count}} missions are dated outside these months."
+    },
+    "inconsistent": {
+      "title": "Dates to fix",
+      "description": "The end precedes the start. Nothing is drawn: a backwards bar cannot be seen, and says nothing."
+    },
+    "emptyTitle": "Nothing to plan in these months",
+    "emptyDescription": "No mission covers this window. They ended before it, or have not started yet.",
+    "emptyCta": "Back to today",
+    "searchEmptyTitle": "No mission matches",
+    "searchEmptyDescription": "The search covers the mission name, the account, the role and the people assigned. Nothing here says the window is empty — only that your search finds nothing.",
+    "searchEmptyCta": "Clear the search",
+    "truncated": "The mission read is capped at {{count}} rows, closest end dates first. Beyond that, a mission ending later may be missing from this timeline.",
+    "openRow": "Open mission {{label}}",
+    "rowMenu": {
+      "label": "Actions on {{label}}",
+      "title": "Actions",
+      "prepareRenewal": "Prepare the renewal",
+      "reverseMarket": "Find assignments for {{name}}",
+      "createInternalNeed": "Create an internal need"
+    },
+    "unnamedMission": "Unnamed mission",
+    "introTitle": "Your mission planning, {{firstName}}",
+    "introTitleWithoutName": "Team planning",
+    "listLink": "Missions list",
+    "newMission": "New mission",
+    "introSubtitle": "See which consultants are engaged, what starts next and who becomes available.",
+    "facetsLabel": "Narrow the timeline",
+    "facets": {
+      "starts": "Starts",
+      "ends": "End dates",
+      "openEnded": "No end date"
+    },
+    "facetHints": {
+      "starts": "Missions whose start falls inside the window on screen.",
+      "ends": "Missions whose PLANNED end falls inside the window. A mission with no end date is never counted here.",
+      "openEnded": "Missions running with no known end. Their right edge is not a deadline."
+    },
+    "scale": {
+      "label": "Window length",
+      "option_one": "{{count}} month",
+      "option_other": "{{count}} months"
+    },
+    "filters": {
+      "consultant": "Consultant",
+      "account": "Account",
+      "status": "Status",
+      "owner": "Owner",
+      "businessUnit": "BU",
+      "skill": "Skill",
+      "availability": "Availability",
+      "availabilityOptions": {
+        "now": "Available now",
+        "soon": "Soon (30 days)",
+        "later": "Later",
+        "unknown": "Unknown"
+      },
+      "all": "{{what}}: all"
+    },
+    "availability": {
+      "header": "Frees up",
+      "now": "Available now",
+      "from": "Available from {{date}}",
+      "nowUncertain": "Available now — renewal undecided",
+      "fromUncertain": "Available from {{date}} — renewal undecided",
+      "renewed": "Renewed — no availability on this date",
+      "unknown": "End unknown",
+      "unreadable": "End date unreadable",
+      "after": "After {{date}}",
+      "pendingNext": "Subject to what follows",
+      "confirmed": "End confirmed",
+      "declared": "Available on {{date}}",
+      "declaredHint": "Declared on their profile — it wins over the mission end"
+    },
+    "laura": {
+      "label": "Ask {{copilot}} about my schedule",
+      "question": "On my mission schedule from {{from}} to {{to}}{{filters}}: who frees up in the next 30 days, which missions have no end date, and where do I have a renewal risk?",
+      "filters": ", looking only at {{list}}",
+      "onConsultant": "{{name}}’s missions",
+      "onAccount": "the {{name}} account",
+      "onStatus": "missions with status “{{status}}”",
+      "onFacet": "“{{facet}}”"
+    },
+    "blocked": {
+      "kicker": "Sales administration",
+      "title_one": "{{count}} mission cannot start",
+      "title_other": "{{count}} missions cannot start",
+      "none": "No blocked mission right now.",
+      "description": "Starts and renewals in the next 60 days whose file is incomplete. The reason is fixed in the mission file.",
+      "clear": "Remove filter",
+      "countersLabel": "Counters by reason",
+      "notMeasured": "Not measured",
+      "notMeasuredHint": "check not computed yet",
+      "dossiers_one": "{{count}} file",
+      "dossiers_other": "{{count}} files",
+      "age_one": "{{count}} day",
+      "age_other": "{{count}} days",
+      "ageUnknown": "Age unknown",
+      "open": "Open the file",
+      "loadFailed": "The start files could not be read. The list is not empty: it is unknown.",
+      "footnote": "A reason at zero stays neutral: it is never painted green.",
+      "pill": "Blocked",
+      "pillCount": "Blocked ({{count}})",
+      "pillLabel": "Blocked files filter"
+    },
+    "deadlines": {
+      "tilesLabel": "Planning deadlines",
+      "toAccompany": "Missions to support",
+      "endingSoon": "Ending within 30 days",
+      "endingSoonHint": "Prepare what comes next",
+      "starting": "Planned starts",
+      "startingHint": "Check the prerequisites",
+      "endUnset": "End date not set",
+      "endUnsetHint": "No date assumed",
+      "none": "None",
+      "title": "Deadlines to prepare",
+      "subtitle": "The planning’s deadlines, not a second task manager.",
+      "empty": "No deadline to prepare in the next 30 days.",
+      "endsIn_one": "Ends in {{count}} day",
+      "endsIn_other": "Ends in {{count}} days",
+      "startsOn": "Start · {{date}}",
+      "prepareNext": "Prepare what comes next",
+      "checkStart": "Check the start",
+      "intercontract_one": "Between missions · {{count}} person",
+      "intercontract_other": "Between missions · {{count}} people",
+      "intercontractHint": "No mission in progress: offer one, or open an internal need.",
+      "findMissions": "Find missions",
+      "endingAction": "Plan what comes next: renew, reposition the person or close cleanly.",
+      "startingAction": "Check the agreement, access and purchase order before day one."
+    },
+    "legend": {
+      "label": "Planning legend",
+      "active": "In progress",
+      "ending": "End to anticipate",
+      "starting": "Planned start",
+      "conflict": "Planning conflict",
+      "conflictAria": "Planning conflict",
+      "endIsNotAvailability": "Planned end ≠ confirmed availability. Moving a mission is validated before it is applied."
+    },
+    "export": {
+      "button": "Export",
+      "mission": "Mission",
+      "account": "Account",
+      "consultant": "Consultant",
+      "start": "Start",
+      "end": "Planned end"
+    },
+    "screen": {
+      "title": "Missions",
+      "subtitle": "Who is working, until when. And what to prepare next.",
+      "featureText": "People, deadlines and next steps in a single planning.",
+      "facepile": "People on a mission",
+      "searchPlaceholder": "Mission, consultant, account…",
+      "seeActions": "See actions",
+      "situation": {
+        "running": "Running",
+        "renewal": "To renew",
+        "starting": "Start planned",
+        "ending": "Ending soon"
+      },
+      "toolbar": {
+        "filters": "Filters",
+        "filtersActive_one": "Filters · {{count}}",
+        "filtersActive_other": "Filters · {{count}}",
+        "views": "My views",
+        "groupLabel": "Group the planning",
+        "group": {
+          "mission": "By mission",
+          "account": "By account",
+          "consultant": "By consultant"
+        },
+        "viewLabel": "Planning view",
+        "view": {
+          "timeline": "Planning",
+          "table": "Table",
+          "board": "Board"
+        }
+      },
+      "quick": {
+        "label": "Narrow the planning",
+        "ending": "Ending within 30 d",
+        "ending60": "Ending within 60 d",
+        "ending90": "Ending within 90 d",
+        "starting": "Starting",
+        "noEnd": "No end date",
+        "toCheck": "To check",
+        "reset": "Reset",
+        "hint": {
+          "ending": "Missions whose planned end falls within the next 30 days. A missing end is never counted.",
+          "ending60": "Missions whose planned end falls within the next 60 days (the 30-day window included). A missing end is never counted.",
+          "ending90": "Missions whose planned end falls within the next 90 days (the 30- and 60-day windows included). A missing end is never counted.",
+          "starting": "Missions whose start is planned after today.",
+          "noEnd": "Missions running with no known end. Their right edge is not a deadline.",
+          "toCheck": "Missions with a planning conflict: overlap, gap, over-allocation, start without a consultant."
+        }
+      },
+      "calendar": {
+        "title": "The team planning",
+        "range": "{{from}} — {{to}}",
+        "after": "After the mission",
+        "detail": "Details",
+        "detailOf": "Details of {{label}}"
+      },
+      "filters": {
+        "title": "Filter the planning",
+        "intro": "The same selection applies to the planning, the table and the board. Missions are neither deleted nor moved.",
+        "more": "More filters",
+        "reset": "Reset",
+        "apply": "Apply",
+        "selected_one": "{{count}} selected",
+        "selected_other": "{{count}} selected",
+        "keys": {
+          "account": "Account",
+          "consultant": "Consultant",
+          "owner": "Owner",
+          "situation": "Status",
+          "skill": "Expertise",
+          "clientTeam": "Team at the client",
+          "availability": "Derived availability",
+          "businessUnit": "BU / agency"
+        }
+      },
+      "views": {
+        "title": "Planning views",
+        "intro": "Save the filters and the date window, without copying the missions.",
+        "listLabel": "My planning views",
+        "empty": "No saved planning view.",
+        "nameLabel": "View name",
+        "close": "Close",
+        "save": "Save the current view"
+      },
+      "table": {
+        "label": "Missions table",
+        "mission": "Mission / consultant",
+        "account": "Account",
+        "dates": "Planned dates",
+        "renewal": "Renewal",
+        "renewalUnknown": "Renewal not recorded",
+        "situation": "Situation",
+        "owner": "Owner",
+        "unstaffed": "Nobody assigned",
+        "unknownOwner": "No owner set"
+      },
+      "board": {
+        "emptyColumns": "Empty columns collapsed: {{list}}. Moving a card checks its prerequisites first."
+      },
+      "create": {
+        "title": {
+          "choose": "Create a mission",
+          "manual": "Enter the mission",
+          "document": "From a document",
+          "odoo": "Import from your management tool"
+        },
+        "intro": {
+          "choose": "Start from a won deal, a document or a short entry. No mission is created before review.",
+          "manual": "Account, person, dates and terms. The rest can be completed later.",
+          "document": "Pick the account, then drop the contract or purchase order: the fields read are proposed to you.",
+          "odoo": "Confirmed sales that do not have a mission yet: import them one by one, or all after review."
+        },
+        "manual": {
+          "title": "Enter the mission",
+          "hint": "Account, person, dates and terms. The rest can be completed later."
+        },
+        "document": {
+          "title": "From a document",
+          "hint": "Attach the contract or purchase order, then check the fields read."
+        },
+        "won": {
+          "title": "From a won deal",
+          "hint": "Find the linked mission, or open the existing Deals flow."
+        },
+        "odoo": {
+          "title": "Import from your management tool",
+          "hint": "Your tool is connected: some confirmed sales have no mission yet. Import one by one, or all after review."
+        },
+        "back": "Back to the choices",
+        "close": "Close"
+      },
+      "peek": {
+        "start": "Planned start",
+        "end": "Planned end",
+        "afterFrom": "After the mission: available on {{date}}.",
+        "afterFromUncertain": "After the mission: available on {{date}}, subject to what follows. A planned end is not a confirmed availability.",
+        "afterNow": "After the mission: nothing is committed.",
+        "afterUnknown": "No end entered: no availability is assumed.",
+        "prepareClientReview": "Prepare the client review",
+        "editDates": "Edit the dates",
+        "seeTimesheets": "See the timesheets",
+        "more": "More details",
+        "back": "Back to the planning",
+        "openDossier": "Open the mission"
+      },
+      "move": {
+        "title": "Move the mission",
+        "intro": "A move is validated: the assignment, timesheets and purchase order are reviewed before being changed.",
+        "start": "Start",
+        "end": "End",
+        "endBeforeStart": "The end is before the start.",
+        "availabilityNote": "A planned end is not a confirmed availability: if the person declared one, review it with them.",
+        "cancel": "Cancel",
+        "confirm": "Validate the move"
+      },
+      "eyebrow": "Delivery & client follow-up"
+    },
+    "signedProjects": {
+      "title_one": "{{count}} signed project tracked here",
+      "title_other": "{{count}} signed projects tracked here",
+      "subtitle": "A signed project is tracked here instead of a mission: there is no consultant to staff.",
+      "signedOn": "Signed on {{date}}",
+      "signedOnUnknown": "Signature date not entered",
+      "detailDescription": "Follow-up of the signed project: steps, deliverables and dates."
+    }
+  },
+  "chain": {
+    "title": "From signature to cash",
+    "intro": "The five steps of this mission, and the screen where each one is fixed.",
+    "month": "Month read: {{month}}",
+    "steps": {
+      "timesheet": "Timesheet",
+      "billable": "Billable revenue",
+      "invoice": "Invoice prepared",
+      "collection": "Payment",
+      "reposition": "Repositioning"
+    },
+    "state": {
+      "done": "Cleared",
+      "pending": "Waiting",
+      "blocked": "Blocked",
+      "not_applicable": "Not applicable",
+      "not_due": "Not due yet",
+      "in_progress": "In progress"
+    },
+    "why": {
+      "readingFailed": "The month could not be read: this step is not measured — that does not make it cleared.",
+      "noRowThisMonth": "No billing line for this mission on the month read.",
+      "notMonthly": "This mission is not billed monthly: the question does not arise.",
+      "craBlockedWithoutCode": "The timesheet is blocking with no recorded reason — the timesheets screen says which.",
+      "waitingOnTimesheet": "Nothing blocks here: it is the timesheet, at the previous step.",
+      "readyToInvoice": "Ready to invoice — no invoice recorded yet.",
+      "waitingOnBillable": "The month is not billable yet.",
+      "disputed": "The client is disputing this invoice: reminders are stopped.",
+      "overdue": "The due date has passed and no payment is recorded.",
+      "awaitingPayment": "Invoice recorded, due date ahead.",
+      "notInvoicedYet": "Nothing to collect: the invoice has not gone out.",
+      "noRenewalWindow": "This mission's deadline was not sent — worth checking again in a moment.",
+      "noEndDate": "This mission has no end date: there is no way to say when to reposition.",
+      "tooEarly": "The end of the mission is still far off.",
+      "window": {
+        "j60": "The end is coming: two months.",
+        "j45": "The end is coming: six weeks.",
+        "j30": "The end is coming: one month.",
+        "j15": "The end is coming: fifteen days.",
+        "imminent": "The end is imminent.",
+        "overdue": "The renewal deadline has passed."
+      },
+      "missionNotRead": "The mission’s status was not sent — check again in a moment.",
+      "onboarding": "The mission is being set up: it has not started yet.",
+      "notStartedYet": "The mission has not started yet.",
+      "paused": "The mission is paused: its billing stops with it.",
+      "periodRunning": "The period is still running: this step comes when it ends.",
+      "waitingOnSubmission": "The timesheet is not submitted yet: nothing to approve.",
+      "sendNotTracked": "{{brand}} prepares the invoice, it does not send it: sending is checked in the invoicing tool.",
+      "noDueDate": "No due date is set: impossible to say whether it has passed.",
+      "dueLater": "The due date is ahead: this delay is contractual, not late.",
+      "partialPayment": "A partial payment is recorded: the rest is still owed.",
+      "noReconciliation": "{{brand}} reconciles no bank account: reconciliation is checked in the accounting tool.",
+      "notPaidYet": "Nothing to reconcile or close until the balance is collected."
+    },
+    "noDoor": "No screen to open from this step.",
+    "stages": {
+      "mission_created": "Mission created",
+      "mission_ready": "Mission ready",
+      "mission_active": "Mission active",
+      "period_delivered": "Period delivered",
+      "timesheet_submitted": "Timesheet submitted",
+      "timesheet_validated": "Timesheet approved",
+      "billable_computed": "Billable revenue computed",
+      "invoice_prepared": "Invoice preparation",
+      "invoice_created": "Invoice created",
+      "invoice_sent": "Invoice sent",
+      "invoice_due": "Due date",
+      "payment_received": "Payment received",
+      "payment_reconciled": "Payment reconciled",
+      "period_closed": "Period closed"
+    },
+    "owner": {
+      "mission_owner": "Owner: {{name}} (mission owner)",
+      "consultant": "Owner: {{name}} (assigned consultant)",
+      "missing": {
+        "mission_owner": "No owner on this mission — step without an owner",
+        "consultant": "No consultant assigned — step without an owner"
+      },
+      "unread": "Owner not sent"
+    },
+    "proof": {
+      "created": "Created on {{date}}",
+      "startedOn": "Started on {{date}}",
+      "missionStatus": "Mission status",
+      "periodEnded": "Period ended on {{date}}",
+      "cra": {
+        "validated": "Timesheet approved",
+        "to_validate": "Timesheet submitted, awaiting approval",
+        "conflict": "Timesheet submitted, disputed"
+      },
+      "billable": "Month billable",
+      "prepared": "Preparation drawn up",
+      "invoicedProven": "Invoice read from the connected tool on {{date}}",
+      "invoicedDeclared": "Invoice declared on {{date}} by {{by}}",
+      "dueOn": "Due on {{date}}",
+      "paid": "Payment recorded on {{date}}",
+      "amount": "Amount: {{amount}}",
+      "reference": "Reference: {{reference}}",
+      "unknownAuthor": "author not found"
+    },
+    "since": "Since {{date}} ({{count}} d)",
+    "timeline": {
+      "toggle": "Mission-to-cash detail (14 steps)",
+      "current": "Current step: {{stage}}",
+      "noCurrent": "No open step on the month read.",
+      "exception": "Exception",
+      "noGo": {
+        "title": "Inconsistent step",
+        "blockedWithoutReason": "{{stage}}: blocked without a recorded reason.",
+        "openWithoutOwner": "{{stage}}: open without an owner or an exception.",
+        "doneWithoutProof": "{{stage}}: done without recorded proof."
+      }
+    }
+  },
+  "dossier": {
+    "openCta": "Open the record",
+    "openLabel": "Open the record for {{label}}",
+    "quickActions": {
+      "askLaura": {
+        "label": "Ask {{copilot}}",
+        "question": "What should I know or do about the mission \"{{mission}}\" ({{account}})?"
+      },
+      "planPoint": {
+        "label": "Plan a check-in",
+        "question": "Prepare a check-in for the mission \"{{mission}}\" ({{account}}). Tell me what changed since last time and what still needs to be decided."
+      },
+      "createAction": {
+        "label": "Create an action",
+        "createdLabel": "Action created",
+        "defaultLabel": "Follow up on the mission — {{mission}}",
+        "defaultReason": "Keep {{mission}} under control and spot what needs handling",
+        "defaultExpectedOutcome": "{{mission}} tracked: every point to handle is spotted and dated",
+        "created": "Action added to the account plan.",
+        "createError": "The action could not be created."
+      }
+    },
+    "loading": "Opening the record…",
+    "backToList": "Back to missions",
+    "createProject": "Create a project",
+    "retry": "Try again",
+    "errorTitle": "This mission could not be loaded",
+    "errorBody": "It is still there — the read is what failed. Try again.",
+    "missingTitle": "Mission not found",
+    "missingBody": "This mission is not in this workspace. The link may come from another workspace, or the mission has since been removed.",
+    "provenance": {
+      "groupLabel": "Provenance of the main fields",
+      "client": "Client",
+      "label": "Title",
+      "startedOn": "Start",
+      "endsOn": "End",
+      "dailyRate": "Daily rate"
+    },
+    "hero": {
+      "account": "Account",
+      "status": "Status",
+      "groupLabel": "Who is on this mission",
+      "consultant": "Consultant",
+      "consultantUnknown": "no consultant assigned",
+      "consultantUnread": "assignments not read",
+      "clientManager": "Client manager",
+      "clientManagerUnknown": "not designated",
+      "period": "Period",
+      "nextAction": "Next action"
+    },
+    "primaryAction": {
+      "pointer_one": "{{count}} item to complete — the detail is in the checklist just below.",
+      "pointer_other": "{{count}} items to complete — the detail is in the checklist just below.",
+      "groupLabel": "Mission's primary action",
+      "label": "Primary action",
+      "state": {
+        "confirm_availability": "Revalidate availability",
+        "complete_start": "Complete the start",
+        "complete_end_checklist": "Complete the exit",
+        "decide_renewal": "Decide on renewal",
+        "on_track": "Nothing to do"
+      }
+    },
+    "repositioning": {
+      "title": "Why reposition",
+      "constraint": "{{name}} — {{text}}",
+      "reasons": {
+        "ending_confirmed": "Ending confirmed or repositioning already launched — nothing starts on its own.",
+        "tier_close": "The end is getting close.",
+        "market_demand": "Market demand is measured on an assignee’s territory.",
+        "profile_scarcity": "A rare profile is harder to reposition.",
+        "open_needs": "An open need requires a skill an assignee holds.",
+        "partners": "A partner is already known on the client account.",
+        "relations": "A declared relation already exists on the client account.",
+        "constraints": "An assignee has declared a constraint on their profile.",
+        "market_memory": "The market shows a technology at the client that an assignee holds.",
+        "presentation_history": "An assignee was recently presented, across any need — the profile is already circulating in the market."
+      }
+    },
+    "lifecycle": {
+      "groupLabel": "Mission lifecycle",
+      "current": "Current stage: {{stage}}",
+      "stages": {
+        "agreement": "Agreement",
+        "start": "Start",
+        "mission": "Mission",
+        "handover": "Handover",
+        "closure": "Closure"
+      }
+    },
+    "backToPlanning": "Back to the planning",
+    "eyebrow": "Mission dossier",
+    "tabsLabel": "Mission dossier views",
+    "relief": {
+      "hint": "Prepare continuity without changing the current assignment.",
+      "open": "Find a relief / reinforcement",
+      "title": "Mission follow-up — {{mission}}",
+      "context": "Prepare what follows “{{mission}}”: a relief or a reinforcement. The current assignment is not changed; the need created is compared with the talent pool."
+    },
+    "identity": {
+      "label": "Mission identity"
+    },
+    "nextStep": {
+      "title": "Next step"
+    },
+    "props": {
+      "label": "Mission properties",
+      "situation": "Mission situation",
+      "dates": "Planned dates",
+      "skills": "Expertise of those assigned",
+      "place": "Place / arrangement",
+      "source": "Mission source",
+      "laura": "Talk to {{copilot}}",
+      "lauraQuestion": "What should I know or prepare about the mission “{{mission}}” ({{account}})?",
+      "owner": "{{brand}} owner"
+    },
+    "pointClient": {
+      "open": "Prepare the client review",
+      "title": "Prepare the client review",
+      "intro": "Preparing sends nothing: the draft is kept in your mailbox, you review it and send it yourself.",
+      "to": "Recipient",
+      "subject": "Subject",
+      "body": "Message to review",
+      "regenerate": "Regenerate",
+      "shorter": "Shorter",
+      "direct": "More direct",
+      "cancel": "Cancel",
+      "keep": "Keep the draft",
+      "kept": "Draft kept in your mailbox. Nothing is sent.",
+      "keepError": "The draft could not be kept.",
+      "noRecipient": "No client contact is set on this mission: set one to leave a draft.",
+      "noEmail": "The contact’s e-mail address is not filled in: the text stays copyable, no address is guessed."
+    },
+    "more": "More mission actions",
+    "frame": {
+      "title": "Mission frame",
+      "mode": "Delivery mode",
+      "staffed_one": "Staffed",
+      "staffed_other": "Staffed",
+      "staffedHint_one": "{{count}} consultant assigned",
+      "staffedHint_other": "{{count}} consultants assigned",
+      "forfait": "Fixed price",
+      "forfaitHint": "Outcome commitment",
+      "unstaffed": "Nobody assigned",
+      "unstaffedHint": "No assignment read"
+    }
+  },
+  "createMission": {
+    "title": "New mission",
+    "description": "An account, a title, a start date: the mission is created and follows its lifecycle (ongoing, extended, ended).",
+    "back": "Back to my ongoing missions",
+    "eyebrow": "Mission record"
+  },
+  "noEndDateTitle": "End date missing",
+  "noEndDateConsequence": "Without it, no renewal can be triggered in time.",
+  "cockpitKpis": {
+    "activeMissions": "Active missions",
+    "securedRevenue": "Secured revenue",
+    "atRiskRevenue": "At-risk revenue",
+    "periodNow": "Right now",
+    "periodThisMonth": "This month",
+    "financeHidden": "Finance access required",
+    "billableNotInvoiced": "Billable, not yet invoiced",
+    "overdueInvoices": "Overdue invoices",
+    "periodLastMonth": "Last month",
+    "periodWindow": "Over 12 months",
+    "overdueCount_one": "{{count}} invoice",
+    "overdueCount_other": "{{count}} invoices"
+  },
+  "toolbar": {
+    "searchPlaceholder": "Search a mission, an account…",
+    "facetsLabel": "Quick filters",
+    "facets": {
+      "toRenew": "To renew",
+      "noEndDate": "No end date",
+      "withRisk": "At risk",
+      "marginAtRisk": "Margin at risk",
+      "consultantsSoonAvailable": "Consultants soon available"
+    },
+    "facetHints": {
+      "toRenew": "Overdue, imminent, or ending within 30 days",
+      "noEndDate": "No renewal window can be triggered without it",
+      "withRisk": "At least one computed risk — renewal not started, timesheet, margin",
+      "marginAtRisk": "Margin is negative or zero — not just unmeasured",
+      "consultantsSoonAvailable": "Confirmed end or repositioning already launched within 30 days — never a renewal that's only been announced"
+    },
+    "windowsLabel": "Deadline breakdown",
+    "statusLabel": "Status",
+    "contractKindLabel": "Type",
+    "ownerLabel": "Owner",
+    "accountLabel": "Client",
+    "consultantLabel": "Consultant",
+    "channelLabel": "Channel",
+    "currencyLabel": "Currency",
+    "businessUnitLabel": "BU / agency",
+    "endWindowLabel": "End",
+    "clearFilters": "Clear filters",
+    "filteredTitle": "No mission matches this filter",
+    "filteredDescription": "Your search or your chips let nothing through. The counters still count the whole list.",
+    "showMore_one": "Show 1 more",
+    "showMore_other": "Show {{count}} more",
+    "showLess": "Show less",
+    "legalEntityLabel": "Legal entity",
+    "satisfactionLabel": "Satisfaction"
+  },
+  "meetingPrep": {
+    "title": "Prepare the meeting",
+    "subtitle": "Pitch, first-meeting (R1) flow and references: ready to read before you call the client.",
+    "open": "Prepare the meeting",
+    "hide": "Hide"
+  },
+  "startReadiness": {
+    "title": "What is blocking the start",
+    "agreementsPending": "Agreements to confirm",
+    "verdict": {
+      "ready": "Ready",
+      "ready_with_reserves": "Ready with reservations",
+      "blocked": "Blocked",
+      "incomplete": "Incomplete"
+    },
+    "state": {
+      "done": "Confirmed",
+      "missing": "Missing",
+      "stale": "To revalidate"
+    },
+    "items": {
+      "client_agreement": "Client agreement",
+      "consultant_agreement": "Consultant agreement",
+      "contract_signed": "Signed contract or purchase order",
+      "consultant_assigned": "Consultant assigned",
+      "start_date": "Start date",
+      "daily_rate": "Daily rate",
+      "site_access": "Day-one location and access"
+    },
+    "reserve": "reservation",
+    "confirm": "Confirm",
+    "withdraw": "Withdraw",
+    "save": "Save",
+    "proofLabel": "Proof (email, purchase order, call…)",
+    "proofPlaceholder": "E.g. client email of 20/09",
+    "confirmedOn": "Confirmed on {{date}} — proof: {{proof}}",
+    "saved": "Start prerequisite saved.",
+    "saveError": "The prerequisite could not be saved."
+  },
+  "endChecklist": {
+    "title": "Exit checklist",
+    "verdict": {
+      "not_started": "Not started",
+      "in_progress": "In progress",
+      "complete": "Complete"
+    },
+    "state": {
+      "done": "Done",
+      "missing": "Missing"
+    },
+    "groups": {
+      "client": "Client",
+      "consultant": "Consultant",
+      "internal": "Internal"
+    },
+    "items": {
+      "client_handover": "Handover",
+      "client_documents": "Documents",
+      "client_payment": "Payment",
+      "consultant_mobility": "Mobility",
+      "consultant_daily_rate": "Daily rate",
+      "consultant_preferences": "Preferences",
+      "consultant_cv_updated": "Updated CV",
+      "consultant_consent": "Consent",
+      "consultant_other_processes": "Other ongoing processes",
+      "internal_actions": "Actions",
+      "internal_references": "References",
+      "internal_equipment": "Equipment",
+      "internal_documents": "Documents"
+    },
+    "confirm": "Confirm",
+    "withdraw": "Withdraw",
+    "save": "Save",
+    "noteLabel": "Note",
+    "notePlaceholder": "E.g. handed over on 20/09",
+    "confirmedOn": "Confirmed on {{date}} — {{note}}",
+    "saved": "Exit checklist item saved.",
+    "saveError": "The item could not be saved."
+  },
+  "deliveryMilestones": {
+    "title": "Delivery milestones",
+    "state": {
+      "not_started": "Not started",
+      "in_progress": "In progress",
+      "done": "Done",
+      "not_evaluable": "Not evaluable",
+      "projected": "Known lead",
+      "lead_known": "Known lead"
+    },
+    "notStartedGroup_one": "{{count}} milestone not started",
+    "notStartedGroup_other": "{{count}} milestones not started",
+    "declare": "Declare",
+    "save": "Save",
+    "cancel": "Cancel",
+    "noteLabel": "Note",
+    "notePlaceholder": "E.g. brief sent on 20/09",
+    "confirmedOn": "Confirmed on {{date}} — {{note}}",
+    "saved": "Delivery milestone saved.",
+    "saveError": "The milestone could not be saved.",
+    "reinjection": {
+      "consultant_terrain": "Could feed a signal.",
+      "crm_action": "Could feed an action."
+    }
+  },
+  "endReason": {
+    "title": "End reason",
+    "reasons": {
+      "date_prevue": "Planned end date",
+      "renouvellement_refuse": "Renewal declined",
+      "interruption": "Interrupted",
+      "remplacement": "Replacement",
+      "demission": "Resignation",
+      "fin_budget": "Budget ended",
+      "mauvais_fit": "Poor fit",
+      "fin_projet": "Project ended"
+    },
+    "saved": "End reason saved.",
+    "saveError": "The end reason could not be saved."
+  },
+  "interruption": {
+    "title": "Mission interrupted",
+    "responsibility": {
+      "label": "Responsibility",
+      "client": "Client",
+      "consultant": "Consultant",
+      "esn": "Us",
+      "partage": "Shared"
+    },
+    "risk": {
+      "label": "Risk",
+      "faible": "Low",
+      "moyen": "Medium",
+      "eleve": "High"
+    },
+    "confidentialityAcknowledged": "I acknowledge the confidentiality obligations",
+    "nonSolicitationAcknowledged": "I acknowledge the non-solicitation clause",
+    "noteLabel": "Note (at least 20 characters)",
+    "declare": "Declare the interruption",
+    "availabilityPending": "Availability not confirmed — a second, separate action is required before the consultant can be proposed elsewhere.",
+    "confirmAvailability": "Confirm availability",
+    "availabilityConfirmed": "Availability confirmed on {{date}}",
+    "saved": "Interruption saved.",
+    "saveError": "The interruption could not be saved."
+  },
+  "savedViews": {
+    "title": "My views",
+    "loading": "Loading your views…",
+    "loadError": "I couldn’t load your saved views.",
+    "empty": "No saved view yet. Set some filters, then save them.",
+    "locked": "Saved views aren’t opened by your plan.",
+    "shared": "shared",
+    "save": "Save this view",
+    "nameLabel": "View name",
+    "namePlaceholder": "E.g.: Overdue timesheets",
+    "confirm": "Save",
+    "cancel": "Cancel",
+    "remove": "Remove the view “{{name}}”",
+    "noCriteria": "Set at least one filter: a view with no criteria is the full list, it already exists.",
+    "full": "You already have {{max}} views on this screen — beyond that, you stop choosing. Remove one.",
+    "saved": "View “{{name}}” saved.",
+    "removed": "View removed.",
+    "error": "I couldn’t save this view."
+  },
+  "businessUnit": {
+    "loading": "Loading…",
+    "inherited": "its account’s BU",
+    "none": "No owning BU",
+    "transfer": "Transfer",
+    "dialogTitle": "Transfer the mission to another BU",
+    "dialogHint": "The mission changes owning BU within your workspace. The transfer is logged (who, when, source BU → target BU) in the mission’s History; nothing is deleted.",
+    "noTarget": "There is no other active BU in your workspace to transfer this mission to.",
+    "target": "Target BU",
+    "confirm": "I confirm the transfer of this mission",
+    "submit": "Transfer the mission",
+    "transferred": "Mission transferred to {{name}}",
+    "transferFailed": "The transfer could not be completed."
+  },
+  "monthPrep": {
+    "monthPicker": "Month to prepare",
+    "title": "Prepare the invoice for {{month}}",
+    "unavailable": "Nothing to prepare for this month, or billing is not available with your role.",
+    "alreadyInvoiced": "This month is already declared invoiced: nothing left to prepare.",
+    "reusedFrom": "Carried over from {{month}} — client: {{client}}",
+    "noPrevious": "No invoice from the previous month to carry over — client: {{client}}",
+    "noClient": "not set",
+    "rate": "Day rate €{{value}}",
+    "daysLabel": "Days to invoice",
+    "daysFromCra": "{{count}} d (timesheet)",
+    "daysPlaceholder": "prev.: {{count}} d",
+    "manualDays": "Days entered, no timesheet",
+    "poLabel": "Purchase order no.",
+    "amount": "{{days}} d = {{amount}}",
+    "alerts": {
+      "po_missing": "No purchase order entered although the client requires one.",
+      "po_expired": "The purchase order expired on {{until}}: it does not cover this month.",
+      "po_ends_mid_period": "The purchase order ends on {{until}}, before the end of this month.",
+      "po_not_started": "The purchase order only starts on {{from}}: it does not cover this month.",
+      "po_volume_exceeded": "Cumulated days exceed the purchase order volume by {{exceeded}} d."
+    },
+    "remaining_one": "Left to consume: {{count}} d",
+    "remaining_other": "Left to consume: {{count}} d",
+    "remainingAfter_one": "{{count}} d after this month",
+    "remainingAfter_other": "{{count}} d after this month",
+    "cta": "Prepare the invoice for {{month}}",
+    "preparedNotSent": "Prepared — not yet created or sent",
+    "noWriteRight": "Preparing an invoice requires finance write access.",
+    "saveError": "The preparation could not be saved.",
+    "auto": "Prepare automatically every month",
+    "autoHint": "On the first working day, the past month is prepared. Nothing is created in the connected tool or sent: you keep that step."
+  },
+  "endingChips": {
+    "label": "Assignment end",
+    "within": "Ends within {{days}} d"
+  },
+  "createForm": {
+    "account": "Account",
+    "accountPlaceholder": "Search for an account",
+    "changeAccount": "Change",
+    "label": "Title",
+    "startedOn": "Start date",
+    "endsOn": "End date",
+    "endBeforeStart": "The end cannot be before the start.",
+    "dailyRate": "Sold daily rate (€)",
+    "consultant": "Consultant",
+    "consultantPlaceholder": "Choose a consultant",
+    "noConsultant": "None yet",
+    "affaire": "Deal",
+    "affairePlaceholder": "Attach to a deal",
+    "noAffaire": "No deal",
+    "submit": "Create the mission",
+    "cancel": "Cancel",
+    "sections": {
+      "client": {
+        "eyebrow": "Account and deal",
+        "title": "For which client",
+        "lede": "The account carries the mission; the signed deal links it to its pipeline."
+      },
+      "mission": {
+        "eyebrow": "The mission",
+        "title": "What starts, and when",
+        "lede": "A title the team recognises, a start date. The end can wait."
+      },
+      "conditions": {
+        "eyebrow": "Terms and team",
+        "title": "The rate and the person",
+        "lede": "Optional at creation: you complete them in the record."
+      }
+    },
+    "required": "required"
+  },
+  "lifecycle": {
+    "extend": "Extend",
+    "end": "End",
+    "extendTitle": "Extend the mission",
+    "extendDescription": "An \"end date change\" amendment is recorded in the history; the consultant’s availability moves to the next day.",
+    "newEndsOn": "New end date",
+    "newDailyRate": "New daily rate (€), if it changes",
+    "proof": "Proof (signed amendment, client e-mail…)",
+    "extendSubmit": "Extend the mission",
+    "endTitle": "End the mission",
+    "endDescription": "The mission becomes \"completed\"; the consultant is available again the day after the end.",
+    "endedOn": "Actual end date",
+    "reason": "Reason",
+    "endSubmit": "End the mission",
+    "cancel": "Cancel",
+    "extended": "Mission extended.",
+    "ended": "Mission ended.",
+    "error": "The operation failed.",
+    "keptHuman": "{{count}} consultant record(s) keep a hand-entered availability.",
+    "reasons": {
+      "date_prevue": "Planned date reached",
+      "renouvellement_refuse": "Renewal declined",
+      "interruption": "Interruption",
+      "remplacement": "Replacement",
+      "demission": "Resignation",
+      "fin_budget": "Budget ended",
+      "mauvais_fit": "Poor fit",
+      "fin_projet": "Project ended"
+    }
+  },
+  "engagement": {
+    "conflict": "The record says \"{{availability}}\" (entered {{date}}); the mission \"{{mission}}\" says on mission.",
+    "align": "Align",
+    "aligned": "Record aligned with the mission."
+  },
+  "startBlockers": {
+    "renewalTitle": "What is blocking the renewal",
+    "repair": "Fix",
+    "repairLabel": "Fix: {{blocker}}"
+  },
+  "after": {
+    "title": "After the mission",
+    "distinct": "The planning date and the consultant's availability are two distinct pieces of information.",
+    "exploreNeeds": "Explore needs for this profile",
+    "confirmAvailability": "Confirm availability",
+    "confirmAvailabilityFor": "Confirm availability · {{name}}"
+  },
+  "recap": {
+    "export": "Export the summary",
+    "mission": "Mission",
+    "account": "Account",
+    "status": "Status",
+    "startedOn": "Start",
+    "endsOn": "End",
+    "noEndDate": "No known end",
+    "consultants": "Consultants"
+  },
+  "financeChain": {
+    "label": "Chain from activity to settlement",
+    "activity": {
+      "title": "Activity",
+      "hint": "Received then validated"
+    },
+    "controls": {
+      "title": "Checks",
+      "hint": "Order, rate, documents"
+    },
+    "invoice": {
+      "title": "Invoice",
+      "hint": "Prepared here, created in your tool"
+    },
+    "settlement": {
+      "title": "Settlement",
+      "hint": "Matched, partial or settled"
+    }
+  },
+  "invoices": {
+    "title": "Invoices",
+    "banner": "Invoices, from preparation to settlement. {{brand}} prepares the document: it neither issues nor books it — the legal number and credit notes come from the connected tool.",
+    "settings": "Invoicing settings",
+    "tiles": {
+      "drafts": "Prepared",
+      "draftsNote": "Not receivables, not collections",
+      "issued": "Invoiced excl. VAT",
+      "issuedNote": "Read from your invoicing tool",
+      "outstanding": "Left to receive",
+      "outstandingNote": "After allocated payments",
+      "disputed": "Disputed invoices",
+      "unknown": "amount not measured on these documents",
+      "issuedNoteDeclared": "Read from your tool · of which {{value}} declared without proof",
+      "disputedNote": "Do not chase blindly",
+      "label": "Invoice figures"
+    },
+    "filters": {
+      "label": "Status",
+      "all": "All",
+      "drafts": "Prepared",
+      "issued": "Invoiced · read from your tool",
+      "with_balance": "With a balance",
+      "overdue": "Overdue",
+      "disputed": "In dispute",
+      "settled": "Settled",
+      "periodLabel": "Invoiced period",
+      "accountLabel": "Account",
+      "ownerLabel": "Owner",
+      "declared": "Declared without proof",
+      "more": "+{{count}} accounts",
+      "moreFilters": "More filters",
+      "less": "Fewer filters",
+      "toolbar": "Filter invoices",
+      "allPeriods": "All periods",
+      "allAccounts": "All accounts",
+      "allOwners": "All owners",
+      "allStates": "All invoices",
+      "searchLabel": "Search"
+    },
+    "search": "Client, mission, invoice…",
+    "selectionCount_one": "{{count}} document in this selection",
+    "selectionCount_other": "{{count}} documents in this selection",
+    "empty": "No invoice prepared or issued in this window.",
+    "filteredEmpty": "No document has this state in this selection.",
+    "columns": {
+      "reference": "No.",
+      "period": "Period",
+      "amount": "Excl. VAT",
+      "state": "Status / balance",
+      "document": "Document / client",
+      "actions": "Actions"
+    },
+    "notIssued": "Not issued",
+    "issued": "Issued",
+    "issuedOn": "Issued on {{date}}",
+    "noReference": "Number not entered",
+    "noNumberYet": "No number",
+    "ceded": "Assigned",
+    "state": {
+      "draft": "Prepared",
+      "to_receive": "To receive",
+      "overdue": "Overdue",
+      "partial_overdue": "Partial · overdue",
+      "disputed": "In dispute",
+      "settled": "Settled"
+    },
+    "reminders_one": "{{count}} reminder logged",
+    "reminders_other": "{{count}} reminders logged",
+    "attachments": "Attachments",
+    "openPreparation": "Open the preparation",
+    "frozen": {
+      "title": "Document frozen once created",
+      "body": "Creating it in your invoicing tool freezes the lines, VAT and references. Changing the mission rate does not recompute an older invoice.",
+      "correction": "A correction goes through a corrective invoice linked to the original one, in your tool; {{brand}} reads and shows it. Preparations stay revisable until they are created."
+    },
+    "accounting": {
+      "title": "Connected invoicing tool",
+      "body": "Reads invoices, corrective invoices and numbers. {{brand}} tracks invoicing; it keeps no chart of accounts, entries or journal.",
+      "reconnect": "· needs reconnecting",
+      "lastRead": "· last read on {{date}}",
+      "none": "No invoicing tool is connected: “invoiced” can then only be declared, without proof."
+    },
+    "toCollections": "See collections",
+    "headline": "Invoices, from preparation to settlement.",
+    "lede": "Invoices tied to missions. {{brand}} prepares them; your invoicing tool creates and numbers them. Corrections adjust a document; they are not collections.",
+    "export": "Export invoices",
+    "prepareFromActivity": "Prepare from activity",
+    "guide": {
+      "heading": "Telling prepared, created and sent apart",
+      "intro": "{{brand}} prepares the invoice from validated activity: days, rate and references. Your invoicing tool creates it, numbers it and sends it when you decide.",
+      "stepsTitle": "The useful path",
+      "step1": "Check the detail and the sources.",
+      "step2": "Refresh a preparation if the activity changed.",
+      "step3": "Once created, correct it with an adjustment made in your tool rather than a silent edit.",
+      "keepTitle": "Worth remembering",
+      "keep": "“Invoiced” always shows its source: a reading of your invoicing tool, or an unconfirmed declaration."
+    },
+    "prepared": "Prepared",
+    "preparedNotCreated": "Prepared · not created yet",
+    "createdOn": "Created on {{date}}",
+    "dueAtCreation": "At creation",
+    "dueSetByTool": "Set by the invoicing tool",
+    "enterDueDate": "Enter the due date",
+    "sourceRead": "Read from the invoicing tool",
+    "sourceDeclared": "Declared · unconfirmed",
+    "noReceivable": "No receivable",
+    "open": "Open",
+    "dialog": {
+      "close": "Close",
+      "preparedTitle": "Prepared invoice · {{account}}",
+      "lifecycle": {
+        "label": "The three stages of an invoice",
+        "prepared": "Prepared",
+        "preparedNote": "Here, from validated activity",
+        "created": "Created",
+        "createdNote": "In your invoicing tool, which numbers it",
+        "sent": "Sent",
+        "sentNote": "By your tool, when you decide"
+      },
+      "sourceReadTitle": "Invoiced · source: your invoicing tool.",
+      "sourceReadBody": "Number, lines and adjustments come from your tool: {{brand}} reads them, it does not rewrite them.",
+      "sourceDeclaredTitle": "Invoiced · declared, unconfirmed.",
+      "mission": "Mission",
+      "order": "Order",
+      "orderUnknown": "purchase order not filled in",
+      "calculation": "Calculation",
+      "calculationBody": "Validated activity for {{month}}",
+      "createdOn": "Created",
+      "createdUnknown": "creation date not read",
+      "dueOn": "Due",
+      "days_one": "{{count}} day",
+      "days_other": "{{count}} days",
+      "daysUnknown": "days not known",
+      "rateUnknown": "rate not filled in",
+      "totals": "Totals",
+      "totalHt": "Total excl. VAT",
+      "settled": "Allocated payments",
+      "settledUnknown": "payment amount not measured",
+      "remaining": "Left to receive",
+      "remainingUnknown": "balance not measured",
+      "draftWarning": "Prepared: not a receivable, not a collection. The mission rate can still move it until it is created in your tool.",
+      "remindersLast_one": "{{count}} reminder logged · the last on {{date}}",
+      "remindersLast_other": "{{count}} reminders logged · the last on {{date}}",
+      "noReminder": "No reminder logged.",
+      "disputeTitle": "Disputed",
+      "disputeNoReason": "reason not logged",
+      "declareElsewhere": "Declare invoiced elsewhere",
+      "recordPayment": "Log a payment",
+      "recordReminder": "Log a reminder sent",
+      "resolveDispute": "Lift the dispute",
+      "openDispute": "Dispute",
+      "prepareFollowUp": "Prepare a follow-up",
+      "trace": "Payments and traceability",
+      "paymentLine": "Payment of {{date}}",
+      "openMission": "Mission"
+    },
+    "noDue": "No due date",
+    "balance": "Balance {{value}}",
+    "balancePartial": "Paid {{paid}} · {{left}} still due",
+    "remindersLast_one": "{{count}} reminder · {{date}}",
+    "remindersLast_other": "{{count}} reminders · latest on {{date}}",
+    "remindersEscalate_one": "{{count}} reminder without reply — escalate",
+    "remindersEscalate_other": "{{count}} reminders without reply — escalate",
+    "due": {
+      "title": "Enter the due date · {{label}}",
+      "body": "Without a due date, this invoice falls into no overdue bucket: it is named apart (“No due date”), never counted as “on time”.",
+      "field": "Due date",
+      "readOnly": "This invoice is read from your invoicing tool: its due date is corrected there, or from the month’s billing — never rewritten here.",
+      "toBilling": "Open the month’s billing",
+      "cancel": "Cancel",
+      "save": "Save"
+    }
+  },
+  "financeView": {
+    "title": "Revenue, margin and cash",
+    "lede": "A financial reading tied to missions, with the unknowns and the documents to handle. It is not a general ledger.",
+    "visible": "Visible with the Finance permission",
+    "statusPending": "Checking your permission…",
+    "statusFailed": "Your Finance permission could not be checked. Try again in a moment.",
+    "denied": {
+      "title": "The financial view requires the Finance permission",
+      "body": "Margins, costs and payments stay confidential. The workspace administrator can open it for you."
+    },
+    "outgoing": {
+      "title": "What goes out: payments and assignments",
+      "body": "Payments to consultants and subcontractors are followed here, with receivable assignments.",
+      "open": "Open payments"
+    },
+    "expenses": {
+      "title": "Mission expenses",
+      "body": "Expenses are entered and approved in expense reports; the scale sets what can be re-invoiced.",
+      "reports": "Expense reports",
+      "scale": "Expense scale",
+      "columns": {
+        "bearer": "Consultant / mission",
+        "report": "Report",
+        "amount": "Amount",
+        "status": "Status"
+      },
+      "lines_one": "{{count}} line",
+      "lines_other": "{{count}} lines",
+      "overage_one": "{{count}} over the policy",
+      "overage_other": "{{count}} over the policy",
+      "empty": "No expense report in this period."
+    },
+    "atCompletion": "Margin at completion and contribution after internal allocations are read in each mission’s file.",
+    "missions": "Open missions",
+    "settingsLink": "Finance settings",
+    "guide": {
+      "heading": "Reading production, margin and cash separately",
+      "intro": "The financial view helps settle blockers, documented profitability and expected payments.",
+      "stepsTitle": "The useful path",
+      "step1": "Pick the activity period, then the scope of missions.",
+      "step2": "Open the documents that explain an amount or a gap.",
+      "step3": "Follow what goes out and what comes in on their own screens.",
+      "keepTitle": "Worth remembering",
+      "keep": "Mission margin and due-date forecast are neither net income nor a bank balance. Unknown costs stay unknown."
+    },
+    "period": "Activity period",
+    "periodReset": "Back to the current month",
+    "stats": {
+      "produced": "Validated production",
+      "producedNote": "Days worked × rate",
+      "invoiced": "Invoiced on this activity",
+      "invoicedNote": "What went out to the invoicing tool",
+      "collected": "Collections of the month",
+      "collectedNote": "What clients actually paid",
+      "outstanding": "Total outstanding",
+      "outstandingNote": "Balance, all periods, after allocated payments",
+      "unread": "not read",
+      "noSource": "no source connected",
+      "floor_one": "Floor: {{count}} mission without an amount",
+      "floor_other": "Floor: {{count}} missions without an amount",
+      "label": "The period’s figures"
+    },
+    "margin": {
+      "kicker": "DOCUMENTED OPERATING MARGIN",
+      "unmeasured": "no mission with known activity and cost",
+      "coverage": "Over {{measured}} measured missions · {{unmeasured}} without a known cost. Unknown costs are not zero.",
+      "warning": "Contribution margin, not net income. Overheads, payroll, bank, VAT due and accounting are not reconstructed.",
+      "coverageBar": "Revenue coverage: {{value}}"
+    },
+    "decisions": {
+      "title": "What deserves a decision",
+      "activity": "Activity / invoicing",
+      "activityBody": "Timesheets to validate and files to unblock",
+      "late": "Client delays",
+      "noneLate": "No delay",
+      "lateAmount": "{{value}} overdue",
+      "noneBlocked": "No file to unblock",
+      "blocked_one": "{{count}} file to unblock",
+      "blocked_other": "{{count}} files to unblock",
+      "orders": "Purchase orders",
+      "ordersBody": "Expected purchase orders",
+      "noneMissingPo": "No missing purchase order",
+      "missingPo_one": "{{count}} missing purchase order",
+      "missingPo_other": "{{count}} missing purchase orders"
+    },
+    "weeks": {
+      "title": "The next four weeks",
+      "hint": "Payment forecast based on due dates. Not a bank balance.",
+      "none": "No payment expected",
+      "unplaced_one": "{{count}} invoice to reschedule, disputed or without a due date ({{value}}), not placed arbitrarily in a week.",
+      "unplaced_other": "{{count}} invoices to reschedule, disputed or without a due date ({{value}}), not placed arbitrarily in a week.",
+      "unplacedUnknown_one": "{{count}} invoice to reschedule, disputed or without a due date, not placed in a week.",
+      "unplacedUnknown_other": "{{count}} invoices to reschedule, disputed or without a due date, not placed in a week.",
+      "aging": "See the aging of the outstanding"
+    },
+    "crumb": "Financial view",
+    "toolbar": "Financial view period",
+    "byMission": {
+      "title": "Profitability, mission by mission",
+      "filters": "Filter missions",
+      "columns": {
+        "mission": "Mission",
+        "days": "Validated days",
+        "produced": "Production excl. VAT",
+        "cost": "Documented cost",
+        "margin": "Margin",
+        "todo": "To do"
+      },
+      "toValidate": "To validate",
+      "toFill": "To fill in",
+      "activityToValidate": "Activity to validate",
+      "costUnknown": "no cost documented in the mission terms",
+      "notComputed": "Not computed",
+      "marginShare": "{{value}} % of revenue",
+      "fillCost": "Fill in the cost",
+      "terms": "Terms",
+      "empty": "No activity in this period.",
+      "filteredEmpty": "No mission in this selection."
+    },
+    "aging": {
+      "body": "What is still due, sorted by due-date age, lives in Collections — with the actions to handle it."
+    },
+    "suppliers": {
+      "title": "Purchases and supplier invoices",
+      "where": "Documents are kept on each mission",
+      "body": "Supplier invoices are filed and checked on each mission’s file, against its activity report; the resulting payment is tracked just below, in “What goes out”."
+    },
+    "cessions": "Factoring assignments",
+    "review": {
+      "title": "The month’s operational review",
+      "activity": "Activity",
+      "activityBody_one": "{{count}} report without client validation",
+      "activityBody_other": "{{count}} reports without client validation",
+      "billing": "Billing",
+      "billingBody": "{{blocked}} to complete · {{ready}} ready",
+      "cash": "Costs and cash",
+      "costs_one": "{{count}} cost to document",
+      "costs_other": "{{count}} costs to document",
+      "toMatch": "{{value}} to match",
+      "openQueue": "Open the queue"
+    }
+  },
+  "multiSelect": {
+    "some": "{{label}} · {{count}}",
+    "clear": "Clear all"
+  },
+  "financeCrumb": "Missions",
+  "financeFilters": {
+    "chosen_one": "{{count}} selected",
+    "chosen_other": "{{count}} selected"
+  },
+  "views": {
+    "label": "Mission views",
+    "planning": "Planning",
+    "table": "Table"
+  },
+  "stats": {
+    "unmeasured": "Not measured",
+    "endsSoon": {
+      "label": "Ending within 30 days",
+      "none": "None",
+      "hint": "Prepare what comes next"
+    },
+    "starting": {
+      "label": "Planned starts",
+      "none": "None",
+      "hint": "Check the prerequisites"
+    },
+    "noEndDate": {
+      "label": "End date not set",
+      "none": "None",
+      "hint": "No date assumed"
+    }
+  },
+  "satisfaction": {
+    "title": "Satisfaction",
+    "client": "Client",
+    "consultant": "Consultant",
+    "unmeasured": "no level declared",
+    "levels": {
+      "low": "Low",
+      "medium": "Medium",
+      "high": "Good"
+    },
+    "badges": {
+      "low": "Low satisfaction",
+      "medium": "Medium satisfaction",
+      "high": "Good satisfaction"
+    },
+    "levelLabel": "Level (optional)",
+    "filterLabel": "Satisfaction",
+    "filter": {
+      "low": "Low",
+      "medium": "Medium",
+      "high": "Good",
+      "unmeasured": "Not measured"
+    }
+  },
+  "presetViews": {
+    "title": "Ready-made views",
+    "hint": "A named population in one click — click again to clear it.",
+    "thisWeek": "To handle this week",
+    "timesheetsMissing": "Missing timesheets",
+    "invoicesBlocked": "Blocked invoices",
+    "paymentsLate": "Late payments",
+    "marginUnmeasured": "Margin not measured"
+  }
+}

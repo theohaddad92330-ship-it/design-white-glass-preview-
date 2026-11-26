@@ -1,0 +1,466 @@
+[
+  {
+    "type": "cycle",
+    "from": "src/features/agenda/view/AgendaBoard.tsx",
+    "to": "src/features/agenda/view/AgendaGrid.tsx",
+    "unresolvedTo": "./AgendaGrid",
+    "dependencyTypes": ["local", "import"],
+    "rule": {
+      "severity": "error",
+      "name": "no-circular"
+    },
+    "cycle": [
+      {
+        "name": "src/features/agenda/view/AgendaGrid.tsx",
+        "dependencyTypes": ["local", "import"]
+      },
+      {
+        "name": "src/features/agenda/view/AgendaBoard.tsx",
+        "dependencyTypes": ["local", "import"]
+      }
+    ]
+  },
+  {
+    "type": "cycle",
+    "from": "src/features/auth/hooks/useDeleteAccount.ts",
+    "to": "src/router.tsx",
+    "unresolvedTo": "@/router",
+    "dependencyTypes": ["aliased", "aliased-tsconfig", "aliased-tsconfig-paths", "local", "dynamic-import"],
+    "rule": {
+      "severity": "error",
+      "name": "no-circular"
+    },
+    "cycle": [
+      {
+        "name": "src/router.tsx",
+        "dependencyTypes": ["aliased", "aliased-tsconfig", "aliased-tsconfig-paths", "local", "dynamic-import"]
+      },
+      {
+        "name": "src/routeTree.gen.ts",
+        "dependencyTypes": ["local", "import"]
+      },
+      {
+        "name": "src/routes/settings/profile/index.tsx",
+        "dependencyTypes": ["local", "import"]
+      },
+      {
+        "name": "src/features/profile/view/ProfilePage.tsx",
+        "dependencyTypes": ["aliased", "aliased-tsconfig", "aliased-tsconfig-paths", "local", "import"]
+      },
+      {
+        "name": "src/features/profile/components/DangerZoneSection.tsx",
+        "dependencyTypes": ["local", "import"]
+      },
+      {
+        "name": "src/features/auth/hooks/useDeleteAccount.ts",
+        "dependencyTypes": ["aliased", "aliased-tsconfig", "aliased-tsconfig-paths", "local", "import"]
+      }
+    ]
+  },
+  {
+    "type": "cycle",
+    "from": "src/features/auth/hooks/useLogout.ts",
+    "to": "src/router.tsx",
+    "unresolvedTo": "@/router",
+    "dependencyTypes": ["aliased", "aliased-tsconfig", "aliased-tsconfig-paths", "local", "dynamic-import"],
+    "rule": {
+      "severity": "error",
+      "name": "no-circular"
+    },
+    "cycle": [
+      {
+        "name": "src/router.tsx",
+        "dependencyTypes": ["aliased", "aliased-tsconfig", "aliased-tsconfig-paths", "local", "dynamic-import"]
+      },
+      {
+        "name": "src/routeTree.gen.ts",
+        "dependencyTypes": ["local", "import"]
+      },
+      {
+        "name": "src/routes/settings/security.tsx",
+        "dependencyTypes": ["local", "import"]
+      },
+      {
+        "name": "src/features/settings/view/SecurityView.tsx",
+        "dependencyTypes": ["aliased", "aliased-tsconfig", "aliased-tsconfig-paths", "local", "import"]
+      },
+      {
+        "name": "src/features/settings/components/security/ActiveSessionsRow.tsx",
+        "dependencyTypes": ["local", "import"]
+      },
+      {
+        "name": "src/features/auth/hooks/useLogout.ts",
+        "dependencyTypes": ["aliased", "aliased-tsconfig", "aliased-tsconfig-paths", "local", "import"]
+      }
+    ]
+  },
+  {
+    "type": "cycle",
+    "from": "src/features/auth/hooks/useOauthCallback.ts",
+    "to": "src/router.tsx",
+    "unresolvedTo": "@/router",
+    "dependencyTypes": ["aliased", "aliased-tsconfig", "aliased-tsconfig-paths", "local", "dynamic-import"],
+    "rule": {
+      "severity": "error",
+      "name": "no-circular"
+    },
+    "cycle": [
+      {
+        "name": "src/router.tsx",
+        "dependencyTypes": ["aliased", "aliased-tsconfig", "aliased-tsconfig-paths", "local", "dynamic-import"]
+      },
+      {
+        "name": "src/routeTree.gen.ts",
+        "dependencyTypes": ["local", "import"]
+      },
+      {
+        "name": "src/routes/auth/callback.tsx",
+        "dependencyTypes": ["local", "import"]
+      },
+      {
+        "name": "src/features/auth/view/AuthCallback.tsx",
+        "dependencyTypes": ["aliased", "aliased-tsconfig", "aliased-tsconfig-paths", "local", "import"]
+      },
+      {
+        "name": "src/features/auth/hooks/useOauthCallback.ts",
+        "dependencyTypes": ["aliased", "aliased-tsconfig", "aliased-tsconfig-paths", "local", "import"]
+      }
+    ]
+  },
+  {
+    "type": "cycle",
+    "from": "src/features/auth/hooks/useRedirectAfterAuth.ts",
+    "to": "src/router.tsx",
+    "unresolvedTo": "@/router",
+    "dependencyTypes": ["aliased", "aliased-tsconfig", "aliased-tsconfig-paths", "local", "dynamic-import"],
+    "rule": {
+      "severity": "error",
+      "name": "no-circular"
+    },
+    "cycle": [
+      {
+        "name": "src/router.tsx",
+        "dependencyTypes": ["aliased", "aliased-tsconfig", "aliased-tsconfig-paths", "local", "dynamic-import"]
+      },
+      {
+        "name": "src/routeTree.gen.ts",
+        "dependencyTypes": ["local", "import"]
+      },
+      {
+        "name": "src/routes/login.tsx",
+        "dependencyTypes": ["local", "import"]
+      },
+      {
+        "name": "src/features/auth/view/LoginPage.tsx",
+        "dependencyTypes": ["aliased", "aliased-tsconfig", "aliased-tsconfig-paths", "local", "import"]
+      },
+      {
+        "name": "src/features/auth/hooks/useRedirectAfterAuth.ts",
+        "dependencyTypes": ["aliased", "aliased-tsconfig", "aliased-tsconfig-paths", "local", "import"]
+      }
+    ]
+  },
+  {
+    "type": "cycle",
+    "from": "src/features/auth/view/SignupPage.tsx",
+    "to": "src/features/auth/hooks/useRedirectAfterAuth.ts",
+    "unresolvedTo": "@/features/auth/hooks/useRedirectAfterAuth",
+    "dependencyTypes": ["aliased", "aliased-tsconfig", "aliased-tsconfig-paths", "local", "import"],
+    "rule": {
+      "severity": "error",
+      "name": "no-circular"
+    },
+    "cycle": [
+      {
+        "name": "src/features/auth/hooks/useRedirectAfterAuth.ts",
+        "dependencyTypes": ["aliased", "aliased-tsconfig", "aliased-tsconfig-paths", "local", "import"]
+      },
+      {
+        "name": "src/router.tsx",
+        "dependencyTypes": ["aliased", "aliased-tsconfig", "aliased-tsconfig-paths", "local", "dynamic-import"]
+      },
+      {
+        "name": "src/routeTree.gen.ts",
+        "dependencyTypes": ["local", "import"]
+      },
+      {
+        "name": "src/routes/signup.tsx",
+        "dependencyTypes": ["local", "import"]
+      },
+      {
+        "name": "src/features/auth/view/SignupPage.tsx",
+        "dependencyTypes": ["aliased", "aliased-tsconfig", "aliased-tsconfig-paths", "local", "import"]
+      }
+    ]
+  },
+  {
+    "type": "cycle",
+    "from": "src/features/consultants/view/ConsultantsPage.tsx",
+    "to": "src/routes/consultants/index.tsx",
+    "unresolvedTo": "@/routes/consultants/index",
+    "dependencyTypes": ["aliased", "aliased-tsconfig", "aliased-tsconfig-paths", "local", "import"],
+    "rule": {
+      "severity": "error",
+      "name": "no-circular"
+    },
+    "cycle": [
+      {
+        "name": "src/routes/consultants/index.tsx",
+        "dependencyTypes": ["aliased", "aliased-tsconfig", "aliased-tsconfig-paths", "local", "import"]
+      },
+      {
+        "name": "src/features/consultants/view/ConsultantsPage.tsx",
+        "dependencyTypes": ["aliased", "aliased-tsconfig", "aliased-tsconfig-paths", "local", "import"]
+      }
+    ]
+  },
+  {
+    "type": "cycle",
+    "from": "src/features/discover/hooks/useDiscoverShortlist.ts",
+    "to": "src/router.tsx",
+    "unresolvedTo": "@/router",
+    "dependencyTypes": ["aliased", "aliased-tsconfig", "aliased-tsconfig-paths", "local", "dynamic-import"],
+    "rule": {
+      "severity": "error",
+      "name": "no-circular"
+    },
+    "cycle": [
+      {
+        "name": "src/router.tsx",
+        "dependencyTypes": ["aliased", "aliased-tsconfig", "aliased-tsconfig-paths", "local", "dynamic-import"]
+      },
+      {
+        "name": "src/routeTree.gen.ts",
+        "dependencyTypes": ["local", "import"]
+      },
+      {
+        "name": "src/routes/discover/index.tsx",
+        "dependencyTypes": ["local", "import"]
+      },
+      {
+        "name": "src/features/discover/view/Discover.tsx",
+        "dependencyTypes": ["aliased", "aliased-tsconfig", "aliased-tsconfig-paths", "local", "import"]
+      },
+      {
+        "name": "src/features/discover/hooks/useDiscoverShortlist.ts",
+        "dependencyTypes": ["aliased", "aliased-tsconfig", "aliased-tsconfig-paths", "local", "import"]
+      }
+    ]
+  },
+  {
+    "type": "cycle",
+    "from": "src/features/discover/view/AddToTargetListDialog.tsx",
+    "to": "src/router.tsx",
+    "unresolvedTo": "@/router",
+    "dependencyTypes": ["aliased", "aliased-tsconfig", "aliased-tsconfig-paths", "local", "dynamic-import"],
+    "rule": {
+      "severity": "error",
+      "name": "no-circular"
+    },
+    "cycle": [
+      {
+        "name": "src/router.tsx",
+        "dependencyTypes": ["aliased", "aliased-tsconfig", "aliased-tsconfig-paths", "local", "dynamic-import"]
+      },
+      {
+        "name": "src/routeTree.gen.ts",
+        "dependencyTypes": ["local", "import"]
+      },
+      {
+        "name": "src/routes/discover/index.tsx",
+        "dependencyTypes": ["local", "import"]
+      },
+      {
+        "name": "src/features/discover/view/Discover.tsx",
+        "dependencyTypes": ["aliased", "aliased-tsconfig", "aliased-tsconfig-paths", "local", "import"]
+      },
+      {
+        "name": "src/features/discover/view/AddToTargetListDialog.tsx",
+        "dependencyTypes": ["local", "import"]
+      }
+    ]
+  },
+  {
+    "type": "cycle",
+    "from": "src/features/discover/view/Discover.tsx",
+    "to": "src/features/target-lists/view/CreateTargetListFromSavedSearchDialog.tsx",
+    "unresolvedTo": "@/features/target-lists/view/CreateTargetListFromSavedSearchDialog",
+    "dependencyTypes": ["aliased", "aliased-tsconfig", "aliased-tsconfig-paths", "local", "import"],
+    "rule": {
+      "severity": "error",
+      "name": "no-circular"
+    },
+    "cycle": [
+      {
+        "name": "src/features/target-lists/view/CreateTargetListFromSavedSearchDialog.tsx",
+        "dependencyTypes": ["aliased", "aliased-tsconfig", "aliased-tsconfig-paths", "local", "import"]
+      },
+      {
+        "name": "src/features/target-lists/useCreateTargetListFromSavedSearch.ts",
+        "dependencyTypes": ["local", "import"]
+      },
+      {
+        "name": "src/router.tsx",
+        "dependencyTypes": ["aliased", "aliased-tsconfig", "aliased-tsconfig-paths", "local", "dynamic-import"]
+      },
+      {
+        "name": "src/routeTree.gen.ts",
+        "dependencyTypes": ["local", "import"]
+      },
+      {
+        "name": "src/routes/discover/index.tsx",
+        "dependencyTypes": ["local", "import"]
+      },
+      {
+        "name": "src/features/discover/view/Discover.tsx",
+        "dependencyTypes": ["aliased", "aliased-tsconfig", "aliased-tsconfig-paths", "local", "import"]
+      }
+    ]
+  },
+  {
+    "type": "cycle",
+    "from": "src/features/discover/view/Discover.tsx",
+    "to": "src/routes/discover/index.tsx",
+    "unresolvedTo": "@/routes/discover/index",
+    "dependencyTypes": ["aliased", "aliased-tsconfig", "aliased-tsconfig-paths", "local", "import"],
+    "rule": {
+      "severity": "error",
+      "name": "no-circular"
+    },
+    "cycle": [
+      {
+        "name": "src/routes/discover/index.tsx",
+        "dependencyTypes": ["aliased", "aliased-tsconfig", "aliased-tsconfig-paths", "local", "import"]
+      },
+      {
+        "name": "src/features/discover/view/Discover.tsx",
+        "dependencyTypes": ["aliased", "aliased-tsconfig", "aliased-tsconfig-paths", "local", "import"]
+      }
+    ]
+  },
+  {
+    "type": "cycle",
+    "from": "src/features/missions/view/MissionsPage.tsx",
+    "to": "src/routes/missions/index.tsx",
+    "unresolvedTo": "@/routes/missions/index",
+    "dependencyTypes": ["aliased", "aliased-tsconfig", "aliased-tsconfig-paths", "local", "import"],
+    "rule": {
+      "severity": "error",
+      "name": "no-circular"
+    },
+    "cycle": [
+      {
+        "name": "src/routes/missions/index.tsx",
+        "dependencyTypes": ["aliased", "aliased-tsconfig", "aliased-tsconfig-paths", "local", "import"]
+      },
+      {
+        "name": "src/features/missions/view/MissionsPage.tsx",
+        "dependencyTypes": ["aliased", "aliased-tsconfig", "aliased-tsconfig-paths", "local", "import"]
+      }
+    ]
+  },
+  {
+    "type": "cycle",
+    "from": "src/features/projects/open-needs/view/NeedDetailPage.tsx",
+    "to": "src/routes/projects/needs_.$needId.tsx",
+    "unresolvedTo": "@/routes/projects/needs_.$needId",
+    "dependencyTypes": ["aliased", "aliased-tsconfig", "aliased-tsconfig-paths", "local", "import"],
+    "rule": {
+      "severity": "error",
+      "name": "no-circular"
+    },
+    "cycle": [
+      {
+        "name": "src/routes/projects/needs_.$needId.tsx",
+        "dependencyTypes": ["aliased", "aliased-tsconfig", "aliased-tsconfig-paths", "local", "import"]
+      },
+      {
+        "name": "src/features/projects/open-needs/view/NeedDetailPage.tsx",
+        "dependencyTypes": ["aliased", "aliased-tsconfig", "aliased-tsconfig-paths", "local", "import"]
+      }
+    ]
+  },
+  {
+    "type": "cycle",
+    "from": "src/features/projects/open-needs/view/OpenNeedsPage.tsx",
+    "to": "src/routes/projects/needs.tsx",
+    "unresolvedTo": "@/routes/projects/needs",
+    "dependencyTypes": ["aliased", "aliased-tsconfig", "aliased-tsconfig-paths", "local", "import"],
+    "rule": {
+      "severity": "error",
+      "name": "no-circular"
+    },
+    "cycle": [
+      {
+        "name": "src/routes/projects/needs.tsx",
+        "dependencyTypes": ["aliased", "aliased-tsconfig", "aliased-tsconfig-paths", "local", "import"]
+      },
+      {
+        "name": "src/features/projects/open-needs/view/OpenNeedsPage.tsx",
+        "dependencyTypes": ["aliased", "aliased-tsconfig", "aliased-tsconfig-paths", "local", "import"]
+      }
+    ]
+  },
+  {
+    "type": "cycle",
+    "from": "src/features/projects/view/ProjectsPage.tsx",
+    "to": "src/routes/projects/index.tsx",
+    "unresolvedTo": "@/routes/projects/index",
+    "dependencyTypes": ["aliased", "aliased-tsconfig", "aliased-tsconfig-paths", "local", "import"],
+    "rule": {
+      "severity": "error",
+      "name": "no-circular"
+    },
+    "cycle": [
+      {
+        "name": "src/routes/projects/index.tsx",
+        "dependencyTypes": ["aliased", "aliased-tsconfig", "aliased-tsconfig-paths", "local", "import"]
+      },
+      {
+        "name": "src/features/projects/view/ProjectsPage.tsx",
+        "dependencyTypes": ["aliased", "aliased-tsconfig", "aliased-tsconfig-paths", "local", "import"]
+      }
+    ]
+  },
+  {
+    "type": "cycle",
+    "from": "src/features/settings/components/security/DeleteAccountDialog.tsx",
+    "to": "src/features/settings/hooks/useDeletePrivacyAccount.ts",
+    "unresolvedTo": "@/features/settings/hooks/useDeletePrivacyAccount",
+    "dependencyTypes": ["aliased", "aliased-tsconfig", "aliased-tsconfig-paths", "local", "import"],
+    "rule": {
+      "severity": "error",
+      "name": "no-circular"
+    },
+    "cycle": [
+      {
+        "name": "src/features/settings/hooks/useDeletePrivacyAccount.ts",
+        "dependencyTypes": ["aliased", "aliased-tsconfig", "aliased-tsconfig-paths", "local", "import"]
+      },
+      {
+        "name": "src/router.tsx",
+        "dependencyTypes": ["aliased", "aliased-tsconfig", "aliased-tsconfig-paths", "local", "dynamic-import"]
+      },
+      {
+        "name": "src/routeTree.gen.ts",
+        "dependencyTypes": ["local", "import"]
+      },
+      {
+        "name": "src/routes/settings/security.tsx",
+        "dependencyTypes": ["local", "import"]
+      },
+      {
+        "name": "src/features/settings/view/SecurityView.tsx",
+        "dependencyTypes": ["aliased", "aliased-tsconfig", "aliased-tsconfig-paths", "local", "import"]
+      },
+      {
+        "name": "src/features/settings/components/security/DeleteAccountRow.tsx",
+        "dependencyTypes": ["local", "import"]
+      },
+      {
+        "name": "src/features/settings/components/security/DeleteAccountDialog.tsx",
+        "dependencyTypes": ["local", "import"]
+      }
+    ]
+  }
+]

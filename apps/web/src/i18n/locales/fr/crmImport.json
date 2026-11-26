@@ -1,0 +1,107 @@
+{
+  "title": "Reprise de ton CRM",
+  "subtitle": "On simule d’abord, tu lis ce qui se passerait, et seulement ensuite on importe. Un champ que tu as corrigé à la main n’est jamais écrasé par un import.",
+  "simulation": "Simulation",
+  "failed": "Échec",
+  "providers": {
+    "hubspot": "Ton CRM",
+    "salesforce": "Ton CRM",
+    "pipedrive": "Ton CRM",
+    "attio": "Ton CRM",
+    "csv": "Fichier",
+    "odoo": "Ton CRM",
+    "zoho": "Ton CRM"
+  },
+  "entityTabs": {
+    "contact": "Contacts",
+    "account": "Entreprises"
+  },
+  "actions": {
+    "simulate": "Simuler l’import",
+    "run": "Importer pour de bon"
+  },
+  "mapping": {
+    "title": "Champs qui seront écrits",
+    "email": "Adresse e-mail → e-mail du contact",
+    "fullName": "Nom → nom complet du contact",
+    "companyName": "Nom → nom de l’entreprise"
+  },
+  "outcome": {
+    "simulated": "Simulation — rien n’a été écrit",
+    "applied": "Import effectué",
+    "counts": "{{created}} à créer · {{updated}} à mettre à jour · {{skipped}} écartés",
+    "truncated": "Il reste des pages — relance pour la suite",
+    "failed": "L’import n’a pas abouti : {{reason}}",
+    "moreSkipped": "et {{count}} autres"
+  },
+  "reasons": {
+    "no_identifier": "aucun identifiant exploitable",
+    "invalid_email": "adresse invalide",
+    "already_linked_elsewhere": "cette adresse est déjà celle d’une autre fiche — à trancher à la main",
+    "unchanged": "rien n’a changé",
+    "limit_reached": "borne atteinte"
+  },
+  "history": {
+    "title": "Imports précédents",
+    "empty": "Aucun import pour l’instant.",
+    "counts": "{{created}} créés · {{updated}} mis à jour · {{skipped}} écartés",
+    "loadError": "L’historique des imports n’a pas pu être chargé. Ce n’est pas « aucun import » : c’est la lecture qui a échoué.",
+    "scopeMissing": "Je n’ai pas le droit de lire ton CRM. Reconnecte-le : un accès déjà donné ne s’élargit pas tout seul.",
+    "authorizationExpired": "Ton CRM est bien connecté, mais son autorisation a expiré. Reconnecte-le depuis Réglages › Intégrations : elle ne se renouvellera pas toute seule.",
+    "notConnected": "Aucun CRM n’est connecté à cet espace.",
+    "openIntegrations": "Ouvrir Réglages › Intégrations"
+  },
+  "toast": {
+    "simulated_one": "Simulation : {{count}} ligne serait traitée.",
+    "simulated_other": "Simulation : {{count}} lignes seraient traitées.",
+    "done_one": "{{count}} ligne importée.",
+    "done_other": "{{count}} lignes importées.",
+    "error": "L’import a échoué.",
+    "keptCrm": "La valeur du CRM a remplacé la tienne."
+  },
+  "providerChoice": "Quel CRM reprendre ?",
+  "firstImport": {
+    "title": "Reprise automatique de ton CRM",
+    "queued": "La reprise de {{crm}} va démarrer — elle part toute seule au branchement.",
+    "running": "Reprise de {{crm}} en cours…",
+    "done": "Reprise de {{crm}} terminée.",
+    "failed": "La reprise de {{crm}} n’a pas abouti.",
+    "pending": "en attente",
+    "inProgress": "en cours…",
+    "notMeasured": "non mesuré",
+    "atLeast": "au moins",
+    "conflicts_one": "{{count}} fiche modifiée des deux côtés — ta correction est gardée, l’écart t’est proposé.",
+    "conflicts_other": "{{count}} fiches modifiées des deux côtés — tes corrections sont gardées, les écarts te sont proposés.",
+    "reconnect": "Reconnecte {{crm}} : l’accès a expiré ou a été refusé, la reprise reprendra ensuite.",
+    "openIntegrations": "Ouvrir Réglages › Intégrations",
+    "objectError": "{{object}} : {{error}}",
+    "objects": {
+      "accounts_one": "{{count, number}} entreprise",
+      "accounts_other": "{{count, number}} entreprises",
+      "contacts_one": "{{count, number}} contact",
+      "contacts_other": "{{count, number}} contacts",
+      "deals_one": "{{count, number}} affaire",
+      "deals_other": "{{count, number}} affaires",
+      "activities_one": "{{count, number}} activité",
+      "activities_other": "{{count, number}} activités",
+      "owners_one": "{{count, number}} propriétaire",
+      "owners_other": "{{count, number}} propriétaires"
+    },
+    "recognized_one": "{{total}}, dont {{count, number}} déjà dans {{brand}}",
+    "recognized_other": "{{total}}, dont {{count, number}} déjà dans {{brand}}",
+    "objectNames": {
+      "accounts": "Entreprises",
+      "contacts": "Contacts",
+      "deals": "Affaires",
+      "activities": "Activités",
+      "owners": "Propriétaires",
+      "needs": "Besoins"
+    },
+    "unread": "Non repris : {{families}}.",
+    "unreadReasons": {
+      "not_in_read_scope": "{{family}} (hors lecture de {{crm}})",
+      "file_only": "{{family}} (à importer par fichier)"
+    },
+    "manualNote": "La simulation reste disponible ci-dessous, à la main — ce n’est plus un préalable."
+  }
+}

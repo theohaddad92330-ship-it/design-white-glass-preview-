@@ -1,0 +1,64 @@
+{
+  "title": "Marque",
+  "subtitle": "Ce que tes partenaires et tes clients voient quand ils ouvrent l'espace : le nom, le logo, la couleur, le domaine.",
+  "restricted": "Seuls le propriétaire et les administrateurs de l'espace peuvent changer la marque — elle change ce que TOUT LE MONDE voit.",
+  "identity": {
+    "title": "Identité",
+    "description": "Le nom remplace « {{brand}} » partout : entête, titre de l'onglet, dossiers exportés, page de partage publique.",
+    "nameLabel": "Nom affiché",
+    "namePlaceholder": "Le nom que tes clients voient",
+    "nameHelp": "Vide = le nom du produit.",
+    "logoLabel": "Adresse du logo",
+    "logoPlaceholder": "https://…/logo.svg",
+    "logoHelp": "Une adresse publique, servie en HTTPS. Un carré lisible à 24 px.",
+    "logoInvalid": "Une adresse HTTPS complète est attendue.",
+    "accentLabel": "Couleur d'accent",
+    "accentHelp": "Elle repeint les boutons, l'onglet actif et l'anneau de focus. Elle ne touche ni les fonds ni le texte.",
+    "accentInvalid": "Un code hexadécimal à six chiffres est attendu, par exemple #5b3ee8."
+  },
+  "domain": {
+    "title": "Domaine",
+    "description": "Fais pointer un sous-domaine à toi vers l'application. C'est ce qui fait qu'un partenaire ne lit jamais notre nom dans sa barre d'adresse.",
+    "label": "Domaine personnalisé",
+    "placeholder": "app.tonentreprise.fr",
+    "help": "Sans https://, sans port. Un enregistrement CNAME vers notre domaine reste à poser chez ton hébergeur.",
+    "invalid": "Un nom de domaine est attendu, par exemple app.tonentreprise.fr.",
+    "taken": "Ce domaine est déjà utilisé par un autre espace.",
+    "emailLabel": "Adresse d'expédition",
+    "emailPlaceholder": "notifications@tonentreprise.fr",
+    "emailHelp": "L'expéditeur des e-mails envoyés par l'espace. Le domaine doit être authentifié chez toi (SPF, DKIM), sinon les messages partent en indésirable.",
+    "emailInvalid": "Une adresse e-mail est attendue."
+  },
+  "preview": {
+    "title": "Aperçu",
+    "description": "Ce que porte l'entête avec les réglages en cours.",
+    "custom": "Marque posée",
+    "default": "Marque du produit"
+  },
+  "actions": {
+    "save": "Enregistrer",
+    "saving": "Enregistrement…",
+    "reset": "Revenir à la marque du produit",
+    "resetConfirm": "Effacer le nom, le logo, la couleur, le domaine et l'adresse d'expédition ?",
+    "retry": "Réessayer",
+    "pending": "Modifications en attente",
+    "noPending": "Aucune modification en attente"
+  },
+  "saved": "Marque enregistrée.",
+  "saveFailed": "L'enregistrement a échoué.",
+  "loadFailed": "La marque n'a pas pu être lue.",
+  "demoBlocked": "La marque ne se change pas dans la salle de démonstration — elle est partagée par tous les visiteurs.",
+  "documents": {
+    "title": "Identité des documents",
+    "description": "Ce que ton espace ajoute à ses dossiers de compétences : une signature en fin de document et un pied en bas de chaque page.",
+    "signatureLabel": "Signature proposée",
+    "signatureHelp": "Placée à la fin du document. Une ligne par information (équipe, téléphone, e-mail).",
+    "signaturePlaceholder": "Équipe, téléphone, e-mail…",
+    "footerLabel": "Pied de document",
+    "footerHelp": "Répété en bas de chaque page — raison sociale, mention de confidentialité.",
+    "footerPlaceholder": "Raison sociale, mention de confidentialité…",
+    "tooLong": "{{max}} caractères au plus.",
+    "previewLabel": "Aperçu d’un dossier de compétences avec la signature et le pied de l’espace",
+    "previewTitle": "Dossier de compétences"
+  }
+}

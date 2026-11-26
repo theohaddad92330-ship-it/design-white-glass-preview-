@@ -1,0 +1,147 @@
+{
+  "zone": {
+    "label": "Lille et métropole (59)",
+    "scope": "france",
+    "departments": ["59"],
+    "cantons": [],
+    "cities": ["Lille", "Villeneuve-d'Ascq", "Roubaix", "Tourcoing"]
+  },
+  "generated_at": "2026-10-04T08:00:00+02:00",
+  "kpis": [
+    { "label": "Profils identifiés", "value": 767, "caption": "dans 355 entreprises de la métropole" },
+    { "label": "Besoins localisés avec prix", "value": 231 },
+    { "label": "Prix médian observé", "value": "505 €/jour" }
+  ],
+  "what_i_know": [
+    {
+      "rubric": "Le marché lillois",
+      "known": "Berceau de la grande distribution : la galaxie Mulliez, La Redoute, Oney, Cofidis, Worldline, OVHcloud. Le cluster AD2N rassemble plus de 40 ESN et éditeurs.",
+      "meaning": "Un marché dominé par le retail, où les mêmes acheteurs se parlent : une référence chez une enseigne circule dans les autres."
+    },
+    {
+      "rubric": "Ce qu'on a en mémoire",
+      "known": "767 profils identifiés dans 355 entreprises, dont 453 externes — 59 % des profils observés.",
+      "meaning": "Parmi les profils observés, six sur dix sont des prestataires : la prestation est massive et prouvée à Lille."
+    }
+  ],
+  "charts": [
+    {
+      "title": "Besoins par métier",
+      "items": [
+        { "label": "Développement logiciel", "value": 79 },
+        { "label": "Data / BI / IA", "value": 35 },
+        { "label": "Gestion de projet / PMO", "value": 21 }
+      ]
+    }
+  ],
+  "esn": [
+    {
+      "name": "Capgemini",
+      "evidence_level": "observed",
+      "proof": "12 profils observés à Lille, dont 7 externes",
+      "reliability": "observé"
+    },
+    {
+      "name": "Daveo",
+      "evidence_level": "observed",
+      "proof": "4 profils observés à Lille, dont 2 externes"
+    }
+  ],
+  "people": [
+    {
+      "name": "Camille Durand",
+      "function": "Responsable achats IT",
+      "entity": "Exemple Retail Lille",
+      "city": "Lille",
+      "email": "camille.durand@exemple-retail.test",
+      "role": "decision_maker"
+    }
+  ],
+  "sections": [],
+  "guardrails": [
+    {
+      "point": "Prix",
+      "detail": "Besoins 2021-2024, dominés par ADEO (190 sur 231) : la grille lilloise reflète d'abord ADEO."
+    },
+    {
+      "point": "2025-2026",
+      "detail": "Aucune donnée de prix lilloise récente dans nos bases."
+    }
+  ],
+  "price_grid": {
+    "currency": "EUR",
+    "period": "2021-2024",
+    "sample_size": 231,
+    "source_kind": "provided_file",
+    "top_client": { "name": "ADEO", "n": 190 },
+    "rows": [
+      {
+        "family": "Développement logiciel",
+        "needs": 79,
+        "median": 502,
+        "junior": { "amount": 435, "n": 16 },
+        "confirmed": { "amount": 505, "n": 38 },
+        "senior": { "amount": 550, "n": 14 },
+        "range": { "min": 405, "max": 800 }
+      },
+      {
+        "family": "Data / BI / IA",
+        "needs": 35,
+        "median": 532,
+        "confirmed": { "amount": 502, "n": 20 },
+        "senior": { "amount": 570, "n": 11 },
+        "range": { "min": 455, "max": 610 }
+      },
+      {
+        "family": "Gestion de projet / PMO",
+        "needs": 21,
+        "median": 610,
+        "confirmed": { "amount": 505, "n": 9 },
+        "senior": { "amount": 650, "n": 9 },
+        "range": { "min": 450, "max": 700 }
+      }
+    ]
+  },
+  "price_trend": [
+    { "year": 2021, "needs": 48, "median": 485 },
+    { "year": 2022, "needs": 42, "median": 498 },
+    { "year": 2023, "needs": 29, "median": 505 },
+    { "year": 2024, "needs": 112, "median": 542 }
+  ],
+  "clients": [
+    {
+      "name": "ADEO",
+      "sector": "Retail / Luxe / Consommation",
+      "size": "1001-5000",
+      "profiles": 70,
+      "externals": 48,
+      "cities": ["Bondues", "La Madeleine"],
+      "families": "Développement logiciel (36) · Produit / Agilité (8) · Design / UX (6)"
+    }
+  ],
+  "groups": [
+    {
+      "name": "Galaxie Mulliez",
+      "note": "Les mêmes acheteurs se parlent d'une enseigne à l'autre.",
+      "members": [
+        { "name": "ADEO", "profiles": 70, "externals": 48 },
+        { "name": "Auchan Retail", "profiles": 38, "externals": 29 }
+      ]
+    }
+  ],
+  "calendar": [
+    {
+      "label": "Talent Fair",
+      "actors": "EuraTechnologies",
+      "when": "6 octobre 2026",
+      "detail": "Salon de recrutement de l'écosystème lillois."
+    }
+  ],
+  "rules": [
+    {
+      "rule": "Référence entre enseignes",
+      "known": "Une référence chez une enseigne circule dans les autres.",
+      "meaning": "Soigner la première mission d'un groupe vaut pour tout le groupe."
+    }
+  ]
+}

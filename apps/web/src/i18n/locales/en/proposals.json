@@ -1,0 +1,77 @@
+{
+  "route": {
+    "title": "Proposal studio",
+    "description": "The outline of your proposal, assembled from what the file already knows."
+  },
+  "state": {
+    "loading": "Assembling the outline…",
+    "failed": "The outline could not be assembled.",
+    "retry": "Try again"
+  },
+  "signature": {
+    "title": "Get it signed",
+    "prepared": "{{brand}} prepares the document; signing happens in your client’s tool or yours. No signature request is created from here.",
+    "open": "Open my signature tool",
+    "statusConnected": "The “signed” status is read from the connected tool, never assumed.",
+    "statusNotRead": "Signature status not read: no signature tool is connected.",
+    "reread": "Re-read status",
+    "rereadPending_one": "{{count}} request is still awaiting a signature in your tool:",
+    "rereadPending_other": "{{count}} requests are still awaiting a signature in your tool:",
+    "rereadDays_one": "for {{count}} day",
+    "rereadDays_other": "for {{count}} days",
+    "rereadNonePending": "No request is pending in your tool right now. That is not proof of signature: open the tool for the signed document.",
+    "rereadNotRead": "Status not read: your signature tool did not answer.",
+    "rereadError": "Status not read: the read failed, nothing is assumed.",
+    "proposal": {
+      "pending": "This request is still waiting for a signature.",
+      "not_sent": "No signature request is attached to this proposal: nothing is read from your tool.",
+      "pending_one": "This request is still waiting for a signature, for {{count}} day.",
+      "pending_other": "This request is still waiting for a signature, for {{count}} days.",
+      "signed": "Signed — confirmed by your signature tool.",
+      "not_found": "This request shows up neither among ongoing nor signed requests in your tool: nothing is assumed.",
+      "unread": "Status not read: your signature tool did not answer."
+    }
+  },
+  "summary": {
+    "ready_one": "{{count}} section ready out of {{total}}",
+    "ready_other": "{{count}} sections ready out of {{total}}",
+    "complete": "No section is empty. That is not “the proposal is good” — it is “nothing is missing from it”.",
+    "incomplete": "Some sections are still empty. Each one says what it needs."
+  },
+  "section": {
+    "context": "Context",
+    "scope": "Scope",
+    "approach": "Approach",
+    "team": "Team",
+    "schedule": "Schedule",
+    "pricing": "Pricing",
+    "references": "References",
+    "risks": "Risks",
+    "objections": "Anticipated objections",
+    "validation": "Validation"
+  },
+  "status": {
+    "ready": "Ready",
+    "partial": "Incomplete",
+    "missing": "Empty"
+  },
+  "gaps": {
+    "title_one": "What is missing ({{count}})",
+    "title_other": "What is missing ({{count}})"
+  },
+  "sources": {
+    "title": "Where this comes from"
+  },
+  "fix": {
+    "project": "Fix it on the need",
+    "account": "Open the account file",
+    "talent": "Open the talent pool"
+  },
+  "nothingSent": "The studio prepares, you send. No email leaves from here and no record is changed.",
+  "plan": {
+    "title": "The commercial proposal",
+    "intro": "The outline is built from what the deal already knows. Price, schedule and availability are never invented: an empty section says what it needs.",
+    "askLaura": "Draft with {{copilot}}",
+    "askLauraQuestion": "Help me draft the commercial proposal for the deal “{{project}}” from what the outline already knows. Do not invent a price, a schedule or availability."
+  }
+}

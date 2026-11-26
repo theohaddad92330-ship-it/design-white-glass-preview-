@@ -1,0 +1,71 @@
+{
+  "title": "Workspace rules",
+  "subtitle": "Set by an administrator for the whole workspace, they take precedence over everyone's individual settings.",
+  "readOnlyNote": "Only a workspace administrator can change these rules. They are shown here so everyone knows what they restrict.",
+  "neverChanged": "Default value, never changed.",
+  "changedBy": "Changed by {{name}} on {{date}}.",
+  "changedByUnknown": "Changed on {{date}}.",
+  "visibility": {
+    "label": "A unit's accounts",
+    "description": "Who sees the accounts attached to an agency, a BU or a team. An account with no unit stays visible to everyone.",
+    "shared": "Shared with the whole workspace",
+    "sharedHint": "Each person's access level decides, as before.",
+    "private": "Private to the unit",
+    "privateHint": "Only the unit's members see its accounts, even a member set to “whole workspace”. Administrators keep their own setting."
+  },
+  "export": {
+    "label": "Who can export",
+    "description": "Everything that takes data out of the workspace — CSV files, downloads (dossiers, contacts, skills files, conversations), exports to a spreadsheet or an external tool —, from the screen as well as from {{copilot}}. Import, share links, sending for signature and logging to the CRM stay open to every member.",
+    "everyone": "Everyone who has the right",
+    "everyoneHint": "Every member whose role or individual grant allows exporting.",
+    "admins": "Administrators only",
+    "adminsHint": "The owner and administrators. An individual grant is no longer enough: for everyone else, the export buttons disappear."
+  },
+  "saved": "The workspace rule is saved.",
+  "saveFailed": "I couldn't save this rule.",
+  "loadingMessage": "Reading your workspace's rules.",
+  "errorMessage": "I couldn't read the workspace's rules.",
+  "refusal": {
+    "exportPolicy": "Reserved by the workspace rule: exporting data is reserved to the workspace’s administrators.",
+    "businessUnitAccountsVisibility": "Reserved by the workspace rule: this unit’s accounts are visible to its members only."
+  },
+  "lauraDefaultMode": {
+    "title": "{{copilot}} — default mode",
+    "subtitle": "The context mode a new conversation uses until someone picks another one. This is not a workspace rule: it takes away no right, it only sets a fallback value.",
+    "readOnlyNote": "Only a workspace administrator can change this setting.",
+    "label": "Default mode for a new conversation",
+    "description": "A thread that already received an explicit choice always keeps priority — this setting only applies to new conversations.",
+    "my_activity": "My activity",
+    "my_activityHint": "Profile, portfolio and CRM read — the behavior before this setting.",
+    "one_off_mission": "One-off mission",
+    "one_off_missionHint": "Only the conversation's brief and the selected account, if one is scoped.",
+    "neutral": "Neutral",
+    "neutralHint": "Only the request and public sources.",
+    "saved": "The default mode is saved.",
+    "saveFailed": "I couldn't save this setting.",
+    "loadingMessage": "Reading your workspace's setting.",
+    "errorMessage": "I couldn't read this setting."
+  },
+  "lauraEvalSampling": {
+    "label": "Improve {{copilot}} with anonymized conversations",
+    "description": "On by default. Set per workspace: each workspace chooses for itself.",
+    "rowTitle": "Send anonymized requests to {{copilot}}’s quality evaluations",
+    "rowDescription": "When on, what members ask {{copilot}} is sent to quality evaluations, after names, contact details, links and identifiers are removed. Turning it off deletes what was already sent; samples are deleted after 90 days anyway.",
+    "never": "Never sent: the body of a drafted message, an attachment, a voice message, or {{copilot}}’s reply.",
+    "on": "On",
+    "off": "Off",
+    "saved": "The setting is saved.",
+    "saveFailed": "I couldn’t save this setting."
+  },
+  "workspaceProfile": {
+    "label": "Workspace profile",
+    "description": "How your firm works with its clients. In fixed-price mode the navigation is organised around projects to scope and follow: staffing moves to the background. Chosen when the workspace is created, editable here — and nowhere else.",
+    "staffing": "Staffing (time & materials)",
+    "staffingHint": "You place consultants at your clients: the navigation stays the original one.",
+    "forfait_conseil": "Fixed-price / consulting",
+    "forfait_conseilHint": "You scope and follow fixed-price projects delivered by the client’s teams: projects come before staffing.",
+    "notChosen": "No profile chosen: the original navigation applies.",
+    "saved": "The workspace profile is saved.",
+    "saveFailed": "I could not save the workspace profile."
+  }
+}

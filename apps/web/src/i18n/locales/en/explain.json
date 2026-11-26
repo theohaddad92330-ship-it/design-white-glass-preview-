@@ -1,0 +1,54 @@
+{
+  "trigger": "Explain how {{label}} is calculated",
+  "sourceWithTime": "{{label}}, recalculated at {{time}}",
+  "rows": {
+    "formula": "Formula",
+    "calculation": "Calculation",
+    "source": "Source",
+    "completeness": "Completeness",
+    "threshold": "Threshold",
+    "decision": "Decision"
+  },
+  "population": {
+    "bench_rate": "consultants",
+    "gross_margin": "missions",
+    "dso_days": "invoices",
+    "signed_revenue": "mission lines"
+  },
+  "formula": {
+    "bench_rate": "consultants with no active assignment / consultants counted",
+    "gross_margin": "(revenue − loaded cost) / revenue, weighted by days",
+    "dso_days": "median delay between issue and payment",
+    "signed_revenue": "sum of won missions, over their contractual length"
+  },
+  "calculation": {
+    "gross_margin": "weighted average over {{count}} mission",
+    "gross_margin_other": "weighted average over {{count}} missions",
+    "dso_days": "median of {{count}} delay",
+    "dso_days_other": "median of {{count}} delays",
+    "signed_revenue": "sum of {{count}} priced line",
+    "signed_revenue_other": "sum of {{count}} priced lines"
+  },
+  "source": {
+    "bench_rate": "mission assignments",
+    "gross_margin": "missions and commercial terms",
+    "dso_days": "paid invoices",
+    "signed_revenue": "won missions"
+  },
+  "excluded": {
+    "bench_rate": "{{count}} consultant not read",
+    "bench_rate_other": "{{count}} consultants not read",
+    "gross_margin": "{{count}} mission with no loaded cost entered",
+    "gross_margin_other": "{{count}} missions with no loaded cost entered",
+    "dso_undatable": "{{count}} invoice without usable dates",
+    "dso_undatable_other": "{{count}} invoices without usable dates",
+    "dso_disputed": "{{count}} disputed invoice",
+    "dso_disputed_other": "{{count}} disputed invoices",
+    "signed_revenue": "{{count}} line without an amount",
+    "signed_revenue_other": "{{count}} lines without an amount"
+  },
+  "decision": {
+    "notMeasurable": "{{count}} observation missing: this number is not yet compared to its target.",
+    "notMeasurable_other": "{{count}} observations missing: this number is not yet compared to its target."
+  }
+}

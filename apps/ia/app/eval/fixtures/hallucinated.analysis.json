@@ -1,0 +1,38 @@
+{
+  "_synthetic": true,
+  "_note": "Synthetic BAD dossier for the eval harness — a fully fictional test company. Deliberately fails every metric: facts shown without a source (hallucination), a plan targeting a contact absent from the enriched list (incoherence), no real decision-maker, and missing core deliverables.",
+  "company": "Contoso Test SARL",
+  "research": {
+    "companyName": "Contoso Test SARL",
+    "sector": "Conseil",
+    "siren": "000000000",
+    "confidence": { "score": 41, "tier": "low" },
+    "sources": { "tags": {}, "citations": {} }
+  },
+  "gate": { "decision": "go", "score": 2 },
+  "classified_contacts": [
+    { "fullName": "Alex Test", "title": "Stagiaire", "decisionRole": "user" }
+  ],
+  "plan": {
+    "actionPlan": {
+      "phases": [
+        {
+          "name": "Prise de contact",
+          "actions": [{ "contact": "Ghost McMissing", "action": "Appeler un contact qui n'existe pas dans le dossier." }]
+        }
+      ]
+    },
+    "plays": [
+      {
+        "painSignal": "",
+        "preuve": null,
+        "targetContact": "À identifier",
+        "esnOffer": "",
+        "angle": "",
+        "firstAction": "À définir",
+        "readyMessage": null,
+        "risk": ""
+      }
+    ]
+  }
+}

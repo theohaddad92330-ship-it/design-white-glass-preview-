@@ -1,0 +1,209 @@
+{
+  "slug": "thales",
+  "company": "Thales",
+  "archetype": "groupe_tech_defense",
+  "issue": "#2130.3",
+  "nature": "reel_source",
+  "as_of": "2026-09-15",
+  "_source": "Entreprise RÉELLE : chaque fait affirmé ci-dessous est relu dans ce dépôt (`app/eval/strategy/companies/<slug>.json`, bloc `registry` relevé le 2026-07-19 sur recherche-entreprises.api.gouv.fr — Annuaire des Entreprises, DINUM), avec son URL, sa date et sa trace. Tout ce que ces faits ne portent pas — décideurs, équipes, signaux, projets, voies d'accès — est déclaré NON MESURÉ et reste vide : l'écrire serait inventer un fait sous un nom réel, ce que le cadrage #2130.1-7 refuse.",
+  "facts": [
+    {
+      "key": "siren",
+      "value": "552059024",
+      "url": "https://recherche-entreprises.api.gouv.fr",
+      "date": "2026-07-19",
+      "trace": "app/eval/strategy/companies/thales.json#registry.siren"
+    },
+    {
+      "key": "denomination",
+      "value": "THALES",
+      "url": "https://recherche-entreprises.api.gouv.fr",
+      "date": "2026-07-19",
+      "trace": "app/eval/strategy/companies/thales.json#registry.denomination"
+    },
+    {
+      "key": "categorie_entreprise",
+      "value": "GE",
+      "url": "https://recherche-entreprises.api.gouv.fr",
+      "date": "2026-07-19",
+      "trace": "app/eval/strategy/companies/thales.json#registry.categorie_entreprise"
+    },
+    {
+      "key": "naf_siege",
+      "value": "70.10Z",
+      "url": "https://recherche-entreprises.api.gouv.fr",
+      "date": "2026-07-19",
+      "trace": "app/eval/strategy/companies/thales.json#registry.naf_siege"
+    },
+    {
+      "key": "tranche_effectif_label",
+      "value": "1 000 à 1 999 salariés",
+      "url": "https://recherche-entreprises.api.gouv.fr",
+      "date": "2026-07-19",
+      "trace": "app/eval/strategy/companies/thales.json#registry.tranche_effectif_label"
+    },
+    {
+      "key": "annee_effectif",
+      "value": "2023",
+      "url": "https://recherche-entreprises.api.gouv.fr",
+      "date": "2026-07-19",
+      "trace": "app/eval/strategy/companies/thales.json#registry.annee_effectif"
+    },
+    {
+      "key": "commune_siege",
+      "value": "MEUDON",
+      "url": "https://recherche-entreprises.api.gouv.fr",
+      "date": "2026-07-19",
+      "trace": "app/eval/strategy/companies/thales.json#registry.commune_siege"
+    },
+    {
+      "key": "code_postal_siege",
+      "value": "92190",
+      "url": "https://recherche-entreprises.api.gouv.fr",
+      "date": "2026-07-19",
+      "trace": "app/eval/strategy/companies/thales.json#registry.code_postal_siege"
+    }
+  ],
+  "expected": {
+    "identite": {
+      "status": "attendu",
+      "contient": [
+        "THALES",
+        "552059024"
+      ]
+    },
+    "perimetre": {
+      "status": "attendu",
+      "contient": [
+        "MEUDON",
+        "70.10Z"
+      ]
+    },
+    "decideurs": {
+      "status": "non_mesure",
+      "raison": "Aucune source vérifiée (URL + date) de ce dépôt ne nomme un décideur de ce compte."
+    },
+    "contacts_a_ne_pas_recommander": {
+      "status": "non_mesure",
+      "raison": "Sans décideur sourcé, il n'y a personne à écarter : rien n'est affirmé."
+    },
+    "equipes_cles": {
+      "status": "non_mesure",
+      "raison": "Aucune source vérifiée de ce dépôt ne décrit une équipe de ce compte."
+    },
+    "signaux": {
+      "status": "non_mesure",
+      "raison": "Aucun signal daté et sourcé dans ce dépôt pour ce compte."
+    },
+    "projets": {
+      "status": "non_mesure",
+      "raison": "Aucun projet sourcé dans ce dépôt pour ce compte."
+    },
+    "partenaires": {
+      "status": "non_mesure",
+      "raison": "La mémoire marché n'est pas relue par ce golden : rien n'est affirmé ici, ni dans un sens ni dans l'autre."
+    },
+    "acces": {
+      "status": "non_mesure",
+      "raison": "Aucune voie d'accès sourcée dans ce dépôt pour ce compte."
+    },
+    "recommandations": {
+      "status": "attendu",
+      "contient": [
+        "552059024"
+      ]
+    },
+    "gaps": {
+      "status": "attendu",
+      "contient": [
+        "décideurs"
+      ]
+    },
+    "sources": {
+      "status": "attendu",
+      "contient": [
+        "recherche-entreprises.api.gouv.fr"
+      ]
+    },
+    "action_suivante": {
+      "status": "attendu",
+      "contient": [
+        "552059024"
+      ]
+    }
+  },
+  "dossier": {
+    "identite": {
+      "name": "THALES",
+      "siren": "552059024"
+    },
+    "perimetre": {
+      "scope": "unite_legale",
+      "entities": [
+        "THALES — unité légale 552059024, siège MEUDON 92190, NAF 70.10Z, catégorie GE"
+      ]
+    },
+    "decideurs": [],
+    "contacts_a_ne_pas_recommander": [],
+    "equipes_cles": [],
+    "signaux": [],
+    "projets": [],
+    "partenaires": [],
+    "acces": [],
+    "recommandations": [
+      {
+        "id": "reco-perimetre",
+        "text": "Qualifier le périmètre avant de chiffrer : l'unité légale 552059024, au siège de MEUDON 92190, déclare une tranche de 1 000 à 1 999 salariés.",
+        "why": "Le code NAF 70.10Z relevé au registre est celui des sièges sociaux : la tranche portée par ce SIREN ne mesure pas l'ensemble des entités.",
+        "target": null,
+        "evidence": [
+          "src-registre"
+        ]
+      }
+    ],
+    "gaps": [
+      "décideurs non identifiés dans une source vérifiée",
+      "entités rattachées non relevées",
+      "aucun signal daté et sourcé"
+    ],
+    "sources": [
+      {
+        "id": "src-registre",
+        "url": "https://recherche-entreprises.api.gouv.fr",
+        "date": "2026-07-19",
+        "label": "registre public des entreprises"
+      }
+    ],
+    "action_suivante": {
+      "text": "Relever au registre les entités rattachées à l'unité légale 552059024 avant de cibler",
+      "target": null,
+      "evidence": [
+        "src-registre"
+      ]
+    }
+  },
+  "cas": [
+    {
+      "id": "cas-generique",
+      "text": "Proposer un accompagnement sur la transformation digitale et l'innovation des équipes.",
+      "why": "Ce groupe doit moderniser son système d'information pour gagner en agilité.",
+      "target": null,
+      "evidence": [
+        "src-registre"
+      ],
+      "label": "generic",
+      "_jugement": "Aucun des faits sourcés n'apparaît : la phrase vaudrait pour n'importe quel grand groupe."
+    },
+    {
+      "id": "cas-perimetre",
+      "text": "Cibler une entité opérationnelle plutôt que l'unité légale 552059024 de MEUDON, dont la tranche déclarée ne dit rien de l'ensemble.",
+      "why": "Le code NAF 70.10Z de l'unité légale 552059024 est celui des sièges sociaux.",
+      "target": null,
+      "evidence": [
+        "src-registre"
+      ],
+      "label": "useful_and_correct",
+      "_jugement": "Tout vient du registre relu dans ce dépôt, rien n'est ajouté."
+    }
+  ]
+}

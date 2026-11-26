@@ -1,0 +1,40 @@
+lot: lot-780
+issues: [5191]
+
+notes: |
+  Lot 780c — INVENTAIRE des endroits qui montrent un signal / besoin cliquable (#5191, 03/11/2026). Tous ouvrent
+  LA modale `SignalBrowserDialog` (BrowsableDialog + WatchlistSignalDetail + personnes à contacter), « 1 sur N » sur
+  la liste affichée :
+   1. /signals › Signaux — `SignalsLibraryPage` (cartes) : branché, N = lignes visibles, personnes proposées par la modale.
+   2. /signals › Historique — `SignalsHistory` HistoryLine AVEC `signalLine` : branché, N = besoins affichés du compte (+ faits une fois dépliés).
+   3. /signals › Historique — HistoryLine SANS `signalLine` (signal de la Veille) : désormais un bouton qui ouvre la même modale.
+   4. Page compte › Signaux et besoins, Actuel ET Historique — `AccountSignalTable` / `SignalCompactRow` : branché, N = lignes affichées (les groupes « établissements fermés » n'ont pas de détail).
+   5. Veille (`WatchlistBoard`, /watchlist) : son BrowsableDialog dédié remplacé (un compte = une entrée, flèches compte à compte).
+   6. Bibliothèque « Mes cibles » (`SignalsLibrary`, target-lists) : son Dialog dédié remplacé.
+   7. `SignalDetailDialog` (lot 780b) déjà supprimé ; `SignalDetailExtras` déplacé dans la modale partagée (plus de doublon).
+   8. `WatchSignalTimeline` (onglet veille historique) : son parent `TabSignal` n'est monté nulle part, aucun détail à brancher.
+   9. Ma journée / briefing, carte Découvrir « besoin observé » : aucun détail de signal propre (cartes, liens vers le compte) — rien à brancher.
+  Infos : lieu, site de publication de l'offre (LinkedIn, France Travail… — le fournisseur ne se nomme jamais), source
+  générique, TJM, compétences, nature, période, formulations regroupées, issue — tout champ absent n'écrit aucune ligne.
+  Personnes à contacter : 1-2 par signal (`proposalForLine`, même règle que la page compte) ; aucune ⇒ pas de section.
+  Démo : la démo propose déjà des personnes sur la moitié environ des signaux semés (Société Générale, BPCE, SNCF, Sanofi…) ;
+  les autres restent sans personne À DESSEIN — la règle ne propose jamais une liste générique, et un contact inventé sur une
+  société réelle est refusé. Aucune donnée démo ajoutée.
+  Ordre par défaut : recrutements en tête (signaux, historique par compte et comptes à offres, tableau du compte) ; ordre,
+  jamais filtre ; « Plus récents » / « Plus anciens » choisis gardent la main.
+
+changelog:
+  id: 2026-11-03-lot-780
+  comment: 'Lot 780 (#5191) — un clic sur un besoin ouvre une modale de détail'
+  fr:
+    date: 3 novembre 2026
+    title: Un besoin s’ouvre en modale
+    items:
+      - 'Tous les signaux (Signaux, Historique, page compte, Veille) s’ouvrent dans la même fenêtre, avec « 1 sur N », le lieu, le site de l’offre et les personnes à contacter ; les recrutements passent en tête par défaut.'
+      - 'Signaux et besoins (onglet Veille du compte, Signaux Actuel et Historique) : un clic sur un besoin ouvre la même fenêtre que les signaux récents (détail complet, contacts proposés), au lieu de déplier la ligne. Le bloc « Projet possible » sous la ligne disparaît.'
+  en:
+    date: November 3, 2026
+    title: A need opens in a dialog
+    items:
+      - 'Every signal (Signals, History, account page, Watch) opens in the same dialog, with “1 of N”, the place, the job board and the people to contact; hiring signals come first by default.'
+      - 'Signals and needs (account Watch tab, Signals Current and History): clicking a need opens the same dialog as recent signals (full detail, suggested contacts) instead of expanding the row. The “Possible project” block under the row is gone.'

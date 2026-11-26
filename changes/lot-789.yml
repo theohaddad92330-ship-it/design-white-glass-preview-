@@ -1,0 +1,8 @@
+lot: lot-789
+issues: [5212]
+
+inserts:
+  - file: agent_docs/chantiers-livres.md
+    text: |
+      - **Découvrir — la recherche par compétence ne repaie plus l'identité d'un même employeur** (#5212, Refs) — mémo d'identité PAR REQUÊTE (nom normalisé + département) dans `find_skill_accounts` : une passe d'élargissement ne redemande ni à notre base ni au registre un employeur déjà résolu (les échecs transitoires `deadline`/`unavailable` ne sont jamais rangés) ; journal `discover pass=<nom> ms=<n> offers=<reçues> kept=<gardées> identity_calls=<n>` par passe (`exact`, `widen_department`, `widen_region`, `widen_skill_t<n>`, `fill_skill`). Filtres âge / compétence / métier / zone : DÉJÀ appliqués à la moisson (`_reject_reason`) avant toute résolution, gardé par `test_5212_passes_identite.py`. Non fait (voir ci-dessous) : passes en parallèle, double POST.
+      - **#5212 — non parallélisé, non changé** : (C) les passes s'enchaînent PAR DÉPENDANCE, pas par habitude — `_widen_skill_by_zone` ne part que si les exacts sont maigres (`needs_zone_widening`) et son barreau région ne part que si le département est maigre ; `widen_rows` et `_fill_skill_search` ne partent que si la liste est encore sous `limit`. Les lancer ensemble paierait des appels que la passe précédente évite. (D) les deux POST `/ia/discover/registry` sont VOULUS : `useDiscoverSearch` lance un premier lot (`limit` = `DISCOVER_FIRST_LOT` = 5, `Discover.tsx:701`) en parallèle de la liste complète (#4363.3) ; ce n'est pas la même requête (`limit` diffère) mais, côté IA, la recherche par compétence paie deux fois le même moteur. Décision produit à prendre (Louis) : ne pas lancer le premier lot sur une recherche par compétence.

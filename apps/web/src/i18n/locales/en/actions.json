@@ -1,0 +1,1121 @@
+{
+  "pageTitle": "Action center",
+  "overflowPriorities": {
+    "title_one": "{{count}} more priority from today, still pending",
+    "title_other": "{{count}} more priorities from today, still pending"
+  },
+  "tabs": {
+    "since": "Since last login",
+    "all": "All",
+    "analysis": "Analyses",
+    "enrichment": "Enrichments",
+    "export": "Exports",
+    "message": "Messages",
+    "reminder": "Reminders",
+    "other": "Other"
+  },
+  "events": {
+    "scoreChanged": "Score updated",
+    "profileUpdated": "ESN profile updated",
+    "profileUpdatedDetail": "Sales context updated"
+  },
+  "since": {
+    "banner": "New since your last login · {{date}}",
+    "emptyTitle": "Nothing new",
+    "emptySubtitle": "No activity since your last login ({{date}}).",
+    "firstVisitTitle": "Welcome to your activity journal",
+    "firstVisitSubtitle": "On your next visit, you'll see everything that changed since the last one here."
+  },
+  "filters": {
+    "type": "Type",
+    "status": "Status",
+    "period": "Period",
+    "account": "Account",
+    "accountPlaceholder": "Account name…",
+    "member": "Member",
+    "unknownMember": "Unnamed member",
+    "channel": "Channel",
+    "last7Days": "Last 7 days",
+    "last30Days": "Last 30 days",
+    "last90Days": "Last 90 days"
+  },
+  "status": {
+    "completed": "Completed",
+    "inProgress": "In progress",
+    "sent": "Sent",
+    "copied": "Copied",
+    "requested": "Requested",
+    "scheduled": "Scheduled",
+    "exported": "Exported",
+    "recorded": "Recorded",
+    "failed": "Failed",
+    "canceled": "Cancelled",
+    "abandoned": "No outcome",
+    "unknown": "Unknown outcome",
+    "scoreUp": "Up",
+    "scoreDown": "Down",
+    "updated": "Updated"
+  },
+  "toolbar": {
+    "title": "Activity log",
+    "subtitle": "Everything {{brand}} and your team have actually prepared, approved or run.",
+    "noActiveFilters": "No active filters"
+  },
+  "table": {
+    "headerAccount": "Account",
+    "headerAction": "Action",
+    "headerUser": "User",
+    "headerDate": "Date",
+    "headerStatus": "Status",
+    "loading": "Loading actions...",
+    "emptyTitle": "No actions found",
+    "emptySubtitle": "Upcoming tracked actions will appear here.",
+    "viewDetail": "View details",
+    "copyId": "Copy ID",
+    "rowActionsAria": "Actions for {{label}}",
+    "scrollLabel": "Activity log, horizontally scrollable table"
+  },
+  "toast": {
+    "idCopied": "Action ID copied",
+    "idCopyFailed": "Could not copy the ID",
+    "messageCopied": "Message copied",
+    "messageCopyFailed": "Copy failed"
+  },
+  "detail": {
+    "fallbackTitle": "Action details",
+    "breadcrumbHistory": "History",
+    "rowAccount": "Account",
+    "rowCommercialStage": "Commercial stage",
+    "rowUser": "User",
+    "rowDate": "Date",
+    "rowCategory": "Category",
+    "openAccount": "Open account",
+    "openContact": "Open contact",
+    "notFoundTitle": "Action not found",
+    "notFoundSubtitle": "It may have been deleted or does not belong to your workspace.",
+    "summaryTitle": "Account summary",
+    "analysisStatus": "Analysis status",
+    "score": "Priority score",
+    "sector": "Sector",
+    "contactsCount": "Contacts identified",
+    "dominantSignal": "Dominant signal",
+    "refreshedAt": "Last updated",
+    "runsTitle": "Analysis history",
+    "durationMinSec": "{{min}} min {{sec}} s",
+    "durationSec": "{{sec}} s",
+    "accountStatus": {
+      "analyzing": "In progress",
+      "completed": "Completed",
+      "error": "Failed",
+      "canceled": "Canceled",
+      "archived": "Archived",
+      "deleted": "Deleted"
+    },
+    "failureReason": "Failure reason",
+    "rowChannel": "Channel",
+    "rollback": {
+      "cancel_reminder": "Cancel the reminder",
+      "restore_status": "Restore the previous status",
+      "remove_crm_task": "Remove the CRM task",
+      "running": "…",
+      "doneDefault": "Done.",
+      "failedDefault": "That didn't work."
+    },
+    "closeCrmTask": {
+      "cta": "Mark the CRM task as done",
+      "running": "…",
+      "doneDefault": "Done.",
+      "failedDefault": "That didn't work."
+    },
+    "subtitle": "Action detail · journal",
+    "sheetLabel": "Action sheet",
+    "metaLabel": "Action context",
+    "whatTitle": "What was done",
+    "traceNote": "This page is the trace of the gesture: it never re-runs anything on its own. “Done” or “copied” is not proof of sending — only a send from your connected mailbox keeps one.",
+    "copyId": "Copy the identifier",
+    "copyIdDone": "Identifier copied.",
+    "copyIdFailed": "Copy failed: your browser refused it.",
+    "verdict": "Analysis verdict"
+  },
+  "panel": {
+    "title": "Shared journal and compliance",
+    "description": "A complete history to strengthen transparency, compliance and collaboration across your team.",
+    "securityLink": "Learn more about security",
+    "compactTitle": "Traceability & security",
+    "compactDescription": "Every action is timestamped and tied to its author.",
+    "compactCta": "See how {{brand}} logs actions"
+  },
+  "evidence": {
+    "traceabilityTitle": "Full traceability",
+    "traceabilityDescription": "Every action is timestamped and linked to its author.",
+    "collaborationTitle": "Stronger collaboration",
+    "collaborationDescription": "Track your team's contributions and avoid duplicates.",
+    "complianceTitle": "Compliance & security",
+    "complianceDescription": "Your activity data is stored securely."
+  },
+  "handoff": {
+    "title": "Delegate to {{name}}",
+    "description": "Tell {{name}} what they need to pick this action up without asking you. The note is shown with the action.",
+    "label": "Context note",
+    "placeholder": "Where things stand, what was said, what is left to do…",
+    "confirm": "Delegate",
+    "required": "Write a context note to delegate."
+  },
+  "executeMenu": {
+    "triggerLabel": "Executable actions",
+    "menuLabel": "Action",
+    "markDone": "Mark as done",
+    "markDoneUndo": "Undo \"done\"",
+    "markPrepared": "Mark as prepared",
+    "markObsolete": "Mark as obsolete",
+    "unmarkObsolete": "Set back to to-do",
+    "snooze": "Snooze",
+    "snoozeDays_one": "{{count}} day",
+    "snoozeDays_other": "{{count}} days",
+    "assignTo": "Assign to…",
+    "memberFallback": "Member",
+    "selfSuffix": "(me)",
+    "noAssignees": "No teammate to assign",
+    "copyMessage": "Copy message",
+    "copyScript": "Copy script",
+    "crmExport": "Export to CRM",
+    "crmNotConnected": "CRM not connected"
+  },
+  "callbackDate": {
+    "title": "Schedule the callback",
+    "description": "A date creates a callback task; without one, the action is simply marked done.",
+    "label": "Callback date (optional)",
+    "cancel": "Cancel"
+  },
+  "outcome": {
+    "positive": "Positive",
+    "declined": "Declined",
+    "deferred": "Deferred",
+    "qualified": "Qualified",
+    "no_response": "No response",
+    "information_obtained": "Information obtained",
+    "connected_qualified": "Right person",
+    "wrong_contact": "Wrong person",
+    "orientation_given": "Introduction obtained",
+    "need_confirmed": "Need confirmed",
+    "need_not_confirmed": "Need not confirmed",
+    "callback_scheduled": "Call back later",
+    "not_now": "Not now",
+    "refused": "Explicit refusal",
+    "no_answer": "No response received",
+    "invalid_contact": "Invalid contact details",
+    "left_company": "Contact has left",
+    "meeting_booked": "Meeting booked",
+    "action_cancelled": "Action cancelled",
+    "other": "Other",
+    "blocked_by_procurement": "Blocked by procurement",
+    "blocked_by_margin": "Blocked by margin",
+    "technical_error": "Technical error",
+    "abandoned": "Abandoned"
+  },
+  "execute": {
+    "trigger": "Execute",
+    "bulkTrigger": "Execute an action",
+    "title": "Execute an action",
+    "subtitleOne": "Run one action on {{name}}. Nothing runs until you click Execute.",
+    "subtitleMany": "Run one action on {{count}} selected contacts.",
+    "chooseAction": "Choose an action",
+    "actions": {
+      "reminder": "Create a follow-up reminder",
+      "reminderDesc": "Create a reminder in your {{brand}} action journal.",
+      "enrich": "Enrich the contact",
+      "crmTask": "Create a CRM task",
+      "crmTaskDesc": "Log a task on the contact's CRM timeline."
+    },
+    "reminderAt": "Remind me on",
+    "note": "Note (optional)",
+    "notePlaceholder": "Add context for this action…",
+    "crmNotConnected": "Connect a CRM to enable this action.",
+    "capNote": "Only the first {{max}} contacts will be processed.",
+    "reviewHint": "No automatic sending. Unsubscribed contacts are ignored server-side.",
+    "confirmOne": "Execute",
+    "confirmMany": "Execute for {{count}}",
+    "doneTitle": "Action executed",
+    "summary": {
+      "done": "Done: {{count}}",
+      "queued": "Queued: {{count}}",
+      "skipped": "Skipped: {{count}}",
+      "failed": "Failed: {{count}}"
+    },
+    "singleDone": "Action completed.",
+    "singleQueued": "Action queued — it will finish shortly.",
+    "singleSkipped": "Skipped: {{reason}}",
+    "singleFailed": "Failed: {{reason}}",
+    "skippedReasonFallback": "a precondition was not met",
+    "errorGeneric": "The action could not be executed. Please try again.",
+    "close": "Close",
+    "enrichHint": "Looks up each contact’s details with our enrichment sources."
+  },
+  "notifications": {
+    "label": "Notifications",
+    "ariaUnread": "Notifications ({{count}} unread)",
+    "ariaUnknown": "Notifications (unread count unavailable)",
+    "unreadUnknown": "Not measured — retrying",
+    "markAllRead": "Mark all as read",
+    "clear": {
+      "action": "Clear",
+      "title": "Clear notifications?",
+      "body": "Every notification in this inbox is deleted for good. Notifications older than 7 days are removed every week anyway."
+    },
+    "empty": "No notifications yet",
+    "justNow": "just now",
+    "minutesAgo": "{{count}} min ago",
+    "hoursAgo": "{{count}} h ago",
+    "daysAgo": "{{count}} d ago",
+    "source": "via {{source}}",
+    "occurrences": "×{{count}}",
+    "filtersLabel": "Filter the inbox",
+    "filterAll": "All",
+    "filterTeam": "Team",
+    "emptyTeam": "No notifications from your colleagues yet",
+    "from": "from {{name}}",
+    "level": {
+      "information": "Information",
+      "action": "Action",
+      "urgent": "Urgent",
+      "critical": "Critical"
+    },
+    "newBadge": "New",
+    "unreadAria": "unread",
+    "close": "Close notifications",
+    "emptyFiltered": "Nothing matches these filters.",
+    "clearFilters": "Clear filters",
+    "filters": {
+      "unread": "Unread",
+      "signal": "Signals",
+      "overdue": "Overdue",
+      "team": "Team",
+      "reply": "Replies",
+      "more": "More filters",
+      "less": "Fewer filters",
+      "discover": "Discover",
+      "meeting": "Meetings",
+      "mission": "Assignments",
+      "digest": "Digests",
+      "product": "{{brand}}"
+    },
+    "family": {
+      "signal": "Signal",
+      "overdue": "Overdue",
+      "team": "Team",
+      "reply": "Reply",
+      "discover": "Discover",
+      "meeting": "Meeting",
+      "mission": "Assignment",
+      "digest": "Digest",
+      "product": "{{brand}}"
+    }
+  },
+  "center": {
+    "title": "Action center",
+    "outreachLink": "Messages to approve and blocked",
+    "tabs": {
+      "toApprove": "To approve",
+      "running": "Running",
+      "done": "Completed",
+      "failed": "Needs attention",
+      "workflows": "Automations",
+      "scheduled": "Scheduled"
+    },
+    "empty": {
+      "toApprove": "Nothing to approve. Actions {{copilot}} prepares land here before they go out.",
+      "runs": "No run in this state.",
+      "workflows": "No automation available.",
+      "scheduled": "No scheduled automation.",
+      "loading": "Loading…"
+    },
+    "filters": {
+      "legend": "Filter the \"To approve\" queue",
+      "empty": "No request matches these filters.",
+      "risk": {
+        "legend": "Risk",
+        "low": "Low",
+        "medium": "Medium",
+        "high": "High",
+        "irreversible": "Irreversible"
+      },
+      "agent": {
+        "legend": "Agent",
+        "human": "Human",
+        "automation": "Automation"
+      },
+      "source": {
+        "legend": "Source",
+        "manual": "Manual",
+        "signal_detected": "Fresh signal",
+        "meeting_upcoming": "Meeting",
+        "account_dormant": "Dormant account",
+        "mission_ending": "Mission ending",
+        "project_qualified": "Qualified project",
+        "copilot_proposal": "{{copilot}} (conversation)",
+        "laura_job": "Composite job",
+        "unknown": "Automatic"
+      }
+    },
+    "approve": "Approve",
+    "reject": "Reject",
+    "openAccount": "Open account",
+    "openContact": "Open contact",
+    "approved": "Action approved — execution started.",
+    "rejected": "Action rejected. Nothing was sent.",
+    "decisionFailed": "The decision could not be recorded.",
+    "expiresAt": "expires on {{date}}",
+    "consequence": {
+      "low": "Easily undone, no lasting effect.",
+      "medium": "Affects several future sends or changes what the whole team sees.",
+      "high": "A significant consequence, hard to correct.",
+      "irreversible": "Cannot be undone automatically."
+    },
+    "source": {
+      "meeting_note": "Composed from a meeting note",
+      "call": "Composed from a call",
+      "routine": "Composed by a routine",
+      "mcp": "Composed by your connected assistant"
+    },
+    "stepCount_one": "{{count}} step",
+    "stepEffect": "Action execution",
+    "stepCount_other": "{{count}} steps",
+    "stepAttempts_one": "{{count}} attempt",
+    "stepAttempts_other": "{{count}} attempts",
+    "stepCompensation": {
+      "reversible": "cancelled — nothing left behind",
+      "compensable": "cancelled — needs compensating",
+      "irreversible": "cancelled — no compensation possible"
+    },
+    "permissionRequired": "Permission required: {{permission}}",
+    "status": {
+      "planned": "Planned",
+      "awaiting_approval": "To approve",
+      "running": "Running",
+      "done": "Completed",
+      "partial": "Partial",
+      "failed": "Failed",
+      "cancelled": "Cancelled",
+      "blocked": "Nothing was sent",
+      "unknown": "To verify"
+    },
+    "workflow": {
+      "signal_to_account_opening": "Fresh signal → account opening",
+      "meeting_follow_up": "After the meeting",
+      "crm_hygiene": "CRM hygiene",
+      "project_to_expert_push": "Project → profile push",
+      "dormant_account_revival": "Dormant account",
+      "card_account_analysis": "Analysis started from the conversation",
+      "card_enrich_contact": "Enrich a contact",
+      "card_schedule_reminder": "Schedule a reminder",
+      "card_export_contact_to_crm": "Export to the CRM",
+      "card_prepare_message": "Prepare a message",
+      "card_prepare_mail_draft": "Prepare a draft",
+      "card_toggle_routine": "Adjust a routine",
+      "card_update_setting": "Change a setting",
+      "card_pin_memory_fact": "Pin to memory",
+      "card_propose_opportunity_update": "Update an opportunity"
+    },
+    "step": {
+      "enrich_decision_maker": "Find the contact's details",
+      "log_crm_opportunity": "Create or update the CRM record",
+      "schedule_follow_up": "Schedule the follow-up",
+      "log_meeting_note": "Write the meeting note in the CRM",
+      "schedule_next_step": "Schedule the next step",
+      "send_recap": "Send the recap",
+      "upsert_record": "Upsert the CRM record",
+      "append_note": "Append the activity note",
+      "push_profile": "Send the profile push",
+      "log_push": "Log the push in the CRM",
+      "follow_up_response": "Check the response",
+      "notify_owner": "Flag the dormant account",
+      "schedule_decision": "Schedule the decision"
+    },
+    "schedule": {
+      "daily": "Every day at {{time}} ({{zone}})",
+      "weekdays": "Monday to Friday at {{time}} ({{zone}})",
+      "weekly": "Every {{weekday}} at {{time}} ({{zone}})",
+      "monthly": "On the first business day of the month at {{time}} ({{zone}})",
+      "quarterly": "On the first business day of the quarter at {{time}} ({{zone}})",
+      "continuous": "Every time the event happens"
+    },
+    "weekday": {
+      "1": "Monday",
+      "2": "Tuesday",
+      "3": "Wednesday",
+      "4": "Thursday",
+      "5": "Friday",
+      "6": "Saturday",
+      "7": "Sunday"
+    },
+    "blocker": {
+      "mailbox_not_connected": "Mailbox not connected",
+      "agenda_not_connected": "Calendar not connected",
+      "no_accounts": "No account followed",
+      "ats_not_connected": "ERP not connected",
+      "crm_not_connected": "CRM not connected",
+      "generic": "Missing capability"
+    },
+    "scheduled": {
+      "blockedTitle_one": "{{count}} enabled automation cannot run",
+      "blockedTitle_other": "{{count}} enabled automations cannot run",
+      "manage": "Configure automations",
+      "lastRun": "Last run on {{date}} — {{outcome}}",
+      "noOutcome": "no detail recorded",
+      "neverRan": "Never run so far"
+    },
+    "erp": {
+      "approve": "Approve the write",
+      "cannotDecide": "This request is waiting for a team lead to decide.",
+      "kind": {
+        "create_mission": "Create an assignment in the ERP",
+        "update_tjm": "Change a day rate in the ERP",
+        "log_call": "Call summary on the ERP contact record",
+        "update_need_status": "Change a need status in the ERP"
+      }
+    },
+    "launch": "Launch",
+    "launched_one": "Launched — 1 step going out now",
+    "launched_other": "Launched — {{count}} steps going out now",
+    "launchBlocked": "Nothing went out",
+    "launchError": "Launch failed",
+    "retry": "Retry",
+    "retried": "Retried — resuming from the failed step",
+    "retryError": "Retry failed",
+    "undo": "Undo",
+    "undoStep": {
+      "cancel_reminder": "Remove the reminder",
+      "delete_draft": "Delete the draft"
+    },
+    "runResult": {
+      "analysisFound_one": "{{count}} contact found, {{verified}} with a verified e-mail.",
+      "analysisFound_other": "{{count}} contacts found, {{verified}} with a verified e-mail.",
+      "learnedLabel": "What it teaches",
+      "label": "Result",
+      "nextActionLabel": "Next action",
+      "nextActionDue": "due {{date}}",
+      "stepsDone": "Steps completed: {{done}} of {{total}} — nothing more to report."
+    },
+    "undone": "Undone",
+    "undoError": "Undo failed",
+    "undoneLabel": {
+      "cancel_reminder": "Undone — reminder cancelled",
+      "delete_draft": "Undone — draft removed"
+    },
+    "outcomeCount_one": "{{count}} possible outcome",
+    "outcomeCount_other": "{{count}} possible outcomes",
+    "playbookSend": {
+      "capability": "Your mailbox",
+      "title": "Automatic follow-up ready for {{recipient}}",
+      "send": "Send",
+      "discard": "Do not send"
+    },
+    "crm": {
+      "kind": {
+        "export_contact": "Contact export to your CRM",
+        "create_note": "Note to add in your CRM",
+        "create_task": "Task to create in your CRM",
+        "log_meeting": "Meeting to log in your CRM",
+        "create_company": "Company to create in your CRM",
+        "create_list": "List to create in your CRM",
+        "enroll_sequence": "Enrolment in one of your CRM sequences",
+        "update_deal_stage": "Deal to move in your CRM",
+        "export_need": "Need to file in your CRM",
+        "send_chat_message": "Reply to send on Beeper"
+      },
+      "revise": "Edit",
+      "saveRevision": "Save and replace",
+      "cancelRevision": "Cancel",
+      "origin": {
+        "you": "Requested by you",
+        "otherUser": "Requested by another member",
+        "system": "Requested by an automation"
+      },
+      "bulkReject": {
+        "checkboxLabel": "Select this request",
+        "selectedCount_one": "{{count}} request selected",
+        "selectedCount_other": "{{count}} requests selected",
+        "action": "Cancel selection"
+      },
+      "destination": "To {{name}}"
+    },
+    "queueTrace": {
+      "playbook": {
+        "author": "Prepared by {{copilot}}",
+        "source": "From an automatic follow-up",
+        "next": "Sends after your approval"
+      },
+      "author": {
+        "laura": "Prepared by {{copilot}}",
+        "me": "Prepared by you",
+        "colleague": "Prepared by a colleague"
+      },
+      "source": {
+        "sequence": "From a sequence",
+        "laura": "From {{copilot}}",
+        "automation": "From an automation"
+      },
+      "next": {
+        "to_review": "Review and approve",
+        "modified": "Approve your edited version again",
+        "blocked": "Clear the blocker to approve"
+      }
+    },
+    "trace": {
+      "triggeredBy": "Triggered by {{name}}",
+      "approvedBy": "approved by {{name}}",
+      "fromAccount": "from {{account}}",
+      "viaCapability": "via {{capability}}",
+      "ref": "ref. {{ref}}",
+      "refLink": "Open reference",
+      "nextStep": "next step: {{step}}",
+      "trigger": {
+        "manual": "Triggered manually",
+        "signal_detected": "Triggered by a fresh signal",
+        "meeting_upcoming": "Triggered by an upcoming meeting",
+        "account_dormant": "Triggered by an account going dormant",
+        "mission_ending": "Triggered by an engagement nearing its end",
+        "project_qualified": "Triggered by a qualified project",
+        "copilot_proposal": "Suggested by {{copilot}} in a conversation",
+        "laura_job": "Prepared as a composite job to confirm",
+        "unknown": "Triggered automatically"
+      },
+      "preparedBy": "prepared by {{copilot}}",
+      "from": {
+        "signal_detected": "from a fresh signal",
+        "meeting_upcoming": "from an upcoming meeting",
+        "account_dormant": "from an account going dormant",
+        "mission_ending": "from an engagement nearing its end",
+        "project_qualified": "from a qualified project"
+      }
+    },
+    "relances": {
+      "companyFallback": "Unnamed account",
+      "completionNote": "This task will only be marked as done.",
+      "done": "Mark \"{{label}}\" as done",
+      "doneError": "Couldn't mark this follow-up as done",
+      "doneToast": "Follow-up marked as done",
+      "empty": "No follow-up scheduled. Your cadence follow-ups will appear here with their due date.",
+      "emptyOverdue": "No overdue follow-up. Your non-urgent follow-ups stay under \"My follow-ups\", without this filter.",
+      "loading": "Reading your follow-ups…",
+      "markSent": "Mark as sent",
+      "markSentDone": "Sending declared · follow-ups D+3, D+6, D+9 scheduled",
+      "markSentTooltip": "Did you send this message yourself? Say so: {{brand}} did not send it and cannot verify it, but it schedules your follow-ups at D+3, D+6 and D+9.",
+      "noDue": "No due date",
+      "tab": "My follow-ups",
+      "timing": {
+        "lead": "Slot your team has learned:",
+        "part": "{{channel}}: {{slot}} ({{answered}} of {{attempts}} follow-ups got a reply)",
+        "slot": "{{weekday}} {{band}}",
+        "weekday": {
+          "monday": "Monday",
+          "tuesday": "Tuesday",
+          "wednesday": "Wednesday",
+          "thursday": "Thursday",
+          "friday": "Friday"
+        },
+        "band": {
+          "morning": "morning",
+          "midday": "midday",
+          "afternoon": "afternoon",
+          "evening": "end of day"
+        }
+      },
+      "title": "My follow-ups",
+      "truncated": "Limited list: {{shown}} of {{total}} actions shown, {{hidden}} are not listed here (the least urgent: no due date or a distant one). Complete or close some actions to bring them up."
+    },
+    "elsewhere": {
+      "title": "My other actions — tasks and calls",
+      "error": "Actions from other screens could not be read. Try again in a moment.",
+      "unavailable": {
+        "plan_item": "Your action plan could not be read.",
+        "task": "Your tasks could not be read. They are still in My day.",
+        "call_task": "Your calls could not be read. They are still in Sequences."
+      },
+      "home": {
+        "task": "Open in My day",
+        "call_task": "Open in Sequences"
+      },
+      "objective": "Objective: {{value}}",
+      "expectedOutcome": "Expected outcome: {{value}}",
+      "outcomes": {
+        "information": "Information",
+        "validation": "Approval",
+        "meeting": "Meeting",
+        "document": "Document",
+        "payment": "Payment",
+        "feedback": "Feedback",
+        "decision": "Decision",
+        "other": "Other"
+      },
+      "sources": {
+        "user": "Created by you",
+        "laura": "Recommended by {{copilot}}",
+        "rule": "Triggered by a rule",
+        "connector": "From a connector",
+        "import": "Imported",
+        "manager": "Created by your manager",
+        "event": "Derived from an event"
+      }
+    },
+    "routing": {
+      "assignAria": "Hand this request to a colleague",
+      "assignPlaceholder": "Hand to…",
+      "assignNobody": "Nobody (original flow)",
+      "assignedToYou": "Handed to you",
+      "assignedTo": "Handed to {{name}}",
+      "assignedToColleague": "Handed to a colleague",
+      "noColleague": "No colleague in this workspace to hand this request to.",
+      "snooze": {
+        "tomorrow": "Snooze until tomorrow",
+        "inThreeDays": "Snooze for 3 days"
+      },
+      "snoozedTitle": "Snoozed",
+      "snoozedUntil": "Snoozed until {{date}}",
+      "wake": "Wake up",
+      "assigned": "Request handed over.",
+      "unassigned": "Delegation removed.",
+      "snoozed": "Request snoozed.",
+      "woken": "Request back in the queue.",
+      "failed": "That didn't go through."
+    },
+    "awaitingOutcome": {
+      "title": "Outcomes to declare ({{count}})",
+      "hint": "These actions are done but their outcome was never declared: without it, {{copilot}} cannot compare what works for you.",
+      "declare": "Declare the outcome of “{{label}}”",
+      "declareShort": "Declare outcome",
+      "byProof": "done by verified send",
+      "declaredToast": "Outcome declared",
+      "declareError": "Could not declare this outcome",
+      "unavailable": "Actions without an outcome could not be read."
+    }
+  },
+  "channels": {
+    "linkedin": "Professional network",
+    "email": "Email",
+    "phone": "Phone",
+    "meeting": "Meeting",
+    "other": "Other"
+  },
+  "actionLevel": {
+    "label": "Action level",
+    "help": "How far {{copilot}} may go for this work. The level is not a display: it authorizes or refuses the write.",
+    "levels": {
+      "respond_only": "Answer only",
+      "prepare": "Prepare",
+      "execute": "Execute",
+      "automate": "Automate"
+    },
+    "levelHelp": {
+      "respond_only": "She touches nothing: no object, no draft, no task, no send.",
+      "prepare": "She creates inside {{brand}}, never outside.",
+      "execute": "She asks before every gesture that leaves {{brand}} or costs something.",
+      "automate": "She acts on her own, and only when the six conditions all hold."
+    },
+    "preparedInBellum": "Prepared in {{brand}}",
+    "preparedInBellumHelp": "Prepared is neither created elsewhere nor sent: nothing has left {{brand}}.",
+    "refused": {
+      "level_writes_nothing": "{{copilot}} is set to answer only: she writes nothing.",
+      "level_prepares_only": "{{copilot}} is set to prepare: she creates nothing outside {{brand}}.",
+      "level_prepares_free": "{{copilot}} is set to prepare: preparing starts nothing.",
+      "level_prepares_unengaged": "{{copilot}} is set to prepare: preparing does not commit the workspace.",
+      "never_reaches_a_person": "{{copilot}} prepares, she never addresses anything to a person — you send.",
+      "automation_not_ready": "Automation is not ready: not all of its conditions are met."
+    },
+    "needsGo": "This gesture leaves {{brand}}: it waits for your approval.",
+    "prerequisites": {
+      "capability_exists": "The capability really exists",
+      "workspace_policy_allows": "The workspace policy allows it",
+      "role_allowed": "The role is entitled",
+      "simulation_validated": "A simulation has been validated",
+      "cap_defined": "A cap is defined",
+      "kill_switch_available": "A kill switch exists"
+    },
+    "notEntitled": "This level is reserved for people who manage the team.",
+    "current": "Action level: {{level}}",
+    "currentDefault": "Action level: {{level}} (default)",
+    "change": "Change the action level",
+    "setting": {
+      "description": "How far {{copilot}} goes when you click one of her proposals. Set for you only; it shows on every proposal, before the click.",
+      "default": "Based on your request (default)",
+      "defaultHint": "A question gets an answer, \"prepare\" gets a preparation, and an action waits for your click. Nothing ambiguous leaves {{brand}}.",
+      "automateNote": "\"Automate\" is not set here: what acts on its own are routines, each with its own action level.",
+      "automateLink": "See routines",
+      "loading": "Reading the action level…",
+      "error": "The action level could not be read. Try again in a moment.",
+      "saved": "Action level saved.",
+      "saveFailed": "The action level could not be saved."
+    }
+  },
+  "today": {
+    "title": "Your actions",
+    "intro": "Open a task to understand the context, prepare with {{copilot}} and decide what comes next.",
+    "doctrine": "Opening and preparing: no automatic processing. Only “Done” closes an action, and it is never proof of sending.",
+    "states": {
+      "legend": "Filter by state",
+      "not_started": "Not started",
+      "in_progress": "In progress",
+      "to_validate": "To approve",
+      "done": "Done",
+      "all": "All"
+    },
+    "drafts": {
+      "banner_one": "{{count}} draft in your mailbox",
+      "banner_other": "{{count}} drafts in your mailbox",
+      "open": "Open the drafts"
+    },
+    "stale": {
+      "banner_one": "{{count}} action overdue by more than {{days}} days — mark it done?",
+      "banner_other": "{{count}} actions overdue by more than {{days}} days — mark them done?",
+      "note": "Nothing is sent or deleted: this is a declarative gesture, with no proof of sending.",
+      "close_one": "Mark it done",
+      "close_other": "Mark them done",
+      "closing": "Closing…",
+      "doneToast_one": "{{count}} action marked done",
+      "doneToast_other": "{{count}} actions marked done",
+      "partial": "{{closed}} marked done, {{rest}} not closed — try again.",
+      "error": "Couldn’t mark these actions done right now."
+    },
+    "subtitle_one": "{{count}} action to handle today",
+    "subtitle_other": "{{count}} actions to handle today",
+    "subtitleOverdue_one": ", {{count}} of them overdue",
+    "subtitleOverdue_other": ", {{count}} of them overdue",
+    "subtitleNone": "Nothing to do today",
+    "history": "History",
+    "loading": "Reading your queue…",
+    "unavailable": "Could not read: {{sources}}. The queue may be incomplete.",
+    "sources": {
+      "approvals": "approvals",
+      "crm": "CRM writes",
+      "erp": "ERP writes",
+      "sends": "sends",
+      "messages": "messages",
+      "plan": "follow-ups",
+      "sequences": "sequences",
+      "calls": "calls",
+      "tasks": "tasks"
+    },
+    "empty": {
+      "title": "Nothing to do today",
+      "description": "The next steps of your sequences will show up here when they are due.",
+      "sequences": "See sequences"
+    },
+    "sections": {
+      "overdue": "Overdue",
+      "today": "Today",
+      "week": "This week",
+      "later": "Later"
+    },
+    "groups": {
+      "validate": "To approve",
+      "email": "Emails",
+      "linkedin": "Professional network",
+      "call": "Calls",
+      "task": "Tasks"
+    },
+    "process": "Work through ({{count}})",
+    "processAria": "Work through {{group}}: {{count}} in a row",
+    "laterShow": "Show ({{count}})",
+    "laterHide": "Collapse",
+    "filters": {
+      "open": "Filters",
+      "legend": "Filter the queue",
+      "gesture": "Type",
+      "account": "Account",
+      "source": "Source",
+      "risk": "Risk",
+      "agent": "Agent",
+      "all": "All",
+      "clear": "Clear filters",
+      "active_one": "{{count}} active filter",
+      "active_other": "{{count}} active filters",
+      "empty": "No task matches these filters.",
+      "sources": {
+        "sequence": "Sequence",
+        "plan": "Plan",
+        "laura": "{{copilot}}",
+        "automation": "Automation"
+      }
+    },
+    "card": {
+      "overdue": "Overdue · {{date}}",
+      "dueOn": "{{date}}",
+      "noDue": "No due date",
+      "step": "Step {{position}}/{{total}} · {{name}}",
+      "origin": {
+        "plan": "From your action plan",
+        "planWithAccount": "From the action plan of {{account}}",
+        "task": "Task added to your list",
+        "taskWithAccount": "Task added to your list · {{account}}",
+        "call": "From your calls to make",
+        "crm": "Write proposed to your CRM",
+        "erp": "Write proposed to your ERP",
+        "send": "Send prepared by an automation",
+        "approval": "Approval request from {{copilot}}",
+        "sequence": "From a sequence",
+        "message": "Outreach message prepared by {{copilot}}"
+      },
+      "draftShow": "Show all",
+      "draftHide": "Collapse",
+      "draftLabel": "Draft",
+      "mail": {
+        "generate": "Generate the email",
+        "generating": "Writing…",
+        "regenerate": "Regenerate",
+        "failed": "The email could not be written. Try again.",
+        "demoUnavailable": "Drafting is not available in the demo.",
+        "title": "Email draft",
+        "subject": "Subject",
+        "body": "Email body"
+      },
+      "noRecipient": "No named recipient",
+      "signal": "Signal · {{text}}",
+      "signalDated": "Signal · {{text}} ({{date}})",
+      "contactRole": "{{name}} ({{role}})",
+      "validate": "Approve",
+      "send": "Send",
+      "reject": "Reject",
+      "edit": "Edit",
+      "save": "Save",
+      "cancel": "Cancel",
+      "copyOpen": "Copy and open",
+      "done": "Done",
+      "doneHintFollowUps": "Marks the action as handled and schedules follow-ups at D+3, D+6, D+9 — this is not proof of sending.",
+      "doneHint": "Marks the action as handled — this is not proof of sending.",
+      "doneAria": "Mark done: {{title}}",
+      "postpone": "Postpone",
+      "postponeAria": "Postpone: {{title}}",
+      "tomorrow": "Tomorrow",
+      "in3days": "In 3 days",
+      "nextMonday": "Next Monday",
+      "pickDate": "Pick a date",
+      "pickDateApply": "Postpone to this date",
+      "skip": "Skip",
+      "more": "More actions: {{title}}",
+      "delegate": "Hand over",
+      "delegateAria": "Hand over: {{title}}",
+      "blocked": "Blocked: {{reason}}",
+      "subject": "Subject",
+      "body": "Message",
+      "callOutcomeTitle": "Call outcome",
+      "relanceOutcomeTitle": "Action outcome"
+    },
+    "toast": {
+      "failed": "The action did not go through.",
+      "validated": "Approved.",
+      "postponed": "Postponed.",
+      "done": "Marked done.",
+      "doneFollowUps": "Marked done · next follow-up scheduled for {{date}} (D+3, D+6, D+9).",
+      "sentDeclared": "Sending declared · follow-ups D+3, D+6, D+9 scheduled.",
+      "saved": "Draft saved.",
+      "callCause": "Done from My day",
+      "copied": "Draft copied: paste it into your mailbox.",
+      "copyFailed": "Could not copy: select the text by hand."
+    },
+    "burst": {
+      "title": "Work through: {{group}}",
+      "progress": "{{current}}/{{total}}",
+      "progressAria": "Card {{current}} of {{total}}, {{handled}} handled",
+      "exit": "Exit",
+      "help": "Shortcuts",
+      "prev": "Previous",
+      "next": "Next",
+      "finished": "Done: {{count}} handled.",
+      "close": "Close",
+      "summary": {
+        "title": "This batch",
+        "count_one": "{{count}} action",
+        "count_other": "{{count}} actions",
+        "recipients_one": "{{count}} recipient",
+        "recipients_other": "{{count}} recipients",
+        "unnamed_one": "{{count}} action without a named recipient",
+        "unnamed_other": "{{count}} actions without a named recipient",
+        "more_one": "+ {{count}} more",
+        "more_other": "+ {{count}} more",
+        "unnamedContact": "Unnamed contact",
+        "whoGets": "Who gets what",
+        "channel": "{{channel}}: {{count}}",
+        "sample": "Typical text: “{{text}}”",
+        "perRecipient": "Each message is written for its recipient.",
+        "noMandate": "Nothing goes out on its own: you review, then send from your mailbox.",
+        "underMandate": "Card by card: Done marks the action as handled, nothing more.",
+        "automate": "Turn it into an automation"
+      },
+      "noMandate": "Without a sending mandate, Enter copies the draft and opens your mailbox: nothing is sent on its own.",
+      "primary": {
+        "validate": "Approve",
+        "copyOpen": "Copy and open",
+        "done": "Done"
+      }
+    },
+    "drawer": {
+      "title": "History",
+      "description": "What happened, what is running and what will run on its own.",
+      "tabs": {
+        "journal": "Activity log",
+        "running": "Running",
+        "done": "Completed",
+        "failed": "To retry",
+        "scheduled": "Scheduled",
+        "workflows": "Automations",
+        "snoozed": "Postponed"
+      },
+      "snoozedEmpty": "No postponed request."
+    },
+    "overdueOnly": "You are only seeing what is overdue.",
+    "overdueOnlyClear": "Show everything",
+    "batch": {
+      "title_one": "{{count}} write to your CRM",
+      "title_other": "{{count}} writes to your CRM",
+      "hint": "Filed together. Each write is decided on its own frozen preview.",
+      "show": "See details ({{count}})",
+      "hide": "Hide details",
+      "reject": "Reject the batch",
+      "rejected_one": "{{count}} write rejected",
+      "rejected_other": "{{count}} writes rejected",
+      "partial": "{{failed}} of {{total}} writes could not be rejected."
+    },
+    "row": {
+      "open": "Open the task {{title}}",
+      "source": {
+        "sequence": "Sequence",
+        "plan": "Account action plan",
+        "laura": "Prepared by {{copilot}}",
+        "automation": "Automation"
+      },
+      "count_one": "{{count}} action",
+      "count_other": "{{count}} actions",
+      "search": "A task or an account…",
+      "searchLabel": "Search a task or an account",
+      "processAll": "Process ({{count}})",
+      "draftsNote": "Reviewing a message and finishing a task are two separate gestures."
+    }
+  },
+  "automations": {
+    "title": "Sequences on a signal",
+    "page": {
+      "title": "Your automations",
+      "subtitle": "Hand recurring follow-ups to {{copilot}}. What she prepares comes back in Actions or Messaging, with no second space to watch.",
+      "browse": "Browse routines",
+      "create": "Create my sequence on a signal",
+      "count": "My automations · {{count}}",
+      "fromMission": "You came from a mission file: these rules used to be part of the old “Mission tracking” screen.",
+      "backToMission": "Back to the file",
+      "prepared": "What they prepared",
+      "laura": {
+        "eyebrow": "{{copilot}} · your AI assistant",
+        "title": "Tell me what you want to delegate.",
+        "help": "“When this happens, prepare that.” We define the steps, the tools and what you keep to validate together.",
+        "placeholder": "When a mission ends within 30 days, prepare a task to check the renewal…",
+        "note": "{{copilot}} proposes a rule; it starts off and nothing leaves without your action.",
+        "label": "Describe your automation",
+        "submit": "Build with {{copilot}}",
+        "promptPrefix": "I want to create an automation: ",
+        "routines": "See the {{count}} routines",
+        "suggestions": {
+          "missionEnd": {
+            "label": "Anticipate a mission ending",
+            "prompt": "Set up an automation that anticipates a mission ending: when a mission ends within 30 days, prepare a task to handle."
+          },
+          "relance": {
+            "label": "Follow up after 7 days",
+            "prompt": "Set up an automation that follows up a contact who has not replied after 7 days, with a draft to review."
+          },
+          "meetings": {
+            "label": "Prepare my meetings",
+            "prompt": "Set up an automation that prepares my meetings for the week: account context, latest exchanges, points to raise."
+          }
+        }
+      },
+      "countPending": "My automations"
+    },
+    "intro": "They start on their own when something happens at an account: a hire, a tender, a new decision-maker… The first message is prepared for you. Nothing goes out without your validation: everything lands in “To do”.",
+    "grammar": {
+      "when": "When",
+      "then": "then"
+    },
+    "signal": {
+      "hiring": "hiring is detected at an account",
+      "new_decision_maker": "a new decision-maker appears",
+      "tender": "a tender is published",
+      "target_change": "something happens at one of my targets",
+      "inactive_account": "an account has had no action for {{days}} days",
+      "mission_end": "a mission is coming to an end"
+    },
+    "action": {
+      "enroll": "enrol the contact in the “{{sequence}}” sequence"
+    },
+    "prepared": {
+      "email_to_review": "prepare an email to review",
+      "call_to_make": "prepare a call to make"
+    },
+    "origin": {
+      "rule": "Rule",
+      "routine": "Scheduled",
+      "workflow": "Workflow",
+      "mission": "Missions"
+    },
+    "filter": {
+      "label": "Filter by origin",
+      "all": "All"
+    },
+    "switch": "Turn on the rule: {{name}}",
+    "firings": {
+      "count_one": "{{count}} trigger in 30 days",
+      "count_other": "{{count}} triggers in 30 days",
+      "unmeasured": "Triggers in 30 days: not measured",
+      "skipped_one": "{{count}} skipped",
+      "skipped_other": "{{count}} skipped"
+    },
+    "lastRun": "Last run: {{date}}",
+    "measures": {
+      "full": "{{firings}} · last run {{date}}",
+      "unmeasured": "Not measured",
+      "never": "No run yet: it starts off"
+    },
+    "neverRun": "Not run yet: the run happens every weekday morning.",
+    "delete": "Delete",
+    "workflowNote": "Runs on your validation, never on its own.",
+    "workflowOpen": "See in the action history",
+    "loadError": "Could not read your rules right now.",
+    "templates": {
+      "title": "Ready-to-activate templates",
+      "help": "One template per signal, ready to use. It turns on in one click and off whenever you like.",
+      "activate": "Activate"
+    },
+    "empty": {
+      "title": "No automation yet",
+      "description": "Describe it to {{copilot}} above, or start from a routine in the library. It will be born switched off."
+    },
+    "laura": {
+      "total": "Rules",
+      "active": "Active rules"
+    },
+    "card": {
+      "trigger": "Trigger",
+      "prepare": "Preparation",
+      "decision": "Your decision",
+      "settings": "Adjust",
+      "stateOn": "Active",
+      "stateOff": "Off",
+      "stateRoutineOn": "Active",
+      "stateRoutineOff": "Paused",
+      "measures": "Measures",
+      "cost": "Cost",
+      "costIncluded": "Included in your plan",
+      "costUses": "Counts toward your usage",
+      "open": "Open",
+      "scope": "My authorised accounts",
+      "scheduleReader": "Every weekday morning · Europe/Paris",
+      "scheduleEvent": "As soon as the signal arrives · working days",
+      "scheduleRoutine": "Next run: {{date}}",
+      "describe": "When {{signal}}, {{action}}.",
+      "switchState": "Turn on the rule “{{name}}”"
+    },
+    "decision": {
+      "rule": "What gets prepared lands in “To handle”: nothing leaves without your action.",
+      "routine": "What gets prepared lands in “To handle”: you validate before anything is sent.",
+      "workflow": "Runs on your validation, never alone."
+    }
+  }
+}

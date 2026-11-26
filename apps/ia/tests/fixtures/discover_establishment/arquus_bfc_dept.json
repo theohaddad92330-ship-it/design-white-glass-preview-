@@ -1,0 +1,33 @@
+{
+  "_comment": "Capture RÉELLE de recherche-entreprises.api.gouv.fr le 18/09/2026 : GET /search?q=arquus&departement=21,25,39,58,70,71,89,90 (les huit départements de Bourgogne-Franche-Comté). Un seul résultat, ARQUUS (SIREN 662043405) — siège à VERSAILLES (78, hors zone), un `matching_etablissements` de UNE entrée : GARCHIZY (58, Nièvre — DANS la zone). Trimmée des champs que `_list_row` ne lit pas, valeurs VERBATIM de la réponse réelle. #2544.1 — c'est le cas cité par Ludovic Marx (« Arquus en Bourgogne »).",
+  "results": [
+    {
+      "siren": "662043405",
+      "nom_complet": "ARQUUS (VOLVO GROUP GOVERNMENTAL SALES, RENAULT TRUCKS DEFENSE, ACMAT, ACMAT DEFENSE, ARQUUS)",
+      "nom_raison_sociale": "ARQUUS",
+      "nature_juridique": "5710",
+      "tranche_effectif_salarie": "42",
+      "categorie_entreprise": "GE",
+      "activite_principale": "30.40Z",
+      "date_creation": "1900-01-01",
+      "nombre_etablissements_ouverts": 8,
+      "siege": {
+        "libelle_commune": "VERSAILLES",
+        "departement": "78",
+        "code_postal": "78000",
+        "etat_administratif": "A"
+      },
+      "matching_etablissements": [
+        {
+          "libelle_commune": "GARCHIZY",
+          "code_postal": "58600",
+          "commune": "58121",
+          "region": "27",
+          "est_siege": false,
+          "etat_administratif": "A",
+          "siret": "66204340500106"
+        }
+      ]
+    }
+  ]
+}

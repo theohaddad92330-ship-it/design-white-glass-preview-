@@ -1,0 +1,64 @@
+name: Météo CI
+
+# La mesure hebdomadaire des SLO de la CI (docs/ci.md §1). Un seul workflow : il mesure
+# (tools/ci/metrics.mjs), publie le rapport dans l'issue unique `ci-meteo` (rien n'est commité depuis
+# la CI) et alerte (label `ci-slo-rate`, tools/ci/meteo-alerte.mjs) si un SLO est raté deux semaines
+# de suite. Interrupteur : vars.CI_METEO = false (docs/ci.md §3).
+on:
+  schedule: [{ cron: '0 6 * * 1' }]
+  workflow_dispatch:
+    inputs:
+      days: { description: 'Fenêtre en jours', default: '7' }
+
+concurrency:
+  group: ci-meteo
+  cancel-in-progress: false
+
+permissions:
+  actions: read
+  contents: read
+  issues: write
+  pull-requests: read
+
+jobs:
+  meteo:
+    name: Météo CI
+    if: ${{ vars.CI_METEO != 'false' }}
+    # Les runners GitHub sont coupés sur ce dépôt : voir uptime.yml.
+    runs-on: ${{ vars.CI_RUNS_ON || 'ubuntu-latest' }}
+    timeout-minutes: 30
+    env:
+      GH_TOKEN: ${{ github.token }}
+      GH_REPO: ${{ github.repository }}
+    steps:
+      - uses: actions/checkout@v7
+      - uses: actions/setup-node@v7
+        with:
+          node-version: 22
+
+      - name: Mesurer
+        run: node tools/ci/metrics.mjs --days "${{ inputs.days || '7' }}" --logs 60 --out "$RUNNER_TEMP/meteo"
+
+      # Compare au rapport de la semaine précédente (marqueur `<!-- ci-meteo:{...} -->` dans l'issue).
+      - name: Publier dans l'issue « Météo CI » et alerter
+        run: |
+          current=$(ls "$RUNNER_TEMP"/meteo/*.json | tail -1)
+          repo="$GH_REPO"
+          number=$(gh api "repos/$repo/issues?labels=ci-meteo&state=open&per_page=1" --jq '.[0].number // empty')
+          previous_args=()
+          if [ -n "$number" ]; then
+            gh api "repos/$repo/issues/$number/comments?per_page=100" --jq '[.[].body] | map(select(contains("<!-- ci-meteo:"))) | last // ""' > "$RUNNER_TEMP/last-comment.txt"
+            node tools/ci/meteo-alerte.mjs --extract "$RUNNER_TEMP/last-comment.txt" > "$RUNNER_TEMP/previous.json" || true
+            [ -s "$RUNNER_TEMP/previous.json" ] && previous_args=(--previous "$RUNNER_TEMP/previous.json")
+          else
+            number=$(gh api "repos/$repo/issues" -f title="Météo CI" -f body="Rapport hebdomadaire de la CI (tools/ci/metrics.mjs)." -f 'labels[]=ci-meteo' --jq .number)
+          fi
+          node tools/ci/meteo-alerte.mjs --metrics "$current" "${previous_args[@]}" > "$RUNNER_TEMP/alerte.md"
+          marker=$(node tools/ci/meteo-alerte.mjs --marker "$current")
+          { cat "${current%.json}.md"; echo; echo "$marker"; } > "$RUNNER_TEMP/comment.md"
+          gh api "repos/$repo/issues/$number/comments" -F body=@"$RUNNER_TEMP/comment.md" > /dev/null
+          if [ -s "$RUNNER_TEMP/alerte.md" ]; then
+            gh api "repos/$repo/issues/$number/labels" -f 'labels[]=ci-slo-rate' > /dev/null
+            gh api "repos/$repo/issues/$number/comments" -F body=@"$RUNNER_TEMP/alerte.md" > /dev/null
+            echo "::warning::SLO raté deux semaines de suite (label ci-slo-rate)"
+          fi

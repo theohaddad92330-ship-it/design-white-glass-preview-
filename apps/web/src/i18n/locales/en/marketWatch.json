@@ -1,0 +1,118 @@
+{
+  "title": "Market",
+  "subtitle": "What moved on the territories you follow, week after week.",
+  "addPlaceholder": "Department (31, 69…)",
+  "add": "Follow",
+  "followedCount": "{{count}} followed territory(ies)",
+  "remove": "Unfollow",
+  "loading": "Reading your territories…",
+  "error": "Your territories cannot be read right now.",
+  "empty": "You follow no territory yet. Add a department to start measuring what happens there.",
+  "department": "Department {{code}}",
+  "lastSnapshot": "Last snapshot on {{date}} · {{count}} snapshot(s) collected",
+  "noSnapshot": "No snapshot taken yet.",
+  "notMeasured": "not measured",
+  "valueGap": "the source did not answer this week",
+  "measure": {
+    "offers": "IT job posts published",
+    "esnPresent": "IT firms based here",
+    "openTenders": "Open tenders",
+    "awardedContracts": "Awarded contracts"
+  },
+  "atLeast": "at least {{value}}",
+  "boundedWhy": "Collection stops at {{ceiling}}: this is a floor, not a total.",
+  "openPanel": "See the detail",
+  "openList": "Open the list",
+  "trend": {
+    "structuralTitle": "Structural trend",
+    "currentTitle": "Current trend",
+    "up": "+{{change}} since {{date}}",
+    "down": "−{{change}} since {{date}}",
+    "steady": "unchanged since {{date}}",
+    "percent": "{{percent}}%",
+    "gap": {
+      "no_previous_snapshot": "change not measured — only one snapshot so far",
+      "no_current_snapshot": "change not measured — the source did not answer this week",
+      "bounded_reading": "change not measured — at least one of the two figures is capped",
+      "denominator_missing": "change not measured — no denominator",
+      "periods_not_ordered": "change not measured — snapshots out of order",
+      "not_enough_history": "not measured yet — not enough history"
+    }
+  },
+  "kind": {
+    "offers": "Job posts",
+    "tenders": "Tenders",
+    "awards": "Awarded contracts",
+    "new_esn": "New IT firm",
+    "esn_surge": "Surge",
+    "esn_left": "Gone"
+  },
+  "movement": {
+    "entered_one": "new on this territory — {{count}} job post published",
+    "entered_other": "new on this territory — {{count}} job posts published",
+    "left_one": "no longer showing — {{count}} job post last week",
+    "left_other": "no longer showing — {{count}} job posts last week",
+    "moved": "{{from}} → {{to}}",
+    "unreadable": "movement unreadable — both figures are missing"
+  },
+  "panel": {
+    "movements": "This week's movements",
+    "technologies": "Skills in demand",
+    "technologiesWhy": "Counted on collected job posts only — the ranking holds, the volume is a floor.",
+    "technologiesNone": "No skill ranking: too few job posts collected this week for it to mean anything.",
+    "hiring": "IT firms hiring here",
+    "hiringWhy": "The top ten of the latest snapshot — the list is not exhaustive.",
+    "hiringNone": "No known IT firm was hiring here at the latest snapshot.",
+    "esn": "IT firms from the directory based here",
+    "esnKnown_one": "{{count}} directory firm is headquartered in this department.",
+    "esnKnown_other": "{{count}} directory firms are headquartered in this department.",
+    "esnPopulation": "directory firms",
+    "esnWhy": "A different population from the public registry count: these are the firms we track nationally, not every establishment in the department.",
+    "esnNone": "No directory firm has a resolved head office in this department.",
+    "bySize": "By size",
+    "byRank": "By declared rank",
+    "sizeUnknown": "size not resolved",
+    "share": "{{count}} · {{share}}%",
+    "openness": {
+      "oui": "accepts rank 2",
+      "non": "does not accept rank 2",
+      "inconnu": "rank not declared"
+    },
+    "risk": {
+      "vigilance": "watch",
+      "alerte": "alert"
+    }
+  },
+  "links": {
+    "title": "From this territory",
+    "accounts_one": "{{count}} account in your portfolio has a site declared here",
+    "accounts_other": "{{count}} accounts in your portfolio have a site declared here",
+    "accountsOf": "out of {{total}} accounts that declare a site",
+    "accountsNone": "No account in your portfolio declares a site here.",
+    "partners_one": "{{count}} partner firm is headquartered here",
+    "partners_other": "{{count}} partner firms are headquartered here",
+    "partnersNone": "None of your partner firms is headquartered here.",
+    "overview": "Open the full territory overview"
+  },
+  "zones": {
+    "empty": "No \"Local market\" zone in this workspace: no account can yet carry the \"Local market\" chip.",
+    "createTitle": "Create a zone",
+    "labelPlaceholder": "Zone name (e.g. Lille)",
+    "labelAria": "Zone name",
+    "scopeAria": "Zone country",
+    "scopeFrance": "France (departments)",
+    "scopeSuisse": "Switzerland (cantons)",
+    "codesPlaceholderFrance": "Departments (e.g. 59, 62)",
+    "codesPlaceholderSuisse": "Cantons (e.g. VD, GE)",
+    "codesAria": "Zone codes",
+    "submit": "Create",
+    "error": "The zone could not be created."
+  },
+  "sections": {
+    "coverage": "What you know about your portfolio",
+    "territories": "Followed territories"
+  },
+  "emptyTitle": "No territory followed",
+  "removeNamed": "Stop following department {{code}}",
+  "emptyAction": "Follow a department"
+}

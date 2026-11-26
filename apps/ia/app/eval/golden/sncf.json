@@ -1,0 +1,25 @@
+{
+  "slug": "sncf",
+  "company": "SNCF",
+  "fixture": "sncf.analysis.json",
+  "_source": "Attentes STRUCTURELLES. Le SIREN est la seule valeur factuelle affirmée : agent_docs/demo/dossier-sncf-2026-08-11.json, champ `account.siren` du dossier capturé le 2026-08-11. `isPublic` est volontairement ABSENT — non vérifiable depuis cette source, donc non affirmé.",
+  "expect": {
+    "siren": "552049447",
+    "sectorPresent": true,
+    "hasSubsidiaries": true,
+    "minEntities": 2,
+    "minPlays": 1,
+    "requiredFacts": [
+      "sector",
+      "siren",
+      "employees",
+      "headquarters",
+      "businessDescription"
+    ],
+    "committeeRoles": [
+      "technical_buyer",
+      "procurement"
+    ]
+  },
+  "_roleFloor": "Plancher de rôles #2631.1 (décision Louis 21/09/2026, doctrine c77_gate_qualite_ia_bloque_sur_role_cle) : les sièges du comité d'achat qui doivent RESTER couverts sur ce compte nommé. Relevé sur le corpus committé le 21/09/2026 via assemble_buying_committee — on déclare ce que le dossier DONNE, jamais un rôle inventé pour faire passer le compte. Un siège qui disparaît fait échouer la CI même si la moyenne du banc monte ; un dossier SANS contact est « non évaluable », pas « perdu »."
+}

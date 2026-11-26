@@ -1,0 +1,2083 @@
+{
+  "financeTab": {
+    "title": "Stratégie financière",
+    "scope": "Comptes publiés de l’entité immatriculée, exercice par exercice.",
+    "scopeNamed": "Comptes publiés de {{name}}, exercice par exercice.",
+    "notYourMargin": "Il s’agit de la marge de ce compte, pas la tienne : ce que l’entreprise analysée dégage, non ce que ton activité encaisse.",
+    "exercise": "Exercice {{year}}",
+    "closedOn": "Clôturé le {{date}}",
+    "closingUnknown": "Date de clôture non publiée",
+    "grossMargin": "Marge brute",
+    "ebitda": "Excédent brut d’exploitation",
+    "operatingResult": "Résultat d’exploitation",
+    "ofRevenue": "{{rate}} du chiffre d’affaires",
+    "notPublished": "Non publié",
+    "empty": {
+      "title": "Aucun exercice publié pour ce compte.",
+      "why": "Cette entreprise n’a pas publié ses comptes, ou ils sont confidentiels, ou l’analyse n’a pas rapproché le compte d’un immatriculé. Le chiffre d’affaires et le résultat net, quand ils existent, restent dans la Synthèse."
+    }
+  },
+  "estimateBasis": {
+    "inference": "Déduit d’indices (offres, presse, site), pas observé chez ce compte.",
+    "market_memory": "Vu dans des parcours d’autres comptes, pas observé chez celui-ci.",
+    "dataforge": "Tiré de comptes comparables de notre base de référence, pas observé chez celui-ci."
+  },
+  "variation": {
+    "title": "Variations du compte",
+    "keys": {
+      "job_offers_mom": "Offres d’emploi, mois sur mois",
+      "headcount_6m": "Effectif sur 6 mois",
+      "public_awards_12m": "Marchés publics gagnés, 12 mois",
+      "it_moves_6m": "Mouvements de décideurs IT, 6 mois"
+    },
+    "measured": "{{current}} (contre {{previous}} avant)",
+    "base": {
+      "previous_period": "Base : {{days}} derniers jours contre les {{days}} précédents, au {{date}}",
+      "six_months_ago": "Base : observation d’il y a environ 6 mois, au {{date}}"
+    }
+  },
+  "cta": {
+    "viewDetail": "Voir le détail"
+  },
+  "overview": {
+    "analysisTitle": "Le regard de {{copilot}}",
+    "verdictHero": "Voici ce que {{brand}} recommande pour {{name}}.",
+    "verdictSummaryLabel": "Verdict",
+    "entityHypothesis": {
+      "title": "Hypothèse retenue — entité identifiée parmi des homonymes"
+    },
+    "entityResolution": {
+      "state": {
+        "resolved": "Entité résolue",
+        "ambiguous": "Entité ambiguë",
+        "unresolved": "Entité non résolue",
+        "manual_override": "Entité choisie par ton espace",
+        "historical": "Entité historique",
+        "inactive": "Entité inactive",
+        "out_of_scope": "Entité hors périmètre"
+      },
+      "kind": {
+        "group": "Groupe",
+        "parent_company": "Maison mère",
+        "subsidiary": "Filiale",
+        "business_unit": "Business unit",
+        "brand": "Marque",
+        "business_direction": "Direction métier",
+        "site": "Site",
+        "program": "Programme",
+        "legal_entity": "Entité légale",
+        "holding": "Holding",
+        "legal_vehicle": "Véhicule juridique",
+        "inactive_company": "Société inactive",
+        "homonym": "Homonyme",
+        "platform": "Plateforme",
+        "esn": "ESN",
+        "end_client": "Client final"
+      },
+      "source": {
+        "legal_identifier": "Identifiant légal",
+        "registry_country": "Registre national",
+        "official_domain": "Domaine officiel",
+        "external_company_id": "Identifiant société externe",
+        "official_site": "Site officiel",
+        "group_graph": "Graphe du groupe",
+        "public_company_profile": "Profil public d’entreprise",
+        "normalized_name": "Nom normalisé",
+        "alias": "Alias",
+        "workspace_correction": "Correction de ton espace",
+        "size": "Taille (registre)",
+        "workspace_data": "Rapproché d’un compte de ton espace"
+      },
+      "confidence": "Confiance {{value}}/100",
+      "siren": "SIREN {{siren}}",
+      "children_one": "{{count}} filiale connue",
+      "children_other": "{{count}} filiales connues",
+      "subsidiaryWarning": "Filiale de {{parent}} — ses données (technologies, recrutements, budgets) ne sont pas celles du groupe.",
+      "formerlyKnownAs": "Anciennement : {{names}}",
+      "question": "Plusieurs entreprises portent ce nom — laquelle est la bonne ?",
+      "sources": "Résolue par : {{sources}}",
+      "confirm": "C’est bien celle-ci",
+      "reject": "Ce n’est pas celle-ci",
+      "confirmNamed": "C’est bien {{name}}",
+      "rejectNamed": "Ce n’est pas {{name}}",
+      "correctedBy": "Tranché par ton espace — version {{version}}",
+      "correctionFailed": "La correction n’a pas été enregistrée. Réessaie."
+    }
+  },
+  "score": {
+    "commercial": "Score commercial",
+    "commercialExplain": "Repère de priorité commerciale, calculé sur des critères visibles. Il ne prédit pas l’issue d’une négociation, et aucune case n’est à remplir pour le faire monter.",
+    "dossierReliability": "Fiabilité du dossier",
+    "weakData": "données faibles",
+    "title": "Score du compte",
+    "subtitle": "Lecture de priorité pour décider si le compte mérite une action commerciale immédiate.",
+    "qualityCap": "Score plafonné (qualité)",
+    "qualityCapWithReason": "Score plafonné (qualité : {{reason}})",
+    "factorsTitle": "Facteurs du score — chacun relié à une preuve",
+    "justification": "Justification",
+    "justificationFallback": "Score non calculé: données insuffisantes ou profil ESN incomplet.",
+    "factorWeight": "+{{value}}",
+    "factorWeightWithMax": "+{{value}} / {{max}}",
+    "factorsTotal": "{{value}} / {{max}}",
+    "pointsDetail": "Détail en points",
+    "words": {
+      "GO": "Compte à attaquer maintenant : les critères clés sont réunis.",
+      "PRUDENT": "Compte à garder en réserve : le potentiel existe, mais un critère manque pour agir maintenant.",
+      "EXPLORER": "Compte à qualifier : trop peu de données pour trancher, il faut d’abord les collecter.",
+      "onHold": "Compte à mettre en veille : un déclencheur identifié le rouvrira.",
+      "setAside": "Compte à écarter pour cet objectif : les critères ne sont pas réunis."
+    },
+    "verdictRule": "Verdict {{name}} — règle des cinq critères",
+    "factorNotMeasured": "non mesuré",
+    "factorsExcluded": "Non évalués : {{names}}",
+    "commercialHint": "Grille de 5 critères — distincte de la lecture du dossier en 7 axes de la Vue d’ensemble",
+    "dossierReliabilityHint": "Qualité de la collecte et des sources de cette analyse — pas le potentiel du compte",
+    "dossierReliabilityNonEvaluable": "Non évaluable",
+    "dossierReliabilityNonEvaluableHint": "Aucune source de collecte n'a répondu — rien à juger, pas une confiance faible",
+    "dossierReliabilityUnknown": "Non mesurée",
+    "dossierReliabilityUnknownHint": "Cette analyse est antérieure à la grille de fiabilité — jamais calculée sur ce dossier"
+  },
+  "proofType": {
+    "signal": "Signal",
+    "source": "Source",
+    "contact": "Contact",
+    "profile": "Profil",
+    "businessRule": "Règle métier",
+    "fallback": "Preuve"
+  },
+  "bellumRead": {
+    "dialogTitle": "Lecture {{brand}}",
+    "dialogDescription": "Synthèse prioritaire issue de l'analyse du compte.",
+    "summary": "Synthèse",
+    "context": "Contexte",
+    "why": "Pourquoi",
+    "missing": "Ce qui manque",
+    "nextAction": "Ce que je ferais maintenant"
+  },
+  "bestContact": {
+    "title": "Meilleure porte d'entrée",
+    "rank": "N° {{position}} sur {{total}} · chemin d'accès recommandé",
+    "why": "Pourquoi lui : {{reason}}",
+    "emptyTitle": "Aucun contact identifié",
+    "emptyDescription": "Les profils décisionnaires et sponsors de {{companyName}} s'afficheront ici après enrichissement.",
+    "cta": "Voir le chemin d'accès recommandé"
+  },
+  "mainSignal": {
+    "title": "Signal principal",
+    "count_one": "{{count}} signal",
+    "count_other": "{{count}} signaux",
+    "emptyTitle": "Aucun signal récent trouvé dans les sources consultées",
+    "emptyDescription": "Les actualités, projets et signaux d'achat détectés apparaîtront ici.",
+    "cta": "Voir la veille"
+  },
+  "nextAction": {
+    "title": "Prochaine action",
+    "subtitle": "Recommandation prioritaire",
+    "emptyTitle": "Aucune action suggérée",
+    "emptyDescription": "La prochaine étape recommandée s'affichera ici dès qu'une analyse exploitable sera disponible.",
+    "cta": "Voir le plan d'action"
+  },
+  "stats": {
+    "offers": "Offres détectées",
+    "contacts": "Contacts qualifiés",
+    "entities": "Entités utiles",
+    "signals": "Signaux détectés",
+    "vsLast30Days": "vs 30 derniers jours",
+    "notComputedYet": "Pas encore calculé"
+  },
+  "similar": {
+    "sameSectorTitle": "Comptes du même secteur",
+    "sharedWith": "En commun : {{criteria}}",
+    "shared": {
+      "geo": "même zone",
+      "size": "effectif comparable",
+      "external_use": "recours à des externes observé des deux côtés",
+      "role_family": "métiers recrutés en commun"
+    },
+    "whyTechTooltip": "Technologies observées des deux côtés dans l'historique observé, en écartant celles que presque toutes les entreprises partagent.",
+    "dismiss": "Masquer cette suggestion",
+    "dismissed": "Suggestion masquée",
+    "dismissError": "Impossible de masquer cette suggestion pour l'instant",
+    "undo": "Annuler",
+    "searching": "Recherche par code NAF…",
+    "empty": "Aucune entreprise similaire trouvée pour ce secteur.",
+    "toAnalyzeTitle": "Comptes similaires a analyser",
+    "help": "Voici ce qu'on te recommande",
+    "potentialScore": "Score potentiel",
+    "launchAnalysis": "Lancer une analyse",
+    "discover": "Découvrir de nouveaux comptes a fort potentiel"
+  },
+  "runs": {
+    "dateAt": "{{date}} à {{time}}",
+    "title": "Historique des analyses",
+    "loading": "Chargement de l'historique…",
+    "empty": "Aucune analyse enregistrée pour ce compte.",
+    "emptyLegacy": "Ce dossier a été analysé avant le suivi détaillé des runs — aucune ligne d'historique n'existe pour cette période."
+  },
+  "whyNow": {
+    "title": "Pourquoi ce compte maintenant ?",
+    "painsTitle": "Enjeux business",
+    "painsEmpty": "Aucun enjeu business identifié",
+    "challengesTitle": "Enjeux à adresser",
+    "challengesEmpty": "Non évalués pour ce compte : aucune source (analyse, dossier importé) n'en porte pour l'instant.",
+    "signalsTitle": "Actualités & signaux récents",
+    "signalsEmpty": "Aucun signal récent trouvé dans les sources consultées",
+    "showMore": "Voir plus ({{count}})",
+    "dialogDescription": "Détails du signal sélectionné.",
+    "offersFolded": "{{count}} offres ({{places}})",
+    "contextPrefix": "Contexte ·",
+    "signalsIncomplete": "Recherche incomplète : {{sources}} non consulté(es). Cela ne prouve pas l'absence de signal.",
+    "sourceFamily": {
+      "press": "presse",
+      "jobs": "offres d'emploi",
+      "legal": "annonces légales",
+      "tenders": "marchés publics",
+      "other": "une source"
+    }
+  },
+  "detail": {
+    "issue": "Enjeu",
+    "description": "Description",
+    "businessImpact": "Impact business",
+    "esnOffer": "Offre ESN",
+    "urgency": "Urgence",
+    "severity": "Sévérité",
+    "timeframe": "Horizon",
+    "signal": "Signal",
+    "type": "Type",
+    "date": "Date",
+    "whyContext": "Pourquoi du contexte"
+  },
+  "level": {
+    "critical": "Critique",
+    "immediate": "Immédiat",
+    "high": "Haute",
+    "medium": "Moyenne",
+    "low": "Basse",
+    "strategic": "Stratégique"
+  },
+  "implications": {
+    "title": "Expertises concernées",
+    "subtitle": "Besoins activables",
+    "sheetDescription": "Lecture commerciale des besoins identifiés sur ce compte.",
+    "empty": "Non évaluées pour ce compte : aucune source n'en porte pour l'instant."
+  },
+  "positioning": {
+    "title": "Positionnement",
+    "competitorCount_one": "{{count}} concurrent analysé pour notre angle — pas la liste des ESN présentes",
+    "competitorCount_other": "{{count}} concurrents analysés pour notre angle — pas la liste des ESN présentes",
+    "recommendedAngle": "Angle recommandé",
+    "sheetTitle": "Positionnement concurrentiel",
+    "sheetDescription": "Arguments recommandés face aux acteurs déjà présents sur le compte.",
+    "recommendedPositioning": "Positionnement recommandé",
+    "talkingPoint": "Angle de réponse",
+    "differentiator": "Différenciation"
+  },
+  "offers": {
+    "sectionTitle": "Offres commerciales",
+    "title": "Offres recommandées",
+    "proposed": "Offre proposée",
+    "fallbackTitle": "Offre recommandée",
+    "sheetDescription": "Détail de l’offre et conditions d’intervention proposées.",
+    "pitch": "Proposition",
+    "painAddressed": "Problème adressé",
+    "targetContact": "Contact cible",
+    "differentiator": "Différenciation",
+    "duration": "Durée",
+    "teamSize": "Équipe",
+    "dailyRate": "TJM estimé",
+    "estimatesLabel": "Estimations {{brand}}"
+  },
+  "generalInfo": {
+    "title": "Informations générales",
+    "sector": "Secteur",
+    "employees": "Effectifs",
+    "revenue": "CA",
+    "headquarters": "Siège",
+    "website": "Site web"
+  },
+  "provenance": {
+    "title": "Sources et confiance",
+    "subtitle": "D'où vient chaque fait de ce dossier",
+    "lastAnalysis": "Dernière analyse le {{date}}",
+    "neverAnalyzed": "Dossier pas encore analysé",
+    "confidenceLabel": "Confiance du dossier",
+    "confidenceHint": "Qualité de la collecte et des sources de cette analyse",
+    "sourcesLabel": "Sources du dossier",
+    "viewAll": "Voir le détail",
+    "noSources": "Aucune source tracée pour ce dossier.",
+    "unknownSource": "Source inconnue",
+    "unknownBadge": "non identifiée",
+    "sheetTitle": "Sources et confiance",
+    "sheetDescription": "Les sources qui ont nourri ce dossier ({{count}}) — chacune avec ce qu'elle a apporté et sa fraîcheur.",
+    "providers": {
+      "apollo": "Réseau professionnel",
+      "pappers": "Registre officiel",
+      "sec": "Registre officiel (États-Unis)",
+      "publicMarkets": "Marchés publics",
+      "employment": "Offres d'emploi",
+      "github": "Dépôts publics de code"
+    },
+    "feeds": {
+      "firmographics": "Firmographie",
+      "financials": "Données financières",
+      "leadership": "Dirigeants & bénéficiaires",
+      "tenders": "Appels d'offres & marchés",
+      "jobs": "Offres d'emploi",
+      "github": "Signal GitHub",
+      "signals": "Signaux"
+    },
+    "tier": {
+      "non_evaluable": "Non évaluable",
+      "low": "Confiance faible",
+      "medium": "Confiance moyenne",
+      "high": "Confiance élevée"
+    },
+    "conflicts": {
+      "title_one": "Une contradiction à trancher",
+      "title_other": "{{count}} contradictions à trancher",
+      "claim": "{{value}} — {{source}}, {{date}}",
+      "recheck": "À revérifier le {{date}}",
+      "settled_one": "{{count}} contradiction déjà tranchée (correction manuelle, source la plus fiable, la plus fraîche ou encore active).",
+      "settled_other": "{{count}} contradictions déjà tranchées (correction manuelle, source la plus fiable, la plus fraîche ou encore active).",
+      "sourceTypes": {
+        "human": "saisie manuelle",
+        "connector": "outil branché",
+        "pipeline": "analyse du dossier",
+        "model": "hypothèse à valider"
+      },
+      "fields": {
+        "headcount": "Effectifs",
+        "sector": "Secteur",
+        "revenue": "Chiffre d'affaires",
+        "website": "Site web",
+        "headquarters": "Siège"
+      }
+    }
+  },
+  "firmographics": {
+    "title": "Firmographie",
+    "source": "Source : réseau professionnel",
+    "employeesMorePrecise": "plus précis que la tranche de la fiche",
+    "headcountGrowth": "Évolution de l’effectif",
+    "headcountGrowthValue": "{{percent}} sur {{months}} mois",
+    "employees": "Effectif observé",
+    "industry": "Industrie",
+    "founded": "Année de fondation",
+    "revenue": "CA annuel",
+    "funding": "Financement total",
+    "fundingStage": "Dernier tour",
+    "technologies": "Technologies détectées",
+    "publiclyTraded": "Cotation",
+    "parent": "Société mère",
+    "retailLocations": "Points de vente",
+    "departments": "Effectifs par département",
+    "keywords": "Mots-clés",
+    "linkedinAria": "Voir la page LinkedIn de l'entreprise",
+    "twitterAria": "Voir le compte X / Twitter de l'entreprise",
+    "untranslated": "Description reprise telle quelle de la source, non traduite",
+    "registrySays": "Registre : {{value}}"
+  },
+  "publicData": {
+    "siteLegalNotice": {
+      "title": "Mentions légales du site",
+      "help": "Ce que la page de mentions légales du site du compte publie, tel que publié. Un champ que la page ne donne pas n'apparaît pas.",
+      "viewPage": "Voir la page",
+      "fields": {
+        "raison_sociale": "Raison sociale",
+        "forme_juridique": "Forme juridique",
+        "capital": "Capital",
+        "immatriculation": "Immatriculation",
+        "siege": "Siège social",
+        "dirigeant": "Direction de la publication",
+        "hebergeur": "Hébergeur"
+      }
+    },
+    "financials": {
+      "title": "Données financières",
+      "source": "Source : registre officiel",
+      "year": "Année",
+      "revenue": "CA",
+      "netResult": "Résultat net",
+      "headcount": "Effectif",
+      "capital": "Capital social",
+      "legalForm": "Forme juridique",
+      "created": "Immatriculation",
+      "pappersLink": "Voir la fiche au registre",
+      "help": "Les comptes déposés au greffe : chiffre d'affaires, résultat, effectif sur trois ans. Ils disent si le compte a les moyens d'acheter, et dans quel sens il va.",
+      "entityAccounts": "Comptes sociaux de {{name}}",
+      "entityAccountsUnnamed": "Comptes sociaux de l'entité immatriculée",
+      "groupRevenue": "CA consolidé (groupe)",
+      "holdingNote": "Société holding : le résultat inclut les dividendes des filiales."
+    },
+    "tech": {
+      "observedTitle": "Environnements technologiques observés",
+      "observedHint": "Technologies vues dans les parcours de prestataires passés par cette entreprise. Elles ne prouvent pas un usage actuel, et leur absence ne prouve rien.",
+      "observedMore": "+{{count}}",
+      "title": "Stack technique",
+      "maturity": "maturité : {{value}}",
+      "subtitle": "Technologies relevées par l'analyse, sur le site et le réseau professionnel",
+      "help": "Les technologies détectées sur le site du compte et chez nos sources. Ce sont les mots à reprendre dans un message — et les compétences à sortir du vivier."
+    },
+    "leadership": {
+      "title": "Dirigeants & bénéficiaires",
+      "source": "Source : registre officiel",
+      "officers": "Dirigeants",
+      "owners": "Bénéficiaires effectifs",
+      "ownerShare": "{{value}} du capital",
+      "help": "Les dirigeants tels que les publie le registre légal, les fonctions opérationnelles et informatiques d'abord. C'est la vérité juridique, pas l'organigramme opérationnel — les décideurs IT vivent dans l'onglet Contacts.",
+      "more_one": "et {{count}} autre mandataire au registre",
+      "more_other": "et {{count}} autres mandataires au registre"
+    },
+    "tenders": {
+      "title": "Appels d'offres & marchés",
+      "source": "Marchés publics",
+      "open": "Appels d'offres ouverts",
+      "awarded": "Marchés publics attribués",
+      "deadline": "Clôture : {{value}}",
+      "published": "Publié le {{value}}",
+      "winner": "Titulaire : {{value}}",
+      "viewSource": "Voir l'avis",
+      "help": "Les marchés publics du compte : ceux qu'il ouvre, et ceux qu'il a déjà attribués. Un marché attribué nomme le prestataire en place — donc le concurrent à déloger, et la date à laquelle ça redevient possible.",
+      "won": "Remporté par ce compte",
+      "wonFrom": "Remporté — acheteur : {{value}}",
+      "notified": "Attribué le {{value}}",
+      "buyer": "Acheteur : {{value}}"
+    },
+    "historicalNeeds": {
+      "title": "Besoins plus anciens",
+      "help": "Les signaux de plus de 180 jours que l'analyse a lus dans l'historique du compte, avec leur date. Un besoin ancien qui n'a pas été comblé reste une porte d'entrée : il dit ce que le compte a déjà cherché à résoudre."
+    },
+    "jobs": {
+      "title": "Offres d'emploi IT",
+      "source": "Offres d'emploi publiées",
+      "subtitle": "Signaux de recrutement récents",
+      "viewOffer": "Voir l'offre",
+      "offTrade": "Hors de ton métier ({{count}})",
+      "tension": "Poste en tension",
+      "tensionHelp": "L'annonce elle-même signale manquer de candidats.",
+      "help": "Les offres d'emploi IT publiées par le compte. Un recrutement en volume dit une tension, et une tension dit un besoin — c'est le signal d'achat le plus fiable qu'on sache lire publiquement.",
+      "folded": "{{count}} offres ({{places}})",
+      "foldedNoPlace": "{{count}} offres",
+      "recentTitle": "Besoins récents ({{count}})",
+      "historyTitle": "Besoins historiques ({{count}})",
+      "showMore": "Voir plus ({{count}})",
+      "team": "Équipe : {{value}}",
+      "role": {
+        "data_ia": "Data / IA",
+        "infrastructure_cloud": "Infrastructure / Cloud",
+        "cybersecurite": "Cybersécurité",
+        "produit_design": "Produit / Design",
+        "qualite_test": "Qualité / Test",
+        "developpement": "Développement",
+        "direction_management": "Direction / Management",
+        "commercial_marketing": "Commercial / Marketing"
+      },
+      "tensionReason": {
+        "source_flag": "L'annonce elle-même signale manquer de candidats.",
+        "urgent_text": "Le texte de l'annonce parle d'urgence.",
+        "republished_text": "Le texte de l'annonce dit qu'elle a été republiée.",
+        "online_long": "Annonce en ligne depuis {{days}} jours."
+      }
+    },
+    "legal": {
+      "title": "Annonces légales",
+      "source": "Source officielle",
+      "risk": "Risque",
+      "viewNotice": "Voir l'annonce",
+      "noLink": "sans lien",
+      "help": "Les annonces légales officielles publiées pour ce SIREN : dépôts de comptes, modifications, cessions, procédures collectives. Une procédure collective (sauvegarde, redressement, liquidation) est un risque pour le contrat, jamais une opportunité.",
+      "viewRegistry": "Voir la page officielle",
+      "closedGroup": "{{count}} établissements fermés entre {{from}} et {{to}}",
+      "closedGroupUndated": "{{count}} établissements fermés (dates non précisées)",
+      "showAll": "Voir plus ({{count}})",
+      "showLess": "Réduire",
+      "checkedAt": "Registre relu le {{date}}",
+      "notWatched": "Pas encore relu en continu : annonces relevées à l'analyse.",
+      "truncated": "Liste incomplète : la source plafonne la lecture.",
+      "sireneSource": "Registre officiel des entreprises",
+      "rneSource": "Registre national des entreprises"
+    },
+    "github": {
+      "title": "Signal ingénierie GitHub",
+      "repos": "{{count}} dépôts publics",
+      "activeRepos": "{{count}} actifs récemment",
+      "viewOrg": "Voir l'organisation",
+      "help": "L'organisation GitHub publique du compte : langages et dépôts actifs. Elle montre ce que les équipes construisent vraiment, souvent avant que ça se dise ailleurs."
+    },
+    "usSecFinancials": {
+      "title": "Financiers SEC (US)",
+      "source": "Registre officiel (États-Unis)",
+      "fiscalYear": "Exercice clos",
+      "revenue": "CA",
+      "netIncome": "Résultat net",
+      "filed": "Déposé le (10-K)",
+      "sharesOutstanding": "Actions en circulation",
+      "sharesValueAt": "{{value}} (au {{date}})",
+      "recentFilings": "Dépôts récents",
+      "viewFiling": "Voir le dépôt",
+      "viewOnEdgar": "Voir les dépôts 10-K sur EDGAR",
+      "help": "Les publications obligatoires d'une société cotée aux États-Unis. Utile quand la maison mère est américaine : c'est là que se décident les budgets.",
+      "filer": "Comptes publiés par {{name}} (SEC)"
+    },
+    "contractModel": {
+      "title": "Modèle de contrat observé",
+      "source": "Offres d'emploi & marchés publics",
+      "staleCollection": "Modèle de contrat : collecte antérieure à cette capacité.",
+      "staleCollectionHint": "Ce compte a été analysé avant cette capacité — utilise « Actualiser » (menu « ··· », axe Signaux, son coût affiché) pour la rejouer.",
+      "notObserved": "Modèle de contrat : non observé sur ses offres d'emploi ni ses avis de marchés publics.",
+      "jobOffers_one": "{{count}} offre publiée : {{breakdown}} — {{source}}, {{period}}",
+      "jobOffers_other": "{{count}} offres publiées : {{breakdown}} — {{source}}, {{period}}",
+      "kind": {
+        "permanent_one": "{{count}} CDI",
+        "permanent_other": "{{count}} CDI",
+        "fixed_term_one": "{{count}} CDD",
+        "fixed_term_other": "{{count}} CDD",
+        "interim_one": "{{count}} intérim",
+        "interim_other": "{{count}} intérim",
+        "freelance_one": "{{count}} indépendant (profession libérale)",
+        "freelance_other": "{{count}} indépendants (profession libérale)",
+        "other_one": "{{count}} autre type",
+        "other_other": "{{count}} autres types"
+      },
+      "publicContracts_one": "{{count}} avis de marché passé : {{breakdown}} — {{source}}, {{period}}",
+      "publicContracts_other": "{{count}} avis de marchés passés : {{breakdown}} — {{source}}, {{period}}",
+      "regie_one": "{{count}} dit régie ou assistance technique",
+      "regie_other": "{{count}} disent régie ou assistance technique",
+      "fixedPrice_one": "{{count}} dit forfait",
+      "fixedPrice_other": "{{count}} disent forfait",
+      "modeUnstated": "aucun ne dit le mode",
+      "disclaimer": "Ce qui a été lu, pas une préférence : une offre ou un avis absent ne dit pas « n'y recourt pas ».",
+      "help": "Comment cette entreprise contractualise, observé sur ses propres offres d'emploi (mode de contrat déclaré) et ses avis de marchés publics (quand l'avis dit le mode) — jamais déduit."
+    },
+    "whatIsThis": "Que montre « {{title}} » ?"
+  },
+  "business": {
+    "title": "Ce que fait concrètement cette entreprise"
+  },
+  "competitors": {
+    "title": "ESN déjà en place",
+    "subtitle": "Qui intervient déjà, et sur quoi il tient.",
+    "strengthsLabel": "Forces",
+    "weaknessesLabel": "Faiblesses",
+    "noContractType": "Périmètre non précisé",
+    "strengths": "Forces : {{value}}",
+    "weaknesses": "Faiblesses : {{value}}",
+    "corroboratedByMarketMemory_one": "Ce nom est aussi observé dans l'historique — {{count}} parcours.",
+    "corroboratedByMarketMemory_other": "Ce nom est aussi observé dans l'historique — {{count}} parcours.",
+    "corroboratedByMarketMemoryRange": "Ce nom est aussi observé dans l'historique — {{range}} parcours."
+  },
+  "programs": {
+    "title": "Projets et transformations",
+    "subtitle": "Les chantiers que le compte a annoncés publiquement.",
+    "entity": "Porté par {{value}}",
+    "noEntity": "Entité porteuse non précisée",
+    "budget": "Budget : {{value}}",
+    "objective": "Objectif : {{value}}",
+    "scope": "Périmètre : {{value}}",
+    "horizon": "Horizon : {{value}}",
+    "unknownReason": "Aucun programme n'a été relevé dans une source publique lors de la dernière analyse."
+  },
+  "vocabulary": {
+    "title": "Vocabulaire du groupe",
+    "description": "La grille de lecture du compte : chaque terme avec son sens, son impact commercial, sa source et son statut de vérité.",
+    "termCount_one": "{{count}} terme",
+    "termCount_other": "{{count}} termes",
+    "headers": {
+      "term": "Terme",
+      "meaning": "Sens",
+      "commercialWhy": "Impact commercial",
+      "source": "Source",
+      "truthStatus": "Statut"
+    },
+    "aliases": "Alias : {{value}}",
+    "kind": {
+      "entity": "Entité",
+      "trap_noise": "Piège / bruit",
+      "internal_competitor": "Concurrent en place",
+      "program": "Programme",
+      "tool_erp": "Outil / techno",
+      "acronym": "Acronyme",
+      "person": "Personne",
+      "angle": "Angle"
+    },
+    "truth": {
+      "fait": "Fait",
+      "registre": "Registre",
+      "signal": "Signal",
+      "hypothese": "Hypothèse",
+      "recommandation": "Recommandation",
+      "risque": "Risque",
+      "inconnu": "À vérifier"
+    }
+  },
+  "executiveSummary": {
+    "title": "Résumé exécutif {{brand}}",
+    "immediateAction": "Action immédiate",
+    "keyContact": "Contact prioritaire :"
+  },
+  "openingStrategy": {
+    "title": "Par où ouvrir ce compte",
+    "entryPointsTitle": "Points d'entrée proposés",
+    "targetProfile": "Interlocuteur visé : {{value}}",
+    "noTargetProfile": "Interlocuteur non précisé par l’analyse",
+    "noJustification": "Raison non écrite par l’analyse",
+    "noLabel": "Point d'entrée sans intitulé",
+    "hypothesis": "hypothèse à confirmer au premier échange"
+  },
+  "attackAngles": {
+    "title": "Angles d'attaque",
+    "subtitle": "Points d'entrée à tester.",
+    "emptyTitle": "Aucun angle identifié",
+    "emptyDescription": "Les angles apparaîtront dès que l'analyse fournit assez de signaux.",
+    "fallbackTitle": "Angle à qualifier",
+    "proof": {
+      "absent": "Aucune preuve à citer sur ce play",
+      "non_verifiable": "Preuve retirée — aucune de tes références déclarées ne la soutient",
+      "non_verifie": "Preuve non vérifiée — analyse antérieure au contrôle"
+    },
+    "generate": "Générer un autre angle",
+    "generating": "Génération…",
+    "recommended": "Prioritaire",
+    "dialogDescription": "Détail de l'angle d'attaque sélectionné.",
+    "reading": "Lecture",
+    "noDescription": "Aucune description détaillée disponible.",
+    "entryPoint": "Point d'entrée",
+    "offer": "Offre associée",
+    "potential": "Potentiel",
+    "discardedIntro": "Aucun angle retenu pour ton profil. Voici ce que l’analyse a écarté, et pourquoi :",
+    "discardedReactivate": "Pour le réactiver : {{how}}",
+    "noDetail": "L'analyse n'a rempli aucun détail pour cet angle — point d'entrée, offre et potentiel restent à qualifier."
+  },
+  "replanNudge": {
+    "title": "Un événement a fait évoluer ce compte",
+    "subtitle": "Une réponse, un rendez-vous ou un bounce a été enregistré depuis la dernière planification. Le plan mérite d'être actualisé.",
+    "action": "Actualiser le plan"
+  },
+  "replan": {
+    "trigger": "Changer d'angle / re-planifier",
+    "title": "Re-planifier le plan d'action",
+    "subtitle": "Reconstruit le plan d'action autour d'un angle que TU choisis — même recherche, mêmes contacts, autre stratégie d'approche. Utile quand l'angle proposé ne colle pas à ce que tu sais du compte.",
+    "angleLabel": "Angle d'attaque",
+    "angleAuto": "Laisser {{brand}} décider",
+    "entryModeLabel": "Vecteur d'entrée (optionnel)",
+    "entryMode": {
+      "top_down": "Top-down",
+      "bottom_up": "Bottom-up",
+      "middle_out": "Middle-out"
+    },
+    "focusEntityLabel": "Entité à cibler (optionnel)",
+    "focusEntityPlaceholder": "Un périmètre / une BU pour ancrer le plan",
+    "constraintsLabel": "Contraintes de forme (optionnel)",
+    "constraintsPlaceholder": "Longueur, mots à éviter… — cadre le message, n'invente rien",
+    "objectiveLabel": "Objectif des messages (optionnel)",
+    "hint": "Le calcul tourne pendant une à deux minutes et n'est pas débité. Ne quitte pas l'écran : le résultat s'affiche ici.",
+    "submit": "Re-planifier",
+    "success": "Plan d'action mis à jour.",
+    "error": "La re-planification a échoué. Réessaie.",
+    "demoFrozen": "Espace de démonstration : les dossiers sont figés, la re-planification n'est pas lancée. Le plan affiché est celui préparé pour la démo.",
+    "preconditionError": "Termine d'abord l'analyse — la re-planification nécessite une recherche complétée et au moins un contact.",
+    "timeoutTitle": "La re-planification n'a pas répondu à temps",
+    "timeoutDescription": "Le calcul continue peut-être côté serveur — le dossier vient d'être rafraîchi. Regarde si le plan a changé avant de relancer : relancer repaie un calcul peut-être déjà fait."
+  },
+  "evaluation": {
+    "quickWinsTitle": "Actions immédiates",
+    "quickWinsDescription": "Ce que tu peux activer dès aujourd’hui.",
+    "quickWinsEmpty": "Aucune action immédiate identifiée.",
+    "risksTitle": "Risques",
+    "risksDescription": "Points à vérifier avant prospection.",
+    "risksEmpty": "Aucun risque identifié.",
+    "proof": {
+      "prefix": "Preuve : {{proof}}",
+      "none": "Preuve à qualifier",
+      "recomputedOn": "recalculé le {{date}}",
+      "types": {
+        "signal": "signal",
+        "source": "source",
+        "contact": "contact",
+        "profile": "profil ESN",
+        "business_rule": "règle métier"
+      }
+    },
+    "provisionalTitle": "Note provisoire",
+    "provisionalCapped": "La note est plafonnée : le dossier ne porte pas encore assez de matière pour trancher.",
+    "provisionalWeak": "La confiance sur les données reste basse — la note peut bouger avec un enrichissement.",
+    "provisionalLevers": "Ce qui ferait bouger la note",
+    "provisionalLever": "{{axis}} — {{weight}}/{{max}}"
+  },
+  "signalList": {
+    "viewDetail": "Voir le détail {{title}}",
+    "remaining_one": "+{{count}} autre élément dans le détail",
+    "remaining_other": "+{{count}} autres éléments dans le détail",
+    "sheetEmpty": "Aucun élément disponible pour {{title}}.",
+    "sheetCount_one": "{{count}} élément à consulter.",
+    "sheetCount_other": "{{count}} éléments à consulter."
+  },
+  "openAccount": {
+    "title": "Comment ouvrir ce compte",
+    "description": "Approche commerciale recommandée pour initier la relation.",
+    "entryStrategy": "Stratégie d'entrée",
+    "fallbackEntryPoint": "Point d’entrée à qualifier",
+    "targetProfile": "Profil cible : {{profile}}"
+  },
+  "recommendationCard": {
+    "title": "Recommandation d'action",
+    "description": "Prochaine décision à prendre sur ce compte."
+  },
+  "emptyEvaluation": {
+    "title": "Score à compléter",
+    "description": "Aucune recommandation exploitable n'est disponible pour ce compte.",
+    "runningTitle": "L'analyse est en cours",
+    "runningDescription": "Le score et la recommandation s'afficheront ici dès que l'analyse aura terminé.",
+    "incompleteTitle": "La dernière analyse ne s'est pas terminée",
+    "incompleteDescription": "Le score n'a pas pu être calculé — ce n'est pas un compte sans potentiel. Relance l'analyse ; le bandeau en haut du dossier dit ce qui a bloqué.",
+    "notAnalyzedTitle": "Ce dossier n'a pas encore été analysé",
+    "notAnalyzedDescription": "Lance une analyse pour obtenir un score, une recommandation et ses points d'entrée."
+  },
+  "plan": {
+    "boardTitle": "Actions du plan",
+    "boardSubtitle_zero": "{{count}} actions à suivre pour engager ce compte.",
+    "boardSubtitle_one": "{{count}} action à suivre pour engager ce compte.",
+    "boardSubtitle_other": "{{count}} actions à suivre pour engager ce compte.",
+    "progress": "Progression",
+    "progressManual": "dont {{count}} ajoutée(s) à la main · {{done}} faite(s)",
+    "phase": "Phase {{number}}",
+    "actionCount_one": "{{count}} action",
+    "actionCount_other": "{{count}} actions",
+    "emptyTitle": "Aucune action dans le plan",
+    "emptyDescription": "Crée une première action concrète pour rendre le plan exploitable.",
+    "absentRunningTitle": "L'analyse est en cours",
+    "absentRunningDescription": "Le plan d'action s'affichera ici dès que l'analyse aura terminé.",
+    "absentIncompleteTitle": "La dernière analyse ne s'est pas terminée",
+    "absentIncompleteDescription": "Le plan d'action n'a pas pu être produit — ce n'est pas à toi de l'écrire. Relance l'analyse ; le bandeau en haut du dossier dit ce qui a bloqué.",
+    "absentNotAnalyzedTitle": "Ce dossier n'a pas encore été analysé",
+    "absentNotAnalyzedDescription": "Lance une analyse pour obtenir un plan d'action, ses angles et ses échéances.",
+    "addedTitle": "Actions ajoutées",
+    "addedSubtitle": "Tâches créées pendant la préparation du plan.",
+    "showMoreActions": "Afficher les {{count}} actions",
+    "showFewerActions": "Réduire à {{count}} actions",
+    "noContactLinked": "Aucun contact lié à cette action",
+    "crmNotConnected": "CRM non connecté",
+    "trackingWhenConnected": "Suivi disponible une fois connecté",
+    "notTracked": "Action non suivie",
+    "readOnlyColleague": "En lecture : cette action appartient à un collègue.",
+    "blockedByDependency": "Bloquée : en attente de « {{label}} »",
+    "taskCheckedNoOutreach": "Cette tâche a été marquée comme terminée. {{brand}} n'a contacté personne.",
+    "rank2Path": {
+      "title": "Un chemin vers le rang 1",
+      "description": "{{partner}} tient le rang 2 sur ce compte : un chemin possible, pas une chance de réussite.",
+      "steps": {
+        "proof_pack": "Réunir la preuve de ce que la mission a livré",
+        "sponsor_path": "Identifier qui, côté client, peut porter l'introduction",
+        "direct_access_plan": "Préparer l'approche directe du rang 1"
+      },
+      "directApproachForbidden": "Ce partenaire porte une clause de non-sollicitation déclarée : aucune approche directe du client final n'est proposée ici.",
+      "marginDestroyed": "Le partage convenu avec ce partenaire ({{share}} %) est sous sa marge minimale déclarée ({{floor}} %) : ce rang 2 détruit la marge.",
+      "carriedBy": "Porté par {{name}} (propriétaire déclaré de la relation client)"
+    },
+    "rank2Qualification": {
+      "title": "Qualifier le rang 2 avant tout CV ou positionnement",
+      "description": "{{partner}} tient le rang 2 sur ce compte, mais le chemin vers le rang 1 attend que ces cinq critères soient qualifiés.",
+      "criteria": {
+        "scope_accessible": "Compte ou périmètre accessible",
+        "brief_precise": "Brief précis",
+        "contact_accountable": "Interlocuteur responsable identifié",
+        "economics_clear": "Économie claire",
+        "next_steps_ready": "Prochaines étapes prêtes"
+      },
+      "status": {
+        "met": "Oui",
+        "missing": "Non",
+        "unmeasured": "Non mesuré"
+      },
+      "decision": {
+        "no_go": "Au moins un critère mesuré est absent : pas de CV ni de positionnement pour l'instant.",
+        "incomplete": "Qualification incomplète : certains critères restent non mesurés."
+      }
+    },
+    "facts": {
+      "handoffNote": "Note de passation : {{note}}",
+      "label": "Ce que dit cette action",
+      "reason": "Pourquoi : {{reason}}",
+      "status": {
+        "todo": "À faire",
+        "done": "Exécutée",
+        "snoozed": "Reportée",
+        "prepared": "Préparée",
+        "obsolete": "Obsolète"
+      },
+      "completionMode": {
+        "manual": "Cochée manuellement",
+        "proof": "Complétée par preuve",
+        "event": "Complétée par un événement",
+        "proposed": "Complétion proposée"
+      },
+      "verifyFirst": {
+        "target": "À vérifier d'abord : l'objet visé",
+        "contact": "À vérifier d'abord : le contact"
+      },
+      "noGo": {
+        "not_clickable": "NO-GO : non cliquable",
+        "not_assigned": "NO-GO : non attribuée",
+        "no_date_or_outcome": "NO-GO : sans date ni résultat attendu"
+      },
+      "target": "{{kind}} : {{label}}",
+      "targetUnset": "Objet visé : non renseigné",
+      "targetKind": {
+        "contact": "Contact",
+        "meeting": "Rendez-vous",
+        "crm_task": "Tâche CRM",
+        "sequence": "Séquence",
+        "project": "Projet",
+        "need": "Besoin",
+        "partner": "Partenaire",
+        "verification": "Vérification"
+      },
+      "ownerPage": "Page : {{page}}",
+      "ownerPages": {
+        "contacts": "Contacts",
+        "agenda": "Agenda",
+        "actions": "Actions",
+        "sequences": "Séquences",
+        "projets": "Opportunités",
+        "besoins": "Besoins",
+        "partenaires": "Partenaires",
+        "dossier": "Dossier du compte"
+      },
+      "contactLinked": "Contact lié",
+      "contactUnset": "Aucun contact lié",
+      "dependsOn": "Après : {{label}}",
+      "dependsOnRemoved": "Après une action retirée du plan",
+      "blockedByDependency": "Bloquée : en attente de « {{label}} »",
+      "source": {
+        "human": "Posée par un membre de l'espace",
+        "connector": "Venue d'un outil connecté",
+        "pipeline": "Calculée par l'analyse",
+        "model": "Hypothèse à valider"
+      },
+      "sourceAt": "{{source}} · {{date}}",
+      "sourceNotKept": "Source non conservée",
+      "confidence": {
+        "high": "Confiance élevée",
+        "medium": "Confiance moyenne",
+        "low": "Confiance faible"
+      },
+      "confidenceNotMeasured": "Confiance non renseignée",
+      "result": "Résultat : {{result}}",
+      "resultNotSet": "Résultat non renseigné",
+      "resultEdit": "Renseigner",
+      "more": "+{{count}} autres",
+      "moreLabel": "Afficher {{count}} autres faits de cette action",
+      "lessLabel": "Masquer les faits de cette action",
+      "less": "Moins",
+      "resultInputLabel": "Résultat de l'action",
+      "resultPlaceholder": "Ce qui s'est passé…",
+      "resultSave": "Enregistrer",
+      "origin": {
+        "line": "Origine : {{parts}}",
+        "recommendation": {
+          "renewal_decision": "décision de renouvellement",
+          "renewal_prepare_questions": "questions à préparer pour le renouvellement"
+        },
+        "methodRule": {
+          "couverture_multi_roles_niveaux_entites": "Règle de méthode : couverture multi-rôles",
+          "plan_de_compte_hebdomadaire": "Règle de méthode : plan de compte hebdomadaire",
+          "non_resultat_est_un_resultat": "Règle de méthode : le non-résultat est un résultat"
+        },
+        "external": "Événement d’agenda créé"
+      },
+      "stopCondition": "S’arrête quand : {{condition}}"
+    }
+  },
+  "planForm": {
+    "addButton": "Ajouter une action",
+    "title": "Nouvelle action",
+    "subtitle": "Ajoute uniquement une action directement vérifiable.",
+    "actionLabel": "Action",
+    "ownerLabel": "Responsable",
+    "actionPlaceholder": "Ex. Relancer Marc Lefebvre après l'audit",
+    "objectiveLabel": "Objectif",
+    "objectivePlaceholder": "Objectif (obligatoire) — ex. Obtenir un rendez-vous avec le DSI",
+    "expectedOutcomeLabel": "Résultat attendu",
+    "expectedOutcomePlaceholder": "Résultat attendu (obligatoire) — ex. Un rendez-vous fixé",
+    "objectiveRequired": "L’objectif est obligatoire : dis à quoi sert cette action.",
+    "expectedOutcomeRequired": "Le résultat attendu est obligatoire : dis à quoi ressemble « fait ».",
+    "ownerPlaceholder": "Optionnel"
+  },
+  "planSummary": {
+    "title": "Plan d'attaque",
+    "subtitle": "Lecture courte avant exécution.",
+    "readDetail": "Lire le détail",
+    "strategy": "Stratégie",
+    "strategyTypes": {
+      "land_and_expand": "Prendre pied, puis étendre"
+    },
+    "firstAction": "Première action",
+    "firstActionInNextMoves": "Déjà en tête de « Prochaines actions »",
+    "seeInNextMoves": "Voir dans « Prochaines actions »",
+    "why": "Pourquoi ?",
+    "fallbackValue": "À qualifier",
+    "dialogDescription": "Lecture complète avant exécution.",
+    "emptyTitle": "Plan à préciser",
+    "emptyDescription": "Ajoute une action ou relance l'analyse pour obtenir une stratégie exploitable.",
+    "cold": {
+      "establishedTitle": "Ce qui est établi",
+      "missingTitle": "Ce qui manque",
+      "nextTitle": "Prochaine action",
+      "launch": "Lancer l’analyse",
+      "relaunch": "Relancer l’analyse",
+      "fact": {
+        "sector": "Secteur : {{value}}",
+        "employees": "Effectif : {{value}}",
+        "headquarters": "Siège : {{value}}"
+      },
+      "status": {
+        "not-analyzed": "Aucune analyse n’a été lancée sur ce dossier.",
+        "analysis-incomplete": "La dernière analyse ne s’est pas terminée.",
+        "analysis-running": "Une analyse est en cours sur ce dossier.",
+        "no-actions": "L’analyse a abouti, mais le plan ne porte aucune action."
+      },
+      "missing": {
+        "not-analyzed": "La stratégie, les angles d’approche et la première action : seule l’analyse les produit.",
+        "analysis-incomplete": "La stratégie, les angles d’approche et la première action n’ont pas pu être produits.",
+        "analysis-running": "La stratégie, les angles et la première action arriveront à la fin de l’analyse.",
+        "no-actions": "Une première action concrète."
+      },
+      "next": {
+        "analysis-running": "Attendre la fin de l’analyse : le plan s’affichera ici.",
+        "no-actions": "Ajouter une première action au tableau du plan."
+      }
+    }
+  },
+  "reverseProspects": {
+    "title": "Prospection inversée",
+    "subtitle": "Ces personnes ont travaillé chez ce compte : elles connaissent la gouvernance, les BU et les pièges.",
+    "nowAt": "Aujourd'hui chez {{company}}",
+    "openProfile": "Ouvrir le profil LinkedIn de {{name}}"
+  },
+  "trajectoryDestinations": {
+    "title": "Ce que {{brand}} observe dans les trajectoires",
+    "subtitle": "Les destinations où plusieurs anciens collaborateurs de ce compte sont allés — jamais leur identité.",
+    "persons_other": "{{count}} personnes"
+  },
+  "salesContext": {
+    "title": "Pourquoi cette stratégie",
+    "subtitle": "Le profil retenu par {{brand}} pour ce compte. Toutes les recommandations ci-contre en découlent.",
+    "esnStage": "Ton ESN",
+    "accountArchetype": "Type de compte",
+    "relationship": "Ta relation avec ce compte",
+    "declared": "déclaré par toi",
+    "inferred": "déduit · confiance {{confidence}}/100",
+    "evidencePrefix": "Sur la base de :",
+    "stages": {
+      "freelance": "Freelance / courtier",
+      "petite": "Petite ESN",
+      "structuration": "ESN en structuration",
+      "etablie": "ESN établie",
+      "grande": "Grande ESN"
+    },
+    "structures": {
+      "founder_solo": "Le fondateur vend seul",
+      "founder_alternant": "Fondateur + alternant",
+      "duo_trio": "Équipe de 2 à 4",
+      "equipe": "Équipe de 5+",
+      "account_team": "Account team"
+    },
+    "revenueModels": {
+      "recurrent": "Revenu récurrent",
+      "mixte": "Revenu mixte",
+      "ponctuel": "Revenu au projet"
+    },
+    "rankPositions": {
+      "rang1": "Prestataire en direct (rang 1)",
+      "rang2": "Sous-traitant (rang 2)",
+      "mixte": "Direct et sous-traitance (mixte)"
+    },
+    "archetypes": {
+      "startup": "Startup / scale-up",
+      "pme_eti": "PME / ETI",
+      "grand_groupe": "Grand groupe privé",
+      "banque_assurance": "Banque / assurance",
+      "public": "Secteur public",
+      "luxe_retail_media": "Luxe / retail / média",
+      "industrie": "Industrie",
+      "international": "Compte international",
+      "inconnu": "Non déterminé"
+    },
+    "states": {
+      "froid": "Compte froid",
+      "connu": "Compte connu",
+      "linkedin": "Connexion LinkedIn acceptée",
+      "dormant": "Relation dormante",
+      "refere": "Compte référé",
+      "ancien_client": "Ancien client",
+      "rang2": "Tu es en rang 2",
+      "client_actif": "Client actif",
+      "besoin_ouvert": "Besoin ouvert",
+      "partenaire_actif": "Partenaire actif"
+    }
+  },
+  "nextMoves": {
+    "title": "Prochains mouvements",
+    "subtitle": "Le mouvement d'ouverture recommandé et les 3 à 5 actions prioritaires.",
+    "movementLabel": "Mouvement d'ouverture",
+    "actionsTitle": "Actions prioritaires",
+    "echoedInBoard_one": "{{count}} sur {{total}} déjà suivie dans le tableau plus bas.",
+    "echoedInBoard_other": "{{count}} sur {{total}} déjà suivies dans le tableau plus bas.",
+    "seeInBoard": "Voir le tableau",
+    "movements": {
+      "bottom_up": "Bottom-up (entrer par le bas)",
+      "middle_out": "Middle-out (par un manager)",
+      "top_down": "Top-down (par le sponsor)",
+      "sandwich": "Sandwich (terrain + budget)",
+      "rang2": "Rang 2 (via le delivery)",
+      "prospection_inversee": "Prospection inversée (par le besoin)",
+      "public": "Secteur public (voie contractuelle)",
+      "reactivation": "Réactivation (relation dormante)",
+      "filiale_site": "Filiale ou site (pas le siège)",
+      "referencement": "Référencement (comprendre le circuit)"
+    },
+    "chantiers": {
+      "compte": "Compte",
+      "contacts": "Contacts",
+      "signaux": "Signaux",
+      "messages": "Messages",
+      "delivery": "Delivery",
+      "expansion": "Expansion"
+    },
+    "horizons": {
+      "aujourd'hui": "Aujourd'hui",
+      "7j": "Sous 7 jours",
+      "30j": "Sous 30 jours",
+      "60j": "Sous 60 jours",
+      "90j": "Sous 90 jours"
+    },
+    "ifSilent": "SI SILENCE",
+    "ifSilentContact": "Autre porte : {{contact}}",
+    "ifSilentAngle": "Autre angle : {{angle}}",
+    "ifSilentPretext": "Prétexte de relance : {{pretext}}",
+    "routeLabel": "Route recommandée",
+    "followedSignalLabel": "Signal suivi",
+    "routes": {
+      "relation_existante": "Par une relation déjà active",
+      "reactivation": "Réactivation d’un ancien client",
+      "direct_accessible": "Directement, sans détour",
+      "filiale_site": "Par une filiale ou un site",
+      "bottom_up": "Bottom-up (entrer bas)",
+      "middle_out": "Middle-out (par un manager)",
+      "sponsor": "Par un sponsor interne",
+      "rang_2": "Rang 2 (via le delivery)",
+      "partenaire": "Par un partenaire en place",
+      "prospection_inversee": "Prospection inversée (par le besoin)",
+      "appel_offres": "Appel d’offres (voie contractuelle)",
+      "expansion_client": "Extension d’un compte client",
+      "recommandation": "Par recommandation",
+      "consultant_present": "Par un consultant déjà en mission",
+      "ancien_consultant": "Par un ancien consultant",
+      "signal_entrant": "Par un signal d’achat déclaré",
+      "veille_seule": "Veille seule, sans prospection",
+      "depuis_talent": "Depuis un talent du vivier",
+      "evenement_communaute": "Depuis un événement ou une communauté",
+      "inbound_contenu": "Par un contenu (inbound)"
+    },
+    "routeDetails": {
+      "motivating_signal": "Signal qui motive la route",
+      "proof_cited": "Preuve citée",
+      "channel_history": "Historique de canal",
+      "first_door": "Première porte",
+      "info_to_obtain": "Info à obtenir",
+      "proof": "Preuve qui valide",
+      "next_contact": "Contact suivant",
+      "passage_condition": "Condition de passage",
+      "fallback_plan": "Plan de repli",
+      "discouraged_route": "Route déconseillée"
+    }
+  },
+  "coverage": {
+    "title": "Qui nous manque pour avancer ?",
+    "subtitle": "Couverture décisionnelle du compte : familles métier et niveaux hiérarchiques déjà engagés, face aux angles morts à ouvrir (méthode plan de compte). Calculé uniquement à partir des contacts existants — aucune donnée inventée.",
+    "scoreLabel": "Couverture décisionnelle",
+    "scoreHint": "Largeur (familles), profondeur (niveaux) et rôles critiques du comité — à poids égal. Un rôle critique non identifié empêche le 100 %.",
+    "engagedContacts": "Contacts engagés",
+    "engagedContactsHint": "sur ~{{target}} visés",
+    "familiesStat": "Familles couvertes",
+    "familiesStatHint": "sur {{target}} visées",
+    "levelsStat": "Niveaux couverts",
+    "levelsStatHint": "sur {{target}} (C-Level / N-1 / N-2)",
+    "championRiskTitle": "Dépendance à un contact unique",
+    "championRiskDescription": "L'accès décisionnel repose sur un seul point de contact ou une seule famille. Élargis la couverture pour sécuriser le compte.",
+    "familiesSectionTitle": "Familles de décision",
+    "familiesSectionDescription": "Business units stratégiques du centre de décision.",
+    "gridAria": "Grille de couverture familles × niveaux",
+    "gridCellAria": "{{family}} — {{level}} : {{status}}",
+    "gridStatus": {
+      "covered": "couvert",
+      "gap": "non trouvé par cette recherche",
+      "partial": "à vérifier",
+      "empty": "non trouvé par cette recherche",
+      "not_priority": "non prioritaire"
+    },
+    "gridActionColumn": "Action recommandée",
+    "gridActionAria": "{{family}} — {{level}} : chercher {{titles}}",
+    "gridActionEmpty": "—",
+    "gridCellSearchAria": "Chercher ce rôle : {{family}} — {{level}}",
+    "gridCellSearch": "Chercher ce rôle",
+    "entityScopeLabel": "Périmètre",
+    "entityScopeAll": "Toutes les entités",
+    "entityScopeUncovered": "{{entity}} (aucun contact)",
+    "entityScopeAria": "Filtrer la matrice par entité",
+    "entityScopeHint": "Une famille couverte au niveau du groupe peut rester à ouvrir dans une filiale. Choisis une entité pour voir SA couverture.",
+    "objectiveScopeLabel": "Objectif",
+    "objectiveScopeAll": "Toutes les familles",
+    "objectiveScopeTarget": "Familles cible",
+    "objectiveScopeSupport": "Familles support",
+    "objectiveScopeAria": "Filtrer la matrice par objectif",
+    "gridLegend": "Chaque case croise une famille et un niveau, dans le périmètre choisi. « À vérifier » = des contacts existent des deux côtés sans preuve du croisement. « Non prioritaire » = famille support, pas un périmètre à ouvrir. L'action au bout de la ligne relance la recherche sur cette seule case.",
+    "levelsSectionTitle": "Niveaux hiérarchiques",
+    "levelsSectionDescription": "Sponsor exécutif, décideur budgétaire et relais terrain.",
+    "mapSectionTitle": "La carte de couverture",
+    "mapSectionDescription": "Niveaux hiérarchiques et familles de décision, croisés. Les chiffres ci-dessus gardent chacun leur dénominateur sans l'ouvrir.",
+    "gapsSectionTitle": "Interlocuteurs manquants",
+    "gapsSectionDescription": "Angles morts priorisés : ce qui manque, pourquoi c'est une opportunité et qui cibler.",
+    "covered": "Couvert",
+    "missing": "À ouvrir",
+    "supportBadge": "Support",
+    "priorityBadge": "P{{priority}}",
+    "suggestedTitles": "Cibler : {{titles}}",
+    "gapSearchCta": "Chercher ce profil",
+    "gapRerunCta": "Trouver ce rôle",
+    "missingAxes": {
+      "title": "Les dix axes à tenir",
+      "aria": "Les dix axes de ce qui nous manque",
+      "states": {
+        "covered": "Tenu",
+        "missing": "Manque",
+        "unmeasured": "Non mesuré"
+      },
+      "axes": {
+        "levels": "Chaque niveau hiérarchique",
+        "families": "Chaque famille métier visée",
+        "entities": "Entités",
+        "sponsor": "Sponsor",
+        "economicBuyer": "Décideur économique",
+        "technicalReferent": "Référent technique",
+        "procurement": "Achats",
+        "operationalRelay": "Relais opérationnel",
+        "singleContact": "Pas de mono-contact",
+        "nextAction": "Prochaine action posée"
+      },
+      "technicalGap": {
+        "noItContact": "Aucun contact IT collecté sur ce compte.",
+        "itBelowDirector_one": "{{count}} contact IT, aucun au niveau direction.",
+        "itBelowDirector_other": "{{count}} contacts IT, aucun au niveau direction.",
+        "findCta": "Chercher un DSI"
+      },
+      "unmeasuredHint": "Les contacts de ce dossier ne permettent pas de le dire : rien n’est déduit.",
+      "nextActionHint": "La prochaine action vit dans le plan d’action, pas dans les contacts.",
+      "openPlan": "Voir le plan"
+    },
+    "gapRerunPending": "Recherche en cours…",
+    "gapRerunHint": "Relance la recherche sur cette seule case (famille × niveau), sans rejouer le dossier.",
+    "openInContacts": "Voir les contacts",
+    "gapsEmptyTitle": "Couverture complète",
+    "gapsEmptyDescription": "Couverture complète : toutes les familles et tous les niveaux stratégiques sont couverts. Continue à consolider chaque relais.",
+    "noContactsTitle": "Aucun contact à cartographier",
+    "noContactsDescription": "Ce compte n'a pas encore de contact identifié. Lance la découverte de contacts pour voir sa couverture.",
+    "loading": "Analyse de la couverture…",
+    "loadErrorTitle": "Couverture indisponible",
+    "loadErrorDescription": "Impossible de charger la couverture pour l'instant. Réessaie plus tard.",
+    "entitiesStat": "Entités couvertes",
+    "entitiesStatHint": "Entités du compte où tu as au moins un contact",
+    "entitiesStatHintNames": "{{names}}",
+    "entitiesStatHintUncovered": "À ouvrir : {{names}}",
+    "entitiesStatExcluded": "Écarté du décompte : {{names}} — une personne, pas une entité.",
+    "rolesStat": "Rôles couverts",
+    "rolesStatHint": "Rôles du comité d'achat effectivement tenus",
+    "rolesStatHintMissing": "Non identifiés : {{roles}} — pas trouvés, pas forcément absents",
+    "rolesStatReason": {
+      "noRoleSet_one": "Le seul contact n’a pas ce rôle posé.",
+      "noRoleSet_other": "Aucun des {{count}} contacts n’a ce rôle posé.",
+      "technicalTitles": "Aucun intitulé reconnu comme DSI ou RSSI non plus."
+    },
+    "committeeRoles": {
+      "economic": "Décideur économique",
+      "technical": "Référent technique",
+      "user": "Utilisateur",
+      "champion": "Champion",
+      "influencer": "Influenceur",
+      "blocker": "Bloqueur",
+      "procurement": "Achats",
+      "sponsor": "Sponsor"
+    },
+    "championsStat": "Champions identifiés",
+    "championsStatHint": "Contacts champions — les relais qui portent le dossier en interne. Le sponsor, lui, se lit sur son axe.",
+    "nextBestActionBadge": "Prochaine meilleure action",
+    "gapRankAria": "Action {{rank}} sur {{total}}",
+    "confidenceStat": "Confiance donnée",
+    "confidenceStatHint": "Identité, fraîcheur, couverture, sources, cohérence — sur les contacts de ce compte",
+    "confidenceSectionTitle": "Pourquoi cette confiance ?",
+    "confidenceSectionDescription": "Les cinq composants de la note, chacun sur 100 et calculé sur les contacts de ce dossier. Le plus bas est ce qu'il faut corriger en premier. À ne pas confondre avec la « Fiabilité du dossier » de l'onglet Aperçu, qui note la collecte de l'analyse, pas les contacts.",
+    "confidenceComponentValue": "{{value}}/100",
+    "confidenceComponents": {
+      "identity": {
+        "label": "Identité",
+        "hint": "Contacts joignables : un email ou un profil sur un réseau professionnel. Un nom seul ne prouve rien."
+      },
+      "freshness": {
+        "label": "Fraîcheur",
+        "hint": "Contacts revus depuis moins de 18 mois. Relancer l'enrichissement remonte ce composant."
+      },
+      "coverage": {
+        "label": "Couverture",
+        "hint": "Familles et niveaux du comité d'achat effectivement tenus — les manques ci-dessous."
+      },
+      "sources": {
+        "label": "Sources",
+        "hint": "Contacts venus d'une source vérifiable (réseau professionnel, registre officiel, import). Une déduction de l'IA reste une hypothèse."
+      },
+      "consistency": {
+        "label": "Cohérence",
+        "hint": "Contacts qu'on sait situer : une famille ET un niveau. Un contact qu'on n'arrive pas à placer est une incohérence."
+      },
+      "verified": {
+        "label": "Personnes vérifiées",
+        "hint": "Contacts dont l'adresse email a été vérifiée — distinct de l'identité : un contact joignable n'a pas forcément une adresse vérifiée."
+      },
+      "scope": {
+        "label": "Scope résolu",
+        "hint": "L'entreprise du dossier est identifiée sur une source vérifiable (SIREN, registre). Sans elle, la voie d'achat et la comparaison entre périmètres n'ont pas de socle."
+      }
+    },
+    "confidenceVerifiedSectionHint": "Signal complémentaire, hors moyenne : ne modifie pas la note de confiance ci-dessus.",
+    "engagedContactsSplit": "sur {{target}} visés · {{inTargetFamilies}} dans une famille cible",
+    "entitiesMore": "+ {{count}} autres",
+    "engagedContactsReached": "{{inTargetFamilies}} dans une famille cible — objectif de couverture atteint",
+    "marketRoleFamilies": {
+      "title": "Familles de rôles observées",
+      "description": "Ce que les observations du marché disent autour de ce compte — un signal EXTERNE, distinct des contacts de ce dossier. N'entre dans aucun calcul de couverture ci-dessus.",
+      "label": "Famille observée sans contact actuel identifié",
+      "persons_one": "{{count}} personne",
+      "persons_other": "{{count}} personnes"
+    }
+  },
+  "relationshipMemory": {
+    "title": "Mémoire de relation",
+    "subtitle": "Ce que ton ESN sait déjà de ce compte. Relu à chaque analyse — avec les notes ci-dessous — pour que le plan parte de ta relation réelle au lieu d'ouvrir à froid.",
+    "relation": "Relation",
+    "relationStage": "Stade de la relation",
+    "relationStageNone": "Non renseigné",
+    "owner": "Qui la porte (côté ESN)",
+    "lastContact": "Dernier contact",
+    "nextReview": "Prochaine revue",
+    "source": "Source",
+    "issue": "Issue de la dernière interaction",
+    "save": "Enregistrer",
+    "saving": "Enregistrement…",
+    "saved": "Mémoire enregistrée",
+    "error": "Impossible d'enregistrer",
+    "competitiveEdge": "Ce que tu sais de ta position ici",
+    "competitiveEdgeHint": "Le prestataire en place et son échéance, une référence comparable à citer, ce qui t'a déjà fait gagner sur ce type de compte. Repris tel quel dans l'analyse — et ça ne fait pas passer le compte pour chaud.",
+    "competitiveEdgePlaceholder": "Sopra est en place jusqu'en mars 2027 · on a fait la même bascule chez X en 2024 · leur DSI vient de chez un de nos clients…",
+    "known": {
+      "title": "Ce que {{brand}} sait déjà",
+      "subtitle": "Ce qu'on connaît déjà des contacts rattachés à ce compte — ta saisie ci-dessous reste toujours la tienne, elle n'est jamais remplacée.",
+      "noContacts": "Aucun contact connu sur ce compte pour l'instant.",
+      "notEnriched_one": "{{count}} contact connu sur ce compte, jamais enrichi : on ne sait pas encore depuis quand il y travaille.",
+      "notEnriched_other": "{{count}} contacts connus sur ce compte, jamais enrichis : on ne sait pas encore depuis quand ils y travaillent.",
+      "enrichedNoPresence_one": "{{count}} contact enrichi, sans rôle courant identifié sur ce compte.",
+      "enrichedNoPresence_other": "{{count}} contacts enrichis, sans rôle courant identifié sur ce compte.",
+      "roleUnknown": "rôle non identifié",
+      "since": "connu depuis {{date}}",
+      "sinceUnknown": "date de début non connue"
+    }
+  },
+  "profileProvenance": {
+    "personalisedNamed": "{{firstName}}, ce dossier a été construit avec le profil de {{esnName}} : offres, secteurs, territoires et capacité commerciale déclarés.",
+    "personalised": "{{firstName}}, ce dossier a été construit avec le profil de ton ESN : offres, secteurs, territoires et capacité commerciale déclarés.",
+    "generic": {
+      "no_profile": "{{firstName}}, ce dossier est générique : aucun profil ESN n'était renseigné au lancement, donc rien n'a été adapté à ce que tu vends.",
+      "incomplete_profile": "{{firstName}}, ce dossier est générique : il manquait des réponses obligatoires au lancement ({{answered}} sur {{required}}), donc rien n'a été adapté à ce que tu vends.",
+      "skipped_by_user": "{{firstName}}, ce dossier est générique : le questionnaire avait été remis à plus tard, donc rien n'a été adapté à ce que tu vends.",
+      "overridden": "{{firstName}}, ce dossier est générique : il a été lancé sans profil, donc rien n'a été adapté à ce que tu vends.",
+      "context_mode": "{{firstName}}, ce dossier est générique : le mode de contexte choisi au lancement a écarté ton profil."
+    },
+    "byMode": {
+      "one_off_mission": "{{firstName}}, ce dossier est calculé sur le brief de la mission : le mode Mission ponctuelle a écarté ton profil habituel.",
+      "neutral": "{{firstName}}, ce dossier est calculé sur des critères neutres : le mode Neutre a écarté ton profil, ton CRM et ton historique."
+    },
+    "completeCta": "Complète ton profil, puis actualise le dossier.",
+    "staleProfile": "{{firstName}}, tes secteurs ou tes offres ont changé depuis ce dossier.",
+    "staleProfileCtaPending": "Recalcul…",
+    "staleProfileCta": "Le recalculer"
+  },
+  "planFreshness": {
+    "vieillissant": "Plan vieillissant",
+    "perime": "Plan périmé",
+    "inconnu": "Âge du plan inconnu"
+  },
+  "meetingPrep": {
+    "title": "Préparer le rendez-vous",
+    "subtitle": "Les questions qui font parler ton interlocuteur, et la trame de l’entretien.",
+    "questions": "Questions à poser",
+    "script": "Trame du rendez-vous",
+    "section": {
+      "opening": "Ouverture",
+      "positioning": "Positionnement",
+      "exploration": "Exploration",
+      "proposal": "Proposition",
+      "closing": "Clôture"
+    },
+    "r1r2": {
+      "title": "Préparer un premier ou un second rendez-vous",
+      "subtitle": "Le déroulé, les retours d’expérience à citer, la proposition d’atelier ou la reprise du premier rendez-vous, et un pitch — tirés de ce que l’espace sait déjà.",
+      "typeLabel": "Type de rendez-vous",
+      "type": {
+        "r1_discovery": "Premier rendez-vous (R1)",
+        "r2_workshop": "Second rendez-vous (R2)"
+      },
+      "suggestedR1": "Proposé : R1 — aucun rendez-vous passé n’est enregistré sur ce compte.",
+      "suggestedR2": "Proposé : R2 — un premier rendez-vous a déjà eu lieu sur ce compte.",
+      "contactLabel": "Interlocuteur (facultatif)",
+      "contactNone": "Aucun interlocuteur précisé",
+      "withContact": "Interlocuteur : {{name}}",
+      "readOnly": "Ce panneau se lit : rien n’est enregistré et aucun e-mail n’est envoyé."
+    }
+  },
+  "timeline": {
+    "title": "Ce qui s’est passé sur ce compte",
+    "subtitle": "Les actions, les mouvements de projet et les exécutions, dans l’ordre réel.",
+    "empty": "Rien n’a encore été fait sur ce compte.",
+    "repeat": "× {{count}}",
+    "showOlder_one": "Voir la ligne plus ancienne",
+    "showOlder_other": "Voir les {{count}} lignes plus anciennes",
+    "stepsDone_one": "{{count}} étape réussie sur {{total}}",
+    "stepsDone_other": "{{count}} étapes réussies sur {{total}}",
+    "loadError": "L’historique n’a pas pu être chargé. Ce n’est pas « aucun historique » — réessaie.",
+    "actionTypes": {
+      "analysis_started": "Analyse lancée",
+      "analysis_completed": "Analyse terminée",
+      "account_score_changed": "Score du compte mis à jour",
+      "message_copied": "Message copié",
+      "message_sent": "Message envoyé",
+      "profile_updated": "Profil ESN mis à jour",
+      "contact_enriched": "Contact enrichi",
+      "export_performed": "Export effectué",
+      "plan_action_opened": "Action du plan ouverte",
+      "plan_action_completed": "Action du plan terminée",
+      "plan_action_uncompleted": "Action du plan rouverte",
+      "plan_action_added": "Action ajoutée au plan",
+      "plan_action_skipped": "Action du plan passée",
+      "plan_action_message_copied": "Message du plan copié",
+      "plan_action_message_sent": "Message du plan marqué envoyé",
+      "plan_action_message_generated": "Message du plan préparé",
+      "plan_action_call_prepared": "Appel préparé",
+      "plan_action_linkedin_opened": "Profil du réseau professionnel ouvert",
+      "plan_action_contact_opened": "Fiche contact ouverte",
+      "crm_lookup": "{{copilot}} a consulté ton CRM"
+    }
+  },
+  "questionLibrary": {
+    "title": "Les questions à poser",
+    "subtitle": "Trois à huit questions, choisies — jamais la banque entière.",
+    "tab": {
+      "discovery": "Découverte",
+      "defense": "Soutenance",
+      "call": "Appel"
+    },
+    "conductTitle": "Ce qui fait qu’une soutenance n’est pas un monologue",
+    "callChecklist": "À préparer avant de décrocher",
+    "nothingLeft": "Le dossier répond déjà à tout ce que cette banque sait demander."
+  },
+  "technologies": {
+    "title": "Technologies en place"
+  },
+  "reinforced": {
+    "title": "Angles renforcés par l’environnement observé",
+    "why": "Ces expertises que tu déclares ressortent aussi dans l’environnement technologique observé autour de ce compte. Deux sources indépendantes, pas une preuve d’intervention actuelle.",
+    "action": "À vérifier : est-ce que ces équipes travaillent avec des prestataires externes aujourd’hui ?",
+    "weak": "Peu de corroboration marché disponible pour {{expertises}}",
+    "weakWhy": "Ces expertises ressortent tout juste dans l’environnement observé — au plancher du corpus. C’est trop peu pour renforcer un angle, et ça ne dit RIEN contre lui."
+  },
+  "overviewSections": {
+    "contextTitle": "Le contexte du compte",
+    "contextDescription": "Pourquoi maintenant, par où ouvrir, les programmes IT nommés, les ESN déjà en place, les offres et les données publiques.",
+    "recordTitle": "La fiche du compte",
+    "recordDescription": "Ce que tu corriges toi-même, le vocabulaire du groupe et la mémoire de la relation."
+  },
+  "attachedDocuments": {
+    "addedAfterLaunch": "Ajoutée après le lancement · {{time}}",
+    "title": "Documents joints",
+    "untitled": "Document sans titre",
+    "attachedTo": "Rattachée à {{company}}"
+  },
+  "presentEsn": {
+    "title": "ESN présentes sur le compte",
+    "unitNote": "Cette liste compte des sociétés. Les « profils ex-ESN » cités dans les rubriques du dossier comptent des personnes passées par une ESN : ce n'est pas un second total d'ESN.",
+    "hint": "Une seule liste : chaque société avec la preuve qui la place chez le compte — déclarée, observée ou déduite — et sa date.",
+    "evidence": {
+      "declared": "Déclaré",
+      "observed": "Observé",
+      "deduced": "Déduit"
+    },
+    "dated": "au {{date}}",
+    "probablySame": "Peut-être la même société que : {{names}}. Non fusionnée.",
+    "dateUnknown": "date inconnue",
+    "strengths": "Forces : {{value}}",
+    "weaknesses": "Faiblesses : {{value}}",
+    "paths": "Aussi observée dans l'historique — {{range}} parcours.",
+    "summaryLead": "Sur ce compte :",
+    "summary": {
+      "declared_one": "{{count}} déclarée",
+      "declared_other": "{{count}} déclarées",
+      "observed_one": "{{count}} observée",
+      "observed_other": "{{count}} observées",
+      "deduced_one": "{{count}} déduite",
+      "deduced_other": "{{count}} déduites"
+    },
+    "meaningTitle": "Ce que ça veut dire pour toi"
+  },
+  "synthesis": {
+    "groups": {
+      "business": "Où est le business",
+      "memory": "Ce que {{brand}} sait du compte",
+      "searched": "Ce qu'on a cherché ensemble"
+    },
+    "identity": {
+      "headquarters": "Siège : {{city}}",
+      "employees": "{{value}} salariés",
+      "revenue": "CA {{value}}"
+    },
+    "takeaway": {
+      "title": "Ce qu'il faut retenir",
+      "score": "{{score}}/10",
+      "score25": "{{score}}/25",
+      "unarbitrated": "non arbitré",
+      "whyTitle": "Pourquoi y aller",
+      "whyWaitTitle": "Pourquoi attendre",
+      "reopenWhen": "Ce qui ferait changer d'avis : {{trigger}}",
+      "GO": "Compte à travailler maintenant.",
+      "PRUDENT": "Compte à travailler avec prudence : qualifie avant d'investir.",
+      "NO-GO": "Compte à ne pas prioriser pour l'instant.",
+      "EXPLORER": "Compte à explorer : l'intérêt est réel, la porte reste à trouver.",
+      "dominantSignal": "Signal dominant : {{label}}.",
+      "dominantSignalDated": "Signal dominant : {{label}} ({{date}}).",
+      "lauraLabel": "Le regard de {{copilot}}"
+    },
+    "discoverBridge": "Découvrir avait dit « {{reason}} », sur la base de ce qu'il avait déjà — ce signal reste vrai, l'analyse mesure davantage depuis.",
+    "discoverOrigin": {
+      "framedByLaura": "Cadré sur ta demande à {{copilot}} : {{criteria}}",
+      "collectedBefore": "Cette analyse est antérieure à la reprise des offres de Découvrir : les offres qui ont fait sortir ce compte n'y figurent pas. Relance la collecte pour les retrouver.",
+      "offers": "offres relevées : {{value}}",
+      "criteria": "Sélectionné dans Découvrir sur : {{criteria}}",
+      "reasonOnly": "Sélectionné dans Découvrir : « {{reason}} »",
+      "criteriaWithReason": "Sélectionné dans Découvrir sur : {{criteria}} — « {{reason}} »",
+      "sector": "secteur {{value}}",
+      "zone": "zone {{value}}",
+      "zoneWidened": "{{value}}",
+      "headcount": "effectif {{value}} salariés",
+      "signal": "signal {{value}}",
+      "skills": "compétence {{value}}",
+      "talent": "consultant {{value}}",
+      "signals": {
+        "tender": "appel d'offres",
+        "award": "marché attribué",
+        "hiring": "recrutement"
+      }
+    },
+    "cards": {
+      "signalTitle": "Signal principal",
+      "signalSource": "Source : {{source}}",
+      "signalWhat": "Ce que ça veut dire : {{implication}}",
+      "signalCta": "Voir les signaux",
+      "entryTitle": "Meilleure porte d'entrée",
+      "entryCta": "Voir le contact",
+      "entryGap": {
+        "off_list": "Désignée par le dossier, mais pas dans l’onglet Contacts : à rapprocher d’un contact avant d’agir.",
+        "hidden": "Ce contact est masqué de ta liste : réaffiche-le avant d’agir."
+      },
+      "entryCtaPath": "Voir les contacts",
+      "actionTitle": "Prochaine action",
+      "actionCta": "Préparer"
+    },
+    "sections": {
+      "plan": "Plan d'action",
+      "planSummary_one": "{{count}} action planifiée",
+      "planSummary_other": "{{count}} actions planifiées",
+      "planOffers_one": "{{count}} offre à proposer",
+      "planOffers_other": "{{count}} offres à proposer",
+      "planRisk": "Le risque principal et comment le lever",
+      "planOpen": "Ouvrir le plan complet",
+      "contacts": "Contacts et comité d'achat",
+      "contactsSummary_one": "{{count}} contact clé",
+      "contactsSummary_other": "{{count}} contacts clés",
+      "contactsOpen": "Voir tous les contacts",
+      "angles": "Angles d'attaque",
+      "anglesSummary_one": "{{count}} angle d'attaque",
+      "anglesSummary_other": "{{count}} angles d'attaque",
+      "meeting": "Préparer le rendez-vous",
+      "meetingSummary": "Pourquoi maintenant, ce qui les fait souffrir, les arguments face aux acteurs en place",
+      "strategy": "Stratégie de compte",
+      "strategySummary": "Où concentrer l'effort, qui est déjà en place, comment se positionner",
+      "technologies": "Technologies et chiffres clés",
+      "technologiesSummary_one": "{{count}} technologie repérée",
+      "technologiesSummary_other": "{{count}} technologies repérées",
+      "technologiesLegal_one": "{{count}} annonce légale",
+      "technologiesLegal_other": "{{count}} annonces légales",
+      "technologiesFacts": "Chiffres clés et données publiques",
+      "sources": "Sources et confiance",
+      "sourcesSummary": "Le score et ses axes, d'où vient chaque fait, la fiche du compte",
+      "history": "Historique des analyses",
+      "historyFacts_one": "{{count}} fait daté",
+      "historyFacts_other": "{{count}} faits datés",
+      "historySummary": "Dernière analyse le {{date}}"
+    },
+    "tech": {
+      "high": "très présente",
+      "medium": "présente",
+      "low": "ponctuelle",
+      "showDetail": "Voir le détail",
+      "hideDetail": "Masquer le détail"
+    },
+    "unanalyzed": {
+      "title": "Ce dossier n’a pas encore été analysé.",
+      "known": "Connu : {{facts}}.",
+      "body": "L’analyse dit pourquoi travailler ce compte, où entrer et quelle action préparer.",
+      "cta": "Analyser ce compte",
+      "contacts_one": "{{count}} contact",
+      "contacts_other": "{{count}} contacts"
+    }
+  },
+  "planSections": {
+    "anglesTitle": "Les angles d'attaque et ce qui les renforce",
+    "anglesDescription": "Les points d'entrée à tester sur ce compte, et ce que l'environnement observé vient corroborer.",
+    "prepareTitle": "Préparer le rendez-vous",
+    "prepareDescription": "Les questions à poser et tes notes de rendez-vous.",
+    "generalTitle": "Questions et réseau — général",
+    "generalDescription": "Méthode et réseau valables pour tout compte, pas propres à celui-ci.",
+    "title": "Le plan, section par section",
+    "subtitle": "Toujours dans le même ordre, verdict en tête.",
+    "sections": {
+      "verdict": "Verdict stratégique",
+      "objectif": "Objectif du compte",
+      "perimetre": "Périmètre ciblé",
+      "voieDentree": "Voie d'entrée",
+      "prochainesActions": "Trois prochaines actions",
+      "horizon6090": "Horizon 60-90 jours",
+      "aEviter": "Ce qu'il ne faut pas faire"
+    }
+  },
+  "canonicalContext": {
+    "title": "Ce qu'on sait, et d'où ça vient",
+    "subtitle": "Une seule lecture du dossier : chaque fait porte sa source et sa date.",
+    "companyName": "Raison sociale",
+    "sector": "Secteur",
+    "headquarters": "Siège",
+    "marketMemoryRoles": "Familles de métiers observées",
+    "marketMemoryRolesHint": "Parcours de consultants passés par ce compte, lus dans les données de marché — pas tes contacts.",
+    "roleFamilyPersons_one": "{{count}} parcours observé",
+    "roleFamilyPersons_other": "{{count}} parcours observés",
+    "otherFamily": {
+      "title": "Autres intitulés (hors métiers)",
+      "hint": "Ce que l'historique observé n'a rangé dans aucun métier — ce n'est pas un métier.",
+      "detailTitle": "Parmi tes contacts sur ce compte (une autre mesure que les parcours ci-dessus), les intitulés qu'aucun métier ne range",
+      "titleCount_one": "{{count}} contact",
+      "titleCount_other": "{{count}} contacts",
+      "seeMore": "Voir plus ({{count}})",
+      "seeLess": "Voir moins",
+      "detailUnavailable": "Le détail de ces intitulés n’est pas disponible : aucun de tes contacts sur ce compte n’y est rangé."
+    },
+    "marketMemoryUnavailable": "Lecture de l'historique observé indisponible — ce n'est pas « rien observé ».",
+    "marketMemoryNotCovered": "Aucune observation exploitable n’est disponible pour ce compte.",
+    "incumbentEsn": "Qui est déjà en place",
+    "technologies": "Technologies en place",
+    "entryPaths": "Par où entrer",
+    "recommendations": "Ce qu'on en tire"
+  },
+  "strategy5P": {
+    "title": "Cinq questions de terrain",
+    "subtitle": "Où entrer, sur quel sujet, avec qui, avec quoi, par quelle voie.",
+    "dimensions": {
+      "perimeter": "Périmètre",
+      "problem": "Problème",
+      "people": "Personnes",
+      "proof": "Preuves",
+      "passage": "Passage"
+    },
+    "readiness": {
+      "READY_TO_ACT": "Prêt à agir",
+      "READY_TO_VERIFY": "Prêt, à vérifier",
+      "INCOMPLETE": "Incomplet",
+      "BLOCKED": "Bloqué",
+      "NO_GO": "Pas prêt pour une séquence"
+    },
+    "nextAction": "À faire : {{action}}",
+    "allSolid": "Les cinq dimensions sont renseignées.",
+    "gap": {
+      "missingProof": "Aucune preuve mobilisable sur ce compte.",
+      "missingRoles_one": "Aucun contact {{roles}} identifié.",
+      "missingRoles_other": "Rôles sans contact identifié : {{roles}}.",
+      "noPath": "Aucune voie d’accès identifiée — consultant en place, ancien collègue, partenaire, rang 2, fournisseur ou relation.",
+      "technicalNoIt": "Aucun contact IT collecté sur ce compte.",
+      "technicalBelowDirector_one": "{{count}} contact IT, aucun au niveau direction.",
+      "technicalBelowDirector_other": "{{count}} contacts IT, aucun au niveau direction."
+    },
+    "cta": {
+      "findAnotherRoute": "Trouver une autre route",
+      "challengeStrategy": "Challenger la stratégie",
+      "prepareFirstMove": "Préparer le premier mouvement",
+      "addToPlan": "Ajouter au plan"
+    },
+    "planAction": {
+      "perimeter": {
+        "label": "Cadrer le périmètre visé (entité, filiale, équipe)",
+        "reason": "Le périmètre est le P le moins renseigné de la stratégie 5P.",
+        "outcome": "Un périmètre visé et un périmètre exclu écrits."
+      },
+      "problem": {
+        "label": "Qualifier le problème et son déclencheur",
+        "reason": "Le problème est le P le moins renseigné de la stratégie 5P.",
+        "outcome": "Un problème daté, avec son impact et son urgence."
+      },
+      "people": {
+        "label": "Identifier les rôles de décision manquants",
+        "reason": "Les personnes sont le P le moins renseigné de la stratégie 5P.",
+        "outcome": "Chaque rôle d’achat tenu par une personne nommée."
+      },
+      "proof": {
+        "label": "Rassembler une preuve mobilisable",
+        "reason": "La preuve est le P le moins renseigné de la stratégie 5P.",
+        "outcome": "Une mission, un consultant ou une référence à citer."
+      },
+      "passage": {
+        "label": "Trouver une voie d’accès au compte",
+        "reason": "La voie d’accès est le P le moins renseigné de la stratégie 5P.",
+        "outcome": "Une route nommée vers un décideur."
+      }
+    },
+    "questions": {
+      "perimeter": "Où entrer ?",
+      "problem": "Sur quel sujet documenté ?",
+      "people": "Avec qui ?",
+      "proof": "Avec quelles références ou capacités ?",
+      "passage": "Par quelle voie ?"
+    },
+    "programDetail": "Voir ce programme dans Signaux et besoins",
+    "toVerify": "À vérifier.",
+    "detail": "Voir le détail",
+    "open": {
+      "perimeter": "Ouvrir l’organigramme",
+      "people": "Ouvrir les contacts",
+      "proof": "Ouvrir les preuves",
+      "passage": "Ouvrir l’accès"
+    },
+    "fields": {
+      "perimeter": {
+        "group": "Groupe",
+        "parent_company": "Maison mère",
+        "subsidiary": "Filiale",
+        "business_unit": "Business unit",
+        "direction": "Direction",
+        "site": "Site",
+        "team": "Équipe",
+        "program": "Programme",
+        "project": "Projet",
+        "selected_scope": "Périmètre visé",
+        "excluded_scopes": "Périmètre exclu",
+        "budget_scope": "Périmètre budgétaire"
+      },
+      "problem": {
+        "trigger": "Déclencheur",
+        "operational_problem": "Problème opérationnel",
+        "business_impact": "Impact business",
+        "urgency": "Urgence",
+        "current_status": "Situation actuelle",
+        "evidence": "Éléments documentés",
+        "hypothesis": "Hypothèse",
+        "expiry": "Valable jusqu’au"
+      },
+      "people": {
+        "users": "Utilisateurs",
+        "operational_relays": "Relais opérationnels",
+        "champions": "Champions",
+        "technical_references": "Références techniques",
+        "sponsors": "Sponsors",
+        "economic_deciders": "Décideurs économiques",
+        "procurement": "Achats",
+        "blockers": "Bloqueurs",
+        "hr": "RH",
+        "known_relationships": "Relations connues"
+      },
+      "proof": {
+        "relevant_consultant": "Consultant pertinent",
+        "comparable_reference": "Référence comparable",
+        "mission_rex": "Retour d’expérience de mission",
+        "client_case": "Cas client",
+        "artifact": "Livrable",
+        "benchmark": "Benchmark",
+        "sector_knowledge": "Connaissance du secteur",
+        "relationship_proof": "Preuve relationnelle"
+      },
+      "passage": {
+        "current_consultant": "Consultant en poste",
+        "former_consultant": "Ancien consultant",
+        "former_colleague": "Ancien collègue",
+        "common_relationship": "Relation commune",
+        "existing_client": "Client existant",
+        "partner": "Partenaire",
+        "rank_2": "Rang 2",
+        "referenced_esn": "ESN référencée",
+        "former_manager": "Ancien manager",
+        "alumni": "Réseau d’anciens",
+        "event": "Événement",
+        "direct_recommendation": "Recommandation directe"
+      }
+    },
+    "esn": {
+      "title": "ESN citées",
+      "undocumented": "Relation non documentée",
+      "open": "Voir {{name}} dans Partenaires",
+      "nextCheck": {
+        "confirm_relation": "À vérifier : la relation avec le client",
+        "confirm_scope": "À vérifier : le périmètre concerné"
+      }
+    },
+    "doors": {
+      "perimeter": "Voir le périmètre détaillé",
+      "orgInfluence": "Voir l’organigramme et l’influence",
+      "committee": "Voir le comité d’achat",
+      "partners": "Voir les partenaires"
+    }
+  },
+  "decisionHeader": {
+    "title": "Décision",
+    "interest": "Intérêt",
+    "penetrability": "Pénétrabilité",
+    "confidence": "Confiance",
+    "bestRoute": "Meilleure route",
+    "bestRouteUnknown": "Voie d’entrée non identifiée",
+    "nextAction": "Prochaine action",
+    "nextActionUnknown": "Aucune action suggérée",
+    "noVerdict": "Verdict non calculé",
+    "reviewDate": "Date de revue suggérée"
+  },
+  "interestPenetrability": {
+    "title": "Intérêt × pénétrabilité du compte",
+    "subtitle": "L'intérêt du compte et la capacité réelle à l'ouvrir maintenant, jamais fusionnés.",
+    "quadrantUnavailable": "Position non déterminée",
+    "axes": {
+      "interest": "Intérêt",
+      "penetrability": "Pénétrabilité"
+    },
+    "bands": {
+      "high": "Élevé",
+      "medium": "Moyen",
+      "low": "Faible",
+      "insufficient_data": "Non déterminé"
+    },
+    "quadrants": {
+      "priority_now": "Priorité immédiate",
+      "strategic_long_road": "Stratégique — route longue ou partenaire nécessaire",
+      "short_measured_test": "Test court et mesuré",
+      "no_go_watch": "No-Go ou simple veille"
+    },
+    "knownCount_one": "{{count}} facteur connu sur {{total}}",
+    "knownCount_other": "{{count}} facteurs connus sur {{total}}",
+    "noFactorKnown": "Aucun facteur déterminant connu pour l'instant.",
+    "factors": {
+      "offer_fit": "Adéquation offre",
+      "need_potential": "Potentiel de besoin",
+      "economic_value": "Valeur économique",
+      "recurrence_potential": "Récurrence possible",
+      "extension_potential": "Extension possible",
+      "delivery_fit": "Compatibilité delivery",
+      "consultant_fit": "Compatibilité consultant",
+      "current_momentum": "Mouvement actuel",
+      "existing_relationship": "Relation existante",
+      "partner_in_place": "Partenaire en place",
+      "former_consultant": "Ancien consultant",
+      "sponsor_identified": "Sponsor identifié",
+      "purchasing_barriers": "Barrières achats",
+      "referencing_status": "Référencement",
+      "sales_cycle": "Cycle d'achat",
+      "subsidiary_autonomy": "Filiale/BU identifiée",
+      "relative_size": "Taille relative",
+      "people_accessibility": "Accessibilité des personnes",
+      "available_proof": "Preuve disponible"
+    },
+    "simulation": {
+      "title": "Simuler",
+      "badge": "Simulation — non enregistrée",
+      "levers": {
+        "partner_in_place": "Avec un partenaire",
+        "available_proof": "Avec une nouvelle référence",
+        "subsidiary_autonomy": "Sur une filiale plutôt que le groupe"
+      }
+    }
+  },
+  "recommendationMeta": {
+    "elements": {
+      "toggle": "Voir les éléments",
+      "period": "Période documentée : jusqu'au {{date}}",
+      "periodNotLatest": "Un recours externe observé sur cette période n'est pas la dernière activité de la plateforme.",
+      "openProofs": "Ouvrir les preuves du compte"
+    },
+    "nature": {
+      "fact": "fait",
+      "observation": "observation",
+      "inference": "Déduit par {{copilot}}",
+      "correction": "correction terrain"
+    },
+    "freshness": {
+      "fresh": "information récente",
+      "ageing": "information de plus d'un mois",
+      "stale": "information de plus de six mois, à revérifier",
+      "undated": "date inconnue"
+    },
+    "confidence": {
+      "corroborated": "corroborée",
+      "single_source": "source unique",
+      "deduced": "déduite"
+    },
+    "confidenceCorroborated": "{{level}} — {{count}} sources concordantes",
+    "limitLabel": "Ne couvre pas :",
+    "limit": {
+      "not_a_commitment": "une porte n'est pas un rendez-vous obtenu",
+      "single_account_only": "ne dit rien des autres comptes du portefeuille",
+      "contact_unverified": "l'interlocuteur n'est pas vérifié",
+      "dated_information": "l'information peut avoir bougé depuis sa date",
+      "coverage_is_not_a_market_fact": "mesure ce qu'on sait, pas ce que le marché fait"
+    },
+    "checkLabel": "À vérifier :",
+    "check": {
+      "confirm_with_contact": "confirmer auprès d'un interlocuteur",
+      "check_public_registry": "recouper avec le registre public",
+      "reread_the_source": "relire la source citée",
+      "check_account_history": "relire l'historique du compte"
+    },
+    "action": {
+      "open_contacts": "Voir les contacts",
+      "open_plan": "Ouvrir le plan",
+      "prepare_message": "Préparer un message",
+      "open_sources": "Voir les preuves"
+    }
+  },
+  "dossierRead": {
+    "worthTitle": "Ce compte mérite-t-il ton temps ?",
+    "scoreName": "Lecture du dossier · somme des axes évalués, sur 7 axes",
+    "scoreNamePrefix": "Lecture du dossier :",
+    "axis": {
+      "adequation_offre": "Adéquation de l’offre",
+      "potentiel_commercial": "Potentiel commercial",
+      "fraicheur": "Fraîcheur actuelle",
+      "accessibilite": "Accessibilité",
+      "capacite_achat_externe": "Capacité d’achat externe",
+      "concurrence": "Concurrence",
+      "qualite_preuves": "Qualité des preuves"
+    },
+    "axisState": {
+      "measured": "Mesuré",
+      "partial": "Partiel",
+      "unknown": "Inconnu"
+    },
+    "axisValue": "{{value}}/{{max}}",
+    "axisImpact": "Impact sur le verdict : {{value}}",
+    "axisLever": "Levier : {{value}}",
+    "axisUnknownReason": "Cet axe n’a pas pu être évalué : il ne compte pas dans la note.",
+    "insufficient": "Pas de note : {{scored}} axe(s) noté(s) sur {{total}}, il en faut au moins {{min}}.",
+    "unknownOutOfScore": "{{axesCount}} axe(s) non mesuré(s), hors du calcul — jamais compté(s) comme zéro : {{axes}}.",
+    "capTitle": "Ce score ne dit rien de l’accès ou de l’achat externe",
+    "capNotice": "Un score élevé calculé sur les autres axes ne dit rien de celui-ci : vérifie avant d’y miser.",
+    "capVerification": {
+      "accessibilite": "Vérifier si un décideur est joignable",
+      "capacite_achat_externe": "Vérifier si ce compte achète de la prestation externe"
+    },
+    "axesEvaluated_one": "{{count}} axe sur {{total}} évalué",
+    "axesEvaluated_other": "{{count}} axes sur {{total}} évalués",
+    "allAxesScored_one": "Noté sur {{count}} axe, évalué.",
+    "allAxesScored_other": "Noté sur {{count}} axes, tous évalués.",
+    "noAxisBreakdownHint": "Cette analyse est antérieure à la lecture en sept axes : sa note s’affiche, sa décomposition n’existe pas pour ce dossier. Rafraîchis l’analyse pour l’obtenir.",
+    "whyForYourEsn": "Pourquoi pour ton ESN",
+    "obstacles": "Freins",
+    "antiAdvice": "Anti-conseil",
+    "missing": "Ce qui reste inconnu",
+    "reliabilityTitle": "Fiabilité du dossier",
+    "reliabilityHint": "Qualité des informations, couverture de ce qui a pu être couvert, fraîcheur des faits. Elle ne dit rien du potentiel du compte.",
+    "reliabilityQuality": "Qualité",
+    "reliabilityCoverage": "Couverture",
+    "reliabilityFreshness": "Fraîcheur",
+    "reliabilityValue": "{{value}}/100",
+    "reliabilityUnknownReason": "Cette dimension n’a pas pu être mesurée.",
+    "noGoTitle": "Pas maintenant",
+    "noGoTemporary": "Ce verdict est temporaire : il tient à un contexte daté, pas au compte.",
+    "noGoContext": "Ce qui bloque aujourd’hui : {{value}}",
+    "noGoTrigger": "Ce qui le ferait changer : {{value}}",
+    "profileIncomplete": "Mon analyse du compte est fiable, mais le fit avec ton ESN dépend de ton profil : {{fields}}.",
+    "profileIncompleteNoFields": "Mon analyse du compte est fiable, mais le fit avec ton ESN dépend de ton profil, qui n’est pas complet.",
+    "profileIncompleteLink": "Compléter mon profil",
+    "profileField": {
+      "offers": "Offres",
+      "sectors": "Secteurs cibles",
+      "positioning": "Positionnement",
+      "references": "Références clients",
+      "unknown": "un champ de ton profil"
+    },
+    "scopeTitle": "Quel périmètre viser ?",
+    "entryTitle": "Par quelle voie entrer ?",
+    "entryTargetProfile": "Profil visé : {{value}}",
+    "accessPathTitle": "Quelle voie d'achat ou d'accès ?",
+    "mainRiskTitle": "Quel est le principal risque ?"
+  },
+  "preparedMessages": {
+    "title": "Messages déjà préparés",
+    "subtitle": "Relire, corriger, puis envoyer : l'envoi reste ton geste.",
+    "duplicateWarning": {
+      "title": "Même texte parti à plusieurs personnes",
+      "line": "{{channel}} : {{names}} reçoivent exactement le même message."
+    },
+    "missing": {
+      "rerun": "Messages non préparés : relance l'analyse.",
+      "reason": "Les messages n'ont pas été rédigés (l'analyse a pu être interrompue avant cette étape).",
+      "action": "Préparer les messages"
+    },
+    "empty": {
+      "title": "Aucun message préparé pour ce compte.",
+      "action": "Ouvrir les contacts"
+    }
+  },
+  "keyNotes": {
+    "interpretationLabel": "Lecture : {{value}}",
+    "implicationLabel": "Implication : {{value}}",
+    "reliabilityLabel": "Fiabilité : {{value}}"
+  },
+  "structuralReading": {
+    "title": "Axes de lecture du compte"
+  },
+  "ecosystemThirdParties": {
+    "title": "Écosystème — acteurs tiers"
+  },
+  "opportunityDomains": {
+    "title": "Domaines d'opportunité"
+  },
+  "financialIndicators": {
+    "title": "Indicateurs financiers par périmètre"
+  },
+  "revision": {
+    "title": "Le verdict a changé",
+    "from": "Avant",
+    "to": "Maintenant",
+    "causes": "Pourquoi",
+    "unchangedSince": "Même verdict depuis le {{date}}",
+    "changedAt": "Changé le {{date}}"
+  },
+  "knownAccountValue": {
+    "newSignalsCounted_one": "{{count}} signal depuis ton dernier contact CRM ({{date}}) — détaillé dans les cartes ci-dessous",
+    "newSignalsCounted_other": "{{count}} signaux depuis ton dernier contact CRM ({{date}}) — détaillés dans les cartes ci-dessous",
+    "title": "Ce que {{brand}} ajoute à ce que tu sais",
+    "newSignals_one": "{{count}} signal depuis ton dernier contact CRM ({{date}}) : {{signals}}",
+    "newSignals_other": "{{count}} signaux depuis ton dernier contact CRM ({{date}}) : {{signals}}",
+    "contactsNotInCrm_one": "{{count}} contact absent de ton CRM : {{names}}",
+    "contactsNotInCrm_other": "{{count}} contacts absents de ton CRM, dont {{names}}"
+  },
+  "planSteps": {
+    "title": "Tes trois prochaines étapes",
+    "detailTitle": "Le détail du plan",
+    "channel": {
+      "email": "E-mail",
+      "linkedin": "LinkedIn",
+      "phone": "Appel"
+    },
+    "sameMessage": "Même message que l’étape {{number}}",
+    "prepare": "Préparer",
+    "contactTitle": "Plan pour {{firstName}}",
+    "generate": "Préparer un plan pour {{firstName}}",
+    "generating": "Préparation en cours…",
+    "generated": "Étapes ajoutées au plan du compte",
+    "generateFailed": "Impossible de préparer ce plan pour l'instant"
+  },
+  "knowledge": {
+    "counters": {
+      "aria": "Repères du dossier",
+      "entities_one": "entité documentée",
+      "entities_other": "entités documentées",
+      "needs_one": "besoin historique documenté",
+      "needs_other": "besoins historiques documentés",
+      "tjm_one": "relevé de TJM",
+      "tjm_other": "relevés de TJM",
+      "contacts_one": "contact dans le dossier",
+      "contacts_other": "contacts dans le dossier",
+      "interest": "intérêt commercial",
+      "axes": "{{measured}} axes sur {{total}}",
+      "scoreDialog": {
+        "title": "Score du dossier et ses axes",
+        "description": "Le score n’est jamais nu : chaque axe est nommé, et ceux qu’on n’a pas pu évaluer le sont aussi."
+      },
+      "interestBand": {
+        "strong": "Fort",
+        "medium": "Moyen",
+        "weak": "Faible"
+      }
+    }
+  },
+  "knowledgeScreen": {
+    "provenance": "Analyse du {{date}}",
+    "sourceScope": "Source & portée",
+    "nextEyebrow": "À faire ensuite",
+    "seePlan": "Voir le plan",
+    "seePeople": "Voir les interlocuteurs",
+    "cards": {
+      "knowEyebrow": "Ce que je sais",
+      "knowTitle": "Ce que le dossier permet de savoir",
+      "entitiesEyebrow": "Organisation",
+      "entitiesTitle": "Les entités à explorer",
+      "entitiesCta": "Explorer l’organisation",
+      "tjmEyebrow": "TJM historiques",
+      "tjmTitle": "Les tarifs relevés, par circuit",
+      "tjmCta": "Voir les observations",
+      "ecosystemEyebrow": "Écosystème",
+      "ecosystemTitle": "Les acteurs de l’écosystème",
+      "ecosystemCta": "Voir l’écosystème"
+    },
+    "moreEyebrow": "Pour aller plus loin",
+    "moreLead": "Les lectures de stratégie, repliées : ouvre seulement celle qui t’aide.",
+    "moreBrief": "Le brief du compte",
+    "moreReading": "Lectures du dossier",
+    "moreEvaluation": "Intérêt et axes du score"
+  },
+  "crmSays": {
+    "title": "Ce que dit ton CRM · {{tool}}",
+    "owner": "Propriétaire : {{name}}",
+    "stage": "Étape : {{stage}}",
+    "deals_one": "{{count}} affaire",
+    "deals_other": "{{count}} affaires",
+    "dealWithStage": "{{title}} — {{stage}}",
+    "activities_one": "{{count}} activité, la dernière le {{date}}",
+    "activities_other": "{{count}} activités, la dernière le {{date}}",
+    "fusion": "La fiche venue de {{tool}} a rejoint ce compte le {{date}}.",
+    "fusionUndo": "Annuler la fusion",
+    "fusionUndone": "Fusion annulée : les deux fiches sont de nouveau séparées.",
+    "fusionUndoError": "La fusion n’a pas pu être annulée.",
+    "fusionNamed": "La fiche « {{name}} » venue de {{tool}} a rejoint ce compte le {{date}}.",
+    "fieldFromCrm": "vient de {{tool}}",
+    "fieldHuman": "corrigé dans {{brand}}",
+    "customField": "{{label}} : {{value}}",
+    "fieldCrmVersionShow": "Voir la version de {{tool}}",
+    "fieldCrmVersionHide": "Masquer la version de {{tool}}",
+    "fieldCrmVersion": "{{tool}} : {{value}}"
+  },
+  "refreshNamed": {
+    "notConfirmed": "Non reconfirmés : {{names}}",
+    "newEntities": "Nouvelles entités : {{names}}"
+  },
+  "accountSections": {
+    "new": "Ce qui est nouveau",
+    "alreadyKnown": "Ce que nous savions déjà",
+    "alreadyKnownCounts": "{{facts}} faits et {{contacts}} contacts étaient déjà au dossier."
+  },
+  "entityQuestion": {
+    "title": "Plusieurs sociétés portent ce nom",
+    "body": "L’analyse est en pause après la recherche, avant les contacts et le plan. Choisis la bonne société : elle reprend aussitôt sur celle-ci.",
+    "siren": "SIREN {{siren}}",
+    "fallback": "Sans réponse dans quelques minutes, l’analyse reprend sur {{name}}.",
+    "answerFailed": "La réponse n’a pas pu être enregistrée. Réessaie."
+  }
+}

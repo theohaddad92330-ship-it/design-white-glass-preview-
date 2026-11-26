@@ -1,0 +1,198 @@
+{
+  "slug": "carrefour",
+  "company": "Carrefour",
+  "archetype": "grande_distribution",
+  "issue": "#2130.1",
+  "nature": "reel_source",
+  "as_of": "2026-09-15",
+  "_source": "Entreprise RÉELLE : chaque fait affirmé ci-dessous est relu dans ce dépôt (`app/eval/strategy/companies/<slug>.json`, bloc `registry` relevé le 2026-07-19 sur recherche-entreprises.api.gouv.fr — Annuaire des Entreprises, DINUM), avec son URL, sa date et sa trace. Tout ce que ces faits ne portent pas — décideurs, équipes, signaux, projets, voies d'accès — est déclaré NON MESURÉ et reste vide : l'écrire serait inventer un fait sous un nom réel, ce que le cadrage #2130.1-7 refuse.",
+  "facts": [
+    {
+      "key": "siren",
+      "value": "652014051",
+      "url": "https://recherche-entreprises.api.gouv.fr",
+      "date": "2026-07-19",
+      "trace": "app/eval/strategy/companies/carrefour.json#registry.siren"
+    },
+    {
+      "key": "denomination",
+      "value": "CARREFOUR",
+      "url": "https://recherche-entreprises.api.gouv.fr",
+      "date": "2026-07-19",
+      "trace": "app/eval/strategy/companies/carrefour.json#registry.denomination"
+    },
+    {
+      "key": "categorie_entreprise",
+      "value": "GE",
+      "url": "https://recherche-entreprises.api.gouv.fr",
+      "date": "2026-07-19",
+      "trace": "app/eval/strategy/companies/carrefour.json#registry.categorie_entreprise"
+    },
+    {
+      "key": "naf_siege",
+      "value": "64.20Z",
+      "url": "https://recherche-entreprises.api.gouv.fr",
+      "date": "2026-07-19",
+      "trace": "app/eval/strategy/companies/carrefour.json#registry.naf_siege"
+    },
+    {
+      "key": "tranche_effectif_label",
+      "value": "3 à 5 salariés",
+      "url": "https://recherche-entreprises.api.gouv.fr",
+      "date": "2026-07-19",
+      "trace": "app/eval/strategy/companies/carrefour.json#registry.tranche_effectif_label"
+    },
+    {
+      "key": "annee_effectif",
+      "value": "2023",
+      "url": "https://recherche-entreprises.api.gouv.fr",
+      "date": "2026-07-19",
+      "trace": "app/eval/strategy/companies/carrefour.json#registry.annee_effectif"
+    },
+    {
+      "key": "commune_siege",
+      "value": "MASSY",
+      "url": "https://recherche-entreprises.api.gouv.fr",
+      "date": "2026-07-19",
+      "trace": "app/eval/strategy/companies/carrefour.json#registry.commune_siege"
+    },
+    {
+      "key": "code_postal_siege",
+      "value": "91300",
+      "url": "https://recherche-entreprises.api.gouv.fr",
+      "date": "2026-07-19",
+      "trace": "app/eval/strategy/companies/carrefour.json#registry.code_postal_siege"
+    }
+  ],
+  "expected": {
+    "identite": {
+      "status": "attendu",
+      "contient": [
+        "CARREFOUR",
+        "652014051"
+      ]
+    },
+    "perimetre": {
+      "status": "attendu",
+      "contient": [
+        "MASSY",
+        "64.20Z"
+      ]
+    },
+    "decideurs": {
+      "status": "non_mesure",
+      "raison": "Aucune source vérifiée (URL + date) de ce dépôt ne nomme un décideur de ce compte."
+    },
+    "contacts_a_ne_pas_recommander": {
+      "status": "non_mesure",
+      "raison": "Sans décideur sourcé, il n'y a personne à écarter : rien n'est affirmé."
+    },
+    "equipes_cles": {
+      "status": "non_mesure",
+      "raison": "Aucune source vérifiée de ce dépôt ne décrit une équipe de ce compte."
+    },
+    "signaux": {
+      "status": "non_mesure",
+      "raison": "Aucun signal daté et sourcé dans ce dépôt pour ce compte."
+    },
+    "projets": {
+      "status": "non_mesure",
+      "raison": "Aucun projet sourcé dans ce dépôt pour ce compte."
+    },
+    "partenaires": {
+      "status": "non_mesure",
+      "raison": "La mémoire marché n'est pas relue par ce golden : rien n'est affirmé ici, ni dans un sens ni dans l'autre."
+    },
+    "acces": {
+      "status": "non_mesure",
+      "raison": "Aucune voie d'accès sourcée dans ce dépôt pour ce compte."
+    },
+    "recommandations": {
+      "status": "attendu",
+      "contient": [
+        "652014051"
+      ]
+    },
+    "gaps": {
+      "status": "attendu",
+      "contient": [
+        "décideurs"
+      ]
+    },
+    "sources": {
+      "status": "attendu",
+      "contient": [
+        "recherche-entreprises.api.gouv.fr"
+      ]
+    },
+    "action_suivante": {
+      "status": "attendu",
+      "contient": [
+        "652014051"
+      ]
+    }
+  },
+  "dossier": {
+    "identite": {
+      "name": "CARREFOUR",
+      "siren": "652014051"
+    },
+    "perimetre": {
+      "scope": "unite_legale",
+      "entities": [
+        "CARREFOUR — unité légale 652014051, siège MASSY 91300, NAF 64.20Z, catégorie GE"
+      ]
+    },
+    "decideurs": [],
+    "contacts_a_ne_pas_recommander": [],
+    "equipes_cles": [],
+    "signaux": [],
+    "projets": [],
+    "partenaires": [],
+    "acces": [],
+    "recommandations": [
+      {
+        "id": "reco-perimetre",
+        "text": "Ne pas lire la taille du compte sur l'unité légale 652014051 : ce SIREN, en NAF 64.20Z au siège de MASSY, déclare une tranche de 3 à 5 salariés.",
+        "why": "L'unité légale de tête relevée au registre est une société de portefeuille : un chiffrage posé sur sa tranche d'effectif viserait une structure qui n'emploie presque personne.",
+        "target": null,
+        "evidence": [
+          "src-registre"
+        ]
+      }
+    ],
+    "gaps": [
+      "décideurs non identifiés dans une source vérifiée",
+      "entités opérationnelles non relevées",
+      "aucun signal daté et sourcé"
+    ],
+    "sources": [
+      {
+        "id": "src-registre",
+        "url": "https://recherche-entreprises.api.gouv.fr",
+        "date": "2026-07-19",
+        "label": "registre public des entreprises"
+      }
+    ],
+    "action_suivante": {
+      "text": "Relever au registre les entités opérationnelles rattachées à l'unité légale 652014051 avant tout ciblage",
+      "target": null,
+      "evidence": [
+        "src-registre"
+      ]
+    }
+  },
+  "cas": [
+    {
+      "id": "cas-generique",
+      "text": "Proposer une offre de renfort pour accompagner les projets de croissance et la stratégie data du groupe.",
+      "why": "Ce groupe doit valoriser ses données pour gagner en performance.",
+      "target": null,
+      "evidence": [
+        "src-registre"
+      ],
+      "label": "generic",
+      "_jugement": "Pas un fait du compte : la phrase tient sur n'importe quelle enseigne."
+    }
+  ]
+}

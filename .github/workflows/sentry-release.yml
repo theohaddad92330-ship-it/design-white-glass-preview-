@@ -1,0 +1,83 @@
+name: Sentry release
+
+# Décision Louis 19/10/2026 : une release Sentry par push sur main, pour chacun
+# des 3 projets (API, IA, web) — commits associés + marqueur de déploiement
+# `production`. Sans SENTRY_AUTH_TOKEN le job saute proprement (no-op strict).
+# Les source maps du web sont envoyées au build Vercel (plugin Vite), pas ici.
+
+on:
+  push:
+    branches: [main]
+  workflow_dispatch:
+
+permissions:
+  contents: read
+
+concurrency:
+  group: sentry-release-${{ github.sha }}
+  cancel-in-progress: false
+
+jobs:
+  release:
+    name: Release ${{ matrix.service }}
+    runs-on: ${{ vars.CI_RUNS_ON || 'ubuntu-latest' }}
+    strategy:
+      fail-fast: false
+      matrix:
+        include:
+          - service: api
+            project_var: SENTRY_PROJECT_API
+          - service: ia
+            project_var: SENTRY_PROJECT_IA
+          - service: web
+            project_var: SENTRY_PROJECT_WEB
+    env:
+      SENTRY_AUTH_TOKEN: ${{ secrets.SENTRY_AUTH_TOKEN }}
+      SENTRY_ORG: bellumai
+      SENTRY_URL: https://de.sentry.io
+      # Slug du projet : variable de dépôt (SENTRY_PROJECT_API / _IA / _WEB).
+      SENTRY_PROJECT_SLUG: ${{ matrix.service == 'api' && vars.SENTRY_PROJECT_API || matrix.service == 'ia' && vars.SENTRY_PROJECT_IA || vars.SENTRY_PROJECT_WEB }}
+      RELEASE: ${{ github.sha }}
+    steps:
+      - name: Vérifier la configuration
+        id: gate
+        run: |
+          if [ -z "$SENTRY_AUTH_TOKEN" ]; then
+            echo "SENTRY_AUTH_TOKEN absent : release Sentry sautée."
+            echo "run=false" >> "$GITHUB_OUTPUT"
+          elif [ -z "$SENTRY_PROJECT_SLUG" ]; then
+            echo "Variable de dépôt ${{ matrix.project_var }} absente : release sautée pour ${{ matrix.service }}."
+            echo "run=false" >> "$GITHUB_OUTPUT"
+          else
+            echo "run=true" >> "$GITHUB_OUTPUT"
+          fi
+
+      - name: Checkout (historique complet pour set-commits)
+        if: steps.gate.outputs.run == 'true'
+        uses: actions/checkout@v7
+        with:
+          fetch-depth: 0
+
+      - uses: actions/setup-node@v7
+        if: steps.gate.outputs.run == 'true'
+        with:
+          node-version: 22
+
+      # `getsentry/action-release` tire une image Docker : les runners Hetzner
+      # n'ont pas docker (« docker: command not found » à chaque push depuis le
+      # 19/10). Même séquence, faite par `sentry-cli` via npx.
+      - name: Créer la release, associer les commits, finaliser
+        if: steps.gate.outputs.run == 'true'
+        env:
+          SENTRY_PROJECT: ${{ env.SENTRY_PROJECT_SLUG }}
+        run: |
+          npx --yes @sentry/cli@2 releases new "$RELEASE"
+          npx --yes @sentry/cli@2 releases set-commits "$RELEASE" --auto --ignore-missing
+          npx --yes @sentry/cli@2 releases finalize "$RELEASE"
+
+      - name: Marqueur de déploiement (production)
+        if: steps.gate.outputs.run == 'true'
+        env:
+          SENTRY_PROJECT: ${{ env.SENTRY_PROJECT_SLUG }}
+        run: |
+          npx --yes @sentry/cli@2 releases deploys "$RELEASE" new -e production

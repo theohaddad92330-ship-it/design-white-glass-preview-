@@ -1,0 +1,210 @@
+{
+  "loading": "Je charge le paysage de ce compte…",
+  "added": "Ajouté.",
+  "addFailed": "Je n’ai pas pu ajouter cette ESN.",
+  "detected": "détecté",
+  "score": "{{score}}/100",
+  "scoreUnknown": "Score non mesurable — rang et relation inconnus",
+  "recommendations": {
+    "title": "Par où entrer, périmètre par périmètre"
+  },
+  "play": {
+    "direct": "En direct",
+    "through_partner": "Par le partenaire",
+    "displace": "Déloger",
+    "find_out": "Aller chercher l’info",
+    "target_other_subsidiary": "Viser une autre filiale",
+    "differentiate": "Se différencier"
+  },
+  "rank": {
+    "rank1": "Rang 1",
+    "rank2": "Rang 2",
+    "unknown": "Rang inconnu"
+  },
+  "relationship": {
+    "partner": "Partenaire",
+    "competitor": "Concurrent",
+    "unknown": "Relation inconnue"
+  },
+  "list": {
+    "title": "Les ESN présentes",
+    "titleWithCount_one": "Les ESN présentes ({{count}})",
+    "titleWithCount_other": "Les ESN présentes ({{count}})",
+    "empty": {
+      "title": "Je n’ai identifié aucune ESN en place sur ce compte.",
+      "description": "Ça ne veut pas dire qu’il n’y en a pas. Déclare qui est en place : c’est ce qui décide si on attaque en direct ou par quelqu’un."
+    },
+    "placeholder": "Nom de l’ESN…",
+    "add": "Ajouter",
+    "fieldLabel": "Nom de l’ESN à déclarer",
+    "suggestions": {
+      "groupLabel": "ESN de notre référentiel",
+      "searching": "Je cherche dans notre référentiel…",
+      "none": "Aucune ESN de notre référentiel ne correspond. Tu peux quand même la déclarer : le référentiel ne connaît pas tout le marché.",
+      "unavailable": "Le référentiel n’a pas répondu — ce n’est pas « aucune ESN ne correspond ». Réessaie, ou saisis le nom à la main.",
+      "parent": "groupe {{name}}"
+    }
+  },
+  "certainty": {
+    "forte": "indices solides",
+    "moyenne": "indices probables",
+    "faible": "à vérifier"
+  },
+  "detectedOn": "détecté le {{date}}",
+  "declaredBy": "Déclarée par {{name}} le {{date}}",
+  "declaredByUnknown": "Auteur inconnu — déclarée avant le {{date}}",
+  "dismiss": {
+    "action": "Ce n’est pas exact",
+    "ask": "Pourquoi cette ESN n’est-elle pas en place ici ?",
+    "done": "Corrigé — cette ESN ne remontera plus sur ce compte.",
+    "failed": "La correction n’a pas pu être enregistrée"
+  },
+  "observed": {
+    "title": "Sociétés de services observées autour de ce compte",
+    "caveat": "Des parcours professionnels relient ces sociétés à ce compte. C’est une observation structurelle : elle ouvre un chemin potentiel à qualifier, elle ne prouve pas une intervention actuelle.",
+    "persons_one": "{{count}} parcours observé",
+    "persons_other": "{{count}} parcours observés",
+    "alsoKnown": "Déjà dans ta liste",
+    "relationTitle": "Relation d’écosystème observée",
+    "pathsSentence_one": "{{count}} parcours observé relie {{name}} à cet environnement.",
+    "pathsSentence_other": "{{count}} parcours observés relient {{name}} à cet environnement.",
+    "pathsSentenceRange": "{{range}} parcours observés relient {{name}} à cet environnement."
+  },
+  "evidence": {
+    "workspace_declared": "Déclarée par ton équipe",
+    "market_observation": "Historique observé",
+    "current_inference": "Source actuelle",
+    "declared_subcontracting": "Rang 2 déclaré",
+    "converging": "Une source récente va également dans ce sens.",
+    "diverging": "Une source récente dit autre chose. Les deux sont affichées : c’est à toi de trancher, pas à nous.",
+    "currentAssessment": "Source actuelle : {{value}}",
+    "marketAssessment": "Observations du marché : {{value}}"
+  },
+  "relation": {
+    "partnerRoute": "Route partenaire potentielle"
+  },
+  "cta": {
+    "qualify": "Qualifier cette relation",
+    "qualifyAria": "Qualifier la relation avec {{name}} — la déclare dans ton espace",
+    "qualifyKnownAria": "Qualifier la relation avec {{name}} — ouvre le choix du rang et de la relation",
+    "verifyToday": "Vérifier aujourd’hui",
+    "verifyTodayAria": "Vérifier {{name}} aujourd’hui — ouvre l’écran d’analyse, qui annonce le coût avant",
+    "openDetailAria": "Voir le détail de {{name}}"
+  },
+  "qualifyForm": {
+    "open": "Qualifier",
+    "openAria": "Qualifier {{name}} — dis son rang et de quel côté elle est",
+    "rankLabel": "Rang",
+    "rankAria": "Rang de {{name}} sur ce compte",
+    "relationshipLabel": "Pour nous",
+    "relationshipAria": "Ce que {{name}} est pour nous sur ce compte",
+    "noteLabel": "Information terrain",
+    "noteAria": "Information terrain sur {{name}}",
+    "competitiveRiskLabel": "Risque concurrentiel",
+    "competitiveRiskAria": "Risque concurrentiel de {{name}}",
+    "complementarityLabel": "Complémentarité",
+    "complementarityAria": "Comment {{name}} complète le périmètre déjà couvert",
+    "nextVerificationLabel": "Prochaine vérification",
+    "nextVerificationAria": "Date de prochaine vérification de {{name}}",
+    "governanceLinkLabel": "Relation partenaire liée (cadre, marge, non-sollicitation…)",
+    "governanceLinkAria": "Relation partenaire gouvernée liée à {{name}}",
+    "governanceLinkNone": "Aucune",
+    "save": "Enregistrer",
+    "saveAria": "Enregistrer la qualification de {{name}}",
+    "cancel": "Annuler",
+    "done": "Qualification enregistrée.",
+    "failed": "La qualification n’a pas été enregistrée.",
+    "rank2Qualification": {
+      "title": "Qualification du rang 2 (avant tout CV ou positionnement)",
+      "criterionAria": "{{criterion}} pour {{name}}",
+      "criteria": {
+        "scope_accessible": "Compte ou périmètre accessible",
+        "brief_precise": "Brief précis",
+        "contact_accountable": "Interlocuteur responsable identifié",
+        "economics_clear": "Économie claire",
+        "next_steps_ready": "Prochaines étapes prêtes"
+      },
+      "triState": {
+        "yes": "Oui",
+        "no": "Non",
+        "unknown": "Non mesuré"
+      }
+    }
+  },
+  "detail": {
+    "dialogDescription": "Détail de la relation avec cette ESN : périmètre, preuves, et les actions possibles.",
+    "previousPartner": "ESN précédente",
+    "nextPartner": "ESN suivante",
+    "competitiveRiskLabel": "Risque concurrentiel",
+    "complementarityLabel": "Complémentarité",
+    "nextVerificationLabel": "Prochaine vérification : {{date}}",
+    "governanceSectionTitle": "Cadre partenaire (rang 2)",
+    "governanceLink": "Voir le cadre dans Partenaires",
+    "governanceLinkAria": "Voir le cadre partenaire de {{name}}",
+    "governance": {
+      "title": "Cadre de la relation",
+      "framed": "{{count}}/18 dimensions cadrées",
+      "risk": {
+        "none": "Cadre complet",
+        "attention": "Cadre incomplet",
+        "blocking": "Cadre insuffisant — bloquant"
+      },
+      "missingLabel": "Manque encore :",
+      "dimensions": {
+        "entry_door": "porte d’entrée",
+        "accounts_accessible": "comptes accessibles",
+        "accounts_forbidden": "comptes interdits",
+        "profiles_sought": "profils recherchés",
+        "domains_covered": "domaines couverts",
+        "margin_floor": "marge minimale",
+        "margin_share": "marge ou partage",
+        "account_ownership": "propriétaire de la relation client",
+        "action_ownership": "propriétaire du consultant",
+        "non_circumvention": "clause de non-contournement",
+        "presentation_terms": "conditions de présentation",
+        "payment_terms": "délais de paiement",
+        "delays": "délais",
+        "counterpart_contacts": "interlocuteurs des deux côtés",
+        "duration": "durée",
+        "exit_conditions": "règles de fin/renouvellement",
+        "referencing_proof": "preuve de référencement",
+        "confidentiality": "confidentialité"
+      },
+      "marginFloor": "Marge minimale : {{percent}} %",
+      "marginShare": "Marge ou partage : {{percent}} %",
+      "marginDestroyed": "Le partage convenu ({{share}} %) est SOUS la marge minimale ({{floor}} %) : ce rang 2 détruit la marge.",
+      "accountOwnership": {
+        "label": "Qui possède la relation client",
+        "ours": "Nous",
+        "partner": "Le partenaire",
+        "shared": "Partagée"
+      },
+      "actionOwnership": {
+        "label": "Qui possède le consultant",
+        "ours": "Nous",
+        "partner": "Le partenaire",
+        "shared": "Partagée"
+      },
+      "paymentTerms": "Délais de paiement : {{terms}}",
+      "durationTerms": "Durée : {{terms}}",
+      "exitConditions": "Fin / renouvellement : {{terms}}",
+      "ourContact": "Notre interlocuteur : {{name}}",
+      "partnerContact": "Interlocuteur côté partenaire : {{name}}",
+      "directApproachForbidden": "Clause de non-sollicitation déclarée : ne pas contourner ce partenaire, aucune approche directe du client final.",
+      "editLink": "Cadrer cette relation dans Partenaires",
+      "referencingProof": "Preuve du référencement : {{proof}}",
+      "confidence": "Confiance : {{value}}"
+    }
+  },
+  "knownContacts": {
+    "title": "Contacts connus dans ton espace",
+    "none": "Aucun contact connu pour cette ESN.",
+    "prepare": "Préparer un message",
+    "prepareAria": "Préparer un message pour {{name}} ({{esn}})"
+  },
+  "workspaceRelation": {
+    "badge": "Dans ton portefeuille",
+    "link": "Voir la fiche compte",
+    "linkAria": "Voir la fiche de {{name}} dans ton portefeuille"
+  }
+}

@@ -1,0 +1,15 @@
+{
+  "name": "@bellum/ia",
+  "version": "0.0.1",
+  "private": true,
+  "scripts": {
+    "dev": "./start.sh",
+    "build": "echo 'No build step for Python'",
+    "test": "pytest",
+    "test:contracts": "pytest -m upstream_contract -p no:randomly tests/contracts",
+    "eval:gate": "./scripts/eval_gate.sh",
+    "eval:gate:chat": "./scripts/eval_gate_chat.sh",
+    "lint": "echo 'TODO: ruff check'",
+    "lint:arch": "lint-imports --config .importlinter"
+  }
+}

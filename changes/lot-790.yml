@@ -1,0 +1,24 @@
+lot: lot-790
+issues: [5212, 5203]
+
+changelog:
+  id: 2026-11-04-lot-790-decouvrir-concurrence
+  comment: 'Lot 790 (#5212 #5203) — recherche par compétence : plus de premier lot concurrent, identités du cache rendues, arrêt à 2× la limite ; compte des cartes retirées, Historique par nom, entonnoir coupé'
+  fr:
+    date: 4 novembre 2026
+    title: La recherche par compétence ne se fait plus concurrence
+    items:
+      - Une recherche par compétence ne lance plus qu'un seul appel: elle ne se dispute plus le registre avec elle-même et ne revient plus vide.
+      - Les employeurs déjà vérifiés sont rendus même quand le délai est écoulé, et la vérification s'arrête dès que la liste est garnie ; le reste est annoncé « à vérifier ».
+      - « Besoins connus » compte une carte retirée par société, comme l'écran les montre.
+      - L'Historique des signaux regroupe « Decathlon » et « DECATHLON » en une seule ligne.
+      - Une recherche coupée avant la vérification n'affiche plus « 0 trouvés · 0 retenus ».
+  en:
+    date: November 4, 2026
+    title: Skill search no longer competes with itself
+    items:
+      - A skill search now makes a single call: it no longer fights itself for the registry and no longer comes back empty.
+      - Employers already verified are returned even when time has run out, and verification stops once the list is full; the rest is announced as "still to verify".
+      - '"Known needs" counts one removed card per company, as the screen shows them.'
+      - The signals History merges "Decathlon" and "DECATHLON" into one row.
+      - A search cut before verification no longer shows "0 found · 0 kept".

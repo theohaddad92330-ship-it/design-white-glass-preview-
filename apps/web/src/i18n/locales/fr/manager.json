@@ -1,0 +1,1062 @@
+{
+  "states": {
+    "loading": "Chargement des statistiques d’équipe…"
+  },
+  "errors": {
+    "forbidden": "Vue réservée aux managers (propriétaire ou admin de l’espace).",
+    "load": "Impossible de charger les statistiques d’équipe."
+  },
+  "missionsHygiene": {
+    "endDate": "Missions sans date de fin",
+    "endDateHint": "Aucune alerte de renouvellement ne se déclenchera jamais dessus.",
+    "cost": "Missions sans coût chargé",
+    "costHint": "Leur marge n’est pas mesurable tant que le coût n’est pas saisi."
+  },
+  "totals": {
+    "accounts": "Comptes",
+    "contacts": "Contacts",
+    "emailsSent": "Emails envoyés"
+  },
+  "sharedActions": {
+    "title": "Actions à traiter (partagées)",
+    "summary": "{{open}} ouvertes · {{overdue}} en retard · {{delegated}} déléguées",
+    "tabs": {
+      "all": "Tout",
+      "mine": "Mes actions",
+      "delegated": "Déléguées à moi"
+    },
+    "badgeOverdue": "En retard",
+    "due": "Échéance {{date}}",
+    "noDue": "Sans échéance",
+    "assignedTo": "Assignée à {{name}}",
+    "ownedBy": "Plan de {{name}}",
+    "truncated_one": "L’action la plus urgente est affichée ; la file en compte {{total}}.",
+    "truncated_other": "Les {{count}} actions les plus urgentes sont affichées ; la file en compte {{total}}.",
+    "emptyFiltered": "Aucune action ouverte dans cette vue.",
+    "empty": "Aucune action ouverte dans l’équipe."
+  },
+  "routines": {
+    "title": "Routines de l’équipe",
+    "subtitle": "Vue d’ensemble, lecture seule — chaque membre reste seul à régler ses propres routines.",
+    "lastFailed": "Dernière exécution en échec"
+  },
+  "playbooks": {
+    "title": "Playbooks partagés",
+    "subtitle": "Les méthodes de vente de ton équipe, partagées dans l’espace de travail.",
+    "openKnowledge": "Ouvrir les Connaissances",
+    "kind": {
+      "playbook": "Playbook",
+      "method_playbook": "Méthode"
+    },
+    "truncated_one": "1 playbook affiché sur {{total}}.",
+    "truncated_other": "{{count}} playbooks affichés sur {{total}}."
+  },
+  "activity": {
+    "unknownMember": "Membre inconnu",
+    "events": {
+      "analysis_started": "a lancé une analyse",
+      "analysis_completed": "a terminé une analyse",
+      "message_sent": "a envoyé un message",
+      "message_copied": "a copié un message",
+      "export": "a exporté des données",
+      "rdv_obtained": "a décroché un rendez-vous",
+      "response_received": "a reçu une réponse",
+      "deal_signed": "a signé une affaire",
+      "crm_task_created": "a créé une tâche CRM",
+      "plan_action_added": "a ajouté une action au plan",
+      "plan_action_completed": "a terminé une action du plan",
+      "plan_action_uncompleted": "a rouvert une action du plan",
+      "plan_action_assigned": "a délégué une action du plan",
+      "plan_action_rescheduled": "a replanifié une action du plan",
+      "plan_action_message_sent": "a envoyé un message depuis le plan",
+      "plan_action_contact_opened": "a ouvert un contact depuis le plan",
+      "plan_action_enrichment_requested": "a demandé un enrichissement",
+      "plan_action_skipped": "a passé une action du plan",
+      "plan_action_opened": "a ouvert une action du plan",
+      "plan_action_message_generated": "a généré un message depuis le plan",
+      "plan_action_message_copied": "a copié un message depuis le plan",
+      "plan_action_call_prepared": "a préparé un appel",
+      "plan_action_call_logged": "a consigné un appel",
+      "plan_action_linkedin_opened": "a ouvert un profil sur le réseau professionnel depuis le plan",
+      "account_score_changed": "a vu le score d’un compte évoluer",
+      "profile_updated": "a mis à jour le profil ESN",
+      "need_play_generated": "a préparé le plan d’attaque d’un besoin",
+      "commercial_status_changed": "a changé le statut commercial",
+      "unknown": "a fait une action"
+    }
+  },
+  "footer": {
+    "hosting": "Données de ton équipe hébergées dans l’Union européenne."
+  },
+  "coverage": {
+    "title": "Comptes par propriétaire",
+    "summary": "{{assigned}} / {{total}} comptes attribués ({{percent}} %)",
+    "unassigned_one": "{{count}} compte n’est porté par personne.",
+    "unassigned_other": "{{count}} comptes ne sont portés par personne.",
+    "allAssigned": "Tous les comptes actifs ont un responsable.",
+    "empty": "Aucun compte pour le moment."
+  },
+  "coverageMap": {
+    "title": "Carte de couverture",
+    "subtitle": "Qui couvre quel secteur, quel territoire, quel persona — et surtout ce que personne ne couvre.",
+    "axis": {
+      "sectors": "Secteurs",
+      "territories": "Territoires",
+      "personas": "Personas"
+    },
+    "unit": {
+      "accounts_one": "{{count}} compte",
+      "accounts_other": "{{count}} comptes",
+      "contacts_one": "{{count}} contact",
+      "contacts_other": "{{count}} contacts"
+    },
+    "whiteSpace": "Périmètre non couvert — personne ne porte ces comptes.",
+    "unassigned_one": "dont {{count}} compte sans responsable",
+    "unassigned_other": "dont {{count}} comptes sans responsable",
+    "persona": {
+      "technical": "Technique (DSI, CTO, RSSI)",
+      "economic": "Économique (budget)",
+      "procurement": "Achats",
+      "user": "Métier / utilisateur",
+      "champion": "Champion",
+      "influencer": "Prescripteur",
+      "blocker": "Bloqueur"
+    }
+  },
+  "unassigned": {
+    "title": "Comptes sans responsable",
+    "subtitle": "Choisis le responsable de chaque compte. Un compte sans responsable n’est suivi par personne.",
+    "placeholder": "Attribuer à…",
+    "assignLabel": "Attribuer {{company}} à un membre",
+    "noSector": "Secteur inconnu",
+    "score": "priorité {{score}}",
+    "more_one": "et {{count}} autre compte non attribué.",
+    "more_other": "et {{count}} autres comptes non attribués."
+  },
+  "assign": {
+    "assigned": "Compte attribué.",
+    "released": "Compte remis dans la liste à attribuer.",
+    "forbidden": "Tu n’as pas le droit d’attribuer ce compte.",
+    "failed": "Impossible d’attribuer ce compte."
+  },
+  "pipeline": {
+    "title": "Contacts à traiter",
+    "status": {
+      "new": "Nouveau",
+      "contacted": "Contacté",
+      "replied": "Répondu",
+      "meeting": "RDV",
+      "won": "Gagné",
+      "lost": "Perdu",
+      "archived": "Archivé"
+    }
+  },
+  "roles": {
+    "owner": "Propriétaire",
+    "admin": "Admin",
+    "sales_ops": "Sales Ops",
+    "sales": "Commercial",
+    "tech_admin": "Admin technique",
+    "member": "Membre",
+    "viewer": "Lecture seule"
+  },
+  "table": {
+    "inactiveCause": {
+      "role": "Rôle lecture seule",
+      "noPortfolio": "Aucun compte attribué"
+    }
+  },
+  "pipelineValue": {
+    "title": "Pipeline partagé",
+    "scope": "Affaires encore en jeu. Le signé, le perdu et le dormant n’entrent pas dans ce total.",
+    "valued_one": "{{formatted}} opportunité chiffrée",
+    "valued_other": "{{formatted}} opportunités chiffrées",
+    "noneValued": "Aucune opportunité chiffrée pour l’instant.",
+    "stageValued": "{{valued}}/{{total}} chiffrées",
+    "withoutAmount_one": "{{formatted}} opportunité sans montant — non comptée dans le total.",
+    "withoutAmount_other": "{{formatted}} opportunités sans montant — non comptées dans le total."
+  },
+  "objectives": {
+    "title": "Objectifs de l’équipe",
+    "subtitle": "Chaque commercial fixe sa cible du mois ; l’atteinte se lit sur des données réelles.",
+    "myTitle": "Mon objectif du mois",
+    "teamTitle": "Atteinte de l’équipe",
+    "teamEmpty": "Aucun objectif déclaré ce mois-ci.",
+    "axis": {
+      "meetings": "Rendez-vous",
+      "accounts": "Comptes",
+      "revenue": "Chiffre d’affaires",
+      "revenueEur": "Chiffre d’affaires (€)"
+    },
+    "progress": "{{achieved}} / {{target}} ({{percent}} %)",
+    "save": "Enregistrer mon objectif",
+    "saving": "Enregistrement…",
+    "saved": "Objectif enregistré.",
+    "define": "Définir mon objectif",
+    "adjust": "Ajuster mes objectifs",
+    "dialogTitle": "Tes objectifs du mois"
+  },
+  "teamComments": {
+    "title": "Les sujets ouverts",
+    "subtitle": "Commentaires liés au travail et aux dossiers. Les conversations privées ne sont pas agrégées.",
+    "inputLabel": "Le point à partager",
+    "placeholder": "Une idée, un retour terrain, un point de coordination…",
+    "share": "Partager un point",
+    "sharing": "Envoi…",
+    "empty": "Aucun sujet partagé pour l’instant. Lance la conversation.",
+    "onAccount": "À propos de {{company}}",
+    "region": "Échanges d’équipe",
+    "shareTitle": "Partager un point d’équipe",
+    "shareBody": "Le point reste dans l’espace Équipe. Rien ne part en dehors.",
+    "shareSend": "Partager",
+    "accountLabel": "Compte concerné",
+    "noAccount": "Aucun compte",
+    "mentionLabel": "Mentionner",
+    "status": {
+      "open": "À discuter",
+      "resolved": "Résolu"
+    },
+    "reply": "Répondre",
+    "replyTitle": "Répondre au sujet",
+    "replyLabel": "Ta réponse",
+    "replySend": "Répondre",
+    "replies": "Réponses",
+    "resolve": "Marquer résolu",
+    "reopen": "Rouvrir"
+  },
+  "coaching": {
+    "sectionTitle": "Coaching",
+    "staleOpportunities_one": "{{count}} opportunité sans action depuis {{days}} jours",
+    "staleOpportunities_other": "{{count}} opportunités sans action depuis {{days}} jours",
+    "why": "Un fait daté à apporter en échange individuel — jamais un score, jamais un classement entre commerciaux."
+  },
+  "board": {
+    "fallbackTitle": "Ton équipe",
+    "members": "Membres de l’équipe",
+    "period": {
+      "label": "Période du tableau",
+      "days_7": "7 jours",
+      "days_30": "30 jours",
+      "days_90": "90 jours",
+      "delta": "{{sign}}{{value}} vs les {{days}} j précédents",
+      "stable": "stable vs les {{days}} j précédents"
+    },
+    "review": {
+      "label": "Préparer ma revue d’équipe",
+      "question": "Prépare ma revue d’équipe : ce qui demande un arbitrage, les affaires sans prochaine étape, et où chacun en est cette période."
+    },
+    "manageMembers": "Gérer les membres",
+    "toHandle": {
+      "eyebrow": "À traiter",
+      "title_one": "{{count}} point à arbitrer",
+      "title_other": "{{count}} points à arbitrer",
+      "clear": "Rien à arbitrer.",
+      "overdue": {
+        "title_one": "{{count}} action en retard dans l’équipe",
+        "title_other": "{{count}} actions en retard dans l’équipe",
+        "cta": "Voir les actions"
+      },
+      "duplicate": {
+        "title": "{{company}} est travaillé par {{names}}",
+        "cta": "Ouvrir le compte"
+      },
+      "duplicateMore_one": "et {{count}} autre compte travaillé en double",
+      "duplicateMore_other": "et {{count}} autres comptes travaillés en double",
+      "awaitingEsn": {
+        "title": "{{name}} attend que tu décrives l’ESN",
+        "cta": "Décrire l’ESN"
+      },
+      "unassigned": {
+        "title_one": "{{count}} compte sans responsable",
+        "title_other": "{{count}} comptes sans responsable",
+        "cta": "Les attribuer"
+      },
+      "stale": {
+        "title_one": "{{count}} compte en veille depuis {{days}} j ou plus",
+        "title_other": "{{count}} comptes en veille depuis {{days}} j ou plus",
+        "cta": "Voir qui les porte"
+      },
+      "whiteSpace": {
+        "title_one": "{{count}} périmètre que personne ne couvre",
+        "title_other": "{{count}} périmètres que personne ne couvre",
+        "cta": "Voir la couverture"
+      },
+      "pendingInvitations": {
+        "title_one": "{{count}} invitation en attente de réponse",
+        "title_other": "{{count}} invitations en attente de réponse",
+        "cta": "Voir les invitations"
+      }
+    },
+    "pulse": {
+      "eyebrow": "Pouls de l’équipe",
+      "title": "Ce que l’équipe a fait sur {{days}} jours",
+      "analyses": "Analyses lancées",
+      "actionsDone": "Actions terminées",
+      "meetings": "RDV obtenus (déclarés)",
+      "meetingsHint": "Déclarés par le commercial, pas vérifiés dans un agenda.",
+      "activeAccounts": "Comptes actifs",
+      "openNeeds": "Besoins ouverts",
+      "openNeedsHint": "Besoins apparus sur la période."
+    },
+    "reps": {
+      "eyebrow": "Par commercial",
+      "title_one": "{{count}} personne dans l’équipe",
+      "title_other": "{{count}} personnes dans l’équipe",
+      "sortedByName": "Rangé par nom — jamais par performance.",
+      "columns": {
+        "member": "Membre",
+        "portfolio": "Portefeuille",
+        "openActions": "Actions ouvertes",
+        "overdue": "Dont en retard",
+        "activity": "Activité ({{days}} j)",
+        "lastSeen": "Dernier passage"
+      },
+      "open": "Voir le portefeuille de {{name}}",
+      "portfolioTitle": "Portefeuille de {{name}}",
+      "portfolioDescription": "Ce que {{name}} porte aujourd’hui dans l’espace.",
+      "portfolioLoading": "Lecture du portefeuille…",
+      "portfolioFailed": "Le portefeuille n’a pas pu être lu.",
+      "seeAccounts": "Ouvrir la liste des comptes"
+    },
+    "pipelineReview": {
+      "eyebrow": "Revue de pipeline",
+      "title_one": "{{count}} affaire demande un geste",
+      "title_other": "{{count}} affaires demandent un geste",
+      "titleClear": "Aucune affaire en attente d’un geste",
+      "reasons": {
+        "no_next_step": "Sans prochaine étape",
+        "no_activity": "Sans activité depuis plus de {{days}} j",
+        "stuck": "Même étape depuis plus de {{days}} j"
+      },
+      "owner": "Responsable : {{name}}",
+      "noOwner": "Aucun responsable",
+      "truncated": "{{count}} affichées sur {{total}}."
+    },
+    "staffing": {
+      "eyebrow": "Staffing",
+      "title": "{{needs}} · {{available}}",
+      "needs_one": "{{count}} besoin ouvert",
+      "needs_other": "{{count}} besoins ouverts",
+      "available_one": "{{count}} consultant disponible",
+      "available_other": "{{count}} consultants disponibles",
+      "titleCoverage": "Qui couvre quoi",
+      "soon_one": "{{count}} autre disponible sous un mois",
+      "soon_other": "{{count}} autres disponibles sous un mois",
+      "openNeeds": "Voir les besoins",
+      "openConsultants": "Voir le vivier"
+    },
+    "activity": {
+      "eyebrow": "Activité de l’équipe",
+      "title_one": "{{count}} geste enregistré sur {{days}} jours",
+      "title_other": "{{count}} gestes enregistrés sur {{days}} jours",
+      "filter": "Filtrer par membre",
+      "everyone": "Toute l’équipe",
+      "truncated": "Les {{count}} plus récents sont affichés ; la période en compte {{total}}.",
+      "emptyMember": "Rien d’enregistré pour cette personne sur la période.",
+      "adminJournal": "Journal d’administration (invitations, rôles)",
+      "kindLabel": "Type de fait",
+      "kinds": {
+        "all": "Tous les faits enregistrés",
+        "research": "Recherches & analyses",
+        "delegations": "Actions & délégations",
+        "followup": "Suivi commercial"
+      },
+      "periodLabel": "Période du journal",
+      "empty": "Aucun fait enregistré sur les {{days}} derniers jours.",
+      "export": {
+        "label": "Exporter cette vue",
+        "file": "journal-equipe",
+        "columns": {
+          "when": "Date",
+          "who": "Membre",
+          "what": "Fait",
+          "account": "Compte"
+        }
+      }
+    },
+    "details": {
+      "eyebrow": "Détail et historique",
+      "adoption": "Adoption",
+      "missions": "Hygiène des missions",
+      "contacts": "Contacts à traiter"
+    },
+    "cap": {
+      "region": "Le cap du mois",
+      "eyebrow": "Le cap de {{month}}",
+      "won": "de contrats gagnés",
+      "declaredTarget": "Cible déclarée",
+      "percent": "{{percent}} % de la cible",
+      "remaining": "{{amount}} restent à signer",
+      "contributors": "{{count}} / {{total}} contributeurs avec une cible",
+      "scope": "Montants estimés des affaires gagnées sur le mois. Ni CA facturé, ni encaissements.",
+      "helpLabel": "Comment se lit le cap commercial",
+      "helpClose": "Fermer",
+      "helpTitle": "Le cap commercial",
+      "helpBody": "Le signé de ce mois est la somme des montants estimés renseignés des affaires au stade Gagné, datées sur le mois sélectionné. La cible collective additionne les cibles déclarées des membres visibles. Un montant absent n’est pas transformé en zéro.",
+      "helpRate": "Le taux d’atteinte est une division signé / cible. Il ne prédit pas les prochains gains.",
+      "detail": "Détail"
+    },
+    "priorities": {
+      "region": "Là où tu peux aider",
+      "eyebrow": "Là où tu peux aider",
+      "title_one": "{{count}} priorité à regarder",
+      "title_other": "{{count}} priorités à regarder",
+      "whyButton": "Pourquoi",
+      "overdue": {
+        "title_one": "{{count}} action à reprendre",
+        "title_other": "{{count}} actions à reprendre",
+        "cta": "Replanifier",
+        "why": "L’échéance est dépassée sur {{company}}. Replanifier te dit où l’équipe est bloquée ; rien n’est envoyé."
+      },
+      "follow": {
+        "cta": "Revoir la suite",
+        "whyStuck": "L’affaire est dans la même étape depuis plus de {{days}} jours.",
+        "whyQuiet": "Aucune activité sur l’affaire depuis plus de {{days}} jours."
+      },
+      "dateless": {
+        "title": "Une affaire sans action datée",
+        "cta": "Créer la prochaine action",
+        "why": "Aucune action ouverte sur {{company}} : l’affaire n’a pas de prochaine étape."
+      }
+    },
+    "counters": {
+      "region": "Compteurs de l’équipe",
+      "actions": "Actions à faire",
+      "actionsLate_one": "Dont {{count}} en retard",
+      "actionsLate_other": "Dont {{count}} en retard",
+      "noLate": "Aucun retard enregistré",
+      "deals": "Affaires à suivre",
+      "dealsSub": "Le détail, pas un score de productivité",
+      "topics": "Sujets partagés",
+      "topicsSub": "Échanges de l’équipe"
+    },
+    "who": {
+      "title": "Qui porte quoi",
+      "subtitle": "La répartition du travail, sans classement des personnes.",
+      "accounts": "comptes",
+      "deals": "affaires",
+      "openActions_one": "{{count}} action ouverte",
+      "openActions_other": "{{count}} actions ouvertes",
+      "late_one": "{{count}} en retard",
+      "late_other": "{{count}} en retard",
+      "lateUnknown": "Retards non mesurés",
+      "portfolios": "Les portefeuilles",
+      "open": "Ouvrir le portefeuille de {{name}}",
+      "nothingSigned": "Rien de signé",
+      "onTarget": "sur {{amount}}"
+    },
+    "glance": {
+      "region": "Le regard de {{copilot}}",
+      "cta": "Préparer les arbitrages",
+      "overdue": {
+        "title": "Commence par lever le blocage.",
+        "body_one": "{{count}} action est en retard dans l’équipe. La terminer dans {{brand}} ne vaut pas un message envoyé.",
+        "body_other": "{{count}} actions sont en retard dans l’équipe. Les terminer dans {{brand}} ne vaut pas un message envoyé."
+      },
+      "follow": {
+        "title": "Relance les affaires sans suite.",
+        "body_one": "{{count}} affaire attend un geste.",
+        "body_other": "{{count}} affaires attendent un geste."
+      },
+      "computed": "Lecture calculée sur les faits de l’équipe, sans appel au modèle."
+    },
+    "moves": {
+      "title": "Derniers mouvements",
+      "all": "Tout voir"
+    },
+    "reviewCta": "Préparer le point d’équipe",
+    "solo": {
+      "title": "Ton espace n’a qu’un membre.",
+      "body": "Le pilotage collectif s’ouvre dès le deuxième membre. En attendant, tout se règle dans Réglages › Équipe.",
+      "cta": "Inviter un collègue"
+    },
+    "title": "Équipe.",
+    "tagline": "Le cap commercial, les dossiers et les décisions de chacun.",
+    "eyebrow": "Le pilotage collectif",
+    "tabs": {
+      "label": "Espaces de l’équipe",
+      "vue": "Vue d’ensemble",
+      "objectifs": "Objectifs & affaires",
+      "plans": "Plans & actions",
+      "recherches": "Recherches",
+      "activite": "Activité & échanges",
+      "administration": "Administration"
+    },
+    "sub": {
+      "objectifs": "Objectifs du mois",
+      "affaires": "Revue des affaires",
+      "portefeuilles": "Portefeuilles",
+      "journal": "Journal d’activité",
+      "echanges": "Échanges d’équipe"
+    },
+    "headline": {
+      "vue": {
+        "title": "Équipe",
+        "tagline": "Le cap commercial, les dossiers et les décisions de chacun."
+      },
+      "objectifs": {
+        "title": "Les ambitions, et la suite",
+        "tagline": "Distingue les contrats à gagner, le pipe ouvert et les montants encaissés."
+      },
+      "plans": {
+        "title": "Plans & actions",
+        "tagline": "Ce qui est prévu, qui le porte, et ce qui est en retard."
+      },
+      "activite": {
+        "title": "Ce qui avance, ce qui se discute",
+        "tagline": "Un fil de faits commerciaux et de décisions partagées. Pas de surveillance de présence."
+      }
+    },
+    "filters": {
+      "label": "Filtres de la page",
+      "scope": "Portée",
+      "everyone": "Toute l’équipe",
+      "objectives": "Objectifs",
+      "period": "Activité sur"
+    },
+    "actor": {
+      "title": "Une vue, pas un droit",
+      "description": "Compare les parcours direction, commercial et administration technique. Ce changement simule seulement les accès à l’espace Équipe.",
+      "you": "toi",
+      "sees": "Ouvre l’espace Équipe",
+      "doesNotSee": "N’ouvre pas l’espace Équipe",
+      "noteTitle": "Changer de vue ne change pas tes droits.",
+      "note": "Tu vois ce que verrait ce rôle, sans agir à sa place."
+    },
+    "potential": {
+      "eyebrow": "Le potentiel à convertir",
+      "openPipe": "de pipe ouvert",
+      "open": "Ouvrir les affaires",
+      "footer_one": "{{count}} affaire ouverte · montants non pondérés",
+      "footer_other": "{{formatted}} affaires ouvertes · montants non pondérés"
+    },
+    "confuse": {
+      "title": "Ne pas confondre",
+      "cap": {
+        "title": "Le cap à signer",
+        "body": "La somme des objectifs déclarés par les membres pour le mois."
+      },
+      "won": {
+        "title": "Les affaires gagnées",
+        "body": "Leurs montants estimés renseignés, attribués au responsable de l’affaire."
+      },
+      "cash": {
+        "title": "Le chiffre réellement encaissé",
+        "body": "Les paiements des factures sont suivis dans Missions. Ils ne s’ajoutent pas aux contrats gagnés.",
+        "cta": "Consulter les encaissements"
+      }
+    },
+    "chosen": {
+      "title": "Un objectif choisi, pas imposé en silence",
+      "body": "Chaque membre déclare sa cible. La direction peut proposer un ajustement à valider."
+    },
+    "deals": {
+      "title": "Faire avancer les affaires, une décision à la fois.",
+      "subtitle": "Les mêmes affaires que dans le pipe : des faits et des dates, rien d’estimé à ta place.",
+      "fullPipe": "Pipe complet",
+      "stageFilter": "Étape des affaires",
+      "count_one": "1 affaire · {{amount}}",
+      "count_other": "{{count}} affaires · {{amount}}",
+      "countNoAmount_one": "1 affaire, sans montant saisi",
+      "countNoAmount_other": "{{count}} affaires, sans montant saisi",
+      "amountsHelp": "Comprendre les montants",
+      "amountsTitle": "Le pipe ouvert",
+      "amountsBody": "Chaque montant est celui saisi sur l’affaire, non pondéré. Ce n’est ni du CA signé, ni du facturé, ni de l’encaissé. Une affaire sans montant reste visible et sort de la somme.",
+      "columns": {
+        "deal": "Affaire & compte",
+        "owner": "Responsable",
+        "stage": "Étape",
+        "amount": "Montant estimé",
+        "next": "Prochaine décision",
+        "actions": "Actions"
+      },
+      "noAmount": "Non chiffrée",
+      "targetDate": "Décision visée : {{date}}",
+      "noTargetDate": "Aucune date de décision",
+      "review": "Revoir",
+      "reviewTitle": "Revoir la suite de l’affaire",
+      "targetDateLabel": "Décision visée (signature prévue)",
+      "ownerLabel": "Responsable de l’affaire",
+      "accountPlan": "Voir le plan de {{company}}",
+      "save": "Enregistrer la suite",
+      "saveError": "La suite n’a pas pu être enregistrée. Rien n’a changé côté affaire.",
+      "footnote": "Les montants ouverts ne sont pas du CA signé. Les affaires non chiffrées restent visibles.",
+      "empty": "Aucune affaire ouverte dans l’espace pour l’instant.",
+      "loadError": "Les affaires n’ont pas pu être lues."
+    },
+    "portfolios": {
+      "title": "Le bon responsable, la bonne prochaine action.",
+      "subtitle": "Créer un compte et en porter la relation ne sont pas la même chose.",
+      "openAccounts": "Ouvrir Comptes",
+      "search": "Rechercher un compte",
+      "situation": "Situation du portefeuille",
+      "situations": {
+        "followed": "Comptes suivis",
+        "noAction": "Sans action ouverte",
+        "noOwner": "Sans responsable"
+      },
+      "count_one": "1 compte",
+      "count_other": "{{count}} comptes",
+      "countShown_one": "1 compte affiché",
+      "countShown_other": "{{count}} comptes affichés",
+      "noOwner": "Sans responsable",
+      "noAction": "Aucune action ouverte",
+      "noActionHint": "La suite reste à décider",
+      "noHorizon": "Sans échéance",
+      "assign": "Attribuer",
+      "assignTitle": "Attribuer {{company}}",
+      "assignBody": "Le nouveau responsable porte la relation. Rien ne change sans ta confirmation.",
+      "newOwner": "Nouveau responsable",
+      "confirm": "Confirmer l’attribution",
+      "more": "Afficher plus de comptes",
+      "empty": "Aucun compte dans l’espace pour l’instant.",
+      "emptyFiltered": "Aucun compte ne correspond à cette situation.",
+      "loadError": "Les comptes n’ont pas pu être lus."
+    }
+  },
+  "review": {
+    "title": "Le point d’équipe.",
+    "tagline": "Un court parcours pour transformer les constats en décisions.",
+    "stepsLabel": "Étapes du point d’équipe",
+    "steps": {
+      "1": "Les sujets",
+      "2": "Les décisions",
+      "3": "La relecture"
+    },
+    "stepOf": "Étape {{step}} / 3",
+    "next": "Continuer",
+    "previous": "Précédent",
+    "leave": "Quitter pour le moment",
+    "save": "Enregistrer les décisions",
+    "saved_one": "{{count}} décision enregistrée dans le plan.",
+    "saved_other": "{{count}} décisions enregistrées dans le plan.",
+    "failed": "Le point n’a pas pu être enregistré. Rien n’a changé.",
+    "topics": {
+      "late": {
+        "kicker": "Une action à reprendre",
+        "why": "L’échéance de cette action est dépassée. La terminer dans {{brand}} ne vaut pas un message envoyé."
+      },
+      "follow": {
+        "kicker": "Une affaire à relancer",
+        "whyStuck": "L’affaire est dans la même étape depuis plus de {{days}} jours. Vérifie les conditions et le calendrier, sans la considérer comme gagnée.",
+        "whyQuiet": "Aucune activité sur l’affaire depuis plus de {{days}} jours."
+      },
+      "dateless": {
+        "kicker": "Une affaire sans action datée",
+        "why": "Aucune action ouverte sur le compte : l’affaire n’a pas de prochaine étape suivable."
+      }
+    },
+    "s1": {
+      "title": "Que faut-il débloquer ensemble ?",
+      "hint": "Sélectionne les sujets du point. La sélection ne modifie aucune action.",
+      "laura_one": "{{copilot}} a préparé ce sujet à partir des retards et des affaires de l’équipe. Décoche ce qui ne mérite pas le point.",
+      "laura_other": "{{copilot}} a préparé ces {{count}} sujets à partir des retards et des affaires de l’équipe. Décoche ce qui ne mérite pas le point.",
+      "empty": "Rien ne demande de décision aujourd’hui : aucun retard, aucune affaire sans suite. Tu peux quand même noter un point à partager.",
+      "noteLabel": "Un autre point à partager",
+      "notePlaceholder": "Un sujet, une décision, une question…"
+    },
+    "s2": {
+      "title": "Qui fait quoi, et pour quand ?",
+      "hint": "Vérifie les décisions. Les actions existantes sont mises à jour, jamais dupliquées.",
+      "decision": "Décision {{index}}",
+      "decisionExisting": "Décision {{index}} · action existante",
+      "decisionLabel": "Décision {{index}}",
+      "action": "Prochaine action",
+      "owner": "Responsable",
+      "due": "Échéance",
+      "skip": "Point sans nouvelle action",
+      "skipHint": "Le point sera enregistré avec sa note, sans créer ni modifier d’action.",
+      "noneChosen": "Point sans nouvelle action : aucun sujet retenu. Le point sera enregistré avec sa note, sans créer ni modifier d’action."
+    },
+    "s3": {
+      "title": "Un compte rendu qui mène à l’action.",
+      "hint": "Dernière relecture. Aucun e-mail ne sera envoyé et aucune affaire ne changera d’étape.",
+      "update": "Mise à jour de l’action existante",
+      "create": "Création d’une action dans le plan",
+      "noAction": "Point sans nouvelle action : aucune action ne sera créée ni modifiée.",
+      "note": "Ta note : {{note}}"
+    }
+  },
+  "team": {
+    "nav": {
+      "overview": "Vue d’ensemble",
+      "business": "Objectifs & affaires",
+      "plans": "Plans & actions"
+    },
+    "loading": "Chargement…",
+    "loadError": "Impossible de charger cette vue pour l’instant.",
+    "target": {
+      "close": "Fermer",
+      "titleMine": "Tes objectifs du mois",
+      "titlePropose": "Proposer une cible à {{name}}",
+      "axis": {
+        "target_revenue": "CA à signer (€)",
+        "target_meetings": "Rendez-vous obtenus",
+        "target_accounts": "Comptes ajoutés ce mois",
+        "target_qualified_needs": "Besoins qualifiés",
+        "target_placements": "Démarrages",
+        "target_margin_percent": "Marge cible (%)",
+        "target_consultants_on_mission": "Consultants en mission"
+      },
+      "emptyMeansUndefined": "Une case vide signifie « non défini ».",
+      "reasonLabel": "Pourquoi cet ajustement ?",
+      "proposalNoteTitle": "Une proposition, pas une modification silencieuse",
+      "proposalNote": "La cible actuelle reste inchangée. {{name}} confirmera la proposition depuis sa vue, et tu verras sa réponse.",
+      "mineNote": "Les réalisations sont calculées à partir des objets. Ajuster une cible ne modifie ni les affaires ni les paiements.",
+      "cancel": "Annuler",
+      "saveMine": "Enregistrer mes objectifs",
+      "sendProposal": "Envoyer la proposition",
+      "savedMine": "Tes objectifs sont enregistrés.",
+      "failed": "Impossible d’enregistrer tes objectifs.",
+      "proposed": "Proposition envoyée à {{name}}. Sa cible actuelle ne change pas avant sa réponse.",
+      "proposeFailed": "Impossible d’envoyer la proposition."
+    },
+    "business": {
+      "title": "Objectifs & affaires",
+      "lead": "Les ambitions du mois, les affaires qui attendent une décision et le portefeuille de comptes : qui porte quoi, et quelle est la suite.",
+      "viewsLabel": "Vues d’Objectifs & affaires",
+      "views": {
+        "objectives": "Objectifs du mois",
+        "deals": "Revue des affaires",
+        "portfolio": "Portefeuilles"
+      },
+      "cap": {
+        "eyebrow": "Le cap de {{month}}",
+        "signed": "{{amount}} de contrats gagnés",
+        "nothingSigned": "Rien de signé pour l’instant",
+        "target": "Cible déclarée {{amount}}",
+        "noTarget": "Aucune cible déclarée",
+        "percent": "{{percent}} % de la cible",
+        "remaining": "{{amount}} restent à signer",
+        "contributors_one": "{{count}} / {{total}} contributeur avec une cible",
+        "contributors_other": "{{count}} / {{total}} contributeurs avec une cible",
+        "wonWithoutAmount_one": "{{count}} affaire gagnée sans montant saisi",
+        "wonWithoutAmount_other": "{{count}} affaires gagnées sans montant saisi",
+        "footnote": "Montants estimés des affaires gagnées sur le mois. Ni CA facturé, ni encaissements."
+      },
+      "confuse": {
+        "title": "Ne pas confondre",
+        "cap": "Le cap à signer",
+        "capHint": "La somme des objectifs déclarés par les membres pour le mois.",
+        "won": "Les affaires gagnées",
+        "wonHint": "Leurs montants estimés renseignés, attribués au responsable de l’affaire.",
+        "cashed": "Le chiffre réellement encaissé",
+        "cashedHint": "Les paiements des factures sont suivis dans Missions. Ils ne s’ajoutent pas aux contrats gagnés.",
+        "cashedLink": "Consulter les encaissements"
+      },
+      "chosen": {
+        "title": "Un objectif choisi, pas imposé en silence.",
+        "lead": "Chaque membre déclare sa cible. La direction peut proposer un ajustement à valider.",
+        "defineMine": "Définir mon objectif"
+      },
+      "member": {
+        "signed": "{{amount}} signés en {{month}}",
+        "nothingSigned": "Rien de signé en {{month}}",
+        "targetLabel": "Cible du mois",
+        "targetUndeclared": "Cible non déclarée",
+        "meetingsLabel": "Rendez-vous obtenus",
+        "accountsLabel": "Comptes ajoutés ce mois",
+        "ratio": "{{done}} / {{target}}",
+        "noTarget": "{{done}} · sans cible",
+        "pendingProposal": "Une cible est proposée · en attente de sa réponse",
+        "adjustMine": "Ajuster mes objectifs",
+        "propose": "Proposer une cible",
+        "openSheet": "Voir la fiche"
+      },
+      "deals": {
+        "title": "Faire avancer les affaires, une décision à la fois.",
+        "lead": "Les mêmes affaires que dans le pipeline. Aucune estimation de signature n’est inventée.",
+        "fullPipeline": "Pipeline complet",
+        "none": "Aucune affaire ouverte pour l’instant.",
+        "summary_one": "{{count}} affaire · {{amount}}",
+        "summary_other": "{{count}} affaires · {{amount}}",
+        "summaryNoAmount_one": "{{count}} affaire · aucun montant saisi",
+        "summaryNoAmount_other": "{{count}} affaires · aucun montant saisi",
+        "withoutAmount_one": "{{count}} sans montant",
+        "withoutAmount_other": "{{count}} sans montant",
+        "understand": "Comprendre les montants",
+        "understandBody": "Chaque montant est l’estimation saisie sur l’affaire, non pondérée : ce n’est ni du chiffre d’affaires signé, ni du facturé. Une affaire sans montant reste visible et n’est jamais comptée comme 0 €.",
+        "col": {
+          "deal": "Affaire & compte",
+          "owner": "Responsable",
+          "stage": "Étape",
+          "amount": "Montant estimé",
+          "decision": "Prochaine décision",
+          "action": "Action"
+        },
+        "noOwner": "Sans responsable",
+        "noAmount": "Sans montant",
+        "noNextDecision": "La suite reste à décider",
+        "targetDecision": "Décision visée : {{date}}",
+        "decisionToSpecify": "Date de décision à préciser",
+        "review": "Revoir",
+        "footnote": "Les montants ouverts ne sont pas du CA signé. Les affaires non chiffrées restent visibles.",
+        "byCategory": "Pipe valorisé par catégorie déclarée et date de signature"
+      },
+      "portfolio": {
+        "title": "Le bon responsable, la bonne prochaine action.",
+        "lead": "Créer un compte et en porter la relation ne sont pas la même chose.",
+        "openAccounts": "Ouvrir Comptes",
+        "filterLabel": "Filtrer les comptes",
+        "filter": {
+          "all": "Tous les comptes",
+          "no_action": "Sans action ouverte",
+          "unassigned": "Sans responsable"
+        },
+        "count_one": "{{count}} compte",
+        "count_other": "{{count}} comptes",
+        "noOwner": "Sans responsable",
+        "noAction": "Aucune action ouverte",
+        "noActionHint": "La suite reste à décider",
+        "assignTo": "Attribuer à",
+        "assign": "Attribuer",
+        "coverageMap": "Couverture par segment et par persona"
+      }
+    },
+    "plans": {
+      "title": "Plans & actions",
+      "lead": "Du plan à l’action. Attribue, prépare et suis le travail, sans confondre tâche terminée et message envoyé.",
+      "create": "Créer une action",
+      "summary": "{{open}} ouvertes · {{overdue}} en retard · {{delegated}} déléguées",
+      "statusLabel": "Filtrer les actions par état",
+      "status": {
+        "todo": "À faire",
+        "overdue": "En retard",
+        "today": "Aujourd’hui",
+        "delegated": "Déléguées",
+        "all": "Toutes"
+      },
+      "accountFilter": "Compte",
+      "allAccounts": "Tous les comptes",
+      "layoutLabel": "Mode d’affichage",
+      "layout": {
+        "list": "Liste",
+        "split": "Répartition",
+        "week": "Semaine"
+      },
+      "empty": "Aucune action ouverte : l’équipe est à jour.",
+      "emptyFiltered": "Aucune action ne correspond à ce filtre.",
+      "badgeOverdue": "En retard",
+      "delegatedBy": "confiée par {{name}}",
+      "noDue": "Sans échéance",
+      "prepare": "Préparer",
+      "edit": "Modifier",
+      "splitHeading": "{{name}} · {{count}}",
+      "weekNoAction": "Aucune action datée.",
+      "weekOther": "Hors de cette semaine / sans date",
+      "dragNote": "Le glisser-déposer propose un changement à confirmer. Tu peux aussi modifier chaque action au clavier.",
+      "confirm": {
+        "close": "Fermer",
+        "title": "Confirmer le changement",
+        "holder": "Responsable",
+        "due": "Échéance",
+        "note": "Note de contexte pour la personne à qui tu confies l’action",
+        "notice": "Rien n’est écrit tant que tu n’as pas confirmé. Aucun message ni invitation ne part.",
+        "cancel": "Annuler",
+        "apply": "Confirmer",
+        "done": "L’action est mise à jour.",
+        "failed": "Impossible de modifier cette action."
+      },
+      "createDialog": {
+        "close": "Fermer",
+        "title": "Une prochaine action, un responsable",
+        "lead": "L’action rejoint le plan du compte et la page Actions.",
+        "label": "Action à réaliser",
+        "holder": "Responsable",
+        "due": "Échéance",
+        "account": "Compte lié",
+        "reason": "Contexte utile",
+        "expectedOutcome": "Résultat attendu",
+        "expectedOutcomeRequired": "Le résultat attendu est obligatoire : dis à quoi ressemble « fait ».",
+        "noticeTitle": "Préparer n’est pas envoyer",
+        "notice": "La tâche sera liée au plan du compte et à Actions. Aucun message ni invitation ne part.",
+        "cancel": "Annuler",
+        "submit": "Créer l’action",
+        "done": "Action créée.",
+        "failed": "Impossible de créer l’action."
+      },
+      "history": "Historique des actions",
+      "automations": "Voir les automatisations"
+    },
+    "member": {
+      "back": "Revenir à toute l’équipe",
+      "loadError": "Impossible d’ouvrir cette fiche : le membre n’est pas dans cet espace.",
+      "pageTitle": "Fiche d’un membre",
+      "title": "{{name}}",
+      "summary": "{{name}} : {{accounts}} comptes suivis dans le portefeuille · {{deals}} affaires ouvertes · {{actions}} prochaines actions.",
+      "objective": {
+        "title": "Ses objectifs",
+        "titleMine": "Mes objectifs",
+        "target": "Cible du mois : {{amount}}",
+        "proposalForYou": "Une cible t’est proposée",
+        "meetings_one": "{{count}} rendez-vous",
+        "meetings_other": "{{count}} rendez-vous",
+        "accounts_one": "{{count}} compte ajouté",
+        "accounts_other": "{{count}} comptes ajoutés",
+        "accept": "Accepter",
+        "refuse": "Refuser",
+        "propose": "Proposer un objectif"
+      },
+      "plan": {
+        "title": "Plan de travail",
+        "lead": "Le plan d’actions de la personne : ses prochaines étapes, comptes et échéances.",
+        "open": "Ouvrir Plans & actions"
+      },
+      "actions": {
+        "title": "Les prochaines actions",
+        "empty": "Aucune action ouverte."
+      },
+      "portfolio": {
+        "title": "Le portefeuille",
+        "empty": "Aucun compte attribué."
+      },
+      "deals": {
+        "title": "Les affaires en cours",
+        "empty": "Aucune affaire ouverte."
+      },
+      "role": {
+        "title": "Le rôle dans l’équipe",
+        "delegationNote": "Les actions confiées sont distinctes du responsable du compte.",
+        "mailboxGuard": "Voir son activité ne permet pas de lire sa messagerie privée.",
+        "handover": "Départ ou reprise du portefeuille"
+      },
+      "access": {
+        "title": "Accès et intégrations",
+        "none": "Aucune intégration branchée dans cet espace.",
+        "kind": {
+          "mailbox": "Messagerie",
+          "crm": "CRM"
+        },
+        "byMember": "branchée par {{name}}",
+        "open": "Voir les intégrations"
+      }
+    }
+  },
+  "equipe": {
+    "eyebrow": "Le pilotage collectif",
+    "tabs": {
+      "plans": "Plans & actions",
+      "searches": "Recherches"
+    },
+    "plans": {
+      "title": "Du plan à l’action",
+      "tagline": "Attribue, prépare et suis le travail, sans confondre tâche terminée et message envoyé.",
+      "lensLabel": "Actions à afficher",
+      "lens": {
+        "todo": "À faire",
+        "late": "En retard",
+        "today": "Aujourd’hui",
+        "delegated": "Déléguées"
+      },
+      "search": "Rechercher une action…",
+      "accounts": "Comptes",
+      "mode": {
+        "list": "Liste",
+        "split": "Répartition",
+        "week": "Semaine"
+      },
+      "today": "Aujourd’hui",
+      "tomorrow": "Demain",
+      "weekLate": "En retard",
+      "weekLater": "Plus tard",
+      "prepare": "Préparer",
+      "allAccounts": "Tous les comptes",
+      "someAccounts_one": "{{count}} compte",
+      "someAccounts_other": "{{count}} comptes",
+      "modeLabel": "Affichage"
+    },
+    "searches": {
+      "title": "Ne laisse pas une recherche dormir",
+      "tagline": "Retrouve le périmètre exploré, les comptes examinés et la prochaine décision.",
+      "eyebrow": "De l’exploration au compte travaillé",
+      "kept_one": "{{count}} recherche conservée.",
+      "kept_other": "{{count}} recherches conservées.",
+      "none": "Aucune recherche conservée.",
+      "choose": "À toi de choisir la suite.",
+      "note": "Une recherche n’est pas une affaire. Les comptes retenus et les actions restent reliés à leurs dossiers.",
+      "new": "Nouvelle recherche",
+      "scope": "Les recherches conservées de toute l’équipe.",
+      "kind": "Découverte",
+      "examine": "Examiner",
+      "news_one": "{{count}} nouveauté depuis la dernière lecture",
+      "news_other": "{{count}} nouveautés depuis la dernière lecture",
+      "listTitle": "Les recherches conservées",
+      "newsShort_one": "nouveauté depuis la dernière lecture",
+      "newsShort_other": "nouveautés depuis la dernière lecture",
+      "examineAria": "Examiner {{label}}",
+      "resume": "Reprendre dans Découvrir"
+    },
+    "member": {
+      "fallback": "Membre de l’équipe",
+      "tagline": "{{role}} · vue de son travail enregistré",
+      "unknown": "Cette personne ne fait pas partie de l’espace.",
+      "back": "Revenir à toute l’équipe",
+      "hello": "{{name}}, au bon endroit.",
+      "accounts_one": "{{count}} compte suivi dans le portefeuille",
+      "accounts_other": "{{count}} comptes suivis dans le portefeuille",
+      "deals_one": "{{count}} affaire à regarder",
+      "deals_other": "{{count}} affaires à regarder",
+      "actions_one": "{{count}} prochaine action",
+      "actions_other": "{{count}} prochaines actions",
+      "nextActions": "Les prochaines actions",
+      "noActions": "Aucune action ouverte pour cette personne.",
+      "portfolio": "Le portefeuille",
+      "assign": "Attribuer",
+      "deals_title": "Les affaires à regarder",
+      "roleTitle": "Le rôle dans l’équipe",
+      "roleBody": "{{role}}. Les actions confiées sont distinctes du responsable du compte.",
+      "privacy": "Voir son travail ne permet pas de lire sa messagerie privée.",
+      "admin": "Accès et administration",
+      "heroLabel": "En un coup d’œil",
+      "workPlan": "Plan de travail",
+      "nothingSigned": "Rien de signé",
+      "signed": "{{amount}} signés",
+      "target": "cible du mois : {{amount}}",
+      "assignAria": "Attribuer {{account}}",
+      "assignTitle": "Attribuer {{account}}",
+      "assignHint": "Le compte change de responsable ; ses actions, notes et historiques restent.",
+      "assignTo": "Confier à",
+      "assignConfirm": "Attribuer"
+    },
+    "prepareReview": "Préparer le point d’équipe",
+    "control": {
+      "label": "Portée et objectifs",
+      "scope": "Portée",
+      "allTeam": "Toute l’équipe",
+      "objectives": "Objectifs"
+    },
+    "task": {
+      "open": "Ouvrir : {{label}}",
+      "owner": "Responsable",
+      "due": "Échéance",
+      "account": "Dossier",
+      "openAccount": "Ouvrir le dossier"
+    },
+    "create": {
+      "open": "Créer une action",
+      "title": "Une prochaine action, un responsable",
+      "label": "Action à réaliser",
+      "labelPlaceholder": "Ex. Obtenir le retour sur le profil présenté",
+      "owner": "Responsable",
+      "due": "Échéance",
+      "account": "Compte lié",
+      "channel": "Type de préparation",
+      "channels": {
+        "phone": "Préparer un appel",
+        "email": "Préparer un e-mail",
+        "linkedin": "Préparer un message sur le réseau pro",
+        "meeting": "Préparer un rendez-vous"
+      },
+      "reason": "Objectif",
+      "reasonPlaceholder": "Pourquoi cette action, le point à vérifier…",
+      "expectedOutcome": "Résultat attendu",
+      "expectedOutcomePlaceholder": "À quoi ressemble « fait » — ex. Un rendez-vous fixé",
+      "expectedOutcomeRequired": "Le résultat attendu est obligatoire : dis à quoi ressemble « fait ».",
+      "note": "L’action rejoint le plan du compte, avec son responsable et son échéance. Rien ne part sans toi.",
+      "submit": "Créer l’action",
+      "created": "Action créée.",
+      "failed": "Impossible de créer l’action.",
+      "noAccount": "Aucun compte dans cette vue pour y rattacher une action."
+    }
+  }
+}

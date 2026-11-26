@@ -1,0 +1,302 @@
+{
+  "_source": "BellumAI_Meta_Analyse_Besoins_Utilisateurs_2026.pdf (extrait Drive 25/09/2026, anonymisé)",
+  "_section": "8. Bibliothèque de requêtes utilisateur",
+  "_anonymise": "noms d'exemple du document original conserves tels quels (Marc Dupuis, Lucie, AXA, INOP'S, BNP) — la note d'anonymisation du .md source les qualifie explicitement de fictifs/illustratifs, distincts des repondants de l'audit.",
+  "_1948": "1948.15 — Champ : formulation reelle (verbatim, distincte de requetes_prio1_2026.json qui vient de l'AUTRE document source)",
+  "requetes": [
+    {
+      "categorie": "CRM et suivi commercial",
+      "requete": "Ok Bellum, ajoute une tâche à la fiche de Marc Dupuis : intéressé, relance dans 10 jours.",
+      "outils": "CRM",
+      "trigger": "Manuel",
+      "resultat_attendu": "Tâche créée et associée."
+    },
+    {
+      "categorie": "CRM et suivi commercial",
+      "requete": "Ok Bellum, logue tous mes rendez-vous Google Calendar de cette semaine dans HubSpot.",
+      "outils": "Agenda + CRM",
+      "trigger": "Manuel ou programmé",
+      "resultat_attendu": "Réunions créées sans doublon."
+    },
+    {
+      "categorie": "CRM et suivi commercial",
+      "requete": "Ok Bellum, liste les leads à relancer cette semaine et explique pourquoi.",
+      "outils": "CRM + Email",
+      "trigger": "Manuel ou lundi matin",
+      "resultat_attendu": "Liste priorisée avec contexte."
+    },
+    {
+      "categorie": "CRM et suivi commercial",
+      "requete": "Ok Bellum, crée une liste de contacts déjà approchés mais sans réponse.",
+      "outils": "CRM + Email",
+      "trigger": "Manuel",
+      "resultat_attendu": "Liste statique/active validée."
+    },
+    {
+      "categorie": "CRM et suivi commercial",
+      "requete": "Ok Bellum, identifie les leads dormants depuis six mois et propose un plan de réactivation.",
+      "outils": "CRM + Email",
+      "trigger": "Manuel ou mensuel",
+      "resultat_attendu": "Scoring + actions."
+    },
+    {
+      "categorie": "CRM et suivi commercial",
+      "requete": "Ok Bellum, génère le rapport hebdomadaire HubSpot et sauvegarde-le en PDF dans Drive.",
+      "outils": "CRM + Drive",
+      "trigger": "Programmé",
+      "resultat_attendu": "PDF + lien + chiffres réels."
+    },
+    {
+      "categorie": "Emails et relation",
+      "requete": "Ok Bellum, réponds en brouillon à mes emails business non lus.",
+      "outils": "Email",
+      "trigger": "Manuel ou programmé",
+      "resultat_attendu": "Un brouillon par thread."
+    },
+    {
+      "categorie": "Emails et relation",
+      "requete": "Ok Bellum, trouve les discussions où je dois relancer depuis 15 jours.",
+      "outils": "Email + CRM",
+      "trigger": "Manuel",
+      "resultat_attendu": "Contacts + raison + priorité."
+    },
+    {
+      "categorie": "Emails et relation",
+      "requete": "Ok Bellum, résume mes échanges avec AXA et prépare un mail de suivi.",
+      "outils": "Email + CRM",
+      "trigger": "Manuel",
+      "resultat_attendu": "Résumé + brouillon contextualisé."
+    },
+    {
+      "categorie": "Emails et relation",
+      "requete": "Ok Bellum, prépare une réponse à cette objection référencement achats.",
+      "outils": "Email + Knowledge",
+      "trigger": "Manuel",
+      "resultat_attendu": "Réponse adaptée et non agressive."
+    },
+    {
+      "categorie": "Emails et relation",
+      "requete": "Ok Bellum, détecte les réponses positives et propose la prochaine action.",
+      "outils": "Email + Agenda + CRM",
+      "trigger": "Manuel ou continu",
+      "resultat_attendu": "Intention + action vérifiable."
+    },
+    {
+      "categorie": "Emails et relation",
+      "requete": "Ok Bellum, retrouve les bounces et propose les contacts à corriger.",
+      "outils": "Email + CRM",
+      "trigger": "Programmé",
+      "resultat_attendu": "Liste des erreurs et corrections."
+    },
+    {
+      "categorie": "Agenda et meetings",
+      "requete": "Ok Bellum, donne-moi mes disponibilités la semaine prochaine.",
+      "outils": "Agenda",
+      "trigger": "Manuel",
+      "resultat_attendu": "Créneaux exacts."
+    },
+    {
+      "categorie": "Agenda et meetings",
+      "requete": "Ok Bellum, crée une réunion avec Lucie lundi à 14h avec un titre et une description professionnels.",
+      "outils": "Agenda + Contacts",
+      "trigger": "Manuel",
+      "resultat_attendu": "Invitation et lien visio."
+    },
+    {
+      "categorie": "Agenda et meetings",
+      "requete": "Ok Bellum, envoie-moi mon planning chaque matin à 8h30.",
+      "outils": "Agenda",
+      "trigger": "Programmé",
+      "resultat_attendu": "Digest quotidien."
+    },
+    {
+      "categorie": "Agenda et meetings",
+      "requete": "Ok Bellum, prépare le brief de mon prochain rendez-vous.",
+      "outils": "Agenda + Email + CRM",
+      "trigger": "Programmé ou manuel",
+      "resultat_attendu": "Brief avec sources."
+    },
+    {
+      "categorie": "Agenda et meetings",
+      "requete": "Ok Bellum, transforme mes notes en compte rendu et next steps.",
+      "outils": "Notes + CRM + Email",
+      "trigger": "Manuel",
+      "resultat_attendu": "CR + tâches + brouillon."
+    },
+    {
+      "categorie": "Agenda et meetings",
+      "requete": "Ok Bellum, montre-moi les rendez-vous réalisés sans email de suivi.",
+      "outils": "Agenda + Email",
+      "trigger": "Manuel ou hebdo",
+      "resultat_attendu": "Liste et brouillons proposés."
+    },
+    {
+      "categorie": "CV, besoins et consultants",
+      "requete": "Ok Bellum, analyse ce besoin Data Engineer et retrouve les cinq CV les plus pertinents.",
+      "outils": "Email/CRM + Drive/ATS",
+      "trigger": "Manuel",
+      "resultat_attendu": "Shortlist scorée."
+    },
+    {
+      "categorie": "CV, besoins et consultants",
+      "requete": "Ok Bellum, reformate ce CV selon notre modèle entreprise.",
+      "outils": "Drive + Word/PDF",
+      "trigger": "Manuel",
+      "resultat_attendu": "CV généré sans invention."
+    },
+    {
+      "categorie": "CV, besoins et consultants",
+      "requete": "Ok Bellum, prépare un mail de push profil pour l'équipe SIRH du client.",
+      "outils": "Drive + Email + CRM",
+      "trigger": "Manuel",
+      "resultat_attendu": "Brouillon + CV joint."
+    },
+    {
+      "categorie": "CV, besoins et consultants",
+      "requete": "Ok Bellum, retrouve les consultants disponibles le mois prochain.",
+      "outils": "CRM/ATS + Email",
+      "trigger": "Manuel ou programmé",
+      "resultat_attendu": "Liste de disponibilités."
+    },
+    {
+      "categorie": "CV, besoins et consultants",
+      "requete": "Ok Bellum, rappelle aux consultants le statut de leurs candidatures.",
+      "outils": "CRM + Email",
+      "trigger": "Programmé",
+      "resultat_attendu": "Messages par statut."
+    },
+    {
+      "categorie": "CV, besoins et consultants",
+      "requete": "Ok Bellum, identifie les fins de mission dans 30 jours et propose des actions.",
+      "outils": "CRM + Calendar",
+      "trigger": "Programmé",
+      "resultat_attendu": "Alertes et matching."
+    },
+    {
+      "categorie": "Prospection et sourcing",
+      "requete": "Ok Bellum, crée mon fichier de 30 prospects à appeler cette semaine.",
+      "outils": "CRM/SalesNav + Drive",
+      "trigger": "Programmé ou manuel",
+      "resultat_attendu": "Sheet actionnable."
+    },
+    {
+      "categorie": "Prospection et sourcing",
+      "requete": "Ok Bellum, importe ce CSV Sales Navigator et déduplique les contacts.",
+      "outils": "SalesNav + CRM",
+      "trigger": "Manuel",
+      "resultat_attendu": "Contacts propres."
+    },
+    {
+      "categorie": "Prospection et sourcing",
+      "requete": "Ok Bellum, liste les CTO et RH d'ESN à Paris.",
+      "outils": "CRM + Data",
+      "trigger": "Manuel",
+      "resultat_attendu": "Liste filtrée."
+    },
+    {
+      "categorie": "Prospection et sourcing",
+      "requete": "Ok Bellum, crée une séquence RH en trois étapes sans l'envoyer.",
+      "outils": "CRM + Email",
+      "trigger": "Manuel",
+      "resultat_attendu": "Template + séquence prête."
+    },
+    {
+      "categorie": "Prospection et sourcing",
+      "requete": "Ok Bellum, détecte les entreprises qui recrutent activement des profils Java.",
+      "outils": "Web/Data + CRM",
+      "trigger": "Programmé",
+      "resultat_attendu": "Signaux + comptes."
+    },
+    {
+      "categorie": "Prospection et sourcing",
+      "requete": "Ok Bellum, propose trois accroches personnalisées pour ces décideurs.",
+      "outils": "LinkedIn/Web + Knowledge",
+      "trigger": "Manuel",
+      "resultat_attendu": "Messages spécifiques."
+    },
+    {
+      "categorie": "Documents et reporting",
+      "requete": "Ok Bellum, trouve la dernière présentation BellumAI et prépare le brouillon pour l'envoyer.",
+      "outils": "Drive + Email",
+      "trigger": "Manuel",
+      "resultat_attendu": "Pièce jointe réelle."
+    },
+    {
+      "categorie": "Documents et reporting",
+      "requete": "Ok Bellum, crée un Google Sheet avec tous les CV et leurs liens.",
+      "outils": "Drive + Sheets",
+      "trigger": "Manuel",
+      "resultat_attendu": "Tableau créé."
+    },
+    {
+      "categorie": "Documents et reporting",
+      "requete": "Ok Bellum, transforme ce compte rendu en Word et PDF.",
+      "outils": "Docs + Drive",
+      "trigger": "Manuel",
+      "resultat_attendu": "Deux fichiers exploitables."
+    },
+    {
+      "categorie": "Documents et reporting",
+      "requete": "Ok Bellum, génère une présentation à partir de ce tableau Excel.",
+      "outils": "Sheets + Slides",
+      "trigger": "Manuel",
+      "resultat_attendu": "Deck créé."
+    },
+    {
+      "categorie": "Documents et reporting",
+      "requete": "Ok Bellum, fais le rapport de mon activité sur 30 jours.",
+      "outils": "Email + Agenda + CRM + Drive",
+      "trigger": "Manuel ou mensuel",
+      "resultat_attendu": "Chiffres + actions."
+    },
+    {
+      "categorie": "Documents et reporting",
+      "requete": "Ok Bellum, prépare un plan de compte complet sur INOP'S.",
+      "outils": "CRM Web + Email + Agenda + Drive",
+      "trigger": "Manuel",
+      "resultat_attendu": "Document sourcé."
+    },
+    {
+      "categorie": "Direction et stratégie",
+      "requete": "Ok Bellum, challenge mon pipeline et donne-moi les cinq priorités de la semaine.",
+      "outils": "CRM + Email + Agenda",
+      "trigger": "Hebdo",
+      "resultat_attendu": "Plan d'action réaliste."
+    },
+    {
+      "categorie": "Direction et stratégie",
+      "requete": "Ok Bellum, fais une fiche de passation pour le nouveau Business Manager.",
+      "outils": "CRM + Email + Drive",
+      "trigger": "Manuel",
+      "resultat_attendu": "Historique + risques + actions."
+    },
+    {
+      "categorie": "Direction et stratégie",
+      "requete": "Ok Bellum, compare mon activité du trimestre avec le précédent.",
+      "outils": "CRM + Email + Agenda",
+      "trigger": "Trimestriel",
+      "resultat_attendu": "Analyse calculée."
+    },
+    {
+      "categorie": "Direction et stratégie",
+      "requete": "Ok Bellum, identifie les comptes stratégiques où le volume d'échanges est fort mais le CA faible.",
+      "outils": "CRM + Email",
+      "trigger": "Mensuel",
+      "resultat_attendu": "Comptes + stratégie."
+    },
+    {
+      "categorie": "Direction et stratégie",
+      "requete": "Ok Bellum, construis une vue dirigeant avec CA, démos, réponse, staffing et top comptes.",
+      "outils": "CRM/ERP + Email + Agenda",
+      "trigger": "Hebdo/mensuel",
+      "resultat_attendu": "Dashboard."
+    },
+    {
+      "categorie": "Direction et stratégie",
+      "requete": "Ok Bellum, propose un plan de pénétration pour la BNP sans inventer de données.",
+      "outils": "CRM + Web sourcé + Knowledge",
+      "trigger": "Manuel",
+      "resultat_attendu": "Hypothèses clairement séparées."
+    }
+  ]
+}

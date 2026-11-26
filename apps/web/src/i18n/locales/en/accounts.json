@@ -1,0 +1,2234 @@
+{
+  "intermediary": {
+    "label": "Intermediary, not the final client",
+    "help": "Recruitment agency or matchmaking platform: what it publishes describes a third party's need, not its own."
+  },
+  "actorBadge": {
+    "partner": {
+      "label": "Declared partner",
+      "help": "Your workspace declared it as a partner: treat it as such before prospecting it."
+    },
+    "data_source": {
+      "label": "Data source, not a prospect",
+      "help": "Business-information provider: it has no staffing need to fulfil."
+    }
+  },
+  "gate": {
+    "state": {
+      "pending": "To decide",
+      "prioritised": "Prioritised",
+      "parked": "Set aside"
+    },
+    "decide": "Decide the priority",
+    "actions": {
+      "prioritise": "Prioritise this account",
+      "park": "Set aside with a reason",
+      "reopen": "Reopen the question"
+    },
+    "parkedBecause": "Set aside: {{reason}}",
+    "done": {
+      "pending": "The question is open again on {{company}}.",
+      "prioritised": "Done. {{company}} is in your portfolio.",
+      "parked": "{{company}} is set aside. It won’t come back in Discover."
+    },
+    "failed": "I couldn’t record that decision.",
+    "parkDialog": {
+      "title": "Why set this account aside?",
+      "description": "The reason is what saves you from asking again in six months — and from saying no for a reason that no longer holds.",
+      "placeholder": "Incumbent in place, no budget, outside our ICP…",
+      "cancel": "Cancel",
+      "confirm": "Set aside"
+    },
+    "reopening": {
+      "withReason": "Set aside on {{date}} — {{reason}}",
+      "withoutReason": "Set aside on {{date}}, no reason recorded"
+    }
+  },
+  "status": {
+    "prospect": "Not analysed",
+    "completed": "Completed",
+    "analyzing": "In progress",
+    "error": "Error",
+    "canceled": "Cancelled",
+    "archived": "Archived",
+    "deleted": "Deleted",
+    "imported": "Imported, not analyzed yet"
+  },
+  "commercialStatus": {
+    "inbox": "To sort",
+    "watching": "Under observation",
+    "opportunity": "High potential",
+    "customer": "Customer",
+    "opening": "Opening in progress",
+    "archived": "Deprioritized",
+    "dormant": "Dormant"
+  },
+  "relationStatus": {
+    "client": "Client",
+    "opening": "Opening",
+    "to_open": "To open",
+    "out_of_priority": "Deprioritized",
+    "on_hold": "On hold"
+  },
+  "commercialStatusReason": {
+    "title": "Why \"{{status}}\"?",
+    "description": "The reason is what explains this change in six months, when no one remembers why.",
+    "label": "Reason",
+    "placeholder": "Unreachable for two months, budget frozen, project postponed…",
+    "cancel": "Cancel",
+    "confirm": "Confirm"
+  },
+  "refreshDimension": {
+    "signals": "Signals",
+    "contacts": "Contacts",
+    "entities": "Entities",
+    "strategy": "Strategy",
+    "identity_group": "Identity and group",
+    "subsidiaries": "Subsidiaries and sites",
+    "positions": "Positions",
+    "ecosystem": "Ecosystem",
+    "buying_path": "Buying path",
+    "projects": "Projects"
+  },
+  "refreshOutcome": {
+    "title": "What the last refresh changed",
+    "newFacts": "New facts",
+    "changedFacts": "Changed facts",
+    "obsoleteFacts": "Facts no longer observed",
+    "preservedCorrections": "Your corrections, kept",
+    "overwrittenCorrections": "Your corrections, overwritten",
+    "overwrittenLine": "{{label}} · you wrote “{{corrected}}”, the {{phase}} refresh wrote “{{overwritten}}” instead",
+    "changedRecommendations": "Changed recommendations",
+    "obsoleteActions": "Actions no longer relevant",
+    "expiredSignals": "Expired signals",
+    "scoreChanged": "Score changed: {{before}} → {{after}}",
+    "confidenceChanged": "Confidence changed: {{before}} → {{after}}",
+    "scoreNotRecalculated": "Score not recalculated: this refresh only re-ran {{dimension}}.",
+    "scoreNotRecalculatedOn": "Score not recalculated: this refresh only re-ran {{dimension}}. Last real calculation on {{date}}.",
+    "scoreNotRecalculatedUnknownDimension": "Score not recalculated by this refresh.",
+    "confidenceNotRecalculated": "Confidence not recalculated: this refresh only re-ran {{dimension}}.",
+    "confidenceNotRecalculatedOn": "Confidence not recalculated: this refresh only re-ran {{dimension}}. Last real calculation on {{date}}.",
+    "confidenceNotRecalculatedUnknownDimension": "Confidence not recalculated by this refresh.",
+    "changedLine": "{{label}} · {{before}} → {{after}}",
+    "preservedLine": "{{label}} · {{kept}} — the refresh suggested “{{discarded}}”, your correction wins",
+    "toRecheck": "undated information, to re-check",
+    "toRecheckOn": "information from {{date}}, to re-check",
+    "nothingChanged": "No change on what was re-read.",
+    "unmeasured": "Not measured: {{axes}}. That phase returned nothing we can compare — this is not “nothing changed”.",
+    "unchangedFacts_one": "{{count}} fact re-read identically, confirmed",
+    "unchangedFacts_other": "{{count}} facts re-read identically, confirmed",
+    "newContacts_one": "{{count}} new contact",
+    "newContacts_other": "{{count}} new contacts",
+    "notConfirmedContacts_one": "{{count}} contact not re-confirmed",
+    "notConfirmedContacts_other": "{{count}} contacts not re-confirmed",
+    "newEntities_one": "{{count}} new entity",
+    "newEntities_other": "{{count}} new entities",
+    "field": {
+      "companyName": "Legal name",
+      "sector": "Sector",
+      "employees": "Headcount",
+      "revenue": "Revenue",
+      "headquarters": "Headquarters",
+      "website": "Website",
+      "phone": "Phone",
+      "address": "Address",
+      "siren": "SIREN",
+      "nafCode": "NAF code"
+    },
+    "failure": {
+      "title": "The “{{phase}}” phase did not complete",
+      "kept": "Kept in the dossier: {{axes}}.",
+      "preserved": "Your handwritten notes, validated actions, evidence and declared relationships are untouched.",
+      "unknownWarning": "Before you retry: the request may have gone out without the answer coming back. Retrying may redo the work — and pay for it again.",
+      "retry": "Retry {{phase}}",
+      "retryAnyway": "Retry anyway"
+    }
+  },
+  "runDepth": {
+    "quick": "Quick",
+    "verified": "Verified",
+    "deep": "Deep",
+    "label_one": "{{depth}} · {{count}} page read",
+    "label_other": "{{depth}} · {{count}} pages read"
+  },
+  "scopeMode": {
+    "groupe": "Entire group",
+    "france": "France",
+    "filiales": "Subsidiaries",
+    "it_digital": "IT & Digital",
+    "startups": "Startups",
+    "custom": "Custom",
+    "default": "Default scope"
+  },
+  "runStatus": {
+    "analyzing": "In progress",
+    "completed": "Completed",
+    "error": "Failed",
+    "canceled": "Cancelled"
+  },
+  "listTabs": {
+    "all": "Account portfolio",
+    "watching": "Under observation",
+    "opportunity": "High-potential accounts",
+    "archived": "Deprioritized"
+  },
+  "filters": {
+    "tag": "Tag",
+    "status": "Analysis status",
+    "score": "Commercial interest",
+    "sector": "Sector",
+    "sort": "Sort",
+    "sortVerb": "is",
+    "recentHistory": "Recent history",
+    "scoreHigh": "High (≥ 7)",
+    "scoreMedium": "Medium (5 - 7)",
+    "scoreLow": "Low (< 5)",
+    "gate": "Priority decision",
+    "gateValue": {
+      "pending": "To decide",
+      "prioritised": "Prioritised",
+      "parked": "Set aside"
+    },
+    "accessClass": "Accessibility",
+    "accessClassValue": {
+      "A": "Likely open",
+      "B": "Open through an entity",
+      "C": "Semi-open",
+      "D": "Likely locked"
+    },
+    "accessClassFilterUnavailable": "The “Accessibility” filter is off: it’s not that no account has a class — it’s that the read failed.",
+    "entityKind": "Entity type",
+    "relation": "Commercial relationship",
+    "secondary": "Secondary state",
+    "freshness": "Dossier freshness",
+    "freshnessValue": {
+      "stale": "Over 90 days (to refresh)"
+    },
+    "documentedHistory": "Documented history",
+    "documentedHistoryValue": {
+      "with": "With history",
+      "without": "Without history"
+    },
+    "authorizedReferences": "References",
+    "authorizedReferencesValue": {
+      "only": "Authorised by my firm only"
+    },
+    "zone": "Area (city or département)",
+    "zoneDepartment": "Département {{code}}",
+    "accountType": "Account type",
+    "accountTypeValue": {
+      "final": "End client",
+      "intermediary": "Intermediary"
+    }
+  },
+  "loadError": {
+    "title": "I couldn’t load the list.",
+    "description": "Try again — your filters are kept.",
+    "retry": "Try again"
+  },
+  "emptyFiltered": {
+    "title": "No account matches the filters",
+    "description": "No account in your portfolio passes the filters you set.",
+    "notInLifecycle": "Your portfolio is not empty: none of its accounts is filed under “{{lifecycle}}”.",
+    "notInFilter": "Your portfolio is not empty: none of its accounts matches the filter “{{filter}}: {{value}}”.",
+    "notInSource": "Your portfolio isn’t empty: none of its accounts matches the “{{source}}” chip.",
+    "resetFilters": "Reset filters",
+    "removeFilter": "Remove this filter",
+    "notInPortfolio": "This list searches your portfolio. “{{company}}” can exist without being in it — run an analysis to add it.",
+    "archivedMatch_one": "“{{company}}” is in your portfolio, but it is archived: {{count}} archived account matches this search. It is filed out of the list, not deleted.",
+    "archivedMatch_other": "{{count}} archived accounts match “{{company}}”. They are filed out of the list, not deleted.",
+    "failedMatch_one": "The analysis failed on “{{company}}”: the account exists, with no content. It is hidden from the list, not lost — resume it.",
+    "failedMatch_other": "The analysis failed on {{count}} accounts named “{{company}}”: they exist, with no content. They are hidden from the list, not lost.",
+    "resume": "Resume “{{company}}”",
+    "showFailed": "See the failures",
+    "showArchived": "See “{{tab}}”",
+    "analyse": "Analyse “{{company}}”"
+  },
+  "toolbar": {
+    "searchPlaceholder": "Search an account, an industry, a topic or a SIREN…",
+    "hideSidebar": "Hide accounts panel",
+    "showSidebar": "Show accounts panel",
+    "filters": "Filters",
+    "owner": {
+      "all": "Whole team",
+      "mine": "My accounts",
+      "teammate": "Owned by a teammate",
+      "aria": "Account owner: {{value}}"
+    },
+    "sort": {
+      "score_desc": "Decision first",
+      "name_asc": "Account name",
+      "date_desc": "Recent file",
+      "custom": "Column sort",
+      "aria": "Sort accounts: {{value}}"
+    },
+    "layout": {
+      "label": "Layout",
+      "table": "Table view",
+      "cards": "Card view"
+    },
+    "export_one": "Export the displayed account",
+    "export_other": "Export the {{count}} displayed accounts",
+    "exportDone_one": "CSV export ready: 1 account.",
+    "exportDone_other": "CSV export ready: {{count}} accounts.",
+    "filtersCount": "Filters ({{count}})",
+    "filtersAria_one": "Filter my portfolio: {{count}} criterion set",
+    "filtersAria_other": "Filter my portfolio: {{count}} criteria set"
+  },
+  "viewMode": {
+    "list": "List view",
+    "grid": "Grid view"
+  },
+  "counters": {
+    "backToPortfolio": "See the whole portfolio"
+  },
+  "table": {
+    "company": "Account",
+    "intermediaryBadge": "Intermediary",
+    "score": "Score",
+    "accessClass": "Accessibility",
+    "qualificationVerdict": "Qualification grid",
+    "lastAnalysis": "Last analysis",
+    "primarySignal": "Top signal",
+    "primarySignalOpen": "See the top signal for {{company}}",
+    "historicalContext": "Historical context",
+    "nextAction": "Next action",
+    "name": "Name",
+    "sector": "Sector",
+    "status": "Status",
+    "date": "Date",
+    "invoiced": "Invoiced",
+    "selectAria": "Select {{name}}",
+    "thisAccount": "this account",
+    "selectAllAria": "Select all",
+    "employees": "Headcount",
+    "commercialStatus": "Pipeline stage",
+    "invoiceReadiness": "Ready to invoice",
+    "rowActions": "Account actions",
+    "billing": "Invoiceable?",
+    "decision": "Team decision",
+    "people": "People",
+    "subject": "Topic & next action",
+    "relation": "Relationship",
+    "owner": "Owner",
+    "relationChange": "{{company}} relationship: {{status}} — change",
+    "ownerChange": "{{company}} is owned by {{name}} — reassign",
+    "ownerAssign": "Assign {{company}}",
+    "interest": "Interest"
+  },
+  "list": {
+    "relationLabel": "Relationship",
+    "openDossier": "View the account",
+    "rowFactsTitle": "Account details",
+    "rowFactsHint": "account details for {{company}}",
+    "accessClass": {
+      "A": "Open",
+      "B": "Through an entity",
+      "C": "Semi-open",
+      "D": "Locked"
+    },
+    "accessClassUnknown": "Accessibility not estimated",
+    "accessClassFailed": "Accessibility could not be read.",
+    "accessClassFailedShort": "Not read",
+    "qualificationVerdictUnknown": "Grid not filled in",
+    "qualificationVerdictFailed": "The qualification grid verdict could not be read.",
+    "qualificationVerdictFailedShort": "Not read",
+    "invoiceReadiness": {
+      "none": "No mission — nothing to invoice",
+      "unmeasured": "Not measured this month — this account has missions, but none has an invoicing line this month",
+      "unmeasuredBadge": "Not measured",
+      "failed": "The invoicing status could not be loaded",
+      "failedShort": "Not loaded",
+      "blockedTooltip": "Blocked — {{blockers}}"
+    },
+    "relaunchBrief": {
+      "flag": "Relaunch the briefing",
+      "hint": "Two open opportunities and no signed mission — pick the scoping call back up before it goes cold.",
+      "aria": "Relaunch the briefing for {{name}}"
+    },
+    "relaunch": "Re-run",
+    "rowActions": "Actions on this account",
+    "askCopilot": "Ask {{copilot}}",
+    "archiving": "Archiving…",
+    "setNextAction": "Set the next action",
+    "assign": "Assign",
+    "sleep": "Put on watch",
+    "archiveAccount": "Archive account",
+    "deleteAccount": "Delete account",
+    "moveTo": "Move to",
+    "signalDetected": "Signal detected",
+    "staleBadge": "Refresh due",
+    "staleTooltip": "Last analyzed over {{days}} days ago",
+    "verdictUnavailable": "Assessment unavailable",
+    "verdictUnavailableReason": {
+      "no_objective": "No offer objective set"
+    },
+    "scoreAnalyzing": "Analysis in progress",
+    "ownedByColleague": "{{name}}",
+    "ownedByColleagueTooltip": "Account owned by {{name}} — coordinate before you approach it.",
+    "favorite": {
+      "add": "Add to favourites",
+      "remove": "Remove from favourites",
+      "error": "The favourite could not be saved."
+    },
+    "billing": {
+      "ready": "Ready to invoice",
+      "blocked": "Not invoiceable",
+      "more": "+{{count}} other blocker",
+      "more_other": "+{{count}} other blockers",
+      "failed": "The billing file could not be loaded",
+      "failedShort": "Not loaded",
+      "legalNameUnknown": "Legal name not recorded",
+      "sirenValue": "SIREN {{siren}}",
+      "sirenUnknown": "SIREN not recorded",
+      "blockers": {
+        "missing_billing_entity": "No billing entity",
+        "missing_billing_contact": "No billing contact",
+        "missing_po": "Purchase order required and missing",
+        "expired_contract": "Contract expired",
+        "unknown_payment_terms": "Payment terms unknown"
+      }
+    },
+    "marketPathsObserved": "{{paths}} observed career paths",
+    "effortLevelLabel": "Effort level",
+    "effortInline": "Effort: {{level}}",
+    "ownerInline": "Owner: {{name}}",
+    "ownerLabel": "Owner",
+    "ownerYou": "You",
+    "effortReasonLabel": "Reason for the level",
+    "effortReviewLabel": "Next review",
+    "lastActionLabel": "Last action",
+    "nextActionLabel": "Next action",
+    "nextActionWithHorizon": "{{horizon}} · {{label}}"
+  },
+  "card": {
+    "openAria": "Open {{name}}’s file",
+    "activeMissions": "Active missions",
+    "expertsOnSite": "Freelancers",
+    "billingEntity": "Billing entity",
+    "compliance": "Status & compliance",
+    "signals": "Signals",
+    "noSignal": "No recent signal found in the sources consulted",
+    "siretValue": "SIRET {{siret}}",
+    "paymentTerms_one": "Payment in {{count}} day",
+    "paymentTerms_other": "Payment in {{count}} days",
+    "verified": {
+      "title": "Legal identity confirmed",
+      "aria": "Legal identity confirmed on {{date}}",
+      "sources": {
+        "public_registry": "public registry",
+        "human_declared": "entered by your team"
+      }
+    },
+    "contactsEmpty": "Contacts: —"
+  },
+  "selectionBar": {
+    "selected_one": "<highlight>{{count}}</highlight> account selected",
+    "selected_other": "<highlight>{{count}}</highlight> accounts selected",
+    "compare": "Compare",
+    "createTarget": "Create a target",
+    "refreshSignals": "Refresh signals",
+    "refreshContacts": "Refresh contacts",
+    "discoverContacts": "Discover contacts",
+    "analyzeBatch": "Analyze in bulk",
+    "clear": "Clear selection",
+    "pushToCrm": "Send to my CRM"
+  },
+  "compare": {
+    "title": "Account comparison",
+    "criterion": "Criterion",
+    "score": "Score",
+    "sector": "Sector",
+    "status": "Status",
+    "analysisDate": "Analysis date",
+    "recommendation": "Recommendation",
+    "interestPenetrability": "Interest × penetrability matrix",
+    "bestOpportunity": "Best opportunity:",
+    "scoreSuffix": "— score {{score}}",
+    "ai": {
+      "title": "AI prioritisation",
+      "generate": "Prioritise with AI",
+      "regenerate": "Regenerate",
+      "aiNote": "AI-generated from the accounts' analyses.",
+      "truncated": "Limited to the first {{count}} accounts.",
+      "hint": "Get a priority order, a per-account verdict and the first recommended action.",
+      "generating": "Running the comparison…",
+      "error": "AI comparison is unavailable right now.",
+      "quickWin": "Immediate action",
+      "sameEntity": "Same company (SIREN {{siren}}): {{companies}}. Comparing them counts the same target twice — nothing is merged, your call.",
+      "priorityOrder": "Priority order",
+      "reasoning": "Why this prioritisation",
+      "strengths": "Strengths: {{value}}",
+      "risks": "Risks: {{value}}",
+      "cycle": "Est. cycle {{value}}",
+      "keyContact": "Key contact {{value}}"
+    }
+  },
+  "deleteDialog": {
+    "title": "Delete this account?",
+    "description": "The account will be removed from your active portfolio and marked as deleted.",
+    "deleting": "Deleting…"
+  },
+  "sidebar": {
+    "recentHistory": "Recent history",
+    "noAccounts": "No account analyzed yet",
+    "viewAllHistory": "View full history →",
+    "similarTitle": "Accounts close to your target",
+    "similarLoading": "Loading opportunities...",
+    "similarEmpty": "No suggested opportunity",
+    "similarShowAll_one": "See the remaining suggestion",
+    "similarShowAll_other": "See the {{count}} other suggestions",
+    "similarShowLess": "Show less",
+    "similarWhyStrong": "Close to your target on several criteria",
+    "similarWhyPartial": "Close to your target on one criterion",
+    "similarWhySeed": "Suggested from the sector of your recent accounts",
+    "similarHeadlineTwin": "Similar to <account>{{account}}</account>, where you won a mission",
+    "similarHeadlineTech": "Technology environment close to <account>{{account}}</account>: {{technologies}}",
+    "similarHeadlineSector": "Same sector as <account>{{account}}</account>, in your portfolio",
+    "similarWhyTooltip": "Matched against your sales profile: target sectors, geographic areas, company size.",
+    "similarWhySeedTooltip": "No criterion from your profile (sectors, areas, size) matches this account yet. Complete your profile to sharpen these suggestions.",
+    "similarReason": {
+      "sector": "same sector as your targets",
+      "geo": "in your area",
+      "size": "the size you target"
+    },
+    "similarAxis": {
+      "sector": "your sectors",
+      "geo": "your area",
+      "size": "the size you target"
+    },
+    "similarUnevaluated": "not assessed: {{axes}} — you haven’t told us yet",
+    "similarSeedBase_one": "Built on your single analysed account — more analyses will widen the suggestions.",
+    "similarSeedBase_other": "Built on {{count}} analysed accounts — more analyses will widen the suggestions.",
+    "similarAnalyse": "Analyse",
+    "similarAnalyseAria": "Analyse {{company}}"
+  },
+  "opportunityBanner": {
+    "title": "Focus on your best opportunities",
+    "analyzed_one": "{{count}} account analyzed",
+    "analyzed_other": "{{count}} accounts analyzed",
+    "highPotential_one": "{{count}} high-potential opportunity.",
+    "highPotential_other": "{{count}} high-potential opportunities.",
+    "cta": "View opportunities →"
+  },
+  "hero": {
+    "tags": "Account tags",
+    "refreshAnalysis": "Refresh analysis",
+    "relaunchImpact": "Refreshing re-runs the analysis on this dossier, never creating a duplicate: the record fields you corrected by hand and the contacts already found are kept; the facts, the org chart and the plan are rebuilt.",
+    "siren": "SIREN {{siren}}",
+    "sirenLink": "SIREN {{siren}}, open the registry record",
+    "analyzedOn": "Analyzed on {{date}}",
+    "dateAtTime": "{{date}} at {{time}}",
+    "brief": "Brief",
+    "analysisState": "Analysis state of this dossier — distinct from the pipeline stage",
+    "analysisStateBadge": "Analysis: {{state}}",
+    "country": "Country: {{country}}",
+    "registryContractDocumented": "Identity read from a documented contract, not yet verified in production — nothing billable depends on it.",
+    "stickyActionAria": "Dossier's primary action",
+    "primary": {
+      "analyzeAccount": "Analyze the account",
+      "completeAccount": "Complete the account",
+      "finishAnalysis": "Finish the analysis",
+      "preparePlan": "Prepare the plan",
+      "continueNextAction": "Continue the next action",
+      "nextActionNamed": "Next action: {{action}}",
+      "noActionSuggested": "No action suggested for now",
+      "prepareMeeting": "Prepare for the meeting",
+      "seeChanges": "See what changed",
+      "askLaura": "Ask {{copilot}}"
+    },
+    "groupEntity": "{{group}} group · analysed entity {{entity}}"
+  },
+  "crmPresence": {
+    "badge": "Already in your CRM",
+    "badgeIn": "In {{tool}}",
+    "openRecord": "Open the record",
+    "tooltipTitle": "This account already exists in your CRM",
+    "contacts_one": "{{count}} contact",
+    "contacts_other": "{{count}} contacts",
+    "deals_one": "{{count}} open deal",
+    "deals_other": "{{count}} open deals",
+    "importedBadge": "Import from your CRM",
+    "importedTooltipTitle": "Contacts from your CRM are already in this account",
+    "importedContacts_one": "{{count}} imported contact",
+    "importedContacts_other": "{{count}} imported contacts",
+    "importedOn": "imported on {{date}}",
+    "importedDateUnknown": "import date not measured",
+    "batchAdvance": {
+      "trigger": "Advance the batch",
+      "title": "Advance several deals",
+      "description": "Pick the open deals and the target stage. Each one stays a separate request, proposed in \"To approve\" — nothing goes out before validation.",
+      "checkboxLabel": "Select {{name}}",
+      "targetStage": "Target stage",
+      "choose": "Choose a stage",
+      "submit": "Propose the batch",
+      "resultOk_one": "{{count}} deal proposed.",
+      "resultOk_other": "{{count}} deals proposed.",
+      "resultPartial": "{{ok}} proposed, {{failed}} rejected — each on its own.",
+      "error": "Proposing the batch failed."
+    }
+  },
+  "slotProposal": {
+    "trigger": "Propose a slot",
+    "title": "Propose a slot",
+    "description": "A slot for {{company}}, to approve before it lands on your calendar.",
+    "defaultSummary": "Business meeting — {{company}}",
+    "searching": "Looking for an available slot…",
+    "previewError": "Looking for a slot failed.",
+    "suppressed": "Rejected today for this account — not proposed again.",
+    "noSlot": "No slot long enough was found in the next ten working days.",
+    "previewBadge": "Preview — not written yet",
+    "consequence": "Uses {{minutes}} minutes of your free time today.",
+    "confirm": "Confirm on my calendar",
+    "confirmError": "Writing the slot failed.",
+    "reject": "Not now",
+    "rejectError": "The rejection could not be saved.",
+    "rejectedNote": "Noted — this account won't be proposed again today.",
+    "confirmedBadge": "Confirmed — proposed by {{brand}}",
+    "confirmedAt": "On your calendar: {{date}}.",
+    "close": "Close"
+  },
+  "cost": {
+    "tooltipTitle": "Analyses on this account",
+    "analyses_one": "{{count}} analysis",
+    "analyses_other": "{{count}} analyses",
+    "tooltipHint": "Provider cost details live in the Manager cockpit."
+  },
+  "cta": {
+    "gate": {
+      "open": {
+        "expected": "Opens what you can decide on this account: prioritise it, park it with a reason, or reopen the question."
+      },
+      "prioritise": {
+        "expected": "Adds this account to your portfolio. No analysis is started.",
+        "proof": "The “Prioritised” state shows in the dossier header, and the account moves up your account list."
+      },
+      "park": {
+        "expected": "Opens the parking reason. Nothing is saved until you confirm."
+      },
+      "reopen": {
+        "expected": "Puts this account back up for decision. The saved parking reason is cleared.",
+        "proof": "The “To decide” state shows in the dossier header, and the account comes back in Discover."
+      },
+      "parkReason": {
+        "expected": "Drops this reason, already used by your workspace, into the field below. The text stays editable."
+      },
+      "parkCancel": {
+        "expected": "Closes this window without parking the account. Nothing is saved."
+      },
+      "parkConfirm": {
+        "expected": "Parks this account with the reason you typed. It will no longer come back in Discover.",
+        "proof": "The “Parked” state and its reason show in the dossier header."
+      }
+    },
+    "analysis": {
+      "relaunch": {
+        "expected": "Opens search pre-filled with this account. The analysis only restarts once you launch it from that screen."
+      }
+    },
+    "moreActions": {
+      "open": {
+        "expected": "Opens everything the header does not show: continue the next action, complete the account, ask {{copilot}}, comment, schedule a slot, update in my CRM, assign, request a validation, add a teammate, refresh one axis, create a target, follow this account, bet profile, archive, detach or delete."
+      },
+      "thisAccount": "this account",
+      "archive": {
+        "expected": "Archives this dossier: it leaves your active portfolio, stays readable, and can be reactivated.",
+        "success": "“{{company}}” is archived.",
+        "proof": "The dossier’s analysis badge switches to “Archived”, and it joins the Deprioritised filter in your account list."
+      },
+      "detach": {
+        "expected": "Detaches this dossier from the group it was linked into. It gets back the status it had before the link, and its contacts return.",
+        "success": "“{{company}}” is detached from its group.",
+        "proof": "The dossier reappears in your account list with its contacts."
+      },
+      "delete": {
+        "expected": "Removes this dossier from your active portfolio. The row is kept, marked deleted — nothing is erased for good.",
+        "success": "“{{company}}” is removed from your active portfolio.",
+        "proof": "The dossier disappears from your account list."
+      },
+      "bestReference": {
+        "expected": "Marks or unmarks this account as your best reference — the source of the Discover preset “Close to your best references”.",
+        "success": "“{{company}}” is marked as a best reference.",
+        "proof": "The Discover preset “Close to your best references” now reads this account’s sector."
+      },
+      "createTarget": {
+        "expected": "Creates a new list in “My targets”, with this account as its first item.",
+        "success": "“{{list}}” was created in My targets, with {{company}} in it.",
+        "error": "Couldn't create this target.",
+        "proof": "The new list appears in My targets, with this account as its first item.",
+        "fallbackName": "New target"
+      },
+      "createTargetFromCrm": {
+        "expected": "Creates a new list in “My targets”, with this account as its first item.",
+        "success": "“{{list}}” was created in My targets, with {{company}} in it.",
+        "error": "Couldn't create this target.",
+        "proof": "The new list appears in My targets, with this account as its first item.",
+        "fallbackName": "New target"
+      },
+      "betProfile": {
+        "expected": "Declare this account’s horizon, size, access and required resource — what {{copilot}} reads to tell you when your week is too homogeneous.",
+        "success": "The bet profile of “{{company}}” is saved.",
+        "proof": "“Where should I invest my time” now names a portfolio made only of long bets or closed large accounts."
+      }
+    },
+    "pdf": {
+      "preview": {
+        "expected": "Opens the PDF preview of the dossier. Nothing is downloaded."
+      },
+      "export": {
+        "expected": "Builds the dossier as a PDF in your browser and downloads it.",
+        "proof": "The file is named after the account, in your browser’s download folder."
+      }
+    },
+    "brief": {
+      "open": {
+        "expected": "Opens the meeting brief for this account."
+      }
+    },
+    "share": {
+      "open": {
+        "expected": "Opens dossier sharing: a read-only link, with no account to create for whoever receives it."
+      }
+    },
+    "refresh": {
+      "menu": {
+        "expected": "Opens the four dossier axes that can be refreshed separately."
+      },
+      "dimension": {
+        "expected": "Re-runs this single axis of the analysis.",
+        "proof": "The dossier reloads with the fresh data for this axis."
+      }
+    },
+    "blocked": {
+      "exports": {
+        "why": "Your plan does not include downloading the dossier.",
+        "missing": "The Exports option is missing from your subscription.",
+        "unblock": "Open the plans that include it."
+      },
+      "parkReason": {
+        "why": "An account is not parked without a reason.",
+        "missing": "The parking reason is missing.",
+        "unblock": "Type it above, or pick a reason already used."
+      }
+    },
+    "hero": {
+      "completeAccount": {
+        "expected": "Opens a preview of the contacts the analysis brought that are not in your CRM. Nothing is sent until you confirm."
+      },
+      "finishAnalysis": {
+        "expected": "Opens the search screen pre-filled with this account to resume the analysis where it stopped. This click starts nothing until you confirm."
+      },
+      "preparePlan": {
+        "expected": "Opens this dossier’s Plan tab so you can decide the first action. Nothing is written."
+      },
+      "continueNextAction": {
+        "expected": "Opens this dossier’s Plan tab on the next action to take. Nothing is written."
+      },
+      "prepareMeeting": {
+        "expected": "Opens the brief page of this dossier: the angles, the contacts and what to know before the meeting. Nothing is sent."
+      },
+      "seeChanges": {
+        "expected": "Opens the Watch tab of this dossier: what moved on this account since last time. Nothing is written."
+      },
+      "askLaura": {
+        "expected": "Opens the copilot on a conversation already scoped to this account. Nothing is sent until you type your question."
+      }
+    },
+    "permission": {
+      "recordsWrite": "Requires permission to edit records.",
+      "dataExport": "Requires permission to export data.",
+      "contactsEnrich": "Requires permission to enrich contacts."
+    }
+  },
+  "moreActions": {
+    "label": "More actions",
+    "previewPdf": "PDF preview",
+    "downloadPdf": "Download PDF",
+    "relaunch": "Re-run",
+    "archive": "Archive",
+    "detach": "Detach",
+    "delete": "Delete",
+    "markBestReference": "Mark as best reference",
+    "unmarkBestReference": "Unmark as best reference",
+    "createTarget": "Create a target",
+    "createTargetFromCrm": "Create a target from the CRM",
+    "betProfile": "Bet profile",
+    "groupDossier": "The file",
+    "groupAccount": "The account"
+  },
+  "bestReference": {
+    "markedToast": "This account is now marked as a best reference.",
+    "unmarkedToast": "This account is no longer marked as a best reference.",
+    "errorToast": "Could not update this reference."
+  },
+  "commercialStatusHistory": {
+    "label": "Commercial status reason and history",
+    "title": "Commercial status",
+    "becameCustomer": "Became a customer on {{date}}.",
+    "noChangeYet": "No status change has been logged on this account yet.",
+    "change": "{{date}} — {{from}} → {{to}}",
+    "fromUnknown": "earlier status not recorded",
+    "reason": "Reason: {{reason}}"
+  },
+  "refreshMenu": {
+    "trigger": "Refresh",
+    "label": "Refresh a dimension"
+  },
+  "refreshSignalsDialog": {
+    "title": "Refresh signals",
+    "description_one": "Replays the Signals axis on the selected account.",
+    "description_other": "Replays the Signals axis on the {{count}} selected accounts.",
+    "capped": "Selection capped at the first {{max}} accounts for this action.",
+    "quoting": "Calculating cost…",
+    "error": "The quote could not be calculated.",
+    "previewTitle": "What this action will do",
+    "alreadyFreshLabel": "Already up to date",
+    "alreadyFresh_one": "{{count}} account, reused at no cost.",
+    "alreadyFresh_other": "{{count}} accounts, reused at no cost.",
+    "toRunLabel": "To refresh",
+    "toRun_one": "{{count}} account.",
+    "toRun_other": "{{count}} accounts.",
+    "noDossierLabel": "No dossier",
+    "noDossier_one": "{{count}} account skipped — no analysis to refresh.",
+    "noDossier_other": "{{count}} accounts skipped — no analysis to refresh.",
+    "running": "Refreshing… {{done}}/{{total}}",
+    "cancel": "Cancel",
+    "submit": "Refresh",
+    "success_one": "{{count}} account refreshed.",
+    "success_other": "{{count}} accounts refreshed.",
+    "partialSuccess": "{{done}} account(s) refreshed, {{failed}} failed — nothing was charged for those.",
+    "allFailed_one": "Failed on {{count}} account — nothing was charged.",
+    "allFailed_other": "Failed on {{count}} accounts — nothing was charged."
+  },
+  "refreshContactsDialog": {
+    "title": "Refresh contacts",
+    "description_one": "Replays contacts collection (Contacts axis) on the selected account.",
+    "description_other": "Replays contacts collection (Contacts axis) on the {{count}} selected accounts.",
+    "capped": "Selection capped at the first {{max}} accounts for this action.",
+    "quoting": "Calculating cost…",
+    "error": "The quote could not be calculated.",
+    "previewTitle": "What this action will do",
+    "alreadyFreshLabel": "Already up to date",
+    "alreadyFresh_one": "{{count}} account, reused at no cost.",
+    "alreadyFresh_other": "{{count}} accounts, reused at no cost.",
+    "toRunLabel": "To refresh",
+    "toRun_one": "{{count}} account.",
+    "toRun_other": "{{count}} accounts.",
+    "noDossierLabel": "No dossier",
+    "noDossier_one": "{{count}} account skipped — no analysis to refresh.",
+    "noDossier_other": "{{count}} accounts skipped — no analysis to refresh.",
+    "running": "Refreshing… {{done}}/{{total}}",
+    "cancel": "Cancel",
+    "submit": "Refresh",
+    "success_one": "{{count}} account refreshed.",
+    "success_other": "{{count}} accounts refreshed.",
+    "partialSuccess": "{{done}} account(s) refreshed, {{failed}} failed — nothing was charged for those.",
+    "allFailed_one": "Failed on {{count}} account — nothing was charged.",
+    "allFailed_other": "Failed on {{count}} accounts — nothing was charged."
+  },
+  "discoverContactsDialog": {
+    "title": "Discover contacts",
+    "description_one": "Looks for never-collected contacts on the selected account.",
+    "description_other": "Looks for never-collected contacts on the {{count}} selected accounts.",
+    "quoting": "Calculating cost…",
+    "error": "The quote could not be calculated.",
+    "previewTitle": "What this action will do",
+    "accountsLabel": "Targeted accounts",
+    "accountsCount_one": "{{count}} account.",
+    "accountsCount_other": "{{count}} accounts.",
+    "running": "Searching… {{done}}/{{total}}",
+    "cancel": "Cancel",
+    "submit": "Search",
+    "success_one": "{{count}} new contact found.",
+    "success_other": "{{count}} new contacts found.",
+    "noneFound": "No new contact found on this selection.",
+    "unconfigured": "This search requires a data provider not configured on this workspace.",
+    "partialSuccess": "{{done}} account(s) processed, {{failed}} failed.",
+    "allFailed_one": "Failed on {{count}} account.",
+    "allFailed_other": "Failed on {{count}} accounts."
+  },
+  "analyzeBatchDialog": {
+    "title": "Launch analysis",
+    "previewTitle": "Selected accounts",
+    "capped": "Selection capped at the first {{max}} accounts for this action.",
+    "noSiren_one": "{{count}} account has no known SIREN and is excluded from the batch.",
+    "noSiren_other": "{{count}} accounts have no known SIREN and are excluded from the batch.",
+    "costUnmeasured": "The detail of at least one launch could not be read. Launching stays blocked until it is known.",
+    "costDemo": "Demo: no launch is charged here.",
+    "alreadyAnalyzedLabel": "Already analyzed",
+    "alreadyAnalyzed_one": "{{count}} account is already analyzed: its dossier will be reopened at no charge.",
+    "alreadyAnalyzed_other": "{{count}} accounts are already analyzed: their dossiers will be reopened at no charge.",
+    "locked": "Your access is closed (trial ended) — an analysis can't be launched.",
+    "cancel": "Cancel",
+    "submit": "Launch analysis",
+    "success_one": "{{count}} analysis launched as a batch — follow it on the batch page.",
+    "success_other": "{{count}} analyses launched as one batch — follow them on the batch page.",
+    "failed_one": "{{count}} analysis could not be launched.",
+    "failed_other": "{{count}} analyses could not be launched.",
+    "previewCountLabel": "Analyses",
+    "countAnnounce_one": "{{count}} analysis will be started.",
+    "countAnnounce_other": "{{count}} analyses will be started.",
+    "previewModeLabel": "Mode"
+  },
+  "share": {
+    "title": "Share the dossier",
+    "description": "Public read-only link, valid for 30 days.",
+    "create": "Create link",
+    "createEvaluationOnly": "Share score only",
+    "evaluationOnlyNotice": "This link only shows the score and its justification — no sector, headcount, headquarters, or website.",
+    "error": "Could not generate the link. Try again in a moment.",
+    "copied": "Link copied",
+    "copyLink": "Copy link",
+    "other": "Other…",
+    "linkedinSummary": "Sales dossier - {{company}}",
+    "nativeTitle": "{{company}} dossier"
+  },
+  "pdf": {
+    "previewTitle": "Preview - {{company}}",
+    "generatedBy": "Sales dossier generated by {{brand}}",
+    "downloading": "Downloading…",
+    "previewError": "The preview could not be built. The Download button is still available.",
+    "fallbackAccountName": "account"
+  },
+  "laura": {
+    "contactsShown": "Contacts shown"
+  },
+  "notificationsProposal": {
+    "title": "Never miss the end of an analysis",
+    "description": "Turn on this browser's notifications: you'll be told the moment a dossier is ready, without keeping this tab open.",
+    "accept": "Turn on",
+    "dismiss": "Later",
+    "blockedTitle": "Browser notifications unavailable",
+    "acknowledge": "Got it"
+  },
+  "statusBanner": {
+    "cancelledTitle": "Analysis cancelled",
+    "failedTitle": "Analysis failed",
+    "interruptedTitle": "Analysis interrupted",
+    "cancelledMessage": "You cancelled the analysis. Resume whenever you like — we will restart from the last successful step.",
+    "failedMessage": "An error occurred during the analysis. Resuming restarts from the last successful step — nothing already done is redone.",
+    "partialDone": "What completed before the failure: {{phases}}.",
+    "partialMissing": "What could not be finished: {{phases}}.",
+    "interruptedMessage": "The analysis was interrupted (timed out, most likely a service restart). Relaunch it — it will pick up from the last successful step.",
+    "identityMismatchTitle": "Refresh refused — this isn't the same company",
+    "identityMismatchMessage": "The run resolved a different company (company number {{resolved}}) from the one on this record (company number {{expected}}). Nothing was written: your record, your contacts and your corrections are untouched. Two different company numbers are two different businesses — to analyse the other one, start a new analysis; if it's this record that carries the wrong number, correct it on the record and relaunch.",
+    "resuming": "Resuming…",
+    "resume": "Resume",
+    "prospectTitle": "Account in your portfolio — not analysed yet",
+    "prospectMessage": "It is assigned to you, but no analysis has been run yet: that is why the tabs are empty.",
+    "prospectCta": "Run the analysis"
+  },
+  "tabSections": {
+    "synthesis": "What I know",
+    "perimeters": "Entities & sites",
+    "opportunities": "Signals & needs",
+    "people": "Contacts",
+    "organigramme": "Org chart",
+    "ecosystem": "Ecosystem & access",
+    "actionPlan": "Action plan",
+    "historyProofs": "History & proof",
+    "finance": "Financial strategy"
+  },
+  "sectionsNav": {
+    "sections": "Account sections",
+    "subSections": "Sub-sections of the active section",
+    "mobile": "Account section",
+    "backToSummary": "Back to summary"
+  },
+  "dossierSearch": {
+    "region": "Account file search",
+    "label": "Search the account file",
+    "placeholder": "A person, a signal, an assignment…",
+    "shortcutHint": "Search the account file — shortcut: {{keys}}",
+    "clear": "Clear the search",
+    "results": "Account file search results",
+    "open": "Open",
+    "where": "{{section}} › {{subSection}}",
+    "empty": "Nothing in this account file matches “{{query}}”.",
+    "quickActions": "Account file shortcuts",
+    "askLaura": "Ask {{copilot}}",
+    "askLauraQuestion": "What should I know about {{company}} before acting?",
+    "askLauraAbout": "Ask {{copilot}} to look for it",
+    "askLauraAboutQuestion": "Look for “{{query}}” in the {{company}} account file.",
+    "prepareAction": "Prepare an action",
+    "addWhatIKnow": "Add what I know",
+    "kinds": {
+      "contact": "Person",
+      "entity": "Entity",
+      "signal": "Signal",
+      "project": "Project",
+      "need": "Need",
+      "mission": "Assignment",
+      "action": "Action",
+      "proof": "Proof",
+      "history": "History",
+      "source": "Source"
+    }
+  },
+  "tabs": {
+    "finance": "Financial strategy",
+    "partners": "Related services firms",
+    "proofs": "Proofs & debriefs",
+    "projects": "Opportunities",
+    "overview": "Overview",
+    "sites": "Sites",
+    "veille": "Signals and needs",
+    "contacts": "Contacts",
+    "organigramme": "Org chart",
+    "coverage": "Who we're missing",
+    "committee": "Buying committee",
+    "plan": "Action plan",
+    "history": "History",
+    "evaluation": "Score",
+    "access": "Procurement practices",
+    "missions": "Missions",
+    "messages": "Messages",
+    "memory": "Relationship memory",
+    "brief": "What I know"
+  },
+  "tabMigrationNotice": {
+    "messageWithSubSection": "This tab is now called {{section}} › {{subSection}}.",
+    "messageSectionOnly": "This tab is now called {{section}}."
+  },
+  "battleCard": {
+    "title": "Competitive positioning — {{company}}",
+    "copyTitle": "COMPETITIVE POSITIONING — {{company}}",
+    "copyPrimaryContact": "Primary contact: {{contact}}",
+    "copyActivity": "Business: {{activity}}",
+    "copyItChallenges": "Challenges to address: {{items}}",
+    "copyAttackAngles": "Attack angles: {{items}}",
+    "copyScore": "Score: {{score}}/10",
+    "copyRecommendation": "Recommendation: {{verdict}}",
+    "toIdentify": "To identify",
+    "primaryContact": "Priority contact",
+    "toIdentifyHint": "To identify — run the contacts analysis",
+    "activity": "Actual business",
+    "itChallenges": "Priority challenges to address",
+    "attackAngles": "Attack angles",
+    "pains": "Pain points",
+    "score": "Score",
+    "launcherTitle": "Competitive positioning sheet",
+    "launcherSubtitle": "Us vs the incumbent ESNs — meeting-ready",
+    "generate": "Generate the positioning sheet",
+    "aiNote": "AI-generated from collected data only.",
+    "generating": "Generating the sheet…",
+    "generatingHint": "The AI is re-reading the account dossier and the ESNs already identified to compose the sheet. Expect under a minute.",
+    "elapsed": "{{seconds}}s",
+    "error": "The positioning sheet is unavailable right now.",
+    "empty": "Not enough analysed data for this positioning sheet.",
+    "budgetEstimated": "Estimated IT budget: {{value}}",
+    "vsCompetitors": "Us vs competitors",
+    "theirStrengths": "Their strengths: {{value}}",
+    "theirWeaknesses": "Their weak spot: {{value}}",
+    "counterAngle": "Our counter-angle: {{value}}",
+    "whatToSay": "Hooks to use",
+    "whatNotToSay": "Traps to avoid",
+    "probableObjection": "Likely objection",
+    "objectionResponse": "Response: {{value}}",
+    "mirrorQuestion": "Mirror question: {{value}}",
+    "killerQuestion": "Question that unlocks the meeting"
+  },
+  "planAction": {
+    "markTodo": "Mark action as to do",
+    "markDone": "Mark action as done",
+    "dueDateLabel": "Follow-up due date",
+    "removeDueDate": "Remove due date",
+    "addDueDate": "Add a due date",
+    "plannedDeadline": "Deadline planned by the analysis — click to set a date",
+    "reasonPrefix": "Why:",
+    "sendStatusEmailSent": "Email sent",
+    "sendStatusDeclared": "Marked done"
+  },
+  "signalFreshnessLine": {
+    "verified": "Last checked: {{when}}",
+    "today": "today",
+    "event": "latest useful event: {{date}}",
+    "eventHistorical": "latest useful event: {{date}} (historical context)",
+    "nothingNewer": "No more recent item has been identified.",
+    "nextReanalysis": "Next automatic re-analysis: {{date}}.",
+    "cadenceDaily": "Automatic watch: at most once a day",
+    "reanalysisSuspended": "Monitoring suspended: no automatic re-analysis is planned.",
+    "reanalysisNeverAnalyzed": "Never analysed: automatic re-analysis starts after the first analysis.",
+    "reanalysisNotFollowed": "No automatic re-analysis: account not followed."
+  },
+  "freshness": {
+    "lessThanHour": "Less than an hour ago",
+    "hoursAgo": "{{count}}h ago",
+    "daysAgo": "{{count}}d ago",
+    "monthsAgo_one": "{{count}} month ago",
+    "monthsAgo_other": "{{count}} months ago",
+    "analyzedOn": "Analyzed on {{date}} — {{label}}",
+    "absoluteDate": "on {{date}}",
+    "nextReanalysis": "Next re-analysis on {{date}}",
+    "onDate": "{{nature}} on {{date}}",
+    "fullAnalysis": "Full analysis",
+    "targetedRefresh": "Targeted refresh — {{dimension}}",
+    "structuralObservation": "Org chart observed",
+    "updatedAgo": {
+      "fullAnalysis": "Analysis refreshed {{ago}}",
+      "targetedRefresh": "Targeted refresh — {{dimension}}, {{ago}}",
+      "structuralObservation": "Org chart observed {{ago}}"
+    }
+  },
+  "timeAgo": {
+    "lessThanHour": "less than an hour ago",
+    "hoursAgo": "{{count}}h ago",
+    "daysAgo_one": "{{count}} day ago",
+    "daysAgo_other": "{{count}} days ago",
+    "monthsAgo_one": "{{count}} month ago",
+    "monthsAgo_other": "{{count}} months ago",
+    "justNow": "just now",
+    "secondsAgo": "{{count}}s ago",
+    "minutesAgo": "{{count}}min ago"
+  },
+  "watch": {
+    "unknownDate": "Unknown date",
+    "unknownSource": "Source not specified",
+    "unknownPerimeter": "This account",
+    "crmKind": {
+      "affaire_perdue": "Lost deal",
+      "affaire_dormante": "Dormant deal",
+      "affaire_renouvellement": "Renewal to review"
+    }
+  },
+  "notFound": {
+    "title": "Account not found",
+    "message": "The account could not be found",
+    "hint1": "The page address is probably incorrect",
+    "hint2": "Go back and try again",
+    "back": "Back to previous page"
+  },
+  "toast": {
+    "contactsSearchNameOnly": "Search limited to the company name: no organization record was available to anchor it, so namesakes or subsidiaries may have been missed. Specify the entity or the account's website to target better.",
+    "noContactsFound": "No contact could be identified for this account.",
+    "contactsIdentified_one": "{{count}} contact added to the account.",
+    "contactsIdentified_other": "{{count}} contacts added to the account.",
+    "contactsAlreadyKnown_one": "{{count}} contact found, already in the account.",
+    "contactsAlreadyKnown_other": "{{count}} contacts found, already in the account.",
+    "orgMapRebuilding": "The influence map is updating in the background.",
+    "orgMapRebuilt": "Org chart updated.",
+    "orgMapRebuildFailed": "The influence map could not be updated. The contacts themselves are in the account.",
+    "orgMapNotRefreshed": "The influence map could not be rebuilt — run “Enrich org chart” to place them on it.",
+    "enrichContactsError": "Error while enriching contacts.",
+    "contactSearchOutOfScope": "This entity was excluded from the analysis scope.",
+    "noContactsToEnrich": "No contact to enrich. Run contact discovery first.",
+    "orgUpdated": "Org chart updated — {{matched}}/{{total}} contacts enriched.",
+    "orgGraphNotAssembled": "{{matched}}/{{total}} contacts classified, but no org chart could be assembled this time.",
+    "enrichOrgError": "Error while enriching the org chart.",
+    "orgPathRecomputed_one": "Path recomputed — {{count}} step.",
+    "orgPathRecomputed_other": "Path recomputed — {{count}} steps.",
+    "orgPathRecomputeError": "Could not recompute the path.",
+    "dimensionRefreshed": "{{dimension}} refreshed",
+    "seePlans": "View plans",
+    "refreshError": "Error while refreshing.",
+    "pdfDownloaded": "PDF downloaded",
+    "pdfReady": "{{name}} dossier ready.",
+    "pdfError": "PDF download failed",
+    "shareLinkError": "Could not generate the share link",
+    "accountArchived": "Account archived",
+    "archiveError": "Error while archiving",
+    "analysisCancelled": "Analysis cancelled",
+    "cancelError": "Could not cancel the analysis",
+    "deleteError": "Error while deleting",
+    "accountDeleted": "Account deleted",
+    "actionAdded": "Action added to the plan.",
+    "actionAddError": "Could not add the action to the plan.",
+    "actionAlreadyInPlan": "This action is already in the plan.",
+    "angleAdded": "Angle added to the plan.",
+    "angleAddError": "Could not add the angle to the plan.",
+    "angleGenerated": "New attack angle generated and added to the dossier.",
+    "angleGeneratedDuplicate": "The generated angle is already in the dossier — nothing new to add.",
+    "angleGenerateError": "Could not generate an attack angle right now.",
+    "noSitesToEnrich": "No site identified for this account.",
+    "sitesUpdated": "Sites updated",
+    "sitesError": "Error while researching sites.",
+    "movedTo": "Account moved to \"{{status}}\"",
+    "statusError": "Error while changing the sales status",
+    "linkCopied": "Link copied to clipboard",
+    "copyError": "Could not copy the link",
+    "analysisResumed": "Resuming the analysis",
+    "resumeError": "Could not resume the analysis",
+    "relationVerified": "Link verified: the evidence was found and cited.",
+    "relationSupported": "Link better supported (confidence {{value}}), but no official proof: it stays inferred.",
+    "relationSupportedNoScore": "Link better supported, but no official proof: it stays inferred.",
+    "relationNoProof": "No public evidence found for this link. It stays inferred — nothing was changed.",
+    "relationVerifyError": "Verifying the link failed.",
+    "alreadyFresh": "This axis is already up to date",
+    "orgAndContactsRefreshed": "The org chart and contacts were re-read."
+  },
+  "emptyState": {
+    "title": "No accounts analyzed yet",
+    "description": "Ask for accounts in one sentence — for example “find me 10 accounts in my sector” — and {{copilot}} gives you a short, justified list. You can also type a target company name to get its conquest dossier.",
+    "cta": "Ask {{copilot}} for accounts",
+    "chatPrompt": "Find me 10 accounts in my sector"
+  },
+  "planFeedback": {
+    "useful": "Useful — reinforce it on the next run",
+    "notUseful": "Off-target — don't propose it again",
+    "report": "Report",
+    "reportLabel": "Report this play",
+    "wrong": "False information",
+    "outdated": "Outdated information",
+    "saved": "Feedback saved — it will feed this account's next runs.",
+    "error": "Could not save your feedback. Please try again."
+  },
+  "analysisVerdict": {
+    "prompt": "On an account you already know, this first analysis is:",
+    "juste": "Accurate",
+    "partiel": "Partial",
+    "faux": "Wrong",
+    "manquant": "Missing",
+    "saved": "Feedback saved — it will feed this account's next runs.",
+    "error": "Could not save your feedback. Please try again."
+  },
+  "boardStatus": {
+    "to_analyse": "To analyse",
+    "to_open": "To open",
+    "in_progress": "In progress",
+    "to_follow_up": "To follow up",
+    "customer": "Customer / already open",
+    "watching": "Watching",
+    "discarded": "Discarded"
+  },
+  "deliverables": {
+    "title": "Deliverables",
+    "subtitle": "The same dossier, in the format your client expects.",
+    "preparing": "Preparing…",
+    "previewDescription": "What this deliverable contains before you download or share it.",
+    "share": {
+      "team": "Share with team",
+      "copied": "Link copied — your colleagues in this workspace can open it.",
+      "error": "Could not copy the link."
+    },
+    "crm": {
+      "exportButton": "Export to your CRM",
+      "exported": "Account exported to your CRM.",
+      "alreadyExists": "This account already exists in your CRM.",
+      "error": "Could not export to your CRM right now."
+    },
+    "format": {
+      "docx": "Word",
+      "pdf": "PDF",
+      "pptx": "Slides",
+      "xlsx": "Contacts (Excel)"
+    },
+    "descriptors": {
+      "content": {
+        "label": "Content included",
+        "dossier": "Identity, {{brand}} take, Recent signals, Contacts",
+        "contacts": "Name, title, entity, email, phone, LinkedIn, status"
+      },
+      "version": {
+        "label": "Version",
+        "value": "Content model v{{n}}"
+      },
+      "scope": {
+        "label": "Scope",
+        "dossier": "This account only — {{company}}",
+        "dossierGrouped": "This account only — {{company}}; linked subsidiaries are not included",
+        "contacts": "{{company}}'s contacts only",
+        "contactsGrouped": "{{company}}'s contacts only; linked subsidiaries are not included"
+      },
+      "source": {
+        "label": "Source",
+        "dossier": "Generated from {{brand}}'s analysis of this account",
+        "contacts": "This account's contact directory"
+      },
+      "freshness": {
+        "label": "Freshness",
+        "unknown": "No analysis or refresh measured on this account yet."
+      },
+      "excluded": {
+        "label": "Data excluded",
+        "dossier": "Message bodies, contacts beyond the first 40, internal log",
+        "contacts": "Message bodies, internal score and notes"
+      },
+      "permissions": {
+        "label": "Permissions",
+        "team": "Visible to the whole workspace team",
+        "exportRestricted": "Restricted to roles allowed to export data"
+      },
+      "cost": {
+        "label": "Cost",
+        "included": "Included in your plan"
+      },
+      "state": {
+        "label": "State"
+      }
+    }
+  },
+  "network": {
+    "title": "Professional network",
+    "subtitle": "Connections to follow up, and post topics grounded in what your firm actually does.",
+    "toFollowUp": "Accepted connections still silent",
+    "unnamedContact": "Unnamed contact",
+    "daysSilent": "{{count}} day of silence",
+    "daysSilent_other": "{{count}} days of silence",
+    "postIdeas": "Suggest post topics",
+    "thinking": "Looking for angles…",
+    "noIdeas": "Not enough material for a solid topic. Fill in your firm profile rather than posting a generality.",
+    "groundedOn": "Grounded on: {{source}}"
+  },
+  "meetingNotes": {
+    "title": "Meeting recap",
+    "subtitle": "Paste your notes — or drop your recording — and get a recap, next steps and a follow-up email.",
+    "placeholder": "Your raw notes, exactly as you took them.",
+    "noNotes": {
+      "title": "No notes yet? Three questions to start with:",
+      "learned": "What did you learn?",
+      "nextStep": "What follow-up was agreed?",
+      "owner": "Who does what, and by when?"
+    },
+    "audioHint": "You can also drop a recording: it will be transcribed into the box below, where you can fix it before going on.",
+    "transcribing": "Transcribing…",
+    "documentHint": "You can also attach a document (PDF, Word): its text will be added to the box below, where you can fix it before going on.",
+    "extractingDocument": "Reading the document…",
+    "documentPartial": "The document could not be fully read (likely a partial scan) — check that nothing important is missing.",
+    "structure": "Structure",
+    "structuring": "Reading the notes…",
+    "nothingFound": "These notes carry no decision and no next step. Nothing was added — a short recap beats an invented one.",
+    "decisions": "Decisions",
+    "nextSteps": "Next steps",
+    "noNextStep": "No next step identified in this recap.",
+    "openQuestions": "Open questions",
+    "signals": "Signals heard",
+    "followUp": "Follow-up email",
+    "followUpSubject": "Following up on our conversation",
+    "pushTasks": "Create {{count}} task in the CRM",
+    "pushTasks_other": "Create {{count}} tasks in the CRM",
+    "inputKind": {
+      "label": "What you paste",
+      "notes": "My notes",
+      "imported_report": "An imported meeting report",
+      "email": "An email (copy-pasted)"
+    },
+    "emailHint": "Paste the text yourself: your mailbox is never read to find it.",
+    "statementLabel": "Your statement (optional)",
+    "statementPlaceholder": "What you promised or noticed — kept apart from what the client said.",
+    "consent": "The attendees agreed to this meeting being recorded.",
+    "consentRequired": "Tick the attendees’ agreement to upload a recording.",
+    "recordingPolicy": "The audio recording is never kept: only the transcribed text remains, in the meeting notes.",
+    "facts": "Facts",
+    "requests": "Requests",
+    "criteria": "Criteria",
+    "dates": "Dates mentioned",
+    "clientCommitments": "Client commitments",
+    "userCommitments": "Your commitments",
+    "mentionedContacts": {
+      "title": "Mentioned people",
+      "includeLabel": "Keep {{name}}",
+      "fullNameLabel": "Name of {{name}}",
+      "roleLabel": "Role of {{name}}",
+      "rolePlaceholder": "Role (optional)"
+    }
+  },
+  "parkedWithReason": "Set aside on {{date}} — {{reason}}",
+  "parkedNoReason": "Set aside, no reason recorded",
+  "orgDeclare": {
+    "title": "Add what you know",
+    "subtitle": "Someone you know that {{brand}} did not find. They survive re-analyses.",
+    "form": {
+      "heading": "Enter a person",
+      "name": "Full name",
+      "title": "Job title (optional)",
+      "entity": "Division / entity (optional)",
+      "manager": "Their manager (optional)",
+      "hint": "An entity or a manager we cannot find in the dossier is never invented: the person is added without a link.",
+      "submit": "Add"
+    },
+    "file": {
+      "heading": "Upload an org chart",
+      "pick": "Choose a file (PDF, image, PowerPoint, Excel or CSV)",
+      "reading": "Reading the document…",
+      "proposedHint": "Proposal read from the document: review it, nothing is added before you click.",
+      "droppedFromFile": "Removed, not named in the document: {{names}}.",
+      "staleBadge": "Data from {{year}}",
+      "staleHint": "This document is more than 12 months old: imported people will be marked \"needs a check\".",
+      "read": "{{count}} person read.",
+      "read_other": "{{count}} people read.",
+      "ignored": "Unrecognised columns, therefore ignored: {{columns}}.",
+      "skipped": "{{count}} row skipped (no name, or duplicate).",
+      "skipped_other": "{{count}} rows skipped (no name, or duplicate).",
+      "truncated": "File too long: only the first 200 people were read.",
+      "documentDateLabel": "Date of this document (optional)",
+      "documentDateHint": "A dated org chart marks the people it imports \"needs a check\" once it goes stale — never verified today by mistake.",
+      "confirm": "Add {{count}} person",
+      "confirm_other": "Add {{count}} people",
+      "preview": {
+        "known_in_graph": "Already in the org chart",
+        "known_contact": "Known to {{brand}}",
+        "new": "Unknown to {{brand}}",
+        "summary": "{{known}} of {{total}} already known to {{brand}} — they will be completed, not duplicated.",
+        "summaryNone": "{{brand}} does not know any of these people yet: they will be added as the file describes them.",
+        "fills": "Completed by {{brand}}: {{fields}}",
+        "fieldTitle": "job title",
+        "fieldLinkedin": "LinkedIn"
+      }
+    },
+    "result": {
+      "title": "Contacts from the imported org chart",
+      "created_one": "{{count}} contact created",
+      "created_other": "{{count}} contacts created",
+      "linked_one": "{{count}} already known, linked without overwriting anything",
+      "linked_other": "{{count}} already known, linked without overwriting anything",
+      "status": {
+        "created": "Created",
+        "linked": "Already known"
+      },
+      "enrich_one": "Enrich the selected contact",
+      "enrich_other": "Enrich the {{count}} selected contacts",
+      "enrichHint": "Looks up the missing contact details of the selected people."
+    },
+    "text": {
+      "heading": "Describe it in plain words",
+      "placeholder": "E.g.: Caroline Jaouen is the CIO, reporting to Marc Petit the CEO. Paul Lefranc runs infrastructure under her.",
+      "structure": "Structure it",
+      "nobody": "No one is named in this text. A job title alone (“the CIO”) is not a name.",
+      "confirm": "Add {{count}} person",
+      "confirm_other": "Add {{count}} people",
+      "dropped": "Dropped, not named in your text: {{names}}.",
+      "discard": "Discard"
+    },
+    "toast": {
+      "done": "{{count}} person added to the org chart.",
+      "done_other": "{{count}} people added to the org chart.",
+      "savedForNextRun": "Saved. This dossier has no org chart yet: they will appear at the next analysis.",
+      "savedForNextRun_other": "Saved. This dossier has no org chart yet: they will appear at the next analysis.",
+      "error": "The addition could not be saved.",
+      "structureError": "Structuring did not succeed.",
+      "previewError": "The preview failed. You can still add the file as is.",
+      "fileError": "The document could not be read."
+    },
+    "documents": {
+      "read": "Read the org charts in your documents",
+      "nobody_one": "No org chart found in your documents ({{count}} read).",
+      "nobody_other": "No org chart found in your documents ({{count}} read).",
+      "error": "Reading the documents did not complete."
+    }
+  },
+  "absorb": {
+    "menuItem": "Attach to another dossier…",
+    "title": "Attach “{{name}}” to another dossier",
+    "intro": "This dossier becomes an entity of the one you keep. Nothing is deleted: it is archived, stays readable, and carries the name of the dossier it was attached to.",
+    "searchPlaceholder": "Search the dossier to keep…",
+    "preview": {
+      "entity": "“{{entity}}” becomes an entity of “{{kept}}”.",
+      "moved": "{{count}} contact moves to the kept dossier.",
+      "moved_other": "{{count}} contacts move to the kept dossier.",
+      "left": "{{count}} contact stays here — already on the kept dossier: {{names}}.",
+      "left_other": "{{count}} contacts stay here — already on the kept dossier: {{names}}.",
+      "rest": "Signals, projects, action plan and history stay on this dossier, which remains readable."
+    },
+    "cancel": "Cancel",
+    "confirm": "Attach",
+    "toast": {
+      "done": "“{{absorbed}}” is attached to “{{kept}}”. {{count}} contact moved.",
+      "done_other": "“{{absorbed}}” is attached to “{{kept}}”. {{count}} contacts moved.",
+      "error": "The attachment could not be saved."
+    },
+    "description": "Pick the account that stays. The other one is attached to it; nothing is deleted."
+  },
+  "groupEntities": {
+    "title": "Other entities of the group",
+    "note": "Each entity has its own record, owner, notes and actions. You only see those within your scope.",
+    "roleGroupe": "Group head",
+    "roleFiliale": "Subsidiary",
+    "owner": "Owner: {{name}}",
+    "noOwner": "No owner",
+    "actions_one": "{{count}} open action",
+    "actions_other": "{{count}} open actions",
+    "notes_one": "{{count}} note",
+    "notes_other": "{{count}} notes"
+  },
+  "links": {
+    "belongsToTitle": "This dossier belongs to a group",
+    "linkedOn": "attached on {{date}}, by a member of the workspace.",
+    "linkedDateUnknown": "attached before the date of the gesture was recorded.",
+    "attachedTitle_one": "{{count}} dossier is attached to it",
+    "attachedTitle_other": "{{count}} dossiers are attached to it",
+    "detach": "Detach",
+    "detaching": "Detaching…"
+  },
+  "detach": {
+    "toast": {
+      "done_one": "“{{detached}}” is detached from “{{kept}}” — {{count}} contact came back to it.",
+      "done_other": "“{{detached}}” is detached from “{{kept}}” — {{count}} contacts came back to it.",
+      "done_zero": "“{{detached}}” is detached from “{{kept}}”. No contact had moved.",
+      "error": "The detach could not be saved."
+    }
+  },
+  "hygiene": {
+    "nextAction": {
+      "flag": "No next action",
+      "flagAria": "No action scheduled on this account — schedule the next action",
+      "flagHint": "This account is being followed and nothing is scheduled on it. Open the dossier to schedule the next action.",
+      "unread": "“Followed accounts with no next action” check: not measured. The read did not complete, so rows are not flagged — this is not “all clear”.",
+      "partial": "The read of accounts with no next action stopped before the end of the portfolio: beyond that point, rows are not flagged."
+    },
+    "contactsEmail": {
+      "title_one": "{{count}} of this account's {{total}} contacts has no email address",
+      "title_other": "{{count}} of this account's {{total}} contacts have no email address",
+      "says": "Nothing reaches them until we have an address.",
+      "action": "Find the missing addresses",
+      "actionPending": "Searching…",
+      "unread": "Contacts without an address: not measured. The read did not complete — this is not “all clear”."
+    }
+  },
+  "propagation": {
+    "columnHint": "What each client has actually paid — invoiced months, at their real amount. The figure is computed in the missions and corrected there.",
+    "cellNoInvoice": "No invoiced month on this account",
+    "cellNoInvoiceOwnScope": "No invoiced month on this account — or this account is outside your financial scope",
+    "cellAmountUnknown": "Months are invoiced, none carries an amount",
+    "cellFailed": "The invoiced amount could not be loaded",
+    "bannerRevenue_one": "This client has brought you {{amount}} across {{count}} mission",
+    "bannerRevenue_other": "This client has brought you {{amount}} across {{count}} missions",
+    "bannerMonths_one": "{{count}} invoiced month",
+    "bannerMonths_other": "{{count}} invoiced months",
+    "bannerFloor_one": "{{count}} invoiced month carries no amount: the total is a floor",
+    "bannerFloor_other": "{{count}} invoiced months carry no amount: the total is a floor",
+    "bannerNoAmount": "Months are invoiced on this client, but none carries an amount. The total cannot be computed — it is not zero.",
+    "bannerNoInvoice": "No month has been invoiced on this client yet.",
+    "bannerDenied": "What this client has paid is outside your scope. This is not missing data: it is a right your role does not hold.",
+    "bannerFailed": "What this client has paid could not be loaded. This is not a client without invoices — it is a read that failed.",
+    "rate": "Average sold day rate: {{amount}} per day",
+    "rateUnknown": "No mission on this client carries a day rate: a fixed-price contract is invoiced at milestones, not by the day.",
+    "rateMissing_one": "{{count}} mission with no day rate, outside the average",
+    "rateMissing_other": "{{count}} missions with no day rate, outside the average",
+    "missions_one": "{{count}} mission",
+    "missions_other": "{{count}} missions"
+  },
+  "lens": {
+    "label": "Portfolio reading",
+    "commercial": "Sales",
+    "delivery": "Invoicing",
+    "counters": {
+      "ready": "accounts ready to invoice",
+      "blocked": "accounts to unblock",
+      "scope": "across the accounts shown"
+    }
+  },
+  "band": {
+    "tiles": {
+      "total": "Total accounts",
+      "withBillingEntity": "Billing entities",
+      "activeMissions": "Missions in progress",
+      "consultantsOnMission": "Freelancers on assignment",
+      "ready": "Accounts ready",
+      "alerts": "Alerts to handle"
+    },
+    "unmeasured": "Not measured",
+    "gaps": {
+      "loading": "Still loading.",
+      "failed": "The read failed — that is not a zero, it is a number we could not get.",
+      "staffing_not_recorded": "No mission in progress has a recorded assignment. A “0” would count rows nobody entered: assign your consultants to their missions and the number will appear."
+    },
+    "deltaThisMonth": "{{change}} this month",
+    "deltaUnmeasured": "Change not measured",
+    "deltaGaps": {
+      "no_previous_snapshot": "No snapshot from last month: the first change will show up after the next monthly sweep.",
+      "no_current_snapshot": "Today’s value has not been read yet.",
+      "denominator_missing": "The reference population was not recorded that month.",
+      "periods_not_ordered": "The available snapshot is not older than the current month."
+    },
+    "denominator_one": "of {{count}} mission in progress",
+    "denominator_other": "of {{count}} missions in progress",
+    "scope": {
+      "workspace": "Whole workspace",
+      "page": "Across the accounts shown"
+    }
+  },
+  "entityKind": {
+    "all": "All types",
+    "bu": "Business unit",
+    "subsidiary": "Subsidiary",
+    "division": "Division",
+    "unknown": "Undetermined type"
+  },
+  "offerLens": {
+    "personalised": "Analysis tailored to your {{domain}} offer portfolio · {{territories}}",
+    "notConfigured": "Your offer portfolio has not been filled in yet, so this file was not read through your lens. You can set it in Settings › Company profile.",
+    "noTerritory": "no area declared",
+    "domainUnknown": "company type not filled in"
+  },
+  "keyFigures": {
+    "total": "Accounts in the workspace",
+    "totalMeta": "Working files",
+    "toResume": "To pick back up",
+    "toResumeMeta": "An action is planned",
+    "activeRelations": "Active relationships",
+    "activeRelationsMeta": "Client account or mission under way",
+    "favorites": "Favorites",
+    "favoritesMeta": "Your pinned accounts",
+    "totalScoped": "Accounts shown",
+    "totalScopedMeta": "Under the active filter",
+    "groupLabel": "Portfolio figures"
+  },
+  "page": {
+    "introTitle": "Your accounts",
+    "introTitleWithoutName": "Your accounts",
+    "introSubtitle": "The companies you or your team follow.",
+    "listsBack": "Back to accounts",
+    "askLauraLabel": "Ask {{copilot}} to prioritise my portfolio",
+    "askLauraQuestion": "Prioritise my accounts: which deserve my time this week, and why? Start with those that have no next action.",
+    "total_one": "{{count}} account",
+    "total_other": "{{count}} accounts",
+    "analyze": "Analyze an account",
+    "portfolioListLabel": "The portfolio"
+  },
+  "techStructure": {
+    "title": "Technical structure",
+    "loading": "Reading…",
+    "unavailable": "Technical structure is unavailable right now. Try again in a moment.",
+    "empty": "No technology is proven on this account yet.",
+    "notObservedLabel": "Not observed: {{axes}}",
+    "partialNote": "Only the axes where a source named a tool are detailed; the others remain to be qualified.",
+    "axis": {
+      "crm": "CRM",
+      "erp": "ERP",
+      "data": "Data",
+      "hosting": "Hosting",
+      "business": "Business tools"
+    },
+    "proof": {
+      "job_offer": "Job offer",
+      "analysis": "Account analysis",
+      "openLink": "Open the proof: {{label}}",
+      "on": "on {{date}}"
+    }
+  },
+  "marketContext": {
+    "trigger": "Market context for {{company}}",
+    "title": "Market context",
+    "externalUse": "Use of external providers",
+    "externalUseObserved": "Observed",
+    "esnEcosystem": "Services-firm ecosystem",
+    "esnCovered": "Covered",
+    "esnToQualify": "To qualify",
+    "roleFamilies": "Observed expertise families",
+    "roleFamiliesToQualify": "To qualify",
+    "esnEcosystemObserved": "Observed services firms",
+    "localRead": "Local memory · reading included",
+    "paths_one": "{{count}} career path read in market data (people who went through this account)",
+    "paths_other": "{{count}} career paths read in market data (people who went through this account)",
+    "source": "Market observations",
+    "loading": "Reading…",
+    "unavailable": "Market observations unavailable",
+    "notMeasured": "Not measured",
+    "saturation": {
+      "label": "Market saturation",
+      "insufficient_information": "Insufficient information",
+      "few_complementary": "A few complementary providers",
+      "fragmented": "Fragmented market",
+      "structured_panel": "Structured panel",
+      "dominant_player": "Dominant player"
+    },
+    "cohortIndex": {
+      "label": "Cohort index",
+      "caution": "A rank among companies of similar size — never a market share, never a probability.",
+      "cohort": "{{bracket}} cohort · {{count}} measured peers",
+      "axis": {
+        "cohortRelativePosition": "Rank within its cohort",
+        "cohortCoverage": "Measured peers in the cohort",
+        "ownObservations": "Own observations"
+      },
+      "excluded": {
+        "noBracket": "Company size unknown in observed history",
+        "belowGlobalMinPaths": "Not enough observed career paths",
+        "noScore": "The corpus does not rate this company",
+        "belowOwnPathsThreshold": "Too few own observations for a graded index",
+        "cohortTooSmall": "Too few measured companies of similar size"
+      }
+    },
+    "verifyToday": "Verify today — new analysis"
+  },
+  "consultantsKnowSector": {
+    "title": "Consultants who know the “{{sector}}” sector",
+    "subtitle": "Consultants in your workspace whose CV cites this sector.",
+    "cited": "Sectors cited: {{sectors}}",
+    "nameUnknown": "Name not provided"
+  },
+  "knownMovements": {
+    "title": "Account already known",
+    "subtitle": "This account already carries a mission, a contact reached out to, or a note — here's what changed."
+  },
+  "historyProofs": {
+    "actionsAndDecisions": "Actions and decisions",
+    "executedActions": "Executed actions",
+    "relationHistory": "Relationship history",
+    "teamComments": {
+      "title": "Team comments",
+      "subtitle": "A shared thread, specific to this account — a coordination point, a field note, a heads-up for the next person opening it.",
+      "inputLabel": "Your comment",
+      "placeholder": "Share a comment on this account…",
+      "share": "Share",
+      "sharing": "Sending…",
+      "empty": "No comment on this account yet.",
+      "unknownMember": "Unknown member",
+      "loadError": "The comment thread could not be loaded.",
+      "mentionSuggestions": "Mention suggestions",
+      "filterMine": "My open threads",
+      "filterAll": "All threads",
+      "noMine": "No open thread for you.",
+      "resolve": "Mark resolved",
+      "reopen": "Reopen",
+      "resolvedOn": "Resolved on {{date}}",
+      "reply": "Reply",
+      "replyLabel": "Your reply",
+      "replySend": "Send",
+      "replyCancel": "Cancel",
+      "onAccount": "On {{company}}"
+    }
+  },
+  "collaboration": {
+    "regionLabel": "Collaboration on this account",
+    "businessUnitLabel": "BU:",
+    "businessUnitNone": "No BU",
+    "businessUnitSaved": "BU saved.",
+    "businessUnitForbidden": "You cannot edit this account.",
+    "businessUnitFailed": "The BU could not be saved.",
+    "lastTeamTouch": "Last team activity: {{name}}, {{when}}",
+    "lastTeamTouchWhat": "Last team activity: {{name}} ({{what}}), {{when}}",
+    "contributors": "Worked on by: {{names}}",
+    "activeAnalysisByColleague": "{{name}} started an analysis {{when}}",
+    "seeColleagueActivity": "See {{name}}’s activity",
+    "continueAnyway": "Continue anyway",
+    "assign": {
+      "trigger": "Assign this account to a team member",
+      "menuLabel": "Assign this account to",
+      "noMembers": "No member to offer",
+      "memberFallback": "Unnamed member",
+      "selfSuffix": "(you)",
+      "crossTeamSuffix": "backup",
+      "release": "Release the account"
+    },
+    "requestValidation": {
+      "trigger": "Request validation",
+      "sent_one": "Request sent to {{count}} authorized person",
+      "sent_other": "Request sent to {{count}} authorized people",
+      "noManager": "No one else is authorized to validate in this workspace",
+      "failed": "The validation request could not be sent"
+    }
+  },
+  "ecosystemTop": {
+    "reading": "Quick read",
+    "whoOrbits": "Who orbits this account",
+    "whatItChanges": "What it changes",
+    "whereToEnter": "Where to enter",
+    "observed_one": "{{count}} proven relationship, evidence attached",
+    "observed_other": "{{count}} proven relationships, evidence attached",
+    "noneObserved": "No proven relationship so far — that is not “no services firm”, it is “nothing proven”.",
+    "historicOnly": "The proven relationships are historical. No current presence is confirmed.",
+    "changesWithRelations": "Entry is played with these firms or against them. Qualifying them before you call keeps you from arriving second.",
+    "changesWithout": "Nothing proven weighs on entry yet. What is missing is evidence, not an opinion.",
+    "whereToEnterHelp": "The workspace access routes are in the “Access” sub-tab of this section.",
+    "whereToEnterCta": "Open the access routes",
+    "whereToEnterHelpFromAccess": "Who orbits the account (partners, competitors) is read in the “Related services firms” sub-tab of this section.",
+    "whereToEnterCtaFromAccess": "Open the related services firms",
+    "possible": "Possible competitors or partners",
+    "possibleEmpty": "No hypothesis to settle right now.",
+    "toQualify": "Information to qualify",
+    "toQualifyEmpty": "Nothing to arbitrate: no source contradicts another.",
+    "reason": {
+      "divergent_sources": "Two sources do not say the same thing. Both are shown: it is yours to settle, not ours.",
+      "no_proof": "The origin promises evidence that is not attached. While it is missing, nothing is asserted."
+    },
+    "types": {
+      "competitor_potential": "Potential competitor",
+      "partner_potential": "Potential partner",
+      "rank1_declared": "Declared rank 1",
+      "rank2_confirmed": "Confirmed rank 2",
+      "intermediation_platform": "Intermediation platform",
+      "historic_observed": "Observed past relationship",
+      "current_sourced": "Sourced current relationship",
+      "team_declared": "Relationship declared by your team",
+      "rank2_potential": "Potential rank 2"
+    },
+    "action": {
+      "qualify": "Qualify",
+      "find_sales_reps": "Find the sales reps involved",
+      "find_sales_repsAria": "Find the sales reps involved with {{name}}",
+      "prepare_partner_approach": "Prepare a partner approach",
+      "mark_competitor": "Mark as competitor",
+      "mark_irrelevant": "Mark as irrelevant",
+      "add_field_note": "Add field information",
+      "add_field_noteAria": "Add field information about {{name}}"
+    },
+    "deduced": "Inferred by {{brand}}",
+    "proofOn": "{{source}} · {{date}}",
+    "proofUndated": "{{source}} · undated",
+    "noProof": "No evidence attached",
+    "confidence": {
+      "forte": "High confidence",
+      "moyenne": "Medium confidence",
+      "faible": "Low confidence",
+      "unknown": "Confidence not assessed"
+    },
+    "currentAssessment": "Current source: {{value}}",
+    "marketAssessment": "Market observations: {{value}} confidence",
+    "corrected": "Corrected on {{date}} by {{who}}",
+    "correctedByTeam": "the workspace team",
+    "previouslyObserved": "Before correction: {{type}}",
+    "source": {
+      "workspace_declared": "Declared by your team",
+      "market_observation": "Market observations",
+      "current_inference": "Current source",
+      "declared_subcontracting": "Declared openness to rank 2"
+    },
+    "fieldNote": {
+      "title": "Field intel — {{name}}",
+      "description": "What you learned on the ground: it is added to the account notes, dated and signed.",
+      "label": "Field intel",
+      "placeholder": "E.g. they lost their tier-1 spot in June.",
+      "save": "Save",
+      "cancel": "Close",
+      "saved": "Field intel added to the account notes",
+      "error": "The intel could not be saved"
+    }
+  },
+  "versioning": {
+    "marketMemoryNotConsulted": "not consulted by this run (account not covered or memory unavailable)",
+    "notMeasured": "not measured",
+    "promptVersionPhases_one": "{{count}} phase captured",
+    "promptVersionPhases_other": "{{count}} phases captured",
+    "field": {
+      "analysis_version": "Pipeline version",
+      "profile_version": "Profile version",
+      "prompt_version": "Prompt fingerprint",
+      "account_context_version": "Account context version",
+      "dataforge_version": "Reference facts version",
+      "market_memory_version": "Observed history version",
+      "scoring_version": "Scoring version"
+    },
+    "showDetails": "This run's versioning"
+  },
+  "betProfile": {
+    "title": "Bet profile",
+    "description": "What you declare here — never an estimate — lets {{copilot}} name an overly homogeneous portfolio. “Not set” means neither short, nor small, nor open.",
+    "notSet": "Not set",
+    "horizon": {
+      "label": "Horizon",
+      "short": "Short bet",
+      "long": "Long bet"
+    },
+    "size": {
+      "label": "Account size",
+      "standard": "Standard account",
+      "very_large": "Very large account"
+    },
+    "access": {
+      "label": "Access",
+      "open": "Open access",
+      "closed": "Closed account"
+    },
+    "resource": {
+      "label": "Required resource",
+      "placeholder": "E.g. Cloud architect"
+    },
+    "cancel": "Cancel",
+    "save": "Save",
+    "savedToast": "Bet profile of “{{company}}” saved.",
+    "errorToast": "Could not save the bet profile."
+  },
+  "commercialBrief": {
+    "title": "What I know about {{company}}",
+    "headquarters": "Headquarters: {{label}}, {{city}}",
+    "known": "What we know",
+    "meaning": "What it means for you",
+    "knowledge": {
+      "title": "What I know"
+    },
+    "sites": {
+      "title": "Headquarters and sites",
+      "scope": "The main sites kept by the brief, not the full census: every establishment is in the Sites tab.",
+      "kind": {
+        "headquarters": "Headquarters",
+        "secondary": "Secondary site",
+        "industrial": "Industrial site",
+        "other": "Other site"
+      }
+    },
+    "entities": {
+      "title": "Group entities",
+      "exited": "Left the group"
+    },
+    "prices": {
+      "title": "Observed prices",
+      "hint": "Prices are grouped by channel: a price without its source is comparable to nothing, so no average is computed.",
+      "perDay": "€{{amount}}/day",
+      "channel": {
+        "direct": "Direct",
+        "msp": "Managed service provider (MSP)",
+        "portage": "Umbrella / portage",
+        "framework": "Framework agreement",
+        "sector_reference": "Sector reference"
+      }
+    },
+    "esn": {
+      "title": "IT services firms in place",
+      "evidence": {
+        "confirmed": "Confirmed",
+        "observed": "Observed",
+        "hint": "Hint"
+      }
+    },
+    "table": {
+      "yes": "Yes",
+      "no": "No"
+    },
+    "people": {
+      "title_one": "{{count}} person in the brief",
+      "title_other": "{{count}} people in the brief",
+      "hint": "People live in the Contacts tab; here, only their breakdown by role.",
+      "roleCount": "{{role}}: {{count}}",
+      "role": {
+        "decision_maker": "Economic decision makers",
+        "manager": "Managers",
+        "contact": "Other contacts",
+        "external": "External",
+        "alumni": "Alumni",
+        "unspecified": "Role not specified"
+      }
+    },
+    "showMore": {
+      "action": "Show {{count}} more",
+      "progress": "{{shown}} shown of {{total}}"
+    },
+    "marketPathsKpi": {
+      "label": "CONSULTANT CAREER PATHS OBSERVED",
+      "caption": "Consultants who have worked at this account, read from market data — not your contacts"
+    }
+  },
+  "relaunchConfirm": {
+    "title": "Refresh the analysis?",
+    "description": "You then go to the launch screen, where you confirm the scope before anything is charged.",
+    "scope": "Scope of the last analysis: {{scope}}",
+    "scopeUnknown": "Scope of the last analysis not recorded — you choose it at the next step.",
+    "zone": "Area: {{zone}}",
+    "diffAfter": "After the refresh, the Overview lists new people and those no longer reconfirmed.",
+    "cancel": "Cancel",
+    "confirm": "Continue",
+    "zoneFiltered": "Area: {{zone}} — people whose known country is outside this area are set aside."
+  },
+  "changes": {
+    "title": "What changed since the last check",
+    "subtitle": "{{account}} — compared with the check of {{date}}. Each line carries the date of the fact.",
+    "nothingNew": "Nothing new since the check of {{date}}.",
+    "retained": "What was known stays available: {{facts}} facts and {{contacts}} contacts.",
+    "unreadable": "The account’s changes could not be read. That is not “nothing new”.",
+    "hiringIsNotANeed": "hiring offer, not a confirmed service need",
+    "kind": {
+      "new_manager": "New manager",
+      "entity_change": "Entity change",
+      "documented_need": "Documented need",
+      "hiring_offer": "Hiring offer",
+      "business_event": "Event"
+    }
+  },
+  "cadrageApplied": {
+    "label": "Focus applied:",
+    "parts": {
+      "geo": "{{zone}} — entities, signals and contacts filtered",
+      "included": "Targeted: {{values}} — first in the dossier",
+      "excluded": "Excluded: {{values}} — removed from the dossier",
+      "priorities": "You sell: {{values}} — angles and signals steered",
+      "roles": "Roles to place: {{values}} — job openings filtered, contacts ranked",
+      "excludedThemes": "Excluded themes: {{values}} — angles removed",
+      "levels": "Level: {{values}} — contacts ranked",
+      "objectives": "Goals: {{values}}",
+      "angle": "Angle: {{values}}",
+      "contactEntities": "Contacts also searched at: {{values}}"
+    },
+    "show": "View the framing",
+    "hide": "Hide details",
+    "dismiss": "Hide this reminder"
+  },
+  "referenceArchive": {
+    "title": "Archive of {{period}} · read-only",
+    "body": "This dossier is never rewritten. To work {{company}} today, create an up-to-date working copy: the archive stays untouched beside it.",
+    "scopeLine": "{{label}} · {{period}} · {{verification}}",
+    "notVerified": "not re-checked online",
+    "verified": "re-checked online",
+    "createCopy": "Create a working copy",
+    "creatingCopy": "Creating the copy…",
+    "sourceScope": "Source & scope",
+    "scopeTitle": "Source and scope of the dossier",
+    "scopeEyebrow": "Supplied archive · not a current check",
+    "scopeBody": "{{label}} — {{period}} · {{scope}}. Historical facts and items to re-check stay distinct; nothing here is updated automatically.",
+    "scopeReading": "The commercial reading is distinct from the record. A local correction never changes the original record.",
+    "close": "Close",
+    "sectionNote": "Supplied archive · {{scope}} · currency not verified",
+    "copyOf": "Working copy of the archive. The archive stays untouched beside it.",
+    "openArchive": "Open the archive",
+    "toast": {
+      "created": "Working copy created: your notes were carried over.",
+      "existing": "You already have a working copy: opening it.",
+      "error": "Could not create the working copy. Try again in a moment."
+    }
+  },
+  "referenceDossier": {
+    "counts": {
+      "units": "units in the record",
+      "needs": "documented historical needs",
+      "tjm": "day-rate records",
+      "contacts": "contacts in the archive"
+    },
+    "scope": "Supplied archive · {{scope}} · currency not verified",
+    "showMore": "Show the next {{count}}",
+    "purchasing": {
+      "eyebrow": "Vendor listing & purchasing practices",
+      "title": "How supplier access is prepared",
+      "hint": "Registration, listing and ordering stay distinct. What the record does not establish remains to be qualified."
+    },
+    "structure": {
+      "eyebrow": "Group structure",
+      "title": "Entities to explore",
+      "hint": "A reading grouping, not an official legal chart. Do not read it as the central body owning every regional bank."
+    },
+    "expertises": {
+      "eyebrow": "Observed expertise",
+      "title": "The expertise that stands out",
+      "hint": "Number of lines in the {{count}} historical needs of the record, not a measure of current demand."
+    },
+    "tjm": {
+      "eyebrow": "Historical day rates",
+      "title": "Historical day rates",
+      "subtitle": "The recorded rates, by channel",
+      "msp": "Via intermediary / MSP",
+      "direct": "Direct sourcing",
+      "observations": "{{count}} observations",
+      "unit": "€/day",
+      "hint": "Historical day rates by channel. No average between direct and intermediary (MSP); price base to be re-qualified."
+    },
+    "needs": {
+      "eyebrow": "Needs history",
+      "title": "Needs history",
+      "subtitle": "The requests in the history",
+      "rate": "€{{rate}} / day",
+      "noRate": "Rate not published",
+      "showAll": "Show the whole history",
+      "showLess": "Collapse the history"
+    },
+    "ecosystem": {
+      "eyebrow": "Ecosystem",
+      "title": "The ecosystem players",
+      "hint": "Players cited, not guaranteed access. An observed collaboration establishes neither a current panel nor a subcontracting agreement with your company.",
+      "observed": "Observed in the record",
+      "indirect": "Indirect signal",
+      "detail": "Detail & caveat"
+    },
+    "programmes": {
+      "eyebrow": "Cited programmes",
+      "title": "The programmes cited in the dossier",
+      "hint": "An announcement or a project horizon is not a call for providers. These items come from the supplied record, with no web update.",
+      "undated": "Undated period",
+      "reading": "What the record suggests",
+      "disclaimer": "Reading of the record, not a confirmed request.",
+      "prepareAngle": "Prepare an angle on this topic",
+      "addCheck": "Add a check",
+      "angleLabel": "Prepare an angle: {{title}}",
+      "checkLabel": "Check: {{title}}",
+      "angleOutcome": "An approach angle ready to use on this topic.",
+      "checkOutcome": "Know who owns the topic and whether a request exists.",
+      "checkReason": "Reading of the record, not a confirmed request: confirm who carries the topic today and whether a request exists."
+    }
+  },
+  "people": {
+    "open": "{{count}} people: open the file",
+    "decider": "Decision-maker",
+    "count_one": "{{count}} contact",
+    "count_other": "{{count}} contacts"
+  },
+  "resume": {
+    "title": "Pick up the thread",
+    "subtitle": "The exchanges that deserve your attention.",
+    "seeActions": "See actions",
+    "contextLastAction": "Last action on {{date}}"
+  },
+  "crmChip": {
+    "label": "My CRM"
+  },
+  "importedChip": {
+    "label": "Imported",
+    "importJob": "This import"
+  },
+  "portfolioTabs": {
+    "all": "Whole portfolio",
+    "favorites": "Favorites",
+    "followed": "Followed",
+    "archives": "Archives"
+  },
+  "synthesis": {
+    "evaluationTitle": "Understanding the account’s interest"
+  },
+  "sectionTheo": {
+    "people": {
+      "context": "Pick the right role before the highest title.",
+      "title": "The right people, at the right level.",
+      "lead": "Find your relationships and the people still to qualify."
+    },
+    "partners": {
+      "context": "Cross-check the file before picking a way in.",
+      "title": "The account’s ecosystem.",
+      "lead": "Declared relationships and historical observations keep their nature."
+    },
+    "access": {
+      "context": "Cross-check the file before picking a way in.",
+      "title": "Procurement practices and access path.",
+      "lead": "How your team got in, and who to go through next."
+    },
+    "plan": {
+      "context": "Find here the actions and messages actually prepared for this account.",
+      "title": "A next step, not a list of intentions.",
+      "lead": "This plan shares its tasks with Actions and My day."
+    },
+    "history": {
+      "context": "Notes, documents and missions keep their links and dates.",
+      "title": "The account’s thread.",
+      "lead": "Notes, exchanges and decisions. Internal operations keep their nature."
+    }
+  },
+  "planTheo": {
+    "tasksTitle": "Actions",
+    "allActions": "All my actions",
+    "doneIsNotSent": "A completed task does not mean an email was sent. Its outcome is logged in the activity.",
+    "openTasks": "See the actions to do in the plan"
+  },
+  "header": {
+    "back": "Portfolio",
+    "backAria": "Back to the portfolio",
+    "pin": "Pin {{company}}",
+    "unpin": "Unpin {{company}}",
+    "refresh": "Refresh",
+    "ownerAria": "Owner: {{name}}",
+    "dossierReady": "Dossier ready to read",
+    "scope": {
+      "open": "Scope & data",
+      "title": "Scope & data",
+      "description": "What the dossier knows about {{company}}, where it comes from, and what you think of it.",
+      "analysis": "Analysis",
+      "crm": "Your CRM",
+      "analyses": "Analyses",
+      "registry": "Registry",
+      "headquarters": "Headquarters",
+      "freshness": "Freshness",
+      "verdict": "What you think of it",
+      "status": "Commercial status",
+      "identity": "Identity",
+      "team": "Team",
+      "nextAction": "Next action",
+      "importedOn": {
+        "file": "Imported on {{date}} from a file",
+        "tool": "Imported on {{date}} from a connected tool"
+      },
+      "importedUnknownDate": {
+        "file": "Imported from a file (date not measured)",
+        "tool": "Imported from a connected tool (date not measured)"
+      }
+    },
+    "menu": {
+      "groupNext": "Move forward",
+      "groupTeam": "The team",
+      "comment": "Comment",
+      "plan": "Schedule a slot",
+      "crmPush": "Update in my CRM",
+      "assign": "Assign the account",
+      "addTeammate": "Add a teammate",
+      "viewTeam": "View the account team",
+      "follow": "Follow this account",
+      "followed": "followed",
+      "followFailed": "Could not change the follow state of this account.",
+      "followCap": "{{max}} followed accounts at most — drop one to follow this one."
+    },
+    "revenue": "Revenue {{value}}"
+  },
+  "filtersDialog": {
+    "zoneNote": "The area is judged on the registered head office and on the sites known from the analysis: an account with no known head office or site is left out.",
+    "title": "Filter my portfolio",
+    "description": "These criteria organise the accounts in your workspace. They don’t start a new market search.",
+    "more": "+{{count}} more",
+    "less": "Show less",
+    "reset": "Reset",
+    "cancel": "Cancel",
+    "apply": "Apply filters",
+    "close": "Close"
+  },
+  "interest": {
+    "label": "Interest",
+    "aria": "Commercial interest {{value}} out of {{max}}: see its axes",
+    "title": "What makes {{company}} interesting",
+    "loading": "Reading the dossier’s axes…",
+    "failed": "I couldn’t read the dossier’s axes.",
+    "noAxes": "The latest analysis doesn’t break this score down by axis.",
+    "excluded": "Not assessable, left out of the total: {{axes}}",
+    "open": "See the detail in the dossier"
+  },
+  "crmFusion": {
+    "found_one": "1 company came from your CRM AND was analysed separately: it is the same account, twice. You can merge them — nothing is deleted, the merge can be undone.",
+    "found_other": "{{count}} companies came from your CRM AND were analysed separately: they are the same accounts, twice. You can merge them — nothing is deleted, the merge can be undone.",
+    "merge": "Merge",
+    "done_one": "1 account merged. The old record is archived, not deleted.",
+    "done_other": "{{count}} accounts merged. The old records are archived, not deleted.",
+    "error": "The merge could not complete. Try again."
+  },
+  "verdictSummary": {
+    "noActNow": "No account to go after: {{reserve}} in reserve out of {{total}} assessed.",
+    "mainReason": "Main reason: {{reason}}.",
+    "reason": {
+      "reserve": "the potential is there but one criterion is missing to act now",
+      "setAside": "the criteria are not met for this objective",
+      "unavailable": "no commercial objective is set to judge these accounts"
+    },
+    "legendTitle": "What do the verdicts mean?",
+    "legend": {
+      "actNow": "the key criteria are met, time to call",
+      "reserve": "some potential, but one criterion is still missing",
+      "onHold": "an identified trigger will reopen the account",
+      "setAside": "the criteria are not met for your objective",
+      "qualify": "too little data to decide, collect it first"
+    }
+  },
+  "procurement": {
+    "title": "{{firstName}}, check the buying route before promising access.",
+    "titleWithoutName": "Check the buying route before promising access.",
+    "lead": "The items in the report help you prepare procurement questions. They certify neither your vendor listing nor an obligation that applies to every subsidiary.",
+    "intro": {
+      "relation": {
+        "title": "Commercial relationship",
+        "body": "A sponsor or a known contact can help you understand a topic."
+      },
+      "listing": {
+        "title": "Supplier listing",
+        "body": "A distinct status and scope, to be documented."
+      },
+      "order": {
+        "title": "Order & assignment",
+        "body": "Conditions to confirm for the specific operation."
+      }
+    },
+    "empty": "This account’s buying route is not documented yet.",
+    "eyebrowFallback": "Route item",
+    "readingToggle": "Reading of the report and points of attention",
+    "origin": "Original qualification: {{value}} · report as provided, not re-verified.",
+    "originUnknown": "not provided",
+    "prepare": "Prepare the check",
+    "prepareAria": "Prepare the check: {{name}}",
+    "task": {
+      "title": "Check: {{name}}",
+      "objective": "Check with procurement: {{name}}",
+      "expectedResult": "The point is confirmed or ruled out, and the answer is noted on the account."
+    },
+    "detailed": "Detailed reading",
+    "briefLink": "See the buying route in Procurement practices"
+  },
+  "ecosystemGrid": {
+    "title": "Cited players, not guaranteed access.",
+    "lead": "{{firstName}}, an observed collaboration establishes neither a current panel nor a subcontracting agreement with your company.",
+    "leadWithoutName": "An observed collaboration establishes neither a current panel nor a subcontracting agreement with your company.",
+    "empty": "No services player is listed around this account yet.",
+    "scopeUnknown": "Scope not specified",
+    "pill": "Observation from the report",
+    "detail": "Detail & caveat",
+    "detailAria": "Detail & caveat: {{name}}",
+    "detailed": "Detailed reading"
+  }
+}

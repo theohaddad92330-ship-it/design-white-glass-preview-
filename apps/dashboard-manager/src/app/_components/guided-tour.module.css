@@ -1,0 +1,105 @@
+/* #1678.2 — la visite guidée : un anneau autour de la section du rail, et un
+   panneau qui explique. Non bloquante par choix (`pointer-events: none` sur
+   l'habillage) : suivre un lien du rail pendant la visite reste possible, et
+   la ferme (voir le docblock de `guided-tour.tsx`). */
+
+.overlay {
+  position: fixed;
+  inset: 0;
+  z-index: 999;
+  background: color-mix(in srgb, var(--bg) 45%, transparent);
+  pointer-events: none;
+}
+
+.spotlight {
+  position: fixed;
+  border: 2px solid var(--accent);
+  border-radius: 10px;
+  box-shadow: 0 0 0 4000px color-mix(in srgb, var(--bg) 45%, transparent);
+  pointer-events: none;
+}
+
+.panel {
+  position: fixed;
+  width: 320px;
+  max-width: calc(100vw - 32px);
+  display: grid;
+  gap: 8px;
+  padding: 16px;
+  background: var(--surface);
+  border: 1px solid var(--border);
+  border-radius: 12px;
+  box-shadow: 0 16px 32px color-mix(in srgb, var(--bg) 70%, transparent);
+  pointer-events: auto;
+}
+
+.stepCount {
+  margin: 0;
+  color: var(--muted);
+  font-size: 0.75rem;
+}
+
+.title {
+  margin: 0;
+  font-size: 1.125rem;
+}
+
+.body {
+  margin: 0;
+  color: var(--muted);
+  font-size: 0.875rem;
+}
+
+.actions {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 8px;
+  margin-top: 4px;
+}
+
+.navGroup {
+  display: flex;
+  gap: 8px;
+}
+
+.ghost {
+  background: none;
+  border: 1px solid var(--border);
+  border-radius: 8px;
+  padding: 6px 12px;
+  color: var(--muted);
+  font: inherit;
+  font-size: 0.875rem;
+  cursor: pointer;
+}
+
+.ghost:hover:not(:disabled) {
+  color: var(--text);
+  border-color: var(--accent);
+}
+
+.ghost:disabled {
+  opacity: 0.5;
+  cursor: default;
+}
+
+.primary {
+  background: var(--action);
+  border: 1px solid var(--action);
+  border-radius: 8px;
+  padding: 6px 14px;
+  color: var(--bg);
+  font: inherit;
+  font-size: 0.875rem;
+  font-weight: 600;
+  cursor: pointer;
+}
+
+/* Cibles tactiles : ≥ 44 px dès que le pointeur est grossier (GA-30). */
+@media (pointer: coarse) {
+  .ghost,
+  .primary {
+    min-height: 44px;
+  }
+}

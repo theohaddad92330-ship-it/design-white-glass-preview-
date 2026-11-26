@@ -1,0 +1,95 @@
+name: Store pnpm (restauration seule)
+description: >-
+  Restaure le store pnpm depuis le cache GitHub, et n'écrit JAMAIS. L'écriture
+  se fait dans un seul job, explicitement, après l'installation.
+
+# ─────────────────────────────────────────────────────────────────────────────
+# POURQUOI CETTE ACTION EXISTE — mesuré le 14/09/2026 sur 168 jobs / 12 exécutions
+#
+# Les treize jobs de `ci.yml` appelaient `actions/setup-node` avec `cache: pnpm`.
+# Ce réglage fait DEUX choses, et seule la première sert :
+#
+#   · la RESTAURATION, au démarrage du job          → 15 s de médiane
+#   · la SAUVEGARDE, dans le pas `Post`, à la fin   → p50 0 s, p75 46 s, max 58 s
+#
+# La sauvegarde coûtait **3,26 min de temps de job par exécution** — 17,5 % de
+# tout le temps de CI, le poste numéro un devant n'importe quelle suite de
+# tests. Treize jobs qui écrivent la même clé se marchent dessus : le premier
+# arrivé l'écrit, les autres paient la compression et la montée avant de se
+# faire refuser. Le total sur les deux pas atteignait **35,3 % du temps de job**.
+#
+# Et ce qu'ils achetaient : `pnpm install --frozen-lockfile` à **2 s de médiane**.
+#
+# La sauvegarde reste NÉCESSAIRE — sans elle le cache ne naît jamais, et un
+# conteneur frais réinstallerait tout depuis le réseau. Mais elle n'a besoin de
+# se produire qu'UNE FOIS par empreinte de lockfile, pas treize fois par
+# exécution. D'où la forme : cette action restaure partout, et un seul job écrit
+# (`format`, le seul sans garde de portée, donc le seul qui tourne toujours).
+#
+# ⚠️ Le repli est d'en faire PLUS. Si l'écriture échoue ou si le job qui la
+# porte tombe avant, le cache reste vide : les jobs suivants réinstallent depuis
+# le réseau. Plus lent, jamais faux — et la prochaine exécution réessaie.
+#
+# ⚠️ `pnpm store path` exige que pnpm soit DÉJÀ installé : cette action se place
+# après `pnpm/action-setup`, jamais avant.
+#
+# ⚠️ VOLUME PERSISTANT DES RUNNERS AUTO-HÉBERGÉS — mesuré le 22/10/2026
+# (audit 15→22/10 : 333 runs, 31 435 runner-min). Le pas `store-pnpm` a coûté
+# 2 798 runner-min en une semaine (55-80 s × ~11 jobs/run, 15 Mo/s pour 784 Mo,
+# log du run 39853570872) : pnpm écrivait dans
+# /home/pwuser/setup-pnpm/node_modules/.bin/store/v10, éphémère, pendant que
+# le volume `pnpm-store` (infra/ci-runner-vps/docker-compose.yml:127, monté sur
+# /home/pwuser/.pnpm-store) restait inutilisé. Désormais, si ce dossier existe
+# et est inscriptible, le store pnpm y est redirigé (npm_config_store_dir) et,
+# s'il est déjà peuplé, la restauration GitHub est SAUTÉE. Volume absent
+# (ubuntu-latest, runner neuf) ou vide : comportement historique, cache GitHub.
+# ─────────────────────────────────────────────────────────────────────────────
+
+outputs:
+  chemin:
+    description: Chemin du store pnpm sur ce runner
+    value: ${{ steps.store.outputs.chemin }}
+  cle:
+    description: Clé de cache — à repasser telle quelle au pas d'écriture
+    value: ${{ steps.store.outputs.cle }}
+  restaure:
+    description: "'true' si le cache existait déjà — le pas d'écriture s'en sert pour ne pas réécrire"
+    value: ${{ steps.volume.outputs.peuple == 'true' || steps.restauration.outputs.cache-hit }}
+
+runs:
+  using: composite
+  steps:
+    - id: volume
+      shell: bash
+      run: |
+        set -euo pipefail
+        volume=/home/pwuser/.pnpm-store
+        peuple=false
+        if [ -d "$volume" ] && [ -w "$volume" ]; then
+          # Le store de pnpm vit désormais sur le volume, pour tous les pas suivants.
+          echo "npm_config_store_dir=$volume" >> "$GITHUB_ENV"
+          export npm_config_store_dir="$volume"
+          if [ -n "$(find "$volume" -maxdepth 4 -type f -path '*/files/*' -print -quit 2>/dev/null)" ]; then
+            peuple=true
+          fi
+        fi
+        echo "peuple=$peuple" >> "$GITHUB_OUTPUT"
+
+    - id: store
+      shell: bash
+      run: |
+        set -euo pipefail
+        echo "chemin=$(pnpm store path --silent)" >> "$GITHUB_OUTPUT"
+        # La clé porte l'empreinte du lockfile : elle change exactement quand le
+        # contenu du store doit changer, et pas une fois de plus.
+        echo "cle=pnpm-store-${RUNNER_OS}-${{ hashFiles('pnpm-lock.yaml') }}" >> "$GITHUB_OUTPUT"
+
+    - id: restauration
+      if: steps.volume.outputs.peuple != 'true'
+      uses: actions/cache/restore@v4
+      with:
+        path: ${{ steps.store.outputs.chemin }}
+        key: ${{ steps.store.outputs.cle }}
+        # Un store d'une version précédente du lockfile reste utile : pnpm ne
+        # retélécharge que ce qui a bougé. Mieux vaut un cache tiède que rien.
+        restore-keys: pnpm-store-${{ runner.os }}-

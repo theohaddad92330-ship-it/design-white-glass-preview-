@@ -1,0 +1,258 @@
+{
+  "$comment": "Canonical AgentEnvelope fixtures parsed by both Python (Pydantic) and TS (Zod). One fixture per AgentStatus + invariant-rejection cases. See agent_docs/agent-contract.md.",
+  "valid": {
+    "success": {
+      "status": "success",
+      "data": {
+        "businessDescription": "Opérateur ferroviaire historique",
+        "sector": "Transport",
+        "employees": 271000
+      },
+      "error": null,
+      "meta": {
+        "agent_name": "researcher",
+        "agent_version": "1.0.0",
+        "correlation_id": "01J5K7XYZ",
+        "started_at": "2026-05-26T10:00:00.000Z",
+        "finished_at": "2026-05-26T10:01:23.456Z",
+        "duration_ms": 83456,
+        "prompt_name": "bellum_research",
+        "model": "claude-sonnet-4-20250514",
+        "token_usage": {
+          "input_tokens": 12453,
+          "output_tokens": 6789,
+          "cost_usd": 0.139
+        },
+        "source_health": {
+          "brave": "ok",
+          "firecrawl": "ok",
+          "pappers": "ok"
+        }
+      }
+    },
+    "partial_success": {
+      "status": "partial_success",
+      "data": {
+        "businessDescription": "Opérateur ferroviaire historique"
+      },
+      "error": null,
+      "meta": {
+        "agent_name": "researcher",
+        "agent_version": "1.0.0",
+        "correlation_id": "01J5K7XYZ",
+        "started_at": "2026-05-26T10:00:00.000Z",
+        "finished_at": "2026-05-26T10:01:31.200Z",
+        "duration_ms": 91200,
+        "source_health": {
+          "brave": "down",
+          "firecrawl": "ok",
+          "pappers": "ok"
+        },
+        "warnings": [
+          {
+            "code": "BRAVE_DOWN_FALLBACK_USED",
+            "message": "Recherche web indisponible. Analyse basée sur Firecrawl + Pappers seuls.",
+            "context": { "fallback": "firecrawl+pappers" }
+          }
+        ]
+      }
+    },
+    "recoverable_failure": {
+      "status": "recoverable_failure",
+      "data": null,
+      "error": {
+        "code": "CLAUDE_RATE_LIMITED",
+        "service": "claude",
+        "severity": "recoverable",
+        "retryable": true,
+        "user_message": "Surcharge Claude temporaire. Nouvelle tentative en cours.",
+        "debug_message": "Anthropic API returned 429 for prompt=bellum_research model=claude-sonnet-4-20250514",
+        "context": { "prompt_name": "bellum_research", "retry_after_s": 30 }
+      },
+      "meta": {
+        "agent_name": "researcher",
+        "agent_version": "1.0.0",
+        "correlation_id": "01J5K7XYZ",
+        "started_at": "2026-05-26T10:00:00.000Z",
+        "finished_at": "2026-05-26T10:00:02.100Z",
+        "duration_ms": 2100
+      }
+    },
+    "terminal_failure": {
+      "status": "terminal_failure",
+      "data": null,
+      "error": {
+        "code": "CLAUDE_OUTPUT_TRUNCATED",
+        "service": "claude",
+        "severity": "terminal",
+        "retryable": false,
+        "user_message": "Réponse Claude tronquée. L'analyse a été annulée.",
+        "debug_message": "max_tokens=16000 hit at prompt=bellum_research model=claude-sonnet-4-20250514",
+        "context": { "prompt_name": "bellum_research", "max_tokens": 16000 }
+      },
+      "meta": {
+        "agent_name": "researcher",
+        "agent_version": "1.0.0",
+        "correlation_id": "01J5K7XYZ",
+        "started_at": "2026-05-26T10:00:00.000Z",
+        "finished_at": "2026-05-26T10:04:11.000Z",
+        "duration_ms": 251000,
+        "prompt_name": "bellum_research",
+        "model": "claude-sonnet-4-20250514"
+      }
+    },
+    "cancelled": {
+      "status": "cancelled",
+      "data": null,
+      "error": null,
+      "meta": {
+        "agent_name": "researcher",
+        "agent_version": "1.0.0",
+        "correlation_id": "01J5K7XYZ",
+        "started_at": "2026-05-26T10:00:00.000Z",
+        "finished_at": "2026-05-26T10:00:12.400Z",
+        "duration_ms": 12400,
+        "source_health": {
+          "brave": "ok",
+          "firecrawl": "skipped",
+          "pappers": "skipped"
+        }
+      }
+    }
+  },
+  "invalid": {
+    "success_without_data": {
+      "$reason": "status=success but data=null violates §1 invariant",
+      "envelope": {
+        "status": "success",
+        "data": null,
+        "error": null,
+        "meta": {
+          "agent_name": "researcher",
+          "agent_version": "1.0.0",
+          "correlation_id": "x",
+          "started_at": "2026-05-26T10:00:00.000Z",
+          "finished_at": "2026-05-26T10:00:01.000Z",
+          "duration_ms": 1000
+        }
+      }
+    },
+    "failure_with_data": {
+      "$reason": "status=terminal_failure but data set violates §1 invariant",
+      "envelope": {
+        "status": "terminal_failure",
+        "data": { "anything": true },
+        "error": {
+          "code": "CLAUDE_UNKNOWN",
+          "service": "claude",
+          "severity": "terminal",
+          "retryable": false,
+          "user_message": "Erreur Claude inattendue.",
+          "debug_message": "boom"
+        },
+        "meta": {
+          "agent_name": "researcher",
+          "agent_version": "1.0.0",
+          "correlation_id": "x",
+          "started_at": "2026-05-26T10:00:00.000Z",
+          "finished_at": "2026-05-26T10:00:01.000Z",
+          "duration_ms": 1000
+        }
+      }
+    },
+    "retryable_mismatches_severity": {
+      "$reason": "severity=terminal but retryable=true violates §4 rule",
+      "envelope": {
+        "status": "terminal_failure",
+        "data": null,
+        "error": {
+          "code": "CLAUDE_UNKNOWN",
+          "service": "claude",
+          "severity": "terminal",
+          "retryable": true,
+          "user_message": "Erreur Claude inattendue.",
+          "debug_message": "boom"
+        },
+        "meta": {
+          "agent_name": "researcher",
+          "agent_version": "1.0.0",
+          "correlation_id": "x",
+          "started_at": "2026-05-26T10:00:00.000Z",
+          "finished_at": "2026-05-26T10:00:01.000Z",
+          "duration_ms": 1000
+        }
+      }
+    },
+    "partial_success_without_warnings": {
+      "$reason": "status=partial_success but meta.warnings empty violates §1 / §3",
+      "envelope": {
+        "status": "partial_success",
+        "data": { "ok": true },
+        "error": null,
+        "meta": {
+          "agent_name": "researcher",
+          "agent_version": "1.0.0",
+          "correlation_id": "x",
+          "started_at": "2026-05-26T10:00:00.000Z",
+          "finished_at": "2026-05-26T10:00:01.000Z",
+          "duration_ms": 1000
+        }
+      }
+    },
+    "cancelled_with_error": {
+      "$reason": "status=cancelled forbids both data and error",
+      "envelope": {
+        "status": "cancelled",
+        "data": null,
+        "error": {
+          "code": "AGENT_CANCELLED",
+          "service": "internal",
+          "severity": "terminal",
+          "retryable": false,
+          "user_message": "Analyse annulée.",
+          "debug_message": "client disconnect"
+        },
+        "meta": {
+          "agent_name": "researcher",
+          "agent_version": "1.0.0",
+          "correlation_id": "x",
+          "started_at": "2026-05-26T10:00:00.000Z",
+          "finished_at": "2026-05-26T10:00:01.000Z",
+          "duration_ms": 1000
+        }
+      }
+    },
+    "agent_name_bad_case": {
+      "$reason": "agent_name must be snake_case",
+      "envelope": {
+        "status": "success",
+        "data": { "ok": true },
+        "error": null,
+        "meta": {
+          "agent_name": "Researcher",
+          "agent_version": "1.0.0",
+          "correlation_id": "x",
+          "started_at": "2026-05-26T10:00:00.000Z",
+          "finished_at": "2026-05-26T10:00:01.000Z",
+          "duration_ms": 1000
+        }
+      }
+    },
+    "version_not_semver": {
+      "$reason": "agent_version must be semver",
+      "envelope": {
+        "status": "success",
+        "data": { "ok": true },
+        "error": null,
+        "meta": {
+          "agent_name": "researcher",
+          "agent_version": "1.0",
+          "correlation_id": "x",
+          "started_at": "2026-05-26T10:00:00.000Z",
+          "finished_at": "2026-05-26T10:00:01.000Z",
+          "duration_ms": 1000
+        }
+      }
+    }
+  }
+}

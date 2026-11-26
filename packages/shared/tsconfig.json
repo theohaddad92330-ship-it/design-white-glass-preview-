@@ -1,0 +1,10 @@
+{
+  "extends": "@bellum/tooling/typescript/lib.json",
+  "compilerOptions": {
+    "noEmit": true,
+    "resolveJsonModule": true,
+    "allowImportingTsExtensions": true
+  },
+  "include": ["src", "schemas/**/*.json"],
+  "exclude": ["src/**/*.test.ts"]
+}

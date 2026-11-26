@@ -1,0 +1,39 @@
+/* #1646 — cockpit business : six tuiles, deux graphiques côte à côte.
+
+   ⚠️ `minmax(0, 1fr)` sur les DEUX grilles, pas `1fr` nu : un enfant de grid
+   garde `min-width: auto` par défaut (sa largeur de contenu comme plancher),
+   ce qui est le premier responsable des débordements horizontaux mesurés
+   ailleurs dans ce dépôt (CLAUDE.md, causes racines). `auto-fit`/`minmax` sur
+   les tuiles les fait s'empiler sans media query ; les deux graphiques, eux,
+   ont besoin d'une vraie bascule à une colonne en dessous de 900px — deux
+   graphiques de largeur égale écrasés sous 450px chacun deviendraient
+   illisibles avant de déborder. */
+
+.tuiles {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
+  gap: 16px;
+  margin-bottom: 28px;
+}
+
+.graphiques {
+  display: grid;
+  grid-template-columns: minmax(0, 1fr) minmax(0, 1fr);
+  gap: 20px;
+  margin-bottom: 28px;
+}
+
+@media (max-width: 900px) {
+  .graphiques {
+    grid-template-columns: minmax(0, 1fr);
+  }
+}
+
+.reserve {
+  margin-bottom: 28px;
+}
+
+.mouvements {
+  margin-top: 16px;
+  margin-bottom: 16px;
+}

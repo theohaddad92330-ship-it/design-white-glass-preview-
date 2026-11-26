@@ -1,0 +1,73 @@
+{
+  "businessDescription": "Éditeur SaaS de santé : prise de rendez-vous médical en ligne, téléconsultation et logiciels pour praticiens et établissements de santé.",
+  "sector": "Édition de logiciels applicatifs",
+  "employees": "2 500 à 3 000 salariés",
+  "revenue": "300000000",
+  "headquarters": "54 Quai Charles de Gaulle, 69006, Lyon, France",
+  "website": "https://www.doctolib.fr",
+  "isPublic": false,
+  "siren": "794598813",
+  "subsidiaries": [
+    { "id": "d1", "siren": "823081593", "name": "DOCTOLIB SOLUTIONS" },
+    { "id": "d2", "name": "Doctolib GmbH" }
+  ],
+  "entitiesExhaustive": [
+    {
+      "name": "Doctolib France",
+      "type": "BU",
+      "parent": "Doctolib",
+      "region": "France",
+      "estimatedHeadcount": "~2 000"
+    },
+    { "name": "Doctolib Allemagne", "type": "BU", "parent": "Doctolib", "region": "Allemagne" }
+  ],
+  "sitesFrance": [
+    { "city": "Levallois-Perret", "type": "siege", "importance": "strategique" },
+    { "city": "Lyon", "type": "bureau", "importance": "haute" },
+    { "city": "Nantes", "type": "bureau", "importance": "moyenne" }
+  ],
+  "programNames": ["Plateforme de téléconsultation", "Doctolib Médecin", "Doctolib Hôpital"],
+  "technologyStack": [
+    { "name": "Cloud (AWS)", "maturity": "mature" },
+    { "name": "Microservices", "maturity": "mature" },
+    { "name": "IA / NLP (assistant médical)", "maturity": "emerging" }
+  ],
+  "regulations": ["HDS (Hébergeur de Données de Santé)", "RGPD", "MDR"],
+  "concreteActivity": "SaaS B2B2C de prise de rendez-vous et téléconsultation pour 350 000+ praticiens.",
+  "itImplicationsForEsn": "Scalabilité plateforme, sécurité données de santé (HDS), industrialisation IA.",
+  "priorityScore": 7,
+  "priorityJustification": "Scale-up tech à forte croissance, besoins data/cloud/sécurité élevés.",
+  "budgetSignals": [{ "signal": "Recrutements ingénierie data", "source": "offres d'emploi" }],
+  "recentSignals": [{ "signal": "Expansion européenne", "type": "projet", "date": "2025" }],
+  "competitors": [{ "name": "Maiia" }, { "name": "Keldoc" }],
+  "esnSynergies": [{ "name": "Référence HealthTech", "certainty": "moyenne" }],
+  "peopleMentioned": [{ "name": "Direction Engineering", "title": "VP Engineering" }],
+  "orgChartLogic": "Organisation produit/engineering par tribus.",
+  "itChallenges": [
+    {
+      "title": "Sécurité des données de santé",
+      "description": "Conformité HDS à grande échelle",
+      "severity": "critical"
+    }
+  ],
+  "pains": [{ "pain": "Scalabilité de la plateforme de téléconsultation", "urgency": "haute" }],
+  "angles": [
+    { "title": "Renfort data engineering", "strategy": "Entrée par la VP Engineering", "isRecommended": true }
+  ],
+  "accountOpeningStrategy": "Approche par l'engineering / la data.",
+  "powerQuestions": ["Comment gérez-vous la conformité HDS sur vos pipelines data ?"],
+  "objections": [
+    { "objection": "Forte culture interne", "response": "Positionnement en renfort ponctuel sur des pics." }
+  ],
+  "confidence": {
+    "score": 80,
+    "tier": "high",
+    "factors": {
+      "sourceCoverage": 1.0,
+      "legalGrounding": 1.0,
+      "citedExtracts": 1.0,
+      "freshness": 0.5,
+      "completeness": 1.0
+    }
+  }
+}

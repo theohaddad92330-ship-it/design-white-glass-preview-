@@ -1,0 +1,212 @@
+{
+  "slug": "defense-arvenne",
+  "company": "Arvenne Défense (fictif)",
+  "archetype": "defense",
+  "issue": "#2130.2",
+  "nature": "fictif",
+  "as_of": "2026-09-15",
+  "_fiction": "Nom FICTIF assumé, marqué « (fictif) » : aucune entreprise réelle n'est décrite ici, aucun identifiant de registre n'est affirmé, et les sources vivent sur le domaine réservé .invalid (RFC 2606) — elles ne peuvent désigner aucune page réelle. Le cadrage #2130.1-7 laisse le choix entre un nom fictif assumé et une entreprise réelle dont chaque fait est sourcé ; faute de source vérifiable depuis ce poste sur cet archétype, c'est le nom fictif.",
+  "expected": {
+    "identite": {
+      "status": "attendu",
+      "contient": [
+        "Arvenne Défense"
+      ]
+    },
+    "perimetre": {
+      "status": "attendu",
+      "contient": [
+        "Vierzonnet"
+      ]
+    },
+    "decideurs": {
+      "status": "attendu",
+      "contient": [
+        "Hélène Varda"
+      ]
+    },
+    "contacts_a_ne_pas_recommander": {
+      "status": "attendu",
+      "contient": [
+        "Julien Brassac"
+      ]
+    },
+    "equipes_cles": {
+      "status": "attendu",
+      "contient": [
+        "Ostral"
+      ]
+    },
+    "signaux": {
+      "status": "attendu",
+      "contient": [
+        "Ostral"
+      ]
+    },
+    "projets": {
+      "status": "attendu",
+      "contient": [
+        "conduite de tir"
+      ]
+    },
+    "partenaires": {
+      "status": "attendu",
+      "contient": [
+        "Cabinet Serlin"
+      ]
+    },
+    "acces": {
+      "status": "attendu",
+      "contient": [
+        "habilitation défense"
+      ]
+    },
+    "recommandations": {
+      "status": "attendu",
+      "contient": [
+        "Ostral"
+      ]
+    },
+    "gaps": {
+      "status": "attendu",
+      "contient": [
+        "Ostral"
+      ]
+    },
+    "sources": {
+      "status": "attendu",
+      "contient": [
+        "src-communique"
+      ]
+    },
+    "action_suivante": {
+      "status": "attendu",
+      "contient": [
+        "Marc Tessier"
+      ]
+    }
+  },
+  "dossier": {
+    "identite": {
+      "name": "Arvenne Défense",
+      "siren": null
+    },
+    "perimetre": {
+      "scope": "groupe",
+      "entities": [
+        "Arvenne Défense — site de Vierzonnet (blindés légers)",
+        "Arvenne Défense — centre d'essais de Colombière-le-Bas"
+      ]
+    },
+    "decideurs": [
+      {
+        "name": "Hélène Varda",
+        "title": "Directrice des programmes numériques",
+        "team": "Programme Ostral"
+      },
+      {
+        "name": "Marc Tessier",
+        "title": "Responsable achats de prestations intellectuelles",
+        "team": "Achats"
+      }
+    ],
+    "contacts_a_ne_pas_recommander": [
+      {
+        "name": "Julien Brassac",
+        "reason": "a quitté le groupe en 2026-03"
+      }
+    ],
+    "equipes_cles": [
+      "Programme Ostral — logiciel de conduite de tir",
+      "Cellule homologation de Colombière-le-Bas"
+    ],
+    "signaux": [
+      {
+        "id": "sig-ostral",
+        "text": "Lancement du programme Ostral, modernisation du calculateur embarqué des blindés VBX-4",
+        "date": "2026-06",
+        "source": "src-communique"
+      },
+      {
+        "id": "sig-atelier",
+        "text": "Fermeture de l'atelier de Pontarlieu annoncée",
+        "date": "2023-02",
+        "source": "src-presse"
+      }
+    ],
+    "projets": [
+      {
+        "id": "prj-ostral",
+        "text": "Refonte du calculateur de conduite de tir des VBX-4 (programme Ostral)",
+        "source": "src-communique"
+      }
+    ],
+    "partenaires": [
+      "Cabinet Serlin Ingénierie (fictif)"
+    ],
+    "acces": [
+      {
+        "text": "Habilitation défense exigée pour intervenir sur le site de Vierzonnet",
+        "via": "sécurité"
+      }
+    ],
+    "recommandations": [
+      {
+        "id": "reco-ostral",
+        "text": "Proposer un binôme de test logiciel habilitable pour le calculateur des VBX-4 du programme Ostral.",
+        "why": "Le programme Ostral lancé en 2026-06 refond ce calculateur, et le site de Vierzonnet exige une habilitation défense.",
+        "target": "Hélène Varda",
+        "evidence": [
+          "sig-ostral",
+          "prj-ostral"
+        ]
+      }
+    ],
+    "gaps": [
+      "budget du programme Ostral non connu"
+    ],
+    "sources": [
+      {
+        "id": "src-communique",
+        "url": "https://sources.fictif.invalid/defense-arvenne/src-communique",
+        "date": "2026-06-12"
+      },
+      {
+        "id": "src-presse",
+        "url": "https://sources.fictif.invalid/defense-arvenne/src-presse",
+        "date": "2023-02-20"
+      }
+    ],
+    "action_suivante": {
+      "text": "Demander à Marc Tessier le calendrier de consultation du programme Ostral",
+      "target": "Marc Tessier",
+      "evidence": [
+        "sig-ostral"
+      ]
+    }
+  },
+  "cas": [
+    {
+      "id": "cas-mauvaise-personne",
+      "text": "Présenter le binôme de test du programme Ostral à Julien Brassac.",
+      "why": "Le programme Ostral refond le calculateur des VBX-4 et demande des tests habilitables.",
+      "target": "Julien Brassac",
+      "evidence": [
+        "sig-ostral"
+      ],
+      "label": "wrong_person",
+      "_jugement": "Le dossier dit lui-même que cette personne a quitté le groupe : elle est sur la liste des contacts à ne pas recommander."
+    },
+    {
+      "id": "cas-perime",
+      "text": "Se positionner sur la reprise d'activité de l'atelier de Pontarlieu.",
+      "why": "La fermeture de l'atelier de Pontarlieu ouvre un besoin de reprise.",
+      "target": "Hélène Varda",
+      "evidence": [
+        "sig-atelier"
+      ],
+      "label": "outdated",
+      "_jugement": "La seule preuve citée date de 2023-02 : au-delà de dix-huit mois, elle ne porte plus une action d'aujourd'hui."
+    }
+  ]
+}

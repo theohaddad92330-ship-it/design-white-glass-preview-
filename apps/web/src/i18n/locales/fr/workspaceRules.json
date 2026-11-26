@@ -1,0 +1,71 @@
+{
+  "title": "Règles d'espace",
+  "subtitle": "Posées par un administrateur pour tout l'espace, elles priment sur les réglages de chacun.",
+  "readOnlyNote": "Seul un administrateur de l’espace peut changer ces règles. Elles sont affichées ici pour que chacun sache ce qu’elles réservent.",
+  "neverChanged": "Valeur par défaut, jamais changée.",
+  "changedBy": "Changée par {{name}} le {{date}}.",
+  "changedByUnknown": "Changée le {{date}}.",
+  "visibility": {
+    "label": "Comptes d’une unité",
+    "description": "Qui voit les comptes rattachés à une agence, une BU ou une équipe. Un compte sans unité reste visible de tous.",
+    "shared": "Partagés à tout l’espace",
+    "sharedHint": "Le niveau d’accès de chacun décide, comme avant.",
+    "private": "Privés à l’unité",
+    "privateHint": "Seuls les membres de l’unité voient ses comptes, même un membre réglé sur « tout l’espace ». Les administrateurs gardent leur propre réglage."
+  },
+  "export": {
+    "label": "Qui peut exporter",
+    "description": "Tout ce qui fait sortir les données de l’espace — fichiers CSV, téléchargements (dossiers, contacts, dossiers de compétences, conversations), exports vers un tableur ou un outil externe —, depuis l’écran comme depuis {{copilot}}. L’import, les liens de partage, l’envoi à signature et le versement au CRM restent ouverts à chaque membre.",
+    "everyone": "Tous ceux qui en ont le droit",
+    "everyoneHint": "Chaque membre dont le rôle ou un accord individuel permet l’export.",
+    "admins": "Administrateurs seulement",
+    "adminsHint": "Le propriétaire et les administrateurs. Un accord individuel ne suffit plus : pour les autres, les boutons d’export disparaissent."
+  },
+  "saved": "La règle d’espace est enregistrée.",
+  "saveFailed": "Je n’ai pas pu enregistrer cette règle.",
+  "loadingMessage": "On lit les règles de ton espace.",
+  "errorMessage": "Je n’ai pas pu lire les règles de l’espace.",
+  "refusal": {
+    "exportPolicy": "Réservé par la règle d’espace : l’export des données est réservé aux administrateurs de l’espace.",
+    "businessUnitAccountsVisibility": "Réservé par la règle d’espace : les comptes de cette unité ne sont visibles que de ses membres."
+  },
+  "lauraDefaultMode": {
+    "title": "{{copilot}} — mode par défaut",
+    "subtitle": "Le mode de contexte qu’une conversation neuve utilise tant que personne n’en choisit un autre. Ce n’est pas une règle d’espace : il ne retire aucun droit, il pose seulement une valeur de repli.",
+    "readOnlyNote": "Seul un administrateur de l’espace peut changer ce réglage.",
+    "label": "Mode par défaut d’une conversation neuve",
+    "description": "Un fil qui a déjà reçu un choix explicite garde toujours la priorité — ce réglage ne s’applique qu’aux conversations neuves.",
+    "my_activity": "Mon activité",
+    "my_activityHint": "Profil, portefeuille et CRM lus — le comportement d’avant ce réglage.",
+    "one_off_mission": "Mission ponctuelle",
+    "one_off_missionHint": "Seuls le brief de la conversation et le compte sélectionné, si un compte est cadré.",
+    "neutral": "Neutre",
+    "neutralHint": "Seules la demande et les sources publiques.",
+    "saved": "Le mode par défaut est enregistré.",
+    "saveFailed": "Je n’ai pas pu enregistrer ce réglage.",
+    "loadingMessage": "On lit le réglage de ton espace.",
+    "errorMessage": "Je n’ai pas pu lire ce réglage."
+  },
+  "lauraEvalSampling": {
+    "label": "Améliorer {{copilot}} avec des conversations anonymisées",
+    "description": "Activé par défaut. Réservé à l’espace : chaque espace choisit pour lui seul.",
+    "rowTitle": "Verser les demandes anonymisées aux évaluations de {{copilot}}",
+    "rowDescription": "Quand c’est activé, ce que les membres demandent à {{copilot}} est versé aux évaluations de qualité, après suppression des noms, coordonnées, liens et identifiants. Décocher efface ce qui a déjà été versé ; les échantillons sont de toute façon effacés au bout de 90 jours.",
+    "never": "Jamais versé : le corps d’un message rédigé, une pièce jointe, un message vocal, ni la réponse de {{copilot}}.",
+    "on": "Activé",
+    "off": "Désactivé",
+    "saved": "Le réglage est enregistré.",
+    "saveFailed": "Je n’ai pas pu enregistrer ce réglage."
+  },
+  "workspaceProfile": {
+    "label": "Profil de l’espace",
+    "description": "Comment ton ESN travaille avec ses clients. Au forfait, la navigation se range autour des projets à cadrer et suivre : le staffing passe au second plan. Choisi à la création de l’espace, modifiable ici — et nulle part ailleurs.",
+    "staffing": "Staffing (régie)",
+    "staffingHint": "Tu places des consultants chez tes clients : la navigation reste celle d’origine.",
+    "forfait_conseil": "Forfait / conseil",
+    "forfait_conseilHint": "Tu cadres et suis des projets au forfait, réalisés par les équipes du client : les projets passent devant le staffing.",
+    "notChosen": "Aucun profil choisi : la navigation d’origine s’applique.",
+    "saved": "Le profil de l’espace est enregistré.",
+    "saveFailed": "Je n’ai pas pu enregistrer le profil de l’espace."
+  }
+}

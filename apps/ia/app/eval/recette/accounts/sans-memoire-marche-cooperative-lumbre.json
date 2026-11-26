@@ -1,0 +1,179 @@
+{
+  "slug": "sans-memoire-marche-cooperative-lumbre",
+  "company": "Coopérative Lumbre (fictif)",
+  "archetype": "sans_memoire_marche",
+  "issue": "#2130.11",
+  "nature": "fictif",
+  "as_of": "2026-09-15",
+  "_fiction": "Nom FICTIF assumé, marqué « (fictif) » : aucune entreprise réelle n'est décrite ici, aucun identifiant de registre n'est affirmé, et les sources vivent sur le domaine réservé .invalid (RFC 2606) — elles ne peuvent désigner aucune page réelle. Le cadrage #2130.1-7 laisse le choix entre un nom fictif assumé et une entreprise réelle dont chaque fait est sourcé ; faute de source vérifiable depuis ce poste sur cet archétype, c'est le nom fictif.",
+  "expected": {
+    "identite": {
+      "status": "attendu",
+      "contient": [
+        "Coopérative Lumbre"
+      ]
+    },
+    "perimetre": {
+      "status": "attendu",
+      "contient": [
+        "Varennes-la-Grange"
+      ]
+    },
+    "decideurs": {
+      "status": "attendu",
+      "contient": [
+        "Jean-Baptiste Aurel"
+      ]
+    },
+    "contacts_a_ne_pas_recommander": {
+      "status": "attendu",
+      "contient": [
+        "Coralie Dumas"
+      ]
+    },
+    "equipes_cles": {
+      "status": "attendu",
+      "contient": [
+        "collecte des grains"
+      ]
+    },
+    "signaux": {
+      "status": "attendu",
+      "contient": [
+        "Balsa"
+      ]
+    },
+    "projets": {
+      "status": "attendu",
+      "contient": [
+        "Balsa"
+      ]
+    },
+    "partenaires": {
+      "status": "vide_attendu",
+      "raison": "La mémoire marché n'a relevé aucun parcours sur ce compte : l'état est « non couvert », ce qui dit ce que NOUS savons — jamais ce que le compte fait, ni ce qu'il ne fait pas."
+    },
+    "acces": {
+      "status": "attendu",
+      "contient": [
+        "conseil d'administration"
+      ]
+    },
+    "recommandations": {
+      "status": "attendu",
+      "contient": [
+        "Balsa"
+      ]
+    },
+    "gaps": {
+      "status": "attendu",
+      "contient": [
+        "non couvert"
+      ]
+    },
+    "sources": {
+      "status": "attendu",
+      "contient": [
+        "src-bulletin"
+      ]
+    },
+    "action_suivante": {
+      "status": "attendu",
+      "contient": [
+        "conseil d'administration"
+      ]
+    }
+  },
+  "dossier": {
+    "identite": {
+      "name": "Coopérative Lumbre",
+      "siren": null
+    },
+    "perimetre": {
+      "scope": "groupe",
+      "entities": [
+        "Coopérative Lumbre — siège et silos de Varennes-la-Grange"
+      ]
+    },
+    "decideurs": [
+      {
+        "name": "Jean-Baptiste Aurel",
+        "title": "Directeur administratif et financier",
+        "team": "Direction financière"
+      }
+    ],
+    "contacts_a_ne_pas_recommander": [
+      {
+        "name": "Coralie Dumas",
+        "reason": "élue du conseil, sans rôle opérationnel"
+      }
+    ],
+    "equipes_cles": [
+      "Service collecte des grains de Varennes-la-Grange"
+    ],
+    "signaux": [
+      {
+        "id": "sig-bascule",
+        "text": "Remplacement des ponts-bascules connectés Balsa sur les silos de Varennes-la-Grange",
+        "date": "2026-06",
+        "source": "src-bulletin"
+      }
+    ],
+    "projets": [
+      {
+        "id": "prj-balsa",
+        "text": "Raccordement des ponts-bascules Balsa au logiciel de collecte",
+        "source": "src-bulletin"
+      }
+    ],
+    "partenaires": [],
+    "acces": [
+      {
+        "text": "Décision en conseil d'administration au-delà du budget courant",
+        "via": "gouvernance"
+      }
+    ],
+    "recommandations": [
+      {
+        "id": "reco-balsa",
+        "text": "Proposer un intégrateur pour raccorder les ponts-bascules Balsa au logiciel de collecte avant la moisson.",
+        "why": "Le remplacement des ponts-bascules Balsa à Varennes-la-Grange impose ce raccordement, et la décision passe en conseil d'administration.",
+        "target": "Jean-Baptiste Aurel",
+        "evidence": [
+          "sig-bascule",
+          "prj-balsa"
+        ]
+      }
+    ],
+    "gaps": [
+      "mémoire marché : non couvert, aucun parcours relevé sur ce compte"
+    ],
+    "sources": [
+      {
+        "id": "src-bulletin",
+        "url": "https://sources.fictif.invalid/sans-memoire-marche-cooperative-lumbre/src-bulletin",
+        "date": "2026-06-14"
+      }
+    ],
+    "action_suivante": {
+      "text": "Obtenir de Jean-Baptiste Aurel la date du prochain conseil d'administration",
+      "target": "Jean-Baptiste Aurel",
+      "evidence": [
+        "src-bulletin"
+      ]
+    }
+  },
+  "cas": [
+    {
+      "id": "cas-preuve-introuvable",
+      "text": "Proposer une supervision des silos de Varennes-la-Grange équipés en Balsa.",
+      "why": "La supervision des silos suivrait le remplacement des ponts-bascules Balsa.",
+      "target": "Jean-Baptiste Aurel",
+      "evidence": [
+        "sig-inexistant"
+      ],
+      "label": "unsupported",
+      "_jugement": "La preuve citée n'existe pas au dossier : rien ne soutient la recommandation."
+    }
+  ]
+}

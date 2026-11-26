@@ -1,0 +1,49 @@
+{
+  "meta": {
+    "title": "Status van de services",
+    "description": "Realtime status van de BellumAI-services: applicatie, database, analyses en AI-engine."
+  },
+  "hero": {
+    "badge": "Systeemstatus",
+    "title": "Status van de BellumAI-services",
+    "subtitle": "Deze pagina toont de toestand van onze services in realtime. Ze wordt elke 30 seconden automatisch vernieuwd."
+  },
+  "overall": {
+    "loading": "Controle bezig …",
+    "operational": "Alle systemen zijn operationeel",
+    "degraded": "Gedeeltelijke verstoring aan de gang",
+    "down": "Groot incident aan de gang",
+    "unreachable": "Onze services zijn niet bereikbaar"
+  },
+  "overallDetail": {
+    "degraded": "Een deel van de services is vertraagd of onbeschikbaar. De applicatie blijft toegankelijk.",
+    "down": "Onze services zijn momenteel onbeschikbaar. We werken aan het herstel.",
+    "unreachable": "De statuscontrole lukt niet — onze services zijn mogelijk onbeschikbaar. Probeer het over enkele ogenblikken opnieuw."
+  },
+  "components": {
+    "api": {
+      "name": "Applicatie & API",
+      "description": "Inloggen, accounts en accountdossiers"
+    },
+    "database": {
+      "name": "Database",
+      "description": "Opslag van je accounts, contacten en analyses"
+    },
+    "redis": {
+      "name": "Verwerkingswachtrijen & realtime",
+      "description": "Analyses op de achtergrond en notificaties"
+    },
+    "ia_engine": {
+      "name": "AI-engine",
+      "description": "Generatie van de dossiers en de sales intelligence"
+    }
+  },
+  "componentStatus": {
+    "operational": "Operationeel",
+    "down": "Onbeschikbaar",
+    "unknown": "Onbekend"
+  },
+  "lastChecked": "Laatste controle: {time}",
+  "autoRefresh": "Automatische vernieuwing elke 30 seconden.",
+  "historyNote": "Beschikbaarheidshistoriek en incidentenlogboek: binnenkort beschikbaar. Deze pagina toont voorlopig de realtime toestand."
+}

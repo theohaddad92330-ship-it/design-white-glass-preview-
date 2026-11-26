@@ -1,0 +1,468 @@
+{
+  "_doc": "Jeu de référence du RAG (tome 7 §38, M7). Chaque requête a UN document attendu. Le corpus est fictif et autoportant : il ne dépend d'aucune base, ce qui rend la mesure reproductible. Les dates sont ABSOLUES et la date de référence est figée : sans cela, le même jeu rendrait un nombre différent chaque mois et aucune variation ne serait interprétable.",
+  "documents": [
+    {
+      "id": "d01",
+      "category": "account_fact",
+      "title": "Barrière d'achat de Thales",
+      "content": "Thales centralise ses achats IT au niveau groupe. Les entrées se font par les filiales à autonomie propre, pas par le siège de La Défense.",
+      "created_at": "2026-08-11T09:00:00+00:00"
+    },
+    {
+      "id": "d02",
+      "category": "winning_angle",
+      "title": "Angle gagnant secteur bancaire",
+      "content": "Chez les banques, l'angle qui a fonctionné est la conformité DORA : le calendrier réglementaire crée une urgence que le budget suit.",
+      "created_at": "2025-07-19T09:00:00+00:00"
+    },
+    {
+      "id": "d03",
+      "category": "sector_insight",
+      "title": "Cycle d'achat de la grande distribution",
+      "content": "Les enseignes achètent en septembre pour un démarrage en janvier. Une prise de contact en juin arrive trop tôt, en novembre trop tard.",
+      "created_at": "2026-07-09T09:00:00+00:00"
+    },
+    {
+      "id": "d04",
+      "category": "objection_answer",
+      "title": "Réponse à « on a déjà un prestataire »",
+      "content": "Ne pas concurrencer frontalement le titulaire. Demander sur quels périmètres il n'intervient pas, et proposer le rang 2 sur les pics de charge.",
+      "created_at": "2024-06-14T09:00:00+00:00"
+    },
+    {
+      "id": "d05",
+      "category": "objection_answer",
+      "title": "Réponse à « vous êtes trop chers »",
+      "content": "Cher par rapport à quoi ? Demander la référence de comparaison avant d'annoncer un tarif. Réciter la grille confirme l'objection.",
+      "created_at": "2026-07-24T09:00:00+00:00"
+    },
+    {
+      "id": "d06",
+      "category": "objection_answer",
+      "title": "Réponse à « vous êtes trop petits »",
+      "content": "Un périmètre, pas un programme. Proposer un lot mesurable de trois mois plutôt qu'un accord-cadre.",
+      "created_at": "2026-01-15T09:00:00+00:00"
+    },
+    {
+      "id": "d07",
+      "category": "client_proof",
+      "title": "Preuve — plateforme de suivi de flotte",
+      "content": "Trois mois de renfort sur l'exploitation d'une plateforme de suivi : observabilité de bout en bout, délai de détection d'incident divisé par quatre.",
+      "created_at": "2026-05-20T09:00:00+00:00"
+    },
+    {
+      "id": "d08",
+      "category": "client_proof",
+      "title": "Preuve — migration Kubernetes",
+      "content": "Migration d'un parc de machines virtuelles vers Kubernetes chez un transporteur, sans interruption de service, en quatre mois.",
+      "created_at": "2024-12-21T09:00:00+00:00"
+    },
+    {
+      "id": "d09",
+      "category": "access_fact",
+      "title": "Référencement en cours chez un acheteur public",
+      "content": "Marché de TMA attribué jusqu'en avril 2029. La consultation de renouvellement se prépare six mois avant l'échéance.",
+      "created_at": "2026-08-08T09:00:00+00:00"
+    },
+    {
+      "id": "d10",
+      "category": "access_fact",
+      "title": "Commission d'un porteur",
+      "content": "Le porteur impose une commission de trois pour cent sur le chiffre d'affaires facturé. Annoncé par l'acheteur au premier échange.",
+      "created_at": "2025-09-07T09:00:00+00:00"
+    },
+    {
+      "id": "d11",
+      "category": "partner_fact",
+      "title": "Vertex Systèmes — partenaire potentiel",
+      "content": "ESN toulousaine de quatre-vingts consultants, ouverte à la sous-traitance en rang 2 sur les compétences cloud.",
+      "created_at": "2026-06-14T09:00:00+00:00"
+    },
+    {
+      "id": "d12",
+      "category": "partner_fact",
+      "title": "Orsan Conseil — concurrent installé",
+      "content": "Présent chez plusieurs comptes du portefeuille sur de l'intégration. Peu différenciant sur l'industrialisation de l'IA.",
+      "created_at": "2024-03-06T09:00:00+00:00"
+    },
+    {
+      "id": "d13",
+      "category": "territory_insight",
+      "title": "Dynamique de la Haute-Garonne",
+      "content": "Le département concentre les offres aéronautique et spatial. Les ESN locales recrutent surtout des profils embarqués et systèmes critiques.",
+      "created_at": "2026-07-29T09:00:00+00:00"
+    },
+    {
+      "id": "d14",
+      "category": "territory_insight",
+      "title": "Dynamique du Rhône",
+      "content": "Lyon porte la logistique et la santé. La demande IT se concentre sur les données et les applications métier.",
+      "created_at": "2025-04-30T09:00:00+00:00"
+    },
+    {
+      "id": "d15",
+      "category": "esn_profile_fact",
+      "title": "Notre wedge",
+      "content": "Nous entrons par l'observabilité et l'exploitation, jamais par le développement au forfait. C'est là que nos références sont vérifiables.",
+      "created_at": "2026-08-15T09:00:00+00:00"
+    },
+    {
+      "id": "d16",
+      "category": "esn_profile_fact",
+      "title": "Nos contraintes de staffing",
+      "content": "Aucun consultant disponible sous trente jours sur les compétences data. Ne pas promettre un démarrage immédiat sur ces profils.",
+      "created_at": "2025-12-06T09:00:00+00:00"
+    },
+    {
+      "id": "d17",
+      "category": "sector_insight",
+      "title": "Achats IT dans l'industrie",
+      "content": "Les groupes industriels passent par des accords-cadres pluriannuels. Hors accord-cadre, seules les directions métier achètent, sous seuil.",
+      "created_at": "2026-04-15T09:00:00+00:00"
+    },
+    {
+      "id": "d18",
+      "category": "account_fact",
+      "title": "Organisation d'un groupe bancaire",
+      "content": "La direction des systèmes d'information est centralisée, mais les filiales de courtage gardent leurs propres équipes techniques.",
+      "created_at": "2024-09-02T09:00:00+00:00"
+    },
+    {
+      "id": "d19",
+      "category": "winning_angle",
+      "title": "Angle gagnant — dette technique",
+      "content": "Parler de la dette technique fonctionne quand un incident récent est public. Sans incident, le sujet n'a pas de porteur.",
+      "created_at": "2026-07-14T09:00:00+00:00"
+    },
+    {
+      "id": "d20",
+      "category": "winning_angle",
+      "title": "Angle gagnant — départ d'un titulaire",
+      "content": "Le départ d'un directeur technique rouvre les choix de prestataires pendant environ six mois.",
+      "created_at": "2026-02-14T09:00:00+00:00"
+    },
+    {
+      "id": "d21",
+      "category": "account_fact",
+      "title": "Pile technique d'un transporteur",
+      "content": "Kubernetes en adoption, TypeScript sur les applications terrain, Kafka pour les flux de livraison en temps réel.",
+      "created_at": "2026-06-29T09:00:00+00:00"
+    },
+    {
+      "id": "d22",
+      "category": "sector_insight",
+      "title": "Recrutement comme signal",
+      "content": "Trois postes produit ouverts simultanément et une pile moderne signalent une maison mûre en produit : parler validation par un pair, pas disponibilité.",
+      "created_at": "2025-09-27T09:00:00+00:00"
+    },
+    {
+      "id": "d23",
+      "category": "access_fact",
+      "title": "Filiale accessible",
+      "content": "La filiale supply chain achète en propre sous cent mille euros. C'est la porte la plus courte du groupe.",
+      "created_at": "2026-08-05T09:00:00+00:00"
+    },
+    {
+      "id": "d24",
+      "category": "partner_fact",
+      "title": "Ce qu'un partenaire attend",
+      "content": "Un partenaire attend un profil validé sous quarante-huit heures et un interlocuteur unique. Un dossier incomplet ferme la relation.",
+      "created_at": "2025-02-09T09:00:00+00:00"
+    },
+    {
+      "id": "d25",
+      "category": "client_proof",
+      "title": "Preuve — reprise de run",
+      "content": "Reprise du run d'un portail transporteurs à un titulaire sortant, sans perte de connaissance, avec deux mois de recouvrement.",
+      "created_at": "2026-05-27T09:00:00+00:00"
+    },
+    {
+      "id": "d26",
+      "category": "objection_answer",
+      "title": "Réponse à « envoyez-nous une plaquette »",
+      "content": "Une plaquette ne se lit pas. Proposer un créneau de vingt minutes sur un sujet précis du compte.",
+      "created_at": "2025-12-26T09:00:00+00:00"
+    },
+    {
+      "id": "d27",
+      "category": "territory_insight",
+      "title": "Marchés publics IT en région",
+      "content": "Les collectivités publient surtout des marchés de TMA et d'hébergement. Les développements neufs passent par des accords-cadres nationaux.",
+      "created_at": "2025-07-09T09:00:00+00:00"
+    },
+    {
+      "id": "d28",
+      "category": "esn_profile_fact",
+      "title": "Nos offres",
+      "content": "Observabilité, exploitation de plateformes, intégration de données. Pas de cybersécurité offensive, pas d'ERP.",
+      "created_at": "2026-06-19T09:00:00+00:00"
+    },
+    {
+      "id": "d29",
+      "category": "account_fact",
+      "title": "Signaux d'un compte en réorganisation",
+      "content": "Une réorganisation de gouvernance numérique place les entités métier sous une direction groupe. Les cycles de décision s'allongent.",
+      "created_at": "2026-03-26T09:00:00+00:00"
+    },
+    {
+      "id": "d30",
+      "category": "winning_angle",
+      "title": "Angle gagnant — appel d'offres perdu",
+      "content": "Un compte qui vient de perdre du temps sur un appel d'offres infructueux accepte plus facilement un lot court.",
+      "created_at": "2026-08-03T09:00:00+00:00"
+    }
+  ],
+  "queries": [
+    {
+      "id": "q01",
+      "text": "comment entrer chez Thales",
+      "expected": "d01"
+    },
+    {
+      "id": "q02",
+      "text": "le siège est verrouillé, par où passer",
+      "expected": "d01"
+    },
+    {
+      "id": "q03",
+      "text": "angle pour une banque",
+      "expected": "d02"
+    },
+    {
+      "id": "q04",
+      "text": "conformité DORA argument",
+      "expected": "d02"
+    },
+    {
+      "id": "q05",
+      "text": "quand contacter la grande distribution",
+      "expected": "d03"
+    },
+    {
+      "id": "q06",
+      "text": "cycle d'achat retail",
+      "expected": "d03"
+    },
+    {
+      "id": "q07",
+      "text": "le client a déjà un prestataire",
+      "expected": "d04"
+    },
+    {
+      "id": "q08",
+      "text": "répondre au titulaire en place",
+      "expected": "d04"
+    },
+    {
+      "id": "q09",
+      "text": "on me dit que je suis trop cher",
+      "expected": "d05"
+    },
+    {
+      "id": "q10",
+      "text": "objection prix",
+      "expected": "d05"
+    },
+    {
+      "id": "q11",
+      "text": "on me trouve trop petit",
+      "expected": "d06"
+    },
+    {
+      "id": "q12",
+      "text": "objection taille de la société",
+      "expected": "d06"
+    },
+    {
+      "id": "q13",
+      "text": "preuve suivi de flotte",
+      "expected": "d07"
+    },
+    {
+      "id": "q14",
+      "text": "référence observabilité plateforme",
+      "expected": "d07"
+    },
+    {
+      "id": "q15",
+      "text": "preuve migration kubernetes",
+      "expected": "d08"
+    },
+    {
+      "id": "q16",
+      "text": "référence conteneurs sans interruption",
+      "expected": "d08"
+    },
+    {
+      "id": "q17",
+      "text": "échéance du marché public",
+      "expected": "d09"
+    },
+    {
+      "id": "q18",
+      "text": "quand préparer le renouvellement",
+      "expected": "d09"
+    },
+    {
+      "id": "q19",
+      "text": "commission du porteur",
+      "expected": "d10"
+    },
+    {
+      "id": "q20",
+      "text": "coût d'accès via un intermédiaire",
+      "expected": "d10"
+    },
+    {
+      "id": "q21",
+      "text": "Vertex Systèmes",
+      "expected": "d11"
+    },
+    {
+      "id": "q22",
+      "text": "ESN toulousaine ouverte au rang 2",
+      "expected": "d11"
+    },
+    {
+      "id": "q23",
+      "text": "Orsan Conseil",
+      "expected": "d12"
+    },
+    {
+      "id": "q24",
+      "text": "concurrent installé intégration",
+      "expected": "d12"
+    },
+    {
+      "id": "q25",
+      "text": "marché de la Haute-Garonne",
+      "expected": "d13"
+    },
+    {
+      "id": "q26",
+      "text": "profils embarqués Toulouse",
+      "expected": "d13"
+    },
+    {
+      "id": "q27",
+      "text": "marché du Rhône",
+      "expected": "d14"
+    },
+    {
+      "id": "q28",
+      "text": "demande IT à Lyon",
+      "expected": "d14"
+    },
+    {
+      "id": "q29",
+      "text": "quel est notre wedge",
+      "expected": "d15"
+    },
+    {
+      "id": "q30",
+      "text": "par quoi on entre habituellement",
+      "expected": "d15"
+    },
+    {
+      "id": "q31",
+      "text": "disponibilité des profils data",
+      "expected": "d16"
+    },
+    {
+      "id": "q32",
+      "text": "peut-on démarrer tout de suite en data",
+      "expected": "d16"
+    },
+    {
+      "id": "q33",
+      "text": "comment achètent les industriels",
+      "expected": "d17"
+    },
+    {
+      "id": "q34",
+      "text": "accord-cadre industrie",
+      "expected": "d17"
+    },
+    {
+      "id": "q35",
+      "text": "organisation d'un groupe bancaire",
+      "expected": "d18"
+    },
+    {
+      "id": "q36",
+      "text": "filiales de courtage équipes techniques",
+      "expected": "d18"
+    },
+    {
+      "id": "q37",
+      "text": "parler de dette technique",
+      "expected": "d19"
+    },
+    {
+      "id": "q38",
+      "text": "angle après un incident public",
+      "expected": "d19"
+    },
+    {
+      "id": "q39",
+      "text": "un directeur technique vient de partir",
+      "expected": "d20"
+    },
+    {
+      "id": "q40",
+      "text": "fenêtre après un départ",
+      "expected": "d20"
+    },
+    {
+      "id": "q41",
+      "text": "pile technique du transporteur",
+      "expected": "d21"
+    },
+    {
+      "id": "q42",
+      "text": "kafka flux temps réel",
+      "expected": "d21"
+    },
+    {
+      "id": "q43",
+      "text": "postes produit ouverts signal",
+      "expected": "d22"
+    },
+    {
+      "id": "q44",
+      "text": "maison mûre en produit vocabulaire",
+      "expected": "d22"
+    },
+    {
+      "id": "q45",
+      "text": "filiale qui achète en propre",
+      "expected": "d23"
+    },
+    {
+      "id": "q46",
+      "text": "porte la plus courte du groupe",
+      "expected": "d23"
+    },
+    {
+      "id": "q47",
+      "text": "ce qu'un partenaire attend de nous",
+      "expected": "d24"
+    },
+    {
+      "id": "q48",
+      "text": "profil validé quarante-huit heures",
+      "expected": "d24"
+    },
+    {
+      "id": "q49",
+      "text": "reprise du run titulaire sortant",
+      "expected": "d25"
+    },
+    {
+      "id": "q50",
+      "text": "on me demande une plaquette",
+      "expected": "d26"
+    }
+  ],
+  "_reference_date": "2026-08-23"
+}

@@ -1,0 +1,315 @@
+{
+  "$schema": "http://json-schema.org/draft-07/schema#",
+  "$id": "https://bellum.ai/schemas/market-brief.schema.json",
+  "title": "BellumMarketBrief",
+  "description": "Brief d'un marché local (zone France ou Suisse) : ce qu'on sait et ce que ça veut dire pour le commercial, KPI, graphiques, ESN observées, personnes (en clair, avec leur employeur), sections, grille de prix avec sa source et ses effectifs, tendance, clients, galaxies, calendrier, règles et garde-fous. Source de vérité : packages/contracts/src/schemas/market-brief.ts (zod), parité tenue par market-brief.test.ts. Les contrôles MÉTIER (France et Suisse mêlées, devise, cellule sous-échantillonnée, grille concentrée sur un client, couverture lue comme un fait de marché, probabilité) vivent dans packages/contracts/src/market-brief/controls.ts. Contrat FERMÉ : aucune clé inconnue.",
+  "type": "object",
+  "additionalProperties": false,
+  "required": ["zone", "generated_at", "kpis", "what_i_know", "charts", "esn", "people", "sections", "guardrails"],
+  "definitions": {
+    "text": { "type": "string", "minLength": 1, "pattern": "\\S" },
+    "count": { "type": "integer", "minimum": 0 },
+    "reliability": {
+      "type": "string",
+      "minLength": 1,
+      "pattern": "\\S",
+      "description": "Colonne FIABILITÉ du classeur source, recopiée telle quelle quand elle existe."
+    },
+    "priceCell": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["amount", "n"],
+      "description": "Une cellule de séniorité. ABSENTE quand n < 3 — jamais un zéro.",
+      "properties": { "amount": { "type": "number", "exclusiveMinimum": 0 }, "n": { "$ref": "#/definitions/count" } }
+    }
+  },
+  "properties": {
+    "zone": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["label", "scope", "departments", "cantons", "cities"],
+      "description": "La zone du marché. france ⇒ au moins un département et aucun canton ; suisse ⇒ au moins un canton et aucun département. Jamais mêlés (D4).",
+      "properties": {
+        "label": { "$ref": "#/definitions/text" },
+        "scope": { "enum": ["france", "suisse"] },
+        "departments": {
+          "type": "array",
+          "items": { "type": "string", "pattern": "^(\\d{2,3}|2[AB])$" },
+          "description": "Codes INSEE de département."
+        },
+        "cantons": {
+          "type": "array",
+          "items": { "type": "string", "pattern": "^[A-Z]{2}$" },
+          "description": "Sigles de canton suisse."
+        },
+        "cities": { "type": "array", "items": { "$ref": "#/definitions/text" } }
+      }
+    },
+    "generated_at": { "type": "string", "format": "date-time", "description": "Horodatage ISO 8601 de génération." },
+    "kpis": {
+      "type": "array",
+      "maxItems": 6,
+      "description": "Bandeau de KPI (six au plus).",
+      "items": {
+        "type": "object",
+        "additionalProperties": false,
+        "required": ["label", "value"],
+        "properties": {
+          "label": { "$ref": "#/definitions/text" },
+          "value": { "anyOf": [{ "$ref": "#/definitions/text" }, { "type": "number" }] },
+          "caption": { "$ref": "#/definitions/text" }
+        }
+      }
+    },
+    "what_i_know": {
+      "type": "array",
+      "minItems": 1,
+      "description": "« Ce que je sais » : une rubrique libre, ce qu'on sait, ce que ça veut dire pour le commercial.",
+      "items": {
+        "type": "object",
+        "additionalProperties": false,
+        "required": ["rubric", "known", "meaning"],
+        "properties": {
+          "rubric": { "$ref": "#/definitions/text" },
+          "known": { "$ref": "#/definitions/text" },
+          "meaning": {
+            "$ref": "#/definitions/text",
+            "description": "Ce que ça veut dire — jamais une recopie de `known`."
+          }
+        }
+      }
+    },
+    "charts": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "additionalProperties": false,
+        "required": ["title", "items"],
+        "properties": {
+          "title": { "$ref": "#/definitions/text" },
+          "items": {
+            "type": "array",
+            "items": {
+              "type": "object",
+              "additionalProperties": false,
+              "required": ["label", "value"],
+              "properties": { "label": { "$ref": "#/definitions/text" }, "value": { "type": "number" } }
+            }
+          }
+        }
+      }
+    },
+    "esn": {
+      "type": "array",
+      "description": "ESN observées sur la zone, chacune avec son niveau de preuve et la preuve elle-même.",
+      "items": {
+        "type": "object",
+        "additionalProperties": false,
+        "required": ["name", "evidence_level", "proof"],
+        "properties": {
+          "name": { "$ref": "#/definitions/text" },
+          "evidence_level": { "type": "string", "enum": ["confirmed", "observed", "hint"] },
+          "proof": { "$ref": "#/definitions/text" },
+          "perimeter": { "$ref": "#/definitions/text" },
+          "reliability": { "$ref": "#/definitions/reliability" }
+        }
+      }
+    },
+    "people": {
+      "type": "array",
+      "description": "Personnes EN CLAIR, avec leur employeur (D5).",
+      "items": {
+        "type": "object",
+        "additionalProperties": false,
+        "required": ["name"],
+        "properties": {
+          "name": { "$ref": "#/definitions/text" },
+          "function": { "$ref": "#/definitions/text" },
+          "entity": { "$ref": "#/definitions/text" },
+          "department": { "$ref": "#/definitions/text" },
+          "manager": { "$ref": "#/definitions/text" },
+          "city": { "$ref": "#/definitions/text" },
+          "email": { "$ref": "#/definitions/text" },
+          "mobile": { "$ref": "#/definitions/text" },
+          "phone": { "$ref": "#/definitions/text" },
+          "linkedin": { "$ref": "#/definitions/text" },
+          "hook": { "$ref": "#/definitions/text" },
+          "role": { "type": "string", "enum": ["decision_maker", "manager", "contact", "external", "alumni"] },
+          "exited": { "type": "boolean" },
+          "reliability": { "$ref": "#/definitions/reliability" }
+        }
+      }
+    },
+    "sections": {
+      "type": "array",
+      "description": "Sections tabulaires génériques.",
+      "items": {
+        "type": "object",
+        "additionalProperties": false,
+        "required": ["key", "title", "columns", "rows"],
+        "properties": {
+          "key": { "$ref": "#/definitions/text" },
+          "title": { "$ref": "#/definitions/text" },
+          "columns": {
+            "type": "array",
+            "items": {
+              "type": "object",
+              "additionalProperties": false,
+              "required": ["key", "label"],
+              "properties": { "key": { "$ref": "#/definitions/text" }, "label": { "$ref": "#/definitions/text" } }
+            }
+          },
+          "rows": {
+            "type": "array",
+            "items": {
+              "type": "object",
+              "additionalProperties": { "type": ["string", "number", "boolean", "null"] }
+            }
+          }
+        }
+      }
+    },
+    "guardrails": {
+      "type": "array",
+      "minItems": 1,
+      "description": "Garde-fous, affichés EN FIN de brief.",
+      "items": {
+        "type": "object",
+        "additionalProperties": false,
+        "required": ["point", "detail"],
+        "properties": { "point": { "$ref": "#/definitions/text" }, "detail": { "$ref": "#/definitions/text" } }
+      }
+    },
+    "price_grid": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["currency", "period", "sample_size", "source_kind", "rows"],
+      "description": "Grille de prix de la zone. Nomme toujours sa source (D6) : own_needs_missions = besoins et missions de l'espace ; observed_public = collecte Bellum de sources publiques ; provided_file = classeur fourni pour la démo.",
+      "properties": {
+        "currency": { "enum": ["EUR", "CHF"] },
+        "period": { "$ref": "#/definitions/text" },
+        "sample_size": { "$ref": "#/definitions/count" },
+        "source_kind": { "enum": ["own_needs_missions", "observed_public", "provided_file"] },
+        "top_client": {
+          "type": "object",
+          "additionalProperties": false,
+          "required": ["name", "n"],
+          "description": "Le client le plus représenté de l'échantillon ; au-delà de 50 %, un garde-fou doit le nommer.",
+          "properties": { "name": { "$ref": "#/definitions/text" }, "n": { "$ref": "#/definitions/count" } }
+        },
+        "rows": {
+          "type": "array",
+          "items": {
+            "type": "object",
+            "additionalProperties": false,
+            "required": ["family", "needs", "median"],
+            "properties": {
+              "family": { "$ref": "#/definitions/text" },
+              "needs": { "$ref": "#/definitions/count" },
+              "median": { "type": "number", "exclusiveMinimum": 0 },
+              "junior": { "$ref": "#/definitions/priceCell" },
+              "confirmed": { "$ref": "#/definitions/priceCell" },
+              "senior": { "$ref": "#/definitions/priceCell" },
+              "range": {
+                "type": "object",
+                "additionalProperties": false,
+                "required": ["min", "max"],
+                "properties": {
+                  "min": { "type": "number", "exclusiveMinimum": 0 },
+                  "max": { "type": "number", "exclusiveMinimum": 0 }
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "price_trend": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "additionalProperties": false,
+        "required": ["year", "needs", "median"],
+        "properties": {
+          "year": { "type": "integer" },
+          "needs": { "$ref": "#/definitions/count" },
+          "median": { "type": "number", "exclusiveMinimum": 0 }
+        }
+      }
+    },
+    "clients": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "additionalProperties": false,
+        "required": ["name", "cities"],
+        "properties": {
+          "name": { "$ref": "#/definitions/text" },
+          "sector": { "$ref": "#/definitions/text" },
+          "size": { "$ref": "#/definitions/text" },
+          "profiles": { "$ref": "#/definitions/count" },
+          "externals": { "$ref": "#/definitions/count" },
+          "cities": { "type": "array", "items": { "$ref": "#/definitions/text" } },
+          "families": { "$ref": "#/definitions/text" },
+          "reading": { "$ref": "#/definitions/text" }
+        }
+      }
+    },
+    "groups": {
+      "type": "array",
+      "description": "Galaxies : des clients liés entre eux.",
+      "items": {
+        "type": "object",
+        "additionalProperties": false,
+        "required": ["name", "members"],
+        "properties": {
+          "name": { "$ref": "#/definitions/text" },
+          "note": { "$ref": "#/definitions/text" },
+          "members": {
+            "type": "array",
+            "items": {
+              "type": "object",
+              "additionalProperties": false,
+              "required": ["name"],
+              "properties": {
+                "name": { "$ref": "#/definitions/text" },
+                "profiles": { "$ref": "#/definitions/count" },
+                "externals": { "$ref": "#/definitions/count" },
+                "needs": { "$ref": "#/definitions/count" }
+              }
+            }
+          }
+        }
+      }
+    },
+    "calendar": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "additionalProperties": false,
+        "required": ["label", "when"],
+        "properties": {
+          "label": { "$ref": "#/definitions/text" },
+          "actors": { "$ref": "#/definitions/text" },
+          "when": { "$ref": "#/definitions/text" },
+          "detail": { "$ref": "#/definitions/text" },
+          "source": { "$ref": "#/definitions/text" }
+        }
+      }
+    },
+    "rules": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "additionalProperties": false,
+        "required": ["rule", "known", "meaning"],
+        "properties": {
+          "rule": { "$ref": "#/definitions/text" },
+          "regime": { "$ref": "#/definitions/text" },
+          "known": { "$ref": "#/definitions/text" },
+          "meaning": { "$ref": "#/definitions/text" }
+        }
+      }
+    }
+  }
+}

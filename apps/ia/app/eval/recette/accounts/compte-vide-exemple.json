@@ -1,0 +1,107 @@
+{
+  "slug": "compte-vide-exemple",
+  "company": "Compte Vide Exemple (fictif)",
+  "archetype": "compte_vide",
+  "issue": "#2130.9",
+  "nature": "fictif",
+  "as_of": "2026-09-15",
+  "_fiction": "Nom FICTIF assumé, marqué « (fictif) » : aucune entreprise réelle n'est décrite ici, aucun identifiant de registre n'est affirmé, et les sources vivent sur le domaine réservé .invalid (RFC 2606) — elles ne peuvent désigner aucune page réelle. Le cadrage #2130.1-7 laisse le choix entre un nom fictif assumé et une entreprise réelle dont chaque fait est sourcé ; faute de source vérifiable depuis ce poste sur cet archétype, c'est le nom fictif.",
+  "expected": {
+    "identite": {
+      "status": "attendu",
+      "contient": [
+        "Compte Vide Exemple"
+      ]
+    },
+    "perimetre": {
+      "status": "vide_attendu",
+      "raison": "Aucune analyse n'a tourné : le périmètre est inconnu, il ne s'invente pas."
+    },
+    "decideurs": {
+      "status": "vide_attendu",
+      "raison": "Aucun contact collecté : la liste reste vide, elle ne se remplit pas d'à-peu-près."
+    },
+    "contacts_a_ne_pas_recommander": {
+      "status": "vide_attendu",
+      "raison": "Sans contact collecté, il n'y a personne à écarter."
+    },
+    "equipes_cles": {
+      "status": "vide_attendu",
+      "raison": "Aucune équipe observée : rien à afficher."
+    },
+    "signaux": {
+      "status": "vide_attendu",
+      "raison": "Aucun signal collecté : un compte sans analyse n'a pas d'actualité devinée."
+    },
+    "projets": {
+      "status": "vide_attendu",
+      "raison": "Aucun projet collecté."
+    },
+    "partenaires": {
+      "status": "vide_attendu",
+      "raison": "Aucune observation : l'état est « non couvert », ce qui dit ce qu'on sait, pas ce que fait le compte."
+    },
+    "acces": {
+      "status": "vide_attendu",
+      "raison": "Aucune voie d'accès observée."
+    },
+    "recommandations": {
+      "status": "vide_attendu",
+      "raison": "Sans le moindre fait, toute recommandation serait générique par construction : on n'en produit aucune."
+    },
+    "gaps": {
+      "status": "attendu",
+      "contient": [
+        "aucune analyse"
+      ]
+    },
+    "sources": {
+      "status": "vide_attendu",
+      "raison": "Aucune source consultée."
+    },
+    "action_suivante": {
+      "status": "attendu",
+      "contient": [
+        "première analyse"
+      ]
+    }
+  },
+  "dossier": {
+    "identite": {
+      "name": "Compte Vide Exemple",
+      "siren": null
+    },
+    "perimetre": {
+      "scope": null,
+      "entities": []
+    },
+    "decideurs": [],
+    "contacts_a_ne_pas_recommander": [],
+    "equipes_cles": [],
+    "signaux": [],
+    "projets": [],
+    "partenaires": [],
+    "acces": [],
+    "recommandations": [],
+    "gaps": [
+      "aucune analyse lancée sur ce compte : aucun fait collecté, et rien n'est deviné"
+    ],
+    "sources": [],
+    "action_suivante": {
+      "text": "Lancer une première analyse du compte",
+      "target": null,
+      "evidence": []
+    }
+  },
+  "cas": [
+    {
+      "id": "cas-reco-sur-du-vide",
+      "text": "Proposer à ce compte un accompagnement sur sa transformation digitale.",
+      "why": "Toute entreprise a des projets de modernisation à mener.",
+      "target": null,
+      "evidence": [],
+      "label": "unsupported",
+      "_jugement": "Sur un compte vide, la recommandation ne s'appuie sur rien du tout."
+    }
+  ]
+}

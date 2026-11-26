@@ -1,0 +1,42 @@
+name: Cache distant turbo (préparation, no-op sans clé)
+description: >-
+  Expose TURBO_API / TURBO_TOKEN / TURBO_TEAM à turbo QUAND ils sont posés
+  (secret `TURBO_TOKEN`, variables `TURBO_API` et `TURBO_TEAM`). Absents : rien
+  n'est écrit, turbo reste sur son cache local — comportement strictement
+  identique à avant. Aucun serveur n'est déployé par ce dépôt (docs/ci.md §3).
+
+inputs:
+  token:
+    description: Valeur du secret TURBO_TOKEN (vide = no-op)
+    required: false
+    default: ''
+  api:
+    description: URL du cache distant (variable TURBO_API)
+    required: false
+    default: ''
+  team:
+    description: Équipe du cache distant (variable TURBO_TEAM)
+    required: false
+    default: ''
+
+runs:
+  using: composite
+  steps:
+    - shell: bash
+      env:
+        TOKEN: ${{ inputs.token }}
+        API: ${{ inputs.api }}
+        TEAM: ${{ inputs.team }}
+      run: |
+        set -euo pipefail
+        if [ -z "$TOKEN" ] || [ -z "$TEAM" ]; then
+          echo "cache distant turbo : non configuré (TURBO_TOKEN/TURBO_TEAM absents) — cache local seul."
+          exit 0
+        fi
+        echo "::add-mask::$TOKEN"
+        {
+          echo "TURBO_TOKEN=$TOKEN"
+          echo "TURBO_TEAM=$TEAM"
+          if [ -n "$API" ]; then echo "TURBO_API=$API"; fi
+        } >> "$GITHUB_ENV"
+        echo "cache distant turbo : activé pour l'équipe $TEAM."

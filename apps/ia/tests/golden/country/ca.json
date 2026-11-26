@@ -1,0 +1,12 @@
+{
+  "registry": "Registres d'entreprises du Canada (CBR / MRAS)",
+  "identifierLabel": "numéro d'entreprise",
+  "note": "Real, verified Canadian IT companies for country-pack resolution non-regression. Every row verified LIVE 2026-07-16 against the free federated search API of Canada's Business Registries: GET https://ised-isde.canada.ca/cbr/srch/api/v1/search?fq=keyword:{<name>} AND Status_State:Active (no key; API base discovered from the app's own /cbr-rec/config.js). juriId is jurisdiction-scoped: QC = NEQ (numero d'entreprise du Quebec, 10 digits starting 11), CC = Corporations Canada federal corporation number, ON = Ontario corporation number. bn = CRA Business Number (9 digits, optional RC#### program suffix) when the registry returns it — not all jurisdictions publish it.",
+  "accounts": [
+    {"name": "CGI INC.", "jurisdiction": "QC", "juriId": "1142478016", "bn": null, "city": "Montréal", "incorporated": "1981-09-29"},
+    {"name": "Open Text Corporation", "jurisdiction": "CC", "juriId": "18052956", "bn": null, "city": "Waterloo", "incorporated": null},
+    {"name": "CONSTELLATION SOFTWARE INC.", "jurisdiction": "ON", "juriId": "1517581", "bn": "891148553", "city": "Toronto", "incorporated": null},
+    {"name": "SHOPIFY INC.", "jurisdiction": "CC", "juriId": "4261607", "bn": "847871746RC0001", "city": "Ottawa", "incorporated": null},
+    {"name": "KINAXIS INC.", "jurisdiction": "CC", "juriId": "8826595", "bn": "100715580RC0003", "city": "Ottawa", "incorporated": null}
+  ]
+}

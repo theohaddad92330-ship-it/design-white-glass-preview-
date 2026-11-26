@@ -1,0 +1,353 @@
+{
+  "title": "Matching",
+  "freeNote": "Free.",
+  "loading": "Comparing profiles…",
+  "transparency": "This ranking is produced by an AI system. It proposes, you decide. Every score is broken down axis by axis, and every excluded profile carries a reason.",
+  "scores": {
+    "correspondence": "Match",
+    "pushable": "Pushable",
+    "matches": "Matches",
+    "missing": "Missing",
+    "unevaluated": "Not assessable",
+    "nothingClear": "Nothing clear yet"
+  },
+  "verdict": {
+    "fortement_defendable": "Strongly defendable",
+    "a_qualifier": "To qualify",
+    "alternative": "Alternative",
+    "non_defendable": "Not defendable",
+    "non_evaluable": "Not evaluable"
+  },
+  "unevaluatedList": "Not evaluable here: {{list}}",
+  "recommendedStep": "Next step: {{action}}",
+  "nextBestMove": {
+    "causesTitle": "Why zero profiles?",
+    "notEvaluableQualifier": "not evaluable",
+    "title": "No profile is worth proposing today — here are the possible calls",
+    "primaryHint": "The gesture most tied to the most frequent cause",
+    "options": {
+      "clarifier": "Clarify the need with the client",
+      "negocier": "Negotiate a criterion (rate, contract…)",
+      "reactiver": "Reactivate a temporarily unavailable profile",
+      "elargir": "Widen the accepted zone",
+      "elargir_contrat": "Widen to permanent/freelance status",
+      "sourcer": "Source new profiles",
+      "recommandation": "Ask for a recommendation",
+      "partenaire": "Identify a partner",
+      "refuser": "Decline this need",
+      "reverse_market": "Find assignments"
+    },
+    "reverseMarketPicker": {
+      "title": "Look for a strong profile elsewhere",
+      "subtitle": "No profile defends this need — look instead at where a profile from your pool would be defensible elsewhere. Nothing is added to this need.",
+      "search": "Search a consultant…",
+      "empty": "No consultant matches.",
+      "cancel": "Cancel"
+    },
+    "refuseUnavailable": "This gesture needs the need's status, unavailable here.",
+    "accountUnavailable": "This gesture needs the need's account, unavailable here."
+  },
+  "feedbackLearnings": {
+    "title": "What past rejections already say about this need",
+    "propose": "Suggest an update to the need",
+    "proposeFor": "Suggest an update to the need from “{{axis}}”"
+  },
+  "buckets": {
+    "recommended": "Recommended",
+    "borderline": "Borderline",
+    "excluded": "Excluded",
+    "notEvaluable": "Not assessable",
+    "empty": "Nobody in this group.",
+    "showMore": "Show {{count}} more"
+  },
+  "criteria": {
+    "required": "Required",
+    "nice": "Nice to have",
+    "context": "Context",
+    "threshold": "Recommendation threshold",
+    "startOn": "starting {{date}}",
+    "none": "not set"
+  },
+  "card": {
+    "originalCv": "Download the original CV",
+    "originalCvMissing": "No original CV kept for this profile",
+    "originalCvDenied": "Original CV unavailable: {{reason}}",
+    "adjacent": "{{found}} present, {{wanted}} requested",
+    "missingRequired": "{{skill}} — required, not proven",
+    "missingNice": "{{skill}} — nice to have, not proven",
+    "unverified": "{{skill}} — required, auto-extracted, needs verification",
+    "toValidate": "To confirm with this person",
+    "openProfile": "Open profile",
+    "explain": "Explain this ranking",
+    "position": "Submit",
+    "dismiss": "Dismiss",
+    "dismissed": "{{name}} dismissed from this ranking",
+    "unknownName": "Profile",
+    "flagOn": "{{detail}} · {{date}}",
+    "targetedCvVersion": "CV already prepared for this need · {{date}}",
+    "askLaura": "Ask {{copilot}}",
+    "askLauraQuestion": "What should I know or prepare about {{name}}?",
+    "validateAvailability": "Confirm availability",
+    "availabilityValidated": "{{name}}'s availability confirmed",
+    "prepareCv": "Prepare CV",
+    "relaunch": "Follow up with consultant",
+    "corresponds": "Matches: {{list}}",
+    "lacks": "Missing: {{list}}"
+  },
+  "relaunch": {
+    "title": "Follow up with {{name}}",
+    "description": "A draft opens in your mail app — nothing is sent from here.",
+    "loading": "Loading profile…",
+    "noEmail": "No visible email address for this profile.",
+    "subject": "Checking in on your availability",
+    "body": "Hi {{name}},\n\nWhere do things stand on your availability? Let me know if anything has changed.\n\nThanks,",
+    "cancel": "Cancel",
+    "open": "Open in my mail app"
+  },
+  "cvStudio": {
+    "title": "Prepare CV — {{name}}",
+    "description": "This document carries no other profile's data."
+  },
+  "explain": {
+    "title": "Why this ranking — {{name}}",
+    "subtitle": "This document carries no other person's data: it can be handed to the person concerned as it is.",
+    "loading": "Gathering the explanation…",
+    "failed": "The explanation could not be loaded. Try again in a moment.",
+    "role": "{{role}} · {{account}}",
+    "runAt": "Computed on {{date}}",
+    "threshold": "Recommendation threshold · {{threshold}}",
+    "bucketLine": "Outcome · {{bucket}}",
+    "bucket": {
+      "recommended": "Recommended",
+      "borderline": "Borderline",
+      "excluded": "Excluded",
+      "not_evaluable": "Not assessable"
+    },
+    "correspondenceHint": "What this profile is worth against the role, axis by axis. An axis that could not be assessed leaves the calculation: it does not count as zero.",
+    "pushableHint": "A different question from the match: what decides whether this profile can be put forward to this client.",
+    "pushableTerms": "This score combines the match, availability, daily-rate fit, history at this client and the strength of evidence. The term-by-term breakdown is not part of this document.",
+    "weights": "The weighting used",
+    "weightsHint": "It is set per workspace. An explanation that hid its weights would explain nothing, and would become wrong the moment they change.",
+    "weightChip": "{{axis}} · {{weight}}",
+    "axisWithDetail": "{{axis}} — {{detail}}",
+    "exclusions": "The reasons recorded",
+    "exclusionLine": "{{reason}} — {{detail}}",
+    "gaps": "What was missing",
+    "download": "Download the document",
+    "downloadHint": "The same content, in a file you can hand to the person concerned.",
+    "downloadFailed": "The document could not be downloaded."
+  },
+  "compare": {
+    "axis": "Axis",
+    "select": "Select {{name}} for comparison",
+    "proofs": "Proof",
+    "noProof": "No proven skill",
+    "gaps": "Gaps",
+    "noGap": "No gap",
+    "risks": "Risks",
+    "noRisk": "None flagged",
+    "preferenceWarnings": "Consultant preference conflict",
+    "noPreferenceWarning": "None",
+    "conditions": "Conditions",
+    "noConditions": "Not provided",
+    "dailyRate": "{{amount}}/day",
+    "availableFrom": "Available from {{date}}",
+    "matches": "Matches",
+    "lacks": "Missing",
+    "noMatch": "Nothing read that matches",
+    "noLack": "Nothing missing",
+    "axisBacked": "Backed",
+    "axisToConfirm": "To confirm",
+    "costMargin": "Cost / margin",
+    "cost": "Cost {{amount}}/day",
+    "margin": "Margin {{amount}}/day",
+    "costUnknown": "Cost not recorded",
+    "marginUnknown": "Margin cannot be computed"
+  },
+  "shortlist": {
+    "create": "Create a shortlist ({{count}})",
+    "created": "Shortlist frozen with {{count}} profile(s)",
+    "cap": "Five profiles at most — beyond that it is no longer a shortlist."
+  },
+  "position": {
+    "done": "Submission prepared",
+    "title": "Submit {{name}}",
+    "subtitle": "Nothing is sent to the client at this point.",
+    "creates": "What I create",
+    "canPrepare": "What I can prepare",
+    "checks": "What I check",
+    "acknowledged": "Points of attention do not block the submission: they are logged with your acknowledgement.",
+    "confirm": "Submit",
+    "cancel": "Cancel"
+  },
+  "levels": {
+    "notions": "basics",
+    "autonome": "autonomous",
+    "confirme": "proficient",
+    "expert": "expert",
+    "inconnu": "level not assessed"
+  },
+  "axes": {
+    "must_have": "Required skills",
+    "nice_to_have": "Nice-to-have skills",
+    "seniority": "Seniority",
+    "sector": "Sector experience",
+    "environment": "Technical environment",
+    "language": "Language",
+    "location": "Location and mobility",
+    "availability": "Availability",
+    "contract_status": "Contract status",
+    "rate": "Daily rate",
+    "evidence_quality": "Strength of evidence",
+    "client_constraints": "Client constraints",
+    "risks": "Risk",
+    "client_history": "History with this client",
+    "comparable_experience": "Comparable experience"
+  },
+  "reasons": {
+    "missing_required_skill": "required skill missing",
+    "unavailable_at_start": "busy on the start date",
+    "out_of_zone": "outside the accepted area",
+    "previously_rejected_by_client": "already rejected by this client",
+    "already_on_mission_at_client": "already on a mission at this client",
+    "consent_expired": "consent expired",
+    "contract_mismatch": "contract status mismatch",
+    "rate_out_of_range": "daily rate out of range",
+    "no_skills_recorded": "no skills recorded",
+    "language_mismatch": "language level too low",
+    "clearance_missing": "required clearance not held"
+  },
+  "launch": {
+    "action": "Run matching",
+    "ready": "I compare this role to your talent pool. I tell you what fits, what is missing, and who is really available. Free, a few seconds.",
+    "noSkills": "This role has no skill recorded. Add at least one, otherwise I am comparing against nothing.",
+    "readyWithGaps": "I can run it. Still unknown, without stopping you from searching: {{missing}}.",
+    "gate": {
+      "seniority": "seniority",
+      "locationOrRemote": "location or work mode",
+      "timing": "timing"
+    },
+    "emptyPool": "Your talent pool is empty. Import consultants or drop CVs.",
+    "locked": "The talent pool belongs to a higher plan.",
+    "failed": "Matching did not complete",
+    "fillPool": "Add a consultant",
+    "knowSomeone": "No profile is submitted on this role yet. If you know someone, add them here — matching follows."
+  },
+  "inverse": {
+    "title": "Which roles does this profile fit?",
+    "subtitle": "I compare this profile to the roles still open. A role starting before they are free shows up as borderline, with its reason — not hidden.",
+    "scopeAria": "Matching scope",
+    "scopeAll": "Whole workspace",
+    "scopeMine": "My portfolio",
+    "launch": "Find roles",
+    "empty": "No open role to compare today.",
+    "open": "Open the ranking"
+  },
+  "summary_one": "I compared {{total}} profiles. 1 is worth a look, {{borderline}} are borderline, {{excluded}} do not fit — and I tell you why for each of them.",
+  "summary_other": "I compared {{total}} profiles. {{recommended}} are worth a look, {{borderline}} are borderline, {{excluded}} do not fit — and I tell you why for each of them.",
+  "journalTruncated": "The ranking below is complete. The audit journal, however, only keeps the first 500 profiles: beyond that, the per-axis detail cannot be replayed from history.",
+  "door": {
+    "saved": "{{name}} is saved to your talent pool.",
+    "nextGesture": {
+      "title": "{{name}} is saved. Shall I compare them to the “{{need}}” role?",
+      "free": "Free, a few seconds.",
+      "launch": "Run matching",
+      "later": "Later"
+    }
+  },
+  "auto": {
+    "done": "Matching run automatically",
+    "doneOn": "Matching run automatically on {{date}}",
+    "withCounts": "{{head}}: {{counts}}.",
+    "withoutCounts": "{{head}}.",
+    "recommended_zero": "no recommended profile",
+    "recommended_one": "{{count}} recommended profile",
+    "recommended_other": "{{count}} recommended profiles",
+    "borderline_one": "{{count}} borderline",
+    "borderline_other": "{{count}} borderline",
+    "queued": "Automatic matching in progress — the result shows up here as soon as it is ready.",
+    "unknown": "Automatic matching: outcome unknown (timed out). Run it by hand to be sure.",
+    "failed": "Automatic matching did not complete. Run it by hand.",
+    "capped": "Automatic matching not run: the workspace’s daily cap is reached. Run it by hand.",
+    "noCriteria": "Automatic matching not run: this need had no skill when it arrived.",
+    "open": "See the matching"
+  },
+  "criteriaCounts": {
+    "backed_one": "{{count}} criterion backed",
+    "backed_other": "{{count}} criteria backed",
+    "toConfirm_one": "{{count}} to confirm",
+    "toConfirm_other": "{{count}} to confirm",
+    "noneToConfirm": "none to confirm"
+  },
+  "direction": {
+    "aria": "Matching direction",
+    "need": "Need → consultants",
+    "consultant": "Consultant → needs",
+    "pick": {
+      "need": "Pick a need to see its profiles.",
+      "consultant": "Pick a profile to see where to place it."
+    },
+    "noPicker": "Run the ranking first to pick one.",
+    "unnamed": "Unnamed profile"
+  },
+  "gesture": {
+    "saved": "Need updated — rerun the matching to see the effect.",
+    "saveError": "The need could not be updated.",
+    "loading": "Reading the need…",
+    "needUnavailable": "This need cannot be found here: nothing is changed.",
+    "save": "Save the need",
+    "proposedBy": "Suggested by client feedback ({{axis}}) — nothing changes until you confirm.",
+    "fields": {
+      "seniority": "Expected seniority",
+      "startOn": "Start date",
+      "duration": "Duration (months)",
+      "targetRate": "Target daily rate (€/day)",
+      "relaxSkills": "Required criteria to make optional",
+      "relaxSkill": "Make “{{term}}” optional",
+      "noRequiredSkill": "No required skill on this need.",
+      "location": "Accepted area",
+      "remote": "Remote work",
+      "contract": "Contract type"
+    },
+    "remote": {
+      "sur_site": "On site",
+      "hybride": "Hybrid",
+      "full_remote": "Fully remote",
+      "indifferent": "No preference"
+    },
+    "contract": {
+      "regie": "Time and materials — employees and freelancers",
+      "forfait": "Fixed price — employees and freelancers",
+      "recrutement": "Recruitment — employees only"
+    },
+    "clarifier": {
+      "description": "Clarify with the client what is still vague: seniority, start, duration."
+    },
+    "negocier": {
+      "description": "Relax a criterion: the target rate, or a required skill that becomes optional."
+    },
+    "elargir": {
+      "description": "Widen the accepted area and the possible remote work."
+    },
+    "elargir_contrat": {
+      "description": "A recruitment need only accepts employees; time and materials or fixed price also opens it to freelancers."
+    },
+    "reactiver": {
+      "description": "Archived profiles or profiles declared unavailable. They are reactivated from their own page.",
+      "empty": "No archived or unavailable profile in the pool."
+    },
+    "recommandation": {
+      "description": "A draft request to copy: nothing is sent from here.",
+      "label": "Draft request",
+      "template": "Hello,\n\nWe are looking for a “{{role}}” profile ({{skills}}). Would you have someone you trust to recommend?\n\nThanks in advance,",
+      "noSkill": "skills to be specified",
+      "copy": "Copy the draft",
+      "copied": "Draft copied — up to you to send it.",
+      "copyError": "Copy failed: select the text manually.",
+      "pickRecipient": "Choose who to send it to"
+    },
+    "sourcer": {
+      "description": "External search for this need: it only starts when you launch it."
+    }
+  }
+}

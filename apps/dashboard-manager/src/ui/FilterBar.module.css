@@ -1,0 +1,94 @@
+/* #1673.1 — FilterBar : pilules, compteur, « Effacer », panneau avancé. */
+
+.bar {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+  margin: 0 0 12px;
+}
+
+.row {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: 8px;
+}
+
+/* Un lien texte, pas une pilule : « Effacer » n'est pas une valeur de filtre,
+   c'est un geste — le distinguer visuellement évite qu'on le lise comme une
+   septième option. */
+.clear {
+  background: none;
+  border: 0;
+  padding: 4px 4px;
+  font: inherit;
+  font-size: 0.75rem;
+  color: var(--muted);
+  text-decoration: underline;
+  cursor: pointer;
+}
+
+.clear:hover {
+  color: var(--text);
+}
+
+.advancedToggle {
+  display: inline-flex;
+  align-items: center;
+  gap: 2px;
+  padding: 4px 10px;
+  border-radius: 999px;
+  border: 1px dashed var(--border);
+  background: none;
+  color: var(--muted);
+  font: inherit;
+  font-size: 0.75rem;
+  cursor: pointer;
+}
+
+.advancedToggle:hover {
+  border-color: var(--accent);
+  color: var(--text);
+}
+
+.advanced {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 12px;
+  padding: 12px;
+  border: 1px solid var(--border);
+  border-radius: 8px;
+  background: var(--surface);
+}
+
+/*
+ * ⚠️ Même défaut que le sélecteur de colonnes du `DataTable`, trouvé le même
+ * jour par la même garde : `hidden={…}` ne masque RIEN tant qu'une classe
+ * d'auteur déclare un `display`. La règle du navigateur
+ * (`[hidden] { display: none }`) a la même spécificité et perd contre celle
+ * définie plus tard. Sans cette ligne, le panneau « Filtres avancés » reste
+ * ouvert en permanence.
+ */
+.advanced[hidden] {
+  display: none;
+}
+
+.advancedField {
+  display: grid;
+  gap: 4px;
+  font-size: 0.75rem;
+  color: var(--muted);
+  min-width: 160px;
+}
+
+.advancedLabel {
+  color: var(--muted);
+}
+
+/* Cibles tactiles : ≥ 44 px dès que le pointeur est grossier (GA-30). */
+@media (pointer: coarse) {
+  .clear,
+  .advancedToggle {
+    min-height: 44px;
+  }
+}

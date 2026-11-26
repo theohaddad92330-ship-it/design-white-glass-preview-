@@ -1,0 +1,161 @@
+{
+  "slug": "permissions-limitees-assurances-bellerive",
+  "company": "Assurances Bellerive (fictif)",
+  "archetype": "permissions_limitees",
+  "issue": "#2130.15",
+  "nature": "fictif",
+  "as_of": "2026-09-15",
+  "_fiction": "Nom FICTIF assumé, marqué « (fictif) » : aucune entreprise réelle n'est décrite ici, aucun identifiant de registre n'est affirmé, et les sources vivent sur le domaine réservé .invalid (RFC 2606) — elles ne peuvent désigner aucune page réelle. Le cadrage #2130.1-7 laisse le choix entre un nom fictif assumé et une entreprise réelle dont chaque fait est sourcé ; faute de source vérifiable depuis ce poste sur cet archétype, c'est le nom fictif.",
+  "expected": {
+    "identite": {
+      "status": "attendu",
+      "contient": [
+        "Assurances Bellerive"
+      ]
+    },
+    "perimetre": {
+      "status": "attendu",
+      "contient": [
+        "Montferrand-la-Côte"
+      ]
+    },
+    "decideurs": {
+      "status": "vide_attendu",
+      "raison": "Hors des droits du profil de recette : la donnée est MASQUÉE, jamais montrée comme une absence."
+    },
+    "contacts_a_ne_pas_recommander": {
+      "status": "vide_attendu",
+      "raison": "Même masque : sans voir les contacts, on n'affiche pas une liste d'exclusion."
+    },
+    "equipes_cles": {
+      "status": "attendu",
+      "contient": [
+        "sinistres"
+      ]
+    },
+    "signaux": {
+      "status": "attendu",
+      "contient": [
+        "Ancolie"
+      ]
+    },
+    "projets": {
+      "status": "attendu",
+      "contient": [
+        "Ancolie"
+      ]
+    },
+    "partenaires": {
+      "status": "attendu",
+      "contient": [
+        "Valdrôme"
+      ]
+    },
+    "acces": {
+      "status": "vide_attendu",
+      "raison": "Les voies d'accès relèvent des données masquées pour ce profil."
+    },
+    "recommandations": {
+      "status": "attendu",
+      "contient": [
+        "Ancolie"
+      ]
+    },
+    "gaps": {
+      "status": "attendu",
+      "contient": [
+        "masqués"
+      ]
+    },
+    "sources": {
+      "status": "attendu",
+      "contient": [
+        "src-plan"
+      ]
+    },
+    "action_suivante": {
+      "status": "attendu",
+      "contient": [
+        "habilité"
+      ]
+    }
+  },
+  "dossier": {
+    "identite": {
+      "name": "Assurances Bellerive",
+      "siren": null
+    },
+    "perimetre": {
+      "scope": "groupe",
+      "entities": [
+        "Assurances Bellerive — direction sinistres de Montferrand-la-Côte"
+      ]
+    },
+    "decideurs": [],
+    "contacts_a_ne_pas_recommander": [],
+    "equipes_cles": [
+      "Direction sinistres de Montferrand-la-Côte"
+    ],
+    "signaux": [
+      {
+        "id": "sig-orage",
+        "text": "Plan de traitement accéléré des sinistres Orage sur la plateforme Ancolie",
+        "date": "2026-08",
+        "source": "src-plan"
+      }
+    ],
+    "projets": [
+      {
+        "id": "prj-ancolie",
+        "text": "Montée en charge de la plateforme de gestion des sinistres Ancolie",
+        "source": "src-plan"
+      }
+    ],
+    "partenaires": [
+      "Conseil Valdrôme (fictif)"
+    ],
+    "acces": [],
+    "recommandations": [
+      {
+        "id": "reco-ancolie",
+        "text": "Proposer un renfort de recette sur la montée en charge de la plateforme Ancolie, pour le plan sinistres Orage.",
+        "why": "Le plan de traitement accéléré des sinistres Orage repose sur la plateforme Ancolie ; l'interlocuteur reste à désigner par un profil habilité.",
+        "target": null,
+        "evidence": [
+          "sig-orage",
+          "prj-ancolie"
+        ]
+      }
+    ],
+    "gaps": [
+      "décideurs et voies d'accès masqués : hors des droits du profil de recette"
+    ],
+    "sources": [
+      {
+        "id": "src-plan",
+        "url": "https://sources.fictif.invalid/permissions-limitees-assurances-bellerive/src-plan",
+        "date": "2026-08-21"
+      }
+    ],
+    "action_suivante": {
+      "text": "Demander à un membre habilité de l'espace qui porte le plan sinistres Orage",
+      "target": null,
+      "evidence": [
+        "sig-orage"
+      ]
+    }
+  },
+  "cas": [
+    {
+      "id": "cas-indecidable",
+      "text": "Proposer la reprise de l'historique des sinistres dans la plateforme Ancolie.",
+      "why": "Sans voir les décideurs, impossible de dire si la reprise d'historique relève de la direction sinistres de Montferrand-la-Côte.",
+      "target": null,
+      "evidence": [
+        "sig-orage"
+      ],
+      "label": "unknown",
+      "_jugement": "Un jugement humain « je ne sais pas trancher » — pas une case vide."
+    }
+  ]
+}

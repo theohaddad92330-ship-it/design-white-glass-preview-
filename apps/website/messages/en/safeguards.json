@@ -1,0 +1,97 @@
+{
+  "meta": {
+    "title": "Safeguards — what BellumAI will not do in your place",
+    "description": "Laura drafts, you decide. The safeguards behind that promise live in the code, not in a brochure."
+  },
+  "hero": {
+    "kicker": "Safeguards",
+    "title": "What we will not do in your place.",
+    "lead": "Sales software can write to your clients faster than you can. The real question is not whether it is able to — it is what stops it. This page describes what BellumAI refuses to do, and what, inside the product, stops it."
+  },
+  "copilot": {
+    "title": "Laura drafts. You send.",
+    "paragraph": "Laura is your sales intelligence copilot. She gathers, she cross-checks, she writes. She has no write path into your mailbox: when she suggests a message, she returns a proposal, and it is your own action that saves the draft. This is not a cautious setting someone could loosen — it is the absence of code.",
+    "items": [
+      {
+        "label": "No tool of Laura's can send.",
+        "desc": "The step that prepares a message returns a proposal. There is no send call behind it, and therefore nothing to switch off."
+      },
+      {
+        "label": "The body of your messages never reaches the model.",
+        "desc": "To draft a follow-up, Laura receives the counterpart, the subject line, and how long the conversation has been silent. Not the text of your exchanges."
+      }
+    ]
+  },
+  "guardrails": {
+    "title": "The six safeguards on automatic follow-ups",
+    "paragraph": "Only one family of automations reaches a client without a salesperson having clicked just before: follow-up reminders, and only if your workspace has armed them. Six safeguards hold them. No setting turns them off — the function that decides whether a follow-up may go out receives only the target's situation and the current time. There is no checkbox to bypass one.",
+    "items": [
+      {
+        "label": "A reply closes the sequence.",
+        "desc": "The moment your counterpart replies, the follow-up stops — for good. It is the most important of the six: chasing someone who has just replied is the fastest way to be ignored."
+      },
+      {
+        "label": "One follow-up, never a cadence.",
+        "desc": "One automatic message per target and per rule, at most. No escalation, no five-step sequence, no copying in the manager on the third round. Whatever is still unanswered after one follow-up goes back to being a human matter."
+      },
+      {
+        "label": "Opt-out is re-read on every send.",
+        "desc": "Never from a cache. An opt-out recorded yesterday applies to today's message, and the check is redone target by target."
+      },
+      {
+        "label": "Quiet hours.",
+        "desc": "Nothing before 8:00, nothing after 19:00, nothing at the weekend. An automatic sales email arriving on a Sunday in the middle of the night is noticed — and it tells its recipient that no human read it first."
+      },
+      {
+        "label": "A cap per workspace, per day.",
+        "desc": "25 automatic follow-ups at most. A loop that runs away stops on a number, not on somebody's vigilance on a Friday evening."
+      },
+      {
+        "label": "Nothing is armed by default.",
+        "desc": "Every automatic follow-up stays off until a human in your workspace turns it on, and a single action turns everything off again."
+      }
+    ]
+  },
+  "review": {
+    "title": "And even armed, a follow-up is put to you.",
+    "paragraph": "The six safeguards answer the question \"can this target be chased?\". They do not answer \"can this particular text go to this particular client today?\". That is a different question, and a human answers it.",
+    "items": [
+      {
+        "label": "What you read is what goes out.",
+        "desc": "Subject and body are frozen at the moment the request is put to you. Nothing is recomposed at approval time: approving one text and sending another would be worse than showing nothing."
+      },
+      {
+        "label": "A refusal holds for good.",
+        "desc": "For that target, the follow-up you refused will not be put to you again the next day. Otherwise the only way out would be to disarm the whole automation."
+      },
+      {
+        "label": "An undecided request expires.",
+        "desc": "After 3 days it does not go out. A follow-up prepared last week speaks of a silence that may no longer exist."
+      }
+    ]
+  },
+  "refusals": {
+    "title": "What this page does not do either.",
+    "paragraph": "A page explaining what we refuse to do is judged first on what it allows itself to write.",
+    "items": [
+      {
+        "label": "No market figures.",
+        "desc": "We were offered unsubscribe and sender-reputation statistics to back this page up. We could not tie them to a public source, named and dated. So they are not here: the only numbers written on this page are constants of the product."
+      },
+      {
+        "label": "No delivery dates.",
+        "desc": "What this page describes works today. What does not exist yet is not announced, not even approximately."
+      },
+      {
+        "label": "No competitor names.",
+        "desc": "We name capabilities — your mailbox, your CRM, your calendar — never other people's tools, and never to compare ourselves to them."
+      }
+    ]
+  },
+  "cta": {
+    "title": "Would you rather check for yourself?",
+    "paragraph": "The demo shows the product as it is, on a dataset labelled as fictional.",
+    "primary": "See the demo",
+    "secondary": "Explore the product"
+  }
+}

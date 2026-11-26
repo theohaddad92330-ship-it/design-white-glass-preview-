@@ -1,0 +1,700 @@
+{
+  "_doc": "#3901.p — jeu de cas COMMUN (TS `hiringScopeVerdict` / Python `hiring_scope_verdict`). Décision Louis 16/10/2026.",
+  "profiles": {
+    "esn_it_deduit": {
+      "placedRoles": [],
+      "inferred": [
+        {
+          "role": "Développeur",
+          "terms": ["developpeur", "devops", "data engineer"]
+        }
+      ]
+    },
+    "esn_industrie_declaree": {
+      "placedRoles": ["Ingénieur HSE", "Automaticien"],
+      "inferred": []
+    },
+    "muet": {
+      "placedRoles": [],
+      "inferred": []
+    },
+    "placeur": {
+      "placedRoles": [],
+      "inferred": [],
+      "recruitsForClients": true
+    },
+    "placeur_data": {
+      "placedRoles": [],
+      "inferred": [
+        {
+          "role": "Data",
+          "terms": ["data engineer", "data scientist"]
+        }
+      ],
+      "recruitsForClients": true
+    },
+    "placeur_supply": {
+      "placedRoles": [],
+      "inferred": [
+        {
+          "role": "Supply chain",
+          "terms": ["acheteur", "logistique"]
+        }
+      ],
+      "recruitsForClients": true
+    },
+    "esn_it_large": {
+      "placedRoles": [],
+      "inferred": [
+        {
+          "role": "Technicien",
+          "terms": ["technicien", "ingenieur", "consultant", "developpeur"]
+        }
+      ]
+    },
+    "esn_it_declaree": {
+      "placedRoles": ["Technicien support", "Ingénieur système"],
+      "inferred": []
+    },
+    "esn_cyber_declaree": {
+      "placedRoles": ["Cybersécurité"],
+      "inferred": []
+    },
+    "esn_cyber_deduit": {
+      "placedRoles": [],
+      "inferred": [
+        {
+          "role": "Cybersécurité",
+          "terms": ["cybersecurite", "soc", "pentest", "rssi"]
+        }
+      ]
+    },
+    "placeur_it_soo": {
+      "placedRoles": [],
+      "inferred": [
+        {
+          "role": "Développeur",
+          "terms": ["developpeur", "devops", "data engineer"]
+        }
+      ],
+      "recruitsForClients": true
+    },
+    "placeur_electricite": {
+      "placedRoles": ["Électricien", "Chef de chantier"],
+      "inferred": [],
+      "recruitsForClients": true
+    }
+  },
+  "cases": [
+    {
+      "profile": "esn_it_deduit",
+      "label": "CDD Facteur Villaines-La-Juhel H/F",
+      "keep": false,
+      "reason": "non_placed"
+    },
+    {
+      "profile": "esn_it_deduit",
+      "label": "CDD Factrice ou Facteur H/F",
+      "keep": false,
+      "reason": "non_placed"
+    },
+    {
+      "profile": "esn_it_deduit",
+      "label": "Conseiller en Service Relation Client H/F",
+      "keep": false,
+      "reason": "non_placed"
+    },
+    {
+      "profile": "esn_it_deduit",
+      "label": "Développeur Java H/F",
+      "keep": true
+    },
+    {
+      "profile": "esn_it_deduit",
+      "label": "Responsable des ressources humaines",
+      "keep": false,
+      "reason": "off_trade"
+    },
+    {
+      "profile": "esn_industrie_declaree",
+      "label": "Ingénieur HSE chantier",
+      "keep": true
+    },
+    {
+      "profile": "esn_industrie_declaree",
+      "label": "Automaticien PLC H/F",
+      "keep": true
+    },
+    {
+      "profile": "esn_industrie_declaree",
+      "label": "Développeur Java H/F",
+      "keep": false,
+      "reason": "off_trade"
+    },
+    {
+      "profile": "muet",
+      "label": "Développeur Java H/F",
+      "keep": false,
+      "reason": "no_roles"
+    },
+    {
+      "profile": "placeur",
+      "label": "Responsable des ressources humaines",
+      "keep": true
+    },
+    {
+      "profile": "placeur",
+      "label": "Livreur H/F",
+      "keep": false,
+      "reason": "non_placed"
+    },
+    {
+      "profile": "placeur",
+      "label": "Caissier / Caissière",
+      "keep": false,
+      "reason": "non_placed"
+    },
+    {
+      "profile": "placeur",
+      "label": "Agent d'entretien",
+      "keep": false,
+      "reason": "non_placed"
+    },
+    {
+      "profile": "placeur",
+      "label": "Conseiller clientèle en agence",
+      "keep": false,
+      "reason": "non_placed"
+    },
+    {
+      "profile": "placeur_data",
+      "label": "Ouvrier d'abattoir",
+      "keep": false,
+      "reason": "non_placed"
+    },
+    {
+      "profile": "placeur_data",
+      "label": "Ouvrier espaces verts",
+      "keep": false,
+      "reason": "non_placed"
+    },
+    {
+      "profile": "placeur_data",
+      "label": "Agent de fabrication",
+      "keep": false,
+      "reason": "non_placed"
+    },
+    {
+      "profile": "placeur_data",
+      "label": "Acheteur",
+      "keep": false,
+      "reason": "off_trade"
+    },
+    {
+      "profile": "placeur_data",
+      "label": "Assistant de gestion",
+      "keep": false,
+      "reason": "off_trade"
+    },
+    {
+      "profile": "placeur_data",
+      "label": "Assistant d'agence",
+      "keep": false,
+      "reason": "off_trade"
+    },
+    {
+      "profile": "placeur_data",
+      "label": "Formation",
+      "keep": false,
+      "reason": "off_trade"
+    },
+    {
+      "profile": "placeur_data",
+      "label": "Logistique",
+      "keep": false,
+      "reason": "off_trade"
+    },
+    {
+      "profile": "placeur_data",
+      "label": "Data engineer",
+      "keep": true
+    },
+    {
+      "profile": "placeur_supply",
+      "label": "Acheteur",
+      "keep": true
+    },
+    {
+      "profile": "placeur_supply",
+      "label": "Ouvrier d'abattoir",
+      "keep": false,
+      "reason": "non_placed"
+    },
+    {
+      "profile": "placeur",
+      "label": "Technicien d'usinage fraisage H/F",
+      "keep": false,
+      "reason": "off_trade"
+    },
+    {
+      "profile": "placeur",
+      "label": "Comptable expérimenté H/F",
+      "keep": false,
+      "reason": "off_trade"
+    },
+    {
+      "profile": "placeur",
+      "label": "Pilote de Flux H/F",
+      "keep": false,
+      "reason": "off_trade"
+    },
+    {
+      "profile": "placeur",
+      "label": "Chargé de Développement Commercial H/F",
+      "keep": false,
+      "reason": "off_trade"
+    },
+    {
+      "profile": "placeur_data",
+      "label": "Data engineer H/F",
+      "keep": true
+    },
+    {
+      "profile": "placeur",
+      "label": "Formateur en Pharmacie H/F",
+      "keep": false,
+      "reason": "off_trade"
+    },
+    {
+      "profile": "placeur",
+      "label": "Climate & Carbon Senior Manager H/F",
+      "keep": false,
+      "reason": "off_trade"
+    },
+    {
+      "profile": "placeur",
+      "label": "Développeur Java H/F",
+      "keep": true
+    },
+    {
+      "profile": "esn_it_deduit",
+      "label": "Manœuvre bâtiment H/F",
+      "keep": false,
+      "reason": "non_placed"
+    },
+    {
+      "profile": "esn_it_deduit",
+      "label": "Plombier chauffagiste",
+      "keep": false,
+      "reason": "non_placed"
+    },
+    {
+      "profile": "esn_it_deduit",
+      "label": "Maçon / Coffreur H/F",
+      "keep": false,
+      "reason": "non_placed"
+    },
+    {
+      "profile": "esn_it_deduit",
+      "label": "Couvreur zingueur",
+      "keep": false,
+      "reason": "non_placed"
+    },
+    {
+      "profile": "esn_it_deduit",
+      "label": "Peintre en bâtiment",
+      "keep": false,
+      "reason": "non_placed"
+    },
+    {
+      "profile": "placeur",
+      "label": "Manoeuvre BTP",
+      "keep": false,
+      "reason": "non_placed"
+    },
+    {
+      "profile": "muet",
+      "label": "Plombier H/F",
+      "keep": false,
+      "reason": "non_placed"
+    },
+    {
+      "profile": "esn_it_deduit",
+      "label": "Infirmier diplômé d'État H/F",
+      "keep": false,
+      "reason": "non_placed"
+    },
+    {
+      "profile": "esn_it_deduit",
+      "label": "Masseur-kinésithérapeute H/F",
+      "keep": false,
+      "reason": "non_placed"
+    },
+    {
+      "profile": "esn_it_deduit",
+      "label": "Agent de tri H/F",
+      "keep": false,
+      "reason": "non_placed"
+    },
+    {
+      "profile": "esn_it_deduit",
+      "label": "Aide à domicile",
+      "keep": false,
+      "reason": "non_placed"
+    },
+    {
+      "profile": "placeur",
+      "label": "Infirmier diplômé d'État H/F",
+      "keep": false,
+      "reason": "non_placed"
+    },
+    {
+      "profile": "placeur",
+      "label": "Masseur-kinésithérapeute H/F",
+      "keep": false,
+      "reason": "non_placed"
+    },
+    {
+      "profile": "placeur",
+      "label": "Agent de tri H/F",
+      "keep": false,
+      "reason": "non_placed"
+    },
+    {
+      "profile": "placeur",
+      "label": "Aide à domicile",
+      "keep": false,
+      "reason": "non_placed"
+    },
+    {
+      "profile": "placeur_data",
+      "label": "Infirmier diplômé d'État H/F",
+      "keep": false,
+      "reason": "non_placed"
+    },
+    {
+      "profile": "placeur_data",
+      "label": "Masseur-kinésithérapeute H/F",
+      "keep": false,
+      "reason": "non_placed"
+    },
+    {
+      "profile": "placeur_data",
+      "label": "Agent de tri H/F",
+      "keep": false,
+      "reason": "non_placed"
+    },
+    {
+      "profile": "placeur_data",
+      "label": "Aide à domicile",
+      "keep": false,
+      "reason": "non_placed"
+    },
+    {
+      "profile": "esn_it_large",
+      "label": "Électrotechnicien travaux sous tension H/F",
+      "keep": false,
+      "reason": "off_trade"
+    },
+    {
+      "profile": "esn_it_large",
+      "label": "Technicien maintenance des trains H/F",
+      "keep": false,
+      "reason": "off_trade"
+    },
+    {
+      "profile": "esn_it_large",
+      "label": "Chargé de clientèle H/F",
+      "keep": false,
+      "reason": "off_trade"
+    },
+    {
+      "profile": "esn_it_large",
+      "label": "Gérant de magasin H/F",
+      "keep": false,
+      "reason": "off_trade"
+    },
+    {
+      "profile": "esn_it_large",
+      "label": "Chef de poste qualification SSIAP H/F",
+      "keep": false,
+      "reason": "off_trade"
+    },
+    {
+      "profile": "esn_it_large",
+      "label": "Technicien support informatique H/F",
+      "keep": true
+    },
+    {
+      "profile": "esn_it_large",
+      "label": "Consultant SAP H/F",
+      "keep": true
+    },
+    {
+      "profile": "esn_it_declaree",
+      "label": "Électrotechnicien travaux sous tension H/F",
+      "keep": false,
+      "reason": "off_trade"
+    },
+    {
+      "profile": "esn_it_declaree",
+      "label": "Gérant de magasin H/F",
+      "keep": false,
+      "reason": "off_trade"
+    },
+    {
+      "profile": "esn_it_declaree",
+      "label": "Chef de poste qualification SSIAP H/F",
+      "keep": false,
+      "reason": "off_trade"
+    },
+    {
+      "profile": "esn_industrie_declaree",
+      "label": "Électrotechnicien travaux sous tension H/F",
+      "keep": true
+    },
+    {
+      "profile": "esn_industrie_declaree",
+      "label": "Technicien maintenance des trains H/F",
+      "keep": true
+    },
+    {
+      "profile": "esn_industrie_declaree",
+      "label": "Gérant de magasin H/F",
+      "keep": false,
+      "reason": "off_trade"
+    },
+    {
+      "profile": "placeur",
+      "label": "Électrotechnicien travaux sous tension H/F",
+      "keep": true
+    },
+    {
+      "profile": "esn_it_deduit",
+      "label": "Conseiller-ère Vente Omnicanal H/F",
+      "keep": false,
+      "reason": "non_placed"
+    },
+    {
+      "profile": "esn_it_deduit",
+      "label": "Conseiller(ère) de vente",
+      "keep": false,
+      "reason": "non_placed"
+    },
+    {
+      "profile": "esn_it_deduit",
+      "label": "Conseiller·e Vente",
+      "keep": false,
+      "reason": "non_placed"
+    },
+    {
+      "profile": "esn_it_deduit",
+      "label": "Conseiller·ère Clientèle",
+      "keep": false,
+      "reason": "non_placed"
+    },
+    {
+      "profile": "esn_it_deduit",
+      "label": "Technicien-ne Atelier H/F",
+      "keep": false,
+      "reason": "non_placed"
+    },
+    {
+      "profile": "esn_it_deduit",
+      "label": "Techniciennes Atelier",
+      "keep": false,
+      "reason": "non_placed"
+    },
+    {
+      "profile": "esn_it_deduit",
+      "label": "Développeur·euse Java H/F",
+      "keep": true
+    },
+    {
+      "profile": "esn_it_deduit",
+      "label": "Technicien·ne Support Informatique",
+      "keep": true
+    },
+    {
+      "profile": "esn_it_deduit",
+      "label": "Hôte(sse) de vente",
+      "keep": false,
+      "reason": "non_placed"
+    },
+    {
+      "profile": "esn_it_deduit",
+      "label": "Hôtesse d'accueil H/F",
+      "keep": false,
+      "reason": "non_placed"
+    },
+    {
+      "profile": "placeur",
+      "label": "Hôte(sse) de vente",
+      "keep": false,
+      "reason": "non_placed"
+    },
+    {
+      "profile": "placeur",
+      "label": "Hôtesse d'accueil H/F",
+      "keep": false,
+      "reason": "non_placed"
+    },
+    {
+      "profile": "muet",
+      "label": "Hôte(sse) de vente",
+      "keep": false,
+      "reason": "non_placed"
+    },
+    {
+      "profile": "muet",
+      "label": "Hôtesse d'accueil H/F",
+      "keep": false,
+      "reason": "non_placed"
+    },
+    {
+      "profile": "esn_it_deduit",
+      "label": "Recherche agent Ssiap 1/2",
+      "keep": false,
+      "reason": "non_placed"
+    },
+    {
+      "profile": "placeur",
+      "label": "Agent SSIAP 1 H/F",
+      "keep": false,
+      "reason": "non_placed"
+    },
+    {
+      "profile": "esn_cyber_declaree",
+      "label": "Chargé d'études économie de la santé",
+      "keep": false,
+      "reason": "off_trade"
+    },
+    {
+      "profile": "esn_cyber_declaree",
+      "label": "Customer Success Manager - Denver",
+      "keep": false,
+      "reason": "off_trade"
+    },
+    {
+      "profile": "esn_cyber_declaree",
+      "label": "Technicien maintenance PRINT",
+      "keep": false,
+      "reason": "off_trade"
+    },
+    {
+      "profile": "esn_cyber_declaree",
+      "label": "Chef d'équipe",
+      "keep": false,
+      "reason": "off_trade"
+    },
+    {
+      "profile": "esn_cyber_declaree",
+      "label": "Analyste SOC N2 H/F",
+      "keep": true
+    },
+    {
+      "profile": "esn_cyber_deduit",
+      "label": "Chargé d'études économie de la santé",
+      "keep": false,
+      "reason": "off_trade"
+    },
+    {
+      "profile": "esn_cyber_deduit",
+      "label": "Customer Success Manager - Denver",
+      "keep": false,
+      "reason": "off_trade"
+    },
+    {
+      "profile": "esn_cyber_deduit",
+      "label": "Technicien maintenance PRINT",
+      "keep": false,
+      "reason": "off_trade"
+    },
+    {
+      "profile": "esn_cyber_deduit",
+      "label": "Chef d'équipe",
+      "keep": false,
+      "reason": "off_trade"
+    },
+    {
+      "profile": "esn_cyber_deduit",
+      "label": "Analyste SOC N2 H/F",
+      "keep": true
+    },
+    {
+      "profile": "placeur_it_soo",
+      "label": "CHEF DE PROJETS EN ELECTRICITE INDUSTRIELLE",
+      "keep": false,
+      "reason": "off_trade"
+    },
+    {
+      "profile": "placeur_electricite",
+      "label": "CHEF DE PROJETS EN ELECTRICITE INDUSTRIELLE",
+      "keep": true
+    },
+    {
+      "profile": "placeur_it_soo",
+      "label": "Technicien de maintenance - Électricien (CFO)",
+      "keep": false,
+      "reason": "off_trade"
+    },
+    {
+      "profile": "placeur_electricite",
+      "label": "Technicien de maintenance - Électricien (CFO)",
+      "keep": true
+    },
+    {
+      "profile": "placeur_it_soo",
+      "label": "Chef de chantier",
+      "keep": false,
+      "reason": "off_trade"
+    },
+    {
+      "profile": "placeur_electricite",
+      "label": "Chef de chantier",
+      "keep": true
+    },
+    {
+      "profile": "placeur_it_soo",
+      "label": "Développeur Java H/F",
+      "keep": true
+    },
+    {
+      "profile": "placeur_it_soo",
+      "label": "Technicien de maintenance informatique",
+      "keep": true
+    },
+    {
+      "profile": "placeur_it_soo",
+      "label": "Chargé de mission transverse",
+      "keep": true
+    },
+    {
+      "profile": "esn_it_deduit",
+      "label": "Directeur des Opérations H/F",
+      "keep": true
+    },
+    {
+      "profile": "esn_it_declaree",
+      "label": "CFO — Directeur Financier H/F",
+      "keep": true
+    },
+    {
+      "profile": "placeur",
+      "label": "Chief Operating Officer (COO)",
+      "keep": true
+    },
+    {
+      "profile": "esn_it_deduit",
+      "label": "Assistant du directeur des opérations H/F",
+      "keep": false,
+      "reason": "off_trade"
+    },
+    {
+      "profile": "placeur_electricite",
+      "label": "Développeur Java H/F",
+      "keep": false,
+      "reason": "off_trade"
+    }
+  ]
+}

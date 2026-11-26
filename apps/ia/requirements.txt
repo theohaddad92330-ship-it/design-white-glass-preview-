@@ -1,0 +1,98 @@
+fastapi==0.162.0
+uvicorn[standard]==0.54.0
+httpx==0.28.1
+httpcore==1.0.9
+firecrawl-py==4.54.0
+trafilatura==2.3.1
+# #4108 palier 2 — navigateur auto-hébergé (Apache-2.0), import tardif (CRAWL_TIER_BROWSER_ENABLED
+# éteint par défaut) : tant qu'il n'est pas allumé, Playwright n'a pas besoin d'être provisionné.
+#
+# Arbitrage pip-audit du 15/10/2026 (PR #4126) — crawl4ai → litellm → openai ↔ instructor :
+# - crawl4ai 0.8.0 portait ~20 avis (≥ 0.8.7/0.8.8/0.9.0) et tirait litellm 1.80.0 (≈ 30 avis,
+#   correctifs ≥ 1.83…1.96.2). TOUTE version corrigée de litellm exige openai ≥ 2.x, et
+#   crawl4ai ≥ 0.8.8 remplace litellm par `unclecode-litellm==1.81.13` (openai ≥ 2.8.0) :
+#   rester sur openai 1.x n'est plus tenable, quelle que soit la voie.
+# - Voie retenue : crawl4ai 0.9.5 (dernière, tous ses avis corrigés, autorise lxml 6.x)
+#   + openai 2.x + instructor 1.13.0 — la PLUS PETITE montée d'instructor qui accepte
+#   openai 2.x, et la dernière qui garde `instructor.processing.response` où vit le
+#   durcissement « un seul tool_use » (app/services/claude_service.py ; 1.17 l'a déplacé).
+#   Écartée : crawl4ai 0.8.0 + litellm 1.96.2 — garde les avis de crawl4ai ET bloque lxml
+#   en 5.x (crawl4ai 0.8.x exige lxml~=5.3), donc plus d'ignores pour la même montée d'openai.
+# - ⚠️ `unclecode-litellm` (fork de litellm 1.81.13, installe le module `litellm`) n'est PAS
+#   vu par pip-audit sous ce nom. Les avis litellm visent surtout le serveur proxy
+#   (`litellm/proxy`), qu'on ne lance pas ; crawl4ai ne s'en sert que pour ses stratégies
+#   d'extraction LLM, que crawl_browser_tier.py n'utilise pas. À revoir quand crawl4ai
+#   reviendra au litellm officiel.
+crawl4ai==0.9.5
+# ⚠️ GELÉ en 0.x (0.52.0 #4729, puis 0.125.0 #4938 : la garde passe). La garde
+# `tests/test_sampling_kwargs_accepted_by_sdk.py` tombe dès la 2.x :
+# `Messages.create` n'y connaît plus `temperature`, donc l'appel lèverait un
+# TypeError AVANT toute requête réseau (panne du 25/10/2026, #4417). Le code sait
+# déjà omettre le paramètre par MODÈLE (`_sampling_kwargs`), pas l'omettre
+# partout — et le retirer change le déterminisme de la génération
+# (`CLAUDE_TEMPERATURE`, 0.0 sur le pipeline) : c'est un lot, pas un relèvement.
+anthropic==0.125.0
+instructor==1.17.0
+# ⚠️ EXPLICITE, et il ne l'était pas — mesuré le 28/08/2026.
+# `openai` n'arrivait ici qu'en dépendance TRANSITIVE d'`instructor`. Une
+# dépendance transitive peut disparaître au prochain relèvement de version sans
+# que rien ne le dise, et la panne qui en sort est silencieuse : sans le paquet,
+# `OpenAIProvider.is_available()` (app/services/llm_gateway.py) vaut False MÊME
+# avec `OPENAI_API_KEY` posée, et la passerelle retombe sur Anthropic. On croirait
+# tourner sur le modèle routé en payant l'autre — un repli honnête qui ment sur
+# la facture.
+#
+# La version est celle sur laquelle la preuve a été tirée : c'est
+# `openai/types/chat/completion_create_params.py` de CE paquet qui établit que
+# `max_tokens` est déprécié au profit de `max_completion_tokens` et refusé par
+# les modèles de la série o — d'où le paramètre qu'envoie la passerelle.
+# Relevé en 2.x le 15/10/2026 (arbitrage pip-audit ci-dessus) : la 2.x garde
+# `max_completion_tokens` et le même client `chat.completions`.
+#
+# ⚠️ PLAFONNÉ à la 2.x, et ce n'est pas un retard de mise à jour (arbitrage
+# Louis du 28/10/2026, #4729) : l'`instructor==1.17.0` ci-dessus exige
+# `jiter<0.15,>=0.6.1`, tandis qu'`openai==3.37.0` exige `jiter<1,>=0.16.0` —
+# relevé sur les métadonnées PyPI des deux versions, pas déduit. AUCUN `jiter`
+# ne satisfait les deux : la résolution échoue avant même qu'un appel réseau
+# soit possible. La 2.54.0 exige `jiter<1,>=0.10.0` et cohabite. Ce qui
+# débloquera la 3.x est `instructor` relâchant sa borne, pas une montée ici.
+openai==2.54.0
+langgraph==1.2.19
+langgraph-checkpoint-postgres==3.2.0
+psycopg[binary]==3.3.6
+pgvector==0.5.1
+python-dotenv==1.2.4
+pydantic==2.14.2
+# Cross-lang contract validation (#273): the pipeline validates each step's
+# output against packages/shared/schemas/*.schema.json — the SAME artifacts the
+# TypeScript side consumes via @bellum/shared. See app/contracts/shared_schemas.py.
+jsonschema==4.26.0
+sentry-sdk[fastapi]==2.73.0
+supabase==2.33.0
+aiolimiter==1.3.0
+redis==8.1.0
+pypdf==6.21.4
+# #3935 — lecture des .doc Word 97-2003 (conteneur OLE), pur Python.
+olefile==0.47
+# #2433.12 — remet une photo prise de côté à l'endroit (étiquette EXIF) avant lecture.
+Pillow==13.0.0
+# #1995 — `zoneinfo` (stdlib) lit la base système (`/usr/share/zoneinfo`) ou
+# CE paquet. `python:3.12-slim` (apps/ia/docker/Dockerfile) n'embarque PAS la
+# base système : sans `tzdata`, `ZoneInfo("Europe/Paris")` lève
+# `ZoneInfoNotFoundError` EN PRODUCTION, pas seulement en CI — le poste macOS
+# d'origine avait la base système, ni l'image du runner CI ni l'image Docker
+# de prod ne l'ont. `now_in_reference_timezone` (app/prompts/current_time.py)
+# retombait donc silencieusement sur UTC à CHAQUE tour : le fuseau annoncé
+# n'était jamais celui qu'il prétendait être. Voir
+# tests/test_current_time_user_timezone.py et
+# test_zoneinfo_resolves_from_the_tzdata_package_alone.
+tzdata==2026.6
+# Transitives de crawl4ai / trafilatura, épinglées EXPLICITEMENT (pip-audit 15/10/2026) :
+# lxml < 6.1.0 lit des fichiers locaux via les entités XML (PYSEC-2026-87) ;
+# lxml-html-clean ≤ 0.4.4 laisse passer `javascript:` dans `xlink:href` (PYSEC-2026-2614).
+lxml==6.1.3
+lxml-html-clean==0.4.6
+pytest==9.2.0
+pytest-asyncio==1.4.1
+pytest-timeout==2.4.0
+fakeredis[lua]==2.40.0

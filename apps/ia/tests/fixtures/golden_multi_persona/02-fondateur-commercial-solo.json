@@ -1,0 +1,105 @@
+{
+  "id": "02-fondateur-commercial-solo",
+  "persona": "Fondateur commercial solo",
+  "personaKind": "fictif",
+  "_source": "#2070 / #2085 — cas de référence du corpus de non-régression multi-persona",
+  "answers": {
+    "user_id": "golden-02-fondateur-commercial-solo",
+    "first_name": "Sophie",
+    "esn_name": "Solo Conseil",
+    "consultant_size": "1-10",
+    "sales_team_size": "Je suis seul (fondateur / indépendant)",
+    "expertise_areas": [
+      "Transformation digitale & Conduite du changement",
+      "Conseil en stratégie SI"
+    ],
+    "positioning": "Conseil & Delivery - cadrage + exécution",
+    "staffing_model": "Mix équilibré CDI / Freelances",
+    "target_sectors": [
+      "Banque de détail & Banque privée",
+      "Assurance & Mutuelles"
+    ],
+    "target_company_types": [
+      "ETI (500-5 000 salariés)"
+    ],
+    "geo_zones": [
+      "Paris & Île-de-France",
+      "Lyon & Auvergne-Rhône-Alpes"
+    ],
+    "main_sales_pain": "Trouver les bons comptes à cibler"
+  },
+  "referenceProfile": {
+    "esnArchetype": "soloHunter",
+    "sellingPosture": "strategicConsulting",
+    "idealAccountProfile": {
+      "size": "eti",
+      "sectorsPriority": [
+        "Banque de détail & Banque privée",
+        "Assurance & Mutuelles"
+      ],
+      "decisionLevel": "director",
+      "entryStrategy": "topDown"
+    },
+    "analysisParameters": {
+      "braveQueriesCount": 20,
+      "firecrawlPagesCount": 10,
+      "contactsTarget": 20,
+      "analysisDepth": "deep",
+      "maxTokensResearch": 18000,
+      "focusAreas": [
+        "Transformation digitale & Conduite du changement",
+        "Conseil en stratégie SI",
+        "DORA",
+        "NIS2",
+        "conformité RGPD bancaire"
+      ]
+    },
+    "messagingStyle": {
+      "tone": "consultative",
+      "messageLength": "detailed",
+      "valuePropositionAngle": "On cadre et on livre vos programmes de transformation digitale bancaire, du diagnostic au déploiement, sans sous-traitance cachée.",
+      "differentiationPoints": [
+        "Cadrage + delivery par la même équipe",
+        "Expertise réglementaire bancaire",
+        "Approche mesurable étape par étape"
+      ],
+      "avoid": [
+        "expertise reconnue",
+        "partenaire de confiance"
+      ]
+    },
+    "coachingInsights": {
+      "mainWeakness": "Ciblage / scoring de comptes",
+      "keyAdvice": "Fixe trois critères de ciblage non négociables (secteur, taille, signal de transformation en cours) et refuse tout compte qui n'en coche pas deux. Un solo qui court après tout ne signe rien.",
+      "cadenceRecommendation": {
+        "analysesPerWeek": 3,
+        "messagesPerDay": 8,
+        "followUpsPerWeek": 4
+      },
+      "kpiTargets": {
+        "accountsPerMonth": 8,
+        "rdvPerMonth": 8,
+        "conversionRateTarget": "25-35%"
+      }
+    },
+    "bellumPhrases": {
+      "welcome": "Bienvenue Sophie, on va transformer ton expertise \"Transformation digitale & Conduite du changement\" en pipeline qualifié sur \"Banque de détail & Banque privée\".",
+      "firstAnalysisCta": "Lancer une analyse sur une ETI du secteur Banque de détail & Banque privée.",
+      "weeklySummaryIntro": "Cette semaine, concentre-toi sur les ETI bancaires en pleine réorganisation SI.",
+      "emptyState": "Aucun compte en pipeline — lance une analyse ciblée sur une ETI bancaire pour démarrer.",
+      "scoreContext": "Le score se justifie par la maturité du programme de transformation détecté et par la correspondance sectorielle, jamais par un chiffre unique."
+    },
+    "welcomeSummary": {
+      "profileRecap": "Tu es une ESN \"Conseil & Delivery\" de 1-10 consultants, basée en \"Paris & Île-de-France\", spécialisée \"Transformation digitale & Conduite du changement\" et \"Conseil en stratégie SI\", qui cible les \"ETI\" \"Banque de détail & Banque privée\". Tu es seul en prospection commerciale.",
+      "searchesPersonalization": "Les recherches cibleront en priorité \"transformation digitale\", \"conformité bancaire\" et \"DORA\".",
+      "contactsPersonalization": "Les contacts identifiés seront des \"DSI\" et \"Directeur Transformation\" (pas des opérationnels juniors).",
+      "messagesPersonalization": "Les messages seront rédigés sur un ton \"consultatif\" (pas challenger agressif).",
+      "scoringPersonalization": "Le scoring évaluera la maturité du programme de transformation SI en cours chez la cible.",
+      "firstAnalysisSuggestions": []
+    }
+  },
+  "contradictions": [],
+  "limits": [
+    "Aucune suggestion d'entreprise au premier écran : aucun compte réel n'est fourni par le questionnaire."
+  ]
+}

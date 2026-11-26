@@ -1,0 +1,54 @@
+{
+  "trigger": "Expliquer le calcul de {{label}}",
+  "sourceWithTime": "{{label}}, recalculé à {{time}}",
+  "rows": {
+    "formula": "Formule",
+    "calculation": "Calcul",
+    "source": "Source",
+    "completeness": "Complétude",
+    "threshold": "Seuil",
+    "decision": "Décision"
+  },
+  "population": {
+    "bench_rate": "consultants",
+    "gross_margin": "missions",
+    "dso_days": "factures",
+    "signed_revenue": "lignes de mission"
+  },
+  "formula": {
+    "bench_rate": "consultants sans affectation active / consultants comptés",
+    "gross_margin": "(chiffre d'affaires − coût chargé) / chiffre d'affaires, pondéré par les jours",
+    "dso_days": "médiane des délais entre l'émission et le paiement",
+    "signed_revenue": "somme des missions gagnées, sur leur durée contractuelle"
+  },
+  "calculation": {
+    "gross_margin": "moyenne pondérée sur {{count}} mission",
+    "gross_margin_other": "moyenne pondérée sur {{count}} missions",
+    "dso_days": "médiane de {{count}} délai",
+    "dso_days_other": "médiane de {{count}} délais",
+    "signed_revenue": "somme de {{count}} ligne chiffrée",
+    "signed_revenue_other": "somme de {{count}} lignes chiffrées"
+  },
+  "source": {
+    "bench_rate": "affectations de mission",
+    "gross_margin": "missions et conditions commerciales",
+    "dso_days": "factures payées",
+    "signed_revenue": "missions gagnées"
+  },
+  "excluded": {
+    "bench_rate": "{{count}} consultant non lu",
+    "bench_rate_other": "{{count}} consultants non lus",
+    "gross_margin": "{{count}} mission sans coût chargé saisi",
+    "gross_margin_other": "{{count}} missions sans coût chargé saisi",
+    "dso_undatable": "{{count}} facture sans dates exploitables",
+    "dso_undatable_other": "{{count}} factures sans dates exploitables",
+    "dso_disputed": "{{count}} facture contestée",
+    "dso_disputed_other": "{{count}} factures contestées",
+    "signed_revenue": "{{count}} ligne sans montant",
+    "signed_revenue_other": "{{count}} lignes sans montant"
+  },
+  "decision": {
+    "notMeasurable": "Il manque {{count}} observation : ce chiffre ne se compare pas encore à sa cible.",
+    "notMeasurable_other": "Il manque {{count}} observations : ce chiffre ne se compare pas encore à sa cible."
+  }
+}

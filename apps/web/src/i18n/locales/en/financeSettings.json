@@ -1,0 +1,21 @@
+{
+  "title": "Commercial margin alert threshold",
+  "subtitle": "Below this COMMERCIAL margin threshold, a mission triggers both the threshold alert AND {{copilot}}'s low-margin diagnosis. No threshold set: neither fires.",
+  "groupLabel": "Workspace threshold",
+  "fieldLabel": "Margin alert threshold, in percent",
+  "notSet": "no alert fires, nor {{copilot}}'s diagnosis",
+  "notSetPlaceholder": "not set",
+  "currentValue": "{{value}}% commercial margin — below this threshold, {{copilot}} flags the mission",
+  "save": "Save",
+  "reset": "Reset to \"not set\"",
+  "saved": "The alert threshold is saved.",
+  "saveFailed": "I couldn't save this threshold.",
+  "invalid": "A percentage between 0 and 100, or empty to turn the alert off.",
+  "loadingMessage": "Reading your workspace's alert threshold.",
+  "errorMessage": "I couldn't read the alert threshold.",
+  "readOnlyNote": "Set by a margin manager.",
+  "accessDenied": {
+    "title": "Reserved to margin managers",
+    "message": "The margin alert threshold is workspace financial data: it requires the right to read margin."
+  }
+}

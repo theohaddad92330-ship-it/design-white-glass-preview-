@@ -1,0 +1,100 @@
+{
+  "section": {
+    "title": "Mes contextes de travail",
+    "subtitle": "Des variantes de ton activité (marché, secteur, offre) sans jamais toucher à ton profil principal.",
+    "loading": "Je charge tes contextes…",
+    "empty": "Aucun contexte enregistré pour l’instant."
+  },
+  "entryPoints": {
+    "oneOffMission": "Pour une mission ponctuelle",
+    "fromActivity": "Créer une variante"
+  },
+  "create": {
+    "title": "Nouveau contexte de travail",
+    "description": "Une variante de ton profil, à côté — ton profil principal ne change pas.",
+    "nameLabel": "Nom",
+    "namePlaceholder": "Automobile Brest",
+    "sectorsLabel": "Secteurs (séparés par une virgule)",
+    "sectorsPlaceholder": "Automobile, Industrie",
+    "territoriesLabel": "Territoires (séparés par une virgule)",
+    "territoriesPlaceholder": "Bretagne, Pays de la Loire",
+    "visibilityLabel": "Visibilité",
+    "profileUnchangedNotice": "Ton profil principal ne sera jamais modifié automatiquement.",
+    "cancel": "Annuler",
+    "confirm": "Enregistrer",
+    "saving": "Enregistrement…",
+    "success": "Contexte « {{name}} » enregistré.",
+    "failed": "Impossible d’enregistrer ce contexte."
+  },
+  "visibility": {
+    "personal": "Personnel",
+    "bu": "Mon équipe",
+    "group": "Tout l’espace"
+  },
+  "status": {
+    "temporaire": "Temporaire",
+    "enregistre": "Enregistré",
+    "partage": "Partagé",
+    "archive": "Archivé"
+  },
+  "activate": {
+    "action": "Activer",
+    "success": "Contexte « {{name}} » actif — nouvelle conversation ouverte.",
+    "failed": "Impossible d’activer ce contexte."
+  },
+  "archive": {
+    "action": "Archiver",
+    "success": "Contexte archivé.",
+    "failed": "Impossible d’archiver ce contexte."
+  },
+  "banner": {
+    "active": "Contexte actif : {{name}}",
+    "clear": "Revenir à mon profil habituel"
+  },
+  "profileSuggestion": {
+    "title": "Mettre à jour ton profil principal ?",
+    "none": "Aucun secteur",
+    "apply": "Appliquer",
+    "dismiss": "Ignorer",
+    "applied": "Profil principal mis à jour.",
+    "failed": "Impossible de mettre à jour le profil."
+  },
+  "mode": {
+    "title": "Contexte de travail",
+    "triggerLabel": "Contexte de travail : {{mode}}",
+    "profileTitle": "Mon profil",
+    "intro": "Ce que {{copilot}} utilise pour personnaliser ses réponses dans cette conversation.",
+    "selected": "actif",
+    "profileUntouched": "Ton profil n’est jamais modifié : ce choix ne vaut que pour cette conversation.",
+    "modes": {
+      "my_activity": {
+        "label": "Mon activité",
+        "does": "{{copilot}} s’appuie sur ton profil, ton ESN, tes BU, ta mémoire, ton portefeuille et ton CRM. Ta demande reste toujours prioritaire.",
+        "when": "Au quotidien, pour tes comptes et tes priorités."
+      },
+      "one_off_mission": {
+        "label": "Mission ponctuelle",
+        "does": "{{copilot}} raisonne uniquement sur ta demande et ce que tu as sélectionné, sans tes secteurs, territoires ni objectifs habituels.",
+        "when": "Pour un brief hors de ton périmètre habituel (autre région, autre secteur)."
+      },
+      "neutral": {
+        "label": "Neutre",
+        "does": "{{copilot}} n’utilise ni ton profil, ni ton CRM, ni ton portefeuille, ni ta mémoire : seulement ta demande et les sources publiques.",
+        "when": "Pour explorer un marché sans biais ou comparer avec un résultat personnalisé."
+      }
+    },
+    "profileSwitch": {
+      "label": "Mon profil",
+      "state": {
+        "my_activity": "Mon activité",
+        "neutral": "Neutre",
+        "one_off_mission": "Mission ponctuelle"
+      },
+      "help": {
+        "my_activity": "{{copilot}} s’appuie sur ton activité.",
+        "neutral": "{{copilot}} répond sans ton profil.",
+        "one_off_mission": "Réglée dans la portée ; l’allumer remet Mon activité."
+      }
+    }
+  }
+}

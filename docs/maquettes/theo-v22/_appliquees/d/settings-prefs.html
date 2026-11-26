@@ -1,0 +1,4253 @@
+<!doctype html>
+<html lang="fr" class="dark">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover" />
+    <meta name="color-scheme" content="light dark" />
+    <meta
+      name="description"
+      content="Maquette appliquée — Réglages › Préférences (Théo V22 + fonctionnalités gardées). Données fictives de démonstration."
+    />
+    <title>Bellum · Réglages · Tes préférences</title>
+    <style>
+      :root {
+        --primary: #5b3ee8;
+        --primary-hover: #3a26a0;
+        --accent: #5b3ee8;
+        --accent-bg: #f4f2ff;
+        --accent-line: #e0d9ff;
+        --bg: #ffffff;
+        --surface: #ffffff;
+        --surface2: #f4f4f5;
+        --sidebar: #ffffff;
+        --border: #e4e4e7;
+        --border2: #d4d4d8;
+        --text: #18181b;
+        --secondary: #52525b;
+        --muted: #6b6b73;
+        --success: #0a6b4a;
+        --success-bg: #dbf3e9;
+        --warning: #7d5206;
+        --warning-bg: #fbeed3;
+        --danger: #9c211a;
+        --danger-bg: #fce5e3;
+        --info: #14568c;
+        --info-bg: #dfeefb;
+        --sidebar-w: 224px;
+        --shadow: 0 12px 48px rgba(24, 24, 27, 0.12);
+        --r: 14px;
+        --on-primary: #fff;
+        color-scheme: light;
+      }
+      :root.dark {
+        --bg: #09090b;
+        --surface: #18181b;
+        --surface2: #232327;
+        --sidebar: #0e0e11;
+        --border: #2e2e33;
+        --border2: #3f3f46;
+        --text: #fafafa;
+        --secondary: #a1a1aa;
+        --muted: #a1a1aa;
+        --accent: #9e87ff;
+        --accent-bg: #221b3c;
+        --accent-line: #40305f;
+        --success: #6ee7b7;
+        --success-bg: #15332b;
+        --warning: #fcd34d;
+        --warning-bg: #3a2d17;
+        --danger: #fca5a5;
+        --danger-bg: #3a2024;
+        --info: #7dd3fc;
+        --info-bg: #182e40;
+        --shadow: 0 16px 56px #0008;
+        color-scheme: dark;
+      }
+      * {
+        box-sizing: border-box;
+      }
+      html,
+      body {
+        margin: 0px;
+        min-height: 100%;
+        scroll-behavior: auto;
+      }
+      body {
+        font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Helvetica, Arial, sans-serif;
+        font-size: 15px;
+        line-height: 1.5;
+        color: var(--text);
+        background: var(--bg);
+        -webkit-font-smoothing: antialiased;
+      }
+      button,
+      input,
+      select,
+      textarea {
+        font: inherit;
+      }
+      button,
+      a,
+      input,
+      select,
+      textarea {
+        -webkit-tap-highlight-color: transparent;
+      }
+      button {
+        color: inherit;
+        cursor: pointer;
+      }
+      button {
+        border: 0px;
+        background: none;
+      }
+      button:disabled {
+        opacity: 0.45;
+        cursor: not-allowed;
+      }
+      a {
+        color: inherit;
+        text-decoration: none;
+      }
+      button,
+      a {
+        touch-action: manipulation;
+      }
+      input,
+      select,
+      textarea {
+        color: var(--text);
+        background: var(--surface);
+        border: 1px solid var(--border2);
+        border-radius: 9px;
+        padding: 10px 12px;
+        min-height: 42px;
+        min-width: 0px;
+        outline: none;
+      }
+      input::placeholder,
+      textarea::placeholder {
+        color: var(--muted);
+      }
+      input[type='checkbox'] {
+        accent-color: var(--primary);
+        min-height: 0px;
+        width: 17px;
+        height: 17px;
+        padding: 0px;
+        cursor: pointer;
+      }
+      textarea {
+        resize: vertical;
+        width: 100%;
+        line-height: 1.65;
+      }
+      input:focus,
+      select:focus,
+      textarea:focus {
+        border-color: var(--accent);
+        box-shadow: 0 0 0 3px var(--accent-bg);
+      }
+      :focus-visible {
+        outline: 2px solid var(--accent);
+        outline-offset: 3px;
+      }
+      h1,
+      h2,
+      h3,
+      h4,
+      p {
+        margin: 0px;
+      }
+      h1 {
+        font-size: 30px;
+        font-weight: 650;
+        line-height: 1.2;
+        letter-spacing: -0.9px;
+      }
+      h2 {
+        font-size: 20px;
+        font-weight: 650;
+        letter-spacing: -0.35px;
+        line-height: 1.35;
+      }
+      h3 {
+        font-size: 16px;
+        font-weight: 650;
+        letter-spacing: -0.18px;
+      }
+      h4 {
+        font-size: 14px;
+        font-weight: 650;
+      }
+      svg {
+        vertical-align: middle;
+      }
+      .icon {
+        width: 19px;
+        height: 19px;
+        flex: 0 0 auto;
+        display: inline-block;
+      }
+      .icon.small {
+        width: 16px;
+        height: 16px;
+      }
+      .skip {
+        position: fixed;
+        z-index: 100;
+        top: -60px;
+        left: 20px;
+        padding: 10px 20px;
+        background: var(--primary);
+        color: white;
+      }
+      .skip:focus {
+        top: 10px;
+      }
+      .small {
+        font-size: 13px;
+      }
+      .kbd {
+        font:
+          11px -apple-system,
+          BlinkMacSystemFont,
+          'Segoe UI',
+          sans-serif;
+        background: var(--surface);
+        border: 1px solid var(--border2);
+        padding: 1px 5px;
+        border-radius: 4px;
+        color: var(--muted);
+      }
+      .sidebar {
+        position: fixed;
+        inset: 0px auto 0px 0px;
+        width: var(--sidebar-w);
+        background: var(--sidebar);
+        border-right: 1px solid var(--border);
+        z-index: 25;
+        display: flex;
+        flex-direction: column;
+        padding: 24px 14px 14px;
+        transition: width 0.16s;
+      }
+      .avatar {
+        width: 34px;
+        height: 34px;
+        border-radius: 50%;
+        display: inline-flex;
+        align-items: center;
+        justify-content: center;
+        font-size: 12px;
+        font-weight: 650;
+        flex: 0 0 auto;
+        background: var(--accent-bg);
+        color: var(--accent);
+        border: 1px solid var(--border);
+        overflow: hidden;
+      }
+      .main-shell {
+        margin-left: var(--sidebar-w);
+        min-height: 100vh;
+      }
+      .topbar {
+        height: 64px;
+        border-bottom: 1px solid var(--border);
+        background: var(--bg);
+        padding: 0px 30px;
+        display: flex;
+        align-items: center;
+        gap: 14px;
+        position: sticky;
+        top: 0px;
+        z-index: 15;
+      }
+      .breadcrumb {
+        display: flex;
+        align-items: center;
+        gap: 9px;
+        font-size: 14px;
+        min-width: 0px;
+      }
+      .breadcrumb a {
+        color: var(--muted);
+      }
+      .breadcrumb span {
+        max-width: 300px;
+        white-space: nowrap;
+        overflow: hidden;
+        text-overflow: ellipsis;
+      }
+      .breadcrumb .icon {
+        width: 15px;
+        height: 15px;
+        color: var(--muted);
+      }
+      .top-right {
+        margin-left: auto;
+        display: flex;
+        align-items: center;
+        gap: 12px;
+        flex: 0 0 auto;
+      }
+      .search-trigger {
+        height: 34px;
+        display: flex;
+        align-items: center;
+        gap: 9px;
+        border: 1px solid var(--border);
+        border-radius: 8px;
+        padding: 0px 10px;
+        color: var(--muted);
+        font-size: 13px;
+      }
+      .icon-btn {
+        display: inline-grid;
+        place-items: center;
+        width: 34px;
+        height: 34px;
+        border-radius: 8px;
+        color: var(--secondary);
+        flex: 0 0 auto;
+      }
+      .icon-btn:hover {
+        background: var(--surface2);
+        color: var(--text);
+      }
+      .mobile-menu {
+        display: none;
+      }
+      .canvas {
+        max-width: 1600px;
+        margin: 0px auto;
+        padding: 32px 34px 44px;
+        min-width: 0px;
+      }
+      .btn {
+        min-height: 39px;
+        padding: 9px 14px;
+        display: inline-flex;
+        align-items: center;
+        justify-content: center;
+        gap: 7px;
+        font-size: 13px;
+        font-weight: 600;
+        line-height: 1.35;
+        border-radius: 8px;
+        border: 1px solid var(--border);
+        background: var(--surface);
+        transition: background 0.12s;
+        white-space: normal;
+        text-align: center;
+      }
+      .btn:hover {
+        background: var(--surface2);
+      }
+      .btn.primary {
+        background: var(--primary);
+        color: rgb(255, 255, 255);
+        border-color: var(--primary);
+      }
+      .btn.primary:hover {
+        background: var(--primary-hover);
+      }
+      .btn.plain {
+        border-color: transparent;
+        background: none;
+        padding-left: 7px;
+        padding-right: 7px;
+      }
+      .btn.sm {
+        min-height: 33px;
+        padding: 6px 10px;
+        font-size: 12px;
+      }
+      .btn .icon {
+        height: 17px;
+        width: 17px;
+      }
+      dialog {
+        border: 1px solid var(--border);
+        border-radius: 16px;
+        padding: 0px;
+        box-shadow: var(--shadow);
+        color: var(--text);
+        background: var(--surface);
+        max-height: calc(-50px + 100dvh);
+        width: min(640px, -36px + 100vw);
+        overflow: auto;
+      }
+      dialog::backdrop {
+        background: rgba(9, 9, 11, 0.33);
+      }
+      .dialog-head {
+        position: sticky;
+        top: 0px;
+        background: var(--surface);
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        padding: 20px 24px;
+        border-bottom: 1px solid var(--border);
+        z-index: 2;
+      }
+      .dialog-head h2 {
+        font-size: 18px;
+      }
+      .dialog-body {
+        padding: 24px;
+      }
+      .dialog-footer {
+        display: flex;
+        justify-content: flex-end;
+        align-items: center;
+        gap: 10px;
+        border-top: 1px solid var(--border);
+        padding: 16px 24px;
+        background: var(--surface);
+        position: sticky;
+        bottom: 0px;
+      }
+      .toast-container {
+        position: fixed;
+        bottom: 22px;
+        left: calc(var(--sidebar-w) + 26px);
+        z-index: 100;
+        display: grid;
+        gap: 8px;
+        max-width: 480px;
+        pointer-events: none;
+      }
+      .toast {
+        padding: 12px 17px;
+        background: var(--text);
+        color: var(--bg);
+        border-radius: 9px;
+        box-shadow: var(--shadow);
+        font-size: 13px;
+        display: flex;
+        align-items: center;
+        gap: 10px;
+        animation: 0.18s ease-out 0s 1 normal none running toast-in;
+      }
+      .toast .icon {
+        width: 17px;
+        height: 17px;
+        flex: 0 0 auto;
+      }
+      .shell-collapsed {
+        --sidebar-w: 76px;
+      }
+      .shell-collapsed .sidebar {
+        padding-left: 9px;
+        padding-right: 9px;
+      }
+      @media (min-width: 1600px) {
+        .canvas {
+          padding: 38px 45px 50px;
+        }
+        .topbar {
+          padding: 0px 40px;
+        }
+      }
+      @media (max-width: 1250px) {
+        :root {
+          --sidebar-w: 207px;
+        }
+        .canvas {
+          padding: 28px 25px 40px;
+        }
+        .topbar {
+          padding: 0px 24px;
+        }
+        .search-trigger span:not(.kbd) {
+          display: none;
+        }
+        .sidebar {
+          padding-left: 12px;
+          padding-right: 12px;
+        }
+      }
+      @media (max-width: 760px) {
+        :root {
+          --sidebar-w: 0px;
+        }
+        .sidebar {
+          width: 236px;
+          transform: translateX(-100%);
+          box-shadow: var(--shadow);
+          transition: transform 0.18s;
+        }
+        .nav-open .sidebar {
+          transform: translateX(0px);
+        }
+        .nav-open::after {
+          content: '';
+          position: fixed;
+          inset: 0px;
+          background: rgba(0, 0, 0, 0.2);
+          z-index: 20;
+          pointer-events: none;
+        }
+        .topbar {
+          height: 57px;
+          padding: 0px 16px;
+          gap: 9px;
+        }
+        .mobile-menu {
+          display: grid;
+        }
+        .top-right {
+          gap: 3px;
+        }
+        .top-right > .search-trigger {
+          width: 32px;
+          justify-content: center;
+          padding: 0px;
+          border: 0px;
+        }
+        .search-trigger .kbd {
+          display: none;
+        }
+        .top-right > .avatar {
+          display: none;
+        }
+        .breadcrumb {
+          font-size: 12px;
+        }
+        .breadcrumb span {
+          max-width: 145px;
+        }
+        .canvas {
+          padding: 23px 18px 38px;
+        }
+        h1 {
+          font-size: 27px;
+        }
+        .btn {
+          font-size: 12px;
+          min-height: 38px;
+        }
+        .toast-container {
+          left: 16px;
+          right: 16px;
+          bottom: 18px;
+          max-width: none;
+        }
+        dialog,
+        dialog.wide {
+          width: calc(-22px + 100vw);
+          max-height: calc(-24px + 100dvh);
+        }
+        .dialog-head {
+          padding: 17px;
+        }
+        .dialog-body {
+          padding: 18px;
+        }
+        .dialog-footer {
+          padding: 14px 18px;
+        }
+        .shell-collapsed {
+          --sidebar-w: 0;
+        }
+        .shell-collapsed .sidebar {
+          width: 76px;
+        }
+      }
+      @media (prefers-reduced-motion: reduce) {
+        *,
+        ::before,
+        ::after {
+          animation: auto ease 0s 1 normal none running none !important;
+          transition: none !important;
+          scroll-behavior: auto !important;
+        }
+      }
+      @media print {
+        .sidebar,
+        .topbar,
+        .feedback-fab,
+        .toast-container,
+        .page-actions,
+        button {
+          display: none !important;
+        }
+        .main-shell {
+          margin: 0px;
+        }
+        .canvas {
+          padding: 15px;
+        }
+        body {
+          font-size: 12px;
+        }
+      }
+      .btn.active {
+        background: var(--surface);
+        color: var(--text);
+      }
+      body[data-page='onboarding'] .sidebar {
+        display: none !important;
+      }
+      body[data-page='onboarding'] .main-shell {
+        margin-left: 0px !important;
+      }
+      body[data-page='onboarding'] .canvas {
+        max-width: 1460px;
+        margin: 0px auto;
+        padding: 26px 28px 60px;
+      }
+      @media (max-width: 800px) {
+        body[data-page='onboarding'] .canvas {
+          padding: 17px 14px 42px;
+        }
+      }
+      :root {
+        --bg: #f5f5f8;
+        --surface: #ffffff;
+        --surface2: #f1f2f6;
+        --border: #e5e6ee;
+        --text: #1c1c28;
+        --secondary: #5d5e70;
+        --muted: #727385;
+        --r: 18px;
+        --sidebar-w: 232px;
+        --shadow: 0 3px 7px -5px #20203924, 0 12px 30px -24px #25244130;
+        --ink: #211e39;
+        --violet-wash: #eeebff;
+      }
+      html.dark {
+        --bg: #101014;
+        --surface: #1a1a22;
+        --surface2: #24242e;
+        --border: #30303c;
+        --text: #f0eff8;
+        --secondary: #b4b3c5;
+        --muted: #9695aa;
+        --shadow: 0 10px 26px -18px #0009;
+        --ink: #211e39;
+        --violet-wash: #29233f;
+      }
+      body {
+        font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Arial, sans-serif;
+        font-size: 15px;
+        letter-spacing: -0.012em;
+        background: var(--bg);
+        color: var(--text);
+      }
+      h1 {
+        font-size: 36px;
+        line-height: 1.13;
+        letter-spacing: -1.25px;
+        font-weight: 720;
+      }
+      h2 {
+        font-size: 23px;
+        letter-spacing: -0.55px;
+      }
+      h3 {
+        font-size: 17px;
+        line-height: 1.4;
+      }
+      .small {
+        font-size: 13px;
+        line-height: 1.55;
+      }
+      .btn {
+        font-size: 14px;
+        min-height: 42px;
+        border-radius: 10px;
+        letter-spacing: -0.1px;
+      }
+      .btn.sm {
+        font-size: 13px;
+        min-height: 35px;
+      }
+      .btn.primary {
+        box-shadow: rgba(91, 62, 232, 0.5) 0px 3px 9px -5px;
+      }
+      .btn.plain {
+        box-shadow: none;
+      }
+      .icon-btn {
+        width: 36px;
+        height: 36px;
+      }
+      .icon {
+        width: 20px;
+        height: 20px;
+      }
+      .sidebar {
+        border-right: 1px solid var(--border);
+        background: var(--surface);
+        width: var(--sidebar-w);
+        padding: 22px 14px 12px;
+      }
+      .topbar {
+        height: 64px;
+        background: var(--surface);
+        padding: 0px 30px;
+        z-index: 24;
+      }
+      .breadcrumb {
+        font-size: 14px;
+      }
+      .top-right {
+        gap: 9px;
+      }
+      .search-trigger {
+        background: var(--surface2);
+        border: 0px;
+        min-width: 206px;
+        padding: 0px 13px;
+        height: 36px;
+      }
+      .search-trigger .kbd {
+        margin-left: auto;
+      }
+      .canvas {
+        max-width: 1720px;
+        padding: 34px 34px 55px;
+      }
+      body[data-page='chat'] .canvas {
+        padding: 0px;
+        max-width: none;
+        height: calc(-64px + 100vh);
+        overflow: hidden;
+      }
+      body[data-page='search'] .canvas {
+        background: var(--surface);
+        padding: 12px;
+        max-width: none;
+        min-height: calc(-64px + 100vh);
+      }
+      body[data-page='onboarding'] .canvas {
+        max-width: 1480px;
+        padding-top: 24px;
+      }
+      body[data-page='onboarding'] .sidebar {
+        padding-top: 18px;
+      }
+      body[data-page='onboarding'] .topbar {
+        background: transparent;
+        border-bottom: none;
+        box-shadow: none;
+      }
+      body[data-page='onboarding'] .top-right .search-trigger,
+      body[data-page='onboarding'] .top-right .preview-pill,
+      body[data-page='onboarding'] .top-right .feedback-header {
+        display: none;
+      }
+      @media (max-width: 760px) {
+        body[data-page='onboarding'] .canvas {
+          padding-left: 14px;
+          padding-right: 14px;
+        }
+      }
+      @media (max-width: 1320px) {
+        :root {
+          --sidebar-w: 212px;
+        }
+        .sidebar {
+          padding-left: 10px;
+          padding-right: 10px;
+        }
+        .canvas {
+          padding: 27px 25px 45px;
+        }
+        .topbar {
+          padding: 0px 23px;
+        }
+        .search-trigger {
+          min-width: 175px;
+        }
+      }
+      @media (max-width: 1140px) {
+        .search-trigger {
+          min-width: 0px;
+          width: 36px;
+          justify-content: center;
+          padding: 0px;
+        }
+        .search-trigger span,
+        .search-trigger .kbd {
+          display: none;
+        }
+      }
+      @media (max-width: 960px) {
+        :root {
+          --sidebar-w: 190px;
+        }
+        .canvas {
+          padding: 24px 19px 40px;
+        }
+        .topbar {
+          padding: 0px 18px;
+        }
+      }
+      @media (max-width: 760px) {
+        :root {
+          --sidebar-w: 0px;
+        }
+        .sidebar {
+          width: 230px;
+          padding: 20px 14px;
+          transform: translateX(-100%);
+          z-index: 80;
+        }
+        .nav-open .sidebar {
+          transform: translateX(0px);
+        }
+        .main-shell {
+          margin-left: 0px;
+        }
+        .topbar {
+          height: 56px;
+          padding: 0px 13px;
+        }
+        .canvas {
+          padding: 23px 16px 40px;
+        }
+        .top-right {
+          gap: 4px;
+        }
+        .top-right > .avatar {
+          display: none;
+        }
+        .breadcrumb {
+          font-size: 12px;
+        }
+        .breadcrumb span {
+          max-width: 130px;
+        }
+        body[data-page='chat'] .canvas {
+          height: calc(-56px + 100dvh);
+        }
+        body[data-page='search'] .canvas {
+          min-height: calc(-56px + 100dvh);
+        }
+      }
+      .btn:focus-visible,
+      .icon-btn:focus-visible,
+      button:focus-visible,
+      a:focus-visible {
+        outline: 2px solid var(--primary);
+        outline-offset: 3px;
+      }
+      body[data-page='discover'] .canvas {
+        padding-top: 30px;
+        max-width: 1800px;
+      }
+      body:has(dialog.d3-dialog[open]) {
+        overflow: hidden;
+      }
+      @media (max-width: 760px) {
+        body[data-page='discover'] .canvas {
+          padding: 23px 17px 34px;
+        }
+      }
+      body[data-page='accounts'] .canvas {
+        max-width: 1800px;
+        padding: 32px 34px 86px;
+      }
+      @media (max-width: 1024px) {
+        body[data-page='accounts'] .canvas {
+          padding-left: 24px;
+          padding-right: 24px;
+        }
+      }
+      @media (max-width: 760px) {
+        body[data-page='accounts'] .canvas {
+          padding: 24px 17px 110px;
+        }
+      }
+      html.dark {
+        color-scheme: dark;
+        --bg: #101014;
+        --surface: #1a1a22;
+        --surface2: #24242e;
+        --border: #30303c;
+        --text: #f0eff8;
+        --secondary: #b4b3c5;
+        --muted: #9695aa;
+        --primary: #6545ef;
+        --primary-hover: #7556f4;
+        --accent: #b4a0ff;
+        --accent-bg: #28223e;
+        --accent-line: #4a3b68;
+        --success: #62d4b0;
+        --success-bg: #19322c;
+        --warning: #eec07d;
+        --warning-bg: #352d21;
+        --danger: #f1a2a9;
+        --danger-bg: #38242b;
+        --info: #91beef;
+        --info-bg: #233043;
+        --shadow: 0 10px 26px -18px #0009;
+        --ink: #211e39;
+        --violet-wash: #29233f;
+      }
+      html,
+      body {
+        background: var(--bg);
+        color: var(--text);
+      }
+      html.dark body {
+        color-scheme: dark;
+      }
+      dialog {
+        background: var(--surface);
+        color: var(--text);
+        border: 1px solid var(--border);
+      }
+      dialog::backdrop {
+        background: rgba(8, 8, 11, 0.75);
+        backdrop-filter: blur(5px);
+      }
+      html.dark input,
+      html.dark textarea,
+      html.dark select {
+        color-scheme: dark;
+      }
+      input::placeholder,
+      textarea::placeholder {
+        color: var(--muted);
+        opacity: 1;
+      }
+      button:disabled {
+        opacity: 0.42;
+        cursor: not-allowed;
+      }
+      button:focus-visible,
+      a:focus-visible,
+      select:focus-visible,
+      input:focus-visible,
+      textarea:focus-visible,
+      [role='button']:focus-visible {
+        outline: 2px solid var(--accent);
+        outline-offset: 3px;
+      }
+      button,
+      a,
+      input,
+      select,
+      textarea {
+        -webkit-tap-highlight-color: transparent;
+      }
+      html.dark .source-line,
+      html.dark .dialog-head,
+      html.dark .dialog-footer {
+        border-color: var(--border);
+      }
+      html.dark .toast {
+        background: rgb(41, 40, 51);
+        color: var(--text);
+        border-color: rgb(72, 67, 84);
+      }
+      :is(#dialog, dialog[data-dlg]) .dialog-footer {
+        flex-wrap: wrap;
+      }
+      :is(#dialog, dialog[data-dlg]) .dialog-footer .btn {
+        line-height: 1.5;
+      }
+      :is(#dialog, dialog[data-dlg]):has(.d3-preview-layout) {
+        width: min(1260px, -32px + 100vw);
+      }
+      @media (max-width: 900px) {
+        .topbar .breadcrumb {
+          min-width: 0px;
+          overflow: hidden;
+        }
+        .topbar .breadcrumb > span {
+          overflow: hidden;
+          text-overflow: ellipsis;
+          white-space: nowrap;
+        }
+        .topbar {
+          padding-right: 17px;
+          padding-left: 17px;
+        }
+        .top-right {
+          flex-shrink: 0;
+        }
+      }
+      @media (max-width: 560px) {
+        .topbar .search-trigger {
+          min-width: 0px;
+          width: 34px;
+          padding: 0px;
+          justify-content: center;
+        }
+        .topbar .search-trigger > span,
+        .topbar .search-trigger > .kbd {
+          display: none;
+        }
+        .topbar .top-right > .avatar {
+          display: none;
+        }
+        .topbar .top-right {
+          gap: 3px;
+        }
+        .topbar .breadcrumb {
+          font-size: 11px;
+        }
+        .topbar .breadcrumb > .icon {
+          width: 12px;
+          flex: 0 0 auto;
+        }
+        .topbar .breadcrumb a {
+          flex-shrink: 0;
+        }
+        .btn {
+          word-break: normal;
+        }
+        dialog {
+          max-width: calc(-20px + 100vw) !important;
+          max-height: calc(-24px + 100dvh) !important;
+        }
+      }
+      @media print {
+        .sidebar,
+        .topbar,
+        .feedback-fab,
+        .a4-selection {
+          display: none !important;
+        }
+        .main-shell {
+          margin: 0px !important;
+        }
+        .canvas {
+          padding: 20px !important;
+        }
+        html {
+          print-color-adjust: exact;
+        }
+      }
+      :root.dark {
+        --secondary: #b8b6c7;
+        --muted: #a3a0b2;
+        --v7-line: #3b3947;
+        --v7-panel: #1c1b23;
+        --v7-ease: cubic-bezier(0.2, 0.7, 0.25, 1);
+      }
+      :where(button, a, input, select, textarea) {
+        scroll-margin-block: 90px;
+      }
+      :where(.btn, .icon-btn, .d3-chip, .d3-active-chip, .tag-button) {
+        transition:
+          background 140ms var(--v7-ease),
+          border-color 140ms var(--v7-ease),
+          color 140ms var(--v7-ease),
+          box-shadow 140ms var(--v7-ease),
+          transform 140ms var(--v7-ease);
+      }
+      .btn:not(:disabled):hover {
+        border-color: rgb(104, 97, 118);
+        box-shadow: rgba(255, 255, 255, 0.035) 0px 1px 0px inset;
+      }
+      .btn.primary:not(:disabled):hover {
+        background: var(--primary-hover);
+        border-color: rgb(158, 137, 255);
+        box-shadow:
+          rgba(91, 62, 232, 0.145) 0px 4px 18px,
+          rgba(255, 255, 255, 0.14) 0px 1px 0px inset;
+      }
+      :where(.btn, .icon-btn):not(:disabled):active {
+        transform: translateY(1px);
+      }
+      .icon-btn:not(:disabled):hover {
+        background: rgb(43, 39, 54);
+        color: rgb(243, 239, 255);
+        border-color: rgb(90, 80, 107);
+      }
+      :where(.btn, .icon-btn, a, [role='option'], [role='button']):focus-visible {
+        outline: 2px solid var(--accent);
+        outline-offset: 3px;
+      }
+      input::placeholder,
+      textarea::placeholder {
+        color: rgb(165, 160, 181);
+        opacity: 1;
+      }
+      input[type='checkbox'],
+      input[type='radio'] {
+        accent-color: var(--primary);
+        cursor: pointer;
+      }
+      :is(#dialog, dialog[data-dlg]) .dialog-head > h2 {
+        font-size: 18px;
+        font-weight: 650;
+        color: var(--text);
+        letter-spacing: -0.3px;
+        line-height: 1.45;
+      }
+      :is(#dialog, dialog[data-dlg]) .dialog-head {
+        padding: 19px 24px;
+        background: rgb(25, 24, 31);
+      }
+      :is(#dialog, dialog[data-dlg]) .dialog-head .icon-btn {
+        width: 38px;
+        height: 38px;
+        border-radius: 12px;
+        border: 1px solid rgb(58, 55, 69);
+        color: rgb(210, 202, 223);
+      }
+      :is(#dialog, dialog[data-dlg]) .dialog-footer {
+        z-index: 5;
+        background: rgb(25, 24, 31);
+        box-shadow: rgba(0, 0, 0, 0.063) 0px -8px 25px;
+      }
+      :is(#dialog, dialog[data-dlg]) :where(input:not([type='checkbox']):not([type='radio']), textarea) {
+        border-radius: 12px;
+        border-color: rgb(69, 64, 79);
+        background: rgb(28, 26, 34);
+        font-size: 14px;
+      }
+      :is(#dialog, dialog[data-dlg]) :where(input:not([type='checkbox']):not([type='radio']), textarea):hover {
+        border-color: rgb(114, 102, 127);
+      }
+      :is(#dialog, dialog[data-dlg]) :where(input:not([type='checkbox']):not([type='radio']), textarea):focus {
+        border-color: var(--accent);
+        box-shadow: rgba(161, 130, 255, 0.094) 0px 0px 0px 3px;
+      }
+      :is(#dialog, dialog[data-dlg]) .btn {
+        min-height: 43px;
+        font-size: 13.5px;
+        border-radius: 11px;
+      }
+      :is(#dialog, dialog[data-dlg])[open] {
+        animation: v7-dialog-in 170ms var(--v7-ease);
+      }
+      :where(.stepper a, .stepper button) {
+        min-height: 42px;
+        line-height: 1.5;
+        transition:
+          background 140ms,
+          color 140ms;
+        outline-offset: 3px;
+      }
+      :where(.stepper a, .stepper button):hover {
+        color: rgb(230, 213, 255);
+      }
+      :where(.a4-subnav a, .m5-nav-children a, .d3-dossier-tabs button) {
+        transition:
+          background 140ms,
+          color 140ms,
+          border-color 140ms;
+      }
+      @media (prefers-reduced-motion: reduce) {
+        *,
+        ::before,
+        ::after {
+          scroll-behavior: auto !important;
+          animation-duration: 0.001ms !important;
+          animation-iteration-count: 1 !important;
+          transition-duration: 0.001ms !important;
+        }
+        .btn:not(:disabled):active {
+          transform: none;
+        }
+      }
+      body[data-page='signals'] .canvas {
+        max-width: 1540px;
+        padding: 32px 34px 48px;
+      }
+      @media (max-width: 760px) {
+        body[data-page='signals'] .canvas {
+          padding: 24px 14px 35px;
+        }
+      }
+      .v12 {
+        --v12-wash: color-mix(in srgb, var(--primary) 9%, var(--surface));
+        --v12-line: color-mix(in srgb, var(--primary) 22%, var(--border));
+        color: var(--text);
+        font-size: 14px;
+        line-height: 1.55;
+      }
+      .v12 a,
+      .v12 button,
+      .v12 input,
+      .v12 select {
+        touch-action: manipulation;
+      }
+      .v12 :is(button, a, input, textarea, select):focus-visible {
+        outline: 2px solid var(--primary);
+        outline-offset: 4px;
+      }
+      .v12 h1 {
+        font-size: 32px;
+        letter-spacing: -1px;
+        line-height: 1.2;
+      }
+      .v12 h2 {
+        font-size: 21px;
+        letter-spacing: -0.5px;
+        line-height: 1.35;
+      }
+      .v12 h3 {
+        font-size: 16px;
+        letter-spacing: -0.25px;
+      }
+      .v12 p {
+        margin: 0px;
+      }
+      .v12-desc {
+        color: var(--secondary);
+        font-size: 14px;
+        max-width: 780px;
+        margin-top: 8px !important;
+      }
+      .v12-eyebrow {
+        font-size: 10px;
+        font-weight: 700;
+        letter-spacing: 1.4px;
+        text-transform: uppercase;
+        color: var(--accent);
+        margin-bottom: 10px;
+      }
+      .v12-header {
+        display: flex;
+        align-items: start;
+        justify-content: space-between;
+        gap: 22px;
+        margin-bottom: 28px;
+      }
+      .v12 .btn {
+        font-size: 13px;
+        min-height: 38px;
+      }
+      .v12 .btn.primary {
+        background: var(--primary);
+        color: rgb(255, 255, 255);
+      }
+      .v12 .btn svg {
+        width: 16px;
+        height: 16px;
+      }
+      .v12-tag {
+        display: inline-flex;
+        align-items: center;
+        gap: 6px;
+        font-size: 11px;
+        line-height: 1.3;
+        padding: 5px 8px;
+        border: 1px solid var(--border);
+        border-radius: 7px;
+        color: var(--secondary);
+        background: var(--surface);
+      }
+      .v12-tag.green {
+        color: rgb(39, 129, 99);
+        background: color-mix(in srgb, #2d9e76 9%, var(--surface));
+        border-color: color-mix(in srgb, #2d9e76 25%, var(--border));
+      }
+      .dark .v12-tag.green {
+        color: rgb(131, 212, 180);
+      }
+      .v12-note {
+        display: flex;
+        align-items: flex-start;
+        gap: 9px;
+        padding: 12px 14px;
+        border-radius: 10px;
+        background: var(--surface2);
+        color: var(--secondary);
+        font-size: 12px;
+        line-height: 1.6;
+      }
+      .v12-note svg {
+        width: 15px;
+        height: 15px;
+        flex: 0 0 auto;
+        margin-top: 2px;
+      }
+      .v12-tabs {
+        display: flex;
+        gap: 24px;
+        align-items: center;
+        border-bottom: 1px solid var(--border);
+        margin-bottom: 20px;
+        overflow-x: auto;
+        white-space: nowrap;
+      }
+      .v12-tabs a,
+      .v12-tabs button {
+        padding: 0px 0px 12px;
+        font-size: 13px;
+        color: var(--secondary);
+        border-bottom: 2px solid transparent;
+        display: inline-flex;
+        align-items: center;
+        gap: 8px;
+      }
+      .v12-tabs .on {
+        color: var(--text);
+        font-weight: 650;
+        border-bottom-color: var(--primary);
+      }
+      .v12-search {
+        display: flex;
+        gap: 9px;
+        align-items: center;
+        border: 1px solid var(--border);
+        border-radius: 10px;
+        background: var(--surface);
+        padding: 0px 12px;
+        min-height: 40px;
+        max-width: 430px;
+        flex: 1 1 0%;
+        min-width: 210px;
+      }
+      .v12-search > svg {
+        width: 16px;
+        height: 16px;
+        color: var(--muted);
+        flex: 0 0 auto;
+      }
+      .v12-search input {
+        width: 100%;
+        min-width: 0px;
+        font-size: 13px;
+        color: var(--text);
+        border: 0px !important;
+        background: transparent !important;
+        box-shadow: none !important;
+        padding: 8px 0px !important;
+        outline: 0px !important;
+      }
+      .v12-select {
+        min-height: 40px;
+        border: 1px solid var(--border);
+        border-radius: 10px;
+        background: var(--surface);
+        color: var(--text);
+        padding: 8px 30px 8px 12px;
+        font-size: 13px;
+        max-width: 260px;
+      }
+      .v12 input[type='checkbox'] {
+        accent-color: var(--primary);
+        width: 16px;
+        height: 16px;
+        cursor: pointer;
+        flex: 0 0 auto;
+      }
+      dialog.v12-dialog {
+        border: 1px solid var(--border);
+        background: var(--surface);
+        color: var(--text);
+        border-radius: 20px;
+        padding: 0px;
+        max-height: min(92dvh, 1100px);
+        width: min(760px, -32px + 100vw);
+        max-width: none;
+        box-shadow: rgba(0, 0, 0, 0.267) 0px 30px 100px;
+      }
+      dialog.v12-dialog::backdrop {
+        background: rgba(15, 14, 24, 0.42);
+        backdrop-filter: blur(7px);
+      }
+      dialog.v12-dialog .dialog-head {
+        padding: 18px 24px;
+        border-bottom: 1px solid var(--border);
+      }
+      dialog.v12-dialog .dialog-head h2 {
+        font-size: 15px !important;
+        font-weight: 600;
+      }
+      dialog.v12-dialog .dialog-body {
+        max-height: calc(-145px + 92dvh);
+        overflow: auto;
+        padding: 24px !important;
+      }
+      body.v12-settings #sidebar {
+        display: flex;
+        flex-direction: column;
+        padding: 18px 12px 10px;
+        width: var(--sidebar-w);
+        background: var(--surface);
+      }
+      .v12-settings-nav {
+        display: flex;
+        flex-direction: column;
+        min-height: 0px;
+        flex: 1 1 0%;
+        overflow: auto;
+        gap: 17px;
+        padding: 10px 4px;
+      }
+      .v12-settings-head {
+        padding: 0px 8px 12px;
+      }
+      .v12-back {
+        display: flex;
+        align-items: center;
+        gap: 7px;
+        font-size: 12px;
+        color: var(--secondary);
+        padding: 7px 0px 14px;
+      }
+      .v12-back svg {
+        width: 15px;
+        height: 15px;
+      }
+      .v12-settings-head h2 {
+        font-size: 19px;
+        letter-spacing: -0.5px;
+      }
+      .v12-settings-head .v12-search {
+        min-width: 0px;
+        margin-top: 15px;
+        min-height: 33px;
+        padding: 0px 8px;
+      }
+      .v12-settings-head .v12-search input {
+        font-size: 11px;
+      }
+      .v12-nav-group > h3 {
+        font-size: 9px;
+        font-weight: 700;
+        text-transform: uppercase;
+        letter-spacing: 1.15px;
+        color: var(--muted);
+        padding: 0px 9px;
+        margin: 0px 0px 7px;
+      }
+      .v12-nav-link {
+        display: flex;
+        gap: 9px;
+        align-items: center;
+        min-height: 31px;
+        padding: 6px 9px;
+        border-radius: 8px;
+        color: var(--secondary);
+        font-size: 12px;
+        line-height: 1.3;
+      }
+      .v12-nav-link svg {
+        width: 15px;
+        height: 15px;
+        flex: 0 0 auto;
+        color: var(--muted);
+      }
+      .v12-nav-link.on {
+        background: var(--accent-bg);
+        color: var(--accent);
+        font-weight: 600;
+      }
+      .v12-nav-link.on svg {
+        color: var(--accent);
+      }
+      .v12-nav-link:hover {
+        background: var(--surface2);
+      }
+      .v12-settings-foot {
+        padding: 12px 9px 0px;
+        border-top: 1px solid var(--border);
+        color: var(--muted);
+        font-size: 10px;
+        display: flex;
+        gap: 8px;
+        align-items: center;
+      }
+      .v12-settings-page {
+        max-width: 1000px;
+        margin: 0px auto;
+        padding: 3px 0px 28px;
+      }
+      .v12-settings-page .v12-header {
+        margin-bottom: 28px;
+      }
+      .v12-settings-page h1 {
+        font-size: 28px;
+      }
+      .v12-settings-page .v12-desc {
+        max-width: 660px;
+      }
+      .v12-setting-block {
+        border: 1px solid var(--border);
+        border-radius: 14px;
+        background: var(--surface);
+        padding: 23px 25px;
+        margin-bottom: 18px;
+      }
+      .v12-setting-block > header {
+        display: flex;
+        align-items: start;
+        justify-content: space-between;
+        gap: 12px;
+        padding-bottom: 18px;
+        border-bottom: 1px solid var(--border);
+        margin-bottom: 18px;
+      }
+      .v12-setting-block > header h2 {
+        font-size: 16px;
+      }
+      .v12-setting-block > header p {
+        font-size: 12px;
+        color: var(--muted);
+        margin-top: 5px;
+        max-width: 650px;
+      }
+      .v12-setting-block .v12-note {
+        margin: 14px 0px;
+      }
+      .v12-setting-row {
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        gap: 25px;
+        padding: 16px 0px;
+        border-bottom: 1px solid var(--border);
+      }
+      .v12-setting-row:last-child {
+        border-bottom: none;
+        padding-bottom: 0px;
+      }
+      .v12-setting-row:first-child {
+        padding-top: 0px;
+      }
+      .v12-setting-row h3 {
+        font-size: 13px;
+        font-weight: 600;
+      }
+      .v12-setting-row p {
+        font-size: 12px;
+        color: var(--secondary);
+        line-height: 1.65;
+        margin-top: 5px;
+        max-width: 570px;
+      }
+      .v12-form {
+        display: flex;
+        flex-direction: column;
+        gap: 18px;
+      }
+      .v12-form input:not([type='checkbox']):not([type='file']):not([type='color']):not([type='radio']),
+      .v12-form textarea,
+      .v12-form select,
+      .v12-note-form textarea {
+        border: 1px solid var(--border);
+        background: var(--surface2);
+        color: var(--text);
+        border-radius: 9px;
+        min-height: 40px;
+        padding: 10px 12px;
+        font-size: 13px;
+        line-height: 1.5;
+        width: 100%;
+        box-shadow: none;
+      }
+      .v12-form textarea {
+        resize: vertical;
+        min-height: 90px;
+      }
+      .v12-field {
+        display: flex;
+        flex-direction: column;
+        gap: 7px;
+        min-width: 0px;
+      }
+      .v12-field label {
+        font-size: 12px;
+        font-weight: 550;
+      }
+      .v12-field small {
+        font-size: 11px;
+        color: var(--muted);
+        line-height: 1.6;
+      }
+      .v12-fields {
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        gap: 19px;
+      }
+      .v12-form-actions {
+        display: flex;
+        justify-content: flex-end;
+        align-items: center;
+        gap: 12px;
+        margin-top: 5px;
+      }
+      .v12-form-actions .v12-save-label {
+        font-size: 11px;
+        color: var(--muted);
+        margin-right: auto;
+      }
+      .v12-choice-grid {
+        display: grid;
+        grid-template-columns: repeat(3, 1fr);
+        gap: 10px;
+      }
+      .v12-choice {
+        display: flex;
+        align-items: center;
+        gap: 9px;
+        border: 1px solid var(--border);
+        border-radius: 10px;
+        padding: 13px;
+        cursor: pointer;
+        font-size: 12px;
+        background: var(--surface);
+      }
+      .v12-choice:has(input:checked) {
+        border-color: var(--primary);
+        background: var(--v12-wash);
+      }
+      .v12-choice input[type='radio'] {
+        accent-color: var(--primary);
+        flex: 0 0 auto;
+      }
+      .v12-check-row {
+        display: flex;
+        align-items: start;
+        gap: 10px;
+        cursor: pointer;
+        font-size: 13px;
+        line-height: 1.6;
+      }
+      .v12-check-row input {
+        margin-top: 3px;
+      }
+      .v12-check-row small {
+        display: block;
+        color: var(--muted);
+        font-size: 11px;
+        margin-top: 3px;
+      }
+      .v12-table-wrap {
+        overflow: auto;
+        border: 1px solid var(--border);
+        border-radius: 12px;
+        background: var(--surface);
+      }
+      .v12-table {
+        width: 100%;
+        border-collapse: collapse;
+        text-align: left;
+        font-size: 12px;
+      }
+      .v12-table td {
+        padding: 15px;
+        border-top: 1px solid var(--border);
+        vertical-align: middle;
+      }
+      .v12-profile-preview {
+        display: flex;
+        gap: 15px;
+        align-items: center;
+        border-bottom: 1px solid var(--border);
+        padding: 0px 0px 20px;
+        margin-bottom: 20px;
+      }
+      .v12-profile-preview .avatar {
+        width: 46px;
+        height: 46px;
+        font-size: 15px;
+      }
+      .v12-profile-preview h3 {
+        font-size: 17px;
+      }
+      .v12-profile-preview p {
+        font-size: 12px;
+        color: var(--secondary);
+        margin-top: 4px;
+      }
+      .v12-theme-preview {
+        height: 62px;
+        width: 90px;
+        border: 1px solid var(--border);
+        border-radius: 7px;
+        display: flex;
+        gap: 7px;
+        padding: 7px;
+        margin-bottom: 10px;
+      }
+      .v12-theme-preview i {
+        width: 17px;
+        height: 100%;
+        border-radius: 3px;
+      }
+      .v12-theme-preview span {
+        width: 48px;
+        height: 28px;
+        border-radius: 3px;
+        margin-top: 6px;
+      }
+      .v12-theme-preview.light {
+        background: rgb(250, 250, 253);
+      }
+      .v12-theme-preview.light i {
+        background: rgb(234, 232, 246);
+      }
+      .v12-theme-preview.light span {
+        background: white;
+        border: 1px solid rgb(226, 223, 240);
+      }
+      .v12-theme-preview.dark {
+        background: rgb(17, 17, 22);
+      }
+      .v12-theme-preview.dark i {
+        background: rgb(40, 37, 51);
+      }
+      .v12-theme-preview.dark span {
+        background: rgb(35, 33, 45);
+        border: 1px solid rgb(56, 52, 68);
+      }
+      .v12-theme-options .v12-choice {
+        display: block;
+      }
+      .v12-theme-options .v12-choice input {
+        margin-right: 7px;
+      }
+      .v12-mobile-settings {
+        display: none;
+      }
+      .v12-local-setting {
+        font-size: 11px;
+        color: var(--muted);
+        line-height: 1.65;
+        margin-top: 18px;
+      }
+      @media (max-width: 1250px) {
+        .v12-choice-grid {
+          grid-template-columns: 1fr 1fr;
+        }
+        .v12-settings-page {
+          max-width: 900px;
+        }
+      }
+      @media (max-width: 760px) {
+        .v12 h1 {
+          font-size: 27px;
+        }
+        .v12-header {
+          display: block;
+          margin-bottom: 22px;
+        }
+        .v12-select {
+          max-width: 100%;
+          width: auto;
+          flex: 1 1 0%;
+          min-width: 0px;
+        }
+        .v12-search {
+          max-width: none;
+          flex-basis: 100%;
+        }
+        .v12-tabs {
+          gap: 18px;
+        }
+        .v12-reader-facts,
+        .v12-fields,
+        .v12-rule-fields,
+        .v12-settings-links,
+        .v12-choice-grid {
+          grid-template-columns: 1fr;
+        }
+        .v12-setting-block {
+          padding: 18px;
+        }
+        .v12-setting-row {
+          gap: 12px;
+          align-items: start;
+        }
+        .v12-setting-row > .btn {
+          flex: 0 0 auto;
+        }
+        .v12-setting-block > header {
+          display: block;
+        }
+        .v12-mobile-settings {
+          display: block;
+          margin-bottom: 18px;
+        }
+        .v12-mobile-settings select {
+          width: 100%;
+          max-width: none;
+        }
+        .v12-dialog .dialog-body {
+          padding: 18px !important;
+        }
+        .v12-settings-page .v12-header {
+          margin-bottom: 21px;
+        }
+      }
+      .v12-form input[type='radio'] {
+        width: 15px;
+        height: 15px;
+        min-height: 0px;
+        padding: 0px;
+        border: 0px;
+        display: inline-block;
+        vertical-align: middle;
+      }
+      .v12-theme-options .v12-choice {
+        position: relative;
+      }
+      .v12-theme-options input[type='radio'] {
+        position: absolute;
+        right: 15px;
+        top: 15px;
+      }
+      .v12-theme-preview {
+        margin-bottom: 12px;
+      }
+      @media (max-width: 760px) {
+        body.v12-settings #sidebar {
+          width: 230px;
+        }
+        .v12-settings-nav {
+          gap: 15px;
+        }
+      }
+      .v12 [hidden],
+      .v12-dialog [hidden] {
+        display: none !important;
+      }
+      [data-a14-task-card] {
+        cursor: pointer;
+      }
+      [data-a14-task-card]:focus-visible {
+        outline: 2px solid var(--accent);
+        outline-offset: 2px;
+      }
+      body[data-page='search'] .canvas {
+        padding: 30px 34px 46px;
+        background: var(--bg);
+        max-width: none;
+        min-height: calc(-64px + 100dvh);
+      }
+      @media (max-width: 1150px) {
+        body[data-page='search'] .canvas {
+          padding: 26px 25px 40px;
+        }
+      }
+      @media (max-width: 600px) {
+        body[data-page='search'] .canvas {
+          padding: 17px 14px 35px;
+        }
+      }
+      html:not(.dark)
+        :is(
+          .a4-focus,
+          .a4-account-card.is-focus,
+          .a4-selection,
+          .m5-finance-hero,
+          .m5-collections-hero,
+          .t8-research-hero,
+          .t8-member-hero
+        ) {
+        --text: #f0eff8;
+        --secondary: #c7c4d7;
+        --muted: #b2afc3;
+        --surface: #1a1a22;
+        --surface2: #292632;
+        --border: #45404f;
+        --border2: #5b526b;
+        --accent: #c0aaff;
+        --accent-bg: #302541;
+        --accent-line: #514063;
+        color: var(--text);
+      }
+      html:not(.dark) :is(#dialog, dialog[data-dlg]) .dialog-head,
+      html:not(.dark) :is(#dialog, dialog[data-dlg]) .dialog-footer {
+        background: var(--surface);
+        border-color: var(--border);
+      }
+      html:not(.dark) :is(#dialog, dialog[data-dlg]) .dialog-head .icon-btn {
+        color: var(--secondary);
+        border-color: var(--border);
+      }
+      html:not(.dark)
+        :is(#dialog, dialog[data-dlg])
+        :is(
+          input:not([type='checkbox']):not([type='radio']):not([type='range']):not([type='file']):not([type='hidden']),
+          textarea,
+          select
+        ) {
+        color: var(--text);
+        background: var(--surface);
+        border-color: var(--border);
+        color-scheme: light;
+      }
+      .v18-guide {
+        margin: 5px 0px 18px;
+        font-size: 12px;
+        color: var(--secondary);
+        min-width: 0px;
+      }
+      .v18-guide > summary {
+        color: var(--accent);
+        display: flex;
+        align-items: center;
+        gap: 7px;
+        cursor: pointer;
+        list-style: none;
+        width: max-content;
+        max-width: 100%;
+        padding: 6px 0px;
+        font-size: 12px;
+      }
+      .v18-guide > summary::-webkit-details-marker {
+        display: none;
+      }
+      .v18-guide > summary > .icon {
+        width: 14px;
+        height: 14px;
+      }
+      .v18-guide > summary .v18-guide-chevron {
+        margin-left: 3px;
+        transition: transform 0.14s;
+      }
+      .v18-guide[open] > summary .v18-guide-chevron {
+        transform: rotate(180deg);
+      }
+      .v18-guide-body {
+        padding: 18px 20px;
+        background: var(--surface);
+        border: 1px solid var(--border);
+        border-radius: 10px;
+        margin-top: 8px;
+        display: grid;
+        grid-template-columns: 1.1fr 1.5fr 1fr;
+        gap: 25px;
+        line-height: 1.65;
+      }
+      .v18-guide-body h3 {
+        font-size: 12px;
+        color: var(--text);
+        margin: 0px 0px 6px;
+      }
+      .v18-guide-body ol {
+        margin: 0px;
+        padding-left: 16px;
+      }
+      @media (max-width: 1150px) {
+        .v18-guide-body {
+          grid-template-columns: 1fr 1.4fr;
+        }
+        .v18-guide-body > div:last-child {
+          grid-column: 1 / -1;
+        }
+      }
+      @media (max-width: 900px) {
+        .v18-guide-body,
+        .v18-chat-guide .v18-guide-body {
+          grid-template-columns: 1fr;
+        }
+        .v18-guide-body > div:last-child {
+          grid-column: auto;
+        }
+      }
+      @media (max-width: 640px) {
+        .v18-guide-body {
+          padding: 14px;
+        }
+        .v18-guide {
+          margin-bottom: 12px;
+        }
+      }
+      @media (prefers-reduced-motion: reduce) {
+        .v18 *,
+        .v18-guide-chevron {
+          scroll-behavior: auto !important;
+          transition: none !important;
+        }
+      }
+      body[data-page='search'] .canvas {
+        padding: 22px 28px 20px;
+        min-height: calc(-64px + 100dvh);
+      }
+      @media (min-width: 1600px) and (min-height: 850px) {
+        body[data-page='search'] .canvas {
+          padding-top: 28px;
+        }
+      }
+      @media (max-height: 780px) and (min-width: 1000px) {
+        body[data-page='search'] .canvas {
+          padding-top: 15px;
+          padding-bottom: 15px;
+        }
+      }
+      @media (max-width: 1190px) and (min-width: 901px) {
+        body[data-page='search'] .canvas {
+          padding-left: 22px;
+          padding-right: 22px;
+        }
+      }
+      @media (max-width: 900px) {
+        body[data-page='search'] .canvas {
+          padding: 18px 20px 26px;
+        }
+      }
+      @media (max-width: 700px) {
+        body[data-page='search'] .canvas {
+          padding: 17px 14px 28px;
+        }
+      }
+      :root {
+        --v22-line: var(--border);
+        --v22-panel: var(--surface);
+        --v22-hover: var(--surface2);
+        --v22-ease: cubic-bezier(0.2, 0.7, 0.3, 1);
+        --v22-radius: 12px;
+        --v22-shadow: 0 12px 40px rgba(20, 18, 32, 0.12);
+      }
+      :root.dark {
+        --bg: #0b0b0e;
+        --surface: #151518;
+        --surface2: #1e1e23;
+        --sidebar: #131316;
+        --border: #2b2b32;
+        --border2: #3c3c45;
+        --text: #f2f2f5;
+        --secondary: #b2b1bd;
+        --muted: #9695a4;
+        --v22-panel: #151518;
+        --v22-hover: #202027;
+        --v22-shadow: 0 18px 58px #0008;
+      }
+      body.v22-design {
+        font-size: 14px;
+        letter-spacing: -0.08px;
+      }
+      .v22-design h1 {
+        font-weight: 650;
+        letter-spacing: -1px;
+        line-height: 1.17;
+      }
+      .v22-design h2 {
+        font-weight: 620;
+        letter-spacing: -0.5px;
+        line-height: 1.3;
+      }
+      .v22-design h3 {
+        font-weight: 620;
+        letter-spacing: -0.18px;
+      }
+      .v22-design .btn {
+        border-radius: 8px;
+        box-shadow: none;
+        transition:
+          background-color 130ms,
+          border-color 130ms,
+          color 130ms;
+        min-height: 36px;
+        font-weight: 560;
+      }
+      .v22-design .btn.primary,
+      .v22-design .laura-nav {
+        background: var(--primary);
+        color: rgb(255, 255, 255);
+        box-shadow: none;
+      }
+      .v22-design .btn.primary:hover,
+      .v22-design .laura-nav:hover {
+        background: var(--primary-hover);
+      }
+      .v22-design .btn.plain {
+        background: transparent;
+      }
+      .v22-design .btn.plain:hover {
+        background: var(--surface2);
+      }
+      .v22-design .icon-btn {
+        border-radius: 7px;
+        transition:
+          background-color 130ms,
+          color 130ms;
+      }
+      .v22-design .icon-btn:hover {
+        background: var(--surface2);
+      }
+      .v22-design .canvas {
+        padding-top: 28px;
+      }
+      .v22-design input:not([type='checkbox']):not([type='radio']),
+      .v22-design select,
+      .v22-design textarea {
+        border-radius: 8px;
+      }
+      .v22-design :where(button, a, input, textarea, select, summary):focus-visible {
+        outline: 2px solid var(--accent);
+        outline-offset: 3px;
+      }
+      .v22-design :where(button, a, input, textarea, select, summary) {
+        scroll-margin-top: 82px;
+        scroll-margin-bottom: 80px;
+      }
+      .v22-design .sidebar {
+        background: var(--sidebar);
+        border-right: 1px solid var(--border);
+      }
+      .v22-design .topbar {
+        background: var(--sidebar);
+        border-bottom: 1px solid var(--border);
+      }
+      .v22-design .breadcrumb {
+        font-size: 12px;
+      }
+      .v22-design .search-trigger {
+        background: transparent;
+        border: 0px;
+        box-shadow: none;
+        font-size: 12px;
+      }
+      .v22-design .v18-guide {
+        margin-bottom: 18px;
+        border: 0px;
+        box-shadow: none;
+      }
+      .v22-design .v18-guide summary {
+        font-size: 12px;
+        min-height: 30px;
+        color: var(--accent);
+      }
+      .v22-design .v18-guide-body {
+        background: var(--surface);
+        border: 1px solid var(--border);
+        border-radius: 10px;
+        margin-top: 10px;
+        padding: 20px;
+      }
+      .v22-design .v18-guide-body h3 {
+        font-size: 15px;
+      }
+      .v22-design .v18-guide-body p,
+      .v22-design .v18-guide-body li {
+        font-size: 13px;
+      }
+      .v22-design :is(#dialog, dialog[data-dlg]) {
+        border-radius: 14px;
+        border: 1px solid var(--border2);
+        box-shadow: var(--v22-shadow);
+        background: var(--surface);
+        color: var(--text);
+      }
+      .v22-design :is(#dialog, dialog[data-dlg])::backdrop {
+        background: rgba(8, 8, 12, 0.62);
+        backdrop-filter: blur(3px);
+      }
+      .v22-design :is(#dialog, dialog[data-dlg]) .dialog-head,
+      .v22-design :is(#dialog, dialog[data-dlg]) .dialog-footer {
+        background: var(--surface);
+        box-shadow: none;
+      }
+      .v22-design :is(#dialog, dialog[data-dlg]) .dialog-head {
+        border-bottom: 1px solid var(--border);
+        padding: 20px 24px;
+      }
+      .v22-design :is(#dialog, dialog[data-dlg]) .dialog-head h2 {
+        font-size: 18px;
+        letter-spacing: -0.4px;
+      }
+      .v22-design :is(#dialog, dialog[data-dlg]) .dialog-head .icon-btn {
+        background: transparent;
+        border: 0px;
+        border-radius: 7px;
+        color: var(--secondary);
+        width: 32px;
+        height: 32px;
+      }
+      .v22-design :is(#dialog, dialog[data-dlg]) .dialog-body {
+        background: var(--surface);
+      }
+      .v22-design :is(#dialog, dialog[data-dlg]) .dialog-footer {
+        border-top: 1px solid var(--border);
+        padding: 14px 24px;
+      }
+      .v22-design :is(#dialog, dialog[data-dlg]) .btn {
+        border-radius: 8px;
+        min-height: 38px;
+        font-size: 13px;
+      }
+      .v22-design
+        :is(#dialog, dialog[data-dlg])
+        :where(input:not([type='checkbox']):not([type='radio']), select, textarea) {
+        background: var(--bg);
+        border-color: var(--border2);
+        color: var(--text);
+        border-radius: 8px;
+        font-size: 13px;
+      }
+      @media (max-width: 760px) {
+        .v22-design .canvas {
+          padding: 20px 17px 36px;
+        }
+        .v22-design :is(#dialog, dialog[data-dlg]) .dialog-head {
+          padding: 17px 18px;
+        }
+        .v22-design :is(#dialog, dialog[data-dlg]) .dialog-footer {
+          padding: 14px 18px;
+        }
+      }
+      @media (prefers-reduced-motion: reduce) {
+        .v22-design *,
+        .v22-design ::before,
+        .v22-design ::after {
+          animation: auto ease 0s 1 normal none running none !important;
+          transition: none !important;
+          scroll-behavior: auto !important;
+        }
+      }
+      @keyframes toast-in {
+        0% {
+          opacity: 0;
+          transform: translateY(8px);
+        }
+        100% {
+          opacity: 1;
+          transform: none;
+        }
+      }
+      @keyframes v7-dialog-in {
+        0% {
+          opacity: 0.7;
+          transform: translateY(6px);
+        }
+        100% {
+          opacity: 1;
+          transform: translateY(0px);
+        }
+      }
+    </style>
+    <style>
+      :root {
+        --add: #b45309;
+        --add-ink: #fff;
+      }
+      :root.dark {
+        --add: #f59e0b;
+        --add-ink: #1c1917;
+      }
+      .t-acc {
+        border: 1px solid var(--border);
+        border-radius: 12px;
+        margin-top: 12px;
+        background: var(--surface);
+      }
+      .t-acc > summary {
+        list-style: none;
+        cursor: pointer;
+        display: flex;
+        align-items: center;
+        gap: 10px;
+        padding: 0px 16px;
+        min-height: 48px;
+        font-size: 14px;
+        font-weight: 600;
+      }
+      .t-acc > summary::-webkit-details-marker {
+        display: none;
+      }
+      .t-acc > summary .grow {
+        flex: 1 1 0%;
+      }
+      .t-acc > summary small {
+        font-weight: 400;
+        color: var(--muted);
+        font-size: 12px;
+      }
+      .t-acc > .t-acc-body {
+        padding: 4px 16px 16px;
+        display: grid;
+        gap: 12px;
+      }
+      .t-kv {
+        display: grid;
+        grid-template-columns: minmax(120px, 40%) 1fr;
+        gap: 6px 14px;
+        font-size: 13px;
+      }
+      .t-kv dt {
+        color: var(--muted);
+      }
+      .t-kv dd {
+        margin: 0px;
+        color: var(--text);
+      }
+      [hidden] {
+        display: none !important;
+      }
+      .rv {
+        position: fixed;
+        top: 6px;
+        right: 62px;
+        z-index: 200;
+        display: flex;
+        flex-direction: column;
+        align-items: flex-end;
+        gap: 8px;
+        font-family: inherit;
+        max-width: calc(-28px + 100vw);
+      }
+      .rv-bar {
+        display: flex;
+        gap: 6px;
+        align-items: center;
+        background: var(--surface);
+        border: 1px solid var(--border2);
+        border-radius: 999px;
+        padding: 4px;
+        box-shadow: var(--shadow);
+      }
+      .rv-switch {
+        display: inline-flex;
+        align-items: center;
+        gap: 8px;
+        min-height: 44px;
+        padding: 0px 14px 0px 8px;
+        border-radius: 999px;
+        border: 0px;
+        background: none;
+        color: var(--text);
+        font-style: inherit;
+        font-variant: inherit;
+        font-stretch: inherit;
+        line-height: inherit;
+        font-family: inherit;
+        font-optical-sizing: inherit;
+        font-size-adjust: inherit;
+        font-kerning: inherit;
+        font-feature-settings: inherit;
+        font-variation-settings: inherit;
+        font-size: 13px;
+        font-weight: 650;
+        cursor: pointer;
+      }
+      .rv-switch .knob {
+        width: 34px;
+        height: 20px;
+        border-radius: 999px;
+        background: var(--border2);
+        position: relative;
+        transition: background 0.15s;
+      }
+      .rv-switch .knob::after {
+        content: '';
+        position: absolute;
+        top: 3px;
+        left: 3px;
+        width: 14px;
+        height: 14px;
+        border-radius: 50%;
+        background: rgb(255, 255, 255);
+        transition: transform 0.15s;
+      }
+      .rv-switch[aria-pressed='true'] .knob {
+        background: var(--add);
+      }
+      .rv-switch[aria-pressed='true'] .knob::after {
+        transform: translateX(14px);
+      }
+      .rv-theme {
+        width: 44px;
+        height: 44px;
+        border-radius: 50%;
+        border: 0px;
+        background: none;
+        color: var(--secondary);
+        display: grid;
+        place-items: center;
+        cursor: pointer;
+      }
+      .rv-panel {
+        position: fixed;
+        right: 14px;
+        bottom: 14px;
+        width: min(340px, -28px + 100vw);
+        max-height: min(58dvh, 560px);
+        overflow: auto;
+        background: var(--surface);
+        border: 1px solid var(--border2);
+        border-radius: 14px;
+        box-shadow: var(--shadow);
+        padding: 14px 16px;
+        font-size: 13px;
+        color: var(--text);
+      }
+      .rv-panel h3 {
+        font-size: 12px;
+        letter-spacing: 0.06em;
+        text-transform: uppercase;
+        color: var(--muted);
+        margin: 12px 0px 6px;
+      }
+      .rv-panel h3:first-child {
+        margin-top: 0px;
+      }
+      .rv-panel ul {
+        list-style: none;
+        margin: 0px;
+        padding: 0px;
+        display: grid;
+        gap: 6px;
+      }
+      .rv-panel li {
+        line-height: 1.45;
+      }
+      .rv-panel li b {
+        color: var(--add);
+        font-weight: 700;
+      }
+      .rv-panel .rv-count {
+        font-size: 13px;
+        color: var(--secondary);
+      }
+      body.show-adds [data-add] {
+        outline: 2px dashed var(--add);
+        outline-offset: 3px;
+        position: relative;
+      }
+      body.show-adds [data-add]::after {
+        content: attr(data-add);
+        position: absolute;
+        top: -4px;
+        left: 4px;
+        transform: translateY(-100%);
+        z-index: 30;
+        background: var(--add);
+        color: var(--add-ink);
+        font:
+          700 12px / 1.35 ui-monospace,
+          SFMono-Regular,
+          Menlo,
+          monospace;
+        padding: 1px 6px;
+        border-radius: 5px;
+        pointer-events: none;
+        white-space: nowrap;
+      }
+      body.show-adds dialog[data-add] {
+        position: fixed;
+      }
+      body.show-adds .rv-r::after {
+        left: auto;
+        right: 4px;
+      }
+      .rv-notes {
+        margin: 48px 0px 24px;
+        border-top: 1px dashed var(--border2);
+        padding-top: 24px;
+      }
+      .rv-notes h2 {
+        font-size: 18px;
+        margin-bottom: 4px;
+      }
+      .rv-notes > p {
+        font-size: 13px;
+        color: var(--muted);
+        margin-bottom: 16px;
+      }
+      .rv-notes ol {
+        display: grid;
+        gap: 12px;
+        padding-left: 20px;
+        max-width: 900px;
+      }
+      .rv-notes li {
+        font-size: 14px;
+        line-height: 1.6;
+        color: var(--secondary);
+      }
+      .rv-notes li strong {
+        color: var(--text);
+      }
+      body .topbar .top-right {
+        margin-right: 330px;
+      }
+      @media (max-width: 767px) {
+        .rv {
+          top: 6px;
+          right: 48px;
+        }
+        .rv-bar {
+          padding: 2px;
+        }
+        .rv-switch .lbl {
+          display: none;
+        }
+        .rv-switch {
+          padding: 0px 8px;
+        }
+        body .topbar .top-right {
+          margin-right: 146px;
+        }
+        body .topbar .top-right .search-trigger {
+          display: none;
+        }
+      }
+      .v12-tag,
+      .bo11-badge,
+      .bo11-mini,
+      .bo11-count,
+      .v12-nav-group h3,
+      .v12-eyebrow,
+      .v12-local-setting,
+      .v12-save-label,
+      .v12-setting-row p,
+      .kbd,
+      kbd {
+        font-size: max(12px, 0.75rem);
+      }
+      .v12-save-label.is-dirty {
+        color: var(--text);
+        font-weight: 600;
+      }
+      .v12-settings-foot .avatar {
+        width: 30px;
+        height: 30px;
+        font-size: 12px;
+        flex: 0 0 auto;
+      }
+      .t-foot-id {
+        display: grid;
+        line-height: 1.3;
+        min-width: 0px;
+      }
+      .t-foot-id b {
+        font-size: 13px;
+        font-weight: 600;
+        color: var(--text);
+      }
+      .t-foot-id small {
+        font-size: 12px;
+        color: var(--muted);
+      }
+      .v12-search {
+        position: relative;
+      }
+      .t-search-res {
+        position: absolute;
+        left: 0px;
+        right: 0px;
+        top: calc(100% + 6px);
+        z-index: 60;
+        background: var(--surface);
+        border: 1px solid var(--border2);
+        border-radius: 12px;
+        box-shadow: var(--shadow);
+        padding: 6px;
+        display: grid;
+      }
+      body.t-compact .v12-setting-block {
+        padding-top: 18px;
+        padding-bottom: 18px;
+      }
+      body.t-compact .v12-setting-row {
+        padding: 10px 0px;
+      }
+      body.t-compact .v12-settings-page {
+        gap: 14px;
+      }
+      .t-ctl {
+        display: flex;
+        align-items: center;
+        gap: 8px;
+        flex: 0 0 auto;
+      }
+      .t-ctl select,
+      .t-ctl input[type='text'] {
+        min-height: 44px;
+      }
+      .t-seg-inline {
+        display: inline-flex;
+        border: 1px solid var(--border);
+        border-radius: 10px;
+        padding: 3px;
+        gap: 3px;
+        background: var(--surface2);
+        flex-wrap: wrap;
+      }
+      .t-seg-inline button {
+        min-height: 44px;
+        min-width: 44px;
+        padding: 0px 14px;
+        border: 0px;
+        border-radius: 9px;
+        background: none;
+        color: var(--secondary);
+        font-style: inherit;
+        font-variant: inherit;
+        font-weight: inherit;
+        font-stretch: inherit;
+        line-height: inherit;
+        font-family: inherit;
+        font-optical-sizing: inherit;
+        font-size-adjust: inherit;
+        font-kerning: inherit;
+        font-feature-settings: inherit;
+        font-variation-settings: inherit;
+        font-size: 13px;
+        cursor: pointer;
+      }
+      .t-seg-inline button.on {
+        background: var(--surface);
+        color: var(--text);
+        font-weight: 600;
+        box-shadow: rgba(0, 0, 0, 0.12) 0px 1px 2px;
+      }
+      .t-seg-inline {
+        min-height: 44px;
+        align-items: center;
+      }
+      .t-sub {
+        font-size: 12px;
+        color: var(--muted);
+      }
+      .t-kbd-groups {
+        display: grid;
+        grid-template-columns: repeat(2, minmax(0px, 1fr));
+        gap: 18px 28px;
+      }
+      .t-kbd-groups h4 {
+        font-size: 12px;
+        font-weight: 650;
+        letter-spacing: 0.04em;
+        text-transform: uppercase;
+        color: var(--muted);
+        margin-bottom: 6px;
+      }
+      .t-kbd-groups dl {
+        display: grid;
+        grid-template-columns: auto 1fr;
+        gap: 8px 14px;
+        align-items: baseline;
+        font-size: 13px;
+      }
+      .t-kbd-groups dd {
+        margin: 0px;
+        color: var(--secondary);
+      }
+      .t-sidebar-list {
+        display: grid;
+        gap: 2px;
+      }
+      .t-sidebar-list label {
+        display: flex;
+        align-items: center;
+        gap: 12px;
+        min-height: 44px;
+        padding: 0px 4px;
+        border-bottom: 1px solid var(--border);
+        font-size: 14px;
+      }
+      .t-sidebar-list label:last-child {
+        border-bottom: 0px;
+      }
+      .t-sidebar-list input {
+        width: 18px;
+        height: 18px;
+        accent-color: var(--primary);
+      }
+      .t-sidebar-list .grow {
+        flex: 1 1 0%;
+      }
+      .t-about {
+        font-variant-numeric: tabular-nums;
+      }
+      .t-about code {
+        font-family: ui-monospace, SFMono-Regular, Menlo, monospace;
+        font-size: 12px;
+        color: var(--secondary);
+      }
+      @media (max-width: 767px) {
+        .t-kbd-groups {
+          grid-template-columns: 1fr;
+        }
+        .v12-setting-row {
+          flex-wrap: wrap;
+          gap: 12px;
+        }
+        .v12-setting-row > .t-ctl,
+        .v12-setting-row > .btn {
+          width: 100%;
+        }
+        .v12-setting-row > .btn {
+          justify-content: center;
+        }
+        .v12-form-actions {
+          flex-wrap: wrap;
+        }
+      }
+      body .v12 select,
+      body .v12 input:not([type='checkbox']):not([type='radio']):not([type='file']),
+      body dialog select,
+      body dialog input[type='text'],
+      body dialog input[type='number'],
+      body .btn,
+      body .v12-tabs a,
+      body .bo11-tabs a,
+      body .v18-guide > summary,
+      body .v12-select {
+        min-height: 44px !important;
+      }
+      body .v12-tabs a,
+      body .bo11-tabs a,
+      body .v18-guide > summary {
+        display: inline-flex;
+        align-items: center;
+      }
+      body .btn {
+        display: inline-flex;
+        align-items: center;
+      }
+      body .t-seg-inline button {
+        min-height: 44px;
+      }
+      body .t-seg-inline {
+        padding: 0px;
+        overflow: hidden;
+      }
+      body .v12 small,
+      body .v12-check-row small,
+      body .v12-save-label,
+      body .t-sub,
+      body dialog small {
+        font-size: max(12px, 0.75rem) !important;
+      }
+      .v12-note a,
+      .v12-setting-row p a {
+        display: inline-block;
+        padding: 14px 0px;
+        margin: -14px 0px;
+      }
+      body .v12-table th,
+      body .v12-table td,
+      body .bo11-table th,
+      body .btn.sm {
+        font-size: max(12px, 0.75rem) !important;
+      }
+      @media (max-width: 767px) {
+        .v12-tabs {
+          overflow-x: auto;
+          flex-wrap: nowrap;
+        }
+        .v12-tabs a {
+          flex: 0 0 auto;
+        }
+      }
+      @media (max-width: 767px) {
+        body .v12-tabs,
+        body .bo11-tabs {
+          max-width: 100%;
+          scrollbar-width: none;
+          overflow-x: auto !important;
+          flex-wrap: nowrap !important;
+        }
+      }
+      [data-view],
+      [data-tabpanel],
+      .v12-settings-page > *,
+      .v12-form {
+        min-width: 0px;
+        max-width: 100%;
+      }
+      .v12-table-wrap,
+      .bo11-table-wrap {
+        position: relative;
+      }
+      :root:not(.dark) {
+        --muted: #5c5c64;
+      }
+      :root:not(.dark) .v12-tag.green {
+        color: var(--success);
+      }
+    </style>
+  </head>
+  <body
+    data-page="settings"
+    data-v13page="settings"
+    class="bellum-v18 v22-design v12-settings"
+    data-v22-view="settings"
+    data-screen="settings-prefs"
+  >
+    <a class="skip" href="#content">Aller au contenu</a>
+    <aside class="sidebar" id="sidebar">
+      <div class="v12-settings-head">
+        <a class="v12-back" href="#bellum" data-toast="Retour à Ma journée."
+          ><svg
+            class="icon"
+            viewBox="0 0 24 24"
+            fill="none"
+            stroke="currentColor"
+            stroke-width="1.6"
+            stroke-linecap="round"
+            stroke-linejoin="round"
+            aria-hidden="true"
+          >
+            <path d="M19 12H5m6-6-6 6 6 6"></path></svg
+          >Revenir à Bellum</a
+        >
+        <h2>Paramètres</h2>
+        <label class="v12-search"
+          ><svg
+            class="icon"
+            viewBox="0 0 24 24"
+            fill="none"
+            stroke="currentColor"
+            stroke-width="1.6"
+            stroke-linecap="round"
+            stroke-linejoin="round"
+            aria-hidden="true"
+          >
+            <circle cx="10.5" cy="10.5" r="6.5"></circle>
+            <path d="m16 16 4 4"></path></svg
+          ><input
+            id="v12-settings-search"
+            aria-label="Rechercher un réglage"
+            placeholder="Rechercher un réglage…"
+            value=""
+            autocomplete="off"
+            aria-controls="t-search-res"
+            aria-expanded="false" />
+          <div class="t-search-res" id="t-search-res" role="listbox" hidden></div
+        ></label>
+      </div>
+      <nav class="v12-settings-nav" aria-label="Paramètres">
+        <section class="v12-nav-group">
+          <h3>Mon compte</h3>
+          <a class="v12-nav-link" href="#" data-nav="settings-prefs:"
+            ><svg
+              class="icon"
+              viewBox="0 0 24 24"
+              fill="none"
+              stroke="currentColor"
+              stroke-width="1.6"
+              stroke-linecap="round"
+              stroke-linejoin="round"
+              aria-hidden="true"
+            >
+              <path d="M3 6h7m4 0h7M3 12h3m4 0h11M3 18h11m4 0h3"></path>
+              <circle cx="12" cy="6" r="2"></circle>
+              <circle cx="8" cy="12" r="2"></circle>
+              <circle cx="16" cy="18" r="2"></circle></svg
+            ><span>Préférences</span></a
+          ><a class="v12-nav-link" href="settings-compte.html#notifications" data-nav="settings-compte:notifications"
+            ><svg
+              class="icon"
+              viewBox="0 0 24 24"
+              fill="none"
+              stroke="currentColor"
+              stroke-width="1.6"
+              stroke-linecap="round"
+              stroke-linejoin="round"
+              aria-hidden="true"
+            >
+              <path d="M18 8a6 6 0 0 0-12 0c0 7-3 7-3 9h18c0-2-3-2-3-9m-12 9 1 3h4l1-3"></path></svg
+            ><span>Notifications</span></a
+          ><a class="v12-nav-link" href="settings-compte.html#securite" data-nav="settings-compte:securite"
+            ><svg
+              class="icon"
+              viewBox="0 0 24 24"
+              fill="none"
+              stroke="currentColor"
+              stroke-width="1.6"
+              stroke-linecap="round"
+              stroke-linejoin="round"
+              aria-hidden="true"
+            >
+              <path d="m12 2 9 4v6c0 5-9 10-9 10S3 17 3 12V6Z"></path>
+              <path d="m8 12 3 3 5-6"></path></svg
+            ><span>Sécurité</span></a
+          ><a class="v12-nav-link" href="settings-compte.html#donnees" data-nav="settings-compte:donnees"
+            ><svg
+              class="icon"
+              viewBox="0 0 24 24"
+              fill="none"
+              stroke="currentColor"
+              stroke-width="1.6"
+              stroke-linecap="round"
+              stroke-linejoin="round"
+              aria-hidden="true"
+            >
+              <path d="M12 3v12m-5-5 5 5 5-5M4 16v5h16v-5"></path></svg
+            ><span>Mes données</span></a
+          >
+        </section>
+        <section class="v12-nav-group">
+          <h3>Mon espace</h3>
+          <a class="v12-nav-link" href="settings-espace.html#profil" data-nav="settings-espace:profil"
+            ><svg
+              class="icon"
+              viewBox="0 0 24 24"
+              fill="none"
+              stroke="currentColor"
+              stroke-width="1.6"
+              stroke-linecap="round"
+              stroke-linejoin="round"
+              aria-hidden="true"
+            >
+              <rect x="4" y="3" width="12" height="18" rx="2"></rect>
+              <path d="M16 9h4v12H7M8 7h4M8 11h4M8 15h4M9 21v-3h3v3"></path></svg
+            ><span>Profil commercial</span></a
+          ><a
+            class="v12-nav-link"
+            href="#equipe"
+            data-toast="Équipe &amp; accès se règle à un seul endroit : Équipe › Administration (maquette du lot Équipe)."
+            ><svg
+              class="icon"
+              viewBox="0 0 24 24"
+              fill="none"
+              stroke="currentColor"
+              stroke-width="1.6"
+              stroke-linecap="round"
+              stroke-linejoin="round"
+              aria-hidden="true"
+            >
+              <circle cx="9" cy="8" r="3"></circle>
+              <path d="M3 21v-3a6 6 0 0 1 12 0v3m2-17a3 3 0 0 1 0 6m2 4a5 5 0 0 1 3 4v3"></path></svg
+            ><span>Équipe &amp; accès</span></a
+          ><a class="v12-nav-link" href="settings-espace.html#perimetres" data-nav="settings-espace:perimetres"
+            ><svg
+              class="icon"
+              viewBox="0 0 24 24"
+              fill="none"
+              stroke="currentColor"
+              stroke-width="1.6"
+              stroke-linecap="round"
+              stroke-linejoin="round"
+              aria-hidden="true"
+            >
+              <path d="m12 3 10 6-10 6L2 9l10-6ZM3 13l9 6 9-6M3 17l9 5 9-5"></path></svg
+            ><span>Périmètres &amp; sociétés</span></a
+          ><a class="v12-nav-link" href="settings-espace.html#regles" data-nav="settings-espace:regles"
+            ><svg
+              class="icon"
+              viewBox="0 0 24 24"
+              fill="none"
+              stroke="currentColor"
+              stroke-width="1.6"
+              stroke-linecap="round"
+              stroke-linejoin="round"
+              aria-hidden="true"
+            >
+              <path d="m3 6 1 1 2-2m-3 7 1 1 2-2m-3 7 1 1 2-2M10 6h11M10 12h11M10 18h11"></path></svg
+            ><span>Règles métier</span></a
+          ><a class="v12-nav-link" href="settings-espace.html#catalogues" data-nav="settings-espace:catalogues"
+            ><svg
+              class="icon"
+              viewBox="0 0 24 24"
+              fill="none"
+              stroke="currentColor"
+              stroke-width="1.6"
+              stroke-linecap="round"
+              stroke-linejoin="round"
+              aria-hidden="true"
+            >
+              <path d="M8 6h13M8 12h13M8 18h13M3 6h.01M3 12h.01M3 18h.01"></path></svg
+            ><span>Catalogues &amp; vocabulaire</span></a
+          ><a class="v12-nav-link" href="settings-espace.html#marque" data-nav="settings-espace:marque"
+            ><svg
+              class="icon"
+              viewBox="0 0 24 24"
+              fill="none"
+              stroke="currentColor"
+              stroke-width="1.6"
+              stroke-linecap="round"
+              stroke-linejoin="round"
+              aria-hidden="true"
+            >
+              <circle cx="12" cy="12" r="9"></circle>
+              <circle cx="8" cy="9" r="1"></circle>
+              <circle cx="13" cy="7" r="1"></circle>
+              <circle cx="17" cy="11" r="1"></circle>
+              <path d="M6 17h5"></path></svg
+            ><span>Marque &amp; documents</span></a
+          >
+        </section>
+        <section class="v12-nav-group">
+          <h3>Laura</h3>
+          <a class="v12-nav-link" href="settings-laura.html#comportement" data-nav="settings-laura:comportement"
+            ><svg
+              class="icon"
+              viewBox="0 0 24 24"
+              fill="none"
+              stroke="currentColor"
+              stroke-width="1.6"
+              stroke-linecap="round"
+              stroke-linejoin="round"
+              aria-hidden="true"
+            >
+              <path d="m12 3 2.5 6.5L21 12l-6.5 2.5L12 21l-2.5-6.5L3 12l6.5-2.5L12 3Z"></path>
+              <path d="m21 2 .5 1.5L23 4l-1.5.5L21 6l-.5-1.5L19 4l1.5-.5L21 2Z"></path></svg
+            ><span>Comportement</span></a
+          ><a class="v12-nav-link" href="settings-laura.html#memoire" data-nav="settings-laura:memoire"
+            ><svg
+              class="icon"
+              viewBox="0 0 24 24"
+              fill="none"
+              stroke="currentColor"
+              stroke-width="1.6"
+              stroke-linecap="round"
+              stroke-linejoin="round"
+              aria-hidden="true"
+            >
+              <path
+                d="M12 4c-4-3-8 0-7 4-4 2-3 7 0 8-1 4 4 7 7 3m0-15c4-3 8 0 7 4 4 2 3 7 0 8 1 4-4 7-7 3V4Z"
+              ></path></svg
+            ><span>Mémoire</span></a
+          ><a class="v12-nav-link" href="settings-laura.html#documents" data-nav="settings-laura:documents"
+            ><svg
+              class="icon"
+              viewBox="0 0 24 24"
+              fill="none"
+              stroke="currentColor"
+              stroke-width="1.6"
+              stroke-linecap="round"
+              stroke-linejoin="round"
+              aria-hidden="true"
+            >
+              <path d="M12 5c-3-2-6-2-9-1v15c3-1 6-1 9 1m0-15c3-2 6-2 9-1v15c-3-1-6-1-9 1V5Z"></path></svg
+            ><span>Documents &amp; références</span></a
+          ><a class="v12-nav-link" href="settings-laura.html#routines" data-nav="settings-laura:routines"
+            ><svg
+              class="icon"
+              viewBox="0 0 24 24"
+              fill="none"
+              stroke="currentColor"
+              stroke-width="1.6"
+              stroke-linecap="round"
+              stroke-linejoin="round"
+              aria-hidden="true"
+            >
+              <circle cx="12" cy="12" r="9"></circle>
+              <path d="m12 12 7-7M12 3v2M21 12h-2M12 21v-2M3 12h2"></path>
+              <circle cx="12" cy="12" r="4"></circle></svg
+            ><span>Routines &amp; veilles</span></a
+          >
+        </section>
+        <section class="v12-nav-group">
+          <h3>Outils &amp; administration</h3>
+          <a class="v12-nav-link" href="settings-integrations.html" data-nav="settings-integrations:"
+            ><svg
+              class="icon"
+              viewBox="0 0 24 24"
+              fill="none"
+              stroke="currentColor"
+              stroke-width="1.6"
+              stroke-linecap="round"
+              stroke-linejoin="round"
+              aria-hidden="true"
+            >
+              <path
+                d="m10 13 4-4m-6 6-2 2a4 4 0 0 1-6-6l5-5a4 4 0 0 1 6 0m2 3 2-2a4 4 0 0 1 6 6l-5 5a4 4 0 0 1-6 0"
+                transform="translate(1 0)"
+              ></path></svg
+            ><span>Connecteurs</span></a
+          ><a class="v12-nav-link" href="settings-outils.html#imports" data-nav="settings-outils:imports"
+            ><svg
+              class="icon"
+              viewBox="0 0 24 24"
+              fill="none"
+              stroke="currentColor"
+              stroke-width="1.6"
+              stroke-linecap="round"
+              stroke-linejoin="round"
+              aria-hidden="true"
+            >
+              <path d="M12 15V3m-5 5 5-5 5 5M4 16v5h16v-5"></path></svg
+            ><span>Imports</span></a
+          ><a class="v12-nav-link" href="settings-outils.html#mcp" data-nav="settings-outils:mcp"
+            ><svg
+              class="icon"
+              viewBox="0 0 24 24"
+              fill="none"
+              stroke="currentColor"
+              stroke-width="1.6"
+              stroke-linecap="round"
+              stroke-linejoin="round"
+              aria-hidden="true"
+            >
+              <circle cx="8" cy="8" r="5"></circle>
+              <path d="m12 12 9 9m-4-4 2-2m-5-1 2-2"></path></svg
+            ><span>Accès assistants / MCP</span></a
+          ><a class="v12-nav-link" href="settings-outils.html#facturation" data-nav="settings-outils:facturation"
+            ><svg
+              class="icon"
+              viewBox="0 0 24 24"
+              fill="none"
+              stroke="currentColor"
+              stroke-width="1.6"
+              stroke-linecap="round"
+              stroke-linejoin="round"
+              aria-hidden="true"
+            >
+              <ellipse cx="9" cy="5" rx="6" ry="3"></ellipse>
+              <path
+                d="M3 5v5c0 4 12 4 12 0V5M3 10v5c0 4 12 4 12 0v-5m0 0c5 0 6 2 6 4s-1 4-6 4m6-4v5c0 2-5 4-10 2"
+              ></path></svg
+            ><span>Facturation</span></a
+          ><a class="v12-nav-link" href="settings-outils.html#journal" data-nav="settings-outils:journal"
+            ><svg
+              class="icon"
+              viewBox="0 0 24 24"
+              fill="none"
+              stroke="currentColor"
+              stroke-width="1.6"
+              stroke-linecap="round"
+              stroke-linejoin="round"
+              aria-hidden="true"
+            >
+              <path d="M3 3v6h6M3.8 8a9 9 0 1 1-.6 8M12 7v5l4 2"></path></svg
+            ><span>Journal d’activité</span></a
+          ><a class="v12-nav-link" href="settings-outils.html#aide" data-nav="settings-outils:aide"
+            ><svg
+              class="icon"
+              viewBox="0 0 24 24"
+              fill="none"
+              stroke="currentColor"
+              stroke-width="1.6"
+              stroke-linecap="round"
+              stroke-linejoin="round"
+              aria-hidden="true"
+            >
+              <circle cx="12" cy="12" r="9"></circle>
+              <path d="M9 9a3 3 0 1 1 4 3c-1 .5-1 1-1 2m0 3h.01"></path></svg
+            ><span>Aide &amp; signalements</span></a
+          >
+        </section>
+      </nav>
+      <footer class="v12-settings-foot">
+        <span class="avatar">TH</span><span class="t-foot-id"><b>Théo Haddad</b><small>Altaïs Conseil</small></span>
+      </footer>
+    </aside>
+    <div class="main-shell">
+      <header class="topbar" id="topbar">
+        <button class="icon-btn mobile-menu" data-act="mobile-menu" aria-label="Ouvrir le menu">
+          <svg
+            class="icon"
+            viewBox="0 0 24 24"
+            fill="none"
+            stroke="currentColor"
+            stroke-width="1.6"
+            stroke-linecap="round"
+            stroke-linejoin="round"
+            aria-hidden="true"
+          >
+            <path d="M3 6h18M3 12h18M3 18h18" />
+          </svg>
+        </button>
+        <div class="breadcrumb">
+          <a href="settings-prefs.html">Paramètres</a
+          ><svg
+            class="icon"
+            viewBox="0 0 24 24"
+            fill="none"
+            stroke="currentColor"
+            stroke-width="1.6"
+            stroke-linecap="round"
+            stroke-linejoin="round"
+            aria-hidden="true"
+          >
+            <path d="m9 5 7 7-7 7" /></svg
+          ><span id="t-crumb">Préférences</span>
+        </div>
+        <div class="top-right">
+          <button
+            class="search-trigger"
+            data-toast="Recherche globale : comptes, contacts, affaires, réglages."
+            aria-label="Rechercher"
+          >
+            <svg
+              class="icon"
+              viewBox="0 0 24 24"
+              fill="none"
+              stroke="currentColor"
+              stroke-width="1.6"
+              stroke-linecap="round"
+              stroke-linejoin="round"
+              aria-hidden="true"
+            >
+              <circle cx="10.5" cy="10.5" r="6.5" />
+              <path d="m16 16 4 4" /></svg
+            ><span>Rechercher</span><kbd class="kbd">⌘ K</kbd></button
+          ><span class="avatar">TH</span>
+        </div>
+      </header>
+      <main id="content" class="canvas" tabindex="-1">
+        <div class="v12 v12-settings-page">
+          <div class="v12-mobile-settings">
+            <select data-v7-skip="1" class="v12-select" id="v12-settings-mobile" aria-label="Page de paramètres">
+              <optgroup label="Mon compte">
+                <option value="settings-prefs.html" data-nav="settings-prefs:">Préférences</option>
+                <option value="settings-compte.html#notifications" data-nav="settings-compte:notifications">
+                  Notifications
+                </option>
+                <option value="settings-compte.html#securite" data-nav="settings-compte:securite">Sécurité</option>
+                <option value="settings-compte.html#donnees" data-nav="settings-compte:donnees">Mes données</option>
+              </optgroup>
+              <optgroup label="Mon espace">
+                <option value="settings-espace.html#profil" data-nav="settings-espace:profil">Profil commercial</option>
+                <option value="settings-espace.html#perimetres" data-nav="settings-espace:perimetres">
+                  Périmètres &amp; sociétés
+                </option>
+                <option value="settings-espace.html#regles" data-nav="settings-espace:regles">Règles métier</option>
+                <option value="settings-espace.html#catalogues" data-nav="settings-espace:catalogues">
+                  Catalogues &amp; vocabulaire
+                </option>
+                <option value="settings-espace.html#marque" data-nav="settings-espace:marque">
+                  Marque &amp; documents
+                </option>
+              </optgroup>
+              <optgroup label="Laura">
+                <option value="settings-laura.html#comportement" data-nav="settings-laura:comportement">
+                  Comportement
+                </option>
+                <option value="settings-laura.html#memoire" data-nav="settings-laura:memoire">Mémoire</option>
+                <option value="settings-laura.html#documents" data-nav="settings-laura:documents">
+                  Documents &amp; références
+                </option>
+                <option value="settings-laura.html#routines" data-nav="settings-laura:routines">
+                  Routines &amp; veilles
+                </option>
+              </optgroup>
+              <optgroup label="Outils &amp; administration">
+                <option value="settings-integrations.html" data-nav="settings-integrations:">Connecteurs</option>
+                <option value="settings-outils.html#imports" data-nav="settings-outils:imports">Imports</option>
+                <option value="settings-outils.html#mcp" data-nav="settings-outils:mcp">Accès assistants / MCP</option>
+                <option value="settings-outils.html#facturation" data-nav="settings-outils:facturation">
+                  Facturation
+                </option>
+                <option value="settings-outils.html#journal" data-nav="settings-outils:journal">
+                  Journal d’activité
+                </option>
+                <option value="settings-outils.html#aide" data-nav="settings-outils:aide">
+                  Aide &amp; signalements
+                </option>
+              </optgroup>
+            </select>
+          </div>
+          <section data-view="" data-nav-key="" data-crumb="Préférences">
+            <details class="v18-guide">
+              <summary aria-label="Comment travailler ici ?">
+                <svg
+                  class="icon small"
+                  viewBox="0 0 24 24"
+                  fill="none"
+                  stroke="currentColor"
+                  stroke-width="1.6"
+                  stroke-linecap="round"
+                  stroke-linejoin="round"
+                  aria-hidden="true"
+                >
+                  <circle cx="12" cy="12" r="9" />
+                  <path d="M12 11v6m0-10h.01" /></svg
+                ><span>Comment travailler ici ?</span
+                ><span class="v18-guide-chevron"
+                  ><svg
+                    class="icon small"
+                    viewBox="0 0 24 24"
+                    fill="none"
+                    stroke="currentColor"
+                    stroke-width="1.6"
+                    stroke-linecap="round"
+                    stroke-linejoin="round"
+                    aria-hidden="true"
+                  >
+                    <path d="m6 9 6 6 6-6" /></svg
+                ></span>
+              </summary>
+              <div class="v18-guide-body">
+                <div>
+                  <h3>Régler ton confort sans réécrire l’historique</h3>
+                  <p>
+                    Tes préférences ne changent que ton affichage : ni les permissions, ni les données déjà validées.
+                  </p>
+                </div>
+                <div>
+                  <h4>Le parcours utile</h4>
+                  <ol>
+                    <li>Choisis la rubrique concernée.</li>
+                    <li>Vérifie la portée : personnelle ou collective.</li>
+                    <li>Enregistre et contrôle l’effet dans le parcours associé.</li>
+                  </ol>
+                </div>
+                <div>
+                  <h4>À garder en tête</h4>
+                  <p>Chaque réglage vit à un seul endroit. La recherche à gauche te dit où.</p>
+                </div>
+              </div>
+            </details>
+            <header class="v12-header">
+              <div>
+                <div class="v12-eyebrow">Paramètres · Personnel</div>
+                <h1>Tes préférences</h1>
+                <p class="v12-desc">Un espace qui reste confortable, quel que soit le travail en cours.</p>
+              </div>
+            </header>
+            <nav class="v12-tabs" aria-label="Rubriques" data-tabs="prefs">
+              <a href="#affichage" class="on" aria-current="page" data-tab="affichage" data-anchor="affichage"
+                >Affichage</a
+              >
+              <a href="#identite" data-tab="identite" data-anchor="identite">Mon identité</a>
+              <a href="#raccourcis" data-tab="raccourcis" data-anchor="raccourcis">Raccourcis</a>
+            </nav>
+
+            <!-- ===== Affichage ===== -->
+            <div data-tabpanel="prefs:affichage">
+              <form class="v12-form" novalidate data-saved="Préférences enregistrées.">
+                <section class="v12-setting-block">
+                  <header>
+                    <div>
+                      <h2>Apparence</h2>
+                      <p>La charte Bellum reste identique. Choisis ton confort de lecture.</p>
+                    </div>
+                  </header>
+                  <div class="v12-choice-grid v12-theme-options">
+                    <label class="v12-choice"
+                      ><div class="v12-theme-preview light"><i></i><span></span></div>
+                      <input type="radio" name="theme" value="light" />Clair</label
+                    >
+                    <label class="v12-choice"
+                      ><div class="v12-theme-preview dark"><i></i><span></span></div>
+                      <input type="radio" name="theme" value="dark" checked />Sombre</label
+                    >
+                    <label class="v12-choice"
+                      ><div class="v12-theme-preview dark"><i></i><span></span></div>
+                      <input type="radio" name="theme" value="system" />Système</label
+                    >
+                  </div>
+                  <div class="v12-fields" style="margin-top: 20px">
+                    <div class="v12-field">
+                      <label for="t-density">Densité</label>
+                      <select id="t-density" name="density">
+                        <option value="comfortable" selected>Confortable</option>
+                        <option value="compact">Compacte</option>
+                      </select>
+                    </div>
+                    <div class="v12-field">
+                      <label for="t-home">Page de démarrage préférée</label>
+                      <select id="t-home" name="home">
+                        <option selected>Ma journée</option>
+                        <option>Laura</option>
+                        <option>Signaux</option>
+                        <option>Affaires</option>
+                        <option>Vivier</option>
+                      </select>
+                    </div>
+                  </div>
+                  <div class="v12-fields" style="margin-top: 14px" data-add="settings-prefs.A4">
+                    <div class="v12-field">
+                      <label for="t-font">Taille du texte</label>
+                      <select id="t-font" name="font">
+                        <option>Petite</option>
+                        <option selected>Par défaut</option>
+                        <option>Grande</option>
+                      </select>
+                      <small class="t-sub">« Petite » ne descend jamais sous 12 px.</small>
+                    </div>
+                    <label class="v12-check-row" style="align-self: end"
+                      ><input type="checkbox" name="pointer" checked /><span
+                        >Curseur main sur ce qui se clique<small
+                          >Au survol, avec une souris ou un pavé tactile.</small
+                        ></span
+                      ></label
+                    >
+                  </div>
+                </section>
+
+                <section class="v12-setting-block" data-add="settings-prefs.A1 · A3 · A5">
+                  <header>
+                    <div>
+                      <h2>Lecture &amp; saisie</h2>
+                      <p>Comment les listes te parlent, et comment tu parles à Laura.</p>
+                    </div>
+                  </header>
+                  <div class="v12-setting-row">
+                    <div>
+                      <h3>Affichage des noms</h3>
+                      <p>Dans les listes de contacts et de consultants. Les fiches gardent toujours le nom complet.</p>
+                    </div>
+                    <div class="t-ctl">
+                      <select aria-label="Affichage des noms">
+                        <option selected>Nom complet</option>
+                        <option>Prénom</option>
+                        <option>Initiales</option>
+                      </select>
+                    </div>
+                  </div>
+                  <div class="v12-setting-row">
+                    <div>
+                      <h3>Envoyer un message à Laura</h3>
+                      <p>La touche qui envoie ; l’autre insère un retour à la ligne.</p>
+                    </div>
+                    <div class="t-seg-inline" data-seg="send" role="group" aria-label="Touche d’envoi">
+                      <button type="button" class="on" aria-pressed="true" data-value="enter">Entrée</button>
+                      <button type="button" aria-pressed="false" data-value="mod">⌘ Entrée</button>
+                    </div>
+                  </div>
+                  <div class="v12-setting-row">
+                    <div>
+                      <h3>Barre latérale</h3>
+                      <p>Choisis les rubriques visibles. Réglages reste toujours accessible.</p>
+                    </div>
+                    <button type="button" class="btn" data-open="dlg-sidebar">
+                      <svg
+                        class="icon"
+                        viewBox="0 0 24 24"
+                        fill="none"
+                        stroke="currentColor"
+                        stroke-width="1.6"
+                        stroke-linecap="round"
+                        stroke-linejoin="round"
+                        aria-hidden="true"
+                      >
+                        <rect x="3" y="3" width="18" height="18" rx="2" />
+                        <path d="M9 3v18m7-13-3 4 3 4" /></svg
+                      >Personnaliser · 2 masquées
+                    </button>
+                  </div>
+                </section>
+
+                <section class="v12-setting-block">
+                  <header>
+                    <div>
+                      <h2>Langue &amp; dates</h2>
+                      <p>Préférences personnelles, sans modifier les règles de l’espace.</p>
+                    </div>
+                  </header>
+                  <div class="v12-fields">
+                    <div class="v12-field">
+                      <label for="t-lang">Langue</label
+                      ><select id="t-lang" name="language">
+                        <option selected>Français</option>
+                      </select>
+                    </div>
+                    <div class="v12-field">
+                      <label for="t-tz">Fuseau horaire</label>
+                      <select id="t-tz" name="timezone">
+                        <option selected>Europe/Paris</option>
+                        <option>Europe/Brussels</option>
+                        <option>Europe/Zurich</option>
+                        <option>UTC</option>
+                      </select>
+                    </div>
+                  </div>
+                  <p class="v12-local-setting">
+                    Le fuseau choisi sera proposé pour les nouvelles veilles. Les configurations existantes restent
+                    inchangées.
+                  </p>
+                </section>
+                <div class="v12-form-actions">
+                  <span class="v12-save-label">Aucune modification en attente</span>
+                  <button type="submit" class="btn primary">Enregistrer les modifications</button>
+                </div>
+              </form>
+
+              <details class="t-acc" data-add="settings-prefs.A6">
+                <summary>
+                  <svg
+                    class="icon"
+                    viewBox="0 0 24 24"
+                    fill="none"
+                    stroke="currentColor"
+                    stroke-width="1.6"
+                    stroke-linecap="round"
+                    stroke-linejoin="round"
+                    aria-hidden="true"
+                  >
+                    <circle cx="12" cy="12" r="9" />
+                    <path d="M12 11v6m0-10h.01" /></svg
+                  ><span class="grow">À propos de Bellum <small>· version et parité, utiles au support</small></span
+                  ><svg
+                    class="icon small"
+                    viewBox="0 0 24 24"
+                    fill="none"
+                    stroke="currentColor"
+                    stroke-width="1.6"
+                    stroke-linecap="round"
+                    stroke-linejoin="round"
+                    aria-hidden="true"
+                  >
+                    <path d="m6 9 6 6 6-6" />
+                  </svg>
+                </summary>
+                <div class="t-acc-body t-about">
+                  <dl class="t-kv">
+                    <dt>Version web</dt>
+                    <dd>4.18.2 <code>· a41c9e2</code></dd>
+                    <dt>Version API</dt>
+                    <dd>4.18.2 <code>· a41c9e2</code> · production</dd>
+                    <dt>Parité de release</dt>
+                    <dd><span class="v12-tag green">Alignée</span></dd>
+                  </dl>
+                  <div>
+                    <button
+                      type="button"
+                      class="btn sm"
+                      data-toast="Versions copiées : web 4.18.2 · API 4.18.2 (a41c9e2)."
+                    >
+                      <svg
+                        class="icon small"
+                        viewBox="0 0 24 24"
+                        fill="none"
+                        stroke="currentColor"
+                        stroke-width="1.6"
+                        stroke-linecap="round"
+                        stroke-linejoin="round"
+                        aria-hidden="true"
+                      >
+                        <rect x="8" y="8" width="13" height="13" rx="2" />
+                        <path d="M16 8V3H3v13h5" /></svg
+                      >Copier pour le support
+                    </button>
+                  </div>
+                </div>
+              </details>
+            </div>
+
+            <!-- ===== Mon identité ===== -->
+            <div data-tabpanel="prefs:identite" hidden>
+              <form class="v12-form" novalidate data-saved="Identité enregistrée.">
+                <div class="v12-profile-preview">
+                  <span class="avatar">TH</span>
+                  <div>
+                    <h3>Théo Haddad</h3>
+                    <p>Propriétaire de l’espace · theo.haddad@altais-conseil.fr</p>
+                  </div>
+                </div>
+                <div class="v12-fields">
+                  <div class="v12-field">
+                    <label for="t-name">Prénom et nom</label
+                    ><input id="t-name" type="text" name="name" value="Théo Haddad" />
+                  </div>
+                  <div class="v12-field">
+                    <label for="t-job">Fonction</label
+                    ><input id="t-job" type="text" name="job" value="Directeur commercial" />
+                  </div>
+                </div>
+                <div class="v12-field">
+                  <label for="t-sig">Signature des nouvelles préparations</label>
+                  <textarea id="t-sig" name="signature" rows="4">
+Théo Haddad
+Directeur commercial · Altaïs Conseil
+06 14 27 58 90 · theo.haddad@altais-conseil.fr</textarea
+                  >
+                </div>
+                <div class="v12-note">
+                  <svg
+                    class="icon"
+                    viewBox="0 0 24 24"
+                    fill="none"
+                    stroke="currentColor"
+                    stroke-width="1.6"
+                    stroke-linecap="round"
+                    stroke-linejoin="round"
+                    aria-hidden="true"
+                  >
+                    <circle cx="12" cy="12" r="9" />
+                    <path d="M12 11v6m0-10h.01" />
+                  </svg>
+                  <div>
+                    La signature proposée ne modifie pas les brouillons déjà relus. L’adresse de connexion et la double
+                    authentification se règlent dans <a href="settings-compte.html#securite">Sécurité</a>.
+                  </div>
+                </div>
+                <div class="v12-form-actions">
+                  <span class="v12-save-label">Aucune modification en attente</span>
+                  <button type="submit" class="btn primary">Enregistrer les modifications</button>
+                </div>
+              </form>
+            </div>
+
+            <!-- ===== Raccourcis ===== -->
+            <div data-tabpanel="prefs:raccourcis" hidden>
+              <section class="v12-setting-block">
+                <header>
+                  <div>
+                    <h2>Les raccourcis utiles</h2>
+                    <p>Ceux qui servent tous les jours.</p>
+                  </div>
+                </header>
+                <div class="v12-table-wrap">
+                  <table class="v12-table">
+                    <tbody>
+                      <tr>
+                        <td><kbd>⌘ K / Ctrl K</kbd></td>
+                        <td>Ouvrir la recherche globale</td>
+                      </tr>
+                      <tr>
+                        <td><kbd>Échap</kbd></td>
+                        <td>Fermer une fenêtre ou un menu</td>
+                      </tr>
+                      <tr>
+                        <td><kbd>Tab / Maj + Tab</kbd></td>
+                        <td>Parcourir les contrôles</td>
+                      </tr>
+                      <tr>
+                        <td><kbd>Entrée / Espace</kbd></td>
+                        <td>Ouvrir un signal lorsque sa carte a le focus</td>
+                      </tr>
+                    </tbody>
+                  </table>
+                </div>
+                <div class="v12-note">
+                  <svg
+                    class="icon"
+                    viewBox="0 0 24 24"
+                    fill="none"
+                    stroke="currentColor"
+                    stroke-width="1.6"
+                    stroke-linecap="round"
+                    stroke-linejoin="round"
+                    aria-hidden="true"
+                  >
+                    <circle cx="12" cy="12" r="9" />
+                    <path d="M12 11v6m0-10h.01" />
+                  </svg>
+                  <div>Les commandes ne déclenchent jamais une action sensible pendant la saisie d’un texte.</div>
+                </div>
+              </section>
+              <details class="t-acc" data-add="settings-prefs.A7">
+                <summary>
+                  <svg
+                    class="icon"
+                    viewBox="0 0 24 24"
+                    fill="none"
+                    stroke="currentColor"
+                    stroke-width="1.6"
+                    stroke-linecap="round"
+                    stroke-linejoin="round"
+                    aria-hidden="true"
+                  >
+                    <path d="M8 6h13M8 12h13M8 18h13M3 6h.01M3 12h.01M3 18h.01" /></svg
+                  ><span class="grow">Tous les raccourcis <small>· 21 branchés, par endroit</small></span
+                  ><svg
+                    class="icon small"
+                    viewBox="0 0 24 24"
+                    fill="none"
+                    stroke="currentColor"
+                    stroke-width="1.6"
+                    stroke-linecap="round"
+                    stroke-linejoin="round"
+                    aria-hidden="true"
+                  >
+                    <path d="m6 9 6 6 6-6" />
+                  </svg>
+                </summary>
+                <div class="t-acc-body">
+                  <div class="t-kbd-groups">
+                    <div>
+                      <h4>Partout</h4>
+                      <dl>
+                        <dt><kbd>⌘ J</kbd></dt>
+                        <dd>Ouvrir Laura, même au milieu d’une saisie</dd>
+                        <dt><kbd>⌘ /</kbd></dt>
+                        <dd>Ouvrir cette page</dd>
+                        <dt><kbd>⌘ B</kbd></dt>
+                        <dd>Replier la barre latérale</dd>
+                        <dt><kbd>Échap</kbd></dt>
+                        <dd>Fermer, annuler, revenir</dd>
+                      </dl>
+                    </div>
+                    <div>
+                      <h4>Aller à · G puis…</h4>
+                      <dl>
+                        <dt><kbd>G</kbd> <kbd>J</kbd></dt>
+                        <dd>Ma journée</dd>
+                        <dt><kbd>G</kbd> <kbd>C</kbd></dt>
+                        <dd>Comptes</dd>
+                        <dt><kbd>G</kbd> <kbd>P</kbd></dt>
+                        <dd>Affaires</dd>
+                        <dt><kbd>G</kbd> <kbd>T</kbd></dt>
+                        <dd>Vivier</dd>
+                        <dt><kbd>G</kbd> <kbd>M</kbd></dt>
+                        <dd>Missions</dd>
+                        <dt><kbd>G</kbd> <kbd>A</kbd></dt>
+                        <dd>Actions</dd>
+                        <dt><kbd>G</kbd> <kbd>L</kbd></dt>
+                        <dd>Pilotage</dd>
+                      </dl>
+                    </div>
+                    <div>
+                      <h4>Dans un dossier de compte</h4>
+                      <dl>
+                        <dt><kbd>/</kbd></dt>
+                        <dd>Chercher dans le dossier : personnes, signaux, besoins, preuves…</dd>
+                      </dl>
+                    </div>
+                    <div>
+                      <h4>Dans la rafale</h4>
+                      <dl>
+                        <dt><kbd>J</kbd> / <kbd>K</kbd></dt>
+                        <dd>Carte suivante, précédente</dd>
+                        <dt><kbd>E</kbd></dt>
+                        <dd>Modifier le brouillon</dd>
+                        <dt><kbd>Entrée</kbd></dt>
+                        <dd>Valider, copier et ouvrir — jamais un envoi seul</dd>
+                        <dt><kbd>S</kbd> / <kbd>X</kbd></dt>
+                        <dd>Reporter, passer</dd>
+                        <dt><kbd>?</kbd></dt>
+                        <dd>Afficher l’aide de la rafale</dd>
+                      </dl>
+                    </div>
+                  </div>
+                  <div class="v12-note">
+                    <svg
+                      class="icon"
+                      viewBox="0 0 24 24"
+                      fill="none"
+                      stroke="currentColor"
+                      stroke-width="1.6"
+                      stroke-linecap="round"
+                      stroke-linejoin="round"
+                      aria-hidden="true"
+                    >
+                      <circle cx="12" cy="12" r="9" />
+                      <path d="M12 11v6m0-10h.01" />
+                    </svg>
+                    <div>
+                      Sur un écran tactile, ces raccourcis ne s’affichent pas : ils sont réservés au clavier et au
+                      pointeur fin.
+                    </div>
+                  </div>
+                </div>
+              </details>
+            </div>
+          </section>
+        </div>
+        <section class="rv-notes" aria-labelledby="rv-notes-t">
+          <h2 id="rv-notes-t">Points à discuter</h2>
+          <p>Notes de conception pour Louis — hors produit. 6 ajouts, 4 retraits sur cet écran.</p>
+          <ol>
+            <li>
+              <strong>Raccourci ⌘ K en conflit.</strong> Théo l’attribue à la recherche globale ; le produit l’a donné à
+              Laura (⌘ ⇧ K pour la recherche). La maquette suit Théo dans « Les raccourcis utiles » et liste le reste
+              dans le repli, avec Laura sur ⌘ J pour ne pas montrer deux fois la même touche.
+              <em>À trancher : quelle touche ouvre Laura ?</em>
+            </li>
+            <li>
+              <strong>Densité Compacte vs Taille du texte.</strong> Théo remplace la taille par la densité ; on garde
+              les deux (accessibilité). Compacte resserre les blocs mais jamais les cibles (44 px). Si l’écran paraît
+              chargé, la taille du texte pourrait rejoindre Apparence en 4ᵉ vignette « Texte agrandi ».
+            </li>
+            <li>
+              <strong>« Lecture &amp; saisie » est le seul bloc neuf.</strong> Il range trois réglages orphelins (noms,
+              touche d’envoi, barre latérale) plutôt que de les empiler sous Apparence. Alternative : les loger dans
+              Apparence, au prix d’un bloc de huit contrôles.
+            </li>
+            <li>
+              <strong>« À propos » en repli fermé.</strong> Utile au support, inutile au quotidien : il ne prend qu’une
+              ligne. Alternative : le déplacer dans Aide &amp; signalements, à côté de « Préparer un signalement ».
+            </li>
+            <li>
+              <strong>Enregistrement explicite (N5).</strong> Le produit enregistre aujourd’hui à chaque changement ;
+              Théo demande un bouton. Appliqué, mais le thème et la densité agissent tout de suite pour qu’on voie
+              l’effet avant d’enregistrer.
+            </li>
+          </ol>
+        </section>
+      </main>
+    </div>
+    <dialog class="v12-dialog" data-dlg id="dlg-sidebar" aria-labelledby="dlg-sidebar-t" data-add="settings-prefs.A5">
+      <div class="dialog-head">
+        <h2 id="dlg-sidebar-t">Rubriques de la barre latérale</h2>
+        <button class="icon-btn" data-close aria-label="Fermer">
+          <svg
+            class="icon"
+            viewBox="0 0 24 24"
+            fill="none"
+            stroke="currentColor"
+            stroke-width="1.6"
+            stroke-linecap="round"
+            stroke-linejoin="round"
+            aria-hidden="true"
+          >
+            <path d="m6 6 12 12M6 18 18 6" />
+          </svg>
+        </button>
+      </div>
+      <div class="dialog-body">
+        <p class="t-sub" style="margin-bottom: 10px">
+          Une rubrique masquée reste joignable par la recherche et par son raccourci.
+        </p>
+        <div class="t-sidebar-list">
+          <label><input type="checkbox" checked /><span class="grow">Ma journée</span></label>
+          <label><input type="checkbox" checked /><span class="grow">Comptes</span></label>
+          <label><input type="checkbox" checked /><span class="grow">Contacts</span></label>
+          <label><input type="checkbox" checked /><span class="grow">Signaux</span></label>
+          <label><input type="checkbox" checked /><span class="grow">Affaires</span></label>
+          <label><input type="checkbox" checked /><span class="grow">Talents</span></label>
+          <label><input type="checkbox" /><span class="grow">Missions</span></label>
+          <label><input type="checkbox" checked /><span class="grow">Actions</span></label>
+          <label><input type="checkbox" /><span class="grow">Messagerie</span></label>
+          <label
+            ><input type="checkbox" checked disabled /><span class="grow">Paramètres</span
+            ><span class="t-sub">toujours visible</span></label
+          >
+        </div>
+      </div>
+      <div class="dialog-footer">
+        <button type="button" class="btn plain" data-close>Annuler</button
+        ><button type="button" class="btn primary" data-close data-toast="Barre latérale mise à jour.">
+          Appliquer
+        </button>
+      </div>
+    </dialog>
+    <div id="toasts" class="toast-container" role="status" aria-live="polite"></div>
+    <div class="rv" id="rv">
+      <div class="rv-bar">
+        <button
+          type="button"
+          class="rv-theme"
+          id="rv-theme"
+          aria-label="Passer en thème clair"
+          data-sun='<svg class="icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="12" cy="12" r="4"/><path d="M12 2v2m0 16v2M2 12h2m16 0h2M5 5l1.5 1.5m11 11L19 19M5 19l1.5-1.5m11-11L19 5"/></svg>'
+          data-moon='<svg class="icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M20.5 13A8.5 8.5 0 0 1 11 3.5 8.5 8.5 0 1 0 20.5 13Z"/></svg>'
+        >
+          <svg
+            class="icon"
+            viewBox="0 0 24 24"
+            fill="none"
+            stroke="currentColor"
+            stroke-width="1.6"
+            stroke-linecap="round"
+            stroke-linejoin="round"
+            aria-hidden="true"
+          >
+            <circle cx="12" cy="12" r="4" />
+            <path d="M12 2v2m0 16v2M2 12h2m16 0h2M5 5l1.5 1.5m11 11L19 19M5 19l1.5-1.5m11-11L19 5" />
+          </svg>
+        </button>
+        <button
+          type="button"
+          class="rv-theme"
+          id="rv-info"
+          aria-expanded="false"
+          aria-controls="rv-panel"
+          aria-label="Détail des ajouts, retraits et corrections"
+        >
+          <svg
+            class="icon"
+            viewBox="0 0 24 24"
+            fill="none"
+            stroke="currentColor"
+            stroke-width="1.6"
+            stroke-linecap="round"
+            stroke-linejoin="round"
+            aria-hidden="true"
+          >
+            <circle cx="12" cy="12" r="9" />
+            <path d="M12 11v6m0-10h.01" />
+          </svg>
+        </button>
+        <button type="button" class="rv-switch" id="rv-switch" aria-pressed="false">
+          <span class="knob"></span><span class="lbl">Montrer les ajouts</span>
+        </button>
+      </div>
+      <div class="rv-panel" id="rv-panel" hidden>
+        <p class="rv-count"><strong>6 ajouts</strong> par rapport à Théo, entourés en pointillé et étiquetés.</p>
+        <h3>Retiré</h3>
+        <ul>
+          <li>
+            <b>D-8</b> « sauvegarde locale », pied « Aperçu local · Ces réglages ne modifient aucun compte de production
+            », pastille « V22 · aperçu local » et « Commenter cette page » : bandeaux de prototype.
+          </li>
+          <li>
+            <b>T7</b> Barre « Critères par défaut… · Paramètres de matching », répétée à l’identique sur les 20
+            rubriques (GA-26) : le matching garde son unique entrée dans Talents.
+          </li>
+          <li>
+            <b>D-8</b> Pied de barre « Aperçu local · Théo » et « Changer de rôle de démonstration » : remplacés par
+            l’identité de la personne connectée.
+          </li>
+          <li><b>D-8</b> « Langue de cet aperçu » → « Langue ».</li>
+        </ul>
+        <h3>Déplacé</h3>
+        <ul>
+          <li>
+            <b>settings-prefs.A2</b> Relancer le tutoriel, la visite guidée et le scénario commercial →
+            <a href="settings-outils.html#aide">Outils › Aide &amp; signalements</a> (proposition du fichier d’écarts).
+          </li>
+        </ul>
+        <h3>Corrigé (doctrine)</h3>
+        <ul>
+          <li><b>D-1</b> Tutoiement (« Vos préférences », « Choisissez » chez Théo).</li>
+          <li><b>D-2</b> Coordonnées pro en clair : adresse et ligne directe dans l’identité et la signature.</li>
+          <li>
+            <b>N5</b> Le libellé dit l’état réel : « Aucune modification en attente », puis « Modifications à
+            enregistrer » dès qu’un champ change.
+          </li>
+        </ul>
+        <h3>Appliqué tel que Théo le montre</h3>
+        <ul>
+          <li>
+            <b>R1–R6 · N1–N5</b> Vignettes de thème, page de démarrage, bloc Langue &amp; dates, identité et raccourcis
+            en onglets, navigation à 4 groupes avec recherche, densité, signature, fuseau des veilles, bouton
+            d’enregistrement.
+          </li>
+        </ul>
+      </div>
+    </div>
+    <script>
+      ;(function () {
+        var d = document,
+          b = d.body
+        var INDEX = [
+          { l: 'Apparence · clair, sombre, système', w: 'Préférences', u: 'settings-prefs.html#affichage' },
+          { l: 'Densité', w: 'Préférences', u: 'settings-prefs.html#affichage' },
+          { l: 'Taille du texte', w: 'Préférences', u: 'settings-prefs.html#affichage' },
+          { l: 'Page de démarrage préférée', w: 'Préférences', u: 'settings-prefs.html#affichage' },
+          { l: 'Barre latérale', w: 'Préférences', u: 'settings-prefs.html#affichage' },
+          { l: 'Langue & fuseau horaire', w: 'Préférences', u: 'settings-prefs.html#affichage' },
+          { l: 'Affichage des noms', w: 'Préférences', u: 'settings-prefs.html#affichage' },
+          { l: 'Envoi des commentaires (Entrée / ⌘ Entrée)', w: 'Préférences', u: 'settings-prefs.html#affichage' },
+          { l: 'Version et à propos', w: 'Préférences', u: 'settings-prefs.html#affichage' },
+          { l: 'Nom, fonction, signature', w: 'Préférences › Mon identité', u: 'settings-prefs.html#identite' },
+          { l: 'Raccourcis clavier', w: 'Préférences › Raccourcis', u: 'settings-prefs.html#raccourcis' },
+          { l: 'Notifications', w: 'Mon compte', u: 'settings-compte.html#notifications' },
+          { l: 'Plage de tranquillité', w: 'Notifications', u: 'settings-compte.html#notifications' },
+          { l: 'SMS d’alerte urgente', w: 'Notifications', u: 'settings-compte.html#notifications' },
+          { l: 'Laura peut te parler en premier', w: 'Notifications', u: 'settings-compte.html#notifications' },
+          { l: 'Double authentification', w: 'Sécurité', u: 'settings-compte.html#securite' },
+          { l: 'Sessions actives', w: 'Sécurité', u: 'settings-compte.html#securite' },
+          { l: 'Supprimer mon compte', w: 'Sécurité', u: 'settings-compte.html#securite' },
+          { l: 'Exporter mes données', w: 'Mes données', u: 'settings-compte.html#donnees' },
+          { l: 'Confidentialité & durées de conservation', w: 'Mes données', u: 'settings-compte.html#donnees' },
+          { l: 'Profil commercial · cadrage', w: 'Mon espace', u: 'settings-espace.html#profil' },
+          { l: 'Maturité commerciale', w: 'Profil commercial', u: 'settings-espace.html#profil' },
+          { l: 'Périmètres, agences, sociétés', w: 'Mon espace', u: 'settings-espace.html#perimetres' },
+          { l: 'Durées cibles du pipeline', w: 'Règles métier', u: 'settings-espace.html#regles' },
+          { l: 'Ne pas contacter', w: 'Règles métier › Accès', u: 'settings-espace.html#regles' },
+          { l: 'Grille de qualification', w: 'Règles métier › Qualité', u: 'settings-espace.html#regles' },
+          { l: 'Seuil d’alerte de marge', w: 'Règles métier', u: 'settings-espace.html#regles' },
+          { l: 'Motifs de perte, comptes écartés', w: 'Catalogues', u: 'settings-espace.html#catalogues' },
+          { l: 'Vocabulaire & mots à ne jamais lire', w: 'Catalogues', u: 'settings-espace.html#catalogues' },
+          { l: 'Logo, couleur, domaine d’expédition', w: 'Marque & documents', u: 'settings-espace.html#marque' },
+          { l: 'Comportement de Laura', w: 'Laura', u: 'settings-laura.html#comportement' },
+          { l: 'Mémoire de Laura · tout oublier', w: 'Laura', u: 'settings-laura.html#memoire' },
+          { l: 'Documents, styles appris, exemples de messages', w: 'Laura', u: 'settings-laura.html#documents' },
+          { l: 'Routines & veilles', w: 'Laura', u: 'settings-laura.html#routines' },
+          { l: 'Connecteurs · CRM, messagerie, agenda', w: 'Outils', u: 'settings-integrations.html' },
+          { l: 'Réponse d’absence', w: 'Connecteurs › Outlook', u: 'settings-integrations.html#outlook' },
+          { l: 'Imports & export du vivier', w: 'Outils', u: 'settings-outils.html#imports' },
+          { l: 'Accès assistants / MCP · clés d’API', w: 'Outils', u: 'settings-outils.html#mcp' },
+          { l: 'Plan, paiement, factures, crédits', w: 'Facturation', u: 'settings-outils.html#facturation' },
+          { l: 'Journal d’activité', w: 'Outils', u: 'settings-outils.html#journal' },
+          { l: 'Relancer la visite guidée', w: 'Aide & signalements', u: 'settings-outils.html#aide' },
+        ]
+        var SCREEN = b.getAttribute('data-screen')
+        function $(s, r) {
+          return (r || d).querySelector(s)
+        }
+        function $$(s, r) {
+          return Array.prototype.slice.call((r || d).querySelectorAll(s))
+        }
+        var toasts = $('#toasts')
+        function toast(t) {
+          var e = d.createElement('div')
+          e.className = 'toast'
+          e.textContent = t
+          toasts.appendChild(e)
+          setTimeout(function () {
+            e.remove()
+          }, 3200)
+        }
+        // ---- vues d'un écran (les rubriques de la barre latérale qu'il porte) ----
+        var views = $$('[data-view]')
+        function showView(id) {
+          if (!views.length) return
+          var v = views.filter(function (x) {
+            return x.getAttribute('data-view') === id
+          })[0]
+          if (!v) v = views[0]
+          views.forEach(function (x) {
+            x.hidden = x !== v
+          })
+          var nk = v.getAttribute('data-nav-key')
+          var key = SCREEN + ':' + (nk !== null ? nk : v.getAttribute('data-view'))
+          $$('.v12-nav-link[data-nav]').forEach(function (a) {
+            var on = a.getAttribute('data-nav') === key
+            a.classList.toggle('on', on)
+            if (on) a.setAttribute('aria-current', 'page')
+            else a.removeAttribute('aria-current')
+          })
+          var ms = $('#v12-settings-mobile')
+          if (ms)
+            $$('option', ms).forEach(function (o) {
+              o.selected = o.getAttribute('data-nav') === key
+            })
+          var c = $('#t-crumb')
+          if (c && v.getAttribute('data-crumb')) c.textContent = v.getAttribute('data-crumb')
+          if (v.getAttribute('data-title')) d.title = v.getAttribute('data-title')
+        }
+        function route() {
+          var h = location.hash.replace('#', '')
+          var sub = $('[data-anchor="' + h + '"]')
+          if (sub) {
+            var host = sub.closest('[data-view]')
+            if (host) showView(host.getAttribute('data-view'))
+            if (sub.matches('[data-tab]')) sub.click()
+            else if (sub.tagName === 'DETAILS') sub.open = true
+            else if (sub.tagName === 'DIALOG') sub.showModal()
+            else if (sub.hasAttribute('data-open')) sub.click()
+            return
+          }
+          showView(h)
+        }
+        addEventListener('hashchange', function () {
+          route()
+          var m = $('#content')
+          if (m) m.scrollTop = 0
+          scrollTo(0, 0)
+        })
+        // ---- onglets internes ----
+        $$('[data-tabs]').forEach(function (nav) {
+          var g = nav.getAttribute('data-tabs')
+          $$('[data-tab]', nav).forEach(function (a) {
+            a.addEventListener('click', function (e) {
+              e.preventDefault()
+              var t = a.getAttribute('data-tab')
+              $$('[data-tab]', nav).forEach(function (x) {
+                var on = x === a
+                x.classList.toggle('on', on)
+                if (on) x.setAttribute('aria-current', 'page')
+                else x.removeAttribute('aria-current')
+              })
+              $$('[data-tabpanel^="' + g + ':"]').forEach(function (p) {
+                p.hidden = p.getAttribute('data-tabpanel') !== g + ':' + t
+              })
+            })
+          })
+        })
+        // ---- fenêtres, tiroirs ----
+        $$('[data-open]').forEach(function (x) {
+          x.addEventListener('click', function (e) {
+            e.preventDefault()
+            var dl = d.getElementById(x.getAttribute('data-open'))
+            if (dl) {
+              closeMenus()
+              ;['title', 'desc', 'cat'].forEach(function (k) {
+                var v = x.getAttribute('data-' + k)
+                if (v !== null)
+                  $$('[data-slot="' + k + '"]', dl).forEach(function (t) {
+                    t.textContent = v
+                  })
+              })
+              dl.showModal()
+            }
+          })
+        })
+        $$('dialog').forEach(function (dl) {
+          dl.addEventListener('click', function (e) {
+            if (e.target === dl) dl.close()
+            var c = e.target.closest('[data-close]')
+            if (c) {
+              dl.close()
+              if (c.getAttribute('data-toast')) toast(c.getAttribute('data-toast'))
+            }
+          })
+        })
+        // ---- menus ----
+        function closeMenus() {
+          $$('.t-menu').forEach(function (m) {
+            m.hidden = true
+          })
+          $$('[data-menu][aria-expanded="true"]').forEach(function (x) {
+            x.setAttribute('aria-expanded', 'false')
+          })
+        }
+        function place(m, anchor) {
+          m.hidden = false
+          var r = anchor.getBoundingClientRect(),
+            w = m.offsetWidth,
+            h = m.offsetHeight
+          var left = Math.min(Math.max(8, r.right - w), innerWidth - w - 8)
+          var top = r.bottom + 6
+          if (top + h > innerHeight - 8) top = Math.max(8, r.top - h - 6)
+          m.style.left = left + 'px'
+          m.style.top = top + 'px'
+        }
+        $$('[data-menu]').forEach(function (x) {
+          x.addEventListener('click', function (e) {
+            e.preventDefault()
+            e.stopPropagation()
+            var m = d.getElementById(x.getAttribute('data-menu'))
+            var open = !m.hidden
+            closeMenus()
+            if (!open) {
+              place(m, x)
+              x.setAttribute('aria-expanded', 'true')
+              var f = $('button,a', m)
+              if (f) f.focus()
+            }
+          })
+        })
+        d.addEventListener('click', function (e) {
+          if (!e.target.closest('.t-menu')) closeMenus()
+          var t = e.target.closest('[data-toast]')
+          if (t && !t.closest('dialog [data-close]')) {
+            if (t.tagName === 'A') e.preventDefault()
+            toast(t.getAttribute('data-toast'))
+            if (t.closest('.t-menu')) closeMenus()
+          }
+          var sr = e.target.closest('.t-search-res a')
+          if (sr) {
+            $('#t-search-res').hidden = true
+          }
+        })
+        d.addEventListener('keydown', function (e) {
+          if (e.key === 'Escape') closeMenus()
+        })
+        // ---- états segmentés (data-seg) et révélations (data-when) ----
+        $$('[data-seg]').forEach(function (g) {
+          $$('button', g).forEach(function (bt) {
+            bt.addEventListener('click', function () {
+              $$('button', g).forEach(function (x) {
+                x.classList.toggle('on', x === bt)
+                x.setAttribute('aria-pressed', x === bt ? 'true' : 'false')
+              })
+              var key = g.getAttribute('data-seg')
+              $$('[data-when^="' + key + ':"]').forEach(function (w) {
+                w.hidden = w.getAttribute('data-when') !== key + ':' + bt.getAttribute('data-value')
+              })
+            })
+          })
+        })
+        $$('[data-reveal]').forEach(function (inp) {
+          function upd() {
+            var t = d.getElementById(inp.getAttribute('data-reveal'))
+            if (t) t.hidden = !inp.checked
+          }
+          inp.addEventListener('change', upd)
+          upd()
+        })
+        // ---- formulaires : « Modifications à enregistrer » (N5) ----
+        $$('form.v12-form').forEach(function (f) {
+          var lab = $('.v12-save-label', f)
+          f.addEventListener('input', function () {
+            if (lab) {
+              lab.textContent = 'Modifications à enregistrer'
+              lab.classList.add('is-dirty')
+            }
+          })
+          f.addEventListener('submit', function (e) {
+            e.preventDefault()
+            if (lab) {
+              lab.textContent = 'Enregistré à l’instant'
+              lab.classList.remove('is-dirty')
+            }
+            toast(f.getAttribute('data-saved') || 'Modifications enregistrées.')
+          })
+        })
+        // ---- vignettes de thème : elles pilotent vraiment le thème de la page ----
+        $$('input[name="theme"]').forEach(function (r) {
+          r.addEventListener('change', function () {
+            if (r.value === 'light') theme(false)
+            else if (r.value === 'dark') theme(true)
+            else theme(matchMedia('(prefers-color-scheme: dark)').matches)
+          })
+        })
+        // ---- densité : appliquée à la page, cibles ≥ 44 px conservées ----
+        var dens = $('#t-density')
+        if (dens)
+          dens.addEventListener('change', function () {
+            b.classList.toggle('t-compact', dens.value === 'compact')
+          })
+        // ---- recherche d'un réglage (N2) ----
+        var si = $('#v12-settings-search'),
+          sres = $('#t-search-res')
+        function norm(s) {
+          return s.toLowerCase().normalize('NFD').replace(/[̀-ͯ]/g, '')
+        }
+        if (si)
+          si.addEventListener('input', function () {
+            var q = norm(si.value.trim())
+            if (!q) {
+              sres.hidden = true
+              si.setAttribute('aria-expanded', 'false')
+              return
+            }
+            var hits = INDEX.filter(function (x) {
+              return norm(x.l + ' ' + x.w).indexOf(q) >= 0
+            }).slice(0, 7)
+            sres.innerHTML = hits.length
+              ? hits
+                  .map(function (x) {
+                    var u = x.u.indexOf(SCREEN + '.html') === 0 ? x.u.slice(SCREEN.length + 5) || '#' : x.u
+                    return '<a role="option" href="' + u + '"><b>' + x.l + '</b><small>' + x.w + '</small></a>'
+                  })
+                  .join('')
+              : '<p>Aucun réglage ne correspond. Essaie « signature », « export » ou « crédits ».</p>'
+            sres.hidden = false
+            si.setAttribute('aria-expanded', 'true')
+          })
+        var ms = $('#v12-settings-mobile')
+        if (ms)
+          ms.addEventListener('change', function () {
+            var u = ms.value
+            if (u.indexOf(SCREEN + '.html') === 0) location.hash = u.slice(SCREEN.length + 5) || '#'
+            else location.href = u
+          })
+        var mm = $('[data-act="mobile-menu"]')
+        if (mm)
+          mm.addEventListener('click', function () {
+            b.classList.toggle('nav-open')
+          })
+        // ---- relecture : « Montrer les ajouts » ----
+        var sw = $('#rv-switch'),
+          pn = $('#rv-panel')
+        function rv(on) {
+          b.classList.toggle('show-adds', on)
+          if (on)
+            $$('[data-add]').forEach(function (x) {
+              var r = x.getBoundingClientRect()
+              x.classList.toggle(
+                'rv-r',
+                r.left + x.getAttribute('data-add').length * 8 + 24 > d.documentElement.clientWidth,
+              )
+            })
+          sw.setAttribute('aria-pressed', on ? 'true' : 'false')
+          pn.hidden = !on || innerWidth < 768
+          try {
+            localStorage.setItem('rv-adds', on ? '1' : '0')
+          } catch (_) {}
+        }
+        sw.addEventListener('click', function () {
+          rv(sw.getAttribute('aria-pressed') !== 'true')
+        })
+        var inf = $('#rv-info')
+        inf.addEventListener('click', function () {
+          pn.hidden = !pn.hidden
+          inf.setAttribute('aria-expanded', pn.hidden ? 'false' : 'true')
+        })
+        var th = $('#rv-theme')
+        function theme(dark) {
+          d.documentElement.classList.toggle('dark', dark)
+          d.documentElement.style.colorScheme = dark ? 'dark' : 'light'
+          th.innerHTML = dark ? th.dataset.sun : th.dataset.moon
+          th.setAttribute('aria-label', dark ? 'Passer en thème clair' : 'Passer en thème sombre')
+          $$('input[name="theme"]').forEach(function (r) {
+            if (r.value !== 'system') r.checked = (r.value === 'dark') === dark
+          })
+          try {
+            localStorage.setItem('rv-theme', dark ? 'dark' : 'light')
+          } catch (_) {}
+        }
+        th.addEventListener('click', function () {
+          theme(!d.documentElement.classList.contains('dark'))
+        })
+        try {
+          if (localStorage.getItem('rv-adds') === '1') rv(true)
+          var st = localStorage.getItem('rv-theme')
+          theme(st ? st === 'dark' : true)
+        } catch (_) {
+          theme(true)
+        }
+        route()
+        var q = new URLSearchParams(location.search)
+        if (q.get('adds') === '1') rv(true)
+        if (q.get('adds') === '0') rv(false)
+        if (q.get('theme')) theme(q.get('theme') === 'dark')
+        if (q.get('open')) {
+          var od = d.getElementById(q.get('open'))
+          if (od) od.showModal()
+        }
+      })()
+    </script>
+  </body>
+</html>

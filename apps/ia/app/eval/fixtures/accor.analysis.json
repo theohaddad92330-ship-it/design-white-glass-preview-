@@ -1,0 +1,131 @@
+{
+  "_synthetic": true,
+  "_note": "Dossier de test SYNTHÉTIQUE pour le banc d'éval. Les faits firmographiques sont les valeurs RÉELLES et vérifiables dans ce dépôt — app/eval/golden/accor.json, bloc `_source`, relevé le 20/09/2026 sur recherche-entreprises.api.gouv.fr (DINUM, adossé à INSEE Sirene). Les entités et les contacts sont des données de TEST, jamais des affirmations sur des personnes ou des filiales réelles. Le chiffre d'affaires est ABSENT : aucune source du dépôt ne le porte, et un chiffre inventé dans le gardien des chiffres inventés serait la faute même qu'il traque.",
+  "company": "Accor",
+  "research": {
+    "companyName": "Accor",
+    "sector": "Activités des sièges sociaux (NAF 70.10Z)",
+    "siren": "602036444",
+    "employees": "1 000 à 1 999 salariés",
+    "headquarters": "ISSY-LES-MOULINEAUX, 92130, France",
+    "businessDescription": "Unité légale de tête enregistrée sous la dénomination ACCOR, code NAF 70.10Z (activités des sièges sociaux), catégorie grande entreprise.",
+    "subsidiaries": [
+      {
+        "name": "Accor — entité de test A"
+      },
+      {
+        "name": "Accor — entité de test B"
+      }
+    ],
+    "entitiesExhaustive": [
+      {
+        "name": "Accor — direction de test",
+        "type": "direction"
+      },
+      {
+        "name": "Accor — hub IT de test",
+        "type": "hub it",
+        "isItEntity": true
+      }
+    ],
+    "angles": [
+      {
+        "title": "Renfort plateforme de réservation",
+        "strategy": "Renforcer les équipes de la plateforme de réservation en ligne."
+      }
+    ],
+    "recentSignals": [
+      {
+        "signal": "Recrutements ingénierie plateforme",
+        "type": "recrutement",
+        "date": "2026"
+      }
+    ],
+    "budgetSignals": [
+      {
+        "signal": "Recrutements ingénierie plateforme",
+        "source": "offres d'emploi"
+      }
+    ],
+    "confidence": {
+      "score": 78,
+      "tier": "high",
+      "factors": {
+        "sourceCoverage": 0.8
+      }
+    },
+    "sources": {
+      "tags": {
+        "siren": "PUBLIC",
+        "employees": "PUBLIC",
+        "headquarters": "PUBLIC",
+        "sector": "PUBLIC"
+      },
+      "citations": {}
+    }
+  },
+  "gate": {
+    "decision": "go",
+    "score": 3
+  },
+  "classified_contacts": [
+    {
+      "fullName": "Camille Bertrand",
+      "title": "Chief Technology Officer",
+      "decisionRole": "technical",
+      "is_c_level": true
+    },
+    {
+      "fullName": "Hugo Lefèvre",
+      "title": "Engineering Manager — Plateforme",
+      "decisionRole": "user"
+    },
+    {
+      "fullName": "Sarah Nguyen",
+      "title": "Responsable Achats IT",
+      "decisionRole": "procurement"
+    }
+  ],
+  "plan": {
+    "actionPlan": {
+      "phases": [
+        {
+          "name": "Prise de contact",
+          "actions": [
+            {
+              "contact": "Camille Bertrand",
+              "action": "Discuter renfort plateforme de réservation."
+            }
+          ]
+        }
+      ]
+    },
+    "quick_wins": [
+      {
+        "contact": "Hugo Lefèvre",
+        "action": "Partager un retour d'expérience staffing."
+      }
+    ],
+    "contactMessages": [
+      {
+        "contact": "Camille Bertrand",
+        "linkedinMessage": "Sujet renfort plateforme de réservation."
+      }
+    ],
+    "plays": [
+      {
+        "painSignal": "Recrutements ingénierie plateforme",
+        "preuve": {
+          "source": "offres d'emploi",
+          "signal": "Recrutements ingénierie plateforme"
+        },
+        "targetContact": "Camille Bertrand",
+        "esnOffer": "Renfort ingénierie plateforme",
+        "angle": "Renfort plateforme de réservation",
+        "firstAction": "Discuter renfort plateforme de réservation.",
+        "readyMessage": "Sujet renfort plateforme de réservation.",
+        "risk": "Concurrence ESN installées."
+      }
+    ]
+  }
+}

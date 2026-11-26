@@ -1,0 +1,30 @@
+{
+  "name": "@bellum/dashboard-manager",
+  "version": "0.0.1",
+  "private": true,
+  "scripts": {
+    "dev": "next dev -p 3005",
+    "build": "next build",
+    "start": "next start -p 3005",
+    "lint": "eslint .",
+    "check-types": "tsc --noEmit --incremental --tsBuildInfoFile node_modules/.cache/tsc/check-types.tsbuildinfo",
+    "test": "vitest run"
+  },
+  "dependencies": {
+    "@bellum/contracts": "workspace:^",
+    "@sentry/nextjs": "^10.47.0",
+    "@supabase/supabase-js": "^2.118.0",
+    "html2canvas-pro": "^2.5.2",
+    "next": "^15.5.28",
+    "react": "^19.2.8",
+    "react-dom": "^19.2.8"
+  },
+  "devDependencies": {
+    "@bellum/tooling": "workspace:^",
+    "@types/node": "^22.10.2",
+    "@types/react": "^19.2.18",
+    "@types/react-dom": "^19.2.7",
+    "typescript": "^5.7.2",
+    "vitest": "^3.2.7"
+  }
+}

@@ -1,0 +1,21 @@
+lot: lot-783
+issues: [5205]
+
+# Pas d'entrée de changelog : l'import est un geste d'opérateur, rien ne change encore à l'écran (les lecteurs
+# viendront par surface, lots suivants).
+#
+# Démo (craft rule n°9) : les trois tables neuves sont « vides à dessein » — base commune importée par l'opérateur,
+# jamais semée en salle (ce serait un fait de marché inventé). Elles ne vont PAS dans DEMO_INTENTIONALLY_EMPTY :
+# `demo-coverage.spec.ts` n'y accepte que des tables purgées par espace (DEMO_PURGE_*), et une table partagée
+# y serait refusée comme périmée. Le classement vit au registre des portées (`table-scopes.ts`, shared).
+inserts:
+  - file: agent_docs/chantiers-livres.md
+    text: |
+      - **Pack marché v2.1 — importeur + script unique** (#5205, lot 783) — `ingest:market-v2` charge les 139 tables
+        (2 338 468 lignes) en base commune : `market_v2_rows` (cellules non pii en `data jsonb`), coffre
+        `market_v2_row_identities` (cellules pii, identités brutes — décision Louis 03/11), registre
+        `market_v2_datasets` (version = sha256 de MANIFEST.csv ; rejeu idempotent, reprise par table). Garde
+        `market-v2-pii-never-read.spec.ts` : aucun lecteur ne nomme le coffre ni n'extrait une clé pii. `import:tout`
+        enchaîne v2, v1, ORION 10/24/25/50 puis la couverture. Démo : vide à dessein (base commune importée par
+        l'opérateur, hors DEMO_INTENTIONALLY_EMPTY qui ne prend que des tables d'espace). **Aucun lecteur encore** :
+        les surfaces se branchent lot par lot.

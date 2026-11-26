@@ -1,0 +1,30 @@
+lot: vieilles-l13-routines
+issues: [2843, 2102]
+
+changelog:
+  id: 2026-11-01-vieilles-l13-routines
+  comment: 'Lot L13 (#2843 #2102.45) — routines : rôles couverts, reprise après échec, parcours d’activation en sept étapes'
+  fr:
+    date: 1er novembre 2026
+    title: Des routines pour chaque rôle, qui se reprennent seules après un échec
+    items:
+      - 'Neuf routines neuves : entretiens et retours d’entretien, risques déclarés, besoins bloqués, pièces en attente, démarrages sans contrat signé, renouvellements, repositionnement, rappel la veille d’un rendez-vous.'
+      - 'Une routine qui échoue est reprise deux fois (15 puis 30 minutes plus tard) ; après trois échecs elle s’arrête et le dit.'
+      - 'Chaque fiche suit le même parcours : comprendre, voir un exemple, simuler, configurer, valider, activer, observer.'
+      - 'Sur la fiche, les 30 derniers jours d’exécutions réelles et un bouton « Lancer maintenant ».'
+  en:
+    date: November 1, 2026
+    title: Routines for every role, retried on their own after a failure
+    items:
+      - 'Nine new routines: interviews and interview feedback, declared risks, stuck needs, pending documents, starts without a signed contract, renewals, repositioning, a reminder the day before a meeting.'
+      - 'A failing routine is retried twice (15 then 30 minutes later); after three failures it stops and says so.'
+      - 'Every routine page follows the same journey: understand, see an example, simulate, configure, validate, activate, observe.'
+      - 'On the routine page, the last 30 days of real runs and a “Run now” button.'
+
+inserts:
+  - file: agent_docs/chantiers-livres.md
+    text: |
+      - **Routines L13** (#2843.1-.26, #2102.45) — 9 routines neuves N1 éteintes (`routine-catalog.ts`, lectures
+        `talent-routines.service.ts`), reprise retry/backoff + statut `error` après 3 échecs (`routine-retry.ts`),
+        durée par exécution back-office seul (`GET internal/admin/routines/runs`), « lancer maintenant »
+        (`POST routines/:key/run-now`), observation 30 jours, parcours en 7 étapes (`RoutineDetailPage.tsx`).

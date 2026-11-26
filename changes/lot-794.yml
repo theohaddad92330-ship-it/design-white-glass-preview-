@@ -1,0 +1,33 @@
+lot: lot-794
+issues: []
+
+changelog:
+  id: 2026-11-04-lot-794-familles-v2
+  comment: 'Lot 794 — les besoins, signaux et offres de la base commune rattachés aux comptes par le référentiel pivot'
+  fr:
+    date: 4 novembre 2026
+    title: Les besoins, signaux et offres du marché rejoignent la fiche du compte
+    items:
+      - 'La fiche d’un compte et l’Historique des signaux montrent aussi les besoins, signaux et offres observés sur le marché chez le compte et les entreprises de son groupe, avec l’entité nommée.'
+      - Un fait sans date reste visible dans l’Historique, à l’année où il a été vu, au lieu de disparaître.
+      - La recherche de l’Historique trouve ces lignes par leur intitulé et leurs technologies.
+  en:
+    date: November 4, 2026
+    title: Market needs, signals and job offers join the account page
+    items:
+      - 'An account page and the signal History now also show the needs, signals and job offers observed on the market at the account and its group companies, with the entity named.'
+      - An undated fact stays visible in the History, at the year it was seen, instead of disappearing.
+      - The History search finds these lines by title and technologies.
+
+inserts:
+  - file: agent_docs/demo-mode.md
+    text: |
+
+      ## Lot 794 (04/11/2026) — classement démo
+
+      - **Familles du pack v2.1 dans les lignes de signaux (fiche compte, Historique)** — VIDE À DESSEIN : ces lignes
+        viennent de la base commune (`market_v2_rows`) via le référentiel pivot ; un compte de la salle n'en montre que
+        s'il se résout réellement vers une entreprise du pack. Semer de faux besoins de marché dans `demo-dataset.ts`
+        serait une donnée fictive présentée comme un fait observé.
+      - **Rattachement ORION par le référentiel pivot (`ingest:orion-needs`)** — script opérateur, hors salle de
+        démonstration.

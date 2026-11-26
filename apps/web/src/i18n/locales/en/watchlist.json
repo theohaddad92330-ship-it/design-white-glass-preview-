@@ -1,0 +1,372 @@
+{
+  "page": {
+    "title": "Watchlist",
+    "heading": "Signals to watch today, {{name}}",
+    "headingNoName": "Signals to watch today",
+    "manageAlerts": "Set up my alerts",
+    "askLaura": "Which signals deserve an action today?",
+    "askLauraLabel": "Ask {{copilot}}"
+  },
+  "filters": {
+    "groupAria": "Watch facets",
+    "todo": "To handle",
+    "priority": "My priority accounts",
+    "rules": "Matching my rules",
+    "typesAria": "Signal type",
+    "types": {
+      "hiring": "Hiring",
+      "mna": "Acquisition / merger",
+      "exec": "New executive",
+      "funding": "Growth / funding",
+      "tender": "Project / tender",
+      "other": "Other"
+    },
+    "clear": "Show all",
+    "more": "More filters"
+  },
+  "toolbar": {
+    "searchPlaceholder": "Search for an account…"
+  },
+  "table": {
+    "headers": {
+      "account": "Account",
+      "whatMoves": "What's moving",
+      "whyItMatters": "Why it matters",
+      "whoConcerned": "Who it's about",
+      "nextAction": "Next action",
+      "date": "Date"
+    },
+    "viewAccount": "View account",
+    "moreSignals_one": "+{{count}} more",
+    "moreSignals_other": "+{{count}} more",
+    "signalDetected": "Signal detected",
+    "requesterToIdentify": "Requester to identify",
+    "archived": "Archive",
+    "othersShow": "Show the other signals",
+    "othersHide": "Hide the other signals",
+    "openAccount": "Open the {{company}} record",
+    "recurrence": {
+      "hiring": "Hiring signal no. {{count}} in {{days}} days",
+      "need": "Need no. {{count}} expressed in {{days}} days",
+      "signal": "Signal no. {{count}} in {{days}} days"
+    },
+    "preparedMessage": "Prepared message",
+    "preparedMessageQuestionPerson": "Draft the message for {{name}} at {{company}}, based on this fact: “{{fact}}”. Keep it editable.",
+    "preparedMessageQuestion": "Draft the message to send at {{company}}, based on this fact: “{{fact}}”, and tell me who to address it to.",
+    "decisionMakerBadge": "Decision-maker",
+    "followed": "Followed account",
+    "followedEye": "{{company}} is followed — unfollow it",
+    "unfollowTitle": "Unfollow {{company}}?",
+    "unfollowBody": "The account stays in your portfolio; a slot frees up in your follows.",
+    "unfollowCancel": "Cancel",
+    "unfollowConfirm": "Unfollow"
+  },
+  "status": {
+    "new": "New",
+    "toQualify": "To qualify"
+  },
+  "score": {
+    "unknownReason": "no analysis score"
+  },
+  "detail": {
+    "signalHint": "This signal may change the account's priority. Review its impact, the decision-maker involved and the next sales action.",
+    "currentScore": "Current score",
+    "source": "Source",
+    "unknownSource": "Unknown source",
+    "impact": "Scale",
+    "unknownImpact": "Not assessed",
+    "attachment": "Attached to: {{parts}}",
+    "attachmentType": {
+      "hiring": "Hiring",
+      "project": "Project"
+    },
+    "attachmentAria": "Offer attachment",
+    "attachmentUnclassified": "Unclassified — the title names no skill or trade",
+    "requester": "Likely requester: {{who}}",
+    "requesterTeam": "the {{team}} team",
+    "requesterEvidence": "Based on the offer text",
+    "currentlyVerified": "Verified",
+    "superseded": "Superseded",
+    "nextStep": "Next step",
+    "nextStepTitle": "Decide whether this signal deserves action",
+    "nextStepDescription": "Identify the right contact and turn the signal into an outreach angle.",
+    "openAccount": "Open the account file",
+    "createReminder": "Notify me automatically",
+    "freshness_one": "Freshness: {{count}} day",
+    "freshness_other": "Freshness: {{count}} days",
+    "askLaura": "What should I do about the \"{{signal}}\" signal at {{company}}?",
+    "askLauraLabel": "Ask what to do",
+    "dialogDescription": "The signal in detail, and what you can do with it. The arrows move from one account to the next in the list on screen.",
+    "previousAccount": "Previous account",
+    "nextAccount": "Next account"
+  },
+  "emptyState": {
+    "errorTitle": "Unable to load the watchlist",
+    "errorDescription": "Please try again in a few moments.",
+    "filteredTitle": "No account matches the filters",
+    "filteredDescription": "Widen the filters or adjust your search to find your accounts.",
+    "clearFilters": "Clear filters and search",
+    "noAccountsTitle": "No signal to track yet",
+    "noAccountsDescription": "Signals come from the accounts you analyse. Add a first account and the watchlist will fill itself.",
+    "discoverAction": "Discover accounts",
+    "noSignalTitle": "No matching signal",
+    "noSignalDescription": "Adjust the search or the filter to find a tracked account."
+  },
+  "model": {
+    "sectorFallback": "Sector not specified",
+    "sourceFallback": "{{brand}} analysis",
+    "typeFallback": "Signal"
+  },
+  "importance": {
+    "high": "High importance",
+    "highWhy": "Recent and sourced signal: it can be quoted as is.",
+    "medium": "Medium importance",
+    "mediumWhy": "Recent signal with no citable source: cross-check before using it.",
+    "low": "Low importance",
+    "lowWhy": "Archived signal (over 24 months old): no longer a trigger."
+  },
+  "action": {
+    "create": "Turn into an action",
+    "triggeredTitle": "Triggered",
+    "toastCreated": "Added to the plan: {{label}}",
+    "toastViewInPlan": "View in the plan",
+    "toastFailed": "Could not create the action"
+  },
+  "history": {
+    "title": "Signal history",
+    "firstDetected": "First detected by {{brand}} on {{date}}.",
+    "trackedSince": "Tracked since {{date}} (already there on that date).",
+    "changed_one": "Updated {{count}} time since (date, source or wording).",
+    "changed_other": "Updated {{count}} times since (date, source or wording).",
+    "lastSeen": "Still present in the {{date}} analysis.",
+    "resolvedOn": "Gone since {{date}}: requalify.",
+    "resolved": "No longer in the latest analysis: requalify.",
+    "verified": "Verified by you on {{date}}.",
+    "verifyAction": "Mark as verified",
+    "verifyToastSuccess": "Signal marked as verified",
+    "verifyToastFailed": "Could not verify this signal"
+  },
+  "why": {
+    "title": "Why {{brand}} is showing you this",
+    "priorityAccount": "Priority account in your portfolio (score {{score}}/10).",
+    "scoredAccount": "Account scored {{score}}/10 against your profile.",
+    "fresh_one": "Signal detected {{count}} day ago — the approach window is open.",
+    "fresh_other": "Signal detected {{count}} days ago — the approach window is open.",
+    "freshToday": "Signal detected today — the approach window is open.",
+    "dated_one": "Signal dated {{count}} day ago — check it still stands.",
+    "dated_other": "Signal dated {{count}} days ago — check it still stands.",
+    "archived": "Old signal (over 24 months): requalify before any approach.",
+    "typeHiring": "Committed hiring means the budget is already voted.",
+    "typeFunding": "A funding round opens fresh budget in the short term.",
+    "typeExec": "A new executive reshuffles priorities: the first 100 days decide.",
+    "typeTender": "A public tender means a formalised, dated need.",
+    "typeMna": "An acquisition triggers IT convergence programmes."
+  },
+  "rules": {
+    "sectionLabel": "Custom watch rules",
+    "sectionDescription": "Add what you want to keep an eye on. {{brand}} highlights the signals that match your rules.",
+    "kindSelectLabel": "Rule type",
+    "valueInputLabel": "Rule value",
+    "addButton": "Add",
+    "loading": "Loading your rules…",
+    "empty": "No rules yet. Add a sector, a technology, an account, a need or a person to watch.",
+    "errorLoad": "Couldn't load your rules. Please try again shortly.",
+    "errorCreate": "Couldn't add this rule. Please try again.",
+    "remove": "Remove the rule {{value}}",
+    "kindLabels": {
+      "sector": "Sector",
+      "techno": "Technology",
+      "account": "Account",
+      "need": "Need",
+      "person": "Person"
+    },
+    "placeholders": {
+      "sector": "e.g. Banking, Insurance, Healthcare…",
+      "techno": "e.g. SAP, ServiceNow, Kubernetes…",
+      "account": "e.g. SNCF, Decathlon…",
+      "need": "e.g. Cybersecurity, Cloud migration…",
+      "person": "e.g. Chief Information Officer…"
+    },
+    "match": "Matches your rule: {{value}}"
+  },
+  "need": {
+    "hiring": "They are hiring: a need for extra capacity is likely.",
+    "mna": "Acquisition or merger: integrating their information systems is ahead.",
+    "exec": "New executive: a review of suppliers is likely.",
+    "funding": "Funding or growth: scaling up is likely.",
+    "tender": "Contract or tender: a project is under way.",
+    "fallbackSignal": "Signal “{{type}}”",
+    "fallbackSignalBare": "Signal",
+    "fallback": "{{head}}: no service need identified for this type of signal: to be qualified with you.",
+    "fallbackBare": "No typed signal: account followed, no service need identified yet."
+  },
+  "nextAction": {
+    "call": "Call {{name}}",
+    "write": "Write to {{name}}",
+    "proposeProfile": "Propose a profile to {{name}}",
+    "identify": "Identify the decision maker"
+  },
+  "rank": {
+    "priority": "Priority account",
+    "signalsThisMonth_one": "{{count}} signal this month",
+    "signalsThisMonth_other": "{{count}} signals this month",
+    "rule": "matches your rule \"{{rule}}\"",
+    "lastSignal": "{{type}} signal",
+    "lastSignalBare": "Signal",
+    "detectedToday": "detected today",
+    "detected_one": "detected {{count}} day ago",
+    "detected_other": "detected {{count}} days ago"
+  },
+  "discard": {
+    "heading": "Set aside ({{count}})",
+    "internship": "Internship or work-study offer",
+    "general": "General news, no commercial trigger",
+    "noReason": "No usable reason yet"
+  },
+  "list": {
+    "showAll": "Show all ({{count}})"
+  },
+  "watches": {
+    "back": "Back to the library",
+    "eyebrow": "Account watches",
+    "title": "The topics you follow.",
+    "subtitle": "Choose your accounts and rules. New signals join the library.",
+    "tabsAria": "What you follow",
+    "tabs": {
+      "rules": "Cross-cutting rules",
+      "follows": "Followed accounts",
+      "alerts": "Search alerts"
+    },
+    "rules": {
+      "intro": "Cross-cutting rules, valid across your whole market rather than one account: a sector, a technology, a keyword. The signals they find join the library, tagged “matches your rule”."
+    },
+    "follows": {
+      "intro": "Followed accounts feed the library. Unfollowing an account deletes nothing.",
+      "meter": "{{count}} / {{max}} followed accounts",
+      "unfollowNamed": "Unfollow {{name}}",
+      "followNamed": "Follow {{name}}",
+      "follow": "Follow",
+      "none": "You are not following any account yet.",
+      "suggestions": "Suggestions",
+      "suggestionHint": "Your most recently analysed account",
+      "capReached": "You already follow {{max}} accounts: unfollow one before following another.",
+      "loadError": "Could not read your followed accounts."
+    },
+    "alerts": {
+      "intro": "Your saved searches, replayed on a schedule. A new account in the result becomes a “Search alert” signal.",
+      "none": "No saved search is replayed on a schedule.",
+      "active": "Active",
+      "allSearches": "All your saved searches"
+    },
+    "footer": "Private data remains subject to the rights and connectors actually plugged in.",
+    "notificationPrefs": "Notification preferences",
+    "rulesMovedHere": "Watch rules are set in My watches.",
+    "openWatches": "Open My watches",
+    "configure": "Set up a watch"
+  },
+  "library": {
+    "eyebrow": "Commercial watch",
+    "title": "Signals",
+    "subtitle": "What moves on your accounts, in one place.",
+    "myWatches": "My watches",
+    "addSignal": "Add a signal",
+    "tabsAria": "Signal library",
+    "tabs": {
+      "all": "All signals",
+      "saved": "Saved",
+      "dismissed": "Dismissed",
+      "trash": "Trash"
+    },
+    "searchPlaceholder": "Search news or an account…",
+    "accountFilter": "Filter by account",
+    "allAccounts": "All accounts",
+    "accountsCount": "{{count}} accounts",
+    "viewAria": "Display",
+    "view": {
+      "list": "List",
+      "byAccount": "By account"
+    },
+    "sortAria": "Sort",
+    "sort": {
+      "trade": "My trade first",
+      "recent": "Most recent",
+      "oldest": "Oldest"
+    },
+    "filters": {
+      "button": "Filters",
+      "title": "Filters",
+      "description": "Several choices are possible in each section.",
+      "nature": "Signal nature",
+      "date": "Date of the fact",
+      "lastDays_one": "{{count}} day",
+      "lastDays_other": "{{count}} days",
+      "reset": "Reset all",
+      "apply": "See the signals"
+    },
+    "selectShown_one": "Select the {{count}} shown",
+    "selectShown_other": "Select the {{count}} shown",
+    "selectOne": "Select {{title}}",
+    "selectedCount_one": "{{count}} selected",
+    "selectedCount_other": "{{count}} selected",
+    "bulk": {
+      "save": "Save",
+      "trash": "Move to trash",
+      "restore": "Restore"
+    },
+    "total_one": "{{count}} signal",
+    "total_other": "{{count}} signals",
+    "moreFor": "More actions for {{title}}",
+    "menu": {
+      "detail": "Read the detail",
+      "account": "Open the account",
+      "save": "Save",
+      "unsave": "Remove from saved",
+      "trash": "Move to trash",
+      "restore": "Restore"
+    },
+    "hiringIsNotMission": "Employee hiring ≠ open assignment",
+    "probableNeed": "Probable need",
+    "makeAction": "Make it an action",
+    "showNext_one": "Show the next one",
+    "showNext_other": "Show the next {{count}}",
+    "shownOf": "{{shown}} of {{total}} · Results already available, no extra search.",
+    "loading": "Loading signals…",
+    "errorTitle": "Could not load signals",
+    "errorBody": "Try again in a moment.",
+    "empty": {
+      "all": "No signal yet. They come from the accounts you analyse.",
+      "saved": "No saved signal.",
+      "dismissed": "No dismissed signal.",
+      "trash": "The trash is empty."
+    },
+    "emptyFilteredTitle": "No signal matches these filters.",
+    "emptyFilteredBody": "Widen the search or reset the filters.",
+    "discoverAction": "Find accounts in Discover",
+    "detailDescription": "The signal detail and what it can change for this account.",
+    "add": {
+      "title": "Add a signal",
+      "description": "A fact you noted yourself, attached to an account.",
+      "account": "Account concerned",
+      "accountPlaceholder": "Choose an account",
+      "nature": "Signal nature",
+      "fact": "The information to keep",
+      "factPlaceholder": "The fact, as you read or heard it.",
+      "date": "Date of the fact",
+      "datePlaceholder": "E.g. published on 18/10",
+      "noAutomation": "No task, opportunity or contact is created automatically.",
+      "cancel": "Cancel",
+      "submit": "Add the signal",
+      "done": "Signal added to the library.",
+      "error": "Could not add this signal.",
+      "close": "Close"
+    },
+    "close": "Close",
+    "actionDialog": {
+      "title": "Turn it into an action",
+      "label": "Action",
+      "helper": "The action joins the account plan and My day. A completed action does not mean a message was sent.",
+      "cancel": "Cancel",
+      "submit": "Add to plan"
+    }
+  }
+}

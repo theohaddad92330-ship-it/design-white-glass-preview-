@@ -1,0 +1,14 @@
+# Rapport PR 12C — lot INTÉGRATIONS (#4510, #4511)
+
+Branche `claude/pr12c-integrations` (base `claude/r23-integ-pr12c`). Écran : `/integrations` (`IntegrationCenterPage.tsx`).
+
+- **#4511 en-tête : conforme.** Titre + phrase + « Importer un fichier » (→ `/settings/import`) + « Comment travailler ici ? » repliable (`ScreenGuideLink`) + onglets Connecteurs / À relire (compteur, même à 0) / Historique + un seul champ « Chercher un outil » (nom ou apport).
+- **#4510 cartes : conforme.** `ConnectorTile` = logo, nom, apport, phrase (2 lignes max), état Branché / À reconnecter / Non connecté, « Voir le parcours » ; « Reconnecter » en plus sur autorisation expirée. Le tiroir `ConnectorDrawer` est branché (carte complète, Déconnecter inclus) ; cinq légendes de famille.
+- **Retiré** : `IntegrationsHero` (pastilles de compteurs, supprimé) ; `LauraSourcesPanel` (« Ce que Laura lit », sans autre appelant ni garde : supprimé avec son test) ; filtres d'état/famille et `applyConnectorFilters` (sans appelant). Clés i18n mortes retirées fr+en (`hero`, `summary*`, `filters`, `lauraSources`, `families.*` sauf `apiKeys`, `importEntry.cta`).
+- **Où vont les gestes** : connexion, déconnexion, diagnostic, première synchro, reprise, domaine/sandbox → tiroir. « Reconnecter » de la carte ouvre le tiroir sur le bouton Reconnecter de la carte complète (Salesforce redemande son domaine, #4431.2) : ce n'est pas un appel OAuth direct.
+- **Garde** `filter-rows-use-the-shared-chip` : l'écran sort de `MIGRATED` (plus aucune rangée de filtres), avec la raison en commentaire.
+- **Démo** : rien à semer. Le calque de lecture existant montre Gmail et HubSpot « Branché », les autres « Non connecté ». Aucun « À reconnecter » n'est fabriqué (doctrine : pas de connexion fictive).
+- **À trancher par Louis** : (1) titre « **Tes** outils… » (maquette + tutoiement) au lieu de « Vos » écrit dans le contrat ; (2) gardés sous la grille, hors maquette : Par quoi commencer, préférences de notification, clés d'API (la maquette les renvoie vers Outils › MCP et Mon compte) ; (3) état « À synchroniser » (Lemlist) de la maquette non repris (hors contrat).
+- **Tests** : rouge → vert sur `ConnectorTile.test` (7), `ConnectorDrawer.test` (4, nouveau, carte réelle), `IntegrationCenterPage.structure.test` (7) ; verts aussi `ImportEntryCard`, `connectors`, `connector-tiles`, `compact-until-connected`, `diagnostics-mounted`, `tool-registry-single-call`, i18n (5 gardes), changelog. `tsc -p apps/web` : 0 error TS. `vitest src/architecture` : 241 fichiers verts (après build local des paquets `@bellum/*` sans `dist`). knip types : vert.
+- **Changelog** : `2026-10-24-pr12c-integrations` (fr+en). Commit `chore: prettier maquettes` exigé par le hook pre-push (11 fichiers docs non touchés).
+- **SHA** : feat `abea61627`, prettier `b780fc5dd`, refactor `2be27edd3` (+ ce rapport).

@@ -1,0 +1,101 @@
+{
+  "title": "Keyboard shortcuts",
+  "subtitle": "Only shortcuts that are actually wired are listed here.",
+  "menuEntry": "Keyboard shortcuts",
+  "keys": {
+    "mod": "Ctrl",
+    "escape": "Esc",
+    "shift": "Shift"
+  },
+  "spoken": {
+    "chord": "shortcut: {{keys}}",
+    "sequence": "shortcut: {{first}} then {{rest}}"
+  },
+  "scopes": {
+    "goto": {
+      "name": "Go to",
+      "explainer": "A two-step sequence: press G, release, then type the letter. It stays quiet while you are typing in a field, and it expires after a second and a half."
+    },
+    "global": {
+      "name": "Everywhere",
+      "explainer": "A chord: both keys at once, on any screen. Only {{copilot}}'s shortcut also answers from inside a text field."
+    },
+    "dossier": {
+      "name": "In an account file",
+      "explainer": "A single key, on an account file. It stays quiet while you are typing in a field."
+    },
+    "rafale": {
+      "name": "In burst mode",
+      "explainer": "Single keys, in burst mode (one card at a time, full screen). They stay quiet while you are typing in a field."
+    }
+  },
+  "rafale": {
+    "next": "Next card",
+    "prev": "Previous card",
+    "edit": "Edit the draft",
+    "primary": "Approve, copy and open, or mark done",
+    "snooze": "Postpone",
+    "skip": "Skip",
+    "help": "Show or hide this help",
+    "escape": "Exit burst mode"
+  },
+  "dossier": {
+    "search": "Search the account file"
+  },
+  "goto": {
+    "accounts": "Accounts",
+    "projects": "Opportunities",
+    "talents": "Talent",
+    "missions": "Assignments",
+    "actions": "Actions",
+    "pilotage": "Steering",
+    "today": "My day"
+  },
+  "global": {
+    "launcher": "{{copilot}}",
+    "help": "This page",
+    "sidebar": "Collapse the sidebar",
+    "escape": "Close, cancel, go back",
+    "search": "Global search"
+  },
+  "describe": {
+    "laura": "Opens {{copilot}} from anywhere — even mid-sentence in a field.",
+    "help": "Opens this page.",
+    "sidebar": "Collapses the sidebar down to its icons, and opens it again.",
+    "escape": "Closes the open panel or dialog, cancels what you were typing.",
+    "global-search": "Opens search across accounts, contacts, needs, consultants, assignments, actions and settings, from anywhere.",
+    "goto-today": "Opens the daily brief: what deserves your attention now.",
+    "goto-accounts": "Opens the list of your accounts.",
+    "goto-projects": "Opens your pipe and the needs attached to it.",
+    "goto-talents": "Opens the consultant pool.",
+    "goto-missions": "Opens the assignments in progress.",
+    "goto-actions": "Opens the log of your actions.",
+    "goto-pilotage": "Opens steering: your figures and the axes behind them.",
+    "dossier-search": "Puts the cursor in the account file search: people, entities, signals, projects, needs, assignments, actions, proofs, history and sources, without knowing which section they live in.",
+    "rafale-next": "Moves to the next card of the deck.",
+    "rafale-prev": "Goes back to the previous card of the deck.",
+    "rafale-edit": "Opens the card draft so you can edit it before approving.",
+    "rafale-primary": "Does the main gesture of the card; never sends a message on its own.",
+    "rafale-snooze": "Postpones the card to later.",
+    "rafale-skip": "Skips the card without handling it.",
+    "rafale-help": "Shows or hides the list of burst shortcuts."
+  },
+  "page": {
+    "subtitle": "What they do, where they answer, and how they read on your keyboard.",
+    "needsKeyboard": "These shortcuts need a physical keyboard. On a touch screen, everything they do stays reachable by hand, through the navigation.",
+    "columns": {
+      "keys": "Keys",
+      "action": "What it does",
+      "scope": "Scope"
+    },
+    "customize": {
+      "title": "Changing them",
+      "intro": "Not possible yet — and rather than leave you guessing, here is exactly what is missing.",
+      "blockers": {
+        "handler": "Collapsing the sidebar is handled by a shared component that cannot read your settings. A key remapped here would show up without triggering anything.",
+        "reserved": "Remapping a chord means knowing which ones your browser and your operating system have already taken. Without that list, we would cost you a shortcut you use a hundred times a day.",
+        "perDevice": "Your interface settings are kept in this browser today, so on this machine. A shortcut remapped here would not exist on your other computer — and a gesture that changes from one machine to the next is never learnt."
+      }
+    }
+  }
+}

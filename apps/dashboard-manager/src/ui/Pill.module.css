@@ -1,0 +1,33 @@
+/* #1642 — Pill : filtre cliquable, état actif. */
+.pill {
+  display: inline-flex;
+  align-items: center;
+  gap: 4px;
+  padding: 4px 12px;
+  border-radius: 999px;
+  border: 1px solid var(--border);
+  background: var(--surface);
+  color: var(--muted);
+  font-size: 12px;
+  font-family: inherit;
+  cursor: pointer;
+  white-space: nowrap;
+}
+
+.pill:hover {
+  border-color: var(--accent);
+  color: var(--text);
+}
+
+.active {
+  border-color: var(--accent);
+  color: var(--text);
+  background: color-mix(in srgb, var(--accent) 14%, var(--surface));
+}
+
+/* Cibles tactiles : ≥ 44 px dès que le pointeur est grossier (GA-30). */
+@media (pointer: coarse) {
+  .pill {
+    min-height: 44px;
+  }
+}

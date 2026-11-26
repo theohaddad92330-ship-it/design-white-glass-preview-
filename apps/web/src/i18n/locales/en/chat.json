@@ -1,0 +1,2827 @@
+{
+  "panel": {
+    "aria": "{{copilot}} — shared thread",
+    "closeAria": "Close {{title}}"
+  },
+  "header": {
+    "titleDefault": "{{copilot}}",
+    "titleWithAccount": "{{copilot}} · {{name}}",
+    "subtitle": "Collaborative conversation, controlled context",
+    "showConversationsAria": "Show conversations",
+    "showContextAria": "Show context",
+    "closeAria": "Close {{copilot}}"
+  },
+  "main": {
+    "aria": "Conversation with {{copilot}}"
+  },
+  "conversations": {
+    "title": "Conversations",
+    "aria": "Recent conversations",
+    "searchSrLabel": "Search conversations",
+    "searchPlaceholder": "Search...",
+    "loadError": "Unable to load conversations.",
+    "empty": "No conversation found.",
+    "generalTitle": "{{copilot}}",
+    "now": "Now",
+    "unnamedAccount": "Unnamed account",
+    "savedUntitled": "Untitled thread",
+    "draftTitle": "New conversation",
+    "newThreadAria": "New conversation with {{name}}",
+    "threadsAria": "{{name}} conversations",
+    "groupEmpty": "No conversation yet — start one."
+  },
+  "nav": {
+    "answerReady": "A reply from {{copilot}} is ready"
+  },
+  "home": {
+    "greetingNoName": "What shall we work on?",
+    "subtitle": "I can work on your portfolio and your bench — then check what deserves action today.",
+    "subtitleWithMarketMemory": "I can work on your portfolio, your bench and {{brand}}'s market references — then check what deserves action today.",
+    "suggestions": {
+      "findCompatibleAccounts": {
+        "label": "Find compatible accounts",
+        "prompt": "Find me accounts that fit my offer, in my target sector.",
+        "benefit": "A list of accounts to prioritize, with the reason for each."
+      },
+      "analyzeCompany": {
+        "label": "Analyze a company",
+        "prompt": "I want to analyze a company.",
+        "benefit": "A full conquest file in a few minutes."
+      },
+      "zoneOpportunities": {
+        "label": "Opportunities around my area",
+        "prompt": "Show me the opportunities around my geographic area.",
+        "benefit": "What's hiring and what's opening up near you."
+      },
+      "whereInvestTime": {
+        "label": "Which accounts should I work this week?",
+        "prompt": "Compare my accounts and tell me which ones genuinely deserve my time this week, with proof.",
+        "benefit": "The accounts that genuinely deserve your time, with the reason for each."
+      },
+      "consultantAvailable": {
+        "label": "Position an available consultant",
+        "prompt": "I have a consultant available: where should I position them?",
+        "benefit": "The accounts and projects that best match their profile.",
+        "promptFor": "{{name}} is available: where should I position them?"
+      },
+      "matchVivier": {
+        "label": "Match my bench to known needs",
+        "prompt": "Match my bench against the needs and projects currently detected.",
+        "benefit": "The possible matches between your bench and the demand already detected."
+      },
+      "matchingEnvironments": {
+        "label": "Matching environments",
+        "prompt": "Which environments best match my bench's skills?",
+        "benefit": "The accounts whose stack matches what your bench can do."
+      },
+      "findAccessPath": {
+        "label": "Find who to go through to get into an account",
+        "prompt": "Find me who to go through to get into an account I can't get into.",
+        "benefit": "The entry points ranked by ease, with the reason for each rank.",
+        "promptFor": "Find me who to go through to get into {{name}}."
+      },
+      "whatsChanged": {
+        "label": "What's changed",
+        "prompt": "Tell me what's changed since Monday on my priority accounts, and what it triggers.",
+        "benefit": "The recent signals worth acting on this week."
+      },
+      "rank2PartnerUsage": {
+        "label": "Look for an entry through my partners",
+        "prompt": "Surface the possible rank-2 opportunities with my current partners.",
+        "benefit": "The accounts where a partner you already know could open a door — a potential route, to confirm with them."
+      },
+      "prepareMeeting": {
+        "label": "Prepare my next meeting",
+        "prompt": "Prepare my next meeting.",
+        "benefit": "A brief to review: stakes, contacts and questions to ask. With no calendar connected, I ask you for what's missing."
+      }
+    },
+    "suggestionFamilies": {
+      "decide": "Decide",
+      "analyse": "Analyse",
+      "discover": "Discover",
+      "find": "Find",
+      "position": "Position",
+      "prepare": "Prepare",
+      "act": "Act",
+      "steer": "Steer"
+    },
+    "knownAccount": {
+      "label": "I have an account in mind",
+      "prompt": "I want to position a profile at an account I already have in mind. Which account, and which profile?",
+      "promptFor": "I want to position a profile at {{name}}. Profile wanted: "
+    },
+    "catalogLink": "All request ideas",
+    "resume": {
+      "label": "Resume: {{title}}",
+      "dismiss": "Stop suggesting this",
+      "region": "Resume your work"
+    },
+    "pickTarget": {
+      "account": "Which account?",
+      "consultant": "Which consultant?",
+      "cancel": "Cancel"
+    },
+    "sections": {
+      "start": {
+        "title": "Start a piece of work",
+        "hint_one": "One way to start",
+        "hint_other": "{{count}} ways to start"
+      }
+    },
+    "hello": "Hello {{name}}."
+  },
+  "opener": {
+    "withName": "Hi {{firstName}}. {{body}}",
+    "withoutName": "Hi. {{body}}",
+    "demo": "This is a demo workspace with fictional accounts: pick one of the suggested questions to see how I work.",
+    "account": "I'm working on {{account}}. I can tell you what changed, who to contact and what to say. Where do we start?",
+    "newcomer": "I don't know much about your business yet. The best starting point: analyze an account you know well, or complete your context. Give me a company name and I'll start.",
+    "neutral": "What are we working on?",
+    "justOnboardedWithName": "Thanks {{firstName}}. I suggest testing an account you know well, or an available consultant, right away: it's the best way to check that I understood your business. Give me a company or consultant name and I'll take it from there.",
+    "justOnboarded": "Thanks. I suggest testing an account you know well, or an available consultant, right away: it's the best way to check that I understood your business. Give me a company or consultant name and I'll take it from there.",
+    "brief": {
+      "greetingWithName": "Hi {{firstName}}. Here's your day in three parts.",
+      "greeting": "Hi. Here's your day in three parts.",
+      "scopeLead": "This brief covers your own day, not your team's.",
+      "changed": {
+        "title": "What changed",
+        "account": "{{company}} moved",
+        "accountsMore_one": "and {{count}} more followed account moved",
+        "accountsMore_other": "and {{count}} more followed accounts moved",
+        "conflicts_one": "{{count}} overlap in your calendar",
+        "conflicts_other": "{{count}} overlaps in your calendar",
+        "positiveReplies_one": "{{count}} positive reply in your inbox",
+        "positiveReplies_other": "{{count}} positive replies in your inbox",
+        "unread_one": "{{count}} unread message from an external contact",
+        "unread_other": "{{count}} unread messages from external contacts",
+        "overdue_one": "{{count}} overdue task",
+        "overdue_other": "{{count}} overdue tasks",
+        "nothing": "Nothing new in what I could read.",
+        "unreadable": "I couldn't read your sources: I don't know yet what changed."
+      },
+      "silence": {
+        "agenda": {
+          "not_connected": "Your calendar isn't connected: I can't see your meetings.",
+          "missing_scope": "Your calendar is connected but doesn't let me read it: I can't see your meetings.",
+          "unavailable": "Your calendar didn't respond: I don't know what changed there.",
+          "provider_disabled": "Access to your calendar is switched off on the provider side: I can’t see your meetings, and it won’t come back on its own.",
+          "partial": "One of your calendars didn't respond: some meetings may be missing."
+        },
+        "mailbox": {
+          "not_connected": "Your inbox isn't connected: I can't see your follow-ups or replies.",
+          "missing_scope": "Your inbox is connected but doesn't let me read it: I can't see your follow-ups or replies.",
+          "unavailable": "Your inbox didn't respond: I don't know what changed there.",
+          "provider_disabled": "Access to your mailbox is switched off on the provider side: I can’t see your follow-ups or replies, and it won’t come back on its own.",
+          "partial": "One of your mailboxes didn't respond: some messages may be missing."
+        },
+        "tasks": "Your tasks couldn't be read."
+      },
+      "prepared": {
+        "title": "What I prepared",
+        "nothing": "Nothing ready yet: I haven't prepared any draft or list for you. Tell me where to start and I'll get on it.",
+        "unreadable": "Without your sources, I can't tell you what's ready."
+      },
+      "advice": {
+        "title": "What I recommend",
+        "first": "I'd start here: {{headline}}.",
+        "firstWithAction": "I'd start here: {{headline}}. {{action}}",
+        "nothing": "Nothing stands out as a priority in what I could read. Where do we start?",
+        "nothingMissing": "Nothing stands out as a priority in what I could read, and part of your sources is out of my reach. Where do we start?",
+        "unreadable": "I won't recommend anything blind: {{retry}}, or tell me where to start.",
+        "retry": "try again from My day"
+      }
+    }
+  },
+  "messages": {
+    "noReply": "No reply.",
+    "connectionError": "Connection to the AI service failed. Try again.",
+    "quotaExplainer": "Only your own requests count: when {{copilot}} asks you a follow-up question, your answer costs nothing.",
+    "typingAria": "{{copilot}} is writing a reply",
+    "assistantName": "{{copilot}}",
+    "replyCut": "The reply was cut off on the way — often a service update. Your question went through: retry it.",
+    "relaunch": "Retry",
+    "networkLost": "Connection lost — nothing was sent. Check your connection, then send your message again.",
+    "sessionExpired": "Your session has expired. Sign in again, then resend your message — it wasn’t lost.",
+    "replied": "{{copilot}} replied.",
+    "authorLabel": "Message from {{firstName}}",
+    "stopped": "Response stopped — the text already received stays displayed.",
+    "interruptedByNavigation": "This exchange was interrupted when you switched threads — the reply never finished. Send your question again to retry.",
+    "replyNotSaved": "This reply is shown, but it couldn’t be saved — the thread may stay “awaiting” in the list until you send your question again.",
+    "stoppedAnnouncement": "Response stopped.",
+    "cancelledAnnouncement": "Send cancelled — your text is back in the field.",
+    "notSentKept": "Your message was not sent: it is kept as a draft in the conversation where you wrote it.",
+    "knownIncident": "Known incident, we are on it: {{message}}",
+    "copyQuestion": "Copy my question",
+    "questionCopied": "Question copied",
+    "questionCopyFailed": "Copy failed"
+  },
+  "quota": {
+    "reached_one": "You’ve reached the limit of {{count}} request to {{copilot}} over a rolling 24 hours.",
+    "reached_other": "You’ve reached the limit of {{count}} requests to {{copilot}} over a rolling 24 hours.",
+    "reopensToday": "It reopens around {{time}}.",
+    "reopensTomorrow": "It reopens tomorrow around {{time}}.",
+    "reopensGradually": "It reopens gradually, as your requests pass the 24-hour mark.",
+    "stillAvailable": "Meanwhile, everything else works: your screens, search, records, analyses, enrichments, exports and the actions already prepared.",
+    "planLimit": "That’s your plan’s limit.",
+    "planLimitLink": "That’s your plan’s limit — [what yours includes](/billing).",
+    "low_one": "You have {{count}} request to {{copilot}} left over a rolling 24 hours. Actions already prepared stay available.",
+    "low_other": "You have {{count}} requests to {{copilot}} left over a rolling 24 hours. Actions already prepared stay available.",
+    "lowPlan_one": "You have {{count}} request to {{copilot}} left over a rolling 24 hours — your plan includes {{limit}}. Actions already prepared stay available.",
+    "lowPlan_other": "You have {{count}} requests to {{copilot}} left over a rolling 24 hours — your plan includes {{limit}}. Actions already prepared stay available.",
+    "exhausted": "No requests to {{copilot}} left for now. {{reopening}} Actions already prepared stay available.",
+    "exhaustedPlan": "No requests to {{copilot}} left for now — your plan includes {{limit}} over a rolling 24 hours. {{reopening}} Actions already prepared stay available."
+  },
+  "composer": {
+    "aria": "Message to {{copilot}}",
+    "placeholder": "Write your message...",
+    "sendHint": "Enter sends · Shift+Enter adds a new line",
+    "sendHintMod": "Ctrl/Cmd+Enter sends · Enter adds a new line",
+    "attachAria": "Attach a file",
+    "attachForConversation": "For this conversation",
+    "attachForConversationHint": "Read by {{copilot}} for this question, never listed in Knowledge, never kept.",
+    "attachToBase": "Add to my ESN’s knowledge base",
+    "attachToBaseHint": "Joins Knowledge: your whole ESN can use it. Kept until you delete it.",
+    "attachCamera": "Take a photo",
+    "importMode": "Import into {{brand}}",
+    "importCvs": "A folder of résumés",
+    "importCvsHint": "Creates or updates talent pool profiles, each résumé to review named.",
+    "importRecords": "Accounts or contacts",
+    "importRecordsHint": "A CSV export: dry run first, with creations, updates and duplicates announced.",
+    "mention": "Mention a member",
+    "moreTools": "Add to this message",
+    "connectedTools": {
+      "stateConnected": "Connected",
+      "stateNeedsReconnect": "Connected, authorization expired",
+      "stateLimited": "Limited access: read-only or partial write, check before counting on sending"
+    },
+    "connectorRemove": "Remove {{name}} from your question",
+    "connector": {
+      "menuLabel": "Use a source",
+      "family": {
+        "crm": "your CRM",
+        "email": "your inbox",
+        "calendar": "your calendar",
+        "linkedin": "your professional network",
+        "prospection": "contact lookup",
+        "documents": "your documents",
+        "communication": "your team channels",
+        "jobs": "job listing sources",
+        "tenders": "your tracked tenders",
+        "data": "public sources and the web",
+        "finance": "your billing",
+        "mcp": "your external AI assistant",
+        "ats": "your ATS",
+        "telephony": "your calling tool",
+        "admin_docs": "your signatures and invoices"
+      }
+    },
+    "disclaimer": "Answers can contain mistakes. Double-check anything critical.",
+    "sendDisabledReason": "Type a message to send it.",
+    "openDisabledReason": "Type some text to open this screen.",
+    "attachPersonal": "My personal space",
+    "attachPersonalHint": "For you only: colleagues never see it, {{copilot}} uses it in your threads. Kept until you delete it.",
+    "attachAccount": "This account only",
+    "attachAccountHint": "Used only when this account is discussed, never another. Your whole ESN can use it. Kept until you delete it.",
+    "attachKnowledgeBase": "Durable knowledge base",
+    "attachKnowledgeBaseHint": "Joins your ESN’s durable base: the whole team uses it, in every analysis. Kept until you delete it.",
+    "researchMode": {
+      "label": "Research mode",
+      "options": {
+        "auto": "Standard",
+        "rapide": "Fast",
+        "verifie": "Verified",
+        "approfondi": "Deep"
+      },
+      "estimate": {
+        "unknown": "Duration not measured",
+        "durationUnderSecond": "< 1 s (over {{sampleSize}} turns)",
+        "duration": "≈ {{seconds}} s (over {{sampleSize}} turns)",
+        "durationAndCost": "≈ {{seconds}} s · ${{cost}} (over {{sampleSize}} turns)",
+        "durationUnderSecondAndCost": "< 1 s · ${{cost}} (over {{sampleSize}} turns)"
+      },
+      "policy": {
+        "tier": {
+          "auto": "{{copilot}} picks the depth",
+          "fast": "Direct answer",
+          "deep": "In-depth analysis"
+        },
+        "search": {
+          "excluded": "no web search",
+          "allowed": "web search allowed"
+        },
+        "upgrade": "Suggests Verified when currency matters, never spending silently."
+      }
+    },
+    "sources": {
+      "trigger": "Sources",
+      "triggerCount": "Sources, {{count}} named in your request",
+      "title": "Sources connected to your workspace",
+      "scope": "Ticking a source names it in your request — it is a mention. {{copilot}} is not limited to these sources and none is excluded."
+    }
+  },
+  "offline": {
+    "sendBlocked": "No connection — this message wasn’t sent. It stays in the box, try again once you’re back online."
+  },
+  "queue": {
+    "title": "Queued · {{count}}",
+    "listLabel": "Queued messages",
+    "item": "Queued message {{position}} of {{total}}",
+    "edit": "Edit",
+    "editAria": "Edit queued message {{position}}",
+    "editField": "Text of queued message {{position}}",
+    "save": "Save",
+    "cancel": "Cancel",
+    "remove": "Remove",
+    "removeAria": "Remove queued message {{position}}",
+    "resume": "Resume",
+    "queueAction": "Add to queue",
+    "queuedAnnouncement": "The request is added to the queue.",
+    "removedAnnouncement": "Message removed from the queue.",
+    "full": "The queue is full (max {{max}} messages) — this message stays in the input.",
+    "attachmentsRefused": "A message with an attachment can’t wait in the queue — it stays in the input, send it once the reply is done.",
+    "suspended": {
+      "failure": "The reply in progress failed: {{reason}} The queue is waiting, nothing was sent.",
+      "restored": "Queue restored after the reload: it is waiting for your go-ahead, nothing was sent.",
+      "refused": "The next message couldn’t be sent (offline?). The queue is waiting."
+    }
+  },
+  "install": {
+    "prompt": "Install {{brand}} on your phone to open it in one tap.",
+    "action": "Install",
+    "dismiss": "Dismiss the install prompt"
+  },
+  "deepLink": {
+    "inaccessible": "This conversation is no longer accessible — it may have been deleted, or you no longer have access to it. You can start a new conversation below."
+  },
+  "voice": {
+    "start": "Record a voice message",
+    "requesting": "Waiting for microphone access…",
+    "recordingAria": "Voice message being recorded",
+    "listening": "Listening",
+    "clock": "{{elapsed}} / {{max}}",
+    "stop": "Done",
+    "stopAria": "Finish recording and transcribe it",
+    "cancel": "Cancel",
+    "cancelAria": "Cancel the voice message without sending anything",
+    "transcribing": "Transcribing…",
+    "language": {
+      "label": "Dictation language",
+      "fr": "French",
+      "en": "English",
+      "auto": "Auto-detect"
+    },
+    "uncertain": "Uncertain passages to review: {{segments}}.",
+    "conversation": {
+      "start": "Start voice conversation",
+      "aria": "Voice conversation in progress",
+      "listening": "Listening",
+      "sending": "Sending…",
+      "speaking": "{{copilot}} is replying",
+      "error": "The last message failed — listening again",
+      "interrupt": "Interrupt",
+      "interruptAria": "Interrupt playback and start listening again",
+      "stop": "Stop",
+      "levelAria": "Microphone level",
+      "silent": "No sound picked up — check your microphone",
+      "stopAria": "Stop the voice conversation"
+    },
+    "livePreview": {
+      "partialAria": "Live preview, partial",
+      "partial": "Partial: {{text}}",
+      "unsupported": "Live preview unavailable on this browser."
+    },
+    "uncertainWords": {
+      "label": "Worth checking before sending:"
+    },
+    "notice": {
+      "title": "Before your first voice message",
+      "body": "Your voice is transcribed into text. You review and edit that text in the message box, then you send it yourself.",
+      "retention_one": "The recording is kept for {{count}} day, then deleted.",
+      "retention_other": "The recording is kept for {{count}} days, then deleted.",
+      "sharing": "Members of your workspace who read this thread can listen to it again.",
+      "stop": "\"Done\" stops listening and transcribes what was said; \"Cancel\" sends nothing.",
+      "refinementWired": "Accent and background noise: a robust recognition model is added to the transcription. For a message that mixes French and English, the language of each part is identified.",
+      "refinementNotWired": "Fine-tuned recognition of accent or background noise: not wired yet — transcription stays standard. For a message that mixes French and English, the language of each part is identified.",
+      "accept": "Turn on the microphone",
+      "decline": "Not now"
+    },
+    "permissionDeniedHint": "Microphone denied — click the padlock next to the address, allow the microphone, then reload the page.",
+    "permissionDeniedDismiss": "Hide this message",
+    "errors": {
+      "permissionDenied": "Microphone access denied. Allow the microphone for this site in your browser settings, or type your question.",
+      "noMicrophone": "No microphone found. Plug one in, or type your question.",
+      "microphoneBusy": "The microphone is already in use by another app. Close it, or type your question.",
+      "unsupported": "Your browser can't record voice messages. Type your question: {{copilot}} answers just the same.",
+      "tooLarge": "This recording is too long to send: a voice message lasts at most {{seconds}} seconds. Split your question in two, or type it.",
+      "quota": "You've reached the message limit for now. Anything you typed stays in the message box; try again later.",
+      "unavailable": "Voice messages are unavailable right now. Type your question: {{copilot}} answers just the same.",
+      "unreadable": "I couldn't transcribe this recording. Move closer to the microphone and try again, or type your question.",
+      "network": "Connection lost — the recording wasn't sent. Check your connection, then try again.",
+      "sessionExpired": "Your session has expired. Sign in again, then try again.",
+      "failed": "The transcription didn't go through. Try again in a moment, or type your question."
+    },
+    "replay": "Listen again",
+    "replayAria": "Listen to this voice message again",
+    "replayLoading": "Loading…",
+    "replayGone": "The recording is no longer available.",
+    "replayFailed": "Couldn't load the recording. Try again."
+  },
+  "attach": {
+    "tooLarge": "File too large (max ~8 MB).",
+    "unsupported": "\"{{name}}\": format \"{{ext}}\" not supported. Accepted formats: {{formats}}.",
+    "unsupportedNoExtension": "\"{{name}}\": format not recognized (no extension). Accepted formats: {{formats}}.",
+    "empty": "\"{{name}}\" is empty.",
+    "dropHint": "Drop your file here — for this conversation",
+    "adding": "Adding \"{{name}}\"…",
+    "added": "Document added — {{copilot}} can now reference it.",
+    "addedToBase": "Document added to your ESN’s knowledge base — {{copilot}} can reference it.",
+    "failed": "Failed to add the document.",
+    "remove": "Remove and delete {{name}}",
+    "removeFromBase": "Remove {{name}} and delete it from your ESN’s knowledge base",
+    "removeFailed": "“{{name}}” couldn’t be deleted. Try again.",
+    "scope": {
+      "conversation": "this thread",
+      "workspace": "ESN base",
+      "changeAria": "Change the scope of “{{name}}”",
+      "changeFailed": "“{{name}}”’s scope could not be changed. Try again.",
+      "personal": "my space",
+      "account": "this account",
+      "knowledge_base": "durable base"
+    },
+    "preview": {
+      "open": "Preview “{{name}}”",
+      "loading": "Loading preview…",
+      "failed": "This document’s preview could not be loaded.",
+      "imageAlt": "Source image — “{{name}}”",
+      "citationsCaption_one": "Highlighted area: where this line was read in the image.",
+      "citationsCaption_other": "Highlighted areas: where these {{count}} lines were read in the image.",
+      "citationLine": "“{{quote}}”",
+      "objects": {
+        "cropProposed": "Suggested crop: the document edges were detected. The image is not changed.",
+        "showCropped": "Show cropped",
+        "showWhole": "Show whole image",
+        "noBounds": "Document edges not detected: the image stays whole.",
+        "tableTitle": "Table read from the image — {{rows}} rows, {{columns}} columns",
+        "emptyCells": "An empty cell stays empty: nothing was read there."
+      }
+    },
+    "limits": "{{formats}} · {{maxMb}} MB max · {{max}} per message",
+    "evicted": "Up to {{max}} documents per message: “{{name}}” was removed to make room.",
+    "zip": {
+      "added_one": "{{count}} attachment added from the archive.",
+      "added_other": "{{count}} attachments added from the archive.",
+      "someFailed_one": "{{count}} file from the archive wasn't kept: {{names}}.",
+      "someFailed_other": "{{count}} files from the archive weren't kept: {{names}}.",
+      "duplicates_one": "{{count}} duplicate in the archive, attached only once: {{names}}.",
+      "duplicates_other": "{{count}} duplicates in the archive, attached only once: {{names}}."
+    },
+    "multiple": {
+      "skipped_one": "At most {{max}} attachments per message: {{count}} file not attached — {{names}}. For a bulk import, use the dedicated import.",
+      "skipped_other": "At most {{max}} attachments per message: {{count}} files not attached — {{names}}. For a bulk import, use the dedicated import."
+    },
+    "status": {
+      "uploading": "Uploading…",
+      "analyzing": "Analyzing…",
+      "ready": "Ready",
+      "partial": "Partially readable",
+      "refused": "Refused",
+      "error": "Error",
+      "partialToast": "Document added — part of it couldn't be read (likely a scan). {{copilot}} works from the rest.",
+      "refusedToast": "Document refused — the file couldn't be verified.",
+      "dismiss": "Remove “{{name}}” from the list",
+      "retry": "Retry sending “{{name}}”"
+    },
+    "classification": {
+      "cv": "Likely résumé",
+      "crmExport": "Likely CRM export",
+      "needsSheet": "Likely needs sheet",
+      "rfp": "Likely RFP",
+      "invoice": "Likely invoice",
+      "screenshot": "Likely screenshot",
+      "toVerify": "to verify"
+    },
+    "importSuggestion": {
+      "account": "This file looks like an account export — drop it via Import instead to add it to your base.",
+      "contact": "This file looks like a contact export — drop it via Import instead to add it to your base.",
+      "project": "This file looks like a project or deal export — drop it via Import instead to add it to your base.",
+      "need": "This file looks like a needs sheet or RFP tracker — drop it via Import instead to add it to your base.",
+      "talent": "This file looks like a consultant pool — drop it via Import instead to add it to your base.",
+      "mission": "This file looks like a missions export — drop it through Import instead to add it to your base."
+    },
+    "importProposalReady": {
+      "account": "An account import proposal was prepared from this file — review and confirm it yourself under Settings > Import.",
+      "contact": "A contact import proposal was prepared from this file — review and confirm it yourself under Settings > Import.",
+      "project": "A project/deal import proposal was prepared from this file — review and confirm it yourself under Settings > Import.",
+      "need": "A needs import proposal was prepared from this file — review and confirm it yourself under Settings > Import.",
+      "talent": "A consultant import proposal was prepared from this file — review and confirm it yourself under Settings > Import.",
+      "mission": "A mission import proposal was prepared from this file — review and confirm it yourself under Settings > Import."
+    }
+  },
+  "prompts": {
+    "general1": {
+      "label": "What changed",
+      "prompt": "Tell me what changed since Monday on my priority accounts, and what it triggers."
+    },
+    "general2": {
+      "label": "Where to spend my time",
+      "prompt": "Compare my tracked accounts and tell me which ones really deserve my time this week, with the evidence."
+    },
+    "general3": {
+      "label": "First messages",
+      "prompt": "Draft a first message and an email for my priority contacts, adapting the tone to each seniority level."
+    },
+    "general4": {
+      "label": "Update my CRM",
+      "prompt": "Compare my hot accounts with my CRM, spot the duplicates and prepare the next tasks for me to approve."
+    },
+    "general5": {
+      "label": "Prepare my next meeting",
+      "prompt": "Prepare my next meeting: account context, attendees, history, questions to ask and likely objections."
+    },
+    "general6": {
+      "label": "Projects × talent pool",
+      "prompt": "Cross the projects you detected with my talent pool and propose experts who are genuinely available, with their evidence and gaps."
+    },
+    "general7": {
+      "label": "Find decision makers",
+      "prompt": "Find reachable decision makers in my target sector and explain, for each one, why they are reachable now."
+    },
+    "general8": {
+      "label": "Team coverage",
+      "prompt": "Show the coverage overlaps between reps and propose a split that doesn't confuse activity with performance."
+    },
+    "account1": {
+      "label": "Where to start",
+      "prompt": "On {{company}}: where do I start, with which contact, and why them rather than someone else?"
+    },
+    "account2": {
+      "label": "Reachable decision makers",
+      "prompt": "Find the reachable decision makers within the {{company}} perimeter and explain why each one is."
+    },
+    "account3": {
+      "label": "First messages",
+      "prompt": "Draft a first message and an email for {{company}}'s priority contacts, one angle per contact."
+    },
+    "account4": {
+      "label": "What changed",
+      "prompt": "What changed at {{company}} since my last analysis, and what does it change about my approach?"
+    },
+    "account5": {
+      "label": "Prepare the meeting",
+      "prompt": "Prepare my {{company}} meeting: context, questions to ask, likely objections and next steps."
+    },
+    "account6": {
+      "label": "Projects × talent pool",
+      "prompt": "Cross the projects detected at {{company}} with my talent pool and propose available experts, evidence and gaps included."
+    },
+    "account7": {
+      "label": "Next CRM tasks",
+      "prompt": "Prepare the next CRM tasks for {{company}}: what would be created, on which objects, and what is left for me to approve."
+    },
+    "account8": {
+      "label": "Tender",
+      "prompt": "Analyse the latest tender attached to {{company}}, give an argued bid/no-bid and prepare the response plan."
+    },
+    "analysis1": {
+      "label": "Signals to act on",
+      "prompt": "Summarise this account's recent signals and tell me which ones deserve immediate commercial action."
+    },
+    "analysis2": {
+      "label": "Likely objections",
+      "prompt": "List the likely objections on this account and the answer to prepare for each one."
+    },
+    "analysis3": {
+      "label": "Next CRM action",
+      "prompt": "Turn this analysis into a next CRM action: which object, which due date, what it costs."
+    },
+    "showMore_one": "+ 1 more starter",
+    "showMore_other": "+ {{count}} more starters"
+  },
+  "context": {
+    "title": "What {{copilot}} uses",
+    "accounts": "Accounts",
+    "analyses": "Quick actions",
+    "sessionTitle": "Shared session",
+    "activeAccount": "Active account: {{name}}",
+    "noActiveAccount": "No active account.",
+    "unnamed": "Unnamed",
+    "score": "Score {{score}}"
+  },
+  "privacy": {
+    "title": "Privacy",
+    "body": "{{copilot}} only uses the accounts, analyses and documents explicitly linked to this conversation."
+  },
+  "members": {
+    "title": "Members",
+    "unavailable": "Members unavailable right now.",
+    "fallbackName": "Member",
+    "you": "{{name}} (you)",
+    "copilotRole": "{{copilot}}",
+    "copilotPermission": "Context access",
+    "presenceAria": "Presence {{presence}}",
+    "permission": {
+      "manage": "Can manage",
+      "comment": "Can comment",
+      "integrations": "Integrations",
+      "readonly": "Read-only"
+    }
+  },
+  "disclosure": {
+    "toggle": "Context used",
+    "sourcesSuffix_one": " · {{count}} source",
+    "sourcesSuffix_other": " · {{count}} sources",
+    "activeTitle": "What this answer used",
+    "permissionsTitle": "Your permissions",
+    "noPermissions": "No write permission on this workspace — read only.",
+    "sourcesTitle": "Cited sources",
+    "sourceExcerptLabel": "Excerpt read",
+    "sourceScopeLabel": "Scope:",
+    "sourceConfidenceLabel": "Confidence:",
+    "sourceConfidence": {
+      "high": "high",
+      "medium": "medium",
+      "low": "low"
+    },
+    "sourceRelatesToLabel": "About:",
+    "sourceNextVerificationLabel": "Next check:",
+    "notConsultedTitle": "Not consulted",
+    "noContext": "No specific context — general-purpose answer.",
+    "noDocument": "No knowledge-base document used.",
+    "kindMethod": "{{brand}} method",
+    "kindDocument": "Your document",
+    "kindCrm": "CRM",
+    "kindAccount": "Account dossier",
+    "kindMarketObservation": "Market observations",
+    "kindMarketSignal": "Market signal",
+    "marketObservationCaption": "Structural observation — does not necessarily describe the current situation.",
+    "profile": "ESN profile",
+    "profileNamed": "ESN profile: {{name}}",
+    "account": "Account",
+    "accountNamed": "Account: {{name}}",
+    "contacts_one": "{{count}} contact",
+    "contacts_other": "{{count}} contacts",
+    "plan": "Action plan",
+    "accountFacts": "Account facts ({{count}})",
+    "workspaceRecall": "Workspace memory ({{count}})",
+    "portfolio": "Portfolio ({{count}})",
+    "memory": "Memory ({{count}} fact(s))",
+    "summary": "This answer uses {{parts}}.",
+    "summaryProfile": "your profile",
+    "summaryAccounts_one": "{{count}} account",
+    "summaryAccounts_other": "{{count}} accounts",
+    "summaryContacts_one": "{{count}} contact",
+    "summaryContacts_other": "{{count}} contacts",
+    "summaryPlan": "your action plan",
+    "summaryAccountFacts_one": "{{count}} account fact",
+    "summaryAccountFacts_other": "{{count}} account facts",
+    "summaryWorkspaceRecall_one": "{{count}} item from your workspace memory",
+    "summaryWorkspaceRecall_other": "{{count}} items from your workspace memory",
+    "summaryDocs_one": "{{count}} cited source",
+    "summaryDocs_other": "{{count}} cited sources",
+    "summaryMemory_one": "{{count}} remembered item",
+    "summaryMemory_other": "{{count}} remembered items",
+    "freshnessToday": "today",
+    "freshnessYesterday": "yesterday",
+    "freshnessDays_one": "{{count}} day ago",
+    "freshnessDays_other": "{{count}} days ago",
+    "actionConnectCrm": "Connect",
+    "actionConnectEmail": "Connect",
+    "actionAddKnowledge": "Add a document",
+    "actionAnalyseAccount": "Run an analysis",
+    "receipt": {
+      "title": "Knowledge receipt",
+      "usedTitle": "Used for this reply:",
+      "usedNone": "Nothing on this list was used for this reply.",
+      "notRequestedTitle": "Not requested:",
+      "unavailableTitle": "Unavailable:",
+      "forbiddenTitle": "Blocked by mode:",
+      "excludedTitle": "Excluded by you for this conversation:",
+      "stateUnavailable": "attempted, unavailable for this reply",
+      "stateForbidden": "actions temporarily paused",
+      "resultCount_one": "{{count}} result",
+      "resultCount_other": "{{count}} results",
+      "layer": {
+        "workspace": "Your workspace",
+        "crm": "Your CRM",
+        "messaging": "Your mailbox",
+        "agenda": "Your calendar",
+        "documents": "Your documents",
+        "accountDossier": "Account file",
+        "dataforge": "{{brand}} sector reference",
+        "marketMemory": "Market observations",
+        "currentPublicSources": "Current public sources",
+        "bellumMethod": "{{brand}} method",
+        "inference": "Reasoning"
+      }
+    },
+    "sourcePlan": {
+      "title": "Source plan",
+      "scopeLine": "Strategy for this reply: {{scope}}",
+      "calledTitle": "Layers called:",
+      "calledNone": "No layer was called for this plan.",
+      "unavailableTitle": "Expected, not obtained:",
+      "publicSearchAvoided": "Public search avoided, as you asked.",
+      "scope": {
+        "internalOnly": "internal only",
+        "currentPublic": "current public info",
+        "combined": "combined view",
+        "workspaceFirst": "your activity first"
+      },
+      "layer": {
+        "explicitRequest": "Your explicit request",
+        "threadMemory": "This conversation's memory",
+        "profile": "Your profile",
+        "workspace": "Your workspace",
+        "connectedSystems": "Your connected tools",
+        "accountDossier": "Account file",
+        "dataforge": "{{brand}} sector reference",
+        "marketMemory": "Market observations",
+        "publicSources": "Current public sources",
+        "methodologicalInference": "Methodological reasoning"
+      }
+    },
+    "turnObservability": {
+      "title": "Deepening",
+      "passes_one": "{{count}} of {{total}} pass used for this reply",
+      "passes_other": "{{count}} of {{total}} passes used for this reply",
+      "scopeNote": "These passes are about the research for this reply, not a relaunch of the account's analysis.",
+      "pass": "PASS {{level}} — {{name}}",
+      "passName": {
+        "0": "local context",
+        "1": "targeted verification",
+        "2": "thematic search",
+        "3": "contradictions to settle"
+      },
+      "stop": {
+        "marginal_gain": "Stopped: the last pass brought nothing new.",
+        "passes_exhausted": "Stopped: every deepening level has been covered.",
+        "other": "Deepening stopped."
+      },
+      "budgetExhausted": "The turn's time budget was reached before the plan finished.",
+      "degradedAnswer": "This reply was produced in degraded mode."
+    },
+    "searchUniverse": {
+      "title": "Search universe",
+      "populationLine": "Request targets: {{population}}",
+      "geographiesTitle": "Geographies:",
+      "rolesTitle": "Roles:",
+      "groupRoot": "Thread group: {{root}}",
+      "groupExcluded": "Out of scope: {{names}}",
+      "exclusionsTitle": "Excluded:",
+      "coverage": {
+        "detected": "{{count}} detected",
+        "resolved": "{{count}} classified",
+        "relevant": "{{count}} match the roles you’re looking for",
+        "verified": "{{count}} verified recently",
+        "enriched": "{{count}} have a usable contact detail",
+        "basis": "A reading of your workspace, not of the market."
+      }
+    },
+    "signals_one": "{{count}} signal",
+    "signals_other": "{{count}} signals",
+    "summarySignals_one": "{{count}} signal",
+    "summarySignals_other": "{{count}} signals",
+    "summaryPortfolio_one": "your portfolio ({{count}} account)",
+    "summaryPortfolio_other": "your portfolio ({{count}} accounts)",
+    "privacyLink": "See the full privacy detail",
+    "memoryUses": {
+      "title": "Memory consulted for this answer",
+      "caption": "{{copilot}} had these items in mind: they were sent with the question, which doesn’t prove she relied on them.",
+      "loading": "Reading the consulted memory…",
+      "unavailable": "The consulted memory couldn’t be read right now.",
+      "none": "No trace kept for this answer.",
+      "private_one": "{{count}} private item — visible to its author only",
+      "private_other": "{{count}} private items — visible to their authors only",
+      "removed_one": "{{count}} item removed since",
+      "removed_other": "{{count}} items removed since",
+      "scope": {
+        "user": "Just you",
+        "workspace": "Your whole company"
+      },
+      "manage": "Manage {{copilot}}’s memory",
+      "earlierAnswer": "For an earlier answer, only the consulted memory is kept: its other sources weren’t stored."
+    },
+    "portfolioNamed_one": "{{count}} account from your portfolio: {{list}}",
+    "portfolioNamed_other": "{{count}} accounts from your portfolio: {{list}}",
+    "portfolioNamedMore": "{{names}} and {{count}} more",
+    "portfolioPartial_one": "{{count}} of {{total}} account: {{list}}",
+    "portfolioPartial_other": "{{count}} of {{total}} accounts: {{list}}",
+    "surfaces": {
+      "discover": {
+        "summary": "This search uses {{parts}}.",
+        "activeTitle": "What this search uses",
+        "sourcesTitle": "Other layers read",
+        "noDocument": "No other layer read."
+      },
+      "analyze": {
+        "summary": "This analysis will use {{parts}}.",
+        "activeTitle": "What the analysis will read",
+        "sourcesTitle": "Other layers read",
+        "noDocument": "No other layer read."
+      },
+      "analysis_batch": {
+        "summary": "This batch will use {{parts}}.",
+        "activeTitle": "What each analysis in the batch will read",
+        "sourcesTitle": "Other layers read",
+        "noDocument": "No other layer read."
+      }
+    }
+  },
+  "pending": {
+    "title": "Action awaiting your approval",
+    "obsolete": "Obsolete — this reply has been replaced by a new attempt.",
+    "describeMessage": {
+      "email": "Draft an email for {{name}}",
+      "linkedin": "Draft a LinkedIn message for {{name}}",
+      "phone": "Draft a call script for {{name}}"
+    },
+    "describeReminder": "Schedule a reminder on {{name}} for {{date}}",
+    "describeEnrich": "Enrich {{name}}'s contact details ({{company}})",
+    "describeCrm": "Push {{name}} to {{provider}}",
+    "describeCrmNote": "Write a CRM note on {{name}}",
+    "describeFind": "Run a Discover search: {{criteria}}",
+    "guaranteeMessage": "{{brand}} sends nothing: you read it, you send it.",
+    "guaranteeReminder": "Nothing is saved until you confirm.",
+    "guaranteeCrm": "Creates or updates the record in {{provider}}, nothing else.",
+    "guaranteeCrmNote": "Adds a note to the record already in your CRM, nothing else.",
+    "guaranteeFind": "Opens Discover pre-filled with these criteria. Exploring is free.",
+    "audienceTitle": "{{count}} recipients you named: one draft each, to validate one by one. Nothing is sent.",
+    "audienceSkipped": "Left out: {{name}} — {{reason}}",
+    "audienceSkippedUnknown": "a contact",
+    "messageDemo": "Demo room: no draft is generated here. In production the draft appears on this card, ready to review — nothing is sent.",
+    "confirmMessage": "Prepare the message",
+    "confirmReminder": "Schedule the reminder",
+    "confirmCrm": "Push to {{provider}}",
+    "confirmCrmNote": "Write the note",
+    "confirmFind": "Open Discover",
+    "dismiss": "Dismiss",
+    "running": "Working…",
+    "assignTo": "Assign to",
+    "assignedTo": "Assigned to {{name}}",
+    "assignError": "Couldn't assign it, try again.",
+    "memberFallback": "A teammate",
+    "reminderDone": "Reminder saved.",
+    "crmNoteDone": "CRM note written.",
+    "claimed": {
+      "selfAt": "You already ran this action at {{time}} — it was not repeated.",
+      "byAt": "Already run by {{actor}} at {{time}} — it was not repeated.",
+      "systemAt": "Already run automatically at {{time}} — it was not repeated.",
+      "selfRunning": "You already ran this action — it is still in progress.",
+      "byRunning": "{{actor}} already ran this action — it is still in progress.",
+      "systemRunning": "This action was already run automatically — it is still in progress."
+    },
+    "enrichEmail": "email",
+    "enrichPhone": "phone",
+    "enrichDone": "Details found: {{found}}.",
+    "enrichNotFound": "No contact details found.",
+    "crmCreated": "Record created in {{provider}}.",
+    "crmUpdated": "Record updated in {{provider}}.",
+    "criteriaDepartment": "department {{code}}",
+    "criteriaCity": "city of {{city}}",
+    "criteriaHeadcount": "headcount {{range}}",
+    "sector": {
+      "it": "IT & digital",
+      "finance": "Banking, insurance, finance",
+      "energy": "Energy",
+      "industry": "Manufacturing",
+      "health": "Healthcare & social care",
+      "retail": "Retail & distribution",
+      "transport": "Transport & logistics",
+      "telecom": "Telecoms",
+      "construction": "Construction",
+      "public": "Public sector"
+    },
+    "signal": {
+      "tender": "open tender",
+      "award": "awarded contract",
+      "hiring": "active hiring"
+    },
+    "failed": "The action could not be completed.",
+    "copy": "Copy",
+    "copied": "Message copied",
+    "draftOnly": "Prepared message — send it from your own mailbox",
+    "unknownContact": "this contact",
+    "crmGeneric": "your CRM",
+    "describeCreateContact": "Create {{name}}'s {{brand}} record ({{company}})",
+    "guaranteeCreateContact": "Creates the record in {{brand}} from your CRM row, nothing else. Nothing is sent.",
+    "confirmCreateContact": "Create the record",
+    "contactCreated": "Record created for {{name}}.",
+    "contactAlreadyExists": "{{name}} already had a record — nothing was duplicated.",
+    "contactAmbiguous_one": "{{count}} record already matches this name or email: nothing was created or merged. Open Contacts to decide.",
+    "contactAmbiguous_other": "{{count}} records already match this name or email: nothing was created or merged. Open Contacts to decide.",
+    "openContact": "Open the record",
+    "previewRole": "Role",
+    "previewEmail": "Email",
+    "previewOrigin": "Where it comes from",
+    "originCrm": "a row in your CRM",
+    "previewReminder": "Reminder that will follow",
+    "writesContactRecord": "a contact record in {{brand}}, attached to this account",
+    "describeCreateTargetList": "Create a target ({{company}})",
+    "guaranteeCreateTargetList": "Creates a list in “My targets” with this account, nothing else.",
+    "confirmCreateTargetList": "Create the target",
+    "createTargetListDefaultName": "Target — {{company}}",
+    "createTargetListDone": "List \"{{list}}\" created.",
+    "previewListName": "List name",
+    "writesTargetList": "a list in \"My targets\", with this account",
+    "describeAddToPortfolio": "Add to portfolio ({{company}})",
+    "guaranteeAddToPortfolio": "Adds this account to your portfolio, nothing else.",
+    "confirmAddToPortfolio": "Add to portfolio",
+    "addToPortfolioDone": "{{company}} added to your portfolio.",
+    "previewSector": "Sector",
+    "previewWebsite": "Website",
+    "writesPortfolio": "this account in your portfolio",
+    "previewTitle": "What this action will do",
+    "limitScope": "Limit this conversation's scope",
+    "previewTarget": "Target",
+    "previewChannel": "Channel",
+    "previewAngle": "Angle",
+    "previewWhen": "When",
+    "previewTimezone": "Timezone used",
+    "previewNote": "Note",
+    "previewOrg": "Company",
+    "previewDestination": "Destination",
+    "previewFieldCurrentValue": "{{field}} — current value",
+    "previewCriteria": "Criteria",
+    "previewWrites": "What gets written",
+    "plan": {
+      "steps_one": "{{count}}-step plan",
+      "steps_other": "{{count}}-step plan",
+      "validation": "nothing runs without your click, one step at a time"
+    },
+    "writesDraftOnly": "a prepared message inside {{brand}} — nothing is sent",
+    "writesReminder": "a dated reminder in your action journal",
+    "writesEnrich": "email and phone on the contact record, if found",
+    "writesCrm": "a contact record created or updated",
+    "writesCrmNote": "a note added to the existing record",
+    "writesNothing": "nothing — the Discover screen opens pre-filled",
+    "channel": {
+      "email": "email",
+      "linkedin": "direct message",
+      "phone": "call"
+    },
+    "describeMailDraft": "Save an email draft for {{to}}",
+    "guaranteeMailDraft": "The draft lands in {{mailbox}}. Nothing is sent.",
+    "confirmMailDraft": "Save the draft",
+    "describeCalendarEvent": "Create the event \"{{title}}\" on {{date}}",
+    "guaranteeCalendarEvent": "Nothing is created before you click. No invitation is sent without a declared guest.",
+    "confirmCalendarEvent": "Create the event",
+    "calendarEventDone": "Event created in your calendar.",
+    "previewGuests": "Guests",
+    "writesCalendarEvent": "One event in your calendar",
+    "mailDraftSaved": "Draft saved to {{mailbox}}.",
+    "mailDraftSavedWithLink": "Draft saved to {{mailbox}} — review it and send when ready.",
+    "mailDraftNoProof": "The draft is ready in {{brand}}, but {{mailbox}} did not confirm it was saved. Nothing was deposited.",
+    "deleteDraft": "Delete the draft",
+    "draftRemoved": "Draft deleted from your mailbox.",
+    "yourMailbox": "your mailbox",
+    "previewSubject": "Subject",
+    "previewContent": "Content",
+    "previewContext": "Context used",
+    "previewContextThread": "Replies to the existing thread",
+    "previewContextNew": "New message",
+    "previewTone": "Tone",
+    "previewSignature": "Attachments and signature",
+    "previewSignatureIncluded": "Your signature will be added. No attachments.",
+    "writesMailDraft": "a draft in {{mailbox}} (nothing sent)",
+    "describeScreen": "Open {{label}}",
+    "guaranteeScreen": "No writes: this click opens a screen, nothing more.",
+    "confirmScreen": "Open the screen",
+    "previewScreen": "Screen",
+    "previewHighlight": "What to look at on arrival",
+    "describeConsultant": "Open a pre-filled consultant record for {{name}}",
+    "guaranteeConsultant": "Nothing is saved: the form opens pre-filled, you are the one who submits it.",
+    "confirmConsultant": "Open the form",
+    "previewConsultant": "Consultant",
+    "writesScreenOnly": "nothing — opens a screen",
+    "describePushProfile": "Open the matching panel to push a profile",
+    "describeToggleRoutine": {
+      "on": "Turn on {{label}}",
+      "off": "Turn off {{label}}"
+    },
+    "guaranteeToggleRoutine": "Only changes your subscription to this routine, in Settings. Nothing is sent.",
+    "confirmToggleRoutine": {
+      "on": "Turn on",
+      "off": "Turn off"
+    },
+    "previewRoutine": "Routine",
+    "previewState": "New state",
+    "previewSchedule": "New schedule",
+    "routineHour": "{{hour}}:00",
+    "routineChannel": {
+      "in_app": "in the app",
+      "email": "by email"
+    },
+    "routineStateOn": "On",
+    "routineStateOff": "Off",
+    "writesRoutineToggle": "your subscription to this routine, in Settings",
+    "routineToggled": {
+      "on": "Routine turned on: {{label}}.",
+      "off": "Routine turned off: {{label}}."
+    },
+    "unknownRoutine": "this routine",
+    "describeUpdateSetting": "Change “{{label}}”",
+    "guaranteeUpdateSetting": "Only changes this setting, in Settings. Nothing is sent.",
+    "confirmUpdateSetting": "Apply",
+    "previewSettingOld": "Current value",
+    "previewSettingNew": "New value",
+    "settingValueOn": "On",
+    "settingValueOff": "Off",
+    "settingValueUnknown": "not measured",
+    "writesSettingUpdate": "this setting, in Settings",
+    "settingUpdated": "Setting updated: {{label}}.",
+    "unknownSetting": "this setting",
+    "describePinFact": "Pin what you understood to memory",
+    "guaranteePinFact": "Pins this text in Settings › Memory — visible and removable at any time.",
+    "confirmPinFact": "Pin it",
+    "previewFact": "To remember",
+    "writesPinFact": "a pinned fact, under Settings › Memory",
+    "previewMemoryBefore": "Before",
+    "previewMemoryBeforeValue": "Nothing is pinned on this yet.",
+    "previewRemembered": "What I will remember",
+    "previewChanges": "What this will change",
+    "changesUserAll": "{{copilot}}’s answers, for you — and nothing for your colleagues.",
+    "changesUserAccount": "{{copilot}}’s answers on this account, for you — and nothing for your colleagues.",
+    "changesWorkspaceAll": "{{copilot}}’s answers, for every member of your company.",
+    "changesWorkspaceAccount": "{{copilot}}’s answers on this account, for every member of your company.",
+    "changesBusinessUnitAll": "{{copilot}}’s answers, for the members of {{name}} — and for nobody else.",
+    "changesBusinessUnitAccount": "{{copilot}}’s answers on this account, for the members of {{name}} — and for nobody else.",
+    "changesConversationAll": "{{copilot}}’s answers in this conversation only — nothing beyond it.",
+    "changesConversationAccount": "{{copilot}}’s answers on this account, in this conversation only — nothing beyond it.",
+    "factPinnedScope": {
+      "user": "Pinned for you only.",
+      "workspace": "Pinned for your whole company — your colleagues will see it too.",
+      "business_unit": "Pinned for the members of {{name}} — and for nobody else in your workspace.",
+      "conversation": "Pinned for this conversation only — it will go with it."
+    },
+    "describeAnalysisPlain": "Run the analysis of {{company}}",
+    "guaranteeAnalysis": "Nothing is launched or charged before your click. Allow 3 to 6 minutes.",
+    "confirmAnalysis": "Run the analysis",
+    "previewDossier": "Dossier",
+    "dossierAnalysedOn": "Analysed on {{date}}",
+    "dossierNeverAnalysed": "Never analysed",
+    "previewReason": "Why this account",
+    "previewObjectsCount": "Contacts already known",
+    "objectsCountValue_one": "{{count}} contact already known",
+    "objectsCountValue_other": "{{count}} contacts already known",
+    "writesAnalysis": "a conquest dossier on this account — contacts, angles, action plan",
+    "analysisNeedsPlan": "The launch did not go through: the preparation expired. Ask me for the analysis again.",
+    "analysisStarted": "The analysis of {{company}} is running — it takes 3 to 6 minutes. You can follow it on its dossier.",
+    "analysisAlreadyFresh": "A recent dossier already existed for {{company}}: nothing was re-run.",
+    "describeCampaign": "Prepare a campaign on {{count}} contact — {{objective}}",
+    "describeCampaign_other": "Prepare a campaign on {{count}} contacts — {{objective}}",
+    "describeCallList": "Prepare a call list on {{count}} contact — {{objective}}",
+    "describeCallList_other": "Prepare a call list on {{count}} contacts — {{objective}}",
+    "guaranteeCampaign": "Opens Sequences pre-filled. No sequence is created before your click, screen by screen, contact by contact.",
+    "confirmCampaign": "Open Sequences",
+    "previewObjective": "Objective",
+    "previewAudience": "Audience",
+    "previewPersona": "Target persona",
+    "previewRelation": "Relationship",
+    "campaignAudience_one": "{{count}} contact",
+    "campaignAudience_other": "{{count}} contacts",
+    "campaignRelation": {
+      "cold": "cold outreach",
+      "warm": "relationship already started",
+      "referred": "referred by a third party",
+      "existing": "existing client"
+    },
+    "describeCompileNeed": "Compiled need — {{title}}, at {{company}}",
+    "describeCompileNeedNoCompany": "Compiled need — {{title}}",
+    "guaranteeCompileNeed": "Opens the need creator. Nothing is saved before your click, and every value above comes from a sentence in your source.",
+    "confirmCompileNeed": "Open the need creator",
+    "describeMissionAmendment": "Register an amendment proposal — {{event}}",
+    "guaranteeMissionAmendment": "The amendment stays \"proposed\": nothing goes into effect, a human validates it in the mission's file.",
+    "confirmMissionAmendment": "Register the proposal",
+    "missionAmendmentProposed": "Amendment registered as proposed — to validate in the mission's file.",
+    "simulateImpactIntro": "Simulate the impact on revenue and margin, before confirming",
+    "needUntitled": "untitled",
+    "needWorkToDo": "The work to be done",
+    "needOutcome": "The expected outcome",
+    "needSkills": "Skills",
+    "needMissing": "Missing to understand it",
+    "needMissingWork": "the work to be done",
+    "needMissingOutcome": "the expected outcome",
+    "needMissingSkills": "the blocking criteria",
+    "needContradictions": "What contradicts itself",
+    "needContradictionsValue_one": "{{count}} field where the source says two things",
+    "needContradictionsValue_other": "{{count}} fields where the source says two things",
+    "needConfirmation": "Who stands behind it",
+    "needConfirmation_confirme_par_le_client": "the client said it",
+    "needConfirmation_rapporte": "reported",
+    "needConfirmation_hypothese": "hypothesis",
+    "needDropped": "Set aside",
+    "needDroppedValue_one": "{{count}} value without a quote or out of scope",
+    "needDroppedValue_other": "{{count}} values without a quote or out of scope",
+    "needSource": {
+      "chat_message": "your message",
+      "free_brief": "pasted text",
+      "email": "an email",
+      "meeting_report": "meeting notes",
+      "transcript": "a transcript",
+      "document": "a document",
+      "screenshot": "a screenshot",
+      "crm_record": "a CRM record",
+      "field_notes": "field notes",
+      "job_posting": "a job posting",
+      "rfp": "a request for proposal"
+    },
+    "describeOpportunityUpdate": "Update the opportunity {{label}}",
+    "guaranteeOpportunityUpdate": "Nothing is written before your click, and only the fields shown change — won or lost are decided on the opportunity screen.",
+    "confirmOpportunityUpdate": "Apply the update",
+    "writesOpportunityUpdate": "Updates the opportunity (stage, estimated amount, next step, risk) through its screen's routes.",
+    "opportunityUpdated": "Opportunity updated — {{label}}.",
+    "opportunityField": {
+      "stage": "Stage",
+      "estimated_amount": "Estimated amount",
+      "next_step": "Next step",
+      "risk": "Risk"
+    },
+    "describeNeedTransition": "Move this need to \"{{status}}\"",
+    "guaranteeNeedTransition": "Nothing is written before your click — the status only changes through this route, the same one as the need's record.",
+    "confirmNeedTransition": "Apply the transition",
+    "writesNeedTransition": "Changes the need's status through its record's status gate.",
+    "needTransitionDone": "Need status updated.",
+    "describeLongJob_bulk_matching": "Rank the talent pool against {{count}} need(s), in the background",
+    "describeLongJob_multi_source_search": "Look for consultants outside the pool for this need, source by source",
+    "guaranteeLongJob": "Nothing starts before you click. The work then runs in the background; follow its progress on the needs screen.",
+    "confirmLongJob": "Start in the background",
+    "writesLongJob": "Queues a job; no profile is pushed and no message is sent.",
+    "longJobStarted": "Work started in the background — follow its progress on the needs screen.",
+    "longJobDemo": "Demo: the launch is not executed in this room — in production, the matching runs in the background.",
+    "longJobFailed": "The work could not be started.",
+    "describeVivierExport": {
+      "ats": "Export the talent pool as ATS",
+      "bulk": "Export the talent pool in bulk"
+    },
+    "guaranteeVivierExport": "Runs the same export as the Settings › My data › Exports button — nothing else.",
+    "confirmVivierExport": {
+      "ats": "Export (ATS)",
+      "bulk": "Export in bulk"
+    },
+    "vivierExportDone": "Talent pool export downloaded.",
+    "vivierExportEmpty": "The talent pool is empty: nothing to export.",
+    "vivierExportFailed": "The talent pool export could not be started.",
+    "vivierExportDemo": "Demo: the export does not run in this room — in production, the file downloads.",
+    "describeBugReport": "Send a bug report to the team",
+    "guaranteeBugReport": "Sends this report through the same form as “Report a problem”, bug category — nothing else. Nothing is sent before you click.",
+    "confirmBugReport": "Send the report",
+    "previewBugObserved": "Observed",
+    "previewBugRoute": "Screen",
+    "previewBugJoined": "Attached",
+    "bugReportJoined": "the page address, the browser and the app version",
+    "bugReportRouteLine": "Screen: {{route}}",
+    "bugReportSent": "Report sent — follow it in Settings › My reports.",
+    "bugReportDemo": "Demo: the report is not sent from this room — in a real workspace, it goes out with its context.",
+    "describeBulkEnrich_one": "Enrich the contact details of {{count}} contact, as one batch",
+    "describeBulkEnrich_other": "Enrich the contact details of {{count}} contacts, as one batch",
+    "confirmBulkEnrich_one": "Enrich {{count}} contact",
+    "confirmBulkEnrich_other": "Enrich {{count}} contacts",
+    "writesBulkEnrich": "Completes these contacts' records; no message is sent.",
+    "previewBulkEnrichContacts": "Contacts",
+    "bulkEnrichDone": "{{found}} contact(s) enriched out of {{total}}.",
+    "bulkEnrichStopped": "Batch stopped after {{processed}} of {{total}} contact(s) ({{found}} enriched) — nothing was charged for the rest.",
+    "bulkEnrichDemo": "Demo: enrichment is not run in this room.",
+    "describePeopleSearch": "Search for new people at {{company}} on the unfilled roles",
+    "confirmPeopleSearch": "Run the search",
+    "writesPeopleSearch": "Adds the people found to the account, as contacts to verify; no message is sent.",
+    "previewPeopleSearchAccount": "Account",
+    "previewPeopleSearchRoles": "Roles searched",
+    "previewPeopleSearchExpertise": "Expertise searched",
+    "previewPeopleSearchSector": "Client sector",
+    "previewPeopleSearchScope": "Scope",
+    "peopleSearchDone_one": "{{count}} new person added to the account, to verify before any approach.",
+    "peopleSearchDone_other": "{{count}} new people added to the account, to verify before any approach.",
+    "peopleSearchUnavailable": "The search could not complete — this does not mean nobody matches this expertise, and nothing was charged. Try again later.",
+    "peopleSearchNone": "Nobody new found on these roles — nothing was charged. Another route: ask a contact the account already knows for an introduction.",
+    "peopleSearchDemo": "Demo: the search is not run in this room.",
+    "describeContactDeparture": "Move {{name}} to historical",
+    "guaranteeContactDeparture": "Nothing is written before your click — the contact is never deleted, and any running sequences on them stop.",
+    "confirmContactDeparture": "Move to historical",
+    "writesContactDeparture": "Archives the contact (historical) and stops running sequences; the contact is never deleted.",
+    "previewContactDepartureContact": "Contact",
+    "contactDepartureDone": "{{name}} moved to historical.",
+    "previewLongJobKind": "Work",
+    "previewLongJobNeeds": "Needs",
+    "longJobKind": {
+      "bulk_matching": "Bulk matching",
+      "multi_source_search": "Search outside the pool"
+    },
+    "previewNeedTransitionFrom": "Current status",
+    "previewNeedTransitionTo": "Target status",
+    "previewNeedTransitionReason": "Reason",
+    "previewNeedTransitionMissing": "Evidence to gather",
+    "commercialEvidence": {
+      "interpretation": "Signal interpretation",
+      "qualification": "Qualification",
+      "criteria_review": "Criteria review",
+      "unknowns_review": "Unknowns review",
+      "consultant_agreement": "Consultant agreement",
+      "client_agreement": "Client agreement"
+    },
+    "expenseReportDecisionValidate": "approve",
+    "expenseReportDecisionReject": "reject",
+    "describeExpenseReportDecision": "{{decision}} this expense report",
+    "guaranteeExpenseReportDecision": "Nothing is written before your click — the decision only applies through this route, the same one as the expense reports screen.",
+    "confirmExpenseReportDecision": "Apply the decision",
+    "writesExpenseReportDecision": "Decides the expense report through its screen's gate.",
+    "expenseReportValidated": "Expense report approved.",
+    "expenseReportRejected": "Expense report rejected.",
+    "previewExpenseReportBearer": "Bearer",
+    "previewExpenseReportAccount": "Account",
+    "previewExpenseReportPeriod": "Month",
+    "previewExpenseReportDecision": "Decision",
+    "previewExpenseReportReason": "Reason",
+    "previewMissionAmendmentEvent": "Change type",
+    "previewMissionAmendmentDiff": "Proposed change",
+    "previewMissionAmendmentEffective": "Effective date",
+    "previewMissionAmendmentProof": "Proof",
+    "previewMissionAmendmentPauseCause": "Pause cause",
+    "writesMissionAmendment": "Registers an amendment proposal, awaiting validation in the mission's file",
+    "openMission": "Open the mission",
+    "missionAmendmentEvent": {
+      "daily_rate_change": "Daily rate",
+      "legal_entity_change": "Billing entity",
+      "work_site_change": "Work site",
+      "remote_policy_change": "Remote policy",
+      "pause_start": "Pause start",
+      "pause_end": "Pause end",
+      "end_date_change": "End date",
+      "start_date_change": "Start date",
+      "contract_kind_change": "Contract kind",
+      "role_title_change": "Role title",
+      "billing_contact_change": "Billing contact",
+      "po_terms_change": "Purchase order terms",
+      "consultant_replacement": "Consultant replacement",
+      "scope_change": "Scope",
+      "renewal_terms_change": "Renewal terms",
+      "termination_notice": "Termination notice"
+    },
+    "missionAmendmentPauseCause": {
+      "mission_pause": "Mission paused",
+      "consultant_absence": "Consultant absence",
+      "client_closure": "Client closure",
+      "non_billable_days": "Non-billable days"
+    },
+    "leadDecisionDismissed": "dismiss",
+    "leadDecisionSnoozed": "snooze",
+    "describeLeadDecision": "{{decision}} this lead to qualify",
+    "guaranteeLeadDecision": "Nothing is written before your click, and nothing is deleted: the decision can be undone from the Opportunities screen, through the same route.",
+    "confirmLeadDecision": "Apply the decision",
+    "writesLeadDecision": "Dismisses or snoozes the lead through the Opportunities tab's gate.",
+    "leadDismissed": "Lead dismissed.",
+    "leadSnoozed": "Lead snoozed.",
+    "previewLeadLabel": "Lead",
+    "previewLeadAccount": "Account",
+    "previewLeadDecision": "Decision",
+    "previewLeadReason": "Reason",
+    "previewLeadUntil": "Snoozed until",
+    "leadDismissReason": {
+      "out_of_target": "Out of target",
+      "no_real_demand": "No real demand",
+      "bad_timing": "Bad timing",
+      "no_access": "No access",
+      "false_data": "False data",
+      "already_handled": "Already handled",
+      "other": "Other"
+    },
+    "guaranteeEnrich": "Looks up this contact’s details with our enrichment sources.",
+    "confirmEnrich": "Enrich",
+    "guaranteeBulkEnrich": "Looks up the details of each contact on the list with our enrichment sources.",
+    "guaranteePeopleSearch": "Looks for people matching the role. No one is contacted: those found become contacts to verify."
+  },
+  "cards": {
+    "plan": {
+      "label": "{{copilot}}’s plan",
+      "title_one": "{{count}}-step plan",
+      "title_other": "{{count}}-step plan",
+      "step": "Step {{step}}: {{status}}",
+      "status": {
+        "todo": "to do",
+        "running": "in progress",
+        "done": "done",
+        "failed": "failed",
+        "blocked": "blocked",
+        "unknown": "outcome unknown",
+        "dropped": "set aside"
+      },
+      "runAll": "Run the whole plan",
+      "runFirst": "Only step {{step}}",
+      "chained_one": "{{count}} step prepared in {{brand}}",
+      "chained_other": "{{count}} steps prepared in {{brand}}",
+      "gated": "Step {{step}}: writes outside {{brand}}, it waits for your approval on its card.",
+      "unknown": "Step {{step}}’s outcome is unknown: the plan won’t resume on its own.",
+      "refused": "Step {{step}}: {{reason}}",
+      "blockedBy": {
+        "failed": "Blocked: step {{step}} failed.",
+        "blocked": "Blocked: step {{step}} could not start.",
+        "unknown": "Blocked: step {{step}}’s outcome is unknown."
+      },
+      "waitingOn_one": "Waits for step {{steps}}.",
+      "waitingOn_other": "Waits for steps {{steps}}.",
+      "brief": {
+        "objective": "Goal: {{text}}",
+        "expectedResults": "Expected results: {{items}}",
+        "missingData": "Missing data: {{items}}",
+        "impossible": "Won’t be done: {{items}}",
+        "horizon": "The plan runs until {{date}} (its latest reminder)."
+      }
+    },
+    "state": {
+      "suggested": "Suggested",
+      "prepared": "Prepared",
+      "awaiting_review": "Awaiting approval",
+      "running": "Running",
+      "executed": "Executed",
+      "partial": "Partial",
+      "failed": "Failed",
+      "snoozed": "Postponed",
+      "rejected": "Declined",
+      "expired": "Expired",
+      "superseded": "Out of date",
+      "unknown_outcome": "Unknown outcome",
+      "blocked": "Nothing was sent"
+    },
+    "gesture": {
+      "confirm": "Approve",
+      "reject": "Decline",
+      "snooze": "Postpone",
+      "retry": "Try again",
+      "cancel": "Cancel",
+      "modify": "Edit"
+    },
+    "edit": {
+      "title": "Edit before approving",
+      "save": "Save",
+      "cancel": "Cancel",
+      "note": "Saving runs nothing: the cost is recalculated, then you approve.",
+      "field": {
+        "angle": "Message angle",
+        "at": "Date and time",
+        "note": "Note",
+        "contact_name": "Contact name",
+        "contact_email": "Email",
+        "contact_title": "Job title",
+        "company": "Company",
+        "to": "Recipient",
+        "subject": "Subject",
+        "body": "Message",
+        "title": "Title",
+        "starts_at": "Start (ISO 8601)",
+        "fact": "The fact to remember"
+      }
+    },
+    "preview": {
+      "title": "What this will do",
+      "target": "Object concerned",
+      "destination": "Destination",
+      "content": "Content or change",
+      "dataUsed": "Data used",
+      "connection": "Connection used",
+      "notDone": "What will not be done"
+    },
+    "result": {
+      "title": "What happened",
+      "outcome": "Outcome",
+      "when": "When",
+      "target": "Object",
+      "destination": "Destination",
+      "connection": "Tool used",
+      "ref": "Reference or link",
+      "actor": "Actor",
+      "next": "Next step",
+      "succeeded": "What still succeeded",
+      "notDone": "What wasn’t done",
+      "toVerify": "What needs to be checked",
+      "open": "Open",
+      "viewDetail": "View detail",
+      "contactSupport": "Contact support"
+    },
+    "working": "Working…",
+    "unknownOutcomeNote": "We don’t know whether the action left: nothing is replayed automatically.",
+    "gestureFailedUnknown": "The action could not be completed."
+  },
+  "replyOptions": {
+    "group": "Suggested answers"
+  },
+  "clarification": {
+    "ruledOut": "Already ruled out:",
+    "assumptions": "I am going with {{items}}. You can correct me.",
+    "canCorrect": "You can correct me."
+  },
+  "blocks": {
+    "kind": {
+      "verdict": "Verdict",
+      "account_ranking": "Account ranking",
+      "contact_list": "Contacts",
+      "comparison": "Comparison",
+      "action_plan": "Action plan",
+      "consultant_shortlist": "Consultants to put forward",
+      "meeting_brief": "Meeting brief",
+      "consultant_brief": "Provisional consultant brief",
+      "missing_data": "What’s missing",
+      "account_card": "Account card",
+      "timeline": "Timeline",
+      "file_export": "Exportable file",
+      "approach": "Approach",
+      "account_volume_sprint": "Account sprint",
+      "count_contract": "Count",
+      "account_map": "Account map",
+      "post_meeting_summary": "Recorded meeting recap",
+      "manager_review": "Manager account review"
+    },
+    "why": "Why",
+    "limits": "What's missing",
+    "route": "Recommended route:",
+    "contact": "Useful contact now:",
+    "whyNow": "Why now:",
+    "action": "Action:",
+    "followUps": "Next steps from this account",
+    "nextAction": "Next action:",
+    "rankedBy": "Ranked by:",
+    "alreadyInWorkspace": "Already in your workspace",
+    "newTarget": "New target",
+    "notEvaluated": "Not evaluated:",
+    "openSource": "Open the source: {{site}}",
+    "source": "Source:",
+    "basis": {
+      "proof": "Proof",
+      "interpretation": "Interpretation",
+      "history": "History"
+    },
+    "criterion": "Criterion",
+    "showMore_one": "Show the other result",
+    "showMore_other": "Show the other {{count}} results",
+    "showLess": "Collapse the list",
+    "contactCount_one": "{{count}} contact",
+    "contactCount_other": "{{count}} contacts",
+    "followUp": {
+      "sent": "Last sent: {{date}}",
+      "prepared": "Follow-up prepared: {{date}}"
+    },
+    "missing": "Still missing",
+    "need": "Need:",
+    "fit": "What fits",
+    "gaps": "Gaps",
+    "availability": "Availability:",
+    "objective": "Objective:",
+    "when": "When:",
+    "owner": "Who:",
+    "attendees": "Attendees",
+    "talkingPoints": "Talking points",
+    "pitch": "Pitch:",
+    "questions": "Questions to ask",
+    "risks": "Risks",
+    "unknowns": "What we don’t know",
+    "role": "Role:",
+    "previousRoles": "Previous roles",
+    "seniority": "Seniority:",
+    "techFocus": "Technical focus:",
+    "functionalFocus": "Functional focus:",
+    "technologies": "Known technologies",
+    "sectors": "Known sectors",
+    "contractType": "Contract type:",
+    "mobility": "Mobility:",
+    "workMode": "Remote or on-site:",
+    "rateTarget": "Target day rate:",
+    "failed": "What failed",
+    "howToGet": "How to get it:",
+    "stillPossible": "What’s still possible",
+    "decisions": "Decisions",
+    "actions": "Actions",
+    "recordedAt": "Recorded on:",
+    "reminder": "Reminder:",
+    "managerReviewVerdict": "Verdict:",
+    "managerReviewChangeDigest": "What changed:",
+    "managerReviewActionsCompleted": "Completed actions",
+    "managerReviewActionsStalled": "Stalled actions",
+    "managerReviewDecisionsRequested": "Decisions pending",
+    "managerReviewArbitrations": "Arbitrations requested",
+    "managerReviewImportantFacts": "Important facts",
+    "managerReviewStatusAttention": "Needs attention",
+    "managerReviewStatusStable": "Stable",
+    "managerReviewStatusNotEvaluable": "Not evaluable",
+    "managerReviewReasonStalledActions": "stalled action(s)",
+    "managerReviewReasonRisks": "flagged risk(s)",
+    "managerReviewReasonCoverageGaps": "coverage gap(s)",
+    "managerReviewReasonDecisionsPending": "pending decision(s)",
+    "managerReviewReasonArbitrationsPending": "pending arbitration(s)",
+    "preparing": "Formatting the reply…",
+    "superseded": "This list was updated further down in the conversation.",
+    "openFiche": "Open the full record",
+    "timelineEmpty": "No history recorded for this account.",
+    "dateUnreadable": "Unreadable date",
+    "download_one": "Download the row",
+    "download_other": "Download all {{count}} rows",
+    "listCount_one": "{{count}} account in this list",
+    "listCount_other": "{{count}} accounts in this list",
+    "shownOfTotal": "{{shown}} of {{total}} shown",
+    "copyLink": "Copy this card's link",
+    "linkCopied": "Link copied",
+    "linkCopyFailed": "Copy failed",
+    "angle": "Approach angle:",
+    "useCase": "Use case:",
+    "noUseCase": "no concrete proof in the file",
+    "fullListCount": "Full list (market observations):",
+    "fullListOpen": "Open the full list in Discover",
+    "sprint": "Executable sprint:",
+    "focus": "To work all the way:",
+    "focusNone": "No account has a verified way in yet — qualify one before launching a first move.",
+    "entryPoint": "Entry point:",
+    "firstMove": "First move:",
+    "deduplicated": "After deduplication:",
+    "resolvedIdentity": "After identity resolution:",
+    "coverage": "Coverage:",
+    "mapPartial": "Partial map",
+    "mapCompleteness": {
+      "complete": "Complete",
+      "partial": "Partial",
+      "sparse": "Sparse"
+    },
+    "mapContextKind": {
+      "territory": "Territory",
+      "sector": "Sector",
+      "size": "Size",
+      "filter": "Filter"
+    },
+    "countContract": {
+      "confidence": "Confidence:",
+      "sources": "Sources:",
+      "belowThreshold": "fewer than {{threshold}} {{unit}}",
+      "scope": {
+        "compte": "Account",
+        "entreprise": "Company",
+        "espace": "Workspace"
+      },
+      "sourceLayer": {
+        "bellum_workspace": "{{brand}} workspace",
+        "market_memory": "Observed history"
+      },
+      "unit": {
+        "personne_one": "person",
+        "personne_other": "people",
+        "parcours_one": "path",
+        "parcours_other": "paths",
+        "mission_one": "mission",
+        "mission_other": "missions",
+        "experience_one": "experience",
+        "experience_other": "experiences",
+        "observation_one": "observation",
+        "observation_other": "observations",
+        "entreprise_one": "company",
+        "entreprise_other": "companies",
+        "filiale_one": "subsidiary",
+        "filiale_other": "subsidiaries",
+        "projet_one": "project",
+        "projet_other": "projects",
+        "contact_one": "contact",
+        "contact_other": "contacts",
+        "signal_one": "signal",
+        "signal_other": "signals",
+        "source_one": "source",
+        "source_other": "sources",
+        "offre_one": "offer",
+        "offre_other": "offers",
+        "relation_one": "relation",
+        "relation_other": "relations"
+      }
+    },
+    "framing": {
+      "title": "Analysis framing",
+      "intro": "Prefilled from your request to {{copilot}}. It puts what relates to your request at the top of the file, and names it; nothing is left out of the analysis.",
+      "skills": "Skills",
+      "removeSkill": "Remove {{skill}}",
+      "addSkill": "Add a skill",
+      "zone": "Area",
+      "removeZone": "Remove the area {{zone}}",
+      "offers_one": "Attach the offer found on the card ({{count}})",
+      "offers_other": "Attach the {{count}} offers found on the card",
+      "launch": "Start the analysis",
+      "cancel": "Cancel"
+    },
+    "resultsToolbar": {
+      "filterPlaceholder": "Filter by name…",
+      "filterAria": "Filter the results shown",
+      "noMatches": "No results for “{{query}}”.",
+      "sortAria": "Sort the results shown",
+      "sortByRank": "{{copilot}}’s order",
+      "sortByName": "Name (A→Z)",
+      "selectAria": "Select {{name}}",
+      "selectedCount_one": "{{count}} selected",
+      "selectedCount_other": "{{count}} selected",
+      "exportSelection_one": "Save the selected account",
+      "exportSelection_other": "Save the {{count}} selected",
+      "exportAll_one": "Export the account as CSV",
+      "exportAll_other": "Export all {{count}} accounts as CSV",
+      "analyzeSelection": "Analyze selection",
+      "analyzeLaunched_one": "{{count}} analysis started — follow it in your background tasks.",
+      "analyzeLaunched_other": "{{count}} analyses started — follow them in your background tasks.",
+      "analyzeFailed": "The analysis could not be started. Please try again.",
+      "previewTitle": "What this analysis will do",
+      "costDemo": "Demo workspace: no real analysis is started.",
+      "costUnmeasured": "The exact cost of at least one launch could not be read — not measured. We don't guess an amount: launching stays blocked until it is known.",
+      "alreadyAnalyzedLabel": "Already analyzed",
+      "alreadyAnalyzed_one": "{{count}} account already analyzed: nothing is charged for it.",
+      "alreadyAnalyzed_other": "{{count}} accounts already analyzed: nothing is charged for them.",
+      "previewCountLabel": "Analyses",
+      "countAnnounce_one": "{{count}} analysis will be started.",
+      "countAnnounce_other": "{{count}} analyses will be started."
+    },
+    "exportHeaders": {
+      "name": "Name",
+      "verdict": "Verdict",
+      "why": "Why",
+      "whyNow": "Why now",
+      "limits": "Limits",
+      "source": "Source",
+      "rank": "Rank",
+      "level": "Level",
+      "notEvaluated": "Not evaluated",
+      "sourceDate": "Source date",
+      "sourceBasis": "Source type",
+      "rankedBy": "Ranked by",
+      "basis": {
+        "proof": "Proof",
+        "interpretation": "Interpretation",
+        "history": "History"
+      }
+    },
+    "edit": "Edit the plan",
+    "editStepsLabel": "One step per line",
+    "editSave": "Save a new version",
+    "editCancel": "Cancel",
+    "editFailed": "The change could not be saved.",
+    "versionLabel": "Version {{version}} — edited",
+    "mapOrigin": "Where the selection comes from:",
+    "mapProves": "What it proves:",
+    "mapNotProven": "What it does not prove:",
+    "mapRetained_one": "{{count}} account kept",
+    "mapRetained_other": "{{count}} accounts kept",
+    "mapReserve": "Main caveat:",
+    "mapCaution": "Caution:",
+    "mapReserveTitle": "Main caveat",
+    "mapTags": "Tags",
+    "mapMemory": "What market observations show",
+    "mapMethodLimit": "Method limit:",
+    "substance": {
+      "title": "What this reply does not establish",
+      "list_not_ranking": "A single account: this is a profile, not a ranking.",
+      "no_dated_source": "{{kind}}: none of the {{total}} rows carries a dated source.",
+      "few_dated_sources": "{{kind}}: {{found}} of {{total}} rows carry a dated source.",
+      "mostly_unmeasured": "{{kind}}: {{found}} of {{total}} cells are filled — the rest is not measured."
+    },
+    "nextGesture": "Next step",
+    "seeAccount": "Open dossier",
+    "contactNoRecord": "First name only: no record to open from this card.",
+    "seeInOrgChart": "See in the org chart",
+    "reveal": {
+      "groupAria": "People found outside your workspace",
+      "button": "Get the email",
+      "buttonAria": "Get the email of {{name}}",
+      "running": "Looking up the address…",
+      "notFound": "Address not found — nothing is charged.",
+      "paused": "Action on hold.",
+      "error": "Lookup unavailable right now — try again later, nothing is charged.",
+      "mailTo": "Recipient of the prepared email: {{email}}. You send it yourself."
+    }
+  },
+  "replyDisclosure": {
+    "show": {
+      "why": "See why"
+    },
+    "hide": "Hide the detail"
+  },
+  "structured": {
+    "aria": "Structured reply"
+  },
+  "save": {
+    "saved": "Saved to memory",
+    "savedAs": "Saved as “{{kind}}”",
+    "as": "Save as…",
+    "close": "Close the choice",
+    "aria": "Save this answer to {{copilot}}'s memory"
+  },
+  "demo": {
+    "notice": "Demo workspace — {{copilot}} answers here from prepared exchanges, on fictional dossiers.",
+    "thinking": "{{copilot}} is writing…",
+    "pickQuestion": "Pick a question",
+    "inputDisabled": "Free typing is disabled in the demo",
+    "inputDisabledAria": "Input disabled in demo mode",
+    "offScript": "In the demo workspace my answers are written in advance — no model call is made. Pick one of the suggested questions and I will show you what I can do on this room's accounts."
+  },
+  "scope": {
+    "portfolio": "My whole workspace",
+    "none": "No targeted file",
+    "strictNone": "Without workspace data",
+    "dialog": {
+      "title": "New conversation",
+      "subtitle": "Pick the file this conversation starts from. {{copilot}} only reads data from your space, and tells you under each answer what it used.",
+      "marketNote": "{{brand}}'s market references can be queried when your question needs them.",
+      "broad": "Overview",
+      "watched": "Tracked accounts",
+      "activeAccounts_one": "{{count}} analyzed account",
+      "activeAccounts_other": "{{count}} analyzed accounts",
+      "noneHint": "No file open. Your workspace accounts stay readable if your question needs them — this is not an exclusion.",
+      "strictNoneHint": "Strict exclusion: the portfolio, account files and CRM are not read for this conversation.",
+      "portfolioReadNote": "available; {{copilot}} only reads what your question asks for, and says so under each answer",
+      "searchPlaceholder": "Search an account…",
+      "searchLabel": "Search an account",
+      "unnamedAccount": "Unnamed account",
+      "noMatch": "No account matches.",
+      "noAccount": "No account analysed in this portfolio yet.",
+      "conversations_one": "{{count}} conversation",
+      "conversations_other": "{{count}} conversations",
+      "effectAccount": "{{copilot}} will only read {{company}}: its contacts, plan, and signals. A new thread opens; your previous conversations stay in your list.",
+      "effectPortfolio": "{{copilot}} will read every account in your workspace — yours and your colleagues’ —, their contacts, plans, and signals. A new thread opens; your previous conversations stay in your list.",
+      "effectNone": "{{copilot}} opens no targeted file, but may read your workspace accounts if your question asks for it. A new thread opens; your previous conversations stay in your list.",
+      "effectStrictNone": "{{copilot}} will read neither the workspace portfolio, the account files nor the CRM, and the tools that read them are removed. A new thread opens without the earlier exchanges, which stay in your list; going back to the previous choice reopens the old thread and undoes no action already taken.",
+      "changeable": "You can change this at any time.",
+      "cancel": "Cancel",
+      "confirm": "Open conversation",
+      "allAccounts": "Accounts",
+      "precise": "A specific file",
+      "tabs": {
+        "account": "An account",
+        "consultant": "A consultant",
+        "need": "A need",
+        "mission": "A mission",
+        "contact": "A person",
+        "opportunity": "An opportunity",
+        "job_offer": "A job posting"
+      },
+      "consultantSearchPlaceholder": "Search a consultant…",
+      "consultantSearchLabel": "Search a consultant",
+      "needSearchPlaceholder": "Search a need…",
+      "needSearchLabel": "Search a need",
+      "missionSearchPlaceholder": "Search for a mission…",
+      "missionSearchLabel": "Search for a mission",
+      "contactSearchPlaceholder": "Search a person, their role, their company…",
+      "contactSearchLabel": "Search a person",
+      "opportunitySearchPlaceholder": "Search a deal, an account…",
+      "opportunitySearchLabel": "Search an opportunity",
+      "jobOfferSearchPlaceholder": "Search a role, an account…",
+      "jobOfferSearchLabel": "Search a job posting",
+      "noConsultant": "No consultant matches.",
+      "noNeed": "No open need matches.",
+      "noMission": "No ongoing mission matches.",
+      "noContact": "No person matches.",
+      "noOpportunity": "No opportunity matches.",
+      "noJobOffer": "No spotted job posting matches.",
+      "clearPrecise": "Clear the chosen record",
+      "unnamedContact": "Unnamed person",
+      "loading": "Loading…",
+      "loadError": "The list couldn't be loaded. Try again in a moment.",
+      "unnamedConsultant": "Unnamed consultant",
+      "availableFrom": "Available from {{date}}",
+      "effectConsultant": "{{copilot}} will read {{name}}'s profile: role, skills, availability, and zones. The accounts in your workspace stay readable. A new thread opens; your previous conversations stay in your list.",
+      "effectNeed": "{{copilot}} will read the need {{need}}: the role, required skills, start date, and shortlist. The accounts in your workspace stay readable. A new thread opens; your previous conversations stay in your list.",
+      "effectMission": "{{copilot}} will read the {{mission}} mission: its account, its role, its schedule and who is staffed on it. The accounts in your workspace stay readable. A new thread opens; your previous conversations stay in your list.",
+      "effectContact": "{{copilot}} will read {{name}}'s record: their role, their part in the decision, the history of exchanges — not their account's whole file. Their contact details are not sent. A new thread opens; your previous conversations stay in your list.",
+      "effectOpportunity": "{{copilot}} will read the {{deal}} deal: its account, its nature, the offer in play, its stage and since when. The accounts in your workspace stay readable. A new thread opens; your previous conversations stay in your list.",
+      "effectJobOffer": "{{copilot}} will read the {{offer}} job posting: the role, its date, its location, the skills required and the account that is hiring. A new thread opens; your previous conversations stay in your list.",
+      "score": "Priority score: {{score}} out of 10"
+    },
+    "state": {
+      "neverAnalysed": "Never analysed",
+      "analysing": "Analysis running",
+      "customer": "Customer",
+      "opportunity": "Live opportunity"
+    },
+    "change": "Change what {{copilot}} reads",
+    "unknownAccount": "One account",
+    "unknownConsultant": "A consultant",
+    "unknownNeed": "A need",
+    "portfolioWithCount_one": "My whole workspace · {{count}} analyzed account",
+    "portfolioWithCount_other": "My whole workspace · {{count}} analyzed accounts",
+    "unknownMission": "A mission",
+    "unknownContact": "A person",
+    "unknownOpportunity": "An opportunity",
+    "unknownJobOffer": "A job posting",
+    "changed": {
+      "label": "Scope changed: {{from}} → {{to}}",
+      "back": "Back to {{scope}}",
+      "dismiss": "Hide this notice"
+    },
+    "shared": {
+      "label_one": "Shared with {{names}}",
+      "label_other": "Shared with {{count}} colleagues",
+      "title": "Also wrote in this thread: {{names}}. Everyone in your workspace can read it."
+    }
+  },
+  "suggestions": {
+    "seeAll": "View all"
+  },
+  "memoryBar": {
+    "title": "Memory",
+    "loading": "Reading memory…",
+    "unavailable": "Memory unavailable",
+    "empty": "Memory · nothing saved yet",
+    "detailsAria": "Open full memory",
+    "dialogDescription": "What {{copilot}} has saved and can re-read. Removing an item does not change earlier messages that quote it; it is no longer re-read for the next ones.",
+    "summary_one": "Memory · {{count}} item saved",
+    "summary_other": "Memory · {{count}} items saved"
+  },
+  "provenance": {
+    "asOf": "Data from {{date}}",
+    "missing_one": "{{count}} missing input",
+    "missing_other": "{{count}} missing inputs",
+    "sources_one": "{{count}} source",
+    "sources_other": "{{count}} sources",
+    "copy": "Copy answer",
+    "copied": "Answer copied",
+    "copyFailed": "Copy failed",
+    "partial": {
+      "turn_timeout": "Partial answer — timed out",
+      "turn_error": "Partial answer — stopped by an error",
+      "default": "Partial answer"
+    },
+    "basis": {
+      "title": "Basis of the answer",
+      "foundation": {
+        "market_memory": "Market observations",
+        "recent_web": "Recent web sources",
+        "workspace": "Workspace data and connectors",
+        "inference": "{{brand}} inference"
+      },
+      "foundedOn": "Based on",
+      "scope": "Scope",
+      "scopeAccount": "account {{name}}",
+      "scopePortfolio_one": "{{count}} portfolio account out of {{total}}",
+      "scopePortfolio_other": "{{count}} portfolio accounts out of {{total}}",
+      "scopePortfolioNoTotal_one": "{{count}} portfolio account",
+      "scopePortfolioNoTotal_other": "{{count}} portfolio accounts",
+      "certainty": "Certainty",
+      "certaintyTier": {
+        "high": "high",
+        "medium": "medium",
+        "low": "low"
+      },
+      "undated": "Freshness: source not dated"
+    }
+  },
+  "feedback": {
+    "openAria": "Give feedback on this answer",
+    "givenAria": "Your feedback on this answer: {{verdict}}. Change or withdraw it",
+    "question": "What do you think?",
+    "verdict": {
+      "utile": "Useful",
+      "pas_pertinent": "Not relevant",
+      "donnee_fausse": "Wrong data",
+      "deja_fait": "Already done",
+      "pas_maintenant": "Not now",
+      "mauvaise_priorite": "Wrong priority"
+    },
+    "reasonQuestion": "What’s wrong?",
+    "reason": {
+      "mauvais_compte": "Wrong account",
+      "mauvais_contact": "Wrong contact",
+      "mauvais_timing": "Wrong timing",
+      "hors_positionnement": "Outside our positioning",
+      "deja_traite": "Already handled",
+      "autre": "Other",
+      "trop_long": "Too long",
+      "doublon": "Duplicate",
+      "source_douteuse": "Dubious source",
+      "contact_parti": "Contact has left",
+      "concurrent_en_place": "Competitor already in place",
+      "budget_insuffisant": "Budget too small"
+    },
+    "noReason": "Send without a reason",
+    "otherLabel": "Tell me more (optional)",
+    "categoryLabel": "Specify (optional)",
+    "categoryNone": "No specifics",
+    "category": {
+      "faux": "Wrong",
+      "donnee_ancienne": "Outdated data",
+      "hors_sujet": "Off topic",
+      "trop_generique": "Too generic",
+      "mauvaise_action": "Wrong action",
+      "mauvais_compte": "Wrong account",
+      "mauvais_contact": "Wrong contact",
+      "permission_incorrecte": "Wrong permission",
+      "fichier_mal_compris": "File misread",
+      "ton": "Tone",
+      "trop_long": "Too long",
+      "manque_capacite": "Missing capability",
+      "bug_interface": "Interface bug",
+      "lenteur": "Slow",
+      "cout_inattendu": "Unexpected cost",
+      "autre": "Other"
+    },
+    "wrongField": "What is wrong?",
+    "wrongValue": "The correct information (optional)",
+    "scopeLabel": "Where should it be corrected?",
+    "scope": {
+      "reply": "In this answer only",
+      "account": "Also in this account’s file, for the whole team"
+    },
+    "wrongPreview": {
+      "title": "Check before sending:"
+    },
+    "review": "Review",
+    "confirm": "Confirm",
+    "edit": "Edit",
+    "send": "Send",
+    "back": "Back",
+    "given": "Your feedback: {{verdict}}",
+    "change": "Change",
+    "withdraw": "Withdraw my feedback",
+    "withdrawn": "Your feedback is withdrawn: it no longer weighs on {{copilot}}’s answers.",
+    "ack": {
+      "saved": "Noted. {{copilot}} takes it into account in the next answers — for you only.",
+      "scoped": "This feedback is about this answer: {{copilot}} won’t draw a general rule from it.",
+      "accountCorrected": "The correction is also applied to the account’s file, for the team.",
+      "retryNow": "Retry with the correction",
+      "retryCostUnknown": "Cost not announced: a new turn may trigger a paid tool.",
+      "suggestion": "You’ve flagged an answer as too long {{count}} times. {{copilot}} suggests making it a reply preference.",
+      "keep": "Keep replies short",
+      "kept": "Done: {{copilot}} will keep replies short. You can change it in Settings › {{copilot}}’s memory.",
+      "where": "Your feedback stays attached to this answer: you can change or withdraw it here.",
+      "demo": "In the demo, your feedback isn’t kept: {{copilot}}’s answers are prepared in advance."
+    },
+    "error": "Your feedback couldn’t be saved. Try again.",
+    "forbidden": "You’re not allowed to correct this account’s file. Choose “In this answer only”."
+  },
+  "share": {
+    "action": "Share in workspace",
+    "notice": "Members of your workspace will be able to read this conversation.",
+    "copyAction": "Copy link",
+    "done": "Link copied",
+    "copied": "Conversation link copied",
+    "failed": "Copy failed — here is the link: {{url}}",
+    "snapshotNotice": "Or a frozen version: the conversation as it stands now, without what gets written next.",
+    "snapshotAction": "Copy a frozen version",
+    "snapshotCopied": "Version {{version}} frozen — link copied",
+    "snapshotFailed": "The version could not be frozen. Try again.",
+    "forbidden": "This conversation is about an account outside your portfolio: it cannot be opened here.",
+    "restrictedSourceNotice": "This thread cites at least one excerpt from a personal connection (e.g. your mailbox): a colleague who opens this link can read it, even without access to that connection themselves."
+  },
+  "version": {
+    "banner": "Frozen version #{{version}} — anything written afterwards does not appear here.",
+    "live": "See the live conversation"
+  },
+  "conversationObject": {
+    "action": "Details",
+    "title": "Conversation details",
+    "loading": "Reading the conversation…",
+    "unavailable": "No details yet: the conversation is not saved yet, or it could not be read.",
+    "failed": "That did not go through. Try again.",
+    "unknownMember": "Unnamed member",
+    "owner": {
+      "opener": "Owner: {{name}} (opened the conversation)",
+      "declared": "Owner: {{name}}",
+      "none": "Owner: nobody to name (deleted account)",
+      "pick": "Transfer to…",
+      "transfer": "Transfer",
+      "done": "Conversation transferred"
+    },
+    "attach": {
+      "attached": "Attached to an account.",
+      "none": "Not attached to any account.",
+      "toScope": "Attach to the scope's account",
+      "detach": "Detach from the account",
+      "done": "Conversation attached to the account",
+      "detached": "Conversation detached from the account"
+    },
+    "branch": {
+      "explore": "Explore another hypothesis",
+      "notice": "Opens a new conversation linked to this one; {{copilot}} picks up its summary there. This one stays as it is.",
+      "openParent": "Open the original conversation",
+      "done": "New conversation opened"
+    },
+    "legalHold": {
+      "on": "Legal hold since {{date}}: the conversation cannot be removed.",
+      "reason": "Reason: {{reason}}",
+      "off": "No legal hold.",
+      "reasonPlaceholder": "Why this hold? (required)",
+      "reasonLabel": "Legal hold reason",
+      "reviewByLabel": "Review date (optional)",
+      "reviewBy": "To review by {{date}}.",
+      "reviewOverdue": "Review overdue since {{date}}.",
+      "place": "Place a legal hold",
+      "lift": "Lift the legal hold",
+      "placed": "Legal hold placed",
+      "lifted": "Legal hold lifted"
+    },
+    "versions": {
+      "title": "Shared frozen versions",
+      "item": "Version {{version}} — up to {{date}}"
+    },
+    "auditSnapshot": {
+      "title": "Opened from the commercial audit",
+      "version": "Audit version when opened: {{version}}",
+      "versionUnknown": "not measured",
+      "strategy": "Strategy in place: {{strategy}}",
+      "firstActionsTitle": "First moves proposed when opened",
+      "unknownsTitle": "What could not be established when opened"
+    }
+  },
+  "participants": {
+    "action": "Participants",
+    "title": "Who can read this thread",
+    "notice": "Tied to your workspace: all of its members can read this conversation. It is neither a private thread nor a public link.",
+    "loading": "Reading members…",
+    "loadFailed": "The member list could not be read. The rule does not change: every workspace member can read this thread.",
+    "empty": "The member list is empty for now. The rule does not change: every workspace member can read this thread.",
+    "you": "You",
+    "unknown": "Unnamed member"
+  },
+  "presence": {
+    "label_one": "{{names}} is also here",
+    "label_other": "{{count}} colleagues are also here",
+    "title": "On this thread right now: {{names}}."
+  },
+  "summary": {
+    "action": "Summary",
+    "mailboxRead": "{{copilot}} read a thread from your mailbox in this conversation. Its content is not replayed here.",
+    "title": "Thread summary",
+    "loading": "Reading the summary…",
+    "loadFailed": "The summary could not be read. Try again.",
+    "empty": "No summary for this thread yet.",
+    "updatedAt": "Updated on {{date}}",
+    "edit": "Edit",
+    "editLabel": "Summary text",
+    "save": "Save",
+    "cancel": "Cancel",
+    "saved": "Summary updated",
+    "saveFailed": "The correction could not be saved.",
+    "sections": {
+      "decisions": "Decisions made",
+      "objects": "Objects involved",
+      "pending": "Pending actions",
+      "pendingOn": "{{action}} — {{target}}",
+      "corrections": "Corrections",
+      "excluded": "Excluded: {{text}}",
+      "excludedWithReason": "Excluded: {{text}} ({{reason}})",
+      "ruled_out": "Ruled out: {{text}}",
+      "ruled_outWithReason": "Ruled out: {{text}} ({{reason}})",
+      "questions": "Questions asked by {{copilot}}",
+      "sources": "Main sources",
+      "sourceCount_one": "{{label}} — cited in {{count}} reply",
+      "sourceCount_other": "{{label}} — cited in {{count}} replies"
+    }
+  },
+  "replyTransform": {
+    "menuLabel": "Adjust this reply",
+    "trigger": "Adjust",
+    "ids": {
+      "deepen": "Go deeper",
+      "synthesize": "Summarize",
+      "more_accounts": "Show more accounts",
+      "less_detail": "Show less detail",
+      "justify": "Justify better",
+      "priorities_only": "Show priorities only",
+      "action_plan": "Reformat as an action plan",
+      "exportable_list": "Reformat as an exportable list"
+    },
+    "demo": {
+      "setAside_one": "{{count}} item set aside.",
+      "setAside_other": "{{count}} items set aside.",
+      "planTitle": "Action plan",
+      "tableHead": {
+        "rank": "#",
+        "item": "Item",
+        "detail": "Detail"
+      },
+      "unavailable": "In the demo, “{{action}}” has no prepared answer: it needs new data that only the full version of {{copilot}} goes and fetches. The gestures that follow from the reply itself (summarize, less detail, priorities, action plan, exportable list) work here.",
+      "nothing": "This reply has no items to rework for “{{action}}”."
+    },
+    "deepenWithQuote": "Go deeper (with a quote)"
+  },
+  "retry": {
+    "menuLabel": "More actions on this reply",
+    "retry": "Retry",
+    "editLastMessage": "Edit my request",
+    "alternativeAngle": "Answer with a different angle",
+    "share": "Share this reply",
+    "report": "Report a problem",
+    "superseded": "Reply replaced at {{time}} — kept for reference.",
+    "obsolete": "Obsolete proposal — this reply has been replaced.",
+    "branchOf": {
+      "retry": "Picks up the {{time}} reply — the same request, replayed.",
+      "angle": "Picks up the {{time}} reply — a different angle was asked for.",
+      "edit": "Picks up the {{time}} reply — the request was edited.",
+      "unknownTime": "This reply picks up an earlier exchange in the thread."
+    },
+    "dataOrigin": {
+      "reused": "{{copilot}} reused the same data as the previous reply.",
+      "refreshed": "{{copilot}} ran a fresh search — the sources changed."
+    },
+    "angleSuffix": " (Answer with a different angle than your previous reply — don't repeat the same wording.)"
+  },
+  "conversationsPanel": {
+    "aria": "Your conversations with {{copilot}}",
+    "title": "Conversations",
+    "collapse": "Collapse conversations",
+    "expand": "Expand conversations",
+    "mobileOpen": "See your conversations"
+  },
+  "sidebarThreads": {
+    "dossiers": {
+      "title": "Your accounts"
+    },
+    "new": "New conversation",
+    "search": "Search…",
+    "loading": "Loading…",
+    "unavailable": "History unavailable",
+    "empty": "No conversation",
+    "noMatch": "No conversation contains “{{query}}”.",
+    "untitled": "Untitled",
+    "startedBy": "Started by {{firstName}}",
+    "status": {
+      "answered": "Replied",
+      "answeredLabel": "{{copilot}} replied",
+      "awaiting": "Awaiting reply",
+      "awaitingLabel": "Waiting for {{copilot}} to reply",
+      "unknown": "No reply received",
+      "unknownLabel": "Your question went unanswered by {{copilot}} — send it again.",
+      "closed": "Done",
+      "closedLabel": "Conversation archived"
+    },
+    "menu": "Conversation options",
+    "archive": "Put away",
+    "unarchive": "Bring back",
+    "rename": "Rename",
+    "renameLabel": "Conversation title",
+    "renamed": "Conversation renamed.",
+    "delete": "Remove",
+    "showArchived": "Show put-away conversations",
+    "showActive": "Back to conversations",
+    "emptyArchived": "No conversation put away",
+    "archived": "Conversation put away.",
+    "unarchived": "Conversation brought back.",
+    "deleted": "Conversation removed.",
+    "deleteConfirm": "Remove this conversation from the list? Its messages are kept, put away — you can find them again under \"View put-away conversations\". Its title and attached documents, though, are gone for good. Anything you saved from {{copilot}} lives elsewhere and stays.",
+    "actionFailed": "The action could not be saved.",
+    "selectMode": "Select",
+    "exitSelectMode": "Done selecting",
+    "selectThread": "Select “{{title}}”",
+    "selectedCount_one": "{{count}} conversation selected",
+    "selectedCount_other": "{{count}} conversations selected",
+    "archiveSelected": "Put away selection",
+    "archivedSelected_one": "{{count}} conversation put away.",
+    "archivedSelected_other": "{{count}} conversations put away.",
+    "clearSelection": "Cancel",
+    "grouping": {
+      "label": "Sort conversations",
+      "byDate": "By date",
+      "byAccount": "By account"
+    },
+    "groups": {
+      "today": "Today",
+      "thisWeek": "This week",
+      "older": "Older",
+      "undated": "No date",
+      "noAccount": "No account",
+      "unknownAccount": "Account not found"
+    },
+    "duplicate": "Duplicate",
+    "duplicated": "Conversation duplicated — it is an independent thread.",
+    "export": "Export",
+    "exportScopes": {
+      "full": "Full thread",
+      "fullHint": "every message",
+      "extract": "Excerpt",
+      "extractHint": "the last 30 messages"
+    },
+    "exportFormats": {
+      "md": "Markdown (.md)",
+      "pdf": "PDF (.pdf)",
+      "json": "Structured copy (.json)"
+    },
+    "exportFailed": "The export could not be downloaded.",
+    "searching": "Searching your whole history…",
+    "sharedFilter": {
+      "label": "Shared",
+      "title": "Show only conversations started by a colleague",
+      "empty": "No conversation started by a colleague"
+    }
+  },
+  "deepen": {
+    "actionsLabel": "Deepen",
+    "actions": {
+      "verify_now": "Verify now",
+      "deepen_answer": "Deepen this answer",
+      "deepen_top_five": "Deepen the top five",
+      "refresh_contacts": "Refresh contacts only",
+      "compare_subsidiaries": "Compare subsidiaries",
+      "verify_position": "Verify a position",
+      "access_paths": "Find access paths",
+      "full_dossier": "Build the full dossier"
+    },
+    "dimension": {
+      "signals": "Signals",
+      "contacts": "Contacts",
+      "entities": "Entities",
+      "strategy": "Strategy",
+      "identity_group": "Identity and group",
+      "subsidiaries": "Subsidiaries and sites",
+      "positions": "Positions",
+      "ecosystem": "Ecosystem",
+      "buying_path": "Buying path",
+      "projects": "Projects"
+    },
+    "quoting": "Working out what is already paid for…",
+    "error": "The estimate could not be computed. Try again.",
+    "nothingToRun": "Everything is already up to date: nothing to re-run.",
+    "line": {
+      "reuse": "{{section}} — {{account}}: up to date, reused",
+      "run": "{{section}} — {{account}}: will be rerun",
+      "same_phase": "{{section}} — {{account}}: covered by the same search",
+      "no_dossier": "{{account}}: no dossier to deepen, run the analysis first"
+    },
+    "launch": "Start deepening",
+    "cancel": "Cancel",
+    "running": "Deepening in progress… {{done}}/{{total}}",
+    "summary": {
+      "title": "What the deepening changed",
+      "confirmed": "Confirmed, unchanged: {{list}}",
+      "changed": "Changed: {{list}}",
+      "added": "New: {{list}}",
+      "dropped": "Dropped, unknown again: {{list}}",
+      "unmeasured": "Not measured by this axis: {{list}}",
+      "failed": "Did not complete, nothing charged: {{list}}"
+    },
+    "steps": {
+      "label": "Steps of this work",
+      "quick": "Quick",
+      "verified": "Verified",
+      "deepened": "Deepened"
+    },
+    "toRun": "Deepening ready to run."
+  },
+  "contextContract": {
+    "label": "Context",
+    "modeGroup": "Search context",
+    "modes": {
+      "my_activity": "My activity",
+      "one_off_mission": "One-off mission",
+      "neutral": "Neutral"
+    },
+    "oneOffNote": "One-off mission mode: your usual profile is set aside, only the brief and the chosen objects count.",
+    "neutralNote": "Neutral mode: your usual profile is ignored for this request. It is neither a private conversation nor an exclusion of workspace data.",
+    "profileVersioned": "{{name}} · v{{version}}",
+    "profilePerimeterWithSectors": "Scope: {{size}} · {{sectors}}.",
+    "profilePerimeterSizeOnly": "Scope: {{size}}.",
+    "portfolio": "Your portfolio — accounts you already follow are flagged",
+    "summaryPortfolio": "your portfolio",
+    "crmUsed": "Your CRM — account presence cross-checked",
+    "summaryCrm": "your CRM",
+    "crmNotConnected": "No CRM connected",
+    "crmNotReadHere": "Your CRM is not read by this search",
+    "profileIgnored": "Usual profile ignored — {{mode}} mode",
+    "crmIgnored": "Connected CRM set aside — {{mode}} mode"
+  },
+  "dayClosure": {
+    "title": "Wrap-up for {{date}}",
+    "guarantee": "Nothing changes before you click “Approve”, and each task is decided one by one. Nothing is sent.",
+    "tasksUnavailable": "Your tasks could not be read: this wrap-up is incomplete.",
+    "sections": {
+      "results": "What moved forward",
+      "commitments": "Commitments made today",
+      "waitingOn": "Who owes you a reply",
+      "blocked": "Failures or blockers",
+      "toDecide": "To decide, task by task",
+      "toValidate": "Data to approve",
+      "firstTomorrow": "First action tomorrow"
+    },
+    "checkedNote": "Checked by you: a declaration, not proof that anything was sent.",
+    "dueOn": "due {{date}}",
+    "noReason": "No reason noted",
+    "unknownThread": "Thread without a subject",
+    "silentDays_one": "no reply for {{count}} day",
+    "silentDays_other": "no reply for {{count}} days",
+    "waitingState": {
+      "not_connected": "Your mailbox is not connected: pending replies are not read.",
+      "missing_scope": "Your mailbox does not allow us to read it: reconnect it in Settings › Integrations.",
+      "unavailable": "Your mailbox did not respond: pending replies are not read."
+    },
+    "toValidateUnavailable": "The cards awaiting approval could not be read.",
+    "openActions": "Open Actions",
+    "decisionFor": "Decision for “{{title}}”",
+    "decision": {
+      "postpone": "Postpone",
+      "delegate": "Delegate",
+      "requalify": "Rephrase",
+      "drop": "Drop",
+      "done": "Mark done"
+    },
+    "fields": {
+      "newDate": "New due date",
+      "owner": "Who takes it over",
+      "chooseOwner": "Choose a person…",
+      "newTitle": "New wording",
+      "dropReason": "Why it is dropped (optional)",
+      "doneNote": "Outcome (optional)"
+    },
+    "noDecisionNote": "A task without a decision stays as it is: nothing is postponed automatically.",
+    "review_one": "Review the change",
+    "review_other": "Review the {{count}} changes",
+    "diffTitle": "What will change",
+    "diff": {
+      "postpone": "{{title}}: due {{before}} → {{after}}",
+      "delegate": "{{title}}: handed over to {{after}}",
+      "requalify": "“{{before}}” → “{{after}}”",
+      "drop": "{{title}}: dropped (archived, not deleted)",
+      "done": "{{title}}: marked done"
+    },
+    "validate_one": "Approve this change",
+    "validate_other": "Approve these {{count}} changes",
+    "back": "Edit",
+    "applied": "Updated.",
+    "failed": "Failed: nothing changed for this task.",
+    "demoNothingSaved": "Demo workspace: these changes are not saved."
+  },
+  "focusPlan": {
+    "title": "Plan for {{date}}",
+    "guarantee": "Nothing is created in your calendar: this card proposes, it writes nothing.",
+    "noBlockPlaced": "No block could be placed today.",
+    "energy": {
+      "low": "Declared energy: low — the plan leaves more margin.",
+      "normal": "Declared energy: normal.",
+      "high": "Declared energy: high — the plan holds a bit more."
+    },
+    "blockType": {
+      "meeting_prep": "Prepare a meeting",
+      "call_session": "Call session",
+      "account_research": "Account research",
+      "enrichment": "Enrichment",
+      "pipeline_review": "Pipeline review",
+      "matching": "Matching",
+      "consultant_followup": "Consultant follow-up",
+      "admin_tasks": "Admin tasks",
+      "follow_ups": "Follow-ups",
+      "manager_review": "Manager review",
+      "data_correction": "Data correction"
+    },
+    "dueOn": "due {{date}}",
+    "deferredTitle": "Not placed",
+    "deferredReason": {
+      "capacite_atteinte": "day's capacity reached",
+      "echeance_depassee": "no free slot before the deadline",
+      "bloc_trop_long": "longer than any free day can hold",
+      "outil_non_branche": "relies on a tool your workspace hasn’t connected"
+    },
+    "margin": "{{duration}} left free in the day.",
+    "unreadSources": "Not taken into account: {{sources}}.",
+    "unreadSource": {
+      "tools": "connected tools",
+      "role": "your role",
+      "team_policy": "team policy"
+    },
+    "connectedTools": "Connected tools taken into account: {{tools}}.",
+    "connectedToolsNone": "No connected tool taken into account.",
+    "toolFamily": {
+      "calendar": "calendar",
+      "email": "mailbox",
+      "crm": "CRM",
+      "telephony": "phone"
+    },
+    "teamPolicy": "Team policy: {{rules}}.",
+    "teamPolicyNone": "No team policy set.",
+    "teamPolicyRule": {
+      "prospecting": "protected prospecting {{ranges}}",
+      "forbidden": "no block {{ranges}}",
+      "maxMeetings_one": "{{count}} meeting max per day",
+      "maxMeetings_other": "{{count}} meetings max per day",
+      "callTarget_one": "target of {{count}} call per day",
+      "callTarget_other": "target of {{count}} calls per day"
+    },
+    "teamPolicyRange": "{{start}}–{{end}}",
+    "teamPolicyRangeDays": "{{start}}–{{end}} ({{days}})",
+    "weekdayShort": {
+      "1": "Mon",
+      "2": "Tue",
+      "3": "Wed",
+      "4": "Thu",
+      "5": "Fri",
+      "6": "Sat",
+      "7": "Sun"
+    },
+    "meetingsOverCap": "{{count}} meetings already on the calendar that day, for a team cap of {{cap}}.",
+    "callTargetUncovered": "No call session in this plan, for a team target of {{count}} calls per day.",
+    "durationMinutes_one": "{{count}} min",
+    "durationMinutes_other": "{{count}} min",
+    "durationHours_one": "{{count}} h",
+    "durationHours_other": "{{count}} h",
+    "durationHoursMinutes": "{{hours}} h {{minutes}}",
+    "confirmBlock": "Add to my calendar",
+    "blockConfirmed": "Confirmed — proposed by {{brand}}",
+    "confirmBlockError": "Adding to the calendar failed.",
+    "demoNothingSaved": "Demo workspace: the calendar is read-only here, nothing is written.",
+    "cancelBlock": "Cancel",
+    "blockCancelled": "Cancelled — removed from your calendar",
+    "cancelBlockError": "Cancelling failed.",
+    "outcome": {
+      "realized": "Done",
+      "interrupted": "Interrupted",
+      "postponed": "Postponed",
+      "recorded": "Marked: {{outcome}}",
+      "noteLabel": "Block result, in one sentence",
+      "notePlaceholder": "Result (optional)",
+      "minutesLabel": "Actual duration, in minutes",
+      "minutesPlaceholder": "Actual duration (min)",
+      "saveDetails": "Save",
+      "edit": "Edit",
+      "error": "Marking the block failed."
+    },
+    "dismissBlock": "Remove",
+    "allBlocksDismissed": "All proposed blocks were removed from this list.",
+    "copyPlan": "Copy the plan",
+    "planCopied": "Plan copied",
+    "planCopyFailed": "Copy failed"
+  },
+  "weeklyPlan": {
+    "title": "Plan for the week of {{date}}",
+    "noDayPlaced": "No block could be placed this week.",
+    "margin": "{{duration}} left free over the week."
+  },
+  "deepenJob": {
+    "resumeBanner": {
+      "default": "A Deepening study was interrupted: “{{label}}”. {{copilot}} resumes it in the background, without you having to type “continue”.",
+      "withSteps": "A Deepening study was interrupted after {{count}} step(s): “{{label}}”. {{copilot}} resumes it in the background, without you having to type “continue”."
+    },
+    "stopped": {
+      "creditCeiling": "You’ve been using {{brand}} a lot this month: the Deepening study “{{label}}” is paused. Drop the team a line, we’ll talk and {{copilot}} then resumes where it stopped.",
+      "maxResumes": "The Deep study \"{{label}}\" has stopped after {{count}} automatic resumes. Continue the conversation to pick up where {{copilot}} left off.",
+      "resumeFailed": "The Deep study \"{{label}}\" could not restart on its own. Continue the conversation to pick up where {{copilot}} left off."
+    }
+  },
+  "lauraJob": {
+    "title": "{{copilot}} job",
+    "aria": "{{copilot}} job: {{intent}}",
+    "state": {
+      "draft": "Draft",
+      "to_confirm": "To confirm",
+      "planned": "Scheduled",
+      "running": "Running",
+      "awaiting_approval": "Awaiting approval",
+      "partial": "Partial",
+      "done": "Done",
+      "failed": "Failed",
+      "cancelled": "Cancelled",
+      "superseded": "Obsolete",
+      "blocked": "Nothing started",
+      "unknown": "To check"
+    },
+    "expectedOutcome": "Expected outcome: {{text}}",
+    "scope": "Scope: {{text}}",
+    "assumptions": "Assumptions: {{items}}",
+    "sources": "Sources: {{items}}",
+    "steps": "Steps",
+    "units": "× {{count}}",
+    "after": "after “{{label}}”",
+    "needsApproval": "approval required",
+    "capability": {
+      "read_workspace": "Workspace read",
+      "search_market_memory": "Market observations",
+      "account_analysis": "Account analysis",
+      "account_refresh": "Account refresh",
+      "contact_enrichment": "Contact enrichment",
+      "message_generation": "Message drafting",
+      "need_matching": "Bench ranking",
+      "territory_snapshot": "Territory snapshot",
+      "crm_write": "CRM write"
+    },
+    "durationMeasured_one": "Expected duration: {{minutes}} min, based on {{count}} measured step",
+    "durationMeasured_other": "Expected duration: {{minutes}} min, based on {{count}} measured steps",
+    "preview": {
+      "reused": "Reuses what the workspace already knows: {{items}}",
+      "newActions": "Will do new work: {{items}}",
+      "limitsTitle": "Limits",
+      "maxTargets_one": "“{{label}}”: at most {{count}} contact from the scope",
+      "maxTargets_other": "“{{label}}”: at most {{count}} contacts from the scope",
+      "noTargets": "“{{label}}”: no contact in the scope, this step will not run",
+      "notExecutable": "“{{label}}” cannot run inside a job yet: nothing will start for it",
+      "maxAccountTargets_one": "“{{label}}”: at most {{count}} account from the scope",
+      "maxAccountTargets_other": "“{{label}}”: at most {{count}} accounts from the scope",
+      "noAccountTargets": "“{{label}}”: no account in the scope, this step will not run",
+      "missingCriteria": "“{{label}}”: no filter (technology, area, need or department) — nothing will start for it",
+      "targetsFromStep": "“{{label}}”: its contacts will come from the “{{from}}” step",
+      "ceilings": "A job covers at most {{contacts}} contacts and {{accounts}} accounts"
+    },
+    "validations_one": "{{count}} step will wait for your approval",
+    "validations_other": "{{count}} steps will wait for your approval",
+    "work": {
+      "kicker": {
+        "running": "Research in progress",
+        "awaiting": "Waiting for your approval",
+        "done": "Research finished",
+        "interrupted": "Research stopped at your request",
+        "failed": "Research failed",
+        "partial": "Partial research",
+        "unknown": "To check"
+      },
+      "current": "Current step: {{label}}",
+      "progress": "{{done}} of {{total}}",
+      "detail": "See details"
+    },
+    "nothingLaunched": "Nothing is launched: this plan has not run or charged anything yet.",
+    "draftMissing": "Draft: specify the scope so it can be confirmed.",
+    "approved": "approved",
+    "stepStatus": {
+      "todo": "To do",
+      "running": "Running",
+      "done": "Done",
+      "failed": "Failed",
+      "blocked": "Blocked",
+      "unknown": "To check",
+      "dropped": "Skipped"
+    },
+    "note": {
+      "not_executable_in_job": "this capability does not run inside a job yet — nothing was sent, nothing was charged",
+      "dependency_not_done": "a step it depends on did not complete",
+      "no_target_in_scope": "no target in the scope",
+      "refused": "refused (permission, mandate or tool not connected)",
+      "capability_failed": "the capability failed",
+      "timeout": "we do not know whether it went out — nothing will be replayed on its own",
+      "missing_criteria": "no filter for this step — nothing went out, nothing was charged"
+    },
+    "awaiting_one": "waiting for {{count}} analysis in progress",
+    "awaiting_other": "waiting for {{count}} analyses in progress",
+    "result": "result: {{summary}}",
+    "created": "Created: {{items}}",
+    "errors": "Errors: {{items}}",
+    "gesture": {
+      "confirm": "Confirm and run",
+      "approve": "Approve “{{label}}”",
+      "resume": "Resume",
+      "cancel": "Cancel"
+    },
+    "error": {
+      "insufficient": "You’ve been using {{brand}} a lot this month — shall we talk? Drop the team a line so we can sort it out together.",
+      "conflict": "This job just changed state — the card is up to date.",
+      "generic": "That did not go through. Try again in a moment."
+    },
+    "synthesis": {
+      "title": "Summary — what this job produced",
+      "accounts_one": "{{count}} account analysed:",
+      "accounts_other": "{{count}} accounts analysed:",
+      "contacts_one": "{{count}} contact found:",
+      "contacts_other": "{{count}} contacts found:",
+      "messages_one": "{{count}} message prepared, to review:",
+      "messages_other": "{{count}} messages prepared, to review:",
+      "nothing": "This job produced no analysed account, no contact and no message.",
+      "failed": "Failed steps: {{items}}",
+      "unknown": "Unknown outcome, check on your side: {{items}}"
+    }
+  },
+  "callBrief": {
+    "identityWithTitle": "{{name}} — {{title}}",
+    "describe": "Call brief for {{name}}",
+    "guarantee": "Nothing is sent or recorded: this card prepares your call, it doesn't place it.",
+    "section": {
+      "context": "Context",
+      "reason": "Why call now",
+      "objective": "Call objective",
+      "opening": "Opening",
+      "nextQuestions": "Next questions",
+      "objection": "Likely objection",
+      "fallback": "Fallback",
+      "expectedOutcome": "Expected outcome",
+      "branches": "If the person…"
+    },
+    "openingFrameNotice": "A frame, not a script to recite word for word.",
+    "branch": {
+      "wrongRole": {
+        "title": "… isn't the right person",
+        "guidance": "Ask for a referral, without insisting."
+      },
+      "notNow": {
+        "title": "… says \"not now\"",
+        "guidance": "Agree on a precise date to call back."
+      },
+      "interest": {
+        "title": "… shows interest",
+        "guidance": "Qualify immediately."
+      },
+      "refusal": {
+        "title": "… refuses",
+        "guidance": "Respect the refusal and ask, if possible, for the main criterion."
+      },
+      "noNeed": {
+        "title": "… says there's no need",
+        "guidance": "Check whether the need is absent, already covered internally, or off-timing."
+      },
+      "referral": {
+        "title": "… points you to someone else",
+        "guidance": "Try to understand the buying path before hanging up."
+      },
+      "voicemail": {
+        "title": "… doesn't answer (voicemail)",
+        "guidance": "Leave a voicemail or not, following the workspace's policy."
+      }
+    },
+    "noRecordingNotice": "{{copilot}} never listens to this call — no recording without explicit consent (Settings › Integrations).",
+    "liveModeOn": "Turn on live mode",
+    "liveModeOff": "Turn off live mode",
+    "live": {
+      "timer": "Timer",
+      "checklist": "Next questions",
+      "factsToVerify": "Facts to verify",
+      "notes": "Notes",
+      "notesPlaceholder": "What you want to remember after the call…",
+      "notesNotSaved": "These notes aren't saved — log what matters to the call history afterwards."
+    },
+    "offerStart": "Starting point",
+    "offerUnnamed": "Job offer",
+    "openOffer": "Open the offer"
+  },
+  "accountVerdict": {
+    "GO_NOW": "Move now",
+    "GO_VIA_PARTNER": "Better via a partner",
+    "GO_AFTER_PROOF": "Proof first",
+    "WATCH": "Keep watching",
+    "NO_GO_NOW": "Not now",
+    "NOT_EVALUABLE": "Not evaluable"
+  },
+  "toolChips": {
+    "add": "Add a tool",
+    "group": "Your tools with {{copilot}}",
+    "reconnect": "Reconnect needed",
+    "limited": "Limited access"
+  },
+  "toolsSources": {
+    "trigger": "Tools and sources",
+    "triggerCount": "Tools and sources · {{selected}}/{{total}}",
+    "title": "Tools for this conversation",
+    "scope": "The chips above the input choose what {{copilot}} reads in this conversation.",
+    "stateRead": "Read in this conversation",
+    "stateExcluded": "Set aside for this conversation",
+    "notConnected": "Not connected: {{families}}. Connect them in Settings › Integrations.",
+    "familyStillRead": "Still read through {{name}} (same kind of tool).",
+    "noDisconnect": "This selection does not disconnect any account.",
+    "reconnect": "Reconnect",
+    "noSend": "Ticking a sending tool lets it prepare, never send: you validate every action.",
+    "manage": "Manage connections",
+    "done": "Done",
+    "demoNote": "Demo room: no tool is connected and the sample answers consult no source. In your workspace, you choose here what {{copilot}} reads."
+  },
+  "replyFamily": {
+    "textFallback": "This answer stayed as plain text although its shape is known.",
+    "retry": "Redo as a card",
+    "prompt": {
+      "account_map": "Redo your last answer as an account map card, with what it covers and what it does not.",
+      "account_analysis": "Redo your last answer as a structured account analysis card.",
+      "contacts_list": "Redo your last answer as a contacts list card.",
+      "action_plan": "Redo your last answer as an action plan card.",
+      "meeting_brief": "Redo your last answer as a meeting brief card.",
+      "post_meeting_summary": "Redo your last answer as a meeting recap card: decisions, actions and the follow-up reminder.",
+      "market_memory_summary": "Redo your last answer as a market observations summary card.",
+      "sequence_audience": "Redo your last answer as a sequence audience card.",
+      "opportunity_review": "Redo your last answer as an opportunity review card.",
+      "account_priorities": "Prioritize these accounts again, as a card: one level per account and its reason.",
+      "account_ranking": "Rank these accounts again, as a card: the ranking criteria and the reason for each rank.",
+      "account_manager_overview": "Redo this manager review as a card: one level per account and its reason, across the portfolio.",
+      "account_next_step": "Redo your last answer as a card: the next action on this account, why, and what is missing."
+    }
+  },
+  "replyKit": {
+    "howToFill": "To fill it in:",
+    "action": {
+      "validate": "Validate the draft",
+      "edit": "Edit",
+      "dismiss": "Dismiss",
+      "youSend": "{{copilot}} prepares, you send.",
+      "validated": "Draft validated — nothing has been sent.",
+      "dismissed": "Dismissed."
+    },
+    "basis": {
+      "scopeAria": "Scope of the reply"
+    },
+    "header": {
+      "partialBadge": "Partial"
+    }
+  },
+  "replyMailboxRead": {
+    "label": "{{copilot}} read this thread",
+    "source": "{{copilot}} read a thread from your mailbox to answer. Its content is not replayed here."
+  },
+  "replyBadges": {
+    "withSources": "{{label}}: {{names}}",
+    "status": {
+      "mapping_partial": "Partial map",
+      "to_qualify": "To qualify",
+      "priority": "Priority",
+      "to_watch": "To watch",
+      "qualification_needed": "Further qualification needed",
+      "historical_signal": "Historical signal",
+      "current_signal_verified": "Current signal verified",
+      "scope_to_confirm": "Scope to confirm",
+      "no_current_proof": "No current evidence",
+      "action_to_validate": "Action to approve"
+    },
+    "confidence": {
+      "high": "High confidence",
+      "medium": "Medium confidence",
+      "low": "To verify"
+    },
+    "freshness": {
+      "current": "Up to date",
+      "recent": "Recent",
+      "dated": "Old"
+    },
+    "proof": {
+      "verified": "Verified",
+      "declared": "Declared",
+      "inferred": "Inferred"
+    },
+    "action": {
+      "draft": "Draft",
+      "proposal": "Proposal",
+      "to_validate": "To approve"
+    }
+  },
+  "workspaceNext": {
+    "label": "Next step",
+    "fact": {
+      "workspace_no_account": "Your workspace has no analysed account yet.",
+      "workspace_accounts_no_contact_one": "Your workspace has {{count}} analysed account and no saved contact.",
+      "workspace_accounts_no_contact_other": "Your workspace has {{count}} analysed accounts and no saved contact.",
+      "workspace_contacts_no_action_one": "Your workspace has {{count}} contact and no saved action.",
+      "workspace_contacts_no_action_other": "Your workspace has {{count}} contacts and no saved action."
+    },
+    "step": {
+      "analyze_account": "Analyse an account",
+      "import_accounts": "Import my accounts",
+      "find_contacts": "Find contacts",
+      "prepare_message": "Prepare a message"
+    },
+    "prompt": {
+      "analyze_account": "Analyse the following company for me: ",
+      "import_accounts": "Help me import my existing accounts.",
+      "find_contacts": "Find the contacts to approach in my analysed accounts.",
+      "prepare_message": "Prepare a first message for one of my contacts."
+    }
+  },
+  "replyActions": {
+    "label": "Next steps",
+    "worklistName": "Work list of {{date}}",
+    "worklistFailed": "The work list could not be created. Nothing was changed; try again in a moment.",
+    "refinePrompt": "Refine this search — {{criteria}}. I want:",
+    "kind": {
+      "view_account": "View the account",
+      "find_contacts": "Find the contacts",
+      "prepare_approach": "Prepare the approach",
+      "refine_search": "Refine the search",
+      "create_worklist": "Create a work list",
+      "qualify_further": "Run a further qualification",
+      "dismiss": "Dismiss"
+    },
+    "criteria": {
+      "sectors": "sectors",
+      "signals": "signals",
+      "department": "department",
+      "region": "region",
+      "headcount": "headcount",
+      "keywords": "keywords"
+    }
+  },
+  "export": {
+    "copyStructured": "Copy structured version",
+    "copyCompact": "Copy short version",
+    "download": "Download as Markdown file",
+    "copied": "Reply copied",
+    "fileFallback": "laura-reply"
+  },
+  "headerMenu": {
+    "action": "More conversation actions"
+  },
+  "conversationMenu": {
+    "action": "Conversation",
+    "title": "Conversation information",
+    "access": "Access"
+  },
+  "newReplies": {
+    "pill": "New reply below"
+  },
+  "linkedinPost": {
+    "declare": "Add this post as an account signal"
+  },
+  "listFold": {
+    "showMore_one": "Show {{count}} more",
+    "showMore_other": "Show {{count}} more",
+    "collapse": "Collapse"
+  },
+  "addCv": {
+    "cta": "Add a résumé",
+    "title": "Add a résumé",
+    "description": "Drop the résumé here: the profile is created or updated in your talent pool, ready to review. You stay in the conversation.",
+    "done": "I added {{name}}’s résumé to my talent pool. Rerun the comparison on this conversation’s need with this profile added, without forgetting the profiles already reviewed.",
+    "doneUnnamed": "I added a résumé to my talent pool. Rerun the comparison on this conversation’s need with this profile added, without forgetting the profiles already reviewed."
+  },
+  "footer": {
+    "rowLabel": "Actions on this reply",
+    "sources": "Sources",
+    "context": "Context",
+    "sourcesAlert": "Sources — partial answer to check",
+    "aside": {
+      "why": "Why",
+      "sources": "Sources cited by {{copilot}}",
+      "limits": "Limits of this analysis",
+      "method": "Method",
+      "notes": "Notes from {{copilot}}",
+      "detail": "Detail"
+    }
+  }
+}

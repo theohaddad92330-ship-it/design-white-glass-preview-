@@ -1,0 +1,61 @@
+{
+  "title": "Commercial load",
+  "subtitle": "The caps that help prioritise: how many tracked accounts and open needs a salesperson can carry.",
+  "groupLabel": "Settings",
+  "placeholder": "not set",
+  "invalid": "An integer between 1 and 500 is expected.",
+  "save": "Save",
+  "reset": "Back to \"not set\"",
+  "saved": "The setting is saved.",
+  "saveFailed": "I couldn't save this setting.",
+  "loadingMessage": "Reading your workspace's commercial load caps.",
+  "errorMessage": "I couldn't read these settings.",
+  "maxTrackedAccounts": {
+    "label": "Tracked accounts, at most",
+    "unset": "not set",
+    "value_one": "{{count}} account per salesperson",
+    "value_other": "{{count}} accounts per salesperson",
+    "invalid": "An integer between {{min}} and {{max}} is expected."
+  },
+  "maxOpenNeeds": {
+    "label": "Open needs, at most",
+    "value_one": "{{count}} open need per salesperson",
+    "value_other": "{{count}} open needs per salesperson",
+    "invalid": "An integer between {{min}} and {{max}} is expected."
+  },
+  "weeklyAvailableHours": {
+    "label": "Commercial hours available, per week",
+    "unset": "not set",
+    "value_one": "{{count}} hour per week",
+    "value_other": "{{count}} hours per week",
+    "invalid": "An integer between {{min}} and {{max}} is expected."
+  },
+  "cadenceWeekday": {
+    "label": "Follow-up day",
+    "hint": "Cadence follow-ups land on that day, never earlier than their rhythm. Without a setting, we follow the day that works best for you, otherwise the nominal rhythm.",
+    "none": "No day imposed",
+    "monday": "Monday",
+    "tuesday": "Tuesday",
+    "wednesday": "Wednesday",
+    "thursday": "Thursday",
+    "friday": "Friday"
+  },
+  "betProfiles": {
+    "title": "Account bet profile",
+    "subtitle": "For each account, declare the horizon, size, access and resource: this is what {{copilot}} reads to tell whether your week is too uniform. Nothing is inferred; a field left empty stays “not declared”.",
+    "groupLabel": "Accounts",
+    "loading": "Reading the bet profiles of your accounts.",
+    "error": "I couldn’t read the bet profiles.",
+    "empty": "No account to declare yet.",
+    "declare": "Declare",
+    "edit": "Edit",
+    "resource": "Resource: {{resource}}",
+    "emptyAction": "Open accounts",
+    "declareOne": "Declare an account",
+    "hideUndeclared": "Hide these accounts",
+    "undeclared_one": "1 account without a bet profile",
+    "undeclared_other": "{{count}} accounts without a bet profile",
+    "showMore_other": "Show {{count}} more accounts",
+    "showMore_one": "Show 1 more account"
+  }
+}

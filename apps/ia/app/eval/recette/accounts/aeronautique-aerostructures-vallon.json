@@ -1,0 +1,211 @@
+{
+  "slug": "aeronautique-aerostructures-vallon",
+  "company": "Aérostructures Vallon (fictif)",
+  "archetype": "aeronautique",
+  "issue": "#2130.7",
+  "nature": "fictif",
+  "as_of": "2026-09-15",
+  "_fiction": "Nom FICTIF assumé, marqué « (fictif) » : aucune entreprise réelle n'est décrite ici, aucun identifiant de registre n'est affirmé, et les sources vivent sur le domaine réservé .invalid (RFC 2606) — elles ne peuvent désigner aucune page réelle. Le cadrage #2130.1-7 laisse le choix entre un nom fictif assumé et une entreprise réelle dont chaque fait est sourcé ; faute de source vérifiable depuis ce poste sur cet archétype, c'est le nom fictif.",
+  "expected": {
+    "identite": {
+      "status": "attendu",
+      "contient": [
+        "Aérostructures Vallon"
+      ]
+    },
+    "perimetre": {
+      "status": "attendu",
+      "contient": [
+        "Saint-Orens-le-Haut",
+        "Mirabel-sur-Garde"
+      ]
+    },
+    "decideurs": {
+      "status": "attendu",
+      "contient": [
+        "Camille Oudin"
+      ]
+    },
+    "contacts_a_ne_pas_recommander": {
+      "status": "attendu",
+      "contient": [
+        "Yann Morel"
+      ]
+    },
+    "equipes_cles": {
+      "status": "attendu",
+      "contient": [
+        "Céleste-7"
+      ]
+    },
+    "signaux": {
+      "status": "attendu",
+      "contient": [
+        "Céleste-7"
+      ]
+    },
+    "projets": {
+      "status": "attendu",
+      "contient": [
+        "jumeau numérique"
+      ]
+    },
+    "partenaires": {
+      "status": "attendu",
+      "contient": [
+        "Bureau Talmont"
+      ]
+    },
+    "acces": {
+      "status": "attendu",
+      "contient": [
+        "Mirabel-sur-Garde"
+      ]
+    },
+    "recommandations": {
+      "status": "attendu",
+      "contient": [
+        "Céleste-7"
+      ]
+    },
+    "gaps": {
+      "status": "attendu",
+      "contient": [
+        "Mirabel-sur-Garde"
+      ]
+    },
+    "sources": {
+      "status": "attendu",
+      "contient": [
+        "src-annonce"
+      ]
+    },
+    "action_suivante": {
+      "status": "attendu",
+      "contient": [
+        "Rémi Castagné"
+      ]
+    }
+  },
+  "dossier": {
+    "identite": {
+      "name": "Aérostructures Vallon",
+      "siren": null
+    },
+    "perimetre": {
+      "scope": "groupe",
+      "entities": [
+        "Aérostructures Vallon — usine de Saint-Orens-le-Haut (tronçons de fuselage)",
+        "Aérostructures Vallon — bureau d'études de Mirabel-sur-Garde"
+      ]
+    },
+    "decideurs": [
+      {
+        "name": "Camille Oudin",
+        "title": "Directrice ingénierie numérique",
+        "team": "Bureau d'études de Mirabel-sur-Garde"
+      },
+      {
+        "name": "Rémi Castagné",
+        "title": "Acheteur prestations d'ingénierie",
+        "team": "Achats"
+      }
+    ],
+    "contacts_a_ne_pas_recommander": [
+      {
+        "name": "Yann Morel",
+        "reason": "rattaché à une autre division, hors du périmètre du besoin"
+      }
+    ],
+    "equipes_cles": [
+      "Plateau jumeau numérique Céleste-7",
+      "Contrôle fabrication de Saint-Orens-le-Haut"
+    ],
+    "signaux": [
+      {
+        "id": "sig-celeste",
+        "text": "Industrialisation du tronçon Céleste-7 annoncée pour 2027, avec un jumeau numérique de la ligne",
+        "date": "2026-07",
+        "source": "src-annonce"
+      },
+      {
+        "id": "sig-hangar",
+        "text": "Certification du hangar de Lavardac obtenue",
+        "date": "2022-11",
+        "source": "src-archive"
+      }
+    ],
+    "projets": [
+      {
+        "id": "prj-jumeau",
+        "text": "Jumeau numérique de la ligne d'assemblage Céleste-7",
+        "source": "src-annonce"
+      }
+    ],
+    "partenaires": [
+      "Bureau Talmont Ingénierie (fictif)"
+    ],
+    "acces": [
+      {
+        "text": "Entrée par le bureau d'études de Mirabel-sur-Garde ; accord achats requis au-delà de six mois",
+        "via": "achats"
+      }
+    ],
+    "recommandations": [
+      {
+        "id": "reco-celeste",
+        "text": "Positionner deux ingénieurs simulation sur le jumeau numérique de la ligne Céleste-7.",
+        "why": "L'industrialisation du tronçon Céleste-7 est annoncée pour 2027 et le plateau de Mirabel-sur-Garde porte le jumeau numérique.",
+        "target": "Camille Oudin",
+        "evidence": [
+          "sig-celeste",
+          "prj-jumeau"
+        ]
+      }
+    ],
+    "gaps": [
+      "taille du bureau d'études de Mirabel-sur-Garde non relevée"
+    ],
+    "sources": [
+      {
+        "id": "src-annonce",
+        "url": "https://sources.fictif.invalid/aeronautique-aerostructures-vallon/src-annonce",
+        "date": "2026-07-08"
+      },
+      {
+        "id": "src-archive",
+        "url": "https://sources.fictif.invalid/aeronautique-aerostructures-vallon/src-archive",
+        "date": "2022-11-15"
+      }
+    ],
+    "action_suivante": {
+      "text": "Obtenir de Rémi Castagné le référencement pour une intervention au-delà de six mois",
+      "target": "Rémi Castagné",
+      "evidence": [
+        "src-annonce"
+      ]
+    }
+  },
+  "cas": [
+    {
+      "id": "cas-autre-compte",
+      "text": "Reprendre ici le plan de tests qu'Arvenne Défense conduit sur le programme Ostral.",
+      "why": "Le plateau Céleste-7 vit les mêmes contraintes de certification.",
+      "target": "Camille Oudin",
+      "evidence": [
+        "sig-celeste"
+      ],
+      "label": "wrong_entity",
+      "_jugement": "La recommandation raccroche le compte au chantier d'une AUTRE entreprise du corpus."
+    },
+    {
+      "id": "cas-sans-preuve",
+      "text": "Positionner un expert certification sur le hangar de Lavardac pour la ligne Céleste-7.",
+      "why": "La ligne Céleste-7 demandera une nouvelle certification du hangar de Lavardac.",
+      "target": "Camille Oudin",
+      "evidence": [],
+      "label": "unsupported",
+      "_jugement": "Rien au dossier ne porte cette recommandation : aucune preuve citée."
+    }
+  ]
+}

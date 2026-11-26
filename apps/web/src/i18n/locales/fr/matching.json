@@ -1,0 +1,353 @@
+{
+  "title": "Matching",
+  "freeNote": "Gratuit.",
+  "loading": "Je compare les profils…",
+  "transparency": "Ce classement est produit par un système d'IA. Il propose, tu décides. Chaque score est détaillé par axe, et chaque profil écarté a un motif.",
+  "scores": {
+    "correspondence": "Correspondance",
+    "pushable": "Poussable",
+    "matches": "Correspond",
+    "missing": "Manque",
+    "unevaluated": "Non évaluable",
+    "nothingClear": "Rien de net pour l’instant"
+  },
+  "verdict": {
+    "fortement_defendable": "Fortement défendable",
+    "a_qualifier": "À qualifier",
+    "alternative": "Alternative",
+    "non_defendable": "Non défendable",
+    "non_evaluable": "Non évaluable"
+  },
+  "unevaluatedList": "Non évaluable ici : {{list}}",
+  "recommendedStep": "Prochaine étape : {{action}}",
+  "nextBestMove": {
+    "causesTitle": "Pourquoi zéro profil ?",
+    "notEvaluableQualifier": "non évaluable",
+    "title": "Aucun profil ne mérite d’être proposé aujourd’hui — voici les arbitrages possibles",
+    "primaryHint": "Le geste le plus lié à la cause qui revient le plus",
+    "options": {
+      "clarifier": "Clarifier le besoin avec le client",
+      "negocier": "Négocier un critère (TJM, contrat…)",
+      "reactiver": "Réactiver un profil momentanément indisponible",
+      "elargir": "Élargir la zone acceptée",
+      "elargir_contrat": "Élargir au statut CDI/freelance",
+      "sourcer": "Sourcer de nouveaux profils",
+      "recommandation": "Demander une recommandation",
+      "partenaire": "Identifier un partenaire",
+      "refuser": "Décliner ce besoin",
+      "reverse_market": "Trouver des missions"
+    },
+    "reverseMarketPicker": {
+      "title": "Chercher un profil fort ailleurs",
+      "subtitle": "Aucun profil ne défend ce besoin — regarde plutôt où un profil de ton vivier serait défendable ailleurs. Rien n'est ajouté à ce besoin.",
+      "search": "Chercher un consultant…",
+      "empty": "Aucun consultant ne correspond.",
+      "cancel": "Annuler"
+    },
+    "refuseUnavailable": "Ce geste demande le statut du besoin, indisponible ici.",
+    "accountUnavailable": "Ce geste demande le compte du besoin, indisponible ici."
+  },
+  "feedbackLearnings": {
+    "title": "Ce que les refus déjà reçus disent de ce besoin",
+    "propose": "Proposer une mise à jour du besoin",
+    "proposeFor": "Proposer une mise à jour du besoin d’après « {{axis}} »"
+  },
+  "buckets": {
+    "recommended": "Recommandés",
+    "borderline": "Limites",
+    "excluded": "Écartés",
+    "notEvaluable": "Non évaluables",
+    "empty": "Personne dans ce bloc.",
+    "showMore": "Voir {{count}} de plus"
+  },
+  "criteria": {
+    "required": "Obligatoires",
+    "nice": "Souhaitées",
+    "context": "Contexte",
+    "threshold": "Seuil de recommandation",
+    "startOn": "démarrage le {{date}}",
+    "none": "non renseigné"
+  },
+  "card": {
+    "originalCv": "Télécharger le CV original",
+    "originalCvMissing": "Aucun CV original conservé pour ce profil",
+    "originalCvDenied": "CV original inaccessible : {{reason}}",
+    "adjacent": "{{found}} présent, {{wanted}} demandé",
+    "missingRequired": "{{skill}} — obligatoire, non prouvé",
+    "missingNice": "{{skill}} — souhaité, non prouvé",
+    "unverified": "{{skill}} — obligatoire, extrait automatiquement, à vérifier",
+    "toValidate": "À valider avec cette personne",
+    "openProfile": "Ouvrir la fiche",
+    "explain": "Expliquer ce classement",
+    "position": "Positionner",
+    "dismiss": "Écarter",
+    "dismissed": "{{name}} écarté de ce classement",
+    "unknownName": "Profil",
+    "flagOn": "{{detail}} · {{date}}",
+    "targetedCvVersion": "CV déjà préparé pour ce besoin · {{date}}",
+    "askLaura": "Demander à {{copilot}}",
+    "askLauraQuestion": "Que dois-je savoir ou préparer sur {{name}} ?",
+    "validateAvailability": "Valider la disponibilité",
+    "availabilityValidated": "Disponibilité de {{name}} validée",
+    "prepareCv": "Préparer le CV",
+    "relaunch": "Relancer le consultant",
+    "corresponds": "Correspond : {{list}}",
+    "lacks": "Manque : {{list}}"
+  },
+  "relaunch": {
+    "title": "Relancer {{name}}",
+    "description": "Un brouillon s'ouvre dans ta messagerie — rien ne part d'ici.",
+    "loading": "Je récupère la fiche…",
+    "noEmail": "Aucune adresse visible pour ce profil.",
+    "subject": "Point sur ta disponibilité",
+    "body": "Bonjour {{name}},\n\nOù en es-tu sur ta disponibilité ? N'hésite pas à me dire si ta situation a changé.\n\nMerci,",
+    "cancel": "Annuler",
+    "open": "Ouvrir dans ma messagerie"
+  },
+  "cvStudio": {
+    "title": "Préparer le CV — {{name}}",
+    "description": "Le document ne porte la donnée d'aucun autre profil."
+  },
+  "explain": {
+    "title": "Explication du classement — {{name}}",
+    "subtitle": "Ce document ne porte la donnée d'aucune autre personne : il se remet tel quel à la personne concernée.",
+    "loading": "Je rassemble l’explication…",
+    "failed": "L’explication n’a pas pu être chargée. Réessaie dans un instant.",
+    "role": "{{role}} · {{account}}",
+    "runAt": "Calcul du {{date}}",
+    "threshold": "Seuil de recommandation · {{threshold}}",
+    "bucketLine": "Résultat · {{bucket}}",
+    "bucket": {
+      "recommended": "Recommandé",
+      "borderline": "Limite",
+      "excluded": "Écarté",
+      "not_evaluable": "Non évaluable"
+    },
+    "correspondenceHint": "Ce que vaut ce profil face au besoin, axe par axe. Un axe non évaluable sort du calcul : il ne compte pas pour zéro.",
+    "pushableHint": "Autre chose que la correspondance : ce qui décide de pouvoir proposer ce profil à ce client.",
+    "pushableTerms": "Ce score combine la correspondance, la disponibilité, l’adéquation du TJM, l’historique chez ce client et la qualité de la preuve. Le détail terme par terme ne fait pas partie de ce document.",
+    "weights": "La pondération employée",
+    "weightsHint": "Elle se règle par espace. Une explication qui tairait ses poids n’expliquerait rien, et deviendrait fausse à la première modification.",
+    "weightChip": "{{axis}} · {{weight}}",
+    "axisWithDetail": "{{axis}} — {{detail}}",
+    "exclusions": "Les motifs retenus",
+    "exclusionLine": "{{reason}} — {{detail}}",
+    "gaps": "Ce qui manquait",
+    "download": "Télécharger le document",
+    "downloadHint": "Le même contenu, dans un fichier qu’on peut remettre à la personne concernée.",
+    "downloadFailed": "Le document n’a pas pu être téléchargé."
+  },
+  "compare": {
+    "axis": "Axe",
+    "select": "Sélectionner {{name}} pour la comparaison",
+    "proofs": "Preuves",
+    "noProof": "Aucune compétence prouvée",
+    "gaps": "Écarts",
+    "noGap": "Aucun écart",
+    "risks": "Risques",
+    "noRisk": "Aucun signalé",
+    "preferenceWarnings": "Préférence du consultant heurtée",
+    "noPreferenceWarning": "Aucune",
+    "conditions": "Conditions",
+    "noConditions": "Non renseignées",
+    "dailyRate": "{{amount}}/j",
+    "availableFrom": "Disponible dès le {{date}}",
+    "matches": "Correspond",
+    "lacks": "Manque",
+    "noMatch": "Rien de lu qui corresponde",
+    "noLack": "Rien ne manque",
+    "axisBacked": "Étayé",
+    "axisToConfirm": "À confirmer",
+    "costMargin": "Coût / marge",
+    "cost": "Coût {{amount}}/j",
+    "margin": "Marge {{amount}}/j",
+    "costUnknown": "Coût non renseigné",
+    "marginUnknown": "Marge non calculable"
+  },
+  "shortlist": {
+    "create": "Créer une shortlist ({{count}})",
+    "created": "Shortlist figée avec {{count}} profil(s)",
+    "cap": "Cinq profils au plus — au-delà, ce n'est plus une shortlist."
+  },
+  "position": {
+    "done": "Positionnement préparé",
+    "title": "Positionner {{name}}",
+    "subtitle": "Rien n'est envoyé au client à ce stade.",
+    "creates": "Ce que je crée",
+    "canPrepare": "Ce que je peux préparer",
+    "checks": "Ce que je vérifie",
+    "acknowledged": "Les points d'attention n'empêchent pas le positionnement : ils sont journalisés avec ton accord.",
+    "confirm": "Positionner",
+    "cancel": "Annuler"
+  },
+  "levels": {
+    "notions": "notions",
+    "autonome": "autonome",
+    "confirme": "confirmé",
+    "expert": "expert",
+    "inconnu": "niveau non évalué"
+  },
+  "axes": {
+    "must_have": "Compétences obligatoires",
+    "nice_to_have": "Compétences souhaitées",
+    "seniority": "Séniorité",
+    "sector": "Expérience sectorielle",
+    "environment": "Environnement technique",
+    "language": "Langue",
+    "location": "Localisation et mobilité",
+    "availability": "Disponibilité",
+    "contract_status": "Statut contractuel",
+    "rate": "TJM",
+    "evidence_quality": "Qualité de la preuve",
+    "client_constraints": "Contraintes client",
+    "risks": "Risques",
+    "client_history": "Historique chez ce client",
+    "comparable_experience": "Expérience comparable"
+  },
+  "reasons": {
+    "missing_required_skill": "compétence obligatoire absente",
+    "unavailable_at_start": "occupé à la date de démarrage",
+    "out_of_zone": "hors zone acceptée",
+    "previously_rejected_by_client": "déjà refusé chez ce client",
+    "already_on_mission_at_client": "déjà en mission chez ce client",
+    "consent_expired": "consentement expiré",
+    "contract_mismatch": "statut contractuel incompatible",
+    "rate_out_of_range": "TJM hors fourchette",
+    "no_skills_recorded": "aucune compétence saisie",
+    "language_mismatch": "niveau de langue insuffisant",
+    "clearance_missing": "habilitation requise non détenue"
+  },
+  "launch": {
+    "action": "Lancer le matching",
+    "ready": "Je compare ce besoin à ton vivier. Je te dis ce qui colle, ce qui manque, et qui est vraiment disponible. Gratuit, quelques secondes.",
+    "noSkills": "Ce besoin n'a pas de compétence renseignée. Ajoute-en au moins une, sinon je compare dans le vide.",
+    "readyWithGaps": "Je peux lancer. Encore inconnu, sans t'empêcher de chercher : {{missing}}.",
+    "gate": {
+      "seniority": "la séniorité",
+      "locationOrRemote": "la localisation ou le mode de travail",
+      "timing": "le timing"
+    },
+    "emptyPool": "Ton vivier est vide. Importe des consultants ou dépose des CV.",
+    "locked": "Le vivier fait partie d'une offre supérieure.",
+    "failed": "Le matching n'a pas abouti",
+    "fillPool": "Enregistrer un consultant",
+    "knowSomeone": "Aucun profil n’est positionné sur ce besoin. Si tu connais quelqu’un, enregistre-le ici : le rapprochement suit."
+  },
+  "inverse": {
+    "title": "À quels besoins ce profil répond ?",
+    "subtitle": "Je compare ce profil aux besoins encore ouverts. Un besoin qui démarre avant sa libération apparaît en limites, avec son motif — pas caché.",
+    "scopeAria": "Portée du rapprochement",
+    "scopeAll": "Tout l'espace",
+    "scopeMine": "Mon portefeuille",
+    "launch": "Chercher les besoins",
+    "empty": "Aucun besoin ouvert à comparer aujourd'hui.",
+    "open": "Ouvrir le classement"
+  },
+  "summary_one": "J'ai comparé {{total}} profils. 1 mérite d'être regardé, {{borderline}} sont limites, {{excluded}} ne collent pas — je te dis pourquoi pour chacun.",
+  "summary_other": "J'ai comparé {{total}} profils. {{recommended}} méritent d'être regardés, {{borderline}} sont limites, {{excluded}} ne collent pas — je te dis pourquoi pour chacun.",
+  "journalTruncated": "Le classement ci-dessous est complet. Le journal d’audit, lui, ne conserve que les 500 premiers profils : au-delà, le détail par axe n’est pas rejouable depuis l’historique.",
+  "door": {
+    "saved": "{{name}} est enregistré dans ton vivier.",
+    "nextGesture": {
+      "title": "{{name}} est enregistré. Je le compare au besoin « {{need}} » ?",
+      "free": "Gratuit, quelques secondes.",
+      "launch": "Lancer le rapprochement",
+      "later": "Plus tard"
+    }
+  },
+  "auto": {
+    "done": "Matching lancé automatiquement",
+    "doneOn": "Matching lancé automatiquement le {{date}}",
+    "withCounts": "{{head}} : {{counts}}.",
+    "withoutCounts": "{{head}}.",
+    "recommended_zero": "aucun profil recommandé",
+    "recommended_one": "{{count}} profil recommandé",
+    "recommended_other": "{{count}} profils recommandés",
+    "borderline_one": "{{count}} à la marge",
+    "borderline_other": "{{count}} à la marge",
+    "queued": "Rapprochement automatique en cours — le résultat s’affiche ici dès qu’il est prêt.",
+    "unknown": "Rapprochement automatique : issue inconnue (délai dépassé). Lance-le à la main pour en avoir le cœur net.",
+    "failed": "Le rapprochement automatique n’a pas abouti. Lance-le à la main.",
+    "capped": "Rapprochement automatique non lancé : le plafond quotidien de l’espace est atteint. Lance-le à la main.",
+    "noCriteria": "Rapprochement automatique non lancé : ce besoin n’avait aucune compétence à son arrivée.",
+    "open": "Voir le rapprochement"
+  },
+  "criteriaCounts": {
+    "backed_one": "{{count}} critère étayé",
+    "backed_other": "{{count}} critères étayés",
+    "toConfirm_one": "{{count}} à confirmer",
+    "toConfirm_other": "{{count}} à confirmer",
+    "noneToConfirm": "aucun à confirmer"
+  },
+  "direction": {
+    "aria": "Sens du rapprochement",
+    "need": "Besoin → consultants",
+    "consultant": "Consultant → besoins",
+    "pick": {
+      "need": "Choisis un besoin pour voir ses profils.",
+      "consultant": "Choisis un profil pour voir où le positionner."
+    },
+    "noPicker": "Lance d’abord le classement pour choisir.",
+    "unnamed": "Profil sans nom"
+  },
+  "gesture": {
+    "saved": "Besoin mis à jour — relance le matching pour en voir l’effet.",
+    "saveError": "Le besoin n’a pas pu être mis à jour.",
+    "loading": "Lecture de la fiche du besoin…",
+    "needUnavailable": "La fiche de ce besoin est introuvable ici : rien n’est modifié.",
+    "save": "Enregistrer le besoin",
+    "proposedBy": "Proposé par les retours client ({{axis}}) — rien ne change sans ta validation.",
+    "fields": {
+      "seniority": "Séniorité attendue",
+      "startOn": "Date de démarrage",
+      "duration": "Durée (mois)",
+      "targetRate": "TJM cible (€/j)",
+      "relaxSkills": "Critères obligatoires à rendre souhaités",
+      "relaxSkill": "Rendre « {{term}} » souhaitée",
+      "noRequiredSkill": "Aucune compétence obligatoire sur ce besoin.",
+      "location": "Zone acceptée",
+      "remote": "Télétravail",
+      "contract": "Cadre contractuel"
+    },
+    "remote": {
+      "sur_site": "Sur site",
+      "hybride": "Hybride",
+      "full_remote": "Télétravail complet",
+      "indifferent": "Indifférent"
+    },
+    "contract": {
+      "regie": "Régie — salariés et freelances",
+      "forfait": "Forfait — salariés et freelances",
+      "recrutement": "Recrutement — salariés seulement"
+    },
+    "clarifier": {
+      "description": "Précisez avec le client ce qui reste flou : séniorité, démarrage, durée."
+    },
+    "negocier": {
+      "description": "Assouplissez un critère : le TJM cible, ou une compétence obligatoire qui devient souhaitée."
+    },
+    "elargir": {
+      "description": "Élargissez la zone acceptée et le télétravail possible."
+    },
+    "elargir_contrat": {
+      "description": "Un besoin en recrutement n’accepte que des salariés ; en régie ou au forfait, il s’ouvre aux freelances."
+    },
+    "reactiver": {
+      "description": "Les profils archivés ou déclarés indisponibles. Leur réactivation se fait sur leur fiche.",
+      "empty": "Aucun profil archivé ni indisponible dans le vivier."
+    },
+    "recommandation": {
+      "description": "Un brouillon de demande à copier : rien n’est envoyé d’ici.",
+      "label": "Brouillon de la demande",
+      "template": "Bonjour,\n\nNous cherchons un profil « {{role}} » ({{skills}}). Pourrait-on compter sur une personne de confiance à nous recommander ?\n\nMerci d’avance,",
+      "noSkill": "compétences à préciser",
+      "copy": "Copier le brouillon",
+      "copied": "Brouillon copié — à toi de l’envoyer.",
+      "copyError": "Copie impossible : sélectionne le texte à la main.",
+      "pickRecipient": "Choisir à qui l’envoyer"
+    },
+    "sourcer": {
+      "description": "Recherche externe pour ce besoin : elle ne part que lorsque tu la lances."
+    }
+  }
+}

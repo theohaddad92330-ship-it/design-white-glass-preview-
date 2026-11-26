@@ -1,0 +1,140 @@
+{
+  "common": {
+    "loading": "Chargement…",
+    "cancel": "Annuler"
+  },
+  "playbooks": {
+    "title": "Relances automatiques",
+    "intro": "Les seules automatisations qui atteignent un client sans que tu cliques. Rien ne part tant que tu n'as pas armé.",
+    "guardrails": "Garde-fous, toujours actifs : une réponse arrête tout définitivement · une seule relance par cible, jamais d'escalade · désabonnement vérifié à chaque envoi · uniquement du lundi au vendredi, entre {{start}} h et {{end}} h · maximum {{cap}} envois par jour pour tout l'espace.",
+    "on": "Armé",
+    "off": "Éteint",
+    "arm": "Armer",
+    "stop": "Éteindre",
+    "silenceLabel": "Jours de silence avant relance",
+    "silenceUnit": "jours de silence",
+    "silenceInvalid": "Entre 1 et 90 jours.",
+    "loadError": "Impossible de lire l'état des relances. Rien n'a été modifié.",
+    "keys": {
+      "submission_no_reply": {
+        "title": "CV envoyé, pas de retour",
+        "description": "Relance le client une seule fois quand un profil positionné reste sans réponse."
+      },
+      "mission_renewal": {
+        "title": "Mission qui arrive à échéance",
+        "description": "Relance une seule fois quand une mission se termine et qu'aucun renouvellement n'est ouvert."
+      },
+      "proposal_no_reply": {
+        "title": "Proposition sans réponse",
+        "description": "Relance une seule fois quand une proposition commerciale reste sans réponse."
+      }
+    },
+    "toast": {
+      "armed": "Relance armée. Elle partira dans les heures ouvrées, une seule fois par cible.",
+      "stopped": "Relance éteinte. Plus aucun envoi automatique pour cette règle.",
+      "error": "Rien n'a été modifié."
+    },
+    "dryRun": {
+      "show": "Simuler",
+      "hide": "Masquer la simulation",
+      "summary": "{{count}} relance(s) partiraient maintenant, sur {{total}} cible(s) examinée(s).",
+      "noSend": "Simulation : rien n’est envoyé, rien n’est enregistré.",
+      "empty": "Aucune cible à examiner pour ce playbook.",
+      "would": "Partirait",
+      "noRecipient": "Aucune adresse",
+      "error": "Simulation indisponible — on ne peut pas conclure que rien ne partirait.",
+      "reasons": {
+        "not_enabled": "Non armé",
+        "replied": "A répondu",
+        "already_sent": "Déjà relancé",
+        "opted_out": "Désabonné",
+        "quiet_hours": "Hors heures d’envoi",
+        "daily_cap": "Plafond du jour atteint",
+        "not_silent_enough": "Silence trop court",
+        "no_recipient": "Aucune adresse",
+        "null": "—"
+      }
+    }
+  },
+  "interventions": {
+    "title": "À traiter",
+    "intro": "Ce que le produit ne peut pas décider seul et qui attend un humain.",
+    "empty": "Rien ne nécessite ton arbitrage actuellement.",
+    "loadError": "Impossible de lire la file. Ce n'est pas « rien à traiter ».",
+    "noOwner": "Personne n'en est responsable",
+    "acknowledge": "Je m'en occupe",
+    "resolve": "Réglé",
+    "states": {
+      "open": "À traiter",
+      "acknowledged": "En cours",
+      "resolved": "Réglé",
+      "stale": "Périmé"
+    },
+    "kinds": {
+      "submission_stalled": "Profil positionné sans retour",
+      "renewal_at_risk": "Renouvellement à risque",
+      "invoicing_blocked": "Facturation bloquée",
+      "account_untouched": "Compte suivi que personne n'a touché",
+      "rep_inactive": "Commercial sans activité",
+      "credits_exhausted": "Usage soutenu",
+      "account_no_next_action": "Compte sans prochaine action",
+      "project_no_decision": "Projet sans décision",
+      "need_without_shortlist": "Besoin sans shortlist",
+      "timesheet_missing": "Relevé manquant",
+      "payment_overdue": "Encaissement en retard",
+      "mission_without_end_date": "Mission sans date de fin",
+      "staffing_collision": "Collision équipe"
+    },
+    "showAll": "Voir les {{count}} autre",
+    "showAll_other": "Voir les {{count}} autres",
+    "reasonPrompt": "Dis ce qui a été fait. Une intervention close sans motif ne se relit pas trois semaines plus tard.",
+    "reasonPlaceholder": "Facturé le 20/08, relance envoyée…",
+    "confirmResolve": "Clore",
+    "open": "Ouvrir",
+    "openAria": "{{label}} — ouvrir le dossier concerné",
+    "assignAria": "{{label}} — attribuer à un membre de l’équipe",
+    "openedFor": "ouverte {{age}}",
+    "consequences": {
+      "submission_stalled": "Sans relance, le profil sort de la short-list du client et la place est prise.",
+      "renewal_at_risk": "Sans décision, la mission s’arrête à son terme et le consultant repasse en intercontrat.",
+      "invoicing_blocked": "Tant que le blocage tient, le mois ne part pas en facturation et l’encaissement glisse d’autant.",
+      "account_untouched": "Sans reprise de contact, le compte se refroidit et il faudra tout rouvrir.",
+      "rep_inactive": "Sans point avec la personne, son portefeuille avance sans que personne ne le sache.",
+      "credits_exhausted": "Enveloppe atteinte : les analyses et enrichissements sont bloqués pour tout ton espace.",
+      "account_no_next_action": "Sans prochaine action posée, personne ne reprendra ce compte — il ne remontera dans aucune file.",
+      "project_no_decision": "Tant que le besoin reste immobile, il occupe une place dans le pipe sans rien y apporter.",
+      "need_without_shortlist": "Sans profil positionné, le client arbitrera avec les propositions des autres.",
+      "timesheet_missing": "Sans relevé signé, le mois ne peut pas être facturé, quelle que soit la réalité du travail fait.",
+      "payment_overdue": "Chaque jour de retard supplémentaire réduit les chances de recouvrer sans procédure.",
+      "mission_without_end_date": "Sans date de fin, la mission n’entre ni dans le prévisionnel ni dans le calcul de capacité.",
+      "staffing_collision": "Tant que personne ne tranche, les deux besoins comptent sur le même consultant — l’un des deux clients sera déçu."
+    },
+    "causes": {
+      "submission_stalled": "Un profil a été positionné chez le client et n’a reçu aucun retour depuis trop longtemps.",
+      "renewal_at_risk": "Aucun renouvellement n’a été ouvert avant l’échéance de la mission.",
+      "invoicing_blocked": "Un mois travaillé n’a pas encore été validé pour la facturation.",
+      "account_untouched": "Aucune action n’a été enregistrée sur ce compte depuis trop longtemps.",
+      "rep_inactive": "Le commercial n’a validé aucune action depuis trop longtemps.",
+      "credits_exhausted": "L’espace a beaucoup utilisé le produit ce mois-ci.",
+      "account_no_next_action": "Aucune prochaine action n’a été planifiée sur ce compte suivi.",
+      "project_no_decision": "Le besoin n’a pas avancé depuis la durée type de son étape.",
+      "need_without_shortlist": "Aucun profil n’a été positionné sur ce besoin ouvert depuis trop longtemps.",
+      "timesheet_missing": "Le relevé d’activité attendu n’est toujours pas arrivé malgré les relances.",
+      "payment_overdue": "L’échéance de paiement de la facture est dépassée sans encaissement.",
+      "mission_without_end_date": "La mission n’a jamais reçu de date de fin.",
+      "staffing_collision": "Le même consultant est positionné, ouvert, sur deux besoins distincts."
+    }
+  },
+  "approvals": {
+    "sent": "Relance envoyée.",
+    "rejected": "Relance annulée. Elle ne sera pas reproposée.",
+    "failed": "La relance n’est pas partie."
+  },
+  "summary": {
+    "title": "Automatisations",
+    "manage": "Gérer",
+    "counts": "{{armed}} armées · {{idle}} non armées",
+    "hint": "Ce qui part tout seul. Le réglage — délai de silence, simulation, armement — vit dans Réglages › Routines.",
+    "unreadable": "L’état des automatisations n’a pas pu être lu. Ce n’est pas « aucune armée » : va le vérifier avant de conclure."
+  }
+}

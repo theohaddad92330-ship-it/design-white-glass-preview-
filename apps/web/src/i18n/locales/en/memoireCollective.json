@@ -1,0 +1,44 @@
+{
+  "crossings": {
+    "openDoor": {
+      "title": "Door already open",
+      "factActive": "{{colleague}} started a {{role}} at {{account}} in {{month}}. The mission is still active.",
+      "factEnded": "{{colleague}} started a {{role}} at {{account}} in {{month}}. The mission has ended."
+    },
+    "prospectionCollision": {
+      "title": "Prospecting collision",
+      "fact": "{{colleague}} is also working on {{account}} — seen in the last {{days}} days."
+    },
+    "crossStaffing": {
+      "title": "Bench profile that matches",
+      "fact": "Your consultant {{consultant}} matches the {{need}} need opened by {{colleague}}."
+    },
+    "knownReferencing": {
+      "title": "Referencing already known",
+      "factFull": "The workspace has been referenced at tier {{rank}} on this perimeter since {{year}}.",
+      "factRankOnly": "The workspace is referenced at tier {{rank}} on this perimeter. The date is not known.",
+      "factYearOnly": "The workspace has been referenced on this perimeter since {{year}}. The tier is not known.",
+      "factBare": "The workspace is referenced on this perimeter. Neither the tier nor the date is known."
+    }
+  },
+  "actions": {
+    "talkToOwnerFirst": "→ Talk to the owner before going in direct",
+    "coordinateOrArbitrate": "→ Coordinate, or ask for a call",
+    "introduceBothOwners": "→ Introduce the two owners",
+    "useFrameworkChannel": "→ Go through the framework channel"
+  },
+  "roles": {
+    "owner": "Leadership",
+    "admin": "Administration",
+    "sales_ops": "Sales Ops",
+    "sales": "Sales",
+    "tech_admin": "Integrations",
+    "member": "Member",
+    "viewer": "Read only",
+    "recruiter": "Recruiting",
+    "finance": "Finance"
+  },
+  "common": {
+    "unknownMonth": "on an unknown date"
+  }
+}

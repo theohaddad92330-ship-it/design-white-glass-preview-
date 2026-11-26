@@ -1,0 +1,550 @@
+{
+  "page": {
+    "title": "Routines",
+    "heading": "Ce que {{brand}} fait pour toi, sans que tu le demandes",
+    "subtitle": "Chaque routine est visible, réglable et désactivable. Aucune ne part avant que tu l'aies vue ici.",
+    "runNow": "Lancer celles qui sont dues",
+    "running": "Exécution…",
+    "ranNone": "Aucune routine n'était due maintenant.",
+    "ranSome_one": "{{count}} routine exécutée.",
+    "ranSome_other": "{{count}} routines exécutées."
+  },
+  "library": {
+    "filterLabel": "Filtrer par cadence",
+    "filterAll": "Toutes les cadences",
+    "emptyCadence": "Aucune routine à cette cadence.",
+    "showAll": "Voir toutes les routines",
+    "backToLibrary": "Retour à la bibliothèque",
+    "notFoundTitle": "Automatisation introuvable",
+    "notFoundBody": "Elle n'est plus dans le catalogue, ou son nom a changé.",
+    "loading": "Chargement de la fiche…"
+  },
+  "config": {
+    "title": "Configuration"
+  },
+  "activation": {
+    "title": "Avant d'activer cette routine",
+    "schedule": "Quand : {{schedule}} · Canal : {{channel}}",
+    "simulateHint": "Tu peux la simuler sur tes données avant de l'activer : rien n'est écrit ni envoyé.",
+    "noSimulation": "Pas de simulation sur tes données pour cette routine : ce qui précède vient de sa fiche, pas d'un essai.",
+    "confirm": "Activer",
+    "cancel": "Annuler"
+  },
+  "cadence": {
+    "daily": "Tous les jours",
+    "weekdays": "Du lundi au vendredi",
+    "weekly": "Une fois par semaine",
+    "continuous": "En continu",
+    "monthly": "Une fois par mois",
+    "quarterly": "Une fois par trimestre"
+  },
+  "weekday": {
+    "1": "lundi",
+    "2": "mardi",
+    "3": "mercredi",
+    "4": "jeudi",
+    "5": "vendredi",
+    "6": "samedi",
+    "7": "dimanche"
+  },
+  "field": {
+    "hour": "Heure",
+    "weekday": "Jour",
+    "enabled": "Activée",
+    "at": "à {{hour}} h",
+    "condition": "Se déclenche quand : {{condition}}",
+    "reads": "Ce qu'elle lit : {{reads}}",
+    "acceptance": "Preuve que ça marche : {{acceptance}}",
+    "fallback": "Si elle ne peut pas : {{fallback}}",
+    "channel": "Canal",
+    "example": "Exemple : {{example}}",
+    "stopCondition": "S'arrête quand : {{stopCondition}}",
+    "version": "v{{version}}",
+    "maxItemsPerRun": "Relances par passage",
+    "maxItemsPerRunOption": "{{count}} par passage",
+    "autonomy": "Autonomie",
+    "owner": "Owner",
+    "ownerSelf": "Owner : toi",
+    "risk": "Risque : {{level}} sur 4 — {{meaning}}",
+    "roles": "Pour : {{roles}}",
+    "steps": "Déroulé : {{steps}}",
+    "preparedActions": "Laisse : {{actions}}"
+  },
+  "level": {
+    "n1_prepare": "Prépare",
+    "n4_bounded_auto": "Notifie sans envoyer",
+    "n5_extended_auto": "Agit seul, sans plafond, sans envoyer",
+    "n0_inform": "Garde le résultat sans notifier"
+  },
+  "updated": {
+    "badge": "Mise à jour disponible",
+    "acknowledge": "Marquer comme vue",
+    "changes": "Ce qui change en v{{version}}",
+    "diff": {
+      "before": "Avant",
+      "after": "Maintenant",
+      "notSet": "non renseignée",
+      "field": {
+        "stopCondition": "Condition d’arrêt",
+        "maxItemsPerRun": "Relances par passage"
+      }
+    }
+  },
+  "status": {
+    "active": "Active",
+    "paused": "En pause",
+    "disabled": "Désactivée",
+    "draft": "Brouillon",
+    "error": "En erreur",
+    "deprecated": "Retirée"
+  },
+  "channel": {
+    "in_app": "Dans l’application",
+    "email": "Email"
+  },
+  "blocker": {
+    "mailbox_not_connected": "Ta messagerie n'est pas connectée : cette routine ne peut rien lire.",
+    "agenda_not_connected": "Ton agenda n'est pas connecté : cette routine ne peut rien lire.",
+    "no_accounts": "Aucun compte suivi : cette routine n'a rien à surveiller.",
+    "fix": "Connecter",
+    "ats_not_connected": "Ton ATS n'est pas connecté : cette routine ne peut rien lire.",
+    "crm_not_connected": "Ton CRM n'est pas connecté : cette routine ne peut rien lire."
+  },
+  "lastRun": {
+    "never": "Jamais exécutée",
+    "at": "Dernière exécution : {{date}}",
+    "failed": "Échec"
+  },
+  "nextTrigger": {
+    "at": "Prochain déclenchement : {{date}}"
+  },
+  "history": {
+    "show": "Voir l'historique",
+    "hide": "Masquer l'historique",
+    "loading": "Lecture de l'historique…",
+    "empty": "Aucune exécution enregistrée.",
+    "proof": "Voir la preuve"
+  },
+  "dryRun": {
+    "show": "Simuler",
+    "hide": "Masquer la simulation",
+    "loading": "Simulation en cours…",
+    "error": "Simulation indisponible — on ne peut pas conclure que rien ne se préparerait.",
+    "empty": "Aucun fil sans réponse à examiner en ce moment.",
+    "summary": "{{count}} fil(s) sans réponse trouvé(s). Simulation : rien n'est écrit, rien n'est envoyé.",
+    "would": "Un brouillon serait préparé",
+    "silentFor": "silencieux depuis {{days}} jours",
+    "reasons": {
+      "no_thread": "Aucun fil à examiner",
+      "no_contact": "Aucun contact identifié",
+      "mailbox_not_ready": "Messagerie non prête pour un brouillon",
+      "no_credit": "Solde d'enrichissement épuisé"
+    }
+  },
+  "error": {
+    "title": "Les routines n'ont pas pu être chargées",
+    "retry": "Réessayer"
+  },
+  "simulation": {
+    "reads": "Elle lirait : {{reads}}",
+    "condition": "Elle se déclencherait quand : {{condition}}",
+    "outcome": "Elle produirait : {{outcome}}",
+    "ready": "Tous ses prérequis sont là : elle pourrait tourner dès aujourd’hui.",
+    "note": "Simulation : rien n'est écrit, rien n'est envoyé, aucun résultat n'est chiffré."
+  },
+  "approvalSettings": {
+    "title": "Autonomie des actions de l’espace",
+    "description": "Ce que {{brand}} fait seul, et jusqu’où. Réglé par un responsable de l’espace.",
+    "postureLabel": "Niveau d’autonomie de l’espace",
+    "loading": "Lecture des réglages d’autonomie…",
+    "error": "Les réglages d’autonomie n’ont pas pu être lus.",
+    "postures": {
+      "n2_user_approval": {
+        "label": "Un clic de l’auteur",
+        "hint": "Chaque action attend que la personne qui l’a lancée la valide."
+      },
+      "n3_manager_approval": {
+        "label": "Un responsable valide",
+        "hint": "Chaque action attend la validation d’un responsable d’équipe."
+      },
+      "n4_bounded_auto": {
+        "label": "Automatique borné",
+        "hint": "Le travail interne part seul tant qu’il reste sous les deux seuils ci-dessous ; au-delà, un responsable valide."
+      },
+      "n5_extended_auto": {
+        "label": "Autonomie étendue",
+        "hint": "Le travail interne part seul, sans plafond de volume ni de dépense."
+      }
+    },
+    "bulkThreshold": {
+      "label": "Cibles par exécution",
+      "unboundedLabel": "Sans plafond — cibles par exécution"
+    },
+    "unbounded": "Sans plafond",
+    "saveThresholds": "Enregistrer les seuils",
+    "invalid": "Un seuil est un nombre entier à partir de 1, ou « sans plafond ».",
+    "readOnly": "Seul un responsable de l’espace règle ces seuils.",
+    "neverWithoutGo": "Quel que soit le niveau, {{brand}} n’envoie un e-mail ni n’écrit dans ton CRM sans ton go.",
+    "saved": "Autonomie de l’espace enregistrée",
+    "saveFailed": "L’autonomie de l’espace n’a pas pu être enregistrée."
+  },
+  "lib": {
+    "eyebrow": "Bibliothèque d’automatisations",
+    "title": "Des suivis prêts à adapter",
+    "subtitle": "Choisis le résultat que tu veux obtenir. {{copilot}} t’aide ensuite à régler le périmètre et les étapes.",
+    "describe": "Décrire mon besoin",
+    "describeQuestion": "Je voudrais un suivi automatique qui n’existe pas dans la bibliothèque. Aide-moi à le décrire, à choisir ce qui le déclenche et à le régler.",
+    "searchLabel": "Rechercher une routine",
+    "searchPlaceholder": "Un rendez-vous, une mission, une relance…",
+    "familyLabel": "Catégorie de routine",
+    "familyAll": "Toutes",
+    "count_one": "{{count}} modèle",
+    "count_other": "{{count}} modèles",
+    "seeFunctioning": "Voir le fonctionnement",
+    "adapt": "Adapter",
+    "showMore": "Afficher les suivants",
+    "noMatch": "Aucune routine ne correspond à cette recherche.",
+    "reset": "Tout afficher",
+    "toConnect": "à connecter",
+    "updated": "Mise à jour",
+    "advancedTitle": "Relances automatiques et lancement",
+    "retry": "Réessayer",
+    "listLabel": "Routines de la bibliothèque"
+  },
+  "guide": {
+    "title": "Comment travailler ici ?",
+    "summary": "Ce qu’est une automatisation, et le parcours utile",
+    "heading": "Décrire un déclencheur et une préparation maîtrisée",
+    "intro": "Une automatisation est une séquence qui démarre sur un signal. Elle relie un événement à une préparation ou à une tâche ; elle ne remplace pas une autorisation d’envoi.",
+    "stepsTitle": "Le parcours utile",
+    "step1": "Choisis le scénario utile à ton organisation.",
+    "step2": "Vérifie les critères, destinataires internes et exclusions.",
+    "step3": "Teste le déclenchement et inspecte ce qui a été créé.",
+    "keepTitle": "À garder en tête",
+    "keep": "Une automatisation naît éteinte. Ce qu’elle prépare arrive dans À traiter ; rien ne part sans ton geste."
+  },
+  "subnav": {
+    "label": "Automatisations",
+    "mine": "Mes automatisations",
+    "library": "Bibliothèque de routines",
+    "journal": "Journal des essais"
+  },
+  "family": {
+    "organisation": "Organisation",
+    "meetings": "Rendez-vous",
+    "prospecting": "Prospection",
+    "missions_invoices": "Missions & factures",
+    "talents_staffing": "Talents & staffing",
+    "watch": "Veille"
+  },
+  "tool": {
+    "mailbox": "Ta messagerie",
+    "agenda": "Ton agenda",
+    "ats": "Ton ATS",
+    "crm": "Ton CRM",
+    "workspace": "Ton espace"
+  },
+  "fn": {
+    "close": "Fermer",
+    "tabsLabel": "Fonctionnement d’une routine",
+    "tabs": {
+      "how": "Comment ça marche",
+      "settings": "Réglages"
+    },
+    "adaptWithLaura": "Adapter avec {{copilot}}",
+    "adaptQuestion": "Aide-moi à adapter la routine « {{name}} » : ce qu’elle surveille, quand elle passe et ce qu’elle prépare pour moi.",
+    "blockedTitle": "Activation bloquée",
+    "rubric": {
+      "when": "Quand",
+      "reads": "Ce qui est lu",
+      "result": "Résultat du modèle de départ",
+      "stop": "Arrêt du suivi",
+      "proof": "Preuve que ça marche",
+      "fallback": "Si elle ne peut pas",
+      "example": "Exemple"
+    },
+    "version": "Version {{version}}",
+    "validates": {
+      "title": "Ce que tu valides",
+      "never": "Aucun envoi ne part sans ton geste, quel que soit ce réglage.",
+      "autonomy": "Le niveau d’autonomie général de {{copilot}} se règle dans",
+      "autonomyLink": "Réglages › {{copilot}}"
+    },
+    "closeWindow": "Fermer la fenêtre"
+  },
+  "journal": {
+    "eyebrow": "Journal des essais",
+    "title": "Le journal de tes essais",
+    "subtitle": "Ce qui a été testé avant d’être conservé. Un essai n’est jamais une preuve d’envoi réel.",
+    "loadError": "Le journal n’a pas pu être lu.",
+    "empty": "Aucun essai enregistré. Teste une règle : le contrôle et son résultat apparaîtront ici.",
+    "emptyAsk": "Créer avec {{copilot}}",
+    "emptyQuestion": "Aide-moi à créer une règle d’automatisation, puis à la tester avant de la conserver.",
+    "kind": {
+      "draft": "Essai du brouillon",
+      "live": "Essai de la règle"
+    },
+    "read_one": "{{count}} situation lue",
+    "read_other": "{{count}} situations lues",
+    "readNone": "Aucune situation à lire aujourd’hui",
+    "wouldAct_one": "Aurait préparé {{count}} action à valider",
+    "wouldAct_other": "Aurait préparé {{count}} actions à valider",
+    "wouldActNone": "N’aurait rien préparé",
+    "failed": "Impossible : {{reason}}",
+    "openRule": "Ouvrir la règle",
+    "openRuleFor": "Ouvrir la règle : {{name}}",
+    "footnote": "Un essai lit les vraies données de ton espace mais ne crée ni tâche, ni message.",
+    "col": {
+      "rule": "Règle",
+      "kind": "Essai",
+      "result": "Résultat",
+      "when": "Quand"
+    },
+    "listLabel": "Essais récents"
+  },
+  "editor": {
+    "close": "Fermer",
+    "cancel": "Annuler",
+    "title": "Ajuster ton automatisation",
+    "subtitle": "Discute du besoin, vérifie le parcours et garde la main sur chaque résultat.",
+    "back": "Retour aux automatisations",
+    "notFoundTitle": "Automatisation introuvable",
+    "notFoundBody": "Elle a été archivée, ou elle n’est pas à toi.",
+    "laura": {
+      "title": "{{copilot}}, avec toi",
+      "tagline": "Conception guidée · rien ne s’active sans toi",
+      "intro": "Voici le scénario conservé. Tu peux le préciser, le tester puis enregistrer la nouvelle version.",
+      "placeholder": "Précise la règle à {{copilot}}",
+      "note": "Les modifications ne déclenchent rien.",
+      "refine": "Préciser",
+      "question": "Voici ma règle d’automatisation « {{name}} » : {{sentence}}. Je veux la préciser ainsi : {{text}}",
+      "bubbleName": "{{copilot}}"
+    },
+    "scenario": {
+      "kicker": "Ton scénario",
+      "adjust": "Régler",
+      "when": "Quand {{signal}}",
+      "version": "Version {{version}}",
+      "versionDraft": "Version {{version}} · brouillon",
+      "costIncluded": "Incluse dans ton offre",
+      "costUses": "Compte dans ton usage",
+      "enabled": "La règle tourne",
+      "scope": "Mes dossiers autorisés"
+    },
+    "result": {
+      "email_to_review": "Un e-mail à relire",
+      "call_to_make": "Un appel à passer",
+      "enroll_sequence": "Une inscription en séquence"
+    },
+    "chain": {
+      "label": "Le parcours de la règle",
+      "trigger": "Déclencheur",
+      "laura": "Préparation · {{copilot}}",
+      "lauraTitle": "{{copilot}} prépare la suite",
+      "lauraEnroll": "Inscrit le contact dans la séquence « {{sequence}} » ; {{copilot}} prépare les textes. Rien n’est envoyé.",
+      "laura_email_to_review": "Prépare un e-mail à relire pour le contact concerné. Rien n’est envoyé.",
+      "laura_call_to_make": "Prépare un appel à passer, avec sa trame. Rien n’est composé à ta place.",
+      "human": "Validation humaine",
+      "humanTitle": "Tu gardes la décision",
+      "humanBody": "Ouvrir le résultat, le vérifier et décider de la suite.",
+      "scout": "Repérage · {{copilot}}",
+      "scoutTitle": "{{copilot}} repère ce qui compte",
+      "scoutBody": {
+        "mission_end": "Les missions de l’espace et leur date de fin.",
+        "hiring": "Les recrutements détectés chez tes comptes suivis.",
+        "new_decision_maker": "Les nouveaux décideurs repérés chez tes comptes suivis.",
+        "tender": "Les appels d’offres publiés par tes comptes suivis.",
+        "target_change": "Ce qui change chez tes cibles suivies.",
+        "inactive_account": "Les comptes restés sans action depuis le délai choisi."
+      }
+    },
+    "stops": {
+      "title": "Ce qui arrête le suivi",
+      "body": "Un même signal ne déclenche jamais deux fois la règle. Un contact déjà en séquence, joint il y a moins de 30 jours, opposé à la prospection ou client est écarté, et la règle le consigne. Éteinte ou archivée, elle ne passe plus."
+    },
+    "tools": {
+      "title": "Outils requis et capacité du modèle de départ",
+      "body": "Ce que la règle lit vient de ton espace et des outils que tu as branchés ; rien d’autre n’est consulté.",
+      "connections": "Voir mes connexions"
+    },
+    "prepared": {
+      "count_one": "Ce qu’elle a préparé · {{count}} action sur 30 jours",
+      "count_other": "Ce qu’elle a préparé · {{count}} actions sur 30 jours",
+      "unmeasured": "Ce qu’elle a préparé · pas encore mesuré"
+    },
+    "try": {
+      "title": "Essayer avant de conserver",
+      "body": "Le test lit les données de ton espace. Il ne crée ni tâche, ni message.",
+      "run": "Tester le parcours",
+      "running": "Test en cours…",
+      "pausedPromise": "Aucun nouveau passage pendant une pause : l’essai ne lit que pour toi.",
+      "kept": "Aucune écriture pendant ce test ; l’essai est gardé dans le journal."
+    },
+    "actions": {
+      "activate": "Activer la version {{version}}",
+      "testToActivate": "Teste le parcours pour pouvoir activer. Toute modification remet la règle en brouillon.",
+      "duplicate": "Dupliquer",
+      "archive": "Archiver cette règle",
+      "saveDraft": "Enregistrer le brouillon",
+      "delete": "Supprimer"
+    },
+    "archive": {
+      "title": "Archiver cette automatisation ?",
+      "body": "La règle s’éteint et sort de la liste. Les tâches, brouillons et preuves déjà créés sont conservés.",
+      "confirm": "Archiver"
+    },
+    "toast": {
+      "draftSaved": "Version {{version}} enregistrée en brouillon. La version en cours continue de tourner.",
+      "activated": "Version {{version}} active.",
+      "duplicated": "Copie créée, éteinte.",
+      "archived": "Règle archivée."
+    },
+    "settings": {
+      "title": "Régler cette automatisation",
+      "description": "Ce que tu changes ici devient un brouillon : la règle qui tourne ne bouge pas avant que tu l’aies testé et activé.",
+      "when": "Quand",
+      "what": "Quoi",
+      "howMuch": "Combien",
+      "name": "Nom de l’automatisation",
+      "trigger": "Déclencheur",
+      "days": "Jours sans action",
+      "daysRange": "Entre {{min}} et {{max}} jours.",
+      "result": "Résultat à préparer",
+      "sequence": "Séquence",
+      "cap": "Plafond d’usage sur 30 jours",
+      "capNone": "Aucun",
+      "capHelp": "Laisse vide pour ne pas plafonner. Au plafond, la règle écarte le signal et le consigne.",
+      "externalSend": "Envoi externe",
+      "externalSendBody": "Jamais seul : chaque envoi passe par ta validation, immédiat ou programmé. Une préparation ne donne pas l’autorisation d’envoyer.",
+      "resetsTest": "Toute modification remet la configuration en brouillon et demande un nouveau test avant activation.",
+      "apply": "Appliquer au brouillon"
+    },
+    "node": {
+      "trigger": "Le déclencheur",
+      "scout": "Le repérage",
+      "prepare": "La préparation",
+      "human": "Ta décision",
+      "adjust": "Régler",
+      "open": "Voir le détail : {{name}}"
+    },
+    "remove": {
+      "title": "Supprimer cette règle ?",
+      "body": "Elle est retirée pour de bon. Préfère « Archiver » si tu veux garder ses tâches, brouillons et preuves.",
+      "confirm": "Supprimer"
+    },
+    "switch": {
+      "title": "Avant de basculer",
+      "from": "Version {{version}} · celle qui tourne",
+      "to": "Version {{version}} · la suivante",
+      "loading": "Lecture de la comparaison…",
+      "error": "La comparaison n’a pas pu être chargée : on ne bascule pas sans l’avoir vue.",
+      "differencesTitle": "Ce qui change",
+      "noDifferences": "Aucun réglage ne change entre les deux versions.",
+      "change": "{{before}} → {{after}}",
+      "none": "aucun",
+      "days": "{{count}} jours",
+      "field": {
+        "name": "Nom",
+        "signal": "Signal",
+        "action_kind": "Nature de l’action",
+        "playbook_key": "Séquence",
+        "prepared_action": "Action préparée",
+        "inactive_days": "Délai d’inactivité"
+      },
+      "value": {
+        "enroll_sequence": "Inscrire dans une séquence",
+        "prepare_action": "Préparer une action"
+      },
+      "migrationTitle": "Ce qui est déjà en cours",
+      "migrationEngaged_one": "{{count}} déclenchement déjà consigné reste tel quel : il n’est ni rejoué ni effacé. La nouvelle version ne reprend que les signaux pas encore vus.",
+      "migrationEngaged_other": "{{count}} déclenchements déjà consignés restent tels quels : ils ne sont ni rejoués ni effacés. La nouvelle version ne reprend que les signaux pas encore vus.",
+      "migrationNone": "Rien n’est encore consigné pour cette règle : il n’y a rien à reprendre.",
+      "migrationSignal": "La version {{to}} écoute un autre signal : ce que la version {{from}} avait déjà pris reste rattaché à l’ancien signal.",
+      "impactTitle": "Impact",
+      "impactMeasured_one": "Lue sans rien exécuter, la version {{version}} agirait ce matin sur {{count}} situation sur {{read}} lues.",
+      "impactMeasured_other": "Lue sans rien exécuter, la version {{version}} agirait ce matin sur {{count}} situations sur {{read}} lues.",
+      "impactUnmeasured": "Impact non mesuré : la source de cette règle n’a pas pu être lue à cet instant. Tu peux basculer quand même.",
+      "kept": "La version {{version}} reste conservée : rien n’est supprimé."
+    }
+  },
+  "journey": {
+    "title": "Parcours d’activation",
+    "understand": "Comprendre",
+    "example": "Voir un exemple",
+    "exampleMissing": "Aucun exemple écrit à la main pour cette routine : la simulation ci-dessous dit ce qu’elle lirait.",
+    "simulate": "Simuler",
+    "configure": "Configurer",
+    "validate": "Valider",
+    "validateBody": "Activer ouvre d’abord un récapitulatif à valider : ce qu’elle lit, son niveau d’autonomie, sa condition d’arrêt. Rien ne part avant ton accord, et aucune routine n’envoie quoi que ce soit dehors.",
+    "activate": "Activer",
+    "errorStatus": "Arrêtée après trois échecs de suite : elle ne repart que si tu la réactives, une fois la cause réglée.",
+    "observe": "Observer",
+    "lastOutcome": "Dernière exécution : {{outcome}}",
+    "observationError": "L’historique n’a pas pu être lu : rien n’a été mesuré.",
+    "observationNone": "Aucune exécution sur les 30 derniers jours : rien n’a été mesuré.",
+    "observationRuns_one": "{{count}} exécution sur les 30 derniers jours",
+    "observationRuns_other": "{{count}} exécutions sur les 30 derniers jours",
+    "observationNotified_one": "{{count}} notification",
+    "observationNotified_other": "{{count}} notifications",
+    "observationFailed_one": "{{count}} échec",
+    "observationFailed_other": "{{count}} échecs",
+    "runNow": "Lancer maintenant",
+    "runNowDone": "Exécutée : {{outcome}}",
+    "runNowRefused": {
+      "demo": "Salle de démonstration : les routines s’y montrent, elles n’y tournent pas.",
+      "blocked": "Un outil qu’elle lit n’est pas connecté : elle ne peut pas tourner.",
+      "already_running": "Déjà lancée à l’instant : une seule exécution par minute."
+    }
+  },
+  "owner": {
+    "self": "Toi"
+  },
+  "scope": {
+    "personal": "Portée : tes objets",
+    "workspace": "Portée : l’espace"
+  },
+  "validation": {
+    "review_before_acting": "Validation : tu relis avant d’agir",
+    "user_sends": "Validation : c’est toi qui envoies",
+    "user_approves_write": "Validation : tu approuves chaque écriture"
+  },
+  "risk": {
+    "0": "elle lit et t’informe",
+    "1": "elle te fait un récapitulatif",
+    "2": "elle écrit une tâche dans {{brand}}",
+    "3": "elle prépare un message, c’est toi qui l’envoies",
+    "4": "elle propose une écriture dans ton outil, que tu approuves"
+  },
+  "role": {
+    "commercial": "Commercial",
+    "recruiter": "Recrutement",
+    "manager": "Management",
+    "adv": "ADV",
+    "delivery": "Delivery",
+    "general": "Tout le monde"
+  },
+  "step": {
+    "read": "lit",
+    "check_condition": "vérifie sa condition",
+    "prepare": "prépare",
+    "notify": "te prévient",
+    "await_validation": "attend ta validation",
+    "record_proof": "garde la preuve"
+  },
+  "preparedAction": {
+    "notification": "une notification",
+    "digest": "un récapitulatif",
+    "message_draft": "un brouillon de message",
+    "task": "une tâche",
+    "crm_update_proposal": "une mise à jour CRM à approuver"
+  },
+  "content": {
+    "title": "Contenu de la notification",
+    "default": "Le texte par défaut de la routine s’applique. Écris un gabarit pour ton espace : {{token}} y reçoit ce que la routine a trouvé.",
+    "custom": "Gabarit de ton espace — {{token}} reçoit ce que la routine a trouvé.",
+    "save": "Enregistrer pour l’espace",
+    "reset": "Revenir au défaut",
+    "error": "Contenu illisible pour le moment — le texte par défaut s’applique.",
+    "loading": "Chargement du contenu…"
+  }
+}

@@ -1,0 +1,57 @@
+name: Relais lsb_release
+description: >-
+  Fournit `lsb_release` quand l'image du runner ne le porte pas. No-op si le
+  binaire existe déjà (donc sur `ubuntu-latest`).
+
+# `actions/setup-python` (et le cache pip) appellent `lsb_release` pour identifier
+# la distribution. L'image du runner auto-hébergé (`bellum-ci`, conteneur sur VPS Hetzner,
+# base Playwright) ne le porte pas : `setup-python` échoue, et tout ce qui suit est
+# ignoré. Le relais lit `/etc/os-release`, qui existe partout.
+#
+# Ce fichier existe parce que le relais était écrit EN DUR dans `ci.yml`, et que
+# `upstream-contracts.yml` ne l'avait pas — il échouait donc sur `setup-python` dès
+# qu'il s'est mis à tourner sur les runners auto-hébergés. Un réglage vit à un seul
+# endroit ; une troisième copie serait une troisième occasion de diverger.
+
+runs:
+  using: composite
+  steps:
+    - name: Fournir `lsb_release` si l'image du runner ne l'a pas
+      shell: bash
+      run: |
+        if command -v lsb_release >/dev/null 2>&1; then
+          echo "lsb_release déjà présent — rien à faire"
+          exit 0
+        fi
+        mkdir -p "$HOME/.local/bin"
+        cat > "$HOME/.local/bin/lsb_release" <<'SHIM'
+        #!/usr/bin/env bash
+        set -eu
+        . /etc/os-release
+        short=0; want_i=0; want_r=0; want_c=0; want_d=0
+        for arg in "$@"; do
+          case "$arg" in
+            -s|--short) short=1 ;;
+            -i|--id) want_i=1 ;;
+            -r|--release) want_r=1 ;;
+            -c|--codename) want_c=1 ;;
+            -d|--description) want_d=1 ;;
+            -a|--all) want_i=1; want_r=1; want_c=1; want_d=1 ;;
+          esac
+        done
+        if [ "$want_i" = 0 ] && [ "$want_r" = 0 ] && [ "$want_c" = 0 ] && [ "$want_d" = 0 ]; then
+          want_i=1; want_r=1; want_c=1; want_d=1
+        fi
+        raw_id="${ID:-unknown}"
+        id_val="$(printf '%s' "$raw_id" | cut -c1 | tr '[:lower:]' '[:upper:]')$(printf '%s' "$raw_id" | cut -c2-)"
+        codename="${VERSION_CODENAME:-${UBUNTU_CODENAME:-n/a}}"
+        [ "$want_d" = 1 ] && { [ "$short" = 1 ] && printf '%s\n' "${PRETTY_NAME:-$id_val}" || printf 'Description:\t%s\n' "${PRETTY_NAME:-$id_val}"; }
+        [ "$want_i" = 1 ] && { [ "$short" = 1 ] && printf '%s\n' "$id_val" || printf 'Distributor ID:\t%s\n' "$id_val"; }
+        [ "$want_r" = 1 ] && { [ "$short" = 1 ] && printf '%s\n' "${VERSION_ID:-rolling}" || printf 'Release:\t%s\n' "${VERSION_ID:-rolling}"; }
+        [ "$want_c" = 1 ] && { [ "$short" = 1 ] && printf '%s\n' "$codename" || printf 'Codename:\t%s\n' "$codename"; }
+        exit 0
+        SHIM
+        sed -i 's/^        //' "$HOME/.local/bin/lsb_release"
+        chmod +x "$HOME/.local/bin/lsb_release"
+        echo "$HOME/.local/bin" >> "$GITHUB_PATH"
+        echo "relais lsb_release installé : $("$HOME/.local/bin/lsb_release" -i -s) $("$HOME/.local/bin/lsb_release" -r -s)"

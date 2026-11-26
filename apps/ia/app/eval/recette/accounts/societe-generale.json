@@ -1,0 +1,198 @@
+{
+  "slug": "societe-generale",
+  "company": "Société Générale",
+  "archetype": "banque",
+  "issue": "#2130.5",
+  "nature": "reel_source",
+  "as_of": "2026-09-15",
+  "_source": "Entreprise RÉELLE : chaque fait affirmé ci-dessous est relu dans ce dépôt (`app/eval/strategy/companies/<slug>.json`, bloc `registry` relevé le 2026-07-19 sur recherche-entreprises.api.gouv.fr — Annuaire des Entreprises, DINUM), avec son URL, sa date et sa trace. Tout ce que ces faits ne portent pas — décideurs, équipes, signaux, projets, voies d'accès — est déclaré NON MESURÉ et reste vide : l'écrire serait inventer un fait sous un nom réel, ce que le cadrage #2130.1-7 refuse.",
+  "facts": [
+    {
+      "key": "siren",
+      "value": "552120222",
+      "url": "https://recherche-entreprises.api.gouv.fr",
+      "date": "2026-07-19",
+      "trace": "app/eval/strategy/companies/societe-generale.json#registry.siren"
+    },
+    {
+      "key": "denomination",
+      "value": "SOCIETE GENERALE (SG)",
+      "url": "https://recherche-entreprises.api.gouv.fr",
+      "date": "2026-07-19",
+      "trace": "app/eval/strategy/companies/societe-generale.json#registry.denomination"
+    },
+    {
+      "key": "categorie_entreprise",
+      "value": "GE",
+      "url": "https://recherche-entreprises.api.gouv.fr",
+      "date": "2026-07-19",
+      "trace": "app/eval/strategy/companies/societe-generale.json#registry.categorie_entreprise"
+    },
+    {
+      "key": "naf_siege",
+      "value": "64.19Z",
+      "url": "https://recherche-entreprises.api.gouv.fr",
+      "date": "2026-07-19",
+      "trace": "app/eval/strategy/companies/societe-generale.json#registry.naf_siege"
+    },
+    {
+      "key": "tranche_effectif_label",
+      "value": "10 000 salariés et plus",
+      "url": "https://recherche-entreprises.api.gouv.fr",
+      "date": "2026-07-19",
+      "trace": "app/eval/strategy/companies/societe-generale.json#registry.tranche_effectif_label"
+    },
+    {
+      "key": "annee_effectif",
+      "value": "2023",
+      "url": "https://recherche-entreprises.api.gouv.fr",
+      "date": "2026-07-19",
+      "trace": "app/eval/strategy/companies/societe-generale.json#registry.annee_effectif"
+    },
+    {
+      "key": "commune_siege",
+      "value": "PARIS",
+      "url": "https://recherche-entreprises.api.gouv.fr",
+      "date": "2026-07-19",
+      "trace": "app/eval/strategy/companies/societe-generale.json#registry.commune_siege"
+    },
+    {
+      "key": "code_postal_siege",
+      "value": "75009",
+      "url": "https://recherche-entreprises.api.gouv.fr",
+      "date": "2026-07-19",
+      "trace": "app/eval/strategy/companies/societe-generale.json#registry.code_postal_siege"
+    }
+  ],
+  "expected": {
+    "identite": {
+      "status": "attendu",
+      "contient": [
+        "SOCIETE GENERALE",
+        "552120222"
+      ]
+    },
+    "perimetre": {
+      "status": "attendu",
+      "contient": [
+        "PARIS",
+        "64.19Z"
+      ]
+    },
+    "decideurs": {
+      "status": "non_mesure",
+      "raison": "Aucune source vérifiée (URL + date) de ce dépôt ne nomme un décideur de ce compte."
+    },
+    "contacts_a_ne_pas_recommander": {
+      "status": "non_mesure",
+      "raison": "Sans décideur sourcé, il n'y a personne à écarter : rien n'est affirmé."
+    },
+    "equipes_cles": {
+      "status": "non_mesure",
+      "raison": "Aucune source vérifiée de ce dépôt ne décrit une équipe de ce compte."
+    },
+    "signaux": {
+      "status": "non_mesure",
+      "raison": "Aucun signal daté et sourcé dans ce dépôt pour ce compte."
+    },
+    "projets": {
+      "status": "non_mesure",
+      "raison": "Aucun projet sourcé dans ce dépôt pour ce compte."
+    },
+    "partenaires": {
+      "status": "non_mesure",
+      "raison": "La mémoire marché n'est pas relue par ce golden : rien n'est affirmé ici, ni dans un sens ni dans l'autre."
+    },
+    "acces": {
+      "status": "non_mesure",
+      "raison": "Aucune voie d'accès sourcée dans ce dépôt pour ce compte."
+    },
+    "recommandations": {
+      "status": "attendu",
+      "contient": [
+        "552120222"
+      ]
+    },
+    "gaps": {
+      "status": "attendu",
+      "contient": [
+        "décideurs"
+      ]
+    },
+    "sources": {
+      "status": "attendu",
+      "contient": [
+        "recherche-entreprises.api.gouv.fr"
+      ]
+    },
+    "action_suivante": {
+      "status": "attendu",
+      "contient": [
+        "552120222"
+      ]
+    }
+  },
+  "dossier": {
+    "identite": {
+      "name": "SOCIETE GENERALE (SG)",
+      "siren": "552120222"
+    },
+    "perimetre": {
+      "scope": "unite_legale",
+      "entities": [
+        "SOCIETE GENERALE (SG) — unité légale 552120222, siège PARIS 75009, NAF 64.19Z, catégorie GE"
+      ]
+    },
+    "decideurs": [],
+    "contacts_a_ne_pas_recommander": [],
+    "equipes_cles": [],
+    "signaux": [],
+    "projets": [],
+    "partenaires": [],
+    "acces": [],
+    "recommandations": [
+      {
+        "id": "reco-entite",
+        "text": "Faire préciser quelle entité porte le besoin avant de s'appuyer sur l'unité légale 552120222 du siège PARIS 75009.",
+        "why": "Le registre décrit une unité légale en NAF 64.19Z avec une tranche de 10 000 salariés et plus, sans dire quelle direction achète.",
+        "target": null,
+        "evidence": [
+          "src-registre"
+        ]
+      }
+    ],
+    "gaps": [
+      "décideurs non identifiés dans une source vérifiée",
+      "direction acheteuse inconnue",
+      "aucun signal daté et sourcé"
+    ],
+    "sources": [
+      {
+        "id": "src-registre",
+        "url": "https://recherche-entreprises.api.gouv.fr",
+        "date": "2026-07-19",
+        "label": "registre public des entreprises"
+      }
+    ],
+    "action_suivante": {
+      "text": "Relever au registre les établissements rattachés à l'unité légale 552120222",
+      "target": null,
+      "evidence": [
+        "src-registre"
+      ]
+    }
+  },
+  "cas": [
+    {
+      "id": "cas-entite",
+      "text": "Demander quelle direction porte le budget avant de citer l'unité légale 552120222 du siège PARIS.",
+      "why": "Le registre s'arrête à l'unité légale en NAF 64.19Z : la direction acheteuse n'y figure pas.",
+      "target": null,
+      "evidence": [
+        "src-registre"
+      ],
+      "label": "useful_and_correct",
+      "_jugement": "Ne dit que ce que la source porte, et sert la prochaine action."
+    }
+  ]
+}

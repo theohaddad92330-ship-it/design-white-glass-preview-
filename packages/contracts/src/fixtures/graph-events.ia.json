@@ -1,0 +1,754 @@
+{
+  "run_completed": [
+    {
+      "type": "phase_completed",
+      "phase": "research",
+      "progress": 25,
+      "data": {
+        "telemetry": {
+          "phase": "research",
+          "ok": true,
+          "duration_ms": 0,
+          "sources": [
+            {
+              "provider": "brave",
+              "status": "down",
+              "detail": "0 résultats"
+            },
+            {
+              "provider": "firecrawl",
+              "status": "down",
+              "detail": "0 pages scrapées"
+            },
+            {
+              "provider": "pappers",
+              "status": "down",
+              "detail": "aucune donnée"
+            },
+            {
+              "provider": "insee-entités",
+              "status": "skipped",
+              "detail": "0"
+            },
+            {
+              "provider": "bodacc",
+              "status": "skipped",
+              "detail": "0"
+            },
+            {
+              "provider": "brave-news",
+              "status": "skipped",
+              "detail": "0"
+            },
+            {
+              "provider": "france-travail",
+              "status": "skipped",
+              "detail": "0"
+            },
+            {
+              "provider": "inpi-rne",
+              "status": "skipped",
+              "detail": "0"
+            },
+            {
+              "provider": "tech-detect",
+              "status": "skipped",
+              "detail": "—"
+            },
+            {
+              "provider": "claude",
+              "status": "ok",
+              "detail": "0 in / 0 out"
+            }
+          ],
+          "input_tokens": 0,
+          "output_tokens": 0,
+          "cost_usd": 0,
+          "cache_read_input_tokens": 0,
+          "cache_creation_input_tokens": 0
+        },
+        "output": {
+          "research": {
+            "businessDescription": "Banque",
+            "executives": []
+          },
+          "seed_contacts": [],
+          "gate": {
+            "decision": "go",
+            "score": 1,
+            "reasons": [],
+            "signals": {
+              "business": true,
+              "intent": false,
+              "entities": false
+            }
+          }
+        }
+      }
+    },
+    {
+      "type": "phase_completed",
+      "phase": "contacts",
+      "progress": 50,
+      "data": {
+        "telemetry": {
+          "phase": "contacts",
+          "ok": true,
+          "duration_ms": 0,
+          "sources": [
+            {
+              "provider": "apollo",
+              "status": "down",
+              "detail": "0 contacts"
+            }
+          ],
+          "input_tokens": 0,
+          "output_tokens": 0,
+          "cost_usd": 0,
+          "cache_read_input_tokens": 0,
+          "cache_creation_input_tokens": 0
+        },
+        "output": {
+          "contacts": []
+        }
+      }
+    },
+    {
+      "type": "phase_completed",
+      "phase": "classify",
+      "progress": 75,
+      "data": {
+        "telemetry": {
+          "phase": "classify",
+          "ok": true,
+          "duration_ms": 0,
+          "sources": [
+            {
+              "provider": "claude",
+              "status": "ok",
+              "detail": "0 in / 0 out"
+            }
+          ],
+          "input_tokens": 0,
+          "output_tokens": 0,
+          "cost_usd": 0,
+          "cache_read_input_tokens": 0,
+          "cache_creation_input_tokens": 0
+        },
+        "output": {
+          "classified_contacts": [
+            {
+              "fullName": "A"
+            }
+          ],
+          "org_graph": {
+            "buyingCommittee": {
+              "members": [
+                {
+                  "fullName": "A",
+                  "title": "",
+                  "entity": "",
+                  "committeeRole": "to_qualify",
+                  "roleLabel": "À qualifier",
+                  "power": 0,
+                  "interest": 0,
+                  "quadrant": "À QUALIFIER",
+                  "cadence": "à définir",
+                  "engagementAction": "Rôle non déductible du poste — qualifier avant d'engager.",
+                  "evidenceLevel": "unknown",
+                  "evidenceLevelLabel": "Inconnu",
+                  "source": null
+                }
+              ],
+              "byQuadrant": {
+                "À QUALIFIER": ["A"]
+              },
+              "roleCoverage": {
+                "to_qualify": 1
+              },
+              "missingRoles": ["economic_buyer", "technical_buyer", "user_buyer", "champion", "procurement"],
+              "summary": "Comité d'achat : aucun rôle clé identifié. Sièges à couvrir : décideur budget, décideur technique, utilisateur, champion, acheteur."
+            },
+            "orgGraph": {
+              "graphVersion": 1,
+              "entities": [],
+              "people": [
+                {
+                  "id": "p-a",
+                  "fullName": "A",
+                  "entityId": null,
+                  "decisionRoles": ["unknown"],
+                  "identityStatus": "verified_identity",
+                  "sources": [],
+                  "confidence": 50
+                }
+              ],
+              "hierarchyEdges": [],
+              "influenceEdges": [],
+              "buyingCommittee": [
+                {
+                  "personId": "p-a",
+                  "role": "unknown",
+                  "entityId": null,
+                  "reason": "À qualifier",
+                  "accessScore": 55
+                }
+              ],
+              "uncoveredZones": [],
+              "recommendedPath": [],
+              "rejectedItems": [],
+              "coverage": {
+                "discovered": 1,
+                "deterministicClassified": 0,
+                "llmEnriched": 1,
+                "enrichmentBatchSize": 50
+              },
+              "colouring": {
+                "unenriched": 1,
+                "grey": 1,
+                "floor": 0.6
+              }
+            }
+          }
+        }
+      }
+    },
+    {
+      "type": "phase_completed",
+      "phase": "plan",
+      "progress": 100,
+      "data": {
+        "telemetry": {
+          "phase": "plan",
+          "ok": true,
+          "duration_ms": 0,
+          "sources": [
+            {
+              "provider": "claude",
+              "status": "ok",
+              "detail": "0 in / 0 out"
+            }
+          ],
+          "input_tokens": 0,
+          "output_tokens": 0,
+          "cost_usd": 0,
+          "cache_read_input_tokens": 0,
+          "cache_creation_input_tokens": 0
+        },
+        "output": {
+          "plan": {
+            "actionPlan": {
+              "strategy": "S"
+            }
+          }
+        }
+      }
+    },
+    {
+      "type": "run_completed",
+      "phase": null,
+      "progress": 100,
+      "data": {
+        "summary": {
+          "total_cost_usd": 0,
+          "total_llm_cost_usd": 0,
+          "total_input_tokens": 0,
+          "total_output_tokens": 0,
+          "total_cache_read_input_tokens": 0,
+          "total_cache_creation_input_tokens": 0,
+          "total_duration_ms": 0,
+          "providers": {},
+          "degraded_sources": [],
+          "gate": {
+            "decision": "go",
+            "score": 1,
+            "reasons": [],
+            "signals": {
+              "business": true,
+              "intent": false,
+              "entities": false
+            }
+          },
+          "phases": [
+            {
+              "phase": "research",
+              "ok": true,
+              "duration_ms": 0,
+              "sources": [
+                {
+                  "provider": "brave",
+                  "status": "down",
+                  "detail": "0 résultats"
+                },
+                {
+                  "provider": "firecrawl",
+                  "status": "down",
+                  "detail": "0 pages scrapées"
+                },
+                {
+                  "provider": "pappers",
+                  "status": "down",
+                  "detail": "aucune donnée"
+                },
+                {
+                  "provider": "insee-entités",
+                  "status": "skipped",
+                  "detail": "0"
+                },
+                {
+                  "provider": "bodacc",
+                  "status": "skipped",
+                  "detail": "0"
+                },
+                {
+                  "provider": "brave-news",
+                  "status": "skipped",
+                  "detail": "0"
+                },
+                {
+                  "provider": "france-travail",
+                  "status": "skipped",
+                  "detail": "0"
+                },
+                {
+                  "provider": "inpi-rne",
+                  "status": "skipped",
+                  "detail": "0"
+                },
+                {
+                  "provider": "tech-detect",
+                  "status": "skipped",
+                  "detail": "—"
+                },
+                {
+                  "provider": "claude",
+                  "status": "ok",
+                  "detail": "0 in / 0 out"
+                }
+              ],
+              "input_tokens": 0,
+              "output_tokens": 0,
+              "cost_usd": 0,
+              "cache_read_input_tokens": 0,
+              "cache_creation_input_tokens": 0
+            },
+            {
+              "phase": "contacts",
+              "ok": true,
+              "duration_ms": 0,
+              "sources": [
+                {
+                  "provider": "apollo",
+                  "status": "down",
+                  "detail": "0 contacts"
+                }
+              ],
+              "input_tokens": 0,
+              "output_tokens": 0,
+              "cost_usd": 0,
+              "cache_read_input_tokens": 0,
+              "cache_creation_input_tokens": 0
+            },
+            {
+              "phase": "classify",
+              "ok": true,
+              "duration_ms": 0,
+              "sources": [
+                {
+                  "provider": "claude",
+                  "status": "ok",
+                  "detail": "0 in / 0 out"
+                }
+              ],
+              "input_tokens": 0,
+              "output_tokens": 0,
+              "cost_usd": 0,
+              "cache_read_input_tokens": 0,
+              "cache_creation_input_tokens": 0
+            },
+            {
+              "phase": "plan",
+              "ok": true,
+              "duration_ms": 0,
+              "sources": [
+                {
+                  "provider": "claude",
+                  "status": "ok",
+                  "detail": "0 in / 0 out"
+                }
+              ],
+              "input_tokens": 0,
+              "output_tokens": 0,
+              "cost_usd": 0,
+              "cache_read_input_tokens": 0,
+              "cache_creation_input_tokens": 0
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "run_failed": [
+    {
+      "type": "phase_completed",
+      "phase": "research",
+      "progress": 25,
+      "data": {
+        "telemetry": {
+          "phase": "research",
+          "ok": true,
+          "duration_ms": 0,
+          "sources": [
+            {
+              "provider": "brave",
+              "status": "down",
+              "detail": "0 résultats"
+            },
+            {
+              "provider": "firecrawl",
+              "status": "down",
+              "detail": "0 pages scrapées"
+            },
+            {
+              "provider": "pappers",
+              "status": "down",
+              "detail": "aucune donnée"
+            },
+            {
+              "provider": "insee-entités",
+              "status": "skipped",
+              "detail": "0"
+            },
+            {
+              "provider": "bodacc",
+              "status": "skipped",
+              "detail": "0"
+            },
+            {
+              "provider": "brave-news",
+              "status": "skipped",
+              "detail": "0"
+            },
+            {
+              "provider": "france-travail",
+              "status": "skipped",
+              "detail": "0"
+            },
+            {
+              "provider": "inpi-rne",
+              "status": "skipped",
+              "detail": "0"
+            },
+            {
+              "provider": "tech-detect",
+              "status": "skipped",
+              "detail": "—"
+            },
+            {
+              "provider": "claude",
+              "status": "ok",
+              "detail": "0 in / 0 out"
+            }
+          ],
+          "input_tokens": 0,
+          "output_tokens": 0,
+          "cost_usd": 0,
+          "cache_read_input_tokens": 0,
+          "cache_creation_input_tokens": 0
+        },
+        "output": {
+          "research": {
+            "businessDescription": "Banque",
+            "executives": []
+          },
+          "seed_contacts": [],
+          "gate": {
+            "decision": "go",
+            "score": 1,
+            "reasons": [],
+            "signals": {
+              "business": true,
+              "intent": false,
+              "entities": false
+            }
+          }
+        }
+      }
+    },
+    {
+      "type": "phase_completed",
+      "phase": "contacts",
+      "progress": 50,
+      "data": {
+        "telemetry": {
+          "phase": "contacts",
+          "ok": true,
+          "duration_ms": 0,
+          "sources": [
+            {
+              "provider": "apollo",
+              "status": "down",
+              "detail": "0 contacts"
+            }
+          ],
+          "input_tokens": 0,
+          "output_tokens": 0,
+          "cost_usd": 0,
+          "cache_read_input_tokens": 0,
+          "cache_creation_input_tokens": 0
+        },
+        "output": {
+          "contacts": []
+        }
+      }
+    },
+    {
+      "type": "phase_failed",
+      "phase": "classify",
+      "progress": 75,
+      "data": {
+        "error": {
+          "phase": "classify",
+          "code": "CLASSIFY_TERMINAL",
+          "message": "400 'temperature' is deprecated for this model"
+        },
+        "summary": {
+          "total_cost_usd": 0,
+          "total_llm_cost_usd": 0,
+          "total_input_tokens": 0,
+          "total_output_tokens": 0,
+          "total_cache_read_input_tokens": 0,
+          "total_cache_creation_input_tokens": 0,
+          "total_duration_ms": 0,
+          "providers": {},
+          "degraded_sources": [],
+          "gate": {
+            "decision": "go",
+            "score": 1,
+            "reasons": [],
+            "signals": {
+              "business": true,
+              "intent": false,
+              "entities": false
+            }
+          },
+          "phases": [
+            {
+              "phase": "research",
+              "ok": true,
+              "duration_ms": 0,
+              "sources": [
+                {
+                  "provider": "brave",
+                  "status": "down",
+                  "detail": "0 résultats"
+                },
+                {
+                  "provider": "firecrawl",
+                  "status": "down",
+                  "detail": "0 pages scrapées"
+                },
+                {
+                  "provider": "pappers",
+                  "status": "down",
+                  "detail": "aucune donnée"
+                },
+                {
+                  "provider": "insee-entités",
+                  "status": "skipped",
+                  "detail": "0"
+                },
+                {
+                  "provider": "bodacc",
+                  "status": "skipped",
+                  "detail": "0"
+                },
+                {
+                  "provider": "brave-news",
+                  "status": "skipped",
+                  "detail": "0"
+                },
+                {
+                  "provider": "france-travail",
+                  "status": "skipped",
+                  "detail": "0"
+                },
+                {
+                  "provider": "inpi-rne",
+                  "status": "skipped",
+                  "detail": "0"
+                },
+                {
+                  "provider": "tech-detect",
+                  "status": "skipped",
+                  "detail": "—"
+                },
+                {
+                  "provider": "claude",
+                  "status": "ok",
+                  "detail": "0 in / 0 out"
+                }
+              ],
+              "input_tokens": 0,
+              "output_tokens": 0,
+              "cost_usd": 0,
+              "cache_read_input_tokens": 0,
+              "cache_creation_input_tokens": 0
+            },
+            {
+              "phase": "contacts",
+              "ok": true,
+              "duration_ms": 0,
+              "sources": [
+                {
+                  "provider": "apollo",
+                  "status": "down",
+                  "detail": "0 contacts"
+                }
+              ],
+              "input_tokens": 0,
+              "output_tokens": 0,
+              "cost_usd": 0,
+              "cache_read_input_tokens": 0,
+              "cache_creation_input_tokens": 0
+            },
+            {
+              "phase": "classify",
+              "ok": false,
+              "duration_ms": 0,
+              "input_tokens": 0,
+              "output_tokens": 0,
+              "cost_usd": 0,
+              "cache_read_input_tokens": 0,
+              "cache_creation_input_tokens": 0
+            }
+          ]
+        }
+      }
+    },
+    {
+      "type": "run_failed",
+      "phase": "classify",
+      "progress": 75,
+      "data": {
+        "error": {
+          "phase": "classify",
+          "code": "CLASSIFY_TERMINAL",
+          "message": "400 'temperature' is deprecated for this model"
+        },
+        "summary": {
+          "total_cost_usd": 0,
+          "total_llm_cost_usd": 0,
+          "total_input_tokens": 0,
+          "total_output_tokens": 0,
+          "total_cache_read_input_tokens": 0,
+          "total_cache_creation_input_tokens": 0,
+          "total_duration_ms": 0,
+          "providers": {},
+          "degraded_sources": [],
+          "gate": {
+            "decision": "go",
+            "score": 1,
+            "reasons": [],
+            "signals": {
+              "business": true,
+              "intent": false,
+              "entities": false
+            }
+          },
+          "phases": [
+            {
+              "phase": "research",
+              "ok": true,
+              "duration_ms": 0,
+              "sources": [
+                {
+                  "provider": "brave",
+                  "status": "down",
+                  "detail": "0 résultats"
+                },
+                {
+                  "provider": "firecrawl",
+                  "status": "down",
+                  "detail": "0 pages scrapées"
+                },
+                {
+                  "provider": "pappers",
+                  "status": "down",
+                  "detail": "aucune donnée"
+                },
+                {
+                  "provider": "insee-entités",
+                  "status": "skipped",
+                  "detail": "0"
+                },
+                {
+                  "provider": "bodacc",
+                  "status": "skipped",
+                  "detail": "0"
+                },
+                {
+                  "provider": "brave-news",
+                  "status": "skipped",
+                  "detail": "0"
+                },
+                {
+                  "provider": "france-travail",
+                  "status": "skipped",
+                  "detail": "0"
+                },
+                {
+                  "provider": "inpi-rne",
+                  "status": "skipped",
+                  "detail": "0"
+                },
+                {
+                  "provider": "tech-detect",
+                  "status": "skipped",
+                  "detail": "—"
+                },
+                {
+                  "provider": "claude",
+                  "status": "ok",
+                  "detail": "0 in / 0 out"
+                }
+              ],
+              "input_tokens": 0,
+              "output_tokens": 0,
+              "cost_usd": 0,
+              "cache_read_input_tokens": 0,
+              "cache_creation_input_tokens": 0
+            },
+            {
+              "phase": "contacts",
+              "ok": true,
+              "duration_ms": 0,
+              "sources": [
+                {
+                  "provider": "apollo",
+                  "status": "down",
+                  "detail": "0 contacts"
+                }
+              ],
+              "input_tokens": 0,
+              "output_tokens": 0,
+              "cost_usd": 0,
+              "cache_read_input_tokens": 0,
+              "cache_creation_input_tokens": 0
+            },
+            {
+              "phase": "classify",
+              "ok": false,
+              "duration_ms": 0,
+              "input_tokens": 0,
+              "output_tokens": 0,
+              "cost_usd": 0,
+              "cache_read_input_tokens": 0,
+              "cache_creation_input_tokens": 0
+            }
+          ]
+        }
+      }
+    }
+  ]
+}

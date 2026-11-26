@@ -1,0 +1,12 @@
+{
+  "registry": "SEC EDGAR",
+  "identifierLabel": "CIK",
+  "note": "Real, verified US IT-services companies (SEC filers) for country-pack resolution non-regression. CIK + ticker verified LIVE 2026-07-16 against the official SEC endpoints: https://www.sec.gov/files/company_tickers.json (ticker->CIK mapping) and https://data.sec.gov/submissions/CIK##########.json (declared User-Agent required — 403 without). CIKs are the canonical 10-digit zero-padded form. EDGAR covers SEC registrants (listed companies + registered debt issuers) ONLY — private US companies are invisible to it (documented pack limitation). Accenture plc is Ireland-incorporated but a US-listed NYSE filer; EPAM illustrates the Delaware-registration vs operating-HQ split (inc. DE, HQ Newtown PA).",
+  "accounts": [
+    {"name": "Accenture plc", "cik": "0001467373", "ticker": "ACN", "exchange": "NYSE", "incorporation": "Ireland", "hq": "Dublin (IE)"},
+    {"name": "EPAM Systems, Inc.", "cik": "0001352010", "ticker": "EPAM", "exchange": "NYSE", "incorporation": "DE", "hq": "Newtown, PA"},
+    {"name": "Cognizant Technology Solutions Corp", "cik": "0001058290", "ticker": "CTSH", "exchange": "Nasdaq", "incorporation": "DE", "hq": "Teaneck, NJ"},
+    {"name": "International Business Machines Corp", "cik": "0000051143", "ticker": "IBM", "exchange": "NYSE", "incorporation": "NY", "hq": "Armonk, NY"},
+    {"name": "DXC Technology Co", "cik": "0001688568", "ticker": "DXC", "exchange": "NYSE", "incorporation": "NV", "hq": "Ashburn, VA"}
+  ]
+}

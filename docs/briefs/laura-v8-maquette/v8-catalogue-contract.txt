@@ -1,0 +1,58 @@
+# V8 — catalogue de demandes : proposition intégrable
+
+## Source et référence
+
+La capture de Théo du 29 octobre à 12 h 23 montre le catalogue V7 avec une longue liste d’accordéons. Le champ de recherche additionne une bordure extérieure et le contour rectangulaire de l’input. Les entrées fermées donnent leur titre, mais pas leur utilité ; le texte développé déplace les demandes suivantes.
+
+Les principes retenus proviennent des références déjà décomposées dans le projet :
+
+- **Visual Narratives** : grille stable et alignement entre les niveaux de lecture.
+- **Invite designers** : sélection identifiable, détail lié à l’objet choisi, action reliée à cette sélection.
+- **Iconsax et menu de profil** : navigation compacte, groupes sobres, accent local.
+- **Inspecteur de relations** : la sélection reste un contexte et le panneau porte la lecture approfondie.
+
+La FAQ reste appropriée aux sources complémentaires. Elle est retirée de ce catalogue, dont l’usage est de choisir et préparer une demande. Aucune animation ou mesure d’utilisabilité n’est attribuée aux captures statiques.
+
+## Comportement proposé
+
+La fenêtre possède deux colonnes : demandes à gauche, aperçu à droite. La recherche reste en haut, suivie de filtres de moment directement visibles. Leurs libellés sont courts ; le titre exact du moment et le titre exact de la commande restent dans le détail. Les compteurs représentent les demandes disponibles dans le catalogue, sans recommandation personnalisée inventée.
+
+Chaque ligne comporte son nom exact et une courte explication métier. Une seule demande est sélectionnée. L’aperçu affiche le texte complet, le résultat attendu, les données requises et les connexions nécessaires. L’action **Préparer cette demande** reste dans un pied fixe de la zone d’aperçu ; elle insère le texte sans envoyer. Le détail peut défiler indépendamment lorsque son contenu est long.
+
+À 680 pixels de viewport et moins, la navigation fonctionne en deux vues : liste puis aperçu. **Retour aux demandes** conserve la recherche, le filtre, l’élément choisi et la position de la liste. Un filtre ou une recherche nouveaux ramènent au début de leurs résultats. La fermeture puis la réouverture garde les filtres et sélection, mais rouvre la liste sur mobile.
+
+Le focus du champ de recherche utilise une seule enveloppe visible. Les boutons gardent un focus distinct de l’état sélectionné. L’apparence utilise les tokens Bellum et les icônes existantes ; ni nouvelle palette de catégories ni carte décorative par demande.
+
+## Intégration
+
+Fichiers proposés, sans modification directe du canonique :
+
+- `analysis/v8-catalogue.js`
+- `analysis/v8-catalogue.css`
+
+Remplacer dans `dist/app.js` la région commençant à `function requestCatalogState()` et finissant juste avant `function insertCatalogRequest(id)` par le contenu JS proposé.
+
+Conserver intégralement : le tableau `requestCatalog`, `requestCatalogMoments`, `requestSourceLabels`, `requestConnectionLabels`, les accès accueil/saisie, `insertCatalogRequest`, `catalogRequestFor` et `answerCatalogRequest`. Les 31 textes de demande, identifiants, résultats attendus et prérequis restent inchangés.
+
+Ajouter au `switch(action)` :
+
+```js
+case 'request-moment': setRequestCatalogMoment(id); break;
+case 'request-back': backToRequestCatalog(); break;
+```
+
+Les actions déjà présentes `request-catalog`, `request-select`, `request-insert`, `request-reset`, `request-search-clear` restent valides. Le hook `input` existant du champ de recherche reste compatible. Le hook de l’ancien select `request-catalog-moment` peut être retiré : cet élément n’est plus rendu.
+
+Ajouter le CSS après les styles catalogue V7, ou remplacer les règles V7 internes du catalogue. Les noms des composants principaux ont été renouvelés pour éviter les héritages d’accordéon : `request-browser-*`, `request-preview-*`, `request-moment`. Les règles partagées des surfaces sont gérées séparément.
+
+## Limites conservées
+
+L’aperçu expose le contrat de la commande, pas une promesse d’exécution de ses outils dans la démonstration. Une note de périmètre est affichée lorsque la portée stricte exclut les données de l’espace, ou lorsque le profil neutre empêche l’usage des données privées nécessaires. Les gardes au moment de l’envoi restent celles de la V7.
+
+L’insertion, la protection d’un brouillon plus récent, la relecture après changement de contexte et l’annulation ne sont pas réimplémentées. Elles utilisent les fonctions existantes. Aucun envoi, connexion, écriture CRM ou appel au backend n’est ajouté.
+
+## Vérification à effectuer après intégration
+
+Dans le navigateur : ouverture, filtre, recherche et état vide ; sélection et détail à 1024/736 ; aller-retour liste/détail à 320 avec conservation du scroll ; insertion sur une saisie existante puis Annuler ; fermeture par Échap et retour du focus ; titre long et prompt long ; clair/sombre ; cohérence des 31 lignes et de leurs prérequis.
+
+Les contrôles locaux de cette proposition valident la syntaxe, la couverture de 31 identifiants, les filtres, les résultats de recherche et la conservation des états de navigation dans un DOM simulé. Ils ne constituent pas une recette visuelle.

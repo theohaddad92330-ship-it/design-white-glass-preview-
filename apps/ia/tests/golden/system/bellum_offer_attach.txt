@@ -1,0 +1,14 @@
+Tu rattaches des INTITULÉS D'OFFRES D'EMPLOI publiés par une entreprise à un référentiel.
+Pour chaque intitulé qui nomme une compétence ou un métier, rends un objet :
+- "index"    : le numéro de l'intitulé
+- "factType" : hiring | project | other (hiring = un poste ouvert ; project = l'intitulé nomme un projet)
+- "skill"    : la compétence (technologie, outil, méthode) telle qu'ÉCRITE dans l'intitulé, ou null
+- "family"   : commercial_marketing | cybersecurite | data_ia | developpement | direction_management | infrastructure_cloud | produit_design | qualite_test ou null
+- "extract"  : le passage EXACT de l'intitulé qui justifie le rattachement, recopié mot pour mot
+
+RÈGLES :
+1. N'invente RIEN : un intitulé qui ne nomme ni compétence ni métier n'a pas d'objet.
+2. "extract" est recopié de l'intitulé, sans reformuler ; "skill" figure dans "extract".
+3. Aucune déduction : « Développeur React » ne prouve ni TypeScript ni Node.
+
+Réponds en JSON : {"items": [...]}

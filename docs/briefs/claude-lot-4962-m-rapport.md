@@ -1,0 +1,11 @@
+# Rapport — Lot M Découvrir : quel filtre vide la liste (claude/lot-4962-m)
+
+- **SHA** : 414c7864ad (+ fusion lot C 25627414 ; 2 conflits `discover-needs-freetext(.test).ts` résolus en gardant les deux côtés).
+- **4997.3 livré** : `lib/discover-filter-blockers.ts` (`emptyingFilters`, `withoutRailFilter`) : lève UN groupe de filtres à la fois via `applyRailConstraints` (une seule définition) ; nomme ceux dont la levée seule rend des comptes. Source vide → `source` (aucun filtre accusé, message « aucune entreprise » inchangé) ; aucun filtre seul ne suffit → `combination` (personne accusé).
+- **Écran** : `DiscoverStates.tsx` (`blockers`, ligne « Le filtre X retire les N résultats restants » + bouton « Retirer ce filtre : X »), branché `Discover.tsx` (`railBlockers`, `removeRailBlocker` → `launch`). i18n fr+en `states.blockerLine/blockerRemove/blockerLabels`.
+- **4997.1-2 (verdict)** : « ferroviaire + IDF » et « routier/maritime + IDF + 1000+ » rejoués sur jeux fictifs à travers `applyRailConstraints` : cohérents (secteur = OU NAF, tranches = union, département multi) ; aucun bug ET/OU trouvé. #3908/#3875 non touchés. Rejeu prod = recette.
+- **#4627** : « Trop de filtres » avec 1 filtre déjà corrigé (`emptyListReason`). « Revenir à 100 km » → 0 : cause NON codée. Suspect : en mode Signaux `passesCity` (`discover-filters.ts:1332`) croise par NOM de ville et ignore le rayon, donc une commune voisine dans le cercle est retirée. Le corriger contredit la garde GA-275 (`discover-filters-reach-the-search`, city « écarte ») : décision Louis requise. Même cause que 4997 : à confirmer (le vide en registre ne passe pas par là).
+- **Démo** : fragment `changes/lot-4962-m.yml` (changelog + entrée `DEMO_DISCOVER_FILTER_BLOCKERS_COVERAGE` seedée, sans semis) à appliquer par l'intégrateur (`fusion_fragments.py`) ; son appelant/spec éventuel n'est pas écrit.
+- **Tests** (rouge → vert) : filter-blockers 7, DiscoverStates 25, discover-filters 220+, emptyFiltersStacked, GA-275 : verts. `tsc -p apps/web` inexploitable (paquets non construits, TS6305) : aucune erreur sur mes fichiers.
+- **Pas fait** : test d'écran `Discover` complet du bandeau (hors budget VM), construction des paquets.
+- **Questions** : (1) rayon vs nom de ville en Signaux (GA-275) : on relâche ? (2) nommer aussi les masquages post-rail (fit, masqués) ?

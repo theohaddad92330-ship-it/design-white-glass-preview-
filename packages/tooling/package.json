@@ -1,0 +1,32 @@
+{
+  "name": "@bellum/tooling",
+  "version": "0.0.1",
+  "private": true,
+  "type": "module",
+  "exports": {
+    "./prettier": "./prettier/index.cjs",
+    "./eslint/base": "./eslint/base.mjs",
+    "./eslint/nestjs": "./eslint/nestjs.mjs",
+    "./eslint/react": "./eslint/react.mjs",
+    "./eslint/shared": "./eslint/shared.mjs",
+    "./typescript/base.json": "./typescript/base.json",
+    "./typescript/nestjs.json": "./typescript/nestjs.json",
+    "./typescript/react.json": "./typescript/react.json",
+    "./typescript/lib.json": "./typescript/lib.json",
+    "./typescript/library.json": "./typescript/library.json",
+    "./commitlint": "./commitlint/index.cjs",
+    "./configs/vitest": "./configs/vitest.ts"
+  },
+  "dependencies": {
+    "@commitlint/cli": "^19.0.0",
+    "@commitlint/config-conventional": "^19.0.0",
+    "@eslint/js": "^9.32.0",
+    "eslint": "^9.32.0",
+    "eslint-config-prettier": "^10.0.0",
+    "eslint-plugin-react-hooks": "^5.2.0",
+    "eslint-plugin-react-refresh": "^0.5.7",
+    "prettier": "^3.9.10",
+    "typescript-eslint": "^8.72.0",
+    "vitest": "^3.2.7"
+  }
+}

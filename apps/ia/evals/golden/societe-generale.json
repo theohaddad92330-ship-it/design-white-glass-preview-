@@ -1,0 +1,32 @@
+{
+  "company": "Société Générale",
+  "slug": "societe-generale",
+  "note": "Golden set derived from the Skaizen «Plans de compte ESN» deck (14 entités · 4 priorités). Reference for #275.",
+  "expect": {
+    "entities": {
+      "min_count": 8,
+      "must_include_any": [
+        ["ITIM", "Innovation, Technologies"],
+        ["GBIS", "GBSU", "Global Banking"],
+        ["SGSS", "Securities Services"],
+        ["BoursoBank", "Boursorama"]
+      ]
+    },
+    "it_entity_present": true,
+    "zones": {
+      "attaque_immediate": 1
+    },
+    "hypotheses": {
+      "min_count": 3,
+      "mention_any": ["mlops", "ml", "data", "fraude", "anti-fraude", "cloud", "cyber", "quant"]
+    },
+    "what_to_sell": {
+      "per_entity_required": true,
+      "entity_expectations": [
+        { "match": ["GBIS", "GBSU"], "stack_any": ["java", "c++", "quant", "low-latency"] },
+        { "match": ["BoursoBank", "Boursorama"], "angles_any": ["mobile", "data", "fraude", "anti-fraude"] },
+        { "match": ["ITIM", "Innovation, Technologies"], "angles_any": ["cloud", "data", "cyber", "run"] }
+      ]
+    }
+  }
+}

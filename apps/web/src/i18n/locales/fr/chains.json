@@ -1,0 +1,202 @@
+{
+  "page": {
+    "title": "Parcours",
+    "heading": "Tes parcours, {{name}}",
+    "headingNoName": "Tes parcours",
+    "subtitle": "{{brand}} suit les étapes importantes de tes dossiers et te signale ceux qui n’avancent plus."
+  },
+  "states": {
+    "errorTitle": "Les parcours n’ont pas pu être chargés",
+    "errorDescription": "Réessaie dans un instant. Ce n’est pas « aucun parcours ».",
+    "nothingBlocked": "Rien ne bloque en ce moment. Passe à « Tous les parcours » pour voir l’ensemble.",
+    "nothingTracked": "Aucun dossier ne se place encore dans un parcours. Crée un besoin, une affaire ou une mission : le parcours suit tout seul.",
+    "nothingTrackedCta": "Ouvrir le pipe des affaires"
+  },
+  "kpis": {
+    "tracked": "Dossiers suivis",
+    "awaitingDecision": "Décisions attendues",
+    "stalled": "Sans mouvement depuis 7 jours",
+    "slowest": "Étape où l’on attend le plus",
+    "slowestDays_one": "{{count}} jour sans mouvement, en médiane",
+    "slowestDays_other": "{{count}} jours sans mouvement, en médiane",
+    "notMeasured": "Non mesuré"
+  },
+  "scope": {
+    "aria": "Filtrer les parcours",
+    "blocked": "Avec blocage ({{count}})",
+    "all": "Tous les parcours ({{count}})"
+  },
+  "lane": {
+    "inProgress_one": "{{count}} dossier en cours",
+    "inProgress_other": "{{count}} dossiers en cours",
+    "waiting_one": "{{count}} décision en attente",
+    "waiting_other": "{{count}} décisions en attente",
+    "gate": "Porte",
+    "stalled_one": "{{count}} sans mouvement",
+    "stalled_other": "{{count}} sans mouvement",
+    "stepEmpty": "aucun",
+    "stepCount_one": "{{count}} dossier",
+    "stepCount_other": "{{count}} dossiers",
+    "stepCountAndDays_one": "{{count}} dossier · {{days}} j",
+    "stepCountAndDays_other": "{{count}} dossiers · {{days}} j",
+    "undetermined_one": "{{count}} à déterminer",
+    "undetermined_other": "{{count}} à déterminer"
+  },
+  "flow": {
+    "why": "Pourquoi ?",
+    "factUnknown": "fait constaté",
+    "gateReason": "Motif retenu : {{reason}}",
+    "undetermined": "Étape non déterminée",
+    "undeterminedReason": {
+      "unmapped_status": "Ce dossier porte un état qu’aucune étape du parcours ne décrit. C’est une donnée à corriger, pas un geste métier à faire."
+    },
+    "state": {
+      "done": "franchie",
+      "skipped": "non constatée",
+      "current": "étape en cours",
+      "upcoming": "à venir",
+      "blocked": "décision attendue"
+    }
+  },
+  "panel": {
+    "title": "Position {{position}}",
+    "empty": "Aucun dossier à cette étape.",
+    "unknownSubject": "Dossier retiré",
+    "days_one": "{{count}} jour sans mouvement",
+    "days_other": "{{count}} jours sans mouvement",
+    "subjects": {
+      "account": "Compte",
+      "project": "Opportunité",
+      "need": "Besoin",
+      "mission": "Mission",
+      "consultant": "Consultant"
+    }
+  },
+  "checklist": {
+    "title": "Gestes hors outil",
+    "progress": "{{done}} / {{total}}"
+  },
+  "subject": {
+    "since_one": "{{count}} jour sans mouvement",
+    "since_other": "{{count}} jours sans mouvement",
+    "currentStep": "Étape en cours : {{step}}",
+    "blockedAt": "Bloqué à « {{step}} » — une décision est attendue.",
+    "blockedAtShort": "Bloqué à « {{step}} »",
+    "close": "Fermer",
+    "dialogDescription": "Où en est ce dossier, ce qui le bloque, ce qu’il reste à faire.",
+    "nextStep": "Prochaine étape : {{step}}"
+  },
+  "blockers": {
+    "title": "Ce qui bloque",
+    "empty": "Rien ne bloque dans tes parcours.",
+    "decision": "Décision attendue",
+    "open": "Ouvrir",
+    "awaiting_one": "{{count}} dossier attend une décision à « {{step}} » ({{chain}})",
+    "awaiting_other": "{{count}} dossiers attendent une décision à « {{step}} » ({{chain}})",
+    "stalled_one": "{{count}} dossier n’a pas bougé à « {{step}} » depuis {{days}} jours ({{chain}})",
+    "stalled_other": "{{count}} dossiers n’ont pas bougé à « {{step}} » depuis {{days}} jours ({{chain}})"
+  },
+  "fact": {
+    "ouverture_compte": {
+      "1": "le compte existe dans ton portefeuille",
+      "2": "une analyse a été lancée",
+      "3_one": "{{count}} signal relevé",
+      "3_other": "{{count}} signaux relevés",
+      "4_one": "un score de priorité est calculé ({{count}}/10)",
+      "4_other": "un score de priorité est calculé ({{count}}/10)",
+      "5_one": "{{count}} entité cartographiée",
+      "5_other": "{{count}} entités cartographiées",
+      "6_one": "{{count}} décideur identifié",
+      "6_other": "{{count}} décideurs identifiés",
+      "7_one": "{{count}} contact avec une coordonnée",
+      "7_other": "{{count}} contacts avec une coordonnée",
+      "8": "un plan de compte existe",
+      "9_one": "{{count}} angle retenu",
+      "9_other": "{{count}} angles retenus",
+      "10": "le compte est suivi au portefeuille"
+    },
+    "acquisition": {
+      "1_one": "{{count}} contact joignable",
+      "1_other": "{{count}} contacts joignables",
+      "2": "un angle est recommandé",
+      "3": "un message est préparé",
+      "4_one": "{{count}} message envoyé",
+      "4_other": "{{count}} messages envoyés",
+      "5": "une séquence de relance existe",
+      "6": "une réponse est arrivée",
+      "7": "un rendez-vous est posé",
+      "8_one": "{{count}} besoin exprimé",
+      "8_other": "{{count}} besoins exprimés"
+    },
+    "prospection_inversee": {
+      "1": "la disponibilité est déclarée",
+      "2_one": "{{count}} compétence retenue",
+      "2_other": "{{count}} compétences retenues",
+      "3_one": "{{count}} compte ciblé",
+      "3_other": "{{count}} comptes ciblés",
+      "4_one": "{{count}} push rattaché à une affaire",
+      "4_other": "{{count}} pushs rattachés à une affaire",
+      "5": "un message est parti",
+      "6": "le client a répondu",
+      "7": "un profil a été retenu"
+    },
+    "sourcing_matching": {
+      "1": "le besoin est ouvert",
+      "2_one": "{{count}} compétence exigée",
+      "2_other": "{{count}} compétences exigées",
+      "3_one": "{{count}} matching lancé",
+      "3_other": "{{count}} matchings lancés",
+      "4_one": "{{count}} profil retenu",
+      "4_other": "{{count}} profils retenus",
+      "5": "une shortlist est figée",
+      "6_one": "{{count}} dossier généré",
+      "6_other": "{{count}} dossiers générés",
+      "7_one": "{{count}} profil positionné",
+      "7_other": "{{count}} profils positionnés",
+      "8": "le client a donné un retour",
+      "9": "un entretien a eu lieu",
+      "10": "une décision client est enregistrée",
+      "11": "les conditions commerciales sont posées"
+    },
+    "push_ao_conversion": {
+      "1": "un appel d’offres est reçu",
+      "2_one": "{{count}} exigence extraite",
+      "2_other": "{{count}} exigences extraites",
+      "3": "un go ou no-go est tranché",
+      "4_one": "{{count}} profil identifié",
+      "4_other": "{{count}} profils identifiés",
+      "5_one": "{{count}} preuve disponible",
+      "5_other": "{{count}} preuves disponibles",
+      "6_one": "{{count}} dossier envoyé",
+      "6_other": "{{count}} dossiers envoyés",
+      "7": "un entretien a eu lieu",
+      "8": "le résultat est enregistré"
+    },
+    "rang2_rang1": {
+      "1_one": "{{count}} affaire avec un mode d’accès connu",
+      "1_other": "{{count}} affaires avec un mode d’accès connu",
+      "2_one": "{{count}} mission réalisée",
+      "2_other": "{{count}} missions réalisées",
+      "3_one": "{{count}} retour d’expérience collecté",
+      "3_other": "{{count}} retours d’expérience collectés",
+      "4_one": "{{count}} preuve solide",
+      "4_other": "{{count}} preuves solides",
+      "5_one": "{{count}} témoignage publiable",
+      "5_other": "{{count}} témoignages publiables",
+      "6": "une affaire est accessible en direct"
+    },
+    "onboarding_delivery": {
+      "1": "la mission est créée",
+      "2": "un TJM est posé",
+      "3_one": "{{count}} consultant affecté",
+      "3_other": "{{count}} consultants affectés",
+      "4": "la mission est en onboarding",
+      "5": "la mission a démarré",
+      "6_one": "{{count}} relevé suivi",
+      "6_other": "{{count}} relevés suivis",
+      "7_one": "{{count}} mois préparé à facturer",
+      "7_other": "{{count}} mois préparés à facturer",
+      "8": "le renouvellement est ouvert"
+    }
+  }
+}

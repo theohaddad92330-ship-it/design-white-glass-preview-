@@ -1,0 +1,930 @@
+{
+  "meta": {
+    "pageTitle": "{{brand}} AI - Search",
+    "pageDescription": "Start an account analysis"
+  },
+  "launch": {
+    "findAccountsLink": "Find accounts",
+    "modes": {
+      "company": "Company",
+      "contact": "Contact",
+      "need": "Need"
+    },
+    "modePanel": {
+      "contactTitle": "Checking a contact lives in Contacts",
+      "contactDescription": "This capability already exists, with its own filters and history — it is not duplicated here.",
+      "contactCta": "Open Contacts",
+      "needTitle": "Checking a need lives in Needs",
+      "needDescription": "This capability already exists, with its own filters and history — it is not duplicated here.",
+      "needCta": "Open Needs"
+    },
+    "cost": {
+      "demo": "Demo mode · sample result",
+      "cacheHit": "A recent dossier already exists.",
+      "stillFresh": "Still fresh",
+      "openExisting": "Open the dossier",
+      "refreshExisting": "Refresh the analysis",
+      "alreadyKnown": "Already known",
+      "toRefresh": "Needs refreshing",
+      "openKnownAccount": "Open the existing dossier",
+      "includedTitle": "Already included / free",
+      "includedRegistry": "Company registry",
+      "includedExistingData": "Data already in your workspace",
+      "includedMarketMemory": "Market observations — paths and stacks already observed",
+      "refundPolicy": "Refunded automatically if the analysis fails or is interrupted."
+    }
+  },
+  "composer": {
+    "correctProfileCta": "Fix my profile",
+    "companyPlaceholder": "Search for a company…",
+    "selectPlaceholder": "Select…",
+    "companyAriaLabel": "Company to analyze",
+    "attachFileAriaLabel": "Attach a file (RFP, brief…) to extract a company name from it",
+    "companiesHeading": "Companies",
+    "searching": "Searching…",
+    "noCompanyFound": "No company found.",
+    "sourceUnavailable": "The company registry did not answer — try again in a moment. It does not mean this company does not exist.",
+    "prepareAnalysisCta": "Prepare the analysis",
+    "broadenedTo": "No exact match — showing results for “{{query}}”.",
+    "attachDocumentsAriaLabel": "Attach documents to this analysis (CSV, ZIP, PDF, workbooks…)"
+  },
+  "presetDropdown": {
+    "ariaLabel": "Choose a context template",
+    "menuLabel": "Structured templates",
+    "clearContext": "Clear context"
+  },
+  "presets": {
+    "dateFormatPlaceholder": "DD/MM/YYYY",
+    "pushOffer": {
+      "label": "Push an offer",
+      "description": "Specific service or skill to position",
+      "fields": {
+        "offer": {
+          "label": "Offer to push",
+          "placeholder": "Cloud, Data, AI, RPA, security…"
+        },
+        "pricing": {
+          "label": "Indicative pricing",
+          "placeholder": "Day rate or fixed price"
+        },
+        "differentiation": {
+          "label": "Our differentiation vs. competitors"
+        },
+        "idealMission": {
+          "label": "Ideal engagement profile"
+        }
+      }
+    },
+    "knownAccount": {
+      "label": "Known account",
+      "description": "Active client, former client, or engaged prospect",
+      "fields": {
+        "commercialStatus": {
+          "label": "Commercial status",
+          "options": {
+            "active": "Active client",
+            "former": "Former client",
+            "engagedProspect": "Engaged prospect"
+          }
+        },
+        "lastInteraction": {
+          "label": "Last interaction (date + contact + topic)"
+        },
+        "openOpportunity": {
+          "label": "Ongoing opportunity or blocker"
+        },
+        "revenueOrPipeline": {
+          "label": "Revenue booked / estimated pipeline"
+        }
+      }
+    },
+    "incumbent": {
+      "label": "Competing ESN in place",
+      "description": "You know who is currently in place to unseat",
+      "fields": {
+        "incumbentName": {
+          "label": "Incumbent ESN"
+        },
+        "incumbentScope": {
+          "label": "Scope covered by the incumbent"
+        },
+        "contractEndDate": {
+          "label": "Contract end / renewal date"
+        },
+        "weakness": {
+          "label": "Weakness to exploit (dissatisfaction, underperformance, price)"
+        }
+      }
+    },
+    "signal": {
+      "label": "Buying signal detected",
+      "description": "Hiring, tender, funding round, appointment, M&A",
+      "fields": {
+        "signalType": {
+          "label": "Signal type",
+          "options": {
+            "recruitment": "Hiring",
+            "tender": "Tender",
+            "fundraise": "Funding round",
+            "appointment": "Appointment",
+            "mergerAcquisition": "M&A",
+            "other": "Other"
+          }
+        },
+        "source": {
+          "label": "Source",
+          "placeholder": "Professional network, press, public tenders, press release"
+        },
+        "signalDate": {
+          "label": "Signal date"
+        },
+        "implication": {
+          "label": "Concrete implication for our offer"
+        }
+      }
+    },
+    "strategic": {
+      "label": "Strategic account",
+      "description": "Priority target without an external signal",
+      "fields": {
+        "prioritizationReason": {
+          "label": "Reason for prioritization"
+        },
+        "targetDecisionMaker": {
+          "label": "Target decision-maker (role / persona)"
+        },
+        "potentialVolume": {
+          "label": "Potential volume",
+          "placeholder": "Day rate × estimated days/year"
+        },
+        "closingHorizon": {
+          "label": "Targeted closing horizon"
+        },
+        "similarReference": {
+          "label": "Similar client reference to leverage"
+        }
+      }
+    },
+    "retry": {
+      "label": "Analysis re-run",
+      "description": "Refine a previous analysis",
+      "fields": {
+        "missingFromPrevious": {
+          "label": "What was missing from the previous analysis"
+        },
+        "newAngle": {
+          "label": "New angle to explore this time"
+        },
+        "hypothesis": {
+          "label": "Hypothesis to validate/invalidate"
+        }
+      }
+    },
+    "free": {
+      "label": "Free text",
+      "description": "Describe the sales context without a template"
+    }
+  },
+  "error": {
+    "title": "Analysis failed",
+    "unknownMessage": "Unknown error. Please try again.",
+    "framingKept": "Your framing is kept."
+  },
+  "confirm": {
+    "title": "The right scope, from the start.",
+    "subtitle": "Nothing is collected until you confirm.",
+    "objectLabel": "Analysed object",
+    "byName": "Resolved by name",
+    "modeLabel": "Mode",
+    "modeFull": "Full dossier",
+    "objective": {
+      "label": "Goal"
+    },
+    "expectedResultLabel": "Expected result",
+    "expectedResultFull": "Full conquest dossier: real contacts, org chart, angles and action plan.",
+    "expectedResultOrganisation": "Updated org chart and contacts — the rest of the dossier is not re-read.",
+    "known": {
+      "title": "What {{brand}} already knows",
+      "identity_one": "{{count}} identity field already known (industry, headcount, company id…)",
+      "identity_other": "{{count}} identity fields already known (industry, headcount, company id…)",
+      "workspaceAnalysis": "Already analyzed in this workspace, on {{date}}",
+      "contacts_one": "{{count}} contact already identified on this account",
+      "contacts_other": "{{count}} contacts already identified on this account",
+      "facts_one": "{{count}} verified",
+      "facts_other": "{{count}} verified",
+      "hypotheses_one": "{{count}} probable, to confirm",
+      "hypotheses_other": "{{count}} probable, to confirm",
+      "freshSignals_one": "{{count}} public result still fresh",
+      "freshSignals_other": "{{count}} public results still fresh",
+      "corrections_one": "{{count}} correction already made by the team",
+      "corrections_other": "{{count}} corrections already made by the team",
+      "included": "Included, nothing more to pay"
+    },
+    "focus": {
+      "title": "Focus the collection (optional)",
+      "subtitle": "Four questions, all optional. Each answer genuinely filters or ranks the delivered dossier.",
+      "includedEntitiesLabel": "Entities to target",
+      "includedEntitiesHint": "Subsidiary, BU, site, division or programme — first in the dossier and the collection.",
+      "includedEntitiesPlaceholder": "TF1, technical subsidiary…",
+      "anchorWarning": "Beyond one, there is no single anchor left: the focus falls back to the full scope.",
+      "prioritiesPlaceholder": "cybersecurity, data, cloud…",
+      "excludedEntitiesLabel": "Entities to exclude",
+      "excludedEntitiesHint": "Subsidiaries or BUs to leave out — their contacts too.",
+      "excludedEntitiesPlaceholder": "TF1 PUB, real-estate subsidiary…",
+      "excludedAnglesHint": "No attack angle will be proposed on these themes.",
+      "excludedAnglesPlaceholder": "ERP, GDPR…",
+      "remove": "Remove {{value}}",
+      "commitHint": "Press Enter or comma to add. One word is enough.",
+      "suggestionsLead": "What you sell — click to add:",
+      "suggestionAdd": "Add {{value}} to priorities",
+      "suggestionsEmpty": "Nothing to suggest: your areas of expertise are not filled in.",
+      "suggestionsSource": "Add or edit your themes under Settings › Profile",
+      "entityAdd": "Target {{value}}",
+      "entityExclude": "Exclude {{value}}"
+    },
+    "sourceExclusions": {
+      "publicSector": "Public sector",
+      "workedAccounts": "Already worked",
+      "hint": "Public sector: read from the company registry (legal category 7xxx or NAF section O). Already worked: accounts that are customers, carry a won deal or have a mission. A company whose source says nothing is neither kept nor excluded."
+    },
+    "contactLevel": {
+      "label": "Contact level",
+      "levels": {
+        "operational": "Field",
+        "n2": "Manager",
+        "n1": "Local division",
+        "purchasing": "Purchasing",
+        "cLevel": "Group leadership"
+      },
+      "priorityHint": "The number shows the priority order — the first level picked is searched for first."
+    },
+    "geo": {
+      "label": "Geographic perimeter",
+      "perimeters": {
+        "world": "World",
+        "international": "International",
+        "europe": "Europe",
+        "france": "France",
+        "region": "Region",
+        "country": "Country",
+        "city": "City / site"
+      },
+      "widenToFrance": "Widen to France",
+      "areasLabel": "Regions or areas",
+      "areasPlaceholder": "Île-de-France, Auvergne-Rhône-Alpes…",
+      "citiesLabel": "Cities or sites",
+      "citiesPlaceholder": "Lyon, Nantes…"
+    },
+    "businessFamily": {
+      "label": "Roles to place",
+      "families": {
+        "cyber": "Cyber",
+        "dataIa": "Data / AI",
+        "cloud": "Cloud",
+        "agility": "Agile",
+        "finance": "Finance",
+        "hr": "HR",
+        "procurement": "Purchasing",
+        "industry": "Industry",
+        "supply": "Supply",
+        "product": "Product",
+        "other": "Other"
+      },
+      "procurementShown": "Procurement roles"
+    },
+    "relaunch": {
+      "title": "You are re-running an existing dossier",
+      "kept": "Kept: the record fields you corrected by hand, every contact already in the dossier, and the angles and actions you added to the plan — they are merged, never deleted.",
+      "redone": "Rebuilt: the facts and signals, the contact search, the org chart and the plan."
+    },
+    "edit": "Edit",
+    "launch": "Launch the analysis",
+    "depth": {
+      "label": "Depth",
+      "quick": "Quick",
+      "deep": "Deep",
+      "pages_one": "{{count}} page read",
+      "pages_other": "{{count}} pages read",
+      "durationMeasured": "≈ {{min}} min (median of your analyses)",
+      "durationUnmeasured": "duration not measured",
+      "help": "Durations: median of your latest analyses."
+    },
+    "insufficient": {
+      "switchToQuick": "Switch to Quick"
+    },
+    "cadrage": {
+      "where": "Where?",
+      "widenToFrance": "Widen to France",
+      "which": "Which part of the group?",
+      "whichDefault": "By default, the whole group.",
+      "what": "What?",
+      "who": "Who?"
+    },
+    "headcount": {
+      "label": "Company headcount",
+      "minLabel": "Minimum headcount",
+      "maxLabel": "Maximum headcount",
+      "minPlaceholder": "50",
+      "maxPlaceholder": "250"
+    },
+    "eyebrow": "Your account analysis",
+    "modify": "Edit",
+    "angleLabel": "What you want to understand",
+    "prepareTitle": "The dossier you are preparing",
+    "expectedLead": "You will get:",
+    "noDuplicate": "The same dossier, no duplicate.",
+    "noSideEffects": "No deal, task or message is created by this action.",
+    "backToFraming": "Back to framing",
+    "footnote": "Your framing is kept on your account · nothing is sent automatically"
+  },
+  "refreshPlan": {
+    "title": "What this refresh will do",
+    "mode": {
+      "full": "Re-read everything",
+      "organisation": "The organisation"
+    },
+    "aged": "Now old:",
+    "agedOn": "{{axis}} (re-read on {{date}})",
+    "agedUnknownDate": "{{axis}} (date unknown)",
+    "lastAnalyzedAt": "Last analysed: {{date}}.",
+    "lastAnalyzedAtUnknown": "Last analysed: unknown.",
+    "detailsToggle": "See details",
+    "fresh": "Still fresh: {{axes}}.",
+    "reread": "Will be re-read: {{axes}}.",
+    "mayChange": "May change: {{outputs}}.",
+    "output": {
+      "facts": "the record facts",
+      "signals": "the signals",
+      "contacts": "the contacts",
+      "org_chart": "the org chart",
+      "recommendations": "the recommendations",
+      "actions": "the plan actions"
+    },
+    "sources": "Sources consulted: {{natures}}.",
+    "sourceNature": {
+      "official_registry": "official registry",
+      "company_website": "company website",
+      "job_postings": "job postings",
+      "public_news": "public news",
+      "professional_network": "professional network"
+    },
+    "duration": "Estimated duration: {{min}} to {{max}} min.",
+    "preserved": "Never overwritten: {{kinds}}.",
+    "preservedKind": {
+      "private_note": "your handwritten notes",
+      "validated_action": "a validated action",
+      "evidence": "a piece of evidence",
+      "declared_relation": "a declared relationship"
+    },
+    "refund": "If the analysis fails or is interrupted, your analysis quota is not used."
+  },
+  "scope": {
+    "lockedLabel": "Scope: {{name}}",
+    "siren": "SIREN {{siren}}",
+    "removeAriaLabel": "Remove the locked scope",
+    "modes": {
+      "groupe": "Entire group",
+      "france": "France",
+      "filiales": "Subsidiaries",
+      "itDigital": "IT & Digital",
+      "startups": "Startups",
+      "businessUnit": "Business unit",
+      "direction": "Division",
+      "programme": "Programme",
+      "site": "Site",
+      "custom": "Custom"
+    }
+  },
+  "autocomplete": {
+    "placeholder": "Company name (e.g. Capgemini)",
+    "notAnEsn": "Doesn't look like an IT services company",
+    "marketPathsObserved_one": "{{count}} path observed",
+    "marketPathsObserved_other": "{{count}} paths observed",
+    "marketPathsNone": "No path observed",
+    "ceased": "Company ceased",
+    "intermediary": "Intermediary, not the final client",
+    "addToPortfolio": "Add to portfolio",
+    "addToPortfolioAria": "Add {{company}} to portfolio",
+    "addedToPortfolio": "{{company}} joined your portfolio.",
+    "addToPortfolioError": "Couldn't add this company to your portfolio. Try again in a moment."
+  },
+  "country": {
+    "aria": "Search target country",
+    "noSuggestions": "No suggestions for this country — launch the analysis with the exact name.",
+    "names": {
+      "FR": "France",
+      "CH": "Switzerland",
+      "BE": "Belgium",
+      "LU": "Luxembourg",
+      "US": "United States",
+      "CA": "Canada"
+    }
+  },
+  "analysis": {
+    "notAuthenticated": "Not authenticated",
+    "unknownError": "Unknown error",
+    "inFlightStartedBy": "Analysis already running, started by {{firstName}}."
+  },
+  "intent": {
+    "label": "What you want to get out of this",
+    "openAccount": "Open this account",
+    "pushExpertise": "Prepare a referencing",
+    "exploitSignal": "Check a signal",
+    "knownAccount": "Prepare a meeting",
+    "findDecisionMakers": "Find the decision-makers",
+    "understandSubsidiaries": "Understand the group",
+    "displaceIncumbent": "Place partners and competitors",
+    "deepenAnalysis": "Deepen an analysis",
+    "other": "Another goal",
+    "more": "More goals",
+    "moreAria": "More goals, {{count}} selected",
+    "descriptions": {
+      "openAccount": "Choose a scope, a reason to get in and a first approach.",
+      "knownAccount": "Gather the context, the contacts and the useful questions before the meeting.",
+      "findDecisionMakers": "Identify the relevant roles and the documented people, not only the executives.",
+      "understandSubsidiaries": "Understand the group’s organisation, its entities and how they connect.",
+      "exploitSignal": "Check what a signal really changes for this account.",
+      "pushExpertise": "Prepare the way in through a referencing: who decides, what framework, which offer.",
+      "displaceIncumbent": "Place the partners and competitors already in, and where they are fragile.",
+      "other": "Describe the goal in your own words, from your own angle."
+    }
+  },
+  "suggestion": {
+    "sameRegistryName": "{{count}} of the results carry the name “{{label}}”.",
+    "sameRegistryName_one": "One other result carries the name “{{label}}”.",
+    "reason": "Matches your declared target"
+  },
+  "related": {
+    "heading": "{{count}} of the results carry the name “{{label}}”",
+    "body": "Analysing each one separately creates that many dossiers. The chosen perimeter decides what this run covers.",
+    "switchToGroup": "Analyse the whole group",
+    "keepEntity": "Keep this entity only",
+    "disclaimer": "A shared name is not proof of ownership, and this list shows only part of the registry."
+  },
+  "marketPreview": {
+    "title": "What {{brand}} already knows",
+    "externalUse": "Use of external providers",
+    "stack": "Skills found",
+    "ecosystem": "IT services ecosystem",
+    "roleFamilies": "Role families",
+    "observed": "Observed",
+    "unknown": "Unknown",
+    "esnLinks_one": "One link observed",
+    "esnLinks_other": "Several links observed",
+    "notCovered": "{{brand}} does not have enough market observations on this account.",
+    "unavailable": "Market observations could not be read.",
+    "source": "Market observations",
+    "focusTitle": "Recommended focus",
+    "focusRecommended": "Recommended",
+    "focusWhy": "Matches your offering and environments observed on this account.",
+    "reasonCovered": "External providers observed on this account",
+    "focusNoMatch": "No strong match found with your current expertise. The field stays open — this is not a judgement on your offer, only the absence of an overlap in what we observe here.",
+    "freeOfCharge": "this lookup is included"
+  },
+  "attachments": {
+    "listLabel": "Documents attached to this analysis",
+    "phase": {
+      "ready": "Ready — sent at launch",
+      "sending": "Sending…",
+      "done_one": "Read: 1 document",
+      "done_other": "Read: {{count}} documents",
+      "doneBound": "Attached to {{account}}",
+      "doneUnbound": "Sent — not yet attached to this account",
+      "error": "Not sent — {{reason}}",
+      "partial": "Some documents could not be read — {{reason}}",
+      "demo": "Demo space: this file is not sent"
+    },
+    "refusal": {
+      "unsupported": "{{name}}: format not read by the analysis (formats: {{formats}}).",
+      "too_large": "{{name}}: larger than {{max}} MB.",
+      "empty": "{{name}}: empty file.",
+      "too_many": "{{name}}: up to {{count}} documents per analysis.",
+      "duplicate": "{{name}}: already attached.",
+      "unreadable_archive": "{{name}}: archive is unreadable or empty.",
+      "no_readable_entry": "{{name}}: no format in this archive is read by the analysis (formats: {{formats}})."
+    },
+    "piecesLabel": "Files in {{name}}",
+    "piece": {
+      "pending": "Waiting to be sent",
+      "read": "Read",
+      "duplicate": "Already in the knowledge base",
+      "failed": "Not read — {{reason}}"
+    },
+    "remove": "Remove {{name}}",
+    "failedFallback": "could not be sent, try again"
+  },
+  "mode": {
+    "label": "How many companies",
+    "one": "One company",
+    "many": "Several companies"
+  },
+  "rail": {
+    "title": "Which account do you want to understand?",
+    "subtitle": "Write its name, then say what you want to get.",
+    "myAnalyses": "My analyses",
+    "analysesTitle": "My analyses",
+    "analysesIntro": "The latest analyses in your workspace: reopen a file or run an analysis again.",
+    "analysesEmpty": "No analysis yet. Write a company name to start.",
+    "close": "Close",
+    "open": "Open",
+    "relaunch": "Run again",
+    "openDossier": "Or open a file:",
+    "recently": "Recently",
+    "doneOn": "Done on {{date}}",
+    "done": "Done",
+    "status": {
+      "analyzing": "In progress",
+      "error": "Failed",
+      "canceled": "Canceled",
+      "prospect": "Not analyzed yet",
+      "imported": "Imported, not analyzed yet",
+      "archived": "Archived",
+      "other": "Not finished"
+    },
+    "whatTitle": "What you will find",
+    "what1": "What I know: {{copilot}}’s view, referencing, organization, needs.",
+    "what2": "Contacts and the org chart, decision-makers first.",
+    "what3": "An action plan and prepared messages: nothing leaves without you.",
+    "import": "Import a file or a list",
+    "seeAll": "See all"
+  },
+  "steps": {
+    "company": "Start with a company",
+    "purpose": "What you want to get",
+    "purposeHint": "Several choices possible",
+    "framing": "Your framing",
+    "footerTitle": "You check the framing before opening the file.",
+    "footerHint": "Nothing starts before you confirm the scope."
+  },
+  "analyze": {
+    "waiting": {
+      "title": "Analysing {{company}}",
+      "titleNoName": "Analysis in progress",
+      "subtitle": "An analysis usually takes three to six minutes."
+    },
+    "title": "Which account do you want to understand?",
+    "subtitle": "Write its name, then say what you want to get.",
+    "searchAccounts": "Find accounts",
+    "myAnalyses": "My analyses",
+    "close": "Close",
+    "modes": {
+      "label": "What you are analysing",
+      "company": "A company",
+      "contact": "A contact",
+      "need": "A need",
+      "many": "Several companies"
+    },
+    "company": {
+      "searchTitle": "Start with a company",
+      "searchHint": "Search by name",
+      "pickedTitle": "Your company",
+      "pickedHint": "You can still change account",
+      "selected": "Account selected",
+      "change": "Change",
+      "listLabel": "Companies",
+      "portfolioGroup": "In your portfolio",
+      "registryGroup": "Company registry",
+      "groupChoice": "What will be analysed",
+      "groupWhole": "Analyse the whole group",
+      "groupAlone": "Keep {{name}} alone",
+      "colleagueRunning": "Analysis already running, started by {{name}}",
+      "colleagueSince": "Started {{since}}",
+      "colleagueFollow": "Follow their analysis"
+    },
+    "known": {
+      "title": "What {{brand}} already knows",
+      "seeDetail": "See detail",
+      "analysedOn": "Analysed on {{date}}",
+      "contacts_one": "{{count}} contact identified",
+      "contacts_other": "{{count}} contacts identified",
+      "signals_one": "{{count}} signal since",
+      "signals_other": "{{count}} signals since",
+      "corrections_one": "{{count}} correction by the team",
+      "corrections_other": "{{count}} corrections by the team",
+      "dialogTitle": "What {{brand}} already knows about {{company}}",
+      "dialogDescription": "What your workspace holds, and what the market has let show.",
+      "workspaceColumn": "In your workspace",
+      "marketColumn": "Market observations",
+      "identity": "Identity",
+      "lastAnalysis": "Last analysis",
+      "contactsLabel": "Contacts",
+      "factsLabel": "Facts",
+      "signalsLabel": "Fresh signals",
+      "correctionsLabel": "Corrections",
+      "footnote": "What is already known is included; the analysis only looks for what is left to find."
+    },
+    "purpose": {
+      "title": "What you want to get",
+      "hint": "Several choices possible",
+      "angleLabel": "Your angle, in one sentence",
+      "optional": "Optional",
+      "anglePlaceholder": "E.g. Data / BI in France: who to contact and where to start?",
+      "template": "Start from a template",
+      "templatesLabel": "Context templates"
+    },
+    "cadrage": {
+      "title": "Your framing",
+      "personalisation": "Personalisation",
+      "themesRetained": "Priority themes: {{values}}",
+      "themesRecommended": "Recommended themes: {{values}}",
+      "themesSuggested": "Themes suggested from your profile: {{values}}",
+      "personalisationDefault": "As set in your workspace",
+      "perimeter": "Scope · {{zone}}",
+      "zoneUnset": "No area",
+      "addDocument": "Add a document",
+      "refinedCount_one": "{{count}} setting applied",
+      "refinedCount_other": "{{count}} settings applied"
+    },
+    "context": {
+      "title": "The context of this analysis",
+      "description": "Choose whether your usual positioning should guide this request. This does not change your permanent profile."
+    },
+    "scope": {
+      "title": "Which scope do you want to work?",
+      "description": "A group to understand the whole, an entity or a site to prepare a more targeted approach.",
+      "kindLabel": "Scope of the analysis",
+      "kind": {
+        "group": "Company / group",
+        "entity": "An entity",
+        "site": "A site"
+      },
+      "zoneHelp": "The account’s head office alone does not define your prospecting area.",
+      "targeted_one": "{{count}} entity targeted",
+      "targeted_other": "{{count}} entities targeted",
+      "excluded_one": "{{count}} excluded",
+      "excluded_other": "{{count}} excluded",
+      "kept": "These changes are kept in your framing, not in the account’s structure.",
+      "done": "Done"
+    },
+    "relaunch": {
+      "title": "What this refresh will do",
+      "analysedOn": "Dossier analysed on {{date}}",
+      "redo": "Redone",
+      "keep": "Kept"
+    },
+    "refine": {
+      "priorities": "Sales priorities",
+      "exclude": "What we leave out"
+    },
+    "footer": {
+      "helper": "You check the framing before the dossier opens.",
+      "includedAria": "What is included",
+      "includedTitle": "What is included",
+      "includedRegistry": "The company registry",
+      "includedWorkspace": "What your workspace already knows",
+      "includedMarket": "The market observations",
+      "includedNote": "The analysis only looks for what is left to find."
+    },
+    "contactPane": {
+      "title": "Which contact do you want to check?",
+      "description": "{{brand}} checks their current role, their company and their professional details. The check happens in Contacts.",
+      "placeholder": "First name Last name, or work address…",
+      "cta": "Check in Contacts"
+    },
+    "needPane": {
+      "title": "Which need do you want to check?",
+      "description": "Paste a job description or a tender: {{brand}} finds the account, the likely decision-maker and the profiles in your pool that fit. The check happens in Needs.",
+      "placeholder": "Job description or tender",
+      "cta": "Check in Needs"
+    },
+    "recent": {
+      "aria": "Pick up a framing",
+      "label": "Recently",
+      "seeAll": "See all"
+    },
+    "help": {
+      "open": "What you will find",
+      "title": "An account dossier, not a new conversation",
+      "oneTitle": "1. Pick the right company",
+      "oneBody": "Select a precise identity, then say your goal and the constraints that matter.",
+      "twoTitle": "2. Check the scope",
+      "twoBody": "An entity, an area or a site can be specified. You stay in control before launch.",
+      "threeTitle": "3. Find a shared dossier",
+      "threeBody": "The strategy, the contacts, the signals and the history stay in the Account page. {{copilot}} can then help you work on it.",
+      "done": "Got it"
+    },
+    "history": {
+      "trailLabel": "Where you are",
+      "crumb": "History",
+      "backToFraming": "Back to my framing",
+      "title": "Your analyses",
+      "subtitle": "Find the dossiers you opened and the framing you had prepared.",
+      "newAnalysis": "New analysis",
+      "scopeLabel": "Analyses shown",
+      "everyone": "The whole team",
+      "mine": "Me",
+      "count": "{{total}} analyses in the workspace",
+      "countWithMine": "{{total}} analyses in the workspace · {{mine}} started by you",
+      "empty": "No analysis in the workspace yet.",
+      "emptyMine": "You have not started any analysis yet.",
+      "tableLabel": "Analysis history",
+      "columns": {
+        "account": "Account",
+        "by": "Started by",
+        "date": "Date",
+        "state": "Status",
+        "actions": "Actions"
+      },
+      "you": "You",
+      "state": {
+        "running": "Running",
+        "done": "Done",
+        "failed": "Failed",
+        "canceled": "Canceled"
+      },
+      "follow": "Follow",
+      "retry": "Retry",
+      "resume": "Resume",
+      "openAccount": "Open dossier",
+      "batchesTitle": "Analysis batches",
+      "launchBatch": "Start a batch from Discover",
+      "batchColumns": {
+        "batch": "Batch",
+        "progress": "Progress"
+      },
+      "batchAccounts_one": "{{count}} account",
+      "batchAccounts_other": "{{count}} accounts",
+      "batchDone_one": "{{count}} done",
+      "batchDone_other": "{{count}} done",
+      "batchRunning_one": "{{count}} running",
+      "batchRunning_other": "{{count}} running",
+      "batchFailed_one": "{{count}} to redo",
+      "batchFailed_other": "{{count}} to redo",
+      "seeBatch": "See batch",
+      "footnote": "The account’s dossier stays intact: the history only finds the analyses again."
+    },
+    "crumbRoot": "Analyse an account",
+    "perimeter": {
+      "loading": "Reading the group from the registry…",
+      "title": "Where should we look for contacts?",
+      "hint": "The group and its subsidiaries, read from the registry. Tick the ones where we should also look for contacts: the analysed entity is always searched.",
+      "role": {
+        "groupe": "Group",
+        "filiale": "Subsidiary"
+      },
+      "analysed": "analysed entity",
+      "ceased": "ceased in the registry",
+      "factsUnpublished": "Size and head office not published",
+      "truncated": "The group has more than 16 entities: the first {{count}} are listed.",
+      "searched_one": "Contacts searched at {{count}} entity",
+      "searched_other": "Contacts searched at {{count}} entities"
+    }
+  },
+  "history": {
+    "link": "My analyses",
+    "title": "Your analyses",
+    "subtitle": "Find the dossiers you opened and the framing you had prepared.",
+    "newAnalysis": "New analysis",
+    "scopeSpace": "Whole team",
+    "scopeMe": "Me",
+    "countsSpace": "{{space}} analyses in the workspace · {{mine}} started by you",
+    "countsMine_one": "{{count}} analysis started by you",
+    "countsMine_other": "{{count}} analyses started by you",
+    "loading": "Loading your analyses…",
+    "loadError": "Couldn’t load the analysis history. Try again.",
+    "emptyMineTitle": "You haven’t started any analysis yet.",
+    "emptySpaceTitle": "No analysis in the workspace yet.",
+    "emptyDescription": "Start a new analysis: it will show up here with its framing.",
+    "unnamed": "Unnamed account",
+    "colleague": "a colleague",
+    "startedBy": "started by {{name}}",
+    "status": {
+      "analyzing": "In progress",
+      "error": "Failed",
+      "canceled": "Canceled"
+    },
+    "depth": {
+      "quick": "Quick",
+      "verified": "Standard",
+      "deep": "In depth"
+    },
+    "resume": "Resume",
+    "retry": "Try again",
+    "viewDossier": "View the dossier",
+    "remove": "Remove the analysis of {{name}} from the history",
+    "removeError": "Couldn’t remove this analysis. Try again.",
+    "removeHint": "Removing an analysis hides it from your history; the account’s dossier stays intact.",
+    "batches": {
+      "title": "Analysis batches",
+      "launch": "Start a batch from Discover",
+      "none": "No batch started yet.",
+      "accounts_one": "{{count}} account",
+      "accounts_other": "{{count}} accounts",
+      "done_one": "{{count}} finished",
+      "done_other": "{{count}} finished",
+      "running_one": "{{count}} in progress",
+      "running_other": "{{count}} in progress",
+      "failed_one": "{{count}} failed",
+      "failed_other": "{{count}} failed",
+      "view": "View the batch"
+    }
+  },
+  "frame": {
+    "title": "Which account do you want to understand?",
+    "subtitle": "Type its name, then say what you want to get out of it.",
+    "history": "My analyses",
+    "helpCta": "What you will find",
+    "optional": "Optional",
+    "tryDossier": "Or try a file:",
+    "step1": {
+      "title": "Start with a company"
+    },
+    "step2": {
+      "title": "What you want to get",
+      "multi": "Several choices possible"
+    },
+    "step3": {
+      "title": "Your framing"
+    },
+    "objectives": {
+      "open_account": "Open this account",
+      "prepare_meeting": "Prepare a meeting",
+      "find_decision_makers": "Find the decision makers",
+      "understand_group": "Understand the group",
+      "verify_signal": "Check a signal",
+      "prepare_listing": "Prepare a vendor listing",
+      "map_partners_competitors": "Map partners and competitors",
+      "other": "Another goal",
+      "others": "Other goals",
+      "required": "Choose at least one goal for this analysis."
+    },
+    "angle": {
+      "label": "Your angle, in one sentence",
+      "placeholder": "Place two Data profiles in the risk department, around Lyon."
+    },
+    "personalization": {
+      "label": "Personalization",
+      "sheetTitle": "The context of this analysis",
+      "sheetBody": "Choose whether your usual positioning should guide this request. This choice does not change your permanent profile."
+    },
+    "perimeter": {
+      "label": "Scope",
+      "sheetTitle": "Which scope do you want to work on?",
+      "sheetBody": "A group to understand the whole, an entity or a site to prepare a more targeted approach. The account’s head office alone does not define your prospecting area.",
+      "included_one": "{{count}} entity targeted",
+      "included_other": "{{count}} entities targeted",
+      "excluded_one": "{{count}} excluded",
+      "excluded_other": "{{count}} excluded",
+      "kept": "These changes are kept in your framing, not in the account structure.",
+      "done": "Done"
+    },
+    "depth": {
+      "tagline": {
+        "quick": "The essential file",
+        "deep": "The account and its ways in"
+      }
+    },
+    "refine": {
+      "title": "Refine",
+      "count_one": "{{count}} setting applied",
+      "count_other": "{{count}} settings applied",
+      "who": "Who to target",
+      "sell": "Sales priorities",
+      "exclude": "What to leave out",
+      "headcount": "Entity headcount"
+    },
+    "documents": {
+      "add": "Add a document"
+    },
+    "footer": {
+      "check": "You check the framing before the file opens.",
+      "blocked": "Your analysis quota is reached for now."
+    },
+    "recent": {
+      "title": "Recently",
+      "prepare": "Prepare an approach",
+      "seeAll": "See all"
+    },
+    "known": {
+      "analysedOn": "Analysed on {{date}}",
+      "contacts_one": "{{count}} contact identified",
+      "contacts_other": "{{count}} contacts identified",
+      "signals_one": "{{count}} fresh signal",
+      "signals_other": "{{count}} fresh signals",
+      "corrections_one": "{{count}} team correction",
+      "corrections_other": "{{count}} team corrections",
+      "marketOnly": "Market observations are available for this company.",
+      "detail": "See details",
+      "sheetTitle": "What {{brand}} already knows about {{name}}"
+    },
+    "inFlight": "An analysis is already running on this account.",
+    "inFlightFollow": "Follow its analysis",
+    "help": {
+      "title": "An account file, not a new conversation",
+      "one": {
+        "title": "1. Pick the right company",
+        "body": "Select a precise identity, then state your goal and any useful constraints."
+      },
+      "two": {
+        "title": "2. Check the scope",
+        "body": "An entity, an area or a site can be specified. You stay in control before launch."
+      },
+      "three": {
+        "title": "3. Find a shared file",
+        "body": "Strategy, contacts, signals and history stay in the Account page. {{copilot}} can then help you work on it."
+      },
+      "done": "Got it"
+    },
+    "close": "Close"
+  }
+}

@@ -1,0 +1,150 @@
+{
+  "route": {
+    "title": "Assignments",
+    "description": "The receivables assigned to your factor, what they still owe, and how their payments match."
+  },
+  "title": "Assignments",
+  "banner": "An assignment covers a receivable that has already been invoiced. {{brand}} prepares the file and matches what the factor paid: sending it to the factor stays your move.",
+  "financeHidden": "Per-assignment amounts are not shown: your role does not grant access to detailed financial data. Counts, statuses and the header totals stay readable.",
+  "loadError": "Assignments could not be read. Try again in a moment.",
+  "tiles": {
+    "outstanding": "Assigned and outstanding",
+    "awaiting": "Awaiting payment",
+    "missing": "No assignment",
+    "variance": "Matching gap",
+    "assignmentCount_one": "{{count}} assignment",
+    "assignmentCount_other": "{{count}} assignments",
+    "receivableCount_one": "{{count}} receivable",
+    "receivableCount_other": "{{count}} receivables",
+    "withoutAmount_one": "{{count}} without an amount",
+    "withoutAmount_other": "{{count}} without an amount",
+    "unmeasurable_one": "{{count}} assignment cannot be matched",
+    "unmeasurable_other": "{{count}} assignments cannot be matched",
+    "noAmount": "Not measured",
+    "noVariance": "No measurable gap",
+    "limitShare": "of a {{value}} ceiling",
+    "overLimit": "{{value}} over the ceiling"
+  },
+  "contracts": {
+    "title": "Factoring contracts",
+    "empty": "No factoring contract yet. Add your factor's contract to be able to assign a receivable.",
+    "add": "Add a contract",
+    "factorName": "Factor name",
+    "factorNamePlaceholder": "The name on your contract",
+    "reference": "Contract reference",
+    "referencePlaceholder": "The reference at the factor",
+    "rate": "Commission rate",
+    "ratePlaceholder": "2.5",
+    "rateUnit": "%",
+    "limit": "Outstanding ceiling",
+    "limitPlaceholder": "500000",
+    "limitUnit": "€",
+    "noRate": "No rate entered",
+    "noLimit": "No ceiling entered",
+    "noReference": "No reference entered",
+    "save": "Save the contract",
+    "cancel": "Cancel",
+    "bankNote": "No bank details are asked for or kept: the factor's transfer lands in your own account, it never passes through here.",
+    "status": {
+      "active": "Running",
+      "suspended": "Suspended",
+      "ended": "Ended"
+    }
+  },
+  "assignments": {
+    "title": "Assignments",
+    "empty": "No assignment yet.",
+    "emptyWhy": "An assignment is prepared from an invoiced, unpaid receivable, in the list below.",
+    "columns": {
+      "account": "Client",
+      "mission": "Mission",
+      "month": "Month",
+      "factor": "Factor",
+      "amount": "Assigned amount",
+      "rate": "Rate",
+      "status": "Status",
+      "reconciliation": "Matching",
+      "variance": "Gap",
+      "actions": "Actions"
+    },
+    "unknownAccount": "No client attached to this mission",
+    "unknownMission": "This mission has no label",
+    "noAmount": "No assigned amount entered",
+    "noRate": "No rate on this assignment nor on its contract",
+    "derogatedRate": "Rate negotiated on this receivable",
+    "rowMenu": "Actions on this assignment",
+    "markAssigned": "Mark as sent to the factor",
+    "markSettled": "Mark as paid",
+    "reject": "The factor turned this receivable down",
+    "recall": "The factor took this receivable back",
+    "status": {
+      "prepared": "Prepared",
+      "assigned": "Sent",
+      "settled": "Paid",
+      "rejected": "Turned down",
+      "recalled": "Taken back"
+    },
+    "reconciliation": {
+      "not_due": "Nothing expected",
+      "unmeasurable": "Cannot be matched",
+      "awaiting": "Awaiting",
+      "matched": "Amounts agree",
+      "short": "Paid short",
+      "over": "Paid over"
+    },
+    "expected": "Net expected: {{value}}",
+    "settled": "Received: {{value}}",
+    "closeTitle": "Why is the factor handing this receivable back?",
+    "closeHint": "Write down what the factor told you. Without that reason, nobody will know in six months why this receivable stayed on your books.",
+    "closePlaceholder": "Client ceiling reached, open dispute…",
+    "closeConfirm": "Save",
+    "closeAbort": "Cancel"
+  },
+  "missing": {
+    "title": "No assignment",
+    "hint": "Invoiced, unpaid receivables that no assignment covers. Not all of them are meant to be assigned: this is a gap to look at, not a fault.",
+    "empty": "No invoiced receivable without an assignment.",
+    "columns": {
+      "account": "Client",
+      "mission": "Mission",
+      "month": "Month",
+      "amount": "Invoiced amount",
+      "dueOn": "Due date",
+      "actions": "Actions"
+    },
+    "noAmount": "No invoiced amount entered",
+    "noDueDate": "No due date entered",
+    "prepare": "Prepare the assignment",
+    "prepareTitle": "Prepare the assignment for {{month}}",
+    "prepareHint": "The file is prepared here; sending it to the factor stays your move.",
+    "chooseContract": "Factoring contract",
+    "amountLabel": "Assigned amount",
+    "amountHint": "Leave it empty if you do not know it yet: the screen will say so rather than show a zero.",
+    "prepareConfirm": "Prepare",
+    "prepareAbort": "Cancel"
+  },
+  "settlements": {
+    "title": "Payments to match",
+    "hint": "Payments from the factor that no assignment settles yet.",
+    "empty": "Every payment received has been matched.",
+    "columns": {
+      "receivedOn": "Received on",
+      "amount": "Amount",
+      "reference": "Reference",
+      "actions": "Actions"
+    },
+    "noReference": "No reference entered",
+    "reconcile": "Match",
+    "reconcileMenu": "Match this payment to an assignment",
+    "noCandidate": "No sent assignment to match against"
+  },
+  "toast": {
+    "contractSaved": "Factoring contract saved.",
+    "prepared": "Assignment prepared. Send it to your factor, then come back and mark it sent.",
+    "assigned": "Assignment marked as sent.",
+    "settled": "Assignment marked as paid.",
+    "closed": "The factor's decision has been recorded.",
+    "reconciled": "Payment matched.",
+    "error": "Saving failed."
+  }
+}

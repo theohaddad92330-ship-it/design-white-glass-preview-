@@ -1,0 +1,228 @@
+{
+  "$schema": "http://json-schema.org/draft-07/schema#",
+  "$id": "https://bellum.ai/schemas/plan.schema.json",
+  "title": "BellumPlanOutput",
+  "description": "Contrat de SORTIE de la phase 4 (Stratège) = le sous-objet `plan` du blob raw_analysis stocké. Clés en camelCase (actionPlan, contactMessages, offersToPropose, competitiveStrategy) SAUF quelques clés snake_case héritées du prompt Python : `quick_wins`, `if_no_response`. Source de vérité zod = @bellum/contracts (`strategyDataSchema`). Permissif (passthrough, tout optionnel) : le prompt peut ajouter des champs sans casser les consommateurs — ils sont documentés ici quand un consommateur branche dessus.",
+  "x-bellum-branchable": {
+    "_comment": "Sous-objet `plan` : les blocs que le dossier de conquete affiche. `quick_wins`/`if_no_response` sont les cles LEGACY snake_case reellement emises.",
+    "root": [
+      "actionPlan",
+      "evaluation",
+      "competitiveStrategy",
+      "contactMessages",
+      "offersToPropose",
+      "quick_wins",
+      "if_no_response"
+    ],
+    "items": {}
+  },
+  "type": "object",
+  "additionalProperties": true,
+  "properties": {
+    "actionPlan": {
+      "type": "object",
+      "additionalProperties": true,
+      "description": "Plan d'action séquencé : phases hebdo + type de stratégie retenu et sa justification.",
+      "properties": {
+        "strategy": {
+          "type": ["string", "null"]
+        },
+        "justification": {
+          "type": ["string", "null"]
+        },
+        "phases": {
+          "type": "array",
+          "items": {
+            "type": "object",
+            "additionalProperties": true
+          }
+        }
+      }
+    },
+    "evaluation": {
+      "type": "object",
+      "additionalProperties": true,
+      "description": "Auto-évaluation du dossier : score global, verdict go/no-go, justification, risques.",
+      "properties": {
+        "globalScore": {
+          "type": ["number", "string"]
+        },
+        "goNoGo": {
+          "type": ["string", "null"]
+        },
+        "justification": {
+          "type": ["string", "null"]
+        },
+        "risks": {
+          "type": "array",
+          "description": "Risques du compte. Chaque objet est daté (`computed_at`) et relié à une preuve réelle (`proof_type`/`proof`/`proof_date`) par le post-traitement déterministe de la phase 4 — clés ABSENTES quand aucune preuve n'a pu être rattachée (jamais de citation inventée).",
+          "items": {
+            "type": ["string", "object"]
+          }
+        }
+      }
+    },
+    "competitiveStrategy": {
+      "type": "object",
+      "additionalProperties": true,
+      "description": "Positionnement concurrentiel : phrase de positionnement + angle vs concurrents identifiés.",
+      "properties": {
+        "positioningStatement": {
+          "type": ["string", "null"]
+        },
+        "vsCompetitors": {
+          "type": ["array", "object", "string"]
+        }
+      }
+    },
+    "contactMessages": {
+      "type": "array",
+      "description": "Messages prêts à envoyer, un bloc par contact prioritaire (email + LinkedIn + accroche téléphone).",
+      "items": {
+        "type": "object",
+        "additionalProperties": true,
+        "properties": {
+          "contactName": {
+            "type": ["string", "null"]
+          },
+          "persona": {
+            "type": ["string", "null"]
+          },
+          "emailSubject": {
+            "type": ["string", "null"]
+          },
+          "emailBody": {
+            "type": ["string", "null"]
+          },
+          "linkedinMessage": {
+            "type": ["string", "null"]
+          },
+          "phoneOpener": {
+            "type": ["string", "null"]
+          }
+        }
+      }
+    },
+    "offersToPropose": {
+      "type": "array",
+      "description": "Offres ESN à proposer, chiffrées (TJM, taille d'équipe, durée) et rattachées à un pain + un contact cible.",
+      "items": {
+        "type": "object",
+        "additionalProperties": true,
+        "properties": {
+          "title": {
+            "type": ["string", "null"]
+          },
+          "pitch": {
+            "type": ["string", "null"]
+          },
+          "targetContact": {
+            "type": ["string", "null"]
+          },
+          "painAddressed": {
+            "type": ["string", "null"]
+          },
+          "estimatedTJM": {
+            "type": ["string", "null"]
+          },
+          "estimatedTeamSize": {
+            "type": ["string", "null"]
+          },
+          "estimatedDuration": {
+            "type": ["string", "null"]
+          },
+          "differentiator": {
+            "type": ["string", "null"]
+          }
+        }
+      }
+    },
+    "quick_wins": {
+      "type": "array",
+      "description": "Actions à impact rapide (clé snake_case héritée du prompt).",
+      "items": {
+        "type": "object",
+        "additionalProperties": true,
+        "properties": {
+          "action": {
+            "type": ["string", "null"]
+          },
+          "channel": {
+            "type": ["string", "null"]
+          },
+          "contact": {
+            "type": ["string", "null"]
+          },
+          "expected_impact": {
+            "type": ["string", "null"]
+          },
+          "time_required": {
+            "type": ["string", "null"]
+          },
+          "computed_at": {
+            "type": ["string", "null"],
+            "description": "ISO-8601 UTC du dernier (re)calcul de l'item — la phase 4 rejoue à chaque analyse et à chaque replan. Absent sur un dossier antérieur : l'écran n'affiche alors aucune date plutôt qu'une date inventée."
+          },
+          "proof_type": {
+            "type": ["string", "null"],
+            "description": "Nature de la preuve rattachée, même taxonomie que les facteurs de score : signal | source | contact | profile | business_rule. Absent quand aucune donnée réelle du dossier ne soutient l'item."
+          },
+          "proof": {
+            "type": ["string", "null"],
+            "description": "Libellé de la preuve (contact du dossier, signal sourcé, offre de l'ESN)."
+          },
+          "proof_date": {
+            "type": ["string", "null"],
+            "description": "Date PROPRE à la preuve (celle du signal sourcé), jamais la date du recalcul."
+          }
+        }
+      }
+    },
+    "if_no_response": {
+      "type": "object",
+      "additionalProperties": true,
+      "description": "Plan de relance si pas de réponse (clé snake_case héritée du prompt).",
+      "properties": {
+        "trigger": {
+          "type": ["string", "object", "null"]
+        },
+        "alternative_contact": {
+          "type": ["string", "object", "null"]
+        },
+        "different_angle": {
+          "type": ["string", "object", "null"]
+        },
+        "escalation_option": {
+          "type": ["string", "object", "null"]
+        },
+        "reengagement_pretext": {
+          "type": ["string", "object", "null"]
+        }
+      }
+    },
+    "prioritySubAccounts": {
+      "type": "array",
+      "description": "Sous-comptes / entités prioritaires à attaquer (peut être vide).",
+      "items": {
+        "type": "object",
+        "additionalProperties": true
+      }
+    },
+    "commercialScore": {
+      "type": ["number", "null"],
+      "description": "Score commercial 0-100 (axe « ça vaut le coup ? »). Miroir zod : `strategyDataSchema.commercialScore`."
+    },
+    "dataConfidence": {
+      "type": ["number", "null"],
+      "description": "Confiance dans la donnee 0-100 (axe « on sait de quoi on parle ? ») — distinct du score commercial. Miroir zod : `strategyDataSchema.dataConfidence`."
+    },
+    "scoreFactors": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "additionalProperties": true
+      },
+      "description": "Preuves derriere le score : un facteur par critere, avec ses points et sa justification. Miroir zod : `strategyDataSchema.scoreFactors`."
+    }
+  }
+}

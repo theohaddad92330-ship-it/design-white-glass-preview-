@@ -1,0 +1,54 @@
+{
+  "_why": "#1924 — le corpus de RÉPONSES du cas d'évaluation du verdict. Chaque entrée est une réponse telle qu'elle a été rendue (ou reconstituée dans sa forme), la question telle qu'elle est posée, et les constats attendus. Contrôleur : app/eval/chat_verdict.py.",
+  "cases": [
+    {
+      "name": "production_2026_09_14_thales",
+      "why": "Reconstitution de la FORME de la réponse mesurée en production le 14/09/2026 : les deux intitulés « Verdict » sont ceux qui ont été observés, le contenu des puces n'est pas reproduit — un fixture n'affirme rien sur une entreprise réelle. Deux symptômes : aucune carte, et le verdict écrit deux fois.",
+      "question": "Est-ce que je peux placer un expert cybersécurité chez THALES ? Réponds par un verdict net.",
+      "answer": "Verdict : oui, mais pas en placement immédiat.\n\nPreuves\n- (le contenu des puces n'est pas reproduit : cette reconstitution ne garde que la FORME de la réponse, jamais ses affirmations sur une entreprise réelle)\nAccès\n- (idem)\nFreins\n- (idem)\nCe qui manque\n- (idem)\n\nVerdict\nOui, un expert cybersécurité peut être pertinent, sous conditions.\n\nPourquoi\n- (idem)\n",
+      "expected": [
+        "bloc_verdict_absent",
+        "verdict_rendu_deux_fois"
+      ]
+    },
+    {
+      "name": "verdict_rendu_en_carte",
+      "why": "La forme attendue : une phrase qui introduit, la carte, la question de fin. Rien en double.",
+      "question": "Est-ce que je peux placer un expert cybersécurité chez ce compte ? Réponds par un verdict net.",
+      "answer": "Voici ce que je peux dire en l'état.\n\n```bellum-block\n{\"type\":\"verdict\",\"conclusion\":\"Oui, mais pas en placement immédiat, et pas sans une entrée nommée.\",\"reasons\":[\"Le dossier porte un besoin cybersécurité identifié.\",\"Aucun contact décisionnaire n'est encore qualifié côté sécurité.\"],\"limits\":[\"Je ne sais pas si un budget est ouvert sur ce périmètre.\"],\"next_action\":{\"label\":\"Ouvrir les contacts sécurité du compte\",\"href\":\"/accounts\"}}\n```\n\nTu veux que j'ouvre les contacts sécurité ?",
+      "expected": []
+    },
+    {
+      "name": "carte_puis_redite_en_texte",
+      "why": "La carte est rendue, puis sa conclusion est réécrite en texte : c'est la loi 4, refusée.",
+      "question": "Est-ce que je peux y aller sur ce compte ?",
+      "answer": "```bellum-block\n{\"type\":\"verdict\",\"conclusion\":\"Oui, mais pas en placement immédiat, et pas sans une entrée nommée.\",\"reasons\":[\"Le dossier porte un besoin cybersécurité identifié.\",\"Aucun contact décisionnaire n'est encore qualifié côté sécurité.\"],\"limits\":[\"Je ne sais pas si un budget est ouvert sur ce périmètre.\"],\"next_action\":{\"label\":\"Ouvrir les contacts sécurité du compte\",\"href\":\"/accounts\"}}\n```\n\nEn clair : oui, mais pas en placement immédiat, et pas sans une entrée nommée.",
+      "expected": [
+        "carte_reecrite_en_texte"
+      ]
+    },
+    {
+      "name": "deux_cartes_verdict",
+      "why": "Deux cartes verdict dans la même réponse : le même contenu sous la même forme, deux fois.",
+      "question": "Est-ce que je peux y aller sur ce compte ?",
+      "answer": "Voici ce que je peux dire.\n\n```bellum-block\n{\"type\":\"verdict\",\"conclusion\":\"Oui, mais pas en placement immédiat, et pas sans une entrée nommée.\",\"reasons\":[\"Le dossier porte un besoin cybersécurité identifié.\",\"Aucun contact décisionnaire n'est encore qualifié côté sécurité.\"],\"limits\":[\"Je ne sais pas si un budget est ouvert sur ce périmètre.\"],\"next_action\":{\"label\":\"Ouvrir les contacts sécurité du compte\",\"href\":\"/accounts\"}}\n```\n\nEt vu autrement :\n\n```bellum-block\n{\"type\":\"verdict\",\"conclusion\":\"Oui, mais pas en placement immédiat, et pas sans une entrée nommée.\",\"reasons\":[\"Le dossier porte un besoin cybersécurité identifié.\",\"Aucun contact décisionnaire n'est encore qualifié côté sécurité.\"],\"limits\":[\"Je ne sais pas si un budget est ouvert sur ce périmètre.\"],\"next_action\":{\"label\":\"Ouvrir les contacts sécurité du compte\",\"href\":\"/accounts\"}}\n```",
+      "expected": [
+        "verdict_rendu_deux_fois"
+      ]
+    },
+    {
+      "name": "temoin_question_factuelle",
+      "why": "Témoin : une question factuelle se répond en deux phrases, aucune carte à réclamer.",
+      "question": "Combien de comptes est-ce que j'ai dans mon portefeuille ?",
+      "answer": "Tu en as 62. Tu veux que je te dise lesquels ont bougé cette semaine ?",
+      "expected": []
+    },
+    {
+      "name": "temoin_question_marche_cinq_temps",
+      "why": "Témoin : une question marché rend ses cinq temps EN TEXTE, verdict compris — c'est le gabarit prévu par le prompt, pas une redite. Une garde qui rougirait ici interdirait une réponse juste.",
+      "question": "Quelles ESN gravitent autour de ce compte ?",
+      "answer": "1. VERDICT — deux ESN ressortent nettement autour de ce compte.\n2. TOP 3 À 5 RÉSULTATS — (les résultats ne sont pas reproduits : ce témoin ne garde que la forme)\n3. CE QUE JE SAIS — (idem)\n4. CE QUE JE NE SAIS PAS — (idem)\n5. ACTION SUIVANTE — (idem)\n",
+      "expected": []
+    }
+  ]
+}

@@ -1,0 +1,64 @@
+{
+  "title": "Brand",
+  "subtitle": "What your partners and clients see when they open the workspace: the name, the logo, the colour, the domain.",
+  "restricted": "Only the workspace owner and admins can change the brand — it changes what EVERYONE sees.",
+  "identity": {
+    "title": "Identity",
+    "description": "The name replaces “{{brand}}” everywhere: header, tab title, exported dossiers, public share page.",
+    "nameLabel": "Display name",
+    "namePlaceholder": "The name your clients see",
+    "nameHelp": "Empty = the product name.",
+    "logoLabel": "Logo URL",
+    "logoPlaceholder": "https://…/logo.svg",
+    "logoHelp": "A public address served over HTTPS. A square that stays legible at 24 px.",
+    "logoInvalid": "A full HTTPS address is expected.",
+    "accentLabel": "Accent colour",
+    "accentHelp": "It repaints buttons, the active tab and the focus ring. It touches neither backgrounds nor text.",
+    "accentInvalid": "A six-digit hex code is expected, for example #5b3ee8."
+  },
+  "domain": {
+    "title": "Domain",
+    "description": "Point a subdomain of your own at the app. That is what keeps a partner from ever reading our name in their address bar.",
+    "label": "Custom domain",
+    "placeholder": "app.yourcompany.com",
+    "help": "No https://, no port. A CNAME record pointing at our domain still has to be added at your host.",
+    "invalid": "A domain name is expected, for example app.yourcompany.com.",
+    "taken": "That domain is already used by another workspace.",
+    "emailLabel": "Sending address",
+    "emailPlaceholder": "notifications@yourcompany.com",
+    "emailHelp": "The sender of emails this workspace sends. The domain must be authenticated on your side (SPF, DKIM), or messages land in spam.",
+    "emailInvalid": "An email address is expected."
+  },
+  "preview": {
+    "title": "Preview",
+    "description": "What the header carries with the current settings.",
+    "custom": "Brand set",
+    "default": "Product brand"
+  },
+  "actions": {
+    "save": "Save",
+    "saving": "Saving…",
+    "reset": "Back to the product brand",
+    "resetConfirm": "Clear the name, logo, colour, domain and sending address?",
+    "retry": "Retry",
+    "pending": "Pending changes",
+    "noPending": "No pending change"
+  },
+  "saved": "Brand saved.",
+  "saveFailed": "Saving failed.",
+  "loadFailed": "The brand could not be read.",
+  "demoBlocked": "The brand cannot be changed in the demo room — it is shared by every visitor.",
+  "documents": {
+    "title": "Document identity",
+    "description": "What your workspace adds to its skills files: a signature at the end of the document and a footer at the bottom of each page.",
+    "signatureLabel": "Proposed signature",
+    "signatureHelp": "Placed at the end of the document. One line per item (team, phone, email).",
+    "signaturePlaceholder": "Team, phone, email…",
+    "footerLabel": "Document footer",
+    "footerHelp": "Repeated at the bottom of every page — company name, confidentiality notice.",
+    "footerPlaceholder": "Company name, confidentiality notice…",
+    "tooLong": "{{max}} characters at most.",
+    "previewLabel": "Preview of a skills file with the workspace signature and footer",
+    "previewTitle": "Skills file"
+  }
+}

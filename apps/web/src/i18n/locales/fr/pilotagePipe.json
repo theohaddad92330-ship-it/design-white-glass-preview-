@@ -1,0 +1,122 @@
+{
+  "page": {
+    "title": "Pipe",
+    "intro": "Le pipe natif de l’espace : les opportunités saisies par l’équipe et leurs montants. Tous les totaux sont non pondérés — aucun pourcentage de réussite n’y est appliqué.",
+    "loading": "Chargement…",
+    "loadError": "Cette lecture n’a pas pu être chargée. Rien n’est perdu : c’est la lecture qui a échoué.",
+    "introOwn": "Tes affaires ouvertes, et le mouvement de ton pipe. L’équipe, le CA probable et le CRM restent au gestionnaire."
+  },
+  "waterfall": {
+    "title": "Mouvement du pipe",
+    "period": "Du {{range}}",
+    "basis_one": "{{count}} opportunité ouverte à l’ouverture, {{closing}} à la clôture",
+    "basis_other": "{{count}} opportunités ouvertes à l’ouverture, {{closing}} à la clôture",
+    "unweighted": "Montants saisis, non pondérés.",
+    "withoutAmount_one": "{{count}} opportunité ouverte sans montant : elle reste hors de ces barres.",
+    "withoutAmount_other": "{{count}} opportunités ouvertes sans montant : elles restent hors de ces barres.",
+    "unexplainedHint": "Écart que l’historique ne permet pas d’expliquer (affaires antérieures au journal des changements).",
+    "bars": {
+      "opening": "Ouverture",
+      "created": "Entrées dans le pipe",
+      "raised": "Montants relevés",
+      "lowered": "Montants baissés",
+      "lost": "Perdues",
+      "signed": "Signées",
+      "removed": "Sorties sans issue",
+      "unexplained": "Écart non expliqué",
+      "closing": "Clôture"
+    },
+    "barsHint": {
+      "created": "Créées dans la période, ou entrées dans le pipe depuis une piste.",
+      "removed": "Mises en sommeil ou renvoyées en amont, ni gagnées ni perdues."
+    }
+  },
+  "inspection": {
+    "title": "Opportunités ouvertes",
+    "subtitle": "Édition en place : la catégorie que tu déclares et la date de signature prévue.",
+    "empty": "Aucune opportunité ouverte dans le pipe.",
+    "columns": {
+      "account": "Compte",
+      "label": "Opportunité",
+      "amount": "Montant",
+      "stage": "Stade",
+      "category": "Catégorie déclarée",
+      "closeOn": "Signature prévue",
+      "owner": "Propriétaire",
+      "daysInStage": "Dans le stade",
+      "signals": "Signaux"
+    },
+    "amountUnknown": "Non mesuré",
+    "closeOnUnset": "Non fixée",
+    "closeOnEdit": "Date de signature prévue — {{label}}",
+    "categoryEdit": "Catégorie déclarée — {{label}}",
+    "ownerUnassigned": "Non attribué",
+    "daysInStage_one": "{{count}} jour",
+    "daysInStage_other": "{{count}} jours",
+    "saveError": "L’enregistrement a échoué. La valeur précédente est conservée.",
+    "noSignal": "Aucun signal",
+    "totals": {
+      "title": "Totaux par catégorie déclarée",
+      "basis": "Opportunités ouvertes, montants non pondérés.",
+      "count_one": "{{count}} opportunité",
+      "count_other": "{{count}} opportunités",
+      "withoutAmount_one": "dont {{count}} sans montant",
+      "withoutAmount_other": "dont {{count}} sans montant",
+      "noAmount": "Non mesuré"
+    }
+  },
+  "signals": {
+    "title": "Signaux de risque",
+    "no_activity": "Aucune activité depuis {{days}} j",
+    "close_overdue": "Date prévue dépassée de {{days}} j",
+    "close_pushed": "Date prévue repoussée {{count}} fois",
+    "amount_lowered": "Montant baissé de {{from}} à {{to}}",
+    "stage_stale": "{{days}} j dans ce stade, au-delà de la médiane du stade"
+  },
+  "byOwner": {
+    "title": "Par commercial",
+    "basis": "Pipe natif de l’espace — hors CRM tiers.",
+    "empty": "Aucune opportunité à attribuer pour le moment.",
+    "unassigned": "Non attribué",
+    "columns": {
+      "owner": "Commercial",
+      "open": "Pipe ouvert",
+      "signed": "Signé sur la période",
+      "winRate": "Taux de gain",
+      "cycle": "Cycle de vente médian"
+    },
+    "open": "{{amount}} — {{count}} opportunités",
+    "signed_one": "{{amount}} — {{count}} signée",
+    "signed_other": "{{amount}} — {{count}} signées",
+    "signedNone": "Aucune signature sur la période",
+    "winRate": "{{value}} % — {{won}} signées sur {{total}} clôturées ({{days}} j glissants)",
+    "winRateSmall": "{{won}} signées sur {{total}} clôturées ({{days}} j glissants) — base trop petite pour un pourcentage",
+    "winRateNone": "Aucune clôture sur {{days}} j glissants",
+    "cycle_one": "{{count}} jour — médiane de {{sample}} signées sur {{days}} j",
+    "cycle_other": "{{count}} jours — médiane de {{sample}} signées sur {{days}} j",
+    "cycleNone": "Aucune signature sur {{days}} j"
+  },
+  "crm": {
+    "title": "Pipeline du CRM connecté"
+  },
+  "laura": {
+    "purpose": "Le pipe natif de l’espace : mouvement du mois, opportunités ouvertes avec leurs signaux de risque, résultats par commercial. Tous les montants sont non pondérés ; la catégorie est une déclaration du commercial, sans pourcentage."
+  },
+  "tracker": {
+    "title": "Traceur des besoins ouverts",
+    "potential": "CA potentiel (cumul journalier)",
+    "daily": "{{amount}} / jour",
+    "noRate": "Aucun tarif communiqué sur les besoins ouverts",
+    "withoutRate_one": "{{count}} besoin sans tarif : compté à part, jamais à 0 €.",
+    "withoutRate_other": "{{count}} besoins sans tarif : comptés à part, jamais à 0 €.",
+    "floor": "Lu sur {{read}} besoins sur {{total}} : ce cumul est un plancher.",
+    "lastTjm": "Dernier TJM connu",
+    "lastTjmBasis": "TJM cible du besoin « {{title}} ».",
+    "lastTjmBasisDated": "TJM cible du besoin « {{title}} », dernier mouvement le {{date}}.",
+    "noLastTjm": "Aucun TJM connu : aucun besoin ouvert n’en porte."
+  },
+  "tabs": {
+    "pipe": "Pipe",
+    "parcours": "Parcours"
+  }
+}

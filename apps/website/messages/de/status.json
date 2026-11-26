@@ -1,0 +1,49 @@
+{
+  "meta": {
+    "title": "Service-Status",
+    "description": "Echtzeit-Status der BellumAI-Services: Anwendung, Datenbank, Analysen und KI-Engine."
+  },
+  "hero": {
+    "badge": "Systemstatus",
+    "title": "Status der BellumAI-Services",
+    "subtitle": "Diese Seite zeigt den Zustand unserer Services in Echtzeit. Sie aktualisiert sich automatisch alle 30 Sekunden."
+  },
+  "overall": {
+    "loading": "Überprüfung läuft …",
+    "operational": "Alle Systeme sind betriebsbereit",
+    "degraded": "Teilweise Beeinträchtigung",
+    "down": "Größerer Vorfall",
+    "unreachable": "Unsere Services sind nicht erreichbar"
+  },
+  "overallDetail": {
+    "degraded": "Ein Teil der Services ist verlangsamt oder nicht verfügbar. Die Anwendung bleibt erreichbar.",
+    "down": "Unsere Services sind derzeit nicht verfügbar. Wir arbeiten an der Wiederherstellung.",
+    "unreachable": "Die Statusprüfung schlägt fehl — unsere Services sind möglicherweise nicht verfügbar. Versuchen Sie es in wenigen Augenblicken erneut."
+  },
+  "components": {
+    "api": {
+      "name": "Anwendung & API",
+      "description": "Anmeldung, Accounts und Account-Dossiers"
+    },
+    "database": {
+      "name": "Datenbank",
+      "description": "Speicherung Ihrer Accounts, Kontakte und Analysen"
+    },
+    "redis": {
+      "name": "Verarbeitungs-Queues & Echtzeit",
+      "description": "Hintergrund-Analysen und Benachrichtigungen"
+    },
+    "ia_engine": {
+      "name": "KI-Engine",
+      "description": "Erzeugung der Dossiers und der Sales Intelligence"
+    }
+  },
+  "componentStatus": {
+    "operational": "Betriebsbereit",
+    "down": "Nicht verfügbar",
+    "unknown": "Unbekannt"
+  },
+  "lastChecked": "Letzte Prüfung: {time}",
+  "autoRefresh": "Automatische Aktualisierung alle 30 Sekunden.",
+  "historyNote": "Verfügbarkeitshistorie und Vorfallsprotokoll: bald verfügbar. Diese Seite zeigt derzeit den Echtzeit-Zustand."
+}

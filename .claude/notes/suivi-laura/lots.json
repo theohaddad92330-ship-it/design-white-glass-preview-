@@ -1,0 +1,425 @@
+{
+ "artifactUrl": "https://claude.ai/code/artifact/4aef274b-8c12-42e9-8789-12ebef711672",
+ "lauraMessages": "0 / 50 le 14/09 — session coupée par Louis, reprise demain",
+ "lots": [
+  {
+   "stage": "recette",
+   "pr": 1974,
+   "sha": "874408131",
+   "name": "Nouveau fil et amorce, masquage du flux",
+   "issues": [
+    1947,
+    1908,
+    1909,
+    1956
+   ]
+  },
+  {
+   "stage": "recette",
+   "pr": 1975,
+   "sha": "84c828383",
+   "name": "La liste des conversations se met à jour",
+   "issues": [
+    1947
+   ],
+   "detail": "#1947 close."
+  },
+  {
+   "stage": "recette",
+   "pr": 1977,
+   "sha": "131ca2c09",
+   "name": "Correctif : question envoyée d'office sur un fil vierge",
+   "issues": []
+  },
+  {
+   "stage": "recette",
+   "pr": 1976,
+   "sha": "f62f2d6a9",
+   "name": "Vague 2 : pièces jointes au fil, nature de la mémoire, langue",
+   "issues": [
+    1954,
+    1962,
+    1958
+   ]
+  },
+  {
+   "stage": "recette",
+   "pr": 1978,
+   "sha": "f41c2cf03",
+   "name": "Fils : brouillons, titres, tiroir mobile, auteurs, effacement",
+   "issues": [
+    1953,
+    1911,
+    1944,
+    1940,
+    1939
+   ],
+   "detail": "Tiroir mobile non vérifiable dans le Chrome piloté (largeur fixe) : preuve par les tests."
+  },
+  {
+   "stage": "recette",
+   "pr": 1979,
+   "sha": "151770f70",
+   "name": "Signaler un problème, mes signalements, masquage des sorties",
+   "issues": [
+    1960,
+    1956,
+    1942
+   ],
+   "detail": "Gestes verts ; 64 écrans balayés, 0 cassé. Masquage non déclenchable en prod (Laura refuse de recopier un IBAN) : preuve par les tests."
+  },
+  {
+   "stage": "recette",
+   "pr": 1980,
+   "sha": "de67ae6bc",
+   "name": "Correctif : Laura répond dans la langue de l'interface",
+   "issues": [
+    1958
+   ],
+   "detail": "Interface en anglais + question en français → réponse en anglais, vu en prod."
+  },
+  {
+   "stage": "recette",
+   "name": "Brief du matin, accueil, notifications en un choix",
+   "issues": [
+    1936,
+    1921,
+    1938
+   ],
+   "pr": 1981,
+   "sha": "de5a6d23e",
+   "detail": "Brief 3 blocs, marqueur du jour, présélections et accueil vus en prod ; 64 écrans balayés, 0 cassé."
+  },
+  {
+   "stage": "recette",
+   "name": "Pièces jointes au fil, mémoire « Toi uniquement »",
+   "issues": [
+    1954,
+    1962,
+    1916,
+    1917,
+    1918,
+    1919
+   ],
+   "pr": 1982,
+   "sha": "97bd0ab54",
+   "detail": "Pièce jointe au fil relue par Laura et absente de la base ; ajout à la base puis retrait ; « Toi uniquement » vu. Contrôles à 2 comptes : tests."
+  },
+  {
+   "stage": "recette",
+   "name": "Outils branchés nommés dans l'app",
+   "issues": [
+    1912,
+    1930,
+    1931,
+    1942
+   ],
+   "detail": "Outils branchés affichés sous la saisie = connexions de l'espace ; pied « hébergées dans l'UE ». Constat antérieur : « Pappers » encore visible dans Découvrir et Veille → correctif en écriture.",
+   "pr": 1989,
+   "sha": "1a4da151f"
+  },
+  {
+   "stage": "ci",
+   "name": "Vocal : parler au lieu de taper, réécouter",
+   "issues": [
+    1939
+   ],
+   "pr": 1983,
+   "sha": "a0829a5f5",
+   "detail": "Refusionnée avec #1989 ; CI à vérifier."
+  },
+  {
+   "stage": "ci",
+   "name": "Action OS : cartes gouvernées (serveur)",
+   "issues": [
+    1940,
+    1943,
+    1952,
+    1957,
+    1959
+   ],
+   "pr": 1984,
+   "sha": "5bead7e38",
+   "detail": "CI verte, prête ; à merger après #1987."
+  },
+  {
+   "stage": "ci",
+   "name": "Voix, formats et contexte des réponses + retours sur réponses",
+   "issues": [
+    1922,
+    1923,
+    1924,
+    1925,
+    1926,
+    1927,
+    1928,
+    1929
+   ],
+   "pr": 1986,
+   "sha": "fc77a1e48",
+   "detail": "CI verte mais en conflit : refusion à faire."
+  },
+  {
+   "stage": "ci",
+   "name": "Mémoire qui s'explique + ce qu'elle a consulté par réponse",
+   "issues": [
+    1916,
+    1917,
+    1918,
+    1919,
+    1962
+   ],
+   "detail": "En conflit : refusion à faire.",
+   "pr": 1988,
+   "sha": "20ad9f8b6"
+  },
+  {
+   "stage": "ci",
+   "name": "Pleine page, surfaces, même Laura dans la bulle, fils groupés",
+   "issues": [
+    1906,
+    1907,
+    1901,
+    1911
+   ],
+   "detail": "CI relancée.",
+   "pr": 1990,
+   "sha": "d163567d1"
+  },
+  {
+   "stage": "ci",
+   "name": "Correctifs trouvés en vérifiant l'existant",
+   "issues": [
+    1956,
+    1901,
+    1918,
+    1961
+   ],
+   "detail": "PRIORITAIRE sécurité. CI en cours ; merger en premier à la reprise.",
+   "pr": 1987,
+   "sha": "d16c5fcda"
+  },
+  {
+   "stage": "ci",
+   "name": "Contexte d'écran, portées, liens, catalogue, quota",
+   "issues": [
+    1902,
+    1903,
+    1904,
+    1910,
+    1932,
+    1933,
+    1949,
+    1950,
+    1951,
+    1957,
+    1961
+   ],
+   "detail": "PR ouverte ; intégration interrompue (pause), à vérifier.",
+   "pr": 1991,
+   "sha": "1ca05c9c7"
+  },
+  {
+   "stage": "recette",
+   "name": "Signaux d'usage : alerte opérateur, demandes non comprises",
+   "issues": [
+    1946,
+    1949
+   ],
+   "detail": "Mergé dans #1997, en prod e1c714c69. Non recetté : no-op strict sans clé fournisseur.",
+   "pr": 1993,
+   "sha": "e1c714c69"
+  },
+  {
+   "stage": "recette",
+   "name": "Notifications par SMS, avec consentement",
+   "issues": [
+    1938
+   ],
+   "detail": "Mergé dans #1997, en prod e1c714c69. Non recetté : no-op strict sans clé fournisseur.",
+   "pr": 1992,
+   "sha": "e1c714c69"
+  },
+  {
+   "stage": "recette",
+   "name": "Aucun nom de nos fournisseurs, même en minuscules (Découvrir, Veille…)",
+   "issues": [
+    1912
+   ],
+   "detail": "Mergé dans #1997, en prod. #1912.11 recetté 13/09 ; libellés de source (Découvrir) restent à revoir.",
+   "pr": 1997,
+   "sha": "e1c714c69"
+  },
+  {
+   "stage": "ecriture",
+   "name": "Action OS L4 : cartes à l'écran, bouton Stop, « validé par »",
+   "issues": [
+    1953,
+    1940
+   ],
+   "detail": "BLOQUÉ par #1998 : l'API renvoie context.cards (ia-proxy.controller.ts:333-334), aucun écran de apps/web/src ne le lit. Le type ChatResponseContext (ContextDisclosure.tsx:19-49) n'a pas le champ. Attend l'atterrissage de #1999, qui tient les mêmes fichiers."
+  },
+  {
+   "stage": "attente",
+   "name": "Campagnes",
+   "issues": [
+    1935
+   ],
+   "detail": "Après Action OS."
+  },
+  {
+   "stage": "attente",
+   "name": "Recette de la démo",
+   "issues": [],
+   "detail": "En tout dernier : ouvrir la démo remplace ta session dans le Chrome piloté."
+  },
+  {
+   "stage": "ci",
+   "pr": 1999,
+   "sha": "309076bf5",
+   "name": "Intégration A — Laura conversation",
+   "issues": [
+    1991,
+    1988,
+    1990,
+    1986
+   ],
+   "detail": "Refusionnée sur main (#1997) : 15 conflits, tous composés, rien perdu (l'ancienne tête est ancêtre). DEUX défauts d'intégration attrapés — des specs qui construisaient le contrôleur PAR POSITION, décalées de 5 rangs ; et un scénario arrivé sans métadonnées (meta: Meta|None = None, rien n'a jeté) dont la garde vient de l'AUTRE branche : ni l'un ni l'autre n'était rouge seul. Suite IA complète : 7 108 verts. CI en cours."
+  },
+  {
+   "stage": "ecriture",
+   "pr": null,
+   "name": "#1998 — brancher les cartes Action OS à l'écran",
+   "issues": [
+    1998,
+    1984
+   ],
+   "detail": "Vérifié 13/09 sur e1c714c69 : cards produit en ia-proxy.controller.ts:333-334, contrat copilot-card.ts:554, ZÉRO lecteur dans apps/web/src. Motif à copier : Chat.tsx:1661-1668 (pending_actions), composant voisin PendingActions.tsx. Huitième « code juste que personne n'appelle ». Attend #1999."
+  },
+  {
+   "stage": "ecriture",
+   "pr": null,
+   "name": "#1995 — Laura ne peut pas identifier le contact qu'elle nomme",
+   "issues": [
+    1995
+   ],
+   "detail": "Vérifié : chat-context.service.ts:250-253 envoie les NOMS sans id ; 4 outils exigent un contact_id UUID ; 54 outils au total, AUCUN ne résout un nom. Précédent à copier : resolveAccountByName (chat-context.service.ts:381-393). Chemin retenu : porter l'id dans contactsSummary. Attend #1999."
+  },
+  {
+   "stage": "ci",
+   "pr": 2000,
+   "name": "portee.py — la largeur du balayage sur-déclenchait",
+   "issues": [
+    1996
+   ],
+   "detail": "PR #2000, avec la garde « champ d'API que personne ne lit ». 3 faux positifs corrigés (fichier AJOUTÉ, common.json additif, contrat dont zéro symbole exporté n'a disparu). ⚠️ Premier rouge de CI : mes deux tests épinglaient un SHA réel — le checkout CI est un clone SUPERFICIEL, git diff sort en 128. Corrigé : skipif + jumeaux sur dépôt-fixture. 28 verts sur clone complet, 21+7 sautés sur 1 commit.",
+   "sha": "930861a87"
+  },
+  {
+   "stage": "attente",
+   "pr": null,
+   "name": "#1912.11 — « Sources : pappers » sur les 24 cartes de Découvrir",
+   "issues": [
+    1912
+   ],
+   "detail": "DÉFAUT DE PROD trouvé en recette le 14/09 sur e1c714c69. CandidateCard.tsx:165 interpole s.name BRUT ; ses 3 voisins passent par dataSourceLabel(). Famille : WatchSourcesPanel.tsx:34,82. Garde GA-44 borgne — elle exempte {tool.name}, ce qui laisse passer {source.name}. Correctif en cours. ⚠️ COUPÉ EN COURS le 14/09 au soir : 11 fichiers modifiés NON COMMITÉS dans .claude/worktrees/agent-aaa5677e702538d79 — ne pas supprimer ce worktree."
+  },
+  {
+   "stage": "recette",
+   "pr": 1997,
+   "sha": "e1c714c69",
+   "name": "Vocal de Laura — VIVANT en production",
+   "issues": [
+    1939,
+    1983
+   ],
+   "detail": "GET /ia/chat/voice/status rend {available:true} : TRANSCRIPTION_API_KEY EST posée. Recetté : micro présent (#1939.1), refus de permission expliqué (#1939.2), notice acceptée (#1939.3). Les 11 autres points exigent d'accorder le micro + un appel facturé. ⚠️ De l'audio est conservé 30 jours pendant que la pièce RGPD reste due."
+  },
+  {
+   "stage": "ci",
+   "pr": 2000,
+   "sha": "930861a87",
+   "name": "Garde : un champ de réponse d'API a un lecteur",
+   "issues": [
+    1998
+   ],
+   "detail": "Le symétrique de wired-write-paths, qui manquait. 147 contrôleurs → 31 champs surveillés, 2 324 fichiers consommateurs. Cliquet à 3 entrées datées — et il a trouvé action-os:currentStepKey à son PREMIER passage, une 9e occurrence que personne ne connaissait. ⚠️ Trou de portée NOMMÉ, pas bouché : la garde vit dans Test (API) mais lit web/back-office/IA."
+  },
+  {
+   "stage": "attente",
+   "pr": null,
+   "name": "Encadrer le contenu RAG injecté au chat (sécurité)",
+   "issues": [
+    1956
+   ],
+   "detail": "rag_service.py:783-832 et :952-969 rendent le contenu en TEXTE BRUT — un texte adverse dans un document joint peut se lire comme une instruction. Le mécanisme fence() existe déjà (prompts/fencing.py:21) et n'est jamais appelé ici. ⚠️ COUPÉ EN COURS le 14/09 au soir : 4 fichiers modifiés NON COMMITÉS dans .claude/worktrees/agent-a4d9f060909db0e31 — ne pas supprimer ce worktree."
+  },
+  {
+   "stage": "attente",
+   "pr": null,
+   "name": "Vocabulaire du mode démonstration, harmonisé",
+   "issues": [
+    1942
+   ],
+   "detail": "Le bandeau ne dit jamais « données d'exemple », et 3 autres écrans conscients du mode démo ont chacun leur texte. Namespace demoMode fr+en, lu par les 4. ⚠️ COUPÉ avant d'avoir commencé — rien à récupérer, à relancer à neuf."
+  },
+  {
+   "stage": "integration",
+   "pr": null,
+   "name": "L'auteur d'une tentative de dispatch",
+   "issues": [
+    1959
+   ],
+   "detail": "FINI ET COMMITÉ, jamais poussé : worktree-agent-a0183b0047d024116, SHA ecd79aad1. Migration 1793100000000, colonne user_id nullable, l'INSERT la pose, l'appelant est branché, 74/74 verts, toutes les gardes d'architecture vertes. À cueillir tel quel."
+  },
+  {
+   "stage": "attente",
+   "pr": null,
+   "name": "⛔ Écriture réelle du stade CRM (décision Louis)",
+   "issues": [
+    1903,
+    1934
+   ],
+   "detail": "Écriture sortante chez un tiers → arrêt obligatoire §10. Le mécanisme est cadré (kind update_stage, le clic « Approuver » EST le geste utilisateur donc auto-approuvé), il attend un OUI."
+  },
+  {
+   "stage": "attente",
+   "pr": null,
+   "name": "⛔ Mesure produit hors fil (décision Louis)",
+   "issues": [
+    1946
+   ],
+   "detail": "La relecture juridique RGPD du traceur produit est reportée trois fois. Le traceur tourne pendant ce temps — c'est ce que la décision assume."
+  }
+ ],
+ "asks": [
+  {
+   "question": "Plafond Laura par plan : quelles valeurs pour Essai, Starter, Team/Enterprise, Growth, Bêta, Découverte ? Et on remonte le plafond opérateur (50 en prod) ?",
+   "why": "Tant que le plafond opérateur reste à 50, un plan réglé au-dessus sera bloqué à 50."
+  },
+  {
+   "question": "Relire les 27 « résultats attendus » du catalogue de commandes avant la mise en ligne.",
+   "why": "Chaque ligne est une promesse écrite sur ce que Laura rend."
+  },
+  {
+   "question": "Vocal : la clé de transcription est-elle posée côté API en prod ?",
+   "why": "Sans elle le micro ne s'affiche pas ; la recette vocale serait impossible."
+  },
+  {
+   "question": "Note d'alerte à 80 % du plafond : ce seuil te va ?",
+   "why": "Repris du seuil des crédits."
+  },
+  {
+   "question": "Sous-titre de l'accueil de Laura : nommer la mémoire marché (drapeau encore éteint alors que l'outil tourne) ?",
+   "why": "Recommandé : oui."
+  },
+  {
+   "question": "Brouillon de message d'un coéquipier visible par tout membre du fil (Action OS) : OK ?",
+   "why": "Fils partagés à l'équipe contre « une boîte mail est personnelle » (D58)."
+  },
+  {
+   "question": "SMS : fournisseur (Brevo, OVHcloud ou Twilio), expéditeur (« Bellum » ou la marque de l'espace en marque blanche), pays autorisés (France seule ou FR+BE+CH+LU), budget mensuel et facturation (inclus ou en crédits) ?",
+   "why": "Aucun client n'est écrit sans ces réponses ; la liste de pays est obligatoire avant tout branchement (fraude aux SMS surtaxés)."
+  }
+ ]
+}

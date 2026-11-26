@@ -1,0 +1,36 @@
+lot: lot-4962-n
+issues: [5029]
+
+changelog:
+  id: 2026-10-31-lot-4962-n
+  comment: 'Lot N (#5029) — proposer un consultant en intercontrat à un compte, une séquence relue à la main'
+  fr:
+    date: 31 octobre 2026
+    title: Proposer un consultant en intercontrat, compte par compte
+    items:
+      - Sur le Reverse Market d’un consultant, « Proposer ce profil » prépare une séquence vers UN interlocuteur du compte.
+      - Le premier e-mail présente le profil anonymisé, sans nom ni tarif, et cite le besoin du compte.
+      - Chaque e-mail se relit et se valide à la main, même si l’espace a signé un mandat d’envoi automatique.
+      - « Déjà proposé à ce compte » s’affiche quand ce profil y a déjà été proposé.
+  en:
+    date: October 31, 2026
+    title: Propose a benched consultant, one account at a time
+    items:
+      - On a consultant’s Reverse Market, “Propose this profile” prepares a sequence to ONE contact at the account.
+      - The first email presents the anonymised profile, with no name or rate, and cites the account’s need.
+      - Every email is reviewed and approved by hand, even when the workspace has signed an automatic sending mandate.
+      - “Already proposed to this account” shows when this profile has already been proposed there.
+
+inserts:
+  - file: agent_docs/chantiers-livres.md
+    after: "- **Explicitement écarté (NO-GO doctrine)** : « Préparer un push profil » — pas d'envoi de CV sans besoin confirmé (#2336, §MESSAGE)."
+    text: |
+      - **Revient sur le NO-GO ci-dessus — levé par Louis le 31/10/2026 (#5029)** : « Proposer ce profil » sur un compte du Reverse Market, SEULEMENT sur geste explicite par compte, profil anonymisé (ni nom ni TJM), UN contact (jamais `/audience`), séquence playbook F TOUJOURS manuelle même sous mandat signé, chaque mail relu et validé. Appelant : `ProposeProfileButton` (`AccountInterlocutorsCard`) → `POST outreach/sequences/bench-push` (`BenchPushService`) ; lien `outreach_sequences.consultant_id` (migration `1796610000300`) ; le dispatcher tient ces messages en relecture (`manual_only`).
+  - file: apps/api/src/modules/demo/demo-coverage.ts
+    before: "  'outreach_sequences',"
+    text: |
+      //   #5029 (31/10/2026) — « Proposer ce profil » (Reverse Market) : `consultant_id` est
+      //   semé sur UNE séquence `bench_consultant` — Camille Roussel (disponible tout de suite)
+      //   proposée à Laurent Hinschberger (Société Générale), premier e-mail = brouillon ANONYMISÉ
+      //   de `buildBenchPushDraft` (`seedPlaybookSequences` → `demoBenchPush`). Le Reverse Market
+      //   de Camille dit « Déjà proposé à ce compte ». Gardé par `demo-playbook-sequences.spec.ts`.

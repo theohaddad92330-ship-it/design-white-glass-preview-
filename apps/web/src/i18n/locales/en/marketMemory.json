@@ -1,0 +1,57 @@
+{
+  "coverage": {
+    "title": "Market observations coverage",
+    "intro": "What market observations say about your accounts — and how many of them they say something about.",
+    "meaning": "This rate measures what WE know about your accounts. It says nothing about what they do, nor about their buying practices.",
+    "headline_one": "{{covered}} account out of {{total}} has usable market observation context.",
+    "headline_other": "{{covered}} accounts out of {{total}} have usable market observation context.",
+    "population": "accounts in your portfolio",
+    "tiles": {
+      "covered": "Covered accounts",
+      "coveredSays": "enough observed career paths to say something",
+      "insufficient": "Not enough observations",
+      "insufficientSays": "the company is in the corpus, but with too few paths",
+      "ambiguous": "Ambiguous matches",
+      "ambiguousSays": "several companies answer, none settles it",
+      "unresolved": "Unresolved accounts",
+      "unresolvedSays": "the corpus does not know this company",
+      "homonyms": "Flagged homonyms",
+      "homonymsSays": "two companies share the same name"
+    },
+    "unavailable": "Market observations could not be read. No counter is shown: a zero would read as a measurement.",
+    "empty": "Your portfolio has no account yet, so there is nothing to match against the corpus."
+  },
+  "review": {
+    "title": "To disambiguate",
+    "intro": "Several companies in the corpus answer for these accounts. Until one settles it, no memory is shown on them — a wrong join is worse than a missing one.",
+    "reason": {
+      "ambiguous_name_one": "Homonym — {{count}} company bears this name",
+      "ambiguous_name_other": "Homonym — {{count}} companies bear this name",
+      "ambiguous_domain_one": "{{count}} company shares this domain",
+      "ambiguous_domain_other": "{{count}} companies share this domain"
+    },
+    "empty": "No account to disambiguate.",
+    "truncated": "The {{shown}} heaviest calls; {{total}} in total.",
+    "decide": {
+      "open": "Disambiguate",
+      "close": "Close",
+      "question": "Which of these companies is {{account}}?",
+      "dismiss": "None of these companies",
+      "noteLabel": "What settled it for you (optional)",
+      "notePlaceholder": "What settled it for you (optional)",
+      "confirmed": "Match recorded. This account leaves the queue.",
+      "dismissed": "Dismissed. This account leaves the queue, and nothing is asserted about it.",
+      "failed": "The decision could not be recorded. Nothing changed."
+    }
+  },
+  "fit": {
+    "title": "Structural fit of your portfolio",
+    "headline_one": "{{count}} covered account whose observed stack overlaps one of your declared areas of expertise.",
+    "headline_other": "{{count}} covered accounts whose observed stack overlaps one of your declared areas of expertise.",
+    "criterion": "Matched against: {{expertises}}",
+    "noGrade": "No grading, and no score: saying \"strong affinity\" would require comparing each account with companies of similar size and sector, which we cannot do yet. A large group mechanically lists more technologies than a small business.",
+    "undeclared": "Fill in your areas of expertise in your profile to read this section — without a criterion, a number would mean nothing.",
+    "excluded_one": "{{count}} account without market observations",
+    "excluded_other": "{{count}} accounts without market observations"
+  }
+}

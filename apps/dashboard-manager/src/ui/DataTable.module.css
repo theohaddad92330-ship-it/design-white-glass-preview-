@@ -1,0 +1,237 @@
+/* #1642 — DataTable : tri, densité compacte (11px), en-tête collant,
+   zébrage subtil. La bordure du conteneur défile dans SA colonne, jamais le
+   corps de la page (règle D81 déjà tenue une fois pour tout le manager par
+   `.wrap { overflow-x: auto }` — ce conteneur n'a pas besoin de la répéter
+   pour l'axe horizontal, il l'ajoute pour borner sa propre hauteur en cas de
+   `maxHeight`). */
+.wrap {
+  border: 1px solid var(--border);
+  border-radius: 12px;
+  overflow: auto;
+}
+
+.table {
+  width: 100%;
+  border-collapse: collapse;
+  background: var(--surface);
+  font-size: 11px;
+}
+
+.table th,
+.table td {
+  /* #1672.8 — hauteur de ligne FIXE : c'est ce qui rend la virtualisation
+     (#1672.5) possible sans mesurer chaque `<tr>` — `ROW_HEIGHT_PX` dans
+     `DataTable.logic.ts` doit rester égal à cette valeur. `box-sizing:
+     border-box` (règle globale du manager) fait que padding + bordure
+     entrent DANS ces 32px, pas en plus. */
+  height: 32px;
+  text-align: left;
+  padding: 6px 10px;
+  border-bottom: 1px solid var(--border);
+  white-space: nowrap;
+}
+
+.table td.num,
+.table th.num {
+  text-align: right;
+  font-variant-numeric: tabular-nums;
+}
+
+.table tr:last-child td {
+  border-bottom: none;
+}
+
+/* Zébrage subtil : un ton à peine perceptible, jamais une couleur nommée. */
+.table tbody tr:nth-child(even) {
+  background: color-mix(in srgb, var(--border) 22%, transparent);
+}
+
+.table thead th {
+  position: sticky;
+  top: 0;
+  z-index: 1;
+  background: var(--surface);
+  color: var(--muted);
+  font-weight: 600;
+  /* #1642.5 — 11px, comme `.table` (le corps) : un même tableau n'a pas deux
+     tailles de texte. */
+  font-size: 11px;
+  text-transform: uppercase;
+  letter-spacing: 0.04em;
+}
+
+.sortButton {
+  display: inline-flex;
+  align-items: center;
+  gap: 4px;
+  background: none;
+  border: none;
+  padding: 0;
+  margin: 0;
+  color: inherit;
+  font: inherit;
+  text-transform: inherit;
+  letter-spacing: inherit;
+  cursor: pointer;
+}
+
+.sortButton:hover {
+  color: var(--text);
+}
+
+.sortArrow {
+  font-size: 9px;
+  color: var(--accent);
+}
+
+.unmeasured {
+  color: var(--muted);
+  font-style: italic;
+}
+
+/* #1672.4 — barre d'outils : recherche + compteur à gauche, colonnes à
+   droite. N'existe dans le DOM que si `searchValue` ou `persistKey` est
+   fourni — un appelant qui ne les passe pas ne voit AUCUN de ces styles. */
+.toolbar {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 12px;
+  margin: 0 0 8px;
+  flex-wrap: wrap;
+}
+
+.search {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  flex: 1;
+  min-width: 200px;
+}
+
+.searchInput {
+  flex: 1;
+  max-width: 320px;
+}
+
+.counter {
+  color: var(--muted);
+  /* #1642.5 — 13px de base : ce n'est pas une cellule de tableau, c'est la
+     barre d'outils AU-DESSUS de lui. */
+  font-size: 13px;
+  white-space: nowrap;
+  font-variant-numeric: tabular-nums;
+}
+
+/* #1672.1 — sélecteur de colonnes. `margin-left: auto` le pousse à DROITE
+   même sans champ de recherche à gauche pour le repousser (un seul enfant
+   flex avec `justify-content: space-between` resterait collé à GAUCHE —
+   piège classique de flexbox à un seul élément). */
+.columnPicker {
+  position: relative;
+  margin-left: auto;
+}
+
+.columnPickerPanel {
+  position: absolute;
+  right: 0;
+  top: calc(100% + 4px);
+  z-index: 1;
+  background: var(--surface);
+  border: 1px solid var(--border);
+  border-radius: 10px;
+  padding: 8px;
+  display: grid;
+  gap: 2px;
+  min-width: 170px;
+}
+
+/*
+ * ⚠️ TROUVÉ EN RECETTE LE 09/09/2026 — le sélecteur de colonnes était OUVERT
+ * en permanence, sur un chargement neuf, et recouvrait les deux dernières
+ * colonnes du tableau.
+ *
+ * Le composant le masque avec l'ATTRIBUT `hidden` (`hidden={!pickerOpen}`).
+ * La feuille du navigateur pose `[hidden] { display: none }` — mais une règle
+ * d'auteur qui déclare `display: grid` à spécificité égale, et définie plus
+ * tard, l'EMPORTE. Le composant croyait donc cacher son panneau pendant que le
+ * CSS le rouvrait : `aria-expanded="false"` et 170 × 306 px visibles à l'écran,
+ * mesurés côte à côte.
+ *
+ * Tout `display` posé sur un élément masqué par `hidden` doit être neutralisé
+ * ici, sinon l'attribut ne masque rien.
+ */
+.columnPickerPanel[hidden] {
+  display: none;
+}
+
+.columnPickerRow {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  /* #1642.5 — 13px de base : un menu, pas une cellule de tableau. */
+  font-size: 13px;
+  padding: 5px 6px;
+  border-radius: 6px;
+  cursor: pointer;
+}
+
+.columnPickerRow:hover {
+  background: color-mix(in srgb, var(--accent) 10%, transparent);
+}
+
+/* Poignée de redimensionnement — bord droit de l'en-tête, sauf la dernière
+   colonne visible (rien au-delà à redimensionner contre). Souris : glisser.
+   Clavier : flèches gauche/droite, un pas fixe (§ pas de mouvement animé —
+   GA-25 : aucun rebond, aucune parallaxe). */
+.resizeHandle {
+  position: absolute;
+  top: 0;
+  right: -3px;
+  bottom: 0;
+  width: 6px;
+  cursor: col-resize;
+  touch-action: none;
+}
+
+.resizeHandle:hover,
+.resizeHandle:focus-visible {
+  background: color-mix(in srgb, var(--accent) 35%, transparent);
+  outline: none;
+}
+
+/* #1672.6 — bannière « partiel » : qualifie les lignes affichées, ne les
+   remplace jamais. */
+.partialBanner {
+  margin: 0 0 8px;
+  /* #1642.5 — 13px de base : une bannière au-dessus du tableau, pas une
+     cellule. */
+  font-size: 13px;
+  color: var(--amber);
+}
+
+/* #1672.4 — pied de pagination serveur. N'existe dans le DOM que si les
+   quatre props (`page`, `pageSize`, `total`, `onPageChange`) sont fournies
+   ET qu'il y a plus d'une page — un appelant qui ne les passe pas ne voit
+   RIEN de nouveau ici. */
+.pager {
+  display: flex;
+  align-items: center;
+  justify-content: flex-end;
+  gap: 12px;
+  margin-top: 12px;
+  font-size: 12px;
+}
+
+.pagerRange {
+  color: var(--muted);
+  margin-right: auto;
+  font-variant-numeric: tabular-nums;
+}
+
+/* Cibles tactiles : ≥ 44 px dès que le pointeur est grossier. */
+@media (pointer: coarse) {
+  .pager :global(.btn-sm) {
+    min-height: 44px;
+  }
+}

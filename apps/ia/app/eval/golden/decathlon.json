@@ -1,0 +1,26 @@
+{
+  "slug": "decathlon",
+  "company": "Decathlon",
+  "fixture": "decathlon.analysis.json",
+  "_source": "Attentes STRUCTURELLES. Le SIREN est le SEUL fait vérifiable dans ce dépôt (apps/ia/tests/contracts/test_open_data_contract.py:22) : `requiredFacts` ne demande donc QUE lui. Exiger un secteur ou un effectif obligerait à en inventer un pour faire passer le golden — c'est ainsi qu'un jeu de référence se met à mentir. Ce golden garde l'identifiant et la FORME du livrable ; ce qu'il ne mesure pas est NOMMÉ ici, jamais compté satisfait.",
+  "expect": {
+    "siren": "500569405",
+    "minEntities": 2,
+    "minPlays": 1,
+    "requiredFacts": [
+      "siren"
+    ],
+    "committeeRoles": [
+      "technical_buyer",
+      "procurement"
+    ],
+    "headRoles": [],
+    "headRolesTarget": [
+      "data",
+      "achats",
+      "dsi"
+    ]
+  },
+  "_roleFloor": "Plancher de rôles #2631.1 (décision Louis 21/09/2026, doctrine c77_gate_qualite_ia_bloque_sur_role_cle) : les sièges du comité d'achat qui doivent RESTER couverts sur ce compte nommé. Relevé sur le corpus committé le 21/09/2026 via assemble_buying_committee — on déclare ce que le dossier DONNE, jamais un rôle inventé pour faire passer le compte. Un siège qui disparaît fait échouer la CI même si la moyenne du banc monte ; un dossier SANS contact est « non évaluable », pas « perdu ».",
+  "_headRecall": "Rappel des têtes #4923.14 (retour Julien Laszlo 30/10/2026) : headRolesTarget = familles de tête attendues (data = CDO / Head of Data / Head of AI, achats, dsi) ; headRoles = plancher que le corpus committé donne déjà. Seuil du rappel posé avant mesure dans app/eval/head_recall.py."
+}

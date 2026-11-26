@@ -1,0 +1,234 @@
+{
+  "kinds": {
+    "email": "Email",
+    "call": "Call",
+    "meeting": "Meeting",
+    "note": "Note",
+    "task": "Task",
+    "stage_change": "Stage change",
+    "crm_export": "CRM export",
+    "linkedin": "Professional network",
+    "analysis": "Analysis",
+    "workflow": "Run",
+    "gate_decision": "Decision recorded",
+    "crm_lookup": "{{copilot}} looked up your CRM"
+  },
+  "gates": {
+    "account_priority": "Account priority",
+    "contact_qualification": "Contact qualification",
+    "need_staffable": "Need can be filled",
+    "submission_send": "Profile sent to the client",
+    "playbook_arming": "Playbook arming",
+    "erp_write": "Write to the ERP",
+    "invoice_readiness": "Month ready to invoice",
+    "project_close": "Project closing",
+    "interview_go": "Interview go",
+    "proof_sufficiency": "Proof sufficiency",
+    "delivery_risk": "Delivery risk",
+    "unknown": "Decision gate"
+  },
+  "gateDecisions": {
+    "accept": "cleared",
+    "refuse": "refused",
+    "force": "cleared despite gaps",
+    "unknown": "outcome not named"
+  },
+  "stages": {
+    "unknown": "stage not named"
+  },
+  "timesheetException": {
+    "timesheet_not_applicable": "timesheet marked not applicable",
+    "timesheet_not_applicable_revoked": "timesheet exception cancelled — the timesheet is expected again"
+  },
+  "repeat": "× {{count}}",
+  "direction": {
+    "inbound": "Received",
+    "outbound": "Sent",
+    "internal": "Internal"
+  },
+  "sources": {
+    "mailbox": "From your mailbox",
+    "agenda": "From your calendar",
+    "telephony": "From your phone system",
+    "manual": "Logged by hand",
+    "crm": "From your CRM",
+    "system": "{{brand}}"
+  },
+  "linkReasons": {
+    "contact_email": "Matched on the contact's address",
+    "contact_phone": "Matched on the contact's number",
+    "account_domain": "Matched on the account's domain",
+    "manual": "Linked by hand",
+    "project_explicit": "Linked to the project"
+  },
+  "filters": {
+    "all": "All",
+    "interactions": "Interactions",
+    "actions": "Actions",
+    "projects": "Opportunities",
+    "analyses": "Analyses",
+    "client": "Client relationship",
+    "internal": "Internal"
+  },
+  "relation": {
+    "empty": "No exchange recorded yet.",
+    "awaiting": "Awaiting reply",
+    "answered": "They replied",
+    "silent": "Gone quiet",
+    "summary_one": "{{count}} exchange · last one {{days}} d ago",
+    "summary_other": "{{count}} exchanges · last one {{days}} d ago",
+    "countOnly_one": "{{count}} exchange",
+    "countOnly_other": "{{count}} exchanges"
+  },
+  "states": {
+    "empty": "No exchange recorded.",
+    "emptyFiltered": "No exchange of this kind.",
+    "emptyHint": "Log a call or a meeting, or pull in what your connected tools already know.",
+    "loadError": "The history could not be loaded. Recorded exchanges are still there — it is the read that failed.",
+    "connectorAbsent": "No connected tool can feed this history.",
+    "connectorAbsentHint": "Log a call or a meeting, or connect your mailbox, calendar or phone system.",
+    "connectorAbsentAction": "Connect a tool"
+  },
+  "executed": {
+    "empty": "No action executed yet."
+  },
+  "body": {
+    "expand": "Read all",
+    "collapse": "Collapse",
+    "truncated": "Message truncated when stored.",
+    "open": "Open in the tool",
+    "redacted": "Content is visible to its author only. Channel, subject and date remain visible.",
+    "openContact": "Open the contact"
+  },
+  "sync": {
+    "action": "Pull in",
+    "done_one": "{{count}} exchange added to the history.",
+    "done_other": "{{count}} exchanges added to the history.",
+    "nothingNew": "Nothing new: everything readable is already in the history.",
+    "noSource": "No source to read. Connect your mailbox, calendar or phone system in Settings › Integrations.",
+    "error": "The pull failed."
+  },
+  "outcome": {
+    "unspecified": "Outcome not specified",
+    "value": {
+      "connected_qualified": "Connected — qualified",
+      "connected_no_fit": "Connected — not a fit",
+      "callback_scheduled": "Callback scheduled",
+      "voicemail": "Voicemail",
+      "wrong_contact": "Wrong contact",
+      "no_answer": "No answer",
+      "orientation_given": "Referred to someone else",
+      "not_now": "Not now",
+      "interest": "Interest expressed",
+      "need_detected": "Need detected",
+      "need_confirmed": "Need confirmed",
+      "meeting_booked": "Meeting booked",
+      "refused": "Refused",
+      "opt_out": "Opted out",
+      "email_requested": "Email requested",
+      "document_requested": "Document requested",
+      "partner_opportunity": "Partner opportunity",
+      "invalid_contact": "Invalid contact details",
+      "left_company": "Left the company",
+      "other": "Other"
+    }
+  },
+  "log": {
+    "callTitle": "Log a call",
+    "action": "Log an exchange",
+    "title": "Log an exchange",
+    "subtitle": "What was said on the phone is written nowhere. Log it here and it stays with the account. Entered by hand: nothing is sent, nobody is called, no future exchange is created.",
+    "kindLabel": "Kind",
+    "directionLabel": "Direction",
+    "subjectLabel": "Subject",
+    "subjectPlaceholder": "Budget review, follow-up, discovery…",
+    "bodyLabel": "What was said",
+    "bodyPlaceholder": "Budget approved, the decision moves up to group level. Call back early September.",
+    "durationLabel": "Duration",
+    "durationPlaceholder": "in minutes",
+    "durationHint": "Optional. Left empty, nothing is shown — rather than a duration nobody measured.",
+    "outcomeLabel": "Call outcome",
+    "outcomeHint": "Optional. Left empty, the outcome reads as \"not specified\".",
+    "showAllOutcomes": "All outcomes",
+    "entryMode": {
+      "note": "Free note",
+      "dictation": "Dictation",
+      "transcript": "Transcript"
+    },
+    "dictation": {
+      "start": "Dictate",
+      "stop": "Stop dictation",
+      "unsupported": "Dictation isn't supported by this browser — paste or type the text instead."
+    },
+    "debrief": {
+      "factLabel": "Key fact",
+      "needLabel": "Need",
+      "objectionLabel": "Objection",
+      "engagementLabel": "Commitment made"
+    },
+    "recordingConsent": "The contact was told this call is being noted",
+    "recap": {
+      "title": "Here's what I'm keeping"
+    },
+    "nextAction": {
+      "add": "Add a next action",
+      "ownerLabel": "Who",
+      "dueDateLabel": "When",
+      "conditionLabel": "Condition",
+      "expectedResultLabel": "Expected result",
+      "incomplete": "Owner, date and condition are all required to create a next action."
+    },
+    "submit": "Save",
+    "saved": "Exchange recorded.",
+    "error": "Saving failed.",
+    "remove": "Remove this entry",
+    "removed": "Entry removed.",
+    "removeError": "The entry could not be removed.",
+    "discard": {
+      "title": "Discard this entry?",
+      "keep": "Keep editing",
+      "confirm": "Discard"
+    }
+  },
+  "cascadeProposal": {
+    "title": "This note can feed the account file",
+    "structuring": "Reading the note…",
+    "dismiss": "Dismiss"
+  },
+  "card": {
+    "contactTitle": "Exchange history",
+    "projectTitle": "Project history",
+    "reply": "Reply"
+  },
+  "verdict": {
+    "sent": "Sent",
+    "drafted": "Left as a draft",
+    "failed": "Failed",
+    "partial": "Partly sent",
+    "unknown": "Outcome unknown"
+  },
+  "taskCompletion": {
+    "noContact": "Nobody was contacted — this only marks the task as done."
+  },
+  "upcoming": {
+    "title": "Upcoming",
+    "planned": "Scheduled, not held yet"
+  },
+  "search": {
+    "label": "Search the history",
+    "placeholder": "Subject, content, author…",
+    "noResult": "No exchange matches “{{query}}”."
+  },
+  "partial": {
+    "banner": "Partial history: reading {{sources}} failed. What is shown is what could be read; the rest may be missing.",
+    "sources": {
+      "mailbox": "your mailbox",
+      "agenda": "your calendar",
+      "telephony": "your phone system",
+      "manual": "manual entries",
+      "crm": "your CRM",
+      "system": "the log"
+    }
+  },
+  "more": "Show more ({{count}} remaining)"
+}

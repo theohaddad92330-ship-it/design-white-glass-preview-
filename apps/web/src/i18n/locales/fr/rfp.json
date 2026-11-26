@@ -1,0 +1,339 @@
+{
+  "page": {
+    "title": "Tes appels d'offres",
+    "subtitle": "Lire, distribuer et préparer un appel d'offres : les échéances qui approchent, les exigences encore sans réponse validée et les décisions à trancher, dossier par dossier.",
+    "askLauraLabel": "Demander à {{copilot}}",
+    "askLauraQuestion": "Aide-moi à prioriser mes appels d'offres en cours."
+  },
+  "intake": {
+    "title": "Importer un appel d'offres",
+    "titlePlaceholder": "Intitulé du dossier (celui sous lequel tu le retrouveras)",
+    "textPlaceholder": "Colle le texte de la consultation, ou dépose le fichier ci-dessous.",
+    "pickFile": "Choisir un fichier",
+    "formats": "PDF, Word, Excel ou texte. L'extraction se fait côté serveur.",
+    "submit": "Analyser",
+    "imported_one": "{{count}} exigence extraite.",
+    "imported_other": "{{count}} exigences extraites.",
+    "failed": "L'analyse n'a pas abouti.",
+    "fileTooLarge": "Ce fichier fait {{size}} Mo. La limite est de {{max}} Mo — dépose un document plus léger, ou colle le texte de la mission dans le champ ci-dessus.",
+    "removeFile": "Retirer {{name}}",
+    "cost": "L’analyse et la rédaction d’un appel d’offres ne dépendent d’aucun quota."
+  },
+  "summary": {
+    "active": "Actifs",
+    "dueSoon": "À J-7",
+    "mandatoryUnanswered": "Exigences bloquantes",
+    "missingProfiles": "Profils manquants",
+    "toValidate": "Réponses à valider",
+    "submitted": "Soumis"
+  },
+  "list": {
+    "title": "Tes dossiers",
+    "empty": "Cette page est utile si tu traites régulièrement des dossiers structurés ou des référencements.",
+    "emptyHint": "Tu peux importer un premier AO ou masquer cette section pour ton workspace.",
+    "emptyView": "Aucun dossier dans cette vue.",
+    "dueAt": "remise le {{date}}",
+    "views": {
+      "label": "Filtrer les dossiers par statut",
+      "all": "Tous",
+      "to_process": "À traiter",
+      "in_preparation": "En préparation",
+      "to_validate": "À valider",
+      "submitted": "Soumis",
+      "won": "Gagnés",
+      "lost": "Perdus",
+      "archived": "Archivés"
+    },
+    "layout": {
+      "label": "Cartes ou tableau",
+      "cards": "Cartes",
+      "table": "Tableau"
+    },
+    "table": {
+      "issuer": "Client",
+      "lots": "Périmètre",
+      "dueAt": "Échéance",
+      "status": "Statut",
+      "requirements": "Exigences",
+      "coverage": "Couverture",
+      "coverageValue": "{{validated}}/{{total}} obligatoires validées",
+      "sortBy": "Trier par {{column}}"
+    }
+  },
+  "detail": {
+    "pick": "Sélectionne un dossier pour voir ses exigences.",
+    "askLauraQuestion": "Aide-moi sur l'appel d'offres « {{title}} »."
+  },
+  "preview": {
+    "title": "Aperçu de l'import",
+    "subtitle": "Ce que « {{title}} » créerait — rien n'est encore écrit.",
+    "failed": "La prévisualisation n'a pas abouti.",
+    "confirmFailed": "La création n'a pas abouti.",
+    "indicators": {
+      "total": "Exigences",
+      "mandatory": "Obligatoires",
+      "dueAt": "Échéance",
+      "missingDocuments": "Documents manquants",
+      "contradictions": "Contradictions",
+      "estimatedCost": "Coût éventuel",
+      "notMeasured": "Non mesuré"
+    },
+    "documents": {
+      "title": "Documents",
+      "exclude": "Exclure {{name}}",
+      "add": "Ajouter une pièce",
+      "pastedText": "Texte collé",
+      "redeposit": "Documents à redéposer pour archiver les fichiers sources : l’aperçu est repris tel quel, les fichiers ne sont pas conservés avant la confirmation."
+    },
+    "confirm": "Confirmer",
+    "createAsDraft": "Créer comme brouillon",
+    "correct": "Corriger",
+    "cancel": "Annuler l'import",
+    "duplicate": {
+      "warningHash": "Un dossier « {{title}} » avec le même contenu existe déjà dans cet espace.",
+      "warningSimilar": "Un dossier proche existe déjà dans cet espace : « {{title}} » ({{criteria}}).",
+      "criteriaSeparator": " et ",
+      "criteria": {
+        "hash": "même contenu",
+        "issuer": "même émetteur",
+        "title": "titre proche",
+        "due_at": "même échéance",
+        "reference": "même référence de consultation"
+      }
+    },
+    "failedDocuments": {
+      "title": "Documents non analysés",
+      "reason": "{{name}} : {{reason}}",
+      "hint": "Exclure ce document ou relancer l'analyse pour reprendre sans perdre le reste."
+    }
+  },
+  "status": {
+    "intake": "Importé",
+    "analysed": "Analysé",
+    "bid": "On y va",
+    "no_bid": "Renoncé",
+    "submitted": "Réponse envoyée",
+    "won": "Gagné",
+    "lost": "Perdu"
+  },
+  "decision": {
+    "title": "Recommandation",
+    "verdict": {
+      "bid": "Y aller",
+      "no_bid": "Renoncer",
+      "conditional": "Y aller sous conditions"
+    },
+    "fit": "fit {{value}}/100",
+    "redFlags": "Ce qui devrait faire renoncer",
+    "conditions": "Ce qui doit être vrai",
+    "questions": "À demander au client avant de répondre",
+    "go": "On y va",
+    "pass": "On renonce",
+    "markSubmitted": "Marquer soumis",
+    "markSubmittedFailed": "Le passage à « soumis » n'a pas abouti."
+  },
+  "compliance": {
+    "title": "Conformité",
+    "total": "Exigences",
+    "mandatory": "Obligatoires",
+    "missing": "Sans réponse validée",
+    "ambiguous": "Ambiguës",
+    "pending": "Restent à produire — {{detail}}",
+    "ready": "Toutes les obligatoires sont validées et sourcées : le dossier peut partir.",
+    "notReady": "Le dossier ne peut pas partir en l'état — une exigence obligatoire sans réponse validée, ou une ambiguïté non levée, se paie à l'ouverture des plis."
+  },
+  "extraction": {
+    "title": "Ce que le document dit",
+    "page": "(p. {{page}})",
+    "category": {
+      "legal_entity": "Entité juridique",
+      "calendar": "Calendrier",
+      "qa": "Questions/réponses",
+      "scoring_criteria": "Critères de notation",
+      "requested_documents": "Pièces demandées",
+      "requested_profiles": "Profils demandés",
+      "volumes": "Volumes",
+      "pricing": "Tarifs",
+      "contractual_terms": "Conditions contractuelles",
+      "security_compliance": "Sécurité / conformité",
+      "contacts": "Interlocuteurs",
+      "submission_format": "Format de remise"
+    },
+    "status": {
+      "found": "Trouvé",
+      "to_verify": "À vérifier",
+      "not_found": "Non trouvé",
+      "contradiction": "Contradiction entre deux documents"
+    }
+  },
+  "requirements": {
+    "title": "Exigences",
+    "empty": "Aucune exigence extraite de ce document.",
+    "draft": "Rédiger à partir des sources approuvées",
+    "draftFailed": "La rédaction n'a pas abouti.",
+    "source": "Source : {{source}}",
+    "sourceDocument": "Document : {{document}}",
+    "ownerAria": "Rôle qui répond — {{text}}",
+    "ownerUpdateFailed": "Le changement de rôle n'a pas abouti.",
+    "evidence": "Preuve : {{evidence}}",
+    "addEvidence": "Ajouter une preuve",
+    "evidenceLabel": "Texte de la preuve",
+    "evidencePlaceholder": "Colle l'extrait qui prouve la réponse — jamais un texte marketing générique.",
+    "evidenceSave": "Enregistrer la preuve",
+    "evidenceUpdateFailed": "L'enregistrement de la preuve n'a pas abouti.",
+    "confidenceLabel": "Confiance dans la réponse",
+    "confidence": {
+      "unset": "Non évaluée",
+      "high": "Haute",
+      "medium": "Moyenne",
+      "low": "Basse"
+    }
+  },
+  "weight": {
+    "mandatory": "Obligatoire",
+    "desirable": "Souhaitable",
+    "informative": "Informatif",
+    "ambiguous": "Ambigu"
+  },
+  "kind": {
+    "technical": "Technique",
+    "security": "Sécurité",
+    "delivery": "Delivery",
+    "financial": "Financier",
+    "contractual": "Contractuel",
+    "csr": "RSE",
+    "team": "Équipe",
+    "other": "Autre"
+  },
+  "owner": {
+    "sales": "Commercial",
+    "expert": "Expert",
+    "hr": "RH",
+    "legal": "Juridique",
+    "security": "Sécurité",
+    "finance": "Finance"
+  },
+  "answerStatus": {
+    "to_produce": "À produire",
+    "reused": "Réutilisée",
+    "drafted": "Rédigée",
+    "to_complete": "À compléter",
+    "to_validate": "À valider",
+    "blocked": "Bloquée",
+    "not_applicable": "Non applicable",
+    "validated": "Validée",
+    "ariaLabel": "Statut de la réponse — {{text}}",
+    "updateFailed": "Le changement de statut n'a pas abouti."
+  },
+  "need": {
+    "title": "Transformer en besoin",
+    "subtitle": "L'appel d'offres rejoint la vue des besoins ouverts et devient de la matière pour le matching du vivier. Les compétences ne sont PAS déduites du document — un texte d'appel d'offres est de la prose, en tirer une liste de technologies ferait classer des profils sur des mots inventés. Tu les saisis sur le besoin.",
+    "projectLabel": "Projet",
+    "projectPlaceholder": "Choisis le projet auquel le rattacher",
+    "submit": "Créer le besoin",
+    "created": "Besoin créé : {{title}}",
+    "open": "Voir les besoins",
+    "failed": "Le besoin n'a pas pu être créé",
+    "noProject": "Aucun projet dans ton pipe pour l'instant. Un projet naît d'une analyse de compte ou d'un signal détecté — il ne se crée pas à la main.",
+    "preview": {
+      "cta": "Prévisualiser le besoin proposé"
+    },
+    "linked": "Ce dossier est déjà lié à un besoin."
+  },
+  "mask": {
+    "hide": "Masquer cette section",
+    "show": "Réafficher la section",
+    "hiddenNotice": "Cette section est masquée pour ton espace.",
+    "failed": "Le réglage n'a pas été enregistré."
+  },
+  "fromNeed": {
+    "cta": "Créer depuis un besoin",
+    "label": "Besoin d’origine",
+    "placeholder": "Choisis le besoin dont part ce dossier",
+    "none": "Aucun besoin ouvert dans ton espace",
+    "lines": {
+      "title": "Besoin : {{value}}",
+      "skills": "Compétences : {{value}}",
+      "seniority": "Séniorité : {{value}}",
+      "headcount_one": "Nombre de profils : {{count}}",
+      "headcount_other": "Nombre de profils : {{count}}",
+      "location": "Localisation : {{value}}",
+      "startOn": "Démarrage : {{value}}",
+      "duration_one": "Durée : {{count}} mois",
+      "duration_other": "Durée : {{count}} mois"
+    }
+  },
+  "comments": {
+    "open": "Commenter l’exigence",
+    "toggle": "Commentaires ({{count}})",
+    "label": "Nouveau commentaire",
+    "submit": "Commenter",
+    "failed": "Le commentaire n’a pas été enregistré."
+  },
+  "versions": {
+    "toggle": "Versions précédentes ({{count}})",
+    "replacedAt": "Remplacée le {{date}}",
+    "compare": "Comparer avec la réponse actuelle",
+    "before": "Avant",
+    "now": "Maintenant",
+    "noCurrent": "Aucune réponse actuelle."
+  },
+  "readOnly": {
+    "notice": "Lecture seule : tu consultes les appels d’offres de ton espace sans pouvoir les modifier."
+  },
+  "export": {
+    "cta": "Exporter la matrice (CSV)",
+    "columns": {
+      "section": "Section",
+      "text": "Exigence",
+      "weight": "Poids",
+      "status": "Statut",
+      "answer": "Réponse",
+      "source": "Source",
+      "owner": "Rôle"
+    }
+  },
+  "sourceDocuments": {
+    "title": "Documents sources",
+    "open": "Ouvrir {{name}}",
+    "openShort": "Ouvrir",
+    "openError": "Le fichier n'a pas pu être ouvert."
+  },
+  "sections": {
+    "assignAria_one": "Attribuer la section « {{section}} » ({{count}} exigence)",
+    "assignAria_other": "Attribuer la section « {{section}} » ({{count}} exigences)",
+    "placeholder": "Attribuer « {{section}} »…",
+    "none": "Sans section",
+    "failed": "La section n’a pas été attribuée."
+  },
+  "resume": {
+    "title": "Un import est en cours : « {{title}} »",
+    "meta_one": "{{count}} document · aperçu du {{date}}",
+    "meta_other": "{{count}} documents · aperçu du {{date}}",
+    "metaPasted": "Texte collé · aperçu du {{date}}",
+    "metaInterrupted": "Analyse interrompue · texte du {{date}}",
+    "metaInterruptedFiles": "Analyse interrompue · fichiers à redéposer : {{names}} ({{date}})",
+    "resume": "Reprendre l’import",
+    "abandon": "Abandonner l’import",
+    "abandonFailed": "L’import n’a pas pu être abandonné."
+  },
+  "draftReview": {
+    "title": "Valide ce que {{copilot}} a le droit de citer avant qu’elle rédige.",
+    "evidenceTitle": "Preuve rattachée",
+    "addTitle": "Titre de la source",
+    "addTitlePlaceholder": "Ex. Référence client, fiche produit…",
+    "addContent": "Contenu de la source",
+    "addContentPlaceholder": "Le passage exact à citer.",
+    "add": "Ajouter cette source",
+    "noSource": "Aucune source validée : {{copilot}} ne rédige rien d’inventé, elle dira ce qui manque.",
+    "generate": "Générer avec les sources validées"
+  },
+  "profiles": {
+    "title": "Profils rattachés",
+    "pick": "Profil à rattacher",
+    "choose": "Choisis un profil du vivier",
+    "attach": "Rattacher ce profil",
+    "unnamed": "Profil sans nom",
+    "noProject": "Ce besoin n’est rattaché à aucune affaire : un profil se positionne sur une affaire, rattache d’abord le besoin à l’une d’elles."
+  }
+}

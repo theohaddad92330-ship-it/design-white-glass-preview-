@@ -1,0 +1,401 @@
+{
+  "title": "Profils positionnés",
+  "unknownTalent": "Profil inconnu",
+  "noRate": "TJM non chiffré",
+  "rate": "{{value}} €/j proposés",
+  "dossier": {
+    "loading": "Chargement du positionnement…",
+    "errorTitle": "Positionnement illisible",
+    "errorBody": "La lecture a échoué — le positionnement est toujours là.",
+    "retry": "Réessayer",
+    "back": "Retour aux profils positionnés",
+    "consultant": "Consultant",
+    "project": "Besoin",
+    "projectUnknown": "besoin introuvable",
+    "need": "Rôle visé",
+    "needUnknown": "aucun rôle précis désigné",
+    "stage": "Étape",
+    "substatus": "Détail",
+    "submittedAt": "CV envoyé le",
+    "submittedAtUnknown": "CV pas encore envoyé"
+  },
+  "stages": {
+    "shortlisted": "Retenu",
+    "submitted": "CV envoyé",
+    "interview": "Entretien",
+    "accepted": "Accepté",
+    "rejected": "Refusé",
+    "withdrawn": "Retiré"
+  },
+  "substatuses": {
+    "to_qualify": "À qualifier",
+    "consultant_agreement_pending": "Accord consultant en attente",
+    "ready_to_present": "Prêt à présenter",
+    "to_validate": "À valider",
+    "presented": "Présenté",
+    "acknowledged": "Accusé réception",
+    "interview_to_schedule": "Entretien à planifier",
+    "interview_scheduled": "Entretien programmé",
+    "interview_done": "Entretien réalisé",
+    "second_interview": "Second entretien",
+    "selected": "Retenu",
+    "declined": "Refusé",
+    "withdrawn": "Retiré",
+    "no_response": "Sans réponse",
+    "converted_to_mission": "Converti en mission",
+    "archived": "Archivé",
+    "presentation_failed": "Échec de la présentation",
+    "presented_manually": "Présenté (copié manuellement)",
+    "to_pursue": "À poursuivre",
+    "to_clarify": "À clarifier",
+    "to_negotiate": "À négocier"
+  },
+  "actions": {
+    "submitted": "Envoyer le CV",
+    "interview": "Entretien programmé",
+    "accepted": "Accepté",
+    "rejected": "Refusé",
+    "withdrawn": "Retirer",
+    "shortlisted": "Remettre en sélection"
+  },
+  "reasons": {
+    "price": "Prix",
+    "skills": "Compétences",
+    "seniority": "Séniorité",
+    "availability": "Disponibilité",
+    "other_supplier": "Autre fournisseur",
+    "need_cancelled": "Besoin annulé",
+    "candidate_declined": "Refus du profil",
+    "no_feedback": "Sans retour",
+    "other": "Autre"
+  },
+  "close": {
+    "title": "Pourquoi « {{stage}} » ? Un motif sans lequel la question « pourquoi perd-on ? » reste sans réponse."
+  },
+  "funnel": {
+    "submitted_one": "{{count}} CV envoyé",
+    "submitted_other": "{{count}} CV envoyés",
+    "rate": "{{value}} % acceptés parmi ceux qui ont répondu",
+    "rateUnknown": "Taux pas encore mesurable",
+    "noFeedback_one": "{{count}} resté sans retour",
+    "noFeedback_other": "{{count}} restés sans retour",
+    "median_one": "{{count}} jour de délai de retour, en médiane",
+    "median_other": "{{count}} jours de délai de retour, en médiane",
+    "medianUnknown": "Délai de retour pas encore mesurable"
+  },
+  "states": {
+    "empty": "Aucun profil positionné sur ce projet.",
+    "loadError": "Les positionnements n’ont pas pu être chargés. Ils sont toujours là — c’est la lecture qui a échoué.",
+    "loading": "Chargement…",
+    "error": "La liste n’a pas pu être chargée. Ce n’est pas « aucun positionnement »."
+  },
+  "toast": {
+    "created": "Profil positionné.",
+    "createError": "Le positionnement a échoué.",
+    "advanced": "Positionnement mis à jour.",
+    "advanceError": "La mise à jour a échoué.",
+    "interviewScheduled": "Entretien enregistré.",
+    "interviewError": "L’entretien n’a pas pu être enregistré.",
+    "feedbackRecorded": "Retour enregistré.",
+    "feedbackError": "Le retour n’a pas pu être enregistré.",
+    "consultantFeedbackRecorded": "Retour consultant enregistré.",
+    "consultantFeedbackError": "Le retour consultant n’a pas pu être enregistré.",
+    "detailsRecorded": "Détails enregistrés.",
+    "detailsError": "Les détails n’ont pas pu être enregistrés."
+  },
+  "feedback": {
+    "title": "Retour du client sur {{name}}",
+    "description": "Ce que le client a dit après la présentation. Un axe dont il n’a pas parlé reste « non abordé » — le noter « en dessous » ferait un reproche que personne n’a formulé.",
+    "axis": {
+      "technical": "Compétences techniques",
+      "experience": "Expérience",
+      "communication": "Communication",
+      "price": "Tarif",
+      "seniority": "Séniorité",
+      "context": "Contexte",
+      "availability": "Disponibilité",
+      "location": "Localisation",
+      "timing": "Timing",
+      "other": "Autre",
+      "personality": "Personnalité"
+    },
+    "verdict": {
+      "unknown": "Non abordé",
+      "below": "En dessous",
+      "meets": "Correspond",
+      "above": "Au-dessus"
+    },
+    "verbatim": "Ce qu’il a dit, dans ses mots",
+    "verbatimPlaceholder": "« Bon profil mais on cherchait plus senior sur la partie données. »",
+    "learning": "Apprentissage (optionnel)",
+    "learningPlaceholder": "« Le TJM annoncé était 100 € trop haut pour ce client. » — reste attaché à ce positionnement, ne réécrit rien sur la fiche.",
+    "alreadyRecorded": "{{count}} retour déjà enregistré sur ce positionnement",
+    "alreadyRecorded_other": "{{count}} retours déjà enregistrés sur ce positionnement",
+    "submit": "Enregistrer le retour",
+    "open": "Noter le retour client"
+  },
+  "consultantFeedback": {
+    "title": "Retour du consultant sur {{name}}",
+    "description": "Ce que le consultant a dit après la présentation. Un bloc entièrement séparé du retour client — les deux ne se mélangent jamais.",
+    "axis": {
+      "interest": "Intérêt pour la mission",
+      "understanding": "Compréhension du besoin",
+      "manager": "Le manager pressenti",
+      "mission": "La mission elle-même",
+      "conditions": "Les conditions",
+      "concerns": "Les inquiétudes",
+      "availability": "Sa disponibilité",
+      "decision": "Sa décision"
+    },
+    "verbatimPlaceholder": "« Le poste m’intéresse mais je veux en savoir plus sur l’équipe. »",
+    "alreadyRecorded": "{{count}} retour consultant déjà enregistré sur ce positionnement",
+    "alreadyRecorded_other": "{{count}} retours consultant déjà enregistrés sur ce positionnement",
+    "submit": "Enregistrer le retour",
+    "open": "Noter le retour consultant"
+  },
+  "interview": {
+    "open": "Planifier un entretien",
+    "title": "Planifier un entretien avec {{name}}",
+    "description": "La date part chez toi et chez le client. Programmer un entretien fait avancer ce positionnement à l'étape « Entretien ».",
+    "at": "Date et heure",
+    "mode": "Format",
+    "modes": {
+      "onsite": "Sur site",
+      "remote": "À distance",
+      "phone": "Téléphone"
+    },
+    "attendees": "Personnes côté client",
+    "attendeesPlaceholder": "Séparées par des virgules",
+    "notes": "Notes",
+    "confirm": "Planifier"
+  },
+  "timeline": {
+    "open": "Historique",
+    "title": "Historique de {{name}}",
+    "description": "Chaque étape franchie par ce positionnement, dans l’ordre où elle est arrivée.",
+    "empty": "Aucune étape tracée pour l’instant.",
+    "unnamedStep": "Étape sans intitulé",
+    "unknownDate": "Date inconnue"
+  },
+  "details": {
+    "open": "Détails",
+    "title": "Détails du positionnement de {{name}}",
+    "description": "Le destinataire, le canal, le message préparé, la disponibilité annoncée et les conditions de ce positionnement. Rien n’est envoyé depuis cette fenêtre — seulement préparé.",
+    "recipient": "Destinataire chez le client",
+    "noRecipient": "Aucun destinataire choisi",
+    "channel": "Canal",
+    "channels": {
+      "phone": "Téléphone",
+      "email": "E-mail",
+      "linkedin": "Réseau professionnel",
+      "meeting": "Réunion"
+    },
+    "message": "Message préparé",
+    "messagePlaceholder": "Le message qui accompagnera l’envoi — jamais envoyé depuis ici",
+    "availability": "Disponibilité annoncée",
+    "conditions": "Conditions particulières",
+    "confirm": "Enregistrer",
+    "preview": {
+      "title": "Aperçu — ce que le client recevra",
+      "subject": "Objet",
+      "cv": "CV joint, figé le {{date}}",
+      "cvUnknownDate": "CV joint, version non datée",
+      "noCv": "Aucune version de CV figée pour cet envoi",
+      "argumentsSource": "Source des arguments : {{source}}"
+    },
+    "agreement": {
+      "label": "Accord du consultant",
+      "unknown": "Non déclaré",
+      "yes": "Oui",
+      "no": "Non"
+    },
+    "agreementDate": "Date de l’accord"
+  },
+  "nextAction": {
+    "open": "Prochaine action",
+    "title": "Prochaine action sur {{name}}",
+    "description": "Toujours datée et attribuée — les trois champs, ou aucun.",
+    "label": "Action",
+    "labelPlaceholder": "Relancer le client",
+    "dueAt": "Échéance",
+    "owner": "Porteur",
+    "none": "Aucune prochaine action posée",
+    "clear": "Effacer",
+    "confirm": "Enregistrer"
+  },
+  "interviewBrief": {
+    "open": "Préparer l’entretien",
+    "title": "Brief d’entretien pour {{name}}",
+    "description": "Ce qu’il faut savoir avant de rencontrer le client — rien n’est inventé, tout dérive du profil et du matching.",
+    "loadError": "Le brief n’a pas pu être chargé.",
+    "objective": "Objectif",
+    "pitch": "Pitch",
+    "participants": "Participants",
+    "noParticipants": "Aucun participant déclaré",
+    "logistics": "Informations logistiques",
+    "noInterviewScheduled": "Aucun entretien programmé pour l’instant",
+    "keyExperiences": "Deux expériences clés",
+    "noKeyExperiences": "Aucune référence citable",
+    "gaps": "Ce qui manque",
+    "noGaps": "Aucun écart détecté",
+    "objections": "Objections probables",
+    "noObjections": "Aucune objection détectée",
+    "consultantQuestions": "Questions à préparer pour le consultant"
+  },
+  "page": {
+    "title": "Positionnements",
+    "shownOf": "{{shown}} sur {{total}} présentations affichées",
+    "showMore": "Afficher les {{count}} suivants"
+  },
+  "digest": {
+    "title": "{{copilot}} résume",
+    "inProgress_one": "{{count}} profil est en cours.",
+    "inProgress_other": "{{count}} profils sont en cours.",
+    "interviewsConfirmed_one": "Un entretien est confirmé.",
+    "interviewsConfirmed_other": "{{count}} entretiens sont confirmés.",
+    "stalled": "{{name}} attend un retour depuis {{days}} jours.",
+    "recommendation": "Je recommande de relancer {{name}}."
+  },
+  "row": {
+    "unnamedConsultant": "Consultant sans nom",
+    "noAccount": "Compte non rattaché"
+  },
+  "presentations": {
+    "title": "Présentations",
+    "subtitle": "Un consultant, un besoin et une histoire distincte. Aucun envoi ne se déduit d’un déplacement de carte.",
+    "count_one": "{{count}} présentation",
+    "count_other": "{{count}} présentations",
+    "states": {
+      "preselection": "Présélection",
+      "to_present": "À présenter",
+      "presented": "Présenté",
+      "client_interview": "Entretien client",
+      "retained": "Retenu",
+      "declined": "Refusé",
+      "withdrawn": "Retiré",
+      "no_response": "Sans réponse",
+      "converted": "Convertie en mission",
+      "archived": "Archivée"
+    },
+    "filter": {
+      "label": "Filtrer par état",
+      "inProgress": "En cours",
+      "all": "Tous les états"
+    },
+    "columns": {
+      "consultant": "Consultant",
+      "need": "Besoin / client",
+      "follow": "Suivi",
+      "channel": "Canal / responsable",
+      "due": "Prochaine échéance",
+      "open": "Ouvrir"
+    },
+    "row": {
+      "recorded": "Présentation consignée le {{date}}",
+      "noSend": "Aucun envoi consigné",
+      "notPresented": "Pas encore présentée",
+      "channelUnknown": "Canal non renseigné",
+      "dueUnknown": "À préciser",
+      "open": "Ouvrir",
+      "openNamed": "Ouvrir la présentation de {{name}}"
+    },
+    "funnel": {
+      "preselected": "Présélectionnés",
+      "presented": "Présentés",
+      "interviews": "En entretien",
+      "retained": "Retenus",
+      "window": "30 derniers jours",
+      "unmeasured": "—",
+      "withoutReply_one": "dont {{count}} sans réponse",
+      "withoutReply_other": "dont {{count}} sans réponse",
+      "thisWeek_one": "{{count}} cette semaine",
+      "thisWeek_other": "{{count}} cette semaine",
+      "toPrepare_one": "{{count}} mission à préparer",
+      "toPrepare_other": "{{count}} missions à préparer",
+      "byOwner": "Par commercial",
+      "ownerInProgress": "{{count}} en cours",
+      "ownerRetained_one": "{{count}} retenue",
+      "ownerRetained_other": "{{count}} retenues",
+      "details": "Taux et délai de retour",
+      "label": "Entonnoir des 30 derniers jours"
+    },
+    "empty": {
+      "title": "Aucune présentation à afficher",
+      "none": "Une présentation relie un profil à un besoin. Ajoute la première.",
+      "filtered": "Aucune présentation ne correspond à ce filtre."
+    },
+    "add": {
+      "cta": "Ajouter une présentation",
+      "title": "Relier un profil à un besoin",
+      "description": "Une présélection n’est ni un envoi ni une mission : tu consignes ensuite ce qui s’est passé.",
+      "need": "Besoin",
+      "profile": "Profil",
+      "choose": "Choisir…",
+      "noNeed": "Aucun besoin rattaché à une affaire : crée d’abord l’affaire du besoin.",
+      "cancel": "Annuler",
+      "confirm": "Vérifier le positionnement"
+    },
+    "back": "Toutes les présentations",
+    "update": {
+      "cta": "Mettre à jour",
+      "title": "Mettre à jour la présentation",
+      "description": "Tu consignes ce qui s’est passé. Aucun message ne part et aucune mission n’est créée automatiquement.",
+      "stage": "Étape",
+      "channel": "Canal",
+      "agreement": "L’accord de présentation pour ce compte a été vérifié.",
+      "reason": "Motif de clôture",
+      "detail": "Retour / motif",
+      "confirm": "Consigner le suivi"
+    },
+    "consign": {
+      "title": "Consigner un entretien avec {{name}}",
+      "description": "Le compte rendu du client, et ce qu’en dit le consultant.",
+      "client": "Compte rendu factuel",
+      "consultant": "Ce qu’en dit le consultant",
+      "internal": "Ce retour reste interne ; il n’est jamais transmis au client.",
+      "confirm": "Consigner"
+    },
+    "retained": {
+      "title": "Retenue par {{account}} le {{date}}",
+      "body": "La mission reprend la présentation, l’affaire et ses conditions. Elle n’existe qu’après ta relecture.",
+      "cta": "Préparer la mission"
+    },
+    "blocks": {
+      "deal": "Affaire",
+      "presentation": "Présentation",
+      "client": "Client",
+      "reason": "Motif de clôture"
+    },
+    "where": {
+      "title": "Où en est cette présentation ?",
+      "sentOn": "Date présentée",
+      "owner": "Responsable",
+      "noOwner": "Non attribué",
+      "expected": "Retour attendu",
+      "agreement": "Accord à présenter",
+      "agreementYes": "Vérifié le {{date}}",
+      "agreementNo": "Refusé le {{date}}",
+      "agreementToGet": "À obtenir",
+      "trace": "Trace",
+      "traceRecorded": "Envoi consigné par {{owner}} · Geste déclaratif, pas une preuve d’envoi",
+      "dossier": "Version du dossier",
+      "dossierFrozen": "Version figée pour cette présentation",
+      "dossierToPrepare": "À préparer",
+      "rate": "TJM proposé",
+      "rateValue": "{{value}} € HT / jour",
+      "rateTarget": "Cible client {{target}} €",
+      "rateGap": "écart {{gap}} €"
+    },
+    "actions": {
+      "dossier": "Dossier de compétences",
+      "message": "Préparer le message",
+      "brief": "Préparer l’entretien",
+      "consign": "Consigner un entretien",
+      "expected": "Retour attendu"
+    },
+    "history": {
+      "title": "Historique et retours"
+    },
+    "search": "Consultant, besoin ou compte…"
+  }
+}

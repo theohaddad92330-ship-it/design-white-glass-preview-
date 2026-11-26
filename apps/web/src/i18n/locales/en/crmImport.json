@@ -1,0 +1,107 @@
+{
+  "title": "Import from your CRM",
+  "subtitle": "We simulate first, you read what would happen, and only then we import. A field you corrected by hand is never overwritten by an import.",
+  "simulation": "Simulation",
+  "failed": "Failed",
+  "providers": {
+    "hubspot": "Your CRM",
+    "salesforce": "Your CRM",
+    "pipedrive": "Your CRM",
+    "attio": "Your CRM",
+    "csv": "File",
+    "odoo": "Your CRM",
+    "zoho": "Your CRM"
+  },
+  "entityTabs": {
+    "contact": "Contacts",
+    "account": "Companies"
+  },
+  "actions": {
+    "simulate": "Simulate the import",
+    "run": "Import for real"
+  },
+  "mapping": {
+    "title": "Fields that will be written",
+    "email": "Email address → contact's email",
+    "fullName": "Name → contact's full name",
+    "companyName": "Name → company name"
+  },
+  "outcome": {
+    "simulated": "Simulation — nothing was written",
+    "applied": "Import done",
+    "counts": "{{created}} to create · {{updated}} to update · {{skipped}} set aside",
+    "truncated": "More pages remain — run again for the rest",
+    "failed": "The import did not complete: {{reason}}",
+    "moreSkipped": "and {{count}} more"
+  },
+  "reasons": {
+    "no_identifier": "no usable identifier",
+    "invalid_email": "invalid address",
+    "already_linked_elsewhere": "this address already belongs to another record — decide by hand",
+    "unchanged": "nothing changed",
+    "limit_reached": "limit reached"
+  },
+  "history": {
+    "title": "Previous imports",
+    "empty": "No import yet.",
+    "counts": "{{created}} created · {{updated}} updated · {{skipped}} set aside",
+    "loadError": "The import history could not be loaded. This is not “no import”: the read failed.",
+    "scopeMissing": "I am not allowed to read your CRM. Reconnect it: access already granted does not widen on its own.",
+    "authorizationExpired": "Your CRM is still connected, but its authorisation has expired. Reconnect it from Settings › Integrations: it will not renew on its own.",
+    "notConnected": "No CRM is connected to this workspace.",
+    "openIntegrations": "Open Settings › Integrations"
+  },
+  "toast": {
+    "simulated_one": "Simulation: {{count}} row would be processed.",
+    "simulated_other": "Simulation: {{count}} rows would be processed.",
+    "done_one": "{{count}} row imported.",
+    "done_other": "{{count}} rows imported.",
+    "error": "The import failed.",
+    "keptCrm": "The CRM value replaced yours."
+  },
+  "providerChoice": "Which CRM to import from?",
+  "firstImport": {
+    "title": "Automatic import from your CRM",
+    "queued": "The import from {{crm}} is about to start — it starts on its own when you connect.",
+    "running": "Importing from {{crm}}…",
+    "done": "Import from {{crm}} finished.",
+    "failed": "The import from {{crm}} did not complete.",
+    "pending": "waiting",
+    "inProgress": "in progress…",
+    "notMeasured": "not measured",
+    "atLeast": "at least",
+    "conflicts_one": "{{count}} record changed on both sides — your correction is kept, the difference is proposed to you.",
+    "conflicts_other": "{{count}} records changed on both sides — your corrections are kept, the differences are proposed to you.",
+    "reconnect": "Reconnect {{crm}}: access expired or was refused; the import will resume afterwards.",
+    "openIntegrations": "Open Settings › Integrations",
+    "objectError": "{{object}}: {{error}}",
+    "objects": {
+      "accounts_one": "{{count, number}} company",
+      "accounts_other": "{{count, number}} companies",
+      "contacts_one": "{{count, number}} contact",
+      "contacts_other": "{{count, number}} contacts",
+      "deals_one": "{{count, number}} deal",
+      "deals_other": "{{count, number}} deals",
+      "activities_one": "{{count, number}} activity",
+      "activities_other": "{{count, number}} activities",
+      "owners_one": "{{count, number}} owner",
+      "owners_other": "{{count, number}} owners"
+    },
+    "recognized_one": "{{total}}, including {{count, number}} already in {{brand}}",
+    "recognized_other": "{{total}}, including {{count, number}} already in {{brand}}",
+    "objectNames": {
+      "accounts": "Companies",
+      "contacts": "Contacts",
+      "deals": "Deals",
+      "activities": "Activities",
+      "owners": "Owners",
+      "needs": "Needs"
+    },
+    "unread": "Not imported: {{families}}.",
+    "unreadReasons": {
+      "not_in_read_scope": "{{family}} (not read from {{crm}})",
+      "file_only": "{{family}} (import them from a file)"
+    },
+    "manualNote": "The dry run is still available below, by hand — it is no longer a prerequisite."
+  }
+}

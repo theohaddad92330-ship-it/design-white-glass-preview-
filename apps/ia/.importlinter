@@ -1,0 +1,84 @@
+[importlinter]
+root_package = app
+include_external_packages = False
+
+# #4118 — contrats de couches d'apps/ia, écrits d'après l'état RÉEL du code (13/10/2026).
+# Lancer : `pnpm --filter @bellum/ia lint:arch`  (import-linter, BSD-2).
+# Les violations existantes sont des exceptions NOMMÉES (`ignore_imports`), jamais masquées :
+# une garde sans exception nommée est désarmée en une semaine.
+
+[importlinter:contract:entrypoint-is-top]
+name = Nothing imports the app entry point
+type = forbidden
+source_modules =
+    app.access
+    app.agents
+    app.config
+    app.contracts
+    app.eval
+    app.graph
+    app.knowledge
+    app.middleware
+    app.models
+    app.prompts
+    app.routers
+    app.services
+forbidden_modules =
+    app.main
+
+[importlinter:contract:leaves-import-nothing]
+name = access and contracts are leaves (import no other app package)
+type = forbidden
+source_modules =
+    app.access
+    app.contracts
+forbidden_modules =
+    app.agents
+    app.config
+    app.eval
+    app.graph
+    app.knowledge
+    app.middleware
+    app.models
+    app.prompts
+    app.routers
+    app.services
+
+[importlinter:contract:lower-layers-not-upward]
+name = Data/config/middleware/knowledge/prompts layers never import agents, graph, routers or eval
+type = forbidden
+source_modules =
+    app.config
+    app.knowledge
+    app.middleware
+    app.models
+    app.prompts
+forbidden_modules =
+    app.agents
+    app.eval
+    app.graph
+    app.routers
+# Direct imports seulement : app.models -> app.services.chat_tools -> app.routers est la
+# violation nommée plus bas (services-not-routers), pas une dépendance directe de ces couches.
+allow_indirect_imports = True
+
+[importlinter:contract:agents-not-upward]
+name = Agents never import graph, routers or eval
+type = forbidden
+source_modules =
+    app.agents
+forbidden_modules =
+    app.eval
+    app.graph
+    app.routers
+
+[importlinter:contract:services-not-routers]
+name = Services do not import routers (existing violations are named exceptions)
+type = forbidden
+source_modules =
+    app.services
+forbidden_modules =
+    app.routers
+ignore_imports =
+    app.services.chat_tools -> app.routers.compare
+    app.services.chat_tools -> app.routers.discover

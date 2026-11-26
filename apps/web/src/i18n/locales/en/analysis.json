@@ -1,0 +1,164 @@
+{
+  "progressCard": {
+    "inProgress": "Analysis in progress...",
+    "progressLabel": "Progress",
+    "durationHint": "The analysis usually takes 3 to 6 minutes. You can leave this page.",
+    "cancel": "Cancel analysis",
+    "badgePartial": "Partial analysis (degraded sources)",
+    "badgeComplete": "Full analysis",
+    "progressUnknown": "In progress",
+    "progressUnknownHint": "Progress unavailable — the analysis is still running on the server.",
+    "partialsTitle": "Already found",
+    "partialsSamples": "including {{names}}",
+    "partialsBy": "by the \"{{phase}}\" step",
+    "partialKind": {
+      "contacts_one": "1 contact",
+      "contacts_other": "{{count}} contacts",
+      "angles_one": "1 angle of approach",
+      "angles_other": "{{count}} angles of approach"
+    },
+    "refreshing": "Refresh in progress",
+    "refreshingHint": "The dossier shown is from the previous analysis — it will be replaced when this one ends.",
+    "quietHint": "This analysis is taking longer than usual. It keeps running on the server: nothing is restarted or charged a second time.",
+    "continueBrowsing": "Keep browsing",
+    "stepOf": "Step {{index}} of {{total}}: {{label}}",
+    "steps": {
+      "scope": "scope",
+      "crosscheck": "source cross-check",
+      "account_sheet": "account sheet",
+      "decision_makers": "decision-makers",
+      "orga_chain": "org chart",
+      "classification": "strategy and scoring",
+      "messages": "messages",
+      "quality_check": "quality check",
+      "save": "saving",
+      "reuse_existing": "reuse of existing data",
+      "current_research": "current research",
+      "thematic_research": "complementary thematic research"
+    }
+  },
+  "sourceHealth": {
+    "ok": "OK",
+    "degraded": "Degraded",
+    "down": "Unavailable",
+    "skipped": "Not used"
+  },
+  "previews": {
+    "scope": {
+      "eyebrow": "What {{brand}} is scoping",
+      "title": "A first read of the account is taking shape.",
+      "body": "{{brand}} consolidates the scope, positioning and public signals to lay down a reliable working base."
+    },
+    "crosscheck": {
+      "eyebrow": "What {{brand}} is verifying",
+      "title": "The useful signals are starting to line up.",
+      "body": "{{brand}} cross-checks public sources, spots contradictions and isolates the signals worth carrying into the report."
+    },
+    "account_sheet": {
+      "eyebrow": "What {{brand}} is building",
+      "title": "The company profile is taking shape.",
+      "body": "The report takes shape around the business stakes, the ecosystem and the context already verified."
+    },
+    "decision_makers": {
+      "eyebrow": "What {{brand}} is identifying",
+      "title": "The most useful contacts are surfacing.",
+      "body": "The most relevant contacts are identified by role, influence and proximity to the topic."
+    },
+    "orga_chain": {
+      "eyebrow": "What {{brand}} is connecting",
+      "title": "The decision chain is becoming clearer.",
+      "body": "{{brand}} reconstructs the links between teams, entities and levels of responsibility to clarify who really weighs on the decision."
+    },
+    "classification": {
+      "eyebrow": "What {{brand}} is refining",
+      "title": "Contact priorities are coming into focus.",
+      "body": "Each contact is re-ranked by priority, approach angle and maturity level to prepare a credible outreach."
+    },
+    "messages": {
+      "eyebrow": "What {{brand}} is preparing",
+      "title": "A first outreach sequence is emerging.",
+      "body": "The messages and the action plan are generated from the strongest signals to produce a ready-to-use angle."
+    },
+    "quality_check": {
+      "eyebrow": "What {{brand}} is checking",
+      "title": "A last read-through catches what shouldn't have made it in.",
+      "body": "The anti-hallucination Judge re-reads the report and flags anything stated without a real source before it reaches you."
+    },
+    "save": {
+      "eyebrow": "What {{brand}} is finishing",
+      "title": "The report is being written to your account.",
+      "body": "The findings, cost and history of this run are saved so the report is there the next time you open it."
+    },
+    "reuse_existing": {
+      "eyebrow": "What {{brand}} reuses",
+      "title": "What you already know is the starting point.",
+      "body": "Facts, contacts and analyses already on this account are carried over: {{brand}} does not look for them a second time."
+    },
+    "current_research": {
+      "eyebrow": "What {{brand}} looks up",
+      "title": "The account's current news is being searched.",
+      "body": "{{brand}} queries the web to find what is being said about the account right now."
+    },
+    "thematic_research": {
+      "eyebrow": "What {{brand}} completes",
+      "title": "Thematic sources complete the picture.",
+      "body": "Job offers, public tenders and awards are cross-checked to sharpen the account's signals."
+    }
+  },
+  "phases": {
+    "collecting": "Research and sources…",
+    "research": "Research and sources",
+    "research_complete": "Group mapping",
+    "contacts": "Contacts and roles",
+    "contacts_complete": "Contacts and roles",
+    "classify": "Strategy and scoring",
+    "classify_complete": "Strategy and scoring",
+    "plan": "Action plan",
+    "quality_check": "Quality control",
+    "save": "Saving",
+    "analysis_done": "Analysis complete!"
+  },
+  "run": {
+    "startingPhase": "Starting...",
+    "startEvent": "Starting the analysis",
+    "doneEvent": "Analysis complete",
+    "rejoinedPhase": "Analysis in progress (resumed tracking)",
+    "retryingPhase": "Retrying — attempt {{attempt}}/{{maxAttempts}}…",
+    "interruptedMessage": "The analysis was interrupted before finishing. Relaunch it — it will pick up from the last successful step.",
+    "canceledMessage": "The analysis was cancelled."
+  },
+  "toast": {
+    "done": "Analysis complete - your report is ready."
+  },
+  "tasks": {
+    "sheetTitle": "What’s running",
+    "sheetSubtitle": "Updated in real time",
+    "sectionErrors": "Errors",
+    "sectionAnalyses": "Analyses",
+    "sectionSaves": "Saves",
+    "analysisLabel": "Analysis",
+    "dismissAria": "Remove from the list",
+    "pillCount_one": "{{count}} task",
+    "pillCount_other": "{{count}} tasks",
+    "runningAria_one": "{{count}} task in progress",
+    "runningAria_other": "{{count}} tasks in progress",
+    "errorAria": "Task failed",
+    "completedAria": "Task completed",
+    "status": {
+      "running": "Running",
+      "completed": "Done",
+      "error": "Failed"
+    },
+    "seeFound": "See what’s already found",
+    "cancelAnalysis": "Cancel the analysis"
+  },
+  "operations": {
+    "status": {
+      "pending": "Pending",
+      "running": "In progress",
+      "completed": "Completed",
+      "partial": "Partial",
+      "interrupted": "Interrupted"
+    }
+  }
+}

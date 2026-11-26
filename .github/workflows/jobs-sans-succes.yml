@@ -1,0 +1,36 @@
+name: Jobs sans succès
+
+# #4873.2 — la routine HEBDOMADAIRE de `tools/ci/jobs-sans-succes.mjs` : nomme tout job de ci.yml qui n'a
+# JAMAIS rendu `success` sur les 40 derniers runs (un job sans succès est indiscernable d'une garde décorative,
+# #4873). Le script se lançait « à la main ou en routine » et rien ne le planifiait ; la CI ne se juge pas elle-même
+# (elle ne dépend pas de l'API GitHub), donc la routine est ce workflow à part, jamais un job de ci.yml.
+# Un job nommé = ce workflow sort en rouge (code 1 du script) : c'est l'alerte. Aucune écriture.
+on:
+  schedule: [{ cron: '0 7 * * 1' }]
+  workflow_dispatch:
+    inputs:
+      runs: { description: 'Nombre de runs de ci.yml lus', default: '40' }
+
+concurrency:
+  group: jobs-sans-succes
+  cancel-in-progress: false
+
+permissions:
+  actions: read
+  contents: read
+
+jobs:
+  jobs-sans-succes:
+    name: Jobs sans succès
+    runs-on: ${{ vars.CI_RUNS_ON || 'ubuntu-latest' }}
+    timeout-minutes: 15
+    env:
+      GH_TOKEN: ${{ github.token }}
+      GH_REPO: ${{ github.repository }}
+    steps:
+      - uses: actions/checkout@v7
+      - uses: actions/setup-node@v7
+        with:
+          node-version: 22
+      - name: Nommer les jobs sans succès
+        run: node tools/ci/jobs-sans-succes.mjs --runs "${{ inputs.runs || '40' }}"

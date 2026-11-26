@@ -1,0 +1,106 @@
+name: Uptime
+
+# Sonde de disponibilité — voir `scripts/probe-health.mjs`.
+#
+# Elle tourne ICI et non dans notre infrastructure : une sonde hébergée à côté de
+# ce qu'elle observe meurt avec lui. GitHub Actions n'a aucune dépendance envers
+# Railway, Vercel ou Supabase, ce qui est exactement la propriété recherchée.
+#
+# ⚠️ Le `schedule` de GitHub n'est PAS ponctuel : il peut être retardé de
+# plusieurs minutes en période de charge, et il est suspendu sur un dépôt sans
+# activité depuis 60 jours. C'est donc un filet, pas un engagement de service. Si
+# la disponibilité devient contractuelle, un service de supervision dédié
+# (BetterStack, UptimeRobot) prend le relais — le script reste utilisable tel quel.
+#
+# Cibles à poser dans Settings → Secrets and variables → Actions → Variables :
+#   PROBE_API_URL   (ex. https://api.bellum-ai.com)
+#   PROBE_IA_URL
+#   PROBE_WEB_URL   (ex. https://app.bellum-ai.com)
+#   PROBE_DEMO_URL  (ex. https://app.bellum-ai.com/demo)
+# Aucune variable posée = le job sort vert en annonçant qu'il n'a rien à sonder.
+
+on:
+  schedule:
+    # ⚠️ TOUTES LES 30 MINUTES, PAS 10, ET C'EST UN ARBITRAGE DE COÛT.
+    # Depuis le 15/09/2026 la CI tourne sur runners GitHub : Actions facture
+    # chaque job ARRONDI À LA MINUTE PLEINE. Cette sonde dure 17 s — donc 1 min
+    # facturée par passage. En `*/10` : 144 passages/jour = 4 320 min/mois, soit
+    # plus que l'enveloppe entière du plan Team, pour 41 min de travail réel.
+    # En `*/30` : 1 440 min/mois. La latence de détection passe de 10 à 30 min,
+    # ce qui reste cohérent avec ce que cette sonde est — un filet, pas un
+    # engagement (voir l'en-tête). Une vraie exigence de disponibilité passe par
+    # BetterStack ou UptimeRobot, dont le palier gratuit sonde chaque minute
+    # sans consommer une seule minute d'Actions.
+    - cron: '*/30 * * * *'
+  workflow_dispatch:
+
+# Une seule sonde à la fois : deux exécutions parallèles ouvriraient deux
+# incidents pour la même panne.
+concurrency:
+  group: uptime
+  cancel-in-progress: false
+
+permissions:
+  contents: read
+  issues: write
+
+jobs:
+  probe:
+    # ⚠️ `vars.CI_RUNS_ON` et pas `ubuntu-latest` en dur. Les runners hébergés par
+    # GitHub sont coupés sur ce dépôt (enveloppe de minutes dépassée) : un job qui
+    # les demande échoue AVANT sa première étape, sans log et sans message. C'est
+    # ce qui est arrivé ici, silencieusement, à partir du 24/08/2026 — le jour où
+    # `ci.yml` est passé aux runners auto-hébergés sans que ce fichier suive.
+    runs-on: ${{ vars.CI_RUNS_ON || 'ubuntu-latest' }}
+    timeout-minutes: 5
+    steps:
+      - uses: actions/checkout@v7
+
+      - uses: actions/setup-node@v7
+        with:
+          node-version: 22
+
+      - name: Sonder les services
+        id: probe
+        env:
+          PROBE_API_URL: ${{ vars.PROBE_API_URL }}
+          PROBE_IA_URL: ${{ vars.PROBE_IA_URL }}
+          PROBE_WEB_URL: ${{ vars.PROBE_WEB_URL }}
+          PROBE_DEMO_URL: ${{ vars.PROBE_DEMO_URL }}
+        run: |
+          set +e
+          node scripts/probe-health.mjs | tee /tmp/probe.log
+          echo "status=${PIPESTATUS[0]}" >> "$GITHUB_OUTPUT"
+
+      # Un incident = UNE issue, rouverte tant que la panne dure. Ouvrir une issue
+      # toutes les dix minutes noierait la seule information utile : depuis quand.
+      - name: Ouvrir ou mettre à jour l'incident
+        if: steps.probe.outputs.status != '0'
+        env:
+          GH_TOKEN: ${{ github.token }}
+        run: |
+          TITLE="Incident de disponibilité"
+          EXISTING=$(gh issue list --state open --label uptime --json number --jq '.[0].number' || true)
+          BODY=$'Sonde du '"$(date -u '+%Y-%m-%d %H:%M UTC')"$'\n\n```\n'"$(cat /tmp/probe.log)"$'\n```\n\nExécution : '"$GITHUB_SERVER_URL/$GITHUB_REPOSITORY/actions/runs/$GITHUB_RUN_ID"
+          if [ -n "$EXISTING" ]; then
+            gh issue comment "$EXISTING" --body "$BODY"
+          else
+            gh issue create --title "$TITLE" --label uptime --body "$BODY"
+          fi
+
+      # La reprise est une information aussi utile que la panne : sans elle,
+      # personne ne sait si l'incident ouvert hier soir est encore réel.
+      - name: Clore l'incident quand tout répond
+        if: steps.probe.outputs.status == '0'
+        env:
+          GH_TOKEN: ${{ github.token }}
+        run: |
+          EXISTING=$(gh issue list --state open --label uptime --json number --jq '.[0].number' || true)
+          if [ -n "$EXISTING" ]; then
+            gh issue comment "$EXISTING" --body "Tout répond de nouveau ($(date -u '+%Y-%m-%d %H:%M UTC'))."
+            gh issue close "$EXISTING"
+          fi
+
+      - name: Échouer si une cible est injoignable
+        if: steps.probe.outputs.status != '0'
+        run: exit 1

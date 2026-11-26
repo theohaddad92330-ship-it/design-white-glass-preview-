@@ -1,0 +1,30 @@
+lot: lot-4962-m
+issues: [4997, 4627]
+
+changelog:
+  id: 2026-10-31-lot-4962-m
+  comment: 'Lot 4962-M (#4997) — Découvrir nomme le filtre qui vide la liste'
+  fr:
+    date: 31 octobre 2026
+    title: Découvrir dit quel filtre vide la liste
+    items:
+      - 'Quand tes filtres ne laissent rien alors que la recherche a trouvé des comptes, l’écran nomme le filtre qui retire les résultats restants et propose de le retirer d’un geste.'
+  en:
+    date: October 31, 2026
+    title: Discover says which filter empties the list
+    items:
+      - 'When your filters leave nothing although the search found accounts, the screen names the filter that removes the remaining results and lets you remove it in one tap.'
+
+inserts:
+  - file: apps/api/src/modules/demo/demo-coverage.ts
+    text: |
+
+      /**
+       * #4997.3 — le filtre qui vide la liste est NOMMÉ à l'écran (`emptyingFilters`, `discover-filter-blockers.ts`),
+       * calculé sur la réponse déjà reçue : aucune donnée neuve, donc rien à semer de plus pour la salle.
+       */
+      export const DEMO_DISCOVER_FILTER_BLOCKERS_COVERAGE: Readonly<{ state: 'seede'; reason: string }> = {
+        state: 'seede',
+        reason:
+          '#4997.3 (31/10/2026) — le message « le filtre X retire les N résultats restants » se calcule à l’écran sur la liste scriptée de Découvrir (`demoDiscoverResponse`) quand les filtres du rail la vident : aucune table, aucune clé raw_analysis, aucun semis de plus.',
+      }

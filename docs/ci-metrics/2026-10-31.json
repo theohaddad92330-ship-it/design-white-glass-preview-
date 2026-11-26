@@ -1,0 +1,207 @@
+{
+  "window_days": 7,
+  "since": "2026-10-24",
+  "runs_total": 563,
+  "runs_per_day": 80,
+  "pr_duration_green_p50": 29.1,
+  "pr_duration_green_p90": 81.2,
+  "pr_runner_min_p50": 120.4,
+  "pr_runner_min_p90": 246.7,
+  "runner_min_per_merged_pr_p50": 213.5,
+  "runner_min_per_merged_pr_mean": 313,
+  "merged_prs": 123,
+  "cancelled_pct": 58,
+  "cancel_causes": {
+    "red-cut": 294,
+    "superseded": 30
+  },
+  "red_rate_real_pct": 62,
+  "first_run_red_pct": 64,
+  "main_green_pct": 48,
+  "main_runs": 121,
+  "main_cancelled": 22,
+  "queue_p50": 0,
+  "queue_p90": 11.8,
+  "queue_max": 257.8,
+  "selection_web_concernes_pct": 0,
+  "selection_api_concernes_pct": 3,
+  "selection_sampled": 59,
+  "duration_by_kind_host": {
+    "Build @ CX43": {
+      "n": 63,
+      "p50": 13,
+      "p90": 15.6
+    },
+    "Build @ non documenté": {
+      "n": 140,
+      "p50": 15.6,
+      "p90": 18
+    },
+    "CI Status @ CX43": {
+      "n": 16,
+      "p50": 0.1,
+      "p90": 0.1
+    },
+    "CI Status @ CX53": {
+      "n": 78,
+      "p50": 0.1,
+      "p90": 0.1
+    },
+    "CI Status @ non documenté": {
+      "n": 48,
+      "p50": 0.1,
+      "p90": 0.1
+    },
+    "Ce qui a changé @ CX43": {
+      "n": 100,
+      "p50": 0.3,
+      "p90": 0.4
+    },
+    "Ce qui a changé @ CX53": {
+      "n": 255,
+      "p50": 0.4,
+      "p90": 0.5
+    },
+    "Ce qui a changé @ non documenté": {
+      "n": 191,
+      "p50": 0.3,
+      "p90": 0.4
+    },
+    "Contrats d'architecture @ CX43": {
+      "n": 54,
+      "p50": 2.8,
+      "p90": 3.7
+    },
+    "Contrats d'architecture @ CX53": {
+      "n": 188,
+      "p50": 4.6,
+      "p90": 5.4
+    },
+    "Contrats d'architecture @ non documenté": {
+      "n": 144,
+      "p50": 2.2,
+      "p90": 3.7
+    },
+    "Contrôles rapides @ CX43": {
+      "n": 43,
+      "p50": 4.5,
+      "p90": 10
+    },
+    "Contrôles rapides @ CX53": {
+      "n": 153,
+      "p50": 7.4,
+      "p90": 18.7
+    },
+    "Contrôles rapides @ non documenté": {
+      "n": 109,
+      "p50": 4.5,
+      "p90": 12.6
+    },
+    "Dette de formatage @ CX53": {
+      "n": 26,
+      "p50": 10.5,
+      "p90": 10.9
+    },
+    "Dette de formatage @ non documenté": {
+      "n": 10,
+      "p50": 6.7,
+      "p90": 7.4
+    },
+    "Démo @ CX43": {
+      "n": 33,
+      "p50": 4.4,
+      "p90": 5.8
+    },
+    "Démo @ CX53": {
+      "n": 132,
+      "p50": 7.3,
+      "p90": 7.9
+    },
+    "Démo @ non documenté": {
+      "n": 57,
+      "p50": 4.4,
+      "p90": 5.3
+    },
+    "La doc suit le code @ CX43": {
+      "n": 54,
+      "p50": 0.3,
+      "p90": 0.4
+    },
+    "La doc suit le code @ CX53": {
+      "n": 166,
+      "p50": 0.3,
+      "p90": 0.5
+    },
+    "La doc suit le code @ non documenté": {
+      "n": 137,
+      "p50": 0.3,
+      "p90": 0.4
+    },
+    "api @ CX43": {
+      "n": 431,
+      "p50": 16.5,
+      "p90": 26.8
+    },
+    "api @ non documenté": {
+      "n": 1215,
+      "p50": 9.8,
+      "p90": 12.4
+    },
+    "ia @ CX43": {
+      "n": 24,
+      "p50": 10.1,
+      "p90": 11
+    },
+    "ia @ CX53": {
+      "n": 99,
+      "p50": 14.6,
+      "p90": 15.5
+    },
+    "ia @ non documenté": {
+      "n": 62,
+      "p50": 10.2,
+      "p90": 12.2
+    },
+    "promptfoo @ CX43": {
+      "n": 48,
+      "p50": 0.1,
+      "p90": 0.1
+    },
+    "promptfoo @ CX53": {
+      "n": 112,
+      "p50": 0.1,
+      "p90": 0.2
+    },
+    "promptfoo @ non documenté": {
+      "n": 111,
+      "p50": 0.1,
+      "p90": 0.2
+    },
+    "web @ CX43": {
+      "n": 248,
+      "p50": 24.6,
+      "p90": 30.3
+    },
+    "web @ non documenté": {
+      "n": 557,
+      "p50": 25.5,
+      "p90": 33.5
+    }
+  },
+  "full_suite_reasons": {
+    "web: fondation touchée : apps/web/src/test/tests-node.generated.ts": 21,
+    "api: fondation touchée : apps/web/src/test/tests-node.generated.ts": 19,
+    "api: fondation touchée : packages/contracts/src/schemas/account-strategy-Np.test.ts": 2,
+    "web: fondation touchée : packages/contracts/src/schemas/account-strategy-Np.test.ts": 2,
+    "api: fondation touchée : packages/contracts/src/index.ts": 1,
+    "web: fondation touchée : packages/contracts/src/index.ts": 1,
+    "api: fondation touchée : .github/workflows/eNe-nightly.yml": 2,
+    "web: fondation touchée : .github/workflows/eNe-nightly.yml": 2,
+    "web: fondation touchée : packages/contracts/package.json": 1,
+    "api: fondation touchée : packages/contracts/package.json": 1,
+    "api: fondation touchée : package.json": 2,
+    "web: fondation touchée : package.json": 2,
+    "api: fondation touchée : .github/workflows/ci.yml": 1,
+    "web: fondation touchée : .github/workflows/ci.yml": 1
+  }
+}

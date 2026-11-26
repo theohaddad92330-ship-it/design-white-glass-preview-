@@ -1,0 +1,37 @@
+{
+  "_comment": "Cas de nommage partagés par les DEUX implémentations du slug personne : `_slug` (apps/ia/app/services/org_graph_assembler.py) et `orgPersonIdFor` (apps/api/src/modules/org-graph/org-graph-versioning.ts). Un rejet mémorisé côté API ne retrouve la personne au run suivant que si les deux produisent le MÊME id — une divergence est silencieuse : le contact écarté réapparaît, sans erreur nulle part. Ce fichier est la source unique ; les deux suites l'assertent.",
+  "cases": [
+    {
+      "name": "Jean Dupont",
+      "id": "p-jean-dupont"
+    },
+    {
+      "name": "Jean-Éric  O’Neil.",
+      "id": "p-jean-ric-o-neil"
+    },
+    {
+      "name": "  Marie   MARTIN  ",
+      "id": "p-marie-martin"
+    },
+    {
+      "name": "Ana María Gómez-Ruiz",
+      "id": "p-ana-mar-a-g-mez-ruiz"
+    },
+    {
+      "name": "Zoë  Ødegård",
+      "id": "p-zo-deg-rd"
+    },
+    {
+      "name": "Jean 2 Dupont",
+      "id": "p-jean-2-dupont"
+    },
+    {
+      "name": "---",
+      "id": "p-p"
+    },
+    {
+      "name": "",
+      "id": "p-p"
+    }
+  ]
+}

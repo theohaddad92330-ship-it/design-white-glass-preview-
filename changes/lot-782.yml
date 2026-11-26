@@ -1,0 +1,38 @@
+lot: lot-782
+issues: [5203]
+
+changelog:
+  id: 2026-11-03-lot-782
+  comment: 'Lot 782 (#5203) — Découvrir cherche dans tous les besoins, récents et anciens, avec filtres et recherche depuis un consultant'
+  fr:
+    date: 3 novembre 2026
+    title: Découvrir cherche dans tous les besoins, récents et anciens
+    items:
+      - 'Une recherche par mot-clé, compétence ou techno cherche par défaut dans tous les besoins connus, sans limite d’âge : un compte qui a eu un besoin Java il y a quatre ans remonte sur « Java ».'
+      - 'La carte dit pourquoi le compte est là : la nature du besoin (recrutement, mission, projet) et sa date, « en 2022 » ou « il y a 3 mois ».'
+      - 'Dans « Cadrer la recherche », la période des besoins (Tous, Récents, Anciens) et leur nature retirent ce qui ne correspond pas.'
+      - 'Un sélecteur « Depuis un consultant » pose ses compétences comme critères de la recherche.'
+      - 'Avec une région active, le cadrage nomme la zone au lieu de dire « aucune zone posée ».'
+  en:
+    date: November 3, 2026
+    title: Discover searches every need, recent and old
+    items:
+      - 'A keyword, skill or tech search now covers every known need by default, with no age limit: an account that had a Java need four years ago shows up for "Java".'
+      - 'The card says why the account is there: the need type (hiring, assignment, project) and its date, "in 2022" or "3 months ago".'
+      - 'In "Frame the search", the needs period (All, Recent, Older) and the need type remove what does not match.'
+      - 'A "From a consultant" picker sets their skills as search criteria.'
+      - 'With an active region, the framing names the area instead of saying "no area set".'
+
+inserts:
+  - file: apps/api/src/modules/demo/demo-coverage.ts
+    text: |
+      /**
+       * #5203 (lot 782) — LES FILTRES DE BESOINS DE DÉCOUVRIR (période, nature) ET LA NATURE SUR LA CARTE : SEEDÉS.
+       * Les cinq comptes fictifs de `withDemoCommonBase` portent chacun un besoin daté (de 2 à 31 mois) et sa nature
+       * (recrutement, mission, projet) ; les filtres RETIRENT en salle comme en vrai (`candidateMatchesNeedFilters`).
+       */
+      export const DEMO_DISCOVER_NEEDS_FILTERS_COVERAGE: Readonly<{ state: 'seede'; reason: string }> = {
+        state: 'seede',
+        reason:
+          '#5203 (03/11/2026) — en salle, `withDemoCommonBase` (`demo-discover-common-base.ts`) sème cinq besoins fictifs datés (récents et anciens) de trois natures et applique `needsPeriod` / `needsNature` comme le vrai chemin. Vérifié par `demo-discover-common-base-coverage.spec.ts`.',
+      }

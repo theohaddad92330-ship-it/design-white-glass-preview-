@@ -1,0 +1,29 @@
+lot: w14-ecran-0311
+issues: [5032, 4714, 4595]
+
+changelog:
+  id: 2026-11-03-w14-ecran
+  comment: 'Lot W14 (#5032.9 #4595.3) — le panneau de conversation, le back-office'
+  fr:
+    date: 3 novembre 2026
+    title: Laura dit ce qu’elle a lu
+    items:
+      - 'Le panneau de la conversation (⋯ › Conversation › Résumé) dit quand Laura a lu un fil de ta messagerie, et seulement à toi.'
+  en:
+    date: November 3, 2026
+    title: Laura says what she read
+    items:
+      - 'The conversation panel (⋯ › Conversation › Summary) says when Laura read a thread of your mailbox, to you only.'
+
+inserts:
+  - file: agent_docs/demo-mode.md
+    text: |
+
+      ## Lot W14 (03/11/2026) — classement démo
+
+      - **« Laura a lu ce fil » dans le panneau de conversation (#5032.9)** — VIDE À DESSEIN : la salle n'a aucune
+        messagerie branchée, donc aucun tour de Laura n'y lit de fil ; inventer cette lecture serait une donnée fictive
+        présentée comme un fait.
+      - **Note « ce qui part sans clic » de la file CRM (#4714.4)** — déjà livrée (`CrmWriteQueueState`) ; texte
+        statique, sans donnée à semer.
+      - **Back-office (#4595.3)** — outil interne, hors salle de démonstration.

@@ -1,0 +1,79 @@
+name: Démo (sonde post-déploiement)
+
+# #4035.2 — ouvre UNE session démo comme un prospect (`POST /demo/session`) et exige une salle prête en ≤ 60 s
+# (`scripts/probe-demo-session.mjs`). Le 11/10/2026 la salle est restée cassée ~8 h API « healthy » : `uptime.yml`
+# sonde `/health/ready` et une page statique, aucune des deux n'ouvre de salle.
+#
+# Aucun workflow de déploiement n'existe dans ce dépôt (Railway / Vercel déploient sur push de `main`) : la sonde
+# part donc à chaque push sur `main`, APRÈS un délai pour laisser le déploiement se faire, puis toutes les heures.
+#
+# ⚠️ PAS couplée au healthcheck Railway de l'API (décision Louis 11/10) : un défaut de démo bloquerait le déploiement
+# d'un correctif prod. Ce job est rouge et prévient ; il ne retient rien. La porte avant fusion est le job CI
+# « Démo (semis sur vraie base) ».
+#
+# À poser (Settings → Secrets and variables → Actions) :
+#   variable PROBE_API_URL   (ex. https://api.bellum-ai.com — la même que `uptime.yml`)
+#   secret   DEMO_LINK_TOKEN (le jeton du lien de démo)
+# L'une des deux absente = avertissement explicite, sortie verte (comme `uptime.yml`).
+
+on:
+  # Plus de `push` sur main (31/10/2026) : avec `checkSuites: true` (.railway/railway.ts), Railway
+  # attend TOUTES les suites du commit avant de déployer ; cette sonde attend le déploiement.
+  # Interblocage. Le passage horaire ci-dessous reste le filet. Détail : docs/ci.md « La file de fusion ».
+  schedule:
+    - cron: '17 * * * *'
+  workflow_dispatch:
+
+# Une seule session à la fois : le plafond de sessions démo (429) est partagé.
+concurrency:
+  group: demo-smoke
+  cancel-in-progress: false
+
+permissions:
+  contents: read
+  deployments: read
+
+jobs:
+  probe:
+    name: Salle démo prête ≤ 60 s
+    # Voir `uptime.yml` : `vars.CI_RUNS_ON`, pas `ubuntu-latest` en dur.
+    runs-on: ${{ vars.CI_RUNS_ON || 'ubuntu-latest' }}
+    timeout-minutes: 15
+    steps:
+      - uses: actions/checkout@v7
+      - uses: actions/setup-node@v7
+        with:
+          node-version: 22
+      # Le déploiement Railway prend quelques minutes après le push : sonder trop tôt testerait l'ANCIENNE version.
+      #
+      # ATTENTE ACTIVE BORNÉE (22/10/2026) : c'était `sleep 420` à chaque push de main, sur un
+      # runner du pool partagé — 65 runs × 483 s = 523 runner-min/sem, un slot bloqué 8 min par
+      # fusion, pour une sonde qui dure 32 s (audit CI 15→22/10). On interroge maintenant,
+      # toutes les 15 s, les déploiements GitHub du commit (statuts posés par Railway / Vercel) et
+      # on sonde dès qu'ils sont TOUS terminés (au moins 60 s après le push, le temps qu'ils
+      # apparaissent). Plafond inchangé : 420 s, puis on sonde quand même. ⚠️ NON PROUVÉ : que Railway
+      # poste bien ses déploiements sur GitHub ; sinon l'attente va jusqu'à 420 s, comme avant.
+      - name: Laisser le déploiement se faire
+        if: github.event_name == 'push'
+        env:
+          GH_TOKEN: ${{ github.token }}
+          DEPOT: ${{ github.repository }}
+          SHA: ${{ github.sha }}
+        run: |
+          debut=$SECONDS
+          while [ $((SECONDS - debut)) -lt 420 ]; do
+            sleep 15
+            [ $((SECONDS - debut)) -ge 60 ] || continue
+            etats=$(gh api "repos/$DEPOT/deployments?sha=$SHA" --jq '.[].statuses_url' 2>/dev/null \
+              | while read -r url; do gh api "$url" --jq '.[0].state // "pending"' 2>/dev/null || echo pending; done)
+            if [ -n "$etats" ] && ! echo "$etats" | grep -qvE '^(success|failure|error|inactive)$'; then
+              echo "déploiements terminés après $((SECONDS - debut)) s :"; echo "$etats" | sort | uniq -c
+              exit 0
+            fi
+          done
+          echo "::warning::Aucun déploiement terminé vu en 420 s : on sonde quand même."
+      - name: Ouvrir une session démo
+        env:
+          PROBE_API_URL: ${{ vars.PROBE_API_URL }}
+          DEMO_LINK_TOKEN: ${{ secrets.DEMO_LINK_TOKEN }}
+        run: node scripts/probe-demo-session.mjs

@@ -1,0 +1,1453 @@
+{
+  "page": {
+    "title": "My day",
+    "headingWithName": "Hello {{name}}. Here is where to spend your time today.",
+    "heading": "Hello. Here is where to spend your time today.",
+    "subtitle": "Here is what changed, what is urgent, and what {{brand}} suggests you do next.",
+    "subtitleWithDecisions_one": "{{count}} topic needs a decision today.",
+    "subtitleWithDecisions_other": "{{count}} topics need a decision today.",
+    "generatedAt": "Refreshed at {{time}}",
+    "refresh": "Refresh",
+    "refreshDetail": "Rereads your calendar, mailbox and tasks",
+    "loading": "Loading today's brief…",
+    "loadingSlow": "This is taking longer than expected. You can try again.",
+    "export": {
+      "cta": "Export",
+      "detail": "Copies today’s briefing to the clipboard — nothing is sent",
+      "header": "Today — {{time}}",
+      "done": "Briefing copied to the clipboard",
+      "failed": "Could not copy the briefing"
+    },
+    "share": {
+      "cta": "Share",
+      "detail": "Copies this page's link, with your current view",
+      "done": "Link copied to the clipboard",
+      "failed": "Could not copy the link"
+    }
+  },
+  "decisions": {
+    "title": "Your decisions",
+    "category": {
+      "protect": "Protect what's already won",
+      "nextMove": "Next commercial move",
+      "simplify": "Simplify"
+    },
+    "dispersion": "Several administrative topics are open at once — this one groups them."
+  },
+  "readAs": {
+    "label": "Read as",
+    "standardOrder": "standard order",
+    "change": "Change in Settings › Profile",
+    "role": {
+      "owner": "Executive",
+      "admin": "Manager",
+      "sales": "Sales",
+      "recruiter": "Recruiter"
+    },
+    "stadeLabel": "Company stage",
+    "stade": {
+      "freelance": "0 to 5 consultants",
+      "petite": "6 to 15 consultants",
+      "structuration": "16 to 50 consultants",
+      "etablie": "more than 50 consultants"
+    }
+  },
+  "actions": {
+    "title": "Do this now",
+    "empty": "Your day is calm, based on the sources currently readable.",
+    "emptyPartial": "No action to suggest: not all the sources below are connected.",
+    "conflict": "Two meetings overlap by {{minutes}} min: {{first}} and {{second}}",
+    "meetingPrep": "Prepare {{subject}}",
+    "positiveReply": "{{counterpart}} replied positively on “{{subject}}” — follow through",
+    "positiveReplyNoSubject": "{{counterpart}} replied positively — follow through",
+    "followUp": "{{counterpart}} has not replied in {{days}} days on “{{subject}}”",
+    "followUpNoSubject": "{{counterpart}} has not replied in {{days}} days",
+    "followUpEsn": "{{counterpart}} (ESN) has not replied in {{days}} days on “{{subject}}”",
+    "followUpEsnNoSubject": "{{counterpart}} (ESN) has not replied in {{days}} days",
+    "freshSignal": "{{company}} moved",
+    "needStale": "Need “{{title}}” open for {{days}} days, no shortlist",
+    "needResumeDue": "Need “{{title}}”: the planned resume date has passed",
+    "missionEnding": "Mission “{{label}}”: ending in {{days}} days",
+    "paymentOverdue": "Mission “{{label}}”: payment {{days}} days overdue",
+    "paymentOverdueMonth": "Mission “{{label}}” — invoice for {{month}}: payment {{days}} days overdue",
+    "rfpDue": "RFP “{{title}}”: due in {{days}} days",
+    "consultantAvailable": "{{name}} frees up in {{days}} days",
+    "availabilityReconfirm": "{{name}}'s availability unconfirmed for {{days}} days",
+    "missionNoEndDate": "Mission “{{label}}”: no end date recorded",
+    "connectorBrokenMailbox": "Your mailbox lost its write access",
+    "connectorBrokenAgenda": "Your calendar lost its write access",
+    "renewalNotEngaged": "Mission “{{title}}”: renewal in {{days}} days, no conversation started",
+    "submissionNoResponse": "{{name}}’s profile sent, no response for {{days}} days",
+    "rfpRequirementGap_one": "RFP “{{title}}”: {{count}} requirement not covered",
+    "rfpRequirementGap_other": "RFP “{{title}}”: {{count}} requirements not covered",
+    "accountNoOwner": "{{company}} has no assigned owner",
+    "projectNoNextAction": "{{company}} — “{{label}}”: no next action scheduled",
+    "projectStale": "{{company}} — “{{label}}”: no movement for {{days}} days",
+    "craMissing": "Mission “{{label}}”: previous month's timesheet missing",
+    "invoiceReady": "Mission “{{label}}”: previous month's invoice ready to prepare",
+    "invoicingBlockedMissingRate": "Mission “{{label}}”: no daily rate on file, the invoice can't be prepared",
+    "invoicingBlockedMissingPo": "Mission “{{label}}”: no purchase order on file, though the client requires one",
+    "invoicingBlockedMissingBillingContact": "Mission “{{label}}”: no billing contact on file",
+    "invoicingBlockedMissingStartDate": "Mission “{{label}}”: no start date on file",
+    "invoicingBlockedMissingCost": "Mission “{{label}}”: no loaded cost on file",
+    "contactBounced": "{{name}}: the last email bounced",
+    "meetingNoFollowup": "Write up the follow-up for {{subject}}",
+    "urgencyTier": {
+      "urgent": "Urgent",
+      "important": "Important",
+      "opportunity": "Opportunity",
+      "administrative": "Administrative"
+    },
+    "banner": {
+      "count_one": "YOUR ACTION",
+      "count_other": "YOUR {{count}} ACTIONS",
+      "shown": "{{count}} shown",
+      "hidden_one": "{{count}} more",
+      "hidden_other": "{{count}} more",
+      "nothingSent": "nothing will be sent",
+      "preparedNotSent_one": "{{count}} item prepared — nothing has been sent",
+      "preparedNotSent_other": "{{count}} items prepared — nothing has been sent",
+      "sources": "Sources: {{list}}",
+      "sourcesUnknown": "No readable source on these actions."
+    },
+    "more": {
+      "title_one": "… and {{count}} more action",
+      "title_other": "… and {{count}} more actions",
+      "subtitle": "Open them: they are ranked like the others, and nothing goes out without you.",
+      "open_one": "See the other action",
+      "open_other": "See the {{count}} others",
+      "close": "Collapse",
+      "viewAllLink": "See everything in the Action Center"
+    },
+    "suggested": "Suggested by {{brand}}",
+    "preparedForYou": {
+      "title": "{{brand}} has prepared this for you",
+      "kind": {
+        "draft_message_one": "{{count}} draft ready to review",
+        "draft_message_other": "{{count}} drafts ready to review",
+        "shortlist_one": "{{count}} shortlist ready",
+        "shortlist_other": "{{count}} shortlists ready",
+        "checklist_one": "{{count}} checklist ready",
+        "checklist_other": "{{count}} checklists ready"
+      }
+    },
+    "prepared": "Preparation available",
+    "expires": "Valid until {{date}}",
+    "dateUnknown": "date unknown",
+    "cta": {
+      "reply": "Prepare a follow-through",
+      "follow_up": "Prepare a nudge",
+      "account": "Look into the opportunity",
+      "need_stale": "View the need",
+      "mission_end": "View the mission",
+      "payment_overdue": "View the mission",
+      "rfp_due": "View the RFP",
+      "conflict": "See both meetings",
+      "consultant_available": "View their profile",
+      "connector_broken": "Reconnect the tool",
+      "project": "View the project",
+      "contact": "View the contact",
+      "critical_data_missing": "Fill in the data"
+    },
+    "invoiceBlockedTimesheetNotSubmitted": "Mission “{{label}}”: this month's timesheet was not submitted",
+    "invoiceBlockedTimesheetNotValidated": "Mission “{{label}}”: the timesheet is awaiting client approval",
+    "invoiceBlockedTimesheetDisputed": "Mission “{{label}}”: the client disputes the timesheet",
+    "invoiceBlockedTimesheetAnomalies": "Mission “{{label}}”: the timesheet has anomalies",
+    "invoiceBlockedUnexplainedGap": "Mission “{{label}}”: a day gap is still unexplained",
+    "invoiceBlockedTimesheetRejected": "Mission “{{label}}”: the timesheet was rejected",
+    "invoiceBlockedPoPeriodMismatch": "Mission “{{label}}”: the purchase order does not cover the month",
+    "invoiceBlockedLegalContractInactive": "Mission “{{label}}”: no active contract covers this client",
+    "criticalDataMissionConsultant": "Mission “{{label}}”: no consultant assigned",
+    "criticalDataBillingContactEmail": "{{label}}: billing contact has no email",
+    "missionStarting": "Mission “{{label}}”: starts in {{days}} days",
+    "missionAmendmentPending": "Mission “{{label}}”: “{{document}}” sent {{days}} days ago, not signed",
+    "contactLeft": "{{name}} no longer works at {{company}}",
+    "connectorBrokenCrm": "Your CRM needs reconnecting"
+  },
+  "conflictDialog": {
+    "title": "Two meetings at the same time",
+    "description": "They overlap by {{minutes}} min.",
+    "noSubject": "Untitled meeting",
+    "openInAgenda": "Open in calendar",
+    "move": "Move",
+    "warn": "Warn",
+    "delegate": "Propose to delegate",
+    "delegateDialog": {
+      "title": "Propose delegating this meeting",
+      "description": "A draft to finish and send from your mail app. Nothing changes in your calendar: the organizer and the guests stay the same.",
+      "subject": "Can you take “{{subject}}”?",
+      "body": "Hi,\n\nI’m booked on two meetings at the same time. Could you take my place on “{{subject}}”, scheduled {{when}}?\n\n"
+    },
+    "responses": {
+      "label": "Replies: {{list}}",
+      "accepted": "{{count}} accepted",
+      "accepted_one": "{{count}} accepted",
+      "tentative": "{{count}} maybe",
+      "tentative_one": "{{count}} maybe",
+      "declined": "{{count}} declined",
+      "declined_one": "{{count}} declined",
+      "pending": "{{count}} pending",
+      "pending_one": "{{count}} pending"
+    },
+    "warnDialog": {
+      "title": "Warn a guest",
+      "description": "A draft to finish and send from your own mailbox — for someone with no CRM record.",
+      "emailLabel": "Email address",
+      "emailPlaceholder": "firstname.lastname@example.com",
+      "invalidEmail": "Invalid email address.",
+      "subject": "About “{{subject}}”",
+      "body": "Hi,\n\nI'm reaching out about our meeting “{{subject}}”, scheduled {{when}}.\n\n",
+      "send": "Open in my mailbox",
+      "cancel": "Cancel"
+    },
+    "resolution": {
+      "move": "Move after the other meeting",
+      "buffer": "Move with a {{duration}} buffer",
+      "shorten": "Shorten until the other meeting starts",
+      "shortenTitle": "Shorten this meeting?",
+      "confirmShorten": "Shorten",
+      "shortened": "Meeting shortened.",
+      "shortenedNotified": "Meeting shortened. Guests have been notified.",
+      "shortenedSilent": "Meeting shortened, without notifying guests.",
+      "failed": "That change did not go through."
+    },
+    "importance": {
+      "client": "Importance: high (client meeting)",
+      "internal": "Importance: standard (internal meeting)",
+      "same": "Same meeting type: the type doesn’t tell them apart. What moves is your call.",
+      "different": "The client meeting weighs more than the internal one. Neither one wins by default, even the client’s: nothing moves without your confirmation."
+    }
+  },
+  "artifacts": {
+    "meetingAttendees_one": "1 external attendee identified",
+    "meetingAttendees_other": "{{count}} external attendees identified",
+    "angle": "Suggested angle: {{title}}"
+  },
+  "facts": {
+    "meeting": "Client meeting coming up: {{subject}}.",
+    "meetingNoSubject": "A client meeting is coming up.",
+    "meetingEnded": "Client meeting ended with no follow-up written: {{subject}}.",
+    "meetingEndedNoSubject": "A client meeting ended with no follow-up written.",
+    "freshSignal": "{{signal}}"
+  },
+  "context": {
+    "conflict": "Two people are expecting you at the same time: one has to move.",
+    "meetingWithin": "It starts in less than {{hours}} h.",
+    "positiveReply": "The last message in the thread is inbound and positive.",
+    "silence_one": "Your last message is {{count}} day old, still unanswered.",
+    "silence_other": "Your last message is {{count}} days old, still unanswered.",
+    "silenceUndated": "Your last message went unanswered — its date is not readable.",
+    "freshSignal": "Signal that appeared in the last {{hours}} hours.",
+    "freshSignalUndated": "Detection date unknown — that is not “today”.",
+    "freshSignalTracked": "Signal tracked since that date; when it appeared is unknown.",
+    "meetingImminent": "It starts in less than {{minutes}} min: time to open the brief.",
+    "needStale": "Open for more than {{days}} days with no profile proposed.",
+    "needResumeDue": "Put on hold with a planned resume date of {{date}}.",
+    "missionEnding": "Ends in {{days}} days: time to prepare what's next.",
+    "missionEndingWithin": "It enters the {{days}}-day window before it ends.",
+    "paymentOverdue": "Past due for {{days}} days, with no payment recorded.",
+    "rfpDue": "Submission due in {{days}} days.",
+    "consultantAvailable": "All their current assignments end in {{days}} days.",
+    "availabilityReconfirm": "Availability entered more than {{days}} days ago, never reconfirmed since.",
+    "missionNoEndDate": "No end date recorded — invisible from deadlines until it has one.",
+    "connectorBroken": "Write access revoked — automations that depend on it went silent.",
+    "renewalNotEngaged": "No renewal conversation started — no email, no call on record.",
+    "submissionNoResponse": "Sent {{days}} days ago, with no response from the client at all.",
+    "rfpRequirementGap_one": "{{count}} mandatory requirement not covered yet.",
+    "rfpRequirementGap_other": "{{count}} mandatory requirements not covered yet.",
+    "accountNoOwner": "No owner assigned — an active account with no responsible rep.",
+    "projectNoNextAction": "No task open yet against this deal.",
+    "projectStale": "No stage movement for more than {{days}} days.",
+    "craMissing": "The previous month is closed and no timesheet was submitted.",
+    "invoiceReady": "No blocker left — the month can be prepared for invoicing.",
+    "invoicingBlockedMissingRate": "Without a daily rate, no amount can be prepared.",
+    "invoicingBlockedMissingPo": "The client requires a purchase order to invoice this mission.",
+    "invoicingBlockedMissingBillingContact": "No one is on file to send the invoice to.",
+    "invoicingBlockedMissingStartDate": "Without a start date, the covered month can't be determined.",
+    "invoicingBlockedMissingCost": "Without a loaded cost, margin can't be computed.",
+    "contactBounced": "The last email sent never reached their inbox — the contact detail needs checking.",
+    "meetingNoFollowup": "No note written in the {{hours}} h after the meeting.",
+    "invoiceBlocked": "The “ready to invoice” gate is blocked on this point, and it can be lifted on your side.",
+    "invoiceBlockedAwaitingThirdParty": "The block is waiting on the client: nothing to lift on your side today.",
+    "criticalDataMissionConsultant": "Without an assigned consultant, neither timesheet nor invoice can be computed.",
+    "criticalDataBillingContactEmail": "Without an email, the prepared invoice has nowhere to go.",
+    "missionStarting": "Starts within {{days}} days.",
+    "missionAmendmentPending_one": "Sent {{count}} day ago, still not signed.",
+    "missionAmendmentPending_other": "Sent {{count}} days ago, still not signed.",
+    "contactLeft": "Departure spotted within the last {{days}} days.",
+    "connectorDisconnected": "The connection no longer renews: you need to reconnect."
+  },
+  "dailyGestures": {
+    "title": "What's waiting on your decision",
+    "subtitle": "Mission tracking, timesheets, invoicing, needs — what the product can't decide on its own.",
+    "empty": "Nothing is waiting on a decision today.",
+    "more_one": "and {{count}} more",
+    "more_other": "and {{count}} more"
+  },
+  "weakestLink": {
+    "title": "The weakest link",
+    "loading": "Computing the weakest link…",
+    "error": "The weakest-link diagnosis could not be computed right now.",
+    "notEnoughSignal": "Not enough signal yet to name a main weakest link.",
+    "evidence": "What we observe",
+    "contradictoryEvidence": "What nuances this",
+    "recommendedExperiment": "What we suggest trying",
+    "actionsToStop": "What to stop doing, in the meantime",
+    "reviewDate": "Next review: {{date}}",
+    "secondary": "Other weak links to watch",
+    "notEvaluated": "Links not assessed",
+    "unwired_one": "{{count}} other family has no measured signal yet.",
+    "unwired_other": "{{count}} other families have no measured signal yet.",
+    "areas": {
+      "pas_de_pipeline_qualifie": "Qualified pipeline",
+      "comptes_ouverts_non_etendus": "Expansion of open accounts",
+      "offre_ou_positionnement_trop_larges": "Offer and positioning",
+      "mauvais_ciblage": "Targeting",
+      "absence_de_voie_dacces": "Access route",
+      "qualification_insuffisante": "Qualification",
+      "vivier_insuffisant": "Bench",
+      "talents_mal_securises": "Talent retention",
+      "marge_trop_faible": "Margin",
+      "delivery_fragile": "Delivery",
+      "absence_de_suivi_ou_de_prochaine_action": "Follow-up and next action",
+      "donnees_dispersees": "Data",
+      "absence_de_rituels": "Rituals",
+      "dependance_a_une_seule_personne": "Single-person dependency",
+      "capacite_commerciale_trop_faible": "Sales capacity",
+      "activite_mal_priorisee": "Activity prioritisation"
+    },
+    "families": {
+      "pas_de_pipeline_qualifie": "No qualified pipeline",
+      "comptes_ouverts_non_etendus": "Accounts open but not expanded",
+      "offre_ou_positionnement_trop_larges": "Offer or positioning too broad",
+      "mauvais_ciblage": "Poor targeting",
+      "absence_de_voie_dacces": "No way in",
+      "qualification_insuffisante": "Insufficient qualification",
+      "vivier_insuffisant": "Insufficient bench",
+      "talents_mal_securises": "Talent not properly secured",
+      "marge_trop_faible": "Margin too low",
+      "delivery_fragile": "Fragile delivery",
+      "absence_de_suivi_ou_de_prochaine_action": "No follow-up or next action",
+      "donnees_dispersees": "Scattered data",
+      "absence_de_rituels": "No rituals",
+      "dependance_a_une_seule_personne": "Dependency on a single person",
+      "capacite_commerciale_trop_faible": "Sales capacity too low",
+      "activite_mal_priorisee": "Poorly prioritized activity"
+    }
+  },
+  "preparations": {
+    "title": "Preparations"
+  },
+  "activeAnalysis": {
+    "single": "Analysis running: {{company}}",
+    "multiple_one": "Analysis running: {{company}} (+{{count}} more)",
+    "multiple_other": "Analysis running: {{company}} (+{{count}} more)",
+    "since": "running for {{minutes}} min"
+  },
+  "quickModes": {
+    "title": "Quick work modes",
+    "subtitle": "A free slot, nothing urgent on the calendar: here's what's worth doing with the time you have.",
+    "cta": "Open",
+    "managerNote": "As a manager, you also arbitrate for the team.",
+    "modes": {
+      "prospect": {
+        "title": "Prospect",
+        "description": "Head back to Discover with fresh accounts to work.",
+        "sessionSummary_one": "{{duration}} min · {{count}} account",
+        "sessionSummary_other": "{{duration}} min · {{count}} accounts"
+      },
+      "prepare_meetings": {
+        "title": "Prepare my meetings",
+        "description": "The next meetings on your calendar, with their prep.",
+        "sessionSummary_one": "{{duration}} min · {{count}} meeting",
+        "sessionSummary_other": "{{duration}} min · {{count}} meetings"
+      },
+      "handle_followups": {
+        "title": "Handle my follow-ups",
+        "description": "Threads without a reply and follow-ups to qualify.",
+        "descriptionCrmOnly": "No mailbox connected: follow-ups via CRM and tasks only.",
+        "sessionSummary_one": "{{duration}} min · {{count}} follow-up",
+        "sessionSummary_other": "{{duration}} min · {{count}} follow-ups"
+      },
+      "position_consultant": {
+        "title": "Position a consultant",
+        "description": "Profiles from the pool to propose on a need.",
+        "sessionSummary_one": "{{duration}} min · {{count}} profile",
+        "sessionSummary_other": "{{duration}} min · {{count}} profiles"
+      },
+      "secure_missions": {
+        "title": "Secure my missions",
+        "description": "Mission endings, renewals and overdue payments.",
+        "sessionSummary_one": "{{duration}} min · {{count}} mission",
+        "sessionSummary_other": "{{duration}} min · {{count}} missions"
+      },
+      "refresh_pipe": {
+        "title": "Refresh my pipeline",
+        "description": "Check in on deals in progress.",
+        "sessionSummary_one": "{{duration}} min · {{count}} deal",
+        "sessionSummary_other": "{{duration}} min · {{count}} deals"
+      }
+    }
+  },
+  "sinceLastVisit": {
+    "title": "What moved since your last visit",
+    "loading": "Loading…",
+    "firstVisit": "This is your first visit: the marker starts now. From your next visit on, whatever moved in between shows up here.",
+    "unreadable": "I could not read what moved. That is not “nothing happened” — the read itself failed.",
+    "upToDate": "You are up to date: nothing moved since {{date}}.",
+    "window": "Since {{date}}",
+    "more_one": "and {{count}} more — open the journal",
+    "more_other": "and {{count}} more — open the journal",
+    "openJournal": "Open the journal",
+    "digestUnreadable": "I could not count what moved. That is not “nothing moved”.",
+    "journalUnreadable": "The activity log did not answer. What is written above was read just fine.",
+    "lines": {
+      "account_signals": {
+        "value_one": "{{count}} new signal across {{accounts}}",
+        "value_other": "{{count}} new signals across {{accounts}}",
+        "valueOnly_one": "{{count}} new signal on your accounts",
+        "valueOnly_other": "{{count}} new signals on your accounts",
+        "accounts_one": "{{count}} account",
+        "accounts_other": "{{count}} accounts",
+        "unavailable": "The signals on your accounts could not be read. That is not “no signal”."
+      },
+      "replies_received": {
+        "value_one": "{{count}} reply received",
+        "value_other": "{{count}} replies received",
+        "notConnected": "No mailbox connected: I cannot tell you whether anyone replied. That is not “no reply”.",
+        "missingScope": "Your mailbox does not grant us read access: replies received cannot be measured.",
+        "unavailable": "Replies received could not be read. That is not “no reply”."
+      },
+      "job_changes": {
+        "value_one": "{{count}} contact changed employer — a new way in",
+        "value_other": "{{count}} contacts changed employer — that many new ways in",
+        "partial": "Too many contacts enriched since your last visit to count them in one go — the detail is in your contacts.",
+        "unavailable": "Role changes could not be read. That is not “nobody moved”."
+      },
+      "missions_moving": {
+        "value_one": "{{count}} mission drops below {{days}} days to its end date",
+        "value_other": "{{count}} missions drop below {{days}} days to their end date",
+        "unavailable": "Mission end dates could not be read. That is not “no deadline”."
+      },
+      "attack_angles_added": {
+        "value_one": "{{count}} new attack angle",
+        "value_other": "{{count}} new attack angles",
+        "unavailable": "Attack angles could not be read. That is not “no opportunity”."
+      },
+      "night_routines_run": {
+        "value_one": "{{count}} overnight routine found something",
+        "value_other": "{{count}} overnight routines found something",
+        "unavailable": "Overnight routines could not be read. That is not “nothing found”."
+      }
+    },
+    "longAbsence": {
+      "heading": "After a long absence, the essentials:",
+      "topLine": "Most important: {{text}}",
+      "openTasks_one": "{{count}} task is still waiting for you.",
+      "openTasks_other": "{{count}} tasks are still waiting for you.",
+      "expiredItems_one": "{{count}} action expired without being handled.",
+      "expiredItems_other": "{{count}} actions expired without being handled.",
+      "treatedByColleague_one": "{{count}} action was handled by a colleague.",
+      "treatedByColleague_other": "{{count}} actions were handled by a colleague."
+    },
+    "myActivity": "My recent activity"
+  },
+  "agenda": {
+    "prepProposal": {
+      "cta": "Prepare the meeting"
+    },
+    "title": "Your calendar",
+    "toPrepare": "To prepare",
+    "conflicts": "Conflicts",
+    "external": "Client",
+    "internal": "Internal",
+    "allDay": "All day",
+    "picker": {
+      "placeholder": "Default calendar",
+      "all": "All my calendars",
+      "incomplete": "One of your calendars did not answer: this list may be incomplete.",
+      "failed": "That choice could not be saved. Try again.",
+      "count": "{{count}} calendars",
+      "default": "Default",
+      "readOnly": "Read only"
+    },
+    "board": {
+      "day": "Day",
+      "week": "Week",
+      "today": "Today",
+      "previous": "Previous period",
+      "next": "Next period",
+      "now": "Now",
+      "join": "Join",
+      "live": "In progress",
+      "liveLeft_one": "In progress · {{count}} min left",
+      "liveLeft_other": "In progress · {{count}} min left",
+      "liveLeftHours_one": "In progress · {{count}} h left",
+      "liveLeftHours_other": "In progress · {{count}} h left",
+      "inMinutes_one": "In {{count}} min",
+      "inMinutes_other": "In {{count}} min",
+      "remaining_zero": "No meetings left today",
+      "remaining_one": "{{count}} meeting ahead",
+      "remaining_other": "{{count}} meetings ahead",
+      "meetingTime": "{{hours}} in meetings",
+      "externalGuests_one": "{{count}} external guest",
+      "externalGuests_other": "{{count}} external guests",
+      "room": "Room: {{name}}",
+      "roomSeats_one": "Room: {{name}} · {{count}} seat",
+      "roomSeats_other": "Room: {{name}} · {{count}} seats",
+      "roomTooSmall_one": "Room too small: {{people}} people for {{count}} seat",
+      "roomTooSmall_other": "Room too small: {{people}} people for {{count}} seats",
+      "kind": {
+        "private_busy": "Busy (private details)",
+        "cancelled": "Cancelled",
+        "out_of_office": "Out of office",
+        "focus_time": "Focus time",
+        "working_location": "Working location",
+        "birthday": "Birthday",
+        "email_event": "Event from an email",
+        "proposed": "Proposed slot, not accepted yet",
+        "external_meeting": "External meeting",
+        "internal_meeting": "Internal meeting",
+        "personal_block": "Personal block, no guests"
+      },
+      "emptyDay": "Nothing scheduled that day.",
+      "undated_one": "{{count}} event without a usable date.",
+      "undated_other": "{{count}} events without a usable date.",
+      "partial": "One of your calendars did not answer: some meetings may be missing here.",
+      "partialNamed": "“{{name}}” did not answer: some meetings may be missing here.",
+      "failed": "Your meetings could not be loaded.",
+      "conflict": "Clash",
+      "proposed": "Proposed",
+      "proposedHint": "Proposed — awaiting a reply, not yet confirmed.",
+      "createdByBellum": "Confirmed — proposed by {{brand}}",
+      "recurring": "Recurring",
+      "recurringHint": "Recurring — part of a series.",
+      "prepare": "Prepare the meeting",
+      "prepareNow": "Open the brief now",
+      "cancelled_one": "{{count}} cancelled meeting",
+      "cancelled_other": "{{count}} cancelled meetings",
+      "weekSummary_one": "{{count}} appointment this week",
+      "weekSummary_other": "{{count}} appointments this week",
+      "points_one": "{{count}} item",
+      "points_other": "{{count}} items",
+      "addEvent": "Add an appointment",
+      "reschedule": "Reschedule",
+      "seeWeek": "See the week",
+      "seeDay": "See the day"
+    },
+    "grid": {
+      "untitled": "Untitled",
+      "busy": "Busy",
+      "freeSlot": "{{duration}} free",
+      "unknownDuration": "No end time given — shown as 30 min by convention.",
+      "attendees_one": "{{count}} guest",
+      "attendees_other": "{{count}} guests",
+      "hourSuffix": "hr"
+    },
+    "reschedule": {
+      "title": "Move this event?",
+      "timeLabel": "Start time",
+      "guests_one": "{{count}} guest will be notified",
+      "guests_other": "{{count}} guests will be notified",
+      "externals_one": "including {{count}} external",
+      "externals_other": "including {{count}} external",
+      "notify": "Notify the guests",
+      "alwaysNotifies": "Your calendar always notifies guests of a change: this box cannot be unchecked.",
+      "noGuests": "Nobody else is invited: no message will go out.",
+      "cancel": "Cancel",
+      "confirm": "Move",
+      "moved": "Event moved.",
+      "movedNotified": "Event moved. The guests have been notified.",
+      "movedSilent": "Event moved, without notifying the guests.",
+      "failed": "The move did not go through.",
+      "dateLabel": "Day",
+      "notifyPreview": "Guests will receive the calendar update: new time {{after}} (instead of {{before}})."
+    },
+    "prep": {
+      "openAccount": "Open the account",
+      "noAccount": "No account in your portfolio matches this meeting.",
+      "personalMeeting": "Personal meeting — no account is attached to it.",
+      "close": "Close",
+      "chooseAccount": {
+        "title": "Several companies from your portfolio are invited to this meeting — which one are we preparing?"
+      },
+      "correctAccount": {
+        "label": "Not the right account?",
+        "attach": "Attach to an account",
+        "auto": "Detected automatically"
+      }
+    },
+    "newEvent": {
+      "title": "Book a meeting",
+      "subject": "Subject",
+      "subjectPlaceholder": "Kick-off — customer journey redesign",
+      "guests": "Guests",
+      "guestsPlaceholder": "first.last@company.com, other@company.com",
+      "invalidGuests": "Unreadable address: {{list}}",
+      "conferencing": "Add a video link",
+      "calendar": "Calendar",
+      "recurrence": "Recurrence",
+      "recurrenceNone": "Does not repeat",
+      "recurrenceDaily": "Every day",
+      "recurrenceWeekly": "Every week",
+      "recurrenceMonthly": "Every month",
+      "reminder": "Reminder",
+      "reminderDefault": "Calendar's default reminder",
+      "reminderAtStart": "At the time of the meeting",
+      "reminderMinutes_one": "{{count}} min before",
+      "reminderMinutes_other": "{{count}} min before",
+      "reminderHours_one": "{{count}} hour before",
+      "reminderHours_other": "{{count}} hours before",
+      "reminderDays_one": "{{count}} day before",
+      "reminderDays_other": "{{count}} days before",
+      "create": "Create",
+      "created": "Meeting created.",
+      "failed": "The meeting could not be created.",
+      "inviteNotice_one": "Confirming sends an invitation to {{count}} guest.",
+      "inviteNotice_other": "Confirming sends an invitation to each of the {{count}} guests.",
+      "noInviteNotice": "With no guest, the meeting is only placed in your calendar: no invitation is sent.",
+      "demoNotPossible": "This workspace is a demo: the calendar is read-only here, nothing is written.",
+      "date": "Date",
+      "startTime": "Time",
+      "durationMinutes": "Duration (minutes)"
+    },
+    "brief": {
+      "title": "Brief — {{subject}} · {{company}}",
+      "titleNoAccount": "Brief — {{subject}}",
+      "at": "Meeting at {{time}}",
+      "remote": "video call",
+      "computedAt": "brief computed at {{at}}",
+      "computedOn": "brief computed on {{at}}",
+      "export": "Export the brief",
+      "exported": "Brief copied — paste it wherever you need.",
+      "exportFailed": "The brief could not be copied.",
+      "blockIndex": "{{index}}",
+      "noContact": "None of this account’s contacts match the meeting guests. We don’t prepare the wrong person.",
+      "block": {
+        "who": "Who",
+        "history": "What was said",
+        "moving": "What’s moving there",
+        "stakes": "Their likely challenges",
+        "around": "Around them",
+        "positionable": "What you can put forward",
+        "outcome": "What you want to walk away with",
+        "objections": "Likely objections",
+        "facts": "Three useful facts",
+        "limits": "What this brief doesn’t know",
+        "linked": "Linked opportunities and missions",
+        "risks": "Risks",
+        "to_verify": "Still to verify",
+        "rex": "Case studies to cite",
+        "workshop_proposal": "Propose the workshop",
+        "pitch": "Your pitch",
+        "r1_recap": "What the R1 taught us"
+      },
+      "ground": {
+        "sourced": "{{sources}} · recorded {{date}}",
+        "mixed": "{{sources}} · recorded {{date}} — {{probable}} is likely, not established",
+        "inferred": "Inferred — confirm it during the meeting",
+        "derived": "Computed from {{from}}"
+      },
+      "sourceJoin": " + ",
+      "source": {
+        "crm": "your CRM",
+        "mailbox": "your mailbox",
+        "agenda": "your calendar",
+        "contact_record": "the contact record",
+        "account_analysis": "the account analysis",
+        "job_postings": "published job openings",
+        "press": "the press",
+        "registry": "a public registry",
+        "bench": "your bench",
+        "telephony": "your phone system",
+        "workspace": "your workspace"
+      },
+      "probable": {
+        "influence": "influence",
+        "sponsorship": "sponsorship",
+        "stakes": "the challenges",
+        "risk": "the risk"
+      },
+      "derivedFrom": {
+        "meeting_type": "the meeting type",
+        "relationship_state": "the relationship state",
+        "brief_coverage": "what the file could be read",
+        "esn_profile": "from your workspace profile",
+        "prior_meeting": "from meeting recaps",
+        "workspace_knowledge": "from what your workspace already knows"
+      },
+      "stance": {
+        "listen_not_pitch": "Listen, don’t pitch.",
+        "reconnect_not_resell": "Reconnect, don’t resell.",
+        "advance_not_restate": "Move it forward, don’t restate it.",
+        "prove_not_promise": "Prove it, don’t promise it.",
+        "serve_not_sell": "Serve, don’t sell.",
+        "align_not_report": "Align, don’t report.",
+        "qualify_not_assume": "Check, don’t assume.",
+        "secure_not_concede": "Secure, don’t concede.",
+        "frame_not_present": "Frame it with them, don’t present.",
+        "renew_on_results": "Renew on results, not on habit.",
+        "prepare_not_script": "Prepare the consultant, don’t script their answers."
+      },
+      "outcome": {
+        "qualify_need": "Understand the real need and what it serves.",
+        "agree_next_step": "Leave with a dated next step.",
+        "map_real_need": "Map out their real need.",
+        "date_to_present_profile": "Get a date to present a profile.",
+        "confirm_decision_path": "Confirm who decides, and through which path.",
+        "collect_profile_feedback": "Collect what the presented profile is missing.",
+        "collect_satisfaction": "Learn what works and what doesn’t today.",
+        "detect_upcoming_need": "Spot the next need before it goes out.",
+        "align_on_delivery": "Align on progress and trade-offs.",
+        "clarify_joint_pipeline": "Clarify what you can carry together.",
+        "clarify_problem": "Pin down the problem to solve.",
+        "clarify_budget_timing": "Pin down the budget and the timeline.",
+        "map_purchasing_circuit": "Understand the purchasing path: steps, vendor listing, approvals.",
+        "clarify_conditions": "Clarify the terms: rates, payment, contract.",
+        "book_workshop": "Leave with a dated workshop, and who will attend.",
+        "frame_workshop_need": "Frame the need: scope, constraints, success criteria.",
+        "brief_opportunities": "Brief the opportunities that come out of it, one by one.",
+        "confirm_renewal_decision": "Confirm the decision to renew, its terms and its timing.",
+        "prepare_consultant": "The consultant arrives prepared: need, people in the room, points to prove."
+      },
+      "noObjective": {
+        "internal": "Internal meeting: no commercial objective. We don’t invent one.",
+        "personal": "Personal meeting: no commercial objective, and no account is attached to it.",
+        "ambiguous": "The relationship state doesn’t say which kind of meeting this is. Rather than a guessed objective, none.",
+        "unknownRelationship": "The relationship state hasn’t been established on this account yet. Without it, the objective would be a guess."
+      },
+      "questions": "{{count}} questions",
+      "questions_one": "{{count}} question",
+      "accessPath": "Way in",
+      "guestLocalTime": "{{name}}: {{time}} ({{zone}})",
+      "missingParticipants": {
+        "title_one": "{{count}} known account contact not invited",
+        "title_other": "{{count}} known account contacts not invited"
+      },
+      "roleProbable": "{{role}}, likely",
+      "role": {
+        "technical": "Technical lead",
+        "economic": "Budget owner",
+        "procurement": "Procurement",
+        "user": "End user",
+        "champion": "Internal champion",
+        "influencer": "Influencer",
+        "blocker": "Gatekeeper",
+        "sponsor": "Sponsor",
+        "operational": "Operational",
+        "purchasing": "Procurement",
+        "unknown": "Role to establish"
+      },
+      "laura": {
+        "title": "{{copilot}} can help right now",
+        "questions": "Draft your questions in your own tone",
+        "compare": "Compare the profiles you could put forward",
+        "influence": "Open the account’s influence map",
+        "ask": "Ask {{copilot}}",
+        "prompt": "Help me prepare the meeting with {{contact}} at {{company}}: my questions in my tone, the profiles to put forward, and the influence map."
+      },
+      "loading": "Reading the account…",
+      "limit": {
+        "history_unread": "The exchange history couldn’t be read.",
+        "no_dated_signal": "No dated signal on the company.",
+        "relationship_unknown": "The relationship state isn’t established.",
+        "relations_unknown": "The person’s circle isn’t resolved.",
+        "bench_unread": "The bench couldn’t be read.",
+        "linked_unread": "Linked opportunities and missions couldn’t be read."
+      },
+      "check": {
+        "probable_role": "{{name}} — role to confirm: {{role}}",
+        "inferred_block": "To confirm: {{block}}",
+        "meeting_type": "The meeting type, hence the objective."
+      },
+      "fact": {
+        "sector": "Sector: {{value}}",
+        "employees": "Headcount: {{value}}",
+        "revenue": "Revenue: {{value}}",
+        "groupRoleSubsidiary": "Subsidiary of group {{siren}}",
+        "groupRoleSubsidiaryUnknown": "Subsidiary of a group",
+        "groupRoleParent": "Group parent company"
+      },
+      "linkedKind": {
+        "opportunity": "Opportunity",
+        "mission": "Mission",
+        "need": "Need"
+      },
+      "linkedForThisMeeting": "{{label}} — this meeting",
+      "risk": {
+        "left": "{{name}} — the recorded employer no longer matches this account",
+        "blocker": "{{name}} — identified blocker"
+      },
+      "more_one": "+{{count}} more line in the file",
+      "more_other": "+{{count}} more lines in the file",
+      "readingTime": "read: ~{{count}} min",
+      "confidential": "confidential",
+      "recurring": "recurring",
+      "meetingType": {
+        "label": "Meeting type",
+        "auto": "Derived from the file",
+        "first_contact": "First meeting",
+        "warm_reactivation": "Reactivation",
+        "open_opportunity": "Open opportunity",
+        "profile_presentation": "Profile presentation",
+        "active_client_review": "Client review",
+        "steering_committee": "Steering committee",
+        "partner_meeting": "Partner meeting",
+        "internal_meeting": "Internal meeting",
+        "qualification": "Qualification",
+        "procurement": "Procurement",
+        "r1_discovery": "R1 — first meeting",
+        "r2_workshop": "R2 — workshop",
+        "renewal": "Renewal",
+        "consultant_interview": "Consultant interview"
+      },
+      "live": {
+        "enter": "I’m in the meeting",
+        "leave": "Back to the brief",
+        "recapAlready": "Recap already written",
+        "objectives": "Objectives",
+        "checklist": "Questions to ask",
+        "progress": "{{done}} of {{total}} asked",
+        "brief": "The brief, in short",
+        "notes": "Notes",
+        "noAccount": "Link this meeting to an account to structure your notes.",
+        "noRecording": "Nothing is recorded during the meeting: only your notes count."
+      },
+      "flow": {
+        "title": "The run-through",
+        "step": {
+          "opening": "Opening: who you are, why them, why now.",
+          "rex": "A case study to cite: a comparable client, a result.",
+          "discovery": "Discovery questions: listen more than you talk.",
+          "workshop_proposal": "Propose a workshop to dig into the need.",
+          "client_need": "The client’s need, in their words.",
+          "framing": "Framing: scope, constraints, timeline.",
+          "opportunities_brief": "Brief the opportunities that come out of it.",
+          "next_step": "The next step, dated, with an owner."
+        }
+      },
+      "pitch": {
+        "noProfile": "No pitch: your profile names neither your firm nor its offers. Fill them in under My profile.",
+        "sentence": {
+          "who": "We are {{esn}}; we support our clients on {{offers}}.",
+          "stake": "At {{account}}, we see a challenge: {{stake}}.",
+          "answer": "Our {{offer}} offer addresses exactly this challenge: {{stake}}.",
+          "answer_no_stake": "On {{offers}}, we step in where your teams need reinforcement.",
+          "proof": "We have done it before: {{rex}}.",
+          "ask": "I’d like to understand where you stand, to see whether this resonates.",
+          "ask_workshop": "I suggest a two-hour workshop to dig into this together.",
+          "ask_next_step": "Today’s goal: leave with a clear, dated next step."
+        }
+      },
+      "rex": {
+        "none": "No case study in your workspace — add one in Knowledge (a client proof, a case study) or list your references in My profile.",
+        "item": "{{kind}} · {{label}}",
+        "itemDated": "{{kind}} · {{label}} ({{date}})",
+        "kind": {
+          "mission": "Engagement",
+          "document": "Client proof",
+          "reference": "Reference"
+        }
+      },
+      "workshop": {
+        "propose": "Propose a two-hour workshop to frame the need with the people who own it.",
+        "attendees": "Ask who should attend: the decision-maker, the need owner, a technical lead.",
+        "date": "Set the date before you hang up — a workshop without a date doesn’t exist."
+      },
+      "r1": {
+        "found": "R1 on {{date}}: {{label}}",
+        "need": "Need created since: {{label}}",
+        "none": "No known R1 on this account: this R2 starts without what the first meeting would have taught. Write up the next recap so it counts.",
+        "unread": "This account’s meeting recaps could not be read: we don’t know whether there was an R1."
+      },
+      "unknownsLine": "Not established: {{list}}",
+      "unknown": {
+        "decision_role": "decision role",
+        "tenure": "time in role",
+        "undated_signals": "undated signals (set aside)",
+        "relation_roles": "decision role of some people",
+        "availability_unverified": "unverified availability of some profiles (set aside)"
+      }
+    },
+    "compact": {
+      "lead": "Your agenda today:",
+      "client_one": "{{count}} client meeting",
+      "client_other": "{{count}} client meetings",
+      "internal_one": "{{count}} internal",
+      "internal_other": "{{count}} internal",
+      "proposed_one": "{{count}} proposed, awaiting an answer",
+      "proposed_other": "{{count}} proposed, awaiting an answer",
+      "freeSlots_one": "{{count}} free slot between your meetings",
+      "freeSlots_other": "{{count}} free slots between your meetings",
+      "capacity_one": "{{count}} case you can open today",
+      "capacity_other": "{{count}} cases you can open today"
+    },
+    "plan": {
+      "banner": "Pick a free slot to plan a meeting with {{name}}. The invitation goes out when you confirm.",
+      "bannerNoEmail": "Pick a free slot to plan a meeting with {{name}}. No known email: nothing is sent, add a guest if needed.",
+      "switchToDay": "Day view"
+    },
+    "slotProposal": {
+      "pick": "Propose a slot to an account",
+      "pickPlaceholder": "Propose a slot…"
+    }
+  },
+  "mail": {
+    "title": "Your mailbox",
+    "empty": "No thread to handle.",
+    "awaitingReply": "Awaiting reply",
+    "unread": "Unread",
+    "positiveReplies": "Positive replies",
+    "days_one": "{{count}} day",
+    "days_other": "{{count}} days",
+    "more_one": "and {{count}} more thread",
+    "more_other": "and {{count}} more threads"
+  },
+  "waitingOnOthers": {
+    "title": "Waiting on others",
+    "profilesLabel": "Profiles sent to the client",
+    "profileDays_one": "{{count}} day without client feedback",
+    "profileDays_other": "{{count}} days without client feedback"
+  },
+  "slotProposalPriorityAccounts": {
+    "title": "Accounts to prioritize for a meeting",
+    "empty": "No account with a measured score to prioritize right now."
+  },
+  "accounts": {
+    "title": "Accounts that moved",
+    "empty": "No new signal on your watched accounts in the last 48 hours.",
+    "signalOn": "Signal spotted on {{date}}",
+    "signalTrackedSince": "Signal tracked since {{date}}",
+    "signalUndated": "Detection date unknown",
+    "more_one": "and {{count}} more account",
+    "more_other": "and {{count}} more accounts",
+    "access": {
+      "relationship": "relationship already known to your workspace",
+      "history": "exchange already recorded",
+      "verified_email": "verified email",
+      "email": "unverified email",
+      "phone": "phone",
+      "professional_profile": "professional profile",
+      "searched_nothing_found": "no channel found after searching"
+    }
+  },
+  "runningJobs": {
+    "title": "In progress",
+    "empty": "Nothing in progress right now.",
+    "open": "Open",
+    "cancel": "Cancel",
+    "steps_one": "{{count}} step of {{total}} done",
+    "steps_other": "{{count}} steps of {{total}} done",
+    "estimatedDuration": "Estimated duration: {{minutes}} min",
+    "pendingValidations_one": "{{count}} validation pending",
+    "pendingValidations_other": "{{count}} validations pending",
+    "intermediateResults_one": "{{count}} intermediate result",
+    "intermediateResults_other": "{{count}} intermediate results"
+  },
+  "criticalRisks": {
+    "title": "Critical risks",
+    "empty": "No critical risk detected right now.",
+    "signalsCount_one": "{{count}} colliding signal",
+    "signalsCount_other": "{{count}} colliding signals",
+    "kind": {
+      "financial": "Overdue payment",
+      "mission": "Renewal not engaged",
+      "contractual": "Uncovered RFP requirement"
+    }
+  },
+  "discoverAlerts": {
+    "title": "Discover alerts",
+    "emptySince": "No trigger since {{date}}.",
+    "emptyNever": "No trigger since watching began.",
+    "source": {
+      "public_information": "Public information",
+      "refreshed_analysis": "Refreshed analysis",
+      "workspace_declaration": "Declared in your workspace"
+    },
+    "kind": {
+      "new_signal": "New signal",
+      "new_matching_company": "New company",
+      "new_confirmed_need": "Confirmed need",
+      "new_relationship": "New relationship",
+      "analysis_refreshed": "Refreshed analysis",
+      "mission_ended": "Mission ended",
+      "new_access_path": "New way in"
+    },
+    "on": "{{kind}} · {{source}} · on {{date}}",
+    "undated": "{{kind}} · {{source}} · date unknown"
+  },
+  "state": {
+    "notConnected": "Not connected",
+    "missingScope": "Permission to renew",
+    "unavailable": "Unavailable",
+    "partial": "Incomplete list",
+    "agendaNotConnected": "No calendar connected. Connect it to see your meetings and free slots here.",
+    "agendaMissingScope": "Your calendar is connected but does not grant us read access. Reconnect it to enable this part.",
+    "agendaUnavailable": "Your calendar did not respond. Nothing is lost: try again in a moment.",
+    "agendaPartial": "One of your calendars did not answer: some meetings may be missing here.",
+    "agendaProviderDisabled": "Calendar access is switched off on the provider's side: the calendar API is not enabled for the connected account. Until it is, your meetings will not show up.",
+    "mailboxPartial": "One of your mailboxes did not answer: some messages may be missing here.",
+    "mailboxProviderDisabled": "Mailbox access is switched off on the provider's side: the API is not enabled for the connected account.",
+    "mailboxNotConnected": "No mailbox connected. Connect it to see your follow-ups and unread threads here.",
+    "mailboxMissingScope": "Your mailbox is connected but does not grant us read access. Reconnect it to enable this part.",
+    "mailboxUnavailable": "Your mailbox did not respond. Nothing is lost: try again in a moment.",
+    "connectAgenda": "Connect my calendar",
+    "connectMailbox": "Connect my mailbox",
+    "reconnect": "Reconnect",
+    "check": "Check access",
+    "tasksUnavailable": "Your tasks could not be read. They are still there — it is the read that failed."
+  },
+  "error": {
+    "title": "The briefing could not be loaded",
+    "retry": "Try again"
+  },
+  "tasks": {
+    "title": "Your tasks",
+    "overdue_one": "{{count}} overdue",
+    "overdue_other": "{{count}} overdue",
+    "today_one": "{{count}} due today",
+    "today_other": "{{count}} due today",
+    "empty": "No open task.",
+    "add": "Add a task",
+    "buckets": {
+      "overdue": "Overdue",
+      "today": "Today",
+      "tomorrow": "Tomorrow",
+      "this_week": "This week",
+      "later": "Later"
+    },
+    "showList": "Show my tasks"
+  },
+  "source": {
+    "capability": {
+      "agenda": "your calendar",
+      "mailbox": "your mailbox",
+      "signals": "your accounts’ signals",
+      "tasks": "your tasks",
+      "needs": "your open needs",
+      "missions": "your missions",
+      "invoices": "your billing",
+      "rfps": "your RFPs"
+    }
+  },
+  "activity": {
+    "title": "My activity",
+    "loading": "Reading…",
+    "unmeasured": "Not measured",
+    "more": "Full detail in Decisions",
+    "partial": "{{served}} of {{expected}} blocks.",
+    "failed": {
+      "pipe": "The pipeline did not answer.",
+      "revenue": "Revenue did not answer.",
+      "missions": "The margin calculation did not answer.",
+      "capacity": "The capacity calculation did not answer.",
+      "sinceLastVisit": "The activity log did not answer."
+    },
+    "blank": "No account followed yet. Run a search or import your base.",
+    "blankSearch": "Run a search",
+    "blankImport": "Import my base",
+    "pipe": {
+      "title": "My pipeline",
+      "withoutAmount_one": "and {{count}} deal with no amount — never counted as zero.",
+      "withoutAmount_other": "and {{count}} deals with no amount — never counted as zero.",
+      "stageWithoutAmount_one": "{{count}} with no amount",
+      "stageWithoutAmount_other": "{{count}} with no amount",
+      "intake_one": "{{count}} detected project nobody has picked up yet.",
+      "intake_other": "{{count}} detected projects nobody has picked up yet."
+    },
+    "revenue": {
+      "title": "My revenue",
+      "titleMonth": "My revenue — {{month}}",
+      "signed": "Signed",
+      "produced": "Produced",
+      "invoiced": "Invoiced",
+      "collected": "Collected",
+      "floor_one": "{{count}} line with no amount — the total is a floor.",
+      "floor_other": "{{count}} lines with no amount — the total is a floor.",
+      "reasons": {
+        "no_source": "No source for this figure — nothing has been recorded yet. This is not “zero euros”.",
+        "no_amount": "Lines exist, none carries an amount. The figure stays unknown.",
+        "unavailable": "Could not read. Nothing is shown rather than a figure at zero."
+      }
+    },
+    "missions": {
+      "title": "My running missions",
+      "empty": "No running mission. A mission comes from a won project.",
+      "emptyAction": "Open my pipeline",
+      "unknownAccount": "Client outside your scope",
+      "assigneesUnknown": "Consultant not read — reading the assignments failed.",
+      "noAssignee": "Nobody is assigned",
+      "noStartDate": "start unknown",
+      "noEndDate": "end date unknown",
+      "daysLeft_one": "{{count}} day left",
+      "daysLeft_other": "{{count}} days left",
+      "overdue_one": "end date passed {{count}} day ago",
+      "overdue_other": "end date passed {{count}} days ago",
+      "margin": "{{percent}}% margin",
+      "marginNotMeasured": "not measurable — loaded cost not entered",
+      "marginForbidden": "margin outside your scope",
+      "nextAction": "Next action — {{title}} (due {{due}})",
+      "noNextAction": "No next action — set one",
+      "more_one": "and {{count}} more mission",
+      "more_other": "and {{count}} more missions",
+      "openAll": "See all my missions"
+    },
+    "capacity": {
+      "title": "Days left to sell — {{count}} months",
+      "days_one": "{{count}} day to sell",
+      "days_other": "{{count}} days to sell",
+      "scope": "Across the workspace consultants, running assignments deducted.",
+      "unmeasured_one": "{{count}} of the three months returned nothing. A partial sum would look like a total.",
+      "unmeasured_other": "{{count}} of the three months returned nothing. A partial sum would look like a total."
+    },
+    "openDashboard": "Open my dashboard",
+    "openPipe": "Open my pipeline",
+    "openMissions": "Open my assignments"
+  },
+  "sources": {
+    "title": "Sources used today",
+    "manage": "Manage connections",
+    "manageNone": "Connect my tools",
+    "connected": "connected",
+    "partial": "partial access",
+    "missingScope": "access to renew",
+    "unavailable": "read failed",
+    "notConnected": "not connected",
+    "complete": "Complete brief",
+    "incomplete": "Incomplete brief",
+    "drawer": {
+      "errorLabel": "Technical error",
+      "freshnessLabel": "Last read"
+    }
+  },
+  "laura": {
+    "prioritize": "Ask {{copilot}} to prioritise my day",
+    "prioritizePrompt": "Look at my day: my priorities, my calendar, my mailbox, my tasks and what changed since yesterday. What should I start with, and why?"
+  },
+  "meetingPrep": {
+    "description": "What to have in mind before this meeting, taken from your space."
+  },
+  "surfaceState": {
+    "notConnected": {
+      "title": "I can already help you without your tools.",
+      "reason": "No calendar and no mailbox are connected to this workspace.",
+      "stillPossible": "I work from your commercial audit, your accounts and whatever you import.",
+      "unlocks": "Connect them and I add your meetings, the replies waiting for you and your follow-ups."
+    },
+    "connectedNotSynced": {
+      "title": "Your tool is connected, but I haven’t read it yet.",
+      "reason": "The first read hasn’t happened: nothing started on its own when you connected.",
+      "stillPossible": "You can keep working on your accounts and your audit in the meantime.",
+      "unlocks": "One first read and your day fills up with your real meetings and real exchanges."
+    },
+    "syncing": {
+      "title": "I’m reading your sources right now.",
+      "reason": "The read is under way: what’s missing here isn’t absent, it hasn’t arrived yet.",
+      "stillPossible": "You can leave this screen, the read carries on without you.",
+      "unlocks": "When it ends, I tell you what I found and what I couldn’t make sense of."
+    },
+    "readyEmpty": {
+      "title": "I looked, and there’s nothing for today.",
+      "reason": "Your sources answered: that’s a fact, not a failed read.",
+      "stillPossible": "This is the moment to go looking: an account to analyse, a message to prepare.",
+      "unlocks": "As soon as a meeting, a reply or a signal turns up, it shows here."
+    },
+    "partial": {
+      "title": "One source is missing: this list is incomplete.",
+      "reason": "One of your sources didn’t answer. What you see is true, it isn’t everything.",
+      "stillPossible": "You can work on what I already have — nothing is lost.",
+      "unlocks": "The missing source may hold exactly what would fill your day."
+    },
+    "missingScope": {
+      "title": "Your tool is connected, but it doesn’t let me read.",
+      "reason": "The permission granted doesn’t cover the read I need.",
+      "stillPossible": "You can work from an import in the meantime.",
+      "unlocks": "Renew the permission and this part of your day switches on."
+    },
+    "permissionDenied": {
+      "title": "This access isn’t open to you in this workspace.",
+      "reason": "It’s a right, not a failure: someone administers this access and it hasn’t been given to you.",
+      "stillPossible": "Everything that doesn’t depend on this access is still yours.",
+      "unlocks": "Once the access is open, this part appears with nothing else to do."
+    },
+    "stale": {
+      "title": "What I’m showing you here is old.",
+      "reason": "The last read is old: these lines may be wrong today.",
+      "stillPossible": "You can read them knowing when they’re from — the date is written.",
+      "unlocks": "A fresh read and you get the real state of your day back."
+    },
+    "unavailable": {
+      "title": "Your source didn’t answer.",
+      "reason": "The read failed just now. Nothing already there is lost.",
+      "stillPossible": "The rest of your day is intact, and you can try again.",
+      "unlocks": "As soon as the source answers, this part comes back as it was."
+    },
+    "error": {
+      "title": "Something broke on my side.",
+      "reason": "This isn’t an empty day: I couldn’t do what I had to do.",
+      "stillPossible": "Whatever was already computed stays on screen, with its date.",
+      "unlocks": "Once the failure is past, there’s nothing for you to redo."
+    },
+    "gesture": {
+      "connect": "Connect my tools",
+      "reconnect": "Renew the permission",
+      "sync": "Run the first sync",
+      "retry": "Try again",
+      "requestAccess": "Request access",
+      "audit": "Update my audit",
+      "analyseAccount": "Analyse a first account",
+      "import": "Import a file",
+      "discover": "Open Discover",
+      "prepareMessage": "Prepare a message from an account"
+    }
+  },
+  "hero": {
+    "summary": {
+      "meetings_one": "{{count}} meeting",
+      "meetings_other": "{{count}} meetings",
+      "replies_one": "{{count}} reply to handle",
+      "replies_other": "{{count}} replies to handle",
+      "followUps_one": "{{count}} follow-up",
+      "followUps_other": "{{count}} follow-ups",
+      "overdueTasks_one": "{{count}} overdue task",
+      "overdueTasks_other": "{{count}} overdue tasks",
+      "blockers_one": "{{count}} blocker",
+      "blockers_other": "{{count}} blockers"
+    },
+    "notEnoughContext": "I can help you better than this: connect your tools or analyse an account, and I’ll tell you where to start."
+  },
+  "card": {
+    "aria": "{{tier}} · {{headline}}",
+    "lastOutcome": "Latest result logged: {{outcome}}",
+    "qualification": {
+      "verdict": "Qualification grid: {{verdict}}"
+    },
+    "axes": {
+      "weighed": "Comes first on: {{list}}",
+      "dominatesPriority": "Comes first: a more pressing deadline or commitment.",
+      "dominatesConfidence": "Comes first: a better-confirmed fact.",
+      "notEvaluable": "Could not be assessed: {{list}}",
+      "notEvaluableCount_one": "{{count}} axis could not be assessed",
+      "notEvaluableCount_other": "{{count}} axes could not be assessed",
+      "name": {
+        "consequence": "consequence",
+        "urgency": "urgency",
+        "actionableNow": "doable now",
+        "roleFit": "your role and goals",
+        "dataConfidence": "data confidence",
+        "effort": "effort",
+        "commitment": "commitment made",
+        "dependency": "dependency",
+        "opportunity": "opportunity"
+      }
+    },
+    "roleFit": {
+      "mark": "Priority for me",
+      "marked": "Priority for me",
+      "markAria": "Mark this card type as a priority for my role",
+      "markedAria": "Remove this card type from your priorities"
+    },
+    "transform": {
+      "cta": "Turn into a task",
+      "done": "Already turned into a task"
+    },
+    "confidence": {
+      "verified": "Verified fact",
+      "reported": "Reported fact",
+      "inferred": "Inferred — to confirm"
+    },
+    "explain": {
+      "label": "Why?",
+      "question": "Why is the card “{{headline}}” in my briefing today?"
+    },
+    "estimatedTime_one": "{{count}} min",
+    "estimatedTime_other": "{{count}} min",
+    "disposition": {
+      "postpone": "Postpone",
+      "dismiss": "Not relevant",
+      "done": "Already handled",
+      "postponeLegend": "Postpone until when?",
+      "postponeOptions": {
+        "this_afternoon": "This afternoon",
+        "tomorrow": "Tomorrow",
+        "this_week": "This week",
+        "custom": "Custom date"
+      },
+      "customDateLabel": "Pick a date",
+      "customConfirm": "Postpone to this date",
+      "reasonsLegend": "Why is it not relevant?",
+      "reasons": {
+        "wrong_priority": "Wrong priority",
+        "already_handled": "Already done",
+        "wrong_data": "Wrong data",
+        "not_now": "Not now",
+        "out_of_scope": "Out of scope",
+        "other": "Other"
+      },
+      "wrongDataHint": "Wrong data is corrected on its record:",
+      "error": "The action was not saved. Try again."
+    }
+  },
+  "tiles": {
+    "label": "Waiting today",
+    "queue": {
+      "label": "To do now",
+      "hint": "Ordered from most to least urgent"
+    },
+    "drafts": {
+      "label": "Drafts to review",
+      "hint": "Prepared by {{copilot}} · nothing is sent without you"
+    },
+    "missions": {
+      "label": "Missions to anticipate",
+      "hint": "Missions ending and missions without an end date"
+    },
+    "replies": {
+      "label": "Replies to handle",
+      "hint": "Inbox · since last night"
+    },
+    "signals": {
+      "label": "New signals",
+      "hint": "Discover alerts since your last visit"
+    }
+  },
+  "scope": {
+    "label": "Whose day this is",
+    "me": "Me",
+    "team": "Team"
+  },
+  "today": {
+    "updated": "Brief updated at {{time}} · {{day}}",
+    "menu": {
+      "label": "More actions on the brief"
+    },
+    "start": {
+      "kicker": "Start here",
+      "kickerWithName": "Start here · {{name}}",
+      "nothing": "Nothing urgent is waiting for you right now",
+      "advance": "Move this action forward",
+      "seeAccount": "See the account"
+    },
+    "plan": {
+      "title": "{{name}}’s plan",
+      "allTasks": "All your tasks"
+    },
+    "decisions": {
+      "note": "What awaits your call, grouped by kind.",
+      "label": "Kind of decisions",
+      "arbitrations_one": "Call · {{count}}",
+      "arbitrations_other": "Calls · {{count}}",
+      "gestures": "Follow-up gestures"
+    },
+    "agendaCard": {
+      "title": "Today’s meetings",
+      "open": "Open the meeting",
+      "seeAgenda": "Calendar"
+    },
+    "agendaView": {
+      "conflicts_one": "{{count}} conflict",
+      "conflicts_other": "{{count}} conflicts",
+      "toPrepare_one": "{{count}} to prepare",
+      "toPrepare_other": "{{count}} to prepare"
+    },
+    "teamReturn": {
+      "note": "Team space · filters do not change the signed-in role.",
+      "dayOf": "{{name}}’s day",
+      "myDay": "Back to My day"
+    }
+  },
+  "day": {
+    "title": "Your day",
+    "tiles": {
+      "pipe": {
+        "label": "Open deals",
+        "detail_one": "{{count}} deal of yours",
+        "detail_other": "{{count}} deals of yours",
+        "withoutAmount_one": "{{count}} without an amount",
+        "withoutAmount_other": "{{count}} without an amount",
+        "unmeasured": "No amount entered on your {{count}} deals",
+        "none": "No open deals"
+      }
+    },
+    "startHere": {
+      "why": "Why this one?",
+      "whyTitle": "Why this one comes first",
+      "close": "Close"
+    },
+    "profiles": {
+      "title": "Profiles you follow",
+      "availability": "Declared availability: {{date}}",
+      "all": "The whole talent pool"
+    },
+    "deals": {
+      "title": "Deals to move forward",
+      "withoutAmount": "amount not entered",
+      "all": "All my deals",
+      "owner": "owner {{name}}",
+      "noNextAction": "no next action"
+    }
+  },
+  "verdict": {
+    "meetingPrep": "Walk in with the account context and one precise question.",
+    "followUp": "The ball is in your court: the follow-up is yours.",
+    "reply": "A yes is waiting for your answer: it comes before follow-ups.",
+    "account": "A move at this client may open a door: check whether it concerns you.",
+    "missionEnd": "What follows this mission is decided before it ends, not after.",
+    "conflict": "One of the two meetings has to move.",
+    "task": "A promised task is either kept or rescheduled.",
+    "needStale": "This need is waiting for a shortlist to move forward.",
+    "paymentOverdue": "This payment is late: a billing reminder is due.",
+    "rfpDue": "The deadline is set by the buyer: it will not move.",
+    "consultantAvailable": "This consultant is freeing up: the next assignment is found before the last day.",
+    "availabilityReconfirm": "An availability not reconfirmed is no longer reliable.",
+    "missionNoEndDate": "Without an end date, neither renewal nor bench time can be anticipated.",
+    "connectorBroken": "Reconnect the tool: what depends on it is not running.",
+    "renewalNotEngaged": "The renewal window is open and the conversation has not started.",
+    "submissionNoResponse": "This profile is waiting for client feedback: follow up.",
+    "rfpRequirementGap": "A mandatory requirement is not covered in the response.",
+    "accountNoOwner": "Nobody owns this account: assign someone.",
+    "projectNoNextAction": "This deal has no next step planned.",
+    "projectStale": "This deal has not changed stage for a long time.",
+    "craMissing": "No timesheet, no invoice: the timesheet comes first.",
+    "invoiceReady": "Everything is ready: this month's invoice can be prepared.",
+    "invoicingBlockedMissingData": "A single piece of data is missing to invoice: fill it in.",
+    "contactBounced": "This address no longer works: find the right one before the next send.",
+    "meetingNoFollowup": "Write the meeting follow-up while it is fresh.",
+    "invoiceBlocked": "This month's invoice is blocked by the named point.",
+    "criticalDataMissing": "A critical piece of data is missing, and what follows depends on it.",
+    "missionStarting": "The start is prepared before day one: access, equipment, kick-off.",
+    "missionAmendmentPending": "The amendment binds nobody until it is signed.",
+    "contactLeft": "Your contact has left: find out who takes over."
+  },
+  "consequence": {
+    "missionEnd": "Without a signed follow-on, the consultant goes on the bench when the mission ends.",
+    "paymentOverdue": "Until it is paid, this amount is missing from cash.",
+    "rfpDue": "After the deadline, the response is no longer admissible.",
+    "connectorBroken": "Automations that depend on this tool stay stopped.",
+    "renewalNotEngaged": "Without a conversation started, the mission stops on its end date.",
+    "rfpRequirementGap": "A mandatory requirement left unanswered can make the bid non-compliant.",
+    "craMissing": "Without a timesheet, this month's invoice cannot be prepared.",
+    "invoiceReady": "Until it is prepared, the month stays uninvoiced.",
+    "invoicingBlockedMissingData": "While the data is missing, this month's invoice cannot go out.",
+    "contactBounced": "Messages sent to this address do not arrive.",
+    "invoiceBlocked": "While the block holds, this month's invoice cannot go out.",
+    "criticalDataMissing": "While the data is missing, the step that depends on it stays impossible.",
+    "missionAmendmentPending": "Until it is signed, the amendment's terms do not apply.",
+    "contactLeft": "Messages addressed to them at this client no longer reach anyone."
+  },
+  "arrival": {
+    "title": "Where to start",
+    "analyze": {
+      "label": "Analyse an account",
+      "hint": "I type a name, I get the full account file."
+    },
+    "discover": {
+      "label": "Find accounts",
+      "hint": "I look for accounts that match my offer."
+    },
+    "laura": {
+      "label": "Talk to {{copilot}}",
+      "hint": "I describe what I need, {{copilot}} suggests what comes next."
+    }
+  }
+}

@@ -1,0 +1,131 @@
+{
+  "_synthetic": true,
+  "_note": "Dossier de test SYNTHÉTIQUE pour le banc d'éval. Les faits firmographiques sont les valeurs RÉELLES et vérifiables dans ce dépôt — app/eval/strategy/companies/thales.json, bloc `registry`, relevé le 2026-07-19 sur recherche-entreprises.api.gouv.fr (DINUM, adossé à INSEE Sirene). Les entités et les contacts sont des données de TEST, jamais des affirmations sur des personnes ou des filiales réelles. Le chiffre d'affaires est ABSENT : aucune source du dépôt ne le porte, et un chiffre inventé dans le gardien des chiffres inventés serait la faute même qu'il traque.",
+  "company": "Thales",
+  "research": {
+    "companyName": "Thales",
+    "sector": "Activités des sièges sociaux (NAF 70.10Z)",
+    "siren": "552059024",
+    "employees": "1 000 à 1 999 salariés",
+    "headquarters": "MEUDON, 92190, France",
+    "businessDescription": "Unité légale de tête enregistrée sous la dénomination THALES, code NAF 70.10Z (activités des sièges sociaux), catégorie grande entreprise.",
+    "subsidiaries": [
+      {
+        "name": "Thales — entité de test A"
+      },
+      {
+        "name": "Thales — entité de test B"
+      }
+    ],
+    "entitiesExhaustive": [
+      {
+        "name": "Thales — direction de test",
+        "type": "direction"
+      },
+      {
+        "name": "Thales — hub IT de test",
+        "type": "hub it",
+        "isItEntity": true
+      }
+    ],
+    "angles": [
+      {
+        "title": "Renfort systèmes embarqués",
+        "strategy": "Renforcer les équipes logicielles embarquées."
+      }
+    ],
+    "recentSignals": [
+      {
+        "signal": "Recrutements logiciel embarqué",
+        "type": "recrutement",
+        "date": "2026"
+      }
+    ],
+    "budgetSignals": [
+      {
+        "signal": "Recrutements logiciel embarqué",
+        "source": "offres d'emploi"
+      }
+    ],
+    "confidence": {
+      "score": 78,
+      "tier": "high",
+      "factors": {
+        "sourceCoverage": 0.8
+      }
+    },
+    "sources": {
+      "tags": {
+        "siren": "PUBLIC",
+        "employees": "PUBLIC",
+        "headquarters": "PUBLIC",
+        "sector": "PUBLIC"
+      },
+      "citations": {}
+    }
+  },
+  "gate": {
+    "decision": "go",
+    "score": 3
+  },
+  "classified_contacts": [
+    {
+      "fullName": "Nadia Rossi",
+      "title": "Chief Technology Officer",
+      "decisionRole": "technical",
+      "is_c_level": true
+    },
+    {
+      "fullName": "Thomas Girard",
+      "title": "Engineering Manager",
+      "decisionRole": "user"
+    },
+    {
+      "fullName": "Léa Fontaine",
+      "title": "Responsable Achats IT",
+      "decisionRole": "procurement"
+    }
+  ],
+  "plan": {
+    "actionPlan": {
+      "phases": [
+        {
+          "name": "Prise de contact",
+          "actions": [
+            {
+              "contact": "Nadia Rossi",
+              "action": "Discuter renfort systèmes embarqués."
+            }
+          ]
+        }
+      ]
+    },
+    "quick_wins": [
+      {
+        "contact": "Thomas Girard",
+        "action": "Partager un retour d'expérience staffing."
+      }
+    ],
+    "contactMessages": [
+      {
+        "contact": "Nadia Rossi",
+        "linkedinMessage": "Sujet renfort systèmes embarqués."
+      }
+    ],
+    "plays": [
+      {
+        "painSignal": "Recrutements logiciel embarqué",
+        "preuve": {
+          "source": "offres d'emploi",
+          "signal": "Recrutements logiciel embarqué"
+        },
+        "targetContact": "Nadia Rossi",
+        "esnOffer": "Renfort logiciel embarqué",
+        "angle": "Renfort systèmes embarqués",
+        "firstAction": "Discuter renfort systèmes embarqués.",
+        "readyMessage": "Sujet renfort systèmes embarqués.",
+        "risk": "Concurrence ESN installées."
+      }
+    ]
+  }
+}

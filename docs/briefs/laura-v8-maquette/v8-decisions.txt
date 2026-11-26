@@ -1,0 +1,47 @@
+# Laura V8 — décisions sur les surfaces secondaires
+
+29 octobre 2026. Cette passe traite le catalogue de demandes, les fenêtres, les menus, les panneaux et les retours de navigation. Elle conserve le thème Bellum, l’accueil, les réponses conversationnelles et les contrats métier V6–V7. La recette navigateur relève du responsable de l’intégration ; cette note n’en annonce pas la réussite.
+
+## De la capture aux causes
+
+La capture utilisateur du catalogue « Que demander à Laura ? » montre deux défauts observables : un champ entouré de deux contours de focus, et une succession d’accordéons de poids visuel presque égal. Le contenu détaillé déplace les demandes suivantes. Il faut ouvrir une ligne pour comprendre ce qu’elle prépare.
+
+La lecture du code ajoute deux causes de friction : une fermeture peut rendre le focus à un élément de menu devenu invisible ; une actualisation des intégrations peut ramener aux onglets alors que l’utilisateur agit dans une famille ou une relecture. La revue des surfaces relève aussi des bordures et reliefs cumulés, ainsi que des métadonnées fonctionnelles moins lisibles que les titres. Ces constats ne prouvent pas un échec de contraste sur tous les états rendus.
+
+## Choix retenus et références du projet
+
+| Référence analysée dans le projet | Principe repris | Décision V8 |
+| --- | --- | --- |
+| Visual Narratives | Grille stable, niveaux de lecture alignés | Catalogue à deux colonnes : liste compacte et aperçu distinct. Aucun troisième rail. |
+| Invite designers ; inspecteur de relations | Sélection identifiable, détail lié à l’objet choisi | Une seule demande sélectionnée ; texte intégral, résultat attendu et prérequis dans l’aperçu ; action reliée à cette demande. |
+| Menus de profil ; Iconsax | Lignes sobres, groupes et accent local | Filtres d’usage directement visibles ; libellés courts et compte discret. Hover neutre, sélection identifiable, focus indépendant. |
+| FLUXIO ; Customize section | Une enveloppe principale, zones fonctionnelles distinctes | Surfaces et pieds plus unis, séparateurs utiles, légère profondeur d’enveloppe. Le relief ne se répète pas sur chaque ligne. |
+| Brainwave | Retour au contexte précédent | Conserver l’origine de navigation, le filtre, le brouillon et la position de lecture. |
+| FAQ | Divulgation du complément | Garder ce principe pour les extraits de sources ; le retirer du catalogue de commandes. |
+
+Le transfert porte sur des principes observables. Les captures ne donnent ni leurs animations réelles, ni les fontes exactes, ni une preuve d’efficacité commerciale.
+
+## États et comportements à préserver
+
+- **Recherche et focus.** Un seul contour visible pour le champ composé ; le bouton d’effacement garde son propre focus. L’état sélectionné d’une ligne ne remplace jamais le repère clavier. Si une cible de retour a disparu ou est cachée, retrouver son équivalent visible, puis un contrôle utile de la surface active.
+- **Menus.** Les flèches parcourent les choix d’un menu. Échap ferme et revient au déclencheur. Tab ferme le menu et poursuit le parcours depuis ce point. Ce comportement ne s’applique pas automatiquement aux fenêtres de rôle dialog.
+- **Catalogue sur écran large.** Recherche puis filtres ; liste à gauche, aperçu à droite. Le corps peut défiler sans perdre l’action « Préparer cette demande ». Changer de filtre ou de recherche ramène au début des nouveaux résultats ; un résultat vide propose une réinitialisation explicite.
+- **Catalogue à 680 px et moins.** Liste puis aperçu. « Retour aux demandes » retrouve filtre, recherche, sélection et défilement. La réouverture commence par la liste.
+- **Préparation.** Les 31 identifiants, textes, résultats attendus et prérequis restent ceux du catalogue. Préparer insère dans la saisie sans envoyer. La logique existante d’annulation protège les brouillons plus récents ; les gardes de contexte strict et de profil neutre restent applicables.
+- **Sous-pages et relecture.** Une actualisation conserve le point de travail local. Après décision, le reçu devient le repère ; actualiser la page derrière un panneau ne doit pas lui voler le focus.
+
+## Motion : continuité de l’existant
+
+Aucune nouvelle animation de présentation n’est ajoutée. Les valeurs existantes de `dist/styles.css` sont conservées : **160 ms** pour les transitions courtes et l’apparition des menus ; **260 ms** pour l’entrée des modales et panneaux ; courbe `cubic-bezier(.32, .72, 0, 1)`. La ligne du catalogue réutilise la transition de fond de 160 ms. La sélection, les filtres et le passage liste–aperçu n’ajoutent aucun délai artificiel, cascade ou faux chargement. Les règles existantes de mouvement réduit restent prioritaires.
+
+## Cadre anti-slop et limite de la promesse
+
+Chaque surface sert une tâche identifiable. Les titres annoncent son contenu ; les actions décrivent leur effet. La palette, les logos et l’iconographie Bellum restent la référence. Aucun score personnalisé, recommandation calculée, pourcentage de travail ou bénéfice métier n’est inventé pour remplir l’interface. Les nuances de surface servent la hiérarchie ; elles ne deviennent pas une couleur par catégorie ou une carte par information.
+
+L’objectif est de rendre les choix plus compréhensibles et les enchaînements plus satisfaisants. Une interface cohérente et une recette réussie ne prouvent pas l’adhésion, la rétention ou une compréhension « en une fraction de seconde ». Ces effets restent à observer auprès d’utilisateurs : trouver une demande pertinente, anticiper son effet, la préparer, revenir au bon endroit et corriger une sélection sans aide.
+
+## Sources internes et vérification
+
+Sources : capture du 29 octobre à 12 h 23 ; `review/v4-component-visual-reference.md`, `v4-component-interactions.md`, `v4-pinterest-decomposition.md` ; `analysis/v8-surfaces-review.md`, `v8-critic.md`, `v8-navigation.js`, `v8-catalogue-contract.md` ; code et tokens de `dist/app.js` et `dist/styles.css`.
+
+Les contrôles locaux du catalogue couvrent la syntaxe, les 31 identifiants et leurs contenus, la recherche, les filtres, l’état vide et le retour mobile dans un DOM simulé. La contre-revue de navigation documente ses contrôles ciblés séparément. Le rendu final, les débordements, le clavier réel, les thèmes et le mouvement réduit restent à vérifier sur le build intégré.

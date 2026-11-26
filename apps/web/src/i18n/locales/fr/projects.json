@@ -1,0 +1,3344 @@
+{
+  "stageMove": {
+    "title": "Déplacer vers « {{stage}} »",
+    "changes": "Ce qui change",
+    "proposals": "Ce que je propose",
+    "checks": "Ce que je vérifie",
+    "externalTag": "sort de l’outil",
+    "cancel": "Annuler",
+    "confirm": "Déplacer",
+    "missionBlocks": "Une mission existe déjà sur ce projet. Traite-la d’abord — le rouvrir la laisserait orpheline sans que personne ne le voie.",
+    "reasonPlaceholder": "Précision (facultative)",
+    "change": {
+      "stage": "l’étape",
+      "stage_entered_at": "la date d’entrée d’étape",
+      "outcome": "l’issue",
+      "closed_at": "la date de clôture"
+    },
+    "proposal": {
+      "review_signal": "Relire le signal d’origine",
+      "qualify_later": "Reprendre cette piste dans une semaine",
+      "complete_btmmp": "Compléter la qualification de l’affaire",
+      "identify_sponsor": "Identifier qui porte le besoin chez le client",
+      "create_submissions": "Proposer des consultants de ton vivier",
+      "verify_profile_sent": "Vérifier que le profil est bien parti",
+      "schedule_interview": "Caler le créneau d’entretien avec le client",
+      "prepare_follow_up_mail": "Préparer le mail de suite",
+      "search_more_profiles": "Chercher d’autres profils dans ton vivier",
+      "prepare_rate_argument": "Préparer l’argumentaire de prix",
+      "check_procurement": "Vérifier le circuit d’achat du client",
+      "prepare_onboarding": "Préparer l’arrivée du consultant",
+      "collect_loss_rex": "Noter pourquoi on a perdu",
+      "park_account": "Mettre le compte en veille",
+      "replan_six_months": "Prévoir une relance dans six mois",
+      "set_review_date": "Fixer quand revoir cette affaire"
+    },
+    "check": {
+      "signal_dated": "Le signal porte-t-il une date ?",
+      "decision_contact_exists": "Un contact décisionnaire existe-t-il ?",
+      "skills_filled": "Les compétences sont-elles renseignées ?",
+      "at_most_five_profiles": "Cinq profils au maximum ?",
+      "none_rejected_here": "Aucun refusé chez ce client ?",
+      "amount_filled": "Le montant est-il saisi ?",
+      "dates_known": "Les dates sont-elles connues ?",
+      "sold_rate_known": "Le TJM vendu est-il connu ?",
+      "billing_contact_known": "Le contact facturation est-il connu ?"
+    },
+    "autoTag": "Fait par {{brand}}",
+    "manualTag": "À faire",
+    "pending_one": "{{count}} action reste à faire de ton côté",
+    "pending_other": "{{count}} actions restent à faire de ton côté",
+    "done": {
+      "create_mission": "Mission créée",
+      "park_account": "Compte écarté du portefeuille"
+    },
+    "failed": {
+      "create_mission": "La mission n’a pas pu être créée",
+      "park_account": "Le compte n’a pas pu être écarté"
+    },
+    "createsMission": "Il n’existe aucun moyen de la supprimer ensuite.",
+    "missionAnnounced": "La mission sera créée à la signature.",
+    "missionsAnnounced_one": "La mission sera créée : un positionnement retenu.",
+    "missionsAnnounced_other": "{{count}} missions seront créées : un positionnement retenu chacune.",
+    "moveOnly": "Déplacer seulement",
+    "strategy": "Stratégie d’approche (facultatif)",
+    "buyingModel": "Modèle d’achat (facultatif)",
+    "organisation": "Organisation de la décision (facultatif)",
+    "choiceNone": "Non renseigné",
+    "strategies": {
+      "conquete_directe": "Conquête directe",
+      "extension_de_compte": "Extension de compte",
+      "via_partenaire": "Via un partenaire",
+      "defense_de_base": "Défense de la base installée"
+    },
+    "buyingModels": {
+      "appel_offres": "Appel d’offres",
+      "accord_cadre": "Accord-cadre",
+      "referencement": "Référencement",
+      "gre_a_gre": "Gré à gré"
+    },
+    "organisations": {
+      "decideur_unique": "Décideur unique",
+      "comite_restreint": "Comité restreint",
+      "comite_elargi": "Comité élargi"
+    },
+    "lossReasonCode": "Motif de la perte",
+    "lossReasonCodes": {
+      "price": "Prix",
+      "competitor_won": "Concurrent retenu",
+      "no_budget": "Pas de budget",
+      "project_cancelled": "Projet annulé",
+      "bad_timing": "Mauvais timing",
+      "no_profile_available": "Pas de profil disponible",
+      "other": "Autre"
+    },
+    "reason": {
+      "review_signal": "pour vérifier qu’il tient toujours avant d’y passer du temps.",
+      "qualify_later": "pour ne pas la laisser dormir sans décision.",
+      "complete_btmmp": "budget, besoin, calendrier et décideurs doivent être connus avant de proposer des profils.",
+      "identify_sponsor": "sans personne qui porte le besoin, l’affaire n’avance pas.",
+      "create_submissions": "le besoin est qualifié, il faut des profils.",
+      "verify_profile_sent": "pour être sûr que le client l’a reçu.",
+      "schedule_interview": "un profil présenté doit vite devenir un entretien.",
+      "prepare_follow_up_mail": "un brouillon est déposé dans ta messagerie : rien ne part sans toi.",
+      "search_more_profiles": "pour avoir une alternative si le client n’est pas convaincu.",
+      "prepare_rate_argument": "pour défendre ton tarif journalier pendant la négociation.",
+      "check_procurement": "un référencement ou un bon de commande peut bloquer la signature.",
+      "prepare_onboarding": "pour que la mission démarre à la date prévue.",
+      "collect_loss_rex": "c’est le seul moment où le client s’en souvient.",
+      "park_account": "pour ne plus le relancer tant que rien n’a changé.",
+      "replan_six_months": "le contexte aura peut-être changé.",
+      "set_review_date": "une affaire en veille sans date est une affaire oubliée."
+    },
+    "result": {
+      "task": "Tâche créée : {{action}}",
+      "draft": "Brouillon déposé dans ta messagerie — rien n’est parti.",
+      "matching": "Vivier interrogé : les profils sont classés.",
+      "openTask": "Ouvrir Ma journée",
+      "openDraft": "Ouvrir le brouillon",
+      "openMatching": "Voir les profils"
+    },
+    "failedAction": "« {{action}} » n’a pas pu être faite",
+    "failedReason": {
+      "no_recipient": "Aucun contact de l’affaire n’a d’adresse e-mail.",
+      "no_need": "L’affaire n’a aucun besoin à classer.",
+      "unavailable": "Ce service n’est pas disponible pour l’instant.",
+      "failed": "Une erreur est survenue."
+    }
+  },
+  "accountTab": {
+    "needsReading": {
+      "seeSignals": "Voir les signaux du compte",
+      "prepareApproach": "Préparer une approche vers un rôle identifié",
+      "historyTitle": "Historique (daté, hors demandes ouvertes)",
+      "historyRow": "{{label}} — clos en {{date}}",
+      "families": "Expertises observées sur ce compte : {{families}}.",
+      "historyCaution": "Ce type d’expertise apparaît dans l’historique disponible ; vérifie si cette équipe porte encore le sujet."
+    },
+    "loading": "Je charge les projets de ce compte…",
+    "empty": {
+      "title": "Aucun projet sur ce compte.",
+      "description": "Ils apparaissent dès qu’une analyse détecte un chantier sur ce compte, ou dès que tu en ouvres un toi-même.",
+      "action": "Ouvrir le pipe",
+      "importAction": "Reprendre des projets depuis un fichier"
+    },
+    "createOpportunity": "Créer une opportunité",
+    "createConfirmedNeed": "Créer un besoin confirmé",
+    "funnel": {
+      "projects_one": "{{count}} projet",
+      "projects_other": "{{count}} projets",
+      "signals_one": "{{count}} signal, compté à part",
+      "signals_other": "{{count}} signaux, comptés à part",
+      "filtered": "{{shown}} sur {{total}} affichés"
+    },
+    "columns": {
+      "label": "Libellé",
+      "kind": "Type",
+      "stage": "Étape",
+      "confidence": "Confiance",
+      "amount": "Montant",
+      "closeDate": "Clôture espérée",
+      "stageAge": "Âge d’étape",
+      "evidence": "Niveau de preuve",
+      "sector": "Secteur"
+    },
+    "days_one": "{{count}} jour",
+    "days_other": "{{count}} jours",
+    "toolbar": {
+      "searchPlaceholder": "Chercher un projet, un détail, une offre",
+      "natureLabel": "Nature",
+      "projects": "Opportunités",
+      "signals": "Signaux",
+      "quickFiltersLabel": "Filtres rapides",
+      "inPipe": "Dans le pipe",
+      "inPipeHint": "Les cinq étapes du pipe — un projet détecté n’a encore été regardé par personne.",
+      "searchLabel": "Chercher un projet de ce compte",
+      "import": "Importer"
+    },
+    "filteredEmpty": {
+      "title": "Aucun projet de ce compte sur ces critères.",
+      "description": "Ce n’est pas « aucun projet » : le compte en porte d’autres, que ta recherche ou tes pastilles écartent."
+    },
+    "noNextAction": "Aucune tâche ouverte",
+    "genericContext": {
+      "title": "Contexte sectoriel ({{count}})",
+      "hint": "Déductions générales de l’analyse, sans fait, sans action ni propriétaire : elles ne comptent ni comme projets ni comme priorités. Rien n’est effacé."
+    },
+    "openDemands": {
+      "title": "Demandes actuelles",
+      "statusOpen": "Ouverte",
+      "see": "Voir la demande",
+      "headcount": "{{count}} postes",
+      "deadline": "avant le {{date}}",
+      "startsOn": "démarrage le {{date}}",
+      "internalHire": "Annonce de recrutement interne : « {{title}} » — ce n’est pas une mission de prestation accessible à une ESN.",
+      "noneFound": "Aucune demande ouverte identifiée dans les sources consultées.",
+      "notSearched": "La recherche de demandes n’a pas encore été faite sur ce compte.",
+      "unavailable": "Source indisponible : les demandes de ce compte n’ont pas pu être lues pour le moment."
+    },
+    "summary": {
+      "past": {
+        "title": "Affaires passées"
+      },
+      "active": {
+        "title": "Opportunités actives",
+        "empty": "Aucune opportunité active pour l’instant."
+      },
+      "confirmed": {
+        "title": "Demandes confirmées",
+        "empty": "Aucun besoin confirmé pour l’instant."
+      },
+      "plausible": {
+        "title": "Projets plausibles",
+        "empty": "Aucun projet plausible détecté pour l’instant."
+      },
+      "positioned": "Profil positionné",
+      "openInPipe": "Ouvrir dans le Pipe",
+      "contactsClient": "Contacts client",
+      "qualify": "Qualifier ce projet plausible",
+      "openNeedsForAccount": "Voir les besoins ouverts de ce compte"
+    },
+    "needContacts": {
+      "label": "Interlocuteurs · {{project}}",
+      "contact": "Contacter {{name}}"
+    }
+  },
+  "staffable": {
+    "yes": "Peut être pourvu",
+    "no": "Ne peut pas être pourvu",
+    "state": {
+      "yes": "Peut être pourvu",
+      "no": "Ne peut pas être pourvu"
+    },
+    "done": {
+      "yes": "C’est noté : ce besoin peut être pourvu.",
+      "no": "C’est noté, avec le motif.",
+      "unknown": "Rien n’a bougé."
+    },
+    "failed": "Je n’ai pas pu enregistrer cette décision.",
+    "dialog": {
+      "title": "Pourquoi « {{role}} » ne peut-il pas être pourvu ?",
+      "description": "Le motif est ce qui construit, refus après refus, la liste de ce que ton ESN ne sait pas encore faire.",
+      "placeholder": "Compétence absente du vivier, TJM incompatible, zone non couverte…",
+      "cancel": "Annuler",
+      "confirm": "Déclarer qu’il ne peut pas être pourvu"
+    }
+  },
+  "openNeeds": {
+    "tab": "Besoins ouverts",
+    "title": "Besoins",
+    "subtitle": "Les demandes à qualifier ou à couvrir, reliées à leur affaire.",
+    "chain": "Un besoin qualifié → critères de recherche → profils comparés → sélection.",
+    "createNeed": {
+      "addTrigger": "Ajouter un besoin",
+      "trigger": "Créer un besoin",
+      "title": "Créer un besoin",
+      "description": "Le minimum pour poser un besoin avant même d’avoir ouvert le projet : un titre, et le projet auquel le rattacher. Le reste — compétences, TJM, urgence — se saisit ensuite sur sa fiche.",
+      "titleLabel": "Titre du besoin",
+      "titlePlaceholder": "Ex. : Architecte cloud confirmé",
+      "projectLabel": "Projet de rattachement",
+      "projectHint": "Un projet regroupe les besoins d’un même client. Pas encore de projet pour ce client ? Crée-en un juste en dessous.",
+      "changeProject": "Modifier",
+      "projectChosenFallback": "Projet sélectionné",
+      "projectSearchPlaceholder": "Chercher un compte ou un projet…",
+      "projectsLoading": "Je charge les projets…",
+      "noProject": "Aucun projet ne correspond à cette recherche.",
+      "noProjectAtAll": "Aucun projet dans cet espace pour l’instant — tape le nom du client ci-dessus pour créer le premier projet, et le besoin avec.",
+      "cancel": "Annuler",
+      "submit": "Créer",
+      "failed": "Je n’ai pas pu créer ce besoin.",
+      "createProjectFor": "Créer un projet pour « {{name}} »",
+      "createProjectHint": "Aucun projet ne porte ce nom. Le projet sera créé au nom du compte, et il accueillera les besoins suivants.",
+      "creatingProject": "Création du projet…",
+      "createProjectFailed": "Le projet n’a pas pu être créé",
+      "withoutProjectFor": "Créer le besoin sans projet, pour « {{name}} »",
+      "withoutProjectHint": "La plupart des missions n’ont pas de projet derrière elles. Le besoin est alors rattaché au client, et à lui seul.",
+      "choosingWithoutProject": "J’enregistre le client…",
+      "withoutProjectChosen": "{{name}} — sans projet",
+      "withoutProjectFailed": "Je n’ai pas pu enregistrer ce client",
+      "contactLabel": "Interlocuteur",
+      "contactPlaceholder": "Aucun interlocuteur choisi",
+      "ownerLabel": "Porteur",
+      "ownerPlaceholder": "Aucun porteur choisi",
+      "createProjectGeneric": "Créer un projet",
+      "createProjectGenericHint": "Tape le nom du projet dans le champ ci-dessus, puis crée-le ici. Tu peux aussi créer la mission sans projet."
+    },
+    "importNeeds": {
+      "cta": "Importer des fiches de poste",
+      "dialogTitle": "Importer des fiches de poste",
+      "dialogDescription": "Dépose plusieurs fiches de poste d’un coup — chacune devient un besoin, à relire avant création.",
+      "pick": {
+        "accountLabel": "Compte client",
+        "accountPlaceholder": "Choisis le compte client",
+        "filesLabel": "Fiches de poste",
+        "dropLabel": "Glisse-dépose tes fichiers ici ou clique pour les parcourir",
+        "fileInputLabel": "Choisir des fichiers",
+        "hint": "PDF, DOC, DOCX, TXT (max. {{maxMb}} Mo par fichier, {{maxFiles}} fichiers par dépôt)",
+        "tooMany": "Dix fichiers au maximum par dépôt — dépose-les en plusieurs fois.",
+        "remove": "Retirer {{file}}",
+        "extracting_one": "J’extrais {{count}} fiche…",
+        "extracting_other": "J’extrais {{count}} fiches…",
+        "extract": "Extraire",
+        "cancel": "Annuler"
+      },
+      "preview": {
+        "hint": "Relis chaque besoin avant de valider — une case décochée ne sera pas créée.",
+        "titleLabel": "Titre du besoin",
+        "skillsFound_one": "{{count}} compétence trouvée",
+        "skillsFound_other": "{{count}} compétences trouvées",
+        "noSkills": "Aucune compétence trouvée dans le document.",
+        "duplicate": "Déjà importé chez ce compte : « {{title}} »",
+        "tooLarge": "Ce fichier dépasse {{max}} Mo.",
+        "submit_one": "Créer {{count}} besoin",
+        "submit_other": "Créer {{count}} besoins",
+        "creating": "Je crée les besoins…",
+        "created": "Créé",
+        "createFailed": "Non créé : {{reason}}",
+        "close": "Fermer"
+      }
+    },
+    "searchPlaceholder": "Rôle, projet ou société…",
+    "loading": "Je charge les besoins…",
+    "count_one": "{{count}} besoin",
+    "count_other": "{{count}} besoins",
+    "moreSkills_one": "+{{count}}",
+    "moreSkills_other": "+{{count}}",
+    "months_one": "{{count}} mois",
+    "months_other": "{{count}} mois",
+    "previous": "Précédent",
+    "next": "Suivant",
+    "page": "Page {{current}} sur {{total}}",
+    "filters": {
+      "withoutShortlist": "Sans shortlist",
+      "deadlinePassed": "Deadline dépassée",
+      "any": "Tous",
+      "skill": "Compétence",
+      "seniority": "Séniorité",
+      "location": "Localisation",
+      "urgency": "Urgence",
+      "status": "Statut",
+      "preciseState": "Étiquette (état précis)",
+      "contractKind": "Type de contrat",
+      "source": "Origine",
+      "startingWithin": "Démarre sous (jours)",
+      "includeClosed": "Inclure les besoins clos",
+      "more": "Plus de filtres",
+      "moreActive": "Plus de filtres ({{count}})",
+      "startingSoon": "Démarrage sous {{days}} j",
+      "toQualify": "À qualifier",
+      "clientReview": "En attente client",
+      "archived": "Archivés",
+      "quickLabel": "Filtres rapides"
+    },
+    "seats_one": "{{count}} poste",
+    "seats_other": "{{count}} postes",
+    "tjmEstimate": "Estimation, pas un tarif signé",
+    "ownedBy": "Porteur : {{name}}",
+    "deadlineOn": "Réponse avant le {{date}}",
+    "sourceLink": {
+      "open": "Ouvrir la source : {{site}}"
+    },
+    "stale": {
+      "badge": "Périmé — à revérifier",
+      "filter": "Périmés"
+    },
+    "columns": {
+      "needAccount": "Besoin / compte",
+      "tjmTarget": "TJM vente cible",
+      "followedProfiles": "Profils suivis",
+      "withoutProject": "Sans projet",
+      "role": "Rôle",
+      "skills": "Compétences obligatoires",
+      "seniority": "Séniorité",
+      "headcount": "Postes",
+      "tjm": "TJM cible",
+      "start": "Démarrage",
+      "duration": "Durée",
+      "location": "Lieu",
+      "remote": "Télétravail",
+      "contract": "Contrat",
+      "account": "Compte · Entité",
+      "perimeter": "Périmètre",
+      "source": "Origine",
+      "deadline": "Deadline",
+      "owner": "Owner",
+      "phase": "Phase",
+      "stageAge": "Âge dans l’étape",
+      "shortlist": "Shortlist",
+      "staffable": "Peut être pourvu",
+      "match": "Matching",
+      "nextAction": "Prochaine action"
+    },
+    "stageAge": {
+      "days_one": "{{count}} j",
+      "days_other": "{{count}} j",
+      "since": "Dans cette étape depuis le {{date}}",
+      "unknown": "aucun changement d’état enregistré"
+    },
+    "shortlist": {
+      "none": "aucune",
+      "noneHint": "Aucun profil n’a encore été positionné sur ce besoin."
+    },
+    "urgency": {
+      "basse": "Basse",
+      "normale": "Normale",
+      "haute": "Haute",
+      "critique": "Critique"
+    },
+    "export": {
+      "partner": "Exporter pour un partenaire",
+      "partnerHint": "Sans tarif ni porteur",
+      "ariaLabel": "Exporter les {{count}} besoins affichés en CSV",
+      "partnerAriaLabel": "Exporter les besoins affichés en CSV pour un partenaire, sans tarif ni porteur",
+      "trigger": "Exporter",
+      "hint": "Exporter en CSV les {{count}} besoins affichés (filtre et page en cours)"
+    },
+    "selection": {
+      "count_one": "{{count}} besoin sélectionné",
+      "count_other": "{{count}} besoins sélectionnés",
+      "actions": "Actions",
+      "clear": "Tout désélectionner",
+      "toggleAll": "Sélectionner les besoins de cette page",
+      "toggleOne": "Sélectionner « {{role}} »",
+      "exportCsv": "Exporter en CSV",
+      "exportJson": "Exporter en JSON",
+      "exportDone_one": "Export prêt : {{count}} besoin.",
+      "exportDone_other": "Export prêt : {{count}} besoins."
+    },
+    "actions": {
+      "title_one": "Sur ce besoin",
+      "title_other": "Sur {{count}} besoins",
+      "rowMenu": "Actions sur « {{role}} »",
+      "assignOwner": "Attribuer à…",
+      "clearOwner": "Retirer le propriétaire",
+      "noMembers": "Aucun membre chargé pour l’instant",
+      "loadingMembers": "Je charge les membres…",
+      "appliesTo_one": "Sur le besoin sélectionné.",
+      "appliesTo_other": "Sur les {{count}} besoins sélectionnés.",
+      "unnamedMember": "Membre sans nom",
+      "setUrgency": "Changer l’urgence",
+      "clearUrgency": "Effacer l’urgence",
+      "createActions": "Créer des actions…",
+      "createActionsTitle_one": "Créer une action sur ce besoin",
+      "createActionsTitle_other": "Créer une action sur {{count}} besoins",
+      "createActionsDescription": "Le libellé part tel quel comme prochaine étape, sur chaque besoin coché. Rien ne se coche ni ne s’envoie tout seul — c’est toi qui la feras avancer.",
+      "createActionsLabel": "Libellé de l’action",
+      "createActionsPlaceholder": "Ex. « Relancer le client sur le devis »",
+      "createActionsConfirm": "Créer l’action",
+      "hold": "Mettre en veille…",
+      "match": "Lancer les rapprochements",
+      "matchTitle_one": "Lancer le rapprochement sur ce besoin",
+      "matchTitle_other": "Lancer le rapprochement sur {{count}} besoins",
+      "matchDescription": "Le moteur cherche des profils du vivier pour chaque besoin retenu. Rien ne change sur la ligne tant qu’il n’a pas trouvé.",
+      "matchConfirm_one": "Lancer le rapprochement",
+      "matchConfirm_other": "Lancer {{count}} rapprochements",
+      "reactivate": "Réactiver",
+      "reactivateTitle_one": "Remettre ce besoin dans la pile",
+      "reactivateTitle_other": "Remettre {{count}} besoins dans la pile",
+      "reactivateDescription": "Le besoin repart, et son motif d’arrêt est effacé — une raison d’arrêt à côté d’un besoin en marche se lirait comme un blocage encore actif.",
+      "closeLost": "Marquer perdu…",
+      "closeCancelled": "Marquer annulé…",
+      "archive": "Archiver",
+      "archiveTitle_one": "Archiver ce besoin",
+      "archiveTitle_other": "Archiver {{count}} besoins",
+      "archiveDescription": "Un rangement neutre : le statut du besoin ne change pas. Il quitte « Besoins ouverts » et rejoint la vue « Archivés », d’où il se désarchive à tout moment.",
+      "unarchive": "Désarchiver",
+      "unarchiveTitle_one": "Désarchiver ce besoin",
+      "unarchiveTitle_other": "Désarchiver {{count}} besoins",
+      "unarchiveDescription": "Le besoin revient dans « Besoins ouverts », avec le statut qu’il avait — désarchiver ne le change pas non plus.",
+      "eligible": "{{eligible}} des {{total}} besoins cochés peuvent recevoir ce geste — les autres sont laissés tels quels.",
+      "cancel": "Annuler"
+    },
+    "hold": {
+      "title_one": "Mettre ce besoin en veille",
+      "title_other": "Mettre {{count}} besoins en veille",
+      "description": "Un besoin en veille reste compté comme ouvert. Sans motif, c’est celui que personne ne rouvre.",
+      "label": "Motif de la mise en veille",
+      "placeholder": "Budget gelé jusqu’en janvier, poste requalifié côté client…",
+      "hint": "Le motif s’efface quand le besoin est réactivé.",
+      "confirm": "Mettre en veille",
+      "resumeOnLabel": "Reprise prévue le (facultatif)"
+    },
+    "closeLost": {
+      "title_one": "Marquer ce besoin perdu",
+      "title_other": "Marquer {{count}} besoins perdus",
+      "description": "Perdu chez le CLIENT. Sans motif, le taux de perte par cause ne veut rien dire — et c’est l’un des rares chiffres qu’on regarde vraiment.",
+      "label": "Motif de la perte",
+      "placeholder": "TJM au-dessus du budget, concurrent déjà positionné…",
+      "hint": "Perdu n’est pas annulé : un besoin qu’on arrête de notre côté se marque « annulé ».",
+      "confirm": "Marquer perdu"
+    },
+    "closeCancelled": {
+      "title_one": "Marquer ce besoin annulé",
+      "title_other": "Marquer {{count}} besoins annulés",
+      "description": "Le besoin n’existe plus. C’est le chemin d’archivage : on archive, on ne supprime pas.",
+      "label": "Motif de l’annulation",
+      "placeholder": "Projet reporté, poste pourvu en interne…",
+      "hint": "Annulé n’est pas perdu : les confondre fausserait le taux de perte.",
+      "confirm": "Marquer annulé",
+      "presets": {
+        "expired": "Expiré",
+        "notRelevant": "Non pertinent"
+      }
+    },
+    "bulk": {
+      "done_one": "{{count}} besoin mis à jour",
+      "done_other": "{{count}} besoins mis à jour",
+      "matchStarted_one": "{{count}} rapprochement lancé",
+      "matchStarted_other": "{{count}} rapprochements lancés",
+      "partial": "{{done}} mis à jour, {{failed}} refusés",
+      "allFailed_one": "{{count}} besoin n’a pas pu être mis à jour",
+      "allFailed_other": "{{count}} besoins n’ont pas pu être mis à jour"
+    },
+    "contract": {
+      "regie": "Régie",
+      "forfait": "Forfait",
+      "recrutement": "Recrutement",
+      "inconnu": "Inconnu"
+    },
+    "remote": {
+      "sur_site": "Sur site",
+      "hybride": "Hybride",
+      "full_remote": "Télétravail complet",
+      "indifferent": "Indifférent"
+    },
+    "source": {
+      "manual": "Saisi à la main",
+      "from_account": "Depuis un compte",
+      "job_posting": "Offre d’emploi",
+      "hiring_signal": "Signal de recrutement",
+      "company_news": "Actualité de l’entreprise",
+      "tender": "Appel d’offres",
+      "client_email": "E-mail d’un client",
+      "meeting_notes": "Notes de réunion",
+      "crm_import": "Import depuis ton CRM",
+      "ats_import": "Import depuis ton ATS",
+      "csv_import": "Import CSV",
+      "pasted_text": "Texte collé"
+    },
+    "empty": {
+      "title": "Aucun besoin ouvert.",
+      "description": "Ils apparaîtront dès qu’un projet passe en besoin exprimé.",
+      "action": "Ouvrir le pipe"
+    },
+    "emptyFiltered": {
+      "title": "Aucun besoin ne correspond.",
+      "description": "Assouplis un filtre — la recherche porte sur le rôle, le projet et la société."
+    },
+    "error": {
+      "title": "Je n’ai pas pu charger les besoins.",
+      "description": "Réessaie — tes filtres sont conservés.",
+      "retry": "Réessayer"
+    },
+    "nextAction": {
+      "type_skills": "Typer les compétences",
+      "decide_expired": "Échéance passée — trancher",
+      "decide_stale_start": "Démarrage dépassé — trancher",
+      "answer_unstaffable": "Répondre au client",
+      "run_matching": "Lancer le matching",
+      "set_target_rate": "Qualifier le budget",
+      "send_shortlist": "Préparer le push"
+    },
+    "counters": {
+      "total": "ouverts",
+      "withoutShortlist": "sans shortlist",
+      "deadlinePassed": "échéance passée",
+      "startingSoon": "démarrent sous 30 j",
+      "notStaffable": "ne peuvent pas être pourvus"
+    },
+    "drawer": {
+      "title": "Plus de filtres",
+      "description": "Les critères s'appliquent quand tu cliques sur « Appliquer ».",
+      "reset": "Réinitialiser",
+      "apply": "Appliquer ({{count}})",
+      "unavailableTitle": "Ce qui ne se filtre pas ici",
+      "unavailable": {
+        "tjm_min_max": "tarif cible",
+        "duration_months": "durée",
+        "languages": "langues",
+        "clearances": "habilitations",
+        "origin": "origine commerciale (entrant, sortant, appel d’offres, apport)",
+        "channel": "canal",
+        "owner_id": "propriétaire",
+        "location_radius": "rayon autour d'une ville"
+      }
+    },
+    "savedViews": {
+      "title": "Mes vues",
+      "loading": "Je charge tes vues…",
+      "loadError": "Je n’ai pas pu charger tes vues enregistrées.",
+      "empty": "Aucune vue enregistrée. Pose des filtres, puis enregistre-les.",
+      "locked": "Les vues enregistrées ne sont pas ouvertes par ton offre.",
+      "shared": "partagée",
+      "save": "Enregistrer cette vue",
+      "nameLabel": "Nom de la vue",
+      "namePlaceholder": "Ex. : Java à staffer",
+      "confirm": "Enregistrer",
+      "cancel": "Annuler",
+      "remove": "Supprimer la vue « {{name}} »",
+      "noCriteria": "Pose au moins un filtre : une vue sans critère est la liste complète, elle existe déjà.",
+      "full": "Tu as déjà {{max}} vues sur cet écran — au-delà, on ne choisit plus. Supprimes-en une.",
+      "saved": "Vue « {{name}} » enregistrée.",
+      "removed": "Vue supprimée.",
+      "error": "Je n’ai pas pu enregistrer cette vue."
+    },
+    "hygiene": {
+      "withoutSkills": "sans compétence typée",
+      "withoutSkillsHint": "Le rapprochement besoin ↔ consultant ne sait pas traiter un besoin sans compétence exigée : ouvre le besoin et saisis-les. Compté sur l’ensemble des besoins ouverts de l’espace, pas sur le filtre en cours."
+    },
+    "sourceUnknown": "Origine inconnue",
+    "sourceUnknownHint": "Personne n’a dit par quel chemin ce besoin est arrivé.",
+    "summaryLabel": "Résumé des besoins"
+  },
+  "needStatus": {
+    "to_qualify": "À qualifier",
+    "qualified": "Qualifié",
+    "to_match": "Matching à lancer",
+    "matching": "Matching en cours",
+    "shortlist_ready": "Shortlist prête",
+    "submitted": "Profil proposé",
+    "client_review": "En validation client",
+    "interview": "Entretien",
+    "negotiation": "Négociation",
+    "won": "Signé",
+    "lost": "Perdu",
+    "on_hold": "En veille",
+    "to_reactivate": "À réactiver",
+    "cancelled": "Annulé",
+    "open": "Ouvert (avant reprise)",
+    "staffed": "Pourvu",
+    "detected": "Détecté"
+  },
+  "needTheoStatus": {
+    "to_qualify": "À qualifier",
+    "open": "Ouvert",
+    "covered": "Couvert",
+    "closed": "Clos"
+  },
+  "affairesTabs": {
+    "label": "Sections d’Affaires",
+    "pipeline": "Pipeline",
+    "needs": "Besoins",
+    "presentations": "Présentations"
+  },
+  "page": {
+    "backToPipe": "Retour au pipe",
+    "title": "Affaires",
+    "introTitle": "Affaires",
+    "introTitleWithoutName": "Affaires",
+    "introSubtitle": "Du premier échange au démarrage.",
+    "portfolioIntroTitle": "{{firstName}}, voici les comptes où il y a de la matière exploitable",
+    "portfolioIntroTitleWithoutName": "Les comptes où il y a de la matière exploitable",
+    "portfolioIntroSubtitle": "{{brand}} regroupe ici les besoins, projets plausibles et signaux par compte, pour t’aider à décider où creuser ensuite.",
+    "needsIntroTitle": "Besoins",
+    "needsIntroTitleWithoutName": "Besoins",
+    "needsIntroSubtitle": "Les demandes à qualifier ou à couvrir, reliées à leur affaire.",
+    "needsAskLauraLabel": "Demander à {{copilot}} de prioriser mes besoins",
+    "needsAskLauraQuestion": "Quels besoins nécessitent mon attention ? Ceux sans profil positionné, ceux qui démarrent bientôt, et ceux qui semblent impossibles à staffer avec mon vivier actuel.",
+    "subtitle": "Du premier échange au démarrage. Chaque dossier conserve son besoin et ses présentations."
+  },
+  "tabs": {
+    "all": "Tous les besoins"
+  },
+  "toolbar": {
+    "searchPlaceholder": "Rechercher un besoin, une offre, un compte…",
+    "pipeSearchPlaceholder": "Rechercher une affaire ou un compte…",
+    "quickFiltersLabel": "Filtres rapides du pipe",
+    "mine": "Mes projets",
+    "withoutNextAction": "Sans prochaine action",
+    "stale": "Vieillissantes",
+    "withoutProfile": "Sans profil positionné",
+    "toSign": "À signer",
+    "interviewThisWeek": "Entretien cette semaine",
+    "viewKanban": "Kanban",
+    "viewTable": "Liste",
+    "createProject": "Nouvelle affaire",
+    "importPipe": "Importer mon pipe",
+    "ownerFilter": "Responsable",
+    "allOwners": "Tous les responsables"
+  },
+  "kpis": {
+    "accounts": {
+      "label": "Comptes avec besoin",
+      "detail": "Au moins un besoin, un projet ou un signal trouvé."
+    },
+    "needs": {
+      "label": "Besoins ouverts",
+      "detail": "Besoins dans un statut ouvert, repérés, confirmés ou déduits."
+    },
+    "signals": {
+      "label": "Signaux d'achat",
+      "detail": "Faits datés qui annoncent peut-être un besoin."
+    },
+    "urgent": {
+      "label": "À traiter rapidement",
+      "detail": "Besoins que l’analyse a marqués urgents."
+    },
+    "withoutOffer": {
+      "label": "À rapprocher de tes offres",
+      "detail": "Aucun besoin rattaché à une de tes offres."
+    },
+    "intake": {
+      "label": "Affaires à qualifier",
+      "pistesToReview_one": "{{count}} piste à revoir",
+      "pistesToReview_other": "{{count}} pistes à revoir",
+      "cta": "Ouvrir la file de qualification"
+    },
+    "headerSummary": {
+      "active_one": "{{count}} active",
+      "active_other": "{{count}} actives",
+      "withoutNextAction_one": "{{count}} sans action",
+      "withoutNextAction_other": "{{count}} sans action",
+      "intake_one": "{{count}} piste",
+      "intake_other": "{{count}} pistes",
+      "withoutProfile_one": "{{count}} sans profil",
+      "withoutProfile_other": "{{count}} sans profil",
+      "unmeasured": "{{axis}} : non mesuré",
+      "withoutNextActionAxis": "Sans action",
+      "intakeAxis": "Pistes",
+      "withoutProfileAxis": "Sans profil"
+    }
+  },
+  "list": {
+    "moreNeeds_one": "+{{count}} autre besoin",
+    "moreNeeds_other": "+{{count}} autres besoins",
+    "noOffer": "Aucune offre rattachée",
+    "toQualify": "À qualifier",
+    "sectorFallback": "Secteur non renseigné",
+    "score": "Score {{score}}/10",
+    "openDetail": "Voir tous les besoins",
+    "openDetailAria": "{{company}} — voir tous les besoins"
+  },
+  "kinds": {
+    "besoin": "Besoin",
+    "pain": "Douleur",
+    "challenge": "Chantier",
+    "program": "Programme",
+    "implication": "Implication",
+    "signal": "Signal",
+    "imported": "Repris d’un fichier",
+    "manual": "Saisi à la main"
+  },
+  "groups": {
+    "pain": "Besoins exprimés",
+    "challenge": "Chantiers IT",
+    "program": "Projets",
+    "implication": "Implications IT"
+  },
+  "urgency": {
+    "high": "Urgent",
+    "medium": "Moyen",
+    "low": "Faible",
+    "unknown": "Non qualifié"
+  },
+  "detail": {
+    "count_one": "{{count}} opportunité détectée",
+    "count_other": "{{count}} opportunités détectées",
+    "countBreakdown_one": "{{count}} opportunité détectée : {{confirmed}} confirmée, {{toQualify}} à qualifier",
+    "countBreakdown_other": "{{count}} opportunités détectées : {{confirmed}} confirmées, {{toQualify}} à qualifier",
+    "provenance": "{{brand}} a détecté ces éléments à partir de tes sources connectées et de signaux publics récents.",
+    "openAccount": "Voir le compte",
+    "enriching": "Enrichissement…",
+    "enrichHint": "L'enrichissement relance la phase d'analyse qui produit les besoins (douleurs, chantiers, offres rattachées).",
+    "impact": "Impact",
+    "context": "Contexte",
+    "risks": "Risques",
+    "scopeLabel": "Périmètre",
+    "openMission": "Ouvrir la mission",
+    "trackedAsMission": "Suivi comme mission — {{name}}",
+    "createMission": "Créer la mission",
+    "prepareProposal": "Préparer la proposition",
+    "answerTender": "Répondre à un appel d'offres",
+    "createdAt": "Créée le {{date}}",
+    "lastActivityAt": "Dernière activité : {{date}}",
+    "addNextAction": "Ajouter une prochaine action",
+    "scheduleMeeting": "Planifier un rendez-vous",
+    "meetingDefaultTitle": "Rendez-vous",
+    "currentSynthesis": "Synthèse et décision actuelle",
+    "share": "Partager",
+    "shareCopied": "Lien du dossier copié.",
+    "shareFailed": "La copie du lien a échoué.",
+    "askLauraLabel": "Demander à {{copilot}}",
+    "askLauraQuestion": "Que dois-je savoir ou préparer sur « {{project}} » ?",
+    "openDossier": "Ouvrir la fiche complète",
+    "commercialConditions": "Conditions commerciales",
+    "archive": "Archiver",
+    "unarchive": "Désarchiver",
+    "archived": "Opportunité archivée.",
+    "unarchived": "Opportunité désarchivée.",
+    "archiveError": "L’archivage a échoué.",
+    "archivedBadge": "Archivée",
+    "steps": {
+      "title": "Actions et prochaines étapes",
+      "empty": "Aucune étape écrite pour l’instant.",
+      "readError": "Les étapes n’ont pas pu être chargées.",
+      "add": "Ajouter",
+      "addPlaceholder": "Ex. « Relancer le sponsor »",
+      "addAria": "Nouvelle étape",
+      "toggleAria": "Cocher « {{label}} »",
+      "status": {
+        "todo": "À faire",
+        "pending": "En attente",
+        "done": "Fait"
+      },
+      "createError": "L’ajout de l’étape a échoué.",
+      "updateError": "La mise à jour de l’étape a échoué."
+    },
+    "synthesis": {
+      "title": "Synthèse en 7 questions",
+      "empty": "Aucune synthèse générée pour l’instant.",
+      "generate": "Générer la synthèse",
+      "regenerate": "Régénérer",
+      "generating": "Génération…",
+      "error": "La synthèse n’a pas pu être générée.",
+      "problem": "Problème du client",
+      "confirmed": "Confirmé",
+      "hypotheses": "Hypothèses",
+      "decisionMaker": "Décideur",
+      "decisionMakerUnknown": "Pas encore identifié",
+      "blockingConditions": "Ce qui peut bloquer",
+      "nextToObtain": "À obtenir ensuite",
+      "whatNotToDo": "Ce qu’il ne faut pas faire"
+    },
+    "caseDimensions": {
+      "title": "Pour comparer cette perte à d’autres cas",
+      "hint": "Trois choix fermés, facultatifs : ils servent à {{copilot}} quand elle rapproche ce compte des affaires déjà gagnées ou perdues.",
+      "strategy": "Stratégie d’approche",
+      "buyingModel": "Modèle d’achat",
+      "organisation": "Cercle de décision",
+      "unavailable": "Les choix de comparaison n’ont pas pu être lus : non renseigné pour l’instant.",
+      "loading": "Lecture des choix de comparaison…",
+      "saveError": "Le choix n’a pas pu être enregistré."
+    },
+    "decisionOrg": {
+      "title": "Organisation de la décision",
+      "error": "Les acteurs de la décision n’ont pas pu être lus.",
+      "empty": "Acteurs de la décision : non renseigné sur cette affaire.",
+      "decider": "Décideur",
+      "unknown": "non renseigné",
+      "missing": "Ce qui manque"
+    },
+    "comparableLosses": {
+      "title": "Pertes comparables dans ton espace",
+      "loading": "Recherche des pertes comparables…",
+      "error": "Les pertes comparables n’ont pas pu être lues.",
+      "empty": "Aucune perte comparable dans ton espace pour l’instant."
+    },
+    "lostDealRex": {
+      "title": "Pertes documentées",
+      "empty": "Aucune perte documentée sur cette affaire pour l’instant.",
+      "readError": "Les REX de perte n’ont pas pu être chargés.",
+      "recordedOn": "Recueilli le {{date}}"
+    },
+    "documents": {
+      "title": "Documents",
+      "empty": "Aucun document suivi sur cette affaire pour l’instant.",
+      "readError": "Les documents n’ont pas pu être chargés.",
+      "kind": {
+        "quote": "Devis",
+        "nda": "NDA",
+        "master_agreement": "Contrat cadre",
+        "other": "Autre document"
+      },
+      "status": {
+        "draft": "Brouillon",
+        "sent": "Envoyé",
+        "pending": "En attente",
+        "signed": "Signé",
+        "refused": "Refusé"
+      },
+      "statusAria": "Statut de {{name}}",
+      "kindAria": "Nature du document",
+      "addPlaceholder": "Nom du fichier",
+      "addAria": "Nom du document",
+      "add": "Suivre ce document",
+      "createError": "Le document n’a pas pu être suivi.",
+      "updateError": "Le statut n’a pas changé."
+    },
+    "primaryAction": {
+      "qualify": "Qualifier l’affaire",
+      "launchMatching": "Lancer le matching",
+      "frameProject": "Cadrer le projet",
+      "followUp": "Suivre les retours",
+      "prepareInterview": "Préparer l’entretien",
+      "secureAgreements": "Sécuriser les deux accords"
+    },
+    "enrich": "Actualiser et approfondir"
+  },
+  "emptyState": {
+    "errorTitle": "Impossible de charger les besoins",
+    "pipelineErrorTitle": "Impossible de charger le pipe",
+    "errorDescription": "Réessaie dans quelques instants.",
+    "filteredTitle": "Aucun besoin ne correspond aux filtres",
+    "filteredDescription": "Essaie une autre recherche ou sélectionne un autre onglet.",
+    "noNeedTitle": "Aucun besoin identifié pour l'instant",
+    "noNeedDescription": "Les besoins remontent des analyses de comptes. Lance une analyse pour alimenter cette vue.",
+    "noProjectTitle": "Ton pipe est vide, mais {{brand}} peut déjà t’aider.",
+    "noProjectDescription": "Les projets naissent des analyses de comptes. Lance une analyse, puis reprends ici ceux que tu veux travailler.",
+    "discoverAction": "Découvrir des comptes",
+    "clearFilters": "Effacer les filtres",
+    "noProjectImportCrm": "Importer un CRM",
+    "createProjectAction": "Créer une première opportunité",
+    "noProjectQualifyLead": "Qualifier une piste détectée"
+  },
+  "amount": {
+    "label": "Montant estimé",
+    "add": "Ajouter un montant estimé",
+    "edit": "Modifier le montant estimé",
+    "inputLabel": "Montant estimé en euros",
+    "placeholder": "ex. 25 000",
+    "save": "Enregistrer",
+    "cancel": "Annuler"
+  },
+  "owner": {
+    "change": "Changer de responsable",
+    "unassigned": "Non attribué",
+    "assignedTo": "Responsable : {{name}}"
+  },
+  "provenance": {
+    "source": "Origine · {{source}}",
+    "sources": {
+      "pain": "Douleur relevée dans l'analyse",
+      "challenge": "Chantier IT identifié",
+      "program": "Projet nommé",
+      "signal": "Signal d'achat sans source citée",
+      "implication": "Lecture ESN de l'activité",
+      "imported": "Ligne reprise d’un fichier, jamais relue par une analyse",
+      "boamp": "Appel d'offres public",
+      "decp": "Marché public attribué",
+      "client": "Apporté par le client",
+      "import": "Fichier importé",
+      "manual": "Saisi à la main"
+    },
+    "confidence": {
+      "high": "Confiance élevée",
+      "medium": "Confiance moyenne",
+      "low": "Confiance faible"
+    }
+  },
+  "actions": {
+    "addToPlan": "Ajouter au plan",
+    "findDeciders": "Trouver les décideurs",
+    "createReminder": "Créer un rappel",
+    "compare": "Ce besoin ailleurs",
+    "exportCrm": "Ajouter au CRM",
+    "exporting": "Ajout…",
+    "planText": "Qualifier le besoin : {{need}}",
+    "planReason": "Savoir si « {{need}} » est un vrai besoin, et qui le porte",
+    "planOutcome": "Besoin confirmé ou écarté, avec l'interlocuteur qui le porte"
+  },
+  "crmExport": {
+    "success": {
+      "default": "Besoin ajouté à {{provider}}.",
+      "deal": "Besoin ajouté à {{provider}} — un deal a été créé.",
+      "note": "Besoin ajouté à {{provider}} — une note a été créée sur la société.",
+      "task": "Besoin ajouté à {{provider}} — une tâche de suivi a été créée.",
+      "opportunity": "Besoin ajouté à {{provider}} — une opportunité a été créée."
+    },
+    "noProviderTitle": "Aucun CRM connecté",
+    "noProviderDescription": "Connecte ton CRM depuis Réglages › Intégrations pour y pousser ce besoin.",
+    "connectCrm": "Connecter un CRM",
+    "error": "L'ajout au CRM a échoué. Réessaie.",
+    "capability": "ton CRM"
+  },
+  "reminder": {
+    "title": "Créer un rappel",
+    "subtitle": "Le rappel est enregistré sur le dossier {{company}} et apparaît dans ton journal d'activité.",
+    "at": "Date du rappel",
+    "note": "Note",
+    "notePrefill": "Faire le point sur : {{need}}",
+    "hint": "Rien n'est envoyé à l'extérieur : le rappel est interne à {{brand}} tant qu'aucun calendrier n'est connecté.",
+    "cancel": "Annuler",
+    "confirm": "Enregistrer le rappel",
+    "close": "Fermer",
+    "done": "Rappel enregistré.",
+    "refused": "Rappel non enregistré.",
+    "error": "Impossible d'enregistrer le rappel."
+  },
+  "similar": {
+    "title": "Ce besoin ailleurs dans ton portefeuille",
+    "subtitle": "Besoins proches de « {{need}} » sur tes autres comptes.",
+    "loading": "Recherche dans ton portefeuille…",
+    "error": "Impossible de chercher les besoins similaires pour l'instant.",
+    "empty": "Aucun besoin comparable sur tes autres comptes. Rien n'a été rapproché de force.",
+    "sharedTerms": "Mots partagés : {{terms}}",
+    "hint": "Rapprochement fait sur les mots des besoins déjà analysés — aucune analyse n’est relancée.",
+    "openAccount": "Ouvrir",
+    "unknownCompany": "Compte sans nom",
+    "close": "Fermer"
+  },
+  "btmmp": {
+    "title": "Qualification (budget, besoin, décideur, délai, moyens, projet)",
+    "qualified": "Qualifié",
+    "progress": "{{score}}/{{total}} qualifié",
+    "save": "Enregistrer",
+    "saving": "Enregistrement…",
+    "saved": "Qualification enregistrée",
+    "error": "Impossible d'enregistrer la qualification",
+    "axes": {
+      "budget": {
+        "label": "Budget",
+        "hint": "TJM / marge — compatible, négociable, rang et frais"
+      },
+      "timing": {
+        "label": "Timing",
+        "hint": "démarrage, durée, disponibilité, deadline"
+      },
+      "mission": {
+        "label": "Mission",
+        "hint": "objectifs, tâches, stack, livrables, séniorité"
+      },
+      "management": {
+        "label": "Management",
+        "hint": "équipe, manager, gouvernance, remote, localisation"
+      },
+      "process": {
+        "label": "Process",
+        "hint": "interlocuteurs, validation, achats, panel, concurrence, soutenance"
+      },
+      "nextStep": {
+        "label": "Prochaine étape",
+        "hint": "date, owner, document, décision attendue"
+      }
+    },
+    "readiness": {
+      "mainBlocker": "Blocage principal : {{label}}",
+      "noBlocker": "Aucun blocage identifié"
+    }
+  },
+  "play": {
+    "prepare": "Préparer l'attaque",
+    "preparing": "Préparation…",
+    "view": "Voir le plan",
+    "free": "Déjà payé par l’équipe — relecture gratuite",
+    "outOfCredits": "Tu as beaucoup utilisé {{brand}} ce mois-ci — on en parle ? Écris à l’équipe.",
+    "error": "La préparation a échoué. Rien n’a été débité.",
+    "angle": "Angle",
+    "targets": "Qui viser",
+    "message": "Premier message",
+    "proofs": "Preuves à apporter",
+    "missing": "Ce qu’on ne peut pas prouver",
+    "nextAction": "Prochaine action",
+    "roleToIdentify": "Rôle à identifier"
+  },
+  "stages": {
+    "signal": {
+      "tab": "Signaux",
+      "label": "Signal",
+      "help": "Un fait daté et sourcé. Il annonce peut-être un besoin ; il n'en est pas un."
+    },
+    "plausible": {
+      "tab": "Projets plausibles",
+      "label": "Projet plausible",
+      "help": "Une interprétation qui relie plusieurs faits. À tester avant d'en parler comme d'un fait."
+    },
+    "qualified": {
+      "tab": "Projets qualifiés",
+      "label": "Projet qualifié",
+      "help": "Un projet nommé : le périmètre existe et il est cité."
+    },
+    "confirmed": {
+      "tab": "Demandes confirmées",
+      "label": "Demande confirmée",
+      "help": "Quelqu'un l'a exprimé. La seule position qui mérite le mot « besoin »."
+    }
+  },
+  "laura": {
+    "purpose": "Suivre tes opportunités commerciales, étape par étape, avec leur prochaine action.",
+    "lens": "Vue",
+    "inPipe": "Affaires dans le pipe",
+    "withoutNextAction": "Affaires sans prochaine action",
+    "stage": "Étape filtrée"
+  },
+  "lens": {
+    "pipeline": "Pipe",
+    "portfolio": "Pistes à qualifier"
+  },
+  "stage": {
+    "change": "Changer d’étape",
+    "detectedOn": "Détecté le {{date}}",
+    "states": {
+      "detected": "Détecté",
+      "potential": "Potentiel",
+      "qualified": "Cadrage",
+      "confirmed": "À qualifier",
+      "profiles_submitted": "Profils présentés",
+      "negotiation": "Proposition",
+      "won": "Gagnée",
+      "lost": "Perdue",
+      "dormant": "En sommeil"
+    },
+    "loss": {
+      "title": "Pourquoi ce projet est-il perdu ?",
+      "description": "Le motif est obligatoire : une perte sans raison n’apprend rien à l’équipe. Il alimente les motifs de perte de l’espace.",
+      "label": "Motif de la perte",
+      "placeholder": "Ex. : budget gelé côté client, concurrent retenu, besoin annulé…",
+      "cancel": "Annuler",
+      "confirm": "Marquer perdu"
+    },
+    "lostDealRex": {
+      "offerTitle": "Documenter ce qu’on apprend de cette perte ?",
+      "offerDescription": "Un REX structuré aide l’équipe à ne pas reproduire la même route sur ce compte.",
+      "offerCta": "Ajouter un REX de perte",
+      "skip": "Plus tard",
+      "title": "REX de perte",
+      "declaredMotifLabel": "Motif déclaré par le client",
+      "suspectedMotifLabel": "Motif que tu penses réel",
+      "motifPlaceholder": "Non renseigné",
+      "distinctionLabel": "D’où vient cette hypothèse ?",
+      "motifs": {
+        "timing": "Timing",
+        "budget": "Budget",
+        "concurrence": "Concurrence",
+        "panel": "Panel",
+        "sponsor_absent": "Sponsor absent",
+        "mauvaise_personne": "Mauvaise personne",
+        "mauvais_besoin": "Mauvais besoin",
+        "proposition": "Proposition",
+        "prix": "Prix",
+        "consultant": "Consultant",
+        "delivery": "Delivery",
+        "decision_interne": "Décision interne",
+        "aucune_decision": "Aucune décision",
+        "inconnu": "Inconnu"
+      },
+      "distinctions": {
+        "fait_confirme": "Fait confirmé",
+        "retour_client": "Retour du client",
+        "interpretation_commerciale": "Interprétation commerciale",
+        "hypothese": "Hypothèse",
+        "inconnu": "Inconnu"
+      },
+      "perimeterLabel": "Périmètre",
+      "perimeterPlaceholder": "Ex. le siège uniquement, pas les filiales",
+      "needLabel": "Besoin",
+      "needPlaceholder": "Ex. migration cloud",
+      "peopleInvolvedLabel": "Personnes impliquées",
+      "peopleInvolvedPlaceholder": "Ex. DSI, RSSI, acheteur",
+      "realDeciderLabel": "Décideur réel",
+      "realDeciderPlaceholder": "Ex. le RSSI, pas le DSI",
+      "sponsorLabel": "Sponsor",
+      "sponsorPlaceholder": "Ex. le DSI",
+      "routeUsedLabel": "Route utilisée",
+      "routeUsedPlaceholder": "Ex. entrée directe par le sponsor métier, sans passer par les achats",
+      "proofUsedLabel": "Preuve mobilisée",
+      "proofUsedPlaceholder": "Ex. étude de cas secteur banque",
+      "angleTriedLabel": "Angle essayé",
+      "angleTriedPlaceholder": "Ex. sécurité et conformité",
+      "anglesNotTriedLabel": "Angles non essayés",
+      "anglesNotTriedPlaceholder": "Un angle par ligne — ex. coût total",
+      "competitorLabel": "Concurrent",
+      "competitorPlaceholder": "Ex. Capgemini",
+      "timingLabel": "Timing",
+      "timingPlaceholder": "Ex. budget déjà engagé ailleurs",
+      "cycleDaysLabel": "Cycle (jours)",
+      "cycleDaysPlaceholder": "Ex. 45",
+      "procurementFrictionLabel": "Friction achats",
+      "procurementFrictionPlaceholder": "Ex. RFP à trois tours",
+      "consultantGapLabel": "Écart consultant",
+      "consultantGapPlaceholder": "Ex. profil senior demandé, junior proposé",
+      "economicsLabel": "Économie",
+      "economicsPlaceholder": "Ex. TJM 15% au-dessus du marché",
+      "lastActionLabel": "Dernière action",
+      "lastActionPlaceholder": "Ex. proposition envoyée le 12/09, sans retour depuis",
+      "whatTeamKnowsLabel": "Ce que l’équipe sait maintenant",
+      "whatTeamKnowsPlaceholder": "Ex. : ce compte se joue par le sponsor métier, pas par le DSI",
+      "revisitOnLabel": "Date de revisite",
+      "reuseTargetsLabel": "Ce REX devrait faire bouger…",
+      "reuseTargets": {
+        "account_local_strategy": "la stratégie de ce compte",
+        "route": "la route à suivre",
+        "message": "le message à envoyer",
+        "blocker_list": "la liste des bloqueurs",
+        "review_date": "la date de revue",
+        "comparable_case": "un cas comparable",
+        "workspace_rule": "une règle d’espace, à proposer"
+      },
+      "cancel": "Annuler",
+      "save": "Enregistrer le REX",
+      "saved": "REX de perte enregistré.",
+      "saveFailed": "Échec de l’enregistrement du REX."
+    }
+  },
+  "stageFilter": {
+    "badge": "Étape : {{stage}}",
+    "hint": "Cette liste est filtrée : elle ne montre pas tout ton pipe.",
+    "remove": "Retirer le filtre d’étape et voir tout le pipe",
+    "removeShort": "Retirer le filtre",
+    "emptyTitle": "Aucune affaire sur ces critères.",
+    "emptyDescription": "Le filtre bloquant est étape = {{stage}}. Ce n’est pas « aucune affaire » : ton pipe en a peut-être à d’autres étapes.",
+    "emptyCta": "Lever le filtre"
+  },
+  "pipeline": {
+    "totalLabel": "pipe ouvert HT",
+    "totalUnknownReason_one": "aucun montant saisi sur {{count}} projet au pipe",
+    "totalUnknownReason_other": "aucun montant saisi sur {{count}} projets au pipe",
+    "withoutAmountSummary_one": "{{count}} affaire sans montant, hors total",
+    "withoutAmountSummary_other": "{{count}} affaires sans montant, hors total",
+    "withoutAmountShort": "{{count}} sans montant",
+    "withoutAmountFilterHint": "N’afficher que les projets sans montant saisi",
+    "withoutAmountShortFilterHint": "N’afficher que les projets sans montant saisi de cette étape",
+    "filteredEmptyColumn": "Tous les projets de cette étape ont un montant saisi.",
+    "intakeHint": "Projets repérés par une analyse, jamais encore pris en main — indépendamment de tout montant saisi. Ne pas confondre avec « Projets ouverts sans montant » du Pilotage, qui compte un montant manquant sur une autre population.",
+    "noAmountYet": "Aucun montant saisi",
+    "emptyColumn": "Personne ici pour l’instant",
+    "unknownAccount": "Compte inconnu",
+    "staleCard_one": "⚠ {{count}} jour sans mouvement",
+    "staleCard_other": "⚠ {{count}} jours sans mouvement",
+    "dragHandle": "Glisser cette carte vers une autre étape",
+    "dragInstructions": "Espace pour saisir la carte, flèche gauche ou droite pour choisir l’étape, Espace pour déposer (le panneau d’effet s’ouvre), Échap pour annuler.",
+    "cardNoAmount": "Montant non saisi",
+    "signals_one": "{{count}} signal, compté à part",
+    "signals_other": "{{count}} signaux, comptés à part",
+    "doorViaRelation": "Porte via une relation — pas encore une affaire",
+    "withoutAmount": "{{count}} projet(s) sans montant saisi",
+    "signals": "{{count}} signal / signaux, comptés à part",
+    "staleGesture": {
+      "qualifier": "→ à qualifier",
+      "contact": "→ trouver un interlocuteur",
+      "matching": "→ lancer le matching",
+      "relance": "→ préparer une relance"
+    },
+    "columnWithoutNextAction_one": "{{count}} sans prochaine action",
+    "columnWithoutNextAction_other": "{{count}} sans prochaine action",
+    "signedSection": "Signés",
+    "cardObjective": "Objectif : {{objective}}",
+    "cardPrimaryNeed": "Besoin principal : {{domain}}",
+    "cardOwner": "Responsable : {{name}}",
+    "cardPositioned_one": "{{count}} profil positionné",
+    "cardPositioned_other": "{{count}} profils positionnés",
+    "askLauraCard": "Demander à {{copilot}}",
+    "askLauraCardQuestion": {
+      "base": "Que me conseilles-tu pour l’opportunité « {{label}} » ?",
+      "account": "Le compte est {{account}}.",
+      "need": "Le besoin principal est {{need}}.",
+      "positioned_one": "{{count}} profil est positionné.",
+      "positioned_other": "{{count}} profils sont positionnés.",
+      "interview_one": "{{count}} profil est en entretien.",
+      "interview_other": "{{count}} profils sont en entretien.",
+      "stale_one": "Elle n’a pas bougé de son étape depuis {{count}} jour.",
+      "stale_other": "Elle n’a pas bougé de son étape depuis {{count}} jours."
+    },
+    "cardLastActivity": "Dernière activité : {{date}}",
+    "cardNextAction": "Prochaine action : {{title}} · {{date}}",
+    "cardNoNextAction": "Aucune prochaine action",
+    "narrowedEmptyColumn": "Aucun projet de cette étape ne passe les filtres.",
+    "savedViews": {
+      "title": "Vues enregistrées",
+      "loading": "Je charge tes vues…",
+      "loadError": "Je n’ai pas pu charger tes vues enregistrées.",
+      "empty": "Aucune vue enregistrée. Pose des filtres, puis enregistre-les.",
+      "save": "Enregistrer cette vue",
+      "nameLabel": "Nom de la vue",
+      "namePlaceholder": "Ex. : Mes affaires à signer",
+      "confirm": "Enregistrer",
+      "remove": "Supprimer la vue « {{name}} »",
+      "noCriteria": "Pose au moins un filtre : une vue sans critère est la liste complète, elle existe déjà.",
+      "full": "Tu as déjà {{max}} vues sur ce pipe — au-delà, on ne choisit plus. Supprimes-en une.",
+      "saved": "Vue « {{name}} » enregistrée.",
+      "removed": "Vue supprimée.",
+      "error": "Je n’ai pas pu enregistrer cette vue."
+    },
+    "cardEstimate_one": "Estimation HT · {{count}} poste",
+    "cardEstimate_other": "Estimation HT · {{count}} postes",
+    "cardHeadcount_one": "{{count}} poste",
+    "cardHeadcount_other": "{{count}} postes",
+    "cardPositionedSee": "Voir",
+    "cardPositionedSeeLabel": "Voir les profils suivis de l’affaire {{label}}",
+    "inView_one": "{{count}} affaire dans cette vue",
+    "inView_other": "{{count}} affaires dans cette vue",
+    "inViewNone": "Aucune affaire dans cette vue"
+  },
+  "needs": {
+    "title": "Rôles recherchés",
+    "empty": "Aucun rôle décrit. C’est ce qui permettra de chercher un profil dans le vivier.",
+    "placeholder": "ex. Architecte de plateforme",
+    "add": "Ajouter",
+    "added": "Rôle ajouté",
+    "addError": "Le rôle n’a pas pu être ajouté",
+    "saveError": "Le rôle n’a pas pu être modifié",
+    "remove": "Retirer le rôle",
+    "removed": "Rôle retiré",
+    "removeError": "Le rôle n’a pas pu être retiré",
+    "headcount": "{{count}} personne(s)",
+    "tjm": "TJM cible {{amount}}",
+    "contract": {
+      "regie": "Régie",
+      "forfait": "Forfait",
+      "recrutement": "Recrutement",
+      "inconnu": "Contrat à préciser"
+    },
+    "loadError": "Les rôles recherchés n’ont pas pu être chargés.",
+    "skills": {
+      "add": "+ Compétences",
+      "edit": "Modifier les compétences",
+      "requiredPlaceholder": "Obligatoires — Kubernetes, Terraform",
+      "nicePlaceholder": "Souhaitées — Observabilité",
+      "save": "Enregistrer",
+      "cancel": "Annuler"
+    }
+  },
+  "detailContacts": {
+    "title": "Contacts et circuit de décision",
+    "empty": "Aucun contact rattaché à cette opportunité pour l’instant.",
+    "loadError": "Les contacts n’ont pas pu être chargés.",
+    "add": "Ajouter un contact",
+    "addContactPlaceholder": "Choisis un contact du compte",
+    "addRolePlaceholder": "Son rôle sur cette affaire",
+    "addSubmit": "Rattacher",
+    "addNoneAvailable": "Tous les contacts du compte sont déjà rattachés, ou le compte n’en porte aucun.",
+    "addFailed": "Le contact n’a pas pu être rattaché.",
+    "prepareMessage": "Préparer un message",
+    "roles": {
+      "sponsor": "Sponsor",
+      "decideur": "Décideur",
+      "prescripteur": "Prescripteur",
+      "acheteur": "Acheteur",
+      "utilisateur": "Utilisateur",
+      "bloqueur": "Bloqueur"
+    }
+  },
+  "proposals": {
+    "title": "Ce que l’analyse a repéré",
+    "subtitle": "Des offres d’emploi détectées chez tes clients. Ce ne sont pas encore des besoins : c’est toi qui décides.",
+    "pickProject": "Rattacher à un projet…",
+    "accept": "En faire un besoin",
+    "dismiss": "Écarter",
+    "dismissReason": "Pourquoi l’écarter ?",
+    "accepted": "Besoin créé",
+    "dismissed": "Proposition écartée",
+    "failed": "L’action n’a pas abouti",
+    "pending_one": "{{count}} proposition à trier",
+    "pending_other": "{{count}} propositions à trier",
+    "toggleOpen": "Trier les propositions",
+    "toggleClose": "Replier les propositions",
+    "dismissCancel": "Annuler",
+    "dismissConfirm": "Confirmer",
+    "statusDetected": "Opportunité détectée",
+    "detectedOn": "Détectée le {{date}}",
+    "seeEvidence": "Voir les preuves"
+  },
+  "needFromRfp": {
+    "title": "Un besoin proposé depuis un appel d’offres",
+    "subtitle": "Ce que le document dit, et ce qu’il ne dit pas. Rien n’existe tant que tu n’as pas confirmé.",
+    "loading": "Lecture du dossier…",
+    "failed": "La lecture n’a pas abouti.",
+    "criteriaTitle": "Ce que le document dit",
+    "noCriteria": "Le document ne fixe aucun critère exploitable.",
+    "unknownsTitle": "Ce qu’il ne dit pas",
+    "pickProject": "Rattacher à un projet…",
+    "confirm": "Confirmer",
+    "cancel": "Annuler",
+    "confirmed": "Besoin créé",
+    "created": "Le besoin est créé.",
+    "noNextAction": "Rien à faire pour l’instant.",
+    "close": "Fermer",
+    "criteria": {
+      "issuer": "Émetteur : {{value}}",
+      "deadline": "Date limite de remise : {{value}}",
+      "lot": "Lot : {{value}}"
+    },
+    "unknowns": {
+      "issuer": "Émetteur non précisé",
+      "deadline": "Date limite non précisée",
+      "skills": "Compétences non extraites — à saisir",
+      "ambiguousRequirement": "Exigence ambiguë : {{value}}"
+    }
+  },
+  "sectors": {
+    "title": "Secteur de la demande",
+    "hint": "Le terrain où cette demande se délivre — pas le secteur du compte. Un même client porte plusieurs métiers, et deux profils ne s'y remplacent pas.",
+    "count": "{{count}} secteur",
+    "count_other": "{{count}} secteurs",
+    "none": "Aucun secteur saisi sur cette demande : le rapprochement se rabat sur le secteur du compte, et il le dit.",
+    "domain": "Famille de prestation achetée",
+    "domainUnknown": "Non dit",
+    "save": "Enregistrer",
+    "saved": "Secteur enregistré",
+    "error": "Enregistrement impossible",
+    "domains": {
+      "esn_it": "Informatique et numérique",
+      "finance": "Finance et gestion",
+      "supply_chain": "Supply chain et opérations",
+      "product_design": "Produit et design",
+      "pmo": "PMO et transformation",
+      "rh": "Ressources humaines",
+      "generic": "Autre",
+      "industrial_engineering": "Ingénierie industrielle"
+    }
+  },
+  "needsKanban": {
+    "toQualifyHint": "Besoins remontés par {{brand}}, pas encore regardés — les plus anciens d’abord.",
+    "tab": "Kanban",
+    "list": "Liste",
+    "daily": "{{amount}} / jour au total",
+    "noRate": "Aucun TJM saisi",
+    "withoutRate_one": "{{count}} sans TJM — le total est un plancher.",
+    "withoutRate_other": "{{count}} sans TJM — le total est un plancher.",
+    "seats_one": "{{count}} poste à {{amount}} / j",
+    "seats_other": "{{count}} postes à {{amount}} / j",
+    "rateUnknown": "TJM non communiqué",
+    "noAccount": "Compte non rattaché",
+    "where": "{{location}} · {{contract}}",
+    "foot": {
+      "enteredToday": "Arrivé dans cette étape aujourd’hui",
+      "stageAgeUnknown": "Aucun changement d’état enregistré",
+      "to_qualify_one": "À qualifier depuis {{count}} j",
+      "to_qualify_other": "À qualifier depuis {{count}} j",
+      "qualified_one": "Qualifié depuis {{count}} j",
+      "qualified_other": "Qualifié depuis {{count}} j",
+      "client_review_one": "Chez le client depuis {{count}} j",
+      "client_review_other": "Chez le client depuis {{count}} j",
+      "interview_one": "En entretien depuis {{count}} j",
+      "interview_other": "En entretien depuis {{count}} j",
+      "negotiation_one": "En négociation depuis {{count}} j",
+      "negotiation_other": "En négociation depuis {{count}} j",
+      "on_hold_one": "En veille depuis {{count}} j",
+      "on_hold_other": "En veille depuis {{count}} j",
+      "to_reactivate_one": "À réactiver depuis {{count}} j",
+      "to_reactivate_other": "À réactiver depuis {{count}} j",
+      "open_one": "Ouvert depuis {{count}} j",
+      "open_other": "Ouvert depuis {{count}} j",
+      "to_match_none": "Aucun profil positionné",
+      "to_match_one": "{{count}} profil déjà positionné",
+      "to_match_other": "{{count}} profils déjà positionnés",
+      "matching_none": "Aucun profil positionné pour l’instant",
+      "matching_one": "{{count}} profil positionné",
+      "matching_other": "{{count}} profils positionnés",
+      "shortlist_ready_none": "Shortlist annoncée, aucun profil positionné",
+      "shortlist_ready_one": "{{count}} profil en shortlist",
+      "shortlist_ready_other": "{{count}} profils en shortlist",
+      "submitted_none": "Aucune présentation en cours",
+      "submitted_one": "{{count}} présentation en cours",
+      "submitted_other": "{{count}} présentations en cours"
+    },
+    "band": {
+      "openNeeds": "Besoins ouverts",
+      "matching": "Matching à traiter",
+      "presenting": "Présentations en cours",
+      "withoutShortlist": "Sans profil positionné",
+      "potential": "CA potentiel",
+      "deltaReason": "La variation se lit entre deux photos mensuelles, et ce compteur n’est pas encore photographié.",
+      "onFilter": "sur tout le filtre",
+      "onPage_one": "sur le besoin affiché",
+      "onPage_other": "sur les {{count}} besoins affichés",
+      "onPageAmount_one": "sur le besoin affiché",
+      "onPageAmount_other": "sur les {{count}} besoins affichés"
+    },
+    "rail": {
+      "title": "{{copilot}} peut traiter ces besoins",
+      "match": {
+        "title": "Matching suggéré",
+        "description_one": "{{count}} besoin est prêt pour un rapprochement.",
+        "description_other": "{{count}} besoins sont prêts pour un rapprochement.",
+        "action": "Sélectionner"
+      },
+      "reactivate": {
+        "title": "Besoins à réactiver",
+        "description_one": "{{count}} besoin en veille peut repartir.",
+        "description_other": "{{count}} besoins en veille peuvent repartir.",
+        "action": "Sélectionner"
+      },
+      "assignOwner": {
+        "title": "Besoins sans porteur",
+        "description_one": "{{count}} besoin n’est porté par personne.",
+        "description_other": "{{count}} besoins ne sont portés par personne.",
+        "action": "Sélectionner"
+      },
+      "viewAll": "Voir toutes les actions ({{count}})",
+      "conversion": {
+        "title": "Performance pipeline",
+        "unknown": "Taux de conversion non mesuré : aucun besoin n’a encore été gagné, perdu ni annulé sur ce filtre.",
+        "basis": "{{won}} gagnés sur {{count}} besoins tranchés"
+      },
+      "hygieneElsewhere": "Les fiches à compléter ne sont pas répétées ici : le compteur « Sans compétence typée », en haut de l’écran, les porte déjà — et il les compte sur tout ton espace, pas sur cette page."
+    }
+  },
+  "needSheet": {
+    "byline": {
+      "need": "Besoin",
+      "ownedBy": "porté par {{name}}"
+    },
+    "startPlanned": "démarrage envisagé le {{date}}",
+    "openProject": "Ouvrir l’affaire",
+    "proposal": {
+      "title": "La proposition commerciale",
+      "body": "Une seule par affaire : elle vit sur la fiche de l’affaire, et chaque présentation y renvoie.",
+      "prepare": "Préparer la proposition"
+    },
+    "shortlist": {
+      "title": "Shortlist · {{count}} positionné(s)",
+      "open": "Voir la shortlist"
+    },
+    "wonProject": {
+      "title": "Projet gagné",
+      "tracked_one": "{{count}} projet suivi",
+      "tracked_other": "{{count}} projets suivis",
+      "unread": "Le nombre de projets suivis n’est pas encore lu.",
+      "noStaffing": "Un projet gagné se suit, il ne se staffe pas : aucune demande de staffing n’est proposée."
+    },
+    "framing": {
+      "title": "Projet à cadrer",
+      "scope": "Périmètre",
+      "sponsor": "Sponsor",
+      "deadline": "Échéance",
+      "scopeToFrame": "à cadrer : le contexte n’a pas été écrit",
+      "sponsorToFrame": "à cadrer : personne n’a été désigné comme sponsor",
+      "deadlineToFrame": "à cadrer : aucune date limite communiquée",
+      "budgetToFrame": "à cadrer : le client n’a pas communiqué de budget, il ne se déduit pas du tarif cible",
+      "titleFramed": "Projet cadré"
+    },
+    "staleBadge": "Périmé — à revérifier",
+    "title": "Fiche du besoin",
+    "loading": "Je charge ce besoin…",
+    "errorTitle": "Je n’ai pas pu charger ce besoin.",
+    "errorBody": "La lecture a échoué — ce n’est pas que le besoin n’existe pas. Réessaie.",
+    "missingTitle": "Besoin introuvable",
+    "missingBody": "Ce besoin n’existe pas dans cet espace, ou il a été supprimé. Le lien que tu as suivi pointe peut-être vers un autre espace.",
+    "backToList": "Retour aux besoins",
+    "prioritize": "Prioriser",
+    "prioritized": "Ce besoin passe en urgence haute.",
+    "share": "Partager",
+    "shareCopied": "Lien copié.",
+    "shareFailed": "Je n’ai pas pu copier le lien.",
+    "noAccount": "Aucun compte rattaché",
+    "onProject": "Sur l’affaire « {{project}} »",
+    "roleBlock": "Le poste",
+    "trackingBlock": "Le suivi",
+    "statusReason": "Motif",
+    "owner": "Responsable",
+    "ownerUnknown": "personne n’est chargé de ce besoin",
+    "contact": "Interlocuteur",
+    "contactUnknown": "personne n’a été désigné comme interlocuteur",
+    "provenance": "Apporté par",
+    "provenanceUnknown": "personne n’a dit qui a apporté ce besoin",
+    "provenanceValue": {
+      "human": "Une personne de l’équipe",
+      "connector": "Un connecteur",
+      "pipeline": "L’analyse d’un compte",
+      "model": "Une lecture automatique"
+    },
+    "skillsUnknown": "aucune compétence n’a été typée — le rapprochement comparerait dans le vide",
+    "skillRequired": "Obligatoire · niveau : {{level}}",
+    "skillOptional": "Souhaitée · niveau : {{level}}",
+    "levelUnknown": "non précisé",
+    "seniorityUnknown": "personne n’a précisé la séniorité attendue",
+    "locationUnknown": "le lieu n’a pas été communiqué",
+    "remoteUnknown": "le télétravail n’a pas été précisé",
+    "startUnknown": "aucune date de démarrage communiquée",
+    "durationUnknown": "la durée n’a pas été communiquée",
+    "deadlineUnknown": "aucune date limite communiquée",
+    "deadlinePassed": "dépassée",
+    "rate": {
+      "title": "Tarif cible et tarif vendu chez ce client",
+      "target": "Ton tarif cible sur ce besoin : {{amount}} par jour.",
+      "targetUnknown": "Personne n’a communiqué de tarif cible sur ce besoin.",
+      "targetUnknownShort": "aucun tarif cible communiqué",
+      "loading": "Je regarde à quel prix ce client achète…",
+      "failed": "Je n’ai pas pu lire les missions de ce client : le tarif vendu moyen reste inconnu pour l’instant.",
+      "noAccount": "Ce besoin n’est rattaché à aucun compte : il n’y a pas d’historique de prix à comparer.",
+      "noMission": "Ce client n’a encore aucune mission chez toi : il n’y a pas de tarif vendu à comparer.",
+      "soldUnmeasured_one": "Ce client porte 1 mission, et elle ne porte pas de tarif journalier — un forfait se facture aux jalons. La moyenne ne se calcule pas.",
+      "soldUnmeasured_other": "Ce client porte {{count}} missions, et aucune ne porte de tarif journalier — un forfait se facture aux jalons. La moyenne ne se calcule pas.",
+      "sold_one": "Tarif vendu moyen chez ce client : {{amount}} par jour, sur 1 mission.",
+      "sold_other": "Tarif vendu moyen chez ce client : {{amount}} par jour, sur {{count}} missions.",
+      "someWithoutRate_one": "1 mission non chiffrée, hors de la moyenne",
+      "someWithoutRate_other": "{{count}} missions non chiffrées, hors de la moyenne",
+      "gapAbove": "Tu vises {{amount}} de plus par jour que ce que ce client paye d’habitude.",
+      "gapBelow": "Tu vises {{amount}} de moins par jour que ce que ce client paye d’habitude.",
+      "gapNone": "Ton tarif cible est exactement celui auquel ce client achète d’habitude."
+    },
+    "requirementsBlock": "Ce que le poste exige",
+    "requirements": {
+      "edit": "Modifier",
+      "save": "Enregistrer",
+      "cancel": "Annuler",
+      "saved": "Exigences enregistrées.",
+      "saveFailed": "Je n’ai pas pu enregistrer les exigences.",
+      "languages": "Langues exigées",
+      "languagesUnknown": "Personne n’a dit quelles langues ce poste exige — l’axe « langues » du rapprochement sort du calcul au lieu de valoir zéro.",
+      "languagesPlaceholder": "fr:natif, en:b2",
+      "languagesHint": "Séparées par des virgules, niveau après deux-points. Sans niveau, la langue reste exigée et son niveau devient une question.",
+      "languageWithLevel": "{{code}} · {{level}}",
+      "languageWithoutLevel": "{{code}} · niveau non précisé",
+      "clearances": "Habilitations exigées",
+      "clearancesUnknown": "Aucune habilitation n’a été saisie — tant qu’il n’y en a pas, rien n’écarte un profil qui n’en aurait pas.",
+      "clearancesPlaceholder": "Confidentiel Défense",
+      "clearancesHint": "Séparées par des virgules. Une habilitation manquante ÉCARTE un profil du rapprochement.",
+      "blockingHint": "Un profil qui ne détient pas ces habilitations sort des profils recommandés, avec son motif nommé.",
+      "interviewRounds": "Nombre d’entretiens",
+      "interviewRoundsUnknown": "Personne n’a dit combien d’entretiens ce processus comporte.",
+      "onsiteDaysPerWeek": "Jours de présence sur site / semaine",
+      "onsiteDaysPerWeekUnknown": "Personne n’a dit combien de jours de présence ce poste exige.",
+      "freelanceExcluded": "Freelance exclu",
+      "freelanceExcludedUnknown": "Personne n’a dit si le client exclut les freelances.",
+      "budgetValidated": "Budget validé côté client",
+      "budgetValidatedUnknown": "Personne n’a dit si le budget est validé côté client.",
+      "boolUnknown": "Non renseigné",
+      "boolYes": "Oui",
+      "boolNo": "Non"
+    },
+    "qualification": {
+      "title": "Questions prioritaires et contradictions",
+      "loading": "Chargement…",
+      "failed": "Je n’ai pas pu lire les questions et contradictions.",
+      "questionsTitle": "Ce qu’il manque pour avancer",
+      "noQuestions": "Aucune question prioritaire — les quatre axes sont renseignés.",
+      "contradictionsTitle": "Contradictions détectées",
+      "noContradictions": "Aucune contradiction détectée.",
+      "arbitration": "Arbitrage proposé",
+      "notEvaluableTitle": "Non évaluable",
+      "axis": {
+        "matching": "Rapprochement",
+        "feasibility": "Faisabilité",
+        "consent": "Consentement",
+        "timing": "Timing"
+      }
+    },
+    "minRate": "Plancher accepté",
+    "minRateUnknown": "Aucun plancher n’a été fixé — ce n’est pas « zéro », c’est une négociation qui n’a pas eu lieu.",
+    "budget": "Budget de l’affaire",
+    "budgetUnknown": "Le client n’a pas communiqué de budget. Il ne se déduit pas du tarif cible : le nombre de jours facturés dans un mois n’est pas une constante.",
+    "expertise": "Expertise attendue",
+    "expertiseUnknown": "Personne n’a précisé le domaine d’expertise au-delà de l’intitulé.",
+    "stack": "Environnement technique",
+    "stackUnknown": "Aucun environnement technique n’a été listé.",
+    "context": "Contexte et objectifs",
+    "contextUnknown": "Le contexte n’a pas été écrit. C’est ce qui manque pour raconter le poste au téléphone plutôt que d’énumérer des mots-clés.",
+    "expectedOutcome": "Résultat attendu",
+    "expectedOutcomeUnknown": "Aucun objectif n’a été écrit sur cette affaire — ce qui manque pour dire ce que ce besoin doit permettre d’obtenir.",
+    "constraints": "Contraintes",
+    "constraintsUnknown": "Aucune contrainte n’a été signalée — astreinte, déplacements, horaires.",
+    "presentationProcess": "Processus de présentation",
+    "presentationProcessUnknown": "Le processus n’a pas été décrit — nombre et nature des entretiens, qui décide.",
+    "decisionProcess": "Processus de décision",
+    "decisionProcessUnknown": "Personne n’a décrit comment ce client décide en interne — comité, validation budgétaire, service informatique.",
+    "decisionMaker": "Décideur",
+    "decisionMakerUnknown": "personne n’a été désigné comme décideur",
+    "procurement": {
+      "label": "Achats",
+      "values": {
+        "implique": "Le service achats est dans la boucle",
+        "non_implique": "Le service achats n’est pas dans la boucle"
+      }
+    },
+    "procurementUnknown": "Personne n’a dit si le service achats est dans la boucle.",
+    "quality": {
+      "title": "Où en est ce besoin",
+      "headline": {
+        "verdictNoGo": "Le verdict de cette fiche est « non » : rien à engager tant qu’il tient.",
+        "notMatchable": "Le besoin n’est pas encore matchable : aucune compétence n’est renseignée.",
+        "matchableNotPresentable": "Le besoin est matchable, mais pas encore présentable.",
+        "presentableNotEngaged": "Le besoin est matchable et présentable ; aucun consultant n’est encore engagé.",
+        "allClear": "Le besoin est matchable, présentable, et un consultant est engagé."
+      },
+      "missing": "Il manque : {{missing}}.",
+      "profileTypeDisagreement": "Le client n’a pas validé le type de profil.",
+      "axis": {
+        "matchable": "Matchable",
+        "presentable": "Présentable",
+        "readyToEngage": "Prêt à engager"
+      },
+      "yes": "oui",
+      "no": "non",
+      "criteria": {
+        "recipient": "le destinataire",
+        "conditions": "les conditions",
+        "budget": "le budget ou la fourchette",
+        "process": "le processus",
+        "consultantAgreement": "l’accord du consultant",
+        "profileTypeAgreement": "l’accord du type de profil"
+      }
+    },
+    "profileTypeAgreement": {
+      "label": "Accord sur le type de profil",
+      "unknown": "Pas encore demandé au client",
+      "agreed": "Type de profil validé par le client",
+      "not_agreed": "Le client n’a pas validé ce type de profil",
+      "setTo": "Marquer « {{state}} »",
+      "failed": "Je n’ai pas pu enregistrer cette décision."
+    },
+    "convergenceState": {
+      "label": "Nature du besoin",
+      "notEvaluated": "Non évaluée",
+      "besoin_exprime": "Exprimé",
+      "besoin_detecte": "Détecté",
+      "projet_plausible": "Simple signal",
+      "projet_confirme": "Projet confirmé",
+      "setTo": "Marquer « {{state}} »",
+      "founding_signals_label": "Signaux qui fondent ce signal",
+      "founding_signals_placeholder": "identifiant, identifiant…",
+      "founding_signals_hint": "Un simple signal doit citer au moins un signal qui le fonde — jamais une intuition.",
+      "confirm": "Enregistrer",
+      "cancel": "Annuler",
+      "failed": "Je n’ai pas pu enregistrer cette nature."
+    },
+    "discoveryRails": {
+      "title": "Ce qu’on sait, ce qu’il manque",
+      "subtitle": "Un rail n’est pas une fiche à remplir : ce qui manque est l’information la plus utile.",
+      "client": {
+        "title": "Rail client",
+        "problem": "Problème",
+        "requirements": "Exigences",
+        "budget": "Budget",
+        "decision": "Décision",
+        "buyingProcess": "Voie d’achat",
+        "timing": "Timing",
+        "nextStep": "Prochaine étape"
+      },
+      "consultant": {
+        "title": "Rail consultant",
+        "titleNamed": "Rail consultant — {{name}}",
+        "titleAnonymous": "Rail consultant — profil positionné",
+        "noPositioned": "Aucun consultant positionné sur ce besoin.",
+        "andOthers_one": "et {{count}} autre positionné",
+        "andOthers_other": "et {{count}} autres positionnés",
+        "reverseMarket": "Trouver des missions pour {{name}}",
+        "fitAndAvailability": "Adéquation et disponibilité",
+        "tjm": "TJM",
+        "mobility": "Mobilité",
+        "competingProcesses": "Autres processus en cours",
+        "realAgreement": "Accord réel et restrictions"
+      },
+      "measured": "renseigné",
+      "missing": "non renseigné",
+      "conclusionClient": "Rail client — manque : {{fields}}.",
+      "conclusionClientComplete": "Rail client — rien ne manque.",
+      "conclusionConsultant": "Rail consultant — manque : {{fields}}.",
+      "conclusionConsultantComplete": "Rail consultant — rien ne manque.",
+      "state": {
+        "confirmed": "Confirmé",
+        "to_verify": "À vérifier",
+        "blocking": "Bloquant",
+        "not_applicable": "Non applicable"
+      },
+      "readiness": {
+        "ready": "Prêt à démarrer : les deux rails sont sécurisés.",
+        "notReady": "Pas encore prêt à démarrer — {{details}}.",
+        "toVerify_one": "{{count}} fait à vérifier",
+        "toVerify_other": "{{count}} faits à vérifier",
+        "blocking_one": "{{count}} bloquant",
+        "blocking_other": "{{count}} bloquants"
+      }
+    },
+    "tabs": {
+      "overview": "Vue d’ensemble",
+      "matching": "Rapprochement",
+      "positioning": "Positionnements",
+      "activity": "Notes & activités",
+      "documents": "Documents",
+      "history": "Historique",
+      "synthese": "Synthèse",
+      "profiles": "Profils",
+      "profilesCount": "Profils ({{count}})",
+      "progress": "Avancement",
+      "documentsHistory": "Documents & historique",
+      "activityHint": "Le fil de l’affaire « {{project}} » — les échanges qui la concernent, pas seulement ce rôle : un projet qui porte plusieurs besoins partage souvent le même appel ou le même e-mail.",
+      "activityWithoutProject": "Ce besoin n’est rattaché à aucune affaire : il n’y a donc pas de fil d’affaire à lire. Les échanges avec ce client vivent sur sa fiche.",
+      "positioningLoading": "Je regarde qui a été positionné sur ce besoin…",
+      "positioningLoadError": "Les positionnements n’ont pas pu être chargés. Ils sont toujours là — c’est la lecture qui a échoué.",
+      "positioningEmpty": "Aucun profil positionné sur ce besoin.",
+      "positioningEmptyElsewhere_one": "Aucun profil positionné sur ce besoin précis. {{count}} positionnement existe sur l’affaire « {{project}} », pour un autre rôle.",
+      "positioningEmptyElsewhere_other": "Aucun profil positionné sur ce besoin précis. {{count}} positionnements existent sur l’affaire « {{project}} », pour d’autres rôles.",
+      "positioningReverseMarket": "Où placer {{name}}"
+    },
+    "staffing": {
+      "title": "Staffing & pipeline",
+      "none": "Aucun",
+      "suggested_one": "Profil retenu",
+      "suggested_other": "Profils retenus",
+      "interviews": "Entretiens planifiés",
+      "proposalsSent": "Proposition envoyée",
+      "missionsAssigned": "Mission attribuée",
+      "readError": "la lecture des positionnements a échoué",
+      "missionsUnlinked_one": "{{count}} mission existe sur cette affaire sans dire de quel rôle elle vient — elle est née avant que le lien besoin → mission n’existe.",
+      "missionsUnlinked_other": "{{count}} missions existent sur cette affaire sans dire de quel rôle elles viennent — elles sont nées avant que le lien besoin → mission n’existe.",
+      "missionsUnserved": "la lecture n’a pas rendu ce compte",
+      "missionsFloor_one": "au moins — {{count}} mission de l’affaire ne dit pas son rôle",
+      "missionsFloor_other": "au moins — {{count}} missions de l’affaire ne disent pas leur rôle"
+    },
+    "recommendation": {
+      "title": "{{copilot}} te recommande",
+      "candidatesToPresent_one": "{{count}} profil à présenter",
+      "candidatesToPresent_other": "{{count}} profils à présenter",
+      "readError": "la lecture des positionnements a échoué",
+      "viewAction": "Voir la recommandation"
+    },
+    "steps": {
+      "title": "Actions et prochaines étapes",
+      "loading": "Je charge les étapes…",
+      "readError": "les étapes n’ont pas pu être chargées",
+      "empty": "Aucune étape n’a encore été posée sur ce besoin.",
+      "toggleAria": "Cocher « {{label}} »",
+      "status": {
+        "todo": "À faire",
+        "pending": "En attente",
+        "done": "Fait"
+      },
+      "addPlaceholder": "Nouvelle étape…",
+      "addAria": "Ajouter une étape",
+      "add": "Ajouter",
+      "updateError": "Je n’ai pas pu enregistrer cette étape.",
+      "createError": "Je n’ai pas pu ajouter cette étape."
+    },
+    "documents": {
+      "loading": "Je charge les documents…",
+      "readError": "Les documents n’ont pas pu être chargés. Ils sont toujours là — c’est la lecture qui a échoué.",
+      "empty": "Aucun document sur ce besoin pour l’instant.",
+      "kind": {
+        "quote": "Devis",
+        "nda": "NDA",
+        "master_agreement": "Contrat cadre",
+        "other": "Autre document"
+      },
+      "status": {
+        "draft": "Brouillon",
+        "sent": "Envoyé",
+        "pending": "En attente",
+        "signed": "Signé",
+        "refused": "Refusé"
+      },
+      "open": "Ouvrir {{name}}",
+      "openError": "Le document n’a pas pu être ouvert. Réessaie dans un instant.",
+      "statusLabel": "Statut de {{name}}",
+      "statusError": "Le statut n’a pas changé. Réessaie dans un instant.",
+      "fileMeta": "{{size}} · à conserver jusqu’au {{date}}",
+      "noFile": "Aucun fichier déposé — on suit la pièce, on ne l’a pas encore.",
+      "filesUnreadable": "Les fichiers n’ont pas pu être lus. Ils sont peut-être là — c’est la lecture qui a échoué.",
+      "deposit": {
+        "prompt": "Dépose une pièce — glisse-la ici, ou choisis-la.",
+        "kindLabel": "Nature du document",
+        "choose": "Choisir un fichier",
+        "working": "Envoi en cours…",
+        "hint": "Formats acceptés : {{formats}}. {{max}} Mo maximum par fichier.",
+        "progressLabel": "Avancement de l’envoi",
+        "sending": "Envoi : {{percent}} %",
+        "sendingUnknown": "Envoi en cours…",
+        "finishing": "Fichier reçu — je le range.",
+        "done": "Document déposé sur le besoin.",
+        "failedUnknown": "Le dépôt n’a pas abouti, et le serveur n’a pas dit pourquoi. Réessaie.",
+        "refusal": {
+          "empty": "Ce fichier est vide : il ne contient aucun octet, il n’y a rien à ranger.",
+          "too_large": "Ce fichier dépasse 10 Mo. Compresse-le, ou dépose une version allégée.",
+          "type_refused": "Ce type de fichier n’est pas accepté. Dépose un PDF, une image, un document ou un tableur.",
+          "name_missing": "Ce fichier n’a pas de nom : renomme-le avant de le déposer.",
+          "quota_exceeded": "L’espace de stockage est plein. Supprime des fichiers échus, ou demande une extension."
+        }
+      }
+    },
+    "history": {
+      "loading": "Je charge l’historique…",
+      "readError": "L’historique n’a pas pu être chargé. Il est toujours là — c’est la lecture qui a échoué.",
+      "empty": "Rien n’a encore été journalisé sur ce besoin.",
+      "decision": {
+        "accept": "Franchie",
+        "refuse": "Refusée",
+        "force": "Franchie malgré des manques connus"
+      },
+      "missing": "Ce qui manquait au moment de décider : {{list}}",
+      "statusEntered": "Entré dans l’état « {{status}} »",
+      "stepDone": "Étape cochée",
+      "documentAdded": "Document ouvert — {{kind}}",
+      "documentStatusToday": "Statut aujourd’hui : {{status}}",
+      "notJournalled": "Ce fil porte les portes franchies, les changements d’état (journalisés depuis le 25 septembre 2026 — avant, seule l’entrée dans l’état courant est connue), les étapes cochées et les documents. Les modifications de champ (TJM, compétences, échéance, urgence, porteur) ne sont écrites nulle part — elles ne sont pas cachées ici, elles n’existent pas.",
+      "statusTransition": "Statut : « {{from}} » → « {{to}} »",
+      "statusFirst": "Statut posé : « {{to}} »",
+      "source": {
+        "laura": "Proposé par {{copilot}}, validé par un humain",
+        "human_correction": "Correction humaine — prime sur toute proposition"
+      }
+    },
+    "resumeOn": "Reprise prévue",
+    "profilesTable": {
+      "title": "Les profils de ce besoin",
+      "hint": "Une présélection n’est ni un envoi ni une mission.",
+      "columns": {
+        "consultant": "Consultant",
+        "correspondence": "Correspondance",
+        "follow": "Suivi",
+        "due": "Prochaine échéance",
+        "open": "Ouvrir"
+      },
+      "availabilityDeclared": "Disponibilité déclarée : {{value}}",
+      "availabilityToConfirm": "Disponibilité à confirmer",
+      "dueAction": "Prochaine action",
+      "dueUnknown": "À préciser",
+      "open": "Ouvrir",
+      "openNamed": "Ouvrir le positionnement de {{name}}"
+    },
+    "inClear": {
+      "corresponds": "Correspond : {{list}}",
+      "partial": "En partie : {{list}}",
+      "lacks": "Manque : {{list}}",
+      "toConfirm": "À confirmer : {{list}}",
+      "none": "Pas encore rapproché"
+    },
+    "findProfiles": "Trouver des profils",
+    "withLaura": "Avec {{copilot}}",
+    "askLauraPrompt": "Aide-moi à faire avancer le besoin « {{title}} » chez {{account}}.",
+    "linkedProjectAtStage": "Relié à l’affaire « {{project}} » à l’étape {{stage}}.",
+    "needBlock": "Le besoin",
+    "decideBlock": "Pour décider",
+    "progressBlock": "Avancement du besoin",
+    "projectThreadBlock": "Notes et échanges de l’affaire",
+    "documentsBlock": "Documents du besoin",
+    "skillsRequired": "Compétences indispensables",
+    "skillsOptional": "Compléments souhaités",
+    "keyFacts": {
+      "start": "Démarrage envisagé",
+      "duration": "Durée envisagée",
+      "place": "Lieu / présence",
+      "seats": "Postes",
+      "targetRate": "TJM vente cible",
+      "perDay": "HT / jour",
+      "onsiteDays_one": "{{count}} jour sur site",
+      "onsiteDays_other": "{{count}} jours sur site"
+    },
+    "beforeMission": {
+      "title": "Avant la mission",
+      "loading": "Je vérifie ce qu’il faudra pour passer en mission…",
+      "readError": "le contrôle de passage en mission n’a pas pu être lu",
+      "nothingMissing": "Rien ne manque pour passer en mission.",
+      "missing": {
+        "consultant_engaged": "Un consultant engagé — accord donné ou profil retenu.",
+        "mission_already_exists": "Une mission est déjà ouverte pour ce besoin."
+      },
+      "openMission": "Ouvrir la mission",
+      "toObtain": "À obtenir",
+      "hint": "Vérifié à chaque passage d’étape ; la mission se crée à la signature."
+    },
+    "duplicates": {
+      "title": "Doublons",
+      "loading": "Je cherche les besoins qui décrivent le même rôle…",
+      "readError": "la recherche de doublons n’a pas pu être lue",
+      "none": "Aucun autre besoin de ce compte ne décrit ce rôle.",
+      "reason": {
+        "meme_intitule": "Même intitulé",
+        "competences_communes": "Une compétence commune"
+      }
+    }
+  },
+  "needReverseProspects": {
+    "title": "Personne à présenter ? D’autres comptes cherchent la même chose",
+    "subtitle": "Comptes qui cherchent {{skills}} du côté de {{location}}",
+    "loading": "Je regarde qui d’autre cherche ce profil…",
+    "unavailable": {
+      "location_missing": "Le lieu n’a pas été communiqué sur ce besoin — sans zone, le croisement rendrait une liste au hasard.",
+      "skills_missing": "Aucune compétence n’a été typée sur ce besoin — sans elle, le croisement rendrait une liste au hasard."
+    },
+    "empty": "Personne d’autre ne cherche ce profil dans cette zone pour l’instant.",
+    "alreadyInPortfolio": "Déjà à ton portefeuille",
+    "openAccount": "Ouvrir {{account}}",
+    "sharedSkill_one": "Compétence commune : {{skills}}",
+    "sharedSkill_other": "Compétences communes : {{skills}}"
+  },
+  "needExternalSourcing": {
+    "title": "Chercher hors vivier",
+    "subtitle": "Élargis la recherche aux sources déjà connectées à ton espace — jamais un scraping.",
+    "launch": "Chercher hors vivier",
+    "loading": "Je regarde ce que les sources connectées savent…",
+    "unavailable": {
+      "skills_missing": "Aucune compétence n’a été typée sur ce besoin — sans elle, la recherche rendrait une liste au hasard."
+    },
+    "empty": "Aucune piste dans les sources déjà connectées, pour l’instant.",
+    "unanswered": "Une source n’a pas répondu à temps — son absence ne veut pas dire « personne ». Relance la recherche plus tard.",
+    "notConnected": "Une recherche publique élargie n’est pas encore branchée sur cet espace — les résultats ci-dessous viennent uniquement de tes sources déjà connectées.",
+    "source": {
+      "network_referral": "Recommandation du réseau",
+      "partner_bench": "Banc partenaire",
+      "inbound_candidacy": "Candidature entrante",
+      "csv_ats_import": "Import non relu",
+      "external_directory": "Annuaire externe"
+    },
+    "tier": {
+      "internal_pool": "Vivier interne — déjà ouvert avant cette recherche",
+      "dormant_profiles": "Profils dormants — déjà ouverts avant cette recherche",
+      "network": "Recommandations et réseau",
+      "authorized_partners": "Partenaires autorisés",
+      "connected_sources": "Sources externes connectées",
+      "manual_import": "Import manuel — candidatures entrantes et imports non relus",
+      "legal_public_search": "Recherche publique légale — servie par l’annuaire externe, jamais un scraping"
+    },
+    "limit": {
+      "not_yet_qualified": "Pas encore relu par ton équipe",
+      "partner_availability_unconfirmed": "Disponibilité non confirmée par le partenaire",
+      "skills_not_provided": "Compétences non fournies par la source : seules celles lisibles dans le poste sont comptées."
+    },
+    "sharedSkill_one": "Compétence commune : {{skills}}",
+    "sharedSkill_other": "Compétences communes : {{skills}}",
+    "unnamed": "Nom non renseigné",
+    "import": "Importer vers le vivier",
+    "consent": "Je consens à recueillir ce profil vers le vivier",
+    "confirmImport": "Confirmer l’import",
+    "cancel": "Annuler",
+    "imported": "Importé dans le vivier",
+    "importSuccess": "Profil importé dans le vivier",
+    "importFailed": "L’import a échoué",
+    "consentStatus": {
+      "notCollected": "Consentement : à recueillir avant import",
+      "collected": "Consentement : recueilli le {{date}}"
+    },
+    "cost": "Coût : gratuit, lecture seule",
+    "preLaunch": {
+      "title": "Avant de lancer",
+      "need": "Besoin : {{title}}",
+      "criteria": "Critères : {{skills}}",
+      "criteriaEmpty": "Critères : aucune compétence n’est typée sur ce besoin",
+      "tiersTitle": "Ordre de recherche :",
+      "cost": "Coût : gratuit, lecture seule",
+      "volume": "Volume maximal : jusqu’à {{limit}} profils par source",
+      "volumeInputLabel": "Profils par source (entre {{min}} et {{max}})",
+      "delay": "Délai : résultat immédiat, aucune file d’attente",
+      "consent": "Consentement : recueilli profil par profil, avant tout import vers le vivier",
+      "dedup": "Déduplication : les profils déjà proposés sur ce besoin sont exclus"
+    },
+    "actions": {
+      "title": "Autres voies",
+      "prepareSalesNavigator": "Préparer une requête Sales Navigator",
+      "salesNavigatorHint": "Aucun connecteur Sales Navigator n’est branché sur cet espace : copie cette requête et lance-la toi-même.",
+      "copyQuery": "Copier la requête",
+      "queryCopied": "Requête copiée",
+      "importResults": "Importer les résultats",
+      "importResultsHint": "Tu as lu un profil ailleurs (Sales Navigator, recherche publique) ? Déclare-le : le serveur ne contacte jamais la plateforme à ta place.",
+      "shareBrief": "Partager le brief à un partenaire"
+    },
+    "partnerBrief": {
+      "title": "Partager le brief à un partenaire",
+      "partnerNameLabel": "Nom du partenaire",
+      "conditionsLabel": "Conditions (optionnel)",
+      "delayLabel": "Délai (optionnel)",
+      "prepare": "Préparer le brief",
+      "prepared": "Brief préparé — à toi de le partager",
+      "preparedHint": "{{brand}} prépare ce brief, il ne l’envoie jamais : copie-le et partage-le toi-même.",
+      "copyBrief": "Copier le brief",
+      "briefCopied": "Brief copié",
+      "nonSolicitation": "Clause de non-sollicitation incluse",
+      "feedbackLabel": "Retour du partenaire",
+      "recordFeedback": "Enregistrer le retour",
+      "feedbackRecorded": "Retour enregistré le {{date}}",
+      "cancel": "Annuler",
+      "prepareFailed": "La préparation du brief a échoué",
+      "feedbackFailed": "L’enregistrement du retour a échoué"
+    }
+  },
+  "needWizard": {
+    "ownerSuggestionBasis": "Le porteur du projet de rattachement — rien n’est choisi tant que tu ne cliques pas.",
+    "ownerSuggestionApply": "Confier à {{name}}",
+    "backToNeeds": "Retour à mes besoins en cours",
+    "stepsLabel": "Étapes de création du besoin",
+    "steps": {
+      "type": "Type de mission",
+      "keyInfo": "Informations clés",
+      "decision": "Décision",
+      "matching": "Matching",
+      "confirmation": "Confirmation"
+    },
+    "stepHints": {
+      "type": "Choisis le type de mission",
+      "keyInfo": "Décris le besoin et importe la fiche",
+      "decision": "Processus, décideur, achats",
+      "matching": "Analyse et matching IA",
+      "confirmation": "Vérifie et lance la mission"
+    },
+    "entryModes": {
+      "label": "Comment démarrer ce besoin",
+      "manual": "Saisie manuelle",
+      "paste_brief": "Coller un brief",
+      "paste_email": "Coller un e-mail",
+      "duplicate": "Dupliquer un besoin",
+      "paste_briefHint": "Colle le texte du brief : je le compile en brouillon, chaque champ avec sa citation. Rien n’est deviné — ce que je ne trouve pas reste une question à l’étape 5.",
+      "paste_emailHint": "Colle le texte de l’e-mail : je le compile en brouillon, chaque champ avec sa citation. Rien n’est deviné — ce que je ne trouve pas reste une question à l’étape 5.",
+      "pastePlaceholder": "Colle le texte ici…",
+      "compile": "Compiler en brouillon",
+      "compiling": "Je compile…",
+      "compileFailed": "Je n’ai pas pu compiler ce texte.",
+      "duplicateHint": "Cherche un besoin déjà créé — son titre, son client, ses critères remplissent le brouillon d’un coup.",
+      "duplicateSearchPlaceholder": "Titre ou client…",
+      "duplicateSearching": "Je cherche…",
+      "duplicateNoResult": "Aucun besoin trouvé.",
+      "from_document": "Depuis un contrat / une fiche de poste (PDF, DOCX)",
+      "from_documentHint": "Dépose un contrat ou une fiche de poste : je lis l’intitulé, les dates et le TJM, et je te montre ce que j’ai lu avant de remplir quoi que ce soit.",
+      "documentReading": "Je lis le document…",
+      "documentFailed": "Je n’ai pas pu lire ce document. Tu peux saisir à la main ou coller son texte.",
+      "documentPreviewTitle": "Ce que j’ai lu dans le document",
+      "documentFieldRole": "Intitulé",
+      "documentFieldAccount": "Compte (indication)",
+      "documentFieldStart": "Démarrage",
+      "documentFieldEnd": "Fin",
+      "documentFieldRate": "TJM (€)",
+      "documentAccountHint": "Le compte n’est pas choisi à ta place : sélectionne-le ci-dessous.",
+      "documentApply": "Pré-remplir le brouillon"
+    },
+    "entityLabel": "Entité cliente (filiale, BU)",
+    "entityPlaceholder": "Non renseignée",
+    "entityFailed": "Je n’ai pas pu enregistrer cette entité.",
+    "decisionTitle": "3. Décision",
+    "decisionHint": "Comment ce client décide en interne, qui décide, et si les achats sont dans la boucle. Trois champs optionnels, remplis quand tu les connais.",
+    "decisionProcessLabel": "Processus de décision",
+    "decisionProcessPlaceholder": "Ex. : comité technique, puis validation budgétaire par le service informatique…",
+    "decisionMakerLabel": "Décideur",
+    "decisionMakerPlaceholder": "Choisis un interlocuteur de ce compte",
+    "procurement": {
+      "label": "Achats",
+      "placeholder": "Non renseigné",
+      "values": {
+        "implique": "Le service achats est dans la boucle",
+        "non_implique": "Le service achats n’est pas dans la boucle"
+      }
+    },
+    "reformulation": {
+      "titleWithAccount": "{{title}} — {{account}}",
+      "accountOnly": "Un besoin chez {{account}}, sans titre encore nommé.",
+      "titleOnly": "{{title}}",
+      "nothingYet": "Un besoin sans titre ni client encore nommés.",
+      "skillsRequired": "Indispensable : {{terms}}.",
+      "skillsOptional": "Souhaitable : {{terms}}.",
+      "tjm": "TJM visé : {{amount}} €/jour.",
+      "location": "Lieu : {{location}}.",
+      "decisionProcess": "Décision : {{process}}"
+    },
+    "typeCards": {
+      "title": "1. Type de mission",
+      "hint": "Choisis le type de mission à lancer. Chaque carte renseigne l’origine, le canal, ou les deux.",
+      "selected": "Sélectionné",
+      "opensPool": "Ouvre le vivier",
+      "inbound": {
+        "title": "Inbound",
+        "subtitle": "Répondre à une demande entrante ou un besoin exprimé."
+      },
+      "outbound": {
+        "title": "Outbound",
+        "subtitle": "Identifier et contacter proactivement des prospects."
+      },
+      "partenaire": {
+        "title": "Mission partenaire",
+        "subtitle": "Intervenir via un partenaire ou dans un cadre collaboratif."
+      },
+      "portage": {
+        "title": "Portage",
+        "subtitle": "Portage salarial ou gestion administrative du consultant."
+      },
+      "sourcing_interne": {
+        "title": "Sourcing interne",
+        "subtitle": "Trouver le bon profil dans ton vivier ou ton réseau interne."
+      },
+      "appel_offres": {
+        "title": "Appel d’offres",
+        "subtitle": "Répondre à un appel d’offres public ou privé."
+      },
+      "apport_affaires": {
+        "title": "Apport d’affaires",
+        "subtitle": "Identifier des opportunités à forte valeur pour ton client."
+      }
+    },
+    "keyInfoTitle": "2. Informations clés",
+    "keyInfoHint": "Importe la fiche de poste et renseigne ce qui sert au rapprochement.",
+    "tjmLabel": "Budget (TJM max)",
+    "tjmCurrency": "€ / jour",
+    "locationLabel": "Localisation",
+    "locationPlaceholder": "Ex. : Paris, France",
+    "remotePlaceholder": "Non renseigné",
+    "seniorityPlaceholder": "Ex. : confirmé, senior…",
+    "skillsLabel": "Technologies & compétences clés",
+    "startOnLabel": "Démarrage souhaité",
+    "durationLabel": "Durée (mois)",
+    "contractKindLabel": "Type de contrat",
+    "supervisedLabel": "Forfait encadré, sans consultants",
+    "supervisedHint": "Le forfait est réalisé par les salariés du client : tu cadres ou tu supervises, sans placer de consultants.",
+    "supervisionRoleLabel": "Rôle tenu",
+    "supervisionRolePlaceholder": "Non renseigné",
+    "supervisionRole": {
+      "framing": "Cadrage",
+      "supervision": "Supervision",
+      "both": "Cadrage et supervision"
+    },
+    "clientTeamSizeLabel": "Équipe côté client (nombre, facultatif)",
+    "clientTeamNamesLabel": "Équipe côté client (noms, facultatif)",
+    "clientTeamNamesPlaceholder": "Marie Dupont, Paul Martin…",
+    "contractKindPlaceholder": "Non renseigné",
+    "contextLabel": "Le problème à résoudre",
+    "contextPlaceholder": "Ce que le client cherche à régler, en une ou deux phrases…",
+    "expertiseLabel": "Expertise attendue",
+    "expertisePlaceholder": "Le domaine précis recherché, au-delà de l’intitulé…",
+    "constraintsLabel": "Contraintes",
+    "constraintsPlaceholder": "Astreinte, déplacements, horaires…",
+    "extraction": {
+      "title": "Extraction IA activée",
+      "body": "J’analyse la fiche de poste pour en tirer compétences, technologies et certifications. Chaque élément proposé porte la CITATION du passage d’où il vient, et rien ne s’ajoute sans ton clic."
+    },
+    "previous": "Étape précédente",
+    "next": "Étape suivante",
+    "submit": "Créer le besoin",
+    "origin": {
+      "label": "Origine du besoin",
+      "values": {
+        "entrant": "Entrant",
+        "sortant": "Sortant",
+        "appel_offres": "Appel d’offres",
+        "apport_affaires": "Apport d’affaires"
+      }
+    },
+    "channel": {
+      "label": "Canal",
+      "values": {
+        "direct": "Direct",
+        "partenaire": "Partenaire",
+        "portage": "Portage"
+      }
+    },
+    "internalSourcing": "Sourcing interne — chercher dans le vivier",
+    "upload": {
+      "label": "Importer une fiche de poste",
+      "placeholder": "Glisse-dépose ton fichier ici ou clique pour le parcourir",
+      "hint": "PDF, DOC, DOCX, TXT (max. {{max}} Mo)",
+      "tooLarge": "Ce fichier dépasse {{max}} Mo — dépose-le en plusieurs morceaux ou colle le texte directement.",
+      "fallbackTitle": "Fiche de poste importée",
+      "extracting": "J’analyse le document…",
+      "failed": "Je n’ai pas pu lire ce document.",
+      "suggestionsTitle": "Ce que j’ai trouvé dans le document",
+      "citation": "cité dans : {{section}}",
+      "document": "le document",
+      "apply": "Ajouter comme compétence"
+    },
+    "tjmPlaceholder": "Ex. : 650",
+    "skillsPlaceholder": "Ex. : React, Node.js, AWS, Python…",
+    "skillBucketLabel": "{{term}} — indispensable ou souhaitable",
+    "skillBucket": {
+      "must": "Indispensable",
+      "nice": "Souhaitable"
+    },
+    "skillLevelLabel": "{{term}} — niveau attendu",
+    "skillLevelPlaceholder": "Niveau (optionnel)",
+    "skillProofLabel": "{{term}} — preuve attendue",
+    "skillProofPlaceholder": "Preuve attendue (optionnel)",
+    "certifications": {
+      "label": "Certifications obligatoires",
+      "placeholder": "Ex. : AWS Certified, PRINCE2, Scrum Master…"
+    },
+    "matching": {
+      "intro": "Une fois le besoin créé, {{copilot}} propose des profils du vivier qui correspondent à ces critères — depuis la fiche du besoin.",
+      "criteriaTitle": "Critères retenus pour le rapprochement",
+      "noSkills": "Aucune compétence saisie pour l’instant — le rapprochement en aura besoin."
+    },
+    "confirmation": {
+      "noTitle": "Besoin sans titre",
+      "tjm": "{{amount}} €/j",
+      "reformulationTitle": "Voici ce que j’ai compris",
+      "blockingUnknownsTitle": "Ce qu’il manque pour qualifier ce besoin",
+      "blockingUnknown": {
+        "work_to_do": "Le travail réel à accomplir n’est pas encore dit.",
+        "expected_outcome": "Ce qui doit avoir changé à la fin de la mission n’est pas encore dit.",
+        "skills": "Aucun critère éliminatoire n’est encore posé."
+      },
+      "willBeCreatedToQualify": "Ce besoin sera créé à qualifier — c’est la première étape, jamais un besoin déjà confirmé."
+    },
+    "tipsTitle": "Conseils de {{copilot}}",
+    "tipsIntro": "Plus tu renseignes de critères, plus le rapprochement a d’axes à évaluer — et moins il te laisse trier à la main.",
+    "tipsOutcome": "Ce que ça change vraiment : un axe que tu ne renseignes pas SORT du calcul, il ne compte pas pour zéro. Un besoin bien décrit n’est donc pas mieux noté, il est comparé sur plus de choses.",
+    "tips": [
+      "Importe une fiche de poste complète.",
+      "Renseigne les compétences clés.",
+      "Indique le niveau de séniorité attendu.",
+      "Précise le budget et la localisation.",
+      "Ajoute les certifications obligatoires."
+    ]
+  },
+  "needVerdict": {
+    "title": "Verdict",
+    "loading": "Le verdict se calcule.",
+    "readError": "Le verdict n’a pas pu être lu. Réessaie dans un instant.",
+    "suggested": "Suggéré par {{brand}}",
+    "deterministic": "Verdict déterministe",
+    "denominator_one": "{{total}} axes · {{measured}} renseignés · {{count}} attention",
+    "denominator_other": "{{total}} axes · {{measured}} renseignés · {{count}} attentions",
+    "summary": "Décidé sur {{measured}} axes renseignés sur {{total}}.",
+    "attentionLine": "Point d’attention — {{axis}} : {{value}}",
+    "blockingLine": "Ce qui bloque — {{axis}} : {{value}}",
+    "measuredOn": "Vivier regardé le {{date}}",
+    "noRunYet": "Aucun rapprochement lancé sur ce besoin",
+    "seeProfiles_one": "Voir le profil",
+    "seeProfiles_other": "Voir les {{count}} profils",
+    "why": "Pourquoi ce verdict ?",
+    "whyTitle": "Ce qui a produit ce verdict",
+    "priorityQuestion": {
+      "title": "{{copilot}} demande d’abord : {{axis}}",
+      "whyEconomics": "C’est elle qui décide si l’affaire vaut le coup : sans TJM cible ni plancher, aucun « oui » n’est possible.",
+      "whyOther": "L’économie est déjà renseignée ; c’est la question suivante à lever."
+    },
+    "axisWithWeight": "{{axis}} ({{weight}})",
+    "axisVerdict": "{{state}} — {{value}}",
+    "kind": {
+      "go": "OUI, FAIS-LE",
+      "no_go": "NON, MAUVAIS FIT",
+      "insufficient_data": "JE MANQUE DE DONNÉES"
+    },
+    "state": {
+      "positive": "positif",
+      "attention": "attention",
+      "blocking": "bloquant"
+    },
+    "weight": {
+      "decisive": "décisif",
+      "advisory": "consultatif"
+    },
+    "rule": {
+      "blocking": "Un axe décisif dit non : {{axes}}. Un seul suffit — on ne vend personne, et on ne vend pas sous son plancher.",
+      "decisiveUnmeasured": "Un axe décisif n’est pas renseigné : {{axes}}. Ne pas savoir n’autorise pas à dire « fais-le » — c’est pourquoi la réponse est « je manque de données » et non « oui ».",
+      "tooFewAxes": "Moins de trois axes renseignés. Sous trois axes, il n’y a pas de verdict.",
+      "allClear": "Les deux axes décisifs sont renseignés et aucun ne dit non. Les attentions se disent, elles ne renversent rien."
+    },
+    "axis": {
+      "staffing_capacity": "Capacité à staffer",
+      "economics": "Économie",
+      "relationship": "Relation",
+      "competition": "Concurrence",
+      "feasibility": "Faisabilité",
+      "access": "Accès",
+      "procurement": "Cadre d’achat",
+      "contract_risk": "Risque contractuel"
+    },
+    "axisValue": {
+      "staffing_capacity_zero": "Aucun profil au-dessus du seuil de {{threshold}}",
+      "staffing_capacity_one": "{{count}} profil au-dessus du seuil de {{threshold}}",
+      "staffing_capacity_other": "{{count}} profils au-dessus du seuil de {{threshold}}",
+      "economics": "TJM cible {{target}} · plancher {{floor}}",
+      "relationship_zero": "Aucune mission en cours chez ce client",
+      "relationship_one": "{{count}} mission en cours",
+      "relationship_other": "{{count}} missions en cours",
+      "competition_zero": "Aucun concurrent enregistré au panel",
+      "competition_one": "{{count}} fournisseur en face",
+      "competition_other": "{{count}} fournisseurs en face",
+      "feasibility": "Démarrage demandé le {{date}}",
+      "access_one": "{{count}} contact connu · décideur identifié",
+      "access_other": "{{count}} contacts connus · décideur identifié",
+      "accessNoDecisionMaker_one": "{{count}} contact connu · décideur manquant",
+      "accessNoDecisionMaker_other": "{{count}} contacts connus · décideur manquant",
+      "procurementInvolved": "Les achats sont dans la boucle du client",
+      "procurementNotInvolved": "Pas de passage par les achats",
+      "contract_risk": "Un risque est déclaré sur l’affaire",
+      "accessLocked_one": "{{count}} contact connu · compte verrouillé à l’entrée",
+      "accessLocked_other": "{{count}} contacts connus · compte verrouillé à l’entrée",
+      "accessSemiOpen_one": "{{count}} contact connu · compte semi-ouvert",
+      "accessSemiOpen_other": "{{count}} contacts connus · compte semi-ouvert",
+      "accessOpen_one": "{{count}} contact connu · compte ouvert",
+      "accessOpen_other": "{{count}} contacts connus · compte ouvert",
+      "accessNoDecisionMakerLocked_one": "{{count}} contact connu · décideur manquant · compte verrouillé",
+      "accessNoDecisionMakerLocked_other": "{{count}} contacts connus · décideur manquant · compte verrouillé",
+      "accessNoDecisionMakerSemiOpen_one": "{{count}} contact connu · décideur manquant · compte semi-ouvert",
+      "accessNoDecisionMakerSemiOpen_other": "{{count}} contacts connus · décideur manquant · compte semi-ouvert",
+      "accessNoDecisionMakerOpen_one": "{{count}} contact connu · décideur manquant · compte ouvert",
+      "accessNoDecisionMakerOpen_other": "{{count}} contacts connus · décideur manquant · compte ouvert"
+    },
+    "unmeasured": {
+      "noRun": "Aucun rapprochement n’a encore tourné sur ce besoin — personne n’a regardé le vivier.",
+      "nobodyEvaluated": "Le rapprochement n’a évalué personne : le besoin ne décrit aucune compétence.",
+      "noTargetRate": "Aucun TJM cible n’a été communiqué sur ce besoin.",
+      "noFloorRate": "Aucun plancher n’est saisi : rien ne dit à partir de quel prix la marge existe.",
+      "noAccount": "Ce besoin n’est rattaché à aucun compte — il n’y a pas de relation à mesurer.",
+      "panelNeverLooked": "Le panel fournisseurs de ce compte n’a jamais été renseigné — ce n’est pas « aucun concurrent ».",
+      "noStartDate": "Aucune date de démarrage n’est demandée sur ce besoin.",
+      "noAvailability": "La disponibilité du profil le mieux classé n’est pas connue.",
+      "noContacts": "Aucun contact n’est rattaché à l’affaire — on ne sait pas s’il manque un décideur.",
+      "unknown": "Cet axe n’a pas pu être évalué.",
+      "noProcurement": "Le cadre d’achat n’est pas renseigné sur ce besoin — on ne sait pas si les achats interviennent.",
+      "noRiskDeclared": "Aucun risque n’est saisi sur l’affaire — ce n’est pas « aucun risque », personne ne l’a posé."
+    },
+    "profilesTitle_one": "Le profil qui passe le seuil",
+    "profilesTitle_other": "Les {{count}} profils qui passent le seuil",
+    "acceptanceReading": "Lecture d’acceptation",
+    "acceptanceUnknown": "Rien de mesurable sur ce profil chez ce client.",
+    "prepareDossier": "Préparer le dossier",
+    "compare": "Comparer",
+    "fact": {
+      "accepted_here_one": "Déjà acceptée {{count}} fois ici",
+      "accepted_here_other": "Déjà acceptée {{count}} fois ici",
+      "rejected_here_one": "Déjà refusée {{count}} fois ici",
+      "rejected_here_other": "Déjà refusée {{count}} fois ici",
+      "never_presented_here": "Jamais présenté ici",
+      "rate_within_target": "TJM dans la cible",
+      "rate_above_target": "TJM au-dessus de la cible",
+      "available_by_start": "Libre pour le démarrage",
+      "available_later": "Libre après le démarrage",
+      "sector_practised": "A déjà travaillé dans ce secteur",
+      "sector_missing": "Manque l’expérience du secteur"
+    },
+    "consent": {
+      "valid": "À jour",
+      "expiring_one": "Expire dans {{count}} j",
+      "expiring_other": "Expire dans {{count}} j",
+      "expired": "Consentement expiré — à renouveler avant de proposer",
+      "none": "Aucun consentement recueilli — à demander"
+    },
+    "method": {
+      "title": "Méthode",
+      "effortLevel": {
+        "focus": "Focus",
+        "sprint_court": "Sprint court",
+        "qualification_volume": "Qualification au volume",
+        "partenaire_rang2": "Partenaire / rang 2",
+        "veille": "Veille",
+        "pause_sortie": "Pause ou sortie"
+      },
+      "openingRoute": {
+        "reactivation_chaude": "Réactivation chaude",
+        "approche_directe_ciblee": "Approche directe ciblée",
+        "partenaire_rang2": "Partenaire ou rang 2"
+      },
+      "trajectory": {
+        "par_le_haut": "Par le haut",
+        "par_le_terrain": "Par le terrain",
+        "manager_intermediaire": "Par un manager intermédiaire",
+        "parallele_relais_sponsor": "En parallèle par relais et sponsor"
+      },
+      "usefulPeople": {
+        "decision_maker": "le décideur",
+        "current_contact": "l’interlocuteur déjà connu"
+      },
+      "nextStep": {
+        "qualify": "Qualifier ce qui manque avant tout message",
+        "build_shortlist": "Constituer la shortlist",
+        "widen_sourcing": "Élargir la recherche de profils",
+        "reconsider": "Ne rien engager — dossier en pause"
+      },
+      "switchCondition": {
+        "on_qualification_complete": "Bascule quand la qualification est complète",
+        "on_shortlist_ready": "Bascule quand la shortlist est prête",
+        "on_verdict_no_go": "Bascule si le verdict devient NON",
+        "on_client_silence": "Bascule si le client reste silencieux",
+        "on_human_reopens": "Ne reprend que sur une réouverture humaine",
+        "already_met": "Déjà atteinte"
+      },
+      "stopCondition": {
+        "on_qualification_complete": "S’arrête quand la qualification est complète",
+        "on_shortlist_ready": "S’arrête quand la shortlist est prête",
+        "on_verdict_no_go": "S’arrête si le verdict devient NON",
+        "on_client_silence": "S’arrête si le client reste silencieux",
+        "on_human_reopens": "Ne reprend que sur une réouverture humaine",
+        "already_met": "Déjà arrêté"
+      },
+      "effortLevelLine": "Niveau d’effort : {{level}}",
+      "openingRouteLine": "Route d’ouverture : {{route}}",
+      "trajectoryLine": "Trajectoire : {{trajectory}}",
+      "notEvaluated": "non évalué",
+      "usefulPeopleLine": "Personnes utiles : {{people}}",
+      "proofLine": "Preuve nécessaire : {{proof}}",
+      "switchConditionLine": "Condition de bascule : {{condition}}",
+      "stopConditionLine": "Condition d’arrêt : {{condition}}",
+      "capacityLine": "Ta capacité déclarée : {{hours}} h par semaine",
+      "overdueLine": "Tes actions en retard : {{count}}",
+      "fivePLine": "5P du compte : {{readiness}}",
+      "fivePLineNext": "5P du compte : {{readiness}} · prochaine dimension : {{dimension}}",
+      "proof": {
+        "qualification": "les axes manquants du verdict",
+        "shortlist": "une shortlist présentable",
+        "client_agreement": "l’accord du client sur la suite"
+      }
+    }
+  },
+  "maturity": {
+    "confirmed": {
+      "tab": "Besoins confirmés"
+    },
+    "to_dig": {
+      "tab": "Opportunités à creuser"
+    },
+    "detected": {
+      "tab": "Signaux seuls"
+    }
+  },
+  "priority": {
+    "confirmed_one": "{{count}} besoin confirmé à traiter",
+    "confirmed_other": "{{count}} besoins confirmés à traiter",
+    "toQualify_one": "{{count}} opportunité à qualifier",
+    "toQualify_other": "{{count}} opportunités à qualifier",
+    "signal_one": "{{count}} signal à creuser",
+    "signal_other": "{{count}} signaux à creuser",
+    "unmatched": "· aucune offre encore rapprochée"
+  },
+  "table": {
+    "columnsCta": "Colonnes",
+    "columnsLabel": "Colonnes affichées",
+    "columnsReset": "Rétablir les colonnes par défaut",
+    "columns": {
+      "project": "Projet",
+      "account": "Compte",
+      "owner": "Porteur",
+      "stage": "Étape",
+      "amount": "Montant",
+      "lastActivity": "Dernière activité",
+      "nextAction": "Prochaine action",
+      "age": "Âge",
+      "origin": "Origine"
+    },
+    "amountUnknownReason": "Personne n’a saisi de montant sur ce projet.",
+    "ageUnknownReason": "La date d’entrée dans l’étape est illisible.",
+    "ageDays_one": "{{count}} j",
+    "ageDays_other": "{{count}} j",
+    "lastActivityHint": "Dernière modification de la ligne — le pipe ne porte pas d’événement de rendez-vous."
+  },
+  "evidence": {
+    "levels": {
+      "fact": "Signal actuel",
+      "detected_project": "Projet plausible",
+      "confirmed_demand": "Besoin exprimé",
+      "opportunity": "Opportunité CRM"
+    },
+    "unmeasured": "Niveau non mesuré",
+    "unmeasuredHint": "Ni fait daté, ni demande formulée : rien ne permet encore de situer cette ligne sur l’échelle de preuve.",
+    "missingPrefix": "Il manque :",
+    "ariaLabel": "Niveau de preuve : {{level}}"
+  },
+  "accountOpportunity": {
+    "screenTitle": "Signaux et besoins",
+    "allDeals": "Toutes les affaires du compte (tableau)",
+    "nature": {
+      "confirmedDemand": "Demande confirmée",
+      "leadToExplore": "Piste à explorer",
+      "recentSignal": "Signal récent",
+      "history": "Historique",
+      "siteInformation": "Information du site"
+    },
+    "signalJournal": "Journal complet des signaux (filtres, sources, projets possibles)",
+    "verifiedOn": "Vérifié le {{date}}",
+    "trackedDeals": {
+      "title_one": "{{count}} affaire déjà suivie",
+      "title_other": "{{count}} affaires déjà suivies",
+      "more_one": "+ {{count}} autre dans le pipe",
+      "more_other": "+ {{count}} autres dans le pipe",
+      "note": "Le dossier les relie, il ne crée pas un second pipeline.",
+      "open": "Ouvrir le pipe"
+    },
+    "refreshSignals": "Actualiser les signaux",
+    "theo": {
+      "context": "Croise les éléments du dossier avant de retenir une voie d’entrée.",
+      "title": "Les sujets qui font bouger le compte.",
+      "lead": "Un recrutement salarié, un projet et une demande de prestation restent distincts.",
+      "viewsAria": "Vues de Signaux & besoins",
+      "views": {
+        "current": "Sujets actuels",
+        "history": "Besoins historiques",
+        "tjm": "TJM observés"
+      },
+      "tjm": {
+        "channel": "Circuit",
+        "profile": "Profil",
+        "rate": "TJM relevé",
+        "note": "Précision"
+      }
+    }
+  },
+  "opportunityCards": {
+    "seenTimes": "Vu {{count}} fois",
+    "offersFolded": "{{count}} offres ({{places}})",
+    "recruitment": {
+      "title": "Recrutements",
+      "tradeCount": "{{inTrade}} du métier · {{out}} hors métier",
+      "others": "Autres recrutements ({{count}})"
+    },
+    "team": {
+      "title": "Besoins d’équipe",
+      "postingOffers_other": "{{count}} offres",
+      "seePostings_one": "Voir le poste",
+      "seePostings_other": "Voir les {{count}} postes",
+      "cardTitle_one": "{{team}} — {{count}} poste ouvert",
+      "cardTitle_other": "{{team}} — {{count}} postes ouverts",
+      "family": {
+        "data": "Équipe data / IA",
+        "security": "Équipe cybersécurité",
+        "cloud": "Équipe cloud / DevOps",
+        "sap": "Équipe SAP",
+        "erp": "Équipe ERP",
+        "dev": "Équipe développement",
+        "industry": "Équipe industrie / ingénierie",
+        "salesforce": "Équipe CRM",
+        "java": "Équipe Java",
+        "dotnet": "Équipe .NET",
+        "frontend": "Équipe front-end",
+        "mobile": "Équipe mobile",
+        "backend": "Équipe back-end",
+        "qa": "Équipe qualité / tests",
+        "network": "Équipe réseau / télécom",
+        "product": "Équipe produit",
+        "project": "Équipe projet",
+        "support": "Équipe support / exploitation",
+        "sales": "Équipe commerciale",
+        "cs": "Équipe customer success / support client",
+        "other": "Autres métiers"
+      },
+      "otherNeeds": "Autres besoins"
+    },
+    "dateUnknown": "Date de publication inconnue",
+    "vision": {
+      "title": "Vision / transformation",
+      "showMore_one": "Voir {{count}} signal de plus",
+      "showMore_other": "Voir {{count}} signaux de plus"
+    },
+    "place": {
+      "france": "France",
+      "unknown": "lieu non précisé",
+      "abroad": "hors France",
+      "abroadAt": "hors France ({{place}})"
+    },
+    "role": "Rôle concerné : {{role}}",
+    "derivedNeeds": "Besoins déduits de cette offre",
+    "whoLinked": "Qui contacter",
+    "whoRelated_one": "Contact proche de ce sujet (métier ou lieu)",
+    "whoRelated_other": "Contacts proches de ce sujet (métier ou lieu)",
+    "prepareMessage": "Préparer le message",
+    "prepareMessageFor": "Préparer le message à {{name}}",
+    "viewProfile": "Voir la fiche",
+    "viewProfileFor": "Voir la fiche de {{name}}",
+    "showMore_one": "Voir {{count}} recrutement de plus",
+    "showMore_other": "Voir {{count}} recrutements de plus",
+    "showLess": "Réduire"
+  },
+  "qualificationLeads": {
+    "title": "Projets possibles, à confirmer",
+    "intro": "Déduits de ce que nous avons trouvé sur ce compte. Aucun n’est confirmé par le client : confirme-le avant d’en faire une affaire, ou écarte-le avec son motif.",
+    "countsHint": "Ces nombres comptent des projets possibles lus sur ce dossier, jamais des projets confirmés du client.",
+    "detectedOn": "Détectée le {{date}}",
+    "impact": {
+      "label": "Ce que ça change",
+      "matched": "Touche ton expertise : {{expertise}}.",
+      "offTarget": "Hors de ton offre connue : consultable, pas prioritaire.",
+      "unknown": "Domaine de l’offre pas encore classé sur ce signal : ni dans ton offre, ni hors cible."
+    },
+    "reserve": "Réserve : {{reserve}}",
+    "origin": "D’où ça vient : {{origin}}",
+    "todo": "À faire : {{action}}",
+    "showMore_one": "Voir l’autre projet",
+    "showMore_other": "Voir les {{count}} autres projets",
+    "showLess": "N’afficher que les 3 premiers",
+    "shownOf": "{{shown}} affichés sur {{total}}",
+    "filters": {
+      "active": "À confirmer",
+      "snoozed": "En veille",
+      "dismissed": "Écartées"
+    },
+    "empty": {
+      "active": "Aucun projet possible à confirmer sur ce dossier.",
+      "snoozed": "Aucune piste en veille.",
+      "dismissed": "Aucune piste écartée."
+    },
+    "logoAlt": "Logo de {{company}}",
+    "undated": "Fait non daté",
+    "rankLabel": "Rang",
+    "notMeasured": "Non évalué :",
+    "axisMeasured": "{{axis}} : {{verdict}}",
+    "verdicts": {
+      "high": "favorable",
+      "medium": "partiel",
+      "low": "défavorable"
+    },
+    "perimeter": "Périmètre :",
+    "expertise": "Expertise rapprochée :",
+    "role": "Rôle potentiellement concerné :",
+    "facts": "Ce sur quoi elle repose :",
+    "factSource": "source : {{source}}",
+    "factSourceUnknown": "source non identifiée",
+    "reason": "Pourquoi elle est proposée :",
+    "verification": "Prochaine vérification :",
+    "missingTitle": "Ce qui manque :",
+    "actions": {
+      "add_to_pipe": "Travailler dans le pipe",
+      "ask_laura": "Demander à {{copilot}}",
+      "snooze": "Mettre en veille",
+      "dismiss": "Écarter",
+      "see_detail": "Voir le détail"
+    },
+    "dismiss": {
+      "title": "Écarter cette piste",
+      "reasonLabel": "Motif",
+      "noteLabel": "Précision (facultatif)",
+      "notePlaceholder": "Ce qui t’a fait trancher",
+      "scopeHint": "Le motif est mémorisé pour ton espace de travail. Il n’écrit rien dans la donnée marché, et la piste reste consultable.",
+      "confirm": "Écarter",
+      "cancel": "Annuler"
+    },
+    "snoozeForm": {
+      "title": "Mettre en veille",
+      "untilLabel": "Revenir le",
+      "hint": "La piste revient d’elle-même dans la file à cette date.",
+      "confirm": "Mettre en veille",
+      "cancel": "Annuler"
+    },
+    "convert": {
+      "title": "Convertir en opportunité",
+      "hint": "Cinq champs, et rien d’autre : ce que le dossier sait déjà est repris tel quel.",
+      "knownTitle": "Repris du dossier, sans ressaisie :",
+      "stage": "Étape de départ",
+      "owner": "Responsable",
+      "ownerNone": "À choisir",
+      "objective": "Objectif",
+      "objectivePlaceholder": "Ex. Décrocher 3 rendez-vous avec la DSI",
+      "nextAction": "Prochaine action",
+      "nextActionPlaceholder": "Ex. Appeler la DSI mardi",
+      "nextActionDue": "Échéance",
+      "need": "Besoin éventuel",
+      "needPlaceholder": "Ex. Deux développeurs Java confirmés — facultatif",
+      "submit": "Convertir",
+      "cancel": "Annuler",
+      "restOnSheet": "La prochaine action devient une tâche sur l’opportunité, et le besoin un rôle à pourvoir.",
+      "openPipe": "Ouvrir le pipe"
+    },
+    "decided": {
+      "dismissedOn": "Écartée le {{date}}",
+      "reason": "Motif : {{reason}}",
+      "snoozedUntil": "En veille jusqu’au {{date}}",
+      "reopen": "Reprendre cette piste"
+    },
+    "error": "La décision n’a pas pu être enregistrée. Rien n’a changé.",
+    "primary": {
+      "identify_contact": "Identifier le responsable",
+      "open_existing": "Ouvrir l’opportunité existante",
+      "see_request": "Voir la demande",
+      "prepare_approach": "Préparer l’approche"
+    },
+    "moreOptions": "Autres options",
+    "unproven_one": "{{count}} projet possible sans source datée",
+    "unproven_other": "{{count}} projets possibles sans source datée",
+    "noneProven": "Aucun projet possible ne repose encore sur une source datée."
+  },
+  "create": {
+    "account": "Compte",
+    "accountPlaceholder": "Choisir un compte",
+    "amount": "Montant estimé (€)",
+    "amountHint": "Laissé vide, le montant reste inconnu — jamais compté comme 0 €.",
+    "description": "Une affaire que tu ouvres toi-même, sur un compte de ton espace.",
+    "descriptionDraft": "Brouillon prérempli depuis un signal : rien n’est créé tant que tu n’as pas validé.",
+    "draftFactsTitle": "Ce que le signal apporte",
+    "draftFact": {
+      "source": "Source",
+      "date": "Date",
+      "type": "Type"
+    },
+    "draftMissingTitle": "Ce qui manque encore",
+    "draftMissing": {
+      "amount": "Montant estimé",
+      "closeOn": "Clôture espérée",
+      "owner": "Porteur de l’affaire",
+      "contact": "Interlocuteur côté client"
+    },
+    "createdFor": "Affaire créée : {{label}}",
+    "openCreated": "Ouvrir l’affaire",
+    "descriptionRenewal": "Le renouvellement est une affaire NEUVE : le compte et la mission sont déjà renseignés, c'est toi qui la crées.",
+    "descriptionConfirmedNeed": "Un besoin confirmé que tu poses toi-même : il entre directement à l'étape où le pipe range un besoin déjà confirmé, sans avoir à l'y glisser après coup.",
+    "done": "Affaire créée",
+    "expectedClose": "Clôture espérée",
+    "failed": "L'affaire n'a pas pu être créée",
+    "label": "Nom de l'affaire",
+    "labelPlaceholder": "Ce que tu cherches à vendre, en une ligne",
+    "objective": "Objectif",
+    "renewalNotLinked": "L'affaire est créée, mais le lien vers la mission renouvelée n'a pas pu être posé.",
+    "scopeLabel": "Équipe, site ou projet concerné",
+    "scopeLabelPlaceholder": "Ex. Équipe Data / Site Lyon (optionnel)",
+    "submit": "Créer l'affaire",
+    "title": "Ouvrir une affaire"
+  },
+  "dossier": {
+    "loading": "Ouverture du dossier…",
+    "backToList": "Retour aux affaires",
+    "backToAccount": "Retour au dossier du compte",
+    "retry": "Réessayer",
+    "errorTitle": "Ce projet n’a pas pu être chargé",
+    "errorBody": "Il est toujours là — c’est la lecture qui a échoué. Réessaie.",
+    "missingTitle": "Projet introuvable",
+    "missingBody": "Ce projet n’est pas dans cet espace : il a été retiré, le lien vient d’un autre espace, ou tes droits ne permettent pas de l’ouvrir. Rien n’a été modifié — tu peux revenir au dossier d’où tu viens.",
+    "prepareProposal": "Préparer la proposition",
+    "edit": "Modifier",
+    "withLaura": "Avec {{copilot}}",
+    "followUp": "Suivi",
+    "tabs": {
+      "need": "Besoin",
+      "profiles_one": "Profils & présentations ({{count}})",
+      "profiles_other": "Profils & présentations ({{count}})",
+      "activity": "Activité",
+      "label": "Sections de l’affaire",
+      "profilesShort": "Profils & présentations"
+    },
+    "nextInfo": "La prochaine information utile",
+    "won": {
+      "title": "Affaire gagnée — prépare la mission",
+      "body": "Les conditions, le consultant retenu et le besoin sont repris. Rien n’est créé tant que tu n’as pas relu."
+    },
+    "feedback": {
+      "title": "Retour client sur {{name}}",
+      "someone": "le profil présenté",
+      "body": "La présentation est consignée : le retour client est la prochaine information utile.",
+      "cta": "Voir les présentations"
+    },
+    "contactsAndPartner": "Contacts et partenaire",
+    "probability": "Calibrage de l’affaire, avec ses axes",
+    "profiles": {
+      "title": "Les profils suivis",
+      "hint": "Une présélection n’est ni un envoi ni une mission.",
+      "all": "Toutes les présentations",
+      "find": "Trouver des profils",
+      "empty": "Aucun profil suivi sur cette affaire pour l’instant."
+    },
+    "panels": {
+      "need": "Le besoin",
+      "contactsHint": "Les personnes reliées à cette affaire, et qui travaille avec toi dessus."
+    }
+  },
+  "detailPartnerGovernance": {
+    "title": "Cadre des partenaires rang 2",
+    "help": "Les ESN en place chez ce compte dont le cadre est déjà posé : à valider avant d’envisager de leur confier un profil.",
+    "open": "Ouvrir Partenaires"
+  },
+  "probability": {
+    "title": "CA probable du trimestre — les trois mois à venir",
+    "percent": "{{value}} %",
+    "interval": "entre {{low}} % et {{high}} %",
+    "range_one": "de {{low}} à {{high}} — sur {{count}} affaire",
+    "range_other": "de {{low}} à {{high}} — sur {{count}} affaires",
+    "method": "Probabilité calibrée sur les issues réelles des affaires closes (modèle bêta-binomial par stade), intervalle à 80 %.",
+    "won_one": "{{count}} gagnée",
+    "won_other": "{{count}} gagnées",
+    "lost_one": "{{count}} perdue",
+    "lost_other": "{{count}} perdues",
+    "axes": {
+      "stage": "Stade : {{stage}}",
+      "workspace_history": "Tes affaires closes à ce stade : {{won}}, {{lost}}",
+      "shared_base": "Base commune ({{dimension}}) : {{won}}, {{lost}} — retenue à {{weight}} %"
+    },
+    "unevaluable": {
+      "stage": "Stade : non évaluable — affaire hors du pipe ouvert",
+      "workspace_history": "Tes affaires closes : non évaluable — aucune issue connue à ce stade",
+      "shared_base": "Base commune : non évaluable — pas assez de données communes"
+    },
+    "dimension": {
+      "sector": "même secteur",
+      "size": "même taille",
+      "group_role": "même position de groupe"
+    },
+    "notMeasured": {
+      "insufficient_history": "pas assez d’affaires closes pour calibrer",
+      "not_in_open_pipeline": "affaire hors du pipe ouvert"
+    },
+    "withoutProbability_one": "{{count}} affaire sans probabilité mesurée, comptée à part",
+    "withoutProbability_other": "{{count}} affaires sans probabilité mesurée, comptées à part",
+    "withoutAmount_one": "{{count}} affaire sans montant saisi, comptée à part",
+    "withoutAmount_other": "{{count}} affaires sans montant saisi, comptées à part",
+    "empty": "Aucune affaire datée dans les trois mois à venir",
+    "noTotal": "Aucune affaire du trimestre n’est à la fois chiffrée et calibrée",
+    "backtest": {
+      "measured_one": "Calibrage mesuré a posteriori : rétro-test sur {{count}} affaire close laissée de côté, écart de Brier {{brier}} contre {{baseline}} pour un calcul qui prédirait toujours le taux de base (plus c’est bas, mieux c’est).",
+      "measured_other": "Calibrage mesuré a posteriori : rétro-test sur {{count}} affaires closes laissées de côté une à une, écart de Brier {{brier}} contre {{baseline}} pour un calcul qui prédirait toujours le taux de base (plus c’est bas, mieux c’est).",
+      "bin_one": "Annoncé autour de {{predicted}} %, observé {{observed}} % ({{count}} affaire)",
+      "bin_other": "Annoncé autour de {{predicted}} %, observé {{observed}} % ({{count}} affaires)",
+      "notMeasured": "Calibrage non mesuré : pas assez d’affaires closes pour le rétro-test"
+    },
+    "dossierTitle": "Probabilité calibrée de cette affaire"
+  },
+  "detections": {
+    "reviewLink_one": "{{count}} piste à revoir",
+    "reviewLink_other": "{{count}} pistes à revoir",
+    "title": "Détecté, à revoir",
+    "intro": "{{brand}} a repéré seul ces passages sur des signaux forts. Rien n’avance sans toi : confirme ou écarte.",
+    "autoDetectOff": "La détection automatique est coupée : aucune ligne neuve n’arrivera.",
+    "kind": {
+      "interest_to_opportunity": "Intérêt → affaire",
+      "shortlist_to_submission": "Shortlist → positionnement",
+      "interview_to_mission": "Entretien → mission"
+    },
+    "confirm": {
+      "interest_to_opportunity": "Ouvrir l’affaire",
+      "shortlist_to_submission": "Positionner le profil",
+      "interview_to_mission": "Prendre en main"
+    },
+    "dismiss": "Écarter",
+    "missionNeedsAgreement": "La mission se crée dans son dossier : elle demande l’accord du client et celui du consultant.",
+    "confirmed": "C’est noté : la ligne quitte « à revoir ».",
+    "dismissed": "Ligne écartée. Elle ne reviendra pas.",
+    "error": "Le geste n’a pas abouti. Réessaie.",
+    "openSourceCall": "Voir l’appel à l’origine",
+    "openSubmission": "Ouvrir le positionnement",
+    "drawerTitle": "File de pistes",
+    "drawerDescription": "Ce que {{copilot}} a repéré chez tes comptes. Rien n’avance sans toi : confirme ou écarte.",
+    "drawerClose": "Fermer les pistes",
+    "signalsStayInSignals": "Les signaux restent dans Signaux →"
+  },
+  "lostList": {
+    "tab": "Perdues",
+    "empty": "Aucune affaire perdue.",
+    "intro": "Les affaires closes à l’étape « perdu » : le motif et la leçon se lisent sur la fiche de chaque affaire.",
+    "rexLink": "Voir les retours d’expérience (REX)",
+    "listLabel": "Affaires perdues",
+    "closedOn": "Perdue le {{date}}",
+    "reason": "Motif : {{reason}}"
+  },
+  "archived": {
+    "listLabel": "Dossiers archivés",
+    "empty": "Aucun dossier archivé.",
+    "loadError": "Les dossiers archivés n’ont pas pu être chargés. Ils sont toujours là — c’est la lecture qui a échoué.",
+    "archivedOn": "Archivé le {{date}}",
+    "unarchive": "Désarchiver",
+    "unarchiveNamed": "Désarchiver {{label}}",
+    "tab": "Archivés"
+  },
+  "forecastCategory": {
+    "label": "Catégorie déclarée",
+    "hint": "Ta déclaration, sans pourcentage associé.",
+    "undeclared": "Non déclarée",
+    "commit": "Engagé",
+    "best_case": "Possible",
+    "pipeline": "Pipe",
+    "omitted": "Hors prévision",
+    "saveError": "L’enregistrement a échoué. La valeur précédente est conservée."
+  },
+  "recordPanel": {
+    "kinds": {
+      "opportunity": "Opportunité",
+      "need": "Besoin",
+      "submission": "Positionnement",
+      "mission": "Mission",
+      "consultant": "Consultant"
+    },
+    "zones": {
+      "properties": "Propriétés",
+      "history": "Historique",
+      "links": "Objets liés"
+    },
+    "properties": {
+      "stage": "Étape",
+      "status": "Statut",
+      "objective": "Objectif",
+      "expectedCloseOn": "Clôture visée",
+      "urgency": "Urgence",
+      "seniority": "Séniorité",
+      "roleTitle": "Rôle",
+      "startedOn": "Début",
+      "endsOn": "Fin",
+      "title": "Titre",
+      "availability": "Disponibilité"
+    },
+    "linkGroups": {
+      "account": "Compte",
+      "opportunity": "Opportunité",
+      "need_one": "Besoin",
+      "need_other": "Besoins",
+      "submission_one": "Positionnement",
+      "submission_other": "Positionnements",
+      "mission_one": "Mission",
+      "mission_other": "Missions",
+      "consultant_one": "Consultant",
+      "consultant_other": "Consultants"
+    },
+    "historyEmpty": "Aucun mouvement enregistré.",
+    "linksEmpty": "Aucun objet lié.",
+    "transition": "{{from}} → {{to}}",
+    "transitionBirth": "Créé · {{to}}",
+    "openFull": "Ouvrir la fiche complète",
+    "askLaura": "Demander à {{copilot}}",
+    "askLauraQuestion": "Que dois-je faire sur {{kind}} « {{label}} » ?",
+    "loading": "Chargement…",
+    "error": "Impossible de charger cette fiche."
+  },
+  "pistes": {
+    "heading": "Pistes détectées sur tes comptes",
+    "count_one": "{{count}} piste à revoir",
+    "count_other": "{{count}} pistes à revoir",
+    "countersAria": "Filtrer les pistes",
+    "maturityAria": "Maturité du besoin",
+    "moreFilters": "Plus de filtres",
+    "counters": {
+      "all": "Toutes",
+      "ready": "Prêtes",
+      "toQualify": "À qualifier",
+      "withOffer": "Avec ton offre",
+      "withoutOffer": "Sans offre rattachée"
+    },
+    "columns": {
+      "piste": "Piste",
+      "account": "Compte",
+      "origin": "Origine",
+      "gaps": "Ce qui manque",
+      "action": "Action"
+    },
+    "gaps": {
+      "none": "Rien : prête",
+      "confirmation": "Besoin à confirmer",
+      "offer": "Ton offre en face",
+      "review": "À confirmer ou écarter"
+    },
+    "createProject": "Créer l’affaire",
+    "qualify": "Qualifier",
+    "qualifyAria": "Qualifier la piste « {{label}} » chez {{company}}"
+  },
+  "export": {
+    "trigger": "Exporter",
+    "done_one": "{{count}} affaire exportée.",
+    "done_other": "{{count}} affaires exportées.",
+    "hint_one": "Exporter l’affaire affichée en CSV",
+    "hint_other": "Exporter en CSV les {{count}} affaires affichées (filtres appliqués)",
+    "columns": {
+      "project": "Affaire",
+      "account": "Compte",
+      "stage": "Étape",
+      "origin": "Origine",
+      "owner": "Porteur",
+      "amount": "Montant (€)",
+      "nextAction": "Prochaine action",
+      "nextActionDueOn": "Échéance de la prochaine action",
+      "stageEnteredOn": "Dans l’étape depuis le",
+      "lastActivityOn": "Dernière activité le",
+      "expectedCloseOn": "Clôture espérée le",
+      "ageDays": "Âge (jours)"
+    }
+  },
+  "frieze": {
+    "label": "Étapes de l’affaire",
+    "steps": {
+      "to_qualify": "À qualifier",
+      "framing": "Cadrage",
+      "profiles": "Profils présentés",
+      "proposal": "Proposition",
+      "won": "Gagnée"
+    },
+    "exitNote": "L’affaire est sortie du Kanban ; reprends-la depuis Suivi."
+  },
+  "decide": {
+    "title": "Ce qui reste à décider",
+    "computeMargin": "Calculer la marge",
+    "marginTitle": "Économie de la mission",
+    "items": {
+      "scope": "Périmètre de la prestation",
+      "budget": "Budget et conditions",
+      "decider": "Accès au décideur"
+    },
+    "state": {
+      "scope": {
+        "done": "Un brief est enregistré.",
+        "partial": "Un brief est enregistré.",
+        "open": "Aucun brief enregistré : cadre la prestation sur le besoin."
+      },
+      "budget": {
+        "done": "Budget confirmé.",
+        "partial": "Une cible existe ; elle ne vaut pas accord client.",
+        "open": "Aucune cible tarifaire renseignée."
+      },
+      "decider": {
+        "done": "Décideur relié : {{who}}.",
+        "partial": "Un interlocuteur est relié. Son pouvoir de décision reste à qualifier.",
+        "open": "Aucun interlocuteur relié à l’affaire."
+      }
+    },
+    "marginDescription": "Le taux de marge affiché est (vente − coûts) / vente. Le coût doit être fourni : aucun salaire net n’est converti automatiquement."
+  },
+  "followUp": {
+    "title": "Suivi de l’affaire",
+    "description": "Aucun message n’est envoyé depuis ici : la tâche rejoint Actions et reste reliée à ce dossier.",
+    "task": "Créer la prochaine tâche",
+    "note": "Ajouter une note",
+    "meeting": "Planifier un rendez-vous",
+    "proposal": "Préparer la proposition commerciale",
+    "tender": "Répondre à un appel d’offres",
+    "hold": "Mettre en veille ou clore",
+    "closeNote": "Clore une affaire conserve les présentations, les documents et l’historique. Aucune mission existante n’est annulée.",
+    "resume": "Reprendre le suivi — l’affaire reste dans le pipe",
+    "dormant": "En sommeil — sort du Kanban",
+    "lost": "Perdue — sort du Kanban ; le motif et le retour d’expérience sont gardés"
+  },
+  "edit": {
+    "title": "Modifier l’affaire",
+    "description": "Porteur, catégorie de prévision, confidentialité, montant, étape et gestes de l’affaire.",
+    "similar": "Affaires similaires"
+  },
+  "lauraDialog": {
+    "title": "Avancer avec {{copilot}}",
+    "description": "À partir du dossier, des présentations et de l’historique du compte.",
+    "sevenQuestions": "L’affaire en 7 questions"
+  },
+  "pipeTheo": {
+    "head": {
+      "import": "Importer"
+    },
+    "owner": {
+      "label": "Responsable",
+      "all": "Tous les responsables",
+      "some_one": "{{count}} responsable",
+      "some_other": "{{count}} responsables",
+      "aria": "Responsable : {{value}}"
+    },
+    "state": {
+      "label": "État des affaires",
+      "aria": "État des affaires : {{value}}",
+      "all": "Tout le portefeuille",
+      "open": "Affaires ouvertes",
+      "won": "Gagnées",
+      "lost": "Perdues",
+      "dormant": "En sommeil",
+      "archived": "Archivées"
+    },
+    "filters": {
+      "cta": "Filtres",
+      "caption": "Filtres rapides",
+      "mine": "Mes affaires",
+      "clear": "Effacer les filtres"
+    },
+    "view": {
+      "label": "Affichage du pipe"
+    },
+    "more": {
+      "label": "Plus d’actions sur le pipe"
+    },
+    "summary": {
+      "label": "Résumé du pipe",
+      "inView_one": "affaire active",
+      "inView_other": "affaires actives",
+      "wonApart_one": "affaire gagnée, à part",
+      "wonApart_other": "affaires gagnées, à part",
+      "unweighted": "estimation non pondérée",
+      "signalsLead": "Les signaux restent dans",
+      "signalsLink": "Signaux"
+    },
+    "column": {
+      "total": "{{amount}} estimés",
+      "add": "Ajouter une affaire"
+    },
+    "card": {
+      "estimate": "Estimation HT",
+      "noEstimate": "Pas encore d’estimation",
+      "amountToEnter": "Montant à saisir",
+      "headcount_one": "{{count}} poste",
+      "headcount_other": "{{count}} postes",
+      "followed_one": "{{count}} profil suivi",
+      "followed_other": "{{count}} profils suivis",
+      "see": "Voir",
+      "seeNamed": "Voir les profils suivis sur {{label}}"
+    },
+    "exits": {
+      "label": "Hors pipe :",
+      "lost_one": "{{count}} perdue",
+      "lost_other": "{{count}} perdues",
+      "dormant_one": "{{count}} en sommeil",
+      "dormant_other": "{{count}} en sommeil",
+      "archived_one": "{{count}} archivée",
+      "archived_other": "{{count}} archivées",
+      "seeLost": "Voir les perdues",
+      "seeDormant": "Voir les affaires en sommeil",
+      "seeArchived": "Voir les archivées"
+    },
+    "panels": {
+      "lost": {
+        "title": "Affaires perdues",
+        "intro": "Sorties du pipe. Chaque perte garde son motif et son retour d’expérience, lisibles sur sa fiche."
+      },
+      "dormant": {
+        "title": "En sommeil",
+        "intro": "Une affaire en sommeil sort du Kanban sans être perdue. Tu la reprends depuis sa fiche.",
+        "empty": "Aucune affaire en sommeil.",
+        "since": "En sommeil · dernière activité le {{date}}",
+        "resume": "Reprendre le suivi"
+      },
+      "archived": {
+        "title": "Archivées",
+        "intro": "On archive, on ne supprime pas : l’historique, les présentations et les documents restent consultables."
+      }
+    }
+  },
+  "dormantList": {
+    "tab": "En sommeil",
+    "empty": "Aucune affaire en sommeil.",
+    "intro": "Les affaires mises en sommeil : elles n’avancent pas, mais rien n’est perdu — rouvre-les depuis leur fiche.",
+    "listLabel": "Affaires en sommeil",
+    "since": "En sommeil depuis le {{date}}"
+  },
+  "missionTracking": {
+    "noOwner": "Aucun porteur"
+  },
+  "missionDetail": {
+    "title": "Suivi de la mission",
+    "none": "Aucune mission n'existe encore pour ce projet gagné.",
+    "remaining": "Pour qu'elle existe : la créer depuis ce projet signé.",
+    "unreadable": "Le statut de la mission n'a pas pu être lu : il n'est pas évalué ici, et rien n'est proposé tant qu'on ne sait pas si elle existe.",
+    "engaged": "Engagé",
+    "owner": "Porteur"
+  },
+  "signalTable": {
+    "aria": "Signaux et besoins du compte",
+    "loading": "Lecture des signaux du compte…",
+    "error": "Les signaux de ce compte n’ont pas pu être lus. Réessaie dans un instant.",
+    "stale": "Collecte antérieure aux dernières capacités",
+    "staleHelp": "Ce compte a été analysé avant les dernières améliorations de la collecte. Actualiser pour en profiter.",
+    "period": {
+      "now": "Actuel · 6 mois",
+      "past": "Historique"
+    },
+    "laura": {
+      "now_one": "Un signal sur les six derniers mois.",
+      "now_other": "{{count}} signaux sur les six derniers mois.",
+      "past_one": "Un besoin ou signal plus ancien.",
+      "past_other": "{{count}} besoins ou signaux plus anciens.",
+      "top_one": "Surtout du côté {{type}}.",
+      "top_other": "Surtout du côté {{type}} ({{count}}).",
+      "leads_one": "Un projet possible est à trancher.",
+      "leads_other": "{{count}} projets possibles sont à trancher."
+    },
+    "filters": {
+      "aria": "Filtrer les lignes par type",
+      "all": "Tout"
+    },
+    "search": "Chercher un métier, une techno…",
+    "columns": {
+      "date": "Date",
+      "type": "Type",
+      "signal": "Signal ou besoin",
+      "contact": "À contacter"
+    },
+    "types": {
+      "recrutement": "Recrutement",
+      "projet": "Projet",
+      "marche_public": "Marché public",
+      "annonce_legale": "Annonce légale",
+      "equipe": "Équipe",
+      "affaire": "Affaire",
+      "besoin_passe": "Besoin passé",
+      "mission_observee": "Mission observée",
+      "fait": "Fait"
+    },
+    "outcome": {
+      "won": "Gagné",
+      "lost": "Perdu",
+      "none": "Sans suite"
+    },
+    "link": {
+      "offer": "Voir l’offre",
+      "notice": "Voir l’avis",
+      "read": "Lire"
+    },
+    "merged_one": "▸ {{count}} ligne regroupée",
+    "merged_other": "▸ {{count}} lignes regroupées",
+    "tjm": "TJM ≈ {{amount}} €",
+    "titleMore": "Tout lire",
+    "prescriber": "Prescripteur : {{who}}",
+    "detail": {
+      "description": "Détail du besoin",
+      "location": "Lieu : {{place}}",
+      "people": "Personnes à contacter",
+      "nobody": "Personne de connu ne recoupe ce signal.",
+      "publishedOn": "Publiée sur {{site}}",
+      "planFailed": "Je n'ai pas pu ajouter l'action au plan."
+    },
+    "titleLess": "Réduire",
+    "closedGroup_one": "{{count}} établissement fermé",
+    "closedGroup_other": "{{count}} établissements fermés",
+    "accountsGroup_one": "{{count}} dépôt de comptes",
+    "accountsGroup_other": "{{count}} dépôts de comptes",
+    "nobody": "Personne de connu ne recoupe cette ligne.",
+    "sharedBase": "Base commune · {{entity}}",
+    "groupSummary_one": "{{count}} besoin sur {{entities}} entités du groupe",
+    "groupSummary_other": "{{count}} besoins sur {{entities}} entités du groupe",
+    "sources": "×{{count}} sources",
+    "nobodyOnce": "Personne de connu ne recoupe certains de ces besoins.",
+    "findContact": "Trouver qui contacter",
+    "toPlan": "Au plan",
+    "toPlanFor": "Ajouter au plan : contacter {{name}}",
+    "person": {
+      "email": "E-mail ✓",
+      "phone": "Tél ✓",
+      "reason": {
+        "named": "→ nommé dans l’annonce",
+        "carried": "→ a porté ce besoin",
+        "then": "→ interlocuteur à l’époque",
+        "role": "→ rôle concerné par ce fait",
+        "craft": "→ même métier : {{words}}",
+        "place": "→ même lieu : {{place}}"
+      },
+      "stillThere": "Toujours en poste",
+      "left": "A quitté le compte",
+      "contactedOn": "Déjà contacté le {{date}}"
+    },
+    "more": "Voir {{count}} de plus ({{total}} restantes)",
+    "empty": {
+      "now": "Aucun signal daté sur les six derniers mois.",
+      "past": "Aucun besoin ni signal daté de plus de six mois.",
+      "filtered": "Aucune ligne ne correspond. Retire un filtre ou change la recherche."
+    },
+    "plan": {
+      "labelWithContact": "Contacter {{name}} — {{signal}}",
+      "reason": "{{type}} du {{date}}"
+    },
+    "side": {
+      "aria": "Résumé des signaux",
+      "glance": "En un coup d’œil",
+      "people": "Qui revient le plus",
+      "peopleLines_one": "{{count}} ligne",
+      "peopleLines_other": "{{count}} lignes",
+      "market": "Observé sur le marché",
+      "marketStack": "Technos les plus vues",
+      "marketFamilies": "Familles de rôles",
+      "marketEsn": "ESN présentes chez ce compte",
+      "marketExEsn": "Ex-ESN présentes chez ce compte",
+      "marketCount_one": "{{count}} parcours",
+      "marketCount_other": "{{count}} parcours",
+      "marketDetails": "Voir les détails",
+      "marketAll": "Tous",
+      "marketClose": "Fermer",
+      "marketPathsError": "Détail indisponible pour l’instant.",
+      "marketPathsPending": "Le détail parcours par parcours n’est pas encore disponible pour ce compte.",
+      "marketPathsLoading": "Chargement des parcours…",
+      "marketPathsCapped": "{{shown}} parcours affichés sur {{total}}",
+      "marketFilterTechno": "Techno",
+      "marketFilterFamily": "Famille de rôle",
+      "marketFilterEsn": "ESN",
+      "marketRate": "{{rate}} € / jour",
+      "marketStatus": { "freelance": "Freelance", "esn": "Salarié ESN", "salarie": "Salarié" },
+      "marketSource": "Source : observé sur le marché",
+      "marketPaths_one": "{{count}} parcours observé chez ce compte",
+      "marketPaths_other": "{{count}} parcours observés chez ce compte",
+      "now": {
+        "deals_one": "{{count}} affaire en cours → Affaires",
+        "deals_other": "{{count}} affaires en cours → Affaires"
+      },
+      "past": {
+        "won_one": "{{count}} besoin passé gagné",
+        "won_other": "{{count}} besoins passés gagnés",
+        "lost_one": "{{count}} besoin passé perdu",
+        "lost_other": "{{count}} besoins passés perdus",
+        "none_one": "{{count}} besoin passé sans suite",
+        "none_other": "{{count}} besoins passés sans suite",
+        "theme_one": "Thème récurrent : {{label}} ({{count}} ligne)",
+        "theme_other": "Thème récurrent : {{label}} ({{count}} lignes)",
+        "tjm": "TJM observés : {{min}} – {{max}} €",
+        "tjmOne": "TJM observé : {{amount}} €"
+      }
+    },
+    "missionSource": "Observé sur le marché",
+    "missionSourceEntity": "Observé sur le marché · {{entity}}",
+    "origin": {
+      "offre": "Offre d’emploi",
+      "marche": "Marché public",
+      "annonce": "Annonce légale",
+      "crm": "CRM",
+      "memoire": "Besoin observé sur le marché",
+      "analyse": "Analyse"
+    }
+  },
+  "wonInPlanning": {
+    "title_one": "{{count}} projet gagné — suivi dans Planning",
+    "title_other": "{{count}} projets gagnés — suivis dans Planning",
+    "link": "Ouvrir le Planning"
+  }
+}

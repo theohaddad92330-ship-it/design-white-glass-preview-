@@ -1,0 +1,11 @@
+# fix-actions-4521-2610 — rapport
+
+Branche `claude/fix-actions-4521-2610`, base `d7e6ab0`. Aucune PR.
+
+**1. Rattrapage des contacts d'étapes de plan (#4521.1)** — `plan-item-contact-backfill.service.ts` + contrôleur `POST internal/admin/plan-item-contact-backfill` (`InternalSecretGuard`, même famille que les autres rattrapages `internal/admin/*`). Corps `{ workspace_id, dry_run }` : **simulation par défaut**, seul `dry_run: false` écrit. UN espace ; ne part pas au déploiement. Étapes ouvertes (`todo/snoozed/prepared`) à `contact_id IS NULL` : rattache l'unique contact du compte, sinon celui dont le nom complet (≥ 2 mots, sans accents ni casse) figure dans le libellé ; plusieurs candidats ou aucun = intact, reste « sans destinataire nommé ». L'écriture porte elle-même `contact_id IS NULL` et le filtre des comptes de l'espace : une correction humaine n'est jamais écrasée, un rejeu n'écrit rien. Compteurs journalisés : examinées / rattachées / ambiguës / déjà rattachées.
+**2. Date du signal (#4521.2)** — la date vient de `provenance.at` (`source_at` de l'étape). L'écran traitait déjà l'absence sans parenthèse (null, vide, invalide) ; test ajouté qui le fige. Aucun changement de code.
+**3. Bouton fantôme (#4521.5/#4593)** — `underMandate` FR/EN cite désormais « Fait » / « Done » ; infobulle (`title`, clé `today.card.doneHint`) sur les deux boutons « Fait » : « Marque l'action comme traitée — ce n'est pas une preuve d'envoi. » Jumeaux : seule cette phrase citait un bouton inexistant ; les autres « Valider » (message, écriture CRM, séquences) sont de vrais boutons.
+
+**Tests** : API `plan-item-contact-backfill.service.spec` 7 verts, `.controller.spec` 2 verts, `action-plan-items.service.spec` 152 verts ; web `burstCopy.test` 3, `TodayCard.planMail.test` 6, `TodayPage.test` + `BurstPanel.laura.test` 52 verts. Copie/infobulle vues rouges avant correction. `tsc` API : rien sur les fichiers touchés.
+
+**Pas fait** : compteurs de simulation sur données réelles (pas d'accès à la base prod ; à lancer en `dry_run` par l'opérateur). Pas de semis de démo (aucun champ neuf). Les 88 cartes seront rattachées seulement après exécution du geste. `provenance.at` est la date de la source de l'étape, pas forcément celle du signal : à trancher si on veut la vraie date du signal.

@@ -1,0 +1,533 @@
+<title>Registre Laura</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Hanken+Grotesk:wght@400;500;600;700&family=JetBrains+Mono:wght@400;500&display=swap">
+<style>
+:root {
+  --ground: #eef1f4;
+  --surface: #ffffff;
+  --sunk: #e4e9ee;
+  --ink: #142029;
+  --muted: #56636f;
+  --rule: #d3dae1;
+  --accent: #2c49c9;
+  --accent-soft: #e3e8fb;
+  --st-trancher: #c8502a;
+  --st-retenu: #8d9aa7;
+  --st-reformule: #a86d12;
+  --st-livre: #2477b3;
+  --st-recette: #1b8055;
+  --st-ecarte: #c3cbd3;
+  --st-deja: #9cc7b4;
+  --ok-soft: #dcefe5;
+  --ok-text: #135c3d;
+  --warn-soft: #f7ead2;
+  --warn-text: #7a4e0a;
+  --info-soft: #dcebf6;
+  --info-text: #185784;
+  --idle-soft: #e7ebef;
+  --idle-text: #46525d;
+  --font-ui: "Hanken Grotesk", "Helvetica Neue", Arial, system-ui, sans-serif;
+  --font-mono: "JetBrains Mono", ui-monospace, "SF Mono", Menlo, monospace;
+}
+@media (prefers-color-scheme: dark) {
+  :root:not([data-theme="light"]) {
+    --ground: #0e141a;
+    --surface: #151d25;
+    --sunk: #1c2630;
+    --ink: #e4eaef;
+    --muted: #97a4b0;
+    --rule: #2a3540;
+    --accent: #93a8ff;
+    --accent-soft: #1f2a4d;
+    --st-trancher: #e8774f;
+    --st-retenu: #6f7d8a;
+    --st-reformule: #d59a3c;
+    --st-livre: #4fa3de;
+    --st-recette: #3fb67f;
+    --st-ecarte: #34404b;
+    --st-deja: #2f5a48;
+    --ok-soft: #17372a;
+    --ok-text: #7fd6a9;
+    --warn-soft: #3a2c14;
+    --warn-text: #e9bd72;
+    --info-soft: #16304a;
+    --info-text: #8ec6ef;
+    --idle-soft: #212b35;
+    --idle-text: #a8b4bf;
+  }
+}
+:root[data-theme="dark"] {
+  --ground: #0e141a;
+  --surface: #151d25;
+  --sunk: #1c2630;
+  --ink: #e4eaef;
+  --muted: #97a4b0;
+  --rule: #2a3540;
+  --accent: #93a8ff;
+  --accent-soft: #1f2a4d;
+  --st-trancher: #e8774f;
+  --st-retenu: #6f7d8a;
+  --st-reformule: #d59a3c;
+  --st-livre: #4fa3de;
+  --st-recette: #3fb67f;
+  --st-ecarte: #34404b;
+  --st-deja: #2f5a48;
+  --ok-soft: #17372a;
+  --ok-text: #7fd6a9;
+  --warn-soft: #3a2c14;
+  --warn-text: #e9bd72;
+  --info-soft: #16304a;
+  --info-text: #8ec6ef;
+  --idle-soft: #212b35;
+  --idle-text: #a8b4bf;
+}
+
+* { box-sizing: border-box; }
+body {
+  background: var(--ground);
+  color: var(--ink);
+  font-family: var(--font-ui);
+  font-size: 15px;
+  line-height: 1.5;
+  padding-inline: 20px;
+  padding-block: 28px 64px;
+}
+.wrap { max-width: 1180px; margin-inline: auto; display: grid; gap: 36px; }
+h1, h2 { text-wrap: balance; margin: 0; }
+h1 { font-size: 30px; font-weight: 700; letter-spacing: -0.01em; }
+h2 { font-size: 18px; font-weight: 700; }
+p { margin: 0; }
+.mono { font-family: var(--font-mono); font-size: 0.86em; }
+.num { font-variant-numeric: tabular-nums; }
+.eyebrow { font-size: 12px; font-weight: 600; text-transform: uppercase; letter-spacing: 0.08em; color: var(--muted); }
+.muted { color: var(--muted); }
+
+/* En-tête */
+header { display: grid; gap: 8px; }
+.meta { display: flex; flex-wrap: wrap; gap: 6px 18px; color: var(--muted); font-size: 13px; }
+.meta b { color: var(--ink); font-weight: 600; }
+
+/* Section */
+section { display: grid; gap: 14px; }
+.section-head { display: flex; flex-wrap: wrap; align-items: baseline; justify-content: space-between; gap: 8px 16px; }
+
+/* Vue d'ensemble */
+.overview { background: var(--surface); border: 1px solid var(--rule); border-radius: 10px; padding: 22px; display: grid; gap: 20px; }
+.figures { display: grid; grid-template-columns: repeat(4, minmax(0, 1fr)); gap: 16px; }
+.figure { display: grid; gap: 2px; }
+.figure .value { font-size: 30px; font-weight: 700; font-variant-numeric: tabular-nums; line-height: 1.1; }
+.figure .value small { font-size: 16px; font-weight: 500; color: var(--muted); }
+.figure .label { font-size: 13px; color: var(--muted); }
+.bar { display: flex; height: 18px; border-radius: 4px; overflow: hidden; background: var(--sunk); }
+.bar span { display: block; height: 100%; min-width: 0; }
+.bar-lg { height: 26px; }
+.seg-trancher { background: var(--st-trancher); }
+.seg-retenu { background: var(--st-retenu); }
+.seg-reformule { background: var(--st-reformule); }
+.seg-livre { background: var(--st-livre); }
+.seg-recette { background: var(--st-recette); }
+.seg-deja { background: var(--st-deja); }
+.seg-ecarte { background: repeating-linear-gradient(135deg, var(--st-ecarte) 0 4px, transparent 4px 7px); }
+.legend { display: flex; flex-wrap: wrap; gap: 8px 20px; font-size: 13px; }
+.legend div { display: flex; align-items: center; gap: 7px; }
+.swatch { width: 11px; height: 11px; border-radius: 2px; flex: none; }
+.legend .count { font-weight: 600; font-variant-numeric: tabular-nums; }
+.scale-note { font-size: 13px; color: var(--muted); max-width: 70ch; }
+
+/* Lots */
+.lots { list-style: none; margin: 0; padding: 0; display: grid; border-top: 1px solid var(--rule); }
+.lot { display: grid; grid-template-columns: 2.2em 11.5em minmax(0, 1fr) auto; gap: 4px 14px; align-items: baseline; padding-block: 11px; border-bottom: 1px solid var(--rule); }
+.lot .order { font-family: var(--font-mono); font-size: 12px; color: var(--muted); }
+.lot .name { font-weight: 600; }
+.lot .detail { font-size: 13px; color: var(--muted); grid-column: 3 / 5; }
+.lot .ref { font-family: var(--font-mono); font-size: 12px; color: var(--muted); text-align: right; white-space: nowrap; }
+.lot .issues { display: inline-flex; flex-wrap: wrap; gap: 4px; margin-left: 6px; vertical-align: baseline; }
+.chip-issue { font-family: var(--font-mono); font-size: 11px; color: var(--muted); background: var(--sunk); border-radius: 3px; padding: 0 5px; }
+
+.pill { display: inline-flex; align-items: center; gap: 6px; font-size: 12px; font-weight: 600; border-radius: 999px; padding: 2px 10px; white-space: nowrap; justify-self: start; }
+.pill::before { content: ""; width: 6px; height: 6px; border-radius: 50%; background: currentColor; }
+.pill-ok { background: var(--ok-soft); color: var(--ok-text); }
+.pill-info { background: var(--info-soft); color: var(--info-text); }
+.pill-warn { background: var(--warn-soft); color: var(--warn-text); }
+.pill-idle { background: var(--idle-soft); color: var(--idle-text); }
+.pill-idle::before { background: transparent; border: 1.5px solid currentColor; width: 5px; height: 5px; }
+
+/* Décisions */
+.asks { list-style: none; margin: 0; padding: 0; display: grid; gap: 10px; }
+.ask { background: var(--surface); border: 1px solid var(--rule); border-left: 3px solid var(--st-trancher); border-radius: 0 8px 8px 0; padding: 12px 16px; display: grid; gap: 3px; max-width: 86ch; }
+.ask b { font-weight: 600; }
+.ask .why { font-size: 13px; color: var(--muted); }
+
+/* Issues */
+.toolbar { display: flex; flex-wrap: wrap; gap: 10px 14px; align-items: center; }
+.search { font: inherit; font-size: 14px; color: var(--ink); background: var(--surface); border: 1px solid var(--rule); border-radius: 6px; padding: 7px 10px; width: min(100%, 260px); }
+.search:focus-visible, .filter:focus-visible, .issue-row:focus-visible { outline: 2px solid var(--accent); outline-offset: 2px; }
+.filters { display: flex; flex-wrap: wrap; gap: 6px; }
+.filter { font: inherit; font-size: 13px; color: var(--muted); background: transparent; border: 1px solid var(--rule); border-radius: 999px; padding: 4px 11px; cursor: pointer; }
+.filter:hover { color: var(--ink); border-color: var(--muted); }
+.filter[aria-pressed="true"] { background: var(--accent-soft); color: var(--ink); border-color: var(--accent); }
+.filter .n { font-variant-numeric: tabular-nums; opacity: 0.75; margin-left: 4px; }
+
+.table-scroll { overflow-x: auto; background: var(--surface); border: 1px solid var(--rule); border-radius: 10px; }
+table { width: 100%; border-collapse: collapse; min-width: 760px; }
+th { text-align: left; font-size: 12px; font-weight: 600; text-transform: uppercase; letter-spacing: 0.06em; color: var(--muted); padding: 10px 14px; border-bottom: 1px solid var(--rule); white-space: nowrap; }
+td { padding: 10px 14px; border-bottom: 1px solid var(--rule); vertical-align: middle; }
+tbody tr:last-child td { border-bottom: 0; }
+.issue-row { cursor: pointer; }
+.issue-row:hover td { background: var(--sunk); }
+.issue-row td:first-child { font-family: var(--font-mono); font-size: 13px; white-space: nowrap; }
+.caret { display: inline-block; width: 1em; color: var(--muted); transition: transform 120ms ease; }
+.issue-row[aria-expanded="true"] .caret { transform: rotate(90deg); }
+.subject-tag { font-family: var(--font-mono); font-size: 12px; color: var(--muted); }
+.progress { display: grid; gap: 4px; min-width: 170px; }
+.progress .bar { height: 8px; border-radius: 2px; }
+.progress .txt { font-size: 12px; color: var(--muted); font-variant-numeric: tabular-nums; white-space: nowrap; }
+.title-cell { font-weight: 500; }
+
+.points-cell { background: var(--sunk); padding: 0; }
+.points { list-style: none; margin: 0; padding: 8px 14px 14px 46px; display: grid; }
+.point { display: grid; grid-template-columns: 5.2em 7.5em minmax(0, 1fr); gap: 2px 14px; padding-block: 7px; border-bottom: 1px dashed var(--rule); font-size: 13px; align-items: baseline; }
+.point:last-child { border-bottom: 0; }
+.point .pid { font-family: var(--font-mono); font-size: 12px; color: var(--muted); }
+.point .pstate { font-size: 12px; font-weight: 600; display: inline-flex; gap: 6px; align-items: center; }
+.point .pstate i { width: 8px; height: 8px; border-radius: 2px; display: inline-block; }
+.point .pask { color: var(--ink); }
+.point .pproof { grid-column: 3; color: var(--muted); font-size: 12px; }
+.point.is-ecarte .pask { color: var(--muted); text-decoration: line-through; text-decoration-color: var(--rule); }
+.empty { padding: 18px 14px; color: var(--muted); }
+
+/* Reprise */
+.resume { background: var(--surface); border: 1px solid var(--rule); border-radius: 10px; padding: 18px 20px; display: grid; gap: 10px; }
+.resume ol { margin: 0; padding-left: 1.3em; display: grid; gap: 6px; max-width: 90ch; }
+pre { margin: 0; overflow-x: auto; background: var(--sunk); border-radius: 6px; padding: 10px 12px; font-family: var(--font-mono); font-size: 12.5px; line-height: 1.55; }
+code { font-family: var(--font-mono); font-size: 0.88em; }
+
+@media (max-width: 820px) {
+  .figures { grid-template-columns: repeat(2, minmax(0, 1fr)); }
+  .lot { grid-template-columns: 2em minmax(0, 1fr); }
+  .lot .pill { grid-column: 2; }
+  .lot .name, .lot .detail, .lot .ref { grid-column: 2; text-align: left; }
+}
+@media (max-width: 480px) {
+  h1 { font-size: 24px; }
+  .figure .value { font-size: 24px; }
+  .overview { padding: 16px; }
+  .points { padding-left: 14px; }
+  .point { grid-template-columns: 4.6em minmax(0, 1fr); }
+  .point .pstate { grid-column: 2; }
+  .point .pask, .point .pproof { grid-column: 1 / 3; }
+}
+@media (prefers-reduced-motion: reduce) { .caret { transition: none; } }
+</style>
+
+<div class="wrap">
+  <header>
+    <span class="eyebrow">Retours bêta · /chat · déposés le 12/09/2026 · #1901 → #1962</span>
+    <h1>Registre Laura</h1>
+    <div class="meta" id="meta"></div>
+  </header>
+
+  <section aria-labelledby="h-overview">
+    <div class="section-head">
+      <h2 id="h-overview">Où on en est</h2>
+      <span class="muted" id="overview-note"></span>
+    </div>
+    <div class="overview">
+      <div class="figures" id="figures"></div>
+      <div class="bar bar-lg" id="bigbar" role="img"></div>
+      <div class="legend" id="legend"></div>
+      <p class="scale-note">Un point est une demande numérotée d'une issue (<code>1960.14</code>). Une issue ne se ferme que quand chacun de ses points est recetté en prod ou écarté avec sa raison écrite. « Livré » veut dire mergé et déployé, pas encore vu tourner. « Déjà là » : le code faisait déjà ce que le point demande (constaté en lisant le code le 12/09, pas encore vu en prod) — rien à coder. « Écarté » : refus motivé (doctrine, décision, constat faux).</p>
+    </div>
+  </section>
+
+  <section aria-labelledby="h-lots">
+    <div class="section-head">
+      <h2 id="h-lots">Lots vers la prod</h2>
+      <span class="muted">dans l'ordre de merge — un lot recetté avant le suivant</span>
+    </div>
+    <ol class="lots" id="lots"></ol>
+  </section>
+
+  <section aria-labelledby="h-asks" id="asks-section">
+    <div class="section-head">
+      <h2 id="h-asks">À trancher par toi</h2>
+    </div>
+    <ul class="asks" id="asks"></ul>
+  </section>
+
+  <section aria-labelledby="h-issues">
+    <div class="section-head">
+      <h2 id="h-issues">Les 62 issues</h2>
+      <span class="muted" id="issues-count"></span>
+    </div>
+    <div class="toolbar">
+      <input class="search" id="search" type="search" placeholder="Numéro, titre ou demande…" aria-label="Filtrer les issues">
+      <div class="filters" id="status-filters" role="group" aria-label="Statut"></div>
+    </div>
+    <div class="filters" id="subject-filters" role="group" aria-label="Sujet"></div>
+    <div class="table-scroll">
+      <table>
+        <thead><tr><th>Issue</th><th>Sujet du retour</th><th>Thème</th><th>Points</th><th>Statut</th></tr></thead>
+        <tbody id="issues"></tbody>
+      </table>
+    </div>
+  </section>
+
+  <section aria-labelledby="h-resume">
+    <div class="section-head"><h2 id="h-resume">Reprendre après un /clear</h2></div>
+    <div class="resume">
+      <ol>
+        <li>Tout l'état est sur disque, pas dans la conversation : le registre <code>.claude/notes/registre-2026-09-12.md</code>, les décisions <code>.claude/notes/decisions-2026-09-12.md</code>, le manifeste <code>.claude/notes/manifeste-vague-3-2026-09-12.md</code> et la reprise <code>.claude/notes/reprise-2026-09-12-laura.md</code>.</li>
+        <li>Les lots et les questions de cette page vivent dans <code>.claude/notes/suivi-laura/lots.json</code>.</li>
+        <li>Pour rafraîchir la page : regénérer, puis republier sur le même lien.</li>
+      </ol>
+      <pre id="resume-cmd"></pre>
+    </div>
+  </section>
+</div>
+
+<script>
+const DATA = __DATA__;
+
+const STATE_META = {
+  'à trancher': { key: 'trancher', label: 'À trancher' },
+  'retenu': { key: 'retenu', label: 'Retenu' },
+  'reformulé': { key: 'reformule', label: 'Reformulé' },
+  'livré': { key: 'livre', label: 'Livré' },
+  'recetté': { key: 'recette', label: 'Recetté' },
+  'déjà là': { key: 'deja', label: 'Déjà là' },
+  'écarté': { key: 'ecarte', label: 'Écarté' },
+};
+const BAR_ORDER = ['recetté', 'livré', 'reformulé', 'retenu', 'à trancher', 'déjà là', 'écarté'];
+const STAGE = {
+  recette: { cls: 'pill-ok', label: 'Recetté en prod' },
+  deploy: { cls: 'pill-info', label: 'Mergé · recette' },
+  ci: { cls: 'pill-info', label: 'En CI' },
+  integration: { cls: 'pill-warn', label: 'Intégration' },
+  ecriture: { cls: 'pill-warn', label: 'En écriture' },
+  attente: { cls: 'pill-idle', label: 'Pas commencé' },
+};
+
+const el = (tag, attrs = {}, ...children) => {
+  const node = document.createElement(tag);
+  for (const [k, v] of Object.entries(attrs)) {
+    if (k === 'class') node.className = v;
+    else if (k === 'text') node.textContent = v;
+    else node.setAttribute(k, v);
+  }
+  for (const c of children) if (c != null) node.append(c);
+  return node;
+};
+const fmt = (n) => n.toLocaleString('fr-FR');
+const pct = (n, d) => (d ? Math.round((n / d) * 100) : 0);
+
+function countStates(points) {
+  const c = Object.fromEntries(Object.keys(STATE_META).map((s) => [s, 0]));
+  for (const p of points) c[p.state] += 1;
+  return c;
+}
+
+function issueStatus(issue) {
+  const c = countStates(issue.points);
+  const remaining = c['retenu'] + c['reformulé'] + c['à trancher'];
+  if (issue.closed) return { key: 'close', cls: 'pill-ok', label: 'Close' };
+  if (!issue.points.length) return { key: 'avenir', cls: 'pill-idle', label: 'Sans point' };
+  if (remaining === 0 && c['livré'] === 0) return { key: 'prete', cls: 'pill-ok', label: 'Prête à clore' };
+  if (remaining === 0) return { key: 'recette', cls: 'pill-info', label: 'En recette' };
+  if (c['livré'] + c['recetté'] > 0) return { key: 'encours', cls: 'pill-warn', label: 'En partie livrée' };
+  return { key: 'avenir', cls: 'pill-idle', label: 'À livrer' };
+}
+
+function bar(counts, total, extraClass = '') {
+  const b = el('div', { class: `bar ${extraClass}` });
+  for (const s of BAR_ORDER) {
+    if (!counts[s]) continue;
+    b.append(el('span', { class: `seg-${STATE_META[s].key}`, style: `width:${(counts[s] / total) * 100}%`, title: `${STATE_META[s].label} : ${counts[s]}` }));
+  }
+  return b;
+}
+
+function renderHeader() {
+  const meta = document.getElementById('meta');
+  const d = new Date(DATA.generatedAt);
+  const when = d.toLocaleString('fr-FR', { day: '2-digit', month: '2-digit', hour: '2-digit', minute: '2-digit' });
+  meta.append(el('span', {}, 'Mis à jour ', el('b', { text: when })));
+  const api = DATA.prod.api, ia = DATA.prod.ia;
+  meta.append(el('span', {}, 'Prod API ', el('b', { class: 'mono', text: api || 'non lue' }), ' · IA ', el('b', { class: 'mono', text: ia || 'non lue' })));
+  if (DATA.lauraMessages) meta.append(el('span', {}, 'Messages Laura en recette aujourd\'hui ', el('b', { class: 'num', text: DATA.lauraMessages })));
+}
+
+function renderOverview() {
+  const c = DATA.counts, total = DATA.total;
+  const inScope = total - c['écarté'] - c['déjà là'];
+  const toDeliver = c['retenu'] + c['reformulé'] + c['à trancher'];
+  const statuses = DATA.issues.map(issueStatus);
+  const closed = statuses.filter((s) => s.key === 'close').length;
+  const ready = statuses.filter((s) => s.key === 'prete').length;
+  const figures = [
+    { value: closed, of: DATA.issues.length, label: 'issues closes' },
+    { value: ready, label: 'prêtes à clore (tout recetté ou écarté)' },
+    { value: c['recetté'], of: inScope, label: `points recettés en prod · ${pct(c['recetté'], inScope)} %` },
+    { value: toDeliver, label: `points encore à livrer · ${fmt(c['livré'])} livrés à recetter · ${fmt(c['déjà là'])} déjà là` },
+  ];
+  const root = document.getElementById('figures');
+  for (const f of figures) {
+    const v = el('div', { class: 'value' }, fmt(f.value));
+    if (f.of != null) v.append(el('small', { text: ` / ${fmt(f.of)}` }));
+    root.append(el('div', { class: 'figure' }, v, el('div', { class: 'label', text: f.label })));
+  }
+  const big = document.getElementById('bigbar');
+  big.replaceWith(Object.assign(bar(c, total, 'bar-lg'), { id: 'bigbar' }));
+  document.getElementById('bigbar').setAttribute('role', 'img');
+  document.getElementById('bigbar').setAttribute('aria-label', BAR_ORDER.map((s) => `${STATE_META[s].label} ${c[s]}`).join(', '));
+  const legend = document.getElementById('legend');
+  for (const s of BAR_ORDER) {
+    legend.append(el('div', {},
+      el('span', { class: `swatch seg-${STATE_META[s].key}` }),
+      el('span', { text: STATE_META[s].label }),
+      el('span', { class: 'count', text: fmt(c[s]) })));
+  }
+  document.getElementById('overview-note').textContent = `${fmt(total)} points dans ${DATA.issues.length} issues`;
+}
+
+function renderLots() {
+  const root = document.getElementById('lots');
+  (DATA.lots || []).forEach((lot, i) => {
+    const stage = STAGE[lot.stage] || STAGE.attente;
+    const name = el('span', { class: 'name', text: lot.name });
+    if (lot.issues?.length) {
+      const chips = el('span', { class: 'issues' });
+      for (const n of lot.issues) chips.append(el('span', { class: 'chip-issue', text: `#${n}` }));
+      name.append(chips);
+    }
+    const ref = [lot.pr ? `PR #${lot.pr}` : null, lot.sha || null].filter(Boolean).join(' · ');
+    root.append(el('li', { class: 'lot' },
+      el('span', { class: 'order', text: String(i + 1).padStart(2, '0') }),
+      el('span', { class: `pill ${stage.cls}`, text: stage.label }),
+      name,
+      el('span', { class: 'ref', text: ref }),
+      lot.detail ? el('span', { class: 'detail', text: lot.detail }) : null));
+  });
+}
+
+function renderAsks() {
+  const asks = DATA.asks || [];
+  if (!asks.length) { document.getElementById('asks-section').hidden = true; return; }
+  const root = document.getElementById('asks');
+  for (const a of asks) {
+    root.append(el('li', { class: 'ask' }, el('b', { text: a.question }), a.why ? el('span', { class: 'why', text: a.why }) : null));
+  }
+}
+
+const state = { q: '', status: 'toutes', subject: 'tous', open: new Set() };
+const STATUS_FILTERS = [
+  ['toutes', 'Toutes'], ['avenir', 'À livrer'], ['encours', 'En partie livrée'],
+  ['recette', 'En recette'], ['prete', 'Prête à clore'], ['close', 'Close'],
+];
+
+function renderFilters() {
+  const statuses = DATA.issues.map(issueStatus);
+  const sRoot = document.getElementById('status-filters');
+  for (const [key, label] of STATUS_FILTERS) {
+    const n = key === 'toutes' ? DATA.issues.length : statuses.filter((s) => s.key === key).length;
+    if (key !== 'toutes' && !n) continue;
+    const b = el('button', { class: 'filter', type: 'button', 'aria-pressed': String(state.status === key), id: `f-status-${key}` }, label, el('span', { class: 'n', text: n }));
+    b.addEventListener('click', () => { state.status = key; syncPressed(sRoot, b); renderIssues(); });
+    sRoot.append(b);
+  }
+  const subRoot = document.getElementById('subject-filters');
+  const all = el('button', { class: 'filter', type: 'button', 'aria-pressed': 'true', id: 'f-subject-tous' }, 'Tous les thèmes');
+  all.addEventListener('click', () => { state.subject = 'tous'; syncPressed(subRoot, all); renderIssues(); });
+  subRoot.append(all);
+  for (const [letter, name] of Object.entries(DATA.subjects)) {
+    const n = DATA.issues.filter((i) => i.subject === letter).length;
+    const b = el('button', { class: 'filter', type: 'button', 'aria-pressed': 'false', id: `f-subject-${letter}` }, `${letter} · ${name}`, el('span', { class: 'n', text: n }));
+    b.addEventListener('click', () => { state.subject = letter; syncPressed(subRoot, b); renderIssues(); });
+    subRoot.append(b);
+  }
+  document.getElementById('search').addEventListener('input', (e) => { state.q = e.target.value.trim().toLowerCase(); renderIssues(); });
+}
+function syncPressed(root, active) {
+  for (const b of root.querySelectorAll('button')) b.setAttribute('aria-pressed', String(b === active));
+}
+
+function renderIssues() {
+  const tbody = document.getElementById('issues');
+  tbody.replaceChildren();
+  const rows = DATA.issues.filter((issue) => {
+    const st = issueStatus(issue);
+    if (state.status !== 'toutes' && st.key !== state.status) return false;
+    if (state.subject !== 'tous' && issue.subject !== state.subject) return false;
+    if (!state.q) return true;
+    const hay = `#${issue.n} ${issue.n} ${issue.title} ${issue.points.map((p) => `${p.id} ${p.ask}`).join(' ')}`.toLowerCase();
+    return hay.includes(state.q);
+  });
+  document.getElementById('issues-count').textContent = `${rows.length} affichée${rows.length > 1 ? 's' : ''} · clic sur une ligne pour ses points`;
+  if (!rows.length) {
+    tbody.append(el('tr', {}, el('td', { class: 'empty', colspan: '5', text: 'Aucune issue ne correspond à ces filtres.' })));
+    return;
+  }
+  for (const issue of rows) {
+    const c = countStates(issue.points);
+    const total = issue.points.length;
+    const st = issueStatus(issue);
+    const remaining = c['retenu'] + c['reformulé'] + c['à trancher'];
+    const txt = [
+      `${c['recetté']} recetté${c['recetté'] > 1 ? 's' : ''}`,
+      c['livré'] ? `${c['livré']} livré${c['livré'] > 1 ? 's' : ''}` : null,
+      remaining ? `${remaining} à livrer` : null,
+      c['déjà là'] ? `${c['déjà là']} déjà là` : null,
+      c['écarté'] ? `${c['écarté']} écarté${c['écarté'] > 1 ? 's' : ''}` : null,
+    ].filter(Boolean).join(' · ');
+    const expanded = state.open.has(issue.n);
+    const row = el('tr', { class: 'issue-row', tabindex: '0', 'aria-expanded': String(expanded) },
+      el('td', {}, el('span', { class: 'caret', 'aria-hidden': 'true', text: '›' }), `#${issue.n}`),
+      el('td', { class: 'title-cell', text: issue.title }),
+      el('td', {}, el('span', { class: 'subject-tag', title: DATA.subjects[issue.subject] || '', text: issue.subject })),
+      el('td', {}, el('div', { class: 'progress' }, total ? bar(c, total) : el('span', { class: 'txt', text: 'aucun point' }), total ? el('span', { class: 'txt', text: `${total} pts · ${txt}` }) : null)),
+      el('td', {}, el('span', { class: `pill ${st.cls}`, text: st.label })));
+    const toggle = () => {
+      if (state.open.has(issue.n)) state.open.delete(issue.n); else state.open.add(issue.n);
+      renderIssues();
+      const again = [...tbody.querySelectorAll('.issue-row')].find((r) => r.firstChild.textContent.endsWith(`#${issue.n}`));
+      again?.focus();
+    };
+    row.addEventListener('click', toggle);
+    row.addEventListener('keydown', (e) => { if (e.key === 'Enter' || e.key === ' ') { e.preventDefault(); toggle(); } });
+    tbody.append(row);
+    if (expanded) tbody.append(el('tr', {}, el('td', { class: 'points-cell', colspan: '5' }, pointsList(issue))));
+  }
+}
+
+function pointsList(issue) {
+  const list = el('ul', { class: 'points' });
+  for (const p of issue.points) {
+    const meta = STATE_META[p.state];
+    const item = el('li', { class: `point is-${meta.key}` },
+      el('span', { class: 'pid', text: p.id }),
+      el('span', { class: 'pstate' }, el('i', { class: `seg-${meta.key}` }), meta.label),
+      el('span', { class: 'pask', text: p.ask }));
+    const proof = p.state === 'recetté' || p.state === 'livré' ? p.trace
+      : p.state === 'écarté' ? (p.trace || p.existing)
+      : p.state === 'déjà là' ? p.existing
+      : p.proof;
+    if (proof) item.append(el('span', { class: 'pproof', text: proof }));
+    list.append(item);
+  }
+  return list;
+}
+
+function renderResume() {
+  const url = DATA.artifactUrl ? `\n# puis republier .claude/notes/suivi-laura/index.html sur ${DATA.artifactUrl}` : '';
+  document.getElementById('resume-cmd').textContent = `python3 .claude/notes/suivi-laura/build.py --refresh${url}`;
+}
+
+renderHeader();
+renderOverview();
+renderLots();
+renderAsks();
+renderFilters();
+renderIssues();
+renderResume();
+</script>

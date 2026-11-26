@@ -1,0 +1,42 @@
+lot: vieilles-l3-agenda-brief
+issues: [2097, 2102]
+
+changelog:
+  id: 2026-10-31-vieilles-l3-agenda-brief
+  comment: 'L3 Agenda (#2097.38 #2102.4 #2102.8 #2102.22 #2102.31 #2102.35 #2102.36) — brief de réunion et conflits'
+  fr:
+    date: 31 octobre 2026
+    title: Le brief de réunion dit ce qu’il ne sait pas, et le conflit dit lequel compte
+    items:
+      - 'Deux nouveaux types de rendez-vous à choisir dans le brief : Renouvellement et Entretien consultant, chacun avec sa posture, ses objectifs et ses questions.'
+      - 'Sous chaque bloc du brief, ce qu’il n’a pas pu établir est nommé (rôle de décision, ancienneté, signaux sans date, disponibilité non vérifiée) ; un bloc complet ne dit rien.'
+      - 'La carte « Autour d’elle » classe l’entourage par poids de décision, le rôle non établi en dernier.'
+      - 'Un conflit d’agenda dit son importance d’après le type de rendez-vous (client ou interne), sans jamais rien déplacer seul, et la confirmation montre ce que les invités vont recevoir.'
+      - 'Le panneau « Ce que tu veux obtenir » s’ouvre en fondu.'
+  en:
+    date: October 31, 2026
+    title: The meeting brief says what it doesn’t know, and a conflict says which one matters
+    items:
+      - 'Two new meeting types to pick in the brief: Renewal and Consultant interview, each with its own stance, goals and questions.'
+      - 'Under each brief block, what it could not establish is named (decision role, time in role, undated signals, unverified availability); a complete block says nothing.'
+      - 'The “Around them” card ranks people by decision weight, with an unestablished role last.'
+      - 'A calendar conflict states its importance from the meeting type (client or internal), never moving anything by itself, and the confirmation shows what guests will receive.'
+      - 'The “What you want to get” panel opens with a fade.'
+
+inserts:
+  - file: apps/api/src/modules/demo/demo-coverage.ts
+    text: |
+
+      /**
+       * #2102.4 (L3 Agenda, 31/10/2026) — L'IMPORTANCE D'UN CONFLIT PAR TYPE DE RÉUNION, CE QUE LA SALLE EN MONTRE.
+       *
+       * `ConflictDialog` dérive l'importance de `isExternal` (client vs interne). Verdal/Pharmatek est client/client
+       * (cas « même type ») ; `demo-event-interne-chevauchement` pose un point interne PENDANT le comité de pilotage
+       * Verdal (cas « le client pèse davantage »). Les types Renouvellement/Entretien consultant (#2102.35/.36) et les
+       * inconnues par bloc (#2102.31) se calculent à l'ouverture du brief : rien à semer de plus.
+       */
+      export const DEMO_AGENDA_CONFLICT_IMPORTANCE_COVERAGE: Readonly<{ state: 'seede'; reason: string }> = {
+        state: 'seede',
+        reason:
+          "`demo-event-interne-chevauchement` (demo-agenda.ts) chevauche `demo-event-verdal-comite` : conflit client/interne, vu par `ConflictDialog` (ligne d'importance par carte + phrase « le client pèse davantage »). Voir `demo-agenda-conflict-importance-coverage.spec.ts`.",
+      }

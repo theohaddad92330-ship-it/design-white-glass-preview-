@@ -1,0 +1,21 @@
+lot: lot-781
+issues: [5192]
+
+inserts:
+  - file: apps/api/src/modules/demo/demo-coverage.ts
+    text: |
+
+      /**
+       * #5192 (lot 781) — DÉTAIL DES PARCOURS OBSERVÉS (`GET /accounts/:id/market-paths`, modale « Voir les détails » de
+       * la carte « Observé sur le marché »).
+       *
+       * VIDE À DESSEIN en démonstration : la carte lit le corpus marché partagé (`market_person_paths`), que la démo ne
+       * sème pas ; des parcours fictifs sur les groupes réels de la salle seraient une donnée inventée. Absent ⇒ aucune
+       * ligne, jamais « 0 » ; le rendu est mesuré par `MarketObservedCard.test.tsx`, l'absence d'identifiant par
+       * `accounts.market-paths.spec.ts`.
+       */
+      export const DEMO_MARKET_PATHS_DETAIL_COVERAGE: Readonly<{ state: 'vide'; reason: string }> = {
+        state: 'vide',
+        reason:
+          "#5192 (lot 781) — le détail des parcours observés lit le corpus marché partagé, non semé en démonstration : des parcours fictifs sur des groupes réels seraient une donnée inventée. Absent ⇒ aucune ligne (jamais « 0 »).",
+      }

@@ -1,0 +1,74 @@
+# ─────────────────────────────────────────────────────────────────────────────
+# ÉVALS IA — REJEU NOCTURNE (#2975, décision Louis 11/10/2026 ; durci le 31/10/2026, lot ci/1-evals)
+#
+# Un rejeu, un verdict :
+#   le banc LIVE sur les comptes de référence, avec un PLAFOND de coût
+#      (`EVAL_NIGHTLY_MAX_COST_USD`, 10 $ par nuit ici ; défaut du code 3 $), qui ROUGIT si un compte
+#      régresse contre `apps/ia/app/eval/baseline.json` ;
+#   promptfoo RETIRÉ le 31/10/2026 (décision Louis) : ~2 M de jetons Sonnet par passage, coût non
+#   mesuré par `promptfoo-cost.py`, ~290 $ de recharges en une matinée. Configs gardées dans apps/ia/evals/.
+#
+# Sans secret `ANTHROPIC_API_KEY` : ROUGE explicite (avant : `status: not_configured`, vert, toutes les nuits,
+# donc aucune nuit rejouée). Désactivable : variable de dépôt `EVAL_NIGHTLY_ENABLED=false` (alors rien ne tourne).
+# Détail : agent_docs/env-reference.md (« Rejeu nocturne des évals IA »), docs/ci.md (« Évals LLM »).
+# ─────────────────────────────────────────────────────────────────────────────
+name: Évals IA — rejeu nocturne
+
+on:
+  schedule:
+    - cron: '10 2 * * *'
+  workflow_dispatch:
+
+permissions:
+  contents: read
+
+concurrency:
+  group: eval-nightly
+  cancel-in-progress: false
+
+jobs:
+  eval-nightly:
+    name: Rejeu nocturne des évals IA
+    runs-on: ${{ vars.CI_RUNS_ON || 'ubuntu-latest' }}
+    timeout-minutes: 90
+    if: ${{ vars.EVAL_NIGHTLY_ENABLED != 'false' }}
+    steps:
+      - name: Clé disponible ? (sinon ROUGE, jamais un vert vide)
+        env:
+          ANTHROPIC_API_KEY: ${{ secrets.ANTHROPIC_API_KEY }}
+        run: |
+          if [ -z "$ANTHROPIC_API_KEY" ]; then
+            echo "### Évals nocturnes — NON REJOUÉES" >> "$GITHUB_STEP_SUMMARY"
+            echo "Secret \`ANTHROPIC_API_KEY\` absent : aucune eval rejouée." >> "$GITHUB_STEP_SUMMARY"
+            echo "::error::secret ANTHROPIC_API_KEY absent : aucune eval rejouée"
+            exit 1
+          fi
+      - uses: actions/checkout@v7
+      - uses: actions/setup-node@v7
+        with:
+          node-version: '22'
+      - uses: actions/setup-python@v7
+        with:
+          python-version: '3.13'
+          cache: pip
+          cache-dependency-path: apps/ia/requirements.txt
+      - name: Installer les dépendances IA
+        working-directory: apps/ia
+        run: pip install -r requirements.txt
+      - name: Rejeu du banc live (plafond de coût, alerte si régression)
+        id: bench
+        continue-on-error: true
+        working-directory: apps/ia
+        env:
+          ANTHROPIC_API_KEY: ${{ secrets.ANTHROPIC_API_KEY }}
+          EVAL_NIGHTLY_MAX_COST_USD: ${{ vars.EVAL_NIGHTLY_MAX_COST_USD || '10' }}
+        run: |
+          set -o pipefail
+          python -m app.eval.nightly | tee -a "$GITHUB_STEP_SUMMARY"
+      - name: Verdict (banc live rouge = nuit rouge)
+        if: always()
+        run: |
+          echo "banc live : ${{ steps.bench.outcome }}"
+          if [ "${{ steps.bench.outcome }}" != "success" ]; then
+            exit 1
+          fi

@@ -1,0 +1,109 @@
+{
+  "evidence": {
+    "count_one": "{{count}} {{skill}} job posting",
+    "count_other": "{{count}} {{skill}} job postings",
+    "latest": "most recent:",
+    "detailTitle": "Postings that mention {{skill}}",
+    "detailPartial": "The {{shown}} most recent of {{count}} postings",
+    "foundInDescription": "word found in the description"
+  },
+  "intermediaries": {
+    "toggle": "Recruitment firms and IT services companies hiring for {{skill}} ({{count}})",
+    "hint": "A recruitment firm hires for a client it doesn't name; an IT services company is a competitor. They are listed apart from end clients.",
+    "kind": {
+      "recruiter": "Recruitment firm",
+      "esn": "IT services or IT consulting company"
+    }
+  },
+  "empty": {
+    "no_offers": "No recent job posting mentions {{skill}} in this area (last 90 days, internships excluded).",
+    "no_offers_in_city": "No recent job posting mentions {{skill}} in this city. Postings exist elsewhere in the département: remove the city to see them.",
+    "only_intermediaries": "Only recruitment firms and IT services companies are hiring for {{skill}} in this area: they are listed separately below.",
+    "no_employer_identified": "Some job postings mention {{skill}}, but no employer could be identified with certainty.",
+    "sources_unavailable": "Job postings can't be read right now: try again in a few minutes.",
+    "outside_headcount": "Companies are hiring for {{skill}} in this area, but none within the selected headcount range."
+  },
+  "notices": {
+    "intermediaries_one": "{{count}} recruitment firm or IT services company is also hiring for {{skill}}: listed apart from end clients.",
+    "intermediaries_other": "{{count}} recruitment firms and IT services companies are also hiring for {{skill}}: listed apart from end clients.",
+    "showIntermediaries": "See the recruitment firms and IT services companies",
+    "outsideHeadcount_one": "{{count}} company outside the chosen size.",
+    "outsideHeadcount_other": "{{count}} companies outside the chosen size.",
+    "outsideSector_one": "{{count}} company set aside as outside the sector.",
+    "outsideSector_other": "{{count}} companies set aside as outside the sector.",
+    "removeHeadcount": "Remove the size",
+    "unresolved_one": "{{count}} employer could not be identified in the company register with certainty: listed without a record, identity in progress.",
+    "unresolved_other": "{{count}} employers could not be identified in the company register with certainty: listed without a record, identity in progress.",
+    "deadlineCut_zero": "Search stopped by the time limit: some job postings are still to be read.",
+    "deadlineCut_one": "Search stopped by the time limit: {{count}} employer is still to be checked.",
+    "deadlineCut_other": "Search stopped by the time limit: {{count}} employers are still to be checked.",
+    "retry": "Run again"
+  },
+  "provenance": {
+    "widened": "Close to your request: {{via}}",
+    "via": {
+      "hiring": "job ads in the same field",
+      "tender": "tender in the field",
+      "capital": "fundraising",
+      "other": "related fact"
+    },
+    "freshFill": "Found by a fresh job-ad collection",
+    "commonBase": "Spotted in the shared base",
+    "jobsAsOf": "Job ads as of {{date}}",
+    "observedNeed": "{{label}} need, {{date}}",
+    "observedNeedNature": "{{nature}} {{label}}, {{when}}",
+    "inYear": "in {{year}}",
+    "monthsAgo_one": "{{count}} month ago",
+    "monthsAgo_other": "{{count}} months ago",
+    "nature": { "recrutement": "Hiring", "mission": "Assignment", "projet": "Project" }
+  },
+  "funnel": {
+    "line": "{{entered}} found · {{kept}} kept",
+    "lineKeptOnly": "{{kept}} kept",
+    "separator": " — ",
+    "city": "{{count}} outside the city",
+    "zone": "{{count}} outside the area",
+    "trade": "{{count}} outside the trade",
+    "headcount": "{{count}} outside the size",
+    "sector": "{{count}} outside the sector",
+    "individual": "{{count}} individuals set aside",
+    "duplicate": "{{count}} duplicates",
+    "portfolio": "{{count}} already in your portfolio",
+    "ceased": "{{count}} ceased",
+    "widened": " + {{count}} through the widening"
+  },
+  "pending": {
+    "title_one": "{{count}} employer proven by a job posting — no SIREN",
+    "title_other": "{{count}} employers proven by a job posting — no SIREN",
+    "locked": "The posting proves they are hiring; their company-register identity is not established. Without a SIREN, analysis, contacts, enrichment and adding to the CRM stay closed.",
+    "state": {
+      "pending": "Identity being verified",
+      "ambiguous": "Several companies share this name",
+      "unmatched": "No company in the register matches with certainty"
+    },
+    "reason": {
+      "homonym_on_site": "Several entities of the group are hiring here — none is picked at random",
+      "brand_or_program": "Brand or programme — entity not named"
+    },
+    "choose": "Choose the company",
+    "chooseTitle": "Which company is “{{name}}”?",
+    "chooseThis": "It is {{name}}",
+    "chooseError": "The choice was not saved. Try again."
+  },
+  "table": {
+    "name": "Name",
+    "type": "Type",
+    "city": "City",
+    "offers": "Offers",
+    "latest": "Latest posting",
+    "date": "Date"
+  },
+  "offersRead": {
+    "only_one": "{{count}} offer read",
+    "only_other": "{{count}} offers read",
+    "ofTotal_one": "{{count}} offer read out of {{total}} found",
+    "ofTotal_other": "{{count}} offers read out of {{total}} found",
+    "atLeast_one": "{{count}} offer read out of at least {{total}} found",
+    "atLeast_other": "{{count}} offers read out of at least {{total}} found"
+  }
+}

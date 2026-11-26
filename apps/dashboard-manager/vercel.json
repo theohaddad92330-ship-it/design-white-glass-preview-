@@ -1,0 +1,11 @@
+{
+  "$schema": "https://openapi.vercel.sh/vercel.json",
+  "ignoreCommand": "bash -c 'case \"$VERCEL_GIT_COMMIT_REF\" in main|integration-*) npx --yes turbo-ignore @bellum/dashboard-manager --fallback=HEAD^ ;; *) exit 0 ;; esac'",
+  "git": {
+    "deploymentEnabled": {
+      "main": true,
+      "integration-*": true,
+      "*": false
+    }
+  }
+}

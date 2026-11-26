@@ -1,0 +1,22 @@
+/* #1642 — Sparkline : barres verticales fines. */
+.spark {
+  display: flex;
+  align-items: flex-end;
+  gap: 2px;
+  height: 28px;
+}
+
+.bar {
+  flex: 1;
+  min-width: 2px;
+  border-radius: 1px;
+  background: var(--accent);
+}
+
+/* Un point non mesuré est un TROU visible : ni barre ni couleur, un simple
+   repère bas pour que la position dans la série reste lisible. */
+.missing {
+  background: none;
+  border-bottom: 1px dashed var(--border);
+  height: 1px;
+}

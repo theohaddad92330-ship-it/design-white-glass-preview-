@@ -1,0 +1,133 @@
+{
+  "_synthetic": true,
+  "_note": "Dossier de test SYNTHÉTIQUE pour le banc d'éval. Les faits firmographiques sont les valeurs RÉELLES et vérifiables dans ce dépôt — agent_docs/demo/dossier-sncf-2026-08-11.json, bloc `account` du dossier capturé le 2026-08-11 (SIREN, secteur, siège, effectif, CA, code NAF). Les entités et les contacts sont des données de TEST, jamais des affirmations sur des personnes ou des filiales réelles.",
+  "company": "SNCF",
+  "research": {
+    "companyName": "SNCF",
+    "sector": "Transport ferroviaire interurbain de voyageurs",
+    "siren": "552049447",
+    "revenue": 43354000000,
+    "employees": "Plus de 10 000 salariés",
+    "headquarters": "2 PLACE AUX ETOILES, 93210, SAINT-DENIS, France",
+    "businessDescription": "Transport ferroviaire interurbain de voyageurs (code NAF 49.10Z), siège à Saint-Denis.",
+    "subsidiaries": [
+      {
+        "name": "SNCF — entité de test A"
+      },
+      {
+        "name": "SNCF — entité de test B"
+      }
+    ],
+    "entitiesExhaustive": [
+      {
+        "name": "SNCF — direction de test",
+        "type": "direction"
+      },
+      {
+        "name": "SNCF — hub IT de test",
+        "type": "hub it",
+        "isItEntity": true
+      }
+    ],
+    "angles": [
+      {
+        "title": "Modernisation du SI voyageurs",
+        "strategy": "Renforcer les équipes du SI voyageurs."
+      }
+    ],
+    "recentSignals": [
+      {
+        "signal": "Recrutements SI voyageurs",
+        "type": "recrutement",
+        "date": "2026"
+      }
+    ],
+    "budgetSignals": [
+      {
+        "signal": "Recrutements SI voyageurs",
+        "source": "offres d'emploi"
+      }
+    ],
+    "confidence": {
+      "score": 80,
+      "tier": "high",
+      "factors": {
+        "sourceCoverage": 0.85
+      }
+    },
+    "sources": {
+      "tags": {
+        "siren": "PUBLIC",
+        "revenue": "PUBLIC",
+        "employees": "PUBLIC",
+        "headquarters": "PUBLIC",
+        "sector": "PUBLIC"
+      },
+      "citations": {}
+    }
+  },
+  "gate": {
+    "decision": "go",
+    "score": 3
+  },
+  "classified_contacts": [
+    {
+      "fullName": "Nadia Rossi",
+      "title": "Chief Technology Officer",
+      "decisionRole": "technical",
+      "is_c_level": true
+    },
+    {
+      "fullName": "Thomas Girard",
+      "title": "Engineering Manager",
+      "decisionRole": "user"
+    },
+    {
+      "fullName": "Léa Fontaine",
+      "title": "Responsable Achats IT",
+      "decisionRole": "procurement"
+    }
+  ],
+  "plan": {
+    "actionPlan": {
+      "phases": [
+        {
+          "name": "Prise de contact",
+          "actions": [
+            {
+              "contact": "Nadia Rossi",
+              "action": "Discuter modernisation du si voyageurs."
+            }
+          ]
+        }
+      ]
+    },
+    "quick_wins": [
+      {
+        "contact": "Thomas Girard",
+        "action": "Partager un retour d'expérience staffing."
+      }
+    ],
+    "contactMessages": [
+      {
+        "contact": "Nadia Rossi",
+        "linkedinMessage": "Sujet modernisation du si voyageurs."
+      }
+    ],
+    "plays": [
+      {
+        "painSignal": "Recrutements SI voyageurs",
+        "preuve": {
+          "source": "offres d'emploi",
+          "signal": "Recrutements SI voyageurs"
+        },
+        "targetContact": "Nadia Rossi",
+        "esnOffer": "Renfort SI voyageurs",
+        "angle": "Modernisation du SI voyageurs",
+        "firstAction": "Discuter modernisation du si voyageurs.",
+        "readyMessage": "Sujet modernisation du si voyageurs.",
+        "risk": "Concurrence ESN installées."
+      }
+    ]
+  }
+}

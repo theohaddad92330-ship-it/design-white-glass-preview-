@@ -1,0 +1,170 @@
+{
+  "page": {
+    "title": "Tracking, invoicing & automations",
+    "subtitle": "Track the execution, invoicing and payments of your missions.",
+    "introTitle": "Your delivery tracking, {{firstName}}",
+    "introTitleWithoutName": "Your delivery tracking",
+    "introSubtitle": "Here is what needs an action to secure your missions and your cash."
+  },
+  "tiles": {
+    "activeMissions": "Active missions",
+    "craToValidate": "Timesheets to validate",
+    "craBlocking_one": "including {{count}} blocking invoicing",
+    "craBlocking_other": "including {{count}} blocking invoicing",
+    "readyToInvoice": "Ready to invoice",
+    "financeHidden": "Amount reserved — ask for financial access to see it",
+    "overduePayments": "Overdue payments",
+    "commercialMargin": "Commercial margin",
+    "commercialMarginFor": "Commercial margin — {{month}}",
+    "periodNow": "right now",
+    "periodWindow_one": "over {{count}} month",
+    "periodWindow_other": "over {{count}} months",
+    "showAll": "Show every mission in the follow-up",
+    "openPilotage": "Open steering to see the margin",
+    "openCra": "Open timesheets",
+    "openInvoicing": "Open invoicing",
+    "openCollections": "Open collections"
+  },
+  "table": {
+    "title": "Active missions",
+    "searchPlaceholder": "Search a mission, a client, a consultant…",
+    "empty": "No active mission right now.",
+    "loadErrorTitle": "Tracking unavailable",
+    "unknownClient": "the owning account is outside your scope",
+    "unknownConsultant": "assignments could not be read",
+    "unstaffed": "Nobody assigned",
+    "unknownPeriod": "no date was entered on this mission",
+    "noNextAction": "No action planned",
+    "columnsCta": "Columns",
+    "columnsLabel": "Displayed columns",
+    "columnsPinned": "Required column",
+    "columnsReset": "Reset",
+    "rowMenu": "Actions on this mission",
+    "viewMission": "Open the mission",
+    "viewCra": "View timesheets",
+    "viewInvoicing": "View invoicing",
+    "columns": {
+      "mission": "Mission",
+      "consultant": "Consultant",
+      "client": "Client",
+      "period": "Period",
+      "cra": "Timesheet",
+      "invoicing": "Invoicing",
+      "payment": "Payment",
+      "nextAction": "Next action"
+    },
+    "craUnknown": "no timesheet for this mission in the month being viewed",
+    "invoicingUnknown": "no invoicing row for this mission in the month being viewed",
+    "paymentUnknown": "no invoicing row for this mission in the month being viewed",
+    "viewsLabel": "What the table shows",
+    "views": {
+      "toAct": "To handle",
+      "all": "All follow-up"
+    },
+    "viewHints": {
+      "toAct": "Missions that genuinely have something pending: timesheet, invoicing, payment or an open action.",
+      "all": "Every active mission, including the ones waiting on nothing."
+    },
+    "askLaura": "Ask {{copilot}} what to unblock",
+    "askLauraQuestion_one": "I have {{count}} mission to handle in my operational follow-up: what is blocking my invoicing, which payments should I chase, and where should I start today?",
+    "askLauraQuestion_other": "I have {{count}} missions to handle in my operational follow-up: what is blocking my invoicing, which payments should I chase, and where should I start today?",
+    "askLauraShort": "Ask {{copilot}}",
+    "askLauraAboutMission": "About the “{{mission}}” mission: is there anything to do today, and why is it not ready to invoice?",
+    "periodFrom": "Since {{date}} — no end date",
+    "periodUntil": "Until {{date}} — no start date",
+    "emptyToAct": "Nothing to handle",
+    "emptyToActDescription": "No mission is waiting on a timesheet, an invoice, a payment or an open action. “All follow-up” shows the full portfolio."
+  },
+  "status": {
+    "cra": {
+      "validated": "Validated",
+      "pendingValidation": "To validate",
+      "actionNeeded": "To do",
+      "notApplicable": "Not applicable"
+    },
+    "invoicing": {
+      "blocked": "Blocked",
+      "ready": "Ready",
+      "invoiced": "Invoiced elsewhere",
+      "not_due": "Not due this month"
+    },
+    "payment": {
+      "paid": "Paid",
+      "disputed": "Disputed",
+      "overdue": "Overdue",
+      "pending": "Upcoming",
+      "not_applicable": "Not applicable",
+      "not_invoiced": "Not invoiced yet"
+    },
+    "invoicingBecause": "Blocked: {{blocker}}",
+    "invoicingWhy": {
+      "blocked": "An invoicing check is not cleared.",
+      "ready": "Timesheet validated, nothing else blocking.",
+      "invoiced": "Marked as invoiced outside the tool.",
+      "not_due": "Nothing is due this month for this mission."
+    }
+  },
+  "automations": {
+    "title": "Automations",
+    "manage": "Manage automations",
+    "active": "Active",
+    "inactive": "Inactive",
+    "empty": "No mission automation.",
+    "error": "Automations could not be loaded.",
+    "summary": "{{active}} automation(s) active · {{inactive}} inactive",
+    "gaps": {
+      "timesheet_chase_one": "“{{name}}” is off: {{count}} timesheet needing a fix should have triggered a chase.",
+      "timesheet_chase_other": "“{{name}}” is off: {{count}} timesheets needing a fix should have triggered a chase.",
+      "invoice_readiness_one": "“{{name}}” is off: {{count}} blocked invoice should have been flagged.",
+      "invoice_readiness_other": "“{{name}}” is off: {{count}} blocked invoices should have been flagged."
+    }
+  },
+  "activity": {
+    "title": "Recent activity",
+    "empty": "Nothing to show yet.",
+    "kind": {
+      "cra_validated": "Timesheet validated",
+      "invoice_issued": "Invoice issued",
+      "payment_received": "Payment received",
+      "reminder_sent": "Reminder logged"
+    }
+  },
+  "profitability": {
+    "title": "Mission profitability",
+    "tabs": {
+      "month": "Month",
+      "quarter": "Quarter",
+      "year": "Year"
+    },
+    "unavailable": "Not measured — {{period}} aggregation does not exist server-side yet. Here is the monthly view, the only one {{brand}} computes today.",
+    "empty": "Not enough measured months to draw a trend."
+  },
+  "drift": {
+    "title": "Missions drifting",
+    "rule": "A mission is only flagged from {{signals}} signals, over {{months}} months minimum. One month off is not a drift.",
+    "firing": "{{signals}} — over {{months}} months read",
+    "notMeasured": "Not measured: {{signals}}",
+    "tooShort": "{{months}} months of history out of the {{needed}} needed — we cannot conclude yet",
+    "unreadable": {
+      "title": "What we cannot read ({{count}})"
+    },
+    "signals": {
+      "growing_day_gap": "day gap widening",
+      "late_timesheet": "timesheet arriving later and later",
+      "slow_client_validation": "client validation slowing down",
+      "satisfaction_drop": "satisfaction dropping",
+      "disputed_days": "disputed days"
+    },
+    "noneForMission": "No point found in this mission's data. This is not an exhaustive guarantee.",
+    "titleForMission": "Drift on this mission"
+  },
+  "concerns": {
+    "payment_overdue": "Payment overdue",
+    "payment_disputed": "Payment disputed",
+    "invoicing_blocked": "Invoicing blocked",
+    "cra_action": "Timesheet to fix",
+    "invoicing_ready": "Ready to invoice",
+    "cra_pending": "Timesheet to validate",
+    "next_action": "Open action"
+  }
+}

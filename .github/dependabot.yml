@@ -1,0 +1,133 @@
+# Mises à jour de dépendances — un passage par semaine (lundi), 3 PR ouvertes au plus par
+# écosystème. Les mises à jour mineures/patch d'un même type sont groupées en UNE PR ; les
+# majeures arrivent à part, une par paquet, pour être relues et recettées. Les avis de
+# sécurité high/critical sont aussi tenus par la CI (`pnpm audit`, `pip-audit`) — voir
+# docs/securite-avis-dependances.md.
+version: 2
+updates:
+  - package-ecosystem: npm
+    directory: /
+    schedule:
+      interval: weekly
+      day: monday
+    open-pull-requests-limit: 3
+    groups:
+      minor-patch-prod:
+        dependency-type: production
+        update-types: [minor, patch]
+      minor-patch-dev:
+        dependency-type: development
+        update-types: [minor, patch]
+      majeures:
+        update-types: [major]
+        # #4895 — typescript 7 (portage natif : plus d'API JS `ts.sys`, donc ts-node et depcruise
+        # cassent), tailwindcss 4 (configuration CSS) et vite 8 (plugins) ne montent pas dans le
+        # groupe : chacun est un chantier d'outillage à part, avec son lot et sa recette. Même geste
+        # que #4863. Le reste du groupe passe en CI pour révéler les vrais rouges (jest 30, jsdom 30, Nest 12).
+        # #4895.4 — ces rouges sont venus (#4948, run 41167256561, 53 montées) : Nest 12 ne sort qu'en ESM
+        # et jest d'apps/api charge du CommonJS, TypeORM 1.x refuse `select: string[]`, ESLint 10 (23 erreurs),
+        # lucide-react 1.x sans `briefcase`, `sendDefaultPii` retiré de @sentry/*. Chacun devient son chantier,
+        # avec son lot et sa recette — jamais un groupe qui échoue ensemble.
+        exclude-patterns:
+          - typescript
+          - tailwindcss
+          - vite
+          - '@nestjs/*'
+          - typeorm
+          - jest
+          - react
+          - react-dom
+          - next
+          - eslint
+          - '@sentry/*'
+          - stripe
+          - '@anthropic-ai/sdk'
+          - lucide-react
+
+  - package-ecosystem: pip
+    directory: /apps/ia
+    schedule:
+      interval: weekly
+      day: monday
+    open-pull-requests-limit: 3
+    groups:
+      minor-patch-prod:
+        dependency-type: production
+        update-types: [minor, patch]
+      minor-patch-dev:
+        dependency-type: development
+        update-types: [minor, patch]
+      majeures:
+        update-types: [major]
+        # #4729 — anthropic 2.x retire `temperature` de la signature (panne AVANT le
+        # réseau, 25/10) : décision produit + éval avant/après. openai 3.x exige un
+        # instructor qui relâche `jiter<0.15` (1.17.0 = dernière, aucune résolution).
+        # Chacun aura son lot et sa recette, jamais un groupe qui échoue ensemble.
+        exclude-patterns: [anthropic, openai]
+    # #4894 — `exclude-patterns` sort anthropic du GROUPE, pas des PR : Dependabot ouvrait quand même
+    # #4871 (2.3.0), rouge sur la garde `test_sampling_kwargs_accepted_by_sdk` (18 tests). La majeure est
+    # refusée tant que #4729 n'a pas tranché (décision produit + éval avant/après) ; mineures/patch de
+    # la 0.x continuent d'arriver.
+    ignore:
+      - dependency-name: anthropic
+        update-types: ['version-update:semver-major']
+
+  - package-ecosystem: github-actions
+    directory: /
+    schedule:
+      interval: weekly
+      day: monday
+    open-pull-requests-limit: 3
+    groups:
+      minor-patch:
+        update-types: [minor, patch]
+      majeures:
+        update-types: [major]
+
+  - package-ecosystem: docker
+    directory: /apps/api/docker
+    schedule:
+      interval: weekly
+      day: monday
+    open-pull-requests-limit: 3
+    groups:
+      minor-patch:
+        update-types: [minor, patch]
+      majeures:
+        update-types: [major]
+
+  - package-ecosystem: docker
+    directory: /apps/ia/docker
+    schedule:
+      interval: weekly
+      day: monday
+    open-pull-requests-limit: 3
+    groups:
+      minor-patch:
+        update-types: [minor, patch]
+      majeures:
+        update-types: [major]
+
+  - package-ecosystem: docker
+    directory: /apps/web/docker
+    schedule:
+      interval: weekly
+      day: monday
+    open-pull-requests-limit: 3
+    groups:
+      minor-patch:
+        update-types: [minor, patch]
+      majeures:
+        update-types: [major]
+
+  - package-ecosystem: docker
+    directory: /infra/ci-runner-vps
+    schedule:
+      interval: weekly
+      day: monday
+    open-pull-requests-limit: 3
+    groups:
+      minor-patch:
+        update-types: [minor, patch]
+      majeures:
+        update-types: [major]

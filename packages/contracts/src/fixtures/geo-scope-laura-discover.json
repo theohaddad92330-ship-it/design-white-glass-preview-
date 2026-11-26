@@ -1,0 +1,37 @@
+{
+  "_doc": "#3876.5 — une même phrase, un même périmètre chez Laura et dans Découvrir. Lu par apps/ia/tests/test_3876_5_geo_laura_decouvrir.py (lecture de la demande, find_accounts, run_account_search) et par apps/web/src/features/chat/view/discover-handoff.geo-scope.test.ts (lien Laura → filtres de Découvrir). `reading` : ce que la lecture de la demande comprend ; `laura` : ce que le modèle passe à l'outil ; `scope` : le périmètre que Découvrir applique — une ville reste une ville (jamais son département), un département reste un département, une région reste une région.",
+  "cases": [
+    {
+      "phrase": "ESN à Marseille",
+      "kind": "city",
+      "reading": { "place_candidates": ["Marseille"], "department": null, "region": null },
+      "laura": { "city": "Marseille" },
+      "commune": { "code": "13055", "name": "Marseille", "department": "13", "latitude": 43.2803, "longitude": 5.3806 },
+      "scope": { "city": "Marseille", "department": "", "region": [] }
+    },
+    {
+      "phrase": "ESN à Lyon",
+      "kind": "city",
+      "reading": { "place_candidates": ["Lyon"], "department": null, "region": null },
+      "laura": { "city": "Lyon" },
+      "commune": { "code": "69123", "name": "Lyon", "department": "69", "latitude": 45.7485, "longitude": 4.8467 },
+      "scope": { "city": "Lyon", "department": "", "region": [] }
+    },
+    {
+      "phrase": "ESN dans le 13",
+      "kind": "department",
+      "reading": { "place_candidates": [], "department": "13", "region": null },
+      "laura": { "department": "13" },
+      "commune": null,
+      "scope": { "city": "", "department": "13", "region": [] }
+    },
+    {
+      "phrase": "ESN en Provence-Alpes-Côte d'Azur",
+      "kind": "region",
+      "reading": { "place_candidates": [], "department": null, "region": "93" },
+      "laura": { "region": ["93"] },
+      "commune": null,
+      "scope": { "city": "", "department": "", "region": ["93"] }
+    }
+  ]
+}

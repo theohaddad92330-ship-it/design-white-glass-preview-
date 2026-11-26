@@ -1,0 +1,101 @@
+{
+  "title": "Raccourcis clavier",
+  "subtitle": "Seuls les raccourcis réellement branchés sont listés ici.",
+  "menuEntry": "Raccourcis clavier",
+  "keys": {
+    "mod": "Ctrl",
+    "escape": "Échap",
+    "shift": "Maj"
+  },
+  "spoken": {
+    "chord": "raccourci : {{keys}}",
+    "sequence": "raccourci : {{first}} puis {{rest}}"
+  },
+  "scopes": {
+    "goto": {
+      "name": "Aller à",
+      "explainer": "Une séquence à deux temps : on appuie sur G, on relâche, puis on tape la lettre. Elle ne répond pas pendant qu'on écrit dans un champ, et elle s'annule au bout d'une seconde et demie."
+    },
+    "global": {
+      "name": "Partout",
+      "explainer": "Une combinaison : les deux touches en même temps, sur n'importe quel écran. Seul le raccourci de {{copilot}} répond aussi depuis un champ de saisie."
+    },
+    "dossier": {
+      "name": "Dans un dossier de compte",
+      "explainer": "Une touche seule, sur le dossier d'un compte. Elle ne répond pas pendant qu'on écrit dans un champ."
+    },
+    "rafale": {
+      "name": "Dans la rafale",
+      "explainer": "Des touches seules, dans le mode rafale (une carte à la fois, plein écran). Elles ne répondent pas pendant qu'on écrit dans un champ."
+    }
+  },
+  "rafale": {
+    "next": "Carte suivante",
+    "prev": "Carte précédente",
+    "edit": "Modifier le brouillon",
+    "primary": "Valider, copier et ouvrir, ou marquer fait",
+    "snooze": "Reporter",
+    "skip": "Passer",
+    "help": "Afficher ou masquer cette aide",
+    "escape": "Quitter la rafale"
+  },
+  "dossier": {
+    "search": "Rechercher dans le dossier"
+  },
+  "goto": {
+    "accounts": "Comptes",
+    "projects": "Opportunités",
+    "talents": "Talents",
+    "missions": "Missions",
+    "actions": "Actions",
+    "pilotage": "Pilotage",
+    "today": "Ma journée"
+  },
+  "global": {
+    "launcher": "{{copilot}}",
+    "help": "Cette page",
+    "sidebar": "Replier la barre latérale",
+    "escape": "Fermer, annuler, revenir",
+    "search": "Recherche globale"
+  },
+  "describe": {
+    "laura": "Ouvre {{copilot}} depuis n'importe quel écran — même au milieu d'une saisie.",
+    "help": "Ouvre cette page.",
+    "sidebar": "Replie la barre latérale sur ses icônes, et la rouvre.",
+    "escape": "Ferme le panneau ou la fenêtre ouverte, annule la saisie en cours.",
+    "global-search": "Ouvre la recherche parmi les comptes, contacts, besoins, consultants, missions, actions et paramètres, depuis n'importe quel écran.",
+    "goto-today": "Ouvre le brief du jour : ce qui mérite ton attention maintenant.",
+    "goto-accounts": "Ouvre la liste de tes comptes.",
+    "goto-projects": "Ouvre tes projets et les besoins qui s'y rattachent.",
+    "goto-talents": "Ouvre le vivier de consultants.",
+    "goto-missions": "Ouvre les missions en cours.",
+    "goto-actions": "Ouvre le journal de tes actions.",
+    "goto-pilotage": "Ouvre le pilotage : tes chiffres et leurs axes.",
+    "dossier-search": "Met le curseur dans la recherche du dossier : personnes, entités, signaux, projets, besoins, missions, actions, preuves, historique et sources, sans savoir dans quelle section ils vivent.",
+    "rafale-next": "Passe à la carte suivante du paquet.",
+    "rafale-prev": "Revient à la carte précédente du paquet.",
+    "rafale-edit": "Ouvre le brouillon de la carte pour le modifier avant de le valider.",
+    "rafale-primary": "Fait le geste principal de la carte ; ne fait jamais partir un message tout seul.",
+    "rafale-snooze": "Reporte la carte à plus tard.",
+    "rafale-skip": "Passe la carte sans la traiter.",
+    "rafale-help": "Affiche ou masque la liste des raccourcis de la rafale."
+  },
+  "page": {
+    "subtitle": "Ce qu'ils font, où ils répondent, et comment ils s'écrivent sur ton clavier.",
+    "needsKeyboard": "Ces raccourcis demandent un clavier physique. Sur un écran tactile, tout ce qu'ils font reste accessible au doigt, par la navigation.",
+    "columns": {
+      "keys": "Touches",
+      "action": "Ce qu'il fait",
+      "scope": "Portée"
+    },
+    "customize": {
+      "title": "Les redéfinir",
+      "intro": "Pas encore possible — et plutôt que de te laisser le deviner, voici exactement ce qui manque.",
+      "blockers": {
+        "handler": "Le repli de la barre latérale est écouté par un composant partagé, qui ne peut pas lire tes réglages. Une touche redéfinie ici s'afficherait sans rien déclencher.",
+        "reserved": "Redéfinir une combinaison suppose de savoir lesquelles sont déjà prises par ton navigateur et ton système. Sans cette liste, on te ferait perdre un raccourci que tu emploies cent fois par jour.",
+        "perDevice": "Tes réglages d'interface sont aujourd'hui gardés dans ce navigateur, donc sur ce poste. Un raccourci redéfini ici n'existerait pas sur ton autre machine — et un geste qui change d'un poste à l'autre ne s'apprend pas."
+      }
+    }
+  }
+}

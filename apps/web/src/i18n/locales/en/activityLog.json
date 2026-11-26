@@ -1,0 +1,77 @@
+{
+  "header": {
+    "title": "Activity log",
+    "subtitle": "Who did what in your workspace — analyses, enrichments, exports, messages, team and integrations."
+  },
+  "filters": {
+    "allMembers": "All members",
+    "allEvents": "All events",
+    "allPeriods": "All time",
+    "period7d": "Last 7 days",
+    "period30d": "Last 30 days",
+    "period90d": "Last 90 days",
+    "label": "Log filters",
+    "event": "Type",
+    "actor": "Member",
+    "period": "Period"
+  },
+  "events": {
+    "analysis_started": "Analysis launched",
+    "analysis_completed": "Analysis completed",
+    "contact_enriched": "Contact enriched",
+    "export_performed": "Export performed",
+    "message_sent": "Message sent",
+    "member_invited": "Member invited",
+    "invitation_revoked": "Invitation revoked",
+    "member_removed": "Member removed",
+    "member_role_changed": "Role changed",
+    "integration_connected": "Integration connected",
+    "integration_disconnected": "Integration disconnected",
+    "portfolio_handed_over": "Portfolio handed over",
+    "member_permissions_changed": "Member permissions changed"
+  },
+  "row": {
+    "unknownActor": "User",
+    "noTarget": "—"
+  },
+  "states": {
+    "loading": "Loading the activity log…",
+    "emptyNever": "Nothing has been logged in this workspace yet. As soon as an analysis starts, a contact is enriched or a member joins, it lands here.",
+    "emptyFiltered": "The log isn't empty: no entry passes the filters you set.",
+    "clearFilters": "Clear filters"
+  },
+  "errors": {
+    "load": "Could not load the activity log. Please try again in a moment.",
+    "retry": "Try again"
+  },
+  "accessDenied": {
+    "title": "Restricted access",
+    "description": "The activity log is restricted to the workspace owner, admins and Sales Ops."
+  },
+  "pagination": {
+    "pageOf": "Page {{page}} / {{total}} · {{count}} events",
+    "prev": "Previous",
+    "next": "Next"
+  },
+  "export": {
+    "action": "Export",
+    "filename": "activity-log.csv",
+    "date": "Date",
+    "by": "By",
+    "change": "Change",
+    "target": "Target",
+    "detail": "Detail",
+    "done": "Log exported: {{count}} rows.",
+    "failed": "The log could not be exported."
+  },
+  "table": {
+    "change": "Change",
+    "by": "By",
+    "date": "Date"
+  },
+  "columns": {
+    "change": "Change",
+    "actor": "By",
+    "date": "Date"
+  }
+}

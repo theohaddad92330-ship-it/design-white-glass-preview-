@@ -1,0 +1,251 @@
+{
+  "header": {
+    "title": "Data & exports",
+    "claim": "Your data is yours",
+    "subtitle": "See what {{brand}} keeps in your workspace, take back what is yours, and understand what stays shared with your team.",
+    "claimNamed": "Your data stays under your control, {{name}}",
+    "screenTitle": "My data",
+    "description": "Leave with your work, without taking another user’s."
+  },
+  "objects": {
+    "identity": "My identity",
+    "esnProfile": "My company profile",
+    "accounts": "Tracked accounts",
+    "contacts": "Contacts",
+    "talents": "Talent and skills",
+    "documents": "Uploaded documents",
+    "actions": "Activity and history",
+    "billing": "Subscription",
+    "credits": "Credit movements",
+    "devices": "Connected devices",
+    "smsChannel": "Number for text-message alerts"
+  },
+  "table": {
+    "object": "Object",
+    "rows": "Rows",
+    "download": "Download",
+    "rowsCount_one": "{{count}} row",
+    "rowsCount_other": "{{count}} rows",
+    "downloadNamed": "Download {{object}} as {{format}}",
+    "rowsUnknown": "not measured",
+    "purposeLine": "Why: {{reason}}",
+    "retentionLine": "Kept: {{duration}}",
+    "provenanceLine": "From: {{source}}",
+    "deletionLine": "If you delete your account: {{fate}}"
+  },
+  "exportAll": {
+    "action": "Prepare my export",
+    "loading": "Preparing…",
+    "lastNever": "last export: never",
+    "lastOn": "last export: {{date}}",
+    "success": "The export landed in your downloads.",
+    "error": "I couldn't prepare that export. Try again in a moment."
+  },
+  "withheld": {
+    "title": "What you don't take with you",
+    "intro": "This list is computed from what the export can actually produce, so it can't fall behind the product.",
+    "sharedMarket": "The shared reference data — the company directory, public registries, territory snapshots. It is funded collectively and serves every workspace: nobody takes it away, nobody loses it.",
+    "sharedOperator": "The models, scoring rules and internal components of the product. That is what we build, not what you entrust to us.",
+    "workspaceOwned": "What belongs to the workspace rather than to you alone — projects, missions, invoicing. A personal copy carrying them would hand you your colleagues' work.",
+    "unclassified": "Data whose ownership we haven't settled yet. While the question is open it doesn't leave: we'd rather write that down than guess."
+  },
+  "exportHistory": {
+    "title": "My exports",
+    "intro": "The history of your personal exports, exactly as we logged it — nothing more.",
+    "full": "Full export",
+    "object": "Export: {{object}}",
+    "entry": "{{kind}} — {{date}}",
+    "entryWithFormat": "{{kind}} ({{format}}) — {{date}}",
+    "count_one": "· {{count}} export",
+    "count_other": "· {{count}} exports",
+    "colExport": "Export",
+    "colDate": "Date"
+  },
+  "deletion": {
+    "title": "Delete my workspace",
+    "action": "Go to deletion"
+  },
+  "states": {
+    "loadingMessage": "Counting what you can take with you.",
+    "errorMessage": "I couldn't read what you can take with you.",
+    "retry": "Try again",
+    "partialMessage": "The list is here, but some counts couldn't be read.",
+    "partialDetail": "The objects concerned show \"not measured\" — they remain exportable."
+  },
+  "perimeter": {
+    "personal": "My personal data",
+    "workspace": "Workspace data",
+    "technical": "Technical data",
+    "files": "Files",
+    "market": "Market",
+    "memory": "Memory"
+  },
+  "memoryCard": {
+    "subtitle": "What {{copilot}} remembers about you and your team, in plain sight.",
+    "rowsCount_one": "{{count}} row remembered",
+    "rowsCount_other": "{{count}} rows remembered"
+  },
+  "classification": {
+    "public": "Public",
+    "interne": "Internal to workspace",
+    "confidentiel": "Confidential",
+    "personnel": "Personal data",
+    "sensible": "Sensitive",
+    "technique": "Technical"
+  },
+  "purpose": {
+    "profile": "Recognise you and personalise your workspace.",
+    "esnProfile": "Adapt every analysis to your company's business.",
+    "accounts": "Keep the memory of your prospecting on this account.",
+    "contacts": "Find and follow up with the right people.",
+    "talents": "Match a need with a consultant who fits.",
+    "documents": "Feed {{copilot}}'s answers with your context.",
+    "actions": "Keep track of what you did and when.",
+    "billing": "Bill your subscription and manage your quotas.",
+    "credits": "Account for every credit spent or refunded.",
+    "devices": "Spot an unusual sign-in.",
+    "smsChannel": "Warn you by text message about urgent alerts."
+  },
+  "retention": {
+    "profile": "For as long as your account exists.",
+    "esnProfile": "Every version is kept, to understand how your profile changed.",
+    "accounts": "As long as the workspace tracks it, then archived — never deleted.",
+    "contacts": "As long as the workspace tracks it, then archived — never deleted.",
+    "talents": "As long as the workspace tracks it, then archived — never deleted.",
+    "documents": "As long as the document stays uploaded in your workspace.",
+    "actions": "Kept as a log — it is the memory of your activity.",
+    "billing": "Kept beyond the account for accounting obligations.",
+    "credits": "Kept beyond the account for accounting obligations.",
+    "devices": "30 days of inactivity, then removed.",
+    "smsChannel": "As long as the number is active."
+  },
+  "provenance": {
+    "declaredByYou": "Entered by you.",
+    "declaredByYourTeam": "Declared by a member of your workspace.",
+    "researchedByYourTeam": "Researched by your workspace, from public sources and your own imports.",
+    "collectedOrImported": "Collected by your workspace or imported from your CRM.",
+    "uploadedByYourTeam": "Uploaded by a member of your workspace.",
+    "loggedByYourTeam": "Logged automatically when an action happens in {{brand}}.",
+    "computedByBellum": "Computed by {{brand}} from your subscription and usage.",
+    "observedByBellum": "Observed by {{brand}} on every sign-in."
+  },
+  "deletionReason": {
+    "anonymizedOnErasure": "anonymised (name, contact details and personal content erased).",
+    "untouchedWorkspaceOwned": "not affected — workspace data, it follows its own lifecycle.",
+    "retainedNonNominative": "kept, non-nominative.",
+    "retainedPseudonymized": "kept, pseudonymised for audit.",
+    "retainedForAccounting": "kept, for accounting obligations.",
+    "revokedOnErasure": "revoked.",
+    "deletedOnErasure": "deleted."
+  },
+  "withheldTitle": {
+    "workspace_owned": "Shared workspace data",
+    "shared_market": "Common reference data",
+    "shared_operator": "{{brand}} technology",
+    "unclassified": "Ownership not yet settled"
+  },
+  "perimeterSummary": {
+    "personal": "What you take with you wherever you go: your identity, your subscription.",
+    "technical": "What {{brand}} watches for your security: your devices and sign-ins.",
+    "workspace": "What lives in the workspace and follows your team's permissions.",
+    "files": "The documents uploaded to your workspace, the ones {{copilot}} reads to answer you.",
+    "objectsOnly_one": "{{count}} exportable object",
+    "objectsOnly_other": "{{count}} exportable objects",
+    "objectsAndRows_one": "{{objects}} exportable objects · {{count}} row",
+    "objectsAndRows_other": "{{objects}} exportable objects · {{count}} rows",
+    "regionLabel": "Summary of your data perimeters"
+  },
+  "recap": {
+    "title": "Here is what your export will contain",
+    "subtitle": "Nothing is downloaded until you confirm.",
+    "notIncludedTitle": "Not included",
+    "format": "A single JSON file. For CSV, download the object you need from the list above.",
+    "cancel": "Cancel",
+    "confirm": "Download my export"
+  },
+  "sensitive": {
+    "zone": "Sensitive zone",
+    "title": "Delete my {{brand}} account",
+    "lead": "A one-way action. Take the time to read what it does before starting it.",
+    "understand": "Understand deletion",
+    "hide": "Hide the details",
+    "erased": "Erased: your identity, contacts, consultants and uploaded documents are anonymised; your sessions are revoked and your subscription is cancelled.",
+    "when": "When: immediately, on confirmation. There is no cooling-off period.",
+    "kept_one": "Kept, without your name: the billing line, the credit ledger, the action log and company data — accounting obligations. They are purged after {{count}} day.",
+    "kept_other": "Kept, without your name: the billing line, the credit ledger, the action log and company data — accounting obligations. They are purged after {{count}} days.",
+    "members": "Your colleagues: anything owned by the workspace stays there. It is your account that leaves, not your team’s work.",
+    "irreversible": "Irreversible: nothing that is anonymised can be restored, by you or by us.",
+    "exportFirst": "Export first. Afterwards, there is nothing left to export."
+  },
+  "laura": {
+    "whatIsInMyExport": "What exactly does my data export contain?",
+    "whatIsInMyExportLabel": "What is in my export?",
+    "whyNotIncluded": "Why are some data not included in my export?",
+    "whyNotIncludedLabel": "Why is this data not included?",
+    "mineVsWorkspace": "What is the difference between my personal data and the workspace data?",
+    "mineVsWorkspaceLabel": "Mine or the workspace’s?"
+  },
+  "privacyPage": {
+    "title": "Privacy & register",
+    "subtitle": "What {{brand}} does with your data, for how long, and how to exercise your rights.",
+    "policy": {
+      "title": "Privacy policy",
+      "body": "The published text, as any visitor reads it.",
+      "open": "Read the privacy policy"
+    },
+    "register": {
+      "title": "Retention register",
+      "body": "Each data category and its retention period, read as the application applies it.",
+      "category": "Category",
+      "duration": "Duration",
+      "why": "Why",
+      "lifetime": "For as long as the account exists",
+      "days_one": "{{count}} day",
+      "days_other": "{{count}} days",
+      "sweepOn": "Automatic purge is on: past this period, data is deleted without any action from you.",
+      "sweepOff": "Automatic purge is paused on this environment: the periods above are published but not enforced for now.",
+      "empty": "No retention period is published yet.",
+      "error": "The register could not be loaded.",
+      "retry": "Retry",
+      "loading": "Loading the register…"
+    },
+    "rights": {
+      "title": "Your rights",
+      "body": "Access, export, erasure: everything is done from Data & exports.",
+      "open": "Open Data & exports"
+    },
+    "link": {
+      "label": "Privacy policy and register",
+      "open": "See the policy and the register"
+    },
+    "sectionTitle": "Privacy & retention"
+  },
+  "cards": {
+    "personal": {
+      "title": "Personal export",
+      "body": "What belongs to you in the workspace: your preferences, your notes and what {{copilot}} remembered. A single JSON file; other members’ conversations and data are not included.",
+      "action": "Export my data"
+    },
+    "workspace": {
+      "title": "Workspace export",
+      "body": "Shared files and settings: accounts, signals, deals and talent pool. Personal memories and preferences are excluded.",
+      "action": "See exportable objects"
+    },
+    "remove": {
+      "title": "Remove my personal information",
+      "body": "An explicit action that does not delete shared files. Export what you want to keep first.",
+      "action": "See how to remove my data"
+    }
+  },
+  "blocks": {
+    "personalHint": "What belongs to you in the workspace.",
+    "personalAllTitle": "My preferences, notes and remembered items",
+    "personalAllHint": "A JSON file, after a summary. Another member’s conversations and data are not included.",
+    "workspaceHint": "Shared records and configurations, object by object."
+  },
+  "tabs": {
+    "label": "My data sections",
+    "exports": "Exports",
+    "imports": "Imports"
+  }
+}

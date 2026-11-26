@@ -1,0 +1,42 @@
+# Porte locale avant push = l'Étage 1 de la CI (lot `ci/5-process`, 31/10/2026).
+# Détail : docs/ci.md « Porte locale ». Mesure qui l'a fait naître : 64 % des PR rouges au
+# premier run, sur ce que la porte d'avant (prettier + knip) ne regardait pas —
+# vitest, pytest, « la doc suit le code ».
+#
+# 1. Une branche de lot (`claude/lot*`) ne touche pas les fichiers chauds : elle
+#    écrit un fragment `changes/<lot>.yml` (format : changes/README.md).
+# 2. `pnpm ci:local` — format (prettier sur les fichiers modifiés, comme avant :
+#    jamais `prettier --check .`, 706 s mesurées le 18/09/2026 à cause des
+#    worktrees), lint, types, doc ↔ code, tests concernés, pytest touchés. Sauté
+#    si le témoin `<git-dir>/ci-local-ok` porte déjà le SHA de HEAD.
+# 3. La garde ESM de `packages/contracts` (import relatif sans `.js` : cassé 3
+#    fois en 5 jours, toujours vu en CI) — le test existant, ~1 s.
+# ÉCHAPPATOIRE D'URGENCE (03/11/2026) : `CI_LOCAL_SKIP=1 git push` saute TOUTE la porte locale (la
+# CI rejoue l'étage 1 de toute façon). À réserver à une machine saturée ou à un correctif de prod
+# urgent : la porte coûte 300-600 s par push quand le Mac est chargé. Documenté dans docs/ci.md §7.
+if [ "${CI_LOCAL_SKIP:-}" = "1" ]; then
+  echo "pre-push : porte locale SAUTÉE (CI_LOCAL_SKIP=1) — la CI fait foi."
+  exit 0
+fi
+
+BASE=$(git merge-base HEAD origin/main 2>/dev/null || echo "")
+if [ -z "$BASE" ]; then
+  # Pas de base commune connue : on ne devine pas, balayage complet.
+  pnpm format:check || exit 1
+  pnpm --filter @bellum/contracts exec vitest run src/esm-import-extensions.test.ts || exit 1
+  pnpm lint:exports:types
+  exit $?
+fi
+
+node tools/ci/hot-files.mjs || exit 1
+
+TEMOIN="$(git rev-parse --absolute-git-dir)/ci-local-ok"
+if [ "$(cat "$TEMOIN" 2>/dev/null)" = "$(git rev-parse HEAD)" ]; then
+  echo "ci:local déjà vert sur $(git rev-parse --short HEAD) (témoin)"
+else
+  pnpm ci:local || exit 1
+fi
+
+if git diff --name-only "$BASE" HEAD | grep -q '^packages/contracts/src/'; then
+  pnpm --filter @bellum/contracts exec vitest run src/esm-import-extensions.test.ts || exit 1
+fi

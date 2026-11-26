@@ -1,0 +1,336 @@
+{
+  "_note": "#4068 (lot DECOUVRIR-CARTE, Louis 13/10) — LE jeu de cas partagé du classement d'un fait de carte Découvrir (fort / contexte / hors carte) : lu par classifyCardFact (packages/contracts, TS) ET classify_card_fact (apps/ia, Python). Dates relatives à `now` = 2026-10-13. Ajouter un cas ici le teste des deux côtés.",
+  "now": "2026-10-13",
+  "company": "LATECOERE",
+  "cases": [
+    {
+      "fact": { "type": "hiring", "label": "Alternance – Développeur Java H/F", "date": "2026-10-01" },
+      "tier": "context",
+      "nature": "work_study"
+    },
+    {
+      "fact": {
+        "type": "hiring",
+        "label": "Technicien méthodes",
+        "date": "2026-10-01",
+        "contractType": "Contrat d'apprentissage"
+      },
+      "tier": "context",
+      "nature": "work_study"
+    },
+    {
+      "fact": { "type": "hiring", "label": "Ingénieur systèmes (alternant) H/F", "date": "2026-10-01" },
+      "tier": "context",
+      "nature": "work_study"
+    },
+    {
+      "fact": { "type": "hiring", "label": "Ingénieur systèmes embarqués H/F", "date": "2026-10-01" },
+      "tier": "strong",
+      "nature": "hiring"
+    },
+    {
+      "fact": { "type": "hiring", "label": "Stage – Bac+5 – Ingénieur méthodes", "date": "2026-10-01" },
+      "tier": "off",
+      "reason": "internship"
+    },
+    {
+      "fact": { "type": "hiring", "label": "Développeur Java", "date": "2026-10-01", "contractType": "Stage" },
+      "tier": "off",
+      "reason": "internship"
+    },
+    {
+      "fact": { "type": "tender", "label": "Maintenance applicative du SI achats", "date": "2026-09-20" },
+      "tier": "strong",
+      "nature": "need"
+    },
+    {
+      "fact": { "type": "award", "label": "Marché attribué : tierce maintenance applicative", "date": "2026-09-02" },
+      "tier": "strong",
+      "nature": "deal"
+    },
+    {
+      "fact": { "type": "funding", "label": "Levée de fonds de 40 M€ pour l'usine de Toulouse", "date": "2026-08-15" },
+      "tier": "strong",
+      "nature": "deal"
+    },
+    {
+      "fact": {
+        "type": "business",
+        "label": "Latécoère nomme Marie Durand directrice des systèmes d'information",
+        "date": "2026-09-10"
+      },
+      "tier": "strong",
+      "nature": "leader"
+    },
+    {
+      "fact": { "type": "business", "label": "Départ du directeur général de Latécoère", "date": "2026-09-10" },
+      "tier": "strong",
+      "nature": "leader"
+    },
+    {
+      "fact": {
+        "type": "business",
+        "label": "Latécoère lance un programme de transformation numérique de ses usines",
+        "date": "2026-07-01"
+      },
+      "tier": "strong",
+      "nature": "project"
+    },
+    {
+      "fact": {
+        "type": "business",
+        "label": "Latécoère remporte un contrat de câblage avec Airbus",
+        "date": "2026-07-01"
+      },
+      "tier": "strong",
+      "nature": "deal"
+    },
+    {
+      "fact": {
+        "type": "business",
+        "label": "Latécoère rachète la société toulousaine Avantis Aero",
+        "date": "2026-08-10"
+      },
+      "tier": "strong",
+      "nature": "deal"
+    },
+    {
+      "fact": {
+        "type": "business",
+        "label": "Latécoère racheté par un consortium d'investisseurs",
+        "date": "2026-08-12"
+      },
+      "tier": "strong",
+      "nature": "deal"
+    },
+    {
+      "fact": {
+        "type": "business",
+        "label": "Latécoère : chiffre d'affaires S1 2026 en hausse de 15 %",
+        "date": "2026-09-25"
+      },
+      "tier": "context",
+      "nature": "financial"
+    },
+    {
+      "fact": { "type": "business", "label": "Latécoère expose au salon du Bourget 2026", "date": "2026-06-20" },
+      "tier": "context",
+      "nature": "event"
+    },
+    {
+      "fact": {
+        "type": "business",
+        "label": "La filière aéronautique toulousaine accélère ses cadences de production",
+        "date": "2026-09-01"
+      },
+      "tier": "context",
+      "nature": "economy"
+    },
+    {
+      "fact": { "type": "tech", "label": "Pile technique observée : SAP S/4HANA, Azure", "date": "2026-09-01" },
+      "tier": "context",
+      "nature": "tech"
+    },
+    {
+      "fact": { "type": "legal", "label": "Modification survenue sur le capital", "date": "2026-09-01" },
+      "tier": "off",
+      "reason": "legal_admin"
+    },
+    {
+      "fact": { "type": "legal", "label": "Modifications diverses", "date": "2026-09-01" },
+      "tier": "off",
+      "reason": "legal_admin"
+    },
+    {
+      "fact": {
+        "type": "legal",
+        "label": "Modification — modification survenue sur l'administration",
+        "date": "2026-09-01"
+      },
+      "tier": "off",
+      "reason": "legal_admin"
+    },
+    {
+      "fact": { "type": "legal", "label": "Changement de dirigeant", "date": "2026-09-01" },
+      "tier": "off",
+      "reason": "legal_admin"
+    },
+    {
+      "fact": { "type": "business", "label": "Changement de dirigeant", "date": "2026-09-01" },
+      "tier": "off",
+      "reason": "legal_admin"
+    },
+    {
+      "fact": {
+        "type": "legal",
+        "label": "Changement de dirigeant — nomination de M. Jean Martin en qualité de président",
+        "date": "2026-09-01"
+      },
+      "tier": "strong",
+      "nature": "leader"
+    },
+    {
+      "fact": { "type": "legal", "label": "Dépôt des comptes", "date": "2026-09-01" },
+      "tier": "off",
+      "reason": "legal_admin"
+    },
+    {
+      "fact": { "type": "business", "label": "Augmentation de capital de Latécoère", "date": "2026-09-01" },
+      "tier": "off",
+      "reason": "legal_admin"
+    },
+    {
+      "fact": { "type": "business", "label": "Augmentation de capital", "date": "2026-09-01" },
+      "tier": "context",
+      "nature": "economy"
+    },
+    {
+      "fact": { "type": "business", "label": "Augmentation de capital", "date": "2025-01-01" },
+      "tier": "off",
+      "reason": "too_old"
+    },
+    {
+      "fact": { "type": "legal", "label": "Vente et cession — cession du site de Colomiers", "date": "2026-09-01" },
+      "tier": "context",
+      "nature": "economy"
+    },
+    {
+      "fact": {
+        "type": "legal",
+        "label": "Procédure collective — jugement d'ouverture de sauvegarde",
+        "date": "2026-09-01"
+      },
+      "tier": "context",
+      "nature": "economy"
+    },
+    {
+      "fact": { "type": "business", "label": "Lerevenu", "date": "2026-09-30" },
+      "tier": "off",
+      "reason": "contentless"
+    },
+    {
+      "fact": { "type": "business", "label": "Latecoere : quelles perspectives ?", "date": "2026-09-30" },
+      "tier": "off",
+      "reason": "contentless"
+    },
+    {
+      "fact": { "type": "business", "label": "Latécoère", "date": "2026-09-30" },
+      "tier": "off",
+      "reason": "contentless"
+    },
+    {
+      "fact": { "type": "hiring", "label": "Ingénieur systèmes embarqués H/F", "date": "2026-02-06" },
+      "tier": "off",
+      "reason": "too_old"
+    },
+    {
+      "fact": {
+        "type": "business",
+        "label": "Latécoère : chiffre d'affaires 2025 en hausse de 8 %",
+        "date": "2026-01-15"
+      },
+      "tier": "off",
+      "reason": "too_old"
+    },
+    {
+      "fact": {
+        "type": "hiring",
+        "label": "Ingénieur systèmes embarqués H/F",
+        "date": "2026-02-06",
+        "fromSpace": true
+      },
+      "tier": "strong",
+      "nature": "hiring"
+    },
+    {
+      "fact": {
+        "type": "business",
+        "label": "Affaire gagnée : refonte du portail fournisseurs",
+        "date": "2025-11-02",
+        "fromSpace": true,
+        "nature": "space"
+      },
+      "tier": "strong",
+      "nature": "space"
+    },
+    {
+      "fact": {
+        "type": "legal",
+        "label": "Modification survenue sur le capital",
+        "date": "2025-12-01",
+        "fromSpace": true
+      },
+      "tier": "off",
+      "reason": "legal_admin"
+    },
+    {
+      "fact": { "type": "business", "label": "Latécoère déménage son siège social à Toulouse", "date": "2026-09-20" },
+      "tier": "strong",
+      "nature": "project"
+    },
+    {
+      "fact": { "type": "legal", "label": "Transfert du siège social", "date": "2026-09-20" },
+      "tier": "off",
+      "reason": "legal_admin"
+    }
+  ],
+  "duplicates": [
+    {
+      "a": {
+        "type": "business",
+        "label": "Latécoère : chiffre d'affaires S1 2026 en hausse de 15 %",
+        "date": "2026-09-25"
+      },
+      "b": {
+        "type": "business",
+        "label": "Latecoere affiche un CA semestriel de +15% sur S1 2026",
+        "date": "2026-09-26"
+      },
+      "same": true
+    },
+    {
+      "a": {
+        "type": "business",
+        "label": "Latécoère : chiffre d'affaires S1 2026 en hausse de 15 %",
+        "date": "2026-09-25"
+      },
+      "b": {
+        "type": "business",
+        "label": "Latécoère publie un chiffre d'affaires S1 2026 en hausse de 15 %",
+        "date": "2026-09-29"
+      },
+      "same": true
+    },
+    {
+      "a": {
+        "type": "business",
+        "label": "Latécoère : chiffre d'affaires S1 2026 en hausse de 15 %",
+        "date": "2026-09-25"
+      },
+      "b": {
+        "type": "business",
+        "label": "Latécoère : chiffre d'affaires S1 2026 en hausse de 15 %",
+        "date": "2026-03-25"
+      },
+      "same": false
+    },
+    {
+      "a": { "type": "hiring", "label": "Ingénieur systèmes embarqués H/F", "date": "2026-10-01" },
+      "b": { "type": "hiring", "label": "Technicien câblage H/F", "date": "2026-10-01" },
+      "same": false
+    },
+    {
+      "a": {
+        "type": "business",
+        "label": "Latécoère : chiffre d'affaires S1 2026 en hausse de 15 %",
+        "date": "2026-09-25"
+      },
+      "b": {
+        "type": "business",
+        "label": "Latécoère lance un programme de transformation numérique avec 15 sites",
+        "date": "2026-09-25"
+      },
+      "same": false
+    }
+  ]
+}

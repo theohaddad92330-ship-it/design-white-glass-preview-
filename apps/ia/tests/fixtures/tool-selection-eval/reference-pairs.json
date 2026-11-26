@@ -1,0 +1,369 @@
+{
+  "_doc": "Jeu de référence du choix d'outil de Laura (#4112.3). Chaque message a UN outil attendu, écrit sur le sens (jamais en recopiant le nom de l'outil). `query` = les mots-clés qu'un modèle passerait à `chercher_un_outil` si l'outil n'est pas dans la liste. Autoportant : aucun appel réseau, aucune date.",
+  "pairs": [
+    {
+      "id": "t01",
+      "family": "compte",
+      "message": "Donne-moi le briefing sur Thales avant mon rendez-vous",
+      "expected": "get_account_briefing",
+      "query": "briefing compte"
+    },
+    {
+      "id": "t02",
+      "family": "compte",
+      "message": "Quels sont les signaux récents chez Airbus ?",
+      "expected": "get_account_signals",
+      "query": "signaux compte"
+    },
+    {
+      "id": "t03",
+      "family": "compte",
+      "message": "Retrouve dans mon portefeuille le compte Capgemini",
+      "expected": "search_workspace_accounts",
+      "query": "chercher compte portefeuille"
+    },
+    {
+      "id": "t04",
+      "family": "compte",
+      "message": "Compare Sopra Steria et Atos pour moi",
+      "expected": "compare_accounts",
+      "query": "comparer comptes"
+    },
+    {
+      "id": "t05",
+      "family": "compte",
+      "message": "Montre-moi la chronologie des échanges avec Orange",
+      "expected": "get_account_timeline",
+      "query": "historique compte"
+    },
+    {
+      "id": "t06",
+      "family": "compte",
+      "message": "Quel est l'organigramme de Safran ?",
+      "expected": "get_account_org_chart",
+      "query": "organigramme compte"
+    },
+    {
+      "id": "t07",
+      "family": "compte",
+      "message": "Par où entrer chez Renault, qu'est-ce qui verrouille le compte ?",
+      "expected": "get_account_access",
+      "query": "entrer compte verrou"
+    },
+    {
+      "id": "t08",
+      "family": "compte",
+      "message": "Complète ce compte avec tout ce qu'on peut savoir",
+      "expected": "complete_account",
+      "query": "completer compte"
+    },
+    {
+      "id": "t09",
+      "family": "compte",
+      "message": "Quelle est la firmographie de Michelin : effectif, chiffre d'affaires ?",
+      "expected": "get_account_firmographics",
+      "query": "firmographie effectif"
+    },
+    {
+      "id": "t10",
+      "family": "compte",
+      "message": "Les notes CRM écrites sur le compte Engie ?",
+      "expected": "get_account_notes",
+      "query": "notes compte crm"
+    },
+    {
+      "id": "t11",
+      "family": "contact",
+      "message": "Qui dois-je approcher chez Société Générale ?",
+      "expected": "get_account_contacts",
+      "query": "contacts compte approcher"
+    },
+    {
+      "id": "t12",
+      "family": "contact",
+      "message": "Cherche Marie Dupont dans tous mes comptes",
+      "expected": "search_workspace_contacts",
+      "query": "chercher personne contact"
+    },
+    {
+      "id": "t13",
+      "family": "contact",
+      "message": "Prépare un message pour Paul Martin",
+      "expected": "prepare_message_for_contact",
+      "query": "preparer message contact"
+    },
+    {
+      "id": "t14",
+      "family": "contact",
+      "message": "Rappelle-moi de relancer Julie Bernard jeudi",
+      "expected": "schedule_reminder_for_contact",
+      "query": "rappel relance contact"
+    },
+    {
+      "id": "t15",
+      "family": "contact",
+      "message": "Prépare mon brief d'appel pour Karim avant l'appel à froid",
+      "expected": "prepare_cold_call",
+      "query": "brief appel froid"
+    },
+    {
+      "id": "t16",
+      "family": "contact",
+      "message": "Vérifie Julien avant que je lui écrive",
+      "expected": "get_contact_preflight",
+      "query": "controle avant action contact"
+    },
+    {
+      "id": "t17",
+      "family": "contact",
+      "message": "Quels contacts ont peut-être changé d'employeur ?",
+      "expected": "get_job_changes",
+      "query": "changement employeur contact"
+    },
+    {
+      "id": "t18",
+      "family": "contact",
+      "message": "Avec qui n'ai-je plus échangé depuis six mois ?",
+      "expected": "search_dormant_network",
+      "query": "contacts dormants sans echange"
+    },
+    {
+      "id": "t19",
+      "family": "contact",
+      "message": "Propose une note sur la fiche CRM de Nadia",
+      "expected": "propose_crm_note",
+      "query": "note fiche crm contact"
+    },
+    {
+      "id": "t20",
+      "family": "contact",
+      "message": "Trouve de nouvelles personnes à contacter chez Thales",
+      "expected": "propose_people_search",
+      "query": "recherche nouvelles personnes"
+    },
+    {
+      "id": "t21",
+      "family": "besoin",
+      "message": "Résume le besoin de la mission SAP chez Danone",
+      "expected": "get_need_summary",
+      "query": "resume besoin"
+    },
+    {
+      "id": "t22",
+      "family": "besoin",
+      "message": "Y a-t-il des doublons pour ce besoin ?",
+      "expected": "find_need_duplicates",
+      "query": "doublons besoin"
+    },
+    {
+      "id": "t23",
+      "family": "besoin",
+      "message": "Montre l'historique des transitions de ce besoin",
+      "expected": "get_need_transition_history",
+      "query": "historique transitions besoin"
+    },
+    {
+      "id": "t24",
+      "family": "besoin",
+      "message": "Quels besoins ouverts correspondent à ce consultant ?",
+      "expected": "find_needs_for_talent",
+      "query": "besoins ouverts consultant"
+    },
+    {
+      "id": "t25",
+      "family": "besoin",
+      "message": "Prépare le pack de proposition pour ce besoin qualifié",
+      "expected": "prepare_proposal_pack",
+      "query": "pack proposition besoin"
+    },
+    {
+      "id": "t26",
+      "family": "besoin",
+      "message": "Cherche les besoins historiques Java dans la base commune",
+      "expected": "search_historical_needs",
+      "query": "besoins historiques"
+    },
+    {
+      "id": "t27",
+      "family": "mission",
+      "message": "Qu'est-ce qui manque avant que la mission démarre ?",
+      "expected": "get_mission_start_readiness",
+      "query": "mission demarrage manque"
+    },
+    {
+      "id": "t28",
+      "family": "mission",
+      "message": "Donne-moi la checklist de démarrage de la mission",
+      "expected": "get_mission_start_checklist",
+      "query": "checklist demarrage mission"
+    },
+    {
+      "id": "t29",
+      "family": "mission",
+      "message": "Prépare un avenant pour changer le TJM de la mission",
+      "expected": "propose_mission_amendment",
+      "query": "avenant mission tjm"
+    },
+    {
+      "id": "t30",
+      "family": "mission",
+      "message": "Propose la preuve de la mission livrée chez Enedis",
+      "expected": "propose_mission_proof",
+      "query": "preuve mission livree"
+    },
+    {
+      "id": "t31",
+      "family": "mission",
+      "message": "Contrôle le handoff avant la conversion du besoin en mission",
+      "expected": "get_need_mission_handoff_check",
+      "query": "handoff conversion besoin mission"
+    },
+    {
+      "id": "t32",
+      "family": "facture",
+      "message": "Quel est mon chiffre d'affaires de septembre ?",
+      "expected": "get_revenue",
+      "query": "chiffre affaires mois"
+    },
+    {
+      "id": "t33",
+      "family": "facture",
+      "message": "Quelles factures sont en retard de paiement ?",
+      "expected": "get_overdue_payments",
+      "query": "factures retard paiement"
+    },
+    {
+      "id": "t34",
+      "family": "facture",
+      "message": "Combien de CA confirmé en octobre ?",
+      "expected": "get_confirmed_revenue",
+      "query": "ca confirme"
+    },
+    {
+      "id": "t35",
+      "family": "facture",
+      "message": "Quelle capacité vendable me reste-t-il en novembre ?",
+      "expected": "get_capacity",
+      "query": "capacite vendable"
+    },
+    {
+      "id": "t36",
+      "family": "facture",
+      "message": "Liste les notes de frais qui attendent une décision",
+      "expected": "list_expense_reports_awaiting_decision",
+      "query": "notes de frais decision"
+    },
+    {
+      "id": "t37",
+      "family": "facture",
+      "message": "Montre le prévisionnel par horizon",
+      "expected": "get_forecast_horizons",
+      "query": "previsionnel horizon"
+    },
+    {
+      "id": "t38",
+      "family": "personnes",
+      "message": "Lance une recherche de personnes décisionnaires chez Airbus",
+      "expected": "propose_people_search",
+      "query": "recherche personnes decideurs"
+    },
+    {
+      "id": "t39",
+      "family": "personnes",
+      "message": "Trouve-moi des profils Java à Lyon dans notre base",
+      "expected": "search_our_base",
+      "query": "profils base competence lieu"
+    },
+    {
+      "id": "t40",
+      "family": "personnes",
+      "message": "Cherche les offres de mission React publiées cette semaine",
+      "expected": "search_job_offers",
+      "query": "offres mission emploi"
+    },
+    {
+      "id": "t41",
+      "family": "personnes",
+      "message": "Cherche des ESN partenaires dans l'espace",
+      "expected": "search_partners",
+      "query": "partenaires esn"
+    },
+    {
+      "id": "t42",
+      "family": "document",
+      "message": "Quels projets Safran a-t-il dans nos documents ?",
+      "expected": "search_document_projects",
+      "query": "projets documents compte"
+    },
+    {
+      "id": "t43",
+      "family": "document",
+      "message": "Cherche un gabarit d'e-mail approuvé dans la bibliothèque",
+      "expected": "search_content_library",
+      "query": "bibliotheque gabarit email"
+    },
+    {
+      "id": "t44",
+      "family": "document",
+      "message": "Quel modèle de message approuvé pour une relance ?",
+      "expected": "select_message_template",
+      "query": "modele message approuve"
+    },
+    {
+      "id": "t45",
+      "family": "document",
+      "message": "Vérifie ce message avant l'envoi",
+      "expected": "check_message_before_send",
+      "query": "verifier message avant envoi"
+    },
+    {
+      "id": "t46",
+      "family": "document",
+      "message": "Cherche sur le web les dernières actualités de Dassault",
+      "expected": "web_search",
+      "query": "web actualites"
+    },
+    {
+      "id": "t47",
+      "family": "document",
+      "message": "Lis le dernier fil de mail avec le client",
+      "expected": "read_mail_thread",
+      "query": "lire fil mail"
+    },
+    {
+      "id": "t48",
+      "family": "pilotage",
+      "message": "Quelles sont mes priorités du jour ?",
+      "expected": "get_daily_briefing",
+      "query": "briefing du jour"
+    },
+    {
+      "id": "t49",
+      "family": "pilotage",
+      "message": "Où en est mon pipe commercial ?",
+      "expected": "get_pipeline",
+      "query": "pipe commercial"
+    },
+    {
+      "id": "t50",
+      "family": "pilotage",
+      "message": "Quels comptes dois-je traiter en premier ?",
+      "expected": "list_accounts_to_act",
+      "query": "comptes a traiter"
+    },
+    {
+      "id": "t51",
+      "family": "pilotage",
+      "message": "Où les dossiers bloquent-ils dans la chaîne ?",
+      "expected": "get_chain_blockers",
+      "query": "dossiers bloquent chaine"
+    },
+    {
+      "id": "t52",
+      "family": "pilotage",
+      "message": "Active la routine de digest hebdomadaire",
+      "expected": "toggle_routine",
+      "query": "routine abonnement"
+    }
+  ]
+}

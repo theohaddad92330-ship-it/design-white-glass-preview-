@@ -1,0 +1,13 @@
+# Rapport lot B (claude/lot-4962-b) — fiche compte + appel
+
+- #4991 livré 1bf9531c — ScoreSummaryCard.tsx (`score-words`, repli `score-points-detail`), accountDetail.json `score.words.*`, « méthodo p25 » retiré.
+- #4990 livré 358a677e — accounts-list/AccountsVerdictSummary.tsx (résumé « aucun compte à attaquer : N en réserve » + raison, légende 5 verdicts), monté AccountsPage.tsx. Seuils inchangés.
+- #4965 livré ce7a1de2 — CollapsedSection.tsx `persistKey` (localStorage par section, « revient sur #4399 »), posé sur technologies/sources/history de TabOverview.tsx. 4965.1/.2 : liste « secondaires » = ces trois (proposition du brief, à valider).
+- #4988.1 livré d64d5851 — AccountGroupEntityLine.tsx (monté AccountDetailHero.tsx sous le nom), lit `entity_resolution` (parent_names + kind). 4988.2 non fait (à trancher, brief).
+- #4995 livré 6a24b05d — bellum_strategy.py : pilote 6 semaines non imposé, message vers le rôle proche de l'offre, CDO = relais visible ; golden system/strategy.txt régénéré ; head_recall intact.
+- #4975/#4976/#4977 livrés 52ac98ce — bellum_outreach.py (ouverture générale sans objections, cite « Offre d'emploi : … » si au contexte), bellum_strategy.py (objections plausibles pour CE compte), approach-grounding.ts (`JOB_OFFER_FACT_ID`, offre la plus récente, coché d'emblée), CallApproachBody.tsx (blocs `call-opening-block` / `call-objections-block`, « Autre approche », message d'absence d'offre), placeholder d'angle renommé.
+- #4981 livré b6da93cd/330ba472 — EnrichThenPrepareButton.tsx (monté ApproachPage.tsx), `useContactEnrich({onEnriched})`; confirmation de coût inchangée; sans e-mail : message + lien réseau professionnel (GA-44 : pas de nom d'éditeur).
+- Tests : vitest ScoreSummaryCard/evaluation (100), AccountsVerdictSummary + AccountsPage (29), disclosure+TabOverview (74), AccountGroupEntityLine+Hero (29), approach+ContactEnrichButton (122), src/architecture + src/i18n (3524, rouge GA-44 corrigé) ; pytest 208 ciblés ; `tsc -p apps/web` rc=0. Build des paquets @bellum/* (dist) nécessaire pour vitest.
+- Non fait : #4988.2 (écran des entités inconnu), semis de démo (aucune donnée neuve : offres/entity_resolution déjà lus du dossier).
+- Hors périmètre touché : aucun (docs/briefs prettier du brief pour passer le hook pre-push).
+- Questions : (1) « Autre approche » régénère le support d'appel mais les objections affichées viennent du dossier (`raw_analysis.objections`) — régénération dédiée = endpoint apps/api/ia hors périmètre ; (2) `message.py` (règle Drive « réponds aux objections ») hors périmètre, corrigé côté prompt seulement ; (3) l'offre « déclencheuse » = la plus récente de `it_job_signals`, pas un lien explicite offre→contact.

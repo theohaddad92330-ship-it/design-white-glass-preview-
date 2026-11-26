@@ -1,0 +1,38 @@
+lot: vieilles-l5-cibles-apercu
+issues: [2157]
+
+changelog:
+  id: 2026-10-31-cibles-apercu
+  comment: 'Vieilles L5 (#2157.17-.24 .37 .41 .57) — « Créer une cible » montre, retire et règle avant de créer'
+  fr:
+    date: 31 octobre 2026
+    title: Créer une cible, c’est d’abord relire
+    items:
+      - 'Avant de créer une cible depuis une sélection de comptes ou de contacts, l’aperçu nomme les fiches écartées et les contacts sans e-mail.'
+      - 'Chaque fiche se retire une à une, avant toute écriture.'
+      - 'Tu choisis le responsable (un membre de ton espace) et qui voit la liste, ou tu ajoutes la sélection à une cible existante.'
+      - 'Une fiche déjà présente dans d’autres cibles est nommée, jamais bloquée.'
+  en:
+    date: October 31, 2026
+    title: Creating a target starts with a review
+    items:
+      - 'Before creating a target from a selection of accounts or contacts, the preview names the items set aside and the contacts without an e-mail.'
+      - 'Each item can be removed one by one, before anything is written.'
+      - 'You choose the owner (a member of your workspace) and who sees the list, or add the selection to an existing target.'
+      - 'An item already in other targets is named, never blocked.'
+
+inserts:
+  - file: apps/api/src/modules/demo/demo-coverage.ts
+    text: |
+      /**
+       * #2157.17-.24 / .37 / .41 / .57 — L'APERÇU AVANT CRÉATION D'UNE CIBLE : SEEDÉ (aucune ligne neuve).
+       *
+       * Le dialogue lit les comptes, contacts, listes et membres DÉJÀ semés : la liste « Mes cibles » et la liste de
+       * tiering (`seedTargetLists`, `seedTieredTargetList`) portent les mêmes premiers comptes, donc sélectionner
+       * ces comptes depuis Comptes nomme les deux listes qui les portent déjà, sans bloquer.
+       */
+      export const DEMO_CIBLES_APERCU_COVERAGE: Readonly<{ state: 'seede'; reason: string }> = {
+        state: 'seede',
+        reason:
+          '#2157 — l’aperçu de création de cible relit les comptes, contacts, listes et membres semés ; le doublon entre deux listes se voit sur les premiers comptes, portés par la liste « Mes cibles » ET la liste de tiering.',
+      }

@@ -1,0 +1,234 @@
+{
+  "kinds": {
+    "email": "E-mail",
+    "call": "Appel",
+    "meeting": "Rendez-vous",
+    "note": "Note",
+    "task": "Tâche",
+    "stage_change": "Changement d'étape",
+    "crm_export": "Export CRM",
+    "linkedin": "Réseau professionnel",
+    "analysis": "Analyse",
+    "workflow": "Exécution",
+    "gate_decision": "Décision tranchée",
+    "crm_lookup": "{{copilot}} a consulté ton CRM"
+  },
+  "gates": {
+    "account_priority": "Priorité du compte",
+    "contact_qualification": "Qualification d'un interlocuteur",
+    "need_staffable": "Besoin pouvant être pourvu",
+    "submission_send": "Envoi d'un profil au client",
+    "playbook_arming": "Armement d'un playbook",
+    "erp_write": "Écriture dans l'ERP",
+    "invoice_readiness": "Mois prêt à facturer",
+    "project_close": "Clôture du projet",
+    "interview_go": "Go entretien",
+    "proof_sufficiency": "Preuves suffisantes",
+    "delivery_risk": "Risque de mission",
+    "unknown": "Porte de décision"
+  },
+  "gateDecisions": {
+    "accept": "franchie",
+    "refuse": "refusée",
+    "force": "franchie malgré des manques",
+    "unknown": "issue non nommée"
+  },
+  "stages": {
+    "unknown": "étape non nommée"
+  },
+  "timesheetException": {
+    "timesheet_not_applicable": "relevé marqué non applicable",
+    "timesheet_not_applicable_revoked": "exception de relevé annulée — le relevé est de nouveau attendu"
+  },
+  "repeat": "× {{count}}",
+  "direction": {
+    "inbound": "Reçu",
+    "outbound": "Envoyé",
+    "internal": "Interne"
+  },
+  "sources": {
+    "mailbox": "Depuis ta messagerie",
+    "agenda": "Depuis ton agenda",
+    "telephony": "Depuis ta téléphonie",
+    "manual": "Saisi à la main",
+    "crm": "Depuis ton CRM",
+    "system": "{{brand}}"
+  },
+  "linkReasons": {
+    "contact_email": "Rattaché par l'adresse du contact",
+    "contact_phone": "Rattaché par le numéro du contact",
+    "account_domain": "Rattaché par le domaine du compte",
+    "manual": "Rattaché à la main",
+    "project_explicit": "Rattaché au projet"
+  },
+  "filters": {
+    "all": "Tout",
+    "interactions": "Interactions",
+    "actions": "Actions",
+    "projects": "Opportunités",
+    "analyses": "Analyses",
+    "client": "Relation client",
+    "internal": "Interne"
+  },
+  "relation": {
+    "empty": "Aucun échange enregistré pour l'instant.",
+    "awaiting": "En attente de réponse",
+    "answered": "Ils ont répondu",
+    "silent": "Sans nouvelles",
+    "summary_one": "{{count}} échange · dernier il y a {{days}} j",
+    "summary_other": "{{count}} échanges · dernier il y a {{days}} j",
+    "countOnly_one": "{{count}} échange",
+    "countOnly_other": "{{count}} échanges"
+  },
+  "states": {
+    "empty": "Aucun échange enregistré.",
+    "emptyFiltered": "Aucun échange de ce type.",
+    "emptyHint": "Note un appel ou un rendez-vous, ou récupère ce que tes outils connectés savent déjà.",
+    "loadError": "L'historique n'a pas pu être chargé. Les échanges enregistrés sont toujours là — c'est la lecture qui a échoué.",
+    "connectorAbsent": "Aucun outil connecté ne peut alimenter cet historique.",
+    "connectorAbsentHint": "Note un appel ou un rendez-vous, ou connecte ta messagerie, ton agenda ou ta téléphonie.",
+    "connectorAbsentAction": "Connecter un outil"
+  },
+  "executed": {
+    "empty": "Aucune action exécutée pour l'instant."
+  },
+  "body": {
+    "expand": "Tout lire",
+    "collapse": "Réduire",
+    "truncated": "Message tronqué à l'enregistrement.",
+    "open": "Ouvrir dans l'outil",
+    "redacted": "Contenu réservé à son auteur. Le canal, l'objet et la date restent visibles.",
+    "openContact": "Ouvrir le contact"
+  },
+  "sync": {
+    "action": "Récupérer",
+    "done_one": "{{count}} échange ajouté à l'historique.",
+    "done_other": "{{count}} échanges ajoutés à l'historique.",
+    "nothingNew": "Rien de nouveau : tout ce qui était lisible est déjà dans l'historique.",
+    "noSource": "Aucune source à lire. Connecte ta messagerie, ton agenda ou ta téléphonie dans Réglages › Intégrations.",
+    "error": "La récupération a échoué."
+  },
+  "outcome": {
+    "unspecified": "Issue non renseignée",
+    "value": {
+      "connected_qualified": "Décroché — qualifié",
+      "connected_no_fit": "Décroché — pas de fit",
+      "callback_scheduled": "Rappel programmé",
+      "voicemail": "Messagerie",
+      "wrong_contact": "Mauvais interlocuteur",
+      "no_answer": "Pas de réponse",
+      "orientation_given": "Orienté vers quelqu'un d'autre",
+      "not_now": "Pas maintenant",
+      "interest": "Intérêt exprimé",
+      "need_detected": "Besoin détecté",
+      "need_confirmed": "Besoin confirmé",
+      "meeting_booked": "Rendez-vous pris",
+      "refused": "Refus",
+      "opt_out": "Ne plus contacter",
+      "email_requested": "E-mail demandé",
+      "document_requested": "Document demandé",
+      "partner_opportunity": "Opportunité partenaire",
+      "invalid_contact": "Coordonnées invalides",
+      "left_company": "A quitté l'entreprise",
+      "other": "Autre"
+    }
+  },
+  "log": {
+    "callTitle": "Consigner un appel",
+    "action": "Consigner un échange",
+    "title": "Consigner un échange",
+    "subtitle": "Ce qui s'est dit au téléphone n'est écrit nulle part. Consigne-le ici, il restera attaché au dossier. Saisi à la main : rien n'est envoyé, personne n'est appelé, aucun échange futur n'est créé.",
+    "kindLabel": "Nature",
+    "directionLabel": "Sens",
+    "subjectLabel": "Objet",
+    "subjectPlaceholder": "Point budget, relance, découverte…",
+    "bodyLabel": "Ce qui s'est dit",
+    "bodyPlaceholder": "Le budget est validé, la décision remonte au niveau groupe. Rappeler début septembre.",
+    "durationLabel": "Durée",
+    "durationPlaceholder": "en minutes",
+    "durationHint": "Facultatif. Laissé vide, rien ne sera affiché — plutôt qu'une durée que personne n'a mesurée.",
+    "outcomeLabel": "Issue de l'appel",
+    "outcomeHint": "Facultatif. Laissée vide, l'issue se lit « non renseignée ».",
+    "showAllOutcomes": "Toutes les issues",
+    "entryMode": {
+      "note": "Note libre",
+      "dictation": "Dictée",
+      "transcript": "Transcript"
+    },
+    "dictation": {
+      "start": "Dicter",
+      "stop": "Arrêter la dictée",
+      "unsupported": "La dictée n'est pas prise en charge par ce navigateur — colle ou tape le texte."
+    },
+    "debrief": {
+      "factLabel": "Fait marquant",
+      "needLabel": "Besoin",
+      "objectionLabel": "Objection",
+      "engagementLabel": "Engagement pris"
+    },
+    "recordingConsent": "Le contact a été informé que cet échange est noté",
+    "recap": {
+      "title": "Voici ce que je retiens"
+    },
+    "nextAction": {
+      "add": "Ajouter une prochaine action",
+      "ownerLabel": "Qui",
+      "dueDateLabel": "Quand",
+      "conditionLabel": "Condition",
+      "expectedResultLabel": "Résultat attendu",
+      "incomplete": "Owner, date et condition sont nécessaires pour créer une prochaine action."
+    },
+    "submit": "Enregistrer",
+    "saved": "Échange enregistré.",
+    "error": "L'enregistrement a échoué.",
+    "remove": "Retirer cette saisie",
+    "removed": "Saisie retirée.",
+    "removeError": "La saisie n’a pas pu être retirée.",
+    "discard": {
+      "title": "Abandonner cette saisie ?",
+      "keep": "Continuer la saisie",
+      "confirm": "Abandonner"
+    }
+  },
+  "cascadeProposal": {
+    "title": "Cette note peut alimenter le dossier",
+    "structuring": "Lecture de la note…",
+    "dismiss": "Ignorer"
+  },
+  "card": {
+    "contactTitle": "Historique des échanges",
+    "projectTitle": "Historique du projet",
+    "reply": "Répondre"
+  },
+  "verdict": {
+    "sent": "Parti",
+    "drafted": "Resté en brouillon",
+    "failed": "Échec",
+    "partial": "Parti en partie",
+    "unknown": "Sort indéterminé"
+  },
+  "taskCompletion": {
+    "noContact": "Personne n'a été contacté — cette case marque seulement la tâche comme faite."
+  },
+  "upcoming": {
+    "title": "À venir",
+    "planned": "Planifié, pas encore tenu"
+  },
+  "search": {
+    "label": "Rechercher dans l’historique",
+    "placeholder": "Objet, contenu, auteur…",
+    "noResult": "Aucun échange ne correspond à « {{query}} »."
+  },
+  "partial": {
+    "banner": "Historique partiel : la lecture de {{sources}} a échoué. Ce qui est affiché est ce qui a pu être lu ; le reste peut manquer.",
+    "sources": {
+      "mailbox": "ta messagerie",
+      "agenda": "ton agenda",
+      "telephony": "ta téléphonie",
+      "manual": "les saisies manuelles",
+      "crm": "ton CRM",
+      "system": "le journal"
+    }
+  },
+  "more": "Afficher plus ({{count}} restants)"
+}

@@ -1,0 +1,35 @@
+lot: claude-vieilles-l8b-ordre-etapes
+issues: [2164]
+
+changelog:
+  id: 2026-11-01-vieilles-l8b-ordre-etapes
+  comment: 'L8-bis (#2164.4 #2164.5 #2164.6) — l’analyse annonce la réutilisation des données existantes, la recherche actuelle et la recherche thématique ; l’avancement suit l’ordre d’affichage'
+  fr:
+    date: 1er novembre 2026
+    title: L’analyse annonce toutes ses étapes
+    items:
+      - 'L’analyse dit quand elle réutilise ce que tu sais déjà du compte, puis quand elle lance la recherche actuelle et la recherche thématique complémentaire.'
+      - 'Une étape que l’analyse n’a pas exécutée n’est ni cochée ni comptée : « Étape 4 sur 9 » reste juste.'
+  en:
+    date: November 1, 2026
+    title: The analysis announces all its steps
+    items:
+      - 'The analysis says when it reuses what you already know about the account, then when it starts the current research and the complementary thematic research.'
+      - 'A step the analysis did not run is neither ticked nor counted: “Step 4 of 9” stays accurate.'
+
+inserts:
+  - file: apps/api/src/modules/demo/demo-coverage.ts
+    text: |
+
+      /**
+       * #2164.4 / #2164.5 / #2164.6 (01/11/2026) — LES TROIS ÉTAPES D'ANALYSE (réutilisation, recherche actuelle,
+       * recherche thématique) : VIDE À DESSEIN. Elles n'existent que sur un job d'analyse RÉEL (worker API
+       * `runViaGraph`, service IA) ; l'espace de démonstration ne lance aucune analyse réelle (`demo_workspace`) et
+       * son parcours scripté (`features/demo/demo-run.ts`) n'émet que les étapes de base — une étape non émise n'est
+       * ni cochée ni comptée. Aucune table ni clé neuve : rien à semer.
+       */
+      export const DEMO_ANALYSIS_EXTRA_STEPS_COVERAGE: Readonly<{ state: 'vide_a_dessein'; reason: string }> = {
+        state: 'vide_a_dessein',
+        reason:
+          "#2164.4/.5/.6 — ces étapes sont émises par un job d'analyse réel ; la démo n'en lance aucun (`demo_workspace`) et son parcours scripté ne les émet pas, donc elles ne sont ni cochées ni comptées. Rien n'est écrit en base.",
+      }

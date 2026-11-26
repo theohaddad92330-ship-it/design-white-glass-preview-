@@ -1,0 +1,429 @@
+{
+  "_source": "BellumAI_Meta_Analyse_Besoins_Workflows_Requetes.pdf (extrait Drive 25/09/2026, anonymisé)",
+  "_section": "7. 60 requetes executables PRIO 1",
+  "_anonymise": "aucune donnee personnelle (requetes metier, un nom de client d'exemple : Orange, EDF)",
+  "_1948": "1948.4 — Corpus existant : 60 requetes utilisateur ; consommee aussi par 1948.15 (formulation reelle) et 1948.56 (recette : requetes beta telles quelles)",
+  "_note": "Copier/coller exact de la commande utilisateur, telle que definie par le protocole PASS/FAIL de la section 12 du meme document — jamais reformulee.",
+  "requetes": [
+    {
+      "id": 1,
+      "requete": "Repondre en brouillon a tous mes emails non lus avec une reponse pro",
+      "outils": "Gmail",
+      "resultat_attendu": "Brouillons reels crees; recap des threads traites",
+      "actions_agent": "Search unread, contexte, generate FR response, create draft To/CC/signature, label."
+    },
+    {
+      "id": 2,
+      "requete": "Preparer une relance pour tous les prospects sans reponse depuis 7 jours",
+      "outils": "Gmail",
+      "resultat_attendu": "Liste prospects + drafts relance",
+      "actions_agent": "Detecter outbound no-reply, exclure internes, draft relance personnalisee, tag."
+    },
+    {
+      "id": 3,
+      "requete": "Generer un email de relance post-reunion pour chaque meeting des 24 h",
+      "outils": "Gmail + Agenda",
+      "resultat_attendu": "Drafts merci/next steps par RDV client",
+      "actions_agent": "Lire agenda -24h, filtrer externes, generer draft, CC internes pertinents."
+    },
+    {
+      "id": 4,
+      "requete": "Lister les emails mentionnant budget et creer un suivi CRM",
+      "outils": "Gmail + HubSpot",
+      "resultat_attendu": "Récap mails + notes/tasks HubSpot",
+      "actions_agent": "Search budget, extraire contacts, note HubSpot, task J+3."
+    },
+    {
+      "id": 5,
+      "requete": "Creer un email presentant 3 CV anonymises au client Orange",
+      "outils": "Gmail + Drive",
+      "resultat_attendu": "Draft avec 3 CV PDF en PJ",
+      "actions_agent": "Rechercher CV, pitch profil, attacher PDF, draft sujet clair."
+    },
+    {
+      "id": 6,
+      "requete": "Lister les reponses positives clients de la semaine",
+      "outils": "Gmail",
+      "resultat_attendu": "Tableau clients positifs + prochaine action",
+      "actions_agent": "Classifier intent positif, lister societe/sujet/date, proposer RDV ou doc."
+    },
+    {
+      "id": 7,
+      "requete": "Detecter tous les mails mentionnant TJM",
+      "outils": "Gmail",
+      "resultat_attendu": "Liste threads + valeurs TJM si disponibles",
+      "actions_agent": "Search TJM/tarif, extraire montants, liens threads."
+    },
+    {
+      "id": 8,
+      "requete": "Activer une reponse d'absence pro sur une periode donnee",
+      "outils": "Gmail",
+      "resultat_attendu": "Vacation responder configure ou draft de configuration",
+      "actions_agent": "Definir dates, message FR, signature, confirmation."
+    },
+    {
+      "id": 9,
+      "requete": "Extraire les dernieres conversations avec EDF",
+      "outils": "Gmail",
+      "resultat_attendu": "Timeline EDF + synthese 10 lignes",
+      "actions_agent": "Search domaine/sujet, compiler dates/PJ, synthese, proposer suivi."
+    },
+    {
+      "id": 10,
+      "requete": "Preparer un email avec la presentation BellumAI en PJ pour un prospect",
+      "outils": "Drive + Gmail",
+      "resultat_attendu": "Draft Gmail avec PDF attache",
+      "actions_agent": "Trouver deck recent, exporter PDF, generer email, draft."
+    },
+    {
+      "id": 11,
+      "requete": "Retrouver tous les emails avec contrat ou signature",
+      "outils": "Gmail",
+      "resultat_attendu": "Liste contrats a signer/signes/a relancer",
+      "actions_agent": "Search keywords, classifier statut, proposer drafts de relance."
+    },
+    {
+      "id": 12,
+      "requete": "Detecter les mails contenant une fiche de poste JD",
+      "outils": "Gmail",
+      "resultat_attendu": "Label JD_detected + resume besoin",
+      "actions_agent": "Detecter PJ + keywords, resumer mission/TJM/duree, proposer matching."
+    },
+    {
+      "id": 13,
+      "requete": "Identifier les mails feedback consultant",
+      "outils": "Gmail",
+      "resultat_attendu": "Liste feedbacks + sentiment + actions",
+      "actions_agent": "Search feedback/retour, classifier positif/negatif, proposer reponse."
+    },
+    {
+      "id": 14,
+      "requete": "Lister tous les CV envoyes a un client le mois dernier",
+      "outils": "Gmail",
+      "resultat_attendu": "Historique CV envoyes avec dates/PJ",
+      "actions_agent": "Search to:client + CV, extraire pieces et noms."
+    },
+    {
+      "id": 15,
+      "requete": "Lister les emails mentionnant call/visio dans les 7 jours",
+      "outils": "Gmail",
+      "resultat_attendu": "Liste events potentiels + creation agenda proposee",
+      "actions_agent": "Search call/visio/date, verifier event, proposer creation si absent."
+    },
+    {
+      "id": 16,
+      "requete": "Envoyer une synthese hebdo des mails non traites",
+      "outils": "Gmail",
+      "resultat_attendu": "Digest priorise client/prospect/admin",
+      "actions_agent": "Detecter no-reply/unread/urgent, grouper, proposer drafts rapides."
+    },
+    {
+      "id": 17,
+      "requete": "Creer un RDV EDF - Project Update mardi 15h + Meet + recap mail",
+      "outils": "Agenda + Gmail",
+      "resultat_attendu": "Event cree + draft de confirmation",
+      "actions_agent": "Créer event titre pro, Meet, invites, draft recap."
+    },
+    {
+      "id": 18,
+      "requete": "Rappel -1 h avant chaque reunion avec titre, participants, lien",
+      "outils": "Agenda",
+      "resultat_attendu": "Notification programmee",
+      "actions_agent": "Ajouter alarme -60min et message contexte."
+    },
+    {
+      "id": 19,
+      "requete": "Resume quotidien des RDV a 8 h 30",
+      "outils": "Agenda",
+      "resultat_attendu": "Digest quotidien affiche/envoye",
+      "actions_agent": "Cron, events jour, participants, liens, docs."
+    },
+    {
+      "id": 20,
+      "requete": "Recap hebdo des meetings vendredi 16 h",
+      "outils": "Agenda",
+      "resultat_attendu": "Stats semaine + actions suggerees",
+      "actions_agent": "Count meetings, duration, contacts, actions follow-up."
+    },
+    {
+      "id": 21,
+      "requete": "Forecast semaine prochaine vendredi 11 h",
+      "outils": "Agenda",
+      "resultat_attendu": "Planning N+1 + slots libres/conflits",
+      "actions_agent": "Lister events, detecter vides, proposer blocs prospection."
+    },
+    {
+      "id": 22,
+      "requete": "Si un RDV client est annule, proposer 3 creneaux + draft replanif",
+      "outils": "Agenda + Gmail",
+      "resultat_attendu": "3 creneaux + draft de replanif",
+      "actions_agent": "Detecter cancel externe, lire dispo, generer draft."
+    },
+    {
+      "id": 23,
+      "requete": "Alerte si aucun RDV dans les 3 jours + blocs prospection",
+      "outils": "Agenda",
+      "resultat_attendu": "Alerte + proposition events",
+      "actions_agent": "Scanner J+3, proposer creaneaux, creer si valide."
+    },
+    {
+      "id": 24,
+      "requete": "Lister RDV du dernier mois et extraire emails clients",
+      "outils": "Agenda + Drive",
+      "resultat_attendu": "CSV des contacts rencontres",
+      "actions_agent": "Export events 30j, filtrer externes, CSV."
+    },
+    {
+      "id": 25,
+      "requete": "Generer un compte-rendu automatique post-RDV",
+      "outils": "Agenda + Gmail + HubSpot",
+      "resultat_attendu": "CR + draft + log CRM",
+      "actions_agent": "Lire event/notes, structurer besoin/next steps, log HubSpot, draft merci."
+    },
+    {
+      "id": 26,
+      "requete": "Creer un meeting et attacher le document Drive Sales pitch Bellum",
+      "outils": "Agenda + Drive",
+      "resultat_attendu": "Event avec document attache",
+      "actions_agent": "Find file Drive, create event, attach link/permission."
+    },
+    {
+      "id": 27,
+      "requete": "Logger tous mes RDV Google Calendar de la semaine dans HubSpot",
+      "outils": "HubSpot + Agenda",
+      "resultat_attendu": "Meetings HubSpot lies contacts/societes",
+      "actions_agent": "Events list, upsert contacts/company, create engagement idempotent."
+    },
+    {
+      "id": 28,
+      "requete": "Lister les leads a relancer cette semaine",
+      "outils": "HubSpot",
+      "resultat_attendu": "Liste leads + action proposee",
+      "actions_agent": "Query Lead Status, sort priority, proposer drafts Gmail."
+    },
+    {
+      "id": 29,
+      "requete": "Generer le rapport hebdo nouveaux contacts, meetings, deals, taches",
+      "outils": "HubSpot + Drive",
+      "resultat_attendu": "PDF/Sheet reporting",
+      "actions_agent": "Aggregate stats 7j, create PDF/Sheet, share."
+    },
+    {
+      "id": 30,
+      "requete": "Extraire 10 hot leads ajoutes cette semaine CSV Drive",
+      "outils": "HubSpot + Drive",
+      "resultat_attendu": "CSV sauvegarde",
+      "actions_agent": "Filter create date, sort score/activity, export."
+    },
+    {
+      "id": 31,
+      "requete": "Nettoyer les doublons contacts/companies",
+      "outils": "HubSpot",
+      "resultat_attendu": "Liste de merges a valider",
+      "actions_agent": "Detect duplicate email/domain/fuzzy, preview, merge on validation."
+    },
+    {
+      "id": 32,
+      "requete": "Creer la sequence Prospection RH - Semaine 1",
+      "outils": "HubSpot",
+      "resultat_attendu": "Sequence creee en pause",
+      "actions_agent": "Create 3 email steps J1/J3/J6, no send by default."
+    },
+    {
+      "id": 33,
+      "requete": "Enroler 10 leads RH IDF dans la sequence sans envoyer",
+      "outils": "HubSpot",
+      "resultat_attendu": "Enrollment pending/paused",
+      "actions_agent": "Find list, enroll paused, recap validation."
+    },
+    {
+      "id": 34,
+      "requete": "Mettre a jour statut lead quand RDV confirme",
+      "outils": "HubSpot + Agenda",
+      "resultat_attendu": "Lead status updated + planned meeting",
+      "actions_agent": "Watch accepted event, upsert contact, create planned meeting."
+    },
+    {
+      "id": 35,
+      "requete": "Creer un deal Mission X - Client Y avec stage + amount + associations",
+      "outils": "HubSpot",
+      "resultat_attendu": "Deal cree et lie",
+      "actions_agent": "Create deal, associate contact/company, note contexte."
+    },
+    {
+      "id": 36,
+      "requete": "Creer une fiche societe enrichie secteur/taille",
+      "outils": "HubSpot",
+      "resultat_attendu": "Company record propre",
+      "actions_agent": "Upsert by domain, fill properties if provided, source Bellum."
+    },
+    {
+      "id": 37,
+      "requete": "Lister CTO/RH a Paris avec emails + telephones Excel",
+      "outils": "HubSpot + Drive",
+      "resultat_attendu": "XLSX exporte",
+      "actions_agent": "Filter persona/location, export columns."
+    },
+    {
+      "id": 38,
+      "requete": "Identifier leads dormants > 6 mois et plan de reactivation",
+      "outils": "HubSpot + Gmail",
+      "resultat_attendu": "Segments + drafts de reactivation",
+      "actions_agent": "Filter last_activity, segment, create draft sequence."
+    },
+    {
+      "id": 39,
+      "requete": "Ajouter mes notes d'entretien sur fiche contact et associer meeting",
+      "outils": "HubSpot",
+      "resultat_attendu": "Note CRM liee au contact/meeting",
+      "actions_agent": "Create engagement note, link objects."
+    },
+    {
+      "id": 40,
+      "requete": "Mettre en place un scoring leads",
+      "outils": "HubSpot",
+      "resultat_attendu": "Score simple stocke",
+      "actions_agent": "Read events, calculate score, write property."
+    },
+    {
+      "id": 41,
+      "requete": "Detecter prospects sans suivi post-proposition et creer tache",
+      "outils": "HubSpot",
+      "resultat_attendu": "Tasks follow-up creees",
+      "actions_agent": "Find stage proposal + inactivity, create task J+2."
+    },
+    {
+      "id": 42,
+      "requete": "Importer le fichier Drive Prospects_Q3.xlsx dans HubSpot",
+      "outils": "HubSpot + Drive",
+      "resultat_attendu": "Contacts upsertes",
+      "actions_agent": "Read sheet, map columns, upsert contacts/companies."
+    },
+    {
+      "id": 43,
+      "requete": "Exporter pipeline deals avec next activity",
+      "outils": "HubSpot + Drive",
+      "resultat_attendu": "CSV pipeline",
+      "actions_agent": "List open deals, join next activity, export."
+    },
+    {
+      "id": 44,
+      "requete": "Apres chaque meeting, creer une tache follow-up J+2",
+      "outils": "HubSpot + Agenda",
+      "resultat_attendu": "Task CRM due J+2",
+      "actions_agent": "Post-meeting hook, create task linked contact/deal."
+    },
+    {
+      "id": 45,
+      "requete": "Lister deals gagnes/perdus du trimestre precedent",
+      "outils": "HubSpot",
+      "resultat_attendu": "Synthese Won/Lost",
+      "actions_agent": "Filter close date Q-1, group by stage."
+    },
+    {
+      "id": 46,
+      "requete": "Associer besoin client Boond et candidats disponibles",
+      "outils": "Boond",
+      "resultat_attendu": "Top candidats matches",
+      "actions_agent": "Read need, filter available consultants, score."
+    },
+    {
+      "id": 47,
+      "requete": "Generer shortlist candidats 3-5 pour un besoin",
+      "outils": "Boond + Gmail",
+      "resultat_attendu": "Shortlist + draft client",
+      "actions_agent": "Matching, create profile cards, draft email."
+    },
+    {
+      "id": 48,
+      "requete": "Lister missions qui se terminent dans 30 jours",
+      "outils": "Boond + Agenda",
+      "resultat_attendu": "Liste + rappels agenda",
+      "actions_agent": "Filter end date, create reminders."
+    },
+    {
+      "id": 49,
+      "requete": "Lister consultants en intercontrat > 30 jours",
+      "outils": "Boond",
+      "resultat_attendu": "Liste interco + actions push",
+      "actions_agent": "Filter status/age, suggest client push."
+    },
+    {
+      "id": 50,
+      "requete": "Mettre a jour TJM et dispo d'un consultant",
+      "outils": "Boond",
+      "resultat_attendu": "Fiche consultant mise a jour",
+      "actions_agent": "Update fields + timestamp."
+    },
+    {
+      "id": 51,
+      "requete": "Generer rapport mensuel staffing",
+      "outils": "Boond + Drive",
+      "resultat_attendu": "PDF/XLS staffing",
+      "actions_agent": "Aggregate missions/dispo/TJM, create report."
+    },
+    {
+      "id": 52,
+      "requete": "Creer une mission pour consultant depuis email recu",
+      "outils": "Gmail + Boond",
+      "resultat_attendu": "Mission pre-remplie a valider",
+      "actions_agent": "Parse email, extract client/dates/TJM, create draft mission."
+    },
+    {
+      "id": 53,
+      "requete": "Envoyer confirmation de mission au consultant",
+      "outils": "Boond + Gmail",
+      "resultat_attendu": "Draft confirmation mission",
+      "actions_agent": "Read mission data, draft email, attach docs."
+    },
+    {
+      "id": 54,
+      "requete": "Exporter besoins ouverts par client",
+      "outils": "Boond + Drive",
+      "resultat_attendu": "CSV besoins ouverts",
+      "actions_agent": "Query open needs, group by client, export."
+    },
+    {
+      "id": 55,
+      "requete": "Synchroniser Boond et HubSpot clients/contacts",
+      "outils": "Boond + HubSpot",
+      "resultat_attendu": "Diff + updates safe",
+      "actions_agent": "Map email/domain, upsert safe, log changes."
+    },
+    {
+      "id": 56,
+      "requete": "Trouver CV Tech lead Java Angular et lister 5 meilleurs",
+      "outils": "Drive",
+      "resultat_attendu": "Top 5 CV avec liens",
+      "actions_agent": "Search content/name PDF/DOCX, score keywords."
+    },
+    {
+      "id": 57,
+      "requete": "Recuperer presentation BellumAI et preparer mail avec PJ",
+      "outils": "Drive + Gmail",
+      "resultat_attendu": "Draft avec PJ PDF",
+      "actions_agent": "Find latest deck, export PDF, draft."
+    },
+    {
+      "id": 58,
+      "requete": "Creer Google Sheet Prospection_Semaine avec 30 leads HubSpot",
+      "outils": "Drive + HubSpot",
+      "resultat_attendu": "Sheet rempli et partage",
+      "actions_agent": "Query 30 leads, create Sheet columns, fill."
+    },
+    {
+      "id": 59,
+      "requete": "Lister fichiers Drive lies a un client, tries par date",
+      "outils": "Drive",
+      "resultat_attendu": "Tableau liens Drive",
+      "actions_agent": "Search client metadata/content, sort last modified."
+    },
+    {
+      "id": 60,
+      "requete": "Apres reception d'un AO par email, creer brouillon de reponse et taches",
+      "outils": "Gmail + HubSpot + Drive",
+      "resultat_attendu": "AO resume + draft + tasks",
+      "actions_agent": "Detect AO, summarize, store Drive, create task deadlines."
+    }
+  ]
+}

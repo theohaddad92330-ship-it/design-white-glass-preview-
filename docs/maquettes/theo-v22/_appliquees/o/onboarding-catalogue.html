@@ -1,0 +1,5727 @@
+<!doctype html>
+<html lang="fr" class="dark">
+  <head>
+    <meta charset="utf-8" />
+    <title>Bellum · Onboarding · Les thèmes</title>
+    <style id="theo">
+      :root {
+        --primary: #5b3ee8;
+        --primary-hover: #3a26a0;
+        --accent: #5b3ee8;
+        --accent-bg: #f4f2ff;
+        --accent-line: #e0d9ff;
+        --bg: #ffffff;
+        --surface: #ffffff;
+        --surface2: #f4f4f5;
+        --sidebar: #ffffff;
+        --border: #e4e4e7;
+        --border2: #d4d4d8;
+        --text: #18181b;
+        --secondary: #52525b;
+        --muted: #6b6b73;
+        --success: #0a6b4a;
+        --success-bg: #dbf3e9;
+        --warning: #7d5206;
+        --warning-bg: #fbeed3;
+        --danger: #9c211a;
+        --danger-bg: #fce5e3;
+        --info: #14568c;
+        --info-bg: #dfeefb;
+        --sidebar-w: 224px;
+        --shadow: 0 12px 48px rgba(24, 24, 27, 0.12);
+        --r: 14px;
+        --on-primary: #fff;
+        color-scheme: light;
+      }
+      :root.dark {
+        --bg: #09090b;
+        --surface: #18181b;
+        --surface2: #232327;
+        --sidebar: #0e0e11;
+        --border: #2e2e33;
+        --border2: #3f3f46;
+        --text: #fafafa;
+        --secondary: #a1a1aa;
+        --muted: #a1a1aa;
+        --accent: #9e87ff;
+        --accent-bg: #221b3c;
+        --accent-line: #40305f;
+        --success: #6ee7b7;
+        --success-bg: #15332b;
+        --warning: #fcd34d;
+        --warning-bg: #3a2d17;
+        --danger: #fca5a5;
+        --danger-bg: #3a2024;
+        --info: #7dd3fc;
+        --info-bg: #182e40;
+        --shadow: 0 16px 56px #0008;
+        color-scheme: dark;
+      }
+      * {
+        box-sizing: border-box;
+      }
+      html,
+      body {
+        margin: 0px;
+        min-height: 100%;
+        scroll-behavior: auto;
+      }
+      body {
+        font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Helvetica, Arial, sans-serif;
+        font-size: 15px;
+        line-height: 1.5;
+        color: var(--text);
+        background: var(--bg);
+        -webkit-font-smoothing: antialiased;
+      }
+      button,
+      input,
+      select,
+      textarea {
+        font: inherit;
+      }
+      button,
+      a,
+      input,
+      select,
+      textarea {
+        -webkit-tap-highlight-color: transparent;
+      }
+      button {
+        color: inherit;
+        cursor: pointer;
+      }
+      button {
+        border: 0px;
+        background: none;
+      }
+      button:disabled {
+        opacity: 0.45;
+        cursor: not-allowed;
+      }
+      a {
+        color: inherit;
+        text-decoration: none;
+      }
+      button,
+      a {
+        touch-action: manipulation;
+      }
+      input,
+      select,
+      textarea {
+        color: var(--text);
+        background: var(--surface);
+        border: 1px solid var(--border2);
+        border-radius: 9px;
+        padding: 10px 12px;
+        min-height: 42px;
+        min-width: 0px;
+        outline: none;
+      }
+      input::placeholder,
+      textarea::placeholder {
+        color: var(--muted);
+      }
+      input[type='checkbox'] {
+        accent-color: var(--primary);
+        min-height: 0px;
+        width: 17px;
+        height: 17px;
+        padding: 0px;
+        cursor: pointer;
+      }
+      input:focus,
+      select:focus,
+      textarea:focus {
+        border-color: var(--accent);
+        box-shadow: 0 0 0 3px var(--accent-bg);
+      }
+      :focus-visible {
+        outline: 2px solid var(--accent);
+        outline-offset: 3px;
+      }
+      h1,
+      h2,
+      h3,
+      h4,
+      p {
+        margin: 0px;
+      }
+      h1 {
+        font-size: 30px;
+        font-weight: 650;
+        line-height: 1.2;
+        letter-spacing: -0.9px;
+      }
+      h2 {
+        font-size: 20px;
+        font-weight: 650;
+        letter-spacing: -0.35px;
+        line-height: 1.35;
+      }
+      h3 {
+        font-size: 16px;
+        font-weight: 650;
+        letter-spacing: -0.18px;
+      }
+      svg {
+        vertical-align: middle;
+      }
+      .icon {
+        width: 19px;
+        height: 19px;
+        flex: 0 0 auto;
+        display: inline-block;
+      }
+      .icon.small {
+        width: 16px;
+        height: 16px;
+      }
+      .small {
+        font-size: 13px;
+      }
+      .main-shell {
+        margin-left: var(--sidebar-w);
+        min-height: 100vh;
+      }
+      .topbar {
+        height: 64px;
+        border-bottom: 1px solid var(--border);
+        background: var(--bg);
+        padding: 0px 30px;
+        display: flex;
+        align-items: center;
+        gap: 14px;
+        position: sticky;
+        top: 0px;
+        z-index: 15;
+      }
+      .icon-btn {
+        display: inline-grid;
+        place-items: center;
+        width: 34px;
+        height: 34px;
+        border-radius: 8px;
+        color: var(--secondary);
+        flex: 0 0 auto;
+      }
+      .icon-btn:hover {
+        background: var(--surface2);
+        color: var(--text);
+      }
+      .canvas {
+        max-width: 1600px;
+        margin: 0px auto;
+        padding: 32px 34px 44px;
+        min-width: 0px;
+      }
+      .btn {
+        min-height: 39px;
+        padding: 9px 14px;
+        display: inline-flex;
+        align-items: center;
+        justify-content: center;
+        gap: 7px;
+        font-size: 13px;
+        font-weight: 600;
+        line-height: 1.35;
+        border-radius: 8px;
+        border: 1px solid var(--border);
+        background: var(--surface);
+        transition: background 0.12s;
+        white-space: normal;
+        text-align: center;
+      }
+      .btn:hover {
+        background: var(--surface2);
+      }
+      .btn.primary {
+        background: var(--primary);
+        color: rgb(255, 255, 255);
+        border-color: var(--primary);
+      }
+      .btn.primary:hover {
+        background: var(--primary-hover);
+      }
+      .btn.soft {
+        color: var(--accent);
+        border-color: var(--accent-line);
+        background: var(--accent-bg);
+      }
+      .btn.plain {
+        border-color: transparent;
+        background: none;
+        padding-left: 7px;
+        padding-right: 7px;
+      }
+      .btn.sm {
+        min-height: 33px;
+        padding: 6px 10px;
+        font-size: 12px;
+      }
+      .btn .icon {
+        height: 17px;
+        width: 17px;
+      }
+      dialog {
+        border: 1px solid var(--border);
+        border-radius: 16px;
+        padding: 0px;
+        box-shadow: var(--shadow);
+        color: var(--text);
+        background: var(--surface);
+        max-height: calc(-50px + 100dvh);
+        width: min(640px, -36px + 100vw);
+        overflow: auto;
+      }
+      dialog::backdrop {
+        background: rgba(9, 9, 11, 0.33);
+      }
+      .dialog-head {
+        position: sticky;
+        top: 0px;
+        background: var(--surface);
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        padding: 20px 24px;
+        border-bottom: 1px solid var(--border);
+        z-index: 2;
+      }
+      .dialog-head h2 {
+        font-size: 18px;
+      }
+      .dialog-body {
+        padding: 24px;
+      }
+      .dialog-footer {
+        display: flex;
+        justify-content: flex-end;
+        align-items: center;
+        gap: 10px;
+        border-top: 1px solid var(--border);
+        padding: 16px 24px;
+        background: var(--surface);
+        position: sticky;
+        bottom: 0px;
+      }
+      .toast-container {
+        position: fixed;
+        bottom: 22px;
+        left: calc(var(--sidebar-w) + 26px);
+        z-index: 100;
+        display: grid;
+        gap: 8px;
+        max-width: 480px;
+        pointer-events: none;
+      }
+      .toast {
+        padding: 12px 17px;
+        background: var(--text);
+        color: var(--bg);
+        border-radius: 9px;
+        box-shadow: var(--shadow);
+        font-size: 13px;
+        display: flex;
+        align-items: center;
+        gap: 10px;
+        animation: 0.18s ease-out 0s 1 normal none running toast-in;
+      }
+      @keyframes fade-in {
+        0% {
+          opacity: 0.5;
+          transform: translateY(2px);
+        }
+        100% {
+          opacity: 1;
+          transform: none;
+        }
+      }
+      @keyframes toast-in {
+        0% {
+          opacity: 0;
+          transform: translateY(8px);
+        }
+        100% {
+          opacity: 1;
+          transform: none;
+        }
+      }
+      @media (min-width: 1600px) {
+        .canvas {
+          padding: 38px 45px 50px;
+        }
+        .topbar {
+          padding: 0px 40px;
+        }
+      }
+      @media (max-width: 1250px) {
+        :root {
+          --sidebar-w: 207px;
+        }
+        .canvas {
+          padding: 28px 25px 40px;
+        }
+        .topbar {
+          padding: 0px 24px;
+        }
+      }
+      @media (max-width: 760px) {
+        :root {
+          --sidebar-w: 0px;
+        }
+        .nav-open::after {
+          content: '';
+          position: fixed;
+          inset: 0px;
+          background: rgba(0, 0, 0, 0.2);
+          z-index: 20;
+          pointer-events: none;
+        }
+        .topbar {
+          height: 57px;
+          padding: 0px 16px;
+          gap: 9px;
+        }
+        .canvas {
+          padding: 23px 18px 38px;
+        }
+        h1 {
+          font-size: 27px;
+        }
+        .btn {
+          font-size: 12px;
+          min-height: 38px;
+        }
+        .toast-container {
+          left: 16px;
+          right: 16px;
+          bottom: 18px;
+          max-width: none;
+        }
+        dialog,
+        dialog.wide {
+          width: calc(-22px + 100vw);
+          max-height: calc(-24px + 100dvh);
+        }
+        .dialog-head {
+          padding: 17px;
+        }
+        .dialog-body {
+          padding: 18px;
+        }
+        .dialog-footer {
+          padding: 14px 18px;
+        }
+      }
+      @media (prefers-reduced-motion: reduce) {
+        *,
+        ::before,
+        ::after {
+          animation: auto ease 0s 1 normal none running none !important;
+          transition: none !important;
+          scroll-behavior: auto !important;
+        }
+      }
+      @media print {
+        .sidebar,
+        .topbar,
+        .feedback-fab,
+        .toast-container,
+        .page-actions,
+        button {
+          display: none !important;
+        }
+        .main-shell {
+          margin: 0px;
+        }
+        .canvas {
+          padding: 15px;
+        }
+        body {
+          font-size: 12px;
+        }
+      }
+      body[data-page='onboarding'] .main-shell {
+        margin-left: 0px !important;
+      }
+      body[data-page='onboarding'] .canvas {
+        max-width: 1460px;
+        margin: 0px auto;
+        padding: 26px 28px 60px;
+      }
+      @media (max-width: 800px) {
+        body[data-page='onboarding'] .canvas {
+          padding: 17px 14px 42px;
+        }
+      }
+      :root {
+        --bg: #f5f5f8;
+        --surface: #ffffff;
+        --surface2: #f1f2f6;
+        --border: #e5e6ee;
+        --text: #1c1c28;
+        --secondary: #5d5e70;
+        --muted: #727385;
+        --r: 18px;
+        --sidebar-w: 232px;
+        --shadow: 0 3px 7px -5px #20203924, 0 12px 30px -24px #25244130;
+        --ink: #211e39;
+        --violet-wash: #eeebff;
+      }
+      html.dark {
+        --bg: #101014;
+        --surface: #1a1a22;
+        --surface2: #24242e;
+        --border: #30303c;
+        --text: #f0eff8;
+        --secondary: #b4b3c5;
+        --muted: #9695aa;
+        --shadow: 0 10px 26px -18px #0009;
+        --ink: #211e39;
+        --violet-wash: #29233f;
+      }
+      body {
+        font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Arial, sans-serif;
+        font-size: 15px;
+        letter-spacing: -0.012em;
+        background: var(--bg);
+        color: var(--text);
+      }
+      h1 {
+        font-size: 36px;
+        line-height: 1.13;
+        letter-spacing: -1.25px;
+        font-weight: 720;
+      }
+      h2 {
+        font-size: 23px;
+        letter-spacing: -0.55px;
+      }
+      h3 {
+        font-size: 17px;
+        line-height: 1.4;
+      }
+      .small {
+        font-size: 13px;
+        line-height: 1.55;
+      }
+      .btn {
+        font-size: 14px;
+        min-height: 42px;
+        border-radius: 10px;
+        letter-spacing: -0.1px;
+      }
+      .btn.sm {
+        font-size: 13px;
+        min-height: 35px;
+      }
+      .btn.primary {
+        box-shadow: rgba(91, 62, 232, 0.5) 0px 3px 9px -5px;
+      }
+      .btn.plain {
+        box-shadow: none;
+      }
+      .icon-btn {
+        width: 36px;
+        height: 36px;
+      }
+      .icon {
+        width: 20px;
+        height: 20px;
+      }
+      .topbar {
+        height: 64px;
+        background: var(--surface);
+        padding: 0px 30px;
+        z-index: 24;
+      }
+      .canvas {
+        max-width: 1720px;
+        padding: 34px 34px 55px;
+      }
+      body[data-page='onboarding'] .canvas {
+        max-width: 1480px;
+        padding-top: 24px;
+      }
+      body[data-page='onboarding'] .topbar {
+        background: transparent;
+        border-bottom: none;
+        box-shadow: none;
+      }
+      @media (max-width: 760px) {
+        body[data-page='onboarding'] .canvas {
+          padding-left: 14px;
+          padding-right: 14px;
+        }
+      }
+      @media (max-width: 1320px) {
+        :root {
+          --sidebar-w: 212px;
+        }
+        .canvas {
+          padding: 27px 25px 45px;
+        }
+        .topbar {
+          padding: 0px 23px;
+        }
+      }
+      @media (max-width: 960px) {
+        :root {
+          --sidebar-w: 190px;
+        }
+        .canvas {
+          padding: 24px 19px 40px;
+        }
+        .topbar {
+          padding: 0px 18px;
+        }
+      }
+      @media (max-width: 760px) {
+        :root {
+          --sidebar-w: 0px;
+        }
+        .main-shell {
+          margin-left: 0px;
+        }
+        .topbar {
+          height: 56px;
+          padding: 0px 13px;
+        }
+        .canvas {
+          padding: 23px 16px 40px;
+        }
+      }
+      .btn:focus-visible,
+      .icon-btn:focus-visible,
+      button:focus-visible,
+      a:focus-visible {
+        outline: 2px solid var(--primary);
+        outline-offset: 3px;
+      }
+      @keyframes d3-spin {
+        100% {
+          transform: rotate(360deg);
+        }
+      }
+      body:has(dialog.d3-dialog[open]) {
+        overflow: hidden;
+      }
+      html.dark {
+        color-scheme: dark;
+        --bg: #101014;
+        --surface: #1a1a22;
+        --surface2: #24242e;
+        --border: #30303c;
+        --text: #f0eff8;
+        --secondary: #b4b3c5;
+        --muted: #9695aa;
+        --primary: #6545ef;
+        --primary-hover: #7556f4;
+        --accent: #b4a0ff;
+        --accent-bg: #28223e;
+        --accent-line: #4a3b68;
+        --success: #62d4b0;
+        --success-bg: #19322c;
+        --warning: #eec07d;
+        --warning-bg: #352d21;
+        --danger: #f1a2a9;
+        --danger-bg: #38242b;
+        --info: #91beef;
+        --info-bg: #233043;
+        --shadow: 0 10px 26px -18px #0009;
+        --ink: #211e39;
+        --violet-wash: #29233f;
+      }
+      html,
+      body {
+        background: var(--bg);
+        color: var(--text);
+      }
+      html.dark body {
+        color-scheme: dark;
+      }
+      dialog {
+        background: var(--surface);
+        color: var(--text);
+        border: 1px solid var(--border);
+      }
+      dialog::backdrop {
+        background: rgba(8, 8, 11, 0.75);
+        backdrop-filter: blur(5px);
+      }
+      html.dark input,
+      html.dark textarea,
+      html.dark select {
+        color-scheme: dark;
+      }
+      input::placeholder,
+      textarea::placeholder {
+        color: var(--muted);
+        opacity: 1;
+      }
+      button:disabled {
+        opacity: 0.42;
+        cursor: not-allowed;
+      }
+      button:focus-visible,
+      a:focus-visible,
+      select:focus-visible,
+      input:focus-visible,
+      textarea:focus-visible,
+      [role='button']:focus-visible {
+        outline: 2px solid var(--accent);
+        outline-offset: 3px;
+      }
+      button,
+      a,
+      input,
+      select,
+      textarea {
+        -webkit-tap-highlight-color: transparent;
+      }
+      html.dark .source-line,
+      html.dark .dialog-head,
+      html.dark .dialog-footer {
+        border-color: var(--border);
+      }
+      html.dark .toast {
+        background: rgb(41, 40, 51);
+        color: var(--text);
+        border-color: rgb(72, 67, 84);
+      }
+      #dialog .dialog-footer {
+        flex-wrap: wrap;
+      }
+      #dialog .dialog-footer .btn {
+        line-height: 1.5;
+      }
+      #dialog:has(.d3-preview-layout) {
+        width: min(1260px, -32px + 100vw);
+      }
+      @media (max-width: 900px) {
+        .topbar {
+          padding-right: 17px;
+          padding-left: 17px;
+        }
+      }
+      @media (max-width: 560px) {
+        .btn {
+          word-break: normal;
+        }
+        dialog {
+          max-width: calc(-20px + 100vw) !important;
+          max-height: calc(-24px + 100dvh) !important;
+        }
+      }
+      @media print {
+        .sidebar,
+        .topbar,
+        .feedback-fab,
+        .a4-selection {
+          display: none !important;
+        }
+        .main-shell {
+          margin: 0px !important;
+        }
+        .canvas {
+          padding: 20px !important;
+        }
+        html {
+          print-color-adjust: exact;
+        }
+      }
+      :root.dark {
+        --secondary: #b8b6c7;
+        --muted: #a3a0b2;
+        --v7-line: #3b3947;
+        --v7-panel: #1c1b23;
+        --v7-ease: cubic-bezier(0.2, 0.7, 0.25, 1);
+      }
+      :where(button, a, input, select, textarea) {
+        scroll-margin-block: 90px;
+      }
+      :where(.btn, .icon-btn, .d3-chip, .d3-active-chip, .tag-button) {
+        transition:
+          background 140ms var(--v7-ease),
+          border-color 140ms var(--v7-ease),
+          color 140ms var(--v7-ease),
+          box-shadow 140ms var(--v7-ease),
+          transform 140ms var(--v7-ease);
+      }
+      .btn:not(:disabled):hover {
+        border-color: rgb(104, 97, 118);
+        box-shadow: rgba(255, 255, 255, 0.035) 0px 1px 0px inset;
+      }
+      .btn.primary:not(:disabled):hover {
+        background: var(--primary-hover);
+        border-color: rgb(158, 137, 255);
+        box-shadow:
+          rgba(91, 62, 232, 0.145) 0px 4px 18px,
+          rgba(255, 255, 255, 0.14) 0px 1px 0px inset;
+      }
+      :where(.btn, .icon-btn):not(:disabled):active {
+        transform: translateY(1px);
+      }
+      .icon-btn:not(:disabled):hover {
+        background: rgb(43, 39, 54);
+        color: rgb(243, 239, 255);
+        border-color: rgb(90, 80, 107);
+      }
+      :where(.btn, .icon-btn, a, [role='option'], [role='button']):focus-visible {
+        outline: 2px solid var(--accent);
+        outline-offset: 3px;
+      }
+      input::placeholder,
+      textarea::placeholder {
+        color: rgb(165, 160, 181);
+        opacity: 1;
+      }
+      input[type='checkbox'],
+      input[type='radio'] {
+        accent-color: var(--primary);
+        cursor: pointer;
+      }
+      #dialog .dialog-head > h2 {
+        font-size: 18px;
+        font-weight: 650;
+        color: var(--text);
+        letter-spacing: -0.3px;
+        line-height: 1.45;
+      }
+      #dialog .dialog-head {
+        padding: 19px 24px;
+        background: rgb(25, 24, 31);
+      }
+      #dialog .dialog-head .icon-btn {
+        width: 38px;
+        height: 38px;
+        border-radius: 12px;
+        border: 1px solid rgb(58, 55, 69);
+        color: rgb(210, 202, 223);
+      }
+      #dialog .dialog-footer {
+        z-index: 5;
+        background: rgb(25, 24, 31);
+        box-shadow: rgba(0, 0, 0, 0.063) 0px -8px 25px;
+      }
+      #dialog :where(input:not([type='checkbox']):not([type='radio']), textarea) {
+        border-radius: 12px;
+        border-color: rgb(69, 64, 79);
+        background: rgb(28, 26, 34);
+        font-size: 14px;
+      }
+      #dialog :where(input:not([type='checkbox']):not([type='radio']), textarea):hover {
+        border-color: rgb(114, 102, 127);
+      }
+      #dialog :where(input:not([type='checkbox']):not([type='radio']), textarea):focus {
+        border-color: var(--accent);
+        box-shadow: rgba(161, 130, 255, 0.094) 0px 0px 0px 3px;
+      }
+      #dialog .btn {
+        min-height: 43px;
+        font-size: 13.5px;
+        border-radius: 11px;
+      }
+      @keyframes v7-dialog-in {
+        0% {
+          opacity: 0.7;
+          transform: translateY(6px);
+        }
+        100% {
+          opacity: 1;
+          transform: translateY(0px);
+        }
+      }
+      @keyframes v7-panel-in {
+        0% {
+          opacity: 0.7;
+          transform: translateY(4px);
+        }
+        100% {
+          opacity: 1;
+          transform: translateY(0px);
+        }
+      }
+      .v7-select {
+        position: relative;
+        display: inline-flex;
+        min-width: 0px;
+        max-width: 100%;
+        vertical-align: middle;
+        align-items: center;
+      }
+      .v7-select > .v7-native-select {
+        display: none !important;
+      }
+      .v7-select-trigger {
+        min-height: 42px;
+        padding: 10px 12px;
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        gap: 13px;
+        width: 100%;
+        min-width: 0px;
+        border: 1px solid rgb(75, 67, 88);
+        border-radius: 11px;
+        background: rgb(32, 29, 40);
+        color: rgb(235, 228, 244);
+        text-align: left;
+        font-size: 13.5px;
+        font-weight: 450;
+        line-height: 1.45;
+        transition:
+          border-color 130ms,
+          background 130ms,
+          box-shadow 130ms;
+      }
+      .v7-select-trigger:hover {
+        background: rgb(44, 36, 55);
+        border-color: rgb(145, 118, 173);
+      }
+      .v7-select-trigger:focus-visible {
+        outline: rgb(182, 152, 241) solid 2px;
+        outline-offset: 3px;
+      }
+      .v7-select-trigger > .v7-select-value {
+        min-width: 0px;
+        white-space: normal;
+        overflow-wrap: anywhere;
+        text-align: left;
+        flex: 1 1 0%;
+      }
+      .v7-select-trigger > .icon {
+        width: 15px;
+        height: 15px;
+        flex: 0 0 auto;
+        color: rgb(186, 166, 217);
+      }
+      .v7-select-trigger:disabled {
+        cursor: not-allowed;
+        opacity: 0.55;
+      }
+      :where(.field, .d3-fields > label, .m5-field, .a4-field, .field-grid > label) > .v7-select {
+        display: flex;
+        width: 100%;
+      }
+      .v7-menu {
+        position: fixed;
+        z-index: 10050;
+        display: flex;
+        flex-direction: column;
+        min-width: 180px;
+        max-width: calc(-20px + 100vw);
+        padding: 7px;
+        background: rgb(36, 32, 45);
+        border: 1px solid rgb(106, 85, 126);
+        border-radius: 14px;
+        box-shadow:
+          rgba(0, 0, 0, 0.6) 0px 18px 50px,
+          rgba(221, 208, 255, 0.07) 0px 1px 0px inset;
+        color: rgb(238, 231, 250);
+        animation: v7-menu-in 120ms var(--v7-ease);
+        overflow: hidden;
+        box-sizing: border-box;
+      }
+      @keyframes v7-menu-in {
+        0% {
+          opacity: 0.55;
+          transform: translateY(-3px);
+        }
+        100% {
+          opacity: 1;
+          transform: translateY(0px);
+        }
+      }
+      .v7-menu-list {
+        overflow: auto;
+        overscroll-behavior: contain;
+        scrollbar-color: rgb(120, 97, 143) transparent;
+        scrollbar-width: thin;
+        min-height: 0px;
+        flex: 1 1 0%;
+        padding: 0px;
+      }
+      .v7-option {
+        display: flex;
+        gap: 10px;
+        align-items: center;
+        position: relative;
+        min-height: 42px;
+        padding: 10px 11px;
+        margin: 2px 0px;
+        border-radius: 8px;
+        font-size: 13.5px;
+        line-height: 1.5;
+        color: rgb(227, 219, 234);
+        cursor: pointer;
+        outline: none;
+        user-select: none;
+      }
+      .v7-option > .v7-option-copy {
+        min-width: 0px;
+        flex: 1 1 0%;
+        overflow-wrap: anywhere;
+        font-weight: 450;
+      }
+      .v7-option:hover,
+      .v7-option.is-active {
+        background: rgb(74, 54, 95);
+        color: rgb(255, 255, 255);
+      }
+      :where(.stepper a, .stepper button) {
+        min-height: 42px;
+        line-height: 1.5;
+        transition:
+          background 140ms,
+          color 140ms;
+        outline-offset: 3px;
+      }
+      :where(.stepper a, .stepper button):hover {
+        color: rgb(230, 213, 255);
+      }
+      :where(.a4-subnav a, .m5-nav-children a, .d3-dossier-tabs button) {
+        transition:
+          background 140ms,
+          color 140ms,
+          border-color 140ms;
+      }
+      @media (max-width: 760px) {
+        .v7-select-trigger {
+          min-height: 44px;
+        }
+      }
+      @media (prefers-reduced-motion: reduce) {
+        *,
+        ::before,
+        ::after {
+          scroll-behavior: auto !important;
+          animation-duration: 0.001ms !important;
+          animation-iteration-count: 1 !important;
+          transition-duration: 0.001ms !important;
+        }
+        .btn:not(:disabled):active {
+          transform: none;
+        }
+      }
+      .v7-select:has(.v7-select-error) {
+        flex-wrap: wrap;
+      }
+      .t8-root :is(h1, h2, h3, h4, p) {
+        margin: 0px;
+      }
+      .t8-root :is(button, a, input, textarea):focus-visible,
+      .t8-dialog :is(button, a, input, textarea):focus-visible {
+        outline: rgb(179, 154, 255) solid 2px;
+        outline-offset: 3px;
+      }
+      .t8-review-decisions :is(input, textarea) {
+        width: 100%;
+      }
+      .v12 :is(button, a, input, textarea, select):focus-visible {
+        outline: 2px solid var(--primary);
+        outline-offset: 4px;
+      }
+      html:not(.dark) .v7-select-trigger {
+        background: var(--surface);
+        border-color: var(--border);
+        color: var(--text);
+      }
+      html:not(.dark) .v7-select-trigger:hover,
+      html:not(.dark) .v7-select-trigger[aria-expanded='true'] {
+        background: var(--accent-bg);
+        border-color: var(--accent-line);
+      }
+      html:not(.dark) .v7-menu {
+        background: var(--surface);
+        border-color: var(--accent-line);
+        color: var(--text);
+        box-shadow: rgba(52, 34, 75, 0.15) 0px 12px 35px;
+      }
+      html:not(.dark) .v7-option {
+        color: var(--text);
+      }
+      html:not(.dark) .v7-option[aria-selected='true'],
+      html:not(.dark) .v7-option:hover,
+      html:not(.dark) .v7-option.is-active {
+        background: var(--accent-bg);
+        color: var(--accent);
+      }
+      .a14 :is(button, a, input, select, textarea):focus-visible,
+      .a14-guidance button:focus-visible {
+        outline: 2px solid var(--accent);
+        outline-offset: 3px;
+      }
+      html:not(.dark)
+        :is(
+          .a4-focus,
+          .a4-account-card.is-focus,
+          .a4-selection,
+          .m5-finance-hero,
+          .m5-collections-hero,
+          .t8-research-hero,
+          .t8-member-hero
+        ) {
+        --text: #f0eff8;
+        --secondary: #c7c4d7;
+        --muted: #b2afc3;
+        --surface: #1a1a22;
+        --surface2: #292632;
+        --border: #45404f;
+        --border2: #5b526b;
+        --accent: #c0aaff;
+        --accent-bg: #302541;
+        --accent-line: #514063;
+        color: var(--text);
+      }
+      html:not(.dark) #dialog .dialog-head,
+      html:not(.dark) #dialog .dialog-footer {
+        background: var(--surface);
+        border-color: var(--border);
+      }
+      html:not(.dark) #dialog .dialog-head .icon-btn {
+        color: var(--secondary);
+        border-color: var(--border);
+      }
+      html:not(.dark)
+        #dialog
+        :is(
+          input:not([type='checkbox']):not([type='radio']):not([type='range']):not([type='file']):not([type='hidden']),
+          textarea,
+          select
+        ) {
+        color: var(--text);
+        background: var(--surface);
+        border-color: var(--border);
+        color-scheme: light;
+      }
+      :root {
+        --v22-line: var(--border);
+        --v22-panel: var(--surface);
+        --v22-hover: var(--surface2);
+        --v22-ease: cubic-bezier(0.2, 0.7, 0.3, 1);
+        --v22-radius: 12px;
+        --v22-shadow: 0 12px 40px rgba(20, 18, 32, 0.12);
+      }
+      :root.dark {
+        --bg: #0b0b0e;
+        --surface: #151518;
+        --surface2: #1e1e23;
+        --sidebar: #131316;
+        --border: #2b2b32;
+        --border2: #3c3c45;
+        --text: #f2f2f5;
+        --secondary: #b2b1bd;
+        --muted: #9695a4;
+        --v22-panel: #151518;
+        --v22-hover: #202027;
+        --v22-shadow: 0 18px 58px #0008;
+      }
+      body.v22-design {
+        font-size: 14px;
+        letter-spacing: -0.08px;
+      }
+      .v22-design h1 {
+        font-weight: 650;
+        letter-spacing: -1px;
+        line-height: 1.17;
+      }
+      .v22-design h2 {
+        font-weight: 620;
+        letter-spacing: -0.5px;
+        line-height: 1.3;
+      }
+      .v22-design h3 {
+        font-weight: 620;
+        letter-spacing: -0.18px;
+      }
+      .v22-design .btn {
+        border-radius: 8px;
+        box-shadow: none;
+        transition:
+          background-color 130ms,
+          border-color 130ms,
+          color 130ms;
+        min-height: 36px;
+        font-weight: 560;
+      }
+      .v22-design .btn.primary,
+      .v22-design .laura-nav {
+        background: var(--primary);
+        color: rgb(255, 255, 255);
+        box-shadow: none;
+      }
+      .v22-design .btn.primary:hover,
+      .v22-design .laura-nav:hover {
+        background: var(--primary-hover);
+      }
+      .v22-design .btn.soft {
+        background: var(--accent-bg);
+        border: 1px solid var(--accent-line);
+        color: var(--accent);
+      }
+      .v22-design .btn.plain {
+        background: transparent;
+      }
+      .v22-design .btn.plain:hover {
+        background: var(--surface2);
+      }
+      .v22-design .icon-btn {
+        border-radius: 7px;
+        transition:
+          background-color 130ms,
+          color 130ms;
+      }
+      .v22-design .icon-btn:hover {
+        background: var(--surface2);
+      }
+      .v22-design .canvas {
+        padding-top: 28px;
+      }
+      .v22-design input:not([type='checkbox']):not([type='radio']),
+      .v22-design select,
+      .v22-design textarea {
+        border-radius: 8px;
+      }
+      .v22-design :where(button, a, input, textarea, select, summary):focus-visible {
+        outline: 2px solid var(--accent);
+        outline-offset: 3px;
+      }
+      .v22-design :where(button, a, input, textarea, select, summary) {
+        scroll-margin-top: 82px;
+        scroll-margin-bottom: 80px;
+      }
+      .v22-design .topbar {
+        background: var(--sidebar);
+        border-bottom: 1px solid var(--border);
+      }
+      .v22-design #dialog {
+        border-radius: 14px;
+        border: 1px solid var(--border2);
+        box-shadow: var(--v22-shadow);
+        background: var(--surface);
+        color: var(--text);
+      }
+      .v22-design #dialog::backdrop {
+        background: rgba(8, 8, 12, 0.62);
+        backdrop-filter: blur(3px);
+      }
+      .v22-design #dialog .dialog-head,
+      .v22-design #dialog .dialog-footer {
+        background: var(--surface);
+        box-shadow: none;
+      }
+      .v22-design #dialog .dialog-head {
+        border-bottom: 1px solid var(--border);
+        padding: 20px 24px;
+      }
+      .v22-design #dialog .dialog-head h2 {
+        font-size: 18px;
+        letter-spacing: -0.4px;
+      }
+      .v22-design #dialog .dialog-head .icon-btn {
+        background: transparent;
+        border: 0px;
+        border-radius: 7px;
+        color: var(--secondary);
+        width: 32px;
+        height: 32px;
+      }
+      .v22-design #dialog .dialog-body {
+        background: var(--surface);
+      }
+      .v22-design #dialog .dialog-footer {
+        border-top: 1px solid var(--border);
+        padding: 14px 24px;
+      }
+      .v22-design #dialog .btn {
+        border-radius: 8px;
+        min-height: 38px;
+        font-size: 13px;
+      }
+      .v22-design #dialog :where(input:not([type='checkbox']):not([type='radio']), select, textarea) {
+        background: var(--bg);
+        border-color: var(--border2);
+        color: var(--text);
+        border-radius: 8px;
+        font-size: 13px;
+      }
+      @keyframes v22-enter {
+        0% {
+          opacity: 0.7;
+        }
+        100% {
+          opacity: 1;
+        }
+      }
+      @media (max-width: 760px) {
+        .v22-design .canvas {
+          padding: 20px 17px 36px;
+        }
+        .v22-design #dialog .dialog-head {
+          padding: 17px 18px;
+        }
+        .v22-design #dialog .dialog-footer {
+          padding: 14px 18px;
+        }
+      }
+      @media (prefers-reduced-motion: reduce) {
+        .v22-design *,
+        .v22-design ::before,
+        .v22-design ::after {
+          animation: auto ease 0s 1 normal none running none !important;
+          transition: none !important;
+          scroll-behavior: auto !important;
+        }
+      }
+      .page-ob23 .canvas {
+        min-width: 0px;
+        overflow: visible;
+        padding: 30px 36px 20px !important;
+      }
+      .ob23 {
+        width: 100%;
+        max-width: 1140px;
+        margin: 0px auto;
+        padding-bottom: 32px;
+        color: var(--text);
+        font-size: 14px;
+      }
+      .ob23 h1,
+      .ob23 h2,
+      .ob23 h3,
+      .ob23 p {
+        margin: 0px;
+      }
+      .ob23 h2 {
+        font-size: 22px;
+        letter-spacing: -0.55px;
+        line-height: 1.3;
+        font-weight: 620;
+      }
+      .ob23 h3 {
+        font-size: 15px;
+        line-height: 1.4;
+        font-weight: 600;
+        letter-spacing: -0.15px;
+      }
+      .ob23 p {
+        line-height: 1.7;
+        color: var(--secondary);
+      }
+      .ob23 a {
+        color: inherit;
+      }
+      .ob23 .btn {
+        font-size: 13px;
+        white-space: normal;
+        min-height: 39px;
+        text-align: center;
+      }
+      .ob23 .btn.primary {
+        color: rgb(255, 255, 255);
+      }
+      .ob23 .btn.plain {
+        color: var(--secondary);
+      }
+      .ob23-kicker {
+        font-size: 10px;
+        font-weight: 650;
+        letter-spacing: 1.4px;
+        display: block;
+        color: var(--accent);
+        line-height: 1.6;
+      }
+      .ob23-heading {
+        display: flex;
+        justify-content: space-between;
+        align-items: flex-start;
+        gap: 25px;
+        margin: 7px 0px 28px;
+      }
+      .ob23-heading h1 {
+        font-size: clamp(26px, 2.45vw, 37px);
+        line-height: 1.17;
+        letter-spacing: -1px;
+        font-weight: 640;
+        margin: 12px 0px 13px;
+        max-width: 830px;
+      }
+      .ob23-heading h1:focus {
+        outline: none;
+      }
+      .ob23-heading > div:first-child {
+        flex: 1 1 0%;
+        min-width: 0px;
+      }
+      .ob23-heading > div > p {
+        max-width: 78ch;
+        font-size: 14px;
+        line-height: 1.7;
+      }
+      .ob23-heading > .ob23-actions {
+        padding-top: 20px;
+        justify-content: flex-end;
+        flex-shrink: 0;
+      }
+      .ob23-actions {
+        display: flex;
+        align-items: center;
+        gap: 9px;
+        flex-wrap: wrap;
+      }
+      .ob23-small {
+        font-size: 12px !important;
+        color: var(--muted) !important;
+        line-height: 1.65 !important;
+      }
+      .ob23-save {
+        font-size: 11px;
+        color: var(--muted);
+        display: block;
+      }
+      .ob23-footer {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        gap: 18px;
+        margin-top: 28px;
+        border-top: 1px solid var(--border);
+        padding: 22px 0px 0px;
+      }
+      .ob23-footer > div {
+        display: flex;
+        align-items: center;
+        gap: 14px;
+        flex-wrap: wrap;
+      }
+      .ob23-footer > div:last-child {
+        justify-content: flex-end;
+      }
+      .ob23-footer .ob23-save {
+        font-size: 10px;
+      }
+      .ob23-status-answer {
+        display: flex;
+        gap: 12px;
+        align-items: center;
+        border: 1px dashed var(--border2);
+        padding: 14px;
+        border-radius: 7px;
+        color: var(--secondary);
+        font-size: 13px;
+      }
+      .ob23-status-answer span {
+        flex: 1 1 0%;
+      }
+      .ob23-status-answer small {
+        display: block;
+        font-size: 11px;
+        color: var(--muted);
+        margin-top: 5px;
+      }
+      .ob23-tags {
+        display: flex;
+        flex-wrap: wrap;
+        gap: 7px;
+        margin: 0px 0px 9px;
+      }
+      .ob23-tags > span {
+        display: flex;
+        align-items: center;
+        gap: 10px;
+        background: var(--accent-bg);
+        color: var(--accent);
+        font-size: 12px;
+        padding: 6px 9px;
+        border-radius: 5px;
+        overflow-wrap: anywhere;
+      }
+      .ob23-tags button {
+        background: none;
+        border: 0px;
+        color: inherit;
+        padding: 0px;
+        cursor: pointer;
+        display: flex;
+      }
+      .ob23-catalog-tools {
+        display: flex;
+        align-items: center;
+        gap: 20px;
+        margin-bottom: 25px;
+      }
+      .ob23-catalog-tools > span {
+        font-size: 11px;
+        color: var(--muted);
+        white-space: nowrap;
+      }
+      .ob23-search {
+        display: flex;
+        align-items: center;
+        gap: 11px;
+        background: var(--surface);
+        border: 1px solid var(--border2);
+        border-radius: 8px;
+        padding: 0px 13px;
+        flex: 1 1 0%;
+        min-width: 0px;
+      }
+      .ob23-search:focus-within {
+        border-color: var(--accent);
+      }
+      .ob23-search .icon {
+        color: var(--muted);
+        flex-shrink: 0;
+      }
+      .ob23-search input {
+        padding: 13px 0px;
+        width: 100%;
+        min-width: 0px;
+        color: var(--text);
+        font-style: inherit;
+        font-variant: inherit;
+        font-weight: inherit;
+        font-stretch: inherit;
+        line-height: inherit;
+        font-family: inherit;
+        font-optical-sizing: inherit;
+        font-size-adjust: inherit;
+        font-kerning: inherit;
+        font-feature-settings: inherit;
+        font-variation-settings: inherit;
+        font-size: 13px;
+        border: 0px !important;
+        outline: none !important;
+        box-shadow: none !important;
+        background: transparent !important;
+      }
+      .ob23-recommended {
+        margin: 0px 0px 30px;
+        display: grid;
+        grid-template-columns: repeat(2, minmax(0px, 1fr));
+        gap: 0px;
+        border: 1px solid var(--border);
+        border-radius: 10px;
+        background: var(--surface);
+        overflow: hidden;
+      }
+      .ob23-recommended h2 {
+        grid-column: 1 / -1;
+        padding: 20px 22px 17px;
+        font-size: 16px;
+        border-bottom: 1px solid var(--border);
+      }
+      .ob23-recommended > a {
+        padding: 19px 22px;
+        border-bottom: 1px solid var(--border);
+        position: relative;
+        min-width: 0px;
+      }
+      .ob23-recommended > a:nth-child(2n) {
+        border-right: 1px solid var(--border);
+      }
+      .ob23-recommended > a > span {
+        display: flex;
+        align-items: center;
+        gap: 9px;
+      }
+      .ob23-recommended > a > span .icon {
+        color: var(--accent);
+        width: 16px;
+        height: 16px;
+        flex-shrink: 0;
+      }
+      .ob23-recommended strong {
+        font-size: 13px;
+        font-weight: 600;
+      }
+      .ob23-recommended p {
+        font-size: 12px;
+        margin-top: 8px;
+        padding-right: 15px;
+      }
+      .ob23-recommended > a > .icon {
+        position: absolute;
+        right: 18px;
+        top: 22px;
+        color: var(--muted);
+      }
+      .ob23-recommended > a:hover {
+        background: var(--surface2);
+      }
+      .ob23-theme-grid {
+        display: grid;
+        grid-template-columns: repeat(3, minmax(0px, 1fr));
+        gap: 17px;
+      }
+      .ob23-theme-grid > a {
+        padding: 20px;
+        border: 1px solid var(--border);
+        border-radius: 10px;
+        background: var(--surface);
+        display: flex;
+        flex-direction: column;
+        min-width: 0px;
+        transition: border-color 120ms;
+      }
+      .ob23-theme-grid > a:hover {
+        border-color: var(--accent);
+      }
+      .ob23-theme-grid > a > div {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        margin-bottom: 18px;
+      }
+      .ob23-theme-grid > a > div > .icon {
+        color: var(--muted);
+      }
+      .ob23-index {
+        color: var(--muted);
+        font-size: 10px;
+        font-variant-numeric: tabular-nums;
+      }
+      .ob23-theme-grid h3 {
+        font-size: 15px;
+        margin-bottom: 10px;
+      }
+      .ob23-theme-grid p {
+        font-size: 12px;
+        margin-bottom: 21px;
+      }
+      .ob23-theme-grid footer {
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        gap: 8px;
+        font-size: 10px;
+        color: var(--muted);
+        margin-top: auto;
+        border-top: 1px solid var(--border);
+        padding-top: 12px;
+      }
+      .ob23-group-list {
+        border-top: 1px solid var(--border);
+        margin-top: 12px;
+      }
+      .ob23-group-list > a {
+        display: flex;
+        align-items: center;
+        gap: 18px;
+        padding: 22px 6px;
+        border-bottom: 1px solid var(--border);
+      }
+      .ob23-group-list > a:hover {
+        background: var(--surface);
+      }
+      .ob23-group-list > a > div {
+        flex: 1 1 0%;
+        min-width: 0px;
+      }
+      .ob23-group-list p {
+        font-size: 12px;
+        margin-top: 7px;
+      }
+      .ob23-group-list > a > .icon {
+        color: var(--muted);
+        flex-shrink: 0;
+      }
+      #dialog.ob23-dialog {
+        width: min(800px, -28px + 100vw);
+        max-width: 800px;
+        max-height: 92dvh;
+        overflow: hidden;
+        padding: 0px;
+      }
+      #dialog.ob23-dialog .dialog-head {
+        flex-shrink: 0;
+        padding: 20px 24px !important;
+      }
+      #dialog.ob23-dialog .dialog-head h2 {
+        max-width: calc(100% - 45px);
+        font-size: 18px;
+        line-height: 1.4;
+      }
+      #dialog.ob23-dialog .dialog-body {
+        overflow-y: auto;
+        padding: 20px 24px;
+        min-height: 0px;
+      }
+      #dialog.ob23-dialog .dialog-footer {
+        flex-shrink: 0;
+        display: flex;
+        justify-content: flex-end;
+        gap: 8px;
+        flex-wrap: wrap;
+        padding: 15px 24px !important;
+      }
+      .ob23-picker > p {
+        font-size: 13px;
+        color: var(--secondary);
+        line-height: 1.65;
+        margin: 0px 0px 18px;
+      }
+      .ob23-picker-top {
+        display: flex;
+        gap: 14px;
+        align-items: center;
+      }
+      .ob23-picker-top > span {
+        font-size: 11px;
+        color: var(--muted);
+        white-space: nowrap;
+      }
+      .ob23-option-groups {
+        display: flex;
+        align-items: center;
+        gap: 14px;
+        margin-top: 12px;
+      }
+      .ob23-option-groups:empty {
+        display: none;
+      }
+      .ob23-option-groups label {
+        font-size: 11px;
+        color: var(--muted);
+      }
+      .ob23-option-groups select {
+        font-style: inherit;
+        font-variant: inherit;
+        font-weight: inherit;
+        font-stretch: inherit;
+        line-height: inherit;
+        font-family: inherit;
+        font-optical-sizing: inherit;
+        font-size-adjust: inherit;
+        font-kerning: inherit;
+        font-feature-settings: inherit;
+        font-variation-settings: inherit;
+        font-size: 12px;
+        padding: 8px 11px;
+        flex: 1 1 0%;
+        min-width: 0px;
+        border: 1px solid var(--border2);
+        background: var(--bg);
+        border-radius: 7px;
+        color: var(--text);
+      }
+      .ob23-selection-preview {
+        display: flex;
+        flex-wrap: wrap;
+        gap: 6px;
+        padding: 15px 0px;
+        margin-bottom: 5px;
+        border-bottom: 1px solid var(--border);
+      }
+      .ob23-selection-preview > button {
+        display: flex;
+        align-items: center;
+        gap: 8px;
+        padding: 5px 8px;
+        background: var(--accent-bg);
+        border: 1px solid var(--accent-line);
+        color: var(--accent);
+        border-radius: 5px;
+        font-style: inherit;
+        font-variant: inherit;
+        font-weight: inherit;
+        font-stretch: inherit;
+        line-height: inherit;
+        font-family: inherit;
+        font-optical-sizing: inherit;
+        font-size-adjust: inherit;
+        font-kerning: inherit;
+        font-feature-settings: inherit;
+        font-variation-settings: inherit;
+        font-size: 11px;
+        text-align: left;
+        cursor: pointer;
+        max-width: 100%;
+      }
+      .ob23-selection-preview > button > span {
+        overflow-wrap: anywhere;
+      }
+      .ob23-selection-preview > button > .icon {
+        flex-shrink: 0;
+        width: 12px;
+        height: 12px;
+      }
+      .ob23-option-list section > h3 {
+        font-size: 11px;
+        letter-spacing: 0.5px;
+        color: var(--secondary);
+        font-weight: 600;
+        margin: 18px 0px 10px;
+      }
+      .ob23-option-grid {
+        display: grid;
+        grid-template-columns: repeat(2, minmax(0px, 1fr));
+        gap: 8px;
+      }
+      .ob23-option-grid > label {
+        display: flex;
+        align-items: flex-start;
+        gap: 11px;
+        border: 1px solid var(--border);
+        border-radius: 8px;
+        padding: 13px 12px;
+        font-size: 13px;
+        line-height: 1.5;
+        cursor: pointer;
+        background: var(--surface);
+      }
+      .ob23-option-grid > label:hover {
+        border-color: var(--border2);
+        background: var(--surface2);
+      }
+      .ob23-option-grid > label.selected {
+        border-color: var(--accent-line);
+        background: var(--accent-bg);
+      }
+      .ob23-option-grid input {
+        accent-color: var(--primary);
+        width: 16px;
+        height: 16px;
+        flex-shrink: 0;
+        margin-top: 2px;
+      }
+      .ob23-option-grid strong {
+        font-size: 12px;
+        font-weight: 550;
+        color: var(--text);
+        overflow-wrap: anywhere;
+      }
+      .ob23-custom {
+        padding: 20px 0px 0px;
+        margin-top: 20px;
+        border-top: 1px solid var(--border);
+      }
+      .ob23-custom > label {
+        font-size: 12px;
+        font-weight: 550;
+        color: var(--text);
+        display: block;
+        margin-bottom: 9px;
+      }
+      .ob23-custom > div {
+        display: flex;
+        gap: 9px;
+      }
+      .ob23-custom input {
+        min-width: 0px;
+        flex: 1 1 0%;
+        padding: 10px 12px;
+        font: inherit;
+        border: 1px solid var(--border2);
+        border-radius: 8px;
+      }
+      .ob23-custom p {
+        color: var(--muted);
+        margin-top: 9px;
+        line-height: 1.6;
+        font-size: 10px !important;
+      }
+      .ob23-dialog-content p {
+        color: var(--secondary);
+        font-size: 13px;
+        line-height: 1.7;
+        margin: 0px 0px 18px;
+      }
+      .ob23-top-title {
+        font-size: 17px;
+        font-weight: 650;
+        display: flex;
+        align-items: center;
+        gap: 20px;
+        letter-spacing: -0.3px;
+        white-space: nowrap;
+      }
+      .ob23-top-title span {
+        font-size: 12px;
+        color: var(--muted);
+        font-weight: 400;
+        letter-spacing: 0px;
+      }
+      .ob23-top-actions {
+        display: flex;
+        gap: 6px;
+        align-items: center;
+        margin-left: auto;
+      }
+      .ob23-top-actions .btn {
+        font-size: 11px;
+        min-height: 32px;
+      }
+      .page-ob23 #topbar {
+        gap: 12px;
+      }
+      @media (max-width: 1150px) {
+        .page-ob23 .canvas {
+          padding: 25px 25px 20px !important;
+        }
+        .ob23-theme-grid {
+          grid-template-columns: repeat(2, minmax(0px, 1fr));
+        }
+        .ob23-top-title span {
+          display: none;
+        }
+        .ob23-heading h1 {
+          font-size: 30px;
+        }
+        .ob23-heading > .ob23-actions {
+          padding-top: 12px;
+        }
+      }
+      @media (max-width: 950px) {
+        .ob23-heading {
+          flex-wrap: wrap;
+          gap: 10px;
+        }
+        .ob23-heading > .ob23-actions {
+          padding: 0px;
+        }
+        .ob23-footer > div:last-child .ob23-save {
+          display: none;
+        }
+      }
+      @media (max-width: 760px) {
+        .page-ob23 .canvas {
+          padding: 20px 17px !important;
+        }
+        .ob23-heading h1 {
+          font-size: 28px;
+          letter-spacing: -0.8px;
+        }
+        .ob23-heading > div > p {
+          font-size: 13px;
+        }
+        .ob23-top-actions .btn {
+          font-size: 10px;
+          max-width: 125px;
+          padding: 6px;
+        }
+        .ob23-top-title {
+          font-size: 16px;
+        }
+        .ob23-recommended {
+          grid-template-columns: 1fr;
+        }
+        .ob23-recommended > a:nth-child(2n) {
+          border-right: 0px;
+        }
+        .ob23-theme-grid {
+          grid-template-columns: 1fr;
+        }
+        .ob23-theme-grid > a {
+          padding: 18px;
+        }
+        .ob23-theme-grid > a > div {
+          margin-bottom: 10px;
+        }
+        .ob23-theme-grid p {
+          margin-bottom: 15px;
+        }
+        .ob23-heading {
+          margin-bottom: 22px;
+        }
+        .ob23-footer {
+          flex-direction: column;
+          align-items: stretch;
+        }
+        .ob23-footer > div {
+          justify-content: space-between;
+        }
+        .ob23-footer > div:last-child {
+          justify-content: flex-end;
+        }
+        .ob23-footer > div:last-child .primary {
+          width: 100%;
+        }
+        .ob23-footer .btn {
+          padding: 10px 12px;
+        }
+        .ob23-catalog-tools {
+          flex-direction: column;
+          align-items: stretch;
+          gap: 10px;
+        }
+        .ob23-option-grid {
+          grid-template-columns: 1fr;
+        }
+        #dialog.ob23-dialog .dialog-head {
+          padding: 17px !important;
+        }
+        #dialog.ob23-dialog .dialog-body {
+          padding: 17px;
+        }
+        #dialog.ob23-dialog .dialog-footer {
+          padding: 14px 17px !important;
+        }
+        .ob23-picker-top {
+          flex-direction: column;
+          align-items: stretch;
+          gap: 10px;
+        }
+        .ob23-picker-top > span {
+          text-align: right;
+        }
+        .ob23-option-groups {
+          align-items: flex-start;
+          flex-direction: column;
+          gap: 7px;
+        }
+        .ob23-option-groups select {
+          width: 100%;
+        }
+        .ob23-custom > div {
+          flex-wrap: wrap;
+        }
+        .ob23-custom input {
+          min-width: 150px;
+        }
+        .ob23-selection-preview {
+          max-height: 125px;
+          overflow-y: auto;
+        }
+        .ob23-option-grid strong {
+          font-size: 13px;
+        }
+        .ob23-group-list > a {
+          padding: 18px 0px;
+          gap: 12px;
+        }
+        .ob23-group-list h3 {
+          font-size: 14px;
+        }
+      }
+      @media (prefers-reduced-motion: reduce) {
+        .ob23 * {
+          transition: none !important;
+          scroll-behavior: auto !important;
+        }
+      }
+      .ob23-footer {
+        position: sticky;
+        bottom: 0px;
+        background: var(--bg);
+        z-index: 3;
+        padding-bottom: 15px;
+      }
+      @media (max-width: 760px) {
+        .ob23-footer {
+          position: static;
+        }
+      }
+    </style>
+    <style id="addon">
+      :root {
+        --add: #b45309;
+        --add-ink: #fff;
+      }
+      :root.dark {
+        --add: #f59e0b;
+        --add-ink: #1c1917;
+      }
+      [hidden] {
+        display: none !important;
+      }
+      /* ---- plancher 12 px (D80) : les tailles de Théo sous 12 px remontent à 12 px ---- */
+      .ob23-kicker,
+      .ob23-steps > a > span,
+      .ob23-steps strong,
+      .ob23-steps small,
+      .ob23-control-hint,
+      .ob23-save,
+      .ob23-footer .ob23-save,
+      .ob23-qnum,
+      .ob23-field-foot select,
+      .ob23-field-foot .btn,
+      .ob23-picked > em,
+      .ob23-welcome-detail,
+      .ob23-status-answer small,
+      .ob23-index,
+      .ob23-theme-grid footer span,
+      .ob23-group-list small,
+      .ob23-review-summary small,
+      .ob23-strategy-index,
+      .ob23-next small,
+      .ob23-catalog-tools > span,
+      .ob23-audit-state small,
+      .ob23-examples span {
+        font-size: 12px !important;
+      }
+      .ob23-field-foot select {
+        min-height: 44px;
+      }
+      .ob23-steps > a {
+        min-height: 44px;
+      }
+      /* statut posé sur une question : la saisie se range sous l’état */
+      .ob23-field.is-status .ob23-selector,
+      .ob23-field.is-status .ob23-control-hint,
+      .ob23-field.is-status .ob23-input,
+      .ob23-field.is-status .ob23-tags,
+      .ob23-field.is-status .ob23-tag-entry {
+        display: none;
+      }
+      .toast-container {
+        left: 26px;
+      }
+      /* ---- composants ajoutés, dans le langage de Théo ---- */
+      .ob-badge {
+        display: inline-flex;
+        align-items: center;
+        gap: 6px;
+        font-size: 12px;
+        line-height: 1.5;
+        padding: 3px 9px;
+        border-radius: 999px;
+        border: 1px solid var(--border2);
+        color: var(--secondary);
+        background: var(--surface);
+        white-space: nowrap;
+      }
+      .ob-badge .icon {
+        width: 13px;
+        height: 13px;
+      }
+      .ob-badge.ok {
+        color: var(--success);
+        border-color: transparent;
+        background: var(--success-bg);
+      }
+      .ob-badge.warn {
+        color: var(--warning);
+        border-color: transparent;
+        background: var(--warning-bg);
+      }
+      .ob-badge.info {
+        color: var(--info);
+        border-color: transparent;
+        background: var(--info-bg);
+      }
+      .ob-badge.danger {
+        color: var(--danger);
+        border-color: transparent;
+        background: var(--danger-bg);
+      }
+      .ob-prefill {
+        display: flex;
+        align-items: center;
+        gap: 10px;
+        flex-wrap: wrap;
+        margin: 10px 0 0;
+        font-size: 12px;
+        color: var(--muted);
+      }
+      .ob-prefill .btn {
+        min-height: 44px;
+        font-size: 12px;
+      }
+      .ob-consequence {
+        margin-top: 10px;
+      }
+      .ob-consequence summary {
+        display: inline-flex;
+        align-items: center;
+        gap: 7px;
+        min-height: 44px;
+        cursor: pointer;
+        color: var(--accent);
+        font-size: 12px;
+        list-style: none;
+      }
+      .ob-consequence summary::-webkit-details-marker {
+        display: none;
+      }
+      .ob-consequence p {
+        font-size: 13px !important;
+        border-left: 2px solid var(--accent-line);
+        padding: 4px 0 4px 14px;
+        max-width: 70ch;
+      }
+      .ob-contradiction {
+        border: 1px solid var(--border);
+        border-left: 2px solid var(--warning);
+        border-radius: 0 9px 9px 0;
+        background: var(--surface);
+        padding: 18px 20px;
+        margin: 0 0 25px;
+      }
+      .ob-contradiction h3 {
+        margin: 6px 0 6px;
+      }
+      .ob-contradiction p {
+        font-size: 13px;
+        max-width: 70ch;
+      }
+      .ob-contradiction .ob23-actions {
+        margin-top: 14px;
+      }
+      .ob-bloc-head {
+        display: flex;
+        justify-content: space-between;
+        align-items: baseline;
+        gap: 16px;
+        margin: 8px 0 22px;
+        padding-top: 26px;
+        border-top: 1px solid var(--border);
+      }
+      .ob-bloc-head:first-child {
+        border-top: 0;
+        padding-top: 0;
+      }
+      .ob-bloc-head h2 {
+        font-size: 20px !important;
+      }
+      .ob-bloc-head span {
+        font-size: 12px;
+        color: var(--muted);
+        font-variant-numeric: tabular-nums;
+        white-space: nowrap;
+      }
+      .ob-drop {
+        border: 1px dashed var(--border2);
+        border-radius: 13px;
+        background: var(--surface);
+        padding: 26px;
+        display: grid;
+        grid-template-columns: minmax(0, 1fr) auto;
+        gap: 22px;
+        align-items: center;
+        margin: 0 0 30px;
+      }
+      .ob-drop h2 {
+        font-size: 19px !important;
+        margin-bottom: 8px !important;
+      }
+      .ob-drop p {
+        font-size: 13px;
+        max-width: 70ch;
+      }
+      .ob-drop ul {
+        list-style: none;
+        margin: 14px 0 0;
+        padding: 0;
+        display: flex;
+        flex-wrap: wrap;
+        gap: 8px;
+      }
+      .ob-file-row {
+        display: grid;
+        grid-template-columns: minmax(0, 1.2fr) minmax(0, 1fr);
+        gap: 16px;
+        align-items: start;
+        padding: 16px 0;
+        border-top: 1px solid var(--border);
+      }
+      .ob-file-row:first-of-type {
+        border-top: 0;
+      }
+      .ob-file-row h3 {
+        font-size: 14px !important;
+        display: flex;
+        align-items: center;
+        gap: 8px;
+        overflow-wrap: anywhere;
+      }
+      .ob-file-row p {
+        font-size: 12px !important;
+        color: var(--muted) !important;
+        margin-top: 5px !important;
+      }
+      .ob-file-row label {
+        display: block;
+        font-size: 12px;
+        color: var(--muted);
+        margin-bottom: 6px;
+      }
+      .ob-file-row select {
+        width: 100%;
+        min-height: 44px;
+        background: var(--surface);
+        border: 1px solid var(--border2);
+        border-radius: 8px;
+        color: var(--text);
+        font: inherit;
+        font-size: 13px;
+        padding: 8px 10px;
+      }
+      .ob-phases {
+        list-style: none;
+        margin: 16px 0 0;
+        padding: 0;
+        display: grid;
+        gap: 0;
+      }
+      .ob-phases li {
+        display: grid;
+        grid-template-columns: 28px minmax(0, 1fr) auto;
+        gap: 12px;
+        align-items: center;
+        padding: 12px 0;
+        border-top: 1px solid var(--border);
+        font-size: 13px;
+        color: var(--secondary);
+      }
+      .ob-phases li:first-child {
+        border-top: 0;
+      }
+      .ob-phases li .icon {
+        color: var(--muted);
+      }
+      .ob-phases li.done .icon {
+        color: var(--success);
+      }
+      .ob-phases li.now {
+        color: var(--text);
+      }
+      .ob-phases li.now .icon {
+        color: var(--accent);
+      }
+      .ob-phases small {
+        font-size: 12px;
+        color: var(--muted);
+      }
+      .ob-after {
+        display: grid;
+        grid-template-columns: minmax(0, 1.25fr) minmax(0, 1fr);
+        gap: 22px;
+        margin-top: 30px;
+        align-items: start;
+      }
+      .ob-card {
+        border: 1px solid var(--border);
+        border-radius: 13px;
+        background: var(--surface);
+        padding: 24px;
+      }
+      .ob-card > h2 {
+        font-size: 19px !important;
+        margin-bottom: 6px !important;
+      }
+      .ob-card > p {
+        font-size: 13px;
+      }
+      .ob-account {
+        display: grid;
+        grid-template-columns: 38px minmax(0, 1fr) auto;
+        gap: 14px;
+        align-items: center;
+        padding: 15px 0;
+        border-top: 1px solid var(--border);
+        text-decoration: none;
+      }
+      .ob-account:first-of-type {
+        margin-top: 14px;
+      }
+      .ob-account .ob-logo {
+        width: 38px;
+        height: 38px;
+        border-radius: 9px;
+        background: var(--surface2);
+        display: grid;
+        place-items: center;
+        font-size: 13px;
+        font-weight: 650;
+        color: var(--secondary);
+      }
+      .ob-account h3 {
+        font-size: 14px !important;
+      }
+      .ob-account p {
+        font-size: 12px !important;
+        margin-top: 3px !important;
+      }
+      .ob-check {
+        list-style: none;
+        margin: 14px 0 0;
+        padding: 0;
+      }
+      .ob-check li {
+        display: grid;
+        grid-template-columns: 24px minmax(0, 1fr) auto;
+        gap: 12px;
+        align-items: center;
+        padding: 13px 0;
+        border-top: 1px solid var(--border);
+      }
+      .ob-check li:first-child {
+        border-top: 0;
+      }
+      .ob-check li .icon {
+        color: var(--muted);
+      }
+      .ob-check li.done .icon {
+        color: var(--success);
+      }
+      .ob-check strong {
+        display: block;
+        font-size: 13px;
+        font-weight: 580;
+      }
+      .ob-check small {
+        display: block;
+        font-size: 12px;
+        color: var(--muted);
+        margin-top: 3px;
+        line-height: 1.5;
+      }
+      .ob-check .btn {
+        min-height: 44px;
+        font-size: 12px;
+      }
+      .ob-pending {
+        border: 1px solid var(--border);
+        border-radius: 13px;
+        background: var(--surface);
+        margin: 0 0 30px;
+        overflow: hidden;
+      }
+      .ob-pending > header {
+        display: flex;
+        justify-content: space-between;
+        align-items: baseline;
+        gap: 16px;
+        padding: 20px 22px;
+        border-bottom: 1px solid var(--border);
+      }
+      .ob-pending > header h2 {
+        font-size: 17px !important;
+      }
+      .ob-pending > header span {
+        font-size: 12px;
+        color: var(--muted);
+      }
+      .ob-pending a {
+        display: grid;
+        grid-template-columns: minmax(0, 1fr) auto 18px;
+        gap: 14px;
+        align-items: center;
+        padding: 14px 22px;
+        border-top: 1px solid var(--border);
+        text-decoration: none;
+        min-height: 44px;
+      }
+      .ob-pending a:first-of-type {
+        border-top: 0;
+      }
+      .ob-pending a:hover {
+        background: var(--surface2);
+      }
+      .ob-pending a strong {
+        font-size: 13px;
+        font-weight: 550;
+      }
+      .ob-pending a small {
+        display: block;
+        font-size: 12px;
+        color: var(--muted);
+        margin-top: 3px;
+      }
+      .ob-maturity {
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        gap: 16px;
+        border-top: 1px solid var(--border);
+        padding: 16px 0 0;
+        margin-top: 18px;
+      }
+      .ob-maturity p {
+        font-size: 13px;
+      }
+      .ob-access {
+        margin: 0 0 22px;
+      }
+      /* ---- mobile : le produit, pas un repli ---- */
+      @media (max-width: 767px) {
+        .ob-drop {
+          grid-template-columns: 1fr;
+          padding: 20px;
+        }
+        .ob-after {
+          grid-template-columns: 1fr;
+        }
+        .ob-file-row {
+          grid-template-columns: 1fr;
+        }
+        .ob-card {
+          padding: 18px;
+        }
+        .ob-account {
+          grid-template-columns: 38px minmax(0, 1fr);
+        }
+        .ob-account > .icon {
+          display: none;
+        }
+        .ob-check li {
+          grid-template-columns: 24px minmax(0, 1fr);
+        }
+        .ob-check li .btn {
+          grid-column: 2;
+          justify-self: start;
+        }
+        .ob-maturity {
+          flex-direction: column;
+          align-items: flex-start;
+        }
+        .ob-bloc-head {
+          flex-direction: column;
+          gap: 4px;
+        }
+      }
+      /* ---- couche de relecture (hors produit) ---- */
+      .rv {
+        position: fixed;
+        top: 6px;
+        right: 62px;
+        z-index: 200;
+        display: flex;
+        flex-direction: column;
+        align-items: flex-end;
+        gap: 8px;
+        font-family: inherit;
+        max-width: calc(100vw - 28px);
+      }
+      .rv-bar {
+        display: flex;
+        gap: 6px;
+        align-items: center;
+        background: var(--surface);
+        border: 1px solid var(--border2);
+        border-radius: 999px;
+        padding: 4px;
+        box-shadow: var(--shadow);
+      }
+      .rv-switch {
+        display: inline-flex;
+        align-items: center;
+        gap: 8px;
+        min-height: 44px;
+        padding: 0 14px 0 8px;
+        border-radius: 999px;
+        border: 0;
+        background: none;
+        color: var(--text);
+        font: inherit;
+        font-size: 13px;
+        font-weight: 650;
+        cursor: pointer;
+      }
+      .rv-switch .knob {
+        width: 34px;
+        height: 20px;
+        border-radius: 999px;
+        background: var(--border2);
+        position: relative;
+        transition: background 0.15s;
+      }
+      .rv-switch .knob::after {
+        content: '';
+        position: absolute;
+        top: 3px;
+        left: 3px;
+        width: 14px;
+        height: 14px;
+        border-radius: 50%;
+        background: #fff;
+        transition: transform 0.15s;
+      }
+      .rv-switch[aria-pressed='true'] .knob {
+        background: var(--add);
+      }
+      .rv-switch[aria-pressed='true'] .knob::after {
+        transform: translateX(14px);
+      }
+      .rv-theme {
+        width: 44px;
+        height: 44px;
+        border-radius: 50%;
+        border: 0;
+        background: none;
+        color: var(--secondary);
+        display: grid;
+        place-items: center;
+        cursor: pointer;
+      }
+      .rv-panel {
+        position: fixed;
+        right: 14px;
+        bottom: 14px;
+        width: min(340px, calc(100vw - 28px));
+        max-height: min(58dvh, 560px);
+        overflow: auto;
+        background: var(--surface);
+        border: 1px solid var(--border2);
+        border-radius: 14px;
+        box-shadow: var(--shadow);
+        padding: 14px 16px;
+        font-size: 13px;
+        color: var(--text);
+      }
+      .rv-panel h3 {
+        font-size: 12px;
+        letter-spacing: 0.06em;
+        text-transform: uppercase;
+        color: var(--muted);
+        margin: 12px 0 6px;
+      }
+      .rv-panel h3:first-child {
+        margin-top: 0;
+      }
+      .rv-panel ul {
+        list-style: none;
+        margin: 0;
+        padding: 0;
+        display: grid;
+        gap: 6px;
+      }
+      .rv-panel li {
+        line-height: 1.45;
+      }
+      .rv-panel li b {
+        color: var(--add);
+        font-weight: 700;
+      }
+      .rv-panel .rv-count {
+        font-size: 13px;
+        color: var(--secondary);
+      }
+      .rv-states {
+        display: flex;
+        flex-wrap: wrap;
+        gap: 6px;
+      }
+      .rv-states button {
+        min-height: 36px;
+        border: 1px solid var(--border2);
+        background: none;
+        color: var(--text);
+        border-radius: 999px;
+        padding: 0 12px;
+        font: inherit;
+        font-size: 12px;
+        cursor: pointer;
+      }
+      .rv-states button.on {
+        background: var(--add);
+        color: var(--add-ink);
+        border-color: var(--add);
+      }
+      body.show-adds [data-add] {
+        outline: 2px dashed var(--add);
+        outline-offset: 3px;
+        position: relative;
+      }
+      body.show-adds [data-add]::after {
+        content: attr(data-add);
+        position: absolute;
+        top: -4px;
+        left: 4px;
+        transform: translateY(-100%);
+        z-index: 30;
+        background: var(--add);
+        color: var(--add-ink);
+        font:
+          700 12px/1.35 ui-monospace,
+          SFMono-Regular,
+          Menlo,
+          monospace;
+        padding: 1px 6px;
+        border-radius: 5px;
+        pointer-events: none;
+        white-space: nowrap;
+      }
+      body.show-adds dialog[data-add] {
+        position: fixed;
+      }
+      body.show-adds .rv-r::after {
+        left: auto;
+        right: 4px;
+      }
+
+      body.show-adds .v7-option[data-add]::after {
+        top: 4px;
+        left: auto;
+        right: 6px;
+        transform: none;
+      }
+      .rv-notes {
+        margin: 48px 0 24px;
+        border-top: 1px dashed var(--border2);
+        padding-top: 24px;
+      }
+      .rv-notes h2 {
+        font-size: 18px;
+        margin-bottom: 4px;
+      }
+      .rv-notes > p {
+        font-size: 13px;
+        color: var(--muted);
+        margin-bottom: 16px;
+      }
+      .rv-notes ol {
+        display: grid;
+        gap: 12px;
+        padding-left: 20px;
+        max-width: 900px;
+      }
+      .rv-notes li {
+        font-size: 14px;
+        line-height: 1.6;
+        color: var(--secondary);
+      }
+      .rv-notes li strong {
+        color: var(--text);
+      }
+      body .topbar .top-right {
+        margin-right: 330px;
+      }
+      @media (max-width: 767px) {
+        .rv {
+          top: 6px;
+          right: 48px;
+        }
+        .rv-bar {
+          padding: 2px;
+        }
+        .rv-switch .lbl {
+          display: none;
+        }
+        .rv-switch {
+          padding: 0 8px;
+        }
+        body .topbar .top-right {
+          margin-right: 146px;
+        }
+        body .topbar .top-right .search-trigger {
+          display: none;
+        }
+      }
+      /* ---- couche de relecture : sous la barre haute de l’onboarding ---- */
+      .rv {
+        top: 8px;
+        right: 14px;
+      }
+      body .topbar .ob23-top-actions {
+        margin-right: 236px;
+      }
+      @media (max-width: 767px) {
+        .rv {
+          top: 8px;
+          right: 10px;
+        }
+        body .topbar .ob23-top-actions {
+          margin-right: 104px;
+        }
+      }
+      /* cibles ≥ 44 px (GA-32) sur les commandes de Théo */
+      .topbar .btn.sm,
+      .ob23 .btn,
+      .ob23 .btn.sm,
+      .ob23-help summary,
+      .ob23-allanswers summary,
+      .ob23 details > summary {
+        min-height: 44px;
+      }
+      .topbar .btn.sm {
+        font-size: 12px;
+      }
+      .topbar .icon-btn {
+        width: 44px;
+        height: 44px;
+      }
+      .ob23-top-title {
+        min-height: 44px;
+        display: inline-flex;
+        align-items: center;
+      }
+      .ob23-field-foot .v7-select-trigger {
+        min-height: 44px;
+      }
+      .ob23-live dt,
+      .ob23-live dd,
+      .ob23-live > small,
+      .ob23-live p,
+      .ob23-deeper > a,
+      .ob23-deeper p {
+        font-size: 12px !important;
+      }
+      .ob23-deeper > a {
+        min-height: 44px;
+      }
+      .ob-bloc-head {
+        grid-column: 1/-1;
+      }
+      .ob23-tags > span > button {
+        min-width: 44px;
+        min-height: 44px;
+        margin: -14px -12px -14px -6px;
+        display: inline-grid;
+        place-items: center;
+      }
+      .ob-file-row > div {
+        min-width: 0;
+      }
+      .ob-file-row .ob-badge {
+        white-space: normal;
+        align-items: flex-start;
+      }
+      dialog .btn {
+        min-height: 44px;
+      }
+      dialog .icon-btn {
+        width: 44px;
+        height: 44px;
+      }
+      .ob23-group-nav a {
+        min-height: 44px;
+      }
+      .ob23-group-nav a > span {
+        font-size: 12px !important;
+      }
+      .ob23-allanswers dt {
+        font-size: 12px !important;
+      }
+      .ob23-allanswers dd a {
+        min-width: 44px;
+        min-height: 44px;
+        display: inline-grid;
+        place-items: center;
+      }
+      .ob23-audit-state span,
+      .ob23-audit-state small,
+      .ob23-audit-intro aside small,
+      .ob23-section-head span,
+      .ob23-next span,
+      .ob23-strategies summary,
+      .ob23-strategies label,
+      .ob23-evidence span,
+      .ob23-evidence small,
+      .ob23-tension a {
+        font-size: 12px !important;
+      }
+      .ob23-evidence a,
+      .ob23-tension a,
+      .ob23-strategies summary {
+        min-height: 44px;
+        display: flex;
+        align-items: center;
+      }
+      .ob23-evidence a {
+        gap: 10px;
+      }
+      .ob23-strategies .v7-select-trigger {
+        min-height: 44px;
+      }
+      .ob23-validation p {
+        font-size: 12px !important;
+      }
+      @media (max-width: 767px) {
+        .ob23-heading {
+          flex-direction: column;
+          gap: 0;
+        }
+        .ob23-heading > .ob23-actions {
+          padding-top: 4px;
+          justify-content: flex-start;
+        }
+        .ob23-top-title span {
+          display: none;
+        }
+        body .topbar .ob23-top-actions {
+          margin-right: 112px;
+          gap: 2px;
+        }
+        .ob23-top-actions .btn.sm {
+          padding: 0 8px;
+        }
+      }
+      @media (max-width: 767px) {
+        .topbar .ob23-top-actions .btn.sm {
+          font-size: 0 !important;
+          width: 44px;
+          padding: 0;
+          justify-content: center;
+        }
+        .topbar .ob23-top-actions .btn.sm .icon {
+          margin: 0;
+        }
+      }
+    </style>
+    <meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover" />
+    <meta name="color-scheme" content="light dark" />
+    <meta
+      name="description"
+      content="Maquette appliquée — Onboarding › Les 16 thèmes à approfondir (228 questions, Théo V23) + recherche. Données fictives de démonstration."
+    />
+  </head>
+  <body class="bellum-v18 v22-design page-ob23" data-page="onboarding">
+    <div class="main-shell">
+      <header class="topbar" id="topbar">
+        <a href="onboarding-accueil.html" class="ob23-top-title">Bellum <span>Ton contexte de travail</span></a>
+        <div class="ob23-top-actions">
+          <button type="button" class="btn plain sm" data-open="dlg-export">
+            <svg
+              class="icon small"
+              viewBox="0 0 24 24"
+              fill="none"
+              stroke="currentColor"
+              stroke-width="1.6"
+              stroke-linecap="round"
+              stroke-linejoin="round"
+              aria-hidden="true"
+            >
+              <path d="M12 3v12m-5-5 5 5 5-5M4 16v5h16v-5"></path></svg
+            >Exporter</button
+          ><button class="icon-btn" data-ob23="theme" aria-label="Changer le thème">
+            <svg
+              class="icon"
+              viewBox="0 0 24 24"
+              fill="none"
+              stroke="currentColor"
+              stroke-width="1.6"
+              stroke-linecap="round"
+              stroke-linejoin="round"
+              aria-hidden="true"
+            >
+              <circle cx="12" cy="12" r="4"></circle>
+              <path d="M12 2v2m0 16v2M2 12h2m16 0h2M5 5l1.5 1.5m11 11L19 19M5 19l1.5-1.5m11-11L19 5"></path>
+            </svg></button
+          ><a class="btn plain sm" href="#" data-toast="Tes réponses sont enregistrées. Tu reprendras ici depuis Laura."
+            ><svg
+              class="icon small"
+              viewBox="0 0 24 24"
+              fill="none"
+              stroke="currentColor"
+              stroke-width="1.6"
+              stroke-linecap="round"
+              stroke-linejoin="round"
+              aria-hidden="true"
+            >
+              <path d="m9 5 7 7-7 7"></path></svg
+            >Reprendre plus tard</a
+          >
+        </div>
+      </header>
+      <main id="content" class="canvas" tabindex="-1">
+        <div class="ob23">
+          <header class="ob23-heading">
+            <div>
+              <span class="ob23-kicker">TON CONTEXTE, À TON RYTHME</span>
+              <h1 tabindex="-1">Les thèmes à approfondir.</h1>
+              <p>
+                Le premier cadrage suffit pour commencer. Tout le catalogue reste accessible ; tu ne dois pas répondre à
+                toutes les questions.
+              </p>
+            </div>
+            <div class="ob23-actions">
+              <a class="btn soft" href="onboarding-guide.html"
+                ><svg
+                  class="icon small"
+                  viewBox="0 0 24 24"
+                  fill="none"
+                  stroke="currentColor"
+                  stroke-width="1.6"
+                  stroke-linecap="round"
+                  stroke-linejoin="round"
+                  aria-hidden="true"
+                >
+                  <path d="M5 12h14m-6-6 6 6-6 6"></path></svg
+                >Reprendre le guidage</a
+              >
+            </div>
+          </header>
+          <div class="ob23-catalog-tools">
+            <label class="ob23-search"
+              ><svg
+                class="icon small"
+                viewBox="0 0 24 24"
+                fill="none"
+                stroke="currentColor"
+                stroke-width="1.6"
+                stroke-linecap="round"
+                stroke-linejoin="round"
+                aria-hidden="true"
+              >
+                <circle cx="10.5" cy="10.5" r="6.5"></circle>
+                <path d="m16 16 4 4"></path></svg
+              ><input
+                id="ob23-catalog-search"
+                type="search"
+                placeholder="Rechercher une question, un outil, un métier ou un choix…"
+                aria-label="Rechercher dans le questionnaire" /></label
+            ><span>34 réponses · 16 thèmes</span>
+          </div>
+          <div id="ob23-search-results" aria-live="polite"></div>
+          <div id="ob23-catalog-body">
+            <section class="ob-pending" data-add="O4.A1" aria-labelledby="pend-t">
+              <header>
+                <h2 id="pend-t">Tes réponses à reprendre</h2>
+                <span>3 questions mises de côté</span>
+              </header>
+              <a href="onboarding-theme.html"
+                ><span><strong>As-tu des profils à positionner prochainement ?</strong><small>Ton vivier</small></span
+                ><span class="ob-badge info">À vérifier avec mon équipe</span
+                ><svg
+                  class="icon small"
+                  viewBox="0 0 24 24"
+                  fill="none"
+                  stroke="currentColor"
+                  stroke-width="1.6"
+                  stroke-linecap="round"
+                  stroke-linejoin="round"
+                  aria-hidden="true"
+                >
+                  <path d="m9 5 7 7-7 7"></path></svg></a
+              ><a href="onboarding-theme.html"
+                ><span><strong>Et le nombre exact, si tu le connais ?</strong><small>Ton entreprise</small></span
+                ><span class="ob-badge">Je ne sais pas</span
+                ><svg
+                  class="icon small"
+                  viewBox="0 0 24 24"
+                  fill="none"
+                  stroke="currentColor"
+                  stroke-width="1.6"
+                  stroke-linecap="round"
+                  stroke-linejoin="round"
+                  aria-hidden="true"
+                >
+                  <path d="m9 5 7 7-7 7"></path></svg></a
+              ><a href="onboarding-theme.html"
+                ><span
+                  ><strong
+                    >Y a-t-il quelque chose d’important sur ton activité que mes questions n’ont pas couvert ?</strong
+                  ><small>Travailler avec Laura</small></span
+                ><span class="ob-badge warn">À compléter plus tard</span
+                ><svg
+                  class="icon small"
+                  viewBox="0 0 24 24"
+                  fill="none"
+                  stroke="currentColor"
+                  stroke-width="1.6"
+                  stroke-linecap="round"
+                  stroke-linejoin="round"
+                  aria-hidden="true"
+                >
+                  <path d="m9 5 7 7-7 7"></path></svg
+              ></a>
+            </section>
+            <section class="ob23-recommended">
+              <h2>À regarder selon tes réponses</h2>
+              <a href="onboarding-theme.html"
+                ><span
+                  ><svg
+                    class="icon"
+                    viewBox="0 0 24 24"
+                    fill="none"
+                    stroke="currentColor"
+                    stroke-width="1.6"
+                    stroke-linecap="round"
+                    stroke-linejoin="round"
+                    aria-hidden="true"
+                  >
+                    <rect x="3" y="7" width="18" height="14" rx="2"></rect>
+                    <path d="M8 7V3h8v4M3 12a24 24 0 0 0 18 0m-9 0v4"></path></svg
+                  ><strong>Clients et missions</strong></span
+                >
+                <p>Relier les validations, les échéances et le suivi des missions.</p>
+                <svg
+                  class="icon small"
+                  viewBox="0 0 24 24"
+                  fill="none"
+                  stroke="currentColor"
+                  stroke-width="1.6"
+                  stroke-linecap="round"
+                  stroke-linejoin="round"
+                  aria-hidden="true"
+                >
+                  <path d="m9 5 7 7-7 7"></path></svg></a
+              ><a href="onboarding-theme.html"
+                ><span
+                  ><svg
+                    class="icon"
+                    viewBox="0 0 24 24"
+                    fill="none"
+                    stroke="currentColor"
+                    stroke-width="1.6"
+                    stroke-linecap="round"
+                    stroke-linejoin="round"
+                    aria-hidden="true"
+                  >
+                    <path d="M14 2H4v20h16V8Z"></path>
+                    <path d="M14 2v6h6M8 13h8M8 17h6"></path></svg
+                  ><strong>Secteurs réglementés et appels d’offres</strong></span
+                >
+                <p>Préciser les conditions d’accès et la préparation des dossiers.</p>
+                <svg
+                  class="icon small"
+                  viewBox="0 0 24 24"
+                  fill="none"
+                  stroke="currentColor"
+                  stroke-width="1.6"
+                  stroke-linecap="round"
+                  stroke-linejoin="round"
+                  aria-hidden="true"
+                >
+                  <path d="m9 5 7 7-7 7"></path></svg></a
+              ><a href="onboarding-theme.html"
+                ><span
+                  ><svg
+                    class="icon"
+                    viewBox="0 0 24 24"
+                    fill="none"
+                    stroke="currentColor"
+                    stroke-width="1.6"
+                    stroke-linecap="round"
+                    stroke-linejoin="round"
+                    aria-hidden="true"
+                  >
+                    <rect x="9" y="2" width="6" height="5" rx="1"></rect>
+                    <rect x="1" y="17" width="6" height="5" rx="1"></rect>
+                    <rect x="9" y="17" width="6" height="5" rx="1"></rect>
+                    <rect x="17" y="17" width="6" height="5" rx="1"></rect>
+                    <path d="M12 7v10M4 17v-5h16v5"></path></svg
+                  ><strong>Réseau et voies d’accès</strong></span
+                >
+                <p>Vérifier les relations disponibles, sans supposer un référencement.</p>
+                <svg
+                  class="icon small"
+                  viewBox="0 0 24 24"
+                  fill="none"
+                  stroke="currentColor"
+                  stroke-width="1.6"
+                  stroke-linecap="round"
+                  stroke-linejoin="round"
+                  aria-hidden="true"
+                >
+                  <path d="m9 5 7 7-7 7"></path></svg></a
+              ><a href="onboarding-theme.html"
+                ><span
+                  ><svg
+                    class="icon"
+                    viewBox="0 0 24 24"
+                    fill="none"
+                    stroke="currentColor"
+                    stroke-width="1.6"
+                    stroke-linecap="round"
+                    stroke-linejoin="round"
+                    aria-hidden="true"
+                  >
+                    <rect x="3" y="7" width="18" height="14" rx="2"></rect>
+                    <path d="M8 7V3h8v4M3 12a24 24 0 0 0 18 0m-9 0v4"></path></svg
+                  ><strong>Offre et expertises</strong></span
+                >
+                <p>Distinguer toute ton offre de tes priorités du moment.</p>
+                <svg
+                  class="icon small"
+                  viewBox="0 0 24 24"
+                  fill="none"
+                  stroke="currentColor"
+                  stroke-width="1.6"
+                  stroke-linecap="round"
+                  stroke-linejoin="round"
+                  aria-hidden="true"
+                >
+                  <path d="m9 5 7 7-7 7"></path></svg
+              ></a>
+            </section>
+            <section class="ob23-theme-grid">
+              <a href="onboarding-theme.html"
+                ><div>
+                  <span class="ob23-index">01</span
+                  ><svg
+                    class="icon small"
+                    viewBox="0 0 24 24"
+                    fill="none"
+                    stroke="currentColor"
+                    stroke-width="1.6"
+                    stroke-linecap="round"
+                    stroke-linejoin="round"
+                    aria-hidden="true"
+                  >
+                    <rect x="4" y="3" width="12" height="18" rx="2"></rect>
+                    <path d="M16 9h4v12H7M8 7h4M8 11h4M8 15h4M9 21v-3h3v3"></path>
+                  </svg>
+                </div>
+                <h3>Ton entreprise</h3>
+                <p>Situer la structure sans confondre groupe, agence et équipe.</p>
+                <footer>
+                  <span>5 réponses · 21 repères disponibles</span
+                  ><svg
+                    class="icon small"
+                    viewBox="0 0 24 24"
+                    fill="none"
+                    stroke="currentColor"
+                    stroke-width="1.6"
+                    stroke-linecap="round"
+                    stroke-linejoin="round"
+                    aria-hidden="true"
+                  >
+                    <path d="m9 5 7 7-7 7"></path>
+                  </svg></footer></a
+              ><a href="onboarding-theme.html"
+                ><div>
+                  <span class="ob23-index">02</span
+                  ><svg
+                    class="icon small"
+                    viewBox="0 0 24 24"
+                    fill="none"
+                    stroke="currentColor"
+                    stroke-width="1.6"
+                    stroke-linecap="round"
+                    stroke-linejoin="round"
+                    aria-hidden="true"
+                  >
+                    <circle cx="12" cy="8" r="4"></circle>
+                    <path d="M4 21v-2a8 8 0 0 1 16 0v2"></path>
+                  </svg>
+                </div>
+                <h3>Ton rôle et ton équipe</h3>
+                <p>Adapter le conseil à ton travail, sans modifier tes droits.</p>
+                <footer>
+                  <span>4 réponses · 23 repères disponibles</span
+                  ><svg
+                    class="icon small"
+                    viewBox="0 0 24 24"
+                    fill="none"
+                    stroke="currentColor"
+                    stroke-width="1.6"
+                    stroke-linecap="round"
+                    stroke-linejoin="round"
+                    aria-hidden="true"
+                  >
+                    <path d="m9 5 7 7-7 7"></path>
+                  </svg></footer></a
+              ><a href="onboarding-theme.html"
+                ><div>
+                  <span class="ob23-index">03</span
+                  ><svg
+                    class="icon small"
+                    viewBox="0 0 24 24"
+                    fill="none"
+                    stroke="currentColor"
+                    stroke-width="1.6"
+                    stroke-linecap="round"
+                    stroke-linejoin="round"
+                    aria-hidden="true"
+                  >
+                    <circle cx="12" cy="12" r="9"></circle>
+                    <circle cx="12" cy="12" r="5"></circle>
+                    <circle cx="12" cy="12" r="1"></circle>
+                  </svg>
+                </div>
+                <h3>Objectifs et difficultés</h3>
+                <p>Choisir le résultat qui mérite ton temps et le frein à lever.</p>
+                <footer>
+                  <span>4 réponses · 11 repères disponibles</span
+                  ><svg
+                    class="icon small"
+                    viewBox="0 0 24 24"
+                    fill="none"
+                    stroke="currentColor"
+                    stroke-width="1.6"
+                    stroke-linecap="round"
+                    stroke-linejoin="round"
+                    aria-hidden="true"
+                  >
+                    <path d="m9 5 7 7-7 7"></path>
+                  </svg></footer></a
+              ><a href="onboarding-theme.html"
+                ><div>
+                  <span class="ob23-index">04</span
+                  ><svg
+                    class="icon small"
+                    viewBox="0 0 24 24"
+                    fill="none"
+                    stroke="currentColor"
+                    stroke-width="1.6"
+                    stroke-linecap="round"
+                    stroke-linejoin="round"
+                    aria-hidden="true"
+                  >
+                    <rect x="3" y="7" width="18" height="14" rx="2"></rect>
+                    <path d="M8 7V3h8v4M3 12a24 24 0 0 0 18 0m-9 0v4"></path>
+                  </svg>
+                </div>
+                <h3>Offre et expertises</h3>
+                <p>Séparer ce que tu délivres déjà de ce que tu veux développer.</p>
+                <footer>
+                  <span>5 réponses · 11 repères disponibles</span
+                  ><svg
+                    class="icon small"
+                    viewBox="0 0 24 24"
+                    fill="none"
+                    stroke="currentColor"
+                    stroke-width="1.6"
+                    stroke-linecap="round"
+                    stroke-linejoin="round"
+                    aria-hidden="true"
+                  >
+                    <path d="m9 5 7 7-7 7"></path>
+                  </svg></footer></a
+              ><a href="onboarding-theme.html"
+                ><div>
+                  <span class="ob23-index">05</span
+                  ><svg
+                    class="icon small"
+                    viewBox="0 0 24 24"
+                    fill="none"
+                    stroke="currentColor"
+                    stroke-width="1.6"
+                    stroke-linecap="round"
+                    stroke-linejoin="round"
+                    aria-hidden="true"
+                  >
+                    <circle cx="9" cy="8" r="3"></circle>
+                    <path d="M3 21v-3a6 6 0 0 1 12 0v3m2-17a3 3 0 0 1 0 6m2 4a5 5 0 0 1 3 4v3"></path>
+                  </svg>
+                </div>
+                <h3>Capacité de staffing</h3>
+                <p>Calibrer la réponse aux besoins et les prochains démarrages.</p>
+                <footer>
+                  <span>Pas encore commencé · 9 repères disponibles</span
+                  ><svg
+                    class="icon small"
+                    viewBox="0 0 24 24"
+                    fill="none"
+                    stroke="currentColor"
+                    stroke-width="1.6"
+                    stroke-linecap="round"
+                    stroke-linejoin="round"
+                    aria-hidden="true"
+                  >
+                    <path d="m9 5 7 7-7 7"></path>
+                  </svg></footer></a
+              ><a href="onboarding-theme.html"
+                ><div>
+                  <span class="ob23-index">06</span
+                  ><svg
+                    class="icon small"
+                    viewBox="0 0 24 24"
+                    fill="none"
+                    stroke="currentColor"
+                    stroke-width="1.6"
+                    stroke-linecap="round"
+                    stroke-linejoin="round"
+                    aria-hidden="true"
+                  >
+                    <path d="m12 2 9 4v6c0 5-9 10-9 10S3 17 3 12V6Z"></path>
+                    <path d="m8 12 3 3 5-6"></path>
+                  </svg>
+                </div>
+                <h3>Références et économie</h3>
+                <p>Construire une approche crédible et connaître tes contraintes économiques.</p>
+                <footer>
+                  <span>1 réponse · 15 repères disponibles</span
+                  ><svg
+                    class="icon small"
+                    viewBox="0 0 24 24"
+                    fill="none"
+                    stroke="currentColor"
+                    stroke-width="1.6"
+                    stroke-linecap="round"
+                    stroke-linejoin="round"
+                    aria-hidden="true"
+                  >
+                    <path d="m9 5 7 7-7 7"></path>
+                  </svg></footer></a
+              ><a href="onboarding-theme.html"
+                ><div>
+                  <span class="ob23-index">07</span
+                  ><svg
+                    class="icon small"
+                    viewBox="0 0 24 24"
+                    fill="none"
+                    stroke="currentColor"
+                    stroke-width="1.6"
+                    stroke-linecap="round"
+                    stroke-linejoin="round"
+                    aria-hidden="true"
+                  >
+                    <path d="m3 5 6-3 6 3 6-3v17l-6 3-6-3-6 3Zm6-3v17m6-14v17"></path>
+                  </svg>
+                </div>
+                <h3>Marchés et territoires</h3>
+                <p>Différencier implantation, mobilité, ambitions et exclusions.</p>
+                <footer>
+                  <span>5 réponses · 12 repères disponibles</span
+                  ><svg
+                    class="icon small"
+                    viewBox="0 0 24 24"
+                    fill="none"
+                    stroke="currentColor"
+                    stroke-width="1.6"
+                    stroke-linecap="round"
+                    stroke-linejoin="round"
+                    aria-hidden="true"
+                  >
+                    <path d="m9 5 7 7-7 7"></path>
+                  </svg></footer></a
+              ><a href="onboarding-theme.html"
+                ><div>
+                  <span class="ob23-index">08</span
+                  ><svg
+                    class="icon small"
+                    viewBox="0 0 24 24"
+                    fill="none"
+                    stroke="currentColor"
+                    stroke-width="1.6"
+                    stroke-linecap="round"
+                    stroke-linejoin="round"
+                    aria-hidden="true"
+                  >
+                    <rect x="4" y="3" width="12" height="18" rx="2"></rect>
+                    <path d="M16 9h4v12H7M8 7h4M8 11h4M8 15h4M9 21v-3h3v3"></path>
+                  </svg>
+                </div>
+                <h3>Clients et décideurs</h3>
+                <p>Cibler un périmètre accessible plutôt qu’un titre prestigieux.</p>
+                <footer>
+                  <span>1 réponse · 17 repères disponibles</span
+                  ><svg
+                    class="icon small"
+                    viewBox="0 0 24 24"
+                    fill="none"
+                    stroke="currentColor"
+                    stroke-width="1.6"
+                    stroke-linecap="round"
+                    stroke-linejoin="round"
+                    aria-hidden="true"
+                  >
+                    <path d="m9 5 7 7-7 7"></path>
+                  </svg></footer></a
+              ><a href="onboarding-theme.html"
+                ><div>
+                  <span class="ob23-index">09</span
+                  ><svg
+                    class="icon small"
+                    viewBox="0 0 24 24"
+                    fill="none"
+                    stroke="currentColor"
+                    stroke-width="1.6"
+                    stroke-linecap="round"
+                    stroke-linejoin="round"
+                    aria-hidden="true"
+                  >
+                    <rect x="9" y="2" width="6" height="5" rx="1"></rect>
+                    <rect x="1" y="17" width="6" height="5" rx="1"></rect>
+                    <rect x="9" y="17" width="6" height="5" rx="1"></rect>
+                    <rect x="17" y="17" width="6" height="5" rx="1"></rect>
+                    <path d="M12 7v10M4 17v-5h16v5"></path>
+                  </svg>
+                </div>
+                <h3>Réseau et voies d’accès</h3>
+                <p>Distinguer relation réelle, prospection directe et partenariat à qualifier.</p>
+                <footer>
+                  <span>1 réponse · 18 repères disponibles</span
+                  ><svg
+                    class="icon small"
+                    viewBox="0 0 24 24"
+                    fill="none"
+                    stroke="currentColor"
+                    stroke-width="1.6"
+                    stroke-linecap="round"
+                    stroke-linejoin="round"
+                    aria-hidden="true"
+                  >
+                    <path d="m9 5 7 7-7 7"></path>
+                  </svg></footer></a
+              ><a href="onboarding-theme.html"
+                ><div>
+                  <span class="ob23-index">10</span
+                  ><svg
+                    class="icon small"
+                    viewBox="0 0 24 24"
+                    fill="none"
+                    stroke="currentColor"
+                    stroke-width="1.6"
+                    stroke-linecap="round"
+                    stroke-linejoin="round"
+                    aria-hidden="true"
+                  >
+                    <circle cx="12" cy="12" r="9"></circle>
+                    <path d="M12 7v5l3 2"></path>
+                  </svg>
+                </div>
+                <h3>Temps et méthode</h3>
+                <p>Faire tenir le plan dans ta semaine réelle.</p>
+                <footer>
+                  <span>1 réponse · 15 repères disponibles</span
+                  ><svg
+                    class="icon small"
+                    viewBox="0 0 24 24"
+                    fill="none"
+                    stroke="currentColor"
+                    stroke-width="1.6"
+                    stroke-linecap="round"
+                    stroke-linejoin="round"
+                    aria-hidden="true"
+                  >
+                    <path d="m9 5 7 7-7 7"></path>
+                  </svg></footer></a
+              ><a href="onboarding-theme.html"
+                ><div>
+                  <span class="ob23-index">11</span
+                  ><svg
+                    class="icon small"
+                    viewBox="0 0 24 24"
+                    fill="none"
+                    stroke="currentColor"
+                    stroke-width="1.6"
+                    stroke-linecap="round"
+                    stroke-linejoin="round"
+                    aria-hidden="true"
+                  >
+                    <circle cx="9" cy="8" r="3"></circle>
+                    <path d="M3 21v-3a6 6 0 0 1 12 0v3m2-17a3 3 0 0 1 0 6m2 4a5 5 0 0 1 3 4v3"></path>
+                  </svg>
+                </div>
+                <h3>Ton vivier</h3>
+                <p>Séparer profils identifiés, qualifiés, disponibles et présentables.</p>
+                <footer>
+                  <span>Pas encore commencé · 14 repères disponibles</span
+                  ><svg
+                    class="icon small"
+                    viewBox="0 0 24 24"
+                    fill="none"
+                    stroke="currentColor"
+                    stroke-width="1.6"
+                    stroke-linecap="round"
+                    stroke-linejoin="round"
+                    aria-hidden="true"
+                  >
+                    <path d="m9 5 7 7-7 7"></path>
+                  </svg></footer></a
+              ><a href="onboarding-theme.html"
+                ><div>
+                  <span class="ob23-index">12</span
+                  ><svg
+                    class="icon small"
+                    viewBox="0 0 24 24"
+                    fill="none"
+                    stroke="currentColor"
+                    stroke-width="1.6"
+                    stroke-linecap="round"
+                    stroke-linejoin="round"
+                    aria-hidden="true"
+                  >
+                    <rect x="3" y="7" width="18" height="14" rx="2"></rect>
+                    <path d="M8 7V3h8v4M3 12a24 24 0 0 0 18 0m-9 0v4"></path>
+                  </svg>
+                </div>
+                <h3>Clients et missions</h3>
+                <p>Capitaliser sur les relations, les retours et les renouvellements.</p>
+                <footer>
+                  <span>1 réponse · 14 repères disponibles</span
+                  ><svg
+                    class="icon small"
+                    viewBox="0 0 24 24"
+                    fill="none"
+                    stroke="currentColor"
+                    stroke-width="1.6"
+                    stroke-linecap="round"
+                    stroke-linejoin="round"
+                    aria-hidden="true"
+                  >
+                    <path d="m9 5 7 7-7 7"></path>
+                  </svg></footer></a
+              ><a href="onboarding-theme.html"
+                ><div>
+                  <span class="ob23-index">13</span
+                  ><svg
+                    class="icon small"
+                    viewBox="0 0 24 24"
+                    fill="none"
+                    stroke="currentColor"
+                    stroke-width="1.6"
+                    stroke-linecap="round"
+                    stroke-linejoin="round"
+                    aria-hidden="true"
+                  >
+                    <path
+                      d="m10 13 4-4m-6 6-2 2a4 4 0 0 1-6-6l5-5a4 4 0 0 1 6 0m2 3 2-2a4 4 0 0 1 6 6l-5 5a4 4 0 0 1-6 0"
+                      transform="translate(1 0)"
+                    ></path>
+                  </svg>
+                </div>
+                <h3>Outils et données</h3>
+                <p>Comprendre ce qui existe avant de proposer une connexion.</p>
+                <footer>
+                  <span>3 réponses · 22 repères disponibles</span
+                  ><svg
+                    class="icon small"
+                    viewBox="0 0 24 24"
+                    fill="none"
+                    stroke="currentColor"
+                    stroke-width="1.6"
+                    stroke-linecap="round"
+                    stroke-linejoin="round"
+                    aria-hidden="true"
+                  >
+                    <path d="m9 5 7 7-7 7"></path>
+                  </svg></footer></a
+              ><a href="onboarding-theme.html"
+                ><div>
+                  <span class="ob23-index">14</span
+                  ><svg
+                    class="icon small"
+                    viewBox="0 0 24 24"
+                    fill="none"
+                    stroke="currentColor"
+                    stroke-width="1.6"
+                    stroke-linecap="round"
+                    stroke-linejoin="round"
+                    aria-hidden="true"
+                  >
+                    <path d="M14 2H4v20h16V8Z"></path>
+                    <path d="M14 2v6h6M8 13h8M8 17h6"></path>
+                  </svg>
+                </div>
+                <h3>Secteurs réglementés et appels d’offres</h3>
+                <p>Adapter la démarche aux prérequis d’accès et au coût de réponse.</p>
+                <footer>
+                  <span>Pas encore commencé · 13 repères disponibles</span
+                  ><svg
+                    class="icon small"
+                    viewBox="0 0 24 24"
+                    fill="none"
+                    stroke="currentColor"
+                    stroke-width="1.6"
+                    stroke-linecap="round"
+                    stroke-linejoin="round"
+                    aria-hidden="true"
+                  >
+                    <path d="m9 5 7 7-7 7"></path>
+                  </svg></footer></a
+              ><a href="onboarding-theme.html"
+                ><div>
+                  <span class="ob23-index">15</span
+                  ><svg
+                    class="icon small"
+                    viewBox="0 0 24 24"
+                    fill="none"
+                    stroke="currentColor"
+                    stroke-width="1.6"
+                    stroke-linecap="round"
+                    stroke-linejoin="round"
+                    aria-hidden="true"
+                  >
+                    <path d="M21 15a3 3 0 0 1-3 3H8l-5 4V5a3 3 0 0 1 3-3h12a3 3 0 0 1 3 3Z"></path>
+                    <path d="M7 7h10M7 11h7"></path>
+                  </svg>
+                </div>
+                <h3>Contenu et visibilité</h3>
+                <p>Distinguer audience, conversations et véritables opportunités.</p>
+                <footer>
+                  <span>Pas encore commencé · 6 repères disponibles</span
+                  ><svg
+                    class="icon small"
+                    viewBox="0 0 24 24"
+                    fill="none"
+                    stroke="currentColor"
+                    stroke-width="1.6"
+                    stroke-linecap="round"
+                    stroke-linejoin="round"
+                    aria-hidden="true"
+                  >
+                    <path d="m9 5 7 7-7 7"></path>
+                  </svg></footer></a
+              ><a href="onboarding-theme.html"
+                ><div>
+                  <span class="ob23-index">16</span
+                  ><svg
+                    class="icon small"
+                    viewBox="0 0 24 24"
+                    fill="none"
+                    stroke="currentColor"
+                    stroke-width="1.6"
+                    stroke-linecap="round"
+                    stroke-linejoin="round"
+                    aria-hidden="true"
+                  >
+                    <path
+                      d="m12 2 2 3 3-.2.5 3 3 1.7-1.5 2.7 1.5 2.7-3 1.7-.5 3-3-.2-2 3-2-3-3 .2-.5-3-3-1.7 1.5-2.7-1.5-2.7 3-1.7.5-3 3 .2Z"
+                    ></path>
+                    <circle cx="12" cy="12" r="3"></circle>
+                  </svg>
+                </div>
+                <h3>Travailler avec Laura</h3>
+                <p>Choisir le niveau de détail, les sollicitations et les limites.</p>
+                <footer>
+                  <span>3 réponses · 7 repères disponibles</span
+                  ><svg
+                    class="icon small"
+                    viewBox="0 0 24 24"
+                    fill="none"
+                    stroke="currentColor"
+                    stroke-width="1.6"
+                    stroke-linecap="round"
+                    stroke-linejoin="round"
+                    aria-hidden="true"
+                  >
+                    <path d="m9 5 7 7-7 7"></path>
+                  </svg></footer
+              ></a>
+            </section>
+          </div>
+          <footer class="ob23-footer">
+            <div>
+              <a class="btn plain" href="onboarding-relecture.html"
+                ><svg
+                  class="icon small"
+                  viewBox="0 0 24 24"
+                  fill="none"
+                  stroke="currentColor"
+                  stroke-width="1.6"
+                  stroke-linecap="round"
+                  stroke-linejoin="round"
+                  aria-hidden="true"
+                >
+                  <path d="M19 12H5m6-6-6 6 6 6"></path></svg
+                >Retour</a
+              >
+            </div>
+            <div>
+              <span class="ob23-save" data-ob23-save="">Brouillon enregistré</span
+              ><a class="btn primary" href="onboarding-relecture.html"
+                ><svg
+                  class="icon small"
+                  viewBox="0 0 24 24"
+                  fill="none"
+                  stroke="currentColor"
+                  stroke-width="1.6"
+                  stroke-linecap="round"
+                  stroke-linejoin="round"
+                  aria-hidden="true"
+                >
+                  <path d="M5 12h14m-6-6 6 6-6 6"></path></svg
+                >Voir ma restitution</a
+              >
+            </div>
+          </footer>
+          <section class="rv-notes" aria-labelledby="rv-notes-t">
+            <h2 id="rv-notes-t">Points à discuter</h2>
+            <p>Notes de conception pour Louis — hors produit. 1 ajout, 4 retraits sur cet écran.</p>
+            <ol>
+              <li>
+                <strong>Réponses reportées</strong> (O4.A1) : le produit garde une liste des questions mises de côté.
+                Rangée en tête du catalogue, au-dessus des recommandations de Théo : c’est ce que Claire a déjà promis
+                de faire. Une absence de report fait disparaître la carte entière (on n’affiche pas ce qu’on n’a pas).
+              </li>
+              <li>
+                <strong>Le catalogue remplace le « Temps 2 »</strong> : nos 60 questions différées en modale vivent
+                désormais dans les 16 thèmes, consultables à tout moment. À confirmer : le profil (Réglages › Profil)
+                ouvre-t-il le même catalogue, ou une copie ? Un seul endroit (GA-26) plaide pour le même.
+              </li>
+              <li>
+                <strong>Recherche</strong> : elle parcourt libellés, thèmes et groupes. Faut-il aussi chercher dans les
+                choix proposés (ex. « Boond » ne trouve que la question des outils si le choix est indexé) ?
+              </li>
+              <li>
+                <strong>Grille de 16 cartes</strong> : longue sur mobile (16 écrans de pouce). Proposition : sous 768
+                px, une liste compacte d’une ligne par thème, comme les groupes de Théo.
+              </li>
+            </ol>
+          </section>
+        </div>
+      </main>
+    </div>
+    <dialog id="dialog" class="ob23-dialog" aria-labelledby="dialog-title">
+      <div class="dialog-head">
+        <h2 id="dialog-title">Choisir</h2>
+        <button type="button" class="icon-btn" data-act="close" aria-label="Fermer">
+          <svg
+            class="icon"
+            viewBox="0 0 24 24"
+            fill="none"
+            stroke="currentColor"
+            stroke-width="1.6"
+            stroke-linecap="round"
+            stroke-linejoin="round"
+            aria-hidden="true"
+          >
+            <path d="m6 6 12 12M6 18 18 6"></path>
+          </svg>
+        </button>
+      </div>
+      <div class="dialog-body"></div>
+      <div class="dialog-footer">
+        <button type="button" class="btn plain" data-ob23="cancel">Annuler</button
+        ><button type="button" class="btn plain" data-ob23="picker-clear">Vider la sélection</button
+        ><button type="button" class="btn primary" data-ob23="picker-apply">Appliquer mes choix</button>
+      </div>
+    </dialog>
+    <dialog id="dlg-export" class="ob23-dialog" aria-labelledby="dlg-export-t">
+      <div class="dialog-head">
+        <h2 id="dlg-export-t">Emporter ton cadrage</h2>
+        <button type="button" class="icon-btn" data-act="close" aria-label="Fermer">
+          <svg
+            class="icon"
+            viewBox="0 0 24 24"
+            fill="none"
+            stroke="currentColor"
+            stroke-width="1.6"
+            stroke-linecap="round"
+            stroke-linejoin="round"
+            aria-hidden="true"
+          >
+            <path d="m6 6 12 12M6 18 18 6"></path>
+          </svg>
+        </button>
+      </div>
+      <div class="dialog-body">
+        <div class="ob23-dialog-content">
+          <p>Le fichier contient tes réponses et leurs statuts, pas les autres données de ton espace.</p>
+          <p>
+            Le JSON permet de retrouver le cadrage dans un autre espace. Une importation reste un brouillon à relire.
+          </p>
+          <p class="ob23-small">
+            Ces fichiers peuvent contenir tes informations commerciales. Partage-les uniquement avec les personnes
+            concernées.
+          </p>
+        </div>
+      </div>
+      <div class="dialog-footer">
+        <button type="button" class="btn plain" data-close="">Fermer</button
+        ><button type="button" class="btn soft" data-close="" data-toast="Cadrage_Altimance.txt téléchargé.">
+          <svg
+            class="icon"
+            viewBox="0 0 24 24"
+            fill="none"
+            stroke="currentColor"
+            stroke-width="1.6"
+            stroke-linecap="round"
+            stroke-linejoin="round"
+            aria-hidden="true"
+          >
+            <path d="M14 2H4v20h16V8Z"></path>
+            <path d="M14 2v6h6M8 13h8M8 17h6"></path></svg
+          >Télécharger le texte</button
+        ><button type="button" class="btn primary" data-close="" data-toast="Cadrage_Altimance.json téléchargé.">
+          <svg
+            class="icon"
+            viewBox="0 0 24 24"
+            fill="none"
+            stroke="currentColor"
+            stroke-width="1.6"
+            stroke-linecap="round"
+            stroke-linejoin="round"
+            aria-hidden="true"
+          >
+            <path d="M12 3v12m-5-5 5 5 5-5M4 16v5h16v-5"></path></svg
+          >Exporter le JSON
+        </button>
+      </div>
+    </dialog>
+    <div class="toast-container" id="toasts" aria-live="polite"></div>
+    <div class="rv" aria-label="Relecture de la maquette">
+      <div class="rv-bar">
+        <button
+          type="button"
+          class="rv-theme"
+          id="rv-info"
+          aria-expanded="false"
+          aria-controls="rv-panel"
+          aria-label="Détail des ajouts, retraits et états"
+        >
+          <svg
+            class="icon"
+            viewBox="0 0 24 24"
+            fill="none"
+            stroke="currentColor"
+            stroke-width="1.6"
+            stroke-linecap="round"
+            stroke-linejoin="round"
+            aria-hidden="true"
+          >
+            <circle cx="12" cy="12" r="9"></circle>
+            <path d="M12 11v6m0-10h.01"></path>
+          </svg></button
+        ><button type="button" class="rv-switch" id="rv-switch" aria-pressed="false">
+          <span class="knob"></span><span class="lbl">Montrer les ajouts</span>
+        </button>
+      </div>
+      <div class="rv-panel" id="rv-panel" hidden="">
+        <p class="rv-count"><strong>1 ajout</strong> par rapport à Théo, entourés en pointillé et étiquetés.</p>
+        <h3>Essayer</h3>
+        <ul>
+          <li>
+            Tape « TJM », « Boond », « appel d’offres » ou « RGPD » dans la recherche : elle parcourt les 228 questions.
+          </li>
+        </ul>
+        <h3>Retiré</h3>
+        <ul>
+          <li>
+            <b>workspace_profile</b> « Comment travailles-tu avec tes clients ? » — question de notre catalogue absente
+            de la V23 (aucun thème ne la porte).
+          </li>
+          <li><b>placed_roles</b> « Quels métiers places-tu réellement ? » — absente de la V23.</li>
+          <li>
+            <b>O4.R1</b> Questionnaire « Temps 2 » en modale (<code>ProfileQuestionnaireDialog</code>, 60 questions par
+            blocs) — absorbé par les 16 thèmes.
+          </li>
+          <li>
+            <b>O4.R2</b> Carte « Compléter ton profil » (<code>ProfileComplementCard</code>) — absorbée par « À regarder
+            selon tes réponses ».
+          </li>
+        </ul>
+        <h3>Corrigé (doctrine)</h3>
+        <ul>
+          <li><b>GA-18</b> « 0 réponse · 21 repères » → « Pas encore commencé · 21 repères ».</li>
+          <li><b>D-1</b> « ce que vous délivrez… vous voulez » → tutoyé.</li>
+          <li><b>D-8</b> « Aperçu local » retiré.</li>
+          <li><b>D80</b> Index et compteurs remontés à 12 px.</li>
+        </ul>
+      </div>
+    </div>
+    <script type="application/json" id="ob-data">
+      {
+        "q": {},
+        "s": {
+          "unknown": "Je ne sais pas",
+          "later": "À compléter plus tard",
+          "na": "Non applicable",
+          "check": "À vérifier avec mon équipe"
+        },
+        "icons": {
+          "down": "\u003cpath d=\"m6 9 6 6 6-6\"/>",
+          "close": "\u003cpath d=\"m6 6 12 12M6 18 18 6\"/>",
+          "search": "\u003ccircle cx=\"10.5\" cy=\"10.5\" r=\"6.5\"/>\u003cpath d=\"m16 16 4 4\"/>",
+          "clock": "\u003ccircle cx=\"12\" cy=\"12\" r=\"9\"/>\u003cpath d=\"M12 7v5l3 2\"/>",
+          "right": "\u003cpath d=\"m9 5 7 7-7 7\"/>",
+          "sun": "\u003ccircle cx=\"12\" cy=\"12\" r=\"4\"/>\u003cpath d=\"M12 2v2m0 16v2M2 12h2m16 0h2M5 5l1.5 1.5m11 11L19 19M5 19l1.5-1.5m11-11L19 5\"/>",
+          "moon": "\u003cpath d=\"M20.5 13A8.5 8.5 0 0 1 11 3.5 8.5 8.5 0 1 0 20.5 13Z\"/>"
+        },
+        "idx": [
+          ["Comment s’appelle ton entreprise ou ton activité ?", "Ton entreprise", "Identité et taille", "esn_name"],
+          ["Combien de consultants compte ta structure ?", "Ton entreprise", "Identité et taille", "consultant_size"],
+          ["Et le nombre exact, si tu le connais ?", "Ton entreprise", "Identité et taille", "consultant_count"],
+          ["Quel est ton site, si tu en as un ?", "Ton entreprise", "Identité et taille", "esn_website"],
+          [
+            "Combien de personnes participent au développement commercial ?",
+            "Ton entreprise",
+            "Équipe commerciale",
+            "sales_team_size"
+          ],
+          [
+            "Où en est ton activité aujourd'hui ?",
+            "Ton entreprise",
+            "Moment de l’entreprise",
+            "esn_maturity_situation"
+          ],
+          [
+            "Quel est l'objectif de l'entreprise en ce moment ?",
+            "Ton entreprise",
+            "Moment de l’entreprise",
+            "company_growth_goal"
+          ],
+          ["Combien de clients actifs en ce moment ?", "Ton entreprise", "Activité réelle", "active_clients_band"],
+          [
+            "Ton chiffre d'affaires est-il plutôt récurrent ou ponctuel ?",
+            "Ton entreprise",
+            "Activité réelle",
+            "revenue_recurrence"
+          ],
+          [
+            "Un client pèse-t-il fort dans ton chiffre d'affaires ?",
+            "Ton entreprise",
+            "Activité réelle",
+            "client_concentration_risk"
+          ],
+          [
+            "Combien de consultants gères-tu directement ?",
+            "Ton entreprise",
+            "Périmètres d’effectif",
+            "consultants_managed_by_user_band"
+          ],
+          [
+            "Combien de consultants sont disponibles maintenant (intercontrat) ?",
+            "Ton entreprise",
+            "Périmètres d’effectif",
+            "available_consultants_band"
+          ],
+          [
+            "Et dans le groupe entier, si tu en fais partie ?",
+            "Ton entreprise",
+            "Périmètres d’effectif",
+            "consultant_size_group_band"
+          ],
+          [
+            "Et dans ta BU / agence spécifiquement, si tu en as une ?",
+            "Ton entreprise",
+            "Périmètres d’effectif",
+            "consultant_size_business_unit_band"
+          ],
+          [
+            "Combien de profils sont identifiés dans ton vivier (CV reçu, contact établi) ?",
+            "Ton vivier",
+            "Connaître son vivier · 1",
+            "talent_pool_identified_band"
+          ],
+          [
+            "Combien, parmi eux, sont qualifiés (dossier vérifié) ?",
+            "Ton vivier",
+            "Connaître son vivier · 1",
+            "talent_pool_qualified_band"
+          ],
+          [
+            "Combien sont disponibles maintenant ?",
+            "Ton vivier",
+            "Connaître son vivier · 1",
+            "talent_pool_available_band"
+          ],
+          [
+            "Cette disponibilité, tu l'as vérifiée quand ?",
+            "Ton vivier",
+            "Connaître son vivier · 1",
+            "talent_pool_availability_recency_band"
+          ],
+          [
+            "Quel est le TJM moyen de ton vivier ?",
+            "Ton vivier",
+            "Connaître son vivier · 2",
+            "talent_pool_avg_tjm_band"
+          ],
+          [
+            "Ton vivier est-il mobile géographiquement ?",
+            "Ton vivier",
+            "Actualité et mobilisation · 1",
+            "talent_pool_mobility_band"
+          ],
+          [
+            "Quel cadre autorise l’utilisation et le partage des profils de ton vivier ?",
+            "Ton vivier",
+            "Actualité et mobilisation · 1",
+            "talent_pool_consent_status"
+          ],
+          [
+            "Combien de ces profils sont aussi en process ailleurs ?",
+            "Ton vivier",
+            "Actualité et mobilisation · 1",
+            "talent_pool_other_processes_band"
+          ],
+          [
+            "Combien seraient vraiment engageables tout de suite ?",
+            "Ton vivier",
+            "Actualité et mobilisation · 1",
+            "talent_pool_engagement_reality_band"
+          ],
+          [
+            "À quelle fréquence revalides-tu ces disponibilités ?",
+            "Ton vivier",
+            "Actualité et mobilisation · 2",
+            "talent_pool_revalidation_frequency"
+          ],
+          [
+            "Combien de profils sont au stade « intéressé » ?",
+            "Ton vivier",
+            "États de qualification",
+            "talent_pool_state_interested_band"
+          ],
+          [
+            "Combien sont au stade « disponible » ?",
+            "Ton vivier",
+            "États de qualification",
+            "talent_pool_state_available_band"
+          ],
+          [
+            "Combien sont au stade « sécurisé » ?",
+            "Ton vivier",
+            "États de qualification",
+            "talent_pool_state_secured_band"
+          ],
+          [
+            "Combien sont au stade « présentable » ?",
+            "Ton vivier",
+            "États de qualification",
+            "talent_pool_state_presentable_band"
+          ],
+          [
+            "Combien de missions sont en cours actuellement ?",
+            "Clients et missions",
+            "Missions et satisfaction · 1",
+            "client_base_missions_ongoing_band"
+          ],
+          [
+            "Combien de missions se sont terminées ces 12 derniers mois ?",
+            "Clients et missions",
+            "Missions et satisfaction · 1",
+            "client_base_missions_completed_band"
+          ],
+          [
+            "Tes missions se renouvellent-elles ?",
+            "Clients et missions",
+            "Missions et satisfaction · 1",
+            "client_base_renewals_band"
+          ],
+          [
+            "La satisfaction de tes clients est-elle suivie ?",
+            "Clients et missions",
+            "Missions et satisfaction · 1",
+            "client_base_satisfaction_band"
+          ],
+          [
+            "Reçois-tu des recommandations de tes clients actuels ?",
+            "Clients et missions",
+            "Missions et satisfaction · 2",
+            "client_base_referrals_band"
+          ],
+          [
+            "Fais-tu un retour d'expérience après chaque mission ?",
+            "Clients et missions",
+            "Références et renouvellement",
+            "client_base_rex_band"
+          ],
+          [
+            "Combien de cas clients sont exploitables aujourd'hui ?",
+            "Clients et missions",
+            "Références et renouvellement",
+            "client_base_case_studies_band"
+          ],
+          [
+            "As-tu déjà proposé une offre complémentaire à un client existant ?",
+            "Clients et missions",
+            "Références et renouvellement",
+            "client_base_cross_sell_band"
+          ],
+          [
+            "Les échéances de tes missions sont-elles suivies à 3 mois ?",
+            "Clients et missions",
+            "Références et renouvellement",
+            "client_base_deadlines_band"
+          ],
+          [
+            "Le suivi de tes comptes clients est-il régulier ?",
+            "Clients et missions",
+            "Suivi des comptes",
+            "client_base_followup_regularity"
+          ],
+          [
+            "Qui est responsable de ce suivi ?",
+            "Clients et missions",
+            "Suivi des comptes",
+            "client_base_followup_owner"
+          ],
+          [
+            "Combien de temps par semaine dis-tu consacrer au développement commercial ?",
+            "Temps et méthode",
+            "Temps commercial disponible",
+            "weekly_sales_time_declared"
+          ],
+          [
+            "Sur ce temps, combien tient vraiment une semaine ordinaire ?",
+            "Temps et méthode",
+            "Temps commercial disponible",
+            "weekly_sales_time_protected"
+          ],
+          [
+            "Et une fois que le reste a servi, il te reste combien ?",
+            "Temps et méthode",
+            "Temps commercial disponible",
+            "weekly_sales_time_residual"
+          ],
+          [
+            "Qu'est-ce qui prend le reste de ta semaine ?",
+            "Temps et méthode",
+            "Charge et créneaux",
+            "competing_workloads"
+          ],
+          [
+            "Ta charge est-elle la même d'une semaine à l'autre ?",
+            "Temps et méthode",
+            "Charge et créneaux",
+            "workload_variability"
+          ],
+          [
+            "À quels moments ton temps commercial tombe-t-il ?",
+            "Temps et méthode",
+            "Charge et créneaux",
+            "weekly_sales_time_slots"
+          ],
+          [
+            "Arrives-tu à bloquer un créneau et à le tenir ?",
+            "Temps et méthode",
+            "Charge et créneaux",
+            "protected_slot_capacity"
+          ],
+          [
+            "Qu'est-ce qui tient aujourd'hui sur tes comptes, même quand tu n'es pas là ?",
+            "Temps et méthode",
+            "Continuité des dossiers",
+            "dossier_continuity_practices"
+          ],
+          [
+            "Où tes dossiers décrochent-ils le plus souvent ?",
+            "Temps et méthode",
+            "Continuité des dossiers",
+            "dossier_continuity_breaks"
+          ],
+          ["Ton CRM — qui s'en sert ?", "Outils et données", "Outils principaux · 1", "tooling_crm"],
+          ["Ton ATS — qui s'en sert ?", "Outils et données", "Outils principaux · 1", "tooling_ats"],
+          ["Ton ERP — qui s'en sert ?", "Outils et données", "Outils principaux · 1", "tooling_erp"],
+          ["Ta messagerie — qui s'en sert ?", "Outils et données", "Outils principaux · 1", "tooling_mailbox"],
+          ["Ton agenda — qui s'en sert ?", "Outils et données", "Outils principaux · 2", "tooling_calendar"],
+          [
+            "Ton espace de fichiers partagés — qui s'en sert ?",
+            "Outils et données",
+            "Outils principaux · 2",
+            "tooling_drive"
+          ],
+          ["Tes tableurs — qui s'en sert ?", "Outils et données", "Outils complémentaires · 1", "tooling_spreadsheet"],
+          [
+            "Un outil pour retrouver des coordonnées — qui s'en sert ?",
+            "Outils et données",
+            "Outils complémentaires · 1",
+            "tooling_enrichment"
+          ],
+          [
+            "Les plateformes où tu reçois ou publies des besoins — qui s'en sert ?",
+            "Outils et données",
+            "Outils complémentaires · 1",
+            "tooling_sourcing_platform"
+          ],
+          [
+            "Ton outil de pilotage et de reporting — qui s'en sert ?",
+            "Outils et données",
+            "Outils complémentaires · 1",
+            "tooling_bi"
+          ],
+          [
+            "Tes notes personnelles — qui y a accès ?",
+            "Outils et données",
+            "Outils complémentaires · 2",
+            "tooling_personal_notes"
+          ],
+          [
+            "Où vivent réellement tes données commerciales aujourd'hui ?",
+            "Outils et données",
+            "Qualité et continuité des données · 1",
+            "tooling_reference"
+          ],
+          [
+            "Que contient cette source ?",
+            "Outils et données",
+            "Qualité et continuité des données · 1",
+            "tooling_reference_data"
+          ],
+          [
+            "À quand remonte sa dernière mise à jour ?",
+            "Outils et données",
+            "Qualité et continuité des données · 1",
+            "tooling_reference_freshness"
+          ],
+          [
+            "Quelle confiance lui accordes-tu ?",
+            "Outils et données",
+            "Qualité et continuité des données · 1",
+            "tooling_reference_confidence"
+          ],
+          [
+            "Peux-tu en sortir tes données ?",
+            "Outils et données",
+            "Qualité et continuité des données · 2",
+            "tooling_reference_export"
+          ],
+          [
+            "La même information vit-elle à plusieurs endroits ?",
+            "Outils et données",
+            "Qualité et continuité des données · 2",
+            "tooling_duplicates"
+          ],
+          [
+            "Qu'est-ce qui te coûte le plus de temps dans cette chaîne ?",
+            "Outils et données",
+            "Qualité et continuité des données · 2",
+            "tooling_pain"
+          ],
+          ["Où ton entreprise est-elle implantée ?", "Ton entreprise", "Implantations", "company_locations"],
+          [
+            "Quel est le chiffre d'affaires annuel de ton ESN ?",
+            "Ton entreprise",
+            "Chiffre d’affaires et période",
+            "annual_revenue_amount"
+          ],
+          [
+            "Ce chiffre correspond à quelle période ?",
+            "Ton entreprise",
+            "Chiffre d’affaires et période",
+            "annual_revenue_period"
+          ],
+          ["Quel est ton rôle principal ?", "Ton rôle et ton équipe", "Rôle et portefeuille", "user_role"],
+          [
+            "Combien de comptes as-tu actuellement dans ton portefeuille ?",
+            "Ton rôle et ton équipe",
+            "Rôle et portefeuille",
+            "portfolio_size"
+          ],
+          [
+            "Depuis combien de temps occupes-tu ce rôle ?",
+            "Ton rôle et ton équipe",
+            "Expérience professionnelle",
+            "role_tenure"
+          ],
+          [
+            "Depuis combien de temps travailles-tu dans le conseil / l'ESN ?",
+            "Ton rôle et ton équipe",
+            "Expérience professionnelle",
+            "industry_tenure"
+          ],
+          [
+            "Quelles décisions prends-tu seul, sans avoir à demander ?",
+            "Ton rôle et ton équipe",
+            "Décisions et validations",
+            "decisions_alone"
+          ],
+          [
+            "Quelles décisions dois-tu faire valider par quelqu'un d'autre ?",
+            "Ton rôle et ton équipe",
+            "Décisions et validations",
+            "decisions_to_validate"
+          ],
+          ["Qui manages-tu ?", "Ton rôle et ton équipe", "Équipe suivie", "people_managed"],
+          [
+            "Recruter un nouveau compte client : c'est toi qui décides ?",
+            "Ton rôle et ton équipe",
+            "Responsabilités réelles",
+            "recruitment_accounts_authority"
+          ],
+          [
+            "Décider un staffing : c'est toi qui décides ?",
+            "Ton rôle et ton équipe",
+            "Responsabilités réelles",
+            "staffing_authority"
+          ],
+          [
+            "La marge et la facturation : c'est toi qui décides ?",
+            "Ton rôle et ton équipe",
+            "Responsabilités réelles",
+            "margin_billing_authority"
+          ],
+          ["À quels outils as-tu accès ?", "Ton rôle et ton équipe", "Accès et invitations", "tools_access"],
+          [
+            "Inviter quelqu'un dans l'espace : c'est toi qui décides ?",
+            "Ton rôle et ton équipe",
+            "Accès et invitations",
+            "invite_authority"
+          ],
+          [
+            "Combien d'associés compte l'entreprise ?",
+            "Ton rôle et ton équipe",
+            "Répartition du travail · 1",
+            "associates_count"
+          ],
+          [
+            "Combien de recruteurs travaillent sur le vivier ?",
+            "Ton rôle et ton équipe",
+            "Répartition du travail · 1",
+            "recruiters_team_size"
+          ],
+          [
+            "Combien de personnes en delivery (missions, encadrement, intercontrat) ?",
+            "Ton rôle et ton équipe",
+            "Répartition du travail · 1",
+            "delivery_team_size"
+          ],
+          [
+            "Combien de personnes dédiées au marketing ?",
+            "Ton rôle et ton équipe",
+            "Répartition du travail · 1",
+            "marketing_team_size"
+          ],
+          [
+            "Combien de personnes dédiées aux opérations (administratif, ADV, RH interne…) ?",
+            "Ton rôle et ton équipe",
+            "Répartition du travail · 2",
+            "ops_team_size"
+          ],
+          [
+            "Comment l'équipe se coordonne-t-elle au quotidien ?",
+            "Ton rôle et ton équipe",
+            "Répartition du travail · 2",
+            "team_coordination_mode"
+          ],
+          [
+            "À quels moments acceptes-tu d'être sollicité ?",
+            "Travailler avec Laura",
+            "Détail et rythme des échanges",
+            "contact_windows"
+          ],
+          [
+            "Quel niveau de détail attends-tu des réponses de Bellum ?",
+            "Travailler avec Laura",
+            "Détail et rythme des échanges",
+            "detail_level"
+          ],
+          [
+            "Dans quels domaines vends-tu tes prestations ?",
+            "Offre et expertises",
+            "Domaines de prestation",
+            "offer_domains"
+          ],
+          [
+            "Quels sont tes domaines d'expertise ?",
+            "Offre et expertises",
+            "Expertises mobilisables",
+            "expertise_areas"
+          ],
+          ["Quel est ton positionnement principal ?", "Offre et expertises", "Positionnement et modèle", "positioning"],
+          [
+            "Comment travailles-tu avec tes consultants ?",
+            "Offre et expertises",
+            "Positionnement et modèle",
+            "staffing_model"
+          ],
+          [
+            "Proposes-tu aussi du recrutement — placer un profil en CDI chez ton client ?",
+            "Capacité de staffing",
+            "Recrutement pour les clients",
+            "recruits_for_clients"
+          ],
+          ["Quels types de prestation proposes-tu ?", "Offre et expertises", "Nature des prestations", "service_types"],
+          [
+            "Lesquelles as-tu déjà vendues ?",
+            "Offre et expertises",
+            "Offre livrée et offre à développer",
+            "service_types_proven"
+          ],
+          [
+            "Lesquelles souhaites-tu développer ?",
+            "Offre et expertises",
+            "Offre livrée et offre à développer",
+            "service_types_desired"
+          ],
+          [
+            "Quels modes utilises-tu vraiment, au-delà de ton mode principal ?",
+            "Capacité de staffing",
+            "Modes de réponse",
+            "staffing_modes"
+          ],
+          [
+            "Comment valides-tu un profil avant de le proposer ?",
+            "Capacité de staffing",
+            "Validation des profils et cadre contractuel",
+            "profile_validation_methods"
+          ],
+          [
+            "Quelles contraintes contractuelles pèsent sur tes missions ?",
+            "Capacité de staffing",
+            "Validation des profils et cadre contractuel",
+            "contractual_constraints"
+          ],
+          [
+            "As-tu des résultats concrets à montrer ?",
+            "Références et économie",
+            "Ce qui rend ton offre crédible · 1",
+            "case_study_results"
+          ],
+          [
+            "As-tu des témoignages clients à citer ?",
+            "Références et économie",
+            "Ce qui rend ton offre crédible · 1",
+            "client_testimonials"
+          ],
+          [
+            "Quelles entreprises peux-tu citer comme références ?",
+            "Références et économie",
+            "Ce qui rend ton offre crédible · 1",
+            "reference_accounts"
+          ],
+          [
+            "Pour quelles expertises n'as-tu encore aucune preuve concrète ?",
+            "Références et économie",
+            "Ce qui rend ton offre crédible · 1",
+            "expertise_no_concrete_proof"
+          ],
+          [
+            "Pour quelles expertises as-tu une référence client à montrer ?",
+            "Références et économie",
+            "Ce qui rend ton offre crédible · 2",
+            "expertise_client_reference"
+          ],
+          [
+            "Pour quelles expertises reposes-tu sur ton expérience personnelle ?",
+            "Références et économie",
+            "Ce qui rend ton offre crédible · 2",
+            "expertise_personal_experience"
+          ],
+          [
+            "Pour quelles expertises reposes-tu sur un partenaire ?",
+            "Références et économie",
+            "Ce qui rend ton offre crédible · 2",
+            "expertise_partner"
+          ],
+          [
+            "Pour quelles expertises as-tu un vivier disponible ?",
+            "Références et économie",
+            "Ce qui rend ton offre crédible · 2",
+            "expertise_talent_pool"
+          ],
+          ["Quels secteurs vises-tu ?", "Marchés et territoires", "Secteurs cibles et références", "target_sectors"],
+          [
+            "Parmi ces secteurs, lesquels sont vraiment prioritaires cette année ?",
+            "Marchés et territoires",
+            "Secteurs cibles et références",
+            "priority_sectors"
+          ],
+          [
+            "Dans lesquels de ces secteurs as-tu une référence réelle ?",
+            "Marchés et territoires",
+            "Secteurs cibles et références",
+            "reference_sectors"
+          ],
+          [
+            "Quels formats d’entreprises souhaites-tu adresser ?",
+            "Marchés et territoires",
+            "Types d’entreprises et géographie",
+            "target_company_types"
+          ],
+          [
+            "Ta zone géographique principale ?",
+            "Marchés et territoires",
+            "Types d’entreprises et géographie",
+            "geo_zones"
+          ],
+          [
+            "Le remote et les déplacements, dans quelles conditions ?",
+            "Marchés et territoires",
+            "Types d’entreprises et géographie",
+            "remote_and_travel_scope"
+          ],
+          [
+            "Sur tes zones cibles, où en es-tu ?",
+            "Marchés et territoires",
+            "Types d’entreprises et géographie",
+            "zone_capability_status"
+          ],
+          [
+            "Par quels canaux tes affaires entrent-elles aujourd'hui ?",
+            "Réseau et voies d’accès",
+            "Canaux qui fonctionnent · 1",
+            "entry_channels_used"
+          ],
+          [
+            "Pour lesquels de ces canaux connais-tu la période sur laquelle portent tes chiffres ?",
+            "Réseau et voies d’accès",
+            "Canaux qui fonctionnent · 1",
+            "entry_channels_period"
+          ],
+          [
+            "Pour lesquels de ces canaux connais-tu les chiffres ?",
+            "Réseau et voies d’accès",
+            "Canaux qui fonctionnent · 1",
+            "entry_channels_measured"
+          ],
+          [
+            "Quels canaux ont produit tes derniers démarrages de mission ?",
+            "Réseau et voies d’accès",
+            "Canaux qui fonctionnent · 1",
+            "entry_channels_last_starts"
+          ],
+          [
+            "Où passe la majorité de ton temps commercial ?",
+            "Réseau et voies d’accès",
+            "Canaux qui fonctionnent · 2",
+            "entry_channels_time_split"
+          ],
+          [
+            "Que comptes-tu réellement aujourd'hui ?",
+            "Temps et méthode",
+            "Mesures et période de référence",
+            "activity_measures_tracked"
+          ],
+          [
+            "Sur quelle période ces chiffres se rapportent-ils ?",
+            "Temps et méthode",
+            "Mesures et période de référence",
+            "activity_reference_period"
+          ],
+          [
+            "Quel est ton plus gros frein commercial aujourd'hui ?",
+            "Objectifs et difficultés",
+            "Le point qui bloque",
+            "main_sales_pain"
+          ],
+          [
+            "Qu'est-ce qui t'empêche réellement d'avancer ?",
+            "Objectifs et difficultés",
+            "Ce que tu as déjà essayé",
+            "sales_freins"
+          ],
+          [
+            "Qu'as-tu déjà essayé pour lever ce frein ?",
+            "Objectifs et difficultés",
+            "Ce que tu as déjà essayé",
+            "frein_attempted"
+          ],
+          ["Qu'est-ce qui s'est arrêté ?", "Objectifs et difficultés", "Ce que tu as déjà essayé", "frein_stopped"],
+          ["Pourquoi ?", "Objectifs et difficultés", "Ce que tu as déjà essayé", "frein_stopped_reason"],
+          [
+            "Quelle taille pour ton client idéal ?",
+            "Clients et décideurs",
+            "Le client que tu veux travailler · 1",
+            "ideal_client_size"
+          ],
+          [
+            "Quelle structure pour ton client idéal ?",
+            "Clients et décideurs",
+            "Le client que tu veux travailler · 1",
+            "ideal_client_structure"
+          ],
+          [
+            "Quelle maturité pour ton client idéal ?",
+            "Clients et décideurs",
+            "Le client que tu veux travailler · 1",
+            "ideal_client_maturity"
+          ],
+          [
+            "Où se trouve ton client idéal ?",
+            "Clients et décideurs",
+            "Le client que tu veux travailler · 1",
+            "ideal_client_territory"
+          ],
+          [
+            "À quel point ce client est-il accessible aujourd'hui ?",
+            "Clients et décideurs",
+            "Le client que tu veux travailler · 2",
+            "ideal_client_accessibility"
+          ],
+          [
+            "Quel cycle de vente es-tu prêt à accepter ?",
+            "Clients et décideurs",
+            "Le client que tu veux travailler · 2",
+            "ideal_client_max_sales_cycle"
+          ],
+          [
+            "Quel est le panier minimum que tu acceptes ?",
+            "Clients et décideurs",
+            "Le client que tu veux travailler · 2",
+            "ideal_client_min_deal_size"
+          ],
+          [
+            "Quelles contraintes de référencement rencontres-tu chez ce client ?",
+            "Clients et décideurs",
+            "Le client que tu veux travailler · 2",
+            "ideal_client_referencement_constraints"
+          ],
+          [
+            "Où en es-tu déjà avec ce profil de client ?",
+            "Clients et décideurs",
+            "Le client que tu veux travailler · 3",
+            "ideal_client_current_state"
+          ],
+          [
+            "À quel niveau obtiens-tu réellement des réponses ?",
+            "Clients et décideurs",
+            "Les bons interlocuteurs",
+            "real_response_level"
+          ],
+          [
+            "Qui valide le budget, dans les faits ?",
+            "Clients et décideurs",
+            "Les bons interlocuteurs",
+            "budget_validator"
+          ],
+          [
+            "Qui peut t'orienter en interne, une fois le premier contact pris ?",
+            "Clients et décideurs",
+            "Les bons interlocuteurs",
+            "access_orienteur"
+          ],
+          [
+            "Sur quel(s) canal/canaux dépends-tu le plus ?",
+            "Réseau et voies d’accès",
+            "Conditions d’accès",
+            "entry_channels_dependency"
+          ],
+          [
+            "Quels prérequis limitent l'accès à un canal ?",
+            "Réseau et voies d’accès",
+            "Conditions d’accès",
+            "entry_channels_prerequisites"
+          ],
+          [
+            "Sur quel(s) canal/canaux as-tu atteint une limite ?",
+            "Réseau et voies d’accès",
+            "Conditions d’accès",
+            "entry_channels_saturation"
+          ],
+          ["Comment as-tu connu Bellum ?", "Travailler avec Laura", "Comment tu nous as trouvés", "heard_about_bellum"],
+          [
+            "Anciens clients : à peu près combien ?",
+            "Réseau et voies d’accès",
+            "Réseau réellement mobilisable · 1",
+            "former_clients_count_band"
+          ],
+          [
+            "Anciens collègues : à peu près combien pourraient parler de toi ?",
+            "Réseau et voies d’accès",
+            "Réseau réellement mobilisable · 1",
+            "former_colleagues_count_band"
+          ],
+          [
+            "Partenaires et rang 2 : à peu près combien connais-tu personnellement ?",
+            "Réseau et voies d’accès",
+            "Réseau réellement mobilisable · 1",
+            "partners_count_band"
+          ],
+          [
+            "Personnes qui pourraient te recommander : à peu près combien ?",
+            "Réseau et voies d’accès",
+            "Réseau réellement mobilisable · 1",
+            "referrers_count_band"
+          ],
+          [
+            "Relations chaudes : à peu près combien, tous canaux confondus ?",
+            "Réseau et voies d’accès",
+            "Réseau réellement mobilisable · 2",
+            "warm_relations_count_band"
+          ],
+          [
+            "Quel est ton objectif individuel principal ?",
+            "Objectifs et difficultés",
+            "Ton objectif prioritaire",
+            "individual_goal"
+          ],
+          [
+            "Quel est ton objectif chiffré sur 30 jours ?",
+            "Objectifs et difficultés",
+            "Ton objectif prioritaire",
+            "monthly_target"
+          ],
+          [
+            "Y a-t-il quelque chose d'important sur ton activité que mes questions n'ont pas couvert ?",
+            "Objectifs et difficultés",
+            "Ce qu’il faut encore comprendre",
+            "uncovered_activity_note"
+          ],
+          ["Quels décideurs vises-tu en priorité ?", "Clients et décideurs", "Compléments", "decision_maker_personas"],
+          [
+            "Combien de temps entre le premier contact et la signature ?",
+            "Clients et décideurs",
+            "Compléments",
+            "avg_sales_cycle"
+          ],
+          ["Quel est ton TJM moyen ?", "Références et économie", "Compléments · 1", "avg_tjm"],
+          [
+            "Quelles références clients peux-tu citer ?",
+            "Références et économie",
+            "Compléments · 1",
+            "client_references"
+          ],
+          [
+            "Y a-t-il des secteurs que tu souhaites exclure ?",
+            "Marchés et territoires",
+            "Compléments",
+            "no_go_sectors"
+          ],
+          [
+            "Quelles fonctions exerces-tu vraiment au quotidien ?",
+            "Ton rôle et ton équipe",
+            "Compléments",
+            "role_functions_practiced"
+          ],
+          ["Depuis combien de temps ta société existe-t-elle ?", "Ton entreprise", "Compléments", "company_age"],
+          ["Quelle est la taille de ta société ?", "Ton entreprise", "Compléments", "company_size"],
+          [
+            "Combien de consultants as-tu réellement en mission ?",
+            "Capacité de staffing",
+            "Compléments",
+            "consultants_on_mission"
+          ],
+          [
+            "Combien de consultants / profils as-tu dans ton vivier actif ?",
+            "Capacité de staffing",
+            "Compléments",
+            "consultants_in_pipe"
+          ],
+          [
+            "Ta société est-elle indépendante, une maison mère, ou une filiale ?",
+            "Ton entreprise",
+            "Compléments",
+            "company_group_structure"
+          ],
+          [
+            "Suis-tu ton délai d'encaissement aujourd'hui, et où ?",
+            "Clients et missions",
+            "Compléments",
+            "payment_delay_visibility"
+          ],
+          ["Quel est ton délai d'encaissement moyen ?", "Clients et missions", "Compléments", "payment_delay_band"],
+          [
+            "Des collègues travaillent-ils sur les mêmes comptes, secteurs ou territoires ?",
+            "Ton rôle et ton équipe",
+            "Compléments",
+            "team_overlap"
+          ],
+          ["Quelle est ta capacité de démarrage ?", "Capacité de staffing", "Compléments", "ramp_up_capacity"],
+          [
+            "Quel est ton panier moyen / taille de mission recherchée ?",
+            "Références et économie",
+            "Compléments · 1",
+            "avg_deal_size"
+          ],
+          [
+            "Quel est le coût mensuel de ton intercontrat ?",
+            "Références et économie",
+            "Compléments · 2",
+            "intercontrat_cost"
+          ],
+          ["Quel niveau de marge cibles-tu ?", "Références et économie", "Compléments · 1", "target_margin"],
+          [
+            "Quel est le statut de la majorité de tes comptes ?",
+            "Clients et décideurs",
+            "Compléments",
+            "accounts_relationship_status"
+          ],
+          [
+            "Travailles-tu plutôt en direct ou via des partenaires ?",
+            "Réseau et voies d’accès",
+            "Compléments",
+            "go_to_market_channels"
+          ],
+          ["Quelles zones veux-tu développer ?", "Marchés et territoires", "Compléments", "growth_target_zones"],
+          [
+            "Où en es-tu sur les marchés publics ?",
+            "Secteurs réglementés et appels d’offres",
+            "Secteurs réglementés et appels d’offres · 3",
+            "public_sector_practice"
+          ],
+          [
+            "Que peux-tu présenter à une banque ou un assureur ?",
+            "Secteurs réglementés et appels d’offres",
+            "Secteurs réglementés et appels d’offres · 4",
+            "regulated_sector_readiness"
+          ],
+          [
+            "Quelle est ta relation avec tes partenaires actuels ?",
+            "Réseau et voies d’accès",
+            "Compléments",
+            "partner_relationship"
+          ],
+          [
+            "Avec combien de partenaires réguliers (ESN, cabinets, rangs 1) travailles-tu réellement aujourd’hui ?",
+            "Réseau et voies d’accès",
+            "Compléments",
+            "partners_regular_count"
+          ],
+          [
+            "Et avec combien de partenaires ponctuels ?",
+            "Réseau et voies d’accès",
+            "Compléments",
+            "partners_occasional_count"
+          ],
+          [
+            "Sur quelles plateformes déposes-tu tes réponses aux appels d'offres ?",
+            "Secteurs réglementés et appels d’offres",
+            "Secteurs réglementés et appels d’offres · 1",
+            "rfp_platforms_used"
+          ],
+          [
+            "Où en es-tu sur les référencements et accords-cadres ?",
+            "Secteurs réglementés et appels d’offres",
+            "Secteurs réglementés et appels d’offres · 1",
+            "rfp_referencing_status"
+          ],
+          [
+            "Comment réponds-tu quand un marché est allotti ?",
+            "Secteurs réglementés et appels d’offres",
+            "Secteurs réglementés et appels d’offres · 1",
+            "rfp_lot_allocation"
+          ],
+          [
+            "As-tu des modèles de réponse réutilisables ?",
+            "Secteurs réglementés et appels d’offres",
+            "Secteurs réglementés et appels d’offres · 1",
+            "rfp_response_templates"
+          ],
+          [
+            "Combien d'appels d'offres traites-tu ?",
+            "Secteurs réglementés et appels d’offres",
+            "Secteurs réglementés et appels d’offres · 2",
+            "rfp_volume"
+          ],
+          [
+            "Sur quelle période ce volume se compte-t-il ?",
+            "Secteurs réglementés et appels d’offres",
+            "Secteurs réglementés et appels d’offres · 2",
+            "rfp_volume_period"
+          ],
+          [
+            "Quels retours as-tu déjà obtenus sur tes dossiers ?",
+            "Secteurs réglementés et appels d’offres",
+            "Secteurs réglementés et appels d’offres · 2",
+            "rfp_outcomes"
+          ],
+          [
+            "Comment décides-tu de répondre ou non à un appel d'offres ?",
+            "Secteurs réglementés et appels d’offres",
+            "Secteurs réglementés et appels d’offres · 2",
+            "rfp_go_no_go_process"
+          ],
+          [
+            "Tes pièces administratives et techniques sont-elles prêtes à l'usage ?",
+            "Secteurs réglementés et appels d’offres",
+            "Secteurs réglementés et appels d’offres · 3",
+            "rfp_document_readiness"
+          ],
+          [
+            "Quelle est l'économie d'un dossier d'appel d'offres type ?",
+            "Secteurs réglementés et appels d’offres",
+            "Secteurs réglementés et appels d’offres · 3",
+            "rfp_deal_value"
+          ],
+          [
+            "Un porteur est-il nommé sur chaque dossier d'appel d'offres ?",
+            "Secteurs réglementés et appels d’offres",
+            "Secteurs réglementés et appels d’offres · 3",
+            "rfp_owner_assignment"
+          ],
+          ["Combien d'appels passes-tu par semaine ?", "Temps et méthode", "Compléments", "weekly_calls"],
+          [
+            "Combien d'emails de prospection envoies-tu par semaine ?",
+            "Temps et méthode",
+            "Compléments",
+            "weekly_emails"
+          ],
+          [
+            "Combien de sollicitations LinkedIn fais-tu par semaine ?",
+            "Temps et méthode",
+            "Compléments",
+            "weekly_linkedin"
+          ],
+          ["Quelle est ta routine actuelle ?", "Temps et méthode", "Compléments", "sales_routine"],
+          [
+            "Où publies-tu du contenu aujourd'hui ?",
+            "Contenu et visibilité",
+            "Contenu et visibilité · 1",
+            "content_active_profile"
+          ],
+          [
+            "Quelle taille d'audience touches-tu ?",
+            "Contenu et visibilité",
+            "Contenu et visibilité · 1",
+            "content_audience_size"
+          ],
+          [
+            "Quelle expertise se voit dans ce que tu publies ?",
+            "Contenu et visibilité",
+            "Contenu et visibilité · 1",
+            "content_visible_expertise"
+          ],
+          [
+            "Quel niveau de réactions obtiens-tu ?",
+            "Contenu et visibilité",
+            "Contenu et visibilité · 1",
+            "content_reactions"
+          ],
+          [
+            "Ton contenu génère-t-il des conversations commerciales ?",
+            "Contenu et visibilité",
+            "Contenu et visibilité · 2",
+            "content_conversations_generated"
+          ],
+          [
+            "Jusqu'où va ton contenu ?",
+            "Contenu et visibilité",
+            "Contenu et visibilité · 2",
+            "content_funnel_stages_reached"
+          ],
+          ["Quels sont tes principaux blocages ?", "Objectifs et difficultés", "Compléments", "sales_blockers"],
+          ["Quel est ton niveau d'équipement actuel ?", "Outils et données", "Compléments", "tooling"],
+          [
+            "Quel niveau de proactivité attends-tu de Bellum ?",
+            "Travailler avec Laura",
+            "Compléments",
+            "proactivity_level"
+          ],
+          [
+            "Quelles données acceptes-tu de partager avec ton équipe ?",
+            "Travailler avec Laura",
+            "Compléments",
+            "shared_data_scope"
+          ],
+          [
+            "Comment souhaites-tu que Laura t’appelle ?",
+            "Ton rôle et ton équipe",
+            "Précisions de cadrage",
+            "first_name"
+          ],
+          ["Comment décrirais-tu ton activité ?", "Ton entreprise", "Précisions de cadrage", "activity_nature"],
+          ["À quel périmètre réponds-tu ?", "Ton rôle et ton équipe", "Précisions de cadrage", "scope_level"],
+          [
+            "Quel est le nom de cette agence, BU ou périmètre ?",
+            "Ton rôle et ton équipe",
+            "Précisions de cadrage",
+            "scope_unit"
+          ],
+          [
+            "À quel horizon cherches-tu un premier résultat ?",
+            "Objectifs et difficultés",
+            "Précisions de cadrage",
+            "horizon"
+          ],
+          [
+            "Quel résultat concret te ferait dire que Bellum est utile ?",
+            "Objectifs et difficultés",
+            "Précisions de cadrage",
+            "success_target"
+          ],
+          [
+            "Quels outils, méthodes ou savoir-faire précisent ton offre ?",
+            "Offre et expertises",
+            "Précisions de cadrage",
+            "skill_technos"
+          ],
+          [
+            "Quelles expertises veux-tu mettre en avant maintenant ?",
+            "Offre et expertises",
+            "Précisions de cadrage",
+            "priority_expertise"
+          ],
+          [
+            "Qu’est-ce qui te différencie concrètement ?",
+            "Offre et expertises",
+            "Précisions de cadrage",
+            "offer_pitch"
+          ],
+          [
+            "Souhaites-tu travailler des clients finaux, des partenaires ou les deux ?",
+            "Clients et décideurs",
+            "Précisions de cadrage",
+            "target_nature"
+          ],
+          [
+            "Quelles tailles d’entreprise souhaites-tu explorer ?",
+            "Clients et décideurs",
+            "Précisions de cadrage",
+            "target_size"
+          ],
+          [
+            "Quelles exclusions ou contraintes devons-nous respecter ?",
+            "Marchés et territoires",
+            "Précisions de cadrage",
+            "no_go"
+          ],
+          [
+            "Quel périmètre géographique précis faut-il retenir ?",
+            "Marchés et territoires",
+            "Précisions de cadrage",
+            "geography_detail"
+          ],
+          [
+            "Dans quels pays peux-tu réellement intervenir ?",
+            "Marchés et territoires",
+            "Précisions de cadrage",
+            "country_scope"
+          ],
+          [
+            "Dans quelles langues peux-tu travailler ?",
+            "Offre et expertises",
+            "Précisions de cadrage",
+            "language_capabilities"
+          ],
+          [
+            "Sur quels comptes as-tu déjà une relation ou un accès ?",
+            "Réseau et voies d’accès",
+            "Précisions de cadrage",
+            "account_access"
+          ],
+          [
+            "As-tu des profils à positionner prochainement ?",
+            "Capacité de staffing",
+            "Précisions de cadrage",
+            "bench_status"
+          ],
+          [
+            "Quel enjeu de recrutement ou de staffing veux-tu traiter ?",
+            "Capacité de staffing",
+            "Précisions de cadrage",
+            "recruiting_priorities"
+          ],
+          [
+            "Quels repères économiques faut-il préserver ?",
+            "Références et économie",
+            "Précisions de cadrage",
+            "commercial_limits"
+          ],
+          [
+            "Dans quelle devise exprimes-tu tes repères économiques ?",
+            "Références et économie",
+            "Précisions de cadrage",
+            "currency"
+          ],
+          [
+            "Quels sujets de missions ou d’ADV veux-tu mieux suivre ?",
+            "Clients et missions",
+            "Précisions de cadrage",
+            "delivery_frictions"
+          ],
+          ["Quels outils utilises-tu déjà ?", "Outils et données", "Précisions de cadrage", "tools"],
+          [
+            "Quelles données utiles pourras-tu réutiliser ?",
+            "Outils et données",
+            "Précisions de cadrage",
+            "data_sources"
+          ],
+          [
+            "Quelle tâche manuelle voudrais-tu arrêter de refaire ?",
+            "Outils et données",
+            "Précisions de cadrage",
+            "workflow_pain"
+          ],
+          [
+            "Quel fonctionnement souhaites-tu avec Laura ?",
+            "Travailler avec Laura",
+            "Précisions de cadrage",
+            "autonomy"
+          ],
+          [
+            "Comment souhaites-tu commencer dans Laura ?",
+            "Travailler avec Laura",
+            "Précisions de cadrage",
+            "context_policy"
+          ]
+        ]
+      }
+    </script>
+    <script>
+      ;(function () {
+        var d = document,
+          b = d.body,
+          DATA = JSON.parse((d.getElementById('ob-data') || { textContent: '{}' }).textContent || '{}')
+        var QD = DATA.q || {},
+          S = DATA.s || {}
+        function $(s, r) {
+          return (r || d).querySelector(s)
+        }
+        function $$(s, r) {
+          return Array.prototype.slice.call((r || d).querySelectorAll(s))
+        }
+        function esc(s) {
+          return String(s).replace(/[&<>"]/g, function (c) {
+            return { '&': '&amp;', '<': '&lt;', '>': '&gt;', '"': '&quot;' }[c]
+          })
+        }
+        function norm(s) {
+          return String(s || '')
+            .normalize('NFD')
+            .replace(/[̀-ͯ]/g, '')
+            .toLowerCase()
+        }
+        var ICON = DATA.icons || {}
+        function icon(n) {
+          return (
+            '<svg class="icon small" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">' +
+            (ICON[n] || '') +
+            '</svg>'
+          )
+        }
+        var toasts = $('#toasts')
+        function toast(t) {
+          var e = d.createElement('div')
+          e.className = 'toast'
+          e.setAttribute('role', 'status')
+          e.textContent = t
+          toasts.appendChild(e)
+          setTimeout(function () {
+            e.remove()
+          }, 3200)
+        }
+        window.obToast = toast
+        // ---- états (data-go / data-when)
+        function setState(g, v) {
+          $$('[data-when]').forEach(function (e) {
+            var hit = false,
+              mine = false
+            e.getAttribute('data-when')
+              .split('|')
+              .forEach(function (x) {
+                var kv = x.split(':')
+                if (kv[0] === g) {
+                  mine = true
+                  if (kv[1] === v) hit = true
+                }
+              })
+            if (mine) e.hidden = !hit
+          })
+          $$('[data-go^="' + g + ':"]').forEach(function (x) {
+            var on = x.getAttribute('data-go') === g + ':' + v
+            x.classList.toggle('on', on)
+            if (x.closest('.ob23-steps,.ob-rail')) {
+              x.classList.toggle('active', on)
+              if (on) x.setAttribute('aria-current', 'step')
+              else x.removeAttribute('aria-current')
+            }
+            if (x.closest('.rv-states')) x.setAttribute('aria-pressed', on ? 'true' : 'false')
+          })
+        }
+        window.tSetState = setState
+        $$('[data-state-default]').forEach(function (x) {
+          var kv = x.getAttribute('data-state-default').split(':')
+          setState(kv[0], kv[1])
+        })
+        // ---- menus (v7-select)
+        function closeMenus() {
+          $$('.t-menu').forEach(function (m) {
+            if (m.id === 't-selmenu') m.remove()
+            else m.hidden = true
+          })
+          $$('[aria-expanded="true"][data-menu],.v7-select-trigger[aria-expanded="true"]').forEach(function (x) {
+            x.setAttribute('aria-expanded', 'false')
+          })
+        }
+        function place(m, a) {
+          m.hidden = false
+          var r = a.getBoundingClientRect(),
+            w = m.offsetWidth,
+            h = m.offsetHeight
+          var left = Math.min(Math.max(8, r.left), innerWidth - w - 8),
+            top = r.bottom + 6
+          if (top + h > innerHeight - 8) top = Math.max(8, r.top - h - 6)
+          m.style.left = left + 'px'
+          m.style.top = top + 'px'
+        }
+        function selectMenu(t) {
+          var sel = t.parentNode.querySelector('select')
+          var host = t.closest('dialog') || b
+          var m = d.createElement('div')
+          m.className = 'v7-menu t-menu'
+          m.id = 't-selmenu'
+          m.setAttribute('role', 'listbox')
+          m.style.width = Math.max(t.offsetWidth, 220) + 'px'
+          var l = d.createElement('div')
+          l.className = 'v7-menu-list'
+          Array.prototype.forEach.call(sel.options, function (op, i) {
+            var x = d.createElement('button')
+            x.type = 'button'
+            x.className = 'v7-option' + (i === sel.selectedIndex ? ' is-active' : '')
+            x.setAttribute('role', 'option')
+            x.innerHTML = '<span class="v7-option-copy"></span>'
+            x.firstChild.textContent = op.text
+            x.onclick = function () {
+              sel.selectedIndex = i
+              t.querySelector('.v7-select-value').textContent = op.text
+              sel.dispatchEvent(new Event('change', { bubbles: true }))
+              closeMenus()
+            }
+            l.appendChild(x)
+          })
+          m.appendChild(l)
+          host.appendChild(m)
+          t.setAttribute('aria-expanded', 'true')
+          place(m, t)
+        }
+        // ---- sélecteur de réponses (modale de Théo)
+        var picker = null
+        function pickerOpen(btn) {
+          var key = btn.getAttribute('data-key'),
+            q = QD[key]
+          if (!q) return toast('Sélecteur non repris dans cette maquette.')
+          picker = {
+            key: key,
+            btn: btn,
+            values: JSON.parse(btn.getAttribute('data-values') || '[]'),
+            query: '',
+            group: 'all',
+          }
+          var dl = $('#dialog')
+          $('#dialog-title').textContent = q.label
+          pickerPaint()
+          dl.showModal()
+          var s = $('#ob23-option-search')
+          if (s) s.focus()
+        }
+        function groupsOf(q) {
+          var g = []
+          q.ch.forEach(function (c) {
+            if (g.indexOf(c[1]) < 0) g.push(c[1])
+          })
+          return g
+        }
+        function pickerPaint() {
+          var q = QD[picker.key],
+            single = q.kind === 'single',
+            gs = groupsOf(q),
+            many = gs.length > 1 || (gs.length === 1 && gs[0])
+          var list = q.ch.filter(function (c) {
+            return (
+              (picker.group === 'all' || c[1] === picker.group) &&
+              (!picker.query || norm(c[0]).indexOf(norm(picker.query)) >= 0)
+            )
+          })
+          var groupsHtml = ''
+          if (many) {
+            var opts =
+              '<option value="all">Toutes les familles (' +
+              q.ch.length +
+              ')</option>' +
+              gs
+                .map(function (g) {
+                  return (
+                    '<option value="' +
+                    esc(g) +
+                    '"' +
+                    (picker.group === g ? ' selected' : '') +
+                    '>' +
+                    esc(g) +
+                    ' (' +
+                    q.ch.filter(function (c) {
+                      return c[1] === g
+                    }).length +
+                    ')</option>'
+                  )
+                })
+                .join('')
+            var cur = picker.group === 'all' ? 'Toutes les familles (' + q.ch.length + ')' : picker.group
+            groupsHtml =
+              '<div id="ob23-option-groups" class="ob23-option-groups"><label for="ob23-option-group">Famille</label><span class="v7-select"><select id="ob23-option-group" class="v7-native-select" aria-hidden="true" tabindex="-1">' +
+              opts +
+              '</select><button type="button" class="v7-select-trigger" role="combobox" aria-haspopup="listbox" aria-expanded="false" aria-label="Famille"><span class="v7-select-value">' +
+              esc(cur) +
+              '</span>' +
+              icon('down') +
+              '</button></span></div>'
+          }
+          var bySection = {}
+          var order = []
+          list.forEach(function (c) {
+            if (!bySection[c[1]]) {
+              bySection[c[1]] = []
+              order.push(c[1])
+            }
+            bySection[c[1]].push(c[0])
+          })
+          var optionsHtml = order
+            .map(function (g) {
+              return (
+                '<section>' +
+                (g ? '<h3>' + esc(g) + '</h3>' : '') +
+                '<div class="ob23-option-grid">' +
+                bySection[g]
+                  .map(function (v) {
+                    var on = picker.values.indexOf(v) >= 0
+                    return (
+                      '<label class="' +
+                      (on ? 'selected' : '') +
+                      '"><input type="' +
+                      (single ? 'radio' : 'checkbox') +
+                      '" name="ob23-option" data-ob23-option value="' +
+                      esc(v) +
+                      '"' +
+                      (on ? ' checked' : '') +
+                      '><span><strong>' +
+                      esc(v) +
+                      '</strong></span></label>'
+                    )
+                  })
+                  .join('') +
+                '</div></section>'
+              )
+            })
+            .join('')
+          if (!optionsHtml)
+            optionsHtml =
+              '<p class="ob23-small">Aucune proposition ne correspond. Tu peux écrire ta propre réponse ci-dessous.</p>'
+          var preview = picker.values
+            .map(function (v) {
+              return (
+                '<button type="button" data-pick-remove="' +
+                esc(v) +
+                '" aria-label="Retirer ' +
+                esc(v) +
+                '"><span>' +
+                esc(v) +
+                '</span>' +
+                icon('close') +
+                '</button>'
+              )
+            })
+            .join('')
+          $('#dialog .dialog-body').innerHTML =
+            '<div class="ob23-picker"><p>' +
+            esc(
+              q.sub ||
+                (single
+                  ? 'Un choix. Tu peux le corriger ensuite.'
+                  : 'Plusieurs choix possibles. Tu peux les corriger ensuite.'),
+            ) +
+            '</p><div class="ob23-picker-top"><label class="ob23-search">' +
+            icon('search') +
+            '<input id="ob23-option-search" type="search" placeholder="Rechercher parmi tous les choix…" aria-label="Rechercher une proposition" value="' +
+            esc(picker.query) +
+            '"></label><span id="ob23-picked-count" aria-live="polite">' +
+            (picker.values.length
+              ? picker.values.length + (picker.values.length > 1 ? ' sélections' : ' sélection')
+              : 'Aucune sélection') +
+            '</span></div>' +
+            groupsHtml +
+            '<div id="ob23-selected-preview" class="ob23-selection-preview">' +
+            preview +
+            '</div><div id="ob23-option-list" class="ob23-option-list">' +
+            optionsHtml +
+            '</div><div class="ob23-custom"><label for="ob23-custom-value">Ton cas n’est pas dans la liste ?</label><div><input id="ob23-custom-value" type="text" maxlength="700" placeholder="Écris ta propre réponse"><button type="button" class="btn soft" data-pick-custom>Ajouter</button></div><p>Les choix personnalisés sont conservés, pas remplacés par la catégorie la plus proche.</p></div></div>'
+        }
+        function pickerApply() {
+          var btn = picker.btn,
+            v = picker.values
+          btn.setAttribute('data-values', JSON.stringify(v))
+          btn.classList.toggle('filled', v.length > 0)
+          var q = QD[picker.key]
+          btn.firstElementChild.innerHTML = v.length
+            ? '<span class="ob23-picked">' +
+              v
+                .slice(0, 4)
+                .map(function (x) {
+                  return '<span>' + esc(x) + '</span>'
+                })
+                .join('') +
+              (v.length > 4 ? '<em>+ ' + (v.length - 4) + '</em>' : '') +
+              '</span>'
+            : '<span class="ob23-placeholder">' +
+              (q.kind === 'single' ? 'Choisir une réponse' : 'Rechercher et choisir plusieurs réponses') +
+              '</span>'
+          var f = btn.closest('.ob23-field'),
+            sel = f && f.querySelector('[data-ob23-status]')
+          if (sel) {
+            sel.options[0].textContent = v.length ? 'Réponse renseignée' : 'Répondre quand tu peux'
+            sel.selectedIndex = 0
+          }
+          $('#dialog').close()
+          btn.focus()
+          picker = null
+        }
+        // ---- statuts de réponse
+        function applyStatus(sel) {
+          var f = sel.closest('.ob23-field'),
+            v = sel.value,
+            st = S[v]
+          if (!f) return
+          var box = f.querySelector('.ob23-status-answer')
+          if (st) {
+            if (!box) {
+              box = d.createElement('div')
+              box.className = 'ob23-status-answer'
+              var anchor = f.querySelector('.ob23-field-foot')
+              f.insertBefore(box, anchor)
+            }
+            box.innerHTML =
+              icon('clock') +
+              '<span>' +
+              esc(st) +
+              '<small>Ta réponse précédente est conservée, mais non utilisée.</small></span><button type="button" class="btn soft sm" data-status-restore>Répondre</button>'
+            f.classList.add('is-status')
+          } else {
+            if (box && !box.hasAttribute('data-static')) box.remove()
+            else if (box) box.hidden = true
+            f.classList.remove('is-status')
+          }
+        }
+        $$('[data-ob23-status]').forEach(function (s) {
+          s.addEventListener('change', function () {
+            applyStatus(s)
+          })
+        })
+        // ---- clics
+        d.addEventListener('click', function (e) {
+          var t = e.target.closest('button,a,summary,label,input')
+          if (
+            !e.target.closest('.t-menu') &&
+            !(t && (t.hasAttribute('data-menu') || t.classList.contains('v7-select-trigger')))
+          )
+            closeMenus()
+          if (!t) return
+          if (
+            t.hasAttribute('data-close') ||
+            t.getAttribute('data-act') === 'close' ||
+            t.getAttribute('data-ob23') === 'cancel'
+          ) {
+            var dl = t.closest('dialog')
+            if (dl) {
+              dl.close()
+              picker = null
+            }
+          }
+          if (t.hasAttribute('data-open')) {
+            e.preventDefault()
+            var o = d.getElementById(t.getAttribute('data-open'))
+            if (o) {
+              closeMenus()
+              $$('dialog[open]').forEach(function (x) {
+                if (x !== o) x.close()
+              })
+              o.showModal()
+            }
+          }
+          if (t.hasAttribute('data-menu')) {
+            e.preventDefault()
+            var m = d.getElementById(t.getAttribute('data-menu')),
+              was = !m.hidden
+            closeMenus()
+            if (!was) {
+              t.setAttribute('aria-expanded', 'true')
+              place(m, t)
+            }
+            return
+          }
+          if (t.classList.contains('v7-select-trigger')) {
+            e.preventDefault()
+            var open = t.getAttribute('aria-expanded') === 'true'
+            closeMenus()
+            if (!open) selectMenu(t)
+            return
+          }
+          if (t.hasAttribute('data-go')) {
+            e.preventDefault()
+            var kv = t.getAttribute('data-go').split(':')
+            setState(kv[0], kv[1])
+            if (t.hasAttribute('data-top')) scrollTo({ top: 0 })
+            if (t.hasAttribute('data-scroll')) {
+              var tg = d.getElementById(t.getAttribute('data-scroll'))
+              if (tg) tg.scrollIntoView({ block: 'start' })
+            }
+          }
+          if (t.hasAttribute('data-toast')) {
+            e.preventDefault()
+            toast(t.getAttribute('data-toast'))
+          }
+          if (t.getAttribute('data-ob23') === 'pick') {
+            e.preventDefault()
+            pickerOpen(t)
+            return
+          }
+          if (t.getAttribute('data-ob23') === 'theme') {
+            theme(!d.documentElement.classList.contains('dark'))
+            return
+          }
+          if (t.hasAttribute('data-pick-remove') && picker) {
+            var rv = t.getAttribute('data-pick-remove')
+            picker.values = picker.values.filter(function (x) {
+              return x !== rv
+            })
+            pickerPaint()
+            return
+          }
+          if (t.hasAttribute('data-pick-custom') && picker) {
+            var inp = $('#ob23-custom-value'),
+              cv = inp.value.trim()
+            if (cv) {
+              if (QD[picker.key].kind === 'single') picker.values = [cv]
+              else if (picker.values.indexOf(cv) < 0) picker.values.push(cv)
+              if (
+                !QD[picker.key].ch.some(function (c) {
+                  return c[0] === cv
+                })
+              )
+                QD[picker.key].ch.push([cv, 'Tes choix personnalisés'])
+              pickerPaint()
+            }
+            return
+          }
+          if (t.getAttribute('data-ob23') === 'picker-clear' && picker) {
+            picker.values = []
+            pickerPaint()
+            return
+          }
+          if (t.getAttribute('data-ob23') === 'picker-apply' && picker) {
+            pickerApply()
+            return
+          }
+          if (t.hasAttribute('data-status-restore')) {
+            var f = t.closest('.ob23-field'),
+              s2 = f.querySelector('[data-ob23-status]')
+            s2.selectedIndex = 0
+            applyStatus(s2)
+            var c = f.querySelector('.ob23-selector,.ob23-input')
+            if (c) c.focus()
+            return
+          }
+          if (t.getAttribute('data-act') === 'remove-tag') {
+            t.closest('span').remove()
+            return
+          }
+          if (t.getAttribute('data-act') === 'add-tag') {
+            var ti = t.parentNode.querySelector('input'),
+              tv = ti.value.trim()
+            if (tv) {
+              var sp = d.createElement('span')
+              sp.innerHTML =
+                esc(tv) +
+                '<button type="button" data-act="remove-tag" aria-label="Retirer ' +
+                esc(tv) +
+                '">' +
+                icon('close') +
+                '</button>'
+              t.closest('.ob23-field').querySelector('.ob23-tags').appendChild(sp)
+              ti.value = ''
+            }
+            return
+          }
+        })
+        d.addEventListener('change', function (e) {
+          var t = e.target
+          if (t.matches('[data-ob23-option]') && picker) {
+            var single = QD[picker.key].kind === 'single'
+            if (single) picker.values = t.checked ? [t.value] : []
+            else if (t.checked) {
+              if (picker.values.indexOf(t.value) < 0) picker.values.push(t.value)
+            } else
+              picker.values = picker.values.filter(function (x) {
+                return x !== t.value
+              })
+            pickerPaint()
+          }
+          if (t.id === 'ob23-option-group' && picker) {
+            picker.group = t.value
+            pickerPaint()
+          }
+          if (t.id === 'ob23-approve') {
+            var err = $('#ob23-validation-error')
+            if (err) err.textContent = ''
+          }
+        })
+        d.addEventListener('input', function (e) {
+          var t = e.target
+          if (t.id === 'ob23-option-search' && picker) {
+            picker.query = t.value
+            var pos = t.selectionStart
+            pickerPaint()
+            var n = $('#ob23-option-search')
+            n.focus()
+            n.setSelectionRange(pos, pos)
+          }
+          if (t.id === 'ob23-catalog-search') catalogueSearch(t.value)
+        })
+        d.addEventListener('keydown', function (e) {
+          if (e.key === 'Escape') closeMenus()
+          if (e.key === 'Enter' && e.target.matches('.ob23-tag-entry input')) {
+            e.preventDefault()
+            e.target.parentNode.querySelector('[data-act="add-tag"]').click()
+          }
+        })
+        // ---- recherche du catalogue
+        function catalogueSearch(v) {
+          var IDX = DATA.idx || [],
+            body = $('#ob23-catalog-body'),
+            root = $('#ob23-search-results'),
+            q = norm(v.trim())
+          if (!body || !root) return
+          body.hidden = !!q
+          if (!q) {
+            root.innerHTML = ''
+            return
+          }
+          var hits = IDX.filter(function (x) {
+            return norm(x[0] + ' ' + x[3]).indexOf(q) >= 0
+          })
+          root.innerHTML =
+            '<p class="ob23-small">' +
+            (hits.length
+              ? hits.length +
+                (hits.length > 1 ? ' questions trouvées' : ' question trouvée') +
+                ' · les 16 thèmes sont parcourus.'
+              : 'Aucune question ne correspond. Essaie un outil, un métier ou un secteur.') +
+            '</p><div class="ob23-group-list">' +
+            hits
+              .slice(0, 40)
+              .map(function (x) {
+                return (
+                  '<a href="onboarding-theme.html"><div><h3>' +
+                  esc(x[0]) +
+                  '</h3><p>' +
+                  esc(x[1]) +
+                  ' · ' +
+                  esc(x[2]) +
+                  '</p></div>' +
+                  icon('right') +
+                  '</a>'
+                )
+              })
+              .join('') +
+            '</div>'
+        }
+        // ---- validation (relecture)
+        var vb = $('[data-validate]')
+        if (vb)
+          vb.addEventListener('click', function (e) {
+            var c = $('#ob23-approve')
+            if (c && !c.checked) {
+              e.preventDefault()
+              $('#ob23-validation-error').textContent =
+                'Confirme la relecture du cadrage, ou reviens corriger une réponse.'
+              c.focus()
+            }
+          })
+        // ---- couche de relecture
+        var sw = $('#rv-switch'),
+          pn = $('#rv-panel')
+        function rv(on) {
+          b.classList.toggle('show-adds', on)
+          if (on)
+            $$('[data-add]').forEach(function (x) {
+              var r = x.getBoundingClientRect()
+              x.classList.toggle(
+                'rv-r',
+                r.left + x.getAttribute('data-add').length * 8 + 24 > d.documentElement.clientWidth,
+              )
+            })
+          sw.setAttribute('aria-pressed', on ? 'true' : 'false')
+          pn.hidden = !on || innerWidth < 768
+          $('#rv-info').setAttribute('aria-expanded', pn.hidden ? 'false' : 'true')
+          try {
+            localStorage.setItem('rv-adds', on ? '1' : '0')
+          } catch (_) {}
+        }
+        sw.addEventListener('click', function () {
+          rv(sw.getAttribute('aria-pressed') !== 'true')
+        })
+        var inf = $('#rv-info')
+        inf.addEventListener('click', function () {
+          pn.hidden = !pn.hidden
+          inf.setAttribute('aria-expanded', pn.hidden ? 'false' : 'true')
+        })
+        try {
+          if (localStorage.getItem('rv-adds') === '1') rv(true)
+        } catch (_) {}
+        function theme(dark) {
+          d.documentElement.classList.toggle('dark', dark)
+          $$('[data-ob23="theme"]').forEach(function (th) {
+            th.innerHTML =
+              '<svg class="icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">' +
+              (dark ? ICON.sun : ICON.moon) +
+              '</svg>'
+            th.setAttribute('aria-label', dark ? 'Passer en thème clair' : 'Passer en thème sombre')
+          })
+          try {
+            localStorage.setItem('rv-theme', dark ? 'dark' : 'light')
+          } catch (_) {}
+        }
+        try {
+          var st = localStorage.getItem('rv-theme')
+          theme(st ? st === 'dark' : true)
+        } catch (_) {
+          theme(true)
+        }
+        var qs = new URLSearchParams(location.search)
+        if (qs.get('adds') === '1') rv(true)
+        if (qs.get('theme')) theme(qs.get('theme') === 'dark')
+        if (qs.get('state')) {
+          qs.get('state')
+            .split(',')
+            .forEach(function (p) {
+              var kv = p.split(':')
+              setState(kv[0], kv[1])
+            })
+        }
+        if (qs.get('open')) {
+          var od = d.getElementById(qs.get('open'))
+          if (od) od.showModal()
+        }
+      })()
+    </script>
+  </body>
+</html>

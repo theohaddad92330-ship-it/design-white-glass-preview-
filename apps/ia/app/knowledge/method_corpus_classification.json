@@ -1,0 +1,604 @@
+[
+ {
+  "id": "business_rule:account_fit_score_25",
+  "source": "business_rule",
+  "classification": "KEEP",
+  "reason": "Règle active, appelée dans app/services/account_score.py, app/routers/phase4_plan.py, app/prompts/bellum_plan.py."
+ },
+ {
+  "id": "business_rule:account_verdict_quality_cap",
+  "source": "business_rule",
+  "classification": "KEEP",
+  "reason": "Règle active, appelée dans app/services/account_score.py, app/routers/phase4_plan.py."
+ },
+ {
+  "id": "business_rule:perimeter_fit_score_20",
+  "source": "business_rule",
+  "classification": "KEEP",
+  "reason": "Règle active, appelée dans app/services/perimeter_score.py, app/routers/phase1_research.py."
+ },
+ {
+  "id": "business_rule:commercial_score_100",
+  "source": "business_rule",
+  "classification": "KEEP",
+  "reason": "Règle active, appelée dans app/services/score_axes.py, app/routers/phase4_plan.py."
+ },
+ {
+  "id": "business_rule:no_go_sectors",
+  "source": "business_rule",
+  "classification": "KEEP",
+  "reason": "Règle active, appelée dans app/config/knowledge_config.py, app/services/entities.py, app/prompts/bellum_strategy.py."
+ },
+ {
+  "id": "business_rule:forbidden_as_fact",
+  "source": "business_rule",
+  "classification": "KEEP",
+  "reason": "Règle active, appelée dans app/prompts/bellum_facts.py, app/prompts/bellum_strategy.py."
+ },
+ {
+  "id": "business_rule:weak_source_exclusion",
+  "source": "business_rule",
+  "classification": "KEEP",
+  "reason": "Règle active, appelée dans app/config/knowledge_config.py, app/services/source_quality.py, app/routers/phase4_plan.py."
+ },
+ {
+  "id": "business_rule:signal_freshness_24m",
+  "source": "business_rule",
+  "classification": "KEEP",
+  "reason": "Règle active, appelée dans app/services/signal_freshness.py, app/routers/phase1_research.py."
+ },
+ {
+  "id": "business_rule:group_insider_detection",
+  "source": "business_rule",
+  "classification": "KEEP",
+  "reason": "Règle active, appelée dans app/config/knowledge_config.py, app/services/group_relationship.py, app/routers/phase4_plan.py."
+ },
+ {
+  "id": "business_rule:contact_fit_score_100",
+  "source": "business_rule",
+  "classification": "KEEP",
+  "reason": "Règle active, appelée dans app/services/contact_priority_score.py, packages/contracts/src/schemas/classified-data.ts."
+ },
+ {
+  "id": "objection:client:on_a_deja_nos_esn_partenaires",
+  "source": "objection",
+  "classification": "KEEP",
+  "reason": "À revoir : script d'objection servi tel quel au chat, aucun doublon prouvé ni règle qui le remplace."
+ },
+ {
+  "id": "objection:client:envoyez_moi_un_email",
+  "source": "objection",
+  "classification": "KEEP",
+  "reason": "À revoir : script d'objection servi tel quel au chat, aucun doublon prouvé ni règle qui le remplace."
+ },
+ {
+  "id": "objection:client:c_est_pas_le_bon_moment",
+  "source": "objection",
+  "classification": "KEEP",
+  "reason": "À revoir : script d'objection servi tel quel au chat, aucun doublon prouvé ni règle qui le remplace."
+ },
+ {
+  "id": "objection:client:c_est_trop_cher",
+  "source": "objection",
+  "classification": "KEEP",
+  "reason": "À revoir : script d'objection servi tel quel au chat, aucun doublon prouvé ni règle qui le remplace."
+ },
+ {
+  "id": "objection:client:vous_etes_trop_petit",
+  "source": "objection",
+  "classification": "KEEP",
+  "reason": "À revoir : script d'objection servi tel quel au chat, aucun doublon prouvé ni règle qui le remplace."
+ },
+ {
+  "id": "objection:client:on_internalise_nos_competences_it",
+  "source": "objection",
+  "classification": "KEEP",
+  "reason": "À revoir : script d'objection servi tel quel au chat, aucun doublon prouvé ni règle qui le remplace."
+ },
+ {
+  "id": "objection:client:je_ne_suis_pas_decisionnaire",
+  "source": "objection",
+  "classification": "KEEP",
+  "reason": "À revoir : script d'objection servi tel quel au chat, aucun doublon prouvé ni règle qui le remplace."
+ },
+ {
+  "id": "objection:client:on_a_un_process_de_referencement",
+  "source": "objection",
+  "classification": "KEEP",
+  "reason": "À revoir : script d'objection servi tel quel au chat, aucun doublon prouvé ni règle qui le remplace."
+ },
+ {
+  "id": "objection:client:rappelez_moi_dans_6_mois",
+  "source": "objection",
+  "classification": "MERGE",
+  "reason": "Même réponse de fond que « pas le bon moment » (timing reporté) ; à fusionner en variantes. Reste servie tant que la fusion n'est pas faite.",
+  "merge_into": "objection:client:c_est_pas_le_bon_moment"
+ },
+ {
+  "id": "objection:client:j_ai_pas_le_temps",
+  "source": "objection",
+  "classification": "KEEP",
+  "reason": "À revoir : script d'objection servi tel quel au chat, aucun doublon prouvé ni règle qui le remplace."
+ },
+ {
+  "id": "objection:client:on_a_gele_les_budgets",
+  "source": "objection",
+  "classification": "KEEP",
+  "reason": "À revoir : script d'objection servi tel quel au chat, aucun doublon prouvé ni règle qui le remplace."
+ },
+ {
+  "id": "objection:client:on_est_en_restructuration",
+  "source": "objection",
+  "classification": "KEEP",
+  "reason": "À revoir : script d'objection servi tel quel au chat, aucun doublon prouvé ni règle qui le remplace."
+ },
+ {
+  "id": "objection:client:notre_dsi_vient_de_changer",
+  "source": "objection",
+  "classification": "KEEP",
+  "reason": "À revoir : script d'objection servi tel quel au chat, aucun doublon prouvé ni règle qui le remplace."
+ },
+ {
+  "id": "objection:client:on_veut_du_nearshore_offshore",
+  "source": "objection",
+  "classification": "KEEP",
+  "reason": "À revoir : script d'objection servi tel quel au chat, aucun doublon prouvé ni règle qui le remplace."
+ },
+ {
+  "id": "objection:client:on_a_deja_l_outil_en_interne",
+  "source": "objection",
+  "classification": "KEEP",
+  "reason": "À revoir : script d'objection servi tel quel au chat, aucun doublon prouvé ni règle qui le remplace."
+ },
+ {
+  "id": "objection:client:on_est_satisfait_de_notre_prestataire_actuel",
+  "source": "objection",
+  "classification": "KEEP",
+  "reason": "À revoir : script d'objection servi tel quel au chat, aucun doublon prouvé ni règle qui le remplace."
+ },
+ {
+  "id": "objection:client:donnez_moi_une_reference_dans_notre_secteur",
+  "source": "objection",
+  "classification": "KEEP",
+  "reason": "À revoir : script d'objection servi tel quel au chat, aucun doublon prouvé ni règle qui le remplace."
+ },
+ {
+  "id": "objection:client:c_est_pas_ma_priorite_cette_annee",
+  "source": "objection",
+  "classification": "MERGE",
+  "reason": "Même réponse de fond que « pas le bon moment » (timing reporté) ; à fusionner en variantes. Reste servie tant que la fusion n'est pas faite.",
+  "merge_into": "objection:client:c_est_pas_le_bon_moment"
+ },
+ {
+  "id": "objection:client:je_dois_en_parler_a_mon_n_1",
+  "source": "objection",
+  "classification": "KEEP",
+  "reason": "À revoir : script d'objection servi tel quel au chat, aucun doublon prouvé ni règle qui le remplace."
+ },
+ {
+  "id": "objection:client:les_consultants_esn_ne_comprennent_pas_notre_metier",
+  "source": "objection",
+  "classification": "KEEP",
+  "reason": "À revoir : script d'objection servi tel quel au chat, aucun doublon prouvé ni règle qui le remplace."
+ },
+ {
+  "id": "objection:consultant:pas_a_l_ecoute_du_marche",
+  "source": "objection",
+  "classification": "KEEP",
+  "reason": "À revoir : script d'objection servi tel quel au chat, aucun doublon prouvé ni règle qui le remplace."
+ },
+ {
+  "id": "objection:consultant:j_ai_deja_mon_portefeuille_client",
+  "source": "objection",
+  "classification": "KEEP",
+  "reason": "À revoir : script d'objection servi tel quel au chat, aucun doublon prouvé ni règle qui le remplace."
+ },
+ {
+  "id": "objection:consultant:je_ne_donne_pas_le_nom_de_mon_manager",
+  "source": "objection",
+  "classification": "KEEP",
+  "reason": "À revoir : script d'objection servi tel quel au chat, aucun doublon prouvé ni règle qui le remplace."
+ },
+ {
+  "id": "objection:consultant:sans_mission_concrete_a_quoi_bon",
+  "source": "objection",
+  "classification": "KEEP",
+  "reason": "À revoir : script d'objection servi tel quel au chat, aucun doublon prouvé ni règle qui le remplace."
+ },
+ {
+  "id": "objection:consultant:je_ne_donne_pas_le_nom_de_mon_client",
+  "source": "objection",
+  "classification": "KEEP",
+  "reason": "À revoir : script d'objection servi tel quel au chat, aucun doublon prouvé ni règle qui le remplace."
+ },
+ {
+  "id": "objection:consultant:pas_d_intermediation",
+  "source": "objection",
+  "classification": "KEEP",
+  "reason": "À revoir : script d'objection servi tel quel au chat, aucun doublon prouvé ni règle qui le remplace."
+ },
+ {
+  "id": "objection:consultant:full_remote_uniquement",
+  "source": "objection",
+  "classification": "KEEP",
+  "reason": "À revoir : script d'objection servi tel quel au chat, aucun doublon prouvé ni règle qui le remplace."
+ },
+ {
+  "id": "objection:consultant:ne_plus_etre_recontacte",
+  "source": "objection",
+  "classification": "KEEP",
+  "reason": "À revoir : script d'objection servi tel quel au chat, aucun doublon prouvé ni règle qui le remplace."
+ },
+ {
+  "id": "objection:consultant:en_mission_pour_longtemps",
+  "source": "objection",
+  "classification": "KEEP",
+  "reason": "À revoir : script d'objection servi tel quel au chat, aucun doublon prouvé ni règle qui le remplace."
+ },
+ {
+  "id": "objection:consultant:pas_confiance_aux_cabinets",
+  "source": "objection",
+  "classification": "KEEP",
+  "reason": "À revoir : script d'objection servi tel quel au chat, aucun doublon prouvé ni règle qui le remplace."
+ },
+ {
+  "id": "objection:consultant:mon_tjm_est_trop_eleve_pour_vous",
+  "source": "objection",
+  "classification": "KEEP",
+  "reason": "À revoir : script d'objection servi tel quel au chat, aucun doublon prouvé ni règle qui le remplace."
+ },
+ {
+  "id": "objection:consultant:mon_profil_ne_correspond_pas_a_ce_que_vous_cherchez",
+  "source": "objection",
+  "classification": "KEEP",
+  "reason": "À revoir : script d'objection servi tel quel au chat, aucun doublon prouvé ni règle qui le remplace."
+ },
+ {
+  "id": "objection:consultant:je_ne_suis_pas_dans_l_urgence",
+  "source": "objection",
+  "classification": "KEEP",
+  "reason": "À revoir : script d'objection servi tel quel au chat, aucun doublon prouvé ni règle qui le remplace."
+ },
+ {
+  "id": "sector:assurance",
+  "source": "sector",
+  "classification": "KEEP",
+  "reason": "Playbook sectoriel injecté au pipeline et cité au chat quand le secteur est nommé ; à revoir : recoupe partiel avec les packs, aucune preuve de redondance."
+ },
+ {
+  "id": "sector:banque",
+  "source": "sector",
+  "classification": "KEEP",
+  "reason": "Playbook sectoriel injecté au pipeline et cité au chat quand le secteur est nommé ; à revoir : recoupe partiel avec les packs, aucune preuve de redondance."
+ },
+ {
+  "id": "sector:energie",
+  "source": "sector",
+  "classification": "KEEP",
+  "reason": "Playbook sectoriel injecté au pipeline et cité au chat quand le secteur est nommé ; à revoir : recoupe partiel avec les packs, aucune preuve de redondance."
+ },
+ {
+  "id": "sector:industrie",
+  "source": "sector",
+  "classification": "KEEP",
+  "reason": "Playbook sectoriel injecté au pipeline et cité au chat quand le secteur est nommé ; à revoir : recoupe partiel avec les packs, aucune preuve de redondance."
+ },
+ {
+  "id": "sector:public",
+  "source": "sector",
+  "classification": "KEEP",
+  "reason": "Playbook sectoriel injecté au pipeline et cité au chat quand le secteur est nommé ; à revoir : recoupe partiel avec les packs, aucune preuve de redondance."
+ },
+ {
+  "id": "sector:retail",
+  "source": "sector",
+  "classification": "KEEP",
+  "reason": "Playbook sectoriel injecté au pipeline et cité au chat quand le secteur est nommé ; à revoir : recoupe partiel avec les packs, aucune preuve de redondance."
+ },
+ {
+  "id": "sector:sante",
+  "source": "sector",
+  "classification": "KEEP",
+  "reason": "Playbook sectoriel injecté au pipeline et cité au chat quand le secteur est nommé ; à revoir : recoupe partiel avec les packs, aucune preuve de redondance."
+ },
+ {
+  "id": "sector:telecom",
+  "source": "sector",
+  "classification": "KEEP",
+  "reason": "Playbook sectoriel injecté au pipeline et cité au chat quand le secteur est nommé ; à revoir : recoupe partiel avec les packs, aucune preuve de redondance."
+ },
+ {
+  "id": "sector:transport",
+  "source": "sector",
+  "classification": "KEEP",
+  "reason": "Playbook sectoriel injecté au pipeline et cité au chat quand le secteur est nommé ; à revoir : recoupe partiel avec les packs, aucune preuve de redondance."
+ },
+ {
+  "id": "competitor:capgemini",
+  "source": "competitor",
+  "classification": "KEEP",
+  "reason": "Fiche concurrent injectée par les blocs de prompt du pipeline, pas par le retrieval du chat ; contenu qualitatif stable."
+ },
+ {
+  "id": "competitor:sopra_steria",
+  "source": "competitor",
+  "classification": "KEEP",
+  "reason": "Fiche concurrent injectée par les blocs de prompt du pipeline, pas par le retrieval du chat ; contenu qualitatif stable."
+ },
+ {
+  "id": "competitor:atos",
+  "source": "competitor",
+  "classification": "KEEP",
+  "reason": "Fiche concurrent injectée par les blocs de prompt du pipeline, pas par le retrieval du chat ; contenu qualitatif stable."
+ },
+ {
+  "id": "competitor:accenture_france",
+  "source": "competitor",
+  "classification": "KEEP",
+  "reason": "Fiche concurrent injectée par les blocs de prompt du pipeline, pas par le retrieval du chat ; contenu qualitatif stable."
+ },
+ {
+  "id": "competitor:cgi_france",
+  "source": "competitor",
+  "classification": "KEEP",
+  "reason": "Fiche concurrent injectée par les blocs de prompt du pipeline, pas par le retrieval du chat ; contenu qualitatif stable."
+ },
+ {
+  "id": "competitor:alten",
+  "source": "competitor",
+  "classification": "KEEP",
+  "reason": "Fiche concurrent injectée par les blocs de prompt du pipeline, pas par le retrieval du chat ; contenu qualitatif stable."
+ },
+ {
+  "id": "competitor:devoteam",
+  "source": "competitor",
+  "classification": "KEEP",
+  "reason": "Fiche concurrent injectée par les blocs de prompt du pipeline, pas par le retrieval du chat ; contenu qualitatif stable."
+ },
+ {
+  "id": "competitor:wavestone",
+  "source": "competitor",
+  "classification": "KEEP",
+  "reason": "Fiche concurrent injectée par les blocs de prompt du pipeline, pas par le retrieval du chat ; contenu qualitatif stable."
+ },
+ {
+  "id": "competitor:aubay",
+  "source": "competitor",
+  "classification": "KEEP",
+  "reason": "Fiche concurrent injectée par les blocs de prompt du pipeline, pas par le retrieval du chat ; contenu qualitatif stable."
+ },
+ {
+  "id": "competitor:open",
+  "source": "competitor",
+  "classification": "KEEP",
+  "reason": "Fiche concurrent injectée par les blocs de prompt du pipeline, pas par le retrieval du chat ; contenu qualitatif stable."
+ },
+ {
+  "id": "competitor:sword_group",
+  "source": "competitor",
+  "classification": "KEEP",
+  "reason": "Fiche concurrent injectée par les blocs de prompt du pipeline, pas par le retrieval du chat ; contenu qualitatif stable."
+ },
+ {
+  "id": "competitor:inetum",
+  "source": "competitor",
+  "classification": "KEEP",
+  "reason": "Fiche concurrent injectée par les blocs de prompt du pipeline, pas par le retrieval du chat ; contenu qualitatif stable."
+ },
+ {
+  "id": "competitor:apside",
+  "source": "competitor",
+  "classification": "KEEP",
+  "reason": "Fiche concurrent injectée par les blocs de prompt du pipeline, pas par le retrieval du chat ; contenu qualitatif stable."
+ },
+ {
+  "id": "competitor:astek",
+  "source": "competitor",
+  "classification": "KEEP",
+  "reason": "Fiche concurrent injectée par les blocs de prompt du pipeline, pas par le retrieval du chat ; contenu qualitatif stable."
+ },
+ {
+  "id": "competitor:neurones",
+  "source": "competitor",
+  "classification": "KEEP",
+  "reason": "Fiche concurrent injectée par les blocs de prompt du pipeline, pas par le retrieval du chat ; contenu qualitatif stable."
+ },
+ {
+  "id": "discipline:nombres_fixes_de_volumes",
+  "source": "discipline",
+  "classification": "KEEP",
+  "reason": "Règle de discipline gouvernée côté METHOD_CORPUS_V1 (enabled=true), servie au chat."
+ },
+ {
+  "id": "discipline:ciblage_informatique_par_defaut",
+  "source": "discipline",
+  "classification": "KEEP",
+  "reason": "Règle de discipline gouvernée côté METHOD_CORPUS_V1 (enabled=true), servie au chat."
+ },
+ {
+  "id": "discipline:gabarits_recopies_mot_pour_mot",
+  "source": "discipline",
+  "classification": "KEEP",
+  "reason": "Règle de discipline gouvernée côté METHOD_CORPUS_V1 (enabled=true), servie au chat."
+ },
+ {
+  "id": "discipline:promesses_de_delai_sans_engagement",
+  "source": "discipline",
+  "classification": "KEEP",
+  "reason": "Règle de discipline gouvernée côté METHOD_CORPUS_V1 (enabled=true), servie au chat."
+ },
+ {
+  "id": "discipline:automatisation_du_reseau_professionnel",
+  "source": "discipline",
+  "classification": "KEEP",
+  "reason": "Règle de discipline gouvernée côté METHOD_CORPUS_V1 (enabled=true), servie au chat."
+ },
+ {
+  "id": "discipline:nom_de_fournisseur_technique_dans_l_app",
+  "source": "discipline",
+  "classification": "KEEP",
+  "reason": "Règle de discipline gouvernée côté METHOD_CORPUS_V1 (enabled=true), servie au chat."
+ },
+ {
+  "id": "discipline:anciennes_statistiques_comme_reperes",
+  "source": "discipline",
+  "classification": "KEEP",
+  "reason": "Règle de discipline gouvernée côté METHOD_CORPUS_V1 (enabled=true), servie au chat."
+ },
+ {
+  "id": "discipline:plan_de_compte_hebdomadaire",
+  "source": "discipline",
+  "classification": "KEEP",
+  "reason": "Règle de discipline gouvernée côté METHOD_CORPUS_V1 (enabled=true), servie au chat."
+ },
+ {
+  "id": "discipline:haut_et_bas_en_parallele",
+  "source": "discipline",
+  "classification": "KEEP",
+  "reason": "Règle de discipline gouvernée côté METHOD_CORPUS_V1 (enabled=true), servie au chat."
+ },
+ {
+  "id": "discipline:fil_achats_distinct_du_fil_metier",
+  "source": "discipline",
+  "classification": "KEEP",
+  "reason": "Règle de discipline gouvernée côté METHOD_CORPUS_V1 (enabled=true), servie au chat."
+ },
+ {
+  "id": "discipline:action_avec_proprietaire_date_resultat",
+  "source": "discipline",
+  "classification": "KEEP",
+  "reason": "Règle de discipline gouvernée côté METHOD_CORPUS_V1 (enabled=true), servie au chat."
+ },
+ {
+  "id": "discipline:couverture_multi_roles_niveaux_entites",
+  "source": "discipline",
+  "classification": "KEEP",
+  "reason": "Règle de discipline gouvernée côté METHOD_CORPUS_V1 (enabled=true), servie au chat."
+ },
+ {
+  "id": "discipline:consultant_capteur_avec_consentement",
+  "source": "discipline",
+  "classification": "KEEP",
+  "reason": "Règle de discipline gouvernée côté METHOD_CORPUS_V1 (enabled=true), servie au chat."
+ },
+ {
+  "id": "discipline:objection_validee_puis_exploree",
+  "source": "discipline",
+  "classification": "KEEP",
+  "reason": "Règle de discipline gouvernée côté METHOD_CORPUS_V1 (enabled=true), servie au chat."
+ },
+ {
+  "id": "discipline:objection_contextuelle_et_sortie_respectee",
+  "source": "discipline",
+  "classification": "KEEP",
+  "reason": "Règle de discipline gouvernée côté METHOD_CORPUS_V1 (enabled=true), servie au chat."
+ },
+ {
+  "id": "discipline:ouverture_construit_une_conversation",
+  "source": "discipline",
+  "classification": "KEEP",
+  "reason": "Règle de discipline gouvernée côté METHOD_CORPUS_V1 (enabled=true), servie au chat."
+ },
+ {
+  "id": "discipline:non_resultat_est_un_resultat",
+  "source": "discipline",
+  "classification": "KEEP",
+  "reason": "Règle de discipline gouvernée côté METHOD_CORPUS_V1 (enabled=true), servie au chat."
+ },
+ {
+  "id": "discipline:quotas_historiques_sont_des_exemples",
+  "source": "discipline",
+  "classification": "KEEP",
+  "reason": "Règle de discipline gouvernée côté METHOD_CORPUS_V1 (enabled=true), servie au chat."
+ },
+ {
+  "id": "pack:pack_ouvrir_un_compte",
+  "source": "pack",
+  "classification": "KEEP",
+  "reason": "Pack sourcé (service existant ou énoncé verbatim du ticket), servi au chat."
+ },
+ {
+  "id": "pack:pack_choisir_un_terrain_de_jeu",
+  "source": "pack",
+  "classification": "KEEP",
+  "reason": "Pack sourcé (service existant ou énoncé verbatim du ticket), servi au chat."
+ },
+ {
+  "id": "pack:pack_identifier_une_premiere_porte",
+  "source": "pack",
+  "classification": "KEEP",
+  "reason": "Pack sourcé (service existant ou énoncé verbatim du ticket), servi au chat."
+ },
+ {
+  "id": "pack:pack_compte_grand_groupe_ferme",
+  "source": "pack",
+  "classification": "KEEP",
+  "reason": "Pack sourcé (service existant ou énoncé verbatim du ticket), servi au chat."
+ },
+ {
+  "id": "pack:pack_filiale_accessible",
+  "source": "pack",
+  "classification": "KEEP",
+  "reason": "Pack sourcé (service existant ou énoncé verbatim du ticket), servi au chat."
+ },
+ {
+  "id": "pack:pack_partenaire_rang_2",
+  "source": "pack",
+  "classification": "KEEP",
+  "reason": "Pack sourcé (service existant ou énoncé verbatim du ticket), servi au chat."
+ },
+ {
+  "id": "pack:pack_consultant_disponible",
+  "source": "pack",
+  "classification": "KEEP",
+  "reason": "Pack sourcé (service existant ou énoncé verbatim du ticket), servi au chat."
+ },
+ {
+  "id": "pack:pack_besoin_entrant",
+  "source": "pack",
+  "classification": "KEEP",
+  "reason": "Pack sourcé (service existant ou énoncé verbatim du ticket), servi au chat."
+ },
+ {
+  "id": "pack:pack_premier_message",
+  "source": "pack",
+  "classification": "KEEP",
+  "reason": "Pack sourcé (service existant ou énoncé verbatim du ticket), servi au chat."
+ },
+ {
+  "id": "pack:pack_reactivation",
+  "source": "pack",
+  "classification": "KEEP",
+  "reason": "Pack sourcé (service existant ou énoncé verbatim du ticket), servi au chat."
+ },
+ {
+  "id": "pack:pack_renouvellement_de_mission",
+  "source": "pack",
+  "classification": "KEEP",
+  "reason": "Pack sourcé (service existant ou énoncé verbatim du ticket), servi au chat."
+ },
+ {
+  "id": "pack:pack_expansion_client",
+  "source": "pack",
+  "classification": "KEEP",
+  "reason": "Pack sourcé (service existant ou énoncé verbatim du ticket), servi au chat."
+ },
+ {
+  "id": "pack:pack_compte_sans_signal",
+  "source": "pack",
+  "classification": "KEEP",
+  "reason": "Pack sourcé (service existant ou énoncé verbatim du ticket), servi au chat."
+ },
+ {
+  "id": "pack:pack_arbitrage_du_temps",
+  "source": "pack",
+  "classification": "KEEP",
+  "reason": "Pack sourcé (service existant ou énoncé verbatim du ticket), servi au chat."
+ },
+ {
+  "id": "pack:pack_compte_a_deconseiller",
+  "source": "pack",
+  "classification": "KEEP",
+  "reason": "Pack sourcé (service existant ou énoncé verbatim du ticket), servi au chat."
+ }
+]

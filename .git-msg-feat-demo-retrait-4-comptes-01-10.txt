@@ -1,0 +1,20 @@
+feat(api): retrait de quatre comptes non cibles de la salle de demo, re-semes sur SG, BPCE, SNCF
+
+Decision Louis 01/10/2026 : la salle de demo ne garde que les comptes cibles
+(Societe Generale, Groupe BPCE, SNCF ; ENGIE/TotalEnergies/Alstom par un autre
+lot). Les quatre dossiers et leurs graphes d'organisation / densites de
+contacts sont supprimes ; chaque etat qu'ils portaient est re-seme sur un compte
+restant (craft rule 9), sauf les etats exclusifs (sprint extension/focus/watch,
+porte parked, compte no-go) : BLOQUES, gardes auto-resserrees a six dossiers.
+
+- DEMO_DOSSIERS = SG, BPCE, SNCF (ordre de semis : briefing/pipe take: 3)
+- SNCF : entity_resolution + correction, last_refresh, contract_model +
+  it_job_signals + signals_collected_at frais, access_barrier + addressability,
+  contact LinkedIn-seul, contacts invalid-phone / cooldown / homonyme, graphe
+  d'org ancien, taches du plan > NEXT_ACTIONS_MAX, copilot done job
+- Groupe BPCE : entity_resolution unresolved, suggested_switch, volume, silence
+- Societe Generale : access_barrier + addressability, gate_decision, favori
+- creation_date : classee absente (le registre ne la publie pas pour les 3)
+
+Co-Authored-By: Claude Sonnet 5.5 <noreply@anthropic.com>
+Claude-Session: https://claude.ai/code/session_013cap8uueL8e6Mad5SHxw85

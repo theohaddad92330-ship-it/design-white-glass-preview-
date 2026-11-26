@@ -1,0 +1,48 @@
+project_id = "bellum-local"
+
+[api]
+enabled = true
+port = 54321
+schemas = ["public", "extensions"]
+
+[db]
+port = 54322
+major_version = 15
+
+[studio]
+enabled = true
+port = 54323
+
+[auth]
+enabled = true
+site_url = "http://localhost:5173"
+additional_redirect_urls = ["http://localhost:5173/auth/callback"]
+# Access JWT TTL — 24h (GoTrue's max). The refresh token stays at 30 days
+# and is rotated on every `/auth/refresh` call. The web client refreshes
+# proactively before expiry plus a single-flight 401 retry (`apiFetch`).
+# For production, set the same value in Supabase Dashboard →
+# Authentication → Settings → JWT expiry = 86400.
+jwt_expiry = 86400
+
+# ---------------------------------------------------------------------------
+# JWT keys for local dev
+# ---------------------------------------------------------------------------
+# `anon_key` and `service_role_key` are derived from the JWT secret and cannot
+# be set here directly — they are managed by Supabase CLI. The values below are
+# the defaults emitted by `supabase start` (unless the CLI has been invoked
+# with a custom `--jwt-secret`). Run `supabase status` to confirm.
+#
+# Put these in `apps/api/.env`:
+#   SUPABASE_ANON_KEY=eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZS1kZW1vIiwicm9sZSI6ImFub24iLCJleHAiOjE5ODM4MTI5OTZ9.CRXP1A7WOeoJeXxjNni43kdQwgnWNReilDMblYTn_I0
+#   SUPABASE_SERVICE_ROLE_KEY=eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZS1kZW1vIiwicm9sZSI6InNlcnZpY2Vfcm9sZSIsImV4cCI6MTk4MzgxMjk5Nn0.EGIM96RAZx35lJzdJsyH-qQwv8Hdp7fsn3W0YpN81IU
+#   SUPABASE_JWT_SECRET=super-secret-jwt-token-with-at-least-32-characters-long
+#
+# If Kong rejects the anon key with "Invalid authentication credentials", run
+#   supabase stop --backup && supabase start
+# to regenerate Kong's consumer registry from the current JWT secret.
+
+[auth.external.google]
+enabled = true
+client_id = "env(GOOGLE_CLIENT_ID)"
+secret = "env(GOOGLE_CLIENT_SECRET)"
+redirect_uri = "http://localhost:54321/auth/v1/callback"

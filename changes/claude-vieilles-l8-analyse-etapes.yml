@@ -1,0 +1,39 @@
+lot: claude-vieilles-l8-analyse-etapes
+issues: [2164]
+
+changelog:
+  id: 2026-11-01-vieilles-l8-analyse-etapes
+  comment: 'L8 (#2164) — l’analyse d’un compte montre ses vraies étapes et nomme ce qui est neuf, connu ou non reconfirmé'
+  fr:
+    date: 1er novembre 2026
+    title: L’actualisation nomme ce qui a bougé
+    items:
+      - 'Après une actualisation, les contacts non reconfirmés et les nouvelles entités sont nommés, plus seulement comptés.'
+      - 'Les changements d’un compte se lisent en deux sections nommées : « Ce qui est nouveau » et « Ce que nous savions déjà ».'
+      - 'La lecture de Laura dit « Ce que je ferais maintenant » au lieu de « Prochaine action ».'
+      - 'Quand plusieurs sociétés portent le nom analysé, l’analyse se met en pause après la recherche et demande laquelle choisir ; sans réponse, elle reprend seule.'
+  en:
+    date: November 1, 2026
+    title: Refreshing names what moved
+    items:
+      - 'After a refresh, contacts not re-confirmed and new entities are named, not just counted.'
+      - 'Account changes read as two named sections: “What is new” and “What we already knew”.'
+      - 'Laura’s reading says “What I would do now” instead of “Next action”.'
+      - 'When several companies share the analysed name, the analysis pauses after the research and asks which one to pick; without an answer, it resumes on its own.'
+
+inserts:
+  - file: apps/api/src/modules/demo/demo-coverage.ts
+    text: |
+
+      /**
+       * #2164.17 (01/11/2026) — LA QUESTION D'IDENTITÉ POSÉE PENDANT L'ANALYSE (`AnalysisEntityQuestionCard`,
+       * `GET /analysis/:accountId/entity-question`) : VIDE À DESSEIN. La question n'existe que sur un job BullMQ en
+       * pause, après la recherche d'une analyse RÉELLE lancée par nom ; l'espace de démonstration ne lance aucune
+       * analyse réelle (`demo_workspace`), donc aucun job ne s'y met en pause. Aucune table ni clé neuve : rien à
+       * semer, et semer un job fictif inventerait une ambiguïté que personne n'a rencontrée.
+       */
+      export const DEMO_ANALYSIS_ENTITY_QUESTION_COVERAGE: Readonly<{ state: 'vide_a_dessein'; reason: string }> = {
+        state: 'vide_a_dessein',
+        reason:
+          "#2164.17 — la question d'identité vit sur un job d'analyse réelle en pause ; la démo ne lance aucune analyse réelle (`demo_workspace`), donc aucune question ne s'y pose. Rien n'est écrit en base.",
+      }

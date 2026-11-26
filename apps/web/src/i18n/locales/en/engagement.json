@@ -1,0 +1,807 @@
+{
+  "panel": {
+    "aria": "Contact outreach panel",
+    "title": "Contact outreach"
+  },
+  "controls": {
+    "minimize": "Minimize",
+    "expand": "Expand",
+    "collapse": "Collapse panel"
+  },
+  "channel": {
+    "phoneToReveal": "number to reveal",
+    "email": "Email",
+    "linkedin": "LinkedIn",
+    "phone": "Call",
+    "task": "Task",
+    "meeting": "Meeting",
+    "action": {
+      "email": "Prepare an email",
+      "linkedin": "Prepare a LinkedIn message",
+      "phone": "Prepare my call",
+      "task": "Prepare an outreach task",
+      "recommendation": "Prepare a recommendation message",
+      "introduction_request": "Prepare an introduction request",
+      "partner_message": "Prepare a partner message",
+      "follow_up_email": "Prepare a follow-up email",
+      "profile_push": "Prepare a consultant profile push",
+      "linkedin_connection_note": "Prepare a LinkedIn connection note"
+    },
+    "review": {
+      "email": "Read the email",
+      "linkedin": "Read the message",
+      "phone": "Read the call script",
+      "task": "Read the task",
+      "recommendation": "Review the recommendation",
+      "introduction_request": "Review the introduction request",
+      "partner_message": "Review the partner message",
+      "follow_up_email": "Review the follow-up email",
+      "profile_push": "Review the profile push",
+      "linkedin_connection_note": "Review the connection note"
+    },
+    "draft": {
+      "email": "Suggested email",
+      "linkedin": "LinkedIn message",
+      "phone": "Call pitch",
+      "task": "Outreach task",
+      "recommendation": "Recommendation message",
+      "introduction_request": "Introduction request",
+      "partner_message": "Partner message",
+      "follow_up_email": "Follow-up email",
+      "profile_push": "Consultant profile push",
+      "linkedin_connection_note": "LinkedIn connection note (300 characters max)"
+    },
+    "voicemail": "Voicemail",
+    "recommendation": "Recommendation",
+    "sms": "SMS",
+    "whatsapp": "WhatsApp",
+    "introduction_request": "Introduction request",
+    "partner_message": "Partner message",
+    "follow_up_email": "Follow-up email",
+    "profile_push": "Profile push",
+    "linkedin_connection_note": "LinkedIn connection note"
+  },
+  "composer": {
+    "objectionsNone": "Objections to anticipate: none found in this account's file. They are added at the next analysis.",
+    "parameters": {
+      "toggle": "Message parameters",
+      "hint": "Choosing an objective drafts the message right away; the other parameters frame the next message. Left empty, {{copilot}} infers it from the file.",
+      "derived": "Inferred from the file",
+      "objective": "Objective",
+      "relationship": "Relationship stage",
+      "persona": "Persona",
+      "signal": "Signal",
+      "offer": "Offer",
+      "proof": "Proof",
+      "cta": "Call to action",
+      "placeholders": {
+        "signal": "The fact that justifies writing now",
+        "offer": "The offer to put forward",
+        "proof": "A reference or result to cite",
+        "scope": "The entity, business unit or site targeted",
+        "constraints": "The form to respect (length, words to avoid)",
+        "problem": "The problem this person may be facing",
+        "service": "E.g. application maintenance, data staffing",
+        "period": "E.g. Q1 2027, before summer",
+        "experience": "E.g. similar assignment in 2024 (assumption)"
+      },
+      "objectives": {
+        "ouverture_compte": "Open the account",
+        "relance": "Follow up",
+        "reprise_relation": "Revive the relationship",
+        "demande_information": "Understand a scope or validate a context",
+        "recommandation": "Be pointed to the right person",
+        "positionnement_expertise": "Make an area of expertise known",
+        "nurturing": "Keep the relationship alive",
+        "suivi_rendez_vous": "Follow up on the meeting",
+        "renouvellement": "Prepare the renewal",
+        "suivi_document": "Follow up on a sent document",
+        "introduction": "Ask for an introduction",
+        "partenariat": "Explore a partnership",
+        "proposer_profil": "Propose a profile",
+        "valider_contexte": "Validate a context",
+        "approche_directe": "Direct approach (no signal)"
+      },
+      "personas": {
+        "decideur": "Decision-maker",
+        "gouvernance": "Governance",
+        "direction": "Executive",
+        "manager": "Manager",
+        "acheteur": "Buyer",
+        "expert": "Expert",
+        "operationnel": "Hands-on"
+      },
+      "ctas": {
+        "question_facile": "An easy question",
+        "sortie_elegante": "A graceful exit",
+        "ce_qui_a_change": "Ask what has changed",
+        "echange_court": "Suggest a short call",
+        "vers_qui": "Ask who to turn to",
+        "aucune_demande": "No ask",
+        "prochaine_etape": "Confirm the next step",
+        "demander_intro": "Ask for the introduction",
+        "explorer_partenariat": "Suggest talking about the partnership"
+      },
+      "scope": "Target scope",
+      "constraints": "Constraints",
+      "problem": "Problem to address",
+      "optionalToggle": "Optional details",
+      "service": "Type of service",
+      "period": "Period",
+      "experience": "Past experience"
+    },
+    "approvedTemplates": {
+      "toggle": "Approved template",
+      "chooseScenario": "Choose a scenario",
+      "loading": "Looking up templates…",
+      "none": "No approved template for this scenario and channel.",
+      "sourceVersion": "Source: {{source}} · version {{version}}",
+      "level": "Level: {{level}}",
+      "levelGeneric": "All levels (account)",
+      "blocked": {
+        "variables_missing": "A template matches, but the file is missing information it needs to be offered ready to send. Missing: {{missing}}.",
+        "evidence_missing": "A template matches, but the proof it requires isn't on file yet. Missing: {{missing}}."
+      },
+      "scenarios": {
+        "invitation_acceptee": "Accepted invitation",
+        "connexion_dormante": "Dormant connection",
+        "contact_recommande": "Referred contact",
+        "approche_froide": "Cold approach",
+        "contexte_partenaire": "Partner context",
+        "appel_sans_contexte": "Call without context",
+        "prospection_inversee_consultant": "Reverse prospecting (consultant)",
+        "objections_client": "Client objections",
+        "objections_consultant": "Consultant objections",
+        "cloture_elegante": "Elegant closing"
+      },
+      "missingNames": {
+        "prenom": "the contact's first name",
+        "entreprise": "the company name",
+        "recent_signal": "a recent signal on the contact"
+      }
+    },
+    "placeholder": "Describe the approach to try...",
+    "contextAria": "Personalization context",
+    "generate": "Generate a personalized message",
+    "objections_one": "{{count}} objection to anticipate",
+    "objections_other": "{{count}} objections to anticipate",
+    "style": {
+      "none": "No style",
+      "createForThread": "Create a style for this thread",
+      "createClose": "Close",
+      "createDescription": "This style only applies to the conversation with this contact. It starts as a draft: activate it from the styles list."
+    },
+    "myAngles": {
+      "toggle": "My angles",
+      "hint": "Angles you wrote yourself — they do not come from the account analysis. Picking one puts it in the message; nothing is sent without you.",
+      "none": "You have not written an angle yet.",
+      "error": "Your angles could not be loaded or saved. Try again in a moment.",
+      "new": "New angle",
+      "edit": "Edit angle “{{title}}”",
+      "remove": "Remove angle “{{title}}”",
+      "form": {
+        "newTitle": "New angle",
+        "editTitle": "Edit angle",
+        "description": "An angle is an opening line you reuse. It stays personal and is never rewritten by the model.",
+        "title": "Title",
+        "content": "Angle content",
+        "cancel": "Cancel",
+        "save": "Save"
+      }
+    }
+  },
+  "objections": {
+    "title": "Objections to anticipate"
+  },
+  "emptyState": {
+    "title": "Generate an approach",
+    "description": "Add an angle in the field below to create a {{draft}} tailored to {{name}}.",
+    "customAngle": "Custom angle",
+    "shortFollowUp": "Short follow-up"
+  },
+  "keepApproach": {
+    "keep": "Keep the direct approach",
+    "kept": "Direct approach kept — remove",
+    "hint": "{{copilot}} applies it to your next messages; an objective you pick always comes first."
+  },
+  "preset": {
+    "email": "Write a short email with a clear subject line, suited to what I want to get from this contact.",
+    "linkedin": "Write a short, natural LinkedIn message focused on starting a conversation.",
+    "phone": "Prepare a short call pitch with a concrete opening question.",
+    "task": "Write an outreach task: who to reach, through which channel, to get what.",
+    "customAngle": "Highlight a concrete business angle tied to the contact's priorities.",
+    "shortFollowUp": "Write a short, direct follow-up that is easy to reply to."
+  },
+  "generation": {
+    "sessionExpired": "Your session has expired — sign in again, then retry.",
+    "rateLimited": "Too many drafts in one minute — try again in a moment.",
+    "unavailable": "The drafting service is temporarily unavailable.",
+    "writing": "Writing the message…",
+    "failed": "Message generation failed. Try again in a moment.",
+    "retry": "Retry",
+    "defaultPrompt": "Generate a personalized approach.",
+    "templateRationale": "Approved template — source: {{source}}, version {{version}}. Exact text, variables filled in."
+  },
+  "message": {
+    "suggested": "Suggested approach",
+    "copy": "Copy message",
+    "openLinkedin": "Open LinkedIn",
+    "copyAndOpenLinkedin": "Copy and open LinkedIn",
+    "copyAndOpenLinkedinHint": "Copies the message and opens the LinkedIn profile — just hit “Message” and paste",
+    "send": "Send",
+    "sending": "Sending…",
+    "supersededBadge": "Earlier version",
+    "receipt": {
+      "nature": {
+        "verified": "Sent by {{brand}}",
+        "declared": "Declared by you, unverified",
+        "handed_off": "Handed off to the sending service",
+        "sent_mailbox": "Sent from your mailbox"
+      },
+      "to": "Recipient",
+      "channel": "Channel",
+      "sentAt": "Date",
+      "channelLabel": {
+        "email": "Email",
+        "linkedin": "Professional network"
+      }
+    },
+    "sentSummary": {
+      "from": "From",
+      "fromIndividualMessage": "The individual message drafted for this contact",
+      "nextStep": "Next step: {{label}}, due {{date}}",
+      "findIt": "Where to find it",
+      "findItMailbox": "In your mailbox's sent items",
+      "bounced": "Not delivered",
+      "bouncedValue": "The address bounced",
+      "attachments": "Attachments"
+    },
+    "markSent": {
+      "action": "Mark as sent",
+      "tooltip": "Did you send this message yourself? Log it: {{brand}} did not send it and cannot verify it, but it schedules your follow-ups at D+3, D+6 and D+9.",
+      "error": "Couldn’t mark this message as sent. Try again."
+    },
+    "declareSent": {
+      "action": "I sent this message",
+      "tooltip": "{{brand}} does not send anything on LinkedIn. If you pasted and sent the message yourself, log it here so it shows up in your activity."
+    },
+    "dismiss": {
+      "action": "Dismiss",
+      "tooltip": "Don't use this draft — nothing is sent or logged."
+    },
+    "edit": {
+      "action": "Edit",
+      "tooltip": "Tweak the message before sending it",
+      "done": "Done",
+      "subjectLabel": "Email subject",
+      "subjectPlaceholder": "Subject…",
+      "bodyLabel": "Message body"
+    },
+    "cannotSend": {
+      "noEmail": "This contact has no email address",
+      "noDraft": "No message to send",
+      "suppressed": "This contact opted out — they can no longer be reached by email",
+      "sendInProgress": "A send is already in progress for this contact",
+      "homonym_conflict": "Identity to confirm — this contact shares their name with another at the same account: authorize the recommendation from the contact sheet before sending",
+      "entity_mismatch": "Identity to confirm — this contact's entity resolves outside the account's scope: authorize the recommendation from the contact sheet before sending"
+    },
+    "confirm": {
+      "title": "Send this email?",
+      "description": "The email goes out right away, exactly as reviewed below. This cannot be undone.",
+      "to": "To",
+      "subject": "Subject",
+      "noSubject": "(no subject)",
+      "send": "Send email",
+      "from": "From",
+      "fromUnknown": "Sending address being checked",
+      "replyTo": "Replies to",
+      "body": "Message",
+      "demo": "Demo: this dialog is real, but no message leaves a demo room.",
+      "channel": {
+        "label": "Send from",
+        "mailbox": "My mailbox ({{address}})",
+        "workspace": "The workspace address ({{address}})",
+        "mailboxStuck": "Your connected mailbox ({{address}}) cannot send right now — it needs to be reconnected. Nothing leaves from the workspace address unless you choose it.",
+        "mailboxToPick": "My mailbox (to choose)"
+      },
+      "fromToChoose": "Choose above",
+      "attachments": "Attachments",
+      "noAttachments": "None",
+      "signature": "Signature",
+      "noSignature": "Not added: the message is sent exactly as reviewed below",
+      "attachmentsPick": {
+        "label": "Attach documents",
+        "limit": "{{total}} of {{max}} at most, {{count}} files maximum.",
+        "blocked": {
+          "interest_not_confirmed": "attached only after confirmed interest"
+        },
+        "refusal": {
+          "too_many": "{{count}} files at most: remove one.",
+          "too_large": "The total exceeds the limit: remove a file.",
+          "type_refused": "A document is not a type that can be attached to an email.",
+          "empty": "A chosen document is empty."
+        }
+      },
+      "senderPick": "Sending mailbox",
+      "senderPlaceholder": "Choose the mailbox the message leaves from",
+      "senderUnnamed": "Mailbox {{n}}"
+    },
+    "uncertain": {
+      "title": "The send did not answer: the message may have gone out.",
+      "help": "Check your sent folder before resending, so this person is not written to twice.",
+      "notSent": "Nothing went out — reopen sending",
+      "sent": "The message is there"
+    }
+  },
+  "trigger": {
+    "noCredits": "You’ve been using {{brand}} a lot this month — shall we talk?",
+    "creditsLoading": "Checking your balance…",
+    "enrichTooltip": "Retrieve email, LinkedIn or phone number",
+    "enrich": "Enrich",
+    "contact": "Contact",
+    "availableChannels": "Available channels",
+    "availableChannelsLinkedinOnly": "Only channel available: LinkedIn",
+    "linkedinOnly": "Reach out via LinkedIn — no email or phone on file",
+    "completeMissing": "Fill in missing info",
+    "addToSequence": "Add to a sequence",
+    "alreadyEnriched": "Already enriched on {{date}} — nothing more found",
+    "retryAnyway": "Try anyway",
+    "noData": "No contact data found",
+    "addToPlan": "Add to plan"
+  },
+  "callBar": {
+    "noPhone": "No phone number on file for this contact — the call support can still be prepared.",
+    "consign": "I made this call — log it"
+  },
+  "launcher": {
+    "reopen": "Reopen the approach for {{name}}",
+    "approach": "Approach"
+  },
+  "tab": {
+    "askBellum": "Ask {{brand}}",
+    "chatTooltip": "Chat with {{brand}}",
+    "contactTooltip": "Contact: {{name}}",
+    "writing": "{{copilot}} is still writing this message — it will be here when you come back.",
+    "closeAria": "Close {{name}}"
+  },
+  "history": {
+    "openAria": "View chat history",
+    "title": "Chat history",
+    "loading": "Loading history...",
+    "error": "Unable to load history.",
+    "empty": "No recent chats.",
+    "group": {
+      "yesterday": "Yesterday",
+      "lastWeek": "Last week",
+      "threeWeeksAgo": "3 weeks ago",
+      "older": "Older"
+    },
+    "age": {
+      "hours": "{{value}}h",
+      "days": "{{value}}d",
+      "weeks": "{{value}}w"
+    }
+  },
+  "agent": {
+    "panelAria": "{{brand}} chat",
+    "title": "Ask {{brand}}",
+    "subtitle": "Shared chat · generation and sales context",
+    "unavailable": "The {{brand}} agent is unavailable right now.",
+    "loading": "Loading the conversation...",
+    "loadError": "Unable to load the chat.",
+    "writing": "{{brand}} is writing...",
+    "replyAria": "{{brand}} reply",
+    "copyReply": "Copy reply",
+    "noReply": "No reply."
+  },
+  "conversations": {
+    "general": {
+      "title": "Open questions",
+      "subtitle": "Priorities, accounts, objections",
+      "prompt": "Help me prioritize my next sales actions."
+    },
+    "accountContext": {
+      "title": "Active account",
+      "subtitle": "Context from the open account",
+      "prompt": "Summarize the active account and suggest a concrete next action."
+    },
+    "analysis": {
+      "title": "Recent analysis",
+      "subtitle": "Synthesis into an action plan",
+      "prompt": "Turn the latest analysis into a short action plan."
+    }
+  },
+  "quickPrompts": {
+    "priorityAccount": {
+      "label": "Priority account",
+      "prompt": "Which account should I prioritize today?"
+    },
+    "shortFollowUp": {
+      "label": "Short follow-up",
+      "prompt": "Prepare a short follow-up for my best contact."
+    },
+    "objections": {
+      "label": "Objections",
+      "prompt": "Which objections should I anticipate on this deal?"
+    }
+  },
+  "agentComposer": {
+    "disclaimer": "{{copilot}} can make mistakes. Double-check important information.",
+    "inputAria": "Ask {{brand}} message",
+    "placeholder": "Ask {{brand}} a question...",
+    "attachFile": "Attach a file",
+    "mention": "Mention",
+    "insertAnalysis": "Insert an analysis",
+    "addAccount": "Add an account",
+    "tokenAnalysis": "Recent analysis",
+    "tokenAccount": "Active account",
+    "contextNotice": "The chat only uses context accessible to your session."
+  },
+  "nav": {
+    "newChat": "New chat",
+    "newChatAria": "Open a new chat",
+    "conversations": "Conversations",
+    "modes": "Modes",
+    "noRecentChats": "No recent chats"
+  },
+  "mention": {
+    "loading": "Loading workspace...",
+    "error": "Unable to load items.",
+    "empty": "No items available.",
+    "sections": {
+      "accounts": "Accounts",
+      "contacts": "Contacts",
+      "signals": "Signals"
+    },
+    "eyebrow": {
+      "account": "Account",
+      "contact": "Contact",
+      "signal": "Signal"
+    },
+    "score": "Score {{score}}"
+  },
+  "preSend": {
+    "allClear": "Pre-send check: nothing to flag",
+    "failures_one": "{{count}} point to review before sending",
+    "failures_other": "{{count}} points to review before sending",
+    "killerMistake": "Reply-killer: {{mistake}}"
+  },
+  "task": {
+    "create": "Create the task",
+    "createdButton": "Task created",
+    "created": "Task added to your actions",
+    "createError": "The task could not be created",
+    "expectedOutcome": "A reply from {{name}}, or a next conversation scheduled",
+    "noAccount": "This contact is not linked to any account: the task would have no plan to live in.",
+    "channelLabel": "Channel",
+    "channelUnspecified": "Unspecified"
+  },
+  "callTask": {
+    "plan": "Schedule this call",
+    "seeInCalls": "See in Calls to make",
+    "create": "Add to calls to make",
+    "createdButton": "Call added",
+    "created": "Call added to your calls to make",
+    "createError": "The call could not be added"
+  },
+  "brief": {
+    "aria": "Message brief",
+    "objective": "Goal",
+    "relationship": "Relationship",
+    "angle": "Angle",
+    "angleDerived": "the most actionable signal in the file",
+    "toSpecify": "To specify: {{what}}",
+    "correct": "Correct the brief",
+    "source": {
+      "formulaire": "chosen by you",
+      "angle": "read from your angle",
+      "relation": "read from the account relationship",
+      "defaut": "default, account with no history"
+    }
+  },
+  "versionTrace": {
+    "objective": "Goal: {{objective}}",
+    "template": "Approved template: {{source}}, version {{version}}",
+    "style": "Message style applied",
+    "unchanged": "Same text as the previous version: nothing was adapted.",
+    "backToGenerated": "Back to the generated version",
+    "backToMine": "Resume my edited version"
+  },
+  "approachQuiz": {
+    "title": "To write to {{name}}, one question: what do you want to get out of it? (The rest is read from the file.)",
+    "question": {
+      "objective": "1. What is the goal of the message?",
+      "angle": "Optional — what should the opener rely on?",
+      "tone": "Optional — which tone?"
+    },
+    "angle": {
+      "signal": "A recent account signal",
+      "role": "The stakes of their role",
+      "reference": "A comparable client reference",
+      "question": "An open question about their priorities"
+    },
+    "tone": {
+      "formal": "Formal",
+      "direct": "Direct and concise",
+      "warm": "Warm and personal"
+    },
+    "angleInstruction": {
+      "signal": "Open on a recent account signal, cited precisely.",
+      "role": "Open on the stakes specific to their role in the organisation.",
+      "reference": "Open on a comparable client reference from our firm, if the file contains one.",
+      "question": "Open with an open question about their current priorities."
+    },
+    "toneInstruction": {
+      "formal": "Formal tone, sober sentences.",
+      "direct": "Direct, concise tone: five sentences at most, a single ask.",
+      "warm": "Warm, personal tone, never overfamiliar."
+    },
+    "cancel": "Cancel",
+    "submit": "Draft the email"
+  },
+  "approachPage": {
+    "title": {
+      "email": "Prepare your email",
+      "linkedin": "Prepare your LinkedIn message",
+      "call": "Prepare your call"
+    },
+    "back": "Back to the contact",
+    "goal": {
+      "title": "What you want to get",
+      "placeholder": "{{copilot}} picks from the file",
+      "orientation": "Get pointed to the right person",
+      "resume": "Pick up a conversation",
+      "expertise": "Present an expertise"
+    },
+    "channel": {
+      "title": "Preparation channel",
+      "email": "Email",
+      "linkedin": "LinkedIn",
+      "call": "Call"
+    },
+    "basis": {
+      "title": "What {{copilot}} builds on",
+      "account": "Account signals",
+      "contact": "Contact signals",
+      "auto": "No pick: {{copilot}} chooses the hook itself and tells you which one (“Element used”). Free angle: in the options.",
+      "rewrite": "Rewrite with this pick"
+    },
+    "precisions": {
+      "title": "Optional details",
+      "hint": "relationship, persona, call to action, style, approved template…",
+      "angle": "Free angle (optional)"
+    },
+    "draft": {
+      "title": "Your draft",
+      "to": "To",
+      "from": "From",
+      "subject": "Subject",
+      "body": "Message body",
+      "toMissing": "Email to fill in",
+      "toLinkedin": "To {{name}} · LinkedIn",
+      "fromSpace": "Your workspace address",
+      "keepHand": "You keep control of every wording.",
+      "edit": "Edit the text",
+      "noLinkedin": "No LinkedIn address known for this contact: you can prepare the message but not open it.",
+      "linkedinNotConnected": "Channel not connected: nothing leaves {{brand}}. You copy the message and send it yourself.",
+      "attachments": "You choose them when you send.",
+      "signature": "Added when you drop the draft in your mailbox.",
+      "dismissed": "Draft set aside. Nothing was sent.",
+      "writeAnother": "Write a new message",
+      "titleLinkedin": "Message ready to personalise",
+      "linkedinKind": "LinkedIn message",
+      "attachmentsLabel": "Attachments",
+      "signatureLabel": "Signature",
+      "linkedinCount": "{{count}} / {{limit}} characters for a connection note."
+    },
+    "status": {
+      "draft": "Not sent",
+      "validated": "Validated · not sent yet",
+      "writing": "Writing"
+    },
+    "actions": {
+      "adapt": "Adapt to the new goal",
+      "copy": "Copy",
+      "copied": "Copied",
+      "save": "Save the draft",
+      "saved": "Draft saved in Messaging, nothing sent.",
+      "saveFailed": "The draft could not be saved. Try again.",
+      "validate": "Validate the draft",
+      "afterValidation": "After validation",
+      "afterValidationHint": "Sending, dropping into your mailbox or copying only unlocks once the draft is reviewed and validated.",
+      "deposit": "Drop in my mailbox",
+      "depositing": "Dropping…",
+      "deposited": "Draft dropped in your mailbox, nothing sent.",
+      "depositFailed": "Dropping the draft in your mailbox failed. Try again.",
+      "depositNeedsMailbox": "Connect your mailbox (Settings › Integrations) to drop the draft in it.",
+      "depositNeedsEmail": "Fill in the contact's email to drop the draft in your mailbox.",
+      "markSent": "Mark as sent by me",
+      "markedSent": "Declared sent by you",
+      "dismiss": "Set this draft aside",
+      "versions": "Versions",
+      "createTask": "Create a task",
+      "proof": "See the evidence",
+      "versionsCount": "Versions · {{count}}",
+      "regenerate": "Regenerate",
+      "sentOtherwise": "Sent another way?"
+    },
+    "generation": {
+      "writing": "{{copilot}} is writing the message…",
+      "writingHint": "This takes about fifteen seconds. You can refine the goal meanwhile.",
+      "failed": "Writing failed.",
+      "failedKeep": "Your previous draft is intact.",
+      "retry": "Try again"
+    },
+    "guard": {
+      "suppressed": "{{name}} asked not to be contacted.",
+      "suppressedBody": "Sending is refused: you can prepare and keep the draft, nothing will go to this address.",
+      "identity": "Identity to confirm before sending.",
+      "identityBody": "There is a doubt about {{name}}: confirm the right contact on their page. Sending stays blocked until then.",
+      "verify": "Check"
+    },
+    "context": {
+      "title": "Context to keep",
+      "contact": "Contact",
+      "account": "Account",
+      "goal": "Goal",
+      "subject": "Topic",
+      "element": "Element used",
+      "none": "No element of the file is cited in this message.",
+      "notSet": "Not set",
+      "freeAngle": "Free angle: no fact of the file imposed."
+    },
+    "avoid": {
+      "title": "Avoid the generic message",
+      "ruleOne": "A question about who to talk to must not automatically end with a meeting request.",
+      "ruleTwo": "No reference, budget or availability is added to make the message more convincing.",
+      "objections": "Objections to expect",
+      "ruleTwoCall": "No reference, budget or availability is added to make the call more convincing."
+    },
+    "proof": {
+      "title": "The elements of this file",
+      "description": "What {{copilot}} used for this message, split between observed, history and interpretation.",
+      "observed": "Observed in the file",
+      "history": "History, distinct from the present",
+      "esn": "What your firm brings",
+      "interpretation": "Commercial interpretation",
+      "disclaimer": "A recommendation is not an extra piece of evidence.",
+      "empty": "{{copilot}} cited no element of the file in this message.",
+      "close": "Close"
+    },
+    "validate": {
+      "title": "Review before validating",
+      "description": "Check the recipient, the subject and the text as they would go out.",
+      "to": "To",
+      "from": "From",
+      "checklist": "Pre-send check",
+      "scope": "This validation covers this recipient and this version. It sends nothing. Changing the content will require a new review.",
+      "confirm": "I checked the recipient, the content and the attachments of this draft.",
+      "back": "Back to the draft",
+      "submit": "Validate the draft",
+      "submitting": "Validating…",
+      "failed": "The validation could not be saved. Try again.",
+      "done": "Draft validated. Nothing was sent.",
+      "pill": "Validated for {{name}}"
+    },
+    "versions": {
+      "title": "Draft versions",
+      "description": "Every change adds a version; none is erased.",
+      "version": "Version",
+      "author": "Author",
+      "when": "Date",
+      "current": "current",
+      "validated": "validated",
+      "resume": "Resume",
+      "you": "You",
+      "laura": "{{copilot}}",
+      "empty": "No version saved yet. “Save the draft” adds one.",
+      "close": "Close",
+      "backToGenerated": "Back to the generated version"
+    },
+    "notFound": {
+      "title": "This channel is not prepared here",
+      "body": "Only email and LinkedIn have an approach page. Other channels stay available from the contact page."
+    },
+    "call": {
+      "before": "What to know before calling",
+      "prepared": "Support ready",
+      "opening": "Your opening",
+      "questions": "Three questions to qualify",
+      "objections": "If they answer…",
+      "regenerate": "Regenerate the script",
+      "copy": "Copy the script",
+      "nextStep": "Next step",
+      "noCall": "{{copilot}} never calls for you: “Call” opens your phone, you dial.",
+      "plan": {
+        "open": "Schedule this call",
+        "reason": "Reason for the call",
+        "objective": "Goal of the call",
+        "needsScript": "The opening must be written first — or type the reason and goal yourself to schedule anyway.",
+        "title": "Schedule this call",
+        "description": "The call joins your “calls to make”, with this script attached.",
+        "day": "Day",
+        "hour": "Time",
+        "cancel": "Cancel",
+        "close": "Close"
+      },
+      "kind": "Qualification call",
+      "phonePro": "work line",
+      "copyPhone": "Copy",
+      "copiedPhone": "Copied",
+      "dial": "Call",
+      "lastSent": "Last message sent on {{date}}.",
+      "lastExchange": "Last exchange on {{date}}: {{subject}}.",
+      "lastExchangeNoSubject": "Last exchange on {{date}}.",
+      "otherApproach": "Another approach"
+    },
+    "breadcrumb": "Prepare the approach",
+    "more": {
+      "label": "More channels",
+      "caption": "Other channels",
+      "followUp": "Follow-up email",
+      "profile": "Propose a consultant profile",
+      "introduction": "Ask for an introduction",
+      "partner": "Message to a partner",
+      "connectionNote": "LinkedIn connection note"
+    },
+    "templates": {
+      "title": "Start from an approved template",
+      "body": "The templates your team validated, chosen by situation.",
+      "choose": "Choose"
+    },
+    "grounding": {
+      "title": "What {{copilot}} relies on",
+      "hint": "Tick the facts the message relies on, then “Regenerate”: {{copilot}} cites no other.",
+      "account": "Account signals",
+      "contact": "Contact signals and needs",
+      "free": "Free angle",
+      "freeHint": "No fact imposed: {{copilot}} follows the angle you write in the options.",
+      "none": "No known signal on this account or this contact. Prepare with a free angle: {{copilot}} invents none.",
+      "homonym": "May concern a namesake — check the identity before relying on it.",
+      "callOffer": "The call opens on the job offer: {{offer}}",
+      "callNoOffer": "No job offer is linked to this call: the script stays general."
+    },
+    "enrichPrepare": {
+      "button": "Enrich, then prepare",
+      "loading": "Enriching…",
+      "noEmail": "No email found for this contact: nothing was prepared.",
+      "toLinkedin": "Prepare a message on the professional network"
+    }
+  },
+  "linkedinDelegation": {
+    "aria": "Delegated LinkedIn sending",
+    "title": "Delegated LinkedIn sending",
+    "loading": "Reading the sending mandate…",
+    "error": "Couldn’t read the LinkedIn sending status.",
+    "retry": "Try again",
+    "none": "No mandate: nothing is sent without your approval.",
+    "period": "Mandate active from {{from}} to {{until}} · {{limit}} per day",
+    "revoked": "Mandate revoked on {{date}}: nothing is sent.",
+    "inactive": "Mandate ended on {{date}}: nothing is sent.",
+    "remaining": "Left today: {{remaining}} of {{limit}}",
+    "notOpen": {
+      "title": "Sending route not open",
+      "hint": "Nothing is sent from here. Copy the message and send it yourself from LinkedIn."
+    },
+    "grant": "Give a {{days}}-day mandate",
+    "grantHint": "At most {{limit}} messages a day, revocable at any time, stopped as soon as the person replies.",
+    "send": "Send this message via LinkedIn",
+    "revoke": "Revoke the mandate",
+    "result": {
+      "sent": "Sent: the sending provider returned a proof.",
+      "unknown": "No answer from the provider: the message may have gone out. Don’t resend it, check on LinkedIn.",
+      "notOpen": "Sending route not open: nothing was sent.",
+      "failed": "The provider refused the send. Nothing was sent.",
+      "refused": {
+        "no_mandate": "No mandate: nothing was sent.",
+        "revoked": "Mandate revoked: nothing was sent.",
+        "not_yet_valid": "The mandate hasn’t started yet: nothing was sent.",
+        "expired": "Mandate expired: nothing was sent.",
+        "recipient_replied": "This person replied: follow-ups stop, nothing was sent.",
+        "previous_unknown": "A previous send to this person stayed uncertain: check on LinkedIn before trying again.",
+        "daily_limit_reached": "Daily limit reached: nothing was sent, try again tomorrow.",
+        "demo": "In the demo, nothing is ever sent."
+      }
+    }
+  }
+}

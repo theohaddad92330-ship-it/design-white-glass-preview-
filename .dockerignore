@@ -1,0 +1,22 @@
+# Pourquoi ce fichier existe — mesuré le 25/10/2026
+#
+# `apps/ia/docker/Dockerfile` fait `COPY . .` (ligne 8) et il n'y avait AUCUN
+# `.dockerignore` dans ce dépôt, ni à la racine ni dans un sous-dossier. Or
+# `apps/ia/.env` existe bien sur les postes (il est seulement gitignoré, ce qui
+# ne dit rien à Docker). Sans cette liste, ce fichier entre dans l'image — et
+# une image, ça se pousse dans un registre, ça se partage et ça se garde.
+#
+# Un `.dockerignore` est lu à la racine du CONTEXTE de build. Il y en a donc un
+# ici ET un dans `apps/ia/`, parce que les deux contextes sont employés selon
+# l'endroit d'où l'image est construite.
+#
+# On n'exclut QUE ce qui ne doit jamais entrer dans une image. Rien dans cette
+# liste n'est nécessaire à un build : on ne peut pas casser une construction en
+# retirant un secret. C'est volontairement court — un `.dockerignore` qui exclut
+# `node_modules` ou `.git` est un arbitrage de TAILLE, pas de sécurité, et il
+# casse les builds qui en dépendent (horodatage par `git rev-parse`, par exemple).
+**/.env
+**/.env.*
+!**/.env.example
+**/*.pem
+**/*.key

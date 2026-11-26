@@ -1,0 +1,97 @@
+# #4805 — CLIQUET des `return null` de vue sur une absence de données. Le compte ne peut que BAISSER.
+# Chaque ligne suivante : `fichier :: condition` (une ligne par occurrence). Une entrée DEVENUE propre doit être RETIRÉE ici
+# (le test échoue sinon). Un site NOUVEAU absent d'ici fait échouer le test : nomme l'absence (NamedAbsence) ou, si
+# c'est légitime (prop optionnelle, liste dont l'absence ne fait aucune ligne), ajoute-le avec sa raison dans le brief.
+# Ce périmètre est un SURENSEMBLE heuristique (fichiers View|Section|Panel|Card|Table, `if (...) return null` sur une absence).
+# Le compte se lit avec `^[0-9]+` (premier entier en début de ligne), jamais sur le fichier entier (piège prettier-dette 29/10).
+90
+components/analysis/AnalysisProgressCard.tsx :: partials.length === 0
+components/analysis/AnalysisProgressCard.tsx :: warnings.length === 0 && healthEntries.length === 0
+features/account-follows/view/FollowedAccountsSection.tsx :: !signals.data
+features/accounts/view/account-detail/components/EntitiesGraphCard.tsx :: flat.length === 0
+features/accounts/view/account-detail/components/GroupEntitiesCard.tsx :: !data || data.length === 0
+features/accounts/view/account-detail/components/LinkedAccountsCard.tsx :: !data
+features/accounts/view/account-detail/components/LinkedAccountsCard.tsx :: !data.mergedInto && data.linked.length === 0
+features/accounts/view/account-detail/components/contact-engagement/ContactEngagementFloatingPanel.tsx :: channels.length === 0 || typeof document === 'undefined'
+features/accounts/view/account-detail/components/sites/RetainedSitesCard.tsx :: sites.length === 0
+features/accounts/view/account-detail/components/sites/RetainedSitesPanel.tsx :: sites.length === 0
+features/accounts/view/account-detail/tabs/contacts/PersonalContactsSection.tsx :: !Array.isArray(data) || data.length === 0
+features/accounts/view/account-detail/tabs/contacts/SignalLeadsSection.tsx :: leads.length === 0
+features/accounts/view/account-detail/tabs/evaluation/ScoreSummaryCard.tsx :: rawFactors.length === 0
+features/accounts/view/account-detail/tabs/opportunities/AccountCrmMirrorSection.tsx :: !mirror || (mirror.deals.length === 0 && mirror.activities.length === 0)
+features/accounts/view/account-detail/tabs/opportunities/AccountDealFactsSection.tsx :: !brief || brief.deals.length + notes.length === 0
+features/accounts/view/account-detail/tabs/organigramme/FocalOrgView.tsx :: !ranked || !contacts || contacts.length === 0
+features/accounts/view/account-detail/tabs/organigramme/FocalOrgView.tsx :: shown.length === 0
+features/accounts/view/account-detail/tabs/organigramme/FocalOrgView.tsx :: view.procurement.length === 0
+features/accounts/view/account-detail/tabs/organigramme/HierarchyOrgView.tsx :: !view
+features/accounts/view/account-detail/tabs/organigramme/HierarchyOrgView.tsx :: !view || !selected
+features/accounts/view/account-detail/tabs/plan/AggregatedTrajectoriesSection.tsx :: destinations.length === 0
+features/accounts/view/account-detail/tabs/plan/ReinforcedAnglesCard.tsx :: corroborated.length === 0
+features/accounts/view/account-detail/tabs/plan/ReverseProspectsSection.tsx :: prospects.length === 0
+features/accounts/view/account-detail/tabs/reference/ReferenceDossierView.tsx :: visible.length === 0
+features/accounts/view/account-detail/tabs/sections/AccountAttachedDocumentsCard.tsx :: attached.length === 0
+features/accounts/view/account-detail/tabs/sections/AccountKnownMovementsCard.tsx :: !data.known || data.since === null
+features/accounts/view/account-detail/tabs/sections/AccountProvenancePanel.tsx :: !hasFreshness && !hasConfidence && sources.length === 0 && conflicts.length === 0
+features/accounts/view/account-detail/tabs/sections/AccountVariationSignalsCard.tsx :: measured.length === 0
+features/accounts/view/account-detail/tabs/sections/AccountVocabularySection.tsx :: terms.length === 0
+features/accounts/view/account-detail/tabs/sections/CompanyPublicDataSection.tsx :: !data
+features/accounts/view/account-detail/tabs/sections/CompanyPublicDataSection.tsx :: !signals || !signals.org
+features/accounts/view/account-detail/tabs/sections/CompanyPublicDataSection.tsx :: all.length === 0
+features/accounts/view/account-detail/tabs/sections/CompanyPublicDataSection.tsx :: jobs.length === 0
+features/accounts/view/account-detail/tabs/sections/CompanyPublicDataSection.tsx :: openTenders.length === 0 && awardedList.length === 0
+features/accounts/view/account-detail/tabs/sections/CompanyPublicDataSection.tsx :: recentSplit.inTrade.length === 0 && historySplit.inTrade.length === 0 && offTrade.length === 0
+features/accounts/view/account-detail/tabs/sections/CompanyPublicDataSection.tsx :: rows.length === 0 && !sharesVal && filings.length === 0
+features/accounts/view/account-detail/tabs/sections/CompetitivePositioningCard.tsx :: competitors.length === 0
+features/accounts/view/account-detail/tabs/sections/ConsultantsKnowSectorCard.tsx :: isPending || isError || !data || data.consultants.length === 0
+features/accounts/view/account-detail/tabs/sections/ItProgramsCard.tsx :: named.length === 0
+features/accounts/view/account-detail/tabs/sections/KeyNotesCard.tsx :: renderable.length === 0
+features/accounts/view/account-detail/tabs/sections/OfferRecommendationsCard.tsx :: facts.length === 0
+features/accounts/view/account-detail/tabs/sections/OfferRecommendationsCard.tsx :: items.length === 0
+features/accounts/view/account-detail/tabs/sections/OffersAndPositioningSection.tsx :: offers.length === 0
+features/accounts/view/account-detail/tabs/veille/WatchHypothesesPanel.tsx :: hypotheses.length === 0
+features/agenda/view/MeetingFlowCard.tsx :: flow.length === 0
+features/briefing/view/DecisionsSection.tsx :: decisions.length === 0
+features/chat/view/ConversationSummaryPanel.tsx :: groups.length === 0
+features/chat/view/ConversationsPanel.tsx :: shortcuts.length === 0
+features/chat/view/FocusPlanCard.tsx :: !sources || sources.length === 0
+features/chat/view/FocusPlanCard.tsx :: lines.length === 0
+features/chat/view/reply-blocks/AccountRankingCard.tsx :: !items?.length
+features/chat/view/reply-blocks/ReplyCard.tsx :: !items?.length
+features/chat/view/reply-blocks/ReplyCard.tsx :: !lines?.length
+features/consultants/view/MissingExpertisePanel.tsx :: query.isPending || items.length === 0
+features/contacts/view/contact-detail/components/ContactOutreachMessagesCard.tsx :: !messages || messages.length === 0
+features/contacts/view/contacts-list/ContactSelectionPanel.tsx :: contacts.length === 0
+features/dashboard/components/perspective/DormantOpportunitiesCard.tsx :: opportunities.length === 0
+features/factoring/view/CessionsSection.tsx :: cleaned.length === 0
+features/factoring/view/CessionsSection.tsx :: cleaned.length === 0
+features/governance/view/DuplicatesPanel.tsx :: !items?.length
+features/governance/view/DuplicatesPanel.tsx :: accounts.length === 0 && pairs.length === 0
+features/manager/view/cockpit/CoachingPanel.tsx :: entries.length === 0
+features/manager/view/cockpit/ObjectivesPanel.tsx :: rows.length === 0
+features/manager/view/cockpit/TeamRoutinesPanel.tsx :: routines.members.length === 0
+features/missions/view/MissionDeliveryMilestonesPanel.tsx :: !data || data.length === 0
+features/missions/view/MissionRepositioningPanel.tsx :: reasons.length === 0 && constraints.length === 0
+features/missions/view/OverdueThirtyDaysCard.tsx :: late.length === 0
+features/missions/view/PaymentsToMatchCard.tsx :: rows.length === 0
+features/onboarding/components/FirstSelectionCard.tsx :: suggestions.length === 0
+features/onboarding/components/LauraUnderstoodSection.tsx :: points.length === 0
+features/pilotage/rex/view/LostDealLearningSection.tsx :: rex.length === 0
+features/pilotage/view/ContributionPanel.tsx :: !data
+features/pilotage/view/ContributionPanel.tsx :: lines.length === 0
+features/pilotage/view/InterestPenetrabilityPortfolioPanel.tsx :: !data
+features/pilotage/view/PartnerGovernancePanel.tsx :: !summary || summary.total === 0
+features/pilotage/view/WorkspaceLearningPanel.tsx :: codes.length === 0 || !isReachable(DISCOVER_POPULATION, known)
+features/profile/components/EsnMarketMemorySection.tsx :: !data
+features/projects/open-needs/view/NeedProposalsPanel.tsx :: isLoading || items.length === 0
+features/projects/probability/ProbableQuarterPanel.tsx :: !data
+features/projects/view/ProjectPartnerGovernancePanel.tsx :: rows.length === 0
+features/settings/view/MyDataView.tsx :: entries.length === 0
+features/settings/view/MyDataView.tsx :: groups.length === 0
+features/team-guardrails/components/AccountTeamCard.tsx :: !data
+features/team-guardrails/components/AccountTeamCard.tsx :: !data.responsible && data.members.length === 0 && !data.can_edit
+features/team-guardrails/components/DuplicateCandidatesCard.tsx :: items.length === 0
+features/team/view/HandoverPlanSection.tsx :: count === 0 || data.eligibleSuccessors.length === 0
+features/team/view/JoinRequestsSection.tsx :: !requests || requests.length === 0
+features/today/TodayCard.tsx :: parts.length === 0
+features/universal-import/view/ImportedExtraCard.tsx :: entries.length === 0
+features/welcome/view/MarketAwarenessCard.tsx :: !query || isPending || !read || read.status !== 'ok' || read.matches.length === 0

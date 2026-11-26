@@ -1,0 +1,97 @@
+{
+  "meta": {
+    "title": "Schutzmechanismen — was BellumAI nicht an Ihrer Stelle tut",
+    "description": "Laura bereitet vor, Sie entscheiden. Die Schutzmechanismen hinter diesem Versprechen stehen im Code, nicht in einer Broschüre."
+  },
+  "hero": {
+    "kicker": "Schutzmechanismen",
+    "title": "Was wir nicht an Ihrer Stelle tun.",
+    "lead": "Vertriebssoftware kann Ihren Kunden schneller schreiben als Sie selbst. Die eigentliche Frage ist nicht, ob sie es könnte — sondern was sie daran hindert. Diese Seite beschreibt, was BellumAI zu tun ablehnt, und was es im Produkt daran hindert."
+  },
+  "copilot": {
+    "title": "Laura bereitet vor. Sie versenden.",
+    "paragraph": "Laura ist Ihr Copilot für Vertriebsintelligenz. Sie sammelt, sie gleicht ab, sie formuliert. Sie hat keinen Schreibpfad in Ihr Postfach: Wenn sie eine Nachricht vorschlägt, liefert sie einen Vorschlag, und erst Ihre eigene Handlung legt den Entwurf ab. Das ist keine vorsichtige Einstellung, die sich lockern ließe — es ist die Abwesenheit von Code.",
+    "items": [
+      {
+        "label": "Kein Werkzeug von Laura kann versenden.",
+        "desc": "Der Schritt, der eine Nachricht vorbereitet, liefert einen Vorschlag. Dahinter steht kein Versandaufruf — und damit gibt es nichts abzuschalten."
+      },
+      {
+        "label": "Der Text Ihrer Nachrichten erreicht das Modell nicht.",
+        "desc": "Um eine Nachfassnachricht zu formulieren, erhält Laura den Gesprächspartner, den Betreff und die Dauer des Schweigens. Nicht den Text Ihres Schriftwechsels."
+      }
+    ]
+  },
+  "guardrails": {
+    "title": "Die sechs Schutzmechanismen automatischer Nachfassnachrichten",
+    "paragraph": "Nur eine Familie von Automatisierungen erreicht einen Kunden, ohne dass unmittelbar zuvor jemand geklickt hat: Nachfassnachrichten, und nur wenn Ihr Arbeitsbereich sie scharf geschaltet hat. Sechs Schutzmechanismen rahmen sie ein. Keine Einstellung schaltet sie ab — die Funktion, die entscheidet, ob eine Nachfassnachricht hinausgehen darf, erhält nur die Lage des Empfängers und die aktuelle Uhrzeit. Es gibt kein Kästchen, um einen davon zu umgehen.",
+    "items": [
+      {
+        "label": "Eine Antwort schließt die Sequenz.",
+        "desc": "Sobald Ihr Gesprächspartner antwortet, endet die Nachfassnachricht — endgültig. Das ist der wichtigste der sechs: jemanden nachzufassen, der gerade geantwortet hat, ist der schnellste Weg, ignoriert zu werden."
+      },
+      {
+        "label": "Eine Nachfassnachricht, niemals eine Kadenz.",
+        "desc": "Höchstens eine automatische Nachricht pro Ziel und pro Regel. Keine Eskalation, keine fünfstufige Sequenz, keine Kopie an die Führungskraft in der dritten Runde. Was nach einer Nachfassnachricht unbeantwortet bleibt, wird wieder zur Sache eines Menschen."
+      },
+      {
+        "label": "Die Abmeldung wird vor jedem Versand neu gelesen.",
+        "desc": "Niemals aus einem Zwischenspeicher. Eine gestern erfasste Abmeldung gilt für die heutige Nachricht, und die Prüfung wird für jedes Ziel einzeln wiederholt."
+      },
+      {
+        "label": "Ruhezeiten.",
+        "desc": "Nichts vor 8:00, nichts nach 19:00, nichts am Wochenende. Eine automatische Vertriebs-E-Mail, die sonntags mitten in der Nacht eintrifft, fällt auf — und sagt ihrem Empfänger, dass kein Mensch sie vorher gelesen hat."
+      },
+      {
+        "label": "Eine Obergrenze pro Arbeitsbereich und Tag.",
+        "desc": "Höchstens 25 automatische Nachfassnachrichten. Eine Schleife, die außer Kontrolle gerät, stoppt an einer Zahl — nicht an der Wachsamkeit einer Person am Freitagabend."
+      },
+      {
+        "label": "Nichts ist standardmäßig scharf geschaltet.",
+        "desc": "Jede automatische Nachfassnachricht bleibt aus, bis ein Mensch in Ihrem Arbeitsbereich sie einschaltet, und eine einzige Handlung schaltet alles wieder aus."
+      }
+    ]
+  },
+  "review": {
+    "title": "Und selbst scharf geschaltet wird Ihnen jede Nachricht vorgelegt.",
+    "paragraph": "Die sechs Schutzmechanismen beantworten die Frage „darf dieses Ziel nachgefasst werden?“. Sie beantworten nicht „darf genau dieser Text heute zu genau diesem Kunden gehen?“. Das ist eine andere Frage, und ein Mensch beantwortet sie.",
+    "items": [
+      {
+        "label": "Was Sie lesen, ist das, was hinausgeht.",
+        "desc": "Betreff und Text werden in dem Moment eingefroren, in dem Ihnen die Anfrage vorgelegt wird. Bei der Freigabe wird nichts neu erzeugt: einen Text freizugeben und einen anderen zu versenden wäre schlimmer, als gar nichts zu zeigen."
+      },
+      {
+        "label": "Eine Ablehnung gilt endgültig.",
+        "desc": "Für dieses Ziel wird Ihnen die abgelehnte Nachfassnachricht am nächsten Tag nicht erneut vorgelegt. Sonst bliebe als einziger Ausweg, die gesamte Automatisierung abzuschalten."
+      },
+      {
+        "label": "Eine unentschiedene Anfrage verfällt.",
+        "desc": "Nach 3 Tagen geht sie nicht hinaus. Eine vergangene Woche vorbereitete Nachfassnachricht spricht von einem Schweigen, das es womöglich nicht mehr gibt."
+      }
+    ]
+  },
+  "refusals": {
+    "title": "Was diese Seite ebenfalls nicht tut.",
+    "paragraph": "Eine Seite, die erklärt, was wir ablehnen, wird zuerst daran gemessen, was sie sich selbst zu schreiben erlaubt.",
+    "items": [
+      {
+        "label": "Keine Marktzahlen.",
+        "desc": "Uns wurden Statistiken zu Abmeldequoten und zum Verlust der Absenderreputation angeboten, um diese Seite zu untermauern. Wir konnten sie keiner öffentlichen, benannten und datierten Quelle zuordnen. Also stehen sie nicht hier: die einzigen Zahlen auf dieser Seite sind Konstanten des Produkts."
+      },
+      {
+        "label": "Keine Liefertermine.",
+        "desc": "Was diese Seite beschreibt, funktioniert heute. Was noch nicht existiert, wird nicht angekündigt, auch nicht ungefähr."
+      },
+      {
+        "label": "Keine Namen von Wettbewerbern.",
+        "desc": "Wir benennen Fähigkeiten — Ihr Postfach, Ihr CRM, Ihr Kalender —, niemals die Werkzeuge anderer, und niemals, um uns damit zu vergleichen."
+      }
+    ]
+  },
+  "cta": {
+    "title": "Lieber selbst nachprüfen?",
+    "paragraph": "Die Demo zeigt das Produkt so, wie es ist, mit einem als fiktiv gekennzeichneten Datensatz.",
+    "primary": "Demo ansehen",
+    "secondary": "Produkt entdecken"
+  }
+}

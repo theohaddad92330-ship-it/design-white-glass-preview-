@@ -1,0 +1,134 @@
+// Grafana Alloy — collecte des runners CI Hetzner, poussée vers Grafana Cloud.
+//
+// Transport : PUSH (remote_write HTTPS 443 sortant). Les runners n'acceptent
+// que le SSH entrant (ufw) ; rien n'est ouvert pour la supervision.
+// Voir .claude/local/supervision.md §1.
+//
+// Cardinalité : Grafana Cloud Free = 10 000 séries actives. On GARDE une liste
+// blanche de métriques (règle « keep » plus bas) ; tout le reste est jeté avant
+// l'envoi. Ordre de grandeur : ~250 séries par hôte × 4 hôtes.
+
+prometheus.exporter.unix "hote" {
+  set_collectors = ["cpu", "loadavg", "meminfo", "filesystem", "netdev", "pressure", "stat", "uname"]
+  filesystem {
+    mount_points_exclude = "^/(dev|proc|run|sys|var/lib/docker/.+|snap/.+)($|/)"
+  }
+  netdev {
+    device_include = "^(eth|ens|enp)[0-9a-z]+$"
+  }
+}
+
+prometheus.exporter.cadvisor "conteneurs" {
+  docker_host      = "unix:///var/run/docker.sock"
+  docker_only      = true
+  storage_duration = "5m"
+}
+
+// Sondes de DISPONIBILITÉ depuis l'extérieur de la production : chaque runner
+// (Helsinki, Nuremberg ×2, Falkenstein) sonde les mêmes cibles. Une panne vue
+// par un seul hôte est un problème de chemin réseau, vue par les quatre c'est
+// la cible qui est tombée. Aucune clé, aucun secret : des GET publics.
+//
+// Module `http_2xx` : GET, redirections suivies, statut final 2xx
+// (`valid_status_codes` vide = 2xx par défaut de blackbox_exporter), IPv4
+// d'abord, délai 10 s. Le label `cible` est celui que lit l'API de supervision.
+prometheus.exporter.blackbox "dispo" {
+  config = "{ modules: { http_2xx: { prober: http, timeout: 10s, http: { method: GET, follow_redirects: true, valid_status_codes: [], preferred_ip_protocol: ip4 } } } }"
+
+  target {
+    name    = "api"
+    address = "https://api.bellum-ai.com/health"
+    module  = "http_2xx"
+    labels  = { cible = "api" }
+  }
+
+  target {
+    name    = "version"
+    address = "https://api.bellum-ai.com/version"
+    module  = "http_2xx"
+    labels  = { cible = "version" }
+  }
+
+  // Front : app.bellum-ai.com (APP_URL du site, sondes de .github/workflows/uptime.yml).
+  target {
+    name    = "web"
+    address = "https://app.bellum-ai.com/"
+    module  = "http_2xx"
+    labels  = { cible = "web" }
+  }
+
+  target {
+    name    = "site"
+    address = "https://bellum-ai.com/"
+    module  = "http_2xx"
+    labels  = { cible = "site" }
+  }
+
+  // Pas de cible « manager » : le back-office est derrière un Basic Auth (401
+  // sans identifiants) et son URL de production n'est écrite nulle part dans
+  // le dépôt. À ajouter ici quand elle sera connue.
+}
+
+prometheus.scrape "hote" {
+  targets         = prometheus.exporter.unix.hote.targets
+  scrape_interval = "30s"
+  forward_to      = [prometheus.relabel.flotte.receiver]
+}
+
+prometheus.scrape "conteneurs" {
+  targets         = prometheus.exporter.cadvisor.conteneurs.targets
+  scrape_interval = "30s"
+  forward_to      = [prometheus.relabel.flotte.receiver]
+}
+
+prometheus.scrape "dispo" {
+  targets         = prometheus.exporter.blackbox.dispo.targets
+  scrape_interval = "60s"
+  scrape_timeout  = "20s"
+  forward_to      = [prometheus.relabel.flotte.receiver]
+}
+
+prometheus.relabel "flotte" {
+  rule {
+    source_labels = ["__name__"]
+    regex         = "up|node_cpu_seconds_total|node_load(1|5|15)|node_memory_(MemTotal|MemAvailable|SwapTotal|SwapFree)_bytes|node_filesystem_(size|avail)_bytes|node_network_(receive|transmit)_bytes_total|node_pressure_(cpu|memory|io)_waiting_seconds_total|node_boot_time_seconds|node_uname_info|container_cpu_usage_seconds_total|container_memory_working_set_bytes|container_spec_memory_limit_bytes|container_spec_cpu_(quota|period)|container_fs_usage_bytes|container_last_seen|container_start_time_seconds|container_oom_events_total|probe_success|probe_duration_seconds|probe_http_status_code|probe_ssl_earliest_cert_expiry|probe_http_duration_seconds"
+    action        = "keep"
+  }
+  // Les modes CPU inutiles pour les décisions sont jetés (nice, irq, softirq, guest…).
+  rule {
+    source_labels = ["__name__", "mode"]
+    regex         = "node_cpu_seconds_total;(nice|irq|softirq|guest|guest_nice)"
+    action        = "drop"
+  }
+  // Sondes : on ne garde que connect, tls et processing (resolve et transfer sont du bruit).
+  rule {
+    source_labels = ["__name__", "phase"]
+    regex         = "probe_http_duration_seconds;(resolve|transfer)"
+    action        = "drop"
+  }
+  // cAdvisor : seuls les conteneurs nommés (les runners), pas les cgroups système.
+  rule {
+    source_labels = ["__name__", "name"]
+    regex         = "container_.+;"
+    action        = "drop"
+  }
+  rule {
+    target_label = "host"
+    replacement  = constants.hostname
+  }
+  rule {
+    target_label = "role"
+    replacement  = "ci-runner"
+  }
+  forward_to = [prometheus.remote_write.grafana.receiver]
+}
+
+prometheus.remote_write "grafana" {
+  endpoint {
+    url = "https://prometheus-prod-65-prod-eu-west-2.grafana.net/api/prom/push"
+    basic_auth {
+      username      = "3624472"
+      password_file = "/etc/alloy/grafana-write.token"
+    }
+  }
+}

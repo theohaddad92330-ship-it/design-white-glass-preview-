@@ -1,0 +1,29 @@
+{
+  "name": "@bellum/shared",
+  "version": "0.0.1",
+  "private": true,
+  "type": "module",
+  "main": "./src/index.ts",
+  "exports": {
+    ".": {
+      "types": "./src/index.ts",
+      "import": "./src/index.ts"
+    },
+    "./schemas/research": "./schemas/research.schema.json",
+    "./schemas/contacts": "./schemas/contacts.schema.json",
+    "./schemas/classify": "./schemas/classify.schema.json",
+    "./schemas/plan": "./schemas/plan.schema.json"
+  },
+  "scripts": {
+    "check-types": "tsc --noEmit",
+    "lint": "eslint .",
+    "test": "vitest run"
+  },
+  "devDependencies": {
+    "@bellum/tooling": "workspace:^",
+    "ajv": "^8.20.0",
+    "eslint": "^9.32.0",
+    "typescript": "^5.8.3",
+    "vitest": "^3.2.7"
+  }
+}

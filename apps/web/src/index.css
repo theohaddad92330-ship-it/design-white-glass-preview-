@@ -1,0 +1,924 @@
+@import './styles/tokens.css';
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+/* Custom scrollbar */
+::-webkit-scrollbar {
+  width: 8px;
+  height: 8px;
+}
+
+::-webkit-scrollbar-track {
+  background: transparent;
+}
+
+::-webkit-scrollbar-thumb {
+  background: #d1d5db;
+  border-radius: 9999px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: #9ca3af;
+}
+
+/* Firefox */
+* {
+  scrollbar-width: thin;
+  scrollbar-color: #d1d5db transparent;
+}
+
+@keyframes shimmer {
+  0% {
+    transform: translateX(-100%);
+  }
+  100% {
+    transform: translateX(100%);
+  }
+}
+
+@keyframes tw-shimmer {
+  from {
+    background-position: 100% 0;
+  }
+  to {
+    background-position: 0 0;
+  }
+}
+
+@layer base {
+  * {
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+  }
+
+  ::selection {
+    background: color-mix(in srgb, var(--bellum-primary-500, #5b3ee8) 25%, transparent);
+  }
+
+  /*
+   * Scrollbar — taille + track communs aux deux modes. La couleur du
+   * thumb est définie plus bas (`.dark` ou défaut clair) pour rester
+   * visible sur chaque background.
+   */
+  ::-webkit-scrollbar {
+    width: 6px;
+    height: 6px;
+  }
+
+  ::-webkit-scrollbar-track {
+    background: transparent;
+  }
+
+  /* Mode clair : thumb gris foncé, lisible sur fond blanc. */
+  ::-webkit-scrollbar-thumb {
+    background: #27272a;
+    border-radius: 3px;
+  }
+
+  ::-webkit-scrollbar-thumb:hover {
+    background: #3f3f46;
+  }
+
+  /*
+   * Mode dark (défaut de l'app) : thumb blanc avec opacité — lisible sur
+   * `--bg-base` / `--bg-surface` sans pour autant être agressif.
+   * `:hover` remonte l'opacité quand l'utilisateur survole la barre.
+   */
+  .dark ::-webkit-scrollbar-thumb {
+    background: rgba(255, 255, 255, 0.18);
+  }
+
+  .dark ::-webkit-scrollbar-thumb:hover {
+    background: rgba(255, 255, 255, 0.32);
+  }
+
+  /*
+   * shadcn HSL vars — driven by --bellum-* tokens (tokens.css).
+   * Light mode is :root, dark mode overrides in .dark.
+   * Primary = bellum-primary-500 (#5B3EE8) — used only on interactive
+   * elements (buttons, focus rings, active states). Qonto-style: no glow,
+   * no gradient, no primary-color headings.
+   */
+  /*
+   * ⚠️ CES VALEURS SONT LE MIROIR HSL DE `styles/tokens.css`, PAS UNE
+   * SECONDE SOURCE. Un réglage vit à un seul endroit (GA-26) : quand un
+   * `--bellum-*` bouge là-bas, son jumeau bouge ici, et `theme-parity.test.ts`
+   * refuse la divergence. Le doublon existe parce que shadcn attend des
+   * triplets HSL nus, pas des couleurs.
+   */
+  :root {
+    /* Light mode — Théo DS §1.1 : fond gris teinté, rampe bleutée de Théo V22 */
+    --background: 240 17.6% 96.7%; /* #F5F5F8 */
+    --foreground: 240 17.6% 13.3%; /* #1C1C28 */
+    --card: 0 0% 100%; /* #FFFFFF */
+    --card-foreground: 240 17.6% 13.3%;
+    --popover: 0 0% 100%;
+    --popover-foreground: 240 17.6% 13.3%;
+    --primary: 250 78.7% 57.6%; /* #5B3EE8 */
+    --primary-foreground: 0 0% 100%;
+    --secondary: 228 21.7% 95.5%; /* #F1F2F6 — le CREUX */
+    --secondary-foreground: 240 17.6% 13.3%;
+    --muted: 228 21.7% 95.5%;
+    /* Miroir de --bellum-text-secondary. Pilote les placeholders shadcn
+     * (`placeholder:text-muted-foreground`) : l'ancienne valeur tombait à
+     * 4.38:1 sur --bellum-surface-2, sous le seuil AA. */
+    --muted-foreground: 237 9.3% 40.2%; /* #5D5E70 */
+    --accent: 250 78.7% 57.6%;
+    --accent-foreground: 0 0% 100%;
+    --destructive: 2 100% 67%; /* #FF5E57 */
+    --destructive-foreground: 0 0% 100%;
+    --border: 233 20.9% 91.6%; /* #E5E6EE */
+    --input: 233 20.9% 91.6%;
+    --ring: 250 78.7% 57.6%;
+    --radius: 0.625rem;
+  }
+
+  .dark {
+    /* Dark mode — Théo DS §1.1 : rampe sombre de Théo V22 */
+    --background: 240 12% 4.9%; /* #0B0B0E */
+    --foreground: 240 13% 95.5%; /* #F2F2F5 */
+    --card: 240 6.7% 8.8%; /* #151518 */
+    --card-foreground: 240 13% 95.5%;
+    --popover: 240 6.7% 8.8%; /* #151518 */
+    --popover-foreground: 240 13% 95.5%;
+    /* Théo DS §1.1 — le remplissage primaire s'éclaircit en sombre (#6545EF). */
+    --primary: 251 84.2% 60.4%; /* #6545EF */
+    --primary-foreground: 0 0% 100%;
+    --secondary: 240 7.7% 12.7%; /* #1E1E23 */
+    --secondary-foreground: 240 13% 95.5%;
+    --muted: 240 7.7% 12.7%;
+    --muted-foreground: 245 8.3% 71.8%; /* #B2B1BD */
+    --accent: 251 84.2% 60.4%;
+    --accent-foreground: 0 0% 100%;
+    --destructive: 2 100% 67%; /* #FF5E57 */
+    --destructive-foreground: 0 0% 100%;
+    --border: 240 7.5% 18.2%; /* #2B2B32 */
+    --input: 240 7.5% 18.2%;
+    /* Anneau = `--bellum-focus-ring` (#9E87FF, 6,7:1) : #6545EF ne ferait que 3,4:1. */
+    --ring: 252 100% 76.5%; /* #9E87FF */
+    --radius: 0.625rem;
+  }
+
+  * {
+    @apply border-border;
+  }
+
+  /* #2588 — le conteneur du tableau de `/missions` déclare déjà
+   * `overscroll-x-contain` (voir `use-horizontal-overflow.ts`), mais un
+   * balayage horizontal qui commence hors d'un conteneur déclaré (une marge,
+   * un fond) chaîne directement jusqu'à la page et déclenche le retour
+   * arrière natif du navigateur — `html`/`body` valent `auto` par défaut.
+   * Décision de Louis (18/09) : blinder la page ENTIÈRE, en plus des
+   * conteneurs qui débordent réellement. `contain` arrête la PROPAGATION du
+   * geste une fois la borne atteinte ; il ne désactive PAS le défilement
+   * horizontal lui-même — un tableau large sous `overflow-x-auto` continue de
+   * se faire défiler à la main (garde
+   * `architecture/overscroll-behavior-x-blinde-la-page.test.ts`). */
+  html {
+    text-rendering: optimizeLegibility;
+    overscroll-behavior-x: contain;
+  }
+
+  body {
+    /* #4605.1 — le bandeau d'incarnation est fixe : la page commence SOUS lui (hauteur publiée par le bandeau,
+     * absente hors incarnation). Une seule fois, ici, pour tous les écrans — jamais écran par écran. */
+    padding-top: var(--impersonation-banner-height, 0px);
+    background: hsl(var(--background));
+    color: hsl(var(--foreground));
+    overscroll-behavior-x: contain;
+    @apply font-sans;
+  }
+
+  /*
+   * `#app-shell` is the layout anchor: every `h-full` chain below it
+   * (`MenuLayout`'s `SidebarProvider`, `MainContainer`, etc.) resolves
+   * against this height. Default to a full viewport; the dev toolbar
+   * wrapper overrides this with `calc(100dvh - 28px)` so the shell sits
+   * above the fixed dev status bar without producing a body-level
+   * scroll into empty space.
+   *
+   * `dvh` et non `vh` — c'est l'ancrage le plus important du produit sur
+   * téléphone. `100vh` compte la barre d'adresse du navigateur mobile comme si
+   * elle n'existait pas : la coque dépasse d'environ 60 px, et TOUT ce qui se
+   * résout contre elle — donc la barre d'onglets du bas — passe sous le pli.
+   * `dvh` suit la hauteur réellement visible, barre repliée ou non.
+   */
+  /*
+   * `min-width: 0` sur les enfants de conteneurs flex et grid.
+   *
+   * ─────────────────────────────────────────────────────────────────────
+   * POURQUOI CETTE RÈGLE EXISTE
+   * ─────────────────────────────────────────────────────────────────────
+   * Un enfant de flex ou de grid a `min-width: auto` par défaut : il refuse
+   * de descendre sous la largeur de son contenu le plus long. C'est la cause
+   * n°1 de débordement d'une interface responsive, et elle ne se voit qu'à la
+   * mesure — rien ne lève, rien ne défile, le contenu sort du cadre ou se
+   * fait rogner par un parent en `overflow: hidden`.
+   *
+   * Trois occurrences le 23/08/2026, sur trois écrans sans rapport : les
+   * colonnes du pipe (40 px de trop), les sections de « Ma journée » (520 px
+   * dans un écran de 500), les cartes d'un dossier de compte (703 px dans un
+   * conteneur de 457, texte coupé net sans ellipse). Les corriger une par une
+   * garantit d'en oublier une quatrième.
+   *
+   * `:where()` a une spécificité NULLE : n'importe quel `min-w-*` écrit
+   * explicitement dans le code gagne. Et un élément qui ne doit pas rétrécir
+   * porte déjà `shrink-0`, que cette règle ne touche pas.
+   */
+  :where(.flex, .inline-flex, .grid, .inline-grid) > * {
+    min-width: 0;
+  }
+
+  /*
+   * `overflow: hidden` — #1701, 07/09/2026.
+   *
+   * Retour de Louis : « beug affichage quand on descend tout en bas des
+   * pages, ca devient page blanche infinie ». Mesuré en production, pas lu :
+   * /dashboard rendait `document.scrollingElement.scrollHeight` 869 pour un
+   * `clientHeight` de 861, et /demo 902 contre 861 — alors que `#app-shell`
+   * mesurait exactement 861 dans les deux cas.
+   *
+   * Un descendant qui dépasse une coque de hauteur FIXE ne la fait pas
+   * grandir : il déborde, et comme rien ne le rogne, c'est le DOCUMENT qui
+   * devient défilant. On descend alors sous la coque, dans une bande que
+   * personne ne peint — la « page blanche ». Ce n'est pas un fond manquant :
+   * c'est du vide sous le seul élément qui porte un fond.
+   *
+   * Les deux causes ont été retirées avec ce lot (`menu-layout.tsx`, et les
+   * écrans qui redéclaraient `100dvh` à l'intérieur du viewport) ; GA-256 les
+   * empêche de revenir. Cette ligne est le rempart pour la troisième cause,
+   * celle qu'aucune garde ne peut voir : un contenu qui déborde par sa
+   * TAILLE. Elle applique la loi D81 telle qu'elle est écrite — « ce qui
+   * déborde défile dans SON conteneur, jamais le corps de la page ».
+   *
+   * Elle n'emprisonne rien de flottant : une infobulle, un toast, un dialogue
+   * sont rendus dans un portail en `position: fixed`, hors de ce sous-arbre.
+   */
+  #app-shell {
+    height: calc(100dvh - var(--impersonation-banner-height, 0px));
+    overflow: hidden;
+    background: hsl(var(--background));
+  }
+
+  /*
+   * Lot V16.4 (08/10) — « ouvrir le sélecteur de mode décale le composeur ».
+   *
+   * `@radix-ui/react-select` (et tout menu Radix qui partage son mécanisme,
+   * `DropdownMenu` compris) verrouille le défilement pendant qu'il est
+   * ouvert via `react-remove-scroll`, qui pose `body[data-scroll-locked]` et
+   * compense la largeur de la barre de défilement RETIRÉE par
+   * `margin-right`/`padding-right` — pensé pour une page qui défile au
+   * niveau du corps.
+   *
+   * Ici, le corps ne défile JAMAIS : `#app-shell` ci-dessus est fixé à
+   * `100dvh`, `overflow: hidden` (règle #1701 — « ce qui déborde défile
+   * dans SON conteneur, jamais le corps de la page », D81). Il n'y a donc
+   * AUCUNE barre à retirer ; la compensation ajoutait quand même sa marge,
+   * qui décalait tout le contenu visible (le composeur de `/chat` compris)
+   * le temps que le menu restait ouvert. Le popover reste un OVERLAY
+   * (`position: fixed`, rendu par `Portal`) : seule cette compensation,
+   * sans objet ici, est neutralisée.
+   */
+  body[data-scroll-locked] {
+    margin-right: 0 !important;
+    padding-right: 0 !important;
+  }
+
+  :focus-visible {
+    outline: 2px solid color-mix(in srgb, var(--bellum-primary-500, #5b3ee8) 50%, transparent);
+    outline-offset: 2px;
+  }
+
+  /* Chrome/Safari autofill repaint inputs with a pale background. Force them
+   * back to the surface color in dark mode so saved-credential fields don't
+   * flash white on the login page. */
+  .dark input:-webkit-autofill,
+  .dark input:-webkit-autofill:hover,
+  .dark input:-webkit-autofill:focus,
+  .dark input:-webkit-autofill:active,
+  .dark textarea:-webkit-autofill {
+    -webkit-text-fill-color: hsl(var(--foreground));
+    -webkit-box-shadow: 0 0 0 1000px hsl(var(--background)) inset;
+    caret-color: hsl(var(--foreground));
+    transition: background-color 9999s ease-out 0s;
+  }
+
+  /* Firefox : `scrollbar-color` ne supporte pas `:hover`, on pose une
+   * valeur statique par mode qui matche l'état "rest" de WebKit. */
+  * {
+    scrollbar-width: thin;
+    scrollbar-color: #27272a transparent;
+  }
+
+  .dark * {
+    scrollbar-color: rgba(255, 255, 255, 0.18) transparent;
+  }
+
+  ::-webkit-scrollbar-corner {
+    background: transparent;
+  }
+}
+
+@layer utilities {
+  .animate-shimmer {
+    animation: shimmer 1.5s infinite;
+  }
+
+  .shimmer {
+    --_spread: var(--shimmer-spread, calc(3ch + 40px));
+    --_base: currentColor;
+    --_highlight: var(--shimmer-color, oklch(from currentColor l c h / calc(alpha * 0.2)));
+    background-image: var(
+      --shimmer-image,
+      linear-gradient(
+        calc(90deg + var(--shimmer-angle, 20deg)),
+        var(--_base) calc(50% - var(--_spread)),
+        color-mix(in oklch, var(--_highlight), var(--_base) 50%) calc(50% - var(--_spread) * 0.5),
+        var(--_highlight) 50%,
+        color-mix(in oklch, var(--_highlight), var(--_base) 50%) calc(50% + var(--_spread) * 0.5),
+        var(--_base) calc(50% + var(--_spread))
+      )
+    );
+    background-repeat: no-repeat;
+    background-size: calc(200% + var(--_spread) * 2) 100%;
+    background-position: 0 0;
+    background-clip: text;
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: var(--shimmer-text-fill, transparent);
+    animation: tw-shimmer var(--shimmer-duration, 2s) linear infinite;
+  }
+
+  .dark .shimmer {
+    --_highlight: var(--shimmer-color, color-mix(in oklch, currentColor 35%, transparent));
+  }
+
+  [dir='rtl'] .shimmer,
+  .shimmer[dir='rtl'] {
+    animation-direction: reverse;
+  }
+
+  .shimmer-once {
+    animation-iteration-count: 1;
+  }
+
+  .shimmer-reverse {
+    animation-direction: reverse;
+  }
+
+  .shimmer-none {
+    --shimmer-image: none;
+    --shimmer-text-fill: currentColor;
+  }
+
+  @media (prefers-reduced-motion: reduce) {
+    .shimmer {
+      background-image: none;
+      -webkit-text-fill-color: currentColor;
+      animation: none;
+    }
+  }
+
+  .bellum-grain::after {
+    content: '';
+    position: fixed;
+    inset: 0;
+    pointer-events: none;
+    z-index: 50;
+    opacity: 0.02;
+    background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 256 256' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.9' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)' opacity='0.5'/%3E%3C/svg%3E");
+  }
+
+  /* 3D perspective for cards */
+  .perspective-1000 {
+    perspective: 1000px;
+  }
+  .preserve-3d {
+    transform-style: preserve-3d;
+  }
+
+  /* Glow pulse for CTAs */
+  .animate-glow-pulse {
+    animation: none;
+  }
+
+  /* Floating animation */
+  .animate-float {
+    animation: float 6s ease-in-out infinite;
+  }
+
+  /* Aurora gradient background */
+  .bg-aurora {
+    background:
+      radial-gradient(
+        circle at 20% 10%,
+        color-mix(in srgb, var(--bellum-primary-500) 8%, transparent),
+        transparent 34%
+      ),
+      linear-gradient(180deg, var(--bellum-bg) 0%, color-mix(in srgb, var(--bellum-bg) 88%, black) 100%);
+    background-size: auto;
+    animation: none;
+  }
+
+  /* Glass card */
+  .glass-card {
+    background: rgba(255, 255, 255, 0.03);
+    backdrop-filter: blur(20px);
+    -webkit-backdrop-filter: blur(20px);
+    border: 1px solid rgba(255, 255, 255, 0.06);
+  }
+
+  /* Text gradient */
+  .text-gradient-violet {
+    background: linear-gradient(
+      135deg,
+      var(--bellum-text-primary),
+      color-mix(in srgb, var(--bellum-primary-500) 42%, var(--bellum-text-primary))
+    );
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+  }
+
+  /* Dot grid pattern */
+  .dot-grid {
+    background-image: radial-gradient(
+      circle,
+      color-mix(in srgb, var(--bellum-primary-500) 10%, transparent) 1px,
+      transparent 1px
+    );
+    background-size: 24px 24px;
+  }
+
+  /* Smooth entrance */
+  .animate-fade-up {
+    animation: fade-up-in 0.6s ease-out forwards;
+  }
+
+  /* Animated gradient border */
+  .gradient-border {
+    position: relative;
+    border-radius: 1rem;
+  }
+  .gradient-border::before {
+    content: '';
+    position: absolute;
+    inset: -1px;
+    border-radius: inherit;
+    background: conic-gradient(
+      from var(--angle, 0deg),
+      color-mix(in srgb, var(--bellum-primary-500) 32%, transparent),
+      color-mix(in srgb, var(--bellum-info) 24%, transparent),
+      color-mix(in srgb, var(--bellum-primary-500) 32%, transparent)
+    );
+    animation: gradient-rotate 4s linear infinite;
+    z-index: -1;
+    opacity: 0;
+    transition: opacity 0.3s;
+  }
+  .gradient-border:hover::before {
+    opacity: 1;
+  }
+
+  /* Animated hue shift for KPI top border */
+  .animate-hue-shift {
+    animation: hue-shift-border 8s linear infinite;
+  }
+
+  /* Gradient sweep for sparkline bars */
+  .animate-gradient-sweep {
+    background-size: 200% 100%;
+    animation: gradient-sweep 4s linear infinite;
+  }
+
+  /* Pulse ring for score circles */
+  .animate-pulse-ring {
+    animation: pulse-ring 2s ease-in-out infinite;
+  }
+
+  /* Avatar ring animation */
+  .animate-avatar-ring {
+    animation: avatar-ring-pulse 3s ease-in-out infinite;
+  }
+
+  /* Glow dot for progress bar */
+  .animate-glow-dot {
+    animation: glow-dot-pulse 2s ease-in-out infinite;
+  }
+
+  /* Wiggle animation for bell icon */
+  .animate-wiggle {
+    animation: wiggle 0.5s ease-in-out;
+  }
+
+  /* Low credits pulse */
+  .animate-credits-pulse {
+    animation: credits-pulse 2s ease-in-out infinite;
+  }
+
+  /* Shimmer sweep for buttons */
+  .shimmer-sweep {
+    position: relative;
+    overflow: hidden;
+  }
+  .shimmer-sweep::after {
+    content: '';
+    position: absolute;
+    inset: 0;
+    background: linear-gradient(
+      105deg,
+      transparent 40%,
+      rgba(255, 255, 255, 0.06) 45%,
+      rgba(255, 255, 255, 0.1) 50%,
+      rgba(255, 255, 255, 0.06) 55%,
+      transparent 60%
+    );
+    transform: translateX(-100%);
+    transition: none;
+  }
+  .shimmer-sweep:hover::after {
+    animation: shimmer-sweep 0.8s ease-out forwards;
+  }
+
+  /* Gradient border always visible variant */
+  .gradient-border-active {
+    position: relative;
+    border-radius: 1rem;
+  }
+  .gradient-border-active::before {
+    content: '';
+    position: absolute;
+    inset: -1px;
+    border-radius: inherit;
+    background: conic-gradient(
+      from var(--angle, 0deg),
+      color-mix(in srgb, var(--bellum-primary-500) 26%, transparent),
+      color-mix(in srgb, var(--bellum-info) 18%, transparent),
+      color-mix(in srgb, var(--bellum-primary-500) 26%, transparent)
+    );
+    animation: gradient-rotate 4s linear infinite;
+    z-index: -1;
+    opacity: 0.45;
+  }
+
+  /* Focus animated gradient border for inputs */
+  .input-focus-gradient {
+    position: relative;
+  }
+  .input-focus-gradient:focus-within::before {
+    content: '';
+    position: absolute;
+    inset: -1px;
+    border-radius: 0.75rem;
+    background: conic-gradient(
+      from var(--angle, 0deg),
+      color-mix(in srgb, var(--bellum-primary-500) 24%, transparent),
+      color-mix(in srgb, var(--bellum-info) 18%, transparent),
+      color-mix(in srgb, var(--bellum-primary-400) 20%, transparent),
+      color-mix(in srgb, var(--bellum-primary-500) 24%, transparent)
+    );
+    animation: gradient-rotate 3s linear infinite;
+    z-index: -1;
+    opacity: 0.35;
+  }
+}
+
+@keyframes hue-shift-border {
+  0% {
+    filter: hue-rotate(0deg);
+  }
+  100% {
+    filter: hue-rotate(360deg);
+  }
+}
+
+@keyframes gradient-sweep {
+  0% {
+    background-position: -200% 0;
+  }
+  100% {
+    background-position: 200% 0;
+  }
+}
+
+@keyframes pulse-ring {
+  0% {
+    box-shadow: 0 0 0 0 color-mix(in srgb, var(--bellum-primary-500) 22%, transparent);
+  }
+  70% {
+    box-shadow: 0 0 0 6px color-mix(in srgb, var(--bellum-primary-500) 0%, transparent);
+  }
+  100% {
+    box-shadow: 0 0 0 0 color-mix(in srgb, var(--bellum-primary-500) 0%, transparent);
+  }
+}
+
+@keyframes avatar-ring-pulse {
+  0%,
+  100% {
+    border-color: color-mix(in srgb, var(--bellum-primary-500) 34%, transparent);
+  }
+  50% {
+    border-color: color-mix(in srgb, var(--bellum-primary-600) 28%, transparent);
+  }
+}
+
+@keyframes glow-dot-pulse {
+  0%,
+  100% {
+    opacity: 0.6;
+    box-shadow: 0 0 4px color-mix(in srgb, var(--bellum-primary-500) 28%, transparent);
+  }
+  50% {
+    opacity: 1;
+    box-shadow: 0 0 8px color-mix(in srgb, var(--bellum-primary-500) 38%, transparent);
+  }
+}
+
+/* Animated gradient border keyframes */
+@keyframes gradient-rotate {
+  0% {
+    --angle: 0deg;
+  }
+  100% {
+    --angle: 360deg;
+  }
+}
+
+@property --angle {
+  syntax: '<angle>';
+  initial-value: 0deg;
+  inherits: false;
+}
+
+@keyframes glow-pulse {
+  0%,
+  100% {
+    box-shadow: 0 0 12px color-mix(in srgb, var(--bellum-primary-500) 12%, transparent);
+  }
+  50% {
+    box-shadow:
+      0 0 18px color-mix(in srgb, var(--bellum-primary-500) 16%, transparent),
+      0 0 32px color-mix(in srgb, var(--bellum-primary-500) 6%, transparent);
+  }
+}
+
+@keyframes float {
+  0%,
+  100% {
+    transform: translateY(0);
+  }
+  50% {
+    transform: translateY(-10px);
+  }
+}
+
+@keyframes aurora {
+  0% {
+    background-position: 0% 50%;
+  }
+  50% {
+    background-position: 100% 50%;
+  }
+  100% {
+    background-position: 0% 50%;
+  }
+}
+
+@keyframes fade-up-in {
+  from {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes typing-dot {
+  0%,
+  100% {
+    transform: scale(1);
+    opacity: 0.5;
+  }
+  50% {
+    transform: scale(1.5);
+    opacity: 1;
+  }
+}
+
+@keyframes focus-border-rotate {
+  0% {
+    --angle: 0deg;
+  }
+  100% {
+    --angle: 360deg;
+  }
+}
+
+@keyframes status-pulse-dot {
+  0%,
+  100% {
+    transform: scale(1);
+    opacity: 1;
+  }
+  50% {
+    transform: scale(1.5);
+    opacity: 0.6;
+  }
+}
+
+@keyframes ring-pulse-search {
+  0%,
+  100% {
+    transform: scale(1);
+    opacity: 0.3;
+  }
+  50% {
+    transform: scale(1.2);
+    opacity: 0.08;
+  }
+}
+
+@keyframes confetti-burst {
+  0% {
+    transform: scale(0) rotate(0deg);
+    opacity: 1;
+  }
+  50% {
+    opacity: 0.8;
+  }
+  100% {
+    transform: scale(1.8) rotate(180deg);
+    opacity: 0;
+  }
+}
+
+@keyframes score-ring-glow {
+  0%,
+  100% {
+    opacity: 0.25;
+    transform: scale(1);
+  }
+  50% {
+    opacity: 0.5;
+    transform: scale(1.06);
+  }
+}
+
+@keyframes progress-dot-glow {
+  0%,
+  100% {
+    box-shadow: 0 0 6px color-mix(in srgb, var(--bellum-primary-500) 24%, transparent);
+  }
+  50% {
+    box-shadow: 0 0 10px color-mix(in srgb, var(--bellum-primary-500) 38%, transparent);
+  }
+}
+
+@keyframes wiggle {
+  0%,
+  100% {
+    transform: rotateZ(0deg);
+  }
+  25% {
+    transform: rotateZ(-5deg);
+  }
+  50% {
+    transform: rotateZ(5deg);
+  }
+  75% {
+    transform: rotateZ(-3deg);
+  }
+}
+
+@keyframes credits-pulse {
+  0%,
+  100% {
+    box-shadow: 0 0 0 0 color-mix(in srgb, var(--bellum-primary-500) 0%, transparent);
+  }
+  50% {
+    box-shadow: 0 0 8px color-mix(in srgb, var(--bellum-primary-500) 18%, transparent);
+  }
+}
+
+@keyframes shimmer-sweep {
+  0% {
+    transform: translateX(-100%);
+  }
+  100% {
+    transform: translateX(100%);
+  }
+}
+
+@keyframes scroll-x {
+  from {
+    transform: translateX(0);
+  }
+  to {
+    transform: translateX(-50%);
+  }
+}
+
+.animate-scroll-x {
+  animation: scroll-x 20s linear infinite;
+}
+
+/* "Curseur main" preference: when enabled, <html> gets `.pointer` and a hand
+   cursor shows over interactive elements (see preferences-provider). Skips
+   disabled controls. */
+html.pointer
+  :where(button, a, [role='button'], select, summary, label[for], [tabindex]:not([tabindex='-1'])):not(:disabled):not(
+    [aria-disabled='true']
+  ) {
+  cursor: pointer;
+}
+
+/* ──────────────────────────────────────────────────────────────────────────
+   LA LARGEUR DE LECTURE, pour ce qui ne passe pas par <Text> (D81).
+   ──────────────────────────────────────────────────────────────────────────
+   Le composant `Text` borne déjà ses paragraphes à 70 caractères. Quelques
+   écrans écrivent un `<p>` à la main : mesuré en production sur /discover, un
+   seul de ces paragraphes faisait 1 112 px, soit ~144 caractères par ligne.
+   Deux corrections valent mieux qu'une règle qu'on applique à moitié.
+
+   `:where()` met la spécificité à ZÉRO : n'importe quelle classe Tailwind
+   (`max-w-*`, `w-*`) l'emporte, donc la règle ne se bat contre rien et
+   n'oblige personne à écrire `!important`.
+
+   Les troncatures sont exclues. `truncate` et `line-clamp` mesurent leur
+   CONTENEUR : borner d'abord couperait le texte plus tôt qu'il ne faut, et un
+   titre coupé à mi-mot est plus gênant qu'une ligne longue. Même raison que
+   l'exclusion côté composant.
+
+   ──────────────────────────────────────────────────────────────────────────
+   ET LES LIGNES DE TABLEAU AUSSI (mesuré en production le 29/08/2026).
+   ──────────────────────────────────────────────────────────────────────────
+   D81 a deux moitiés, et cette règle n'en appliquait qu'une : « texte et
+   formulaires bornés à 70 caractères ; listes, tableaux et tableaux de bord
+   EN PLEINE LARGEUR — ils ont besoin de leurs colonnes ». `li` est ici pour
+   la puce de prose, et il attrapait aussi la ligne de tableau, qui n'est pas
+   un texte mais une mise en page.
+
+   Mesuré sur `/pilotage/qualite`, fenêtre de 1 512 px :
+
+     carte ......................................... 1 184 px
+     ligne `<li>` .................................    649,74 px  ← ici
+     colonne des libellés .........................    109 px
+     « Consultants à disponibilité inconnue » ...... 4 lignes, un mot par ligne
+
+   535 px de la carte étaient inutilisables, et tout le manque retombait sur
+   la colonne des libellés — celle qui a `min-w-0` et donc aucun plancher.
+
+   La signature retenue est `justify-between` : DEUX groupes poussés aux
+   extrémités, ce qu'un paragraphe n'est jamais et ce qu'une ligne de tableau
+   est toujours. Elle est étroite exprès — un `li` en `flex` peut très bien
+   être une puce « icône + texte », et celle-là doit rester bornée.
+
+   ── #2708, 22/09/2026 : LE TREIZIÈME ────────────────────────────────────
+   Ce commentaire annonçait qu'oublier le treizième était garanti. Il l'était.
+   `QualificationLeadsQueue.tsx` écrit `<li className="min-w-0">` et délègue
+   la rangée à un composant : le `li` ne porte donc NI `flex` NI
+   `justify-between`, et la signature de classe ne pouvait pas le voir.
+   Mesuré en production, compte Decathlon, onglet Opportunités :
+
+     <ul> ........................ 1 195 px de large, 11 189 px de HAUT
+     <li> ........................   649,74 px  ← encore le même chiffre
+     colonne du libellé ..........    44 px — « Barba / ra / Martin / Coppo / la »
+     hauteur d'une ligne .........   524 px, pour 18 pistes
+
+   Retour rouvert TROIS fois (#2692, puis #2708) : à chaque recette, le texte
+   de la page rendait « Barbara Martin Coppola » proprement. Le défaut
+   n'existait qu'en pixels.
+
+   Seconde signature : `:has(button)`. Une puce de prose ne contient jamais de
+   bouton ; une ligne d'action en contient toujours un. Elle attrape les
+   rangées qui DÉLÈGUENT leur mise en page, ce que la signature de classe ne
+   peut pas voir — les deux coexistent, elles ne se remplacent pas.
+   Après exemption : li 1 195 px · libellé 589 px · ligne 64 px · ul 1 189 px.
+
+   Douze `<li>` du dépôt étaient concernés, dont AUCUN ne portait `w-full`.
+   Les corriger un par un aurait garanti d'oublier le treizième : c'est la
+   raison même pour laquelle cette règle est ici et non dans les écrans.
+   Tenue par GA-63 (`architecture/type-scale.test.ts`).
+   ────────────────────────────────────────────────────────────────────────── */
+#app-shell
+  :where(p, li, dd, blockquote):not(.truncate):not([class*='line-clamp']):not([class*='max-w']):not(
+    [class*='w-full']
+  ):not([class*='justify-between']):not(:has(button)) {
+  max-width: 70ch;
+}
+
+/* Théo D settings-prefs.N1 — densité « Compacte » : resserre les cellules de
+   tableau et les lignes de réglage (rythme vertical), jamais les cibles
+   tactiles (GA-35 : les boutons gardent leur hauteur ≥ 44 px). */
+html[data-density='compact'] table :is(th, td) {
+  padding-top: 0.25rem;
+  padding-bottom: 0.25rem;
+}
+html[data-density='compact'] [data-settings-row] {
+  padding-top: 0.5rem;
+  padding-bottom: 0.5rem;
+}

@@ -1,0 +1,12 @@
+# Rapport — claude/epopee-2843-routines-02-11 (épopée #2843, 7 points)
+
+- **#2843.7 livré (3e95b46a)** — fiche à 25 attributs (rôles, profils d'espace, portée, étapes, actions préparées, validations, budget) ; 60 entrées renseignées ; `routine-catalog.spec.ts` dit NON (champ vide/absent, brouillon sans « tu envoies », CRM sans porte). Owner/statut vivent sur l'abonnement.
+- **#2843.29 livré (04ba5ec9)** — famille lue au catalogue (`roles[0]`, GA-26) + profil d'espace (staffing/forfait) : même ensemble, ordre différent (c76).
+- **#2843.13 livré (8db0dc53)** — autonomie (niveau du catalogue ou `n0_inform` = garde sans notifier) et owner (routine `workspace`, membre de l'espace, reçoit le résultat) réglables et LUS ; portée + validations nommées. Table `routine_preferences`. ⚠️ Portée et validations affichées, non réglables : aucun exécuteur ne sait lire une autre portée, une validation de plus doublerait l'autonomie (GA-26) — tranché sans Louis.
+- **#2843.19/.21 livré (cc22f490)** — exécuteur sous le fil `routine-run:<clé>` → coût rattaché via `provider_costs.correlation_id` ; back-office : coût par exécution, plafond, arrêts ; `PUT internal/admin/routines/caps` ; 403 utilisateur testé. Plafond atteint ⇒ occurrence non exécutée, statut nommé sans chiffre. ⚠️ Plafond en USD (unité des coûts capturés) : aucune conversion crédit↔USD n'existe.
+- **#2843.24 livré (ee2748ab)** — risque 0-4 dérivé (`routineRiskOf`), rôles, déroulé, actions sur la fiche et la fenêtre ouverte depuis /actions/automatisations ; coût absent.
+- **#2843.30 livré (ea2269eb)** — gabarit `{{resultat}}` par espace (`routine_contents`, GET/PUT/DELETE `routines/:key/content`), appliqué au texte de la notification, retour au défaut.
+- Fragment `changes/epopee-2843-routines-02-11.yml` (0bdad1df, validé `fusion_fragments.py --garder` sur copie). Démo : `routine_preferences`/`routine_contents` vides à dessein + purgés.
+- Hors périmètre touché (nécessaire) : fixtures `scheduleLabel.test.ts`, `AutomationsRail.test.tsx` ; garde GA-12 `check-constraints-cover-enums.spec.ts`. Trailers « Doc-inchangée » pour `database_schema.md`/`demo-mode.md`.
+- Tests : ciblés api/web/contracts rouges puis verts ; `ci:local` vert (0bdad1df). TDD imparfait sur le contrat de .30 (test et code écrits ensemble).
+- Questions : plafond en crédits plutôt qu'en USD ? owner réglable aussi pour les routines personnelles (exposerait boîte/agenda) ?

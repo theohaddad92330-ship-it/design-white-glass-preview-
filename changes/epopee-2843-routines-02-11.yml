@@ -1,0 +1,32 @@
+lot: epopee-2843-routines-02-11
+issues: [2843]
+
+changelog:
+  id: 2026-11-02-epopee-2843-routines
+  comment: 'Épopée #2843 — routines : autonomie, owner et contenu réglables, fiche complète, ordre par rôle et par espace'
+  fr:
+    date: 2 novembre 2026
+    title: Tes routines se règlent jusqu’au texte qu’elles t’envoient
+    items:
+      - 'Sur la fiche d’une routine, tu règles son autonomie (garder le résultat sans te notifier) et, pour une routine qui lit l’espace, la personne qui reçoit son résultat.'
+      - 'Le texte de la notification d’une routine se personnalise pour ton espace, et revient au défaut d’un geste.'
+      - 'La fiche nomme le risque de la routine sur 4, à qui elle parle, son déroulé, ce qu’elle laisse et les validations qu’elle attend.'
+      - 'Ton rôle et le type de ton espace changent l’ordre des routines proposées, jamais la liste.'
+  en:
+    date: November 2, 2026
+    title: Your routines can be tuned down to the text they send you
+    items:
+      - 'On a routine’s page, you set its autonomy (keep the result without notifying you) and, for a routine that reads the workspace, who receives its result.'
+      - 'A routine’s notification text can be customised for your workspace, and goes back to default in one gesture.'
+      - 'The page names the routine’s risk out of 4, who it speaks to, its steps, what it leaves behind and the approvals it waits for.'
+      - 'Your role and your workspace type change the order of suggested routines, never the list.'
+
+inserts:
+  - file: agent_docs/chantiers-livres.md
+    text: |
+      - **Routines #2843 (02/11)** (#2843.7/.13/.19/.21/.24/.29/.30) — fiche à 25 attributs (rôles, profils d'espace,
+        portée, étapes, actions préparées, validations, budget ; `routines.ts`, garde `routine-catalog.spec.ts`),
+        autonomie/owner (`routine_preferences`, lus par `RoutinesService.applyPreference`), contenu par espace
+        (`routine_contents`, `GET/PUT/DELETE routines/:key/content`), risque 0-4 dérivé (`routineRiskOf`), ordre
+        rôle + type d'espace (`routine-role-order.ts`, c76), coût rattaché par le fil `routine-run:<clé>` et plafond
+        par routine au back-office seul (`internal/admin/routines/runs`, `PUT …/caps`, c132).

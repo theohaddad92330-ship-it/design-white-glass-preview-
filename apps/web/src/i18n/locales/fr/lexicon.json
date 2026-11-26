@@ -1,0 +1,66 @@
+{
+  "page": {
+    "title": "Lexique",
+    "description": "Les mots que ton ESN emploie pour nommer les objets du produit. Un terme posé ici remplace le libellé partout où le produit affiche ce nom seul — la navigation, les titres d'écran, les sélecteurs.",
+    "loading": "Chargement du lexique…"
+  },
+  "accessDenied": {
+    "title": "Réservé aux gestionnaires de l'espace",
+    "description": "Le lexique change ce que toute l'équipe lit : il demande le droit de gérer l'équipe."
+  },
+  "language": {
+    "label": "Langue des termes",
+    "hint": "Un terme se pose par langue. « Affaire » n'a pas de traduction évidente, et la deviner en écrirait une fausse."
+  },
+  "terms": {
+    "title": "Les mots de ton équipe",
+    "default": "Par défaut : {{term}}",
+    "singular": "Singulier",
+    "plural": "Pluriel",
+    "clear": "Revenir au mot du produit pour « {{concept}} »"
+  },
+  "version": {
+    "label": "Version {{version}} · modifiée le {{date}} par {{who}}",
+    "unset": "Version : non mesurée — le lexique n'a jamais encore été modifié",
+    "unknownMember": "un membre qui n'est plus dans l'équipe"
+  },
+  "concepts": {
+    "need": "Le rôle recherché sur un projet",
+    "project": "Le projet client dans le pipe",
+    "account": "L'entreprise suivie",
+    "contact": "La personne chez le client",
+    "consultant": "La personne que ton ESN positionne",
+    "talent_pool": "L'ensemble de tes consultants",
+    "mission": "La prestation vendue",
+    "submission": "La proposition d'un consultant sur un besoin"
+  },
+  "forbidden": {
+    "title": "Mots à ne jamais lire",
+    "hint": "{{copilot}} ne les emploie plus dans ce qu'elle rédige. Et si le mot interdit est celui du produit, il faut aussi dire ce qui le remplace — sinon il resterait à l'écran.",
+    "placeholder": "ex. le mot que tu ne veux plus lire",
+    "add": "Ajouter",
+    "remove": "Retirer « {{term}} »",
+    "empty": "Aucun mot interdit."
+  },
+  "outOfScope": {
+    "title": "Ce que le lexique ne change pas",
+    "hint": "Un lexique qui dit ce qu'il ne fait pas vaut mieux qu'un lexique qui ment sur la moitié.",
+    "items": {
+      "sentences": "Les phrases. « Aucun compte ne correspond » garde son mot : l'accorder demanderait une grammaire, et s'en passer écrirait « Aucun Affaire ne correspond ».",
+      "document_titles": "Le titre de l'onglet du navigateur, qui compose le nom du produit avec celui de l'écran.",
+      "third_party_objects": "Les objets d'un outil connecté, sur les écrans de ce connecteur — les renommer mentirait sur ce que l'outil lit.",
+      "pricing_grid": "La grille tarifaire : elle est commune à tous les espaces.",
+      "cross_workspace_metrics": "Les indicateurs comparables d'un espace à l'autre — les renommer casserait la comparaison."
+    }
+  },
+  "violations": {
+    "preferred_is_forbidden": "« {{term}} » est à la fois le mot que tu préfères et un mot que tu t'interdis.",
+    "forbidden_without_replacement": "Tu interdis « {{term}} », qui est le mot du produit : donne le terme à employer à la place, sinon il reste à l'écran."
+  },
+  "save": "Enregistrer le lexique",
+  "saving": "Enregistrement…",
+  "saved": "Lexique enregistré",
+  "saveFailed": "Lexique non enregistré",
+  "pending": "Modifications du lexique en attente",
+  "noPending": "Aucune modification en attente"
+}

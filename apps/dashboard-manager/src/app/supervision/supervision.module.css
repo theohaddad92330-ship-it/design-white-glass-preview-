@@ -1,0 +1,198 @@
+.onglets {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.25rem;
+  margin: 0.25rem 0 1.25rem;
+  border-bottom: 1px solid var(--border);
+}
+
+.onglet,
+.ongletLien,
+.ongletAVenir {
+  display: inline-flex;
+  align-items: center;
+  min-height: 2.75rem;
+  padding: 0.5rem 0.875rem;
+  font-size: 0.875rem;
+  margin-bottom: -1px;
+  border-bottom: 2px solid transparent;
+}
+
+.onglet {
+  font-weight: 700;
+  color: var(--text);
+  border-bottom-color: var(--text);
+}
+
+.ongletAVenir {
+  color: var(--muted);
+  cursor: default;
+}
+
+.ongletLien {
+  color: var(--muted);
+  text-decoration: none;
+}
+
+.ongletLien:hover {
+  color: var(--text);
+}
+
+.note {
+  margin: -0.5rem 0 1.25rem;
+  font-size: 0.875rem;
+  color: var(--muted);
+}
+
+.bandeau {
+  margin: 0 0 1.25rem;
+  padding: 0.75rem 1rem;
+  border: 1px solid var(--amber);
+  border-radius: 0.5rem;
+  color: var(--text);
+  background: color-mix(in srgb, var(--amber) 12%, transparent);
+}
+
+.bandeauDiscret {
+  margin: 0 0 1rem;
+  padding: 0.5rem 0.75rem;
+  border: 1px solid var(--border, currentColor);
+  border-radius: 0.5rem;
+  font-size: 0.875rem;
+  color: var(--muted);
+}
+
+.bloc {
+  margin: 0 0 2rem;
+}
+
+.bloc h2 {
+  font-size: 1.125rem;
+  margin: 0 0 0.75rem;
+}
+
+.hotes {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(16rem, 1fr));
+  gap: 0.75rem;
+}
+
+.hote {
+  min-width: 0;
+  padding: 0.875rem 1rem;
+  border: 1px solid var(--border);
+  border-radius: 0.5rem;
+  background: var(--surface);
+}
+
+.hotePerime {
+  border-color: var(--red);
+}
+
+.hoteTete {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 0.5rem;
+  margin-bottom: 0.5rem;
+}
+
+.hoteNom {
+  font-weight: 700;
+  overflow-wrap: anywhere;
+}
+
+.perime {
+  font-size: 0.75rem;
+  font-weight: 700;
+  padding: 0.125rem 0.5rem;
+  border-radius: 999px;
+  color: var(--red);
+  border: 1px solid var(--red);
+}
+
+.mesures {
+  display: grid;
+  grid-template-columns: auto 1fr;
+  gap: 0.25rem 0.75rem;
+  margin: 0;
+  font-size: 0.875rem;
+}
+
+.mesures dt {
+  color: var(--muted);
+}
+
+.mesures dd {
+  margin: 0;
+  text-align: right;
+}
+
+.fraicheur {
+  margin: 0.5rem 0 0;
+  font-size: 0.75rem;
+  color: var(--muted);
+}
+
+.tableau {
+  overflow-x: auto;
+}
+
+.tableau table {
+  width: 100%;
+  border-collapse: collapse;
+  font-size: 0.875rem;
+}
+
+.tableau th,
+.tableau td {
+  padding: 0.5rem 0.75rem;
+  border-bottom: 1px solid var(--border);
+  text-align: left;
+  white-space: nowrap;
+}
+
+.tableau th {
+  color: var(--muted);
+  font-weight: 600;
+}
+
+.nonMesure {
+  color: var(--muted);
+  font-style: italic;
+}
+
+.oom {
+  color: var(--red);
+  font-weight: 700;
+}
+
+.tlsOrange {
+  color: var(--amber);
+  font-weight: 700;
+}
+
+.graphes {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(18rem, 1fr));
+  gap: 0.75rem;
+}
+
+.graphe {
+  min-width: 0;
+  padding: 0.75rem 1rem;
+  border: 1px solid var(--border);
+  border-radius: 0.5rem;
+  background: var(--surface);
+}
+
+.graphe h3 {
+  font-size: 0.875rem;
+  margin: 0 0 0.5rem;
+}
+
+.grapheHote {
+  font-size: 0.75rem;
+  color: var(--muted);
+  margin: 0.5rem 0 0.25rem;
+}

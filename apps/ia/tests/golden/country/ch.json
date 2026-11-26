@@ -1,0 +1,12 @@
+{
+  "registry": "Zefix",
+  "identifierLabel": "UID",
+  "note": "Real, verified Swiss company identifiers (UID, format CHE-XXX.XXX.XXX) for country-pack resolution non-regression. Verified 2026-07-16 against Schweizer-Handelsregister-derived sources (northdata.com / help.ch, which cite the commercial register / UID register). The live Zefix Public REST API is HTTP-Basic credential-gated, so these UIDs are the canonical EXPECTED identifiers; the parser is exercised against a spec-shaped fixture (zefix_companyfull.json, built from the official OpenAPI 3.1 schema).",
+  "accounts": [
+    {"name": "ELCA Informatique SA", "uid": "CHE-105.944.452", "canton": "VD", "legalForm": "SA", "seat": "Pully"},
+    {"name": "Swisscom AG", "uid": "CHE-102.753.938", "canton": "BE", "legalForm": "AG", "seat": "Ittigen"},
+    {"name": "Bedag Informatik AG", "uid": "CHE-108.955.156", "canton": "BE", "legalForm": "AG", "seat": "Bern"},
+    {"name": "ti&m AG", "uid": "CHE-112.496.074", "canton": "ZH", "legalForm": "AG", "seat": "Zürich"},
+    {"name": "Adnovum AG", "uid": "CHE-106.013.711", "canton": "ZH", "legalForm": "AG", "seat": "Zürich"}
+  ]
+}

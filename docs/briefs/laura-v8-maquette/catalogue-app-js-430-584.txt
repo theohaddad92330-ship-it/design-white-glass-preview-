@@ -1,0 +1,155 @@
+}
+
+// V7 — 31 requests from the supplied production catalogue; no auto-send.
+// Insert inside the existing application IIFE, before persist().
+const requestCatalog = [{"id":"daily_briefing","category":"agenda","moment":"start_day","label":"Mon brief du jour","prompt":"Fais-moi le brief de ma journée.","outcome":"Tes rendez-vous à préparer, tes fils sans réponse, les réponses favorables et les comptes qui ont bougé. Une source non connectée est signalée comme telle.","requires":[],"reads":["meetings","mail_threads","accounts"]},{"id":"mail_no_reply","category":"mailbox","moment":"follow_up","label":"Qui ne m’a pas répondu","prompt":"Quels fils sont sans réponse depuis 7 jours ? Prépare-moi une relance pour chacun.","outcome":"Les fils restés sans réponse depuis 7 jours, et un brouillon de relance pour chacun, à valider. Rien n’est envoyé.","requires":["email"],"reads":["mail_threads"]},{"id":"mail_unread","category":"mailbox","moment":"start_day","label":"Mes messages non lus","prompt":"Qu’est-ce que je n’ai pas encore lu, et qu’est-ce qui attend une réponse ?","outcome":"Tes fils non lus et ceux qui attendent une réponse, avec l’interlocuteur et la date du dernier message.","requires":["email"],"reads":["mail_threads"]},{"id":"agenda_tomorrow","category":"agenda","moment":"prepare_meeting","label":"Préparer mes rendez-vous de demain","prompt":"Prépare mes rendez-vous de demain : qui je vois, sur quoi, et ce que je dois savoir.","outcome":"Tes rendez-vous de demain avec leurs participants, et le point sur les comptes déjà analysés qu’ils concernent.","requires":["calendar"],"reads":["meetings","account_dossiers"]},{"id":"meeting_imminent","category":"agenda","moment":"prepare_meeting","label":"J’ai un rendez-vous dans trente minutes","prompt":"J’ai un rendez-vous dans trente minutes : prépare-moi l’essentiel à lire en cinq minutes.","outcome":"Ton prochain rendez-vous d’aujourd’hui : qui tu vois, l’objectif, les questions à poser et ce qui reste à vérifier.","requires":["calendar"],"reads":["meetings","account_dossiers"]},{"id":"agenda_free_slots","category":"agenda","moment":"start_day","label":"Mes créneaux libres","prompt":"Quels créneaux d’une heure ai-je de libres cette semaine ?","outcome":"Les créneaux d’une heure libres dans ton agenda cette semaine, en heures ouvrées.","requires":["calendar"],"reads":["meetings"]},{"id":"accounts_to_prioritise","category":"accounts","moment":"start_day","label":"Quels comptes prioriser","prompt":"Quels comptes dois-je prioriser cette semaine, et pourquoi ceux-là ?","outcome":"Les comptes qui attendent une décision ou une action, chacun avec sa raison.","requires":[],"reads":["accounts"]},{"id":"accounts_stalled","category":"accounts","moment":"follow_up","label":"Comptes sans prochaine action","prompt":"Quels comptes suivis n’ont plus rien qui bouge dessus ?","outcome":"Les comptes suivis sur lesquels rien n’a bougé depuis un mois.","requires":[],"reads":["accounts"]},{"id":"account_briefing","category":"accounts","moment":"prepare_meeting","label":"Le point sur un compte","prompt":"Fais-moi le point sur ce compte : où on en est, ce qui a bougé, ce que je fais ensuite.","outcome":"Le score, le verdict, les douleurs principales et les prochaines actions d’un compte déjà analysé.","requires":[],"reads":["account_dossiers"]},{"id":"accounts_compare","category":"accounts","moment":"open_account","label":"Comparer deux comptes","prompt":"Compare ces comptes : lequel mérite mon temps en premier ?","outcome":"Une priorisation argumentée entre des comptes déjà analysés.","requires":[],"reads":["account_dossiers"]},{"id":"account_similar_cases","category":"accounts","moment":"open_account","label":"À quoi ce compte ressemble","prompt":"À quoi ressemble ce compte par rapport à ce qu’on a gagné ou perdu ?","outcome":"Jusqu’à trois cas gagnés ou perdus du même espace, chacun avec ses similitudes et ses différences nommées. Ce qui a été regardé est toujours dit, même si la liste est vide.","requires":[],"reads":["account_dossiers"]},{"id":"find_accounts","category":"accounts","moment":"open_account","label":"Trouver de nouveaux comptes","prompt":"Trouve-moi des comptes à prospecter dans mon secteur et ma région.","outcome":"Des critères de recherche prêts : ton clic ouvre Découvrir pré-rempli. Aucune entreprise n’est citée avant.","requires":[],"reads":[]},{"id":"run_account_search","category":"accounts","moment":"open_account","label":"Faire un tour d’horizon du marché","prompt":"Fais-moi un tour d’horizon des entreprises de mon secteur dans mon département.","outcome":"La liste des comptes trouvés, dans la conversation, avec les critères qui l’ordonnent et ce qui n’a pas pu être évalué.","requires":[],"reads":["registry"]},{"id":"needs_open","category":"accounts","moment":"handle_need","label":"Les besoins actifs","prompt":"Quels besoins sont actifs sur mes comptes ?","outcome":"Les besoins ouverts chez tes clients, chacun rattaché à son compte.","requires":[],"reads":["needs"]},{"id":"talents_available","category":"talent","moment":"position_consultant","label":"Qui est disponible","prompt":"Quels consultants sont disponibles, et à partir de quand ?","outcome":"Les consultants disponibles et à partir de quand. Une disponibilité inconnue est dite, jamais présentée comme libre.","requires":[],"reads":["bench"]},{"id":"talents_by_skill","category":"talent","moment":"position_consultant","label":"Qui connaît une techno","prompt":"Qui dans le vivier connaît cette technologie, et à quel niveau ?","outcome":"Les profils du vivier qui ont cette compétence, avec leur niveau.","requires":[],"reads":["bench"]},{"id":"talents_reactivate","category":"talent","moment":"position_consultant","label":"Qui repositionner","prompt":"Quels consultants faut-il repositionner, et pourquoi eux ?","outcome":"Les consultants à recontacter, chacun avec la raison de sa présence : fin de mission proche, intercontrat, jamais positionné…","requires":[],"reads":["bench"]},{"id":"matching_shortlist","category":"talent","moment":"handle_need","label":"Classer le vivier sur un besoin","prompt":"Classe mon vivier sur ce besoin et donne-moi les trois meilleurs profils, avec leurs manques.","outcome":"Ton vivier classé sur le besoin, avec les profils écartés et leur motif. Les mêmes critères rendent le même classement.","requires":[],"reads":["needs","bench"]},{"id":"matching_explain","category":"talent","moment":"position_consultant","label":"Pourquoi ce profil sur ce besoin","prompt":"Compare ce consultant avec ce besoin, axe par axe.","outcome":"L’explication axe par axe. Un axe non évaluable est dit, jamais compté zéro.","requires":[],"reads":["needs","bench"]},{"id":"missions_ending","category":"delivery","moment":"track_mission","label":"Missions qui finissent bientôt","prompt":"Quelles missions finissent dans les 30 jours ?","outcome":"Les missions qui finissent dans les 30 jours, et celles qui n’ont aucune date de fin.","requires":[],"reads":["missions"]},{"id":"missions_at_risk","category":"delivery","moment":"track_mission","label":"Missions à risque","prompt":"Quelles missions sont à risque, et de quoi exactement ?","outcome":"Les missions en cours et leur risque nommé : fin sans renouvellement, relevé contesté ou manquant, marge à risque ou non mesurable.","requires":[],"reads":["missions","timesheets"]},{"id":"timesheets_missing","category":"delivery","moment":"track_mission","label":"Relevés d’activité manquants","prompt":"Quels relevés d’activité manquent, et pour quelles missions ?","outcome":"Les relevés manquants sur les mois clos, mission par mission. Un mois en cours n’est pas compté en retard.","requires":[],"reads":["timesheets"]},{"id":"timesheets_chase","category":"delivery","moment":"track_mission","label":"Relancer les relevés","prompt":"Prépare une relance pour chaque relevé d’activité manquant.","outcome":"Un brouillon de relance par relevé manquant, à valider. Rien n’est envoyé.","requires":["email"],"reads":["timesheets","mail_threads"]},{"id":"invoicing_blocked","category":"delivery","moment":"track_mission","label":"Ce qui bloque ma facturation","prompt":"Qu’est-ce qui bloque ma facturation ce mois-ci ?","outcome":"Ce qui empêche de facturer ce mois, mission par mission, avec le bloqueur nommé. Aucune facture n’est émise.","requires":[],"reads":["missions","timesheets"]},{"id":"rfp_summary","category":"rfp","moment":"handle_need","label":"Résumer un appel d’offres","prompt":"Résume cet appel d’offres : ce qu’il demande, et ce à quoi je ne sais pas répondre.","outcome":"Ce que demande l’appel d’offres, exigence par exigence, avec les exigences sans réponse nommées.","requires":[],"reads":["tenders"]},{"id":"proofs_usable","category":"rfp","moment":"prepare_meeting","label":"Quelles références citer","prompt":"Quelles références puis-je mobiliser pour ce client ?","outcome":"Les références que tu peux citer : seulement celles dont l’accord écrit est valide.","requires":[],"reads":["references"]},{"id":"interventions_today","category":"steering","moment":"steer_team","label":"Où intervenir aujourd’hui","prompt":"Où dois-je intervenir aujourd’hui ?","outcome":"La file des interventions du jour, chacune avec le motif qui l’a fait remonter.","requires":[],"reads":["interventions"]},{"id":"access_open_accounts","category":"access","moment":"open_account","label":"Des comptes que je peux ouvrir seul","prompt":"Trouve-moi des comptes où rien ne semble bloquer l’entrée, avec un signal récent.","outcome":"Des critères de recherche prêts : ton clic ouvre Découvrir pré-rempli. Aucune entreprise n’est citée avant.","requires":[],"reads":[]},{"id":"access_my_size","category":"access","moment":"open_account","label":"Des comptes à ma taille","prompt":"Quels comptes sont à la portée d’une structure de ma taille, sans passer par un référencement ?","outcome":"Des critères de recherche prêts : ton clic ouvre Découvrir pré-rempli. Aucune entreprise n’est citée avant.","requires":[],"reads":[]},{"id":"access_territory","category":"access","moment":"open_account","label":"Ouvrir une ville","prompt":"Je veux ouvrir une nouvelle ville : qu’est-ce qui bouge là-bas, et où puis-je entrer ?","outcome":"Des critères de recherche prêts : ton clic ouvre Découvrir pré-rempli. Aucune entreprise n’est citée avant.","requires":[],"reads":[]},{"id":"day_closure","category":"steering","moment":"end_day","label":"Clôturer ma journée","prompt":"Fais la clôture de ma journée : ce qui a avancé, ce qui reste ouvert, qui attend une réponse et par quoi je reprends demain.","outcome":"Une carte : tes tâches cochées, tes engagements du jour, les réponses attendues, les blocages et la première action de demain. Chaque tâche restée ouverte se décide une par une, et rien ne change avant ta validation.","requires":[],"reads":["tasks","mail_threads"]}];
+const requestCatalogMoments = [
+ ['start_day','Commencer ma journée'],['prepare_meeting','Préparer un rendez-vous'],
+ ['open_account','Ouvrir un compte'],['position_consultant','Positionner un consultant'],
+ ['handle_need','Traiter un besoin'],['follow_up','Relancer un contact'],
+ ['track_mission','Suivre une mission'],['steer_team','Piloter mon équipe'],
+ ['end_day','Clôturer ma journée']
+];
+const requestSourceLabels = {
+ mail_threads:'tes échanges de messagerie',meetings:'tes rendez-vous',accounts:'tes comptes',
+ account_dossiers:'les dossiers de comptes',needs:'les besoins qualifiés',bench:'ton vivier',
+ missions:'tes missions',timesheets:'les relevés d’activité',tenders:'tes appels d’offres',
+ references:'les références autorisées',interventions:'les interventions à traiter',
+ registry:'le registre des entreprises',tasks:'tes tâches'
+};
+const requestConnectionLabels = {email:'Messagerie',calendar:'Agenda',crm:'CRM',documents:'Documents'};
+function requestCatalogWelcome(){
+ return `<div class="request-library-entry"><span>Tu ne sais pas quoi demander ?</span><button type="button" data-action="request-catalog">Toutes les idées de demandes <span class="request-library-count">${requestCatalog.length}</span>${I('chevron-right')}</button></div>`;
+}
+function requestCatalogTrigger(){
+ return `<button type="button" class="btn btn-ghost request-catalog-trigger" data-action="request-catalog" aria-label="Idées de demandes pour Laura">${I('document')}<span>Idées</span></button>`;
+}
+function updateRequestCatalogTrigger(){
+ $$('.request-catalog-trigger').forEach(b=>b.classList.remove('hidden'));
+}
+// V8 — replace requestCatalogState() through resetRequestCatalog().
+// Keep the canonical catalogue, its insertion/undo logic and its response guards.
+const requestCatalogMomentLabels={all:'Tout',start_day:'Ma journée',prepare_meeting:'Rendez-vous',open_account:'Comptes',position_consultant:'Consultants',handle_need:'Besoins',follow_up:'Relances',track_mission:'Missions',steer_team:'Équipe',end_day:'Bilan'};
+const requestCatalogSnippets={
+ daily_briefing:'Rendez-vous, réponses attendues et comptes à suivre.',
+ mail_no_reply:'Retrouver les échanges à relancer depuis sept jours.',
+ mail_unread:'Identifier les messages et les réponses à traiter.',
+ agenda_tomorrow:'Retrouver les participants et le contexte des comptes.',
+ meeting_imminent:'Préparer l’objectif et les questions du prochain échange.',
+ agenda_free_slots:'Repérer les créneaux d’une heure cette semaine.',
+ accounts_to_prioritise:'Savoir quel compte faire avancer, et pourquoi.',
+ accounts_stalled:'Retrouver les comptes sans mouvement depuis un mois.',
+ account_briefing:'Reprendre l’analyse et les prochaines actions du compte.',
+ accounts_compare:'Comparer les raisons de travailler chaque compte.',
+ account_similar_cases:'Rapprocher le compte de cas gagnés ou perdus.',
+ find_accounts:'Préparer les critères de ta prochaine recherche.',
+ run_account_search:'Parcourir les comptes et leurs critères de sélection.',
+ needs_open:'Retrouver les besoins ouverts, client par client.',
+ talents_available:'Voir qui est disponible, et à partir de quand.',
+ talents_by_skill:'Retrouver une compétence et le niveau renseigné.',
+ talents_reactivate:'Identifier les consultants à recontacter.',
+ matching_shortlist:'Comparer le vivier aux critères d’un besoin.',
+ matching_explain:'Comprendre les rapprochements et les informations manquantes.',
+ missions_ending:'Anticiper les fins de mission dans les trente jours.',
+ missions_at_risk:'Repérer ce qui mérite une vérification sur les missions.',
+ timesheets_missing:'Retrouver les relevés attendus sur les mois clos.',
+ timesheets_chase:'Préparer des relances à valider avant tout envoi.',
+ invoicing_blocked:'Identifier ce qui empêche de facturer chaque mission.',
+ rfp_summary:'Reprendre les exigences et les points sans réponse.',
+ proofs_usable:'Choisir parmi les références autorisées par écrit.',
+ interventions_today:'Parcourir les blocages et leur motif de remontée.',
+ access_open_accounts:'Définir des critères de comptes accessibles en autonomie.',
+ access_my_size:'Préparer une recherche adaptée à ta structure.',
+ access_territory:'Définir les critères pour prospecter une ville.',
+ day_closure:'Préparer les décisions ouvertes et la reprise de demain.'
+};
+
+function requestCatalogState(){
+ if(!S.requestCatalog)S.requestCatalog={query:'',moment:'all',selected:null,originThread:thread().id};
+ const s=S.requestCatalog;if(!s.view)s.view='list';if(!Number.isFinite(s.listScroll))s.listScroll=0;
+ return s;
+}
+function requestCatalogCompact(){return window.matchMedia('(max-width:680px)').matches;}
+function requestCatalogMatches(){
+ const s=requestCatalogState(),needle=normalizeQuestion(s.query).trim();
+ return requestCatalog.filter(x=>(s.moment==='all'||x.moment===s.moment)&&(!needle||normalizeQuestion(x.label+' '+x.prompt+' '+x.outcome+' '+(requestCatalogMoments.find(m=>m[0]===x.moment)?.[1]||'')).includes(needle)));
+}
+function requestCatalogFilters(){
+ const s=requestCatalogState(),moments=[['all','Toutes les demandes'],...requestCatalogMoments];
+ return moments.map(([id,label])=>{const count=id==='all'?requestCatalog.length:requestCatalog.filter(x=>x.moment===id).length;return `<button type="button" class="request-moment" data-action="request-moment" data-id="${id}" aria-pressed="${s.moment===id}" aria-label="${esc(label)} · ${noun(count,'demande')}"><span>${esc(requestCatalogMomentLabels[id]||label)}</span><span class="request-moment-count" aria-hidden="true">${count}</span></button>`}).join('');
+}
+function showRequestCatalog(){
+ const s=requestCatalogState();s.originThread=thread().id;s.view='list';
+ modal('Idées de demandes',`<div class="request-browser"><div class="request-browser-top"><p class="request-browser-intro">Un point de départ pour ta prochaine conversation.</p><label class="request-browser-search">${I('search')}<input id="request-catalog-search" type="search" placeholder="Un besoin, un compte, un rendez-vous…" aria-label="Rechercher une demande" value="${esc(s.query)}" autocomplete="off"><button type="button" class="icon-button ${s.query?'':'hidden'}" id="request-search-clear" data-action="request-search-clear" aria-label="Effacer la recherche">${I('close')}</button></label><nav class="request-moments" aria-label="Filtrer les demandes par usage">${requestCatalogFilters()}</nav></div><div class="request-browser-workspace"><div class="request-browser-list"><div class="request-browser-caption"><span id="request-catalog-count" role="status" aria-live="polite"></span><span class="request-browser-list-hint">Choisir une demande</span></div><div class="request-browser-results" id="request-catalog-results"></div></div><section class="request-preview" id="request-catalog-preview" aria-label="Aperçu de la demande"></section></div></div>`);
+ $('#modal').dataset.modalKind='request-catalog';$('#modal').dataset.catalogView='list';
+ renderRequestCatalog();$('#request-catalog-search').focus({preventScroll:true});
+}
+function requestCatalogRow(item){
+ const selected=requestCatalogState().selected===item.id;
+ return `<button type="button" class="request-browser-choice" id="request-choice-${item.id}" data-action="request-select" data-id="${item.id}" aria-pressed="${selected}" aria-controls="request-catalog-preview"><span class="request-browser-choice-copy"><strong>${esc(item.label)}</strong><span>${esc(requestCatalogSnippets[item.id]||item.outcome)}</span></span><span class="request-browser-choice-mark" aria-hidden="true">${I('chevron-right')}</span></button>`;
+}
+function requestCatalogScopeNote(item){
+ const t=thread(),scope=t.scope||{};
+ if(scope.kind==='none'&&scope.strict)return 'Les données de l’espace sont exclues de cette conversation. Ajoute les informations utiles à ta demande.';
+ if(t.contextMode==='neutral'&&item.reads.some(x=>['mail_threads','meetings'].includes(x)))return 'Mon profil est désactivé. Pour cette demande, ajoute les informations utiles ou réactive ton profil avant l’envoi.';
+ return '';
+}
+function requestCatalogPreview(item){
+ if(!item)return '';
+ const label=requestCatalogMoments.find(x=>x[0]===item.moment)?.[1]||'',reads=item.reads.map(x=>requestSourceLabels[x]).filter(Boolean),needs=item.requires.map(x=>requestConnectionLabels[x]||x),note=requestCatalogScopeNote(item);
+ return `<button type="button" class="request-preview-back" data-action="request-back">${I('arrow-left')}Retour aux demandes</button><div class="request-preview-content"><p class="request-preview-category">${esc(label)}</p><h3 class="request-preview-title">${esc(item.label)}</h3><div class="request-preview-section"><h4>La demande</h4><blockquote class="request-preview-prompt">${esc(item.prompt)}</blockquote></div><div class="request-preview-section"><h4>Ce que tu obtiens</h4><p>${esc(item.outcome)}</p></div><dl class="request-preview-data"><div><dt>Données nécessaires</dt><dd>${esc(reads.length?reads.join(', '):'les critères que tu précises dans ta demande')}.</dd></div>${needs.length?`<div><dt>${needs.length>1?'Connexions nécessaires':'Connexion nécessaire'}</dt><dd>${esc(needs.join(' et '))}.</dd></div>`:''}</dl>${note?`<p class="request-preview-scope-note">${I('info')}<span>${esc(note)}</span></p>`:''}</div><footer class="request-preview-footer"><button type="button" class="btn btn-primary" data-action="request-insert" data-id="${item.id}">Préparer cette demande ${I('arrow-down')}</button><p>Tu pourras la modifier avant l’envoi.</p></footer>`;
+}
+function renderRequestCatalog(){
+ const s=requestCatalogState(),box=$('#request-catalog-results'),preview=$('#request-catalog-preview');if(!box||!preview)return;
+ const matches=requestCatalogMatches(),key=s.moment+'\u001f'+s.query,changed=s.filterKey!==undefined&&s.filterKey!==key;
+ const oldTop=changed?0:box.childElementCount?box.scrollTop:s.listScroll;
+ if(changed){s.listScroll=0;s.view='list';}
+ s.filterKey=key;
+ if(!matches.some(x=>x.id===s.selected))s.selected=matches[0]?.id||null;
+ const selected=matches.find(x=>x.id===s.selected);
+ box.innerHTML=matches.length?requestCatalogMoments.map(([id,label])=>{const entries=matches.filter(x=>x.moment===id);return entries.length?`<section class="request-browser-group" aria-label="${esc(label)}">${s.moment==='all'?`<h3>${esc(label)}</h3>`:''}${entries.map(requestCatalogRow).join('')}</section>`:''}).join(''):`<div class="request-browser-empty">${I('search')}<strong>Aucune demande trouvée</strong><p>Essaie un autre mot ou retrouve les ${requestCatalog.length} demandes.</p><button type="button" class="btn btn-subtle" data-action="request-reset">Voir toutes les demandes</button></div>`;
+ const firstSelection=preview.dataset.requestId!==s.selected;
+ if(firstSelection||!preview.childElementCount){preview.innerHTML=requestCatalogPreview(selected);preview.dataset.requestId=s.selected||'';}
+ $('#request-catalog-count').textContent=noun(matches.length,'demande')+(matches.length!==requestCatalog.length?' sur '+requestCatalog.length:'');
+ $('#request-search-clear').classList.toggle('hidden',!s.query);
+ $$('.request-moment').forEach(b=>b.setAttribute('aria-pressed',String(b.dataset.id===s.moment)));
+ $('.request-browser').dataset.empty=String(!matches.length);$('#modal').dataset.catalogView=s.view;
+ preview.hidden=!matches.length;box.scrollTop=oldTop;s.listScroll=oldTop;hydrateIcons();
+}
+function selectCatalogRequest(id){
+ const s=requestCatalogState(),item=requestCatalogMatches().find(x=>x.id===id);if(!item)return;
+ const box=$('#request-catalog-results');s.listScroll=box.scrollTop;s.selected=id;s.view='detail';
+ renderRequestCatalog();
+ if(requestCatalogCompact())$('.request-preview-back')?.focus({preventScroll:true});
+ else $('#request-choice-'+id)?.focus({preventScroll:true});
+}
+function setRequestCatalogMoment(id){
+ if(id!=='all'&&!requestCatalogMoments.some(x=>x[0]===id))return;
+ const s=requestCatalogState();s.moment=id;s.selected=null;s.view='list';s.listScroll=0;
+ renderRequestCatalog();$('.request-moment[data-id="'+id+'"]')?.focus({preventScroll:true});
+}
+function backToRequestCatalog(){
+ const s=requestCatalogState();s.view='list';$('#modal').dataset.catalogView='list';
+ const box=$('#request-catalog-results');if(box)box.scrollTop=s.listScroll;
+ $('#request-choice-'+s.selected)?.focus({preventScroll:true});
+}
+function resetRequestCatalog(){
+ const s=requestCatalogState();s.query='';s.moment='all';s.selected=null;s.view='list';s.listScroll=0;
+ $('#request-catalog-search').value='';renderRequestCatalog();$('#request-catalog-search').focus({preventScroll:true});
+}
+
+function insertCatalogRequest(id){
+ const item=requestCatalog.find(x=>x.id===id),t=thread();if(!item)return;
+ if(requestCatalogState().originThread!==t.id){closeModal();toast('Rouvre les idées depuis la conversation à compléter.');return;}
+ const text=item.prompt,previous=$('#composer-input').value,previousCatalog=t.catalogRequest?{...t.catalogRequest}:null,previousPrepared=t.preparedRequest?{...t.preparedRequest}:null,previousReview=t.draftContextReview?{...t.draftContextReview}:null,previousScope={...t.scope},previousMode=t.contextMode;
+ closeModal();t.draft=text;t.catalogRequest={id:item.id,text};t.preparedRequest=null;t.draftContextReview=null;
+ if(t.launchPlan)t.launchPlan.prepared=false;
+ $('#composer-input').value=text;resizeComposer();if(!t.messages.length)refreshLaunch();updateControls();persist();$('#composer-input').focus({preventScroll:true});
+ if(previous.trim()&&previous!==text)offerUndo('La demande remplace ta saisie.',()=>{
+  if(t.draft.trim()&&t.draft!==text)return 'Ta saisie plus récente a été conservée.';
+  t.draft=previous;t.catalogRequest=previousCatalog;t.preparedRequest=previousPrepared;
+  t.draftContextReview=previousReview||(!sameConversationContext(t,previousScope,previousMode)?{from:scopeName(previousScope),to:scopeName(t.scope),oldText:previous}:null);
+  if(t===thread()){$('#composer-input').value=previous;resizeComposer();if(!t.messages.length)refreshLaunch();updateControls();}
+  return 'Ta saisie précédente a été rétablie.';
+ });else announce('Demande ajoutée à la saisie. Tu peux la compléter avant de l’envoyer.');
+}

@@ -1,0 +1,391 @@
+{
+  "_comment": [
+    "Capture RÉELLE de recherche-entreprises.api.gouv.fr pour q=ROCHE, le 30/08/2026.",
+    "Deux pages, parce que le défaut se joue sur le RAPPEL et pas sur le tri :",
+    "  - `plain`   : la requête historique (q seul). 10 000 résultats au total ;",
+    "                le laboratoire Roche (SIREN 552012031) n'apparaît dans AUCUNE",
+    "                des 25 premières lignes — le tri par défaut ignore la taille.",
+    "  - `staffed` : la MÊME requête, plus le rappel par tranche d'effectif",
+    "                (`tranche_effectif_salarie` = 10 salariés et plus). Le",
+    "                laboratoire y est. C'est un rappel ADDITIF, pas un filtre :",
+    "                rien n'est retiré de `plain`, on ajoute ce que son tri enterre.",
+    "",
+    "Trimmée des sous-objets que le chemin de suggestion ne lit jamais",
+    "(matching_etablissements, dirigeants, finances, complements) — 90 % du corps.",
+    "Les champs conservés sont VERBATIM ceux de la réponse réelle."
+  ],
+  "plain": {
+    "total_results": 10000,
+    "page": 1,
+    "per_page": 10,
+    "results": [
+      {
+        "siren": "894464296",
+        "nom_complet": "ROCHE (SCI)",
+        "nom_raison_sociale": "ROCHE",
+        "activite_principale": "68.32A",
+        "libelle_activite_principale": null,
+        "categorie_entreprise": "PME",
+        "tranche_effectif_salarie": "NN",
+        "nombre_etablissements_ouverts": 2,
+        "date_creation": "2020-04-02",
+        "siege": {
+          "libelle_commune": null,
+          "departement": null,
+          "etat_administratif": "A",
+          "libelle_activite_principale": null,
+          "code_postal": null
+        }
+      },
+      {
+        "siren": "811131184",
+        "nom_complet": "ROCHE",
+        "nom_raison_sociale": "ROCHE",
+        "activite_principale": "68.20A",
+        "libelle_activite_principale": null,
+        "categorie_entreprise": null,
+        "tranche_effectif_salarie": "NN",
+        "nombre_etablissements_ouverts": 1,
+        "date_creation": "2014-10-24",
+        "siege": {
+          "libelle_commune": "CHAMROUSSE",
+          "departement": "38",
+          "etat_administratif": "A",
+          "libelle_activite_principale": null,
+          "code_postal": "38410"
+        }
+      },
+      {
+        "siren": "951061399",
+        "nom_complet": "ROCHE",
+        "nom_raison_sociale": "ROCHE",
+        "activite_principale": "68.20A",
+        "libelle_activite_principale": null,
+        "categorie_entreprise": null,
+        "tranche_effectif_salarie": "NN",
+        "nombre_etablissements_ouverts": 1,
+        "date_creation": "2022-06-10",
+        "siege": {
+          "libelle_commune": "LORIENT",
+          "departement": "56",
+          "etat_administratif": "A",
+          "libelle_activite_principale": null,
+          "code_postal": "56100"
+        }
+      },
+      {
+        "siren": "838130045",
+        "nom_complet": "ROCHE",
+        "nom_raison_sociale": "ROCHE",
+        "activite_principale": "47.78C",
+        "libelle_activite_principale": null,
+        "categorie_entreprise": "PME",
+        "tranche_effectif_salarie": "NN",
+        "nombre_etablissements_ouverts": 1,
+        "date_creation": "2018-03-06",
+        "siege": {
+          "libelle_commune": "GUERET",
+          "departement": "23",
+          "etat_administratif": "A",
+          "libelle_activite_principale": null,
+          "code_postal": "23000"
+        }
+      },
+      {
+        "siren": "884509555",
+        "nom_complet": "ROCHE (ROCHE)",
+        "nom_raison_sociale": "ROCHE",
+        "activite_principale": "43.22A",
+        "libelle_activite_principale": null,
+        "categorie_entreprise": "PME",
+        "tranche_effectif_salarie": "NN",
+        "nombre_etablissements_ouverts": 1,
+        "date_creation": "2020-06-24",
+        "siege": {
+          "libelle_commune": "MIRIBEL",
+          "departement": "01",
+          "etat_administratif": "A",
+          "libelle_activite_principale": null,
+          "code_postal": "01700"
+        }
+      },
+      {
+        "siren": "844693044",
+        "nom_complet": "ROCHE",
+        "nom_raison_sociale": "ROCHE",
+        "activite_principale": "32.12Z",
+        "libelle_activite_principale": null,
+        "categorie_entreprise": "PME",
+        "tranche_effectif_salarie": "02",
+        "nombre_etablissements_ouverts": 1,
+        "date_creation": "2018-10-01",
+        "siege": {
+          "libelle_commune": "BAUME-LES-DAMES",
+          "departement": "25",
+          "etat_administratif": "A",
+          "libelle_activite_principale": null,
+          "code_postal": "25110"
+        }
+      },
+      {
+        "siren": "805363496",
+        "nom_complet": "ROCHE",
+        "nom_raison_sociale": "ROCHE",
+        "activite_principale": "68.20B",
+        "libelle_activite_principale": null,
+        "categorie_entreprise": null,
+        "tranche_effectif_salarie": "NN",
+        "nombre_etablissements_ouverts": 1,
+        "date_creation": "2014-09-27",
+        "siege": {
+          "libelle_commune": "LE MONTCEL",
+          "departement": "73",
+          "etat_administratif": "A",
+          "libelle_activite_principale": null,
+          "code_postal": "73100"
+        }
+      },
+      {
+        "siren": "935093807",
+        "nom_complet": "ROCHE",
+        "nom_raison_sociale": "ROCHE",
+        "activite_principale": "68.20A",
+        "libelle_activite_principale": null,
+        "categorie_entreprise": null,
+        "tranche_effectif_salarie": "NN",
+        "nombre_etablissements_ouverts": 1,
+        "date_creation": "2024-09-06",
+        "siege": {
+          "libelle_commune": "ROANNE",
+          "departement": "42",
+          "etat_administratif": "A",
+          "libelle_activite_principale": null,
+          "code_postal": "42300"
+        }
+      },
+      {
+        "siren": "889223194",
+        "nom_complet": "ROCHE",
+        "nom_raison_sociale": "ROCHE",
+        "activite_principale": "68.20B",
+        "libelle_activite_principale": null,
+        "categorie_entreprise": "PME",
+        "tranche_effectif_salarie": "NN",
+        "nombre_etablissements_ouverts": 1,
+        "date_creation": "2020-09-14",
+        "siege": {
+          "libelle_commune": "PARTHENAY",
+          "departement": "79",
+          "etat_administratif": "A",
+          "libelle_activite_principale": null,
+          "code_postal": "79200"
+        }
+      },
+      {
+        "siren": "909460925",
+        "nom_complet": "ROCHE",
+        "nom_raison_sociale": "ROCHE",
+        "activite_principale": "43.32A",
+        "libelle_activite_principale": null,
+        "categorie_entreprise": "PME",
+        "tranche_effectif_salarie": "NN",
+        "nombre_etablissements_ouverts": 1,
+        "date_creation": "2022-01-24",
+        "siege": {
+          "libelle_commune": "CHABONS",
+          "departement": "38",
+          "etat_administratif": "A",
+          "libelle_activite_principale": null,
+          "code_postal": "38690"
+        }
+      }
+    ]
+  },
+  "staffed": {
+    "total_results": 3842,
+    "page": 1,
+    "per_page": 10,
+    "results": [
+      {
+        "siren": "389286865",
+        "nom_complet": "ROCHE",
+        "nom_raison_sociale": "ROCHE",
+        "activite_principale": "41.20B",
+        "libelle_activite_principale": null,
+        "categorie_entreprise": "PME",
+        "tranche_effectif_salarie": "11",
+        "nombre_etablissements_ouverts": 1,
+        "date_creation": "1992-10-01",
+        "siege": {
+          "libelle_commune": "SAINT-GILLES",
+          "departement": "30",
+          "etat_administratif": "A",
+          "libelle_activite_principale": null,
+          "code_postal": "30800"
+        }
+      },
+      {
+        "siren": "552012031",
+        "nom_complet": "ROCHE",
+        "nom_raison_sociale": "ROCHE",
+        "activite_principale": "46.46Z",
+        "libelle_activite_principale": null,
+        "categorie_entreprise": "ETI",
+        "tranche_effectif_salarie": "41",
+        "nombre_etablissements_ouverts": 1,
+        "date_creation": "1980-01-01",
+        "siege": {
+          "libelle_commune": "BOULOGNE-BILLANCOURT",
+          "departement": "92",
+          "etat_administratif": "A",
+          "libelle_activite_principale": null,
+          "code_postal": "92100"
+        }
+      },
+      {
+        "siren": "779723022",
+        "nom_complet": "ASSOCIATION DE LA ROCHE",
+        "nom_raison_sociale": "ASSOCIATION DE LA ROCHE",
+        "activite_principale": "87.20A",
+        "libelle_activite_principale": null,
+        "categorie_entreprise": "ETI",
+        "tranche_effectif_salarie": "41",
+        "nombre_etablissements_ouverts": 21,
+        "date_creation": "1900-01-01",
+        "siege": {
+          "libelle_commune": "LES SAUVAGES",
+          "departement": "69",
+          "etat_administratif": "A",
+          "libelle_activite_principale": null,
+          "code_postal": "69170"
+        }
+      },
+      {
+        "siren": "218501914",
+        "nom_complet": "COMMUNE DE LA ROCHE-SUR-YON",
+        "nom_raison_sociale": "COMMUNE DE LA ROCHE-SUR-YON",
+        "activite_principale": "84.11Z",
+        "libelle_activite_principale": null,
+        "categorie_entreprise": "ETI",
+        "tranche_effectif_salarie": "42",
+        "nombre_etablissements_ouverts": 39,
+        "date_creation": "1983-03-01",
+        "siege": {
+          "libelle_commune": "LA ROCHE-SUR-YON",
+          "departement": "85",
+          "etat_administratif": "A",
+          "libelle_activite_principale": null,
+          "code_postal": "85000"
+        }
+      },
+      {
+        "siren": "612007757",
+        "nom_complet": "DMC ROCHE",
+        "nom_raison_sociale": "DMC ROCHE",
+        "activite_principale": "47.59A",
+        "libelle_activite_principale": null,
+        "categorie_entreprise": "ETI",
+        "tranche_effectif_salarie": "12",
+        "nombre_etablissements_ouverts": 8,
+        "date_creation": "1961-01-01",
+        "siege": {
+          "libelle_commune": "PARIS",
+          "departement": "75",
+          "etat_administratif": "A",
+          "libelle_activite_principale": null,
+          "code_postal": "75012"
+        }
+      },
+      {
+        "siren": "332200526",
+        "nom_complet": "SARL ROCHE",
+        "nom_raison_sociale": "SARL ROCHE",
+        "activite_principale": "46.45Z",
+        "libelle_activite_principale": null,
+        "categorie_entreprise": "PME",
+        "tranche_effectif_salarie": "12",
+        "nombre_etablissements_ouverts": 4,
+        "date_creation": "1985-02-01",
+        "siege": {
+          "libelle_commune": "VAUGNERAY",
+          "departement": "69",
+          "etat_administratif": "A",
+          "libelle_activite_principale": null,
+          "code_postal": "69670"
+        }
+      },
+      {
+        "siren": "753251354",
+        "nom_complet": "BEYNAT ROCHE ENERGIES",
+        "nom_raison_sociale": "BEYNAT ROCHE ENERGIES",
+        "activite_principale": "47.78B",
+        "libelle_activite_principale": null,
+        "categorie_entreprise": "ETI",
+        "tranche_effectif_salarie": "12",
+        "nombre_etablissements_ouverts": 9,
+        "date_creation": "2012-07-18",
+        "siege": {
+          "libelle_commune": "TULLE",
+          "departement": "19",
+          "etat_administratif": "A",
+          "libelle_activite_principale": null,
+          "code_postal": "19000"
+        }
+      },
+      {
+        "siren": "200084168",
+        "nom_complet": "COMMUNE DE LA ROCHE-JAUDY",
+        "nom_raison_sociale": "COMMUNE DE LA ROCHE-JAUDY",
+        "activite_principale": "84.11Z",
+        "libelle_activite_principale": null,
+        "categorie_entreprise": "PME",
+        "tranche_effectif_salarie": "21",
+        "nombre_etablissements_ouverts": 11,
+        "date_creation": "2019-01-01",
+        "siege": {
+          "libelle_commune": "LA ROCHE-JAUDY",
+          "departement": "22",
+          "etat_administratif": "A",
+          "libelle_activite_principale": null,
+          "code_postal": "22450"
+        }
+      },
+      {
+        "siren": "217402247",
+        "nom_complet": "COMMUNE DE LA ROCHE SUR FORON",
+        "nom_raison_sociale": "COMMUNE DE LA ROCHE SUR FORON",
+        "activite_principale": "84.11Z",
+        "libelle_activite_principale": null,
+        "categorie_entreprise": "PME",
+        "tranche_effectif_salarie": "31",
+        "nombre_etablissements_ouverts": 11,
+        "date_creation": "1983-03-01",
+        "siege": {
+          "libelle_commune": "LA ROCHE-SUR-FORON",
+          "departement": "74",
+          "etat_administratif": "A",
+          "libelle_activite_principale": null,
+          "code_postal": "74800"
+        }
+      },
+      {
+        "siren": "214201899",
+        "nom_complet": "COMMUNE DE ROCHE LA MOLIERE",
+        "nom_raison_sociale": "COMMUNE DE ROCHE LA MOLIERE",
+        "activite_principale": "84.11Z",
+        "libelle_activite_principale": null,
+        "categorie_entreprise": "PME",
+        "tranche_effectif_salarie": "22",
+        "nombre_etablissements_ouverts": 10,
+        "date_creation": "1983-03-01",
+        "siege": {
+          "libelle_commune": "ROCHE-LA-MOLIERE",
+          "departement": "42",
+          "etat_administratif": "A",
+          "libelle_activite_principale": null,
+          "code_postal": "42230"
+        }
+      }
+    ]
+  }
+}

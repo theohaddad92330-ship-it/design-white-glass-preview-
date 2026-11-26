@@ -1,0 +1,6 @@
+# #4113 — NER optionnel des NOMS de personnes dans les traces Langfuse.
+# NON installé par défaut : `TRACE_PII_NER_ENABLED` absent = Presidio jamais
+# importé (app/services/trace_pii_ner.py). Pour l'activer : installer ce
+# fichier, puis `python -m spacy download fr_core_news_md`, puis poser le flag.
+# Sans le paquet ou le modèle, on retombe sur le masquage regex (jamais d'erreur).
+presidio-analyzer==2.2.366

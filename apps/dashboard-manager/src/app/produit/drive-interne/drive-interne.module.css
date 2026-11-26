@@ -1,0 +1,66 @@
+/* #3586 — tableau « Fichiers » : tient dans la carte à ≥ 1280 px sans défilement
+   horizontal. Colonnes à largeur maîtrisée ; Nom/Chemin et message d'erreur
+   tronqués (valeur complète au survol via `title`). Sous 1280 px, le conteneur
+   défile horizontalement (tableau gardé à sa largeur minimale). */
+.defilement {
+  overflow-x: auto;
+}
+
+.table {
+  table-layout: fixed;
+  min-width: 960px;
+}
+
+.colFichier {
+  width: 32%;
+}
+.colStatut {
+  width: 7.5rem;
+}
+.colFragments {
+  width: 8rem;
+}
+.colDate {
+  width: 11.5rem;
+}
+
+.compact {
+  white-space: nowrap;
+  padding-inline: 16px;
+}
+
+/* #3586 — en-têtes alignés sur les autres tableaux du DM (12 px, globals.css) :
+   même padding horizontal que les cellules, pour que « Fragments » et
+   « Synchronisé le » ne se touchent plus. */
+.table th {
+  padding-inline: 16px;
+}
+
+.fichier {
+  display: block;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+
+/* #3586 — le chemin (dossier parent, deux derniers segments) tient sur 2
+   lignes max, coupé aux « / » ; chemin complet au survol (`title`).
+   12 px en px : la racine du DM est à 13 px, 0.75rem donnait 9,75 px. */
+.chemin {
+  display: -webkit-box;
+  -webkit-box-orient: vertical;
+  -webkit-line-clamp: 2;
+  line-clamp: 2;
+  overflow: hidden;
+  overflow-wrap: anywhere;
+  font-size: 12px;
+}
+
+.raison {
+  display: -webkit-box;
+  -webkit-box-orient: vertical;
+  -webkit-line-clamp: 2;
+  line-clamp: 2;
+  overflow: hidden;
+  overflow-wrap: anywhere;
+}

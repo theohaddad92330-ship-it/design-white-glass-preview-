@@ -1,0 +1,45 @@
+lot: rattrapage-produit-01-11
+issues: [4671, 4941, 4688, 4576, 2202, 4819, 4711, 4733, 4928, 4868, 4631, 4770]
+
+changelog:
+  id: 2026-11-01-rattrapage-produit-01-11
+  comment: 'Rattrapage produit 01/11 (#4671.2 #4941.1 #4941.2 #4688.11 #4576.7 #2202.15 #2202.36 #4819.4 #4711.1 #4711.2 #4733.2 #4733.6 #4928.3 #4928.5 #4868.1 #4631.3 #4631.4 #4631.5 #4631.6 #4770.2 #4770.3 #4770.4)'
+  fr:
+    date: 1 novembre 2026
+    title: Compteurs justes, liens de Laura et gestes qui manquaient
+    items:
+      - 'L’historique des analyses se met à jour tout seul tant qu’un lot tourne ; la puce « Annulée » est traduite et le compteur « Filtres » égale les puces affichées.'
+      - 'Découvrir : l’en-tête, la tuile « Comptes à explorer » et le badge d’onglet comptent les lignes rendues, l’en-tête dit la tranche (« 1–12 ») et la ligne d’entonnoir nomme « + N par l’élargissement ».'
+      - 'Séquences : l’audience peut venir d’un besoin, et chaque étape a son responsable. Contacts d’un compte : « Écarter les contacts de cette entité », confirmé et réversible.'
+      - 'Intégrations : « Vérifier la connexion » montre les avertissements de l’éditeur. Les onglets passent à 44 px sous 768 px.'
+      - 'Le recrutement d’un dirigeant se voit sur Signaux & besoins ; les liens de Laura emportent leur recherche ; /version dit quand le service a été construit.'
+  en:
+    date: November 1, 2026
+    title: Accurate counters, Laura’s links and the missing gestures
+    items:
+      - 'The analyses history refreshes by itself while a batch runs; the “Cancelled” chip is translated and the “Filters” counter equals the chips shown.'
+      - 'Discover: the header, the “Accounts to explore” tile and the tab badge count the rendered rows, the header states the slice (“1–12”) and the funnel line names “+ N through the widening”.'
+      - 'Sequences: the audience can come from a need, and every step has its owner. Account contacts: “Dismiss this entity’s contacts”, confirmed and reversible.'
+      - 'Integrations: “Check the connection” shows the publisher’s warnings. Tabs reach 44 px below 768 px.'
+      - 'An executive hire shows on Signals & needs; Laura’s links carry their search; /version says when the service was built.'
+
+inserts:
+  - file: apps/api/src/modules/demo/demo-coverage.ts
+    text: |
+
+      /**
+       * Rattrapage produit 01/11 — ce que la salle montre des points livrés (craft rule n°9).
+       *
+       * #4688.11 « Vérifier la connexion » rend l'avertissement semé `appOauthRedirection` (`demoAtsConnection`) ;
+       * #2202.15 la source « besoin » lit les besoins déjà semés (demandeur et décideur) ; #2202.36 chaque étape à faire
+       * d'une séquence semée a pour responsable l'occupant unique de la salle (`seedOutreachSequences`) ; #4819.4
+       * « Castaing Transports (démo) » : sa seule offre récente est fermée, il passe en « Comptes à historique »
+       * (`demo-discover-history-coverage.spec.ts`) ; #4733.6 SNCF porte une offre de directeur des opérations flaggée
+       * `executive_role`. Vides à dessein : #2202.12 (aucune vue de scope contacts n'existe en base ni en salle), #4711
+       * (route d'infrastructure, rien à semer), #4928.5 (le geste de l'utilisateur sur les contacts déjà semés).
+       */
+      export const DEMO_RATTRAPAGE_PRODUIT_0111_COVERAGE: Readonly<{ state: 'seede'; reason: string }> = {
+        state: 'seede',
+        reason:
+          '#4688.11 (avertissement `appOauthRedirection`), #2202.15 (besoins semés), #2202.36 (étapes à faire avec responsable), #4819.4 (Castaing Transports : offre récente fermée), #4733.6 (SNCF : directeur des opérations, executive_role). Vides à dessein : #2202.12 (aucune vue de scope contacts), #4711 (route d’infrastructure), #4928.5 (geste de l’utilisateur).',
+      }

@@ -1,0 +1,142 @@
+<!doctype html>
+<meta charset="utf-8" />
+<style>
+  body {
+    font:
+      12px/1.4 Inter,
+      system-ui,
+      sans-serif;
+    margin: 0;
+    padding: 12px;
+    color: var(--figma-color-text);
+    background: var(--figma-color-bg);
+  }
+  fieldset {
+    border: 1px solid var(--figma-color-border);
+    border-radius: 6px;
+    margin: 0 0 12px;
+  }
+  label {
+    display: flex;
+    gap: 8px;
+    align-items: center;
+    padding: 3px 0;
+  }
+  button {
+    width: 100%;
+    padding: 8px;
+    border: 0;
+    border-radius: 6px;
+    background: var(--figma-color-bg-brand);
+    color: var(--figma-color-text-onbrand);
+    font-weight: 600;
+    cursor: pointer;
+  }
+  button:disabled {
+    opacity: 0.5;
+  }
+  #log {
+    margin-top: 12px;
+    height: 220px;
+    overflow: auto;
+    font-family: ui-monospace, monospace;
+    font-size: 11px;
+    border: 1px solid var(--figma-color-border);
+    border-radius: 6px;
+    padding: 6px;
+    white-space: pre-wrap;
+  }
+  .warn {
+    color: var(--figma-color-text-warning);
+  }
+  .error {
+    color: var(--figma-color-text-danger);
+  }
+  .widths {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 2px 8px;
+  }
+  #version {
+    font-family: ui-monospace, monospace;
+    font-size: 10px;
+    color: var(--figma-color-text-secondary);
+    margin-bottom: 8px;
+  }
+</style>
+
+<div id="version"></div>
+<fieldset>
+  <legend>À synchroniser</legend>
+  <label><input type="checkbox" value="tokens" checked /> Tokens (variables)</label>
+  <label><input type="checkbox" value="styles" checked /> Styles (texte, ombres)</label>
+  <label><input type="checkbox" value="foundations" checked /> Fondations (Cover, Getting Started, Foundations)</label>
+  <label><input type="checkbox" value="components" /> Composants</label>
+  <label><input type="checkbox" value="templates" /> Gabarits</label>
+  <label><input type="checkbox" value="pages-app" /> Pages App</label>
+  <label><input type="checkbox" value="pages-site" /> Pages Site</label>
+  <label><input type="checkbox" value="pages-dm" /> Pages DM</label>
+  <label><input type="checkbox" value="overlays-app" /> Overlays App (modales, panneaux, menus, toasts)</label>
+  <label><input type="checkbox" value="overlays-site" /> Overlays Site</label>
+  <label><input type="checkbox" value="overlays-dm" /> Overlays DM</label>
+</fieldset>
+<fieldset>
+  <legend>Largeurs des pages (px) — dans cet ordre</legend>
+  <div class="widths">
+    <label><input type="checkbox" class="width" value="1440" checked /> 1440 <small>bureau</small></label>
+    <label><input type="checkbox" class="width" value="1920" checked /> 1920 <small>bureau</small></label>
+    <label><input type="checkbox" class="width" value="2560" checked /> 2560 <small>très grand</small></label>
+    <label><input type="checkbox" class="width" value="1280" checked /> 1280 <small>bureau</small></label>
+    <label><input type="checkbox" class="width" value="390" checked /> 390 <small>téléphone</small></label>
+    <label><input type="checkbox" class="width" value="360" checked /> 360 <small>téléphone</small></label>
+    <label><input type="checkbox" class="width" value="3440" /> 3440 <small>très grand</small></label>
+    <label><input type="checkbox" class="width" value="1536" /> 1536 <small>bureau</small></label>
+    <label><input type="checkbox" class="width" value="1366" /> 1366 <small>bureau</small></label>
+    <label><input type="checkbox" class="width" value="1194" /> 1194 <small>tablette</small></label>
+    <label><input type="checkbox" class="width" value="1024" /> 1024 <small>tablette</small></label>
+    <label><input type="checkbox" class="width" value="844" /> 844 <small>téléphone paysage</small></label>
+    <label><input type="checkbox" class="width" value="834" /> 834 <small>tablette</small></label>
+    <label><input type="checkbox" class="width" value="768" /> 768 <small>tablette</small></label>
+    <label><input type="checkbox" class="width" value="430" /> 430 <small>téléphone</small></label>
+    <label><input type="checkbox" class="width" value="320" /> 320 <small>téléphone</small></label>
+  </div>
+  <small
+    >Les gabarits sont toujours dessinés aux 16 largeurs. Une page n’est dessinée qu’aux largeurs de ses viewports
+    (desktop ≥ 768, mobile &lt; 768).</small
+  >
+</fieldset>
+<button id="sync">Synchroniser</button>
+<div id="log" role="log" aria-live="polite"></div>
+
+<script>
+  const button = document.getElementById('sync')
+  const out = document.getElementById('log')
+  const write = (level, text) => {
+    const line = document.createElement('div')
+    line.className = level
+    line.textContent = (level === 'info' ? '' : level.toUpperCase() + ' — ') + text
+    out.appendChild(line)
+    out.scrollTop = out.scrollHeight
+  }
+  button.onclick = () => {
+    const steps = [...document.querySelectorAll('input[type=checkbox]:not(.width):checked')].map(i => i.value)
+    const widths = [...document.querySelectorAll('input.width:checked')].map(i => Number(i.value))
+    out.textContent = ''
+    button.disabled = true
+    write('info', 'Synchronisation : ' + steps.join(', '))
+    parent.postMessage({ pluginMessage: { type: 'sync', steps, widths } }, '*')
+  }
+  onmessage = event => {
+    const msg = event.data.pluginMessage
+    if (!msg) return
+    if (msg.type === 'version') {
+      document.getElementById('version').textContent =
+        'sha ' + msg.sha + ' · ' + msg.date.slice(0, 10) + ' · ' + msg.specCount + ' pages'
+    }
+    if (msg.type === 'log') write(msg.level, msg.text)
+    if (msg.type === 'done') {
+      button.disabled = false
+      write(msg.ok ? 'info' : 'error', msg.ok ? 'Terminé.' : 'Terminé avec une erreur.')
+    }
+  }
+</script>

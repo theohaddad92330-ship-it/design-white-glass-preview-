@@ -1,0 +1,73 @@
+Genere UNIQUEMENT la section 'action_plan' pour le plan commercial final du compte ACME (analyse compte + contacts fournis dans le contexte système).
+
+Contraintes:
+- Repondre uniquement en JSON valide
+- Sois CONCIS : 1-2 phrases par champ texte, du concret, pas de remplissage
+- Retourner exactement ce schema (aucun champ additionnel):
+{"actionPlan":{"strategy":"...","justification":"...","phases":[{"name":"IMMEDIAT|MOIS 1|MOIS 2-3|MOIS 3-6|MOIS 6-12","title":"...","objective":"...","actions":[{"action_id":"action_immediate_1","action":"...","owner":"toi|alternant|SDR|AM","contact":"...","channel":"linkedin|email|phone|event|meeting|content","reason":"le signal/besoin/regle qui declenche","deadline":"J+3","expectedOutcome":"...","kpi":"..."}]}]}}
+
+Genere UNIQUEMENT la section 'offers' pour le plan commercial final du compte ACME (analyse compte + contacts fournis dans le contexte système).
+
+Contraintes:
+- Repondre uniquement en JSON valide
+- Sois CONCIS : 1-2 phrases par champ texte, du concret, pas de remplissage
+- Retourner exactement ce schema (aucun champ additionnel):
+{"offersToPropose":[{"title":"...","pitch":"...","targetContact":"...","painAddressed":"...","estimatedTJM":"...","estimatedTeamSize":"...","estimatedDuration":"...","estimationHypothesis":"...","justifyingSignals":["..."],"differentiator":"..."}]}
+
+ESTIMATIONS = HYPOTHESES (methode commerciale Bellum) : chaque estimation (TJM, taille d'equipe, duree) est une HYPOTHESE Bellum derivee du contexte (taille du compte, perimetre du signal), PAS un fait. 'estimationHypothesis' explicite le raisonnement en 1-2 phrases (ex: 'compte >5k salaries, perimetre data sur 2 BUs -> 2 consultants pendant 6 mois'). 'justifyingSignals' cite les signaux REELS de l'analyse qui justifient l'offre (recentSignals / budgetSignals — pas de signal invente). Rien ne permet d'estimer ? Laisse le champ vide ("") — n'invente JAMAIS un chiffre, et ne presente JAMAIS un tarif comme la grille du client (le TJM reste une hypothese a relier a ses tarifs reels).
+
+Genere UNIQUEMENT la section 'quick_wins' pour le plan commercial final du compte ACME (analyse compte + contacts fournis dans le contexte système).
+
+Contraintes:
+- Repondre uniquement en JSON valide
+- Sois CONCIS : 1-2 phrases par champ texte, du concret, pas de remplissage
+- Retourner exactement ce schema (aucun champ additionnel):
+{"quick_wins":[{"action":"...","contact":"...","channel":"linkedin|email|phone","time_required":"< 15 minutes","expected_impact":"..."}]}
+
+Genere UNIQUEMENT la section 'if_no_response' pour le plan commercial final du compte ACME (analyse compte + contacts fournis dans le contexte système).
+
+Contraintes:
+- Repondre uniquement en JSON valide
+- Sois CONCIS : 1-2 phrases par champ texte, du concret, pas de remplissage
+- Retourner exactement ce schema (aucun champ additionnel):
+{"if_no_response":{"trigger":"...","alternative_contact":{"name":"...","title":"...","reason":"..."},"different_angle":"...","reengagement_pretext":"...","escalation_option":"..."}}
+
+Genere UNIQUEMENT la section 'evaluation' pour le plan commercial final du compte ACME (analyse compte + contacts fournis dans le contexte système).
+
+Contraintes:
+- Repondre uniquement en JSON valide
+- Sois CONCIS : 1-2 phrases par champ texte, du concret, pas de remplissage
+- Retourner exactement ce schema (aucun champ additionnel):
+{"evaluation":{"scoreBreakdown":[{"axis":"fit_offre","points":0,"note":"Fit — problemes et offres compatibles (max 5)"},{"axis":"timing","points":0,"note":"Timing — signaux/besoins/budget maintenant (max 5)"},{"axis":"accessibilite","points":0,"note":"Accessibilite — relation, BU, panel, geo, taille (max 5)"},{"axis":"concurrence","points":0,"note":"Concurrence — incumbents, interne, alternatives (max 5)"},{"axis":"capacite","points":0,"note":"Capacite — ta delivery/references/marge/delai (max 5)"}],"justification":"3-4 phrases citant axes forts/faibles","risks":[{"risk":"...","probability":"haute|moyenne|basse","impact":"critique|important|modere","mitigation":"..."}],"bellum_read":{"verdict_line":"...","why":["...","...","..."],"missing":"...","next_action":"..."},"dossier_read":{"axes":[{"key":"adequation_offre","state":"measured|partial|unknown","value":0,"impact":"...","lever":"..."},{"key":"potentiel_commercial","state":"...","value":0,"impact":"...","lever":"..."},{"key":"fraicheur","state":"...","value":0,"impact":"...","lever":"..."},{"key":"accessibilite","state":"...","value":0,"impact":"...","lever":"..."},{"key":"capacite_achat_externe","state":"...","value":0,"impact":"...","lever":"..."},{"key":"concurrence","state":"...","value":0,"impact":"...","lever":"..."},{"key":"qualite_preuves","state":"...","value":0,"impact":"...","lever":"..."}],"why_for_your_esn":"...","recommended_scope":"...","best_entry_point":{"label":"...","target_profile":"...","why":"..."},"access_path":"...","obstacles":[{"label":"...","why":"..."}],"anti_advice":{"what":"...","why":"..."},"next_action":{"label":"...","tab":"contacts|evaluation|overview|messages"},"reliability":{"quality":{"state":"...","value":0},"coverage":{"state":"...","value":0},"freshness":{"state":"...","value":0}},"no_go":{"context":"...","trigger":"..."},"missing":[{"label":"...","why":"..."}]}}}
+
+BELLUM READ (#1607.1, obligatoire — QUATRE BLOCS distincts, en plus de scoreBreakdown/justification/risks, pour le résumé affiché en tête de dossier) :
+- verdict_line : UNE phrase courte et directe, le verdict en clair (ex: « SNCF se travaille par entité, pas au niveau groupe. »). Jamais un chiffre nu, jamais une probabilité.
+- why : 1 à 3 PREUVES maximum qui justifient ce verdict — des faits du dossier (signal, contact, structure), jamais une reformulation du score.
+- missing : UNE ligne explicite sur ce qui MANQUE pour trancher plus fort (ex: « Pas de contact confirmé côté DSI Retail »).
+- next_action : UNE SEULE action. Si le seul argument disponible est l'environnement technique observé (bloc observation du marché ci-dessus, quand il est présent) sans aucune preuve actuelle, c'est une action de VÉRIFICATION (« Vérifier si... »), jamais une action commerciale. Sinon (preuve actuelle : contact confirmé, signal daté, appel d'offres, échange client), formule une action commerciale concrète.
+
+
+DOSSIER READ (#2118, obligatoire) — la lecture STRUCTURÉE du dossier, en plus de bellum_read :
+- axes : les SEPT axes ci-dessus, TOUS présents, dans cet ordre, aucun autre, aucun renommé. Chaque axe porte son `state` : `measured` (tu as de quoi le noter), `partial` (tu as de quoi le noter, sur des preuves minces), `unknown` (tu n'as PAS de quoi le noter). ⚠️ Un axe `unknown` n'a PAS de `value` — retire la clé. Ne mets JAMAIS 0 pour dire « je ne sais pas » : un axe non évalué SORT du calcul, il ne fait pas baisser la note. Un axe `measured` ou `partial` porte une `value` de 0 à 5 sur les FAITS du contexte. `impact` = ce que cet axe fait au verdict, en une phrase. `lever` = ce qui le ferait monter, concrètement. Mieux vaut trois axes honnêtement notés que sept devinés. #2306.5 — `accessibilite` note AUSSI les CONDITIONS d'engagement (taille du compte, budget, localisation, modèle contractuel, TJM praticable pour ce profil), pas seulement l'accès à un décideur : ce ne sont pas des faits séparés, ce sont les conditions DE ce même accès.
+- why_for_your_esn : pourquoi CE compte pour CETTE ESN — cite ses offres, ses références, sa taille, son territoire, ses secteurs, sa capacite de demarrage, son modèle (staffing) et le role du commercial (PROFIL ESN du contexte système). Un champ du PROFIL ESN « non renseigne » ne se suppose PAS : nomme-le dans `missing` s'il aurait changé la lecture. ⚠️ Une raison INTERCHANGEABLE entre deux ESN est une raison FAUSSE : si ta phrase resterait vraie en changeant l'ESN, réécris-la. Aucun gabarit, aucune généralité sur le compte seul.
+- recommended_scope : la BU / l'entité / le programme à attaquer, jamais « le groupe ».
+- best_entry_point : la meilleure porte d'entrée — qui, quel profil, pourquoi lui.
+- access_path : la voie d'achat ou d'accès PLAUSIBLE sur ce compte — DISTINCTE de best_entry_point (qui contacter) : PAR OÙ entrer commercialement (un programme déjà lancé, un appel d'offres en cours, une porte partenaire, un panel fournisseur ouvert…). Absente si aucune voie plausible n'est identifiable — jamais une voie devinée.
+- obstacles : les freins réels, chacun avec sa raison.
+- anti_advice : ce qu'il ne faut PAS faire sur ce compte, et POURQUOI (ex. « ne commence pas par le CTO groupe : il ne décide pas du budget de la BU Retail »). Les deux champs ensemble ou rien.
+- next_action : le geste suivant et son onglet — DISTINCT de bellum_read.next_action, qui est la phrase du résumé.
+⚠️ ANTI-GÉNÉRIQUE (#2304.28-.31) — SUR TOUS LES CHAMPS TEXTE de dossier_read ci-dessus (why_for_your_esn, recommended_scope, best_entry_point, obstacles, anti_advice, next_action, missing) : « compte à fort potentiel », « poursuivre les échanges », « identifier les décideurs », « capitaliser sur les signaux » sont INTERDITES. Ce sont des généralités vraies pour n'importe quel compte, donc fausses pour CELUI-CI — nomme le fait concret qu'elles maquillent (quelle offre, quel signal daté, quel contact nommé, quel échange précis) au lieu de les écrire.
+- reliability : la fiabilité du DOSSIER (qualité de la collecte, couverture, fraîcheur), 0-100 chacune. Elle ne dit RIEN du potentiel du compte. Même règle : `unknown` sans chiffre.
+- no_go : SEULEMENT si le compte est à écarter aujourd'hui — `context` (ce qui bloque maintenant) et `trigger` (l'événement qui rouvrirait le compte). Un no-go est toujours temporaire : s'il n'existe aucun déclencheur plausible, n'écris pas ce bloc.
+- missing : ce que tu n'as PAS pu évaluer, un élément par ligne, NOMMÉ, avec sa raison. C'est ce qui rend le reste crédible — ne le laisse pas vide par confort.
+
+
+Note chaque axe sur son max, sur les FAITS du contexte (decideurs identifies -> axe accessibilite ; signaux/recrutements/budget IT -> axe timing ; prestataires en place/concurrents -> axe concurrence ; ton profil ESN (consultants en mission, vivier actif, capacite de demarrage — pas seulement la taille) vs le besoin -> axe capacite). Le total /25 et le verdict sont RECALCULES ensuite — ne les mets pas. Calibrage (repere) : STOP = mauvais compte, aucun fit / aucun signal / inaccessible, ne pas y perdre de temps. PRUDENT = potentiel reel mais avec freins (acces difficile, cycle long, achats structures) — c'est le cas le PLUS courant sur un grand groupe. GO = fort fit + accessible + signaux chauds. EXPLORER = potentiel mais donnees manquantes : l'action est d'aller collecter l'info, pas de conclure. Un grand groupe bancaire avec signaux IT, decideurs identifies et budget, mais acces difficile et achats structures = PRUDENT (~15-18/25), PAS STOP. L'axe capacite penalise DEJA le grand compte pour une petite ESN (delivery/references limitees) — ne re-penalise pas les autres axes pour la meme raison.
+
+Genere UNIQUEMENT la section 'competitive_strategy' pour le plan commercial final du compte ACME (analyse compte + contacts fournis dans le contexte système).
+
+Contraintes:
+- Repondre uniquement en JSON valide
+- Sois CONCIS : 1-2 phrases par champ texte, du concret, pas de remplissage
+- Retourner exactement ce schema (aucun champ additionnel):
+{"competitiveStrategy":{"positioningStatement":"...","vsCompetitors":[{"competitor":"...","differentiator":"...","talkingPoint":"..."}]}}

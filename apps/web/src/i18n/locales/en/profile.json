@@ -1,0 +1,527 @@
+{
+  "page": {
+    "title": "My profile",
+    "subtitle": "Manage your ESN information and account security."
+  },
+  "identity": {
+    "title": "Identity",
+    "sectionSubtitle": "Visible in your personal space.",
+    "rowTitle": "First and last name",
+    "emptyValue": "To be completed",
+    "subtitle": "Your first and last name appear in your personal space.",
+    "firstNameLabel": "First name",
+    "firstNamePlaceholder": "John",
+    "lastNameLabel": "Last name",
+    "lastNamePlaceholder": "Smith",
+    "emailLabel": "Email",
+    "emailHint": "Email changes are confirmed with a code sent to the new address.",
+    "timezoneLabel": "Time zone",
+    "timezonePlaceholder": "Choose your time zone",
+    "timezoneHint": "It decides which day “tomorrow” is when you ask {{copilot}} for a follow-up, and what time your routines run.",
+    "timezoneDetectedHint": "Proposed from your browser ({{timezone}}) — save to confirm it, or pick another one. Until something is saved, the reference time zone is Europe/Paris.",
+    "toast": {
+      "saved": "Identity saved"
+    },
+    "signatureTitle": "Your email signature",
+    "signatureHint": "It is added at the bottom of the drafts {{brand}} prepares. Left empty, your inbox's own signature applies.",
+    "businessRole": {
+      "label": "Business role",
+      "unset": "Not set",
+      "saved": "Business role saved",
+      "error": "The business role could not be saved",
+      "hint": "Your role orders your My day page: the same blocks, in the order of your job."
+    },
+    "securityNote": "Your password and two-factor authentication are managed in",
+    "securityNoteLink": "Security"
+  },
+  "businessUnits": {
+    "title": "My scopes",
+    "subtitle": "The business units, agencies or teams you belong to. Upcoming analyses take them into account: an account's verdict cites your scope.",
+    "restricted": "Your access is limited to your scopes: to join another one, request access from its lead.",
+    "loading": "Reading your workspace's scopes…",
+    "error": "Could not read your workspace's scopes. Try again in a moment.",
+    "empty": "Your workspace has not defined any scope yet.",
+    "member": "You belong to it",
+    "archived": "Archived",
+    "join": "Join",
+    "joinAria": "Join {{name}}",
+    "requestAccess": "Request access",
+    "requestAccessAria": "Request access to {{name}}",
+    "requestPending": "Request sent",
+    "memberCount_one": "{{count}} member",
+    "memberCount_other": "{{count}} members",
+    "kinds": {
+      "business_unit": "Business unit",
+      "agency": "Agency",
+      "sales_team": "Sales team",
+      "territory": "Territory",
+      "new_venture": "New venture",
+      "solo": "Solo"
+    },
+    "toast": {
+      "joined": "You joined {{name}}.",
+      "joinError": "Could not join this scope.",
+      "requested": "Access request sent for {{name}}.",
+      "requestError": "Could not send the request.",
+      "created": "{{name}} is created.",
+      "createError": "Could not create this scope."
+    },
+    "territory": {
+      "title": "Territory model",
+      "subtitle": "The 7 axes your territory can carry. Three are already answers on your profile, editable here; the other four don't exist yet in the product — named, never guessed.",
+      "unset": "Not set — {{reason}}",
+      "axes": {
+        "agenciesRegionsCountries": {
+          "title": "Agencies, regions and countries",
+          "hint": "Two distinct answers: where your firm is based (agencies/offices), and the zones it targets (regions, countries, national, international — still one list, not three separate axes)."
+        },
+        "remoteAndTravel": {
+          "title": "Accepted remote work and travel"
+        },
+        "localSectors": {
+          "title": "Local sectors",
+          "reason": "no sector is crossed with a zone yet — targeted sectors remain national."
+        },
+        "reservedAccounts": {
+          "title": "Reserved accounts and group-accessible accounts",
+          "reason": "no cross-workspace account reservation exists yet."
+        },
+        "territoryRules": {
+          "title": "Territory rules",
+          "reason": "no territory rules engine exists yet."
+        },
+        "exclusiveOrShared": {
+          "title": "Exclusive or shared scope",
+          "reason": "depends on reserved accounts, which don't exist yet."
+        },
+        "capabilityStatus": {
+          "title": "What you can cover"
+        }
+      }
+    }
+  },
+  "errors": {
+    "saveFailed": "Save failed"
+  },
+  "email": {
+    "changeEmail": "Change email address",
+    "dialogDescription": "To confirm the new address, we will send it a 6-character code. This change applies to your {{brand}} account.",
+    "newEmailLabel": "New email address",
+    "emailPlaceholder": "you@company.com",
+    "currentEmail": "Current address: {{email}}",
+    "sending": "Sending…",
+    "sendCode": "Send code",
+    "otpLabel": "Confirmation code",
+    "codeSentHint": "Code sent to {{email}}. Also check your spam folder.",
+    "changeAddress": "Change address",
+    "verifying": "Verifying…",
+    "toast": {
+      "codeSent": "Code sent to {{email}}",
+      "updated": "Email address updated"
+    },
+    "errors": {
+      "sendFailed": "Could not send the code.",
+      "invalidCode": "Invalid or expired code."
+    }
+  },
+  "esn": {
+    "title": "ESN profile",
+    "subtitle": "Editable at any time.",
+    "shared": {
+      "badge": "Company profile (shared)",
+      "subtitleEditable": "Shared with the whole team — your changes apply to every member.",
+      "subtitleLocked": "Company fields are shared by the team and editable by the owner or an admin.",
+      "lockedField": "Company field — editable by the owner or an admin."
+    },
+    "correction": {
+      "reportButton": "Report an error",
+      "dialogTitle": "Report a wrong piece of information",
+      "dialogDescription": "Nothing is changed: your request goes straight to your workspace's administrators.",
+      "reasonLabel": "Why is this information wrong?",
+      "reasonPlaceholder": "Explain what changed…",
+      "submit": "Send the report",
+      "cancel": "Cancel",
+      "successTitle": "Report sent to your workspace's administrators.",
+      "errorBody": "Could not send your report. Try again."
+    },
+    "personal": {
+      "title": "My personal preferences",
+      "hint": "Your main sales blocker stays personal: it only affects your own analyses."
+    },
+    "impactedAccounts": {
+      "notice_one": "{{count}} account was analysed with an ESN profile older than today's.",
+      "notice_other": "{{count}} accounts were analysed with an ESN profile older than today's."
+    },
+    "stages": {
+      "companyInfo": "Name, size, sales team",
+      "offerExpertise": "Domains, positioning, model",
+      "targetMarket": "Sectors, types, territory, blocker"
+    },
+    "answerStatus": {
+      "confirmed": "Confirmed",
+      "unconfirmed": "Not confirmed — needs a look"
+    },
+    "knowledgeBasis": {
+      "declared": "You declared it",
+      "prefilled_confirmed": "Prefilled and confirmed",
+      "imported": "Imported",
+      "observed": "Observed",
+      "deduced": "Deduced",
+      "unknown": "Origin not established"
+    },
+    "confirmAnswer": {
+      "button": "Confirm",
+      "error": "Confirmation failed. Try again in a moment."
+    },
+    "stageAnswers": "{{filled}}/{{total}} answers"
+  },
+  "marketMemory": {
+    "title": "Your company in market observations",
+    "lead": "Here is what {{brand}} observes.",
+    "paths": "{{paths}} career paths observed around your company.",
+    "roleFamilies": "Main role families: {{families}}.",
+    "destinations": "Most frequent destination ecosystems: {{destinations}}.",
+    "matchedOn": {
+      "name": "Matched to “{{company}}” by name. If that is not your company, these observations are not about it.",
+      "domain": "Matched to “{{company}}” by website.",
+      "alias": "Matched to “{{company}}” through a recorded equivalence. If that is not your company, these observations are not about it."
+    },
+    "insufficient": "Your company is not sufficiently covered in our observations.",
+    "undeclared": "Fill in your company name above: without it, {{brand}} has nothing to observe.",
+    "unavailable": "These observations could not be read. Try again in a moment."
+  },
+  "stage": {
+    "autoSaveHint": "Changes are saved automatically.",
+    "guidedModeLink": "Revisit this questionnaire in guided mode, with {{copilot}}'s help",
+    "guidedModeError": "The request could not be saved. Try again in a moment."
+  },
+  "security": {
+    "title": "Security",
+    "description": "Manage your password and account access.",
+    "passwordTitle": "Password",
+    "passwordDescription": "You will receive an email to reset it.",
+    "sending": "Sending...",
+    "changePassword": "Change password",
+    "toast": {
+      "resetSent": "We have sent you a reset link by email."
+    },
+    "errors": {
+      "sendFailed": "Could not send the email."
+    }
+  },
+  "danger": {
+    "title": "Danger zone",
+    "description": "Deleting your account is permanent and results in the loss of all your data.",
+    "rowTitle": "Delete my account",
+    "rowDescription": "This action erases all your data - accounts, contacts, action plans.",
+    "confirmPrompt": "Are you sure? This action is irreversible.",
+    "deleting": "Deleting...",
+    "confirmCta": "Yes, delete my account",
+    "toast": {
+      "deleted": "Account deleted."
+    },
+    "errors": {
+      "deleteFailed": "Could not delete the account."
+    }
+  },
+  "saveStatus": {
+    "saving": "Saving...",
+    "saved": "Saved",
+    "error": "Save failed"
+  },
+  "autoSave": {
+    "taskTitle": "Saving profile",
+    "taskLabel": "Saving",
+    "toast": {
+      "saved": "Profile saved"
+    }
+  },
+  "context": {
+    "section": {
+      "title": "{{brand}} profile",
+      "rowTitle": "Summary, personalization and coaching",
+      "rowDescAvailable": "Profile summary, analysis personalization and tailored coaching.",
+      "rowDescPending": "Available after the first generation."
+    },
+    "header": {
+      "title": "Your {{brand}} profile",
+      "subtitle": "What the agents use to personalize your analyses."
+    },
+    "status": {
+      "succeeded": "Available",
+      "generating": "In progress",
+      "failed": "Failed — reason not recorded",
+      "failedWithReason": "Failed — {{reason}}",
+      "notGenerated": "Not generated"
+    },
+    "failure": {
+      "model_error": "The model did not return a usable profile.",
+      "model_unreachable": "The analysis service did not respond.",
+      "persist_failed": "The profile was produced but could not be saved."
+    },
+    "toc": {
+      "recap": "Summary",
+      "personalization": "Personalization",
+      "coaching": "Coaching"
+    },
+    "emptyState": {
+      "description": "No profile generated yet. Launch a generation to personalize the other agents' analyses."
+    },
+    "generate": {
+      "loading": "Generating…",
+      "cta": "Regenerate my profile"
+    },
+    "regenerate": {
+      "cta": "Regenerate my AI context",
+      "title": "Regenerate your AI context?",
+      "description": "{{brand}} will re-run the analysis of your profile and replace the current context. The current version stays available and can be restored from “Versions”.",
+      "confirm": "Regenerate",
+      "toastStarted": "Regeneration started…",
+      "toastError": "Couldn't start the regeneration. Try again in a moment."
+    },
+    "regenerateSection": {
+      "cta": "Regenerate this section",
+      "title": "Regenerate this section?",
+      "description": "{{brand}} will re-run the analysis of your profile, but only replaces this section — the rest of your AI context stays untouched.",
+      "confirm": "Regenerate",
+      "toastSuccess": "Section regenerated.",
+      "toastError": "Couldn't regenerate this section. Try again in a moment."
+    },
+    "versions": {
+      "title": "Versions",
+      "subtitle": "History of your AI context. Restore a previous version at any time.",
+      "versionLabel": "Version {{version}}",
+      "current": "Current",
+      "superseded": "Superseded",
+      "lastValidated": "Last validated",
+      "restore": "Restore",
+      "confirmTitle": "Restore version {{version}}?",
+      "confirmDescription": "This version will replace your current AI context. The action is reversible: the current version stays in the history.",
+      "confirmCta": "Restore",
+      "toastRestored": "Version {{version}} restored",
+      "toastError": "Couldn't restore. Try again in a moment."
+    },
+    "coaching": {
+      "title": "Personalized coaching",
+      "vigilance": "Point of attention"
+    },
+    "impactedAccounts": {
+      "title": "Accounts affected by this change",
+      "description_one": "{{count}} account was analysed with an earlier profile.",
+      "description_other": "{{count}} accounts were analysed with an earlier profile.",
+      "hint": "Nothing replays on its own: open a file to be offered its recalculation, at its cost."
+    },
+    "recap": {
+      "title": "Your {{brand}} profile",
+      "edit": "Edit my profile",
+      "correct": "Correct this summary",
+      "corrected": "Corrected",
+      "correctionSave": "Save",
+      "correctionCancel": "Cancel"
+    },
+    "personalization": {
+      "title": "What {{brand}} personalizes for you",
+      "searches": "Personalized searches",
+      "contacts": "Personalized contacts",
+      "messages": "Personalized messages",
+      "scoring": "Personalized scoring"
+    },
+    "suggestions": {
+      "title": "Launch your first analysis",
+      "subtitle": "Click a suggestion below to launch your first analysis and continue.",
+      "columns": { "account": "Account", "sector": "Target sector", "reason": "Why", "action": "Action" },
+      "analyze": "Analyze"
+    },
+    "archetype": {
+      "soloHunter": "Solo hunter",
+      "boutiqueExpert": "Expert boutique",
+      "midMarketChallenger": "Mid-market challenger",
+      "scaleUp": "Scale-up",
+      "enterprisePlayer": "Enterprise player"
+    },
+    "posture": {
+      "expertiseRare": "Rare expertise",
+      "volumeFlexible": "Flexible volume",
+      "strategicConsulting": "Strategic consulting",
+      "nearshoreCompetitive": "Competitive nearshore",
+      "nicheVerticals": "Niche verticals"
+    },
+    "accountSize": {
+      "pme": "SMB",
+      "eti": "Mid-market",
+      "grandCompte": "Enterprise",
+      "all": "All sizes"
+    },
+    "task": {
+      "title": "Updating {{brand}} profile",
+      "label": "Profile",
+      "inProgress": "In progress",
+      "subtitle": "{{step}}…",
+      "done": "Profile up to date."
+    },
+    "toast": {
+      "updated": "Your {{brand}} profile has been updated."
+    }
+  },
+  "targetPersonas": {
+    "title": "Roles you target",
+    "description": "Import your target job titles with their decision-maker level: they order an account's contacts (never filter them) and the reason shows on each contact.",
+    "format": "Columns: category, title, decision level (1 to 4). csv file (; or , separator) or xlsx.",
+    "levelsTitle": "The four levels",
+    "levels": {
+      "1": "Level 1 — signatory / final buyer",
+      "2": "Level 2 — decision-maker",
+      "3": "Level 3 — recommender",
+      "4": "Level 4 — influencer"
+    },
+    "count_one": "{{count}} target role saved.",
+    "count_other": "{{count}} target roles saved.",
+    "empty": "No target role imported: contact order is unchanged.",
+    "replaceHint": "A new import replaces all target roles.",
+    "chooseCsv": "Import a csv",
+    "chooseXlsx": "Import an xlsx",
+    "working": "Importing…",
+    "failed": "The import failed.",
+    "summary_one": "{{count}} role imported.",
+    "summary_other": "{{count}} roles imported.",
+    "fed": "{{count}} level 1-2 title(s) added to your decision-maker contacts.",
+    "missingColumn": {
+      "title": "Column \"title\" not found: nothing was imported.",
+      "level": "Column \"decision level\" not found: nothing was imported."
+    },
+    "rejectedTitle": "Skipped rows ({{count}})",
+    "rejected": {
+      "level_missing": "row {{line}}: level missing",
+      "level_invalid": "row {{line}}: invalid level (expected 1 to 4)",
+      "title_missing": "row {{line}}: title missing"
+    },
+    "locked": "Only a workspace manager can import target roles."
+  },
+  "offerPortfolio": {
+    "title": "Offer portfolio",
+    "subtitle": "What your company sells, to which sectors, on which sites — and the wording it uses.",
+    "loading": "Loading portfolio",
+    "locked": "Only a team manager can change the company portfolio.",
+    "understood": {
+      "title": "What {{brand}} understood",
+      "sentence": "You are a {{companyType}}, and you mainly sell: {{domains}}.",
+      "positioning": "How you work: {{positioning}}.",
+      "noDomains": "no domain selected",
+      "unknown": "No offer domain selected yet: {{brand}} cannot say what you sell. Complete your offer in the profile.",
+      "notConfigured": "Nothing is configured here yet — what you see below is empty, not a default choice.",
+      "positioningLabel": "Way of working",
+      "lockedReason": "Reserved to workspace admins — you can report an error."
+    },
+    "companyType": {
+      "esn_it": "digital services company",
+      "finance": "finance consultancy",
+      "supply_chain": "supply chain consultancy",
+      "product_design": "product and design consultancy",
+      "pmo": "project management consultancy",
+      "rh": "HR consultancy",
+      "generic": "consultancy",
+      "industrial_engineering": "industrial engineering consultancy",
+      "ia": "AI consultancy",
+      "cyber": "cybersecurity consultancy",
+      "hse": "environment & HSE consultancy"
+    },
+    "sectors": {
+      "title": "Target application sectors",
+      "hint": "The market your work is delivered into. Used to match projects and your consultants' experience — empty means \"no declared targeting\", never \"all\"."
+    },
+    "site": {
+      "title": "Site policy",
+      "hint": "A preference, not a rule: a site below the threshold is still surfaced when it carries a strong signal.",
+      "minHeadcount": "Minimum headcount on site",
+      "noThreshold": "no threshold"
+    },
+    "siteTypes": {
+      "siege": "Headquarters",
+      "R&D": "R&D centre",
+      "usine": "Plant",
+      "datacenter": "Data centre",
+      "agence": "Branch",
+      "bureau commercial": "Sales office",
+      "centre de services": "Service centre",
+      "bureau d’études": "Engineering office",
+      "entrepôt": "Warehouse",
+      "site énergie": "Energy site",
+      "chantier": "Construction site"
+    },
+    "lexicon": {
+      "movedTitle": "Workspace lexicon",
+      "movedHint": "Forbidden words and the name your team gives each product object now live on their own screen — a setting is edited in one place only.",
+      "movedLink": "Open the lexicon"
+    },
+    "soldSeniority": {
+      "title": "Levels you place",
+      "hint": "Tick the consultant levels the company sells. When left blank, job offers are not compared with your offer.",
+      "levels": {
+        "junior": "Junior",
+        "confirme": "Experienced",
+        "senior": "Senior"
+      }
+    },
+    "feedbackReuse": {
+      "label": "Share the verdict on my first analyses (right, partial, wrong, missing) with {{brand}}'s product review",
+      "hint": "Off by default. Only the verdict is shared — never the account name nor the text of a note. Applies to verdicts given from now on: those already given stay private to your workspace."
+    }
+  },
+  "placedRoles": {
+    "title": "Roles you place",
+    "label": "Roles you place",
+    "description": "The roles your company actually places (developer, data, cloud…). A job posting outside these roles is ranked after the others in “Why now”. Same answer as the profile complement question: changing it here changes it there.",
+    "placeholder": "E.g. Developer, Data, Cloud",
+    "empty": "No role declared: job postings stay “not assessable”, never penalised.",
+    "locked": "Only a workspace admin can change the placed roles.",
+    "saved": "Placed roles saved",
+    "error": "The placed roles could not be saved.",
+    "inferred": {
+      "title": "Inferred from your context",
+      "badge": "inferred",
+      "whenNotDeclared": "Until you declare any, these roles widen your hiring signals and rank first — they never remove one. Confirm or remove them.",
+      "whenDeclared": "Your declared roles prevail: these stay suggestions until you confirm them.",
+      "questionTitle": "Which roles do you place?",
+      "questionBody": "Nothing in your context (profile, offer, talent pool, missions) lets us infer it yet, and we don't guess. Tell us above: your hiring signals will follow your roles.",
+      "evidenceLine": "{{source}} · “{{excerpt}}”",
+      "source": {
+        "onboarding": "Your profile",
+        "offer_portfolio": "Your offer",
+        "talent_pool": "Your talent pool",
+        "missions": "A won mission"
+      },
+      "moreEvidence_one": "+ {{count}} more clue",
+      "moreEvidence_other": "+ {{count}} more clues",
+      "confirm": "Confirm",
+      "confirmAria": "Confirm {{role}}",
+      "dismiss": "Remove",
+      "dismissAria": "Remove {{role}}",
+      "dismissed": "Role removed: it won't come back.",
+      "full": "Six declared roles at most: remove one to confirm this one."
+    }
+  },
+  "framing": {
+    "eyebrow": "Settings · Profile",
+    "subtitle": "You can adjust your context without starting over. Fix a theme, then read what {{copilot}} infers from it.",
+    "seeAudit": "See my audit",
+    "export": "Export my framing",
+    "reread": "Review my framing by theme",
+    "continue": "Continue the questionnaire",
+    "answerCount_one": "{{count}} answer filled in",
+    "answerCount_other": "{{count}} answers filled in",
+    "noAnswer": "No answer filled in yet.",
+    "maturity": {
+      "title": "Your sales maturity",
+      "subtitle": "Computed from your answers and your activity. An axis that cannot be assessed leaves the calculation: it is not counted as zero."
+    },
+    "context": {
+      "title": "What {{copilot}} knows about your firm",
+      "subtitle": "The detail behind the framing. Each line can be corrected here, without redoing the questionnaire."
+    },
+    "sensitive": {
+      "title": "Reconfigure or start over",
+      "subtitle": "Answers to review, sensitive area"
+    },
+    "title": "Your working profile"
+  }
+}

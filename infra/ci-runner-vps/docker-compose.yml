@@ -1,0 +1,218 @@
+# La flotte de runners des VPS Hetzner (CX43 8 vCPU x86 / 16 Go, et un CX53
+# 16 vCPU / 32 Go). Parc réel et procédure : `runbook.md`.
+#
+# Le Dockerfile et l'entrypoint vivent dans CE dossier : `build.context: .`.
+# Après un `git pull` qui les touche, `docker compose build` sur chaque hôte.
+#
+# ── Le dimensionnement : par machine, et plusieurs machines ───────────────
+# Les jobs de `ci.yml` sont écrits pour un runner GitHub à 2 cœurs. Trois
+# runners × 2 vCPU = 6 des 8, et la mémoire ferme la porte au quatrième (voir
+# `mem_limit` plus bas : l'invariant donne 3 × 4,5 Go, pas 4).
+#
+# ⚠️ Ce commentaire s'est trompé DEUX fois le 16/09/2026, dans les deux sens, et
+# les deux erreurs valent d'être gardées parce qu'elles se ressemblent :
+#
+#   · il a d'abord dit TROIS en invoquant la MAUVAISE ressource — « quatre ne
+#     tiendraient pas la mémoire, à 3,74 Go par runner chaud ». Mesuré : six
+#     runners tous occupés tiennent en 11 Go sur 15, soit ~1,8 Go chacun.
+#   · il a ensuite dit QUATRE en regardant le seul CPU, et c'est la mémoire qui
+#     a tranché : `@bellum/api#build` est mort en `exit 137` parce que le
+#     plafond par conteneur qui rentrait dans la machine ne rentrait pas dans
+#     le job.
+#
+# La conclusion est TROIS, pour la troisième raison — la seule mesurée des deux
+# côtés. Charge moyenne relevée sur 8 cœurs :
+#
+#   3 runners …… 2,88 → 7,12    le pic touche déjà le plafond
+#   6 runners …… 16,50 → 32,58  4× sursouscrit : tout rampe, rien ne casse
+#
+# Six sur UNE machine ne fait pas gagner de temps, il le DÉPLACE : le job
+# n'attend plus dans la file, il attend le CPU — et cette attente-là ne se voit
+# nulle part, ni dans le temps de file ni dans un échec.
+#
+# ── Pourquoi une SECONDE machine, et pas un cinquième conteneur ────────────
+# `ci.yml` a 15 jobs. `ubuntu-latest` en lance 15 à la fois, soit 30 vCPU à la
+# demande ; ce CX43 en a 8. Le plancher est arithmétique : 76,7 minutes de job
+# cumulées ÷ 3 runners ≈ 25 min, contre 6,2 min de p50 mesurés sur GitHub.
+# Aucun réglage ne passe sous ce chiffre sur une seule machine — c'est de la
+# capacité qu'il manque, pas de la configuration.
+#
+# D'où TROIS hôtes à 16,49 €, soit 49,47 €/mois pour 9 runners et 24 vCPU. Ils
+# ne se parlent pas : un runner ne fait que SORTIR vers GitHub, donc une machine
+# vit dans la localisation qui a du stock sans que ça change rien — ce qui tombe
+# bien, le CX43 était en rupture à Helsinki le jour de la deuxième, et
+# disponible à Nuremberg.
+#
+# ⚠️ Le TROISIÈME hôte n'a pas été acheté pour accélérer UN chantier, mais pour
+# en tenir DEUX. Mesuré le 16/09/2026 : `perf/ci-threads-cache-runner` et
+# `integration-vague12bis` tournaient ensemble, soit 30 jobs pour 6 runners, et
+# un run n'en obtenait qu'UN. Six suffisent à un chantier, pas à deux — et c'est
+# la situation normale ici, où un lot d'issues tourne pendant qu'on intègre.
+#
+# Pour ajuster : `docker compose up -d --scale runner=N`. Le bon signal est le
+# temps de FILE (`createdAt` → `startedAt` de l'API Actions), pas la charge de
+# la machine — c'est la file qu'on achète ici.
+#
+# ⚠️⚠️ JAMAIS pendant un run. `--scale` vers le bas DÉTRUIT les conteneurs
+# surnuméraires — il ne les arrête pas proprement : leurs jobs meurent, et
+# chacun laisse une entrée « offline » de plus côté GitHub. Attendre le
+# verdict, puis ajuster.
+services:
+  runner:
+    build:
+      context: .
+      # ⚠️ L'hôte est x86 — la gamme ARM `CAX` de Hetzner était
+      # en RUPTURE aux trois localisations européennes le 16/09/2026
+      # (« Not available. Please choose another location or type. »). Le CX43
+      # offre les mêmes 8 vCPU / 16 Go / 160 Go pour 15,99 € au lieu de 20,99 €,
+      # et fait tomber les deux inconnues du plan ARM : Playwright et
+      # `actions/setup-python`, dont les binaires Linux ARM64 sont incomplets.
+      #
+      # Le Dockerfile reste multi-architecture : le jour où la gamme CAX
+      # redevient disponible, seule cette ligne change.
+      args:
+        TARGETARCH: amd64
+    restart: always
+    environment:
+      GITHUB_REPO: ${GITHUB_REPO:?}
+      # Deux façons de s'enrôler, l'une OU l'autre (voir `entrypoint.sh`) :
+      #
+      #   GITHUB_PAT    jeton de LONGUE durée : le conteneur peut redemander un
+      #                 jeton d'enrôlement tout seul s'il est recréé.
+      #   RUNNER_TOKEN  jeton d'enrôlement déjà obtenu, valable 1 h. Suffit ici :
+      #                 `config.sh` ne s'en sert qu'une fois, puis `.runner` et
+      #                 `.credentials` vivent dans la couche du conteneur, que
+      #                 `restart` préserve. AUCUN secret durable sur la machine —
+      #                 ce qui est exactement ce qu'on veut d'un hôte qui exécute
+      #                 du code de CI.
+      #
+      #   gh api -X POST repos/Bellum-AI/belllum-monorepo/actions/runners/registration-token --jq .token
+      #
+      # ⚠️ Le prix du second mode : à l'arrêt, le runner ne peut pas se
+      # désenregistrer (son jeton a expiré) et laisse une entrée « offline ».
+      # `./purge-ghost-runners.sh` est là pour ça.
+      GITHUB_PAT: ${GITHUB_PAT:-}
+      RUNNER_TOKEN: ${RUNNER_TOKEN:-}
+      RUNNER_LABELS: ${RUNNER_LABELS:-bellum-ci}
+      RUNNER_NAME_PREFIX: vps
+      # `RUNNER_NAME` doit être unique entre instances et STABLE dans le temps
+      # pour une même instance — les deux, pas l'un ou l'autre. Un nom instable
+      # a déjà produit 121 runners déclarés dont 117 fantômes (27/08/2026).
+      # Compose donne à chaque replica un hostname stable tant qu'on ne le
+      # recrée pas ; `purge-ghost-runners.sh` reste le filet.
+      RUNNER_NAME: ${RUNNER_NAME:-}
+      # Les plafonds de workers vivent dans l'ENVIRONNEMENT et pas dans une
+      # ligne de commande — même raison qu'au §4 de `.claude/projet.md` : une
+      # commande peut être réécrite, un environnement non.
+      #
+      # 2 par runner × 4 runners = les 8 vCPU. ⚠️ `TURBO_CONCURRENCY` est
+      # indispensable : `turbo test` est UNE commande qui en lance N, et
+      # plafonner vitest sans plafonner turbo ne plafonne rien.
+      VITEST_MAX_THREADS: '2'
+      VITEST_MAX_FORKS: '2'
+      TURBO_CONCURRENCY: '2'
+      # ⚠️ Jest n'a AUCUNE variable d'environnement native pour se borner : celle-ci
+      # est lue par `apps/api/jest.config.js`, qui fait disparaître la clé quand
+      # elle est absente (sur `ubuntu-latest`, rien ne change). Sans elle, jest
+      # lit `os.cpus()` — qui rend les 8 cœurs de l'HÔTE, un conteneur ne cachant
+      # pas les cœurs qu'il n'a pas le droit d'utiliser — et lance 7 workers.
+      # C'est ce qui a mis UN conteneur à 665 % de CPU le 16/09/2026, et tué
+      # `Test (API)` en `exit 137`.
+      JEST_MAX_WORKERS: '2'
+    volumes:
+      # Ce qui SURVIT volontairement d'un job à l'autre, et qui est la raison
+      # d'être d'un runner auto-hébergé : sur `ubuntu-latest`, chaque job
+      # re-télécharge son store pnpm. Le chemin est celui que le Dockerfile
+      # pose en `PNPM_HOME`, pas un chemin deviné.
+      - pnpm-store:/home/pwuser/.pnpm-store
+      #
+      # ⚠️ PAS de volume pour le cache turbo, et ce n'est pas un oubli. Turbo
+      # écrit dans `<dépôt>/.turbo` — 1,3 Go sur le poste de dev au 16/09/2026 —
+      # donc à l'intérieur de `_work`, et non dans `~/.cache/turbo` : un volume
+      # monté là n'aurait rien caché du tout, en donnant l'impression du
+      # contraire.
+      #
+      # `_work` n'est pas monté non plus, et c'est délibéré dans l'autre sens :
+      # `--scale runner=4` partagerait UN volume nommé entre les quatre, qui
+      # écriraient dans le même répertoire de travail. Il vit donc dans la
+      # couche du conteneur, où il survit très bien à `restart` (le recyclage
+      # nocturne redémarre le conteneur, il ne le recrée pas). Seul un
+      # `--force-recreate` le repart à froid, ce qui est le comportement voulu
+      # le jour où l'on change l'image.
+    # ── Les deux plafonds d'un conteneur, et pourquoi il en faut DEUX ──────
+    # `cpus` borne ce qu'un conteneur PREND, quel que soit le nombre de
+    # processus qu'un outil décide de lancer. C'est le seul plafond qui n'est
+    # pas à refaire pour chaque outil : borner jest, puis vitest, puis turbo,
+    # puis tsc, puis eslint, c'est une course qu'on perd à chaque nouvel outil.
+    # 2 vCPU chacun, et c'est ce pour quoi les jobs de `ci.yml` sont écrits
+    # (un runner GitHub en a 2) : trois runners occupent 6 des 8 vCPU.
+    #
+    # ⚠️ Il ne DISPENSE PAS des plafonds par outil au-dessus, et c'est le point
+    # qui se rate : un quota CPU cgroup ne change pas ce que `os.cpus()` rend.
+    # Jest en déduirait toujours 7 workers, simplement ralentis — et sept
+    # processus Node, c'est la MÉMOIRE qui part, pas le CPU. `cpus` tient la
+    # contention, `JEST_MAX_WORKERS` tient le nombre de processus. Les deux.
+    #
+    # ── La mémoire : un invariant, et le nombre de runners en DÉCOULE ───────
+    # L'ordre compte. C'est en le prenant à l'envers — choisir N, puis chercher
+    # un plafond qui rentre — qu'on se trompe, et on s'est trompé deux fois :
+    #
+    #     N × mem_limit ≤ RAM − réserve de l'hôte
+    #     2 × 6,8 Go = 13,6 Go ≤ 15,6 − 2
+    #
+    #   5 Go × 4 = 20 Go > 15,6 → l'OOM frappe en GLOBAL
+    #             (`constraint=CONSTRAINT_NONE`) et l'allocation d'un conteneur
+    #             tue le job d'un AUTRE. Un plafond par conteneur ne protège de
+    #             rien si leur SOMME dépasse l'hôte.
+    #   3 Go × 4 = 12 Go : l'hôte tient, mais UN job n'y tient pas. Le tueur
+    #             frappe alors en `CONSTRAINT_MEMCG` et `@bellum/api#build` meurt
+    #             en `exit 137`. Une somme saine ne dit rien du PLUS GROS job.
+    #
+    # ⚠️⚠️ 4,5 Go × 3 était ENCORE faux, et cette fois SANS AUCUN ROUGE pour le
+    # dire. Avec du swap sur l'hôte, un conteneur qui dépasse son plafond ne meurt
+    # plus : il ÉCHANGE. Relevé après le run 35085255208, dans le cgroup :
+    #
+    #   memory.peak 4 500 Mo (le plafond)  +  memory.swap.peak 3 203 Mo
+    #
+    # Soit un besoin réel d'environ **7,7 Go** pour un shard vitest web. Le prix
+    # ne se lit pas en échecs mais en DURÉE : le même shard passe de 21 min à plus
+    # de 45 selon qu'il échange ou non, et c'est le délai du step qui finit par le
+    # tuer — un rouge qui accuse le test alors qu'il accuse la mémoire. Signe
+    # reconnaissable : UN shard explose à chaque run, et jamais le même.
+    #
+    # ⚠️ C'est le piège du swap : il change une mort franche en lenteur diffuse.
+    # Il reste la bonne soupape — un pic ponctuel vaut mieux qu'un job tué — mais
+    # il ne DISPENSE PAS de dimensionner, il MASQUE le sous-dimensionnement.
+    # `memory.swap.peak` est le seul endroit où ça se voit, et `memory.peak` seul
+    # ment : il sature au plafond et laisse croire qu'on l'a bien réglé.
+    #
+    # D'où 6,8 Go et DEUX runners par machine. `cpus` passe de 2 à 3 dans le même
+    # mouvement : avec deux conteneurs au lieu de trois, six des huit vCPU restent
+    # servis.
+    #
+    # Pour mémoire, l'estimation qui donnait 4,5 : `pnpm build` construit tout le
+    # monorepo et `TURBO_CONCURRENCY=2` en fait tourner deux à la fois ; un seul
+    # processus de build pique à 1,94 Go (`/usr/bin/time -l`). Elle n'était pas
+    # fausse — elle visait le BUILD, et c'est le shard vitest web qui demande le
+    # double. Dimensionner sur le job qu'on a mesuré, pas sur celui qu'on a en tête.
+    #
+    # Ce chiffre se re-vérifie SUR LA MACHINE sans rien instrumenter — cgroup v2
+    # garde le pic de chaque conteneur, et c'est lui qui doit remplacer toute
+    # estimation le jour où un job grossit :
+    #
+    #   for c in $(docker ps -q); do \
+    #     n=$(docker inspect -f '{{.Name}}' $c); \
+    #     echo "$n $(sudo cat /sys/fs/cgroup/system.slice/docker-$c*.scope/memory.peak)"; \
+    #   done
+    cpus: 3.0
+    mem_limit: 6800m
+    # 90 s pour laisser le `trap` de l'entrypoint se désenregistrer proprement
+    # avant le SIGKILL — sinon l'entrée reste « offline » côté GitHub et finit
+    # par recevoir des jobs.
+    stop_grace_period: 90s
+    logging:
+      driver: json-file
+      options: { max-size: '10m', max-file: '3' }
+
+volumes:
+  pnpm-store:

@@ -1,0 +1,2083 @@
+{
+  "financeTab": {
+    "title": "Financial strategy",
+    "scope": "Published accounts of the registered entity, year by year.",
+    "scopeNamed": "Published accounts of {{name}}, year by year.",
+    "notYourMargin": "This is the margin of this account, not yours: what the analysed company earns, not what your own business collects.",
+    "exercise": "Financial year {{year}}",
+    "closedOn": "Closed on {{date}}",
+    "closingUnknown": "Closing date not published",
+    "grossMargin": "Gross margin",
+    "ebitda": "EBITDA",
+    "operatingResult": "Operating result",
+    "ofRevenue": "{{rate}} of revenue",
+    "notPublished": "Not published",
+    "empty": {
+      "title": "No published financial year for this account.",
+      "why": "This company has not published its accounts, they are confidential, or the analysis could not match the account to a registered entity. Revenue and net result, when they exist, stay in the Summary."
+    }
+  },
+  "estimateBasis": {
+    "inference": "Inferred from clues (job posts, press, website), not observed at this account.",
+    "market_memory": "Seen in paths at other accounts, not observed at this one.",
+    "dataforge": "Drawn from comparable accounts in our reference base, not observed at this one."
+  },
+  "variation": {
+    "title": "Account variations",
+    "keys": {
+      "job_offers_mom": "Job offers, month over month",
+      "headcount_6m": "Headcount over 6 months",
+      "public_awards_12m": "Public contracts won, 12 months",
+      "it_moves_6m": "IT decision-maker moves, 6 months"
+    },
+    "measured": "{{current}} (against {{previous}} before)",
+    "base": {
+      "previous_period": "Base: last {{days}} days against the {{days}} before, as of {{date}}",
+      "six_months_ago": "Base: observation from about 6 months ago, as of {{date}}"
+    }
+  },
+  "cta": {
+    "viewDetail": "View details"
+  },
+  "overview": {
+    "analysisTitle": "{{copilot}}’s take",
+    "verdictHero": "Here's what {{brand}} recommends for {{name}}.",
+    "verdictSummaryLabel": "Verdict",
+    "entityHypothesis": {
+      "title": "Assumed entity — chosen among several namesakes"
+    },
+    "entityResolution": {
+      "state": {
+        "resolved": "Entity resolved",
+        "ambiguous": "Ambiguous entity",
+        "unresolved": "Unresolved entity",
+        "manual_override": "Entity chosen by your workspace",
+        "historical": "Historical entity",
+        "inactive": "Inactive entity",
+        "out_of_scope": "Out-of-scope entity"
+      },
+      "kind": {
+        "group": "Group",
+        "parent_company": "Parent company",
+        "subsidiary": "Subsidiary",
+        "business_unit": "Business unit",
+        "brand": "Brand",
+        "business_direction": "Business division",
+        "site": "Site",
+        "program": "Program",
+        "legal_entity": "Legal entity",
+        "holding": "Holding",
+        "legal_vehicle": "Legal vehicle",
+        "inactive_company": "Inactive company",
+        "homonym": "Namesake",
+        "platform": "Platform",
+        "esn": "IT services firm",
+        "end_client": "End client"
+      },
+      "source": {
+        "legal_identifier": "Legal identifier",
+        "registry_country": "National registry",
+        "official_domain": "Official domain",
+        "external_company_id": "External company ID",
+        "official_site": "Official website",
+        "group_graph": "Group graph",
+        "public_company_profile": "Public company profile",
+        "normalized_name": "Normalized name",
+        "alias": "Alias",
+        "workspace_correction": "Your workspace's correction",
+        "size": "Size (registry)",
+        "workspace_data": "Matched to an account in your workspace"
+      },
+      "confidence": "Confidence {{value}}/100",
+      "siren": "SIREN {{siren}}",
+      "children_one": "{{count}} known subsidiary",
+      "children_other": "{{count}} known subsidiaries",
+      "subsidiaryWarning": "Subsidiary of {{parent}} — its data (technologies, hiring, budgets) is not the group's.",
+      "formerlyKnownAs": "Formerly known as: {{names}}",
+      "question": "Several companies share this name — which one is it?",
+      "sources": "Resolved from: {{sources}}",
+      "confirm": "That’s the one",
+      "reject": "Not this one",
+      "confirmNamed": "That’s {{name}}",
+      "rejectNamed": "Not {{name}}",
+      "correctedBy": "Decided by your workspace — version {{version}}",
+      "correctionFailed": "The correction was not saved. Try again."
+    }
+  },
+  "score": {
+    "commercial": "Commercial score",
+    "commercialExplain": "A commercial priority marker, computed from visible criteria. It does not predict the outcome of a negotiation, and nothing has to be filled in to raise it.",
+    "dossierReliability": "Dossier reliability",
+    "weakData": "weak data",
+    "title": "Account score",
+    "subtitle": "Priority read to decide whether the account deserves immediate sales action.",
+    "qualityCap": "Score capped (quality)",
+    "qualityCapWithReason": "Score capped (quality: {{reason}})",
+    "factorsTitle": "Score factors — each tied to a proof",
+    "justification": "Justification",
+    "justificationFallback": "Score not computed: insufficient data or incomplete ESN profile.",
+    "factorWeight": "+{{value}}",
+    "factorWeightWithMax": "+{{value}} / {{max}}",
+    "factorsTotal": "{{value}} / {{max}}",
+    "pointsDetail": "Points detail",
+    "words": {
+      "GO": "Act on this account now: the key criteria are met.",
+      "PRUDENT": "Keep this account in reserve: the potential is there, but one criterion is missing to act now.",
+      "EXPLORER": "Qualify this account: too little data to decide, collect it first.",
+      "onHold": "Put this account on watch: an identified trigger will reopen it.",
+      "setAside": "Set this account aside for this objective: the criteria are not met."
+    },
+    "verdictRule": "Verdict {{name}} — five-criteria rule",
+    "factorNotMeasured": "not measured",
+    "factorsExcluded": "Not evaluated: {{names}}",
+    "commercialHint": "5-criteria grid — distinct from the 7-axis dossier reading on the Overview",
+    "dossierReliabilityHint": "Quality of this analysis's collection and sources — not the account potential",
+    "dossierReliabilityNonEvaluable": "Not evaluable",
+    "dossierReliabilityNonEvaluableHint": "No collection source responded — nothing to grade, not a low confidence",
+    "dossierReliabilityUnknown": "Not measured",
+    "dossierReliabilityUnknownHint": "This analysis predates the reliability grid — never computed on this dossier"
+  },
+  "proofType": {
+    "signal": "Signal",
+    "source": "Source",
+    "contact": "Contact",
+    "profile": "Profile",
+    "businessRule": "Business rule",
+    "fallback": "Proof"
+  },
+  "bellumRead": {
+    "dialogTitle": "{{brand}} read",
+    "dialogDescription": "Priority summary from the account analysis.",
+    "summary": "Summary",
+    "context": "Context",
+    "why": "Why",
+    "missing": "What's missing",
+    "nextAction": "What I would do now"
+  },
+  "bestContact": {
+    "title": "Best entry point",
+    "rank": "No. {{position}} of {{total}} · recommended access path",
+    "why": "Why them: {{reason}}",
+    "emptyTitle": "No contact identified",
+    "emptyDescription": "Decision-makers and sponsors at {{companyName}} will appear here after enrichment.",
+    "cta": "View the recommended access path"
+  },
+  "mainSignal": {
+    "title": "Main signal",
+    "count_one": "{{count}} signal",
+    "count_other": "{{count}} signals",
+    "emptyTitle": "No recent signal found in the sources consulted",
+    "emptyDescription": "Detected news, projects and buying signals will appear here.",
+    "cta": "View monitoring"
+  },
+  "nextAction": {
+    "title": "Next action",
+    "subtitle": "Top recommendation",
+    "emptyTitle": "No suggested action",
+    "emptyDescription": "The recommended next step will appear here as soon as an actionable analysis is available.",
+    "cta": "View action plan"
+  },
+  "stats": {
+    "offers": "Detected offers",
+    "contacts": "Qualified contacts",
+    "entities": "Relevant entities",
+    "signals": "Signals detected",
+    "vsLast30Days": "vs last 30 days",
+    "notComputedYet": "Not computed yet"
+  },
+  "similar": {
+    "sameSectorTitle": "Accounts in the same sector",
+    "sharedWith": "In common: {{criteria}}",
+    "shared": {
+      "geo": "same area",
+      "size": "comparable headcount",
+      "external_use": "use of external providers observed on both sides",
+      "role_family": "shared roles recruited"
+    },
+    "whyTechTooltip": "Technologies observed on both sides in the observed history, leaving out the ones nearly every company shares.",
+    "dismiss": "Hide this suggestion",
+    "dismissed": "Suggestion hidden",
+    "dismissError": "Couldn't hide this suggestion right now",
+    "undo": "Undo",
+    "searching": "Searching by NAF code…",
+    "empty": "No similar company found for this sector.",
+    "toAnalyzeTitle": "Similar accounts to analyze",
+    "help": "Here is what we recommend",
+    "potentialScore": "Potential score",
+    "launchAnalysis": "Run an analysis",
+    "discover": "Discover new high-potential accounts"
+  },
+  "runs": {
+    "dateAt": "{{date}} at {{time}}",
+    "title": "Analysis history",
+    "loading": "Loading history…",
+    "empty": "No analysis recorded for this account.",
+    "emptyLegacy": "This dossier was analysed before detailed run tracking existed — no history row exists for that period."
+  },
+  "whyNow": {
+    "title": "Why this account now?",
+    "painsTitle": "Business challenges",
+    "painsEmpty": "No business challenge identified",
+    "challengesTitle": "Challenges to address",
+    "challengesEmpty": "Not evaluated for this account: no source (analysis, imported file) carries any yet.",
+    "signalsTitle": "News & recent signals",
+    "signalsEmpty": "No recent signal found in the sources consulted",
+    "showMore": "Show more ({{count}})",
+    "dialogDescription": "Details of the selected signal.",
+    "offersFolded": "{{count}} offers ({{places}})",
+    "contextPrefix": "Context ·",
+    "signalsIncomplete": "Incomplete search: {{sources}} could not be consulted. This does not prove there is no signal.",
+    "sourceFamily": {
+      "press": "press",
+      "jobs": "job postings",
+      "legal": "legal notices",
+      "tenders": "public tenders",
+      "other": "a source"
+    }
+  },
+  "detail": {
+    "issue": "Challenge",
+    "description": "Description",
+    "businessImpact": "Business impact",
+    "esnOffer": "ESN offer",
+    "urgency": "Urgency",
+    "severity": "Severity",
+    "timeframe": "Timeframe",
+    "signal": "Signal",
+    "type": "Type",
+    "date": "Date",
+    "whyContext": "Why this is context"
+  },
+  "level": {
+    "critical": "Critical",
+    "immediate": "Immediate",
+    "high": "High",
+    "medium": "Medium",
+    "low": "Low",
+    "strategic": "Strategic"
+  },
+  "implications": {
+    "title": "Expertise involved",
+    "subtitle": "Actionable needs",
+    "sheetDescription": "Sales read of the needs identified on this account.",
+    "empty": "Not evaluated for this account: no source carries one for now."
+  },
+  "positioning": {
+    "title": "Positioning",
+    "competitorCount_one": "{{count}} competitor analysed for our angle — not the list of IT firms present",
+    "competitorCount_other": "{{count}} competitors analysed for our angle — not the list of IT firms present",
+    "recommendedAngle": "Recommended angle",
+    "sheetTitle": "Competitive positioning",
+    "sheetDescription": "Recommended arguments against players already present on the account.",
+    "recommendedPositioning": "Recommended positioning",
+    "talkingPoint": "Talking point",
+    "differentiator": "Differentiation"
+  },
+  "offers": {
+    "sectionTitle": "Commercial offers",
+    "title": "Recommended offers",
+    "proposed": "Proposed offer",
+    "fallbackTitle": "Recommended offer",
+    "sheetDescription": "Offer details and proposed engagement terms.",
+    "pitch": "Pitch",
+    "painAddressed": "Problem addressed",
+    "targetContact": "Target contact",
+    "differentiator": "Differentiation",
+    "duration": "Duration",
+    "teamSize": "Team",
+    "dailyRate": "Estimated daily rate",
+    "estimatesLabel": "{{brand}} estimates"
+  },
+  "generalInfo": {
+    "title": "General information",
+    "sector": "Sector",
+    "employees": "Headcount",
+    "revenue": "Revenue",
+    "headquarters": "Headquarters",
+    "website": "Website"
+  },
+  "provenance": {
+    "title": "Sources & confidence",
+    "subtitle": "Where each fact in this dossier comes from",
+    "lastAnalysis": "Last analysed on {{date}}",
+    "neverAnalyzed": "Dossier not analysed yet",
+    "confidenceLabel": "Dossier confidence",
+    "confidenceHint": "Quality of this analysis' collection and sources",
+    "sourcesLabel": "Dossier sources",
+    "viewAll": "See details",
+    "noSources": "No source traced for this dossier.",
+    "unknownSource": "Unknown source",
+    "unknownBadge": "unidentified",
+    "sheetTitle": "Sources & confidence",
+    "sheetDescription": "The sources that fed this dossier ({{count}}) — each with what it contributed and its freshness.",
+    "providers": {
+      "apollo": "Professional network",
+      "pappers": "Official registry",
+      "sec": "Official registry (United States)",
+      "publicMarkets": "Public tenders",
+      "employment": "Job postings",
+      "github": "Public code repositories"
+    },
+    "feeds": {
+      "firmographics": "Firmographics",
+      "financials": "Financials",
+      "leadership": "Officers & beneficial owners",
+      "tenders": "Tenders & contracts",
+      "jobs": "Job postings",
+      "github": "GitHub signal",
+      "signals": "Signals"
+    },
+    "tier": {
+      "non_evaluable": "Not evaluable",
+      "low": "Low confidence",
+      "medium": "Medium confidence",
+      "high": "High confidence"
+    },
+    "conflicts": {
+      "title_one": "One contradiction to settle",
+      "title_other": "{{count}} contradictions to settle",
+      "claim": "{{value}} — {{source}}, {{date}}",
+      "recheck": "To re-check on {{date}}",
+      "settled_one": "{{count}} contradiction already settled (manual correction, most reliable, freshest or still-active source).",
+      "settled_other": "{{count}} contradictions already settled (manual correction, most reliable, freshest or still-active source).",
+      "sourceTypes": {
+        "human": "manual entry",
+        "connector": "connected tool",
+        "pipeline": "dossier analysis",
+        "model": "hypothesis to validate"
+      },
+      "fields": {
+        "headcount": "Headcount",
+        "sector": "Sector",
+        "revenue": "Revenue",
+        "website": "Website",
+        "headquarters": "Headquarters"
+      }
+    }
+  },
+  "firmographics": {
+    "title": "Firmographics",
+    "source": "Source: professional network",
+    "employeesMorePrecise": "more precise than the record’s range",
+    "headcountGrowth": "Headcount change",
+    "headcountGrowthValue": "{{percent}} over {{months}} months",
+    "employees": "Observed headcount",
+    "industry": "Industry",
+    "founded": "Founded",
+    "revenue": "Annual revenue",
+    "funding": "Total funding",
+    "fundingStage": "Latest round",
+    "technologies": "Detected technologies",
+    "publiclyTraded": "Publicly traded",
+    "parent": "Parent company",
+    "retailLocations": "Retail locations",
+    "departments": "Headcount by department",
+    "keywords": "Keywords",
+    "linkedinAria": "View the company's LinkedIn page",
+    "twitterAria": "View the company's X / Twitter account",
+    "untranslated": "Description taken verbatim from the source, shown untranslated",
+    "registrySays": "Registry: {{value}}"
+  },
+  "publicData": {
+    "siteLegalNotice": {
+      "title": "Site legal notice",
+      "help": "What the account's website legal-notice page publishes, as published. A field the page does not give does not appear.",
+      "viewPage": "View the page",
+      "fields": {
+        "raison_sociale": "Company name",
+        "forme_juridique": "Legal form",
+        "capital": "Share capital",
+        "immatriculation": "Registration",
+        "siege": "Registered office",
+        "dirigeant": "Publication director",
+        "hebergeur": "Host"
+      }
+    },
+    "financials": {
+      "title": "Financials",
+      "source": "Source: official registry",
+      "year": "Year",
+      "revenue": "Revenue",
+      "netResult": "Net result",
+      "headcount": "Headcount",
+      "capital": "Share capital",
+      "legalForm": "Legal form",
+      "created": "Incorporated",
+      "pappersLink": "View the registry record",
+      "help": "Accounts filed with the registry: revenue, profit and headcount over three years. They say whether the account can afford to buy, and which way it's heading.",
+      "entityAccounts": "Statutory accounts of {{name}}",
+      "entityAccountsUnnamed": "Statutory accounts of the registered entity",
+      "groupRevenue": "Consolidated revenue (group)",
+      "holdingNote": "Holding company: the net result includes dividends from subsidiaries."
+    },
+    "tech": {
+      "observedTitle": "Observed technology environments",
+      "observedHint": "Technologies seen in the paths of contractors who went through this company. They do not prove current use, and their absence proves nothing.",
+      "observedMore": "+{{count}}",
+      "title": "Tech stack",
+      "maturity": "maturity: {{value}}",
+      "subtitle": "Technologies recorded by the analysis, on the site and the professional network",
+      "help": "Technologies detected on the account's website and across our sources. These are the words to reuse in a message — and the skills to pull from your talent pool."
+    },
+    "leadership": {
+      "title": "Officers & beneficial owners",
+      "source": "Source: official registry",
+      "officers": "Officers",
+      "owners": "Beneficial owners",
+      "ownerShare": "{{value}} of capital",
+      "help": "Directors as published by the legal registry, operational and IT roles first. That's the legal truth, not the operational org chart — IT decision-makers live in the Contacts tab.",
+      "more_one": "and {{count}} other officer in the registry",
+      "more_other": "and {{count}} other officers in the registry"
+    },
+    "tenders": {
+      "title": "Tenders & awarded contracts",
+      "source": "Public tenders",
+      "open": "Open tenders",
+      "awarded": "Awarded public contracts",
+      "deadline": "Deadline: {{value}}",
+      "published": "Published on {{value}}",
+      "winner": "Winner: {{value}}",
+      "viewSource": "View notice",
+      "help": "The account's public contracts: the ones it opens, and the ones it has already awarded. An awarded contract names the incumbent — so the competitor to displace, and the date it becomes possible again.",
+      "won": "Won by this account",
+      "wonFrom": "Won — buyer: {{value}}",
+      "notified": "Awarded on {{value}}",
+      "buyer": "Buyer: {{value}}"
+    },
+    "historicalNeeds": {
+      "title": "Older needs",
+      "help": "Signals older than 180 days that the analysis read in the account's history, with their date. An older need that was never met is still a way in: it tells you what the account already tried to solve."
+    },
+    "jobs": {
+      "title": "IT job postings",
+      "source": "Published job postings",
+      "subtitle": "Recent hiring signals",
+      "viewOffer": "View posting",
+      "offTrade": "Outside your trade ({{count}})",
+      "tension": "Hard-to-fill role",
+      "tensionHelp": "The posting itself reports a shortage of candidates.",
+      "help": "IT job postings published by the account. Hiring at volume means strain, and strain means a need — the most reliable buying signal readable in public.",
+      "folded": "{{count}} offers ({{places}})",
+      "foldedNoPlace": "{{count}} offers",
+      "recentTitle": "Recent needs ({{count}})",
+      "historyTitle": "Past needs ({{count}})",
+      "showMore": "Show more ({{count}})",
+      "team": "Team: {{value}}",
+      "role": {
+        "data_ia": "Data / AI",
+        "infrastructure_cloud": "Infrastructure / Cloud",
+        "cybersecurite": "Cybersecurity",
+        "produit_design": "Product / Design",
+        "qualite_test": "Quality / Testing",
+        "developpement": "Software development",
+        "direction_management": "Leadership / Management",
+        "commercial_marketing": "Sales / Marketing"
+      },
+      "tensionReason": {
+        "source_flag": "The posting itself reports a shortage of candidates.",
+        "urgent_text": "The posting text speaks of urgency.",
+        "republished_text": "The posting text says it was reposted.",
+        "online_long": "Posting online for {{days}} days."
+      }
+    },
+    "legal": {
+      "title": "Legal notices",
+      "source": "Official source",
+      "risk": "Risk",
+      "viewNotice": "View the notice",
+      "noLink": "no link",
+      "help": "Official legal notices published for this SIREN: accounts filings, amendments, sales, collective proceedings. A collective proceeding (safeguard, receivership, liquidation) is a contract risk, never a sales opportunity.",
+      "viewRegistry": "View the official page",
+      "closedGroup": "{{count}} establishments closed between {{from}} and {{to}}",
+      "closedGroupUndated": "{{count}} establishments closed (dates not given)",
+      "showAll": "Show more ({{count}})",
+      "showLess": "Show less",
+      "checkedAt": "Registry re-read on {{date}}",
+      "notWatched": "Not yet re-read continuously: notices collected at analysis time.",
+      "truncated": "Incomplete list: the source caps how much can be read.",
+      "sireneSource": "Official company registry",
+      "rneSource": "National business register"
+    },
+    "github": {
+      "title": "GitHub engineering signal",
+      "repos": "{{count}} public repos",
+      "activeRepos": "{{count}} recently active",
+      "viewOrg": "View organisation",
+      "help": "The account's public GitHub organisation: active languages and repositories. It shows what the teams are really building, often before it's said anywhere else."
+    },
+    "usSecFinancials": {
+      "title": "SEC financials (US)",
+      "source": "Official registry (United States)",
+      "fiscalYear": "Fiscal year end",
+      "revenue": "Revenue",
+      "netIncome": "Net income",
+      "filed": "Filed (10-K)",
+      "sharesOutstanding": "Shares outstanding",
+      "sharesValueAt": "{{value}} (as of {{date}})",
+      "recentFilings": "Recent filings",
+      "viewFiling": "View filing",
+      "viewOnEdgar": "View 10-K filings on EDGAR",
+      "help": "Mandatory filings of a US-listed company. Useful when the parent is American: that's where budgets are decided.",
+      "filer": "Accounts filed by {{name}} (SEC)"
+    },
+    "contractModel": {
+      "title": "Observed contract model",
+      "source": "Job offers & public procurement",
+      "staleCollection": "Contract model: collection predates this capability.",
+      "staleCollectionHint": "This account was analysed before this capability — use \"Refresh\" (\"···\" menu, Signals axis, its cost shown there) to replay it.",
+      "notObserved": "Contract model: not observed in its job offers or public procurement notices.",
+      "jobOffers_one": "{{count}} offer published: {{breakdown}} — {{source}}, {{period}}",
+      "jobOffers_other": "{{count}} offers published: {{breakdown}} — {{source}}, {{period}}",
+      "kind": {
+        "permanent_one": "{{count}} permanent",
+        "permanent_other": "{{count}} permanent",
+        "fixed_term_one": "{{count}} fixed-term",
+        "fixed_term_other": "{{count}} fixed-term",
+        "interim_one": "{{count}} temp (agency)",
+        "interim_other": "{{count}} temp (agency)",
+        "freelance_one": "{{count}} self-employed",
+        "freelance_other": "{{count}} self-employed",
+        "other_one": "{{count}} other type",
+        "other_other": "{{count}} other types"
+      },
+      "publicContracts_one": "{{count}} procurement notice placed: {{breakdown}} — {{source}}, {{period}}",
+      "publicContracts_other": "{{count}} procurement notices placed: {{breakdown}} — {{source}}, {{period}}",
+      "regie_one": "{{count}} says time and materials or technical assistance",
+      "regie_other": "{{count}} say time and materials or technical assistance",
+      "fixedPrice_one": "{{count}} says fixed price",
+      "fixedPrice_other": "{{count}} say fixed price",
+      "modeUnstated": "none states the model",
+      "disclaimer": "What was read, not a preference: a missing offer or notice does not mean \"doesn't use it\".",
+      "help": "How this company contracts, observed on its own job offers (declared contract type) and public procurement notices (when the notice states the model) — never deduced."
+    },
+    "whatIsThis": "What does “{{title}}” show?"
+  },
+  "business": {
+    "title": "What this company actually does"
+  },
+  "competitors": {
+    "title": "IT services firms already in place",
+    "subtitle": "Who already works here, and what they hold on to.",
+    "strengthsLabel": "Strengths",
+    "weaknessesLabel": "Weaknesses",
+    "noContractType": "Scope not specified",
+    "strengths": "Strengths: {{value}}",
+    "weaknesses": "Weaknesses: {{value}}",
+    "corroboratedByMarketMemory_one": "This name is also seen in the observed history — {{count}} career path.",
+    "corroboratedByMarketMemory_other": "This name is also seen in the observed history — {{count}} career paths.",
+    "corroboratedByMarketMemoryRange": "This name is also seen in the observed history — {{range}} career paths."
+  },
+  "programs": {
+    "title": "Projects and transformations",
+    "subtitle": "The initiatives this account has announced publicly.",
+    "entity": "Run by {{value}}",
+    "noEntity": "Owning entity not specified",
+    "budget": "Budget: {{value}}",
+    "objective": "Objective: {{value}}",
+    "scope": "Scope: {{value}}",
+    "horizon": "Horizon: {{value}}",
+    "unknownReason": "No program was found in a public source during the latest analysis."
+  },
+  "vocabulary": {
+    "title": "Group vocabulary",
+    "description": "The account's reading grid: each term with its meaning, commercial impact, source and truth status.",
+    "termCount_one": "{{count}} term",
+    "termCount_other": "{{count}} terms",
+    "headers": {
+      "term": "Term",
+      "meaning": "Meaning",
+      "commercialWhy": "Commercial impact",
+      "source": "Source",
+      "truthStatus": "Status"
+    },
+    "aliases": "Aliases: {{value}}",
+    "kind": {
+      "entity": "Entity",
+      "trap_noise": "Trap / noise",
+      "internal_competitor": "Incumbent competitor",
+      "program": "Program",
+      "tool_erp": "Tool / tech",
+      "acronym": "Acronym",
+      "person": "Person",
+      "angle": "Angle"
+    },
+    "truth": {
+      "fait": "Fact",
+      "registre": "Registry",
+      "signal": "Signal",
+      "hypothese": "Hypothesis",
+      "recommandation": "Recommendation",
+      "risque": "Risk",
+      "inconnu": "To verify"
+    }
+  },
+  "executiveSummary": {
+    "title": "{{brand}} executive summary",
+    "immediateAction": "Immediate action",
+    "keyContact": "Priority contact:"
+  },
+  "openingStrategy": {
+    "title": "Where to open this account",
+    "entryPointsTitle": "Suggested entry points",
+    "targetProfile": "Target contact: {{value}}",
+    "noTargetProfile": "Contact not specified by the analysis",
+    "noJustification": "Reason not written by the analysis",
+    "noLabel": "Entry point without a title",
+    "hypothesis": "a hypothesis to confirm on the first exchange"
+  },
+  "attackAngles": {
+    "title": "Attack angles",
+    "subtitle": "Entry points to test.",
+    "emptyTitle": "No angle identified",
+    "emptyDescription": "Angles will appear as soon as the analysis provides enough signals.",
+    "fallbackTitle": "Angle to qualify",
+    "proof": {
+      "absent": "No proof to quote on this play",
+      "non_verifiable": "Proof removed — none of your declared references backs it",
+      "non_verifie": "Proof not checked — analysis predates the check"
+    },
+    "generate": "Generate another angle",
+    "generating": "Generating…",
+    "recommended": "Priority",
+    "dialogDescription": "Details of the selected attack angle.",
+    "reading": "Read",
+    "noDescription": "No detailed description available.",
+    "entryPoint": "Entry point",
+    "offer": "Related offer",
+    "potential": "Potential",
+    "discardedIntro": "No angle kept for your profile. Here is what the analysis set aside, and why:",
+    "discardedReactivate": "To reactivate it: {{how}}",
+    "noDetail": "The analysis filled in no detail for this angle — entry point, offer and potential are still to qualify."
+  },
+  "replanNudge": {
+    "title": "An event moved this account forward",
+    "subtitle": "A reply, a meeting or a bounce was recorded since the last planning. The plan is worth refreshing.",
+    "action": "Refresh the plan"
+  },
+  "replan": {
+    "trigger": "Change angle / re-plan",
+    "title": "Re-plan the action plan",
+    "subtitle": "Rebuilds the action plan around an angle YOU choose — same research, same contacts, a different way in. Useful when the suggested angle doesn't match what you know about the account.",
+    "angleLabel": "Attack angle",
+    "angleAuto": "Let {{brand}} decide",
+    "entryModeLabel": "Entry vector (optional)",
+    "entryMode": {
+      "top_down": "Top-down",
+      "bottom_up": "Bottom-up",
+      "middle_out": "Middle-out"
+    },
+    "focusEntityLabel": "Focus entity (optional)",
+    "focusEntityPlaceholder": "A perimeter / business unit to anchor on",
+    "constraintsLabel": "Form constraints (optional)",
+    "constraintsPlaceholder": "Length, words to avoid… — frames the message, invents nothing",
+    "objectiveLabel": "Message objective (optional)",
+    "hint": "The computation runs for one to two minutes and is not charged. Stay on this screen: the result appears here.",
+    "submit": "Re-plan",
+    "success": "Action plan updated.",
+    "error": "Re-planning failed. Please try again.",
+    "demoFrozen": "Demo workspace: dossiers are frozen, re-planning is not run. The plan shown is the one prepared for the demo.",
+    "preconditionError": "Finish the analysis first — re-planning needs completed research and at least one contact.",
+    "timeoutTitle": "Re-planning didn't answer in time",
+    "timeoutDescription": "The computation may still be running server-side — the account was just refreshed. Check whether the plan changed before running it again: running it again pays for a computation that may already be done."
+  },
+  "evaluation": {
+    "quickWinsTitle": "Immediate actions",
+    "quickWinsDescription": "What you can act on today.",
+    "quickWinsEmpty": "No immediate action identified.",
+    "risksTitle": "Risks",
+    "risksDescription": "Points to check before prospecting.",
+    "risksEmpty": "No risk identified.",
+    "proof": {
+      "prefix": "Evidence: {{proof}}",
+      "none": "Evidence to be confirmed",
+      "recomputedOn": "recomputed on {{date}}",
+      "types": {
+        "signal": "signal",
+        "source": "source",
+        "contact": "contact",
+        "profile": "seller profile",
+        "business_rule": "business rule"
+      }
+    },
+    "provisionalTitle": "Provisional score",
+    "provisionalCapped": "The score is capped: the dossier does not carry enough material to decide yet.",
+    "provisionalWeak": "Data confidence is still low — the score can move with enrichment.",
+    "provisionalLevers": "What would move the score",
+    "provisionalLever": "{{axis}} — {{weight}}/{{max}}"
+  },
+  "signalList": {
+    "viewDetail": "View {{title}} details",
+    "remaining_one": "+{{count}} more item in the details",
+    "remaining_other": "+{{count}} more items in the details",
+    "sheetEmpty": "No items available for {{title}}.",
+    "sheetCount_one": "{{count}} item to review.",
+    "sheetCount_other": "{{count}} items to review."
+  },
+  "openAccount": {
+    "title": "How to open this account",
+    "description": "Recommended sales approach to initiate the relationship.",
+    "entryStrategy": "Entry strategy",
+    "fallbackEntryPoint": "Entry point to qualify",
+    "targetProfile": "Target profile: {{profile}}"
+  },
+  "recommendationCard": {
+    "title": "Action recommendation",
+    "description": "Next decision to make on this account."
+  },
+  "emptyEvaluation": {
+    "title": "Score to complete",
+    "description": "No actionable recommendation is available for this account.",
+    "runningTitle": "The analysis is running",
+    "runningDescription": "The score and recommendation will appear here as soon as the analysis has finished.",
+    "incompleteTitle": "The last analysis did not finish",
+    "incompleteDescription": "The score could not be computed — this is not an account without potential. Run the analysis again; the banner at the top of the folder says what blocked it.",
+    "notAnalyzedTitle": "This account has not been analysed yet",
+    "notAnalyzedDescription": "Run an analysis to get a score, a recommendation and its entry points."
+  },
+  "plan": {
+    "boardTitle": "Plan actions",
+    "boardSubtitle_zero": "{{count}} actions to track to engage this account.",
+    "boardSubtitle_one": "{{count}} action to track to engage this account.",
+    "boardSubtitle_other": "{{count}} actions to track to engage this account.",
+    "progress": "Progress",
+    "progressManual": "of which {{count}} added by hand · {{done}} done",
+    "phase": "Phase {{number}}",
+    "actionCount_one": "{{count}} action",
+    "actionCount_other": "{{count}} actions",
+    "emptyTitle": "No action in the plan",
+    "emptyDescription": "Create a first concrete action to make the plan actionable.",
+    "absentRunningTitle": "The analysis is running",
+    "absentRunningDescription": "The action plan will appear here as soon as the analysis finishes.",
+    "absentIncompleteTitle": "The last analysis did not finish",
+    "absentIncompleteDescription": "The action plan could not be produced — writing it is not on you. Run the analysis again; the banner at the top of the account says what blocked it.",
+    "absentNotAnalyzedTitle": "This account has not been analysed yet",
+    "absentNotAnalyzedDescription": "Run an analysis to get an action plan, its angles and its deadlines.",
+    "addedTitle": "Added actions",
+    "addedSubtitle": "Tasks created while preparing the plan.",
+    "showMoreActions": "Show all {{count}} actions",
+    "showFewerActions": "Show fewer ({{count}})",
+    "noContactLinked": "No contact linked to this action",
+    "crmNotConnected": "CRM not connected",
+    "trackingWhenConnected": "Tracking available once connected",
+    "notTracked": "Action not tracked",
+    "readOnlyColleague": "Read-only: this action belongs to a colleague.",
+    "blockedByDependency": "Blocked: waiting on \"{{label}}\"",
+    "taskCheckedNoOutreach": "This task was marked as done. {{brand}} did not contact anyone.",
+    "rank2Path": {
+      "title": "A path toward rank 1",
+      "description": "{{partner}} holds rank 2 on this account: a possible path, not a chance of success.",
+      "steps": {
+        "proof_pack": "Gather proof of what the mission delivered",
+        "sponsor_path": "Identify who, on the client side, can carry the introduction",
+        "direct_access_plan": "Prepare the direct approach to rank 1"
+      },
+      "directApproachForbidden": "This partner carries a declared non-solicitation clause: no direct approach of the end client is proposed here.",
+      "marginDestroyed": "The agreed share with this partner ({{share}}%) is below its declared margin floor ({{floor}}%): this tier-2 destroys margin.",
+      "carriedBy": "Carried by {{name}} (declared owner of the client relationship)"
+    },
+    "rank2Qualification": {
+      "title": "Qualify rank 2 before any CV or positioning",
+      "description": "{{partner}} holds rank 2 on this account, but the path to rank 1 waits for these five criteria to be qualified.",
+      "criteria": {
+        "scope_accessible": "Account or scope accessible",
+        "brief_precise": "Precise brief",
+        "contact_accountable": "Accountable contact identified",
+        "economics_clear": "Clear economics",
+        "next_steps_ready": "Next steps ready"
+      },
+      "status": {
+        "met": "Yes",
+        "missing": "No",
+        "unmeasured": "Not measured"
+      },
+      "decision": {
+        "no_go": "At least one measured criterion is missing: no CV or positioning for now.",
+        "incomplete": "Qualification incomplete: some criteria are still not measured."
+      }
+    },
+    "facts": {
+      "handoffNote": "Handoff note: {{note}}",
+      "label": "What this action says",
+      "reason": "Why: {{reason}}",
+      "status": {
+        "todo": "To do",
+        "done": "Executed",
+        "snoozed": "Snoozed",
+        "prepared": "Prepared",
+        "obsolete": "Obsolete"
+      },
+      "completionMode": {
+        "manual": "Checked manually",
+        "proof": "Completed by proof",
+        "event": "Completed by event",
+        "proposed": "Proposed completion"
+      },
+      "verifyFirst": {
+        "target": "Check first: the target object",
+        "contact": "Check first: the contact"
+      },
+      "noGo": {
+        "not_clickable": "NO-GO: not clickable",
+        "not_assigned": "NO-GO: not assigned",
+        "no_date_or_outcome": "NO-GO: no date or expected outcome"
+      },
+      "target": "{{kind}}: {{label}}",
+      "targetUnset": "Target object: not set",
+      "targetKind": {
+        "contact": "Contact",
+        "meeting": "Meeting",
+        "crm_task": "CRM task",
+        "sequence": "Sequence",
+        "project": "Project",
+        "need": "Need",
+        "partner": "Partner",
+        "verification": "Check"
+      },
+      "ownerPage": "Page: {{page}}",
+      "ownerPages": {
+        "contacts": "Contacts",
+        "agenda": "Calendar",
+        "actions": "Actions",
+        "sequences": "Sequences",
+        "projets": "Opportunities",
+        "besoins": "Needs",
+        "partenaires": "Partners",
+        "dossier": "Account file"
+      },
+      "contactLinked": "Linked contact",
+      "contactUnset": "No linked contact",
+      "dependsOn": "After: {{label}}",
+      "dependsOnRemoved": "After an action removed from the plan",
+      "blockedByDependency": "Blocked: waiting on \"{{label}}\"",
+      "source": {
+        "human": "Set by a workspace member",
+        "connector": "From a connected tool",
+        "pipeline": "Computed by the analysis",
+        "model": "Hypothesis to validate"
+      },
+      "sourceAt": "{{source}} · {{date}}",
+      "sourceNotKept": "Source not kept",
+      "confidence": {
+        "high": "High confidence",
+        "medium": "Medium confidence",
+        "low": "Low confidence"
+      },
+      "confidenceNotMeasured": "Confidence not provided",
+      "result": "Result: {{result}}",
+      "resultNotSet": "No result logged",
+      "resultEdit": "Log a result",
+      "more": "+{{count}} more",
+      "moreLabel": "Show {{count}} more facts about this action",
+      "lessLabel": "Hide the facts about this action",
+      "less": "Less",
+      "resultInputLabel": "Action result",
+      "resultPlaceholder": "What happened…",
+      "resultSave": "Save",
+      "origin": {
+        "line": "Origin: {{parts}}",
+        "recommendation": {
+          "renewal_decision": "renewal decision",
+          "renewal_prepare_questions": "questions to prepare for the renewal"
+        },
+        "methodRule": {
+          "couverture_multi_roles_niveaux_entites": "Method rule: multi-role coverage",
+          "plan_de_compte_hebdomadaire": "Method rule: weekly account plan",
+          "non_resultat_est_un_resultat": "Method rule: a non-result is a result"
+        },
+        "external": "Calendar event created"
+      },
+      "stopCondition": "Stops when: {{condition}}"
+    }
+  },
+  "planForm": {
+    "addButton": "Add an action",
+    "title": "New action",
+    "subtitle": "Only add an action that is directly verifiable.",
+    "actionLabel": "Action",
+    "ownerLabel": "Owner",
+    "actionPlaceholder": "E.g. Follow up with Marc Lefebvre after the audit",
+    "objectiveLabel": "Objective",
+    "objectivePlaceholder": "Objective (required) — e.g. Get a meeting with the CIO",
+    "ownerPlaceholder": "Optional",
+    "expectedOutcomeLabel": "Expected result",
+    "expectedOutcomePlaceholder": "Expected result (required) — e.g. A meeting booked",
+    "objectiveRequired": "The objective is required: say what this action is for.",
+    "expectedOutcomeRequired": "The expected result is required: say what \"done\" looks like."
+  },
+  "planSummary": {
+    "title": "Attack plan",
+    "subtitle": "Short read before execution.",
+    "readDetail": "Read details",
+    "strategy": "Strategy",
+    "strategyTypes": {
+      "land_and_expand": "Land, then expand"
+    },
+    "firstAction": "First action",
+    "firstActionInNextMoves": "Already at the top of \"Next moves\"",
+    "seeInNextMoves": "See in \"Next moves\"",
+    "why": "Why?",
+    "fallbackValue": "To qualify",
+    "dialogDescription": "Full read before execution.",
+    "emptyTitle": "Plan to refine",
+    "emptyDescription": "Add an action or rerun the analysis to get an actionable strategy.",
+    "cold": {
+      "establishedTitle": "What is established",
+      "missingTitle": "What is missing",
+      "nextTitle": "Next action",
+      "launch": "Run the analysis",
+      "relaunch": "Rerun the analysis",
+      "fact": {
+        "sector": "Sector: {{value}}",
+        "employees": "Headcount: {{value}}",
+        "headquarters": "Headquarters: {{value}}"
+      },
+      "status": {
+        "not-analyzed": "No analysis has been run on this account.",
+        "analysis-incomplete": "The last analysis did not finish.",
+        "analysis-running": "An analysis is running on this account.",
+        "no-actions": "The analysis finished, but the plan holds no action."
+      },
+      "missing": {
+        "not-analyzed": "The strategy, the approach angles and the first action: only the analysis produces them.",
+        "analysis-incomplete": "The strategy, the approach angles and the first action could not be produced.",
+        "analysis-running": "The strategy, the angles and the first action will arrive when the analysis ends.",
+        "no-actions": "A first concrete action."
+      },
+      "next": {
+        "analysis-running": "Wait for the analysis to finish: the plan will show here.",
+        "no-actions": "Add a first action to the plan board."
+      }
+    }
+  },
+  "reverseProspects": {
+    "title": "Reverse prospecting",
+    "subtitle": "These people used to work at this account: they know its governance, business units and pitfalls.",
+    "nowAt": "Now at {{company}}",
+    "openProfile": "Open {{name}}'s LinkedIn profile"
+  },
+  "trajectoryDestinations": {
+    "title": "What {{brand}} observes in the trajectories",
+    "subtitle": "Destinations where several former employees of this account have gone — never their identity.",
+    "persons_other": "{{count}} people"
+  },
+  "salesContext": {
+    "title": "Why this strategy",
+    "subtitle": "The profile {{brand}} used for this account. Every recommendation opposite follows from it.",
+    "esnStage": "Your company",
+    "accountArchetype": "Account type",
+    "relationship": "Your relationship with this account",
+    "declared": "declared by you",
+    "inferred": "inferred · confidence {{confidence}}/100",
+    "evidencePrefix": "Based on:",
+    "stages": {
+      "freelance": "Freelance / broker",
+      "petite": "Small firm",
+      "structuration": "Scaling firm",
+      "etablie": "Established firm",
+      "grande": "Large firm"
+    },
+    "structures": {
+      "founder_solo": "Founder sells alone",
+      "founder_alternant": "Founder + apprentice",
+      "duo_trio": "Team of 2 to 4",
+      "equipe": "Team of 5+",
+      "account_team": "Account team"
+    },
+    "revenueModels": {
+      "recurrent": "Recurring revenue",
+      "mixte": "Mixed revenue",
+      "ponctuel": "Project-based revenue"
+    },
+    "rankPositions": {
+      "rang1": "Direct prime contractor (tier 1)",
+      "rang2": "Subcontractor (tier 2)",
+      "mixte": "Direct and subcontracting (mixed)"
+    },
+    "archetypes": {
+      "startup": "Startup / scale-up",
+      "pme_eti": "SME / mid-market",
+      "grand_groupe": "Large private group",
+      "banque_assurance": "Banking / insurance",
+      "public": "Public sector",
+      "luxe_retail_media": "Luxury / retail / media",
+      "industrie": "Industry",
+      "international": "International account",
+      "inconnu": "Undetermined"
+    },
+    "states": {
+      "froid": "Cold account",
+      "connu": "Known account",
+      "linkedin": "LinkedIn connection accepted",
+      "dormant": "Dormant relationship",
+      "refere": "Referred account",
+      "ancien_client": "Former client",
+      "rang2": "You are a subcontractor",
+      "client_actif": "Active client",
+      "besoin_ouvert": "Open need",
+      "partenaire_actif": "Active partner"
+    }
+  },
+  "nextMoves": {
+    "title": "Next moves",
+    "subtitle": "The recommended opening movement and the 3 to 5 priority actions.",
+    "movementLabel": "Opening movement",
+    "actionsTitle": "Priority actions",
+    "echoedInBoard_one": "{{count}} of {{total}} already tracked in the board below.",
+    "echoedInBoard_other": "{{count}} of {{total}} already tracked in the board below.",
+    "seeInBoard": "See the board",
+    "movements": {
+      "bottom_up": "Bottom-up (start low)",
+      "middle_out": "Middle-out (via a manager)",
+      "top_down": "Top-down (via the sponsor)",
+      "sandwich": "Sandwich (field + budget)",
+      "rang2": "Tier 2 (via delivery)",
+      "prospection_inversee": "Reverse prospecting (from the need)",
+      "public": "Public sector (contractual route)",
+      "reactivation": "Reactivation (dormant relationship)",
+      "filiale_site": "Subsidiary or site (not headquarters)",
+      "referencement": "Vendor listing (understand the circuit)"
+    },
+    "chantiers": {
+      "compte": "Account",
+      "contacts": "Contacts",
+      "signaux": "Signals",
+      "messages": "Messages",
+      "delivery": "Delivery",
+      "expansion": "Expansion"
+    },
+    "horizons": {
+      "aujourd'hui": "Today",
+      "7j": "Within 7 days",
+      "30j": "Within 30 days",
+      "60j": "Within 60 days",
+      "90j": "Within 90 days"
+    },
+    "ifSilent": "IF NO ANSWER",
+    "ifSilentContact": "Other door: {{contact}}",
+    "ifSilentAngle": "Other angle: {{angle}}",
+    "ifSilentPretext": "Re-engagement hook: {{pretext}}",
+    "routeLabel": "Recommended route",
+    "followedSignalLabel": "Followed signal",
+    "routes": {
+      "relation_existante": "Through an active relationship",
+      "reactivation": "Reactivating a former client",
+      "direct_accessible": "Directly, no detour",
+      "filiale_site": "Through a subsidiary or a site",
+      "bottom_up": "Bottom-up (enter low)",
+      "middle_out": "Middle-out (through a manager)",
+      "sponsor": "Through an internal sponsor",
+      "rang_2": "Tier 2 (through delivery)",
+      "partenaire": "Through a partner already in place",
+      "prospection_inversee": "Reverse prospecting (from the need)",
+      "appel_offres": "Tender (contractual route)",
+      "expansion_client": "Expanding a client account",
+      "recommandation": "Through a referral",
+      "consultant_present": "Through a consultant already on mission",
+      "ancien_consultant": "Through a former consultant",
+      "signal_entrant": "Through a declared buying signal",
+      "veille_seule": "Watch only, no prospecting",
+      "depuis_talent": "From a talent in the pool",
+      "evenement_communaute": "From an event or a community",
+      "inbound_contenu": "Through content (inbound)"
+    },
+    "routeDetails": {
+      "motivating_signal": "Signal behind the route",
+      "proof_cited": "Cited proof",
+      "channel_history": "Channel history",
+      "first_door": "First door",
+      "info_to_obtain": "Information to obtain",
+      "proof": "Proof that validates",
+      "next_contact": "Next contact",
+      "passage_condition": "Condition to move on",
+      "fallback_plan": "Fallback plan",
+      "discouraged_route": "Discouraged route"
+    }
+  },
+  "coverage": {
+    "title": "Who are we missing to move forward?",
+    "subtitle": "Decision coverage for the account: business families and hierarchy levels already engaged versus the blind spots left to open (account-plan method). Computed from existing contacts only — no invented data.",
+    "scoreLabel": "Decision coverage",
+    "scoreHint": "Breadth (families), depth (levels) and the committee's critical roles — equally weighted. A critical role not identified rules out 100%.",
+    "engagedContacts": "Engaged contacts",
+    "engagedContactsHint": "of ~{{target}} targeted",
+    "familiesStat": "Families covered",
+    "familiesStatHint": "of {{target}} targeted",
+    "levelsStat": "Levels covered",
+    "levelsStatHint": "of {{target}} (C-Level / N-1 / N-2)",
+    "championRiskTitle": "Single-contact dependency",
+    "championRiskDescription": "Decision access rests on a single point of contact or a single family. Broaden coverage to secure the account.",
+    "familiesSectionTitle": "Decision families",
+    "familiesSectionDescription": "Strategic business units of the buying center.",
+    "gridAria": "Families × levels coverage grid",
+    "gridCellAria": "{{family}} — {{level}}: {{status}}",
+    "gridStatus": {
+      "covered": "covered",
+      "gap": "to open",
+      "partial": "to verify",
+      "empty": "no contact",
+      "not_priority": "not a priority"
+    },
+    "gridActionColumn": "Recommended action",
+    "gridActionAria": "{{family}} — {{level}}: find {{titles}}",
+    "gridActionEmpty": "—",
+    "entityScopeLabel": "Scope",
+    "entityScopeAll": "All entities",
+    "entityScopeUncovered": "{{entity}} (no contact)",
+    "entityScopeAria": "Filter the matrix by entity",
+    "entityScopeHint": "A family covered at group level can still be uncovered inside a subsidiary. Pick an entity to see ITS coverage.",
+    "objectiveScopeLabel": "Objective",
+    "objectiveScopeAll": "All families",
+    "objectiveScopeTarget": "Target families",
+    "objectiveScopeSupport": "Support families",
+    "objectiveScopeAria": "Filter the matrix by objective",
+    "gridLegend": "Each cell crosses a family with a level, within the selected scope. “To verify” = contacts exist on both axes with no proof of the intersection. “Not a priority” = support family, not a perimeter to open. The action at the end of the row re-runs the search on that single cell.",
+    "levelsSectionTitle": "Hierarchy levels",
+    "levelsSectionDescription": "Executive sponsor, budget-holding decision-maker and field relay.",
+    "mapSectionTitle": "The coverage map",
+    "mapSectionDescription": "Hierarchy levels and decision families, crossed. Each figure above keeps its own denominator without opening it.",
+    "gapsSectionTitle": "Missing stakeholders",
+    "gapsSectionDescription": "Prioritized blind spots: what is missing, why it is an opportunity and who to target.",
+    "covered": "Covered",
+    "missing": "To open",
+    "supportBadge": "Support",
+    "priorityBadge": "P{{priority}}",
+    "suggestedTitles": "Target: {{titles}}",
+    "gapSearchCta": "Find this profile",
+    "gapRerunCta": "Find this role",
+    "missingAxes": {
+      "title": "The ten axes to hold",
+      "aria": "The ten axes of what we're missing",
+      "states": {
+        "covered": "Held",
+        "missing": "Missing",
+        "unmeasured": "Not measured"
+      },
+      "axes": {
+        "levels": "Every hierarchy level",
+        "families": "Every targeted business family",
+        "entities": "Entities",
+        "sponsor": "Sponsor",
+        "economicBuyer": "Economic buyer",
+        "technicalReferent": "Technical referent",
+        "procurement": "Procurement",
+        "operationalRelay": "Operational relay",
+        "singleContact": "No single-contact dependency",
+        "nextAction": "Next action set"
+      },
+      "technicalGap": {
+        "noItContact": "No IT contact collected on this account.",
+        "itBelowDirector_one": "{{count}} IT contact, none at director level.",
+        "itBelowDirector_other": "{{count}} IT contacts, none at director level.",
+        "findCta": "Find the CIO"
+      },
+      "unmeasuredHint": "This dossier's contacts can't tell: nothing is inferred.",
+      "nextActionHint": "The next action lives in the action plan, not in contacts.",
+      "openPlan": "Open the plan"
+    },
+    "gapRerunPending": "Searching…",
+    "gapRerunHint": "Re-runs the search on this single cell (family × level), without redoing the whole dossier.",
+    "openInContacts": "View contacts",
+    "gapsEmptyTitle": "Full coverage",
+    "gapsEmptyDescription": "Full coverage: every strategic family and level is covered. Keep consolidating each relay.",
+    "noContactsTitle": "No contact to map yet",
+    "noContactsDescription": "This account has no identified contact yet. Run contact discovery to see its coverage.",
+    "loading": "Analyzing coverage…",
+    "loadErrorTitle": "Coverage unavailable",
+    "loadErrorDescription": "Could not load coverage right now. Please try again later.",
+    "entitiesStat": "Entities covered",
+    "entitiesStatHint": "Account entities where you have at least one contact",
+    "entitiesStatHintNames": "{{names}}",
+    "entitiesStatHintUncovered": "To open: {{names}}",
+    "entitiesStatExcluded": "Excluded from the count: {{names}} — a person, not an entity.",
+    "rolesStat": "Roles covered",
+    "rolesStatHint": "Buying-committee roles actually held",
+    "rolesStatHintMissing": "Not identified: {{roles}} — not found, not necessarily absent",
+    "rolesStatReason": {
+      "noRoleSet_one": "The only contact does not have this role set.",
+      "noRoleSet_other": "None of the {{count}} contacts has this role set.",
+      "technicalTitles": "No job title recognised as CIO or CISO either."
+    },
+    "committeeRoles": {
+      "economic": "Economic buyer",
+      "technical": "Technical evaluator",
+      "user": "End user",
+      "champion": "Champion",
+      "influencer": "Influencer",
+      "blocker": "Blocker",
+      "procurement": "Procurement",
+      "sponsor": "Sponsor"
+    },
+    "championsStat": "Champions identified",
+    "championsStatHint": "Champion contacts — the relays carrying the deal internally. The sponsor is read on its own axis.",
+    "nextBestActionBadge": "Next best action",
+    "gapRankAria": "Action {{rank}} of {{total}}",
+    "confidenceStat": "Data confidence",
+    "confidenceStatHint": "Identity, freshness, coverage, sources, consistency — on this account's contacts",
+    "confidenceSectionTitle": "Why this confidence score?",
+    "confidenceSectionDescription": "The five components of the score, each out of 100 and computed on this account's contacts. The lowest one is what to fix first. Not to be confused with \"Dossier reliability\" on the Overview tab, which grades the analysis's collection, not the contacts.",
+    "confidenceComponentValue": "{{value}}/100",
+    "confidenceComponents": {
+      "identity": {
+        "label": "Identity",
+        "hint": "Reachable contacts: an email or a profile on a professional network. A name alone proves nothing."
+      },
+      "freshness": {
+        "label": "Freshness",
+        "hint": "Contacts reviewed less than 18 months ago. Re-running enrichment raises this component."
+      },
+      "coverage": {
+        "label": "Coverage",
+        "hint": "Buying-committee families and levels actually held — the gaps listed below."
+      },
+      "sources": {
+        "label": "Sources",
+        "hint": "Contacts from a verifiable source (professional network, official registry, import). An AI inference stays a hypothesis."
+      },
+      "consistency": {
+        "label": "Consistency",
+        "hint": "Contacts we can place: a family AND a level. A contact we cannot place is an inconsistency."
+      },
+      "verified": {
+        "label": "Verified people",
+        "hint": "Contacts whose email address has been verified — distinct from identity: a reachable contact doesn't necessarily have a verified address."
+      },
+      "scope": {
+        "label": "Scope resolved",
+        "hint": "The dossier's company is identified on a verifiable source (SIREN, registry). Without it, the buying path and comparisons across scopes have no anchor."
+      }
+    },
+    "confidenceVerifiedSectionHint": "Additional signal, outside the average: does not change the confidence score above.",
+    "engagedContactsSplit": "of {{target}} targeted · {{inTargetFamilies}} in a target family",
+    "entitiesMore": "+ {{count}} more",
+    "engagedContactsReached": "{{inTargetFamilies}} in a target family — coverage goal reached",
+    "marketRoleFamilies": {
+      "title": "Observed role families",
+      "description": "What market observations say around this account — an EXTERNAL signal, distinct from this dossier's contacts. Feeds into no coverage calculation above.",
+      "label": "Family observed, no contact identified yet",
+      "persons_one": "{{count}} person",
+      "persons_other": "{{count}} people"
+    },
+    "gridCellSearch": "Search this role",
+    "gridCellSearchAria": "Search this role: {{family}} — {{level}}"
+  },
+  "relationshipMemory": {
+    "title": "Relationship memory",
+    "subtitle": "What your company already knows about this account. Read back at every analysis — along with the notes below — so the plan starts from your real relationship instead of opening cold.",
+    "relation": "Relationship",
+    "relationStage": "Relationship stage",
+    "relationStageNone": "Not set",
+    "owner": "Owner (your side)",
+    "lastContact": "Last contact",
+    "nextReview": "Next review",
+    "source": "Source",
+    "issue": "Outcome of the last interaction",
+    "save": "Save",
+    "saving": "Saving…",
+    "saved": "Memory saved",
+    "error": "Couldn't save",
+    "competitiveEdge": "What you know about your position here",
+    "competitiveEdgeHint": "The incumbent and when their contract ends, a comparable reference you can name, what already won you this kind of account. Quoted as written in the analysis — and it does not make the account count as warm.",
+    "competitiveEdgePlaceholder": "Incumbent locked in until March 2027 · we ran the same migration at X in 2024 · their CIO came from one of our clients…",
+    "known": {
+      "title": "What {{brand}} already knows",
+      "subtitle": "What we already know about the contacts attached to this account — your input below is always yours, it is never overwritten.",
+      "noContacts": "No known contact on this account yet.",
+      "notEnriched_one": "{{count}} known contact on this account, never enriched: we don't yet know since when they work there.",
+      "notEnriched_other": "{{count}} known contacts on this account, never enriched: we don't yet know since when they work there.",
+      "enrichedNoPresence_one": "{{count}} enriched contact, no current role identified on this account.",
+      "enrichedNoPresence_other": "{{count}} enriched contacts, no current role identified on this account.",
+      "roleUnknown": "role not identified",
+      "since": "known since {{date}}",
+      "sinceUnknown": "start date not known"
+    }
+  },
+  "profileProvenance": {
+    "personalisedNamed": "{{firstName}}, this account was built with {{esnName}}'s profile: your declared offers, sectors, territories and sales capacity.",
+    "personalised": "{{firstName}}, this account was built with your firm's profile: your declared offers, sectors, territories and sales capacity.",
+    "generic": {
+      "no_profile": "{{firstName}}, this account is generic: no firm profile was on file when it ran, so nothing was tailored to what you sell.",
+      "incomplete_profile": "{{firstName}}, this account is generic: required answers were missing when it ran ({{answered}} of {{required}}), so nothing was tailored to what you sell.",
+      "skipped_by_user": "{{firstName}}, this account is generic: the questionnaire had been postponed, so nothing was tailored to what you sell.",
+      "overridden": "{{firstName}}, this account is generic: it ran without a profile, so nothing was tailored to what you sell.",
+      "context_mode": "{{firstName}}, this account is generic: the context mode chosen at launch set your profile aside."
+    },
+    "byMode": {
+      "one_off_mission": "{{firstName}}, this account is built on the mission brief: One-off mission mode set your usual profile aside.",
+      "neutral": "{{firstName}}, this account is built on neutral criteria: Neutral mode set your profile, CRM and history aside."
+    },
+    "completeCta": "Complete your profile, then refresh the account.",
+    "staleProfile": "{{firstName}}, your sectors or offers have changed since this account file was built.",
+    "staleProfileCtaPending": "Recalculating…",
+    "staleProfileCta": "Recompute it"
+  },
+  "planFreshness": {
+    "vieillissant": "Ageing plan",
+    "perime": "Stale plan",
+    "inconnu": "Plan age unknown"
+  },
+  "meetingPrep": {
+    "title": "Prepare the meeting",
+    "subtitle": "The questions that get your contact talking, and the shape of the conversation.",
+    "questions": "Questions to ask",
+    "script": "Meeting outline",
+    "section": {
+      "opening": "Opening",
+      "positioning": "Positioning",
+      "exploration": "Exploration",
+      "proposal": "Proposal",
+      "closing": "Closing"
+    },
+    "r1r2": {
+      "title": "Prepare a first or second meeting",
+      "subtitle": "The flow, the case studies to cite, the workshop proposal or the recap of the first meeting, and a pitch — drawn from what the workspace already knows.",
+      "typeLabel": "Meeting type",
+      "type": {
+        "r1_discovery": "First meeting (R1)",
+        "r2_workshop": "Second meeting (R2)"
+      },
+      "suggestedR1": "Suggested: R1 — no past meeting is recorded on this account.",
+      "suggestedR2": "Suggested: R2 — a first meeting has already taken place on this account.",
+      "contactLabel": "Contact (optional)",
+      "contactNone": "No contact specified",
+      "withContact": "Contact: {{name}}",
+      "readOnly": "This panel is read-only: nothing is saved and no e-mail is sent."
+    }
+  },
+  "timeline": {
+    "title": "What happened on this account",
+    "subtitle": "Actions, project moves and executions, in the order they really occurred.",
+    "empty": "Nothing has been done on this account yet.",
+    "repeat": "× {{count}}",
+    "showOlder_one": "Show the older line",
+    "showOlder_other": "Show the {{count}} older lines",
+    "stepsDone_one": "{{count}} step succeeded out of {{total}}",
+    "stepsDone_other": "{{count}} steps succeeded out of {{total}}",
+    "loadError": "The history could not be loaded. That is not “no history” — try again.",
+    "actionTypes": {
+      "analysis_started": "Analysis started",
+      "analysis_completed": "Analysis completed",
+      "account_score_changed": "Account score updated",
+      "message_copied": "Message copied",
+      "message_sent": "Message sent",
+      "profile_updated": "Firm profile updated",
+      "contact_enriched": "Contact enriched",
+      "export_performed": "Export performed",
+      "plan_action_opened": "Plan action opened",
+      "plan_action_completed": "Plan action completed",
+      "plan_action_uncompleted": "Plan action reopened",
+      "plan_action_added": "Action added to the plan",
+      "plan_action_skipped": "Plan action skipped",
+      "plan_action_message_copied": "Plan message copied",
+      "plan_action_message_sent": "Plan message marked as sent",
+      "plan_action_message_generated": "Plan message prepared",
+      "plan_action_call_prepared": "Call prepared",
+      "plan_action_linkedin_opened": "Professional network profile opened",
+      "plan_action_contact_opened": "Contact record opened",
+      "crm_lookup": "{{copilot}} looked up your CRM"
+    }
+  },
+  "questionLibrary": {
+    "title": "Questions to ask",
+    "subtitle": "Three to eight questions, selected — never the whole bank.",
+    "tab": {
+      "discovery": "Discovery",
+      "defense": "Pitch",
+      "call": "Call"
+    },
+    "conductTitle": "What keeps a pitch from becoming a monologue",
+    "callChecklist": "To prepare before dialling",
+    "nothingLeft": "The account file already answers everything this bank knows how to ask."
+  },
+  "technologies": {
+    "title": "Technologies in place"
+  },
+  "reinforced": {
+    "title": "Angles reinforced by the observed environment",
+    "why": "These expertises you declare also stand out in the technology environment observed around this account. Two independent sources, not proof of a current engagement.",
+    "action": "To check: are those teams working with external providers today?",
+    "weak": "Little market corroboration available for {{expertises}}",
+    "weakWhy": "These expertises barely stand out in the observed environment — right at the corpus floor. Too little to reinforce an angle, and it says NOTHING against one."
+  },
+  "overviewSections": {
+    "contextTitle": "Account context",
+    "contextDescription": "Why now, where to open, the named IT programmes, the incumbent providers, the offers and the public data.",
+    "recordTitle": "Account record",
+    "recordDescription": "What you correct yourself, the group's vocabulary and the relationship memory."
+  },
+  "attachedDocuments": {
+    "addedAfterLaunch": "Added after launch · {{time}}",
+    "title": "Attached documents",
+    "untitled": "Untitled document",
+    "attachedTo": "Attached to {{company}}"
+  },
+  "presentEsn": {
+    "title": "IT services firms present on the account",
+    "unitNote": "This list counts companies. The “ex-ESN profiles” quoted in the dossier sections count people who worked at an ESN: it is not a second total of ESNs.",
+    "hint": "One list: each firm with the evidence that places it at the account — declared, observed or deduced — and its date.",
+    "evidence": {
+      "declared": "Declared",
+      "observed": "Observed",
+      "deduced": "Deduced"
+    },
+    "dated": "as of {{date}}",
+    "probablySame": "Possibly the same firm as: {{names}}. Not merged.",
+    "dateUnknown": "date unknown",
+    "strengths": "Strengths: {{value}}",
+    "weaknesses": "Weaknesses: {{value}}",
+    "paths": "Also observed in the history — {{range}} career paths.",
+    "summaryLead": "On this account:",
+    "summary": {
+      "declared_one": "{{count}} declared",
+      "declared_other": "{{count}} declared",
+      "observed_one": "{{count}} observed",
+      "observed_other": "{{count}} observed",
+      "deduced_one": "{{count}} deduced",
+      "deduced_other": "{{count}} deduced"
+    },
+    "meaningTitle": "What it means for you"
+  },
+  "synthesis": {
+    "groups": {
+      "business": "Where the business is",
+      "memory": "What {{brand}} knows about the account",
+      "searched": "What we searched together"
+    },
+    "identity": {
+      "headquarters": "HQ: {{city}}",
+      "employees": "{{value}} employees",
+      "revenue": "Revenue {{value}}"
+    },
+    "takeaway": {
+      "title": "Key takeaway",
+      "score": "{{score}}/10",
+      "score25": "{{score}}/25",
+      "unarbitrated": "not arbitrated",
+      "whyTitle": "Why go",
+      "whyWaitTitle": "Why wait",
+      "reopenWhen": "What would change the call: {{trigger}}",
+      "GO": "An account to work now.",
+      "PRUDENT": "An account to work with care: qualify before investing.",
+      "NO-GO": "Not an account to prioritise for now.",
+      "EXPLORER": "An account to explore: the interest is real, the way in is still to find.",
+      "dominantSignal": "Leading signal: {{label}}.",
+      "dominantSignalDated": "Leading signal: {{label}} ({{date}}).",
+      "lauraLabel": "{{copilot}}’s take"
+    },
+    "discoverBridge": "Discover had said \"{{reason}}\", based on what it already had — that signal still holds, the analysis now measures more.",
+    "discoverOrigin": {
+      "framedByLaura": "Framed on your request to {{copilot}}: {{criteria}}",
+      "collectedBefore": "This analysis predates the carry-over of Discover offers: the offers that surfaced this account are not shown here. Rerun the collection to bring them back.",
+      "offers": "offers found: {{value}}",
+      "criteria": "Selected in Discover on: {{criteria}}",
+      "reasonOnly": "Selected in Discover: \"{{reason}}\"",
+      "criteriaWithReason": "Selected in Discover on: {{criteria}} — \"{{reason}}\"",
+      "sector": "sector {{value}}",
+      "zone": "area {{value}}",
+      "zoneWidened": "{{value}}",
+      "headcount": "headcount {{value}} employees",
+      "signal": "signal {{value}}",
+      "skills": "skill {{value}}",
+      "talent": "consultant {{value}}",
+      "signals": {
+        "tender": "call for tenders",
+        "award": "awarded contract",
+        "hiring": "hiring"
+      }
+    },
+    "cards": {
+      "signalTitle": "Main signal",
+      "signalSource": "Source: {{source}}",
+      "signalWhat": "What it means: {{implication}}",
+      "signalCta": "See the signals",
+      "entryTitle": "Best way in",
+      "entryCta": "See the contact",
+      "entryGap": {
+        "off_list": "Named by the dossier, but not in the Contacts tab: match it to a contact before acting.",
+        "hidden": "This contact is hidden from your list: unhide it before acting."
+      },
+      "entryCtaPath": "See the contacts",
+      "actionTitle": "Next action",
+      "actionCta": "Prepare"
+    },
+    "sections": {
+      "plan": "Action plan",
+      "planSummary_one": "{{count}} planned action",
+      "planSummary_other": "{{count}} planned actions",
+      "planOffers_one": "{{count}} offer to pitch",
+      "planOffers_other": "{{count}} offers to pitch",
+      "planRisk": "The main risk and how to lift it",
+      "planOpen": "Open the full plan",
+      "contacts": "Contacts and buying committee",
+      "contactsSummary_one": "{{count}} key contact",
+      "contactsSummary_other": "{{count}} key contacts",
+      "contactsOpen": "See all contacts",
+      "angles": "Angles of attack",
+      "anglesSummary_one": "{{count}} angle of attack",
+      "anglesSummary_other": "{{count}} angles of attack",
+      "meeting": "Prepare the meeting",
+      "meetingSummary": "Why now, what hurts them, how to stand against the incumbents",
+      "strategy": "Account strategy",
+      "strategySummary": "Where to focus the effort, who is already in place, how to position yourself",
+      "technologies": "Technologies and key figures",
+      "technologiesSummary_one": "{{count}} technology spotted",
+      "technologiesSummary_other": "{{count}} technologies spotted",
+      "technologiesLegal_one": "{{count}} legal notice",
+      "technologiesLegal_other": "{{count}} legal notices",
+      "technologiesFacts": "Key figures and public data",
+      "sources": "Sources and confidence",
+      "sourcesSummary": "The score and its axes, where each fact comes from, the account record",
+      "history": "Analysis history",
+      "historyFacts_one": "{{count}} dated fact",
+      "historyFacts_other": "{{count}} dated facts",
+      "historySummary": "Last analysed on {{date}}"
+    },
+    "tech": {
+      "high": "widely used",
+      "medium": "used",
+      "low": "occasional",
+      "showDetail": "Show the detail",
+      "hideDetail": "Hide the detail"
+    },
+    "unanalyzed": {
+      "title": "This account has not been analysed yet.",
+      "known": "Known: {{facts}}.",
+      "body": "The analysis says why to work this account, where to start and which action to prepare.",
+      "cta": "Analyse this account",
+      "contacts_one": "{{count}} contact",
+      "contacts_other": "{{count}} contacts"
+    }
+  },
+  "planSections": {
+    "anglesTitle": "Attack angles and what reinforces them",
+    "anglesDescription": "The entry points to test on this account, and what the observed environment corroborates.",
+    "prepareTitle": "Prepare the meeting",
+    "prepareDescription": "The questions to ask and your meeting notes.",
+    "generalTitle": "Questions and network — general",
+    "generalDescription": "Method and network that apply to any account, not specific to this one.",
+    "title": "The plan, section by section",
+    "subtitle": "Always in the same order, verdict first.",
+    "sections": {
+      "verdict": "Strategic verdict",
+      "objectif": "Account objective",
+      "perimetre": "Targeted scope",
+      "voieDentree": "Way in",
+      "prochainesActions": "Next three actions",
+      "horizon6090": "60-90 day horizon",
+      "aEviter": "What not to do"
+    }
+  },
+  "canonicalContext": {
+    "title": "What we know, and where it comes from",
+    "subtitle": "One reading of the account: every fact carries its source and its date.",
+    "companyName": "Legal name",
+    "sector": "Sector",
+    "headquarters": "Headquarters",
+    "marketMemoryRoles": "Observed role families",
+    "marketMemoryRolesHint": "Career paths of consultants who have worked at this account, read from market data — not your contacts.",
+    "roleFamilyPersons_one": "{{count}} observed career path",
+    "roleFamilyPersons_other": "{{count}} observed career paths",
+    "otherFamily": {
+      "title": "Other titles (not a trade)",
+      "hint": "What the observed history did not file under any trade — this is not a trade.",
+      "detailTitle": "Among your contacts on this account (a different measure from the paths above), the titles no role family covers",
+      "titleCount_one": "{{count}} contact",
+      "titleCount_other": "{{count}} contacts",
+      "seeMore": "See more ({{count}})",
+      "seeLess": "See less",
+      "detailUnavailable": "The detail of these titles is not available: none of your contacts on this account falls under it."
+    },
+    "marketMemoryUnavailable": "Observed history could not be read — that is not “nothing observed”.",
+    "marketMemoryNotCovered": "No usable observation is available for this account.",
+    "incumbentEsn": "Who is already in place",
+    "technologies": "Technologies in place",
+    "entryPaths": "Where to get in",
+    "recommendations": "What we draw from it"
+  },
+  "strategy5P": {
+    "title": "Five field questions",
+    "subtitle": "Where to enter, on which subject, with whom, with what, by which route.",
+    "dimensions": {
+      "perimeter": "Scope",
+      "problem": "Problem",
+      "people": "People",
+      "proof": "Proof",
+      "passage": "Passage"
+    },
+    "readiness": {
+      "READY_TO_ACT": "Ready to act",
+      "READY_TO_VERIFY": "Ready, to verify",
+      "INCOMPLETE": "Incomplete",
+      "BLOCKED": "Blocked",
+      "NO_GO": "Not ready for a sequence"
+    },
+    "nextAction": "To do: {{action}}",
+    "allSolid": "All five dimensions are filled in.",
+    "gap": {
+      "missingProof": "No mobilisable proof on this account.",
+      "missingRoles_one": "No {{roles}} contact identified.",
+      "missingRoles_other": "Roles with no contact identified: {{roles}}.",
+      "noPath": "No access route identified — current consultant, former colleague, partner, tier 2, supplier or relationship.",
+      "technicalNoIt": "No IT contact collected on this account.",
+      "technicalBelowDirector_one": "{{count}} IT contact, none at director level.",
+      "technicalBelowDirector_other": "{{count}} IT contacts, none at director level."
+    },
+    "cta": {
+      "findAnotherRoute": "Find another route",
+      "challengeStrategy": "Challenge the strategy",
+      "prepareFirstMove": "Prepare the first move",
+      "addToPlan": "Add to plan"
+    },
+    "planAction": {
+      "perimeter": {
+        "label": "Frame the target scope (entity, subsidiary, team)",
+        "reason": "Scope is the least filled-in P of the 5P strategy.",
+        "outcome": "A target scope and an excluded scope, written down."
+      },
+      "problem": {
+        "label": "Qualify the problem and its trigger",
+        "reason": "The problem is the least filled-in P of the 5P strategy.",
+        "outcome": "A dated problem with its impact and urgency."
+      },
+      "people": {
+        "label": "Identify the missing decision roles",
+        "reason": "People is the least filled-in P of the 5P strategy.",
+        "outcome": "Each buying role held by a named person."
+      },
+      "proof": {
+        "label": "Gather usable proof",
+        "reason": "Proof is the least filled-in P of the 5P strategy.",
+        "outcome": "A mission, a consultant or a reference to cite."
+      },
+      "passage": {
+        "label": "Find a way into the account",
+        "reason": "Access route is the least filled-in P of the 5P strategy.",
+        "outcome": "A named route to a decision maker."
+      }
+    },
+    "questions": {
+      "perimeter": "Where to enter?",
+      "problem": "On which documented subject?",
+      "people": "With whom?",
+      "proof": "With which references or capabilities?",
+      "passage": "By which route?"
+    },
+    "programDetail": "See this programme in Signals and needs",
+    "toVerify": "To verify.",
+    "detail": "See detail",
+    "open": {
+      "perimeter": "Open the org chart",
+      "people": "Open contacts",
+      "proof": "Open proof",
+      "passage": "Open access"
+    },
+    "fields": {
+      "perimeter": {
+        "group": "Group",
+        "parent_company": "Parent company",
+        "subsidiary": "Subsidiary",
+        "business_unit": "Business unit",
+        "direction": "Division",
+        "site": "Site",
+        "team": "Team",
+        "program": "Programme",
+        "project": "Project",
+        "selected_scope": "Targeted scope",
+        "excluded_scopes": "Excluded scope",
+        "budget_scope": "Budget scope"
+      },
+      "problem": {
+        "trigger": "Trigger",
+        "operational_problem": "Operational problem",
+        "business_impact": "Business impact",
+        "urgency": "Urgency",
+        "current_status": "Current situation",
+        "evidence": "Documented evidence",
+        "hypothesis": "Hypothesis",
+        "expiry": "Valid until"
+      },
+      "people": {
+        "users": "Users",
+        "operational_relays": "Operational relays",
+        "champions": "Champions",
+        "technical_references": "Technical references",
+        "sponsors": "Sponsors",
+        "economic_deciders": "Economic deciders",
+        "procurement": "Procurement",
+        "blockers": "Blockers",
+        "hr": "HR",
+        "known_relationships": "Known relationships"
+      },
+      "proof": {
+        "relevant_consultant": "Relevant consultant",
+        "comparable_reference": "Comparable reference",
+        "mission_rex": "Mission lessons learned",
+        "client_case": "Client case",
+        "artifact": "Deliverable",
+        "benchmark": "Benchmark",
+        "sector_knowledge": "Sector knowledge",
+        "relationship_proof": "Relationship proof"
+      },
+      "passage": {
+        "current_consultant": "Consultant on site",
+        "former_consultant": "Former consultant",
+        "former_colleague": "Former colleague",
+        "common_relationship": "Common relationship",
+        "existing_client": "Existing client",
+        "partner": "Partner",
+        "rank_2": "Tier 2",
+        "referenced_esn": "Referenced IT services firm",
+        "former_manager": "Former manager",
+        "alumni": "Alumni network",
+        "event": "Event",
+        "direct_recommendation": "Direct recommendation"
+      }
+    },
+    "esn": {
+      "title": "Cited IT firms",
+      "undocumented": "Relationship not documented",
+      "open": "See {{name}} in Partners",
+      "nextCheck": {
+        "confirm_relation": "To verify: the relationship with the client",
+        "confirm_scope": "To verify: the scope involved"
+      }
+    },
+    "doors": {
+      "perimeter": "View detailed scope",
+      "orgInfluence": "View org chart and influence",
+      "committee": "View buying committee",
+      "partners": "View partners"
+    }
+  },
+  "decisionHeader": {
+    "title": "Decision",
+    "interest": "Interest",
+    "penetrability": "Penetrability",
+    "confidence": "Confidence",
+    "bestRoute": "Best route",
+    "bestRouteUnknown": "No entry route identified",
+    "nextAction": "Next action",
+    "nextActionUnknown": "No action suggested",
+    "noVerdict": "Verdict not computed",
+    "reviewDate": "Suggested review date"
+  },
+  "interestPenetrability": {
+    "title": "Account interest × penetrability",
+    "subtitle": "The account's economic interest and the real ability to open it now, never merged.",
+    "quadrantUnavailable": "Position not determined",
+    "axes": {
+      "interest": "Interest",
+      "penetrability": "Penetrability"
+    },
+    "bands": {
+      "high": "High",
+      "medium": "Medium",
+      "low": "Low",
+      "insufficient_data": "Not determined"
+    },
+    "quadrants": {
+      "priority_now": "Immediate priority",
+      "strategic_long_road": "Strategic — long road or partner needed",
+      "short_measured_test": "Short, measured test",
+      "no_go_watch": "No-Go or simple watch"
+    },
+    "knownCount_one": "{{count}} factor known out of {{total}}",
+    "knownCount_other": "{{count}} factors known out of {{total}}",
+    "noFactorKnown": "No determining factor known yet.",
+    "factors": {
+      "offer_fit": "Offer fit",
+      "need_potential": "Need potential",
+      "economic_value": "Economic value",
+      "recurrence_potential": "Recurrence potential",
+      "extension_potential": "Extension potential",
+      "delivery_fit": "Delivery fit",
+      "consultant_fit": "Consultant fit",
+      "current_momentum": "Current momentum",
+      "existing_relationship": "Existing relationship",
+      "partner_in_place": "Partner in place",
+      "former_consultant": "Former consultant",
+      "sponsor_identified": "Sponsor identified",
+      "purchasing_barriers": "Purchasing barriers",
+      "referencing_status": "Referencing status",
+      "sales_cycle": "Sales cycle",
+      "subsidiary_autonomy": "Subsidiary/BU identified",
+      "relative_size": "Relative size",
+      "people_accessibility": "People accessibility",
+      "available_proof": "Available proof"
+    },
+    "simulation": {
+      "title": "Simulate",
+      "badge": "Simulation — not saved",
+      "levers": {
+        "partner_in_place": "With a partner",
+        "available_proof": "With a new reference",
+        "subsidiary_autonomy": "On a subsidiary rather than the group"
+      }
+    }
+  },
+  "recommendationMeta": {
+    "elements": {
+      "toggle": "View the elements",
+      "period": "Documented period: until {{date}}",
+      "periodNotLatest": "An external engagement observed over this period is not the platform's latest activity.",
+      "openProofs": "Open the account's proofs"
+    },
+    "nature": {
+      "fact": "fact",
+      "observation": "observation",
+      "inference": "Deduced by {{copilot}}",
+      "correction": "field correction"
+    },
+    "freshness": {
+      "fresh": "recent information",
+      "ageing": "information over a month old",
+      "stale": "information over six months old, worth re-checking",
+      "undated": "unknown date"
+    },
+    "confidence": {
+      "corroborated": "corroborated",
+      "single_source": "single source",
+      "deduced": "deduced"
+    },
+    "confidenceCorroborated": "{{level}} — {{count}} matching sources",
+    "limitLabel": "Does not cover:",
+    "limit": {
+      "not_a_commitment": "a door is not a booked meeting",
+      "single_account_only": "says nothing about the rest of the portfolio",
+      "contact_unverified": "the contact has not been verified",
+      "dated_information": "the information may have moved since its date",
+      "coverage_is_not_a_market_fact": "measures what we know, not what the market does"
+    },
+    "checkLabel": "Worth checking:",
+    "check": {
+      "confirm_with_contact": "confirm with a contact",
+      "check_public_registry": "cross-check with the public registry",
+      "reread_the_source": "re-read the cited source",
+      "check_account_history": "re-read the account history"
+    },
+    "action": {
+      "open_contacts": "See contacts",
+      "open_plan": "Open the plan",
+      "prepare_message": "Prepare a message",
+      "open_sources": "See the evidence"
+    }
+  },
+  "dossierRead": {
+    "scoreName": "Dossier reading · sum of the evaluated axes, out of 7 axes",
+    "scoreNamePrefix": "Dossier reading:",
+    "worthTitle": "Is this account worth your time?",
+    "axis": {
+      "adequation_offre": "Offer fit",
+      "potentiel_commercial": "Commercial potential",
+      "fraicheur": "Current freshness",
+      "accessibilite": "Reachability",
+      "capacite_achat_externe": "External buying capacity",
+      "concurrence": "Competition",
+      "qualite_preuves": "Evidence quality"
+    },
+    "axisState": {
+      "measured": "Measured",
+      "partial": "Partial",
+      "unknown": "Unknown"
+    },
+    "axisValue": "{{value}}/{{max}}",
+    "axisImpact": "Impact on the verdict: {{value}}",
+    "axisLever": "Lever: {{value}}",
+    "axisUnknownReason": "This axis could not be assessed: it does not count towards the score.",
+    "insufficient": "No score: {{scored}} axis/axes scored out of {{total}}, at least {{min}} are needed.",
+    "unknownOutOfScore": "{{axesCount}} axis/axes not measured, left out of the score — never counted as zero: {{axes}}.",
+    "capTitle": "This score says nothing about reach or external buying",
+    "capNotice": "A high score computed from the other axes says nothing about this one: verify before relying on it.",
+    "capVerification": {
+      "accessibilite": "Check whether a decision-maker is reachable",
+      "capacite_achat_externe": "Check whether this account buys external services"
+    },
+    "axesEvaluated_one": "{{count}} axis out of {{total}} evaluated",
+    "axesEvaluated_other": "{{count}} axes out of {{total}} evaluated",
+    "allAxesScored_one": "Scored on {{count}} axis, measured.",
+    "allAxesScored_other": "Scored on {{count}} axes, all measured.",
+    "noAxisBreakdownHint": "This analysis predates the seven-axis read: its score is shown, its breakdown does not exist for this account. Refresh the analysis to get it.",
+    "whyForYourEsn": "Why this account for your firm",
+    "obstacles": "Blockers",
+    "antiAdvice": "What not to do",
+    "missing": "What remains unknown",
+    "reliabilityTitle": "Dossier reliability",
+    "reliabilityHint": "Quality of the information, coverage of what could be covered, freshness of the facts. It says nothing about the account's potential.",
+    "reliabilityQuality": "Quality",
+    "reliabilityCoverage": "Coverage",
+    "reliabilityFreshness": "Freshness",
+    "reliabilityValue": "{{value}}/100",
+    "reliabilityUnknownReason": "This dimension could not be measured.",
+    "noGoTitle": "Not now",
+    "noGoTemporary": "This verdict is temporary: it depends on a dated context, not on the account itself.",
+    "noGoContext": "What blocks it today: {{value}}",
+    "noGoTrigger": "What would change it: {{value}}",
+    "profileIncomplete": "My reading of the account is reliable, but the fit with your firm depends on your profile: {{fields}}.",
+    "profileIncompleteNoFields": "My reading of the account is reliable, but the fit with your firm depends on your profile, which is incomplete.",
+    "profileIncompleteLink": "Complete my profile",
+    "profileField": {
+      "offers": "Offers",
+      "sectors": "Target sectors",
+      "positioning": "Positioning",
+      "references": "Client references",
+      "unknown": "a field in your profile"
+    },
+    "scopeTitle": "Which scope should you target?",
+    "entryTitle": "Which way in?",
+    "entryTargetProfile": "Target profile: {{value}}",
+    "accessPathTitle": "Which buying or access route?",
+    "mainRiskTitle": "What's the main risk?"
+  },
+  "preparedMessages": {
+    "title": "Drafts already prepared",
+    "subtitle": "Review, edit, then send: sending stays your call.",
+    "duplicateWarning": {
+      "title": "Same text sent to several people",
+      "line": "{{channel}}: {{names}} are getting the exact same message."
+    },
+    "missing": {
+      "rerun": "Messages not prepared: run the analysis again.",
+      "reason": "The messages were not drafted (the analysis may have been interrupted before this step).",
+      "action": "Prepare the messages"
+    },
+    "empty": {
+      "title": "No draft prepared for this account yet.",
+      "action": "Open contacts"
+    }
+  },
+  "keyNotes": {
+    "interpretationLabel": "Reading: {{value}}",
+    "implicationLabel": "Implication: {{value}}",
+    "reliabilityLabel": "Reliability: {{value}}"
+  },
+  "structuralReading": {
+    "title": "Account reading axes"
+  },
+  "ecosystemThirdParties": {
+    "title": "Ecosystem — third parties"
+  },
+  "opportunityDomains": {
+    "title": "Opportunity domains"
+  },
+  "financialIndicators": {
+    "title": "Financial indicators by perimeter"
+  },
+  "revision": {
+    "title": "The verdict changed",
+    "from": "Before",
+    "to": "Now",
+    "causes": "Why",
+    "unchangedSince": "Same verdict since {{date}}",
+    "changedAt": "Changed on {{date}}"
+  },
+  "knownAccountValue": {
+    "newSignalsCounted_one": "{{count}} signal since your last CRM contact ({{date}}) — detailed in the cards below",
+    "newSignalsCounted_other": "{{count}} signals since your last CRM contact ({{date}}) — detailed in the cards below",
+    "title": "What {{brand}} adds to what you know",
+    "newSignals_one": "{{count}} signal since your last CRM contact ({{date}}): {{signals}}",
+    "newSignals_other": "{{count}} signals since your last CRM contact ({{date}}): {{signals}}",
+    "contactsNotInCrm_one": "{{count}} contact missing from your CRM: {{names}}",
+    "contactsNotInCrm_other": "{{count}} contacts missing from your CRM, including {{names}}"
+  },
+  "planSteps": {
+    "title": "Your next three steps",
+    "detailTitle": "Plan details",
+    "channel": {
+      "email": "Email",
+      "linkedin": "LinkedIn",
+      "phone": "Call"
+    },
+    "sameMessage": "Same message as step {{number}}",
+    "prepare": "Prepare",
+    "contactTitle": "Plan for {{firstName}}",
+    "generate": "Prepare a plan for {{firstName}}",
+    "generating": "Preparing…",
+    "generated": "Steps added to the account plan",
+    "generateFailed": "Couldn't prepare this plan right now"
+  },
+  "knowledge": {
+    "counters": {
+      "aria": "Account at a glance",
+      "entities_one": "documented entity",
+      "entities_other": "documented entities",
+      "needs_one": "documented past need",
+      "needs_other": "documented past needs",
+      "tjm_one": "daily-rate reading",
+      "tjm_other": "daily-rate readings",
+      "contacts_one": "contact in the account",
+      "contacts_other": "contacts in the account",
+      "interest": "commercial interest",
+      "axes": "{{measured}} of {{total}} axes",
+      "scoreDialog": {
+        "title": "Account score and its axes",
+        "description": "A score is never shown bare: every axis is named, including those we could not assess."
+      },
+      "interestBand": {
+        "strong": "Strong",
+        "medium": "Medium",
+        "weak": "Weak"
+      }
+    }
+  },
+  "knowledgeScreen": {
+    "provenance": "Analysis of {{date}}",
+    "sourceScope": "Source & scope",
+    "nextEyebrow": "Next step",
+    "seePlan": "See the plan",
+    "seePeople": "See the people",
+    "cards": {
+      "knowEyebrow": "What I know",
+      "knowTitle": "What the file tells us",
+      "entitiesEyebrow": "Organisation",
+      "entitiesTitle": "Entities to explore",
+      "entitiesCta": "Explore the organisation",
+      "tjmEyebrow": "Historical day rates",
+      "tjmTitle": "Recorded rates, by channel",
+      "tjmCta": "See the observations",
+      "ecosystemEyebrow": "Ecosystem",
+      "ecosystemTitle": "Players in the ecosystem",
+      "ecosystemCta": "See the ecosystem"
+    },
+    "moreEyebrow": "Go further",
+    "moreLead": "Strategy readings, folded: open only the one that helps you.",
+    "moreBrief": "The account brief",
+    "moreReading": "File readings",
+    "moreEvaluation": "Interest and score axes"
+  },
+  "crmSays": {
+    "title": "What your CRM says · {{tool}}",
+    "owner": "Owner: {{name}}",
+    "stage": "Stage: {{stage}}",
+    "deals_one": "{{count}} deal",
+    "deals_other": "{{count}} deals",
+    "dealWithStage": "{{title}} — {{stage}}",
+    "activities_one": "{{count}} activity, the latest on {{date}}",
+    "activities_other": "{{count}} activities, the latest on {{date}}",
+    "fusion": "The record from {{tool}} joined this account on {{date}}.",
+    "fusionUndo": "Undo the merge",
+    "fusionUndone": "Merge undone: the two records are separate again.",
+    "fusionUndoError": "The merge could not be undone.",
+    "fusionNamed": "The record “{{name}}” from {{tool}} joined this account on {{date}}.",
+    "fieldFromCrm": "from {{tool}}",
+    "fieldHuman": "corrected in {{brand}}",
+    "customField": "{{label}}: {{value}}",
+    "fieldCrmVersionShow": "See the {{tool}} version",
+    "fieldCrmVersionHide": "Hide the {{tool}} version",
+    "fieldCrmVersion": "{{tool}}: {{value}}"
+  },
+  "refreshNamed": {
+    "notConfirmed": "Not re-confirmed: {{names}}",
+    "newEntities": "New entities: {{names}}"
+  },
+  "accountSections": {
+    "new": "What is new",
+    "alreadyKnown": "What we already knew",
+    "alreadyKnownCounts": "{{facts}} facts and {{contacts}} contacts were already in the file."
+  },
+  "entityQuestion": {
+    "title": "Several companies share this name",
+    "body": "The analysis is paused after the research, before contacts and the plan. Pick the right company: it resumes on it right away.",
+    "siren": "SIREN {{siren}}",
+    "fallback": "Without an answer within a few minutes, the analysis resumes on {{name}}.",
+    "answerFailed": "The answer could not be saved. Try again."
+  }
+}

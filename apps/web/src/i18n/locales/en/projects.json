@@ -1,0 +1,3344 @@
+{
+  "stageMove": {
+    "title": "Move to “{{stage}}”",
+    "changes": "What changes",
+    "proposals": "What I suggest",
+    "checks": "What I check",
+    "externalTag": "leaves the tool",
+    "cancel": "Cancel",
+    "confirm": "Move",
+    "missionBlocks": "A mission already exists on this project. Handle it first — reopening would leave it orphaned without anyone noticing.",
+    "reasonPlaceholder": "Details (optional)",
+    "change": {
+      "stage": "the stage",
+      "stage_entered_at": "the stage entry date",
+      "outcome": "the outcome",
+      "closed_at": "the close date"
+    },
+    "proposal": {
+      "review_signal": "Re-read the original signal",
+      "qualify_later": "Pick this lead up again in a week",
+      "complete_btmmp": "Complete the deal qualification",
+      "identify_sponsor": "Identify who owns the need at the client",
+      "create_submissions": "Suggest consultants from your talent pool",
+      "verify_profile_sent": "Check the profile actually went out",
+      "schedule_interview": "Set the interview slot with the client",
+      "prepare_follow_up_mail": "Prepare the follow-up email",
+      "search_more_profiles": "Look for other profiles in your talent pool",
+      "prepare_rate_argument": "Prepare the pricing argument",
+      "check_procurement": "Check the client’s purchasing process",
+      "prepare_onboarding": "Prepare the consultant’s arrival",
+      "collect_loss_rex": "Note why we lost",
+      "park_account": "Put the account on hold",
+      "replan_six_months": "Plan a follow-up in six months",
+      "set_review_date": "Set when to look at this deal again"
+    },
+    "check": {
+      "signal_dated": "Does the signal carry a date?",
+      "decision_contact_exists": "Is there a decision-maker contact?",
+      "skills_filled": "Are the skills filled in?",
+      "at_most_five_profiles": "Five profiles at most?",
+      "none_rejected_here": "None rejected at this client?",
+      "amount_filled": "Is the amount filled in?",
+      "dates_known": "Are the dates known?",
+      "sold_rate_known": "Is the sold rate known?",
+      "billing_contact_known": "Is the billing contact known?"
+    },
+    "autoTag": "Done by {{brand}}",
+    "manualTag": "Up to you",
+    "pending_one": "{{count}} action is still up to you",
+    "pending_other": "{{count}} actions are still up to you",
+    "done": {
+      "create_mission": "Assignment created",
+      "park_account": "Account set aside"
+    },
+    "failed": {
+      "create_mission": "The assignment could not be created",
+      "park_account": "The account could not be set aside"
+    },
+    "createsMission": "There is no way to delete one afterwards.",
+    "missionAnnounced": "The assignment will be created on signature.",
+    "missionsAnnounced_one": "The assignment will be created: one retained placement.",
+    "missionsAnnounced_other": "{{count}} assignments will be created: one per retained placement.",
+    "moveOnly": "Move only",
+    "strategy": "Approach strategy (optional)",
+    "buyingModel": "Buying model (optional)",
+    "organisation": "Decision-making organisation (optional)",
+    "choiceNone": "Not specified",
+    "strategies": {
+      "conquete_directe": "Direct conquest",
+      "extension_de_compte": "Account expansion",
+      "via_partenaire": "Via a partner",
+      "defense_de_base": "Installed-base defence"
+    },
+    "buyingModels": {
+      "appel_offres": "Tender",
+      "accord_cadre": "Framework agreement",
+      "referencement": "Vendor listing",
+      "gre_a_gre": "Direct award"
+    },
+    "organisations": {
+      "decideur_unique": "Single decision-maker",
+      "comite_restreint": "Small committee",
+      "comite_elargi": "Broad committee"
+    },
+    "lossReasonCode": "Loss reason",
+    "lossReasonCodes": {
+      "price": "Price",
+      "competitor_won": "Competitor won",
+      "no_budget": "No budget",
+      "project_cancelled": "Project cancelled",
+      "bad_timing": "Bad timing",
+      "no_profile_available": "No profile available",
+      "other": "Other"
+    },
+    "reason": {
+      "review_signal": "to check it still holds before you spend time on it.",
+      "qualify_later": "so it doesn’t sit idle without a decision.",
+      "complete_btmmp": "budget, need, timing and decision makers must be known before proposing profiles.",
+      "identify_sponsor": "without an owner for the need, the deal doesn’t move.",
+      "create_submissions": "the need is qualified, now it needs profiles.",
+      "verify_profile_sent": "to be sure the client received it.",
+      "schedule_interview": "a submitted profile should quickly become an interview.",
+      "prepare_follow_up_mail": "a draft is placed in your mailbox: nothing is sent without you.",
+      "search_more_profiles": "to have an alternative if the client isn’t convinced.",
+      "prepare_rate_argument": "to defend your daily rate during the negotiation.",
+      "check_procurement": "a framework listing or purchase order can block the signature.",
+      "prepare_onboarding": "so the assignment starts on the planned date.",
+      "collect_loss_rex": "it’s the only moment the client still remembers.",
+      "park_account": "to stop chasing it while nothing has changed.",
+      "replan_six_months": "the context may have changed.",
+      "set_review_date": "a dormant deal with no date is a forgotten deal."
+    },
+    "result": {
+      "task": "Task created: {{action}}",
+      "draft": "Draft placed in your mailbox — nothing was sent.",
+      "matching": "Talent pool searched: profiles are ranked.",
+      "openTask": "Open My day",
+      "openDraft": "Open the draft",
+      "openMatching": "See the profiles"
+    },
+    "failedAction": "“{{action}}” could not be done",
+    "failedReason": {
+      "no_recipient": "No contact on the deal has an email address.",
+      "no_need": "The deal has no need to rank profiles for.",
+      "unavailable": "This service isn’t available right now.",
+      "failed": "Something went wrong."
+    }
+  },
+  "accountTab": {
+    "needsReading": {
+      "seeSignals": "See the account's signals",
+      "prepareApproach": "Prepare an approach to an identified role",
+      "historyTitle": "History (dated, not open requests)",
+      "historyRow": "{{label}} — closed in {{date}}",
+      "families": "Expertise observed on this account: {{families}}.",
+      "historyCaution": "This kind of expertise appears in the available history; check whether this team still owns the topic."
+    },
+    "loading": "Loading this account’s projects…",
+    "empty": {
+      "title": "No project on this account.",
+      "description": "They appear as soon as an analysis detects an initiative on this account, or as soon as you open one yourself.",
+      "action": "Open the pipeline",
+      "importAction": "Import projects from a file"
+    },
+    "createOpportunity": "Create an opportunity",
+    "createConfirmedNeed": "Create a confirmed need",
+    "funnel": {
+      "projects_one": "{{count}} project",
+      "projects_other": "{{count}} projects",
+      "signals_one": "{{count}} signal, counted separately",
+      "signals_other": "{{count}} signals, counted separately",
+      "filtered": "{{shown}} of {{total}} shown"
+    },
+    "columns": {
+      "label": "Label",
+      "kind": "Type",
+      "stage": "Stage",
+      "confidence": "Confidence",
+      "amount": "Amount",
+      "closeDate": "Expected close",
+      "stageAge": "Stage age",
+      "evidence": "Evidence level",
+      "sector": "Sector"
+    },
+    "days_one": "{{count}} day",
+    "days_other": "{{count}} days",
+    "toolbar": {
+      "searchPlaceholder": "Search a project, a detail, an offering",
+      "natureLabel": "Nature",
+      "projects": "Opportunities",
+      "signals": "Signals",
+      "quickFiltersLabel": "Quick filters",
+      "inPipe": "In the pipe",
+      "inPipeHint": "The five pipe stages — a detected project has not been looked at by anyone yet.",
+      "searchLabel": "Search a project on this account",
+      "import": "Import"
+    },
+    "filteredEmpty": {
+      "title": "No project on this account matches these criteria.",
+      "description": "This is not “no project”: the account holds others, which your search or your chips leave out."
+    },
+    "noNextAction": "No open task",
+    "genericContext": {
+      "title": "Sector context ({{count}})",
+      "hint": "General deductions from the analysis, with no fact, action or owner: they count neither as projects nor as priorities. Nothing is deleted."
+    },
+    "openDemands": {
+      "title": "Current requests",
+      "statusOpen": "Open",
+      "see": "See the request",
+      "headcount": "{{count}} positions",
+      "deadline": "before {{date}}",
+      "startsOn": "starts on {{date}}",
+      "internalHire": "Internal recruitment posting: “{{title}}” — not a service mission open to an IT services firm.",
+      "noneFound": "No open demand identified in the sources consulted.",
+      "notSearched": "The search for demands has not been run on this account yet.",
+      "unavailable": "Source unavailable: this account’s demands could not be read right now."
+    },
+    "summary": {
+      "past": {
+        "title": "Past deals"
+      },
+      "active": {
+        "title": "Active opportunities",
+        "empty": "No active opportunity yet."
+      },
+      "confirmed": {
+        "title": "Confirmed requests",
+        "empty": "No confirmed need yet."
+      },
+      "plausible": {
+        "title": "Plausible projects",
+        "empty": "No plausible project detected yet."
+      },
+      "positioned": "Profile positioned",
+      "openInPipe": "Open in the Pipe",
+      "contactsClient": "Client contacts",
+      "qualify": "Qualify this plausible project",
+      "openNeedsForAccount": "View this account's open needs"
+    },
+    "needContacts": {
+      "label": "Contacts · {{project}}",
+      "contact": "Contact {{name}}"
+    }
+  },
+  "staffable": {
+    "yes": "Can be filled",
+    "no": "Cannot be filled",
+    "state": {
+      "yes": "Can be filled",
+      "no": "Cannot be filled"
+    },
+    "done": {
+      "yes": "Noted: this need can be filled.",
+      "no": "Noted, with the reason.",
+      "unknown": "Nothing moved."
+    },
+    "failed": "I couldn’t record that decision.",
+    "dialog": {
+      "title": "Why can’t “{{role}}” be filled?",
+      "description": "The reason is what builds, refusal after refusal, the list of what your firm can’t do yet.",
+      "placeholder": "Skill missing from our bench, rate incompatible, area we don’t cover…",
+      "cancel": "Cancel",
+      "confirm": "Mark as cannot be filled"
+    }
+  },
+  "openNeeds": {
+    "tab": "Open needs",
+    "title": "Needs",
+    "subtitle": "Requests to qualify or to cover, linked to their deal.",
+    "chain": "A qualified need → search criteria → compared profiles → selection.",
+    "createNeed": {
+      "addTrigger": "Add a need",
+      "trigger": "Create a need",
+      "title": "Create a need",
+      "description": "The minimum to log a need before you've even opened the project: a title, and the project to attach it to. Everything else — skills, day rate, urgency — is filled in afterwards on its own page.",
+      "titleLabel": "Need title",
+      "titlePlaceholder": "e.g. Senior cloud architect",
+      "projectLabel": "Attach to project",
+      "projectHint": "A project groups the needs of a single client. No project for this client yet? Create one right below.",
+      "changeProject": "Change",
+      "projectChosenFallback": "Project selected",
+      "projectSearchPlaceholder": "Search an account or a project…",
+      "projectsLoading": "Loading projects…",
+      "noProject": "No project matches this search.",
+      "noProjectAtAll": "No project in this workspace yet — type the client’s name above to create the first project, and the need with it.",
+      "cancel": "Cancel",
+      "submit": "Create",
+      "failed": "I couldn't create this need.",
+      "createProjectFor": "Create a project for “{{name}}”",
+      "createProjectHint": "No project goes by that name. The project will be created under the account’s name, and will hold the needs that follow.",
+      "creatingProject": "Creating the project…",
+      "createProjectFailed": "The project could not be created",
+      "withoutProjectFor": "Create the need without a project, for “{{name}}”",
+      "withoutProjectHint": "Most assignments have no project behind them. The need is then tied to the client, and to the client alone.",
+      "choosingWithoutProject": "Saving the client…",
+      "withoutProjectChosen": "{{name}} — no project",
+      "withoutProjectFailed": "I couldn’t save this client",
+      "contactLabel": "Point of contact",
+      "contactPlaceholder": "No point of contact chosen",
+      "ownerLabel": "Owner",
+      "ownerPlaceholder": "No owner chosen",
+      "createProjectGeneric": "Create a project",
+      "createProjectGenericHint": "Type the project name in the field above, then create it here. You can also create the mission without a project."
+    },
+    "importNeeds": {
+      "cta": "Import job postings",
+      "dialogTitle": "Import job postings",
+      "dialogDescription": "Drop several job postings at once — each one becomes a need, for you to review before it's created.",
+      "pick": {
+        "accountLabel": "Client account",
+        "accountPlaceholder": "Choose the client account",
+        "filesLabel": "Job postings",
+        "dropLabel": "Drag and drop your files here, or click to browse",
+        "fileInputLabel": "Choose files",
+        "hint": "PDF, DOC, DOCX, TXT (max. {{maxMb}} MB per file, {{maxFiles}} files per drop)",
+        "tooMany": "Ten files maximum per drop — split them into several drops.",
+        "remove": "Remove {{file}}",
+        "extracting_one": "Reading {{count}} file…",
+        "extracting_other": "Reading {{count}} files…",
+        "extract": "Extract",
+        "cancel": "Cancel"
+      },
+      "preview": {
+        "hint": "Review each need before confirming — an unchecked row won't be created.",
+        "titleLabel": "Need title",
+        "skillsFound_one": "{{count}} skill found",
+        "skillsFound_other": "{{count}} skills found",
+        "noSkills": "No skill found in the document.",
+        "duplicate": "Already imported for this account: “{{title}}”",
+        "tooLarge": "This file is over {{max}} MB.",
+        "submit_one": "Create {{count}} need",
+        "submit_other": "Create {{count}} needs",
+        "creating": "Creating the needs…",
+        "created": "Created",
+        "createFailed": "Not created: {{reason}}",
+        "close": "Close"
+      }
+    },
+    "searchPlaceholder": "Role, project or company…",
+    "loading": "Loading needs…",
+    "count_one": "{{count}} need",
+    "count_other": "{{count}} needs",
+    "moreSkills_one": "+{{count}}",
+    "moreSkills_other": "+{{count}}",
+    "months_one": "{{count}} month",
+    "months_other": "{{count}} months",
+    "previous": "Previous",
+    "next": "Next",
+    "page": "Page {{current}} of {{total}}",
+    "filters": {
+      "withoutShortlist": "Without a shortlist",
+      "deadlinePassed": "Deadline passed",
+      "any": "Any",
+      "skill": "Skill",
+      "seniority": "Seniority",
+      "location": "Location",
+      "urgency": "Urgency",
+      "status": "Status",
+      "preciseState": "Tag (precise state)",
+      "contractKind": "Contract type",
+      "source": "Origin",
+      "startingWithin": "Starting within (days)",
+      "includeClosed": "Include closed needs",
+      "more": "More filters",
+      "moreActive": "More filters ({{count}})",
+      "startingSoon": "Starting within {{days}} d",
+      "toQualify": "To qualify",
+      "clientReview": "Awaiting client",
+      "archived": "Archived",
+      "quickLabel": "Quick filters"
+    },
+    "seats_one": "{{count}} position",
+    "seats_other": "{{count}} positions",
+    "tjmEstimate": "Estimate, not a signed rate",
+    "ownedBy": "Owner: {{name}}",
+    "deadlineOn": "Answer by {{date}}",
+    "sourceLink": {
+      "open": "Open the source: {{site}}"
+    },
+    "stale": {
+      "badge": "Stale — to recheck",
+      "filter": "Stale"
+    },
+    "columns": {
+      "needAccount": "Need / account",
+      "tjmTarget": "Target sell rate",
+      "followedProfiles": "Followed profiles",
+      "withoutProject": "No project",
+      "role": "Role",
+      "skills": "Required skills",
+      "seniority": "Seniority",
+      "headcount": "Openings",
+      "tjm": "Target rate",
+      "start": "Start",
+      "duration": "Duration",
+      "location": "Location",
+      "remote": "Remote",
+      "contract": "Contract",
+      "account": "Account · Entity",
+      "perimeter": "Scope",
+      "source": "Origin",
+      "deadline": "Deadline",
+      "owner": "Owner",
+      "phase": "Phase",
+      "stageAge": "Age in stage",
+      "shortlist": "Shortlist",
+      "staffable": "Can be filled",
+      "match": "Matching",
+      "nextAction": "Next action"
+    },
+    "shortlist": {
+      "none": "none",
+      "noneHint": "No profile has been put forward for this need yet."
+    },
+    "stageAge": {
+      "days_one": "{{count}} d",
+      "days_other": "{{count}} d",
+      "since": "In this stage since {{date}}",
+      "unknown": "no status change recorded"
+    },
+    "urgency": {
+      "basse": "Low",
+      "normale": "Normal",
+      "haute": "High",
+      "critique": "Critical"
+    },
+    "export": {
+      "partner": "Export for a partner",
+      "partnerHint": "No rate or owner",
+      "ariaLabel": "Export the {{count}} displayed needs as CSV",
+      "partnerAriaLabel": "Export the displayed needs as CSV for a partner, without rate or owner",
+      "trigger": "Export",
+      "hint": "Export the {{count}} displayed needs as CSV (current filter and page)"
+    },
+    "selection": {
+      "count_one": "{{count}} need selected",
+      "count_other": "{{count}} needs selected",
+      "actions": "Actions",
+      "clear": "Clear selection",
+      "toggleAll": "Select the needs on this page",
+      "toggleOne": "Select “{{role}}”",
+      "exportCsv": "Export as CSV",
+      "exportJson": "Export as JSON",
+      "exportDone_one": "Export ready: {{count}} need.",
+      "exportDone_other": "Export ready: {{count}} needs."
+    },
+    "actions": {
+      "title_one": "On this need",
+      "title_other": "On {{count}} needs",
+      "rowMenu": "Actions on “{{role}}”",
+      "assignOwner": "Assign to…",
+      "clearOwner": "Remove owner",
+      "noMembers": "No member loaded yet",
+      "loadingMembers": "Loading members…",
+      "appliesTo_one": "On the selected need.",
+      "appliesTo_other": "On the {{count}} selected needs.",
+      "unnamedMember": "Unnamed member",
+      "setUrgency": "Change urgency",
+      "clearUrgency": "Clear urgency",
+      "createActions": "Create actions…",
+      "createActionsTitle_one": "Create an action on this need",
+      "createActionsTitle_other": "Create an action on {{count}} needs",
+      "createActionsDescription": "The label is posted as-is as a next step, on every checked need. Nothing checks itself off or sends itself — you're the one who'll move it forward.",
+      "createActionsLabel": "Action label",
+      "createActionsPlaceholder": "E.g. \"Follow up with the client on the quote\"",
+      "createActionsConfirm": "Create the action",
+      "hold": "Put on hold…",
+      "match": "Run matching",
+      "matchTitle_one": "Run matching on this need",
+      "matchTitle_other": "Run matching on {{count}} needs",
+      "matchDescription": "The engine looks for talent-pool profiles for each need kept. Nothing changes on the row until it finds some.",
+      "matchConfirm_one": "Run matching",
+      "matchConfirm_other": "Run {{count}} matchings",
+      "reactivate": "Reactivate",
+      "reactivateTitle_one": "Put this need back in the pile",
+      "reactivateTitle_other": "Put {{count}} needs back in the pile",
+      "reactivateDescription": "The need starts again, and its stop reason is cleared — a stop reason next to a running need would read as a blocker that is still active.",
+      "closeLost": "Mark as lost…",
+      "closeCancelled": "Mark as cancelled…",
+      "archive": "Archive",
+      "archiveTitle_one": "Archive this need",
+      "archiveTitle_other": "Archive {{count}} needs",
+      "archiveDescription": "A neutral filing move: the need's status does not change. It leaves \"Open needs\" and joins the \"Archived\" view, where it can be unarchived at any time.",
+      "unarchive": "Unarchive",
+      "unarchiveTitle_one": "Unarchive this need",
+      "unarchiveTitle_other": "Unarchive {{count}} needs",
+      "unarchiveDescription": "The need is back in \"Open needs\", with the status it had — unarchiving does not change that either.",
+      "eligible": "{{eligible}} of the {{total}} ticked needs can take this action — the others are left as they are.",
+      "cancel": "Cancel"
+    },
+    "hold": {
+      "title_one": "Put this need on hold",
+      "title_other": "Put {{count}} needs on hold",
+      "description": "A need on hold still counts as open. Without a reason, it is the one nobody reopens.",
+      "label": "Reason for putting on hold",
+      "placeholder": "Budget frozen until January, role redefined by the client…",
+      "hint": "The reason is cleared when the need is reactivated.",
+      "confirm": "Put on hold",
+      "resumeOnLabel": "Planned resume date (optional)"
+    },
+    "closeLost": {
+      "title_one": "Mark this need as lost",
+      "title_other": "Mark {{count}} needs as lost",
+      "description": "Lost at the CLIENT. Without a reason, the loss rate by cause means nothing — and it is one of the few figures anyone really looks at.",
+      "label": "Reason for the loss",
+      "placeholder": "Day rate above budget, competitor already positioned…",
+      "hint": "Lost is not cancelled: a need we stop on our side is marked “cancelled”.",
+      "confirm": "Mark as lost"
+    },
+    "closeCancelled": {
+      "title_one": "Mark this need as cancelled",
+      "title_other": "Mark {{count}} needs as cancelled",
+      "description": "The need no longer exists. This is the archiving path: we archive, we do not delete.",
+      "label": "Reason for the cancellation",
+      "placeholder": "Project postponed, role filled internally…",
+      "hint": "Cancelled is not lost: confusing the two would skew the loss rate.",
+      "confirm": "Mark as cancelled",
+      "presets": {
+        "expired": "Expired",
+        "notRelevant": "No longer relevant"
+      }
+    },
+    "bulk": {
+      "done_one": "{{count}} need updated",
+      "done_other": "{{count}} needs updated",
+      "matchStarted_one": "{{count}} matching started",
+      "matchStarted_other": "{{count}} matchings started",
+      "partial": "{{done}} updated, {{failed}} refused",
+      "allFailed_one": "{{count}} need could not be updated",
+      "allFailed_other": "{{count}} needs could not be updated"
+    },
+    "contract": {
+      "regie": "Time & materials",
+      "forfait": "Fixed price",
+      "recrutement": "Permanent hire",
+      "inconnu": "Unknown"
+    },
+    "remote": {
+      "sur_site": "On site",
+      "hybride": "Hybrid",
+      "full_remote": "Fully remote",
+      "indifferent": "No preference"
+    },
+    "source": {
+      "manual": "Entered by hand",
+      "from_account": "From an account",
+      "job_posting": "Job posting",
+      "hiring_signal": "Hiring signal",
+      "company_news": "Company news",
+      "tender": "Tender",
+      "client_email": "Email from a client",
+      "meeting_notes": "Meeting notes",
+      "crm_import": "Import from your CRM",
+      "ats_import": "Import from your ATS",
+      "csv_import": "CSV import",
+      "pasted_text": "Pasted text"
+    },
+    "empty": {
+      "title": "No open need.",
+      "description": "They appear as soon as a project reaches the expressed-need stage.",
+      "action": "Open the pipeline"
+    },
+    "emptyFiltered": {
+      "title": "No need matches.",
+      "description": "Loosen a filter — the search covers the role, the project and the company."
+    },
+    "error": {
+      "title": "I couldn’t load the needs.",
+      "description": "Try again — your filters are kept.",
+      "retry": "Try again"
+    },
+    "nextAction": {
+      "type_skills": "Type the skills",
+      "decide_expired": "Deadline passed — decide",
+      "decide_stale_start": "Start date passed — decide",
+      "answer_unstaffable": "Answer the client",
+      "run_matching": "Run the matching",
+      "set_target_rate": "Qualify the budget",
+      "send_shortlist": "Prepare the push"
+    },
+    "counters": {
+      "total": "open",
+      "withoutShortlist": "without shortlist",
+      "deadlinePassed": "deadline passed",
+      "startingSoon": "starting within 30 d",
+      "notStaffable": "cannot be filled"
+    },
+    "drawer": {
+      "title": "More filters",
+      "description": "Criteria apply when you click “Apply”.",
+      "reset": "Reset",
+      "apply": "Apply ({{count}})",
+      "unavailableTitle": "What cannot be filtered here",
+      "unavailable": {
+        "tjm_min_max": "target rate",
+        "duration_months": "duration",
+        "languages": "languages",
+        "clearances": "clearances",
+        "origin": "commercial origin (inbound, outbound, tender, referral)",
+        "channel": "channel",
+        "owner_id": "owner",
+        "location_radius": "radius around a city"
+      }
+    },
+    "savedViews": {
+      "title": "My views",
+      "loading": "Loading your views…",
+      "loadError": "I couldn’t load your saved views.",
+      "empty": "No saved view yet. Set some filters, then save them.",
+      "locked": "Saved views aren’t included in your plan.",
+      "shared": "shared",
+      "save": "Save this view",
+      "nameLabel": "View name",
+      "namePlaceholder": "e.g. Java to staff",
+      "confirm": "Save",
+      "cancel": "Cancel",
+      "remove": "Delete the view “{{name}}”",
+      "noCriteria": "Set at least one filter: a view with no criteria is the full list — it already exists.",
+      "full": "You already have {{max}} views on this screen — beyond that, you stop choosing. Delete one first.",
+      "saved": "View “{{name}}” saved.",
+      "removed": "View deleted.",
+      "error": "I couldn’t save this view."
+    },
+    "hygiene": {
+      "withoutSkills": "with no typed skill",
+      "withoutSkillsHint": "Need ↔ consultant matching cannot handle a need with no required skill: open the need and enter them. Counted across every open need in the workspace, not on the current filter."
+    },
+    "sourceUnknown": "Unknown origin",
+    "sourceUnknownHint": "Nobody recorded how this need came in.",
+    "summaryLabel": "Needs summary"
+  },
+  "needStatus": {
+    "to_qualify": "To qualify",
+    "qualified": "Qualified",
+    "to_match": "Matching to launch",
+    "matching": "Matching in progress",
+    "shortlist_ready": "Shortlist ready",
+    "submitted": "Profile submitted",
+    "client_review": "Client review",
+    "interview": "Interview",
+    "negotiation": "Negotiation",
+    "won": "Signed",
+    "lost": "Lost",
+    "on_hold": "On hold",
+    "to_reactivate": "To reactivate",
+    "cancelled": "Cancelled",
+    "open": "Open (legacy)",
+    "staffed": "Staffed",
+    "detected": "Detected"
+  },
+  "needTheoStatus": {
+    "to_qualify": "To qualify",
+    "open": "Open",
+    "covered": "Covered",
+    "closed": "Closed"
+  },
+  "affairesTabs": {
+    "label": "Deals sections",
+    "pipeline": "Pipeline",
+    "needs": "Needs",
+    "presentations": "Presentations"
+  },
+  "page": {
+    "backToPipe": "Back to the pipe",
+    "title": "Deals",
+    "introTitle": "Deals",
+    "introTitleWithoutName": "Deals",
+    "introSubtitle": "From the first conversation to the start.",
+    "portfolioIntroTitle": "{{firstName}}, here are the accounts with workable material",
+    "portfolioIntroTitleWithoutName": "The accounts with workable material",
+    "portfolioIntroSubtitle": "{{brand}} groups needs, plausible projects and signals by account, to help you decide where to dig next.",
+    "needsIntroTitle": "Needs",
+    "needsIntroTitleWithoutName": "Needs",
+    "needsIntroSubtitle": "Requests to qualify or to cover, linked to their deal.",
+    "needsAskLauraLabel": "Ask {{copilot}} to prioritise my needs",
+    "needsAskLauraQuestion": "Which needs require my attention? Those without a positioned profile, those starting soon, and those that look impossible to staff with my current pool.",
+    "subtitle": "From first contact to kick-off. Each deal keeps its need and its presentations."
+  },
+  "tabs": {
+    "all": "All needs"
+  },
+  "toolbar": {
+    "searchPlaceholder": "Search a need, an offering, an account…",
+    "pipeSearchPlaceholder": "Search a deal or an account…",
+    "quickFiltersLabel": "Pipeline quick filters",
+    "mine": "My projects",
+    "withoutNextAction": "No next action",
+    "stale": "Aging",
+    "withoutProfile": "No profile positioned",
+    "toSign": "To sign",
+    "interviewThisWeek": "Interview this week",
+    "viewKanban": "Kanban",
+    "viewTable": "List",
+    "createProject": "New deal",
+    "importPipe": "Import my pipeline",
+    "ownerFilter": "Owner",
+    "allOwners": "All owners"
+  },
+  "kpis": {
+    "accounts": {
+      "label": "Accounts with a need",
+      "detail": "At least one need, project or signal found."
+    },
+    "needs": {
+      "label": "Open needs",
+      "detail": "Needs in an open status, spotted, confirmed or inferred."
+    },
+    "signals": {
+      "label": "Buying signals",
+      "detail": "Dated facts that may announce a need."
+    },
+    "urgent": {
+      "label": "To handle quickly",
+      "detail": "Needs the analysis flagged as urgent."
+    },
+    "withoutOffer": {
+      "label": "To map to your offerings",
+      "detail": "No need mapped to any of your offerings yet."
+    },
+    "intake": {
+      "label": "Deals to qualify",
+      "pistesToReview_one": "{{count}} lead to review",
+      "pistesToReview_other": "{{count}} leads to review",
+      "cta": "Open the qualification queue"
+    },
+    "headerSummary": {
+      "active_one": "{{count}} active",
+      "active_other": "{{count}} active",
+      "withoutNextAction_one": "{{count}} without action",
+      "withoutNextAction_other": "{{count}} without action",
+      "intake_one": "{{count}} lead",
+      "intake_other": "{{count}} leads",
+      "withoutProfile_one": "{{count}} without a profile",
+      "withoutProfile_other": "{{count}} without a profile",
+      "unmeasured": "{{axis}}: not measured",
+      "withoutNextActionAxis": "Without action",
+      "intakeAxis": "Leads",
+      "withoutProfileAxis": "Without a profile"
+    }
+  },
+  "list": {
+    "moreNeeds_one": "+{{count}} more need",
+    "moreNeeds_other": "+{{count}} more needs",
+    "noOffer": "No offering mapped",
+    "toQualify": "To qualify",
+    "sectorFallback": "Sector not specified",
+    "score": "Score {{score}}/10",
+    "openDetail": "See all needs",
+    "openDetailAria": "{{company}} — see all needs"
+  },
+  "kinds": {
+    "besoin": "Need",
+    "pain": "Pain",
+    "challenge": "Initiative",
+    "program": "Programme",
+    "implication": "Implication",
+    "signal": "Signal",
+    "imported": "Imported from a file",
+    "manual": "Entered by hand"
+  },
+  "groups": {
+    "pain": "Stated needs",
+    "challenge": "IT initiatives",
+    "program": "Projects",
+    "implication": "IT implications"
+  },
+  "urgency": {
+    "high": "Urgent",
+    "medium": "Medium",
+    "low": "Low",
+    "unknown": "Not qualified"
+  },
+  "detail": {
+    "count_one": "{{count}} opportunity detected",
+    "count_other": "{{count}} opportunities detected",
+    "countBreakdown_one": "{{count}} opportunity detected: {{confirmed}} confirmed, {{toQualify}} to qualify",
+    "countBreakdown_other": "{{count}} opportunities detected: {{confirmed}} confirmed, {{toQualify}} to qualify",
+    "provenance": "{{brand}} detected these from your connected sources and recent public signals.",
+    "openAccount": "Open the account",
+    "enriching": "Enriching…",
+    "enrichHint": "Enriching re-runs the analysis phase that produces needs (pains, initiatives, mapped offerings).",
+    "impact": "Impact",
+    "context": "Context",
+    "risks": "Risks",
+    "scopeLabel": "Scope",
+    "openMission": "Open the mission",
+    "trackedAsMission": "Tracked as mission — {{name}}",
+    "createMission": "Create the mission",
+    "prepareProposal": "Prepare the proposal",
+    "answerTender": "Answer a tender",
+    "createdAt": "Created on {{date}}",
+    "lastActivityAt": "Last activity: {{date}}",
+    "addNextAction": "Add a next action",
+    "scheduleMeeting": "Schedule a meeting",
+    "meetingDefaultTitle": "Meeting",
+    "currentSynthesis": "Current synthesis and decision",
+    "share": "Share",
+    "shareCopied": "Dossier link copied.",
+    "shareFailed": "Copying the link failed.",
+    "askLauraLabel": "Ask {{copilot}}",
+    "askLauraQuestion": "What should I know or prepare about \"{{project}}\"?",
+    "openDossier": "Open full record",
+    "commercialConditions": "Commercial conditions",
+    "archive": "Archive",
+    "unarchive": "Unarchive",
+    "archived": "Opportunity archived.",
+    "unarchived": "Opportunity unarchived.",
+    "archiveError": "Archiving failed.",
+    "archivedBadge": "Archived",
+    "steps": {
+      "title": "Actions and next steps",
+      "empty": "No step written yet.",
+      "readError": "Steps could not be loaded.",
+      "add": "Add",
+      "addPlaceholder": "E.g. \"Follow up with the sponsor\"",
+      "addAria": "New step",
+      "toggleAria": "Check \"{{label}}\"",
+      "status": {
+        "todo": "To do",
+        "pending": "Pending",
+        "done": "Done"
+      },
+      "createError": "Adding the step failed.",
+      "updateError": "Updating the step failed."
+    },
+    "synthesis": {
+      "title": "Synthesis in 7 questions",
+      "empty": "No synthesis generated yet.",
+      "generate": "Generate synthesis",
+      "regenerate": "Regenerate",
+      "generating": "Generating…",
+      "error": "The synthesis could not be generated.",
+      "problem": "Client's problem",
+      "confirmed": "Confirmed",
+      "hypotheses": "Hypotheses",
+      "decisionMaker": "Decision maker",
+      "decisionMakerUnknown": "Not yet identified",
+      "blockingConditions": "What could block it",
+      "nextToObtain": "Next to obtain",
+      "whatNotToDo": "What not to do"
+    },
+    "caseDimensions": {
+      "title": "To compare this loss with other cases",
+      "hint": "Three optional closed choices: {{copilot}} uses them when she matches this account against deals already won or lost.",
+      "strategy": "Approach strategy",
+      "buyingModel": "Buying model",
+      "organisation": "Decision circle",
+      "unavailable": "The comparison choices could not be read: not filled in for now.",
+      "loading": "Reading the comparison choices…",
+      "saveError": "The choice could not be saved."
+    },
+    "decisionOrg": {
+      "title": "Decision organisation",
+      "error": "The decision makers could not be read.",
+      "empty": "Decision makers: not filled in on this deal.",
+      "decider": "Decision maker",
+      "unknown": "not filled in",
+      "missing": "What is missing"
+    },
+    "comparableLosses": {
+      "title": "Comparable losses in your workspace",
+      "loading": "Looking for comparable losses…",
+      "error": "Comparable losses could not be read.",
+      "empty": "No comparable loss in your workspace yet."
+    },
+    "lostDealRex": {
+      "title": "Documented losses",
+      "empty": "No loss documented on this deal yet.",
+      "readError": "Loss debriefs could not be loaded.",
+      "recordedOn": "Recorded on {{date}}"
+    },
+    "documents": {
+      "title": "Documents",
+      "empty": "No document tracked on this deal yet.",
+      "readError": "Documents could not be loaded.",
+      "kind": {
+        "quote": "Quote",
+        "nda": "NDA",
+        "master_agreement": "Master agreement",
+        "other": "Other document"
+      },
+      "status": {
+        "draft": "Draft",
+        "sent": "Sent",
+        "pending": "Pending",
+        "signed": "Signed",
+        "refused": "Refused"
+      },
+      "statusAria": "Status of {{name}}",
+      "kindAria": "Document kind",
+      "addPlaceholder": "File name",
+      "addAria": "Document name",
+      "add": "Track this document",
+      "createError": "The document could not be tracked.",
+      "updateError": "The status did not change."
+    },
+    "primaryAction": {
+      "qualify": "Qualify the deal",
+      "launchMatching": "Launch matching",
+      "frameProject": "Frame the project",
+      "followUp": "Follow up on responses",
+      "prepareInterview": "Prepare the interview",
+      "secureAgreements": "Secure both agreements"
+    },
+    "enrich": "Refresh and deepen"
+  },
+  "emptyState": {
+    "errorTitle": "Could not load needs",
+    "pipelineErrorTitle": "Unable to load the pipeline",
+    "errorDescription": "Please try again in a moment.",
+    "filteredTitle": "No need matches these filters",
+    "filteredDescription": "Try another search or pick a different tab.",
+    "noNeedTitle": "No need identified yet",
+    "noNeedDescription": "Needs come from account analyses. Run an analysis to populate this view.",
+    "noProjectTitle": "Your pipeline is empty, but {{brand}} can already help.",
+    "noProjectDescription": "Projects come out of account analyses. Run one, then pick up here the ones you want to work.",
+    "discoverAction": "Discover accounts",
+    "clearFilters": "Clear filters",
+    "noProjectImportCrm": "Import a CRM",
+    "createProjectAction": "Create a first opportunity",
+    "noProjectQualifyLead": "Qualify a detected lead"
+  },
+  "amount": {
+    "label": "Estimated amount",
+    "add": "Add an estimated amount",
+    "edit": "Edit the estimated amount",
+    "inputLabel": "Estimated amount in euros",
+    "placeholder": "e.g. 25,000",
+    "save": "Save",
+    "cancel": "Cancel"
+  },
+  "owner": {
+    "change": "Change owner",
+    "unassigned": "Unassigned",
+    "assignedTo": "Owner: {{name}}"
+  },
+  "provenance": {
+    "source": "Origin · {{source}}",
+    "sources": {
+      "pain": "Pain captured in the analysis",
+      "challenge": "IT initiative identified",
+      "program": "Named project",
+      "signal": "Buying signal with no cited source",
+      "implication": "ESN reading of the activity",
+      "imported": "Row imported from a file, never re-read by an analysis",
+      "boamp": "Public tender",
+      "decp": "Awarded public contract",
+      "client": "Brought by the client",
+      "import": "Imported file",
+      "manual": "Entered by hand"
+    },
+    "confidence": {
+      "high": "High confidence",
+      "medium": "Medium confidence",
+      "low": "Low confidence"
+    }
+  },
+  "actions": {
+    "addToPlan": "Add to plan",
+    "findDeciders": "Find the deciders",
+    "createReminder": "Create a reminder",
+    "compare": "This need elsewhere",
+    "exportCrm": "Add to CRM",
+    "exporting": "Adding…",
+    "planText": "Qualify the need: {{need}}",
+    "planReason": "Find out whether “{{need}}” is a real need, and who owns it",
+    "planOutcome": "Need confirmed or dismissed, with the person who owns it"
+  },
+  "crmExport": {
+    "success": {
+      "default": "Need added to {{provider}}.",
+      "deal": "Need added to {{provider}} — a deal was created.",
+      "note": "Need added to {{provider}} — a note was created on the company.",
+      "task": "Need added to {{provider}} — a follow-up task was created.",
+      "opportunity": "Need added to {{provider}} — an opportunity was created."
+    },
+    "noProviderTitle": "No CRM connected",
+    "noProviderDescription": "Connect your CRM from Settings › Integrations to push this need there.",
+    "connectCrm": "Connect a CRM",
+    "error": "Adding to CRM failed. Please try again.",
+    "capability": "your CRM"
+  },
+  "reminder": {
+    "title": "Create a reminder",
+    "subtitle": "The reminder is saved on the {{company}} account and shows up in your activity journal.",
+    "at": "Reminder date",
+    "note": "Note",
+    "notePrefill": "Follow up on: {{need}}",
+    "hint": "Nothing leaves {{brand}}: the reminder stays internal until a calendar is connected.",
+    "cancel": "Cancel",
+    "confirm": "Save the reminder",
+    "close": "Close",
+    "done": "Reminder saved.",
+    "refused": "Reminder not saved.",
+    "error": "Could not save the reminder."
+  },
+  "similar": {
+    "title": "This need elsewhere in your portfolio",
+    "subtitle": "Needs close to “{{need}}” on your other accounts.",
+    "loading": "Searching your portfolio…",
+    "error": "Similar needs can't be searched right now.",
+    "empty": "No comparable need on your other accounts. Nothing was matched by force.",
+    "sharedTerms": "Shared words: {{terms}}",
+    "hint": "Matching done on the words of already-analysed needs — no analysis is re-run.",
+    "openAccount": "Open",
+    "unknownCompany": "Unnamed account",
+    "close": "Close"
+  },
+  "btmmp": {
+    "title": "Qualification (budget, need, decision-maker, timing, means, project)",
+    "qualified": "Qualified",
+    "progress": "{{score}}/{{total}} qualified",
+    "save": "Save",
+    "saving": "Saving…",
+    "saved": "Qualification saved",
+    "error": "Couldn't save the qualification",
+    "axes": {
+      "budget": {
+        "label": "Budget",
+        "hint": "day rate / margin — compatible, negotiable, tier and costs"
+      },
+      "timing": {
+        "label": "Timing",
+        "hint": "start, duration, availability, deadline"
+      },
+      "mission": {
+        "label": "Mission",
+        "hint": "goals, tasks, stack, deliverables, seniority"
+      },
+      "management": {
+        "label": "Management",
+        "hint": "team, manager, governance, remote, location"
+      },
+      "process": {
+        "label": "Process",
+        "hint": "stakeholders, sign-off, procurement, panel, competition, pitch"
+      },
+      "nextStep": {
+        "label": "Next step",
+        "hint": "date, owner, document, expected decision"
+      }
+    },
+    "readiness": {
+      "mainBlocker": "Main blocker: {{label}}",
+      "noBlocker": "No blocker identified"
+    }
+  },
+  "play": {
+    "prepare": "Prepare the approach",
+    "preparing": "Preparing…",
+    "view": "View the plan",
+    "free": "Already paid by the team — free to re-read",
+    "outOfCredits": "You’ve been using {{brand}} a lot this month — shall we talk? Drop the team a line.",
+    "error": "Preparation failed. Nothing was charged.",
+    "angle": "Angle",
+    "targets": "Who to target",
+    "message": "First message",
+    "proofs": "Proof points",
+    "missing": "What we cannot prove",
+    "nextAction": "Next action",
+    "roleToIdentify": "Role to identify"
+  },
+  "stages": {
+    "signal": {
+      "tab": "Signals",
+      "label": "Signal",
+      "help": "A dated, sourced fact. It may announce a need; it is not one."
+    },
+    "plausible": {
+      "tab": "Plausible projects",
+      "label": "Plausible project",
+      "help": "An interpretation linking several facts. To be tested before being spoken of as a fact."
+    },
+    "qualified": {
+      "tab": "Qualified projects",
+      "label": "Qualified project",
+      "help": "A named project: the perimeter exists and is quoted."
+    },
+    "confirmed": {
+      "tab": "Confirmed demands",
+      "label": "Confirmed demand",
+      "help": "Someone expressed it. The only position that deserves the word « need »."
+    }
+  },
+  "laura": {
+    "purpose": "Tracks your sales opportunities, stage by stage, with their next action.",
+    "lens": "View",
+    "inPipe": "Deals in the pipeline",
+    "withoutNextAction": "Deals without a next action",
+    "stage": "Filtered stage"
+  },
+  "lens": {
+    "pipeline": "Pipeline",
+    "portfolio": "Leads to qualify"
+  },
+  "stage": {
+    "change": "Change stage",
+    "detectedOn": "Detected on {{date}}",
+    "states": {
+      "detected": "Detected",
+      "potential": "Potential",
+      "qualified": "Scoping",
+      "confirmed": "To qualify",
+      "profiles_submitted": "Profiles submitted",
+      "negotiation": "Proposal",
+      "won": "Won",
+      "lost": "Lost",
+      "dormant": "Dormant"
+    },
+    "loss": {
+      "title": "Why was this project lost?",
+      "description": "A reason is required: a loss without one teaches the team nothing. It feeds the workspace’s loss reasons.",
+      "label": "Loss reason",
+      "placeholder": "E.g. budget frozen on the client side, competitor won, need cancelled…",
+      "cancel": "Cancel",
+      "confirm": "Mark as lost"
+    },
+    "lostDealRex": {
+      "offerTitle": "Document what this loss teaches?",
+      "offerDescription": "A structured debrief helps the team avoid repeating the same route on this account.",
+      "offerCta": "Add a loss debrief",
+      "skip": "Later",
+      "title": "Loss debrief",
+      "declaredMotifLabel": "Reason declared by the client",
+      "suspectedMotifLabel": "Reason you think is real",
+      "motifPlaceholder": "Not provided",
+      "distinctionLabel": "Where does this come from?",
+      "motifs": {
+        "timing": "Timing",
+        "budget": "Budget",
+        "concurrence": "Competition",
+        "panel": "Panel",
+        "sponsor_absent": "No sponsor",
+        "mauvaise_personne": "Wrong person",
+        "mauvais_besoin": "Wrong need",
+        "proposition": "Proposal",
+        "prix": "Price",
+        "consultant": "Consultant",
+        "delivery": "Delivery",
+        "decision_interne": "Internal decision",
+        "aucune_decision": "No decision",
+        "inconnu": "Unknown"
+      },
+      "distinctions": {
+        "fait_confirme": "Confirmed fact",
+        "retour_client": "Client feedback",
+        "interpretation_commerciale": "Sales interpretation",
+        "hypothese": "Hypothesis",
+        "inconnu": "Unknown"
+      },
+      "perimeterLabel": "Perimeter",
+      "perimeterPlaceholder": "E.g. headquarters only, not the subsidiaries",
+      "needLabel": "Need",
+      "needPlaceholder": "E.g. cloud migration",
+      "peopleInvolvedLabel": "People involved",
+      "peopleInvolvedPlaceholder": "E.g. CIO, CISO, buyer",
+      "realDeciderLabel": "Real decider",
+      "realDeciderPlaceholder": "E.g. the CISO, not the CIO",
+      "sponsorLabel": "Sponsor",
+      "sponsorPlaceholder": "E.g. the CIO",
+      "routeUsedLabel": "Route used",
+      "routeUsedPlaceholder": "E.g. direct entry via the business sponsor, bypassing procurement",
+      "proofUsedLabel": "Proof used",
+      "proofUsedPlaceholder": "E.g. banking sector case study",
+      "angleTriedLabel": "Angle tried",
+      "angleTriedPlaceholder": "E.g. security and compliance",
+      "anglesNotTriedLabel": "Angles not tried",
+      "anglesNotTriedPlaceholder": "One angle per line — e.g. total cost",
+      "competitorLabel": "Competitor",
+      "competitorPlaceholder": "E.g. Capgemini",
+      "timingLabel": "Timing",
+      "timingPlaceholder": "E.g. budget already committed elsewhere",
+      "cycleDaysLabel": "Cycle (days)",
+      "cycleDaysPlaceholder": "E.g. 45",
+      "procurementFrictionLabel": "Procurement friction",
+      "procurementFrictionPlaceholder": "E.g. three-round RFP",
+      "consultantGapLabel": "Consultant gap",
+      "consultantGapPlaceholder": "E.g. senior profile requested, junior offered",
+      "economicsLabel": "Economics",
+      "economicsPlaceholder": "E.g. day rate 15% above market",
+      "lastActionLabel": "Last action",
+      "lastActionPlaceholder": "E.g. proposal sent on 09/12, no reply since",
+      "whatTeamKnowsLabel": "What the team knows now",
+      "whatTeamKnowsPlaceholder": "E.g. this account is decided by the business sponsor, not the CIO",
+      "revisitOnLabel": "Revisit date",
+      "reuseTargetsLabel": "This debrief should change…",
+      "reuseTargets": {
+        "account_local_strategy": "this account’s strategy",
+        "route": "the route to follow",
+        "message": "the message to send",
+        "blocker_list": "the blocker list",
+        "review_date": "the review date",
+        "comparable_case": "a comparable case",
+        "workspace_rule": "a workspace rule, to propose"
+      },
+      "cancel": "Cancel",
+      "save": "Save debrief",
+      "saved": "Loss debrief saved.",
+      "saveFailed": "Failed to save the debrief."
+    }
+  },
+  "stageFilter": {
+    "badge": "Stage: {{stage}}",
+    "hint": "This list is filtered: it does not show your whole pipeline.",
+    "remove": "Remove the stage filter and see the whole pipeline",
+    "removeShort": "Remove the filter",
+    "emptyTitle": "No deal matches these criteria.",
+    "emptyDescription": "The blocking filter is stage = {{stage}}. This is not “no deal”: your pipeline may have some at other stages.",
+    "emptyCta": "Clear the filter"
+  },
+  "pipeline": {
+    "totalLabel": "open pipeline excl. VAT",
+    "totalUnknownReason_one": "no amount entered on {{count}} project in the pipeline",
+    "totalUnknownReason_other": "no amount entered on {{count}} projects in the pipeline",
+    "withoutAmountSummary_one": "{{count}} deal with no amount, excluded from the total",
+    "withoutAmountSummary_other": "{{count}} deals with no amount, excluded from the total",
+    "withoutAmountShort": "{{count}} with no amount",
+    "withoutAmountFilterHint": "Show only the projects with no amount entered",
+    "withoutAmountShortFilterHint": "Show only the projects with no amount entered in this stage",
+    "filteredEmptyColumn": "Every project in this stage has an amount entered.",
+    "intakeHint": "Projects spotted by an analysis, never yet taken in hand — regardless of any amount entered. Not to be confused with Pilotage's “Open projects without an amount”, which counts a missing amount on a different population.",
+    "noAmountYet": "No amount entered",
+    "emptyColumn": "Nothing here yet",
+    "unknownAccount": "Unknown account",
+    "staleCard_one": "⚠ {{count}} day without movement",
+    "staleCard_other": "⚠ {{count}} days without movement",
+    "dragHandle": "Drag this card to another stage",
+    "dragInstructions": "Press Space to pick the card up, the left or right arrow to choose the stage, Space to drop it (the effect panel opens), Escape to cancel.",
+    "cardNoAmount": "No amount entered",
+    "signals_one": "{{count}} signal, counted separately",
+    "signals_other": "{{count}} signals, counted separately",
+    "doorViaRelation": "Door through a relationship — not a deal yet",
+    "withoutAmount": "{{count}} project(s) with no amount entered",
+    "signals": "{{count}} signal(s), counted separately",
+    "staleGesture": {
+      "qualifier": "→ to qualify",
+      "contact": "→ find a contact",
+      "matching": "→ start matching",
+      "relance": "→ prepare a follow-up"
+    },
+    "columnWithoutNextAction_one": "{{count}} without a next action",
+    "columnWithoutNextAction_other": "{{count}} without a next action",
+    "signedSection": "Signed",
+    "cardObjective": "Objective: {{objective}}",
+    "cardPrimaryNeed": "Main need: {{domain}}",
+    "cardOwner": "Owner: {{name}}",
+    "cardPositioned_one": "{{count}} candidate submitted",
+    "cardPositioned_other": "{{count}} candidates submitted",
+    "askLauraCard": "Ask {{copilot}}",
+    "askLauraCardQuestion": {
+      "base": "What do you recommend for the “{{label}}” opportunity?",
+      "account": "The account is {{account}}.",
+      "need": "The main need is {{need}}.",
+      "positioned_one": "{{count}} candidate is submitted.",
+      "positioned_other": "{{count}} candidates are submitted.",
+      "interview_one": "{{count}} candidate is in interviews.",
+      "interview_other": "{{count}} candidates are in interviews.",
+      "stale_one": "It has not moved from its stage for {{count}} day.",
+      "stale_other": "It has not moved from its stage for {{count}} days."
+    },
+    "cardLastActivity": "Last activity: {{date}}",
+    "cardNextAction": "Next action: {{title}} · {{date}}",
+    "cardNoNextAction": "No next action",
+    "narrowedEmptyColumn": "No project at this stage passes the filters.",
+    "savedViews": {
+      "title": "Saved views",
+      "loading": "Loading your views…",
+      "loadError": "I couldn’t load your saved views.",
+      "empty": "No saved view yet. Set some filters, then save them.",
+      "save": "Save this view",
+      "nameLabel": "View name",
+      "namePlaceholder": "E.g. My deals to sign",
+      "confirm": "Save",
+      "remove": "Remove view “{{name}}”",
+      "noCriteria": "Set at least one filter: a view with no criteria is the full list — it already exists.",
+      "full": "You already have {{max}} views on this pipeline — beyond that, you can no longer choose. Remove one.",
+      "saved": "View “{{name}}” saved.",
+      "removed": "View removed.",
+      "error": "I couldn’t save this view."
+    },
+    "cardEstimate_one": "Estimate excl. VAT · {{count}} position",
+    "cardEstimate_other": "Estimate excl. VAT · {{count}} positions",
+    "cardHeadcount_one": "{{count}} position",
+    "cardHeadcount_other": "{{count}} positions",
+    "cardPositionedSee": "View",
+    "cardPositionedSeeLabel": "View the tracked profiles of the deal {{label}}",
+    "inView_one": "{{count}} deal in this view",
+    "inView_other": "{{count}} deals in this view",
+    "inViewNone": "No deal in this view"
+  },
+  "needs": {
+    "title": "Roles sought",
+    "empty": "No role described yet. This is what will let you search the talent pool.",
+    "placeholder": "e.g. Platform architect",
+    "add": "Add",
+    "added": "Role added",
+    "addError": "The role could not be added",
+    "saveError": "The role could not be updated",
+    "remove": "Remove role",
+    "removed": "Role removed",
+    "removeError": "The role could not be removed",
+    "headcount": "{{count}} person(s)",
+    "tjm": "Target day rate {{amount}}",
+    "contract": {
+      "regie": "Time & materials",
+      "forfait": "Fixed price",
+      "recrutement": "Permanent hire",
+      "inconnu": "Contract to be defined"
+    },
+    "loadError": "The roles sought could not be loaded.",
+    "skills": {
+      "add": "+ Skills",
+      "edit": "Edit skills",
+      "requiredPlaceholder": "Required — Kubernetes, Terraform",
+      "nicePlaceholder": "Nice to have — observability",
+      "save": "Save",
+      "cancel": "Cancel"
+    }
+  },
+  "detailContacts": {
+    "title": "Contacts and decision chain",
+    "empty": "No contact attached to this opportunity yet.",
+    "loadError": "Contacts could not be loaded.",
+    "add": "Add a contact",
+    "addContactPlaceholder": "Pick a contact from the account",
+    "addRolePlaceholder": "Their role on this deal",
+    "addSubmit": "Attach",
+    "addNoneAvailable": "Every account contact is already attached, or the account has none.",
+    "addFailed": "The contact could not be attached.",
+    "prepareMessage": "Prepare a message",
+    "roles": {
+      "sponsor": "Sponsor",
+      "decideur": "Decision maker",
+      "prescripteur": "Advocate",
+      "acheteur": "Buyer",
+      "utilisateur": "User",
+      "bloqueur": "Blocker"
+    }
+  },
+  "proposals": {
+    "title": "What the analysis spotted",
+    "subtitle": "Job ads found at your clients. These are not needs yet — you decide.",
+    "pickProject": "Attach to a project…",
+    "accept": "Turn into a need",
+    "dismiss": "Dismiss",
+    "dismissReason": "Why dismiss it?",
+    "accepted": "Need created",
+    "dismissed": "Proposal dismissed",
+    "failed": "The action did not go through",
+    "pending_one": "{{count}} proposal to triage",
+    "pending_other": "{{count}} proposals to triage",
+    "toggleOpen": "Triage the proposals",
+    "toggleClose": "Collapse the proposals",
+    "dismissCancel": "Cancel",
+    "dismissConfirm": "Confirm",
+    "statusDetected": "Opportunity detected",
+    "detectedOn": "Detected on {{date}}",
+    "seeEvidence": "See the evidence"
+  },
+  "needFromRfp": {
+    "title": "A need proposed from a tender",
+    "subtitle": "What the document says, and what it doesn’t. Nothing exists until you confirm.",
+    "loading": "Reading the file…",
+    "failed": "The read did not go through.",
+    "criteriaTitle": "What the document says",
+    "noCriteria": "The document sets no usable criterion.",
+    "unknownsTitle": "What it doesn’t say",
+    "pickProject": "Attach to a project…",
+    "confirm": "Confirm",
+    "cancel": "Cancel",
+    "confirmed": "Need created",
+    "created": "The need is created.",
+    "noNextAction": "Nothing to do for now.",
+    "close": "Close",
+    "criteria": {
+      "issuer": "Issuer: {{value}}",
+      "deadline": "Submission deadline: {{value}}",
+      "lot": "Lot: {{value}}"
+    },
+    "unknowns": {
+      "issuer": "Issuer not stated",
+      "deadline": "Deadline not stated",
+      "skills": "Skills not extracted — enter them",
+      "ambiguousRequirement": "Ambiguous requirement: {{value}}"
+    }
+  },
+  "sectors": {
+    "title": "Sector of the request",
+    "hint": "The field this request is delivered in — not the account's sector. One client covers several trades, and two profiles are not interchangeable across them.",
+    "count": "{{count}} sector",
+    "count_other": "{{count}} sectors",
+    "none": "No sector recorded on this request: matching falls back to the account's sector, and says so.",
+    "domain": "Service family bought",
+    "domainUnknown": "Not stated",
+    "save": "Save",
+    "saved": "Sector saved",
+    "error": "Could not save",
+    "domains": {
+      "esn_it": "IT and digital",
+      "finance": "Finance and accounting",
+      "supply_chain": "Supply chain and operations",
+      "product_design": "Product and design",
+      "pmo": "PMO and transformation",
+      "rh": "Human resources",
+      "generic": "Other",
+      "industrial_engineering": "Industrial engineering"
+    }
+  },
+  "needsKanban": {
+    "toQualifyHint": "Needs surfaced by {{brand}}, not yet reviewed — oldest first.",
+    "tab": "Kanban",
+    "list": "List",
+    "daily": "{{amount}} / day in total",
+    "noRate": "No target rate entered",
+    "withoutRate_one": "{{count}} without a rate — the total is a floor.",
+    "withoutRate_other": "{{count}} without a rate — the total is a floor.",
+    "seats_one": "{{count}} seat at {{amount}} / day",
+    "seats_other": "{{count}} seats at {{amount}} / day",
+    "rateUnknown": "Rate not disclosed",
+    "noAccount": "No account linked",
+    "where": "{{location}} · {{contract}}",
+    "foot": {
+      "enteredToday": "Entered this stage today",
+      "stageAgeUnknown": "No status change on record",
+      "to_qualify_one": "To qualify for {{count}} day",
+      "to_qualify_other": "To qualify for {{count}} days",
+      "qualified_one": "Qualified {{count}} day ago",
+      "qualified_other": "Qualified {{count}} days ago",
+      "client_review_one": "With the client for {{count}} day",
+      "client_review_other": "With the client for {{count}} days",
+      "interview_one": "In interview for {{count}} day",
+      "interview_other": "In interview for {{count}} days",
+      "negotiation_one": "In negotiation for {{count}} day",
+      "negotiation_other": "In negotiation for {{count}} days",
+      "on_hold_one": "On hold for {{count}} day",
+      "on_hold_other": "On hold for {{count}} days",
+      "to_reactivate_one": "To reactivate for {{count}} day",
+      "to_reactivate_other": "To reactivate for {{count}} days",
+      "open_one": "Open for {{count}} day",
+      "open_other": "Open for {{count}} days",
+      "to_match_none": "No profile put forward",
+      "to_match_one": "{{count}} profile already put forward",
+      "to_match_other": "{{count}} profiles already put forward",
+      "matching_none": "No profile put forward yet",
+      "matching_one": "{{count}} profile put forward",
+      "matching_other": "{{count}} profiles put forward",
+      "shortlist_ready_none": "Shortlist announced, no profile put forward",
+      "shortlist_ready_one": "{{count}} profile shortlisted",
+      "shortlist_ready_other": "{{count}} profiles shortlisted",
+      "submitted_none": "No presentation under way",
+      "submitted_one": "{{count}} presentation under way",
+      "submitted_other": "{{count}} presentations under way"
+    },
+    "band": {
+      "openNeeds": "Open needs",
+      "matching": "Matching to handle",
+      "presenting": "Presentations in progress",
+      "withoutShortlist": "Without a positioned profile",
+      "potential": "Potential revenue",
+      "deltaReason": "A change is read between two monthly snapshots, and this counter is not snapshotted yet.",
+      "onFilter": "across the whole filter",
+      "onPage_one": "on the need shown",
+      "onPage_other": "on the {{count}} needs shown",
+      "onPageAmount_one": "on the need shown",
+      "onPageAmount_other": "on the {{count}} needs shown"
+    },
+    "rail": {
+      "title": "{{copilot}} can handle these needs",
+      "match": {
+        "title": "Suggested matching",
+        "description_one": "{{count}} need is ready for matching.",
+        "description_other": "{{count}} needs are ready for matching.",
+        "action": "Select"
+      },
+      "reactivate": {
+        "title": "Needs to reactivate",
+        "description_one": "{{count}} need on hold can restart.",
+        "description_other": "{{count}} needs on hold can restart.",
+        "action": "Select"
+      },
+      "assignOwner": {
+        "title": "Needs with no owner",
+        "description_one": "{{count}} need has nobody on it.",
+        "description_other": "{{count}} needs have nobody on them.",
+        "action": "Select"
+      },
+      "viewAll": "See all actions ({{count}})",
+      "conversion": {
+        "title": "Pipeline performance",
+        "unknown": "Conversion rate not measured: no need has been won, lost or cancelled yet under this filter.",
+        "basis": "{{won}} won out of {{count}} needs settled"
+      },
+      "hygieneElsewhere": "Needs to complete are not repeated here: the “No typed skill” counter at the top of the screen already carries them — and it counts across your whole workspace, not just this page."
+    }
+  },
+  "needSheet": {
+    "byline": {
+      "need": "Need",
+      "ownedBy": "owned by {{name}}"
+    },
+    "startPlanned": "planned start {{date}}",
+    "openProject": "Open the deal",
+    "proposal": {
+      "title": "The commercial proposal",
+      "body": "One per deal: it lives on the deal sheet, and every submission points back to it.",
+      "prepare": "Prepare the proposal"
+    },
+    "shortlist": {
+      "title": "Shortlist · {{count}} positioned",
+      "open": "See the shortlist"
+    },
+    "wonProject": {
+      "title": "Won project",
+      "tracked_one": "{{count}} tracked project",
+      "tracked_other": "{{count}} tracked projects",
+      "unread": "The number of tracked projects has not been read yet.",
+      "noStaffing": "A won project is tracked, not staffed: no staffing request is proposed."
+    },
+    "framing": {
+      "title": "Project to scope",
+      "scope": "Scope",
+      "sponsor": "Sponsor",
+      "deadline": "Deadline",
+      "scopeToFrame": "to be framed: the context hasn’t been written",
+      "sponsorToFrame": "to be framed: no one has been named as sponsor",
+      "deadlineToFrame": "to be framed: no deadline was given",
+      "budgetToFrame": "to be framed: the client hasn’t shared a budget, it can’t be derived from the target rate",
+      "titleFramed": "Framed project"
+    },
+    "staleBadge": "Stale — to recheck",
+    "title": "Need sheet",
+    "loading": "Loading this need…",
+    "errorTitle": "I couldn’t load this need.",
+    "errorBody": "The read failed — that is not the same as the need not existing. Try again.",
+    "missingTitle": "Need not found",
+    "missingBody": "This need does not exist in this workspace, or it has been deleted. The link you followed may point to another workspace.",
+    "backToList": "Back to needs",
+    "prioritize": "Prioritize",
+    "prioritized": "This need is now high urgency.",
+    "share": "Share",
+    "shareCopied": "Link copied.",
+    "shareFailed": "I couldn’t copy the link.",
+    "noAccount": "No account attached",
+    "onProject": "On the “{{project}}” deal",
+    "roleBlock": "The role",
+    "trackingBlock": "Tracking",
+    "statusReason": "Reason",
+    "owner": "Owner",
+    "ownerUnknown": "nobody is in charge of this need",
+    "contact": "Contact",
+    "contactUnknown": "nobody was named as the contact",
+    "provenance": "Brought in by",
+    "provenanceUnknown": "nobody recorded who brought this need in",
+    "provenanceValue": {
+      "human": "Someone on the team",
+      "connector": "A connector",
+      "pipeline": "An account analysis",
+      "model": "An automated read"
+    },
+    "skillsUnknown": "no skill has been recorded — matching would compare against nothing",
+    "skillRequired": "Required · level: {{level}}",
+    "skillOptional": "Nice to have · level: {{level}}",
+    "levelUnknown": "not stated",
+    "seniorityUnknown": "nobody stated the seniority expected",
+    "locationUnknown": "the location was not given",
+    "remoteUnknown": "remote work was not specified",
+    "startUnknown": "no start date was given",
+    "durationUnknown": "the duration was not given",
+    "deadlineUnknown": "no deadline was given",
+    "deadlinePassed": "passed",
+    "rate": {
+      "title": "Target rate vs rate sold at this client",
+      "target": "Your target rate on this need: {{amount}} per day.",
+      "targetUnknown": "Nobody gave a target rate on this need.",
+      "targetUnknownShort": "no target rate given",
+      "loading": "Checking what this client pays…",
+      "failed": "I couldn’t read this client’s missions: the average rate sold stays unknown for now.",
+      "noAccount": "This need is not attached to any account: there is no price history to compare against.",
+      "noMission": "This client has no mission with you yet: there is no rate sold to compare against.",
+      "soldUnmeasured_one": "This client has 1 mission, and it carries no daily rate — a fixed-price deal bills on milestones. The average cannot be computed.",
+      "soldUnmeasured_other": "This client has {{count}} missions, and none of them carries a daily rate — a fixed-price deal bills on milestones. The average cannot be computed.",
+      "sold_one": "Average rate sold at this client: {{amount}} per day, across 1 mission.",
+      "sold_other": "Average rate sold at this client: {{amount}} per day, across {{count}} missions.",
+      "someWithoutRate_one": "1 mission without a rate, left out of the average",
+      "someWithoutRate_other": "{{count}} missions without a rate, left out of the average",
+      "gapAbove": "You are aiming {{amount}} a day more per day than this client usually pays.",
+      "gapBelow": "You are aiming {{amount}} a day less than this client usually pays.",
+      "gapNone": "Your target rate is exactly what this client usually pays."
+    },
+    "requirementsBlock": "What the role requires",
+    "requirements": {
+      "edit": "Edit",
+      "save": "Save",
+      "cancel": "Cancel",
+      "saved": "Requirements saved.",
+      "saveFailed": "I couldn’t save the requirements.",
+      "languages": "Required languages",
+      "languagesUnknown": "Nobody said which languages this role requires — the matching “languages” axis drops out of the score instead of counting as zero.",
+      "languagesPlaceholder": "fr:natif, en:b2",
+      "languagesHint": "Comma-separated, level after a colon. Without a level the language is still required, and its level becomes a question.",
+      "languageWithLevel": "{{code}} · {{level}}",
+      "languageWithoutLevel": "{{code}} · level not stated",
+      "clearances": "Required clearances",
+      "clearancesUnknown": "No clearance has been entered — until there is one, nothing rules out a profile that doesn’t hold any.",
+      "clearancesPlaceholder": "Confidentiel Défense",
+      "clearancesHint": "Comma-separated. A missing clearance RULES OUT a profile in matching.",
+      "blockingHint": "A profile without these clearances leaves the recommended list, with its reason named.",
+      "interviewRounds": "Number of interview rounds",
+      "interviewRoundsUnknown": "Nobody said how many interview rounds this process has.",
+      "onsiteDaysPerWeek": "On-site days / week",
+      "onsiteDaysPerWeekUnknown": "Nobody said how many on-site days this role requires.",
+      "freelanceExcluded": "Freelancers excluded",
+      "freelanceExcludedUnknown": "Nobody said whether the client excludes freelancers.",
+      "budgetValidated": "Budget validated by the client",
+      "budgetValidatedUnknown": "Nobody said whether the budget is validated by the client.",
+      "boolUnknown": "Not filled in",
+      "boolYes": "Yes",
+      "boolNo": "No"
+    },
+    "qualification": {
+      "title": "Priority questions and contradictions",
+      "loading": "Loading…",
+      "failed": "I couldn’t read the questions and contradictions.",
+      "questionsTitle": "What’s missing to move forward",
+      "noQuestions": "No priority question — all four axes are filled in.",
+      "contradictionsTitle": "Contradictions detected",
+      "noContradictions": "No contradiction detected.",
+      "arbitration": "Proposed arbitration",
+      "notEvaluableTitle": "Not evaluable",
+      "axis": {
+        "matching": "Matching",
+        "feasibility": "Feasibility",
+        "consent": "Consent",
+        "timing": "Timing"
+      }
+    },
+    "minRate": "Accepted floor",
+    "minRateUnknown": "No floor has been set — that isn’t “zero”, it’s a negotiation that hasn’t happened.",
+    "budget": "Deal budget",
+    "budgetUnknown": "The client hasn’t shared a budget. It can’t be derived from the target rate: the number of billed days in a month is not a constant.",
+    "expertise": "Expected expertise",
+    "expertiseUnknown": "Nobody narrowed the field of expertise beyond the job title.",
+    "stack": "Technical environment",
+    "stackUnknown": "No technical environment has been listed.",
+    "context": "Context and goals",
+    "contextUnknown": "The context hasn’t been written. It’s what’s missing to tell the story of the role on the phone instead of listing keywords.",
+    "expectedOutcome": "Expected outcome",
+    "expectedOutcomeUnknown": "No objective has been written on this deal — what’s missing to say what this need should achieve.",
+    "constraints": "Constraints",
+    "constraintsUnknown": "No constraints have been flagged — on-call, travel, hours.",
+    "presentationProcess": "Presentation process",
+    "presentationProcessUnknown": "The process hasn’t been described yet — number and kind of interviews, who decides.",
+    "decisionProcess": "Decision process",
+    "decisionProcessUnknown": "Nobody has described how this client decides internally — committee, budget sign-off, IT department.",
+    "decisionMaker": "Decision maker",
+    "decisionMakerUnknown": "no one has been named as decision maker",
+    "procurement": {
+      "label": "Procurement",
+      "values": {
+        "implique": "Procurement is in the loop",
+        "non_implique": "Procurement is not in the loop"
+      }
+    },
+    "procurementUnknown": "Nobody has said whether procurement is in the loop.",
+    "quality": {
+      "title": "Where this need stands",
+      "headline": {
+        "verdictNoGo": "This page’s verdict is “no”: nothing to engage while it stands.",
+        "notMatchable": "This need is not matchable yet: no skill is recorded.",
+        "matchableNotPresentable": "This need is matchable, but not presentable yet.",
+        "presentableNotEngaged": "This need is matchable and presentable; no consultant is engaged yet.",
+        "allClear": "This need is matchable, presentable, and a consultant is engaged."
+      },
+      "missing": "Missing: {{missing}}.",
+      "profileTypeDisagreement": "The client has not approved the profile type.",
+      "axis": {
+        "matchable": "Matchable",
+        "presentable": "Presentable",
+        "readyToEngage": "Ready to engage"
+      },
+      "yes": "yes",
+      "no": "no",
+      "criteria": {
+        "recipient": "the recipient",
+        "conditions": "the conditions",
+        "budget": "the budget or range",
+        "process": "the process",
+        "consultantAgreement": "the consultant's agreement",
+        "profileTypeAgreement": "the profile-type agreement"
+      }
+    },
+    "profileTypeAgreement": {
+      "label": "Agreement on the profile type",
+      "unknown": "Not asked the client yet",
+      "agreed": "Profile type confirmed by the client",
+      "not_agreed": "The client hasn’t confirmed this profile type",
+      "setTo": "Mark “{{state}}”",
+      "failed": "I couldn’t save that decision."
+    },
+    "convergenceState": {
+      "label": "Nature of the need",
+      "notEvaluated": "Not evaluated",
+      "besoin_exprime": "Expressed",
+      "besoin_detecte": "Detected",
+      "projet_plausible": "Simple signal",
+      "projet_confirme": "Confirmed project",
+      "setTo": "Mark “{{state}}”",
+      "founding_signals_label": "Signals this signal is built on",
+      "founding_signals_placeholder": "id, id…",
+      "founding_signals_hint": "A simple signal must cite at least one founding signal — never a hunch.",
+      "confirm": "Save",
+      "cancel": "Cancel",
+      "failed": "I couldn’t save that nature."
+    },
+    "discoveryRails": {
+      "title": "What we know, what’s missing",
+      "subtitle": "A rail isn’t a form to fill in: what’s missing is the most useful information.",
+      "client": {
+        "title": "Client rail",
+        "problem": "Problem",
+        "requirements": "Requirements",
+        "budget": "Budget",
+        "decision": "Decision",
+        "buyingProcess": "Buying process",
+        "timing": "Timing",
+        "nextStep": "Next step"
+      },
+      "consultant": {
+        "title": "Consultant rail",
+        "titleNamed": "Consultant rail — {{name}}",
+        "titleAnonymous": "Consultant rail — positioned profile",
+        "noPositioned": "No consultant positioned on this need.",
+        "andOthers_one": "and {{count}} other positioned",
+        "andOthers_other": "and {{count}} others positioned",
+        "reverseMarket": "Find assignments for {{name}}",
+        "fitAndAvailability": "Fit and availability",
+        "tjm": "Day rate",
+        "mobility": "Mobility",
+        "competingProcesses": "Other processes underway",
+        "realAgreement": "Real agreement and restrictions"
+      },
+      "measured": "recorded",
+      "missing": "not recorded",
+      "conclusionClient": "Client rail — missing: {{fields}}.",
+      "conclusionClientComplete": "Client rail — nothing missing.",
+      "conclusionConsultant": "Consultant rail — missing: {{fields}}.",
+      "conclusionConsultantComplete": "Consultant rail — nothing missing.",
+      "state": {
+        "confirmed": "Confirmed",
+        "to_verify": "To verify",
+        "blocking": "Blocking",
+        "not_applicable": "Not applicable"
+      },
+      "readiness": {
+        "ready": "Ready to start: both rails are secured.",
+        "notReady": "Not ready to start yet — {{details}}.",
+        "toVerify_one": "{{count}} fact to verify",
+        "toVerify_other": "{{count}} facts to verify",
+        "blocking_one": "{{count}} blocking",
+        "blocking_other": "{{count}} blocking"
+      }
+    },
+    "tabs": {
+      "overview": "Overview",
+      "matching": "Matching",
+      "positioning": "Submissions",
+      "activity": "Notes & activity",
+      "documents": "Documents",
+      "history": "History",
+      "synthese": "Summary",
+      "profiles": "Profiles",
+      "profilesCount": "Profiles ({{count}})",
+      "progress": "Progress",
+      "documentsHistory": "Documents & history",
+      "activityHint": "The “{{project}}” deal's thread — the exchanges about it, not just this role: a project carrying several needs often shares the same call or the same email.",
+      "activityWithoutProject": "This need isn’t tied to any deal, so there is no deal thread to read. Your exchanges with this client live on their record.",
+      "positioningLoading": "Checking who has been put forward on this need…",
+      "positioningLoadError": "The submissions couldn’t be loaded. They are still there — it’s the read that failed.",
+      "positioningEmpty": "No profile submitted on this need.",
+      "positioningEmptyElsewhere_one": "No profile submitted on this specific need. {{count}} submission exists on the “{{project}}” deal, for another role.",
+      "positioningEmptyElsewhere_other": "No profile submitted on this specific need. {{count}} submissions exist on the “{{project}}” deal, for other roles.",
+      "positioningReverseMarket": "Where to place {{name}}"
+    },
+    "staffing": {
+      "title": "Staffing & pipeline",
+      "none": "None",
+      "suggested_one": "Profile shortlisted",
+      "suggested_other": "Profiles shortlisted",
+      "interviews": "Interviews scheduled",
+      "proposalsSent": "Proposal sent",
+      "missionsAssigned": "Missions assigned",
+      "readError": "reading submissions failed",
+      "missionsUnlinked_one": "{{count}} mission exists on this deal without saying which role it came from — it predates the need → mission link.",
+      "missionsUnlinked_other": "{{count}} missions exist on this deal without saying which roles they came from — they predate the need → mission link.",
+      "missionsUnserved": "the read did not return this count",
+      "missionsFloor_one": "at least — {{count}} mission on this deal does not say its role",
+      "missionsFloor_other": "at least — {{count}} missions on this deal do not say their role"
+    },
+    "recommendation": {
+      "title": "{{copilot}} recommends",
+      "candidatesToPresent_one": "{{count}} profile to present",
+      "candidatesToPresent_other": "{{count}} profiles to present",
+      "readError": "reading submissions failed",
+      "viewAction": "View the recommendation"
+    },
+    "steps": {
+      "title": "Actions and next steps",
+      "loading": "Loading the steps…",
+      "readError": "the steps couldn’t be loaded",
+      "empty": "No step has been posted on this need yet.",
+      "toggleAria": "Check “{{label}}”",
+      "status": {
+        "todo": "To do",
+        "pending": "Pending",
+        "done": "Done"
+      },
+      "addPlaceholder": "New step…",
+      "addAria": "Add a step",
+      "add": "Add",
+      "updateError": "I couldn’t save this step.",
+      "createError": "I couldn’t add this step."
+    },
+    "documents": {
+      "loading": "Loading the documents…",
+      "readError": "The documents couldn’t be loaded. They are still there — it’s the read that failed.",
+      "empty": "No document on this need yet.",
+      "kind": {
+        "quote": "Quote",
+        "nda": "NDA",
+        "master_agreement": "Master agreement",
+        "other": "Other document"
+      },
+      "status": {
+        "draft": "Draft",
+        "sent": "Sent",
+        "pending": "Pending",
+        "signed": "Signed",
+        "refused": "Refused"
+      },
+      "open": "Open {{name}}",
+      "openError": "The document could not be opened. Try again in a moment.",
+      "statusLabel": "Status of {{name}}",
+      "statusError": "The status did not change. Try again in a moment.",
+      "fileMeta": "{{size}} · keep until {{date}}",
+      "noFile": "No file uploaded — we are tracking the document, we do not hold it yet.",
+      "filesUnreadable": "The files could not be read. They may well be there — it is the read that failed.",
+      "deposit": {
+        "prompt": "Upload a document — drop it here, or pick a file.",
+        "kindLabel": "Document type",
+        "choose": "Choose a file",
+        "working": "Uploading…",
+        "hint": "Accepted formats: {{formats}}. {{max}} MB per file, maximum.",
+        "progressLabel": "Upload progress",
+        "sending": "Uploading: {{percent}}%",
+        "sendingUnknown": "Uploading…",
+        "finishing": "File received — filing it now.",
+        "done": "Document uploaded to the role.",
+        "failedUnknown": "The upload did not go through, and the server did not say why. Try again.",
+        "refusal": {
+          "empty": "This file is empty: it holds no bytes, there is nothing to store.",
+          "too_large": "This file is over 10 MB. Compress it, or upload a lighter version.",
+          "type_refused": "This file type is not accepted. Upload a PDF, an image, a document or a spreadsheet.",
+          "name_missing": "This file has no name: rename it before uploading.",
+          "quota_exceeded": "Storage is full. Delete expired files, or ask for more room."
+        }
+      }
+    },
+    "history": {
+      "loading": "Loading the history…",
+      "readError": "The history couldn’t be loaded. It is still there — it’s the read that failed.",
+      "empty": "Nothing has been logged on this need yet.",
+      "decision": {
+        "accept": "Crossed",
+        "refuse": "Refused",
+        "force": "Crossed despite known gaps"
+      },
+      "missing": "What was missing when deciding: {{list}}",
+      "statusEntered": "Entered the “{{status}}” state",
+      "stepDone": "Step checked off",
+      "documentAdded": "Document opened — {{kind}}",
+      "documentStatusToday": "Status today: {{status}}",
+      "notJournalled": "This feed carries gates crossed, state changes (journaled since September 25, 2026 — before that, only entry into the current state is known), steps checked off and documents. Field edits (rate, skills, deadline, urgency, owner) are written nowhere — they are not hidden here, they do not exist.",
+      "statusTransition": "Status: “{{from}}” → “{{to}}”",
+      "statusFirst": "Status set: “{{to}}”",
+      "source": {
+        "laura": "Suggested by {{copilot}}, validated by a person",
+        "human_correction": "Human correction — prevails over any suggestion"
+      }
+    },
+    "resumeOn": "Planned resume",
+    "profilesTable": {
+      "title": "Profiles on this need",
+      "hint": "A shortlist is neither a submission nor a mission.",
+      "columns": {
+        "consultant": "Consultant",
+        "correspondence": "Fit",
+        "follow": "Status",
+        "due": "Next due date",
+        "open": "Open"
+      },
+      "availabilityDeclared": "Declared availability: {{value}}",
+      "availabilityToConfirm": "Availability to confirm",
+      "dueAction": "Next action",
+      "dueUnknown": "To be set",
+      "open": "Open",
+      "openNamed": "Open {{name}}’s submission"
+    },
+    "inClear": {
+      "corresponds": "Matches: {{list}}",
+      "partial": "Partly: {{list}}",
+      "lacks": "Missing: {{list}}",
+      "toConfirm": "To confirm: {{list}}",
+      "none": "Not matched yet"
+    },
+    "findProfiles": "Find profiles",
+    "withLaura": "With {{copilot}}",
+    "askLauraPrompt": "Help me move the “{{title}}” need forward at {{account}}.",
+    "linkedProjectAtStage": "Linked to the “{{project}}” deal at the {{stage}} stage.",
+    "needBlock": "The need",
+    "decideBlock": "To decide",
+    "progressBlock": "Need progress",
+    "projectThreadBlock": "Deal notes and exchanges",
+    "documentsBlock": "Need documents",
+    "skillsRequired": "Must-have skills",
+    "skillsOptional": "Nice-to-have skills",
+    "keyFacts": {
+      "start": "Planned start",
+      "duration": "Planned duration",
+      "place": "Location / presence",
+      "seats": "Seats",
+      "targetRate": "Target sell rate",
+      "perDay": "excl. VAT / day",
+      "onsiteDays_one": "{{count}} day on site",
+      "onsiteDays_other": "{{count}} days on site"
+    },
+    "beforeMission": {
+      "title": "Before the mission",
+      "loading": "Checking what the mission will need…",
+      "readError": "the mission handoff check could not be read",
+      "nothingMissing": "Nothing is missing to move to a mission.",
+      "missing": {
+        "consultant_engaged": "An engaged consultant — agreement given or profile retained.",
+        "mission_already_exists": "A mission is already open for this need."
+      },
+      "openMission": "Open the mission",
+      "toObtain": "To obtain",
+      "hint": "Checked at every stage change; the mission is created at signature."
+    },
+    "duplicates": {
+      "title": "Duplicates",
+      "loading": "Looking for needs describing the same role…",
+      "readError": "the duplicate search could not be read",
+      "none": "No other need on this account describes this role.",
+      "reason": {
+        "meme_intitule": "Same title",
+        "competences_communes": "A shared skill"
+      }
+    }
+  },
+  "needReverseProspects": {
+    "title": "Nobody to present? Other accounts want the same thing",
+    "subtitle": "Accounts looking for {{skills}} around {{location}}",
+    "loading": "Checking who else is looking for this profile…",
+    "unavailable": {
+      "location_missing": "No location was given on this need — without a zone, the crossing would return a random list.",
+      "skills_missing": "No skill has been typed on this need — without one, the crossing would return a random list."
+    },
+    "empty": "Nobody else is looking for this profile in this zone right now.",
+    "alreadyInPortfolio": "Already in your portfolio",
+    "openAccount": "Open {{account}}",
+    "sharedSkill_one": "Shared skill: {{skills}}",
+    "sharedSkill_other": "Shared skills: {{skills}}"
+  },
+  "needExternalSourcing": {
+    "title": "Search outside the pool",
+    "subtitle": "Widen the search to the sources already connected to your workspace — never a scrape.",
+    "launch": "Search outside the pool",
+    "loading": "Checking what the connected sources know…",
+    "unavailable": {
+      "skills_missing": "No skill has been typed on this need — without one, the search would return a random list."
+    },
+    "empty": "No lead in the sources already connected, for now.",
+    "unanswered": "One source did not answer in time — its absence does not mean “nobody”. Run the search again later.",
+    "notConnected": "A broader public search isn’t connected to this workspace yet — the results below come only from your already-connected sources.",
+    "source": {
+      "network_referral": "Network referral",
+      "partner_bench": "Partner bench",
+      "inbound_candidacy": "Inbound candidacy",
+      "csv_ats_import": "Unreviewed import",
+      "external_directory": "External directory"
+    },
+    "tier": {
+      "internal_pool": "Internal pool — already open before this search",
+      "dormant_profiles": "Dormant profiles — already open before this search",
+      "network": "Referrals and network",
+      "authorized_partners": "Authorized partners",
+      "connected_sources": "Connected external sources",
+      "manual_import": "Manual import — inbound applications and unreviewed imports",
+      "legal_public_search": "Legal public search — served by the external directory, never scraping"
+    },
+    "limit": {
+      "not_yet_qualified": "Not yet reviewed by your team",
+      "partner_availability_unconfirmed": "Availability not confirmed by the partner",
+      "skills_not_provided": "Skills not provided by the source: only those readable in the job title are counted."
+    },
+    "sharedSkill_one": "Shared skill: {{skills}}",
+    "sharedSkill_other": "Shared skills: {{skills}}",
+    "unnamed": "Name not provided",
+    "import": "Import into the pool",
+    "consent": "I consent to collecting this profile into the pool",
+    "confirmImport": "Confirm import",
+    "cancel": "Cancel",
+    "imported": "Imported into the pool",
+    "importSuccess": "Profile imported into the pool",
+    "importFailed": "Import failed",
+    "consentStatus": {
+      "notCollected": "Consent: to be collected before import",
+      "collected": "Consent: collected on {{date}}"
+    },
+    "cost": "Cost: free, read-only",
+    "preLaunch": {
+      "title": "Before launching",
+      "need": "Need: {{title}}",
+      "criteria": "Criteria: {{skills}}",
+      "criteriaEmpty": "Criteria: no skill is typed on this need",
+      "tiersTitle": "Search order:",
+      "cost": "Cost: free, read-only",
+      "volume": "Maximum volume: up to {{limit}} profiles per source",
+      "volumeInputLabel": "Profiles per source (between {{min}} and {{max}})",
+      "delay": "Delay: instant result, no queue",
+      "consent": "Consent: collected profile by profile, before any import into the pool",
+      "dedup": "Deduplication: profiles already proposed on this need are excluded"
+    },
+    "actions": {
+      "title": "Other paths",
+      "prepareSalesNavigator": "Prepare a Sales Navigator query",
+      "salesNavigatorHint": "No Sales Navigator connector is wired to this workspace: copy this query and run it yourself.",
+      "copyQuery": "Copy the query",
+      "queryCopied": "Query copied",
+      "importResults": "Import the results",
+      "importResultsHint": "You read a profile elsewhere (Sales Navigator, public search)? Declare it: the server never contacts the platform on your behalf.",
+      "shareBrief": "Share the brief with a partner"
+    },
+    "partnerBrief": {
+      "title": "Share the brief with a partner",
+      "partnerNameLabel": "Partner name",
+      "conditionsLabel": "Conditions (optional)",
+      "delayLabel": "Delay (optional)",
+      "prepare": "Prepare the brief",
+      "prepared": "Brief prepared — yours to share",
+      "preparedHint": "{{brand}} prepares this brief, it never sends it: copy it and share it yourself.",
+      "copyBrief": "Copy the brief",
+      "briefCopied": "Brief copied",
+      "nonSolicitation": "Non-solicitation clause included",
+      "feedbackLabel": "Partner feedback",
+      "recordFeedback": "Record the feedback",
+      "feedbackRecorded": "Feedback recorded on {{date}}",
+      "cancel": "Cancel",
+      "prepareFailed": "Preparing the brief failed",
+      "feedbackFailed": "Recording the feedback failed"
+    }
+  },
+  "needWizard": {
+    "ownerSuggestionBasis": "The owner of the linked project — nothing is set until you click.",
+    "ownerSuggestionApply": "Assign to {{name}}",
+    "backToNeeds": "Back to my open needs",
+    "stepsLabel": "Need creation steps",
+    "steps": {
+      "type": "Mission type",
+      "keyInfo": "Key information",
+      "decision": "Decision",
+      "matching": "Matching",
+      "confirmation": "Confirmation"
+    },
+    "stepHints": {
+      "type": "Choose the mission type",
+      "keyInfo": "Describe the need and import the job posting",
+      "decision": "Process, decision maker, procurement",
+      "matching": "AI analysis and matching",
+      "confirmation": "Check it, then launch the mission"
+    },
+    "entryModes": {
+      "label": "How to start this need",
+      "manual": "Manual entry",
+      "paste_brief": "Paste a brief",
+      "paste_email": "Paste an email",
+      "duplicate": "Duplicate a need",
+      "paste_briefHint": "Paste the brief's text: I'll compile it into a draft, each field with its citation. Nothing is guessed — what I can't find stays a question at step 5.",
+      "paste_emailHint": "Paste the email's text: I'll compile it into a draft, each field with its citation. Nothing is guessed — what I can't find stays a question at step 5.",
+      "pastePlaceholder": "Paste the text here…",
+      "compile": "Compile into a draft",
+      "compiling": "Compiling…",
+      "compileFailed": "I couldn't compile this text.",
+      "duplicateHint": "Search for a need already created — its title, client and criteria fill the draft in one go.",
+      "duplicateSearchPlaceholder": "Title or client…",
+      "duplicateSearching": "Searching…",
+      "duplicateNoResult": "No need found.",
+      "from_document": "From a contract / job description (PDF, DOCX)",
+      "from_documentHint": "Drop a contract or a job description: I read the title, dates and day rate, and show you what I read before filling anything in.",
+      "documentReading": "Reading the document…",
+      "documentFailed": "I could not read this document. You can type by hand or paste its text.",
+      "documentPreviewTitle": "What I read in the document",
+      "documentFieldRole": "Title",
+      "documentFieldAccount": "Account (hint)",
+      "documentFieldStart": "Start",
+      "documentFieldEnd": "End",
+      "documentFieldRate": "Day rate (€)",
+      "documentAccountHint": "The account is not chosen for you: select it below.",
+      "documentApply": "Fill in the draft"
+    },
+    "entityLabel": "Client entity (subsidiary, BU)",
+    "entityPlaceholder": "Not specified",
+    "entityFailed": "I couldn't save this entity.",
+    "decisionTitle": "3. Decision",
+    "decisionHint": "How this client decides internally, who decides, and whether procurement is in the loop. Three optional fields, filled in when you know them.",
+    "decisionProcessLabel": "Decision process",
+    "decisionProcessPlaceholder": "E.g.: technical committee, then budget sign-off by IT…",
+    "decisionMakerLabel": "Decision maker",
+    "decisionMakerPlaceholder": "Pick a contact from this account",
+    "procurement": {
+      "label": "Procurement",
+      "placeholder": "Not specified",
+      "values": {
+        "implique": "Procurement is in the loop",
+        "non_implique": "Procurement is not in the loop"
+      }
+    },
+    "reformulation": {
+      "titleWithAccount": "{{title}} — {{account}}",
+      "accountOnly": "A need at {{account}}, no title named yet.",
+      "titleOnly": "{{title}}",
+      "nothingYet": "A need with no title or client named yet.",
+      "skillsRequired": "Must-have: {{terms}}.",
+      "skillsOptional": "Nice-to-have: {{terms}}.",
+      "tjm": "Target rate: {{amount}} €/day.",
+      "location": "Location: {{location}}.",
+      "decisionProcess": "Decision: {{process}}"
+    },
+    "typeCards": {
+      "title": "1. Mission type",
+      "hint": "Choose the type of mission to launch. Each card fills in the origin, the channel, or both.",
+      "selected": "Selected",
+      "opensPool": "Opens the talent pool",
+      "inbound": {
+        "title": "Inbound",
+        "subtitle": "Answer an incoming request or a stated need."
+      },
+      "outbound": {
+        "title": "Outbound",
+        "subtitle": "Identify and reach out to prospects proactively."
+      },
+      "partenaire": {
+        "title": "Partner mission",
+        "subtitle": "Deliver through a partner or in a joint setup."
+      },
+      "portage": {
+        "title": "Umbrella",
+        "subtitle": "Umbrella employment or admin handling for the contractor."
+      },
+      "sourcing_interne": {
+        "title": "Internal sourcing",
+        "subtitle": "Find the right profile in your own talent pool or network."
+      },
+      "appel_offres": {
+        "title": "Tender",
+        "subtitle": "Answer a public or private tender."
+      },
+      "apport_affaires": {
+        "title": "Referral",
+        "subtitle": "Spot high-value opportunities for your client."
+      }
+    },
+    "keyInfoTitle": "2. Key information",
+    "keyInfoHint": "Import the job posting and fill in what matching actually uses.",
+    "tjmLabel": "Budget (max day rate)",
+    "tjmCurrency": "€ / day",
+    "locationLabel": "Location",
+    "locationPlaceholder": "E.g.: Paris, France",
+    "remotePlaceholder": "Not provided",
+    "seniorityPlaceholder": "E.g.: mid-level, senior…",
+    "skillsLabel": "Technologies & key skills",
+    "startOnLabel": "Desired start date",
+    "durationLabel": "Duration (months)",
+    "contractKindLabel": "Contract type",
+    "supervisedLabel": "Supervised fixed price, no consultants",
+    "supervisedHint": "The fixed-price work is done by the client’s own employees: you frame or supervise it, without placing consultants.",
+    "supervisionRoleLabel": "Role held",
+    "supervisionRolePlaceholder": "Not set",
+    "supervisionRole": {
+      "framing": "Framing",
+      "supervision": "Supervision",
+      "both": "Framing and supervision"
+    },
+    "clientTeamSizeLabel": "Client-side team (headcount, optional)",
+    "clientTeamNamesLabel": "Client-side team (names, optional)",
+    "clientTeamNamesPlaceholder": "Marie Dupont, Paul Martin…",
+    "contractKindPlaceholder": "Not set",
+    "contextLabel": "The problem to solve",
+    "contextPlaceholder": "What the client is trying to fix, in a sentence or two…",
+    "expertiseLabel": "Expected expertise",
+    "expertisePlaceholder": "The precise field sought, beyond the job title…",
+    "constraintsLabel": "Constraints",
+    "constraintsPlaceholder": "On-call duty, travel, hours…",
+    "extraction": {
+      "title": "AI extraction on",
+      "body": "I read the job posting for skills, technologies and certifications. Every suggestion carries the QUOTE it came from, and nothing is added without your click."
+    },
+    "previous": "Previous step",
+    "next": "Next step",
+    "submit": "Create the need",
+    "origin": {
+      "label": "Need origin",
+      "values": {
+        "entrant": "Inbound",
+        "sortant": "Outbound",
+        "appel_offres": "Tender",
+        "apport_affaires": "Referral"
+      }
+    },
+    "channel": {
+      "label": "Channel",
+      "values": {
+        "direct": "Direct",
+        "partenaire": "Partner",
+        "portage": "Umbrella"
+      }
+    },
+    "internalSourcing": "Internal sourcing — search the talent pool",
+    "upload": {
+      "label": "Import a job posting",
+      "placeholder": "Drag and drop your file here or click to browse",
+      "hint": "PDF, DOC, DOCX, TXT (max {{max}} MB)",
+      "tooLarge": "This file is over {{max}} MB — split it or paste the text directly.",
+      "fallbackTitle": "Imported job posting",
+      "extracting": "Analysing the document…",
+      "failed": "I could not read this document.",
+      "suggestionsTitle": "What I found in the document",
+      "citation": "cited in: {{section}}",
+      "document": "the document",
+      "apply": "Add as a skill"
+    },
+    "tjmPlaceholder": "E.g.: 650",
+    "skillsPlaceholder": "E.g.: React, Node.js, AWS, Python…",
+    "skillBucketLabel": "{{term}} — must-have or nice-to-have",
+    "skillBucket": {
+      "must": "Must-have",
+      "nice": "Nice-to-have"
+    },
+    "skillLevelLabel": "{{term}} — expected level",
+    "skillLevelPlaceholder": "Level (optional)",
+    "skillProofLabel": "{{term}} — expected proof",
+    "skillProofPlaceholder": "Expected proof (optional)",
+    "certifications": {
+      "label": "Required certifications",
+      "placeholder": "E.g.: AWS Certified, PRINCE2, Scrum Master…"
+    },
+    "matching": {
+      "intro": "Once the need is created, {{copilot}} suggests talent-pool profiles matching these criteria — from the need's page.",
+      "criteriaTitle": "Criteria kept for matching",
+      "noSkills": "No skill entered yet — matching will need one."
+    },
+    "confirmation": {
+      "noTitle": "Untitled need",
+      "tjm": "{{amount}} €/day",
+      "reformulationTitle": "Here's what I understood",
+      "blockingUnknownsTitle": "What's missing to qualify this need",
+      "blockingUnknown": {
+        "work_to_do": "The actual work to be done hasn't been said yet.",
+        "expected_outcome": "What should have changed by the end of the mission hasn't been said yet.",
+        "skills": "No blocking criterion has been set yet."
+      },
+      "willBeCreatedToQualify": "This need will be created to qualify — that's the first step, never an already-confirmed need."
+    },
+    "tipsTitle": "{{copilot}}'s tips",
+    "tipsIntro": "The more criteria you fill in, the more axes matching has to work with — and the less sorting is left to you.",
+    "tipsOutcome": "What it actually changes: an axis you leave empty DROPS OUT of the calculation, it does not count as zero. A well-described need is not scored higher — it is compared on more things.",
+    "tips": [
+      "Import a complete job posting.",
+      "Fill in the key skills.",
+      "State the expected seniority level.",
+      "Specify the budget and the location.",
+      "Add the required certifications."
+    ]
+  },
+  "needVerdict": {
+    "title": "Verdict",
+    "loading": "Working out the verdict.",
+    "readError": "The verdict could not be read. Try again in a moment.",
+    "suggested": "Suggested by {{brand}}",
+    "deterministic": "Deterministic verdict",
+    "denominator_one": "{{total}} axes · {{measured}} filled in · {{count}} watch-out",
+    "denominator_other": "{{total}} axes · {{measured}} filled in · {{count}} watch-outs",
+    "summary": "Decided on {{measured}} of {{total}} axes that could be filled in.",
+    "attentionLine": "Watch out — {{axis}}: {{value}}",
+    "blockingLine": "What blocks — {{axis}}: {{value}}",
+    "measuredOn": "Bench last looked at on {{date}}",
+    "noRunYet": "No matching has been run on this need",
+    "seeProfiles_one": "See the profile",
+    "seeProfiles_other": "See the {{count}} profiles",
+    "why": "Why this verdict?",
+    "whyTitle": "What produced this verdict",
+    "priorityQuestion": {
+      "title": "{{copilot}} asks first: {{axis}}",
+      "whyEconomics": "It decides whether the deal is worth it: without a target rate or a floor, no “yes” is possible.",
+      "whyOther": "Economics is already answered; this is the next question to clear."
+    },
+    "axisWithWeight": "{{axis}} ({{weight}})",
+    "axisVerdict": "{{state}} — {{value}}",
+    "kind": {
+      "go": "YES, GO FOR IT",
+      "no_go": "NO, WRONG FIT",
+      "insufficient_data": "I’M MISSING DATA"
+    },
+    "state": {
+      "positive": "positive",
+      "attention": "watch out",
+      "blocking": "blocking"
+    },
+    "weight": {
+      "decisive": "decisive",
+      "advisory": "advisory"
+    },
+    "rule": {
+      "blocking": "A decisive axis says no: {{axes}}. One is enough — you can’t sell nobody, and you can’t sell below your floor.",
+      "decisiveUnmeasured": "A decisive axis is not filled in: {{axes}}. Not knowing does not license a “go for it” — that is why the answer is “I’m missing data” and not “yes”.",
+      "tooFewAxes": "Fewer than three axes filled in. Below three axes there is no verdict.",
+      "allClear": "Both decisive axes are filled in and neither says no. Watch-outs are stated; they never overturn the verdict."
+    },
+    "axis": {
+      "staffing_capacity": "Ability to staff",
+      "economics": "Economics",
+      "relationship": "Relationship",
+      "competition": "Competition",
+      "feasibility": "Feasibility",
+      "access": "Access",
+      "procurement": "Procurement framework",
+      "contract_risk": "Contract risk"
+    },
+    "axisValue": {
+      "staffing_capacity_zero": "No profile above the {{threshold}} threshold",
+      "staffing_capacity_one": "{{count}} profile above the {{threshold}} threshold",
+      "staffing_capacity_other": "{{count}} profiles above the {{threshold}} threshold",
+      "economics": "Target rate {{target}} · floor {{floor}}",
+      "relationship_zero": "No mission running at this client",
+      "relationship_one": "{{count}} mission running",
+      "relationship_other": "{{count}} missions running",
+      "competition_zero": "No competitor recorded on the panel",
+      "competition_one": "{{count}} supplier facing us",
+      "competition_other": "{{count}} suppliers facing us",
+      "feasibility": "Start requested on {{date}}",
+      "access_one": "{{count}} contact known · decision maker identified",
+      "access_other": "{{count}} contacts known · decision maker identified",
+      "accessNoDecisionMaker_one": "{{count}} contact known · decision maker missing",
+      "accessNoDecisionMaker_other": "{{count}} contacts known · decision maker missing",
+      "procurementInvolved": "The client’s procurement team is in the loop",
+      "procurementNotInvolved": "No procurement involvement",
+      "contract_risk": "A risk is declared on the deal",
+      "accessLocked_one": "{{count}} contact known · account locked at the door",
+      "accessLocked_other": "{{count}} contacts known · account locked at the door",
+      "accessSemiOpen_one": "{{count}} contact known · account semi-open",
+      "accessSemiOpen_other": "{{count}} contacts known · account semi-open",
+      "accessOpen_one": "{{count}} contact known · account open",
+      "accessOpen_other": "{{count}} contacts known · account open",
+      "accessNoDecisionMakerLocked_one": "{{count}} contact known · decision maker missing · account locked",
+      "accessNoDecisionMakerLocked_other": "{{count}} contacts known · decision maker missing · account locked",
+      "accessNoDecisionMakerSemiOpen_one": "{{count}} contact known · decision maker missing · account semi-open",
+      "accessNoDecisionMakerSemiOpen_other": "{{count}} contacts known · decision maker missing · account semi-open",
+      "accessNoDecisionMakerOpen_one": "{{count}} contact known · decision maker missing · account open",
+      "accessNoDecisionMakerOpen_other": "{{count}} contacts known · decision maker missing · account open"
+    },
+    "unmeasured": {
+      "noRun": "No matching has run on this need yet — nobody has looked at the bench.",
+      "nobodyEvaluated": "The matching evaluated nobody: the need lists no skill.",
+      "noTargetRate": "No target rate has been given on this need.",
+      "noFloorRate": "No floor is recorded: nothing says from which price the margin exists.",
+      "noAccount": "This need is attached to no account — there is no relationship to measure.",
+      "panelNeverLooked": "This account’s supplier panel has never been filled in — that is not “no competitor”.",
+      "noStartDate": "No start date is requested on this need.",
+      "noAvailability": "The availability of the best-ranked profile is unknown.",
+      "noContacts": "No contact is attached to the deal — we cannot tell whether a decision maker is missing.",
+      "unknown": "This axis could not be evaluated.",
+      "noProcurement": "The procurement framework isn’t set on this need — we can’t tell whether procurement is involved.",
+      "noRiskDeclared": "No risk is entered on the deal — that isn’t “no risk”, nobody has stated it."
+    },
+    "profilesTitle_one": "The profile above the threshold",
+    "profilesTitle_other": "The {{count}} profiles above the threshold",
+    "acceptanceReading": "Acceptance reading",
+    "acceptanceUnknown": "Nothing measurable on this profile at this client.",
+    "prepareDossier": "Prepare the dossier",
+    "compare": "Compare",
+    "fact": {
+      "accepted_here_one": "Already accepted {{count}} time here",
+      "accepted_here_other": "Already accepted {{count}} times here",
+      "rejected_here_one": "Already turned down {{count}} time here",
+      "rejected_here_other": "Already turned down {{count}} times here",
+      "never_presented_here": "Never presented here",
+      "rate_within_target": "Rate within target",
+      "rate_above_target": "Rate above target",
+      "available_by_start": "Free for the start date",
+      "available_later": "Free after the start date",
+      "sector_practised": "Has worked in this sector",
+      "sector_missing": "Lacks the sector experience"
+    },
+    "consent": {
+      "valid": "Up to date",
+      "expiring_one": "Expires in {{count}} day",
+      "expiring_other": "Expires in {{count}} days",
+      "expired": "Consent expired — renew before proposing",
+      "none": "No consent collected — to be requested"
+    },
+    "method": {
+      "title": "Method",
+      "effortLevel": {
+        "focus": "Focus",
+        "sprint_court": "Short sprint",
+        "qualification_volume": "Qualification at volume",
+        "partenaire_rang2": "Partner / tier 2",
+        "veille": "Watch",
+        "pause_sortie": "Pause or exit"
+      },
+      "openingRoute": {
+        "reactivation_chaude": "Warm reactivation",
+        "approche_directe_ciblee": "Targeted direct approach",
+        "partenaire_rang2": "Partner or tier 2"
+      },
+      "trajectory": {
+        "par_le_haut": "From the top",
+        "par_le_terrain": "From the field",
+        "manager_intermediaire": "Through a middle manager",
+        "parallele_relais_sponsor": "In parallel, via relay and sponsor"
+      },
+      "usefulPeople": {
+        "decision_maker": "the decision maker",
+        "current_contact": "the contact already known"
+      },
+      "nextStep": {
+        "qualify": "Qualify what's missing before any message",
+        "build_shortlist": "Build the shortlist",
+        "widen_sourcing": "Widen the search for profiles",
+        "reconsider": "Commit nothing — file on hold"
+      },
+      "switchCondition": {
+        "on_qualification_complete": "Switches once qualification is complete",
+        "on_shortlist_ready": "Switches once the shortlist is ready",
+        "on_verdict_no_go": "Switches if the verdict turns NO",
+        "on_client_silence": "Switches if the client stays silent",
+        "on_human_reopens": "Only resumes on a human reopening",
+        "already_met": "Already met"
+      },
+      "stopCondition": {
+        "on_qualification_complete": "Stops once qualification is complete",
+        "on_shortlist_ready": "Stops once the shortlist is ready",
+        "on_verdict_no_go": "Stops if the verdict turns NO",
+        "on_client_silence": "Stops if the client stays silent",
+        "on_human_reopens": "Only resumes on a human reopening",
+        "already_met": "Already stopped"
+      },
+      "effortLevelLine": "Effort level: {{level}}",
+      "openingRouteLine": "Opening route: {{route}}",
+      "trajectoryLine": "Trajectory: {{trajectory}}",
+      "notEvaluated": "not evaluated",
+      "usefulPeopleLine": "Useful people: {{people}}",
+      "proofLine": "Proof needed: {{proof}}",
+      "switchConditionLine": "Switch condition: {{condition}}",
+      "stopConditionLine": "Stop condition: {{condition}}",
+      "capacityLine": "Your declared capacity: {{hours}} h per week",
+      "overdueLine": "Your overdue actions: {{count}}",
+      "fivePLine": "Account 5P: {{readiness}}",
+      "fivePLineNext": "Account 5P: {{readiness}} · next dimension: {{dimension}}",
+      "proof": {
+        "qualification": "the missing axes of the verdict",
+        "shortlist": "a presentable shortlist",
+        "client_agreement": "the client's agreement on next steps"
+      }
+    }
+  },
+  "maturity": {
+    "confirmed": {
+      "tab": "Confirmed needs"
+    },
+    "to_dig": {
+      "tab": "Opportunities to dig"
+    },
+    "detected": {
+      "tab": "Signals only"
+    }
+  },
+  "priority": {
+    "confirmed_one": "{{count}} confirmed need to handle",
+    "confirmed_other": "{{count}} confirmed needs to handle",
+    "toQualify_one": "{{count}} opportunity to qualify",
+    "toQualify_other": "{{count}} opportunities to qualify",
+    "signal_one": "{{count}} signal to dig into",
+    "signal_other": "{{count}} signals to dig into",
+    "unmatched": "· no offer mapped yet"
+  },
+  "table": {
+    "columnsCta": "Columns",
+    "columnsLabel": "Visible columns",
+    "columnsReset": "Reset to default columns",
+    "columns": {
+      "project": "Project",
+      "account": "Account",
+      "owner": "Owner",
+      "stage": "Stage",
+      "amount": "Amount",
+      "lastActivity": "Last activity",
+      "nextAction": "Next action",
+      "age": "Age",
+      "origin": "Origin"
+    },
+    "amountUnknownReason": "Nobody has entered an amount on this project.",
+    "ageUnknownReason": "The stage entry date cannot be read.",
+    "ageDays_one": "{{count}} d",
+    "ageDays_other": "{{count}} d",
+    "lastActivityHint": "Last change to the row — the pipeline carries no meeting event."
+  },
+  "evidence": {
+    "levels": {
+      "fact": "Current signal",
+      "detected_project": "Plausible project",
+      "confirmed_demand": "Expressed need",
+      "opportunity": "CRM opportunity"
+    },
+    "unmeasured": "Level not measured",
+    "unmeasuredHint": "Neither a dated fact nor a voiced demand: nothing places this row on the evidence scale yet.",
+    "missingPrefix": "Missing:",
+    "ariaLabel": "Evidence level: {{level}}"
+  },
+  "accountOpportunity": {
+    "screenTitle": "Signals and needs",
+    "allDeals": "All deals on this account (table)",
+    "nature": {
+      "confirmedDemand": "Confirmed request",
+      "leadToExplore": "Lead to explore",
+      "recentSignal": "Recent signal",
+      "history": "History",
+      "siteInformation": "Site information"
+    },
+    "signalJournal": "Full signal log (filters, sources, possible projects)",
+    "verifiedOn": "Verified on {{date}}",
+    "trackedDeals": {
+      "title_one": "{{count}} deal already tracked",
+      "title_other": "{{count}} deals already tracked",
+      "more_one": "+ {{count}} more in the pipe",
+      "more_other": "+ {{count}} more in the pipe",
+      "note": "The account links them; it does not create a second pipeline.",
+      "open": "Open the pipe"
+    },
+    "refreshSignals": "Refresh signals",
+    "theo": {
+      "context": "Cross-check the file before picking a way in.",
+      "title": "What is moving the account.",
+      "lead": "A salaried hire, a project and a services request stay distinct.",
+      "viewsAria": "Signals & needs views",
+      "views": {
+        "current": "Current topics",
+        "history": "Past needs",
+        "tjm": "Observed day rates"
+      },
+      "tjm": {
+        "channel": "Channel",
+        "profile": "Profile",
+        "rate": "Recorded rate",
+        "note": "Detail"
+      }
+    }
+  },
+  "opportunityCards": {
+    "seenTimes": "Seen {{count}} times",
+    "offersFolded": "{{count}} openings ({{places}})",
+    "recruitment": {
+      "title": "Hiring",
+      "tradeCount": "{{inTrade}} in your trade · {{out}} out of trade",
+      "others": "Other hiring ({{count}})"
+    },
+    "team": {
+      "title": "Team needs",
+      "postingOffers_other": "{{count}} offers",
+      "seePostings_one": "See the posting",
+      "seePostings_other": "See the {{count}} postings",
+      "cardTitle_one": "{{team}} — {{count}} open role",
+      "cardTitle_other": "{{team}} — {{count}} open roles",
+      "family": {
+        "data": "Data / AI team",
+        "security": "Cybersecurity team",
+        "cloud": "Cloud / DevOps team",
+        "sap": "SAP team",
+        "erp": "ERP team",
+        "dev": "Software development team",
+        "industry": "Industry / engineering team",
+        "salesforce": "CRM team",
+        "java": "Java team",
+        "dotnet": ".NET team",
+        "frontend": "Front-end team",
+        "mobile": "Mobile team",
+        "backend": "Back-end team",
+        "qa": "Quality / testing team",
+        "network": "Network / telecom team",
+        "product": "Product team",
+        "project": "Project team",
+        "support": "Support / operations team",
+        "sales": "Sales team",
+        "cs": "Customer success / client support team",
+        "other": "Other trades"
+      },
+      "otherNeeds": "Other needs"
+    },
+    "dateUnknown": "Publication date unknown",
+    "vision": {
+      "title": "Vision / transformation",
+      "showMore_one": "See {{count}} more signal",
+      "showMore_other": "See {{count}} more signals"
+    },
+    "place": {
+      "france": "France",
+      "unknown": "location not specified",
+      "abroad": "outside France",
+      "abroadAt": "outside France ({{place}})"
+    },
+    "role": "Role concerned: {{role}}",
+    "derivedNeeds": "Needs inferred from this posting",
+    "whoLinked": "Who to contact",
+    "whoRelated_one": "Contact close to this topic (role or place)",
+    "whoRelated_other": "Contacts close to this topic (role or place)",
+    "prepareMessage": "Prepare the message",
+    "prepareMessageFor": "Prepare the message to {{name}}",
+    "viewProfile": "View profile",
+    "viewProfileFor": "View the profile of {{name}}",
+    "showMore_one": "See {{count}} more hiring signal",
+    "showMore_other": "See {{count}} more hiring signals",
+    "showLess": "Show less"
+  },
+  "qualificationLeads": {
+    "title": "Possible projects, to confirm",
+    "intro": "Inferred from what we found on this account. None is confirmed by the client: confirm it before turning it into a deal, or set it aside with its reason.",
+    "countsHint": "These numbers count possible projects read on this dossier, never the client’s confirmed projects.",
+    "detectedOn": "Detected on {{date}}",
+    "impact": {
+      "label": "What it changes",
+      "matched": "Matches your expertise: {{expertise}}.",
+      "offTarget": "Outside your known offer: viewable, not a priority.",
+      "unknown": "Offer domain not classified yet on this signal: neither in your offer, nor off target."
+    },
+    "reserve": "Caveat: {{reserve}}",
+    "origin": "Where it comes from: {{origin}}",
+    "todo": "To do: {{action}}",
+    "showMore_one": "Show the other project",
+    "showMore_other": "Show the {{count}} other projects",
+    "showLess": "Show only the first 3",
+    "shownOf": "{{shown}} shown out of {{total}}",
+    "filters": {
+      "active": "To confirm",
+      "snoozed": "Snoozed",
+      "dismissed": "Set aside"
+    },
+    "empty": {
+      "active": "No possible project to confirm on this dossier.",
+      "snoozed": "No snoozed lead.",
+      "dismissed": "No lead set aside."
+    },
+    "logoAlt": "{{company}} logo",
+    "undated": "Undated fact",
+    "rankLabel": "Rank",
+    "notMeasured": "Not assessed:",
+    "axisMeasured": "{{axis}}: {{verdict}}",
+    "verdicts": {
+      "high": "favourable",
+      "medium": "partial",
+      "low": "unfavourable"
+    },
+    "perimeter": "Perimeter:",
+    "expertise": "Matched expertise:",
+    "role": "Potentially concerned role:",
+    "facts": "What it rests on:",
+    "factSource": "source: {{source}}",
+    "factSourceUnknown": "source not identified",
+    "reason": "Why it is proposed:",
+    "verification": "Next check:",
+    "missingTitle": "What is missing:",
+    "actions": {
+      "add_to_pipe": "Work it in the pipe",
+      "ask_laura": "Ask {{copilot}}",
+      "snooze": "Snooze",
+      "dismiss": "Set aside",
+      "see_detail": "See the details"
+    },
+    "dismiss": {
+      "title": "Set this lead aside",
+      "reasonLabel": "Reason",
+      "noteLabel": "Details (optional)",
+      "notePlaceholder": "What made you decide",
+      "scopeHint": "The reason is remembered for your workspace. It writes nothing into market data, and the lead stays available.",
+      "confirm": "Set aside",
+      "cancel": "Cancel"
+    },
+    "snoozeForm": {
+      "title": "Snooze",
+      "untilLabel": "Come back on",
+      "hint": "The lead returns to the queue by itself on that date.",
+      "confirm": "Snooze",
+      "cancel": "Cancel"
+    },
+    "convert": {
+      "title": "Convert into an opportunity",
+      "hint": "Five fields, and nothing else: what the dossier already knows is carried over.",
+      "knownTitle": "Carried over from the dossier, no re-entry:",
+      "stage": "Starting stage",
+      "owner": "Owner",
+      "ownerNone": "To be chosen",
+      "objective": "Objective",
+      "objectivePlaceholder": "E.g. Land 3 meetings with the CIO",
+      "nextAction": "Next action",
+      "nextActionPlaceholder": "E.g. Call the CIO on Tuesday",
+      "nextActionDue": "Due date",
+      "need": "Possible need",
+      "needPlaceholder": "E.g. Two senior Java developers — optional",
+      "submit": "Convert",
+      "cancel": "Cancel",
+      "restOnSheet": "The next action becomes a task on the opportunity, and the need a role to fill.",
+      "openPipe": "Open the pipe"
+    },
+    "decided": {
+      "dismissedOn": "Set aside on {{date}}",
+      "reason": "Reason: {{reason}}",
+      "snoozedUntil": "Snoozed until {{date}}",
+      "reopen": "Bring this lead back"
+    },
+    "error": "The decision could not be saved. Nothing changed.",
+    "primary": {
+      "identify_contact": "Identify the person in charge",
+      "open_existing": "Open the existing opportunity",
+      "see_request": "See the request",
+      "prepare_approach": "Prepare the approach"
+    },
+    "moreOptions": "More options",
+    "unproven_one": "{{count}} possible project without a dated source",
+    "unproven_other": "{{count}} possible projects without a dated source",
+    "noneProven": "No possible project rests on a dated source yet."
+  },
+  "create": {
+    "account": "Account",
+    "accountPlaceholder": "Pick an account",
+    "amount": "Estimated amount (€)",
+    "amountHint": "Left empty, the amount stays unknown — never counted as €0.",
+    "description": "A deal you open yourself, on an account in your workspace.",
+    "descriptionDraft": "Draft pre-filled from a signal: nothing is created until you validate.",
+    "draftFactsTitle": "What the signal brings",
+    "draftFact": {
+      "source": "Source",
+      "date": "Date",
+      "type": "Type"
+    },
+    "draftMissingTitle": "What is still missing",
+    "draftMissing": {
+      "amount": "Estimated amount",
+      "closeOn": "Expected close",
+      "owner": "Deal owner",
+      "contact": "Client-side contact"
+    },
+    "createdFor": "Opportunity created: {{label}}",
+    "openCreated": "Open the opportunity",
+    "descriptionRenewal": "A renewal is a NEW deal: the account and the assignment are already filled in — you are the one who creates it.",
+    "descriptionConfirmedNeed": "A confirmed need you post yourself: it enters directly at the stage where the pipeline files an already-confirmed need, with nothing left to drag there afterwards.",
+    "done": "Deal created",
+    "expectedClose": "Expected close",
+    "failed": "The deal could not be created",
+    "label": "Deal name",
+    "labelPlaceholder": "What you are trying to sell, in one line",
+    "objective": "Objective",
+    "renewalNotLinked": "The deal is created, but the link to the renewed assignment could not be set.",
+    "scopeLabel": "Team, site or project involved",
+    "scopeLabelPlaceholder": "E.g. Data team / Lyon site (optional)",
+    "submit": "Create the deal",
+    "title": "Open a deal"
+  },
+  "dossier": {
+    "loading": "Opening the record…",
+    "backToList": "Back to deals",
+    "backToAccount": "Back to the account record",
+    "retry": "Retry",
+    "errorTitle": "This project could not be loaded",
+    "errorBody": "It's still there — the read failed. Try again.",
+    "missingTitle": "Project not found",
+    "missingBody": "This project is not in this workspace: it has been removed, the link comes from another workspace, or your permissions do not let you open it. Nothing was changed — you can go back to the record you came from.",
+    "prepareProposal": "Prepare the proposal",
+    "edit": "Edit",
+    "withLaura": "With {{copilot}}",
+    "followUp": "Follow-up",
+    "tabs": {
+      "need": "Need",
+      "profiles_one": "Profiles & presentations ({{count}})",
+      "profiles_other": "Profiles & presentations ({{count}})",
+      "activity": "Activity",
+      "label": "Deal sections",
+      "profilesShort": "Profiles & presentations"
+    },
+    "nextInfo": "The next useful piece of information",
+    "won": {
+      "title": "Deal won — prepare the mission",
+      "body": "The terms, the selected consultant and the need are carried over. Nothing is created until you have reviewed it."
+    },
+    "feedback": {
+      "title": "Client feedback on {{name}}",
+      "someone": "the presented profile",
+      "body": "The presentation is recorded: the client’s feedback is the next useful piece of information.",
+      "cta": "See the presentations"
+    },
+    "contactsAndPartner": "Contacts and partner",
+    "probability": "Deal calibration, with its axes",
+    "profiles": {
+      "title": "Profiles being followed",
+      "hint": "A shortlist is neither a send nor a mission.",
+      "all": "All presentations",
+      "find": "Find profiles",
+      "empty": "No profile followed on this deal yet."
+    },
+    "panels": {
+      "need": "The need",
+      "contactsHint": "The people linked to this deal, and who works on it with you."
+    }
+  },
+  "detailPartnerGovernance": {
+    "title": "Rank-2 partner framework",
+    "help": "ESNs already in place at this account whose framework is on record: validate it before considering handing them a profile.",
+    "open": "Open Partners"
+  },
+  "probability": {
+    "title": "Probable revenue this quarter — the next three months",
+    "percent": "{{value}}%",
+    "interval": "between {{low}}% and {{high}}%",
+    "range_one": "from {{low}} to {{high}} — across {{count}} deal",
+    "range_other": "from {{low}} to {{high}} — across {{count}} deals",
+    "method": "Probability calibrated on the real outcomes of closed deals (beta-binomial model by stage), 80% interval.",
+    "won_one": "{{count}} won",
+    "won_other": "{{count}} won",
+    "lost_one": "{{count}} lost",
+    "lost_other": "{{count}} lost",
+    "axes": {
+      "stage": "Stage: {{stage}}",
+      "workspace_history": "Your closed deals at this stage: {{won}}, {{lost}}",
+      "shared_base": "Shared base ({{dimension}}): {{won}}, {{lost}} — weighted at {{weight}}%"
+    },
+    "unevaluable": {
+      "stage": "Stage: not assessable — deal outside the open pipeline",
+      "workspace_history": "Your closed deals: not assessable — no known outcome at this stage",
+      "shared_base": "Shared base: not assessable — not enough shared data"
+    },
+    "dimension": {
+      "sector": "same sector",
+      "size": "same size",
+      "group_role": "same group position"
+    },
+    "notMeasured": {
+      "insufficient_history": "not enough closed deals to calibrate",
+      "not_in_open_pipeline": "deal outside the open pipeline"
+    },
+    "withoutProbability_one": "{{count}} deal without a measured probability, counted separately",
+    "withoutProbability_other": "{{count}} deals without a measured probability, counted separately",
+    "withoutAmount_one": "{{count}} deal without an amount, counted separately",
+    "withoutAmount_other": "{{count}} deals without an amount, counted separately",
+    "empty": "No deal dated in the next three months",
+    "noTotal": "No deal this quarter is both priced and calibrated",
+    "backtest": {
+      "measured_one": "Calibration measured after the fact: back-test on {{count}} closed deal held out, Brier score {{brier}} versus {{baseline}} for a calculation that would always predict the base rate (lower is better).",
+      "measured_other": "Calibration measured after the fact: back-test on {{count}} closed deals held out one at a time, Brier score {{brier}} versus {{baseline}} for a calculation that would always predict the base rate (lower is better).",
+      "bin_one": "Announced around {{predicted}} %, observed {{observed}} % ({{count}} deal)",
+      "bin_other": "Announced around {{predicted}} %, observed {{observed}} % ({{count}} deals)",
+      "notMeasured": "Calibration not measured: not enough closed deals for the back-test"
+    },
+    "dossierTitle": "Calibrated probability for this deal"
+  },
+  "detections": {
+    "reviewLink_one": "{{count}} lead to review",
+    "reviewLink_other": "{{count}} leads to review",
+    "title": "Detected, to review",
+    "intro": "{{brand}} spotted these moves on its own, from strong signals. Nothing moves without you: confirm or dismiss.",
+    "autoDetectOff": "Automatic detection is switched off: no new line will arrive.",
+    "kind": {
+      "interest_to_opportunity": "Interest → deal",
+      "shortlist_to_submission": "Shortlist → submission",
+      "interview_to_mission": "Interview → engagement"
+    },
+    "confirm": {
+      "interest_to_opportunity": "Open the deal",
+      "shortlist_to_submission": "Submit the profile",
+      "interview_to_mission": "Take it on"
+    },
+    "dismiss": "Dismiss",
+    "missionNeedsAgreement": "The engagement is created in its own file: it needs both the client’s and the consultant’s agreement.",
+    "confirmed": "Noted: the line leaves “to review”.",
+    "dismissed": "Line dismissed. It won’t come back.",
+    "error": "That didn’t go through. Try again.",
+    "openSourceCall": "See the call it came from",
+    "openSubmission": "Open the submission",
+    "drawerTitle": "Leads queue",
+    "drawerDescription": "What {{copilot}} spotted at your accounts. Nothing moves without you: confirm or set aside.",
+    "drawerClose": "Close leads",
+    "signalsStayInSignals": "Signals stay in Signals →"
+  },
+  "lostList": {
+    "tab": "Lost",
+    "empty": "No lost deal.",
+    "intro": "Deals closed at the “lost” stage: the reason and the lesson are on each deal’s page.",
+    "rexLink": "See the lessons learned (REX)",
+    "listLabel": "Lost deals",
+    "closedOn": "Lost on {{date}}",
+    "reason": "Reason: {{reason}}"
+  },
+  "archived": {
+    "listLabel": "Archived deals",
+    "empty": "No archived deal.",
+    "loadError": "Archived deals could not be loaded. They are still there — the read failed.",
+    "archivedOn": "Archived on {{date}}",
+    "unarchive": "Unarchive",
+    "unarchiveNamed": "Unarchive {{label}}",
+    "tab": "Archived"
+  },
+  "forecastCategory": {
+    "label": "Declared category",
+    "hint": "Your declaration, with no percentage attached.",
+    "undeclared": "Not declared",
+    "commit": "Committed",
+    "best_case": "Possible",
+    "pipeline": "Pipe",
+    "omitted": "Left out of forecast",
+    "saveError": "Saving failed. The previous value is kept."
+  },
+  "recordPanel": {
+    "kinds": {
+      "opportunity": "Opportunity",
+      "need": "Need",
+      "submission": "Positioning",
+      "mission": "Mission",
+      "consultant": "Consultant"
+    },
+    "zones": {
+      "properties": "Properties",
+      "history": "History",
+      "links": "Linked records"
+    },
+    "properties": {
+      "stage": "Stage",
+      "status": "Status",
+      "objective": "Objective",
+      "expectedCloseOn": "Target close",
+      "urgency": "Urgency",
+      "seniority": "Seniority",
+      "roleTitle": "Role",
+      "startedOn": "Start",
+      "endsOn": "End",
+      "title": "Title",
+      "availability": "Availability"
+    },
+    "linkGroups": {
+      "account": "Account",
+      "opportunity": "Opportunity",
+      "need_one": "Need",
+      "need_other": "Needs",
+      "submission_one": "Positioning",
+      "submission_other": "Positionings",
+      "mission_one": "Mission",
+      "mission_other": "Missions",
+      "consultant_one": "Consultant",
+      "consultant_other": "Consultants"
+    },
+    "historyEmpty": "No movement recorded.",
+    "linksEmpty": "No linked records.",
+    "transition": "{{from}} → {{to}}",
+    "transitionBirth": "Created · {{to}}",
+    "openFull": "Open the full record",
+    "askLaura": "Ask {{copilot}}",
+    "askLauraQuestion": "What should I do about the {{kind}} “{{label}}”?",
+    "loading": "Loading…",
+    "error": "Could not load this record."
+  },
+  "pistes": {
+    "heading": "Leads detected on your accounts",
+    "count_one": "{{count}} lead to review",
+    "count_other": "{{count}} leads to review",
+    "countersAria": "Filter leads",
+    "maturityAria": "Need maturity",
+    "moreFilters": "More filters",
+    "counters": {
+      "all": "All",
+      "ready": "Ready",
+      "toQualify": "To qualify",
+      "withOffer": "With your offer",
+      "withoutOffer": "No offer attached"
+    },
+    "columns": {
+      "piste": "Lead",
+      "account": "Account",
+      "origin": "Origin",
+      "gaps": "What's missing",
+      "action": "Action"
+    },
+    "gaps": {
+      "none": "Nothing: ready",
+      "confirmation": "Need to confirm",
+      "offer": "Your offer to match",
+      "review": "Confirm or dismiss"
+    },
+    "createProject": "Create the deal",
+    "qualify": "Qualify",
+    "qualifyAria": "Qualify the lead “{{label}}” at {{company}}"
+  },
+  "export": {
+    "trigger": "Export",
+    "done_one": "{{count}} deal exported.",
+    "done_other": "{{count}} deals exported.",
+    "hint_one": "Export the displayed deal as CSV",
+    "hint_other": "Export the {{count}} displayed deals as CSV (filters applied)",
+    "columns": {
+      "project": "Deal",
+      "account": "Account",
+      "stage": "Stage",
+      "origin": "Origin",
+      "owner": "Owner",
+      "amount": "Amount (€)",
+      "nextAction": "Next action",
+      "nextActionDueOn": "Next action due",
+      "stageEnteredOn": "In stage since",
+      "lastActivityOn": "Last activity on",
+      "expectedCloseOn": "Expected close on",
+      "ageDays": "Age (days)"
+    }
+  },
+  "frieze": {
+    "label": "Deal stages",
+    "steps": {
+      "to_qualify": "To qualify",
+      "framing": "Framing",
+      "profiles": "Profiles presented",
+      "proposal": "Proposal",
+      "won": "Won"
+    },
+    "exitNote": "The deal left the Kanban; pick it up again from Follow-up."
+  },
+  "decide": {
+    "title": "What is left to decide",
+    "computeMargin": "Compute the margin",
+    "marginTitle": "Mission economics",
+    "items": {
+      "scope": "Scope of the service",
+      "budget": "Budget and terms",
+      "decider": "Access to the decision-maker"
+    },
+    "state": {
+      "scope": {
+        "done": "A brief is recorded.",
+        "partial": "A brief is recorded.",
+        "open": "No brief recorded: frame the service on the need."
+      },
+      "budget": {
+        "done": "Budget confirmed.",
+        "partial": "A target exists; it is not the client’s agreement.",
+        "open": "No target rate recorded."
+      },
+      "decider": {
+        "done": "Decision-maker linked: {{who}}.",
+        "partial": "A contact is linked. Their decision power is still to be qualified.",
+        "open": "No contact linked to the deal."
+      }
+    },
+    "marginDescription": "The displayed margin rate is (sales − costs) / sales. The cost must be provided: no net salary is converted automatically."
+  },
+  "followUp": {
+    "title": "Deal follow-up",
+    "description": "No message is sent from here: the task joins Actions and stays linked to this record.",
+    "task": "Create the next task",
+    "note": "Add a note",
+    "meeting": "Plan a meeting",
+    "proposal": "Prepare the commercial proposal",
+    "tender": "Answer a tender",
+    "hold": "Put on hold or close",
+    "closeNote": "Closing a deal keeps its presentations, documents and history. No existing mission is cancelled.",
+    "resume": "Resume follow-up — the deal stays in the pipe",
+    "dormant": "Dormant — leaves the Kanban",
+    "lost": "Lost — leaves the Kanban; the reason and the lessons learned are kept"
+  },
+  "edit": {
+    "title": "Edit the deal",
+    "description": "Owner, forecast category, privacy, amount, stage and the deal’s actions.",
+    "similar": "Similar deals"
+  },
+  "lauraDialog": {
+    "title": "Move forward with {{copilot}}",
+    "description": "From the record, the presentations and the account history.",
+    "sevenQuestions": "The deal in 7 questions"
+  },
+  "pipeTheo": {
+    "head": {
+      "import": "Import"
+    },
+    "owner": {
+      "label": "Owner",
+      "all": "All owners",
+      "some_one": "{{count}} owner",
+      "some_other": "{{count}} owners",
+      "aria": "Owner: {{value}}"
+    },
+    "state": {
+      "label": "Deal status",
+      "aria": "Deal status: {{value}}",
+      "all": "Whole portfolio",
+      "open": "Open deals",
+      "won": "Won",
+      "lost": "Lost",
+      "dormant": "Dormant",
+      "archived": "Archived"
+    },
+    "filters": {
+      "cta": "Filters",
+      "caption": "Quick filters",
+      "mine": "My deals",
+      "clear": "Clear filters"
+    },
+    "view": {
+      "label": "Pipeline display"
+    },
+    "more": {
+      "label": "More pipeline actions"
+    },
+    "summary": {
+      "label": "Pipeline summary",
+      "inView_one": "active deal",
+      "inView_other": "active deals",
+      "wonApart_one": "won deal, kept apart",
+      "wonApart_other": "won deals, kept apart",
+      "unweighted": "unweighted estimate",
+      "signalsLead": "Signals stay in",
+      "signalsLink": "Signals"
+    },
+    "column": {
+      "total": "{{amount}} estimated",
+      "add": "Add a deal"
+    },
+    "card": {
+      "estimate": "Estimate excl. VAT",
+      "noEstimate": "No estimate yet",
+      "amountToEnter": "Amount to enter",
+      "headcount_one": "{{count}} position",
+      "headcount_other": "{{count}} positions",
+      "followed_one": "{{count}} profile followed",
+      "followed_other": "{{count}} profiles followed",
+      "see": "See",
+      "seeNamed": "See the profiles followed on {{label}}"
+    },
+    "exits": {
+      "label": "Out of pipeline:",
+      "lost_one": "{{count}} lost",
+      "lost_other": "{{count}} lost",
+      "dormant_one": "{{count}} dormant",
+      "dormant_other": "{{count}} dormant",
+      "archived_one": "{{count}} archived",
+      "archived_other": "{{count}} archived",
+      "seeLost": "See lost deals",
+      "seeDormant": "See dormant deals",
+      "seeArchived": "See archived deals"
+    },
+    "panels": {
+      "lost": {
+        "title": "Lost deals",
+        "intro": "Out of the pipeline. Each loss keeps its reason and its lessons learned, readable on its record."
+      },
+      "dormant": {
+        "title": "Dormant",
+        "intro": "A dormant deal leaves the Kanban without being lost. You pick it up again from its record.",
+        "empty": "No dormant deal.",
+        "since": "Dormant · last activity on {{date}}",
+        "resume": "Resume follow-up"
+      },
+      "archived": {
+        "title": "Archived",
+        "intro": "We archive, we don't delete: history, presentations and documents stay available."
+      }
+    }
+  },
+  "dormantList": {
+    "tab": "Dormant",
+    "empty": "No dormant deal.",
+    "intro": "Deals put to sleep: they do not move, but nothing is lost — reopen them from their record.",
+    "listLabel": "Dormant deals",
+    "since": "Dormant since {{date}}"
+  },
+  "missionTracking": {
+    "noOwner": "No owner"
+  },
+  "missionDetail": {
+    "title": "Mission follow-up",
+    "none": "No mission exists yet for this won project.",
+    "remaining": "For it to exist: create it from this signed project.",
+    "unreadable": "The mission status could not be read: it is not assessed here, and nothing is offered until we know whether it exists.",
+    "engaged": "Committed",
+    "owner": "Owner"
+  },
+  "signalTable": {
+    "aria": "Account signals and needs",
+    "loading": "Reading the account's signals…",
+    "error": "This account's signals could not be read. Try again in a moment.",
+    "stale": "Collected before the latest capabilities",
+    "staleHelp": "This account was analysed before the latest collection improvements. Refresh to benefit from them.",
+    "period": {
+      "now": "Current · 6 months",
+      "past": "History"
+    },
+    "laura": {
+      "now_one": "One signal over the last six months.",
+      "now_other": "{{count}} signals over the last six months.",
+      "past_one": "One older need or signal.",
+      "past_other": "{{count}} older needs or signals.",
+      "top_one": "Mostly {{type}}.",
+      "top_other": "Mostly {{type}} ({{count}}).",
+      "leads_one": "One possible project to decide on.",
+      "leads_other": "{{count}} possible projects to decide on."
+    },
+    "filters": {
+      "aria": "Filter rows by type",
+      "all": "All"
+    },
+    "search": "Search a role, a technology…",
+    "columns": {
+      "date": "Date",
+      "type": "Type",
+      "signal": "Signal or need",
+      "contact": "Who to contact"
+    },
+    "types": {
+      "recrutement": "Hiring",
+      "projet": "Project",
+      "marche_public": "Public tender",
+      "annonce_legale": "Legal notice",
+      "equipe": "Team",
+      "affaire": "Deal",
+      "besoin_passe": "Past need",
+      "mission_observee": "Observed assignment",
+      "fait": "Fact"
+    },
+    "outcome": {
+      "won": "Won",
+      "lost": "Lost",
+      "none": "No follow-up"
+    },
+    "link": {
+      "offer": "View the job ad",
+      "notice": "View the notice",
+      "read": "Read"
+    },
+    "merged_one": "▸ {{count}} grouped row",
+    "merged_other": "▸ {{count}} grouped rows",
+    "tjm": "Day rate ≈ €{{amount}}",
+    "titleMore": "Read all",
+    "prescriber": "Requester: {{who}}",
+    "detail": {
+      "description": "Need details",
+      "location": "Location: {{place}}",
+      "people": "People to contact",
+      "nobody": "No known person matches this signal.",
+      "publishedOn": "Posted on {{site}}",
+      "planFailed": "I couldn't add the action to the plan."
+    },
+    "titleLess": "Collapse",
+    "closedGroup_one": "{{count}} closed establishment",
+    "closedGroup_other": "{{count}} closed establishments",
+    "accountsGroup_one": "{{count}} accounts filing",
+    "accountsGroup_other": "{{count}} accounts filings",
+    "nobody": "Nobody known matches this row.",
+    "sharedBase": "Shared base · {{entity}}",
+    "groupSummary_one": "{{count}} need across {{entities}} group entities",
+    "groupSummary_other": "{{count}} needs across {{entities}} group entities",
+    "sources": "×{{count}} sources",
+    "nobodyOnce": "No known person matches some of these needs.",
+    "findContact": "Find who to contact",
+    "toPlan": "To plan",
+    "toPlanFor": "Add to plan: contact {{name}}",
+    "person": {
+      "email": "Email ✓",
+      "phone": "Phone ✓",
+      "reason": {
+        "named": "→ named in the notice",
+        "carried": "→ carried this need",
+        "then": "→ contact at the time",
+        "role": "→ role this fact concerns",
+        "craft": "→ same craft: {{words}}",
+        "place": "→ same place: {{place}}"
+      },
+      "stillThere": "Still in post",
+      "left": "Has left the account",
+      "contactedOn": "Already contacted on {{date}}"
+    },
+    "more": "Show {{count}} more ({{total}} left)",
+    "empty": {
+      "now": "No dated signal over the last six months.",
+      "past": "No dated need or signal older than six months.",
+      "filtered": "No row matches. Remove a filter or change the search."
+    },
+    "plan": {
+      "labelWithContact": "Contact {{name}} — {{signal}}",
+      "reason": "{{type}} of {{date}}"
+    },
+    "side": {
+      "aria": "Signals summary",
+      "glance": "At a glance",
+      "people": "Who comes up most",
+      "peopleLines_one": "{{count}} row",
+      "peopleLines_other": "{{count}} rows",
+      "market": "Observed on the market",
+      "marketStack": "Most seen technologies",
+      "marketFamilies": "Role families",
+      "marketEsn": "ESN present at this account",
+      "marketExEsn": "Former ESN staff at this account",
+      "marketCount_one": "{{count}} career path",
+      "marketCount_other": "{{count}} career paths",
+      "marketDetails": "See details",
+      "marketAll": "All",
+      "marketClose": "Close",
+      "marketPathsError": "Details unavailable right now.",
+      "marketPathsPending": "The path-by-path detail is not available for this account yet.",
+      "marketPathsLoading": "Loading career paths…",
+      "marketPathsCapped": "{{shown}} career paths shown of {{total}}",
+      "marketFilterTechno": "Technology",
+      "marketFilterFamily": "Role family",
+      "marketFilterEsn": "ESN",
+      "marketRate": "€{{rate}} / day",
+      "marketStatus": { "freelance": "Freelance", "esn": "ESN employee", "salarie": "Employee" },
+      "marketSource": "Source: observed on the market",
+      "marketPaths_one": "{{count}} career path observed at this account",
+      "marketPaths_other": "{{count}} career paths observed at this account",
+      "now": {
+        "deals_one": "{{count}} open deal → Deals",
+        "deals_other": "{{count}} open deals → Deals"
+      },
+      "past": {
+        "won_one": "{{count}} past need won",
+        "won_other": "{{count}} past needs won",
+        "lost_one": "{{count}} past need lost",
+        "lost_other": "{{count}} past needs lost",
+        "none_one": "{{count}} past need with no follow-up",
+        "none_other": "{{count}} past needs with no follow-up",
+        "theme_one": "Recurring theme: {{label}} ({{count}} row)",
+        "theme_other": "Recurring theme: {{label}} ({{count}} rows)",
+        "tjm": "Observed day rates: €{{min}} – €{{max}}",
+        "tjmOne": "Observed day rate: €{{amount}}"
+      }
+    },
+    "missionSource": "Observed on the market",
+    "missionSourceEntity": "Observed on the market · {{entity}}",
+    "origin": {
+      "offre": "Job ad",
+      "marche": "Public tender",
+      "annonce": "Legal notice",
+      "crm": "CRM",
+      "memoire": "Need observed on the market",
+      "analyse": "Analysis"
+    }
+  },
+  "wonInPlanning": {
+    "title_one": "{{count}} won project — tracked in Planning",
+    "title_other": "{{count}} won projects — tracked in Planning",
+    "link": "Open Planning"
+  }
+}

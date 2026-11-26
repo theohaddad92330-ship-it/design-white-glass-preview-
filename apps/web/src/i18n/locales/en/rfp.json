@@ -1,0 +1,339 @@
+{
+  "page": {
+    "title": "Your tenders",
+    "subtitle": "Read, route and prepare a tender: upcoming deadlines, requirements still without a validated answer, and decisions to make — dossier by dossier.",
+    "askLauraLabel": "Ask {{copilot}}",
+    "askLauraQuestion": "Help me prioritise my ongoing tenders."
+  },
+  "intake": {
+    "title": "Import a tender",
+    "titlePlaceholder": "Dossier name (the one you'll find it under)",
+    "textPlaceholder": "Paste the consultation text, or drop the file below.",
+    "pickFile": "Choose a file",
+    "formats": "PDF, Word, Excel or text. Extraction happens server-side.",
+    "submit": "Analyse",
+    "imported_one": "{{count}} requirement extracted.",
+    "imported_other": "{{count}} requirements extracted.",
+    "failed": "The analysis did not complete.",
+    "fileTooLarge": "This file is {{size}} MB. The limit is {{max}} MB — upload a lighter document, or paste the mission text in the field above.",
+    "removeFile": "Remove {{name}}",
+    "cost": "Analysing and drafting a tender depends on no quota."
+  },
+  "summary": {
+    "active": "Active",
+    "dueSoon": "Due in 7 days",
+    "mandatoryUnanswered": "Blocking requirements",
+    "missingProfiles": "Missing profiles",
+    "toValidate": "Answers to validate",
+    "submitted": "Submitted"
+  },
+  "list": {
+    "title": "Your dossiers",
+    "empty": "This page is useful if you regularly handle structured tenders or vendor listings.",
+    "emptyHint": "You can import a first tender or hide this section for your workspace.",
+    "emptyView": "No dossier in this view.",
+    "dueAt": "due {{date}}",
+    "views": {
+      "label": "Filter dossiers by status",
+      "all": "All",
+      "to_process": "To process",
+      "in_preparation": "In preparation",
+      "to_validate": "To validate",
+      "submitted": "Submitted",
+      "won": "Won",
+      "lost": "Lost",
+      "archived": "Archived"
+    },
+    "layout": {
+      "label": "Cards or table",
+      "cards": "Cards",
+      "table": "Table"
+    },
+    "table": {
+      "issuer": "Client",
+      "lots": "Scope",
+      "dueAt": "Due date",
+      "status": "Status",
+      "requirements": "Requirements",
+      "coverage": "Coverage",
+      "coverageValue": "{{validated}}/{{total}} mandatory validated",
+      "sortBy": "Sort by {{column}}"
+    }
+  },
+  "detail": {
+    "pick": "Select a dossier to see its requirements.",
+    "askLauraQuestion": "Help me on the tender \"{{title}}\"."
+  },
+  "preview": {
+    "title": "Import preview",
+    "subtitle": "What \"{{title}}\" would create — nothing is written yet.",
+    "failed": "The preview did not complete.",
+    "confirmFailed": "The creation did not complete.",
+    "indicators": {
+      "total": "Requirements",
+      "mandatory": "Mandatory",
+      "dueAt": "Deadline",
+      "missingDocuments": "Missing documents",
+      "contradictions": "Contradictions",
+      "estimatedCost": "Estimated cost",
+      "notMeasured": "Not measured"
+    },
+    "documents": {
+      "title": "Documents",
+      "exclude": "Exclude {{name}}",
+      "add": "Add a file",
+      "pastedText": "Pasted text",
+      "redeposit": "Documents to re-upload to archive the source files: the preview is restored as it was, files are not kept before confirmation."
+    },
+    "confirm": "Confirm",
+    "createAsDraft": "Create as draft",
+    "correct": "Correct",
+    "cancel": "Cancel import",
+    "duplicate": {
+      "warningHash": "A dossier with identical content already exists in this workspace: \"{{title}}\".",
+      "warningSimilar": "A close match already exists in this workspace: \"{{title}}\" ({{criteria}}).",
+      "criteriaSeparator": " and ",
+      "criteria": {
+        "hash": "identical content",
+        "issuer": "same issuer",
+        "title": "close title",
+        "due_at": "same deadline",
+        "reference": "same consultation reference"
+      }
+    },
+    "failedDocuments": {
+      "title": "Documents not analysed",
+      "reason": "{{name}}: {{reason}}",
+      "hint": "Exclude this document or re-run the analysis to resume without losing the rest."
+    }
+  },
+  "status": {
+    "intake": "Imported",
+    "analysed": "Analysed",
+    "bid": "Going for it",
+    "no_bid": "Passed",
+    "submitted": "Response sent",
+    "won": "Won",
+    "lost": "Lost"
+  },
+  "decision": {
+    "title": "Recommendation",
+    "verdict": {
+      "bid": "Go",
+      "no_bid": "Pass",
+      "conditional": "Go, conditionally"
+    },
+    "fit": "fit {{value}}/100",
+    "redFlags": "What should make us pass",
+    "conditions": "What must be true",
+    "questions": "To ask the client before answering",
+    "go": "We go",
+    "pass": "We pass",
+    "markSubmitted": "Mark submitted",
+    "markSubmittedFailed": "Switching to \"submitted\" did not go through."
+  },
+  "compliance": {
+    "title": "Compliance",
+    "total": "Requirements",
+    "mandatory": "Mandatory",
+    "missing": "No validated answer",
+    "ambiguous": "Ambiguous",
+    "pending": "Still to produce — {{detail}}",
+    "ready": "All mandatory requirements are validated and sourced: the dossier can go out.",
+    "notReady": "The dossier cannot go out as it stands — a mandatory requirement without a validated answer, or an unresolved ambiguity, is paid for when the bids are opened."
+  },
+  "extraction": {
+    "title": "What the document says",
+    "page": "(p. {{page}})",
+    "category": {
+      "legal_entity": "Legal entity",
+      "calendar": "Calendar",
+      "qa": "Q&A",
+      "scoring_criteria": "Scoring criteria",
+      "requested_documents": "Requested documents",
+      "requested_profiles": "Requested profiles",
+      "volumes": "Volumes",
+      "pricing": "Pricing",
+      "contractual_terms": "Contractual terms",
+      "security_compliance": "Security / compliance",
+      "contacts": "Contacts",
+      "submission_format": "Submission format"
+    },
+    "status": {
+      "found": "Found",
+      "to_verify": "To verify",
+      "not_found": "Not found",
+      "contradiction": "Contradiction between two documents"
+    }
+  },
+  "requirements": {
+    "title": "Requirements",
+    "empty": "No requirement extracted from this document.",
+    "draft": "Draft from approved sources",
+    "draftFailed": "The drafting did not complete.",
+    "source": "Source: {{source}}",
+    "sourceDocument": "Document: {{document}}",
+    "ownerAria": "Role that answers — {{text}}",
+    "ownerUpdateFailed": "The role change did not go through.",
+    "evidence": "Evidence: {{evidence}}",
+    "addEvidence": "Add evidence",
+    "evidenceLabel": "Evidence text",
+    "evidencePlaceholder": "Paste the excerpt that proves the answer — never generic marketing copy.",
+    "evidenceSave": "Save evidence",
+    "evidenceUpdateFailed": "Saving the evidence did not go through.",
+    "confidenceLabel": "Confidence in the answer",
+    "confidence": {
+      "unset": "Not assessed",
+      "high": "High",
+      "medium": "Medium",
+      "low": "Low"
+    }
+  },
+  "weight": {
+    "mandatory": "Mandatory",
+    "desirable": "Desirable",
+    "informative": "Informative",
+    "ambiguous": "Ambiguous"
+  },
+  "kind": {
+    "technical": "Technical",
+    "security": "Security",
+    "delivery": "Delivery",
+    "financial": "Financial",
+    "contractual": "Contractual",
+    "csr": "CSR",
+    "team": "Team",
+    "other": "Other"
+  },
+  "owner": {
+    "sales": "Sales",
+    "expert": "Expert",
+    "hr": "HR",
+    "legal": "Legal",
+    "security": "Security",
+    "finance": "Finance"
+  },
+  "answerStatus": {
+    "to_produce": "To produce",
+    "reused": "Reused",
+    "drafted": "Drafted",
+    "to_complete": "To complete",
+    "to_validate": "To validate",
+    "blocked": "Blocked",
+    "not_applicable": "Not applicable",
+    "validated": "Validated",
+    "ariaLabel": "Answer status — {{text}}",
+    "updateFailed": "The status change did not go through."
+  },
+  "need": {
+    "title": "Turn into a need",
+    "subtitle": "The RFP joins the open-needs view and becomes material for talent-pool matching. Skills are NOT derived from the document — RFP wording is prose, and turning it into a technology list would rank profiles on words we made up. You enter them on the need.",
+    "projectLabel": "Project",
+    "projectPlaceholder": "Pick the project to attach it to",
+    "submit": "Create the need",
+    "created": "Need created: {{title}}",
+    "open": "See needs",
+    "failed": "The need could not be created",
+    "noProject": "No project in your pipe yet. A project comes from an account analysis or a detected signal — it is not created by hand.",
+    "preview": {
+      "cta": "Preview the proposed need"
+    },
+    "linked": "This tender is already linked to a need."
+  },
+  "mask": {
+    "hide": "Hide this section",
+    "show": "Show the section again",
+    "hiddenNotice": "This section is hidden for your workspace.",
+    "failed": "The setting was not saved."
+  },
+  "fromNeed": {
+    "cta": "Create from a need",
+    "label": "Source need",
+    "placeholder": "Pick the need this tender starts from",
+    "none": "No open need in your workspace",
+    "lines": {
+      "title": "Need: {{value}}",
+      "skills": "Skills: {{value}}",
+      "seniority": "Seniority: {{value}}",
+      "headcount_one": "Profiles: {{count}}",
+      "headcount_other": "Profiles: {{count}}",
+      "location": "Location: {{value}}",
+      "startOn": "Start: {{value}}",
+      "duration_one": "Duration: {{count}} month",
+      "duration_other": "Duration: {{count}} months"
+    }
+  },
+  "comments": {
+    "open": "Comment on this requirement",
+    "toggle": "Comments ({{count}})",
+    "label": "New comment",
+    "submit": "Comment",
+    "failed": "The comment was not saved."
+  },
+  "versions": {
+    "toggle": "Previous versions ({{count}})",
+    "replacedAt": "Replaced on {{date}}",
+    "compare": "Compare with the current answer",
+    "before": "Before",
+    "now": "Now",
+    "noCurrent": "No current answer."
+  },
+  "readOnly": {
+    "notice": "Read-only: you can browse your workspace’s tenders but not change them."
+  },
+  "export": {
+    "cta": "Export the matrix (CSV)",
+    "columns": {
+      "section": "Section",
+      "text": "Requirement",
+      "weight": "Weight",
+      "status": "Status",
+      "answer": "Answer",
+      "source": "Source",
+      "owner": "Role"
+    }
+  },
+  "sourceDocuments": {
+    "title": "Source documents",
+    "open": "Open {{name}}",
+    "openShort": "Open",
+    "openError": "The file could not be opened."
+  },
+  "sections": {
+    "assignAria_one": "Assign section “{{section}}” ({{count}} requirement)",
+    "assignAria_other": "Assign section “{{section}}” ({{count}} requirements)",
+    "placeholder": "Assign “{{section}}”…",
+    "none": "No section",
+    "failed": "The section was not assigned."
+  },
+  "resume": {
+    "title": "An import is in progress: “{{title}}”",
+    "meta_one": "{{count}} document · preview from {{date}}",
+    "meta_other": "{{count}} documents · preview from {{date}}",
+    "metaPasted": "Pasted text · preview from {{date}}",
+    "metaInterrupted": "Analysis interrupted · pasted text from {{date}}",
+    "metaInterruptedFiles": "Analysis interrupted · files to re-drop: {{names}} ({{date}})",
+    "resume": "Resume the import",
+    "abandon": "Abandon the import",
+    "abandonFailed": "The import could not be abandoned."
+  },
+  "draftReview": {
+    "title": "Approve what {{copilot}} may cite before she drafts.",
+    "evidenceTitle": "Attached evidence",
+    "addTitle": "Source title",
+    "addTitlePlaceholder": "E.g. client reference, product sheet…",
+    "addContent": "Source content",
+    "addContentPlaceholder": "The exact passage to cite.",
+    "add": "Add this source",
+    "noSource": "No approved source: {{copilot}} invents nothing, she will say what is missing.",
+    "generate": "Generate with approved sources"
+  },
+  "profiles": {
+    "title": "Attached profiles",
+    "pick": "Profile to attach",
+    "choose": "Pick a profile from the bench",
+    "attach": "Attach this profile",
+    "unnamed": "Unnamed profile",
+    "noProject": "This need is not linked to any deal: a profile is put forward on a deal, link the need to one first."
+  }
+}

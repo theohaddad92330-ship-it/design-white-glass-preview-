@@ -1,0 +1,170 @@
+{
+  "page": {
+    "title": "Suivi, facturation & automatisations",
+    "subtitle": "Pilote l’exécution, la facturation et les paiements de tes missions.",
+    "introTitle": "Ton suivi opérationnel, {{firstName}}",
+    "introTitleWithoutName": "Ton suivi opérationnel",
+    "introSubtitle": "Voici ce qui nécessite une action pour sécuriser tes missions et ton cash."
+  },
+  "tiles": {
+    "activeMissions": "Missions actives",
+    "craToValidate": "CRA à valider",
+    "craBlocking_one": "dont {{count}} bloque la facturation",
+    "craBlocking_other": "dont {{count}} bloquent la facturation",
+    "readyToInvoice": "Prêt à facturer",
+    "financeHidden": "Montant réservé — demande l’accès financier pour le voir",
+    "overduePayments": "Paiements en retard",
+    "commercialMargin": "Marge commerciale",
+    "commercialMarginFor": "Marge commerciale — {{month}}",
+    "periodNow": "en ce moment",
+    "periodWindow_one": "sur {{count}} mois",
+    "periodWindow_other": "sur {{count}} mois",
+    "showAll": "Montrer toutes les missions du suivi",
+    "openPilotage": "Ouvrir le pilotage pour voir la marge",
+    "openCra": "Ouvrir les relevés d’activité",
+    "openInvoicing": "Ouvrir la facturation",
+    "openCollections": "Ouvrir les encaissements"
+  },
+  "table": {
+    "title": "Missions actives",
+    "searchPlaceholder": "Rechercher une mission, un client, un consultant…",
+    "empty": "Aucune mission active pour l’instant.",
+    "loadErrorTitle": "Suivi indisponible",
+    "unknownClient": "le compte porteur n’est pas dans ton périmètre",
+    "unknownConsultant": "les affectations n’ont pas pu être lues",
+    "unstaffed": "Personne d’affecté",
+    "unknownPeriod": "aucune date n’a été saisie sur cette mission",
+    "noNextAction": "Aucune action planifiée",
+    "columnsCta": "Colonnes",
+    "columnsLabel": "Colonnes affichées",
+    "columnsPinned": "Colonne obligatoire",
+    "columnsReset": "Réinitialiser",
+    "rowMenu": "Gestes sur cette mission",
+    "viewMission": "Ouvrir la mission",
+    "viewCra": "Voir les relevés",
+    "viewInvoicing": "Voir la facturation",
+    "columns": {
+      "mission": "Mission",
+      "consultant": "Consultant",
+      "client": "Client",
+      "period": "Période",
+      "cra": "CRA",
+      "invoicing": "Facturation",
+      "payment": "Paiement",
+      "nextAction": "Prochaine action"
+    },
+    "craUnknown": "aucun relevé pour cette mission sur le mois consulté",
+    "invoicingUnknown": "aucune ligne de facturation pour cette mission sur le mois consulté",
+    "paymentUnknown": "aucune ligne de facturation pour cette mission sur le mois consulté",
+    "viewsLabel": "Ce que la table montre",
+    "views": {
+      "toAct": "À traiter",
+      "all": "Tout le suivi"
+    },
+    "viewHints": {
+      "toAct": "Les missions qui ont réellement un geste en attente : relevé, facturation, paiement ou action ouverte.",
+      "all": "Toutes les missions actives, y compris celles qui n’attendent rien."
+    },
+    "askLaura": "Demander à {{copilot}} quoi débloquer",
+    "askLauraQuestion_one": "J’ai {{count}} mission à traiter sur mon suivi opérationnel : qu’est-ce qui bloque ma facturation, quels paiements dois-je relancer, et par quoi commencer aujourd’hui ?",
+    "askLauraQuestion_other": "J’ai {{count}} missions à traiter sur mon suivi opérationnel : qu’est-ce qui bloque ma facturation, quels paiements dois-je relancer, et par quoi commencer aujourd’hui ?",
+    "askLauraShort": "Demander à {{copilot}}",
+    "askLauraAboutMission": "Sur la mission « {{mission}} » : y a-t-il quelque chose à faire aujourd’hui, et pourquoi n’est-elle pas prête à facturer ?",
+    "periodFrom": "Depuis le {{date}} — sans date de fin",
+    "periodUntil": "Jusqu’au {{date}} — sans date de démarrage",
+    "emptyToAct": "Rien à traiter",
+    "emptyToActDescription": "Aucune mission n’attend de relevé, de facture, de paiement ni d’action ouverte. « Tout le suivi » montre le portefeuille complet."
+  },
+  "status": {
+    "cra": {
+      "validated": "Validé",
+      "pendingValidation": "À valider",
+      "actionNeeded": "À faire",
+      "notApplicable": "Sans objet"
+    },
+    "invoicing": {
+      "blocked": "Bloqué",
+      "ready": "Prêt",
+      "invoiced": "Facturé ailleurs",
+      "not_due": "Pas dû ce mois"
+    },
+    "payment": {
+      "paid": "Payé",
+      "disputed": "Contesté",
+      "overdue": "En retard",
+      "pending": "À venir",
+      "not_applicable": "Sans objet",
+      "not_invoiced": "Pas encore facturé"
+    },
+    "invoicingBecause": "Bloquée : {{blocker}}",
+    "invoicingWhy": {
+      "blocked": "Un contrôle de facturation n’est pas levé.",
+      "ready": "Relevé validé, aucun autre blocage.",
+      "invoiced": "Marquée comme facturée en dehors de l’outil.",
+      "not_due": "Rien n’est dû sur ce mois pour cette mission."
+    }
+  },
+  "automations": {
+    "title": "Automatisations",
+    "manage": "Gérer les automatisations",
+    "active": "Actif",
+    "inactive": "Inactif",
+    "empty": "Aucune automatisation de mission.",
+    "error": "Les automatisations n’ont pas pu être chargées.",
+    "summary": "{{active}} automatisation(s) active(s) · {{inactive}} inactive(s)",
+    "gaps": {
+      "timesheet_chase_one": "« {{name}} » est inactive : {{count}} relevé à corriger aurait dû déclencher une relance.",
+      "timesheet_chase_other": "« {{name}} » est inactive : {{count}} relevés à corriger auraient dû déclencher une relance.",
+      "invoice_readiness_one": "« {{name}} » est inactive : {{count}} facturation bloquée aurait dû être signalée.",
+      "invoice_readiness_other": "« {{name}} » est inactive : {{count}} facturations bloquées auraient dû être signalées."
+    }
+  },
+  "activity": {
+    "title": "Activité récente",
+    "empty": "Rien à montrer pour l’instant.",
+    "kind": {
+      "cra_validated": "CRA validé",
+      "invoice_issued": "Facture émise",
+      "payment_received": "Paiement reçu",
+      "reminder_sent": "Relance consignée"
+    }
+  },
+  "profitability": {
+    "title": "Rentabilité des missions",
+    "tabs": {
+      "month": "Mois",
+      "quarter": "Trimestre",
+      "year": "Année"
+    },
+    "unavailable": "Non mesuré — l’agrégation par {{period}} n’existe pas encore côté serveur. Voici la vue mensuelle, la seule que {{brand}} calcule aujourd’hui.",
+    "empty": "Pas assez de mois mesurés pour tracer une tendance."
+  },
+  "drift": {
+    "title": "Missions qui dérapent",
+    "rule": "Une mission n’est signalée qu’à partir de {{signals}} signaux, sur {{months}} mois minimum. Un mois d’écart n’est pas une dérive.",
+    "firing": "{{signals}} — sur {{months}} mois lus",
+    "notMeasured": "Non mesuré : {{signals}}",
+    "tooShort": "{{months}} mois d’historique sur les {{needed}} nécessaires — on ne peut pas encore conclure",
+    "unreadable": {
+      "title": "Ce qu’on ne sait pas lire ({{count}})"
+    },
+    "signals": {
+      "growing_day_gap": "écart de jours qui se creuse",
+      "late_timesheet": "relevé de plus en plus tardif",
+      "slow_client_validation": "validation client de plus en plus lente",
+      "satisfaction_drop": "satisfaction en baisse",
+      "disputed_days": "jours contestés"
+    },
+    "noneForMission": "Aucun point relevé dans les données de cette mission. Cela ne constitue pas une garantie exhaustive.",
+    "titleForMission": "Dérive de cette mission"
+  },
+  "concerns": {
+    "payment_overdue": "Paiement en retard",
+    "payment_disputed": "Paiement contesté",
+    "invoicing_blocked": "Facturation bloquée",
+    "cra_action": "Relevé à corriger",
+    "invoicing_ready": "Prêt à facturer",
+    "cra_pending": "Relevé à valider",
+    "next_action": "Action ouverte"
+  }
+}

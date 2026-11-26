@@ -1,0 +1,360 @@
+{
+  "page": {
+    "heading": "Integrations",
+    "subtitle": "Connect your tools: {{brand}} reads what you already have and acts where you work."
+  },
+  "searchPlaceholder": "Search a tool",
+  "noMatch": "No tool matches.",
+  "demoConnection": "{{name}} (demo) — nothing is actually connected.",
+  "noMatchClear": "Clear the search and filter",
+  "states": {
+    "operational": "Operational",
+    "read_only": "Read-only",
+    "limited_write": "Partial write access",
+    "authorization_expired": "Authorization expired",
+    "degraded": "Degraded",
+    "sync_late": "No recent activity",
+    "not_connected": "Not connected",
+    "not_included_in_plan": "Not included"
+  },
+  "mcp": {
+    "name": "AI assistant",
+    "description": "Query your accounts from your AI assistant. Connecting and revoking happen on its own screen.",
+    "open": "Open",
+    "manage": "Manage access"
+  },
+  "callback": {
+    "connected": "{{name}} is connected.",
+    "failed": "{{name}} could not be connected: {{reason}}",
+    "reasonUnknown": "unknown reason"
+  },
+  "error": {
+    "title": "The integrations list could not be loaded",
+    "body": "Nothing can be concluded about your tools: the read failed, not the connections.",
+    "retry": "Retry"
+  },
+  "testButton": "Test",
+  "testHint": "I run a real read, changing nothing. You will see exactly what I get back.",
+  "repairButton": "Repair",
+  "diagnosticFailed": "The diagnostic itself did not complete. Try again in a moment.",
+  "lastProof": "Verified: {{sample}} — {{when}}",
+  "missingScope": "Missing access: {{scopes}}",
+  "grantedScopes": "Access granted: {{scopes}}",
+  "coveragePeriod": "Coverage period: {{value}}",
+  "coveragePeriodUnknown": "Coverage period: not stated",
+  "latencyDeclared": "Latency declared by the provider: {{value}} (as of {{when}})",
+  "latencyMeasured": "Latency measured by {{brand}}: {{value}} (measured over {{days}} days, {{count}} synchronizations, as of {{when}})",
+  "latencyNotMeasured": "Latency: not measured — {{reason}}",
+  "latencyUnknown": "Latency: not reported",
+  "betaFeature": "Beta feature at the provider: {{feature}}",
+  "betaGeneric": "This tool is in beta at the provider.",
+  "betaUnknown": "Beta status: not reported",
+  "dependentRoutines": "{{count}} automation(s) depend on it.",
+  "neverDoesTitle": "What I will never do with this tool:",
+  "capabilityKeys": {
+    "read": "Read",
+    "search": "Search",
+    "summarize": "Summarise",
+    "prepare": "Prepare",
+    "create": "Create",
+    "update": "Update",
+    "send": "Send",
+    "delete": "Delete",
+    "schedule": "Schedule",
+    "webhook": "Notify"
+  },
+  "capabilityLevels": {
+    "l0_disconnected": "Not connected",
+    "l1_consult": "Consultation",
+    "l2_prepare": "Preparation",
+    "l3_notify": "One-way notification",
+    "l4_write_confirmed": "Confirmed write",
+    "l5_send_confirmed": "Confirmed send",
+    "l6_automate": "Bounded automation"
+  },
+  "capabilityStates": {
+    "not_connected": "Not connected",
+    "read_only": "Read only",
+    "limited_write": "Limited write",
+    "authorization_expired": "Authorisation expired",
+    "degraded": "Degraded",
+    "sync_late": "Sync behind",
+    "operational": "Operational",
+    "scope_missing": "Access not granted",
+    "untested": "Never verified"
+  },
+  "errorCodes": {
+    "not_connected": "this tool is not connected",
+    "scope_missing": "I am not allowed to look",
+    "provider_api_disabled": "access is switched off on the provider side",
+    "provider_unavailable": "the tool did not answer",
+    "rate_limited": "too many requests at once"
+  },
+  "optionalBadge": "Optional",
+  "preConsentTitle": "Before you continue, here is what I will be able to do:",
+  "preConsentScopeLimited": "Nothing else is read or changed: only the capabilities listed above are used.",
+  "preConsentNever": "I will never delete anything, and never send a message without your click. You can revoke this access at any time.",
+  "preConsentContinueWithout": "Continue without {{name}}",
+  "preConsentConfirm": "Understood, connect",
+  "benefitsTitle": "What this connected tool allows me to do:",
+  "builtOnTopTitle": "What I build on top:",
+  "derivedCapabilities": {
+    "detect_conflicts": "Spot clashes between your meetings — the calculation is mine, the tool only lists",
+    "free_slots": "Find your free slots, so you can offer a time that holds"
+  },
+  "lastError": "Last failure: {{reason}} — {{when}}",
+  "lastErrorUndated": "Last failure: {{reason}}",
+  "lastSync": "Last real activity: {{when}}",
+  "toolActions": {
+    "add_lead_to_campaign": "Add a contact to one of your existing sequences, after your click",
+    "create_draft": "Prepare a draft — never send it for you",
+    "create_event": "Book a meeting, after your click",
+    "create_mission": "Create a mission in your ERP, once a second manager approves",
+    "enrich_contact": "Fill in a contact's details",
+    "export_contact": "Push a contact to this tool",
+    "import_contacts": "Bring in the contacts already there",
+    "list_campaigns": "Read your campaigns to pick where to add",
+    "list_events": "Read your calendar",
+    "list_pending_signatures": "List the signatures pending",
+    "list_unpaid_invoices": "List the unpaid invoices",
+    "log_activity": "Log an activity there",
+    "log_to_crm": "Report back what happened",
+    "lookup_company": "Look a company up in the registry",
+    "manage_billing": "Prepare an invoice run",
+    "read_calls": "Read the call history",
+    "read_consultants": "Read the consultant pool",
+    "read_data": "Read the operational data",
+    "read_emails": "Read your exchanges to prepare a follow-up",
+    "read_file": "Read a document",
+    "read_lead_statuses": "Read back what happened (sent, opened, replied)",
+    "read_missions": "Read the ongoing assignments",
+    "read_opportunities": "Read the open deals",
+    "read_pages": "Read a page from your notes space",
+    "run_analysis": "Run an analysis on it",
+    "scrape_page": "Read a public page",
+    "search_contacts": "Search for a contact there",
+    "search_files": "Search for a document",
+    "search_offers": "Search published job offers",
+    "search_pages": "Search your notes space",
+    "search_tenders": "Search published public tenders",
+    "search_web": "Search the open web",
+    "send_email": "Send a message, after your click",
+    "send_event": "Publish a product event there",
+    "send_message": "Send a message, after your click",
+    "send_notification": "Alert you in your team channel",
+    "send_to_signature": "Send a document out for signature, after your click",
+    "transcribe_recording": "Transcribe a recording",
+    "log_call": "Add a call summary to a contact record in your ERP, once a second manager approves",
+    "update_need_status": "Change the status of a need in your ERP, once a second manager approves",
+    "update_tjm": "Update the day rate of a mission, once a second manager approves",
+    "view_profile": "Look at a public profile"
+  },
+  "importEntry": {
+    "title": "Already have files or a CRM?",
+    "subtitle": "Import your files (accounts, contacts, history) before starting from scratch. A connected CRM is imported by itself: its progress is on its card."
+  },
+  "capabilityTiers": {
+    "read": "Read",
+    "prepare": "Draft",
+    "act": "Act, after you approve"
+  },
+  "details": {
+    "show": "See details",
+    "hide": "Hide details"
+  },
+  "dataTypeKeys": {
+    "contacts": "contacts",
+    "companies": "companies",
+    "deals": "deals",
+    "accounts": "accounts",
+    "opportunities": "opportunities",
+    "persons": "people",
+    "organizations": "organizations",
+    "people_records": "people records",
+    "emails": "emails",
+    "threads": "email threads",
+    "events": "calendar events",
+    "availability": "availability",
+    "documents": "documents",
+    "file_metadata": "file names",
+    "pages": "pages",
+    "databases": "databases"
+  },
+  "firstSyncCta": {
+    "title": "Sync and understand my data",
+    "body": "We’ll look at what {{name}} already knows, and tell you what we found there.",
+    "later": "Later",
+    "resyncTitle": "Resync",
+    "resyncBody": "We’ll read {{name}} again and refresh this summary."
+  },
+  "syncPreview": {
+    "title": "Before syncing {{name}}",
+    "scope": "{{brand}} will read the data of your connected {{name}} account — nothing else.",
+    "objectsTitle": "What will be read:",
+    "durationTitle": "Estimated duration: {{value}}",
+    "durationUnknown": "Estimated duration: not stated",
+    "costTitle": "Cost: {{value}}",
+    "costUnknown": "Cost: not stated",
+    "launch": "Sync",
+    "later": "Later"
+  },
+  "syncSummary": {
+    "title": "Sync summary",
+    "partialTitle": "Partial summary — a source failed",
+    "lastSyncTitle": "Last sync",
+    "waitingSince": "Waiting for {{count}} min",
+    "pollUnavailable": "Sync status unavailable — retrying.",
+    "running": "Syncing…",
+    "cancel": "Cancel",
+    "canceledTitle": "Sync canceled",
+    "empty": "Nothing new since last time.",
+    "errorTitle": "The sync failed",
+    "predatesCapacity": "Summary available after the next sync — this connection was synced before this summary existed.",
+    "states": {
+      "running": "Syncing…",
+      "pending": "Waiting…",
+      "reading_sources": "Reading sources…",
+      "matching_accounts": "Matching companies…",
+      "matching_contacts": "Matching contacts…",
+      "detecting_events": "Detecting events…",
+      "preparing_summary": "Preparing summary…",
+      "completed": "Completed",
+      "partial": "Partial — a source failed",
+      "failed": "Failed",
+      "canceled": "Canceled"
+    },
+    "blocks": {
+      "found": "What I found",
+      "matched": "What I matched",
+      "unclear": "What I didn't understand",
+      "impact": "What this changes",
+      "advice": "What I recommend"
+    }
+  },
+  "tabs": {
+    "aria": "Integrations sections",
+    "connectors": "Connectors",
+    "apiKeys": "API keys",
+    "history": "History",
+    "label": "Integrations"
+  },
+  "crmRead": {
+    "title": "CRM reads",
+    "none": "No CRM connected — nothing is read.",
+    "unavailable": "Read status unavailable — try again in a moment.",
+    "lastRead": "last read {{date}}",
+    "neverRead": "never read"
+  },
+  "grid": {
+    "title": "Your tools, the same file",
+    "subtitle": "Choose what comes from each tool, review the changes, find their outcome.",
+    "importFile": "Import a file",
+    "guide": {
+      "title": "How to work here",
+      "heading": "Know what a tool lets you read or prepare",
+      "intro": "Each connector says what it reads, what it prepares and what waits for your validation.",
+      "stepsTitle": "The useful path",
+      "step1": "Pick your workspace’s tool.",
+      "step2": "Tell reading, preparing and writing apart.",
+      "step3": "Review the changes before they enter a file.",
+      "keepTitle": "Keep in mind",
+      "keep": "No tool shares your data with another firm. Everything is optional."
+    },
+    "tabsAria": "Connector sections",
+    "tabs": {
+      "connectors": "Connectors",
+      "review": "To review",
+      "history": "History"
+    },
+    "families": {
+      "crm": "CRM, ERP and activity management",
+      "workspace": "Mail, calendar and documents",
+      "communication": "Team channels",
+      "outreach": "Outreach and recruitment",
+      "admin": "Telephony, signature, invoicing and assistants"
+    },
+    "status": {
+      "connected": "Connected",
+      "action_required": "Needs reconnecting",
+      "available": "Not connected",
+      "not_included_in_plan": "Not included in your plan",
+      "contractual": "Scope to be contracted"
+    },
+    "actions": {
+      "journey": "See the journey",
+      "reconnect": "Reconnect"
+    },
+    "openAria": "{{action}}: {{name}}",
+    "pointers": {
+      "mcp": "AI assistants and API keys are set up in Tools › Assistant access / MCP.",
+      "notifications": "How {{copilot}} notifies you:"
+    },
+    "pointerMcpLink": "Assistant access / MCP",
+    "pointerNotifLink": "My account › Notifications",
+    "drawer": {
+      "close": "Close",
+      "guaranteesTitle": "What stays in your hands",
+      "readScope": "Read scope",
+      "readScopeBody": "Limited to the workspace and the allowed objects. No data shared between firms.",
+      "noDuplicate": "Matching without duplicates",
+      "noDuplicateBody": "External identity kept; a simultaneous change is left for you to arbitrate.",
+      "writesReviewed": "Writes to review",
+      "writesReviewedBody": "Preview of the changes and validation. No success without the tool’s answer."
+    },
+    "review": {
+      "intro": "Compare the information before updating a record. No blind “Approve all”.",
+      "unavailable": "Read status unavailable — reading your tools failed, try again in a moment.",
+      "empty": "Nothing to review: no difference between {{brand}} and your tools.",
+      "unnamed": "Unnamed record",
+      "received": "{{tool}} · received on {{date}}",
+      "inBellum": "In {{brand}}",
+      "inTool": "In {{tool}}",
+      "absent": "Not filled in",
+      "keep": "Keep, {{field}}",
+      "keepBellum": "{{brand}}",
+      "lockNote": "Your correction is kept until you choose the other value.",
+      "apply": "Apply these choices",
+      "applied": "Your choices are applied.",
+      "failed": "The choices could not be applied.",
+      "demoPreview": "Preview: in the demo room, nothing is written."
+    },
+    "history": {
+      "intro": "The operations actually made with your tools, and the result the tool reported.",
+      "empty": "No operation yet: the history fills as soon as you read from or write to a connected tool.",
+      "entity": {
+        "account": "companies",
+        "contact": "contacts",
+        "record": "records"
+      },
+      "operation": {
+        "read": "Read · {{count}} {{entity}} touched",
+        "write": "Write validated by you",
+        "first_sync": "First sync",
+        "readPlain": "Read"
+      },
+      "result": {
+        "done": "Done",
+        "to_review": "To review",
+        "confirmed": "Confirmed by the tool",
+        "refused": "Refused by the tool",
+        "to_review_count_one": "{{count}} change to review",
+        "to_review_count_other": "{{count}} changes to review"
+      }
+    }
+  },
+  "history": {
+    "intro": "The operations actually carried out with your tools, and the result the tool reported.",
+    "loading": "Reading your tools’ history…",
+    "failed": "I couldn’t read your tools’ history.",
+    "empty": "No synchronisation has been run yet with your connected tools.",
+    "emptyNoTool": "No connected tool: the history appears from the first synchronisation.",
+    "operationSync": "Synchronisation",
+    "columns": {
+      "date": "Date",
+      "tool": "Tool",
+      "operation": "Operation",
+      "result": "Result"
+    }
+  },
+  "notificationsMoved": "How {{copilot}} notifies you: My account › Notifications."
+}

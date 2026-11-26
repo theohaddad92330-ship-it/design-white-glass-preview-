@@ -1,0 +1,31 @@
+{
+  "name": "@bellum/events",
+  "version": "0.0.1",
+  "private": true,
+  "type": "module",
+  "main": "./dist/index.js",
+  "module": "./src/index.ts",
+  "exports": {
+    ".": {
+      "types": "./src/index.ts",
+      "import": "./dist/index.js",
+      "require": "./dist/index.js"
+    }
+  },
+  "types": "src/index.ts",
+  "scripts": {
+    "build": "tsc --build",
+    "check-types": "tsc --build",
+    "test": "vitest run",
+    "test:watch": "vitest"
+  },
+  "dependencies": {
+    "ioredis": "^5.7.0",
+    "zod": "^4.6.6"
+  },
+  "devDependencies": {
+    "@bellum/tooling": "workspace:*",
+    "typescript": "^5.8.3",
+    "vitest": "^3.2.7"
+  }
+}

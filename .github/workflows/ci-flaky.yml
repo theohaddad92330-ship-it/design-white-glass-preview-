@@ -1,0 +1,41 @@
+name: CI — flaky (quarantaine)
+
+# Lot ci/6-quarantaine, docs/ci.md §3. Après la suite complète nocturne (ci.yml, 01:30 UTC), lit les rapports
+# des 14 dernières nuits, met à jour tools/ci/quarantine.json et les issues `flaky`. Le fichier change par une
+# PR automatique (main est protégée). Interrupteur : vars.CI_FLAKY_DETECT = false.
+on:
+  schedule: [{ cron: '30 5 * * *' }]
+  workflow_dispatch:
+
+permissions:
+  contents: write
+  issues: write
+  pull-requests: write
+
+jobs:
+  flaky:
+    name: Détecter les flaky
+    if: ${{ vars.CI_FLAKY_DETECT != 'false' }}
+    runs-on: ${{ vars.CI_RUNS_ON || 'ubuntu-latest' }}
+    timeout-minutes: 20
+    env:
+      GH_TOKEN: ${{ github.token }}
+    steps:
+      - uses: actions/checkout@v7
+      - uses: actions/setup-node@v7
+        with:
+          node-version: 22
+      - run: node tools/ci/flaky.mjs --issues
+      - name: PR de mise à jour de la quarantaine
+        run: |
+          if git diff --quiet -- tools/ci/quarantine.json; then echo "quarantaine inchangée"; exit 0; fi
+          branch=ci/quarantaine-auto
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git switch -C "$branch"
+          git add tools/ci/quarantine.json
+          git commit -m "chore(ci): mise à jour de la quarantaine des tests flaky"
+          git push --force origin "HEAD:refs/heads/$branch"
+          gh pr create --base main --head "$branch" --title "chore(ci): quarantaine des tests flaky" \
+            --body "Mise à jour automatique de tools/ci/quarantine.json (docs/ci.md §3)." \
+            || echo "::warning::PR déjà ouverte ou création refusée : la branche $branch est à jour."

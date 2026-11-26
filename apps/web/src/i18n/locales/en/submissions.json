@@ -1,0 +1,401 @@
+{
+  "title": "Profiles submitted",
+  "unknownTalent": "Unknown profile",
+  "noRate": "No rate set",
+  "rate": "{{value}} €/day proposed",
+  "dossier": {
+    "loading": "Loading submission…",
+    "errorTitle": "Submission unreadable",
+    "errorBody": "The read failed — the submission is still there.",
+    "retry": "Retry",
+    "back": "Back to submitted profiles",
+    "consultant": "Consultant",
+    "project": "Need",
+    "projectUnknown": "need not found",
+    "need": "Role targeted",
+    "needUnknown": "no specific role designated",
+    "stage": "Stage",
+    "substatus": "Detail",
+    "submittedAt": "CV sent on",
+    "submittedAtUnknown": "CV not sent yet"
+  },
+  "stages": {
+    "shortlisted": "Shortlisted",
+    "submitted": "CV sent",
+    "interview": "Interview",
+    "accepted": "Accepted",
+    "rejected": "Rejected",
+    "withdrawn": "Withdrawn"
+  },
+  "substatuses": {
+    "to_qualify": "To qualify",
+    "consultant_agreement_pending": "Consultant agreement pending",
+    "ready_to_present": "Ready to present",
+    "to_validate": "To validate",
+    "presented": "Presented",
+    "acknowledged": "Acknowledged",
+    "interview_to_schedule": "Interview to schedule",
+    "interview_scheduled": "Interview scheduled",
+    "interview_done": "Interview done",
+    "second_interview": "Second interview",
+    "selected": "Selected",
+    "declined": "Declined",
+    "withdrawn": "Withdrawn",
+    "no_response": "No response",
+    "converted_to_mission": "Converted to mission",
+    "archived": "Archived",
+    "presentation_failed": "Presentation failed",
+    "presented_manually": "Presented (copied manually)",
+    "to_pursue": "To pursue",
+    "to_clarify": "To clarify",
+    "to_negotiate": "To negotiate"
+  },
+  "actions": {
+    "submitted": "Send the CV",
+    "interview": "Interview booked",
+    "accepted": "Accepted",
+    "rejected": "Rejected",
+    "withdrawn": "Withdraw",
+    "shortlisted": "Back to shortlist"
+  },
+  "reasons": {
+    "price": "Price",
+    "skills": "Skills",
+    "seniority": "Seniority",
+    "availability": "Availability",
+    "other_supplier": "Another supplier",
+    "need_cancelled": "Need cancelled",
+    "candidate_declined": "Profile declined",
+    "no_feedback": "No feedback",
+    "other": "Other"
+  },
+  "close": {
+    "title": "Why \"{{stage}}\"? A reason, without which \"why do we lose?\" stays unanswered."
+  },
+  "funnel": {
+    "submitted_one": "{{count}} CV sent",
+    "submitted_other": "{{count}} CVs sent",
+    "rate": "{{value}} % accepted among those who replied",
+    "rateUnknown": "Rate not measurable yet",
+    "noFeedback_one": "{{count}} left with no feedback",
+    "noFeedback_other": "{{count}} left with no feedback",
+    "median_one": "{{count}} day to first feedback, median",
+    "median_other": "{{count}} days to first feedback, median",
+    "medianUnknown": "Feedback delay not measurable yet"
+  },
+  "states": {
+    "empty": "No profile submitted on this project.",
+    "loadError": "Submissions could not be loaded. They are still there — it is the read that failed.",
+    "loading": "Loading…",
+    "error": "The list could not load. That is not “no submissions”."
+  },
+  "toast": {
+    "created": "Profile submitted.",
+    "createError": "The submission failed.",
+    "advanced": "Submission updated.",
+    "advanceError": "The update failed.",
+    "interviewScheduled": "Interview recorded.",
+    "interviewError": "The interview could not be recorded.",
+    "feedbackRecorded": "Feedback recorded.",
+    "feedbackError": "The feedback could not be recorded.",
+    "consultantFeedbackRecorded": "Consultant feedback recorded.",
+    "consultantFeedbackError": "The consultant feedback could not be recorded.",
+    "detailsRecorded": "Details saved.",
+    "detailsError": "The details could not be saved."
+  },
+  "feedback": {
+    "title": "Client feedback on {{name}}",
+    "description": "What the client said after the presentation. An axis they did not mention stays “not discussed” — marking it “below” would put words in their mouth.",
+    "axis": {
+      "technical": "Technical skills",
+      "experience": "Experience",
+      "communication": "Communication",
+      "price": "Rate",
+      "seniority": "Seniority",
+      "context": "Context",
+      "availability": "Availability",
+      "location": "Location",
+      "timing": "Timing",
+      "other": "Other",
+      "personality": "Personality"
+    },
+    "verdict": {
+      "unknown": "Not discussed",
+      "below": "Below",
+      "meets": "Meets",
+      "above": "Above"
+    },
+    "verbatim": "What they said, in their words",
+    "verbatimPlaceholder": "“Good profile, but we were looking for more seniority on the data side.”",
+    "learning": "Learning (optional)",
+    "learningPlaceholder": "“The quoted rate was €100 too high for this client.” — stays attached to this submission, never rewrites the profile.",
+    "alreadyRecorded": "{{count}} feedback already recorded on this submission",
+    "alreadyRecorded_other": "{{count}} feedbacks already recorded on this submission",
+    "submit": "Record feedback",
+    "open": "Record client feedback"
+  },
+  "consultantFeedback": {
+    "title": "Consultant feedback on {{name}}",
+    "description": "What the consultant said after the presentation. A block entirely separate from client feedback — the two never mix.",
+    "axis": {
+      "interest": "Interest in the mission",
+      "understanding": "Understanding of the need",
+      "manager": "The prospective manager",
+      "mission": "The mission itself",
+      "conditions": "Conditions",
+      "concerns": "Concerns",
+      "availability": "Their availability",
+      "decision": "Their decision"
+    },
+    "verbatimPlaceholder": "“I’m interested but I want to know more about the team.”",
+    "alreadyRecorded": "{{count}} consultant feedback already recorded on this submission",
+    "alreadyRecorded_other": "{{count}} consultant feedbacks already recorded on this submission",
+    "submit": "Record feedback",
+    "open": "Record consultant feedback"
+  },
+  "interview": {
+    "open": "Schedule an interview",
+    "title": "Schedule an interview with {{name}}",
+    "description": "The date is shared with you and the client. Scheduling an interview moves this submission to the “Interview” stage.",
+    "at": "Date and time",
+    "mode": "Format",
+    "modes": {
+      "onsite": "On site",
+      "remote": "Remote",
+      "phone": "Phone"
+    },
+    "attendees": "People on the client side",
+    "attendeesPlaceholder": "Comma-separated",
+    "notes": "Notes",
+    "confirm": "Schedule"
+  },
+  "timeline": {
+    "open": "History",
+    "title": "History for {{name}}",
+    "description": "Every step this submission went through, in the order it happened.",
+    "empty": "No step traced yet.",
+    "unnamedStep": "Unnamed step",
+    "unknownDate": "Unknown date"
+  },
+  "details": {
+    "open": "Details",
+    "title": "Submission details for {{name}}",
+    "description": "The recipient, the channel, the prepared message, the announced availability and the terms of this submission. Nothing is sent from this window — only prepared.",
+    "recipient": "Recipient at the client",
+    "noRecipient": "No recipient chosen",
+    "channel": "Channel",
+    "channels": {
+      "phone": "Phone",
+      "email": "Email",
+      "linkedin": "Professional network",
+      "meeting": "Meeting"
+    },
+    "message": "Prepared message",
+    "messagePlaceholder": "The message that will go with the submission — never sent from here",
+    "availability": "Announced availability",
+    "conditions": "Special terms",
+    "confirm": "Save",
+    "preview": {
+      "title": "Preview — what the client will receive",
+      "subject": "Subject",
+      "cv": "CV attached, captured on {{date}}",
+      "cvUnknownDate": "CV attached, undated version",
+      "noCv": "No CV version captured for this submission",
+      "argumentsSource": "Source of the arguments: {{source}}"
+    },
+    "agreement": {
+      "label": "Consultant agreement",
+      "unknown": "Not declared",
+      "yes": "Yes",
+      "no": "No"
+    },
+    "agreementDate": "Agreement date"
+  },
+  "nextAction": {
+    "open": "Next action",
+    "title": "Next action on {{name}}",
+    "description": "Always dated and assigned — all three fields, or none.",
+    "label": "Action",
+    "labelPlaceholder": "Follow up with the client",
+    "dueAt": "Due date",
+    "owner": "Owner",
+    "none": "No next action set",
+    "clear": "Clear",
+    "confirm": "Save"
+  },
+  "interviewBrief": {
+    "open": "Prepare the interview",
+    "title": "Interview brief for {{name}}",
+    "description": "What to know before meeting the client — nothing invented, everything derived from the profile and the matching.",
+    "loadError": "The brief could not be loaded.",
+    "objective": "Objective",
+    "pitch": "Pitch",
+    "participants": "Participants",
+    "noParticipants": "No participant declared",
+    "logistics": "Logistics",
+    "noInterviewScheduled": "No interview scheduled yet",
+    "keyExperiences": "Two key experiences",
+    "noKeyExperiences": "No citable reference",
+    "gaps": "What's missing",
+    "noGaps": "No gap detected",
+    "objections": "Likely objections",
+    "noObjections": "No objection detected",
+    "consultantQuestions": "Questions to prepare for the consultant"
+  },
+  "page": {
+    "title": "Submissions",
+    "shownOf": "{{shown}} of {{total}} presentations shown",
+    "showMore": "Show the next {{count}}"
+  },
+  "digest": {
+    "title": "{{copilot}}'s summary",
+    "inProgress_one": "{{count}} profile is in progress.",
+    "inProgress_other": "{{count}} profiles are in progress.",
+    "interviewsConfirmed_one": "One interview is confirmed.",
+    "interviewsConfirmed_other": "{{count}} interviews are confirmed.",
+    "stalled": "{{name}} has been waiting for a reply for {{days}} days.",
+    "recommendation": "I recommend following up with {{name}}."
+  },
+  "row": {
+    "unnamedConsultant": "Unnamed consultant",
+    "noAccount": "No account linked"
+  },
+  "presentations": {
+    "title": "Presentations",
+    "subtitle": "One consultant, one need and its own history. Nothing is sent just because a card moved.",
+    "count_one": "{{count}} presentation",
+    "count_other": "{{count}} presentations",
+    "states": {
+      "preselection": "Shortlisted",
+      "to_present": "Ready to present",
+      "presented": "Presented",
+      "client_interview": "Client interview",
+      "retained": "Selected",
+      "declined": "Declined",
+      "withdrawn": "Withdrawn",
+      "no_response": "No reply",
+      "converted": "Converted to mission",
+      "archived": "Archived"
+    },
+    "filter": {
+      "label": "Filter by status",
+      "inProgress": "In progress",
+      "all": "All statuses"
+    },
+    "columns": {
+      "consultant": "Consultant",
+      "need": "Need / client",
+      "follow": "Follow-up",
+      "channel": "Channel / owner",
+      "due": "Next due date",
+      "open": "Open"
+    },
+    "row": {
+      "recorded": "Presentation recorded on {{date}}",
+      "noSend": "No send recorded",
+      "notPresented": "Not presented yet",
+      "channelUnknown": "Channel not set",
+      "dueUnknown": "To be set",
+      "open": "Open",
+      "openNamed": "Open {{name}}’s presentation"
+    },
+    "funnel": {
+      "preselected": "Shortlisted",
+      "presented": "Presented",
+      "interviews": "In interview",
+      "retained": "Selected",
+      "window": "Last 30 days",
+      "unmeasured": "—",
+      "withoutReply_one": "{{count}} with no reply",
+      "withoutReply_other": "{{count}} with no reply",
+      "thisWeek_one": "{{count}} this week",
+      "thisWeek_other": "{{count}} this week",
+      "toPrepare_one": "{{count}} mission to prepare",
+      "toPrepare_other": "{{count}} missions to prepare",
+      "byOwner": "By salesperson",
+      "ownerInProgress": "{{count}} in progress",
+      "ownerRetained_one": "{{count}} selected",
+      "ownerRetained_other": "{{count}} selected",
+      "details": "Rates and reply delay",
+      "label": "Funnel over the last 30 days"
+    },
+    "empty": {
+      "title": "No presentation to show",
+      "none": "A presentation links a profile to a need. Add the first one.",
+      "filtered": "No presentation matches this filter."
+    },
+    "add": {
+      "cta": "Add a presentation",
+      "title": "Link a profile to a need",
+      "description": "A shortlist is neither a send nor a mission: you record afterwards what happened.",
+      "need": "Need",
+      "profile": "Profile",
+      "choose": "Choose…",
+      "noNeed": "No need is attached to a deal: create the need’s deal first.",
+      "cancel": "Cancel",
+      "confirm": "Check the positioning"
+    },
+    "back": "All presentations",
+    "update": {
+      "cta": "Update",
+      "title": "Update the presentation",
+      "description": "You record what happened. No message is sent and no mission is created automatically.",
+      "stage": "Stage",
+      "channel": "Channel",
+      "agreement": "The agreement to be presented at this account has been verified.",
+      "reason": "Closing reason",
+      "detail": "Feedback / reason",
+      "confirm": "Record the follow-up"
+    },
+    "consign": {
+      "title": "Record an interview with {{name}}",
+      "description": "The client’s account, and what the consultant says about it.",
+      "client": "Factual account",
+      "consultant": "What the consultant says",
+      "internal": "This feedback stays internal; it is never passed on to the client.",
+      "confirm": "Record"
+    },
+    "retained": {
+      "title": "Selected by {{account}} on {{date}}",
+      "body": "The mission takes over the presentation, the deal and its terms. It only exists after your review.",
+      "cta": "Prepare the mission"
+    },
+    "blocks": {
+      "deal": "Deal",
+      "presentation": "Presentation",
+      "client": "Client",
+      "reason": "Closing reason"
+    },
+    "where": {
+      "title": "Where does this presentation stand?",
+      "sentOn": "Presented on",
+      "owner": "Owner",
+      "noOwner": "Unassigned",
+      "expected": "Reply expected",
+      "agreement": "Agreement to present",
+      "agreementYes": "Verified on {{date}}",
+      "agreementNo": "Declined on {{date}}",
+      "agreementToGet": "To obtain",
+      "trace": "Trace",
+      "traceRecorded": "Send recorded by {{owner}} · Declarative gesture, not proof of sending",
+      "dossier": "Dossier version",
+      "dossierFrozen": "Version frozen for this presentation",
+      "dossierToPrepare": "To prepare",
+      "rate": "Proposed daily rate",
+      "rateValue": "€{{value}} excl. VAT / day",
+      "rateTarget": "Client target €{{target}}",
+      "rateGap": "gap {{gap}} €"
+    },
+    "actions": {
+      "dossier": "Skills dossier",
+      "message": "Prepare the message",
+      "brief": "Prepare the interview",
+      "consign": "Record an interview",
+      "expected": "Expected reply"
+    },
+    "history": {
+      "title": "History and feedback"
+    },
+    "search": "Consultant, need or account…"
+  }
+}

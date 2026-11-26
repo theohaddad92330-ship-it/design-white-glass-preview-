@@ -1,0 +1,2114 @@
+{
+  "page": {
+    "title": "Talent pool",
+    "introTitle": "Talent pool",
+    "introTitleWithoutName": "Talent pool",
+    "introSubtitle": "Find the right expertise, check availability, prepare the next submission.",
+    "askLaura": "Ask {{copilot}}",
+    "askLauraQuestion": "Help me find the right profile in my talent pool."
+  },
+  "add": "Add a profile",
+  "laura": {
+    "purpose": "Gathers the consultants and candidates you can put forward for a need.",
+    "inPool": "Profiles in the pool",
+    "found": "Profiles matching these criteria",
+    "filters": "Active filters",
+    "emptyPool": "No profile in the pool"
+  },
+  "loading": "Loading the bench…",
+  "empty": {
+    "title": "Your talent pool is empty",
+    "archivedHiddenShow": "Show them",
+    "archivedHidden_one": "{{count}} archived profile is not listed — your submissions may name it.",
+    "archivedHidden_other": "{{count}} archived profiles are not listed — your submissions may name them.",
+    "archivedOnly": {
+      "title": "No active talent — {{count}} archived profile",
+      "title_other": "No active talent — {{count}} archived profiles",
+      "subtitle": "Your submissions and needs may name these profiles: they are archived, not deleted.",
+      "show": "Show archived"
+    },
+    "subtitle": "Add your available talents: it is what lets you push a profile onto a need, with its reasons and its risks."
+  },
+  "selection": {
+    "count": "{{count}} profile selected",
+    "count_other": "{{count}} profiles selected",
+    "clear": "Clear selection",
+    "archive": "Archive selection",
+    "archiving": "Archiving…",
+    "archived": "{{count}} profile archived.",
+    "archived_other": "{{count}} profiles archived.",
+    "archiveFailed": "Archiving the selection failed.",
+    "export": "Export selection (CSV)",
+    "erase": "Delete permanently",
+    "selectAll": "Select all {{count}} profiles",
+    "selectCapped": "Select {{count}} of {{total}} profiles",
+    "refusedTitle": "{{count}} profile not archived:",
+    "refusedTitle_other": "{{count}} profiles not archived:",
+    "refused": {
+      "not_found": "not found in your workspace",
+      "on_mission": "on a mission until {{date}}",
+      "on_mission_open": "on a mission (no known end date)",
+      "unnamed": "Unnamed profile",
+      "dismiss": "Close",
+      "offScreen": "A profile outside the displayed list"
+    },
+    "compare": "Compare on a need"
+  },
+  "row": {
+    "edit": "Edit",
+    "delete": "Remove from bench",
+    "noEndDate": "no end date",
+    "unknownClient": "client not specified",
+    "submissions": "{{open}} open submission of {{total}}",
+    "submissions_other": "{{open}} open submissions of {{total}}",
+    "reverseMarket": "Where to place {{name}}",
+    "moreActions": "More actions for {{name}}",
+    "match": "Match",
+    "presentations_one": "{{count}} submission",
+    "presentations_other": "{{count}} submissions",
+    "noPresentation": "No submission"
+  },
+  "name": {
+    "unnamed": "Name not provided",
+    "fromFile": "Uploaded file · {{file}}"
+  },
+  "count": {
+    "all": "{{count}} profile in the pool",
+    "all_other": "{{count}} profiles in the pool",
+    "filtered": "{{count}} profile found",
+    "filtered_other": "{{count}} profiles found"
+  },
+  "availability": {
+    "immediate": "Available",
+    "sous_1_mois": "Within 1 month",
+    "sous_3_mois": "Within 3 months",
+    "indisponible": "Unavailable",
+    "inconnu": "Not stated",
+    "en_mission": "On assignment",
+    "a_confirmer": "To confirm"
+  },
+  "seniority": {
+    "junior": "Junior",
+    "confirme": "Mid-level",
+    "senior": "Senior",
+    "expert": "Expert",
+    "inconnu": "Seniority to set",
+    "estimateBasis_one": "inferred from {{count}} year of recorded experience",
+    "estimateBasis_other": "inferred from {{count}} years of recorded experience"
+  },
+  "contract": {
+    "cdi": "Permanent",
+    "freelance": "Freelance",
+    "portage": "Umbrella",
+    "inconnu": "Contract to set",
+    "cdd": "Fixed-term",
+    "sous_traitance": "Subcontracting"
+  },
+  "form": {
+    "addTitle": "Add a consultant",
+    "editTitle": "Edit consultant",
+    "fullName": "Full name",
+    "title": "Job title",
+    "titlePlaceholder": "Network security engineer",
+    "seniority": "Seniority",
+    "availability": "Availability",
+    "availableFrom": "Available from",
+    "contract": "Contract type",
+    "tjm": "Target day rate (€/day)",
+    "stack": "Skills / stack",
+    "sectors": "Sectors already worked in",
+    "zones": "Geographic areas",
+    "references": "Citable references",
+    "experiences": "Experience",
+    "education": "Education",
+    "wants": "Consultant's aspiration",
+    "wantsHint": "What they want to do. A profile pushed against their will leaves and resigns.",
+    "notes": "Notes",
+    "listHint": "Separate with commas.",
+    "cancel": "Cancel",
+    "save": "Save",
+    "saving": "Saving…",
+    "cvText": "Consultant CV",
+    "cvTextHint": "Paste the existing CV. It is the raw material for tailoring to a mission — and the reference that prevents any experience being added that isn’t there.",
+    "kind": "Nature",
+    "kindHint": "A candidate is an application file: the record is erased two years after the last contact.",
+    "engagement": "Engagement type",
+    "engagementHint": "How you staff them — independent of the nature.",
+    "manager": "Manager",
+    "managerHint": "The person’s line manager, picked from the talent pool. Neither the client-side contact nor the account owner.",
+    "managerNone": "Not recorded",
+    "partner": "Carrying partner",
+    "partnerHint": "Without it, the record does not say who answers to the client.",
+    "partnerPlaceholder": "Partner account id",
+    "email": "Email",
+    "phone": "Phone",
+    "location": "Location",
+    "publicProfile": "Public profile (LinkedIn)",
+    "publicProfileHint": "The address the person gave you. Nothing is collected behind their back.",
+    "minTjm": "Minimum day rate (€)",
+    "financeHint": "Only visible with access to amounts.",
+    "costRate": "Loaded cost (€ / day)",
+    "purchaseTjm": "Purchase day rate (€ / day)",
+    "costHint": "Always entered, never computed. Without it, margin reads “not measured”.",
+    "remote": "Remote work",
+    "travel": "Travel",
+    "notAsked": "Not provided",
+    "mobilityHint": "Leave blank until the person told you — the pool does not invent their answer.",
+    "mobilityZones": "Accepted areas",
+    "relocation": "Willing to relocate",
+    "relocationYes": "Willing to relocate",
+    "relocationNo": "Not willing to relocate",
+    "siteFrequency": "On-site frequency",
+    "siteFrequencyHint": "How often they're expected on the client's premises — distinct from occasional travel.",
+    "internationalMobility": "International mobility",
+    "internationalYes": "Open to an assignment abroad",
+    "internationalNo": "Not open to an assignment abroad",
+    "mobilityRestrictions": "Mobility restriction",
+    "mobilityRestrictionsHint": "Plain text (driving licence, no overnight stays, childcare…) — no shared scale fits everyone.",
+    "processInProgress": "Ongoing process elsewhere",
+    "processInProgressYes": "A process is ongoing elsewhere",
+    "processInProgressNo": "No process ongoing elsewhere",
+    "processExclusive": "Exclusivity",
+    "processExclusiveYes": "Exclusivity granted",
+    "processExclusiveNo": "No exclusivity",
+    "processOtherInterviews": "Other interviews",
+    "processOtherInterviewsHint": "Plain text: what we know of other processes, never guessed.",
+    "processDecisionDeadline": "Decision deadline",
+    "otherProcessesKnown": "Other processes known",
+    "otherProcessesKnownYes": "Known",
+    "otherProcessesKnownNo": "Not asked",
+    "wantedSectors": "Preferred sectors",
+    "refusedSectors": "Refused sectors",
+    "refusedTechnologies": "Refused technologies",
+    "wantedContractKinds": "Preferred engagement types",
+    "preferredClientTypes": "Preferred client types",
+    "refusedClients": "Refused clients",
+    "environmentsToAvoid": "Environments to avoid",
+    "nonNegotiableConditions": "Non-negotiable conditions",
+    "nonNegotiableConditionsHint": "Plain text: what makes a mission unacceptable, never guessed.",
+    "refusedHint": "Flagged in matching, never disqualifying: you are the one who talks to the consultant.",
+    "languages": "Spoken languages",
+    "languagesHint": "Comma-separated, level after a colon: fr:natif, en:b2. Without a level, we will ask.",
+    "clearances": "Security clearances",
+    "clearancesHint": "Comma-separated. A missing clearance blocks a submission.",
+    "financeOutOfScope": "Rates are outside your scope. Loaded cost, purchase rate and minimum rate stay visible to whoever has that access.",
+    "consentTitle": "Consent",
+    "consentGivenAt": "Consent collected on",
+    "consentExpiresAt": "Consent valid until",
+    "consentBasis": "Legal basis",
+    "consentBasisHint": "Write it out: this wording is what commits your firm, not a ticked box.",
+    "consentBasisPlaceholder": "Agreement given by email for an introduction to a client",
+    "consentRestrictions": "Restrictions",
+    "consentRestrictionsHint": "What the person EXCLUDED from their agreement — distinct from the legal basis above.",
+    "consentRestrictionsPlaceholder": "No assignment at a direct competitor",
+    "consentState": {
+      "none": "Never collected. This is not “expired”: nobody has asked yet. The profile can still be submitted, and the absence is recorded on the submission.",
+      "valid": "Collected, and valid.",
+      "expiring": "Collected, but the agreement is close to lapsing. Ask again before it does.",
+      "expired": "Collected, then expired. Until it is renewed, a submission will be refused."
+    },
+    "stackPlaceholder": "Kubernetes",
+    "stackAdd": "Add the skill",
+    "stackRemove": "Remove {{skill}}",
+    "stackTyping": "One skill at a time. Each is recorded at level “unknown”, source “declared” — level and source are refined afterwards in the Skills tab of the profile.",
+    "stackAliasHint": "“{{term}}” is known here as “{{canonical}}”.",
+    "stackAliasUse": "Use “{{canonical}}”",
+    "duplicate": {
+      "title": "This person looks like someone you already have",
+      "line": "{{name}} — {{reason}}",
+      "createAnyway": "Not the same person, create anyway"
+    },
+    "yearsExperience": "Years of experience",
+    "tjmPlaceholder": "e.g. 620",
+    "yearsExperiencePlaceholder": "e.g. 8",
+    "yearsExperienceHint": "Entered, never inferred — distinct from a skill's years of practice.",
+    "description": "Fill in what you know. Apart from the name, nothing is required — everything can be completed later.",
+    "linkedinLookup": {
+      "open": "Pre-fill from a LinkedIn profile address",
+      "label": "LinkedIn profile address",
+      "placeholder": "linkedin.com/in/first-last",
+      "submit": "Pre-fill the record",
+      "working": "Looking up the profile…",
+      "invalid": "Paste a profile address, like linkedin.com/in/first-last.",
+      "notFound": "Profile not found — paste the profile text.",
+      "done": "Record pre-filled — review and correct it before saving.",
+      "noCredit": "You’ve been using {{brand}} a lot this month — shall we talk? Drop the team a line.",
+      "missing": "Not found: {{fields}} — to fill in.",
+      "field": {
+        "title": "job title",
+        "email": "email",
+        "phone": "phone",
+        "cv_text": "career history",
+        "stack": "skills"
+      },
+      "error": "The lookup failed. Try again in a moment, or paste the profile text."
+    }
+  },
+  "toast": {
+    "created": "Consultant added to the bench",
+    "updated": "Consultant updated",
+    "deleted": "Consultant removed from the bench",
+    "error": "Something went wrong",
+    "archived": "Record archived.",
+    "reactivated": "Record reactivated.",
+    "ownerUpdated": "Ownership updated."
+  },
+  "matchPanel": {
+    "title": "Personalised matching",
+    "hint": "Match your profiles against an open need"
+  },
+  "match": {
+    "title": "Push a profile onto a need",
+    "subtitle": "Pick a need: {{brand}} ranks your bench and keeps the pushable profiles, with their reasons and their risks.",
+    "pickNeed": "Pick a need…",
+    "loading": "Finding profiles…",
+    "emptyVivier": "Add consultants to the bench to match a need.",
+    "noPushable": "No pushable profile as-is: availability, stack or sector block it. The full bench stays visible opposite.",
+    "emptyDefendable": "No defendable profile as-is: availability, stack or sector block the whole bench on this need.",
+    "topHeading_one": "{{count}} defendable profile",
+    "topHeading_other": "{{count}} defendable profiles",
+    "score": "Fit with the need {{score}}/100",
+    "scoreUnmeasuredReason": "fewer than three evaluable criteria — not enough to score",
+    "unevaluatedList": "Not evaluable here: {{list}}",
+    "verdict": {
+      "fortement_defendable": "Strongly defendable",
+      "a_qualifier": "To qualify",
+      "alternative": "Alternative",
+      "non_defendable": "Not defendable",
+      "non_evaluable": "Not evaluable"
+    },
+    "gapsTitle": "What's missing",
+    "recommendedStep": "Next step: {{action}}",
+    "compare": "Compare",
+    "compareTitle": "Comparing selected profiles",
+    "compareHint": "Select 2 to 4 defendable profiles to compare them on the same criteria.",
+    "bulkCvRewriteCta_one": "Rewrite the CV of the selected profile",
+    "bulkCvRewriteCta_other": "Rewrite the CVs of the {{count}} selected profiles",
+    "bulkCvRewriteWorking": "Rewriting in progress…",
+    "bulkCvRewriteDone_one": "{{count}} CV rewritten.",
+    "bulkCvRewriteDone_other": "{{count}} CVs rewritten.",
+    "bulkCvRewritePartial": "{{done}} CVs rewritten, {{failed}} failed.",
+    "bulkCvRewriteFailed": "The bulk rewrite did not complete.",
+    "bulkCvRewriteOutOfCredits": "You’ve been using {{brand}} a lot this month — shall we talk? Drop the team a line.",
+    "reasons": "Why this profile",
+    "risks": "Tell the client before they find out",
+    "feedbackPrompt": "Outcome:",
+    "retained": "Retained",
+    "refused": "Rejected",
+    "feedbackSaved": "Feedback saved",
+    "feedbackError": "Couldn't save",
+    "shortlist": "Shortlist on this need",
+    "clientHistory": {
+      "rejected": "Already rejected by this client",
+      "no_feedback": "Already put forward, no reply",
+      "submitted": "Already in progress with this client",
+      "accepted": "Already accepted by this client",
+      "recoverable": "the reason does not block a new submission"
+    }
+  },
+  "cv": {
+    "open": "Tailor CV",
+    "title": "{{name}}’s CV tailored to the need",
+    "intro": "The CV will be rewritten for this need: the relevant experience moves to the top, in the client’s words. Nothing is added — whatever the need asks for and the CV doesn’t prove is flagged as a gap.",
+    "generate": "Tailor the CV to this need",
+    "generating": "Tailoring…",
+    "regenerate": "Regenerate",
+    "generated": "CV tailored to the need",
+    "error": "Tailoring the CV failed. Try again in a moment.",
+    "forNeed": "Tailored to: {{need}}",
+    "highlights": "Highlighted experience",
+    "noHighlights": "No experience in the CV could be tied to this need.",
+    "gaps": "What this CV does not prove",
+    "copy": "Copy CV",
+    "copied": "CV copied",
+    "description": "The CV is rewritten for this need: nothing is added that the original CV does not carry."
+  },
+  "skills": {
+    "title": "Skills — {{name}}",
+    "subtitle": "The stack says what the person knows. Here we say at what LEVEL, and above all how we know it.",
+    "label": "Skill",
+    "placeholder": "Kubernetes, Java, Snowflake…",
+    "add": "Add",
+    "delete": "Remove skill",
+    "empty": "No typed skill yet.",
+    "loadError": "Skills could not be loaded. They are still there — it is the read that failed.",
+    "saveError": "The skill could not be saved.",
+    "deleteError": "The skill could not be removed.",
+    "validate": "Validate",
+    "validated": "validated",
+    "validatedHint": "Validated by a recruiter, independently of the initial declaration.",
+    "validationError": "The validation could not be saved.",
+    "canonicalHint": "\"K8s\" and \"Kubernetes\" are stored as the same skill: without that, a Kubernetes need would never find the person who wrote \"k8s\".",
+    "source": "Skill source",
+    "sourceHint": "“Declared” is what the person says; “seen on a mission” is what we observed. It is the source, not the level, that a client checks.",
+    "levels": {
+      "notions": "Basics",
+      "autonome": "Autonomous",
+      "confirme": "Proficient",
+      "expert": "Expert",
+      "inconnu": "Level unknown"
+    },
+    "inferred": "to verify",
+    "inferredHint": "This word was found in a text, not in a detailed experience — confirm it before presenting it as acquired.",
+    "evidence": "Evidence: {{reference}}",
+    "evidenceHint": "Named evidence at {{company}}, never a figure.",
+    "evidenceMaskedCompany": "masked client",
+    "sources": {
+      "declared": "declared",
+      "cv": "read on a CV",
+      "interview": "confirmed in interview",
+      "mission": "seen on a mission"
+    },
+    "chipTitle": "{{level}} · {{source}}",
+    "more": "+{{count}} more",
+    "more_other": "+{{count}} more"
+  },
+  "documents": {
+    "title": "CV and documents",
+    "hint": "Paste the CV text. We keep the TEXT, never the file: nothing here re-displays a PDF, and storing the binary would multiply personal data with no use for it.",
+    "label": "CV text",
+    "placeholder": "Paste the CV content here…",
+    "defaultName": "CV of {{name}}",
+    "add": "Save the CV",
+    "added": "CV saved.",
+    "addedWithSkills_one": "CV saved, {{count}} skill recognised.",
+    "addedWithSkills_other": "CV saved, {{count}} skills recognised.",
+    "noText": "No text could be read: a scanned CV image yields nothing.",
+    "noTextShort": "No readable text",
+    "chars_one": "{{count}} character of text",
+    "chars_other": "{{count}} characters of text",
+    "empty": "No document.",
+    "loadError": "Documents could not be loaded.",
+    "delete": "Delete document",
+    "deleteError": "The document could not be deleted.",
+    "error": "The document could not be saved."
+  },
+  "retention": {
+    "saved": "Retention policy saved.",
+    "error": "The policy could not be saved."
+  },
+  "kind": {
+    "consultant": "Consultant",
+    "candidate": "Candidate"
+  },
+  "openSkills": "Skills",
+  "search": {
+    "error": "Couldn't load the list with these filters. Change them or try again.",
+    "label": "Search a talent",
+    "placeholder": "Name or job title…",
+    "empty": {
+      "title": "No talent matches",
+      "subtitle": "Try another name, or clear the search to see the whole pool again.",
+      "clear": "Clear the search"
+    },
+    "namedEmpty": {
+      "title": "No talent matches “{{criterion}}”",
+      "subtitle": "Clear this filter to see the rest of the pool.",
+      "clear": "Clear this filter"
+    }
+  },
+  "pager": {
+    "previous": "Previous",
+    "next": "Next",
+    "position": "Page {{page}} of {{lastPage}}",
+    "show": "Show",
+    "goTo": "Go to page {{page}}",
+    "range": "{{from}} – {{to}} of {{total}} · {{size}} per page",
+    "showArchived_one": "Show the archived profile ({{count}})",
+    "showArchived_other": "Show archived profiles ({{count}})"
+  },
+  "completeness": {
+    "axes": {
+      "identity": "Identity",
+      "skills": "Skills",
+      "availability": "Availability",
+      "rate": "Rate",
+      "cv": "CV"
+    },
+    "label": "Record completeness",
+    "pendingReview": "CV not read yet",
+    "allFilled": "Complete profile",
+    "toComplete": "To complete: {{missing}}",
+    "missing": "Missing: {{missing}}"
+  },
+  "stats": {
+    "total": "Talents in the pool",
+    "availableNow": "Available now",
+    "availabilityUnknownCount_one": "{{count}} profile with no recorded assignment — availability not measurable",
+    "availabilityUnknownCount_other": "{{count}} profiles with no recorded assignment — availability not measurable",
+    "availabilityAllUnknown_one": "no assignment recorded on the single profile in the pool",
+    "availabilityAllUnknown_other": "no assignment recorded on any of the {{count}} profiles in the pool",
+    "completenessPopulation": "profiles in the pool",
+    "enrichedPercent": "Enriched profiles",
+    "incomplete": "Profiles below the threshold",
+    "enrichedThreshold": "A profile is enriched when at least {{min}} of the 5 axes (identity, skills, availability, rate, CV) are filled; the profile completeness counts all 5.",
+    "percent": "{{value}}%",
+    "noTalentToMeasure": "no talent to measure",
+    "favorites": "Favourite profiles",
+    "favoritesLoading": "loading",
+    "viewFavorites": "View my favourites",
+    "lastUpdated": "Last updated",
+    "refreshedThisWeek": "share of profiles updated this week",
+    "notMeasuredShort": "not measured"
+  },
+  "qualityBlock": {
+    "title": "Consultant record quality",
+    "subtitle": "How many talent-pool records are enriched, and when they last changed.",
+    "link": "See the records to complete"
+  },
+  "matchRail": {
+    "title": "Suggested matches",
+    "subtitle": "{{copilot}} matched these profiles against open needs.",
+    "loading": "Matching in progress…",
+    "empty": "No pushable profile for this need.",
+    "withoutProject": "This need isn’t tied to any project: start the matching from its sheet.",
+    "viewAll": "View all matches ({{count}})"
+  },
+  "staffing": {
+    "available": "Available",
+    "partial": "Partly booked",
+    "busy": "On assignment",
+    "busyUntil": "On assignment until {{date}}",
+    "busy_open_ended": "On assignment, no end date",
+    "unknown": "To be confirmed",
+    "a_confirmer": "Interruption to confirm",
+    "declared": "the record says “{{value}}”",
+    "declaredNone": "not declared",
+    "declaredWins": "Declared — takes precedence over the schedule",
+    "planning": "Schedule: {{value}}",
+    "contradicts": "the record claims “available” — needs fixing",
+    "declaredSourceUnknown": "Origin not stated",
+    "provenance": {
+      "card": "the profile declares it",
+      "busyUntil": "an assignment runs until {{date}}",
+      "activeNoEnd": "assignment running, end date unknown",
+      "interruptionUnconfirmed": "assignment interrupted, availability not confirmed",
+      "openEnded": "assignment with no end date — no release announced",
+      "noneRunning": "no assignment currently running",
+      "unknownSource": "source unknown"
+    }
+  },
+  "delete": {
+    "title": "Delete {{name}}?",
+    "loading": "Checking what is attached to this record…",
+    "deleted": "Will be deleted",
+    "orphaned": "Will survive attached to nobody",
+    "kept": "Kept",
+    "nothingAttached": "Nothing is attached to this record. Deleting it takes nothing else with it.",
+    "cancel": "Cancel",
+    "confirm": "Delete permanently",
+    "blocked": {
+      "open_assignments": "This talent is still staffed on a running assignment. End or remove the assignment before deleting the record — otherwise the mission keeps a workload nobody carries."
+    },
+    "lines": {
+      "skills": "{{count}} skill",
+      "skills_other": "{{count}} skills",
+      "documents": "{{count}} document",
+      "documents_other": "{{count}} documents",
+      "submissions": "{{count}} submission",
+      "submissions_other": "{{count}} submissions",
+      "assignments": "{{count}} mission assignment",
+      "assignments_other": "{{count}} mission assignments",
+      "cvRewrites": "{{count}} tailored CV",
+      "cvRewrites_other": "{{count}} tailored CVs",
+      "pushFeedback": "{{count}} push feedback",
+      "pushFeedback_other": "{{count}} push feedbacks"
+    },
+    "keptLines": {
+      "audit_trail": "The write journal — knowing a record existed and was erased is what proves the retention policy is honoured."
+    },
+    "description": "This removal is permanent. What the profile carries is listed below before you confirm."
+  },
+  "engagement": {
+    "salarie": "Employee",
+    "freelance": "Freelance",
+    "portage": "Umbrella company",
+    "sous_traitance": "Subcontracting",
+    "partenaire": "Partner",
+    "inconnu": "Not specified"
+  },
+  "views": {
+    "filterAria": "Talent pool quick views",
+    "available_30d": "Available within 30 days",
+    "on_bench": "On the bench",
+    "never_submitted": "Never submitted",
+    "dormant": "Reconnect with them",
+    "no_recent_mission": "No recent assignment",
+    "candidates": "Candidates",
+    "all": "All profiles"
+  },
+  "filters": {
+    "skills": "Skills",
+    "skillsPlaceholder": "Kubernetes, Java…",
+    "maxTjm": "Max day rate",
+    "minTjm": "Min day rate",
+    "zone": "Area",
+    "sector": "Sector",
+    "sectorPlaceholder": "Banking, Industry…",
+    "engagementKind": "Profile type",
+    "engagementKindAny": "All profile types",
+    "freeBefore": "Free before {{date}}",
+    "dormant": "No contact for {{count}} months",
+    "clear": "Clear all",
+    "includeArchived": "Show archived",
+    "availability": "Declared availability",
+    "availabilityHint": "What the record claims — not the availability derived from assignments, already offered by the views above.",
+    "seniority": "Seniority",
+    "any": "Any",
+    "drawer": {
+      "city": "City",
+      "cityPlaceholder": "Paris, Lyon…",
+      "minTjm": "Minimum day rate",
+      "maxTjm": "Maximum day rate",
+      "language": "Spoken language",
+      "languageHint": "The language code (\"fr\", \"en\"…).",
+      "languagePlaceholder": "en",
+      "cvAvailable": "CV available",
+      "cvAvailableHint": "Only show profiles with a source CV on file.",
+      "onMission": "On assignment",
+      "onMissionOptions": {
+        "yes": "Yes",
+        "no": "No"
+      },
+      "mobility": "Work mode",
+      "indifferent": "No preference",
+      "unavailableTitle": "This drawer can't filter on yet",
+      "unavailable": {
+        "radius": "radius around a city",
+        "yearsOfExperience": "years of experience"
+      },
+      "radius": "Radius",
+      "radiusHint": "No effect without a city — a radius needs a centre.",
+      "radiusOption": "{{km}} km",
+      "yearsExperience": "Years of experience",
+      "yearsExperienceHint": "A talent with no years on file is never excluded.",
+      "yearsExperienceOption": "{{count}} year and up",
+      "yearsExperienceOption_other": "{{count}} years and up",
+      "dormant": "Freshness",
+      "dormantHint": "Only show profiles with no exchange for at least this long. A profile with no recorded last contact is not placed here.",
+      "dormantOption": "No contact for {{count}} month",
+      "dormantOption_other": "No contact for {{count}} months",
+      "noMissionMonths": "Last assignment",
+      "noMissionMonthsHint": "Only show profiles with no ongoing or finished assignment for at least this long. Distinct from freshness, which tracks the last contact.",
+      "noMissionMonthsOption": "No assignment for {{count}} month",
+      "noMissionMonthsOption_other": "No assignment for {{count}} months",
+      "consentState": "Consent",
+      "completeness": "Profile completeness",
+      "completenessOptions": {
+        "incomplete": "Incomplete",
+        "enriched": "Enriched"
+      },
+      "provenSkillsOnly": "Proven skills only",
+      "provenSkillsOnlyHint": "Only show profiles with at least one skill proven on assignment or in interview — never a declared or CV-only skill.",
+      "favorites": "My favourites",
+      "favoritesHint": "Only show the profiles you starred — your favourites, never a colleague’s."
+    },
+    "dialog": {
+      "open": "Filters",
+      "openActive_one": "Filters · {{count}}",
+      "openActive_other": "Filters · {{count}}",
+      "title": "Filter my talent pool",
+      "description": "These criteria organise the profiles in your talent pool. They apply when you click “Apply filters”.",
+      "view": "Quick view",
+      "skillsHint": "Separate skills with a comma.",
+      "includeArchivedHint": "Archived profiles stay searchable: their past missions prove a skill.",
+      "reset": "Reset",
+      "apply": "Apply filters",
+      "sections": {
+        "profile": "Profile",
+        "availability": "Availability",
+        "place": "Location and terms"
+      }
+    }
+  },
+  "savedViews": {
+    "title": "My views",
+    "loading": "Loading your views…",
+    "loadError": "I couldn’t load your saved views.",
+    "empty": "No saved view yet. Set some filters, then save them.",
+    "locked": "Saved views aren’t opened by your plan.",
+    "shared": "shared",
+    "save": "Save this view",
+    "nameLabel": "View name",
+    "namePlaceholder": "E.g.: Java available within 1 month",
+    "confirm": "Save",
+    "cancel": "Cancel",
+    "remove": "Remove the view “{{name}}”",
+    "noCriteria": "Set at least one filter: a view with no criteria is the full list, it already exists.",
+    "full": "You already have {{max}} views on this screen — beyond that, you stop choosing. Remove one.",
+    "saved": "View “{{name}}” saved.",
+    "removed": "View removed.",
+    "error": "I couldn’t save this view."
+  },
+  "workMode": {
+    "sur_site": "On-site",
+    "hybride": "Hybrid",
+    "full_remote": "Remote",
+    "indifferent": "No preference"
+  },
+  "favorite": {
+    "add": "Add to favourites",
+    "remove": "Remove from favourites",
+    "addNamed": "Add {{name}} to favourites",
+    "removeNamed": "Remove {{name}} from favourites"
+  },
+  "detail": {
+    "loading": "Loading the record…",
+    "errorTitle": "Record unavailable",
+    "errorBody": "This record could not be loaded. It may have been deleted, or the request did not go through.",
+    "errorNotFound": "This record no longer exists or does not belong to your workspace.",
+    "unreadable": "Part of this record could not be read ({{fields}}). The rest is shown as is; the unreadable part can be fixed by reopening the imported CV.",
+    "unreadableFields": {
+      "stack": "Skills",
+      "sectors": "Sectors",
+      "zones": "Zones",
+      "references": "References",
+      "clearances": "Clearances",
+      "education": "Education",
+      "environments": "Environments",
+      "tools": "Tools",
+      "certifications": "Certifications",
+      "languages": "Languages",
+      "field_reports": "Field reports",
+      "extra": "Imported columns",
+      "mobility_zones": "Mobility zones",
+      "wanted_sectors": "Wanted sectors",
+      "refused_sectors": "Refused sectors",
+      "refused_technologies": "Refused technologies",
+      "wanted_contract_kinds": "Wanted contract types",
+      "preferred_client_types": "Preferred client types",
+      "refused_clients": "Refused clients",
+      "environments_to_avoid": "Environments to avoid",
+      "interview_traits": "Interview traits"
+    },
+    "backToPool": "Back to the pool",
+    "edit": "Edit",
+    "archive": "Archive",
+    "reactivate": "Reactivate",
+    "archivedBanner": "This record has been archived since {{date}}. It no longer appears in the active pool or in matching, and its missions are kept.",
+    "notProvided": "Not provided",
+    "hiddenByPolicy": "Hidden by your workspace setting",
+    "financeHidden": "Amounts require access to financial data.",
+    "rateHistory": "Rate history",
+    "tjmMetadata": {
+      "title": "What the rate carries",
+      "currency": "Currency",
+      "source": "Source",
+      "context": "Context",
+      "observedAt": "Observed on",
+      "confidential": "Confidentiality",
+      "confidentialYes": "Confidential",
+      "confidentialNo": "Not confidential",
+      "historicalBadge": "Historical context — not the current condition",
+      "prepareRevalidation": "Prepare a revalidation",
+      "revalidationDraft": "Hi {{name}},\n\nThe rate on file dates from a past assignment — could you confirm your current terms before we put you forward for a new one?\n\nThanks!"
+    },
+    "skillsIntro": "The level and source of each skill. A skill with no level stays “unknown”: the profile is not discarded from matching, it just does not surface there.",
+    "editSkills": "Refine skills",
+    "skillYears": "{{count}} year of practice",
+    "skillYears_other": "{{count}} years of practice",
+    "skillLastUsed": "used until {{year}}",
+    "documentChars": "{{count}} character extracted",
+    "documentChars_other": "{{count}} characters extracted",
+    "documentNoText": "no text extracted — a scanned CV yields nothing",
+    "documentPreview": {
+      "open": "Preview {{name}}",
+      "title": "CV preview",
+      "description": "{{name}} — the uploaded file and the text read from it.",
+      "frameTitle": "Original file: {{name}}",
+      "download": "Download the original",
+      "noBrowserPreview": "This format can’t be displayed in the browser: download the original, or read the extracted text below.",
+      "noOriginal": "Original not kept for this CV — upload it again for a faithful preview.",
+      "fileError": "The original file could not be opened. The extracted text is still readable below.",
+      "loading": "Loading preview…",
+      "extractedTitle": "Extracted text",
+      "partial": "Part of this document could not be read: the text below is incomplete.",
+      "textError": "The extracted text could not be loaded.",
+      "noText": "No text was extracted from this document."
+    },
+    "documentKind": {
+      "cv": "CV",
+      "dossier": "Portfolio",
+      "certificate": "Certification",
+      "other": "Other document"
+    },
+    "load": "{{percent}}% load",
+    "tabs": {
+      "profile": "Profile",
+      "skills": "Skills",
+      "documents": "Documents",
+      "delivery": "Presentations",
+      "rates": "Availability & rate",
+      "submissions": "Submissions",
+      "missions": "Missions",
+      "notes": "Activity",
+      "review": "CV review",
+      "reviewCorrect": "Correct the CV reading",
+      "studio": "Pack",
+      "consent": "Compliance",
+      "identity": "Identity"
+    },
+    "empty": {
+      "skills": "No skill recorded. Without them this profile is “not assessable” in matching — it is not discarded, but it does not surface either.",
+      "documents": "No document. The source CV is what makes it possible to tailor a pack to a need.",
+      "submissions": "Never submitted. This profile has not been put forward for any need yet — the reverse match says which ones fit.",
+      "missions": "No mission recorded. Displayed availability stays “to be confirmed” while that is the case.",
+      "rateHistory": "No rate change recorded.",
+      "documentsAction": "Paste the CV into the record",
+      "submissionsAction": "See the needs that fit"
+    },
+    "submissionStage": {
+      "shortlisted": "Shortlisted",
+      "submitted": "Sent to client",
+      "interview": "Interview",
+      "accepted": "Accepted",
+      "rejected": "Rejected",
+      "withdrawn": "Withdrawn"
+    },
+    "submissionReason": {
+      "price": "price",
+      "skills": "skills",
+      "seniority": "seniority",
+      "availability": "availability",
+      "other_supplier": "other supplier",
+      "need_cancelled": "need cancelled",
+      "candidate_declined": "candidate declined",
+      "no_feedback": "no feedback",
+      "other": "other"
+    },
+    "photo": {
+      "add": "Add a photo",
+      "change": "Change photo",
+      "remove": "Remove",
+      "saved": "Photo saved.",
+      "removed": "Photo removed.",
+      "error": "I couldn't save that photo.",
+      "badType": "Accepted formats: PNG, JPEG, WEBP.",
+      "tooBig": "This image is too large — pick a lighter file."
+    },
+    "tabsAria": "Record tabs",
+    "header": {
+      "availabilityLoading": "Reading their assignments…",
+      "availabilityUnavailable": "I could not read their assignments: what you see is what the record declares, “{{value}}”.",
+      "tjm": "{{tjm}} € / day",
+      "tjmUnknown": "Rate not provided",
+      "favoriteAdd": "Add {{name}} to favourites",
+      "favoriteRemove": "Remove {{name}} from favourites",
+      "contact": "Email {{name}}",
+      "call": "Call {{name}}",
+      "openCv": "Open the CV",
+      "contactMissing": "Add a way to reach them",
+      "updatedAt": "Updated on {{date}}",
+      "ownedBy": "Owned by {{name}}",
+      "ownerUnassigned": "Unassigned",
+      "ownerAssign": "Assign",
+      "ownerAssignTrigger": "Assign ownership of this record",
+      "ownerAssignMenuLabel": "Owned by…",
+      "ownerNoMembers": "No members in this workspace",
+      "ownerMemberFallback": "Workspace member",
+      "ownerRelease": "Remove assignment",
+      "status": {
+        "incomplete": "Incomplete record",
+        "in_mission": "On assignment",
+        "availability_to_verify": "Availability to verify",
+        "positioned": "Submitted",
+        "available": "Available"
+      },
+      "addToNeed": "Add to a need",
+      "prepareMessage": "Prepare a message",
+      "actionsAria": "Record actions",
+      "viewMission": "View the assignment"
+    },
+    "addToNeed": {
+      "label": "Pick an open need",
+      "placeholder": "Add to a need…",
+      "submit": "Add",
+      "working": "Adding…",
+      "failed": "I couldn’t add this profile to that need.",
+      "title": "Add {{name}} to a need",
+      "description": "Needs that match their profile come first. The placement starts as “shortlisted” — this doesn’t send it, it holds it for later.",
+      "empty": "No open need in your portfolio right now.",
+      "confirm": "Add",
+      "search": "Search for a need…",
+      "matches": "Matches their profile",
+      "matchLoading": "Looking for the needs that match them…",
+      "matchFailed": "I couldn’t look up the needs that match them: the list below is still complete.",
+      "noResult": "No need matches this search."
+    },
+    "preparedMessages": {
+      "title": "Prepare a message for {{name}}",
+      "description": "A draft, never a send — you're the one who sends it, from your own channel.",
+      "channel": "Channel",
+      "channels": {
+        "email": "Email",
+        "linkedin": "Professional network",
+        "phone": "Phone"
+      },
+      "subject": "Subject",
+      "body": "Message",
+      "history": "Drafts already prepared",
+      "confirm": "Save draft",
+      "saved": "Draft saved.",
+      "error": "I couldn’t save this draft.",
+      "regenerate": "Regenerate",
+      "shorter": "Shorter",
+      "moreDirect": "More direct",
+      "drafting": "{{copilot}} is writing…",
+      "objective": {
+        "label": "Goal:",
+        "propose_mission": "Propose a mission",
+        "revalidate_availability": "Revalidate availability"
+      },
+      "basis": "Written by {{copilot}} from {{sources}}",
+      "draftFailed": "The draft could not be written. Try again in a moment.",
+      "draftUnavailable": "{{copilot}} cannot write right now: the writing service is unavailable."
+    },
+    "fieldReports": {
+      "title": "Field intelligence",
+      "subtitle": "What this consultant was willing to share about an account, with its provenance.",
+      "add": "Add field intelligence",
+      "empty": "No field intelligence captured yet.",
+      "dialogTitle": "Capture field intelligence",
+      "dialogDescription": "With consent, and without putting the consultant in a difficult spot — every piece of information keeps who declared it, when, and its confidentiality level.",
+      "question1": "Where do you work, or have you worked, exactly?",
+      "question2": "Who decides or sponsors on the client side?",
+      "question3": "Who should we contact, or who could you introduce us to?",
+      "accountName": "Company",
+      "entity": "Entity",
+      "team": "Team",
+      "manager": "Manager",
+      "project": "Project",
+      "technologies": "Technologies",
+      "teamSize": "Team size",
+      "partnersObserved": "Partners observed",
+      "listHint": "Comma-separated.",
+      "painPoints": "Pain points",
+      "possibleSponsor": "Possible sponsor",
+      "decisionMakers": "Decision makers",
+      "uncoveredNeed": "Uncovered need",
+      "peopleToContact": "People to contact",
+      "introductionPossible": "Possible introduction",
+      "provenance": "Provenance and consent",
+      "recordedBy": "Recorded by {{name}}, {{date}}",
+      "recordedByUnknown": "you",
+      "confidentialityLevel": "Confidentiality level",
+      "confidentialityLevels": {
+        "interne": "Internal",
+        "partage_limite": "Limited sharing",
+        "confidentiel": "Confidential"
+      },
+      "confidence": "Confidence",
+      "confidenceLevels": {
+        "faible": "Low",
+        "moyenne": "Medium",
+        "forte": "High"
+      },
+      "usageAuthorization": "Usage authorization",
+      "scope": "Authorization scope",
+      "notForCommercialUse": "Do not use commercially",
+      "notForCommercialUseHint": "The consultant asked that this specific piece of information not be used commercially.",
+      "notForCommercialUseBadge": "No commercial use",
+      "confirm": "Save this information"
+    },
+    "profile": {
+      "identity": "Identity and contact",
+      "engagement": "Engagement and rate",
+      "coverage": "Coverage and languages",
+      "process": "Ongoing process",
+      "positioningAgreement": "Agreement before presenting",
+      "preferences": "Preferences and constraints",
+      "clearances": "Clearances and aspirations",
+      "experienceEducation": "Experience and education",
+      "environments": "Technical environments",
+      "tools": "Tools",
+      "certifications": "Certifications",
+      "declaredSkills": "Declared: {{list}}",
+      "notReadFromCv": "Not yet read from a CV",
+      "declaredAvailability": "Declared availability",
+      "copyLink": "Copy link",
+      "linkCopied": "Profile link copied.",
+      "linkCopyFailed": "I couldn’t copy that link.",
+      "availabilityConfirmHint": "Still accurate? Confirm it without changing the declared value.",
+      "availabilityConfirm": "Confirm availability",
+      "availabilityConfirmWorking": "Confirming…",
+      "availabilityConfirmed": "Availability confirmed just now.",
+      "tjmValidateHint": "Rate or terms confirmed with the talent? One axis of the agreement before presenting.",
+      "tjmValidate": "Validate the rate",
+      "tjmValidateWorking": "Validating…",
+      "tjmValidated": "Rate validated.",
+      "cvValidateHint": "CV validated, or usage rules accepted? One axis of the agreement before presenting.",
+      "cvValidate": "Validate the CV",
+      "cvValidateWorking": "Validating…",
+      "cvValidated": "CV validated.",
+      "interviewAssessment": "What the interview showed",
+      "interviewTrait": {
+        "communication": "Communication",
+        "autonomy": "Autonomy"
+      },
+      "traitLevel": {
+        "a_developper": "Needs development",
+        "solide": "Solid",
+        "fort": "Strong"
+      },
+      "rampUp": "Time to productivity",
+      "rampUpBand": {
+        "immediat": "Immediate",
+        "jours": "A few days",
+        "semaines": "A few weeks",
+        "mois": "A few months"
+      },
+      "enrich": {
+        "working": "Searching…",
+        "noResultTitle": "Current role",
+        "notFetched": "Not looked up yet",
+        "noMatchKey": "This record has no saved professional profile: without it, the search cannot reliably identify the right person.",
+        "noIdentity": "This record has no name: there is no one to search for.",
+        "creditsExhausted": "You’ve been using {{brand}} a lot this month — shall we talk? Drop the team a line.",
+        "failed": "Enrichment failed. Try again in a moment.",
+        "nothingChanged": "Searched — nothing new beyond what the record already shows.",
+        "searchByName": "Search by name",
+        "searchHint": "No professional profile on file: search for the person by name, see the homonyms (role, company, city), and pick the right one — no contact detail appears before your pick.",
+        "searchFullNameLabel": "Full name",
+        "searchOrganizationLabel": "Company (if known)",
+        "searchOrganizationPlaceholder": "Company (optional)",
+        "searchSubmit": "Search",
+        "searchChoose": "Pick",
+        "searchError": "The search failed. Try again in a moment.",
+        "searchEmpty": "No homonym found for this name.",
+        "searchUnavailable": "Search by name is not available right now.",
+        "channelEmail": "Email",
+        "channelPhone": "Phone",
+        "found": "Found: {{fields}}.",
+        "fields": {
+          "title": "job title",
+          "email": "email",
+          "phone": "phone",
+          "public_profile_url": "public professional profile"
+        },
+        "action": "Enrich"
+      }
+    },
+    "moreActions": {
+      "label": "More actions",
+      "trigger": "More actions for this record"
+    },
+    "contactActions": {
+      "none": "No way to reach them is on file."
+    },
+    "inline": {
+      "readOnly": "Read-only: your role can't edit this record.",
+      "handEntered": "Entered manually",
+      "groups": {
+        "identity": "Identity and engagement",
+        "contact": "Contact details",
+        "availability": "Availability",
+        "mobility": "Mobility",
+        "process": "Ongoing process",
+        "preferences": "Mission preferences",
+        "skills": "Skills, languages and references",
+        "rates": "Rates",
+        "notes": "Notes",
+        "cvText": "Source CV",
+        "consent": "Consent"
+      },
+      "errors": {
+        "nameRequired": "The name is required.",
+        "refusedField": "The “{{field}}” field was refused: {{rule}}",
+        "refusedOtherField": "The “{{field}}” field was refused although you were editing “{{edited}}”: the whole record is sent, fix “{{field}}” first ({{rule}}).",
+        "partnerRequired": "A subcontractor always carries their partner: fill in the partner first."
+      },
+      "partnerHint": "Filling in a partner switches the engagement to subcontracting.",
+      "managerNone": "Not provided",
+      "fromConnector": "Taken from a connected connector",
+      "fromImport": "Taken from the CV or the import"
+    },
+    "objectives": {
+      "aria": "Profile goals",
+      "intro": "Two distinct goals: answer a known need or explore compatible accounts.",
+      "compareNeeds": "Compare needs",
+      "exploreAccounts": "Explore accounts"
+    },
+    "plannedEndNote": "A planned end does not confirm the consultant's availability: here, the declaration wins.",
+    "briefOpen": "Brief and defence",
+    "sections": {
+      "expertise": "Expertise & qualification",
+      "score": "Consultant score",
+      "missions": "Missions and engagements"
+    },
+    "refreshAvailability": "Update",
+    "score": {
+      "filled": "Filled in",
+      "missing": "To complete",
+      "axesAria": "What the profile knows, axis by axis",
+      "hint": "The facts on the profile, spelled out — never a score in points. No personal criterion (age, gender, origin, photo, address) goes into it."
+    }
+  },
+  "intake": {
+    "prompt": "Drop a CV here to create a record",
+    "paste": {
+      "open": "Paste a profile’s text",
+      "label": "Profile text",
+      "submit": "Create the record from this text"
+    },
+    "notACv": "This file is a spreadsheet, not a résumé. To import a list of contacts or companies, use Settings › Import.",
+    "attachPrompt": "Drop a CV here to add it to this record, as a new version",
+    "choose": "Choose a file",
+    "working": "Reading the CV…",
+    "hint": "PDF, DOCX, RTF or text. A scanned CV is read automatically when text recognition is connected; otherwise the screen will say so.",
+    "created": "Record created, {{count}} characters read — skills are not read yet: check them in the CV review before relying on this record.",
+    "failed": "The upload did not go through.",
+    "tooBig": "This file is over {{max}} MB. Past that, it is not a CV any more.",
+    "progress": {
+      "received": "Upload received",
+      "processing": "Reading and extracting the document…",
+      "created": "Record created",
+      "updated": "Record updated",
+      "unknown": "We don't know whether the upload arrived: nothing is replayed automatically. Check the talent pool before re-uploading the file."
+    },
+    "duplicate": {
+      "title": "This person looks like someone you already have",
+      "line": "{{name}} — {{reason}}",
+      "createAnyway": "Not the same person, create anyway",
+      "cancel": "Cancel the upload",
+      "reasons": {
+        "same_email": "same work address",
+        "same_phone": "same phone",
+        "same_name_same_employer": "same name, same employer",
+        "same_name": "same name",
+        "same_external_id": "same ID in a connected tool",
+        "same_public_profile": "same public profile",
+        "same_document": "same file, under another name",
+        "same_name_same_employer_period": "same name, same experience (employer and period)",
+        "same_name_same_location": "same name, same location",
+        "same_experiences": "several identical experiences"
+      },
+      "attach": "Add this CV to {{name}}’s record"
+    },
+    "batch": {
+      "choose": "Upload several CVs",
+      "chooseFolder": "Upload a folder of CVs",
+      "progress": "{{done}} of {{total}} processed",
+      "remainingSeconds": "≈ {{count}} second left",
+      "remainingSeconds_other": "≈ {{count}} seconds left",
+      "remainingMinutes": "≈ {{count}} minute left",
+      "remainingMinutes_other": "≈ {{count}} minutes left",
+      "stop": "Stop",
+      "close": "Close",
+      "summary": "{{created}} profile(s) created · {{duplicate}} already known · {{failed}} unreadable",
+      "skippedDuplicate": "{{file}} — skipped: a profile already exists ({{names}})",
+      "skippedTooBig": "{{file}} — skipped: file too large",
+      "skippedFailed": "{{file}} — {{reason}}",
+      "done": "{{count}} profile created.",
+      "done_other": "{{count}} profiles created.",
+      "note": "The batch creates profiles from the TEXT of the CVs. It does not read them: name, phone and skills are filled in by the CV review, profile by profile."
+    },
+    "updated": "CV added to the existing record as a new version ({{count}} characters read). No field was overwritten."
+  },
+  "atsExport": {
+    "cta": "Export the pool (ATS)",
+    "working": "Preparing the export…",
+    "empty": "The pool is empty — nothing to export.",
+    "truncated": "Export limited to the first {{max}} profiles (larger pool)."
+  },
+  "bulkExport": {
+    "cta": "Export the pool in bulk",
+    "working": "Export in progress…",
+    "empty": "The pool is empty — nothing to export.",
+    "truncated": "Export limited to the first {{max}} profiles (larger pool).",
+    "failed": "The export did not complete."
+  },
+  "batchImport": {
+    "formats": "Formats read: a .zip archive or a folder of CVs as PDF, DOCX, DOC, RTF, TXT or image. A refused file is named with its reason in the report.",
+    "single": {
+      "cta": "One CV or skills file",
+      "title": "Drop a CV or a skills file",
+      "description": "A PDF or DOCX file: the profile is created, then you review what was extracted before it is put in front of a client."
+    },
+    "next": {
+      "processExceptions_one": "Process the exception",
+      "processExceptions_other": "Process {{count}} exceptions",
+      "seeVivier": "See the talent pool",
+      "askLaura": "Ask {{copilot}} what to do with this batch",
+      "askLauraPrompt": "I just imported a batch of CVs into the pool. What do you recommend I do with this batch?"
+    },
+    "zip": {
+      "cta": "Import a ZIP archive",
+      "title": "Import a ZIP archive of CVs",
+      "description": "Every file in the archive follows the same automatic intake: a reliable profile updates itself, an ambiguous one is set aside for your review — nothing is ever merged.",
+      "tooBig": "This archive is {{sizeMb}} MB; the import limit is {{max}} — split it into several smaller uploads.",
+      "choose": "Choose a .zip archive",
+      "working": "Importing the archive…",
+      "failed": "The import did not go through.",
+      "progress": {
+        "working": "{{processed}} of {{total}} files processed…",
+        "failed": "The job failed: {{reason}}"
+      },
+      "manifest": {
+        "checking": "Looking at what’s in the archive…",
+        "summary": "{{count}} file(s) in the archive",
+        "duplicates": "{{count}} duplicate(s) found in the batch",
+        "duplicateRule": "For the same person, the most recent version is kept; an unknown date never wins.",
+        "confirm": "Confirm the import",
+        "cancel": "Cancel",
+        "failed": "I couldn’t read the archive."
+      },
+      "large": {
+        "confirmTitle": "Large archive ({{sizeMb}} MB) — direct deposit, then background processing.",
+        "confirm": "Import (large archive)",
+        "cancel": "Cancel",
+        "uploading": "Uploading the archive… {{percent}}%",
+        "retrying": "Network hiccup — resuming the upload automatically (attempt {{attempt}})…",
+        "uploadFailed": "Uploading the archive to storage failed.",
+        "uploadRefusedWithCause": "Storage refused the archive upload (HTTP {{status}}): {{cause}}",
+        "uploadRefusedSize": "Storage refused this archive: it's too large.",
+        "uploadRefusedType": "Storage refused this file: it's not a valid ZIP archive.",
+        "uploadRefusedForbidden": "Storage refused this upload: the write permission expired — try again, a new one will be requested.",
+        "queued": "Waiting for processing…",
+        "downloadingUnknown": "Downloading the archive…",
+        "downloadingKnown": "Downloading the archive — {{received}} MB of {{total}} MB",
+        "downloadingReceived": "Downloading the archive — {{received}} MB received",
+        "opening": "Opening the archive…",
+        "runningKnown": "Processing… {{processed}} / {{total}} file(s)",
+        "runningUnknown": "Processing… {{processed}} file(s) processed",
+        "resultLost": "Tracking for this import was lost — the archive may still be processing, check back shortly.",
+        "stillRunning": "Processing is taking longer than the usual tracking window — check back shortly, it keeps running in the background."
+      },
+      "summary": "{{created}} created · {{autoUpdated}} updated · {{exception}} to review · {{scans}} suspected scan(s) · {{errors}} error(s) · {{ignored}} ignored (not a CV)",
+      "outcome": {
+        "auto_updated": "{{file}} — updated automatically, matched by: {{reason}}",
+        "auto_updated_generic": "{{file}} — updated automatically",
+        "exception": "{{file}} — set aside for review: {{state}}",
+        "exception_conflicts": "{{file}} — set aside for review: {{state}} (to verify: {{conflicts}})",
+        "too_big": "{{file}} — too large",
+        "ignored": "{{file}} — ignored, not a CV",
+        "failed": "{{file}} — {{reason}}"
+      },
+      "close": "Close"
+    },
+    "files": {
+      "choose": "Choose a folder",
+      "empty": "This folder has no recognized CV (.pdf, .docx, .doc, .rtf, .txt, .md)."
+    },
+    "csv": {
+      "cta": "Import a CSV",
+      "title": "Import a CSV file of consultants",
+      "description": "Recognized columns: full name (or first/last name), title, email, phone. An unrecognized column is ignored, never guessed. A row that resembles an existing profile is skipped for your review — nothing is ever merged.",
+      "choose": "Choose a .csv file",
+      "working": "Importing the file…",
+      "failed": "The import did not go through.",
+      "summary": "{{created}} created · {{duplicate}} already known · {{skipped}} skipped",
+      "ignoredColumns": "Ignored columns (unrecognized): {{columns}}",
+      "outcome": {
+        "duplicate": "Line {{line}} — skipped, resembles {{names}}",
+        "erased": "Line {{line}} — erased: this person requested their data be erased, their record cannot be recreated",
+        "skipped": {
+          "no_identity": "Line {{line}} — skipped: no name or email",
+          "no_name": "Line {{line}} — skipped: no name (an email alone is not enough)",
+          "duplicate_in_file": "Line {{line}} — skipped: already seen earlier in the file",
+          "malformed": "Line {{line}} — skipped: empty row"
+        }
+      },
+      "close": "Close"
+    },
+    "availability": {
+      "cta": "Import availabilities",
+      "title": "Import an availability table",
+      "description": "Recognized columns: name or email, availability date, daily rate. Updates EXISTING profiles in the pool (matched by email, then name) — never creates a new profile.",
+      "chooseCsv": "Choose a .csv file",
+      "chooseXlsx": "Choose a .xlsx file",
+      "working": "Updating availabilities…",
+      "failed": "The import did not go through.",
+      "summary": "{{updated}} updated · {{unmatched}} not matched · {{skipped}} skipped",
+      "ignoredColumns": "Ignored columns (unrecognized): {{columns}}",
+      "outcome": {
+        "unmatched": {
+          "not_found": "Line {{line}} — not matched: “{{identity}}” not found in the pool",
+          "ambiguous_name": "Line {{line}} — not matched: several profiles share the name “{{identity}}”"
+        },
+        "skipped": {
+          "no_identity": "Line {{line}} — skipped: no name or email",
+          "no_data": "Line {{line}} — skipped: no date or rate",
+          "malformed": "Line {{line}} — skipped: empty row"
+        }
+      },
+      "close": "Close"
+    },
+    "mail": {
+      "cta": "Import from an email",
+      "title": "Import an attachment from an authorized thread",
+      "description": "Only threads your connected mailbox can already read appear here. The message body never travels — only the attachment does.",
+      "loading": "Looking for threads with a CV…",
+      "empty": "No thread with an attachment found in the last 90 days.",
+      "noMessages": "This thread does not detail its messages yet — come back once the mailbox has resynced.",
+      "showAttachments": "Show attachments",
+      "attachmentsLoading": "Listing the attachments…",
+      "attachmentsEmpty": "No attachment found on this message — it may have changed since.",
+      "import": "Import {{file}}",
+      "importing": "Importing…",
+      "outcome": {
+        "created": "{{file}} — profile created",
+        "auto_updated": "{{file}} — joined an existing profile, matched by: {{reason}}",
+        "auto_updated_generic": "{{file}} — joined an existing profile",
+        "exception": "{{file}} — set aside for review: {{state}}",
+        "exception_conflicts": "{{file}} — set aside for review: {{state}} (to verify: {{conflicts}})",
+        "too_big": "{{file}} — too large",
+        "ignored": "{{file}} — ignored, not a CV",
+        "failed": "{{file}} — {{reason}}"
+      },
+      "close": "Close"
+    }
+  },
+  "review": {
+    "needsReview": "CV not read",
+    "qualified": "Reviewed"
+  },
+  "parse": {
+    "intro": "Every field read quotes the passage of the CV it comes from. Hover a field to see it highlighted on the left.",
+    "loading": "Reading the CV…",
+    "failed": "Reading the CV did not go through.",
+    "retry": "Retry",
+    "placeCta": "Where to place this profile?",
+    "noSkills": "0 skills extracted — check the document.",
+    "partial": "This CV was only partially read — one page could not be decoded. A field marked “not found” below isn’t necessarily absent from the CV.",
+    "sourceTitle": "The CV read ({{count}} characters)",
+    "fieldsTitle": "What I read in it",
+    "notFound": "Not found in the CV",
+    "skillsPartial": "Partial read: skills not recognised. The CV mentions skills, but none could be read with certainty — type them below, no need to re-run the read.",
+    "skillsManualLabel": "Skills to add (comma-separated)",
+    "skillsManualPlaceholder": "Java, Spring, project management",
+    "confidence": "read with {{percent}}% certainty",
+    "accept": "Accept",
+    "correct": "Correct",
+    "reject": "Reject",
+    "acceptAllBlocked": "A decisive field is uncertain: read it again before validating.",
+    "commit": "Save my corrections",
+    "committing": "Saving…",
+    "committed": "Corrections saved. The record is qualified and can be put in front of a client.",
+    "validatedBy": "Validated by {{name}} · {{date}}",
+    "validatedByUnknown": "Unknown author",
+    "detections": {
+      "identity": "Identity",
+      "job_title": "Job title",
+      "skills": "Skills",
+      "seniority": "Seniority",
+      "sectors": "Sectors",
+      "environments": "Technical environments",
+      "tools": "Tools",
+      "languages": "Languages",
+      "certifications": "Certifications",
+      "mobility": "Mobility",
+      "availability": "Availability",
+      "experiences": "Experience",
+      "education": "Education",
+      "daily_rate": "Daily rate read in the CV"
+    }
+  },
+  "studio": {
+    "title": "Competency pack",
+    "intro": "Composed from the source CV, with no model call. What is not proven is struck through, never quietly dropped.",
+    "version": "Version",
+    "anonymisation": "Anonymisation",
+    "workspaceDefault": "Your workspace setting",
+    "source": "Source",
+    "sourceNone": "None (internal dossier)",
+    "sourceOpportunity": "Opportunity",
+    "sourceRfp": "RFP",
+    "sourceMission": "Comparable mission",
+    "sourceNeed": "Need",
+    "ruleForced": "This version enforces its own rule.",
+    "generate": "Compose",
+    "generating": "Composing…",
+    "generated": "Version composed. It is added to the previous ones, it replaces none.",
+    "failed": "Composing did not go through.",
+    "generatedBy": "by {{name}}",
+    "downloadFailed": "The download did not go through.",
+    "excludedTitle": "What this pack does not prove",
+    "highlightedTitle": "Highlighted skills",
+    "changesTitle": "What changed",
+    "guarantees": {
+      "title": "What this dossier never does",
+      "noRewrite": "No rewriting — sections repeat the source CV's text as-is.",
+      "fixedOrder": "Sections stay in the source CV's fixed order, never reordered.",
+      "noExperienceAdded": "No experience added — composed solely from the source CV."
+    },
+    "empty": "No version yet. Compose one: you will always know what a client received.",
+    "docx": "Word",
+    "pdf": "PDF",
+    "kinds": {
+      "source": "Source CV (internal)",
+      "client": "Client CV",
+      "anonyme": "Anonymous CV",
+      "enrichi": "Enriched CV (internal)",
+      "resume": "Summary CV (internal)"
+    },
+    "rules": {
+      "nom_complet": "Full name",
+      "prenom_initiale": "First name + initial",
+      "initiales": "Initials",
+      "trigramme": "Trigram"
+    },
+    "status": {
+      "draft": "Draft",
+      "pending_validation": "Pending validation",
+      "validated": "Validated"
+    },
+    "pendingValidationDetail": "This version still awaits validation before it can be considered ready.",
+    "validate": "Validate",
+    "validating": "Validating…",
+    "validated": "Version validated.",
+    "validateFailed": "Validation did not go through.",
+    "validatedOn": "Validated on {{date}}",
+    "compareSelect": "Select to compare",
+    "compare": "Compare",
+    "comparing": "Comparing…",
+    "compareFailed": "The comparison did not go through.",
+    "compareResultTitle": "What differs between the two versions",
+    "compareNoDiff": "No difference between these two versions.",
+    "diffAbsent": "absent from this version",
+    "diffSkillsAdded": "Struck-through skills added",
+    "diffSkillsRemoved": "Struck-through skills removed",
+    "diffHighlightedAdded": "Highlighted skills added",
+    "diffHighlightedRemoved": "Highlighted skills removed",
+    "edit": "Edit",
+    "editing": "Editing the version",
+    "save": "Save",
+    "saving": "Saving…",
+    "saved": "Version edited.",
+    "saveFailed": "Saving did not go through.",
+    "cancel": "Cancel"
+  },
+  "remote": {
+    "sur_site": "On site",
+    "hybride": "Hybrid",
+    "full_remote": "Fully remote",
+    "indifferent": "No preference"
+  },
+  "travel": {
+    "aucun": "No travel",
+    "ponctuel": "Occasional travel",
+    "frequent": "Frequent travel"
+  },
+  "siteFrequency": {
+    "jamais": "Never on site",
+    "ponctuelle": "Occasional",
+    "reguliere": "Regular",
+    "permanente": "Permanent"
+  },
+  "pool": {
+    "title": "To recontact",
+    "intro": "The people you have already met. Here are the ones worth recontacting.",
+    "empty": "Nobody in this segment.",
+    "segmentsAria": "Talent pool segments to recontact",
+    "segments": {
+      "soon_available": "Available soon",
+      "dormant": "Reconnect with them",
+      "never_submitted": "Never submitted",
+      "recoverable_rejects": "Recoverable rejections",
+      "rare_profiles": "Rare profiles",
+      "archived": "Archived"
+    },
+    "explain": {
+      "soon_available": "Their assignment ends within 45 days. An assignment with no end date is not listed: we do not invent an availability.",
+      "dormant": "No contact for six months. Reaching out resets the clock — and extends how long you may keep their file.",
+      "to_revalidate": "Their record claims an availability no assignment confirms. That is not wrong data, it is unverified data: call them.",
+      "never_submitted": "Reviewed, ready, and never put in front of anyone. This is the pool you built without using it.",
+      "recoverable_rejects": "Rejected for a reason that says nothing about them: price, timing, cancelled need. Worth pitching elsewhere.",
+      "rare_profiles": "Fewer than three people carry their skill. Losing them costs a capability, not a profile.",
+      "archived": "Out of the active pool, data kept. A need can bring them back."
+    }
+  },
+  "consent": {
+    "title": "Consent",
+    "givenAt": "Collected on",
+    "expiresAt": "Valid until",
+    "basis": "Legal basis",
+    "restrictions": "Restrictions",
+    "source": "Where the record came from",
+    "daysLeft": "{{count}} day left",
+    "daysLeft_other": "{{count}} days left",
+    "export": "Export their data",
+    "dataTitle": "What we hold about this person",
+    "dataIntro": "The exact list, before any deletion — this is what you must be able to show if they ask.",
+    "nothingAttached": "Their record alone: no skill, no document, no submission attached.",
+    "states": {
+      "none": "Never collected",
+      "valid": "Valid",
+      "expiring": "Expiring soon",
+      "expired": "Expired"
+    },
+    "banner": {
+      "expiring": "{{name}}’s consent expires in {{days}} days. Without renewal, their record will be purged.",
+      "expired": "{{name}}’s consent has expired. Their record goes at the next purge, and erasure is irreversible."
+    }
+  },
+  "sources": {
+    "manual": "Manual entry",
+    "cv": "Uploaded CV",
+    "import": "Import",
+    "ats": "ATS tool",
+    "referral": "Referral",
+    "linkedin_profile": "LinkedIn profile"
+  },
+  "brief": {
+    "title": "Presentation brief",
+    "strengths": "What the profile brings",
+    "objections": "What the client will push back on",
+    "planJ30": "The first thirty days",
+    "noStrengths": "Matching found nothing salient on this profile for this need.",
+    "noObjections": "No risk identified by matching — which does not mean there is none.",
+    "noPlan": "No milestones derived: the need does not describe its deliverables clearly enough.",
+    "loadError": "The brief could not be loaded. Try again — this is not an empty brief.",
+    "open": "Presentation brief",
+    "description": "A summary ready to send to your client, built from what the profile carries."
+  },
+  "nextGesture": {
+    "title": "{{name}} is in the talent pool.",
+    "prompt": "{{count}} open role has not been matched against this profile yet. Shall I run the matching?",
+    "prompt_other": "{{count}} open roles have not been matched against this profile yet. Shall I run the matching?",
+    "promptUnknown": "Shall I match this profile against your open roles?",
+    "launch": "Run the matching",
+    "running": "Comparing…",
+    "later": "Later",
+    "result": "{{count}} recommended role out of {{evaluated}} assessed.",
+    "result_other": "{{count}} recommended roles out of {{evaluated}} assessed.",
+    "notEvaluable": "{{count}} could not be assessed — that is not a refusal, a piece of information is missing.",
+    "notEvaluable_other": "{{count}} could not be assessed — that is not a refusal, a piece of information is missing.",
+    "openProfile": "See the detail on the profile",
+    "close": "Close"
+  },
+  "propagation": {
+    "placements_one": "Placed {{count}} time",
+    "placements_other": "Placed {{count}} times",
+    "placementsTitle": "Missions that STARTED — not to be confused with the submissions shown next to it, which are proposals sent out. The gap between the two is what a recruiter is looking for.",
+    "marginTitle": "Average margin",
+    "margin": "{{percent}} % average margin",
+    "marginHint": "Weighted by declared days: a one-day mission does not weigh like a one-year one. It is computed in the missions and corrected there.",
+    "marginUnmeasurable": "Average margin not measurable: {{observed}} mission out of the {{required}} needed. A percentage on so few is not an average, it is an anecdote.",
+    "marginNoData": "Average margin not measured: no mission of this consultant carries a day rate, a loaded cost and declared days at once.",
+    "marginDenied": "Margin is outside your scope. This is not missing data: it is a right your role does not hold.",
+    "marginFailed": "The average margin could not be loaded.",
+    "marginUnmeasured_one": "{{count}} mission is left out of the calculation for a missing term — counted, never blended in",
+    "marginUnmeasured_other": "{{count}} missions are left out of the calculation for a missing term — counted, never blended in"
+  },
+  "missingExpertise": {
+    "staffingLink_one": "{{count}} skill is costing you needs — see Pilotage › Staffing",
+    "staffingLink_other": "{{count}} skills are costing you needs — see Pilotage › Staffing",
+    "title": "Skills that are costing you needs",
+    "rule": "A skill shows up from {{count}} needs closed for lack of a profile, over {{days}} days.",
+    "headline_one": "{{count}} {{skill}} need closed for lack of a profile",
+    "headline_other": "{{count}} {{skill}} needs closed for lack of a profile",
+    "revenue_one": "Around {{amount}} of unaddressed revenue, over {{count}} priceable need",
+    "revenue_other": "Around {{amount}} of unaddressed revenue, over {{count}} priceable needs",
+    "revenueUnknown": "No amount: none of these needs carries both a target day rate and a length. We guess neither.",
+    "revenueHidden": "Unaddressed revenue is outside your scope. This is not missing data: it is a right your role does not hold.",
+    "excludedPrefix": "Left out of the amount:",
+    "excludedRate": "{{count}} without a target day rate",
+    "excludedDuration": "{{count}} without a length"
+  },
+  "radar": {
+    "chartName": "{{title}} — 12-axis radar",
+    "needsTwo": "At least two profiles are needed to compare.",
+    "capped": "{{count}} further profile is not plotted — the radar overlays four at most.",
+    "capped_other": "{{count}} further profiles are not plotted — the radar overlays four at most.",
+    "hatchLegend": "hatched: not assessable, never zero"
+  },
+  "reverseMarket": {
+    "title": "Where to place this profile",
+    "back": "Back to {{name}}’s record",
+    "heading": "Where to place {{name}}",
+    "subtitle": "Reverse prospecting: start from this profile to find where to place them, internally and on the market.",
+    "fromOpportunities": {
+      "title": "Where to place this profile",
+      "subtitle": "Reverse matching ranks open needs against THIS profile.",
+      "cta": "See possible assignments"
+    },
+    "internal": {
+      "title": "Internal needs",
+      "subtitle": "The space’s open needs, ranked against this profile — the same as from a need, seen from the other end.",
+      "scopeAria": "Reverse market scope",
+      "scopeAll": "Whole portfolio",
+      "scopeMine": "My needs",
+      "launch": "Run the ranking",
+      "loading": "Ranking in progress…",
+      "empty": "No open need comes out of this ranking.",
+      "found": "{{count}} need(s) found",
+      "interlocutors": {
+        "title": "Contacts at {{account}}",
+        "accountUnnamed": "unnamed account",
+        "noAccountId": "No verifiable account is attached to this need — its contacts can't be looked up from this screen.",
+        "loading": "Looking up contacts…",
+        "unavailable": "Contact ranking unavailable for this account.",
+        "none": "No known contact for this account.",
+        "seeAccount": "See all contacts on the account page",
+        "addToTarget": "Create a target",
+        "createOpportunity": "Create an opportunity",
+        "propose": {
+          "action": "Propose this profile",
+          "already": "Already proposed to this account",
+          "title": "Propose this profile to {{account}}",
+          "description": "Pick ONE contact. A sequence is prepared with the anonymised profile — no name, no rate. Every email stays to be reviewed and approved by hand: nothing is sent on its own.",
+          "contactsLegend": "Who to propose this profile to",
+          "noContacts": "No known contact at this account: add a contact before proposing this profile.",
+          "confirm": "Prepare the sequence",
+          "cancel": "Cancel",
+          "close": "Close",
+          "done": "Sequence prepared: the first email is waiting for your review before anything is sent.",
+          "openSequences": "Open sequences",
+          "error": "The sequence could not be prepared: {{message}}"
+        }
+      }
+    },
+    "external": {
+      "title": "External market",
+      "subtitle": "Published job offers and ESNs hiring in their area — the territory watch, read from this profile.",
+      "loading": "Loading the market…"
+    },
+    "consent": {
+      "expired": "Consent has expired: this person must not be put forward until it is renewed. The market stays readable — that isn’t what’s being refused.",
+      "none": "Consent was never collected — this information is shown for reference only.",
+      "expiring": "Consent is expiring soon — renew it before putting this person forward."
+    },
+    "unavailable": {
+      "zones_missing": "No area is set on this record: there is no way to know which territory to read.",
+      "skills_missing": "No skill is set on this record: there is nothing to cross with market demand.",
+      "no_snapshot": "The territory watch hasn’t recorded anything on these areas yet — that isn’t a quiet market, it’s an area nobody has looked at yet.",
+      "zones_unresolved": "None of the record’s areas ({{zones}}) name a territory the watch tracks. Fix the area on the record rather than here."
+    },
+    "demand": {
+      "title": "Published job offers, crossed with the record",
+      "empty": "No department recorded yet.",
+      "department": "Department",
+      "offers": "IT job offers",
+      "offersUnknown": "The public source returned nothing that week",
+      "matched": "Technologies in demand, on the record",
+      "noMatch": "none of the {{total}} most-requested technologies is on the record",
+      "rankedOf": " ({{matched}} of {{total}} most-requested technologies)",
+      "source": "Source"
+    },
+    "recruiters": {
+      "title": "ESNs hiring in their area",
+      "caveat": "“Hiring in their area”, never “hiring this profile”: the watch counts offers per ESN and technologies per department, and never crosses the two.",
+      "empty": "No ESN recorded on these areas yet.",
+      "name": "ESN",
+      "department": "Department",
+      "offers": "Offers",
+      "baseline": "Quarterly baseline",
+      "baselineUnknown": "Not enough readings for a baseline",
+      "openToSubcontracting": "Open to tier-2",
+      "declaredUnknown": "Never declared",
+      "declaredYes": "Yes, declared",
+      "declaredNo": "No, declared"
+    },
+    "compatible": {
+      "title": "Structurally compatible environments",
+      "subtitle": "What market observations have recorded, in the past, around this profile — a trace, never a current event.",
+      "noCriterion": "No skill nor area is recorded on this profile: nothing to cross-reference with market observations.",
+      "loading": "Searching…",
+      "unavailable": "Market observations could not be read.",
+      "empty": "No structurally compatible environment stands out from market observations for this profile.",
+      "buckets": {
+        "compatible": "{{count}} compatible",
+        "verifiedLabel": "Verified:",
+        "verified": "{{count}} verified",
+        "verifiedUnmeasuredReason": "No verification has been requested on this list from this workspace. \"Not measured\" is not \"none\".",
+        "withAccess": "{{count}} with access",
+        "reserve": "{{count}} in reserve",
+        "priority": "{{count}} priority"
+      },
+      "showTop": "See the top 5",
+      "showAll": "See all",
+      "fitNoGrade": "No grading, and no score: calling it “strong” or “moderate” would require comparing each environment to peer companies of similar size and sector, which isn’t something we can do yet.",
+      "verdict": {
+        "priority": "Priority",
+        "to_qualify": "To qualify",
+        "structurally_compatible": "Structurally compatible",
+        "reserve": "In reserve",
+        "dropped": "Dropped"
+      },
+      "columns": {
+        "company": "Company",
+        "verdict": "Verdict",
+        "zone": "Area",
+        "fit": "Expertise fit",
+        "restriction": "Declared restriction",
+        "externalRecourse": "External workforce",
+        "currentSignal": "Current signal",
+        "access": "Access",
+        "followed": "Tracked account",
+        "actions": "Actions",
+        "verification": "Verification"
+      },
+      "zoneCaveat": "Observed footprint ≠ official site",
+      "zoneUnknown": "No area observed for this company in the corpus.",
+      "fitMatched": "Overlaps your skills: {{skills}}",
+      "fitUnmeasured": "Not measured",
+      "restrictionObserved": "Avoided tech observed: {{techno}}",
+      "restrictionUnknown": "None known",
+      "restrictionReason": "A warning, never an exclusion: the company stays in this table and the verdict doesn’t move because of it — it’s the salesperson who decides.",
+      "externalRecourseObserved": "Observed",
+      "externalRecourseUnknown": "Unknown",
+      "currentSignalReason": "No current signal — no dated observation is readable for this company: either none of your accounts points to it, or too few workspaces have observed it for a date to be stated without pointing to who saw it. This column never comes from market observations, which only carry a trace of the past.",
+      "signalOwn": "observed in your workspace",
+      "signalShared": "Observed elsewhere · {{month}}",
+      "signalSharedGrain": "to the month — an exact date would point to who observed it",
+      "accessPotentialPath": "Potential path",
+      "accessUnknown": "Unknown",
+      "followedReason": "No shared identifier (SIREN) between market observations and your accounts makes this reliably knowable.",
+      "analyze": "Analyze",
+      "dismissed": {
+        "hide": "Hide",
+        "hideAria": "Hide {{name}} — personal, no effect on other workspace members",
+        "toggle_one": "{{count}} hidden",
+        "toggle_other": "{{count}} hidden",
+        "restore": "Restore"
+      }
+    },
+    "verification": {
+      "optional": "Verification stays optional: this whole table reads and works without ever running one. An unverified row SAYS so, it is never locked.",
+      "selectAria": "Preselect {{name}} — preselecting costs nothing",
+      "selectAllAria": "Preselect every company shown",
+      "cta_one": "Verify today ({{count}} company)",
+      "cta_other": "Verify today ({{count}} companies)",
+      "state": {
+        "to_verify": "Not verified",
+        "kept": "Verified",
+        "stale": "Needs re-checking",
+        "unknown": "Not measured",
+        "corrected": "Corrected by hand"
+      },
+      "stateReason": {
+        "to_verify": "No verification has been run on this company from this workspace. That is not a flaw in the row: verification is optional.",
+        "unknown": "The last verification could not measure anything (it timed out) — that is not a failure, and nothing is retried on its own.",
+        "stale": "The verification has aged: the fact is unknown again. The previous row is kept, it was not deleted."
+      },
+      "plan": {
+        "title": "What this verification will cost",
+        "subtitle": "Five facts, before the gesture. Nothing is charged from this screen.",
+        "loading": "Preparing the quote…",
+        "unavailable": "The quote could not be prepared. Nothing was launched, nothing was charged.",
+        "candidates": "Candidates to verify",
+        "candidatesValue_one": "{{count}} company",
+        "candidatesValue_other": "{{count}} companies",
+        "sources": "Sources used",
+        "publicSources": "Named public sources",
+        "publicTendersScope": "Public procurement: announced for {{shown}} of the {{total}} companies launched, those whose registry activity is already known.",
+        "duration": "Duration",
+        "durationValue": "{{min}} to {{max}} minutes per company",
+        "adds": "What it can change",
+        "kept_one": "{{count}} company is already verified and drops out of the cost: what is kept is not paid for twice.",
+        "kept_other": "{{count}} companies are already verified and drop out of the cost: what is kept is not paid for twice.",
+        "keptFloor_one": "This total is a floor: {{count}} kept verification has no known cost.",
+        "keptFloor_other": "This total is a floor: {{count}} kept verifications have no known cost.",
+        "locked": "Your trial access has ended: paid verification is no longer offered. Everything else on this screen keeps working.",
+        "confirm": "Launch the verifications",
+        "costDemo": "Demo: no launch is charged here.",
+        "reopened_one": "{{count}} company is already analyzed in your workspace: launching reopens its dossier at no charge.",
+        "reopened_other": "{{count}} companies are already analyzed in your workspace: launching reopens their dossiers at no charge."
+      },
+      "sourceNature": {
+        "official_registry": "Official registry",
+        "company_website": "Company website",
+        "job_postings": "Published job ads",
+        "public_news": "Public news",
+        "professional_network": "Professional network"
+      },
+      "output": {
+        "facts": "Facts",
+        "signals": "Signals",
+        "contacts": "Contacts",
+        "org_chart": "Org chart",
+        "recommendations": "Recommendations",
+        "actions": "Actions"
+      },
+      "dated": "{{state}} on {{date}}",
+      "launchedAll_one": "{{count}} verification launched — it will not be charged again until it ages.",
+      "launchedAll_other": "{{count}} verifications launched — they will not be charged again until they age.",
+      "launchedSome_one": "{{count}} verification launched.",
+      "launchedSome_other": "{{count}} verifications launched.",
+      "launchFailed": "Not launched: {{names}}. Nothing was verified for them; they stay ticked.",
+      "launchUnknown": "Not measured: {{names}} — the launcher did not answer in time. Nothing is retried on its own."
+    },
+    "placement": {
+      "title": "Where to place this profile?",
+      "searched": "Searched: the trade “{{roles}}”, in the area “{{zones}}”.",
+      "unknownRole": "not set",
+      "unknownZone": "not set",
+      "empty": "No company with a dated offer for this trade has been found yet.",
+      "company": "Company",
+      "department": "Department",
+      "departmentUnknown": "Department not found",
+      "offers": "Dated offers",
+      "contacts": "Contacts your workspace already knows",
+      "noKnownContact": "No known contact"
+    },
+    "accounts": {
+      "heading": "Accounts for {{name}}",
+      "declared": "(declared)",
+      "subtitle": "Compatibility opens a lead. It guarantees neither a current need nor an assignment.",
+      "listAria": "Accounts ranked for {{name}}",
+      "state": {
+        "need": "Recorded need",
+        "to_qualify": "Request to qualify"
+      },
+      "needCount": "{{count}} needs",
+      "reason": {
+        "relation": "A “{{role}}” need is open and the workspace already knows this account: start from the existing relationship, not a cold approach.",
+        "skills": "A “{{role}}” need overlaps this profile on {{skills}}. Check mobility, day rate and availability before any contact.",
+        "role": "A “{{role}}” need is matched to this profile. Shared skills are to be confirmed before any contact."
+      },
+      "explore": "Explore the account",
+      "prepareWithLaura": "Prepare with {{copilot}}",
+      "moreAria": "More actions for {{account}}",
+      "createTarget": "Create a target from a contact",
+      "createDeal": "Create a deal for {{name}}",
+      "laura": {
+        "title": "Prepare with {{copilot}} · {{account}}",
+        "description": "What do you want to prepare for {{name}} at {{account}}? {{copilot}} prepares, you review; nothing goes out without your action.",
+        "message": {
+          "label": "A message to the account",
+          "question": "Prepare a message for {{account}} proposing {{name}} on the matched need."
+        },
+        "plan": {
+          "label": "An approach plan for this profile",
+          "question": "Prepare an approach plan at {{account}} for {{name}}: who to see, in what order, with what proof."
+        },
+        "r1": {
+          "label": "The first meeting with the account",
+          "question": "Prepare the first meeting with {{account}} for {{name}}: outline, proof to cite, likely questions."
+        }
+      },
+      "why": {
+        "title": "Why these matches?",
+        "body": "Shared skills and location give a first priority. An existing relationship with the account comes first: we don’t cold-approach an account where we already are. History stays distinct from current needs. Mobility, day rate and availability are checked before presenting the profile."
+      },
+      "needsDetail": "See the detail by need",
+      "externalFold": "External market and compatible environments",
+      "before": {
+        "title": "Before presenting {{name}}",
+        "consentValid": "{{name}} agrees to be presented to clients.",
+        "follow": "Follow their presentations",
+        "followAria": "Follow {{name}}’s presentations"
+      }
+    },
+    "declared": "(declared)",
+    "asideAria": "Before submitting"
+  },
+  "table": {
+    "headerName": "Person / expertise",
+    "headerTitle": "Title",
+    "headerSkills": "Declared skills",
+    "headerSeniority": "Seniority",
+    "headerLocation": "Location",
+    "headerStatus": "Status",
+    "headerAvailability": "Availability & schedule",
+    "headerTjm": "Day rate",
+    "headerRemote": "Remote",
+    "headerEngagement": "Contract",
+    "headerCompleteness": "Completeness",
+    "headerLastContact": "Last interaction",
+    "headerActions": "Actions",
+    "openSkillsFor": "Skills for {{name}}",
+    "selectAllAria": "Select all",
+    "selectAria": "Select {{name}}",
+    "headerFollowUp": "Follow-up",
+    "headerFollow": "Follow-up"
+  },
+  "identity": {
+    "title": "Possible duplicates",
+    "intro": "We suggest, you decide: no record is ever merged on its own.",
+    "empty": "No other record in the talent pool looks like this one.",
+    "error": "This record cannot be compared with the talent pool right now.",
+    "state": "Status: {{state}}",
+    "states": {
+      "resolved": "same person identified",
+      "probable_duplicate": "probable duplicate, to confirm",
+      "ambiguous": "resemblance to check",
+      "new": "no duplicate",
+      "updated": "record completed",
+      "conflicting": "contradictory data",
+      "ignored": "suggestion ignored"
+    },
+    "reason": "Matched on: {{reason}}",
+    "compare": "Compare both records",
+    "hideCompare": "Hide the comparison",
+    "loadingCompare": "Comparing both records…",
+    "sideA": "This record",
+    "sideB": "The other record",
+    "openOther": "Open the other record",
+    "fields": {
+      "fullName": "Name",
+      "email": "Email",
+      "phone": "Phone",
+      "publicProfileUrl": "Public profile (LinkedIn)",
+      "title": "Job title",
+      "location": "Location"
+    },
+    "conflictFields": {
+      "name": "name",
+      "email": "email",
+      "phone": "phone",
+      "public_profile": "public profile"
+    },
+    "fieldStates": {
+      "identical": "identical",
+      "different": "different",
+      "oneSided": "filled on one side only"
+    },
+    "notProvided": "Not provided",
+    "documents": "Documents",
+    "noDocuments": "No document.",
+    "history": "History",
+    "noHistory": "No recorded change.",
+    "historyLine": "{{field}} · {{actor}} · {{date}}",
+    "historyRule": "rule: {{rule}}",
+    "unknownActor": "author not recorded",
+    "consequencesTitle": "What each action does",
+    "consequences": {
+      "keep_separate": "Both records stay separate, and this pair will not be suggested again.",
+      "update_existing": "{{count}} document(s) from the other record are copied here as versions. No field is overwritten, the other record stays untouched.",
+      "ignore": "The suggestion is hidden. It comes back if a stronger signal appears.",
+      "assign_to_recruiter": "A task is added to the chosen person’s queue."
+    },
+    "mergeUnavailable": "Merging two records is not offered: we suggest matches, we never merge.",
+    "actions": {
+      "keep_separate": "Not the same person",
+      "update_existing": "Copy their documents here",
+      "ignore": "Ignore",
+      "assign_to_recruiter": "Assign the check"
+    },
+    "assignee": "Assign to",
+    "assigneePlaceholder": "Choose a member",
+    "assignedTo": "Assigned to {{name}}",
+    "decidedBy": "Decision by {{name}}",
+    "someone": "a workspace member",
+    "undo": "Undo this decision",
+    "done": "Decision saved.",
+    "undone": "Decision undone. Copied documents were archived.",
+    "failed": "The decision was not saved."
+  },
+  "ioMenu": {
+    "import": {
+      "cta": "Import",
+      "title": "Import without re-keying",
+      "description": "One window: each import keeps its own report, nothing is merged without your review.",
+      "options": {
+        "csv": "Pool profiles — a CSV file (under 1 MB): name, job title, skills, city, email.",
+        "zip": "A CV archive: a reliable profile updates itself, an ambiguity is set aside for review.",
+        "mail": "An attachment from a thread your connected mailbox can already read.",
+        "single": "One CV or skills file (PDF, DOCX): a single profile, created then reviewed by you.",
+        "availability": "Availability (.csv, .xlsx) — updates existing profiles, never creates one."
+      },
+      "cvTitle": "Drop CVs here",
+      "cvBody": "PDF or Word, several files, a folder, a ZIP archive or an email attachment. Each CV read creates or completes a qualified profile; the original is kept with its preview.",
+      "objectsTitle": "Objects to import",
+      "csvPreview": "The CSV is previewed before anything is added. An identity matching at 0.99 or more is merged on its own, and reversibly; below that, it is proposed to you."
+    },
+    "export": {
+      "cta": "Export",
+      "title": "Export the pool",
+      "description": "Pick the output format for the pool.",
+      "options": {
+        "ats": "The active pool in ATS format, downloaded right away (with a row cap).",
+        "bulk": "The whole pool as a background job, no cap. Keep this window open until the download."
+      }
+    }
+  },
+  "erase": {
+    "word": "DELETE",
+    "title_one": "Permanently delete {{count}} person?",
+    "title_other": "Permanently delete {{count}} people?",
+    "body": "This is GDPR erasure (Article 17): each selected profile — skills, experience, CV, prepared messages, submissions, finished assignments and what {{copilot}} remembered about the person — is deleted for good, with no way back. Archiving, by contrast, can be undone.",
+    "trace": "{{brand}} keeps only a trace with no personal data — who erased, when, and a non-reversible fingerprint — so the person is not recreated by an import or a CV upload. Payments already issued stay (accounting records), with no link to the person.",
+    "skippedNote": "A profile still assigned to an ongoing mission is left in place, with its reason stated: end or remove the assignment first.",
+    "typePrompt": "To confirm, type “{{word}}”",
+    "confirm_one": "Permanently delete {{count}} person",
+    "confirm_other": "Permanently delete {{count}} people",
+    "cancel": "Cancel",
+    "done_one": "{{count}} person permanently deleted.",
+    "done_other": "{{count}} people permanently deleted.",
+    "doneWithSkipped": "{{erased}} deleted, {{skipped}} left in place. {{reasons}}",
+    "failed": "The deletion could not be done.",
+    "reasons": {
+      "not_found": "A profile was already gone or outside your workspace.",
+      "forbidden": "Only a workspace administrator or the profile’s owner can delete it.",
+      "blocked": "An ongoing assignment holds it: end it first."
+    }
+  },
+  "addProfile": "Add a profile",
+  "tabs": {
+    "vivier": "Talent pool",
+    "recrutement": "Recruitment"
+  },
+  "layout": {
+    "aria": "Talent pool display",
+    "list": "List",
+    "cards": "Cards"
+  },
+  "summary": {
+    "people_one": "<b>{{count}}</b> person",
+    "people_other": "<b>{{count}}</b> people",
+    "declaredWins": "Declared availability stays distinct from the mission schedule — and takes precedence when it exists.",
+    "pushable": "A consultant on assignment can always be put forward."
+  },
+  "loadError": {
+    "title": "The talent pool could not be loaded.",
+    "retry": "Retry"
+  },
+  "card": {
+    "profile": "Profile"
+  },
+  "recruitment": {
+    "emptyStage": "No profile at this stage.",
+    "title": "Recruitment",
+    "subtitle": "Qualifying the person, independently of their presentations to clients.",
+    "bar": {
+      "label": "Talents",
+      "pool": "Talent pool",
+      "recruitment": "Recruitment"
+    },
+    "stage": {
+      "to_qualify": "To qualify",
+      "call_planned": "Call planned",
+      "qualified": "Qualified",
+      "on_hold": "On hold",
+      "discarded": "Set aside"
+    },
+    "relation": {
+      "salarie": "Employee",
+      "freelance": "Freelance",
+      "portage": "Umbrella",
+      "sous_traitance": "Subcontractor"
+    },
+    "unnamed": "Unnamed profile",
+    "retention": "A person on hold stays in the talent pool as long as their consent is valid; erasure is requested from their record.",
+    "plannedOn": "Call on {{date}}",
+    "change": "Change stage",
+    "changeFor": "Change stage for {{name}}",
+    "loadError": "Could not load recruitment. Try again in a moment.",
+    "saveError": "The stage could not be saved.",
+    "dialog": {
+      "title": "Qualify this person’s follow-up",
+      "independence": "This stage does not change their presentations on needs or their mission assignments.",
+      "stage": "Recruitment stage",
+      "plannedAt": "Call date",
+      "reason": "Feedback or reason",
+      "cancel": "Cancel",
+      "save": "Save"
+    },
+    "add": "Add a profile"
+  },
+  "vivier": {
+    "score": {
+      "pill": "{{score}} /100",
+      "axesOf_one": "{{count}} axis of 4",
+      "axesOf_other": "{{count}} axes of 4",
+      "notEvaluable": "Score not evaluable",
+      "openAria": "See the score axes for {{name}}",
+      "dialogTitle": "Score · {{score}} / 100",
+      "axes": {
+        "file": "Complete profile",
+        "skills": "Proven skills",
+        "availability": "Confirmed availability",
+        "feedback": "Mission feedback"
+      },
+      "footnote": "An axis that cannot be evaluated is left out of the calculation: it is never counted as zero. The score ranks the profile, not the person.",
+      "fileDetail": "Complete profile: the five checks"
+    },
+    "availability": {
+      "declaredOn": "Available on {{date}}",
+      "available": "Available",
+      "upcoming": "Start planned",
+      "in_mission": "On mission",
+      "to_reconfirm": "To reconfirm",
+      "unknown": "Not provided",
+      "declaredWins": "Declared on {{date}} — overrides the planning",
+      "declaredAt": "Declared on {{date}}",
+      "declaredUndated": "Declared, confirmation not dated",
+      "planningEnds": "Planning: ends {{date}}",
+      "planningOpen": "Planning: on mission, no planned end",
+      "endsOn": "Ends {{date}}",
+      "noEnd": "No planned end",
+      "confirmedOn": "Confirmed on {{date}}",
+      "announced": "Announced date {{date}}",
+      "noAnnouncedDate": "No announced date",
+      "lastConfirmation": "confirmation {{date}}",
+      "noConfirmation": "no confirmation",
+      "unknownLine": "Nothing declared, nothing assumed"
+    },
+    "follow": {
+      "count_one": "{{count}} submission",
+      "count_other": "{{count}} submissions",
+      "none": "No submission"
+    },
+    "row": {
+      "match": "Match",
+      "preview": "Preview the profile",
+      "compare": "Compare with other profiles",
+      "archive": "Archive the profile"
+    },
+    "header": {
+      "title": "Talent pool",
+      "subtitle": "Find the right expertise, check availability, prepare the next placement."
+    },
+    "stats": {
+      "filter": "Filter",
+      "active": "Filter on",
+      "filterAria": "Filter the pool: {{label}}"
+    },
+    "view": {
+      "saveTitle": "Save the current view",
+      "saveDescription": "The filters you set become a view you can find again under “My views”."
+    },
+    "myViews": {
+      "label": "My views",
+      "save": "Save the current view…"
+    },
+    "favoriteError": "Could not update this favorite. Try again.",
+    "retry": "Retry",
+    "add": {
+      "title": "Add a profile",
+      "subtitle": "Three ways in, one record to find again.",
+      "doorsAria": "How to add this profile",
+      "doors": {
+        "essential": {
+          "title": "Enter the essentials",
+          "hint": "Name, job title and skills. The rest can come later."
+        },
+        "laura": {
+          "title": "Prepare with {{copilot}}",
+          "hint": "Start from a text and review the proposal before saving it."
+        },
+        "import": {
+          "title": "Import or bring over a tool",
+          "hint": "Drop CVs (PDF, Word, folder, ZIP, email attachment), preview a CSV or bring over a tool."
+        }
+      },
+      "name": "Profile name or alias",
+      "jobTitle": "Job title",
+      "skills": "Skills · separated by commas",
+      "city": "Location",
+      "relation": "Relationship with the firm",
+      "relations": {
+        "employee": "Employee",
+        "freelance": "Freelance",
+        "candidate": "Candidate"
+      },
+      "duplicate": {
+        "title": "This profile looks like {{name}}",
+        "nothingMerged": "Nothing is merged without you.",
+        "compare": "Compare the two profiles",
+        "notSame": "It is not the same person"
+      },
+      "cancel": "Cancel",
+      "save": "Save",
+      "saveAndMatch": "Save and match",
+      "laura": {
+        "intro": "Paste a text (message, interview notes, profile). {{copilot}} proposes a profile; you review it before anything is saved.",
+        "create": "Create the reviewed profile"
+      },
+      "import": {
+        "more": "A CSV, an archive, an email attachment or availability sheets:"
+      }
+    }
+  }
+}

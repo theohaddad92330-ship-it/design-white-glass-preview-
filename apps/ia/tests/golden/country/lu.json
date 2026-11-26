@@ -1,0 +1,13 @@
+{
+  "registry": "RCS / LBR",
+  "identifierLabel": "numéro RCS",
+  "status": "live",
+  "note": "Real, verified Luxembourg IT/ESN companies with their RCS number (numéro RCS, format B<digits>), for country-pack identifier non-regression. The live LBR/RCS registry (lbr.lu) has no free structured API (automated access is restricted/paid) and its search front-end is a JS SPA, so these RCS numbers are the canonical EXPECTED identifiers — the LU pack is 'beta'/degraded (no online resolution wired). Numbers verified 2026-07-16 via northdata.com company pages, which cite the RCS register (RCS B<number>). The parser/helpers are exercised on these canonical forms; format-only, no live lookup.",
+  "accounts": [
+    {"name": "Proximus Luxembourg SA", "rcs": "B19669", "seat": "Bertrange", "legalForm": "SA", "note": "ex-Telindus Luxembourg (renamed 2019) — flagship LU ICT/ESN + telecom"},
+    {"name": "POST Telecom SA", "rcs": "B43290", "seat": "Luxembourg", "legalForm": "SA", "note": "telecom/IT arm of POST Luxembourg"},
+    {"name": "Computer Task Group Luxembourg PSF SA", "rcs": "B56109", "seat": "Bertrange", "legalForm": "SA", "note": "CTG Luxembourg — IT services (NACE 62.03), statut PSF"},
+    {"name": "EBRC SA", "rcs": "B72585", "seat": "Leudelange", "legalForm": "SA", "note": "European Business Reliance Centre — datacenter/managed IT (NACE 62.03); RCS radiée fin 2024, conservée comme identifiant historique vérifié"},
+    {"name": "Telecom Luxembourg Private Operator SA", "rcs": "B65305", "seat": "Luxembourg", "legalForm": "SA", "note": "opérateur télécom/IT privé"}
+  ]
+}

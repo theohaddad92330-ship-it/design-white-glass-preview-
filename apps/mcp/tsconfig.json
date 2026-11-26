@@ -1,0 +1,18 @@
+{
+  "extends": "../../packages/tooling/typescript/base.json",
+  "compilerOptions": {
+    // Plain Node ESM service (not a bundled lib): override the base's
+    // bundler resolution so `node dist/main.js` resolves imports at runtime.
+    "module": "NodeNext",
+    "moduleResolution": "NodeNext",
+    "outDir": "./dist",
+    "rootDir": "./src",
+    "lib": ["ES2023"],
+    "types": ["node"],
+    "declaration": false,
+    "declarationMap": false,
+    "sourceMap": true
+  },
+  "include": ["src"],
+  "exclude": ["node_modules", "dist"]
+}

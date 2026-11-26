@@ -1,0 +1,16 @@
+/*
+ * Geist — primary brand typeface for BellumAI. Vercel's open-source sans
+ * (SIL OFL 1.1, free for commercial use). Loaded from Google Fonts CDN
+ * with `display=swap` so text stays readable while the font streams.
+ *
+ * Geist Mono is paired for code/numeric values where monospace is wanted.
+ *
+ * Coque Théo (23/10/2026) — l'APPLICATION (apps/web) ne charge plus ce fichier : elle
+ * suit la pile système des maquettes (`--bellum-font-sans`, tokens.css). Il reste pour
+ * le site vitrine (apps/website), qui l'importe.
+ *
+ * If we ever need to self-host (perf, no third-party calls), grab the
+ * woff2 from https://github.com/vercel/geist-font (same OFL license) and
+ * swap the @import for @font-face declarations.
+ */
+@import url('https://fonts.googleapis.com/css2?family=Geist:wght@300;400;500;600;700;800;900&family=Geist+Mono:wght@400;500;600&display=swap');

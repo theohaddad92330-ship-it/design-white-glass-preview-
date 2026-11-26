@@ -1,0 +1,21 @@
+lot: apollo-pro-0211
+issues: []
+
+inserts:
+  - file: apps/api/src/modules/demo/demo-coverage.ts
+    text: |
+
+      /**
+       * Apollo Professional (02/11) — CROISSANCE D'EFFECTIF sur la firmographie du compte
+       * (`accounts.apollo_enrichment.headcountGrowth`, ligne « Évolution de l’effectif »).
+       *
+       * VIDE À DESSEIN en démonstration : les comptes de la salle sont des groupes RÉELS (voir
+       * `DEMO_LAURA_DOSSIER_READS_COVERAGE`), et un pourcentage d'évolution d'effectif semé à la main serait une
+       * donnée inventée sur une vraie société. Absent ⇒ aucune ligne, jamais « 0 » ; le rendu est mesuré par
+       * `ApolloFirmographicsCard.test.tsx`.
+       */
+      export const DEMO_HEADCOUNT_GROWTH_COVERAGE: Readonly<{ state: 'vide'; reason: string }> = {
+        state: 'vide',
+        reason:
+          "Apollo Professional (02/11) — `accounts.apollo_enrichment.headcountGrowth` reste vide à dessein en démonstration : les comptes de la salle sont des groupes réels, un pourcentage d'effectif semé à la main serait une donnée inventée. Absent ⇒ aucune ligne (jamais « 0 »).",
+      }

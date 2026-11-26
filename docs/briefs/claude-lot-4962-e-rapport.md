@@ -1,0 +1,10 @@
+# Rapport — lot 4962-e (#5024, #4608)
+
+- Branche `claude/lot-4962-e` — SHA `307d85e3` (correctif), `debeab12` (formatage prettier du brief, requis par le hook pre-push).
+- **#5024 livré `307d85e3`** — `apps/web/src/features/auth/hooks/useCloseDemoOnLogin.ts:47` : la démo se ferme si le marqueur d'onglet OU le serveur (`is_demo`) le dit ; `:49` `checking` retient rebond + formulaire tant que le serveur n'a pas répondu ; `:58` détectée par le seul serveur, fermeture `scope: 'tab'` (la session réelle d'à côté survit, #4608) — le cas marqueur garde la sortie #3788 inchangée.
+- Source unique : `apps/web/src/features/demo/useIsDemo.ts:7` `useDemoSpaceStatus` (`demo`/`real`/`unknown`, échec = `real`) ; `useIsDemo` en dérive. Appelant : `apps/web/src/features/auth/view/LoginPage.tsx:19-20` (écran `/login`), état « Vérification de ta session » (i18n fr/en `login.checkingSessionTitle`).
+- **#4608 déjà là** — `apps/web/src/features/auth/hooks/useExitDemo.ts:39-50` (`takePreDemoIdentity` + `logout({ scope: 'tab' })`), `pre-demo-identity.ts` ; cause distincte (sortie de démo), non recodée. Reste la recette écran demandée dans l'issue.
+- Tests (rouge → vert) : `useCloseDemoOnLogin.test.tsx` (4 nouveaux : serveur dit démo sans marqueur ⇒ fermé en scope tab ; inconnu ⇒ retenu ; réel ⇒ NON ; non connecté ⇒ démo accessible) + `LoginPage.closeDemo.test.tsx` (1 nouveau) : 5 rouges puis 16/16 verts avec `demo/useIsDemo.test.ts` (3). `LoginPage.test.tsx` 3/3, `i18n/parity` + `keys-resolve` 279/279, `tsc -p apps/web --noEmit` 0 erreur, `lint:exports:types` vert.
+- Non fait : recette navigateur (démo ouverte dans un onglet, /login dans un autre) — hors moyens de la VM cloud.
+- Hors périmètre touché : aucun (apps/web/src + docs/briefs). Démo : aucune donnée neuve affichée, pas de semis.
+- Question : sur une page autre que `/login` (ex. `/` ouvert dans un onglet neuf), le serveur peut encore servir la session démo d'un autre onglet — ce lot ne couvre que la connexion ; faut-il un lot pour ce cas ?

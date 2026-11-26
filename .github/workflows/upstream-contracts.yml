@@ -1,0 +1,139 @@
+name: Upstream contracts
+
+# Detects a provider breaking its API contract within 24h, instead of finding out
+# when a user's analysis dies. See apps/ia/tests/contracts/harness.py.
+#
+# COST: deliberately minimal — ONE job, once a day, ~3-4 min (dep install is
+# pip-cached; the tests themselves take seconds). ~110 min/month. It runs on a
+# schedule ONLY — never on pull_request — so it costs nothing per-PR and is
+# intentionally NOT part of the `CI Status` gate in ci.yml: a provider outage
+# must never block a merge.
+#
+# ─────────────────────────────────────────────────────────────────────────────
+# WHAT THIS JOB'S COLOUR MEANS — D25, 28/08/2026
+# ─────────────────────────────────────────────────────────────────────────────
+# Red means SOMETHING IS BROKEN: a provider changed its API, or a key we hold was
+# refused. Nothing else turns it red.
+#
+# In particular, a contract with NO credential configured no longer fails. This
+# repo carries one provider secret, so twelve of the eighteen contracts went red
+# every single day since this workflow was written — and a permanent daily red
+# signals nothing at all. It is now a neutral `NOT RUN`, and the price of that
+# neutrality is paid in the job summary: the FIRST line counts how many contracts
+# were verified, how many nobody is watching, and how many are broken. A green
+# run here says "nothing is broken", never "everything is verified" — the summary
+# says which.
+#
+# Read the argument in full in apps/ia/tests/contracts/harness.py; the counting
+# is unit-tested in apps/ia/tests/test_upstream_contract_verdicts.py.
+on:
+  schedule:
+    # 06:12 UTC — off the hour, so we don't pile onto the cron rush and get
+    # queued behind everyone else's midnight jobs.
+    - cron: '12 6 * * *'
+  workflow_dispatch: # manual re-run after rotating a key
+
+concurrency:
+  group: upstream-contracts
+  cancel-in-progress: true
+
+permissions:
+  contents: read
+
+jobs:
+  contracts:
+    name: Live provider contracts
+    # ⚠️ `vars.CI_RUNS_ON` et pas `ubuntu-latest` en dur. Les runners hébergés par
+    # GitHub sont coupés sur ce dépôt (enveloppe de minutes dépassée) : un job qui
+    # les demande échoue AVANT sa première étape, sans log et sans message. C'est
+    # ce qui est arrivé ici, silencieusement, à partir du 24/08/2026 — le jour où
+    # `ci.yml` est passé aux runners auto-hébergés sans que ce fichier suive.
+    runs-on: ${{ vars.CI_RUNS_ON || 'ubuntu-latest' }}
+    timeout-minutes: 12
+    defaults:
+      run:
+        working-directory: apps/ia
+    env:
+      ANTHROPIC_API_KEY: ${{ secrets.ANTHROPIC_API_KEY }}
+      PAPPERS_API_KEY: ${{ secrets.PAPPERS_API_KEY }}
+      BRAVE_API_KEY: ${{ secrets.BRAVE_API_KEY }}
+      FIRECRAWL_API_KEY: ${{ secrets.FIRECRAWL_API_KEY }}
+      APOLLO_API_KEY: ${{ secrets.APOLLO_API_KEY }}
+      INSEE_API_KEY: ${{ secrets.INSEE_API_KEY }}
+      FRANCE_TRAVAIL_CLIENT_ID: ${{ secrets.FRANCE_TRAVAIL_CLIENT_ID }}
+      FRANCE_TRAVAIL_CLIENT_SECRET: ${{ secrets.FRANCE_TRAVAIL_CLIENT_SECRET }}
+      # The built-in token lifts GitHub's anonymous 60 req/h to 1000 req/h, so
+      # the GitHub contract stops xfailing on the shared-runner IP quota.
+      GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+    steps:
+      - uses: actions/checkout@v7
+
+      # `setup-python` appelle `lsb_release`, absent de l'image du runner
+      # auto-hébergé — sans ce relais, ce job échoue à l'étape suivante et
+      # tout le contrôle des contrats est ignoré.
+      - uses: ./.github/actions/lsb-release-shim
+      - uses: actions/setup-python@v7
+        with:
+          python-version: '3.13'
+          cache: pip
+          cache-dependency-path: apps/ia/requirements.txt
+
+      - name: Install dependencies
+        run: pip install -r requirements.txt
+
+      - name: Live upstream contract tests
+        id: contracts
+        run: |
+          set -o pipefail
+          # `-rs` prints the reason of every skip in the short summary — that is
+          # where a `NOT RUN` contract now says WHICH key is missing. Without it
+          # a neutral contract would be silent in the log, which is the one thing
+          # D25 must not allow.
+          pytest -m upstream_contract -p no:randomly tests/contracts \
+            -q --no-header -rs 2>&1 | tee contract-run.log
+
+      # The summary is what someone actually reads. It answers two questions in
+      # this order: how much of the bench was verified (the counts — the only
+      # thing that keeps a green run honest now that a missing key is neutral),
+      # then, if something is red, whether "Anthropic changed its API" or "the
+      # Pappers key ran dry" — without reading a stack trace.
+      - name: Publish verdict table
+        if: always()
+        run: |
+          # Fixed tokens emitted by tests/contracts/conftest.py. Grepping a token
+          # beats parsing a table whose columns move when a label is renamed.
+          counts="$(sed -n 's/.*CONTRACT COUNTS: //p' contract-run.log | head -1)"
+          notice="$(sed -n 's/.*CONTRACT NOTICE: //p' contract-run.log | head -1)"
+          {
+            echo '## Upstream contract verdicts'
+            echo ''
+            echo "**${counts:-no verdict recorded — the suite did not reach a single provider}**"
+            if [ -n "$notice" ]; then
+              echo ''
+              echo "> :warning: $notice"
+            fi
+            echo ''
+            echo '```'
+            # ⚠️ The end marker, not `^===*$`. The block is FRAMED by `===` rules,
+            # so the old range closed on the line right below the title and this
+            # summary showed two lines and not one verdict.
+            sed -n '/UPSTREAM CONTRACT VERDICTS/,/END OF CONTRACT VERDICTS/p' contract-run.log || true
+            echo '```'
+            echo ''
+            echo '<details><summary>Detail — what is red, and what merely was not run</summary>'
+            echo ''
+            echo '```'
+            grep -A9 -E '\[(CONTRACT BROKEN|CREDENTIALS REJECTED|NOT RUN)' contract-run.log || echo 'none'
+            echo '```'
+            echo ''
+            echo '</details>'
+          } >> "$GITHUB_STEP_SUMMARY"
+
+      - name: Upload run log
+        if: always()
+        uses: actions/upload-artifact@v7
+        with:
+          name: upstream-contract-log
+          path: apps/ia/contract-run.log
+          retention-days: 14
+          if-no-files-found: ignore

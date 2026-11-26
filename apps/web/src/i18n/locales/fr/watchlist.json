@@ -1,0 +1,372 @@
+{
+  "page": {
+    "title": "Veille",
+    "heading": "Les signaux à surveiller aujourd’hui, {{name}}",
+    "headingNoName": "Les signaux à surveiller aujourd’hui",
+    "manageAlerts": "Paramétrer mes alertes",
+    "askLaura": "Quels signaux méritent une action aujourd’hui ?",
+    "askLauraLabel": "Demander à {{copilot}}"
+  },
+  "filters": {
+    "groupAria": "Facettes de la veille",
+    "todo": "À traiter",
+    "priority": "Mes comptes prioritaires",
+    "rules": "Selon mes règles",
+    "typesAria": "Type de signal",
+    "types": {
+      "hiring": "Recrutement",
+      "mna": "Rachat / fusion",
+      "exec": "Nouveau dirigeant",
+      "funding": "Croissance / financement",
+      "tender": "Projet / appel d’offres",
+      "other": "Autres"
+    },
+    "clear": "Tout afficher",
+    "more": "Plus de filtres"
+  },
+  "toolbar": {
+    "searchPlaceholder": "Rechercher un compte…"
+  },
+  "table": {
+    "headers": {
+      "account": "Compte",
+      "whatMoves": "Ce qui bouge",
+      "whyItMatters": "Pourquoi ça compte",
+      "whoConcerned": "Qui ça concerne",
+      "nextAction": "Prochaine action",
+      "date": "Date"
+    },
+    "viewAccount": "Voir le compte",
+    "moreSignals_one": "+{{count}} autre",
+    "moreSignals_other": "+{{count}} autres",
+    "signalDetected": "Signal détecté",
+    "requesterToIdentify": "Demandeur à identifier",
+    "archived": "Archive",
+    "othersShow": "Voir les autres signaux",
+    "othersHide": "Masquer les autres signaux",
+    "openAccount": "Ouvrir la fiche de {{company}}",
+    "recurrence": {
+      "hiring": "{{count}}e signal de recrutement en {{days}} jours",
+      "need": "{{count}}e besoin exprimé en {{days}} jours",
+      "signal": "{{count}}e signal en {{days}} jours"
+    },
+    "preparedMessage": "Message préparé",
+    "preparedMessageQuestionPerson": "Rédige le message pour {{name}} chez {{company}}, à partir de ce fait : « {{fact}} ». Tutoie-moi, vouvoie le client, et garde-le éditable.",
+    "preparedMessageQuestion": "Rédige le message à envoyer chez {{company}}, à partir de ce fait : « {{fact}} », et dis-moi à qui l’adresser.",
+    "decisionMakerBadge": "Décideur",
+    "followed": "Compte suivi",
+    "followedEye": "{{company}} est suivi — ne plus le suivre",
+    "unfollowTitle": "Ne plus suivre {{company}} ?",
+    "unfollowBody": "Le compte reste dans ton portefeuille ; une place se libère dans tes suivis.",
+    "unfollowCancel": "Annuler",
+    "unfollowConfirm": "Ne plus suivre"
+  },
+  "status": {
+    "new": "Nouveau",
+    "toQualify": "À qualifier"
+  },
+  "score": {
+    "unknownReason": "aucune note d’analyse"
+  },
+  "detail": {
+    "signalHint": "Ce signal peut modifier la priorité du compte. Vérifie son impact, le décideur concerné et la prochaine action commerciale.",
+    "currentScore": "Score actuel",
+    "source": "Source",
+    "unknownSource": "Source inconnue",
+    "impact": "Ampleur",
+    "unknownImpact": "Non évaluée",
+    "attachment": "Rattachement : {{parts}}",
+    "attachmentType": {
+      "hiring": "Recrutement",
+      "project": "Projet"
+    },
+    "attachmentAria": "Rattachement de l’offre",
+    "attachmentUnclassified": "Non classé — l’intitulé ne nomme ni compétence ni métier",
+    "requester": "Demandeur probable : {{who}}",
+    "requesterTeam": "l’équipe {{team}}",
+    "requesterEvidence": "D’après le texte de l’offre",
+    "currentlyVerified": "Vérifié",
+    "superseded": "Remplacé",
+    "nextStep": "Prochaine étape",
+    "nextStepTitle": "Décide si ce signal mérite une action",
+    "nextStepDescription": "Identifie le bon contact et transforme le signal en angle d’approche.",
+    "openAccount": "Ouvrir le dossier",
+    "createReminder": "Me prévenir automatiquement",
+    "freshness_one": "Fraîcheur : {{count}} jour",
+    "freshness_other": "Fraîcheur : {{count}} jours",
+    "askLaura": "Que faire du signal « {{signal}} » chez {{company}} ?",
+    "askLauraLabel": "Demander quoi faire",
+    "dialogDescription": "Le détail du signal et les gestes possibles. Les flèches passent d’un compte à l’autre dans la liste affichée.",
+    "previousAccount": "Compte précédent",
+    "nextAccount": "Compte suivant"
+  },
+  "emptyState": {
+    "errorTitle": "Impossible de charger la veille",
+    "errorDescription": "Réessaie dans quelques instants.",
+    "filteredTitle": "Aucun compte ne correspond aux filtres",
+    "filteredDescription": "Élargis les filtres ou modifie ta recherche pour retrouver tes comptes.",
+    "clearFilters": "Effacer les filtres et la recherche",
+    "noAccountsTitle": "Aucun signal à suivre pour l’instant",
+    "noAccountsDescription": "Les signaux naissent des comptes que tu analyses. Ajoute un premier compte et la veille se remplira toute seule.",
+    "discoverAction": "Découvrir des comptes",
+    "noSignalTitle": "Aucun signal correspondant",
+    "noSignalDescription": "Modifie la recherche ou le filtre pour retrouver un compte suivi."
+  },
+  "model": {
+    "sectorFallback": "Secteur non renseigné",
+    "sourceFallback": "Analyse {{brand}}",
+    "typeFallback": "Signal"
+  },
+  "importance": {
+    "high": "Importance forte",
+    "highWhy": "Signal récent et sourcé : il peut être cité tel quel.",
+    "medium": "Importance moyenne",
+    "mediumWhy": "Signal récent mais sans source citable : à recouper avant de l'utiliser.",
+    "low": "Importance faible",
+    "lowWhy": "Signal archivé (plus de 24 mois) : ce n'est plus un déclencheur."
+  },
+  "action": {
+    "create": "En faire une action",
+    "triggeredTitle": "A déclenché",
+    "toastCreated": "Ajoutée au plan : {{label}}",
+    "toastViewInPlan": "Voir dans le plan",
+    "toastFailed": "Impossible de créer l'action"
+  },
+  "history": {
+    "title": "Historique du signal",
+    "firstDetected": "Détecté par {{brand}} le {{date}}.",
+    "trackedSince": "Suivi depuis le {{date}} (déjà présent à cette date).",
+    "changed_one": "Mis à jour {{count}} fois depuis (date, source ou formulation).",
+    "changed_other": "Mis à jour {{count}} fois depuis (date, source ou formulation).",
+    "lastSeen": "Toujours présent dans l'analyse du {{date}}.",
+    "resolvedOn": "N'apparaît plus depuis le {{date}} : à requalifier.",
+    "resolved": "N'apparaît plus dans la dernière analyse : à requalifier.",
+    "verified": "Vérifié par toi le {{date}}.",
+    "verifyAction": "Marquer vérifié",
+    "verifyToastSuccess": "Signal marqué vérifié",
+    "verifyToastFailed": "Impossible de vérifier ce signal"
+  },
+  "why": {
+    "title": "Pourquoi {{brand}} te montre ça",
+    "priorityAccount": "Compte prioritaire dans ton portefeuille (score {{score}}/10).",
+    "scoredAccount": "Compte évalué {{score}}/10 sur ton profil.",
+    "fresh_one": "Signal détecté il y a {{count}} jour — la fenêtre d'approche est ouverte.",
+    "fresh_other": "Signal détecté il y a {{count}} jours — la fenêtre d'approche est ouverte.",
+    "freshToday": "Signal détecté aujourd'hui — la fenêtre d'approche est ouverte.",
+    "dated_one": "Signal daté d'il y a {{count}} jour — vérifie qu'il est toujours d'actualité.",
+    "dated_other": "Signal daté d'il y a {{count}} jours — vérifie qu'il est toujours d'actualité.",
+    "archived": "Signal ancien (plus de 24 mois) : à requalifier avant toute approche.",
+    "typeHiring": "Un recrutement engagé signale un budget déjà voté.",
+    "typeFunding": "Une levée de fonds ouvre des budgets nouveaux à court terme.",
+    "typeExec": "Une nomination rebat les priorités : les 100 premiers jours décident.",
+    "typeTender": "Un marché public annonce un besoin formalisé et daté.",
+    "typeMna": "Une acquisition déclenche des chantiers de convergence SI."
+  },
+  "rules": {
+    "sectionLabel": "Règles de veille personnalisées",
+    "sectionDescription": "Ajoute ce que tu veux suivre. {{brand}} met en avant les signaux qui correspondent à tes règles.",
+    "kindSelectLabel": "Type de règle",
+    "valueInputLabel": "Valeur de la règle",
+    "addButton": "Ajouter",
+    "loading": "Chargement de tes règles…",
+    "empty": "Aucune règle pour l'instant. Ajoute un secteur, une technologie, un compte, un besoin ou une personne à surveiller.",
+    "errorLoad": "Impossible de charger tes règles. Réessaie dans quelques instants.",
+    "errorCreate": "Impossible d'ajouter cette règle. Réessaie.",
+    "remove": "Supprimer la règle {{value}}",
+    "kindLabels": {
+      "sector": "Secteur",
+      "techno": "Technologie",
+      "account": "Compte",
+      "need": "Besoin",
+      "person": "Personne"
+    },
+    "placeholders": {
+      "sector": "Ex. Banque, Assurance, Santé…",
+      "techno": "Ex. SAP, ServiceNow, Kubernetes…",
+      "account": "Ex. SNCF, Décathlon…",
+      "need": "Ex. Cybersécurité, Migration cloud…",
+      "person": "Ex. Directeur des Systèmes d'Information…"
+    },
+    "match": "Correspond à ta règle : {{value}}"
+  },
+  "need": {
+    "hiring": "Il recrute : un besoin de renfort est probable.",
+    "mna": "Rachat ou fusion : l’intégration de leurs systèmes d’information est à prévoir.",
+    "exec": "Nouveau dirigeant : une revue des prestataires est probable.",
+    "funding": "Levée ou croissance : une montée en charge est probable.",
+    "tender": "Contrat ou appel d’offres : un projet est lancé.",
+    "fallbackSignal": "Signal « {{type}} »",
+    "fallbackSignalBare": "Signal",
+    "fallback": "{{head}} : aucun besoin de prestation identifié pour ce type de signal : à qualifier avec toi.",
+    "fallbackBare": "Aucun signal typé : compte suivi, aucun besoin de prestation identifié à ce stade."
+  },
+  "nextAction": {
+    "call": "Appeler {{name}}",
+    "write": "Écrire à {{name}}",
+    "proposeProfile": "Proposer un profil à {{name}}",
+    "identify": "Identifier le décideur"
+  },
+  "rank": {
+    "priority": "Compte prioritaire",
+    "signalsThisMonth_one": "{{count}} signal ce mois-ci",
+    "signalsThisMonth_other": "{{count}} signaux ce mois-ci",
+    "rule": "correspond à ta règle « {{rule}} »",
+    "lastSignal": "Signal « {{type}} »",
+    "lastSignalBare": "Signal",
+    "detectedToday": "détecté aujourd’hui",
+    "detected_one": "détecté il y a {{count}} jour",
+    "detected_other": "détecté il y a {{count}} jours"
+  },
+  "discard": {
+    "heading": "Écartés ({{count}})",
+    "internship": "Offre de stage ou d’alternance",
+    "general": "Actualité générale, sans déclencheur commercial",
+    "noReason": "Aucune raison exploitable pour l’instant"
+  },
+  "list": {
+    "showAll": "Voir tout ({{count}})"
+  },
+  "watches": {
+    "back": "Revenir à la bibliothèque",
+    "eyebrow": "Veilles par compte",
+    "title": "Les sujets que tu suis.",
+    "subtitle": "Choisis tes comptes et tes règles. Les nouveaux signaux rejoignent la bibliothèque.",
+    "tabsAria": "Ce que tu suis",
+    "tabs": {
+      "rules": "Règles transverses",
+      "follows": "Comptes suivis",
+      "alerts": "Alertes de recherche"
+    },
+    "rules": {
+      "intro": "Des règles transverses, valables sur tout ton marché et pas sur un compte : un secteur, une technologie, un mot-clé. Les signaux qu’elles trouvent rejoignent la bibliothèque, marqués « correspond à ta règle »."
+    },
+    "follows": {
+      "intro": "Les comptes suivis alimentent la bibliothèque. Ne plus suivre un compte ne supprime rien.",
+      "meter": "{{count}} / {{max}} comptes suivis",
+      "unfollowNamed": "Ne plus suivre {{name}}",
+      "followNamed": "Suivre {{name}}",
+      "follow": "Suivre",
+      "none": "Tu ne suis aucun compte pour l’instant.",
+      "suggestions": "Suggestions",
+      "suggestionHint": "Ton compte analysé le plus récent",
+      "capReached": "Tu suis déjà {{max}} comptes : retires-en un avant d’en suivre un autre.",
+      "loadError": "Impossible de lire tes comptes suivis."
+    },
+    "alerts": {
+      "intro": "Tes recherches enregistrées, rejouées à cadence. Un nouveau compte dans le résultat devient un signal « Alerte de recherche ».",
+      "none": "Aucune recherche enregistrée n’est rejouée à cadence.",
+      "active": "Active",
+      "allSearches": "Toutes tes recherches enregistrées"
+    },
+    "footer": "Les données privées restent soumises aux droits et aux connecteurs réellement branchés.",
+    "notificationPrefs": "Préférences de notification",
+    "rulesMovedHere": "Les règles de veille se règlent dans Mes veilles.",
+    "openWatches": "Ouvrir Mes veilles",
+    "configure": "Configurer une veille"
+  },
+  "library": {
+    "eyebrow": "Veille commerciale",
+    "title": "Signaux",
+    "subtitle": "Ce qui bouge sur tes comptes, au même endroit.",
+    "myWatches": "Mes veilles",
+    "addSignal": "Ajouter un signal",
+    "tabsAria": "Bibliothèque de signaux",
+    "tabs": {
+      "all": "Tous les signaux",
+      "saved": "Enregistrés",
+      "dismissed": "Écartés",
+      "trash": "Corbeille"
+    },
+    "searchPlaceholder": "Rechercher une actualité, un compte…",
+    "accountFilter": "Filtrer par compte",
+    "allAccounts": "Tous les comptes",
+    "accountsCount": "{{count}} comptes",
+    "viewAria": "Affichage",
+    "view": {
+      "list": "Liste",
+      "byAccount": "Par compte"
+    },
+    "sortAria": "Trier",
+    "sort": {
+      "trade": "Mon métier d’abord",
+      "recent": "Plus récents",
+      "oldest": "Plus anciens"
+    },
+    "filters": {
+      "button": "Filtres",
+      "title": "Filtres",
+      "description": "Plusieurs choix possibles dans chaque rubrique.",
+      "nature": "Nature du signal",
+      "date": "Date du fait",
+      "lastDays_one": "{{count}} jour",
+      "lastDays_other": "{{count}} jours",
+      "reset": "Tout réinitialiser",
+      "apply": "Voir les signaux"
+    },
+    "selectShown_one": "Sélectionner le {{count}} affiché",
+    "selectShown_other": "Sélectionner les {{count}} affichés",
+    "selectOne": "Sélectionner {{title}}",
+    "selectedCount_one": "{{count}} sélectionné",
+    "selectedCount_other": "{{count}} sélectionnés",
+    "bulk": {
+      "save": "Enregistrer",
+      "trash": "Mettre à la corbeille",
+      "restore": "Restaurer"
+    },
+    "total_one": "{{count}} signal",
+    "total_other": "{{count}} signaux",
+    "moreFor": "Plus d’actions pour {{title}}",
+    "menu": {
+      "detail": "Lire le détail",
+      "account": "Ouvrir le compte",
+      "save": "Enregistrer",
+      "unsave": "Retirer des enregistrés",
+      "trash": "Mettre à la corbeille",
+      "restore": "Restaurer"
+    },
+    "hiringIsNotMission": "Recrutement salarié ≠ mission ouverte",
+    "probableNeed": "Besoin probable",
+    "makeAction": "En faire une action",
+    "showNext_one": "Afficher le suivant",
+    "showNext_other": "Afficher les {{count}} suivants",
+    "shownOf": "{{shown}} sur {{total}} · Résultats déjà disponibles, aucune recherche supplémentaire.",
+    "loading": "Chargement des signaux…",
+    "errorTitle": "Impossible de charger les signaux",
+    "errorBody": "Réessaie dans quelques instants.",
+    "empty": {
+      "all": "Aucun signal pour l’instant. Ils naissent des comptes que tu analyses.",
+      "saved": "Aucun signal enregistré.",
+      "dismissed": "Aucun signal écarté.",
+      "trash": "La corbeille est vide."
+    },
+    "emptyFilteredTitle": "Aucun signal ne correspond à ces filtres.",
+    "emptyFilteredBody": "Élargis la recherche ou réinitialise les filtres.",
+    "discoverAction": "Chercher des comptes dans Découvrir",
+    "detailDescription": "Le détail du signal et ce qu’il peut changer pour ce compte.",
+    "add": {
+      "title": "Ajouter un signal",
+      "description": "Un fait que tu as relevé toi-même, rattaché à un compte.",
+      "account": "Compte concerné",
+      "accountPlaceholder": "Choisis un compte",
+      "nature": "Nature du signal",
+      "fact": "L’information à retenir",
+      "factPlaceholder": "Le fait, tel que tu l’as lu ou entendu.",
+      "date": "Date du fait",
+      "datePlaceholder": "Ex. publié le 18/10",
+      "noAutomation": "Aucune tâche, opportunité ou prise de contact n’est créée automatiquement.",
+      "cancel": "Annuler",
+      "submit": "Ajouter le signal",
+      "done": "Signal ajouté à la bibliothèque.",
+      "error": "Impossible d’ajouter ce signal.",
+      "close": "Fermer"
+    },
+    "close": "Fermer",
+    "actionDialog": {
+      "title": "En faire une action",
+      "label": "Action",
+      "helper": "L’action rejoint le plan du compte et Ma journée. Une action terminée ne signifie pas qu’un message a été envoyé.",
+      "cancel": "Annuler",
+      "submit": "Ajouter au plan"
+    }
+  }
+}

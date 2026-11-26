@@ -1,0 +1,1947 @@
+name: CI
+
+on:
+  pull_request:
+    branches: [development, staging, main]
+    # `ready_for_review` : une PR en BROUILLON ne consomme aucun runner (voir
+    # `changes` ci-dessous) ; la passer « prête » lance la CI. C'est la file
+    # d'attente du coordinateur — une PR d'intégration en CI à la fois, les
+    # suivantes attendent en brouillon au lieu de se disputer les runners
+    # (mesuré 28/09/2026 : 4 PR × 15 jobs sur 10 runners, chacune 4× plus
+    # lente, et celles qui passaient derrière une fusion étaient relancées).
+    types: [opened, synchronize, reopened, ready_for_review]
+  # SUITE COMPLÈTE APRÈS FUSION (14/10/2026). Sur une PR, `Test (Web)` et `Test (API)` ne lancent que
+  # les tests liés au diff (`tools/ci/test-changed.mjs ci`) ; la suite entière tourne ici, sur main,
+  # chaque nuit et à la demande. Hors `pull_request`, SEULS `changes`, `Test (Web)` et `Test (API)`
+  # tournent (en mode complet) : tous les autres jobs sont déjà complets sur la PR.
+  push: { branches: [main] }
+  schedule: [{ cron: '30 1 * * *' }]
+  workflow_dispatch:
+
+# ──────────────────────────────────────────────
+# POURQUOI LE GROUPE N'EST PAS LE MÊME SUR UNE PR ET SUR `main`
+#
+# Mesuré le 25/10/2026, depuis que la suite complète après fusion existe (14/10) :
+# sur 87 exécutions déclenchées par `push` sur `main`, **39 ont été ANNULÉES**
+# (45 %), 45 vertes, 2 rouges. La cause n'est pas un incident : c'est ce bloc.
+# Avec `group: ci-<ref>`, toutes les fusions dans `main` partagent un seul groupe,
+# donc chaque fusion tue la suite complète de la précédente — et les fusions
+# arrivent en rafale (relevé : plusieurs « Merge pull request » à quelques minutes
+# d'écart).
+#
+# Le coût n'est pas d'abord la facture (une annulation relevée tournait déjà depuis
+# 32 min, 4 shards web à ~31 min chacun). C'est que **la garantie n'existe pas** :
+# sur une PR, `Test (Web)` et `Test (API)` ne lancent que les tests liés au diff
+# (voir `on:` ci-dessus) ; la suite ENTIÈRE ne tourne QUE sur `main`. Un commit de
+# `main` sur deux n'a donc jamais eu son verdict complet, alors que c'était
+# exactement le but du changement du 14/10.
+#
+# Correction : sur une PR, on garde l'annulation (un nouveau `push` remplace le
+# précédent, c'est le bon comportement et il économise des runners). Hors PR, le
+# groupe porte le SHA : chaque commit de `main` a son propre groupe, personne ne
+# tue personne, et un rejeu du MÊME SHA continue de dédupliquer.
+#
+# ⚠️ RÉVISÉ LE 03/11/2026 — le groupe par SHA a coûté plus cher que la garantie qu'il
+# achetait. Mesuré sur 374 runs au niveau job : les 97 runs `push` sur `main` des
+# dernières 44 h représentent **42 % de tous les job-min du parc** (23 runners
+# self-hosted, ~100 % occupés aux heures de bureau), un run `push` dure p50 173 min
+# dont 136 min d'ATTENTE en file, et ces runs font attendre p50 111 min les jobs
+# des PR (la file = 77 % du temps-job ; un run de PR : p50 55 min dont 28 d'attente).
+# Désormais : un SEUL run `push` complet en vol, un nouveau commit sur `main` annule
+# le précédent. Conséquence ASSUMÉE : en rafale de fusions, les commits intermédiaires
+# n'ont pas de verdict complet à eux ; le DERNIER commit de la rafale l'a, et la suite
+# nocturne (`schedule`) couvre le reste. `schedule` et `workflow_dispatch` gardent le
+# groupe par SHA, jamais annulé (une fusion ne tue pas la suite de la nuit).
+# ──────────────────────────────────────────────
+concurrency:
+  group: ci-${{ github.event_name == 'pull_request' && format('pr-{0}', github.event.pull_request.number) || github.event_name == 'push' && 'main-push' || github.sha }}
+  cancel-in-progress: ${{ github.event_name == 'pull_request' || github.event_name == 'push' }}
+
+# ──────────────────────────────────────────────
+# LE TAS DE NODE — pourquoi il est écrit ici, et pas laissé au défaut
+#
+# `@bellum/web#build` et `@bellum/web#check-types` sont morts le 15/09/2026 sur
+# « FATAL ERROR: Ineffective mark-compacts near heap limit — JavaScript heap out
+# of memory », code 134. Trois jobs rouges (Build, Check types, E2E) pour une
+# seule cause, et AUCUN changement de code : `vars.CI_RUNS_ON` venait de
+# repasser de `bellum-ci` à `ubuntu-latest`, dont le tas par défaut est plus
+# petit que celui des runners auto-hébergés.
+#
+# Node calcule son tas par défaut à partir de la mémoire de la machine : le même
+# dépôt passe ou casse selon OÙ il tourne. Un plafond écrit ici rend le résultat
+# indépendant du runner — c'est-à-dire reproductible.
+#
+# Le nombre est MESURÉ, pas deviné : le build du web culmine à ~2,96 Go de
+# mémoire résidente (`/usr/bin/time -l`, 16/09/2026), et passe avec un tas de
+# 4 Go. 6 Go laissent la marge sans inviter la dérive — et c'est un PLAFOND, pas
+# une réservation : Node n'alloue que ce qu'il consomme.
+# ──────────────────────────────────────────────
+env:
+  NODE_OPTIONS: --max-old-space-size=6144
+  # Cache de compilation de Node 22 HORS du workspace : le runner fait `git clean -ffdx`, qui emporterait
+  # un cache posé dans le dépôt. Survit entre jobs sur un runner persistant ; vide = désactivé
+  # (`vars.CI_NODE_COMPILE_CACHE=false`, docs/ci.md §3).
+  NODE_COMPILE_CACHE: ${{ vars.CI_NODE_COMPILE_CACHE != 'false' && '/tmp/node-compile-cache' || '' }}
+
+jobs:
+  # ──────────────────────────────────────────────
+  # Setup is duplicated across jobs on purpose so they run in parallel
+  # — pnpm + Node + dep install is cached, so the cost stays low.
+  # ──────────────────────────────────────────────
+  # ──────────────────────────────────────────────
+  # OÙ TOURNE LA CI — un seul interrupteur, hors du code
+  #
+  # `vars.CI_RUNS_ON` est une variable de DÉPÔT (Settings › Actions › Variables).
+  # Absente, tout tourne sur les runners GitHub, exactement comme avant. Posée à
+  # `bellum-ci`, tout bascule sur les runners auto-hébergés des VPS Hetzner
+  # (`infra/ci-runner-vps/`).
+  #
+  # Le repli doit rester à un réglage et non à une modification de fichier : le
+  # jour où les runners tombent, la CI ne doit pas attendre une PR pour
+  # redevenir verte. Vider la variable suffit, et l'exécution suivante repart
+  # chez GitHub.
+  # ──────────────────────────────────────────────
+
+  # ──────────────────────────────────────────────
+  # CE QUI A CHANGÉ — le job qui décide de tous les autres
+  #
+  # Chaque suite ne tourne que si la PR peut l'affecter. Une PR qui ne touche
+  # qu'à `apps/website` n'a aucune raison de rejouer 6 028 tests d'API.
+  #
+  # Trois règles portent ce job, et chacune évite un accident précis :
+  #
+  #  1. **Les FONDATIONS relancent tout.** `packages/contracts`, `packages/shared`,
+  #     le lockfile, `turbo.json` et ce fichier même traversent le dépôt entier :
+  #     un contrat modifié casse l'API, le web ET le service Python (qui embarque
+  #     sa copie des schémas). Les traiter comme un paquet parmi d'autres
+  #     laisserait passer exactement la dérive que le contrat existe pour empêcher.
+  #  2. **Le repli est d'en faire PLUS, jamais moins.** Si le calcul du diff
+  #     échoue — base introuvable, historique tronqué — on déclare tout modifié.
+  #     Une CI qui, en cas de doute, saute des suites est une CI qui passe au vert
+  #     sur du vide : c'est la famille de la « garde borgne » que ce dépôt a déjà
+  #     payée six fois.
+  #  3. **On compare au MERGE-BASE**, pas au dernier commit de la base. Sinon une
+  #     PR ouverte depuis trois jours « verrait » comme siens les changements que
+  #     d'autres ont mergés entre-temps, et relancerait tout sans raison.
+  # ──────────────────────────────────────────────
+  changes:
+    name: Ce qui a changé
+    # Brouillon = aucune CI : tous les jobs dépendent de `changes`, ils sont donc
+    # sautés, et `CI Status` le dit en rouge (voir son premier pas) plutôt que
+    # de laisser un vert sur une PR dont rien n'a été testé.
+    # Hors PR (push sur main, nuit, déclenchement manuel) : pas de brouillon, et tout est à `true`.
+    if: github.event_name != 'pull_request' || github.event.pull_request.draft == false
+    runs-on: ${{ vars.CI_RUNS_ON || 'ubuntu-latest' }}
+    timeout-minutes: 5
+    outputs:
+      api: ${{ steps.scope.outputs.api }}
+      web: ${{ steps.scope.outputs.web }}
+      contracts: ${{ steps.scope.outputs.contracts }}
+      ia: ${{ steps.scope.outputs.ia }}
+      site: ${{ steps.scope.outputs.site }}
+      backoffice: ${{ steps.scope.outputs.backoffice }}
+      node: ${{ steps.scope.outputs.node }}
+      demo: ${{ steps.scope.outputs.demo }}
+      figma_sync: ${{ steps.scope.outputs.figma_sync }}
+      promptfoo: ${{ steps.scope.outputs.promptfoo }}
+    steps:
+      # Runner auto-hébergé : un job tué laisse un _work dont l'index git ment (« not uptodate; will not
+      # remove ») et le checkout rend un dépôt VIDE (« No pnpm version »). On vide avant de cloner.
+      - name: Vider l'espace de travail du runner
+        run: find "$GITHUB_WORKSPACE" -mindepth 1 -maxdepth 1 -exec rm -rf {} + 2>/dev/null || true
+      - uses: actions/checkout@v7
+        with:
+          fetch-depth: 0
+      - name: Calculer la portée
+        id: scope
+        env:
+          BASE: ${{ github.base_ref }}
+          EVENT: ${{ github.event_name }}
+        run: |
+          set -uo pipefail
+
+          # Tout à VRAI est le repli. On ne le quitte que si le diff se calcule.
+          api=true; web=true; contracts=true; ia=true; site=true; backoffice=true; node=true; figma_sync=true; demo=true; promptfoo=true
+
+          if [ "$EVENT" != "pull_request" ]; then
+            echo "Événement ${EVENT} — pas de diff à comparer : tout est à vrai (suite complète)."
+          elif git fetch --no-tags --prune origin "+refs/heads/${BASE}:refs/remotes/origin/${BASE}" \
+            && MERGE_BASE="$(git merge-base HEAD "origin/${BASE}")" \
+            && FILES="$(git diff --name-only "$MERGE_BASE" HEAD)"; then
+
+            echo "Base : origin/${BASE} — merge-base ${MERGE_BASE}"
+            echo "$FILES" | sed 's/^/  /'
+
+            touched() { echo "$FILES" | grep -qE "$1"; }
+
+            # Le changelog (`packages/contracts/src/changelog/`) n'est PAS une fondation : chaque lot y ajoute
+            # une entrée (298 commits sur 1794 du 15 au 22/10/2026 ; ça rejouait les 2775 tests web). On le
+            # retire de FILES pour le test « fondations » ; ses lecteurs tournent quand même : la suite
+            # contracts (changelog.test.ts), et web/API en mode « concernés » — test-changed.mjs ajoute
+            # `changelogReaders` à la sélection (web/API importent contracts via dist/, invisible au graphe).
+            CHANGELOG_RE='^packages/contracts/src/changelog/'
+            FOUNDATION_FILES="$(echo "$FILES" | grep -vE "$CHANGELOG_RE" || true)"
+            changelog_touched=false
+            echo "$FILES" | grep -qE "$CHANGELOG_RE" && changelog_touched=true
+
+            # Les fondations : elles traversent tout le dépôt. Ici elles allument tous les JOBS ; la suite
+            # COMPLÈTE, elle, se décide dans `test-changed.mjs` (contracts / .github n'y sont plus des fondations :
+            # le graphe d'imports et l'empreinte de lecture sélectionnent). Lot A, 31/10/2026.
+            if echo "$FOUNDATION_FILES" | grep -qE '^(packages/(contracts|shared)/|pnpm-lock\.yaml|package\.json|turbo\.json|pnpm-workspace\.yaml|\.github/workflows/)'; then
+              echo "Fondations touchées — toutes les suites tournent."
+            else
+              api=false; web=false; contracts=false; ia=false; site=false; backoffice=false; figma_sync=false; demo=false; promptfoo=false
+              touched '^apps/(api|mcp)/'      && api=true
+              # #4035.1 — la garde « Démo (semis sur vraie base) » : le semis de la salle, les migrations et
+              # les entités (les contraintes SQL contre lesquelles il écrit). `packages/contracts/` est déjà dans
+              # les fondations plus haut : il rallume tout, démo comprise.
+              touched '^apps/api/src/(modules/demo/|migrations/|database/entities/)' && demo=true
+              # ⚠️ `apps/dashboard-manager/` est DANS la portée du web, en plus
+              # d'avoir sa propre suite. Raison mesurée le 07/09/2026 : la garde
+              # GA-19 (`apps/web/src/architecture/display-primitives.test.ts`)
+              # lit `apps/dashboard-manager/src` dans son corpus, mais vit dans
+              # la suite `web`. Une PR qui ne touchait QUE le back-office a donc
+              # fait remonter son cliquet sans que `Test (Web)` tourne : la PR
+              # est passée verte, et `main` est resté ROUGE pour la première
+              # personne qui toucherait au web, deux heures plus tard.
+              # La portée d'un job doit couvrir la portée des gardes qu'il porte.
+              touched '^(apps/web/|apps/dashboard-manager/|packages/ui/)' && web=true
+              touched '^apps/ia/'             && ia=true
+              # #4111.2 (16/10/2026) — promptfoo, rapatrié depuis l'ancien workflow : mêmes chemins que son `paths:`.
+              # Job `promptfoo` RETIRÉ le 31/10/2026 (décision Louis, coût) : la sortie reste, plus personne ne la lit.
+              # `.github/workflows/` est déjà dans les fondations (tout à vrai) : ce fichier ne s'y ajoute pas.
+              # Lot ci/1-evals : + tout dossier `prompts/` de l'IA, les goldens et le banc d'évals (`apps/ia/evals/`).
+              touched '^(apps/ia/(.*/)?prompts/|apps/ia/app/services/chat_tools\.py$|apps/ia/app/services/model_policy\.py$|apps/ia/app/models/outputs/org_declare\.py$|apps/ia/evals/)' && promptfoo=true
+              touched '^apps/website/'        && site=true
+              touched '^apps/dashboard-manager/' && backoffice=true
+              # `packages/figma-sync` extrait ses tokens de ces quatre fichiers
+              # (tokens.css, tailwind.config.ts, index.css) et de `packages/ui`
+              # — un changement de token doit relancer sa suite même si rien
+              # dans le paquet lui-même n'a bougé.
+              # 22/10/2026 (audit CI 15→22/10 : 17 coupes) : `route-coverage.test.ts` lit les routes de
+              # apps/web/src/routes, apps/website/src/app et apps/dashboard-manager/src/app
+              # (route-coverage.ts:31-33), mais la suite figma-sync ne se lançait pas quand
+              # une route bougeait : le rouge n'apparaissait qu'à la PR suivante. Elle ne
+              # tourne toujours QUE si la PR touche figma-sync, les tokens, ui ou ces routes.
+              touched '^(packages/figma-sync/|apps/web/src/styles/tokens\.css|apps/web/tailwind\.config\.ts|apps/web/src/index\.css|packages/ui/|apps/web/src/routes/|apps/website/src/app/|apps/dashboard-manager/src/app/)' && figma_sync=true
+              # Lint / format / types / build : dès qu'un fichier de code bouge.
+              node=false
+              touched '\.(ts|tsx|js|jsx|mjs|cjs|json)$' && node=true
+              # Changelog touché : contracts (changelog.test.ts) + web et API — qui, sur une PR, ne lancent
+              # que les tests sélectionnés par test-changed.mjs (dont les lecteurs du changelog).
+              if [ "$changelog_touched" = true ]; then contracts=true; web=true; api=true; fi
+            fi
+          else
+            echo "::warning::Diff illisible — toutes les suites tournent (repli délibéré)."
+          fi
+
+          for name in api web contracts ia site backoffice node figma_sync demo promptfoo; do
+            eval "value=\$$name"
+            echo "$name=$value" >> "$GITHUB_OUTPUT"
+            echo "$name=$value"
+          done
+
+  # ──────────────────────────────────────────────
+  # `Build` + `Check types` FONDUS EN UN JOB le 05/10/2026 (-1 slot par run).
+  # Diagnostic du jour : la CI est limitée par la FILE (run vert de 110 min =
+  # 384 min de file pour 157 min d'exécution), pas par les tests. Les deux jobs
+  # payaient chacun file + checkout + `pnpm install` pour 6-7 min de travail.
+  # Deux STEPS distincts, nommés pour qu'on voie lequel a rougi ; chacun porte
+  # `!cancelled()`, donc un build rouge n'empêche pas le verdict des types (et
+  # inversement) — même règle que `quick`. Timeout = somme des deux anciens (15 + 22).
+  # ⚠️ Le nom de check `Check types` n'existe plus : si la protection de branche
+  # l'exigeait, la retirer (la cible reste `CI Status`).
+  # ──────────────────────────────────────────────
+  build:
+    name: Build
+    # bilan 14/10 : une dérive doc↔code (30 s) coupait 11 jobs de 31-52 min
+    needs: [changes]
+    if: github.event_name == 'pull_request' && needs.changes.outputs.node == 'true'
+    # Runners RAPIDES (`CI_RUNS_ON_WEB`, comme Test (API/Web)) — audit CI 15→22/10/2026 :
+    # sur les 4 runners Intel lents, Build dure 23,9 min (n=22) contre 12,7 (n=79) ailleurs ;
+    # ~590 runner-min/sem d'excès et +11 min d'attente quand Build y tombe (22 % des runs).
+    # Risque : plus de contention sur le pool rapide. Variable vide = flotte entière.
+    runs-on: ${{ vars.CI_RUNS_ON_WEB && fromJSON(vars.CI_RUNS_ON_WEB) || vars.CI_RUNS_ON || 'ubuntu-latest' }}
+    timeout-minutes: 37
+    permissions:
+      contents: read
+    steps:
+      # Runner auto-hébergé : un job tué laisse un _work dont l'index git ment (« not uptodate; will not
+      # remove ») et le checkout rend un dépôt VIDE (« No pnpm version »). On vide avant de cloner.
+      - name: Vider l'espace de travail du runner
+        run: find "$GITHUB_WORKSPACE" -mindepth 1 -maxdepth 1 -exec rm -rf {} + 2>/dev/null || true
+      - uses: actions/checkout@v7
+      - uses: pnpm/action-setup@v6
+      - uses: actions/setup-node@v7
+        with:
+          node-version: 22
+      - uses: ./.github/actions/store-pnpm
+        id: store
+      - run: pnpm install --frozen-lockfile
+      # Cache distant turbo : préparé, no-op sans TURBO_TOKEN/TURBO_TEAM (docs/ci.md §3).
+      - uses: ./.github/actions/turbo-remote
+        with:
+          token: ${{ secrets.TURBO_TOKEN }}
+          api: ${{ vars.TURBO_API }}
+          team: ${{ vars.TURBO_TEAM }}
+      # Un seul `.turbo` pour les deux tâches ; les anciennes clés
+      # `turbo-check-types-` restent en repli pour le premier run après fusion.
+      - name: Cache Turbo
+        uses: actions/cache@v6
+        with:
+          path: .turbo
+          key: turbo-build-${{ runner.os }}-${{ github.sha }}
+          restore-keys: |
+            turbo-build-${{ runner.os }}-
+            turbo-check-types-${{ runner.os }}-
+      # ⚠️ L'INCRÉMENTAL DE tsc, EN PLUS DU CACHE TURBO — mesuré le 29/09/2026.
+      # Le cache turbo est tout ou rien : un seul fichier du web modifié, et
+      # `@bellum/web#check-types` repart de zéro (run 36531216182 : 8 min 24 de
+      # `pnpm check-types`, puis 3 min de `check-types:tests` de l'API). Les
+      # paquets lourds écrivent maintenant un `.tsbuildinfo`
+      # (`--incremental --tsBuildInfoFile node_modules/.cache/tsc/…`), gardé
+      # ici d'un run à l'autre. Mesure locale sur apps/web : 43 s à froid,
+      # 23 s avec un fichier modifié, 6 s sans changement. Ce n'est pas un
+      # assouplissement : tsc repère les fichiers par le HASH de leur contenu,
+      # et un changement de signature exportée re-vérifie ses consommateurs
+      # (vérifié : erreur injectée chez trois consommateurs, vue à chaud).
+      # Restauré APRÈS `pnpm install`, qui pourrait recréer `node_modules`.
+      - name: Cache de l'incrémental tsc
+        uses: actions/cache@v6
+        with:
+          path: |
+            apps/web/node_modules/.cache/tsc
+            apps/website/node_modules/.cache/tsc
+            apps/dashboard-manager/node_modules/.cache/tsc
+            apps/api/node_modules/.cache/tsc
+            packages/ui/node_modules/.cache/tsc
+          key: tsc-incremental-${{ runner.os }}-${{ github.sha }}
+          restore-keys: tsc-incremental-${{ runner.os }}-
+      # Diagnostic B2 : hash turbo de `@bellum/contracts#build` pour ce SHA, à comparer avec `warm-cache`.
+      - name: Hash turbo (diagnostic)
+        run: node tools/ci/turbo-hash.mjs || true
+      # ⚠️ UNE SEULE VÉRIFICATION DE TYPES PAR PAQUET — audit CI 15→22/10/2026.
+      # Le build refaisait les types que « Check types » (ci-dessous) refait : web
+      # (`vite build && tsc --noEmit`), website et dashboard (`next build` : types +
+      # ESLint, que `pnpm lint` de `quick` couvre), api (`tsc -p tsconfig.build.json`
+      # en émission, même projet que son check-types). ~2-3 min par Build × ~250
+      # Build/sem = 500-750 runner-min. `CI_TYPES_VERIFIES` coupe ces doublons ICI
+      # seulement ; build local et de prod les gardent. L'émission JS de l'api
+      # (dist/) n'est lue par aucun job CI (grep ci.yml).
+      - name: Build
+        if: ${{ !cancelled() }}
+        env:
+          CI_TYPES_VERIFIES: '1'
+        run: pnpm build
+      - name: Check types
+        if: ${{ !cancelled() }}
+        run: pnpm check-types
+
+      # ⚠️ `apps/api/tsconfig.build.json` exclut `**/*.spec.ts` : le pas
+      # ci-dessus ne regarde donc PAS les 500 fichiers de test de l'API. Tant
+      # que jest passait par `ts-jest`, ils étaient type-vérifiés à chaque
+      # exécution de la suite ; `@swc/jest` transpile sans vérifier — c'est
+      # d'ailleurs tout l'intérêt. Sans ce pas, l'accélération du job
+      # `Test (API)` s'achèterait avec 500 fichiers non typés, ce qui n'est pas
+      # un échange mais une perte déguisée. Il vit ici, dans le job `Build`
+      # (fusionné avec l'ancien `Check types` le 05/10/2026), pas dans le chemin critique.
+      - name: Check types — les fichiers de test de l'API
+        if: ${{ !cancelled() }}
+        run: pnpm --filter @bellum/api check-types:tests
+
+  # ──────────────────────────────────────────────
+  # CHAUFFER LES CACHES DEPUIS MAIN (lot B2 ci/1-caches, 31/10/2026)
+  #
+  # GitHub n'isole pas les caches par « job » mais par REF : un cache écrit sur la ref d'une PR n'est lisible
+  # que par cette PR ; seuls les caches de la branche par défaut sont lisibles de toutes. Or `Build` et
+  # `quick` ne tournent que sur `pull_request` : `turbo-build-*`, `tsc-incremental-*` et `turbo-quick-*`
+  # n'existaient jamais sur main, donc chaque PR repartait à froid (restore-keys sans correspondance).
+  # Ce job rejoue Build + Check types (+ les tests légers de `quick`) sur chaque push main et ENREGISTRE ces
+  # trois familles de clés. Il remplace rien : `Build` reste le verdict de la PR. Interrupteur
+  # `vars.CI_WARM_CACHE` (`false` = désactivé). Une fusion = un build de plus sur main ; il est dans les
+  # `needs` de `suite-complete-rouge` (garde alarme-main-couvre-tous-les-jobs) : s'il rougit, main est rouge.
+  # ──────────────────────────────────────────────
+  warm-cache:
+    name: Chauffer les caches (main)
+    if: ${{ github.event_name == 'push' && vars.CI_WARM_CACHE != 'false' }}
+    runs-on: ${{ vars.CI_RUNS_ON_WEB && fromJSON(vars.CI_RUNS_ON_WEB) || vars.CI_RUNS_ON || 'ubuntu-latest' }}
+    timeout-minutes: 37
+    permissions:
+      contents: read
+    steps:
+      # Runner auto-hébergé : un job tué laisse un _work dont l'index git ment (« not uptodate; will not
+      # remove ») et le checkout rend un dépôt VIDE (« No pnpm version »). On vide avant de cloner.
+      - name: Vider l'espace de travail du runner
+        run: find "$GITHUB_WORKSPACE" -mindepth 1 -maxdepth 1 -exec rm -rf {} + 2>/dev/null || true
+      - uses: actions/checkout@v7
+      - uses: pnpm/action-setup@v6
+      - uses: actions/setup-node@v7
+        with:
+          node-version: 22
+      - uses: ./.github/actions/store-pnpm
+        id: store
+      - run: pnpm install --frozen-lockfile
+      - uses: ./.github/actions/turbo-remote
+        with:
+          token: ${{ secrets.TURBO_TOKEN }}
+          api: ${{ vars.TURBO_API }}
+          team: ${{ vars.TURBO_TEAM }}
+      # Mêmes chemins et mêmes restore-keys que `Build`, pour que la PR les retrouve ; restauration PUIS
+      # sauvegarde explicite (`always()`), comme les shards de tests : un type en erreur ne jette pas le cache.
+      - name: Cache Turbo (restauration)
+        id: turbo-cache
+        uses: actions/cache/restore@v6
+        with:
+          path: .turbo
+          key: turbo-build-${{ runner.os }}-${{ github.sha }}
+          restore-keys: |
+            turbo-build-${{ runner.os }}-
+            turbo-check-types-${{ runner.os }}-
+      - name: Cache de l'incrémental tsc (restauration)
+        id: tsc-cache
+        uses: actions/cache/restore@v6
+        with:
+          path: |
+            apps/web/node_modules/.cache/tsc
+            apps/website/node_modules/.cache/tsc
+            apps/dashboard-manager/node_modules/.cache/tsc
+            apps/api/node_modules/.cache/tsc
+            packages/ui/node_modules/.cache/tsc
+          key: tsc-incremental-${{ runner.os }}-${{ github.sha }}
+          restore-keys: tsc-incremental-${{ runner.os }}-
+      - name: Hash turbo (diagnostic)
+        run: node tools/ci/turbo-hash.mjs || true
+      - name: Build
+        env:
+          CI_TYPES_VERIFIES: '1'
+        run: pnpm build
+      - name: Check types
+        if: ${{ !cancelled() }}
+        run: pnpm check-types
+      # Ce que `quick` rejoue dans `.turbo` sur une PR (tests légers de shared + contracts).
+      - name: Tests légers (réchauffe turbo-quick)
+        if: ${{ !cancelled() }}
+        run: pnpm turbo test --filter=@bellum/shared --filter=@bellum/contracts
+      - name: Cache Turbo build (sauvegarde)
+        if: always() && steps.turbo-cache.outputs.cache-hit != 'true'
+        uses: actions/cache/save@v6
+        with:
+          path: .turbo
+          key: turbo-build-${{ runner.os }}-${{ github.sha }}
+      - name: Cache Turbo quick (sauvegarde)
+        if: always()
+        uses: actions/cache/save@v6
+        with:
+          path: .turbo
+          key: turbo-quick-${{ runner.os }}-${{ github.sha }}
+      - name: Cache tsc (sauvegarde)
+        if: always() && steps.tsc-cache.outputs.cache-hit != 'true'
+        uses: actions/cache/save@v6
+        with:
+          path: |
+            apps/web/node_modules/.cache/tsc
+            apps/website/node_modules/.cache/tsc
+            apps/dashboard-manager/node_modules/.cache/tsc
+            apps/api/node_modules/.cache/tsc
+            packages/ui/node_modules/.cache/tsc
+          key: tsc-incremental-${{ runner.os }}-${{ github.sha }}
+
+  # ──────────────────────────────────────────────
+  # Tests — the regression net: the API (jest) here, the IA service (pytest) in
+  # `test-ia`, the frontend in `test-web`.
+  #
+  # `@bellum/web` was excluded from this net for months, on the stated grounds
+  # that it carried "pre-existing failures owned elsewhere". Nobody owned them.
+  # Being ungated is what ALLOWED them: with no job watching, the suite rotted
+  # to 14 red, everyone learned to read red as normal, and one of those 14 was
+  # a real product bug — `normalize.ts` read keys no run emits, so every
+  # exported PDF shipped with no action plan, no evaluation and no strategy.
+  # Four tests said so for weeks and were dismissed as environmental noise.
+  # Fixed in #645; gated here so it cannot happen again.
+  #
+  # Still out: `@bellum/events`, whose vitest workers die on
+  # `ERR_IPC_CHANNEL_CLOSED`. That is a real, un-diagnosed failure — named here
+  # rather than hidden behind "pre-existing", so the next person knows exactly
+  # what is missing and why.
+  # ──────────────────────────────────────────────
+
+  # ──────────────────────────────────────────────
+  # POURQUOI UN SEUL JOB — ET POURQUOI IL Y EN A EU QUATRE
+  #
+  # ⚠️ LA PRÉMISSE A CHANGÉ LE 15/09/2026. Le raisonnement ci-dessous tenait
+  # quand les runners étaient auto-hébergés : les minutes étaient GRATUITES, le
+  # seul coût était l'horloge. Depuis la bascule sur `ubuntu-latest`, Actions
+  # facture chaque job ARRONDI À LA MINUTE PLEINE, et la mise en place (checkout,
+  # setup-node, restauration du store pnpm) coûte ~60 s AVANT le premier test.
+  # Entre-temps `@swc/jest` a fait passer la suite de 57,9 s à 16,7 s.
+  # Quatre jobs de ~2 min facturées pour ~1 min de tests réels : le sharding
+  # coûtait ~8 min facturées par exécution pour en économiser une d'horloge.
+  # Mesuré sur un run complet : 19 jobs, 2 395 s réels → 54 min FACTURÉES.
+  #
+  # Quand re-sharder : si ce job redevient le chemin critique (> ~6 min) ET que
+  # les minutes cessent d'être la contrainte — c'est-à-dire au retour de runners
+  # auto-hébergés. Les deux conditions, pas une.
+  #
+  # L'HISTORIQUE, qui reste vrai dans son contexte :
+  #
+  # Mesuré : ce job était le SEUL chemin critique de la CI (8,8 à 20 min, tous
+  # les autres ≤ 3 min), et l'attente en file des runners était de 0,0 min —
+  # les runners sont libres, le problème n'a jamais été la capacité. Un job qui
+  # occupe un runner pendant 20 min pendant que trois autres dorment n'est pas
+  # une contrainte de ressources, c'est une sérialisation gratuite.
+  #
+  # `--shard=i/N` est l'option NATIVE de jest : il répartit les FICHIERS de
+  # test, pas les tests, donc aucun fichier n'est exécuté deux fois et aucun
+  # n'est oublié — la somme des shards est exactement la suite.
+  #
+  # ⚠️ `fail-fast: false` est délibéré. Par défaut, un shard rouge ANNULE les
+  # trois autres : la porte resterait rouge (elle refuse `cancelled` autant que
+  # `failure`), mais on ne saurait plus quels autres tests cassent, et il
+  # faudrait un second tour de CI pour l'apprendre. On veut tous les verdicts (plus de coupure globale : la porte d'étage ne s'arrête qu'en failure explicite).
+  # ──────────────────────────────────────────────
+  test:
+    name: Test (API)
+    needs: [changes]
+    # `doc-suit-le-code` n'est plus dans les `needs` (il reste bloquant via `CI Status`) : il ne retarde plus les jobs lourds.
+    if: ${{ !cancelled() && needs.changes.result == 'success' && needs.changes.outputs.api == 'true' }}
+    # Même routage que `Test (Web)` depuis le 05/10/2026 : les 6 jobs lourds (API ×2,
+    # Web ×4) sur les 6 runners `rapide` (CX43 AMD), les légers (quick, build, IA)
+    # sur le CX53 Intel, ~2× plus lent par runner. Mesuré run 37364564077 : API
+    # 22-26 min sur le CX53. Vider `CI_RUNS_ON_WEB` = tout sur la flotte entière.
+    # Routage API (31/10/2026) : `CI_RUNS_ON_API` (même forme JSON que `CI_RUNS_ON_WEB`), repli `CI_RUNS_ON_WEB` puis `CI_RUNS_ON`.
+    runs-on: ${{ vars.CI_RUNS_ON_API && fromJSON(vars.CI_RUNS_ON_API) || vars.CI_RUNS_ON_WEB && fromJSON(vars.CI_RUNS_ON_WEB) || vars.CI_RUNS_ON || 'ubuntu-latest' }}
+    # 10 min suffisaient pour un quart de la suite ; ce job la porte entière, et
+    # un runner GitHub standard a 2 cœurs là où le runner auto-hébergé en avait
+    # plus. La marge est là pour ça, pas pour masquer une lenteur.
+    # +5 le 16/09, pour la même raison que `Test (Web)` : un cache FROID doit
+    # rebuild `@bellum/contracts` avant le premier test, et un job tué par le
+    # timeout ne sauve pas son cache — donc le run suivant repart froid.
+    # 30 → 55 le 05/10/2026 : 2 shards au lieu de 4, un shard a dépassé 29 min sur le CX53
+    # (run 37355319782). Le délai de l'étape jest (45) reste PLUS COURT : le cache se sauve.
+    timeout-minutes: 85
+    permissions:
+      contents: read
+      actions: read
+    # 4 → 2 SHARDS LE 05/10/2026 : -2 slots par run (file dominante, 14 jobs pour 10
+    # runners, ~80 % d'occupation). Chaque shard reste SOUS le chemin critique du
+    # Web (18-35 min contre 6-9 min mesurés pour l'API en 4 shards) ; la somme des
+    # shards reste exactement la suite (`--shard=i/2`).
+    # 2 → 3 SHARDS LE 16/10/2026 : sur main « Test (API) (1) » durait 44 min (limite d'étape 45) et le
+    # shard 2 18 min ; le shard 1 a dépassé la limite sur la PR #4253. Trois shards : la somme reste
+    # exactement la suite (`--shard=i/3`, y compris via `tools/ci/test-changed.mjs`).
+    # 3 → 6 SHARDS LE 25/10/2026 : 2 564 specs sur apps/api, un shard dure 42-47 min pour un plafond
+    # d'étape de 45 ; le shard 3 de la PR #4537 (run 40176214659) a été TUÉ au timeout avec tous ses
+    # specs affichés PASS — c'est la QUATRIÈME fois (22-23/10 déjà). Six shards ≈ 430 specs, soit
+    # ~21-24 min chacun. Coût : +3 slots par run (parc fixe, 10 runners, non modifié). La somme reste
+    # exactement la suite (`--shard=i/6`, y compris via `tools/ci/test-changed.mjs`).
+    # REDIS (25/10/2026) : ce job n'avait pas de Redis ; la connexion BullMQ ouverte par les modules
+    # Nest de l'e2e retentait dans le vide et levait `Unhandled error: Connection is closed`
+    # (ioredis event_handler), imputé par jest à un test sans rapport (auth.e2e.spec.ts › 401).
+    # On lui donne un SOCKET qui répond, rien de plus : aucune donnée, aucun worker, aucun job de
+    # file ne tourne ici, aucun test ne dépend de Redis. Même forme que `Démo (semis sur vraie base)`.
+    # RE-SHARDÉ LE 17/09/2026 — les deux conditions de la note au-dessus de ce
+    # job sont réunies : les runners sont de nouveau auto-hébergés (les minutes
+    # ne sont plus la contrainte), et ce job est redevenu le chemin critique
+    # (8,5 · 19,3 · 22+ min sur les derniers runs, dont deux sur
+    # vps-fd892a059c55). Quatre shards alors, et
+    # `fail-fast: false` pour la raison écrite dans cette note.
+    env:
+      REDIS_URL: redis://localhost:6379
+    strategy:
+      fail-fast: false
+      matrix:
+        shard: [1, 2, 3, 4, 5, 6]
+    steps:
+      # Runner auto-hébergé : un job tué laisse un _work dont l'index git ment (« not uptodate; will not
+      # remove ») et le checkout rend un dépôt VIDE (« No pnpm version »). On vide avant de cloner.
+      - name: Vider l'espace de travail du runner
+        run: find "$GITHUB_WORKSPACE" -mindepth 1 -maxdepth 1 -exec rm -rf {} + 2>/dev/null || true
+      - uses: actions/checkout@v7
+        with:
+          # Sur une PR : l'historique entier (0), pour le merge-base du sélecteur. (0 en branche « vraie » d'une expression vaut faux : il faut le mettre en dernier.)
+          fetch-depth: ${{ github.event_name != 'pull_request' && 1 || 0 }}
+      - uses: pnpm/action-setup@v6
+      - uses: actions/setup-node@v7
+        with:
+          node-version: 22
+      # Porte d'étage (ci/1-etages) : un job de l'étage rapide déjà rouge ⇒ on s'arrête en `failure`, jamais `cancelled`.
+      - name: Porte d'étage
+        if: github.event_name == 'pull_request' && vars.CI_STAGE_GATE != 'false'
+        working-directory: ${{ github.workspace }}
+        env:
+          GITHUB_TOKEN: ${{ github.token }}
+        run: node tools/ci/stage-gate.mjs
+      - uses: ./.github/actions/store-pnpm
+        id: store
+      - run: pnpm install --frozen-lockfile
+      # La clé porte le shard : deux jobs qui écrivent la MÊME clé de cache se
+      # marchent dessus et l'un d'eux échoue à l'enregistrer. Le
+      # `restore-keys` reste commun, donc chaque shard repart du cache de
+      # n'importe quel run précédent.
+      - name: Cache Turbo (restauration)
+        id: turbo-cache
+        uses: actions/cache/restore@v6
+        with:
+          path: .turbo
+          key: turbo-test-${{ runner.os }}-${{ github.sha }}-${{ matrix.shard }}
+          restore-keys: turbo-test-${{ runner.os }}-
+      # Le shard passe par `--`, donc jusqu'à jest. VÉRIFIÉ plutôt que supposé,
+      # parce que la question qui tue est « et si turbo rejouait le cache du
+      # shard 1 pour l'autre ? » — deux jobs verts qui n'auraient
+      # exécuté que la moitié de la suite. Sur turbo 2.9.3, les arguments passés
+      # après `--` ENTRENT dans le hash de tâche : les deux appels produisent
+      # deux hashs différents (2f5c630b9efeffce contre e2ececffb424851e) et le
+      # second exécute bien ses propres fichiers. Chaque shard est donc sa
+      # propre entrée de cache.
+      # Un socket Redis qui répond, RIEN d'autre (pas de donnée, pas de worker) : voir « REDIS (25/10/2026) »
+      # plus haut. Pas de `services:` — runners = conteneurs sans socket Docker. Installé seulement s'il manque.
+      - name: Redis (socket seul)
+        run: |
+          if ! command -v redis-server >/dev/null 2>&1; then
+            sudo DEBIAN_FRONTEND=noninteractive dpkg --configure -a
+            sudo DEBIAN_FRONTEND=noninteractive apt-get update -qq
+            sudo DEBIAN_FRONTEND=noninteractive apt-get install -y -qq redis-server
+          fi
+          (redis-server --port 6379 --daemonize yes >/dev/null) || true
+      # Même raison que pour vitest : jest compte les cœurs de l'hôte, et
+      # `apps/api/jest.config.js` ne borne rien en CI sans `JEST_MAX_WORKERS`.
+      - name: Plafond de workers (lu dans le conteneur, pas sur l'hôte)
+        run: |
+          n=$(bash .github/scripts/plafond-workers.sh 1536)
+          [ -n "${JEST_MAX_WORKERS:-}" ] || echo "JEST_MAX_WORKERS=$n" >> "$GITHUB_ENV"
+      # TESTS CONCERNÉS SUR UNE PR (14/10/2026) : `tools/ci/test-changed.mjs ci` calcule les specs liées
+      # au diff (jest `--listTests --changedSince=<merge-base>`) plus celles qui lisent le dépôt sans
+      # l'importer (architecture, demo-coverage), et écrit la ligne de mesure dans le journal. Une
+      # fondation touchée, un calcul en échec, le label `ci:suite-complete` ou plus de 50 % des specs
+      # sélectionnées : COMPLET, raison au journal. Hors PR (main, nuit) : toujours complet.
+      - name: Jest (apps/api) — shard ${{ matrix.shard }}/6
+        # DÉLAI MESURÉ, pas supposé (run 41606062617, PR #5182) : la durée du step jest par shard a été
+        # 2639 / 2286 / 1721 / 2714 / 2632 / 2488 s pour un plafond de 2700 s — QUATRE shards sur six
+        # entre 92 % et 100,5 % du délai. Le shard 4 a été TUÉ à 2714 s, et son journal porte 81 lignes
+        # `PASS` et ZÉRO ligne `FAIL` : aucun test en échec, la suite n'a pas eu le temps de finir. Un
+        # rouge tiré au sort, donc, qui ne parle pas du code — déjà vu « trois fois les 22-23/10/2026 »
+        # d'après la note ci-dessus. 70 min (step) et 85 min (job) laissent la marge SANS ajouter de job
+        # à une flotte en file (12 runs en attente le 03/11 à 10:30) : un délai ne coûte rien quand il ne
+        # sert pas, Actions facture le temps réel et pas le plafond. Ne pas re-sharder sans remesurer.
+        timeout-minutes: 70
+        env:
+          EVENT: ${{ github.event_name }}
+          BASE: ${{ github.base_ref }}
+          PR_LABELS: ${{ join(github.event.pull_request.labels.*.name, ',') }}
+          GITHUB_TOKEN: ${{ github.token }}
+          CI_DURATIONS_FRAICHES: ${{ vars.CI_DURATIONS_FRAICHES }}
+          CI_SELECTOR_LEGACY: ${{ vars.CI_SELECTOR_LEGACY }}
+          CI_QUARANTINE: ${{ vars.CI_QUARANTINE }}
+        # `--log-order=stream` : turbo gardait la sortie de jest en mémoire jusqu'à la fin de la
+        # tâche ; un shard tué au timeout (45 min, trois fois les 22-23/10/2026) ne laissait AUCUNE
+        # ligne, et le reporter qui nomme le fichier pendu ne pouvait rien montrer.
+        run: |
+          # SHARDS PAR DURÉE (ci/shards-api-par-duree, 03/11/2026) : run 41606062617, shards de 28,7 à 45,2 min
+          # (1,6×) pour 139 fichiers chacun — le découpage par rang/nombre mettait les specs lourdes ensemble.
+          # Durées FRAÎCHES par fichier = rapports jest `api-test-report-*` du dernier run complet de main (REST).
+          # Absence, échec ou `CI_DURATIONS_FRAICHES=false` : fichier vide, et chaque chemin retombe sur son
+          # découpage d'avant (rang en `concernes`, `jest --listTests --shard` en `complet`) — jamais un rouge.
+          durations="$RUNNER_TEMP/api-durations.json"
+          rm -f "$durations"
+          if [ "${CI_DURATIONS_FRAICHES}" != "false" ]; then
+            node tools/ci/fetch-durations.mjs --suite api --out "$durations" || true
+          fi
+          mode=complet
+          if [ "$EVENT" = "pull_request" ]; then
+            git fetch --no-tags --prune origin "+refs/heads/${BASE}:refs/remotes/origin/${BASE}" || true
+            mode=$(node tools/ci/test-changed.mjs ci --suite api --base "origin/${BASE}" --shard ${{ matrix.shard }}/6 --durations "$durations" --out "$RUNNER_TEMP/api-shard-files.txt" | sed -n 's/^mode=//p')
+            [ -n "$mode" ] || { mode=complet; echo "tests concernés : suite complète (mode : complet — le sélecteur a échoué, voir plus haut)"; }
+          else
+            echo "tests concernés : suite complète (mode : complet — événement ${EVENT}, hors pull_request)"
+          fi
+          # ⚠️ EN MODE `complet`, LE SHARD PASSE PAR UNE LISTE DE FICHIERS, PAS PAR
+          # `--shard` — mesuré le 25/10/2026 sur trois runs (39925939590,
+          # 40093361204, 40088952172) : avec
+          # `turbo test --filter=@bellum/api -- --shard=i/3`, les TROIS shards ont
+          # rapporté la suite ENTIÈRE (851, 847 et 854 suites sur 855), soit trois
+          # suites complètes par run et un chemin critique de 36 min 54 au lieu
+          # d'un tiers. L'argument n'arrive pas jusqu'à jest à travers turbo —
+          # lancé en direct dans `apps/api`, le même `--shard=1/3` coupe bien
+          # (504 fichiers listés sur 1 512).
+          #
+          # La garde qui existait vérifiait que `--shard=i/N` entrait dans le HASH
+          # de tâche de turbo. C'est vrai, et ça ne prouve rien : le hash dit que
+          # turbo a vu des arguments différents, pas que jest a exécuté des
+          # fichiers différents. D'où `garde-shard.sh`, qui lit COMBIEN de fichiers
+          # ont tourné.
+          #
+          # On fait donc ici ce que `Test (Web)` fait déjà et qui marche
+          # (`tools/ci/shard-by-duration.mjs`, 715 fichiers par shard sur 2 860) :
+          # jest calcule LUI-MÊME la liste de son shard, et on la lui repasse
+          # explicitement — exactement le chemin de code du mode `concernes`,
+          # déjà en production.
+          if [ "$mode" != "concernes" ]; then
+            # Par durée si les durées sont là (code 0) ; sinon (code 3 = pas de durées) le découpage par nombre.
+            if [ -s "$durations" ] && node tools/ci/shard-by-duration.mjs --suite api --shard ${{ matrix.shard }}/6 --durations "$durations" > "$RUNNER_TEMP/api-shard-files.txt" && [ -s "$RUNNER_TEMP/api-shard-files.txt" ]; then
+              echo "shard ${{ matrix.shard }}/6 : $(grep -c . < "$RUNNER_TEMP/api-shard-files.txt") fichiers, répartis par durée (shard-by-duration.mjs --suite api)"
+            else
+              ( cd apps/api && npx jest --listTests --shard=${{ matrix.shard }}/6 ) \
+                | sed -E 's|.*/apps/api/||' > "$RUNNER_TEMP/api-shard-files.txt"
+              echo "shard ${{ matrix.shard }}/6 : $(grep -c . < "$RUNNER_TEMP/api-shard-files.txt") fichiers, calculés par jest --listTests"
+            fi
+          fi
+          mapfile -t files < "$RUNNER_TEMP/api-shard-files.txt"
+          if [ "${#files[@]}" -eq 0 ]; then echo "Aucun test API de ce shard : vert."; exit 0; fi
+          total=$( ( cd apps/api && npx jest --listTests ) | grep -c . || true )
+          # ⚠️ LE STATUT DE L'ÉTAPE EST CELUI DE JEST, PAS CELUI DE `tee` (29/10/2026).
+          # L'étape tourne sous `bash -e {0}`, donc SANS `pipefail` : le code de retour du
+          # pipeline était celui de `tee` — zéro, toujours — et `garde-shard.sh`, dernière
+          # commande et qui ne compte que des FICHIERS, fixait le statut final. Mesuré sur le
+          # run 40780829979 : `Test (API) (5)` conclut `success` en imprimant « Test Suites: 2
+          # failed, 441 passed », et sur les douze runs précédents AUCUN `Test (API)` n'avait
+          # jamais conclu `failure`. Un shard API rouge ne bloquait donc ni une PR, ni un push
+          # sur main, et `Suite complète rouge sur main` (`if: failure()`) ne tirait jamais pour
+          # un échec d'API. `Test (Web)` n'a pas de pipe : c'est pourquoi ses shards
+          # rougissaient, et jamais ceux-ci. Treize suites étaient rouges sur `7d39faafcb`.
+          #
+          # La garde de découpage DOIT rester exécutée même quand jest échoue — c'est elle qui
+          # dit si un shard rouge a bien mesuré SA part de la suite —, d'où le code gardé dans
+          # `jest_rc` puis rendu en dernier. Garde : `le-statut-dun-test-est-celui-de-loutil`.
+          # Rapport JSON jest : la nuit/main (lot ci/6, artefact `api-test-report-<i>` lu par tools/ci/flaky.mjs)
+          # et sur PR quand la quarantaine a des entrées (tools/ci/quarantine.mjs). Aucun retry.
+          jest_report=()
+          if [ "$EVENT" != "pull_request" ]; then
+            jest_report=(--json "--outputFile=$RUNNER_TEMP/api-test-report.json")
+          elif [ "${CI_QUARANTINE}" != "false" ] && node tools/ci/quarantine.mjs active; then
+            jest_report=(--json "--outputFile=$RUNNER_TEMP/api-quarantine.json")
+          fi
+          jest_rc=0
+          set -o pipefail
+          pnpm turbo test --filter=@bellum/api --log-order=stream --output-logs=full -- --passWithNoTests "${files[@]}" "${jest_report[@]}" 2>&1 \
+            | tee "$RUNNER_TEMP/api-jest.log" || jest_rc=$?
+          set +o pipefail
+          bash .github/scripts/garde-shard.sh "$RUNNER_TEMP/api-jest.log" "$total" 6 "Test (API) shard ${{ matrix.shard }}/6" "${#files[@]}"
+          # Quarantaine (PR seulement) : vert SEULEMENT si tous les tests rouges y sont nommés.
+          if [ "$jest_rc" -ne 0 ] && [ "$EVENT" = "pull_request" ] && [ "${CI_QUARANTINE}" != "false" ] \
+            && node tools/ci/quarantine.mjs decide --report "$RUNNER_TEMP/api-quarantine.json" --rc "$jest_rc"; then
+            exit 0
+          fi
+          [ "$jest_rc" -eq 0 ] || { echo "::error::Test (API) shard ${{ matrix.shard }}/6 : jest a échoué (code $jest_rc) — lire « Test Suites: » et les lignes « FAIL » plus haut dans ce journal."; exit "$jest_rc"; }
+
+      # Rapport jest nocturne (lot ci/6-quarantaine) : lu par tools/ci/flaky.mjs. Absent = pas d'artefact, jamais un rouge.
+      - name: Rapport de tests API (artefact)
+        if: ${{ always() && github.event_name != 'pull_request' }}
+        uses: actions/upload-artifact@v7
+        with:
+          name: api-test-report-${{ matrix.shard }}
+          path: ${{ runner.temp }}/api-test-report.json
+          if-no-files-found: ignore
+          retention-days: 15
+      # `@bellum/mcp` avait un script `test` et aucun job pour le lancer. Une
+      # suite qu'aucune CI n'exécute ne garde rien — c'est le défaut trouvé sur
+      # `test-web` le 19/08, à l'identique. Sa suite est minuscule (le serveur
+      # est un proxy), donc elle vit ici plutôt que dans un job à elle.
+      #
+      # Un seul shard la lance : la répéter deux fois ne garderait rien de
+      # plus. Elle reste gardée, parce que la porte lit le résultat AGRÉGÉ de la
+      # matrice — si ce shard tombe, `needs.test.result` vaut `failure`.
+      # La suite MCP est petite : elle tourne une fois, pas deux.
+      - name: Vitest (apps/mcp)
+        if: matrix.shard == 1
+        run: pnpm turbo test --filter=@bellum/mcp
+      # Voir la raison détaillée sur `test-web` : un job tué par son délai ne
+      # sauve pas son cache, donc le run suivant repart froid et meurt pareil.
+      - name: Cache Turbo (sauvegarde, même si la suite a échoué)
+        if: always() && steps.turbo-cache.outputs.cache-hit != 'true'
+        uses: actions/cache/save@v6
+        with:
+          path: .turbo
+          key: turbo-test-${{ runner.os }}-${{ github.sha }}-${{ matrix.shard }}
+
+  # ──────────────────────────────────────────────
+  # Tests — the frontend (vitest + jsdom). Its own job rather than another
+  # `--filter` on `test`, so a red frontend and a red API are distinguishable at
+  # a glance in the checks list; a job that tells you "something is broken"
+  # without saying which half is the shape of failure this repo keeps paying for.
+  # ──────────────────────────────────────────────
+  # SIX SHARDS ET NON TROIS — mesuré le 16/09/2026 au soir (run 35153685272).
+  # Un shard de 442 fichiers prend 11-12 min sur un runner sain, et ce temps
+  # n'est pas fait de tests : sur 655 s de vitest, `setup` 512 s, `collect`
+  # 259 s, `environment` 174 s, `tests` 222 s (cumul des 3 workers). Pendant
+  # ce temps, une fois les jobs courts finis (≤ 5 min), la moitié de la flotte
+  # dort. Quatre shards (six jusqu'au 29/09/2026) répartissent le même travail
+  # sur les runners libres, et un runner malade (vps-e820d794dc84 : 35 à 42 min
+  # sur un shard) n'en retient plus qu'un quart. La somme des shards reste exactement la suite — garde
+  # GA-286 pour les projets, `apps/web/src/test/ci-shards.test.ts` pour les
+  # paquets.
+  #
+  # ⚠️ RÉPARTIS PAR DURÉE, PLUS PAR NOMBRE — mesuré le 29/09/2026 (run
+  # 36531216182). `--shard=i/N` coupe en paquets de même NOMBRE de fichiers :
+  # les six shards ont duré 10, 11, 28, 11, 13 et 24 min, le shard 3 portant à
+  # lui seul `ProfileQuestionnaireDialog.test.tsx` (394 s). Chaque shard reçoit
+  # désormais sa liste de `tools/ci/shard-by-duration.mjs`, qui lit
+  # `apps/web/test-durations.json` (glouton, plus long d'abord ; un fichier
+  # neuf, pas encore mesuré, est réparti par nombre). Remesurer : voir
+  # `docs/tests-rapides.md`. Un fichier de durées périmé déséquilibre les
+  # paquets, il n'en perd AUCUN : la liste vient du disque.
+  test-web:
+    name: Test (Web)
+    needs: [changes]
+    # `doc-suit-le-code` n'est plus dans les `needs` (il reste bloquant via `CI Status`).
+    if: ${{ !cancelled() && needs.changes.result == 'success' && needs.changes.outputs.web == 'true' }}
+    # Routage Web (05/10/2026) : les 6 runners AMD (label `rapide`) font un shard en
+    # 18-23 min, les 4 Intel en 35-43. `CI_RUNS_ON_WEB` = `["bellum-ci","rapide"]`.
+    # Variable vide = repli sur la flotte entière (`CI_RUNS_ON`) : un RÉGLAGE, pas une PR.
+    runs-on: ${{ vars.CI_RUNS_ON_WEB && fromJSON(vars.CI_RUNS_ON_WEB) || vars.CI_RUNS_ON || 'ubuntu-latest' }}
+    timeout-minutes: 55
+    permissions:
+      contents: read
+      actions: read
+    # ⚠️ 20 MINUTES N'ONT PAS SUFFI — mesure du 16/09/2026 à 03 h 31.
+    # Le shard 2 a été TUÉ à 20 min pile sur `integration-vague11-onboarding`,
+    # alors que les quinze autres jobs du run étaient VERTS. Un seul job tué
+    # rend `CI Status` rouge : la vague entière est restée bloquée pour vingt
+    # secondes de dépassement. Les deux runs précédents avaient duré 18 min 17
+    # et 19 min 13 — le plafond était posé à un cheveu de la durée réelle, et
+    # la vague 11 ajoute des tests. Un plafond qui frôle la mesure n'est pas un
+    # garde-fou, c'est un tirage au sort.
+    # 40 minutes ne coûtent rien tant qu'elles ne servent pas : Actions facture
+    # le temps RÉEL, pas le plafond. Ce qui coûte, c'est le cercle vicieux déjà
+    # écrit plus bas — un job tué ne sauve pas son cache turbo, donc le run
+    # suivant repart froid et meurt pareil.
+    # ⚠️ OÙ PASSE LE TEMPS, MESURÉ — et ce n'est PAS dans les tests.
+    # Relevé de vitest sur deux shards indépendants du 16/09 :
+    #
+    #   shard onboarding 2 : 1 129 s total — tests 201 s (17,8 %),
+    #     setup 427 s · collect 192 s · environment 170 s · prepare 52 s
+    #   shard laura 1      : 1 072 s total — tests 145 s (13,5 %),
+    #     setup 435 s · collect 185 s · environment 170 s · prepare 50 s
+    #
+    # Les trois shards durent la même chose (19 min 44 · 20 min 11 · 19 min 32) :
+    # le découpage est ÉQUILIBRÉ, il n'y a pas de shard lent à rattraper. Ce qui
+    # dure, c'est le hors-tests : ~855 s d'installation pour ~180 s de tests.
+    #
+    # ⚠️⚠️ CE QUI SUIVAIT ÉTAIT UNE HYPOTHÈSE, ET ELLE EST FAUSSE — mesurée le
+    # 16/09/2026. Elle désignait `apps/web/src/test/setup.ts:12` (`import
+    # '@/i18n'`, qui charge les catalogues FR+EN entiers pour chacun des ~413
+    # fichiers du shard) et annonçait « gain potentiel ~40 % ». Vérification, à
+    # corpus et machine constants :
+    #
+    #   retirer `import '@/i18n'`     setup 5,77 s → 0,24 s … mais collect
+    #                                 2,74 s → 7,40 s, TOTAL 5,73 s → 6,08 s
+    #                                 (et 8 tests rouges)
+    #   retirer les 90 catalogues EN  setup 5,77 s → 5,05 s — 0,7 s sur 1,1 Mo
+    #   `isolate: false`              54 tests rouges, et 9,78 s au lieu de 5,73
+    #
+    # Le travail n'est pas supprimé, il est DÉPLACÉ : les composants importent
+    # l'i18n eux-mêmes. Ni l'emplacement de l'import ni le poids des catalogues
+    # n'est le coût — le coût est le MONTAGE, par fichier, de jsdom +
+    # `@testing-library/jest-dom` + le singleton i18n.
+    #
+    # Ce qui marche, livré le 16/09 (détail et chiffres : `apps/web/src/test/projects.ts`) :
+    #
+    #   projet `node` pour les gardes           59,93 s → 35,58 s   (−41 %)
+    #     (setup 58,60 → 10,11 s · environment 17,07 → 2,32 s, 0 rouge)
+    #
+    # ⚠️ `pool: 'threads'` valait −17 % de plus et a été REFUSÉ : il rend
+    # `thread-groups.test.ts` dépendant de l'ordre d'exécution (il bascule
+    # `process.env.TZ`, que Node met en cache pour tout le process partagé).
+    #
+    # Le levier qui RESTE, et son coût : re-sharder 3 → 4. `setup` étant par
+    # fichier, il se divise bien — mais chaque shard neuf re-paie checkout,
+    # `pnpm install` et le build des contracts. Le gain est réel, le coût
+    # facturé monte.
+    # Prérequis commun : re-vérifier que la somme des shards fait exactement la
+    # suite. Un découpage bâclé donne des jobs verts sur un tiers des tests —
+    # c'est la garde GA-286 qui tient cette question pour les PROJETS.
+    # ⚠️ 10 minutes etait taille pour un run en CACHE CHAUD sur les runners
+    # auto-heberges : sur la derniere CI verte, ce job a pris 1 minute. Le
+    # 16/09/2026, le runner auto-heberge etait OFFLINE et tout repassait sur
+    # `ubuntu-latest` (2 coeurs) : un cache FROID devait y rebuild
+    # `@bellum/contracts` avant de lancer 1 200 fichiers de test, et le job est
+    # mort a 10 min pile, pendant `contracts:build`, sans avoir lance un seul
+    # test.
+    # ⚠️ PERIME depuis : releve du 25/10/2026 — `CI_RUNS_ON=bellum-ci`,
+    # `CI_RUNS_ON_WEB=["bellum-ci","rapide"]`, 23 runners auto-heberges en
+    # ligne. Le paragraphe ci-dessus explique POURQUOI le plafond est haut, il
+    # ne decrit plus ou tourne la CI.
+    #
+    # Le cercle vicieux est le vrai probleme : un job tue par le timeout ne
+    # SAUVE PAS son cache, donc le run suivant repart froid et meurt pareil.
+    # 20 minutes cassent le cercle une fois ; ensuite le cache est chaud et le
+    # job retombe a une minute. Un timeout ne coute rien quand il ne sert pas —
+    # Actions facture le temps reel, pas le plafond.
+    # Après le shard de l'API, `Test (Web)` était devenu le job le plus long —
+    # donc le PLANCHER de la CI entière : tant qu'un job dure N minutes, aucun
+    # nombre de runners ne descend en dessous. Mesuré le 27/08 : 2,3 min ici
+    # contre ≤ 1,9 partout ailleurs.
+    #
+    # Découpage VÉRIFIÉ, pas supposé : 990 + 1266 + 1175 = 3 431 tests, soit
+    # exactement la suite complète. Rien en double, rien d'oublié — la question
+    # qui tue étant « et si les trois shards rejouaient les mêmes fichiers ? »,
+    # qui donnerait trois jobs verts sur un tiers de la suite.
+    strategy:
+      fail-fast: false
+      matrix:
+        # 6 → 4 shards le 29/09/2026 : -2 slots par run (file dominante : ~24 jobs
+        # pour 10 runners, p90 hors brouillon 70,8 min). Chaque shard re-paie
+        # checkout + install ; l'exécution rallonge de ~3-4 min mais la file
+        # raccourcit davantage. Garde : `apps/web/src/test/ci-shards.test.ts`
+        # relit ce tableau ET le `/N` de `shard-by-duration.mjs` — ils doivent
+        # rester alignés.
+        # 4 → 8 shards le 03/11/2026 : mesuré sur 374 runs (niveau job), un shard Web dure p50 26 min
+        # (41 % des minutes-job du parc) — c'est le plafond du chemin critique d'une PR (p50 55 min).
+        # Huit shards ≈ 13 min d'exécution chacun. Coût : +4 slots par run et 4× checkout + install ;
+        # accepté parce que la file ne vient plus des push `main` (voir le groupe de concurrence en tête)
+        # et que la durée d'un run ne baisse qu'avec le chemin critique. Si la file remonte, remesurer
+        # avant de re-sharder. Le `/8` est écrit trois fois dans le step vitest ci-dessous.
+        shard: [1, 2, 3, 4, 5, 6, 7, 8]
+    steps:
+      # Runner auto-hébergé : un job tué laisse un _work dont l'index git ment (« not uptodate; will not
+      # remove ») et le checkout rend un dépôt VIDE (« No pnpm version »). On vide avant de cloner.
+      - name: Vider l'espace de travail du runner
+        run: find "$GITHUB_WORKSPACE" -mindepth 1 -maxdepth 1 -exec rm -rf {} + 2>/dev/null || true
+      - uses: actions/checkout@v7
+        with:
+          # Sur une PR : l'historique entier (0), pour le merge-base du sélecteur. (0 en branche « vraie » d'une expression vaut faux : il faut le mettre en dernier.)
+          fetch-depth: ${{ github.event_name != 'pull_request' && 1 || 0 }}
+      - uses: pnpm/action-setup@v6
+      - uses: actions/setup-node@v7
+        with:
+          node-version: 22
+      # Porte d'étage (ci/1-etages) : un job de l'étage rapide déjà rouge ⇒ on s'arrête en `failure`, jamais `cancelled`.
+      - name: Porte d'étage
+        if: github.event_name == 'pull_request' && vars.CI_STAGE_GATE != 'false'
+        working-directory: ${{ github.workspace }}
+        env:
+          GITHUB_TOKEN: ${{ github.token }}
+        run: node tools/ci/stage-gate.mjs
+      - uses: ./.github/actions/store-pnpm
+        id: store
+      - run: pnpm install --frozen-lockfile
+      # La clé porte le shard : trois jobs qui écrivent la MÊME clé se marchent
+      # dessus et deux d'entre eux échouent à l'enregistrer. Le `restore-keys`
+      # reste commun, donc chaque shard repart du cache d'un run précédent.
+      - name: Cache Turbo (restauration)
+        id: turbo-cache
+        uses: actions/cache/restore@v6
+        with:
+          path: .turbo
+          key: turbo-test-web-${{ runner.os }}-${{ github.sha }}-${{ matrix.shard }}
+          restore-keys: turbo-test-web-${{ runner.os }}-
+      # `turbo test` builds the workspace packages `@bellum/web` depends on
+      # first. That ordering is load-bearing: running vitest directly against an
+      # unbuilt workspace yields dozens of phantom file-level failures that look
+      # like product breakage and are not.
+      #
+      # ⚠️ LE DÉLAI EST SUR LE STEP, ET IL EST PLUS COURT QUE CELUI DU JOB (40).
+      # C'est ce qui casse le cercle vicieux décrit plus haut. Un job tué par son
+      # `timeout-minutes` n'exécute AUCUN step suivant, `if: always()` compris :
+      # le cache n'est pas sauvé, le run d'après repart froid et meurt pareil.
+      # Un délai de STEP, lui, fait ÉCHOUER le step et rend la main au job, qui
+      # a dix minutes devant lui pour enregistrer ce que la passe a déjà bâti.
+      # Le plafond se LIT dans le conteneur (quota CPU et mémoire du cgroup), parce
+      # que vitest compte les cœurs de l'HÔTE. Il vit dans l'environnement, pas
+      # dans la commande (§4 de .claude/projet.md), et `turbo.json` le laisse
+      # passer — sans ça turbo le jetait en silence. Un plafond déjà posé par le
+      # runner gagne. Garde : `les-plafonds-de-workers-traversent-turbo.spec.ts`.
+      - name: Plafond de workers (lu dans le conteneur, pas sur l'hôte)
+        run: |
+          n=$(bash .github/scripts/plafond-workers.sh 1536)
+          [ -n "${VITEST_MAX_FORKS:-}" ] || echo "VITEST_MAX_FORKS=$n" >> "$GITHUB_ENV"
+          [ -n "${VITEST_MAX_THREADS:-}" ] || echo "VITEST_MAX_THREADS=$n" >> "$GITHUB_ENV"
+      - name: Vitest (apps/web) — shard ${{ matrix.shard }}/8
+        #
+        # ⚠️ 45 ET NON 30 depuis le 16/09/2026, et le chiffre vient d'une mesure
+        # SOUS CONTENTION, pas d'un shard seul. Relevé du run 35081760065, pendant
+        # qu'un second chantier tournait sur la même flotte :
+        #
+        #   shard 2 …… 21 min 36, vert
+        #   shard 1 …… > 30 min, TUÉ par ce délai
+        #   shard 3 …… 166 s — cache turbo REJOUÉ, il n'a rien exécuté
+        #
+        # Les trois shards sont équilibrés quand ils tournent seuls (20,3 · 21,0 ·
+        # 21,5 au run précédent) : l'écart ne vient pas du découpage, il vient de
+        # ce que la machine fait d'autre. Un délai calibré sur le cas ISOLÉ rend
+        # donc la CI rouge dès que deux chantiers se croisent — c'est-à-dire dans
+        # la situation normale ici — et le rouge ne parle pas du code.
+        #
+        # ⚠️ Et vitest n'écrit RIEN avant sa dernière ligne : trente minutes de
+        # silence dans le log ressemblent à un blocage alors que c'est une passe
+        # qui travaille. Ne pas chercher un test coupable là où il n'y en a pas.
+        #
+        # La liste du shard vient de `shard-by-duration.mjs` (répartition par
+        # DURÉE, voir l'en-tête du job), en chemins relatifs à `apps/web` — le
+        # répertoire où turbo lance vitest. `mapfile` + `"${files[@]}"` : aucun
+        # chemin n'est re-découpé ni développé par le shell.
+        timeout-minutes: 45
+        env:
+          EVENT: ${{ github.event_name }}
+          BASE: ${{ github.base_ref }}
+          PR_LABELS: ${{ join(github.event.pull_request.labels.*.name, ',') }}
+          GITHUB_TOKEN: ${{ github.token }}
+          CI_DURATIONS_FRAICHES: ${{ vars.CI_DURATIONS_FRAICHES }}
+          CI_SELECTOR_LEGACY: ${{ vars.CI_SELECTOR_LEGACY }}
+          CI_QUARANTINE: ${{ vars.CI_QUARANTINE }}
+        run: |
+          # TESTS CONCERNÉS SUR UNE PR (14/10/2026) : `tools/ci/test-changed.mjs ci` sélectionne les
+          # fichiers que vitest relie au diff, plus les gardes qui LISENT le dépôt sans l'importer
+          # (architecture, demo-coverage, tout test qui lit un fichier). Les 4 shards se partagent
+          # cette liste ; un shard sans fichier sort vert. Repli sur la suite COMPLÈTE (le chemin
+          # `shard-by-duration`, à l'identique) : fondation touchée, calcul en échec, label
+          # `ci:suite-complete`, plus de 50 % des tests sélectionnés. La raison est dans le journal.
+          # Hors PR (push sur main, nuit, manuel) : toujours complet.
+          mode=complet
+          if [ "$EVENT" = "pull_request" ]; then
+            git fetch --no-tags --prune origin "+refs/heads/${BASE}:refs/remotes/origin/${BASE}" || true
+            # Le sélecteur ne dépend plus d'un `dist/` : vitest.config.ts aliase @bellum/* vers src/ (lot A).
+            mode=$(node tools/ci/test-changed.mjs ci --suite web --base "origin/${BASE}" --shard ${{ matrix.shard }}/8 --out "$RUNNER_TEMP/web-shard-files.txt" | sed -n 's/^mode=//p')
+            [ -n "$mode" ] || { mode=complet; echo "tests concernés : suite complète (mode : complet — le sélecteur a échoué, voir plus haut)"; }
+          else
+            echo "tests concernés : suite complète (mode : complet — événement ${EVENT}, hors pull_request)"
+          fi
+          if [ "$mode" != "concernes" ]; then
+            # Durées FRAÎCHES du dernier run complet de main (artefacts `web-test-report-*`, REST) ; échec ou
+            # absence = repli silencieux sur `apps/web/test-durations.json`. Interrupteur `CI_DURATIONS_FRAICHES=false`.
+            if [ "${CI_DURATIONS_FRAICHES}" != "false" ]; then
+              node tools/ci/fetch-durations.mjs --out "$RUNNER_TEMP/web-durations.json" || true
+              if [ -s "$RUNNER_TEMP/web-durations.json" ]; then export CI_WEB_DURATIONS_FILE="$RUNNER_TEMP/web-durations.json"; fi
+            fi
+            node tools/ci/shard-by-duration.mjs --shard ${{ matrix.shard }}/8 > "$RUNNER_TEMP/web-shard-files.txt"
+          fi
+          mapfile -t files < "$RUNNER_TEMP/web-shard-files.txt"
+          if [ "${#files[@]}" -eq 0 ]; then echo "Aucun test web de ce shard : vert."; exit 0; fi
+          # Hors PR (suite complète) : un rapport JSON vitest par shard, publié en artefact pour le run suivant.
+          # Chemin ABSOLU dans RUNNER_TEMP : il entre dans le hash turbo, donc pas de rejeu de cache sans rapport.
+          report=()
+          if [ "$EVENT" != "pull_request" ]; then
+            report=(--reporter=default --reporter=json "--outputFile.json=$RUNNER_TEMP/web-test-report.json")
+          fi
+          # Quarantaine (lot ci/6) : sur PR, rapport JSON seulement si la quarantaine a des entrées ; échec =
+          # vert SEULEMENT si tous les tests rouges y sont nommés (tools/ci/quarantine.mjs), jamais de retry.
+          # PR seulement : jamais en même temps que `report` (hors PR).
+          qreport=()
+          if [ "$EVENT" = "pull_request" ] && [ "${CI_QUARANTINE}" != "false" ] && node tools/ci/quarantine.mjs active; then
+            qreport=(--reporter=default --reporter=json "--outputFile.json=$RUNNER_TEMP/web-quarantine.json")
+          fi
+          web_rc=0
+          pnpm turbo test --filter=@bellum/web -- "${files[@]}" "${report[@]}" "${qreport[@]}" || web_rc=$?
+          if [ "$web_rc" -ne 0 ]; then
+            [ "${#qreport[@]}" -gt 0 ] && node tools/ci/quarantine.mjs decide --report "$RUNNER_TEMP/web-quarantine.json" --rc "$web_rc" && exit 0
+            exit "$web_rc"
+          fi
+      # Rapport de durées par fichier (suite complète seulement) : lu par `fetch-durations.mjs` au run suivant.
+      # Absent (cache turbo rejoué, shard vide) = pas d'artefact, jamais un rouge.
+      - name: Rapport de durées (artefact)
+        if: ${{ always() && github.event_name != 'pull_request' }}
+        uses: actions/upload-artifact@v7
+        with:
+          name: web-test-report-${{ matrix.shard }}
+          path: ${{ runner.temp }}/web-test-report.json
+          if-no-files-found: ignore
+          retention-days: 14
+      # Sauver MÊME sur échec : le travail de build déjà fait n'a aucune raison
+      # d'être jeté parce qu'un test est rouge. `cache-hit` ne vaut `true` que
+      # sur une correspondance EXACTE de clé — une restauration par
+      # `restore-keys` laisse donc bien la sauvegarde se faire.
+      - name: Cache Turbo (sauvegarde, même si la suite a échoué)
+        if: always() && steps.turbo-cache.outputs.cache-hit != 'true'
+        uses: actions/cache/save@v6
+        with:
+          path: .turbo
+          key: turbo-test-web-${{ runner.os }}-${{ github.sha }}-${{ matrix.shard }}
+
+  test-ia:
+    name: Test (IA / Python)
+    needs: [changes]
+    # #4869.5 — la nuit sur `main` aussi (décision de Louis : la nuit SEULEMENT, jamais sur chaque push).
+    # Sur une PR, `ia` ne vaut `true` que si apps/ia bouge : un défaut Python posé par une fondation
+    # (contrats, lock) ou resté caché derrière la portée sélective se voit donc la nuit. Le rouge de
+    # nuit sonne par `suite-complete-rouge` (dans ses `needs`), pas par `CI Status` (PR seulement).
+    if: github.event_name == 'pull_request' && needs.changes.outputs.ia == 'true' || github.event_name == 'schedule'
+    runs-on: ${{ vars.CI_RUNS_ON || 'ubuntu-latest' }}
+    # #4869.3 — TROIS shards (décision de Louis, 31/10/2026) : `tools/ci/shard-ia.mjs i/3` répartit les
+    # fichiers pytest par taille ; la somme des paquets est exactement la suite (garde
+    # `apps/web/src/test/ci-shard-ia.test.ts`). `fail-fast: false` : un shard rouge n'en annule pas un autre.
+    strategy:
+      fail-fast: false
+      matrix:
+        shard: [1, 2, 3]
+    # 15 min datait du 29/06/2026 ; la suite pytest compte aujourd'hui 1 642
+    # fichiers et n'a jamais été re-mesurée depuis. Mesure du 29/10/2026 :
+    # 1 min 10 de mise en place (pip, pip-audit, schémas vendorisés) + 14 min 08
+    # de pytest, coupé à 98 %. Le job sortait alors `cancelled` SANS aucune étape
+    # rouge, et `--log-failed` ne montrait que `CI Status` : six PR de la même
+    # heure ont lu « rien à corriger » sur un budget trop court (#4834). 30 laisse
+    # la marge d'un parc qui grandit ; le vrai remède — paralléliser pytest — est
+    # l'affaire d'un chantier, pas d'un plafond. Chantier ouvert par #4869.3 : le plafond vaut
+    # désormais PAR SHARD (un tiers de la suite, ~5 min de pytest + la mise en place).
+    timeout-minutes: 30
+    permissions:
+      contents: read
+      actions: read
+    defaults:
+      run:
+        working-directory: apps/ia
+    env:
+      # Cross-lang contract validation (#273) is NON-blocking in production (a
+      # violation is logged, the dossier still ships). In CI we want the opposite:
+      # a step whose output drifts from packages/shared/schemas must FAIL the
+      # build, not page someone after the fact. Verified green on the full suite.
+      BELLUM_SCHEMA_STRICT: 'true'
+    steps:
+      # Runner auto-hébergé : un job tué laisse un _work dont l'index git ment (« not uptodate; will not
+      # remove ») et le checkout rend un dépôt VIDE (« No pnpm version »). On vide avant de cloner.
+      - name: Vider l'espace de travail du runner
+        # Le défaut du job (`apps/ia`) n'existe pas avant le checkout : bash ne démarrerait pas.
+        working-directory: ${{ github.workspace }}
+        run: find "$GITHUB_WORKSPACE" -mindepth 1 -maxdepth 1 -exec rm -rf {} + 2>/dev/null || true
+      - uses: actions/checkout@v7
+      - uses: actions/setup-node@v7
+        with:
+          node-version: 22
+      # Porte d'étage (ci/1-etages) : un job de l'étage rapide déjà rouge ⇒ on s'arrête en `failure`, jamais `cancelled`.
+      - name: Porte d'étage
+        if: github.event_name == 'pull_request' && vars.CI_STAGE_GATE != 'false'
+        working-directory: ${{ github.workspace }}
+        env:
+          GITHUB_TOKEN: ${{ github.token }}
+        run: node tools/ci/stage-gate.mjs
+      # Le relais vit dans une action composite : `upstream-contracts.yml` en a
+      # besoin aussi, et une deuxième copie aurait divergé de la première.
+      - uses: ./.github/actions/lsb-release-shim
+      - uses: actions/setup-python@v7
+        with:
+          python-version: '3.13'
+      # Venv par job depuis `apps/ia/requirements.lock` (uv) : plus de `pip install` dans le
+      # Python partagé du runner, donc plus de fuite d'un job à l'autre. Les pins
+      # import-linter<2.7 / rich<14 vivent dans `requirements-ci.in`. Détail : docs/ci.md.
+      - uses: ./.github/actions/ia-venv
+      # Fraîcheur du lock : si requirements*.txt / *.in changent, on régénère (même commande, les
+      # versions déjà verrouillées sont préférées) et on compare. Base illisible → on vérifie (défaut sûr).
+      - name: Le lock est à jour (requirements.lock)
+        # #4869.3 — une fois pour les trois shards (même contenu, même verdict).
+        if: matrix.shard == 1
+        working-directory: .
+        env:
+          BASE: ${{ github.event.pull_request.base.sha }}
+        run: |
+          if [ -n "$BASE" ]; then
+            git fetch -q --depth=1 origin "$BASE" 2>/dev/null || true
+            if git cat-file -e "$BASE^{commit}" 2>/dev/null \
+              && git diff --quiet "$BASE" HEAD -- ':(top,glob)apps/ia/requirements*.txt' ':(top,glob)apps/ia/requirements*.in'; then
+              echo "requirements*.{txt,in} inchangés : fraîcheur du lock non revérifiée."
+              exit 0
+            fi
+          fi
+          export PATH="$HOME/.local/bin:$PATH"
+          cmd='uv pip compile apps/ia/requirements-ci.in --universal --python-version 3.13 -o apps/ia/requirements.lock'
+          $cmd --quiet
+          if ! git diff --exit-code -- apps/ia/requirements.lock; then
+            echo "::error title=lock périmé::lock périmé : régénérer par « $cmd » puis committer apps/ia/requirements.lock"
+            exit 1
+          fi
+      # Failles des dépendances Python — BLOQUANT. Exclusion éventuelle : `--ignore-vuln ID`
+      # ICI et dans docs/securite-avis-dependances.md, jamais en silence.
+      # Exclusions (revue 15/10/2026, prochaine 27/10/2026) — failles SANS correctif publié :
+      # - PYSEC-2026-3740 (nltk 3.10.3, transitif de crawl4ai) : API d'artefacts de modèle
+      #   (TransitionParser, AveragedPerceptron…) jamais appelées par apps/ia.
+      # - PYSEC-2026-2447 (diskcache 5.6.3, transitif d'instructor 1.13) : pickle lu depuis le
+      #   cache, exige un accès en écriture au répertoire ; aucun cache instructor activé.
+      # Bloquant sur une PR qui touche requirements*.txt / pyproject ; avertissement sinon
+      # (même schéma que l'audit npm du job `quick`). POURQUOI (22/10/2026) : 6 coupes du run
+      # par pip-audit sur 15→22/10, 3 sur des avis publiés hors de la PR, qu'elle ne pouvait
+      # pas corriger. Diff illisible ou base introuvable → bloquant (défaut sûr).
+      - name: Audit des dépendances Python (pip-audit)
+        # #4869.3 — une fois pour les trois shards (même contenu, même verdict).
+        if: matrix.shard == 1
+        env:
+          BASE: ${{ github.event.pull_request.base.sha }}
+        run: |
+          bloquant=1
+          if [ -n "$BASE" ]; then
+            git fetch -q --depth=1 origin "$BASE" 2>/dev/null || true
+            if git cat-file -e "$BASE^{commit}" 2>/dev/null \
+              && git diff --quiet "$BASE" HEAD -- ':(top,glob)apps/ia/requirements*' ':(top,glob)apps/ia/pyproject*.toml'; then
+              bloquant=0
+            fi
+          fi
+          # pip-audit vit dans son PROPRE environnement (uvx), jamais dans le venv testé.
+          if uvx pip-audit -r requirements.txt --ignore-vuln PYSEC-2026-3740 --ignore-vuln PYSEC-2026-2447; then exit 0; fi
+          if [ "$bloquant" = 1 ]; then exit 1; fi
+          echo "::warning title=pip-audit::rouge, mais cette PR ne touche pas les dépendances Python : non bloquant ici."
+      # The IA image ships its own copy of packages/shared/schemas (Railway root
+      # is apps/ia, so the monorepo's packages/ is NOT in the build context).
+      # Fail fast and explicitly when that copy is stale, rather than letting the
+      # pytest assertion explain it further down the log.
+      - name: Vendored shared schemas are in sync
+        # #4869.3 — une fois pour les trois shards (même contenu, même verdict).
+        if: matrix.shard == 1
+        run: '"$IA_VENV/bin/python" -m app.contracts.sync_schemas --check'
+      # Interrupteur `vars.CI_IA_XDIST` : nombre de workers (défaut 3), `0` = séquentiel.
+      # `--dist loadfile` : un fichier de test reste sur UN worker (état de module intact).
+      - name: Pytest — shard ${{ matrix.shard }}/3
+        env:
+          CI_IA_XDIST: ${{ vars.CI_IA_XDIST || '3' }}
+        run: |
+          # #4869.3 — les fichiers de CE shard, calculés depuis le disque (jamais un paquet vide : le script refuse).
+          mapfile -t files < <(node ../../tools/ci/shard-ia.mjs "${{ matrix.shard }}/3")
+          echo "shard ${{ matrix.shard }}/3 : ${#files[@]} fichiers de test"
+          if [ "$CI_IA_XDIST" = "0" ]; then
+            "$IA_VENV/bin/python" -m pytest -q "${files[@]}"
+          else
+            "$IA_VENV/bin/python" -m pytest -q -n "$CI_IA_XDIST" --dist loadfile "${files[@]}"
+          fi
+
+  # ──────────────────────────────────────────────
+  # E2E smoke — Playwright : DÉMÉNAGÉ dans `.github/workflows/e2e-nightly.yml`
+  # le 14/09/2026.
+  #
+  # Il vivait ici avec `continue-on-error: true` ET hors des `needs` de
+  # `CI Status` : il ne pouvait donc faire échouer aucune fusion. Mesuré sur
+  # 45 exécutions : 42 verts, 1 annulé, ZÉRO rouge, pour 1,8 min de temps de
+  # job par exécution et 108 s de médiane — à égalité avec `Build` pour le job
+  # le plus long, donc sur le chemin critique du temps d'attente. Une garde qui
+  # ne peut pas dire non et qui n'a jamais rougi coûtait ici son plein prix.
+  #
+  # Il tourne désormais toutes les nuits sur `main`, SANS `continue-on-error`
+  # (un rouge est un rouge), et sur toute PR qui touche `e2e/`. Le promouvoir
+  # dans `CI Status` le jour où il aura attrapé un vrai défaut.
+  # ──────────────────────────────────────────────
+
+  # ──────────────────────────────────────────────
+  # CI Status gate — branch protection rule target
+  # ──────────────────────────────────────────────
+  # ──────────────────────────────────────────────
+  # `quick` — HUIT petits jobs fondus en UN, exécutés à la suite.
+  #
+  # Mesuré le 29/09/2026 (diagnostic CI du jour) : une exécution occupait ~24
+  # jobs pour 10 runners ; lint (2 min), format (3,8), contracts (2,4), site
+  # (1,7), back-office (1,9), figma-sync (1,3), eval (0,6) et avancement (0,5)
+  # payaient chacun leur file d'attente + checkout + `pnpm install`. Un seul
+  # job les paie une fois : -7 slots par exécution (-8 avec l'ancien `changes`
+  # de tête, qui reste à part car tous les autres jobs en dépendent), le chemin
+  # critique (Test Web / API) est inchangé.
+  #
+  # ⚠️ ANCIENS JOBS → ÉTAPES, aucune n'a disparu (garde borgne) :
+  #   lint · format (+ CLAUDE.md ≤ 15 000) · test-contracts · test-site ·
+  #   test-backoffice · test-figma-sync · eval · test-avancement.
+  # Chacune GARDE sa condition de portée d'origine (`needs.changes.outputs.X`) ;
+  # `format` et `test-avancement` n'en avaient pas — ils n'en ont toujours pas
+  # (leur commande est repo-wide, voir l'histoire ci-dessous).
+  #
+  # ⚠️ ÉCHECS INDÉPENDANTS : chaque étape porte `!cancelled()`, donc un lint
+  # rouge n'empêche pas le format, le site, le back-office… de tourner et de
+  # s'afficher. Le job échoue à la fin si UNE étape a échoué : `ci-status` lit
+  # `needs.quick.result`, qui vaut `failure` dès qu'une étape tombe. Ne pas
+  # enlever `!cancelled()` d'une étape : la suivante serait sautée sur un
+  # échec, et on ne verrait plus qu'une erreur à la fois.
+  # Coût assumé : si `pnpm install` échoue, toutes les étapes Node échouent
+  # ensemble (bruit, pas de faux vert).
+  #
+  # Histoire des étapes reprise des anciens jobs :
+  #  · `format` est repo-wide (`prettier --check .` — markdown, YAML, JSON) :
+  #    le gater sur `node` en faisait une garde borgne (constaté le 28/08 sur
+  #    #1212). Il écrit aussi le cache du store pnpm, seul job à le faire.
+  #  · `test-avancement` sans garde de portée : une PR qui ne touche QUE le
+  #    tracker et casse la mesure doit rougir ; la cohérence des registres
+  #    lit les registres (17 anomalies réelles trouvées le 16/09/2026).
+  #  · `test-backoffice` passe par `turbo test` (la tâche déclare
+  #    `dependsOn: ["^build"]`, sinon `@bellum/contracts` n'a pas de `dist/`).
+  #  · `test-site` : 359 tests + parité i18n que rien ne lançait avant le 27/08.
+  #  · `test-figma-sync` : la portée couvre tokens.css / tailwind / packages/ui.
+  #  · `eval` : `fetch-depth: 0` pour le merge-base ; golden set hermétique,
+  #    zéro appel réseau ; doc dans agent_docs/eval-gate.md.
+  # ──────────────────────────────────────────────
+  quick:
+    name: Contrôles rapides (lint, format, suites légères, eval)
+    needs: changes
+    if: github.event_name == 'pull_request'
+    runs-on: ${{ vars.CI_RUNS_ON || 'ubuntu-latest' }}
+    # Somme des anciens plafonds ≈ 70 min ; mesuré ≈ 15 min au total. 40 laisse
+    # une marge de contention sans occuper un runner des heures.
+    timeout-minutes: 40
+    permissions:
+      contents: read
+    steps:
+      # `fetch-depth: 0` : requis par l'eval gate (merge-base avec la base).
+      # Runner auto-hébergé : un job tué laisse un _work dont l'index git ment (« not uptodate; will not
+      # remove ») et le checkout rend un dépôt VIDE (« No pnpm version »). On vide avant de cloner.
+      - name: Vider l'espace de travail du runner
+        run: find "$GITHUB_WORKSPACE" -mindepth 1 -maxdepth 1 -exec rm -rf {} + 2>/dev/null || true
+      - uses: actions/checkout@v7
+        with:
+          fetch-depth: 0
+      - uses: pnpm/action-setup@v6
+      - uses: actions/setup-node@v7
+        with:
+          node-version: 22
+      - uses: ./.github/actions/store-pnpm
+        id: store
+      - run: pnpm install --frozen-lockfile
+      # Le SEUL écrivain du cache du store pnpm (voir `format` ci-dessus).
+      - name: Écrire le cache du store pnpm
+        if: steps.store.outputs.restaure != 'true'
+        uses: actions/cache/save@v6
+        with:
+          path: ${{ steps.store.outputs.chemin }}
+          key: ${{ steps.store.outputs.cle }}
+      - name: Cache Turbo
+        uses: actions/cache@v6
+        with:
+          path: .turbo
+          key: turbo-quick-${{ runner.os }}-${{ github.sha }}
+          restore-keys: turbo-quick-${{ runner.os }}-
+
+      # ── failles des dépendances npm — BLOQUANT. Un avis high/critical de prod sans
+      # correctif possible s'exclut dans package.json (`pnpm.auditConfig.ignoreGhsas`) ET se
+      # documente dans docs/securite-avis-dependances.md, jamais en silence. Pas de portée :
+      # un avis tombe sans qu'aucun fichier ne change.
+      # Bloquant sur main, la nuit, et pour une PR qui touche les dépendances ; sur une PR
+      # qui n'y touche pas, un avertissement. POURQUOI (22/10/2026) : deux avis « high »
+      # publiés dans la journée (next, dompurify) ont rougi l'audit de TOUTES les PR ; avec
+      # `CI_COUPE_SUR_ROUGE`, chaque run était coupé à ~16 min sur une faille que la PR
+      # n'avait pas introduite et ne pouvait pas corriger (PR #4483, couches « audit » de PR7).
+      # La faille se corrige dans UNE PR de montée de version, qui, elle, reste bloquée.
+      - name: Audit des dépendances npm (prod, high+)
+        if: ${{ !cancelled() }}
+        env:
+          EVENEMENT: ${{ github.event_name }}
+          BASE: ${{ github.event.pull_request.base.sha }}
+        run: |
+          bloquant=1
+          if [ "$EVENEMENT" = "pull_request" ] && [ -n "$BASE" ]; then
+            git fetch -q --depth=1 origin "$BASE" 2>/dev/null || true
+            # Objet absent ou diff illisible → on reste bloquant (défaut sûr).
+            if git cat-file -e "$BASE^{commit}" 2>/dev/null \
+              && git diff --quiet "$BASE" HEAD -- pnpm-lock.yaml ':(glob)**/package.json' pnpm-workspace.yaml; then
+              bloquant=0
+            fi
+          fi
+          if pnpm audit --prod --audit-level=high; then exit 0; fi
+          if [ "$bloquant" = 1 ]; then exit 1; fi
+          echo "::warning title=Audit npm::rouge, mais cette PR ne touche pas les dépendances : non bloquant ici (bloquant sur main et la nuit)."
+
+      # ── lint (ex-job `lint`) ──
+      - name: ESLint
+        if: ${{ !cancelled() && needs.changes.outputs.node == 'true' }}
+        run: pnpm lint
+      - name: Knip — unused type exports
+        if: ${{ !cancelled() && needs.changes.outputs.node == 'true' }}
+        run: pnpm lint:exports:types
+      # Liste `tests-node.generated.ts` à jour (lot ci/3-web-setup). Ne rougit que pour les fichiers
+      # DE LA PR : la dérive venue de main reste un avertissement (#4484). Réglage : docs/ci.md §3.
+      - name: Liste des tests node à jour
+        if: ${{ !cancelled() && needs.changes.outputs.web == 'true' && vars.CI_TESTS_NODE_CHECK != 'off' }}
+        env:
+          BASE: ${{ github.event.pull_request.base.sha }}
+          MODE: ${{ vars.CI_TESTS_NODE_CHECK }}
+        run: |
+          if [ "$MODE" = "strict" ]; then
+            node apps/web/scripts/classer-tests-node.mjs --check
+            exit $?
+          fi
+          git fetch -q --depth=1 origin "$BASE" 2>/dev/null || true
+          # Diff illisible → mode strict (défaut sûr).
+          git diff --name-only "$BASE" HEAD > "$RUNNER_TEMP/fichiers-pr.txt" || { node apps/web/scripts/classer-tests-node.mjs --check; exit $?; }
+          node apps/web/scripts/classer-tests-node.mjs --check --seulement="$RUNNER_TEMP/fichiers-pr.txt"
+
+      # ── format (ex-job `format`) — repo-wide, SANS garde de portée ──
+      # Sur PR : seulement les fichiers modifiés par rapport à la base. POURQUOI (22/10/2026) :
+      # `prettier --check .` = 221 s × 203 runs = 749 runner-min/sem, le plus gros pas de
+      # `quick` (audit CI 15→22/10). Dépôt entier sur main et la nuit (filet), et sur PR si la
+      # base est introuvable, le diff illisible ou la config prettier elle-même bouge.
+      - name: Prettier check
+        if: ${{ !cancelled() }}
+        env:
+          EVENEMENT: ${{ github.event_name }}
+          BASE: ${{ github.event.pull_request.base.sha }}
+        run: |
+          # ⚠️ `pnpm-lock.yaml` N'EST PAS DANS CE DÉCLENCHEUR, ET C'EST MESURÉ (#4772, 28/10/2026).
+          # Un lockfile ne peut pas changer la sortie de Prettier — seuls un `.prettierrc`,
+          # un `.prettierignore` ou la clé `prettier` de `package.json` le peuvent. Tant que le
+          # lockfile y figurait, TOUTE PR Dependabot (qui touche le lockfile par définition)
+          # basculait sur `prettier --check .` et héritait des 193 fichiers non formatés du dépôt :
+          # #4638, #4636 et #4560 étaient rouges sur une dette qui n'était pas la leur, et le vrai
+          # rouge était invisible (tous les jobs sortaient `cancelled`, aucun en `failure`).
+          # La dette, elle, ne peut plus GROSSIR : une PR ordinaire vérifie son propre diff, donc
+          # tout fichier ajouté ou modifié doit être formaté. Et le job `dette-formatage`
+          # ci-dessous en garde le COMPTE, chaque nuit.
+          #
+          # ⚠️ `^package\.json$` N'EST PLUS DANS CE DÉCLENCHEUR NON PLUS, ET C'EST MESURÉ
+          # (#4638, 29/10/2026). Retirer le lockfile n'avait pas suffi : une PR Dependabot
+          # qui bouge une VERSION de dépendance touche aussi `package.json` à la racine, donc
+          # #4638 (run 40924335117) basculait encore sur `prettier --check .` et repayait les
+          # 192 fichiers de la dette — seul rouge du run, quinze jobs `cancelled` derrière lui.
+          # Or ce dépôt N'A AUCUNE clé `prettier` dans `package.json` : sa config est dans
+          # `.prettierrc.js` et `packages/tooling/prettier/`, couverts juste en dessous par
+          # leur propre motif. Le nom de fichier `package.json` ne
+          # prouvait donc RIEN — il attrapait ce qu'il ne visait pas (une garde doit savoir
+          # dire NON sans attraper le reste). Ce qui est testé maintenant, c'est la clé
+          # elle-même, des deux côtés du diff : si elle apparaît, change ou devient illisible,
+          # on reprend le dépôt entier. Un simple numéro de version de prettier, lui, change la
+          # RÈGLE de mesure, pas le devoir de cette PR : le compte repo-wide qui en découle est
+          # relevé chaque nuit sur `main` par `dette-formatage`, jamais payé par une PR.
+          if [ "$EVENEMENT" = "pull_request" ] && [ -n "$BASE" ]; then
+            git fetch -q --depth=1 origin "$BASE" 2>/dev/null || true
+            if git cat-file -e "$BASE^{commit}" 2>/dev/null \
+              && git diff --name-only --diff-filter=ACMR -z "$BASE" HEAD > /tmp/prettier-diff.lst 2>/dev/null; then
+              # La clé `prettier` de `package.json`, lue des deux côtés. `node` ne sort jamais
+              # en erreur : un `package.json` absent, vide ou illisible rend `ILLISIBLE`, qui
+              # bascule sur le dépôt entier — on ne devine pas une config qu'on n'a pas su lire.
+              LIRE_CLE='const s=require("fs").readFileSync(0,"utf8");let o="ILLISIBLE";try{o=JSON.stringify(JSON.parse(s).prettier ?? null)}catch(e){}process.stdout.write(o)'
+              CLE_BASE=$(git show "$BASE:package.json" 2>/dev/null | node -e "$LIRE_CLE")
+              CLE_HEAD=$(git show HEAD:package.json 2>/dev/null | node -e "$LIRE_CLE")
+              # `.prettierrc.js` ne contient qu'un `require('@bellum/tooling/prettier')` :
+              # TOUTES les options (printWidth 120, semi false, singleQuote…) vivent dans
+              # `packages/tooling/prettier/index.cjs`, que `(^|/)\.prettier` n'attrapait pas.
+              # Y changer `printWidth` reformatait le dépôt entier sans que ce pas s'en
+              # aperçoive (relevé le 29/10/2026). `prettier.config.*` est le nom standard,
+              # cité pour le jour où le dépôt y passe.
+              if tr '\0' '\n' < /tmp/prettier-diff.lst \
+                | grep -qE '(^|/)\.prettier|(^|/)prettier\.config\.|^packages/tooling/prettier/'; then
+                echo "config prettier modifiée : dépôt entier"
+              elif [ "$CLE_BASE" = "ILLISIBLE" ] || [ "$CLE_HEAD" = "ILLISIBLE" ]; then
+                echo "clé prettier de package.json illisible ($CLE_BASE -> $CLE_HEAD) : dépôt entier"
+              elif [ "$CLE_BASE" != "$CLE_HEAD" ]; then
+                echo "clé prettier de package.json modifiée : dépôt entier"
+              else
+                echo "prettier : $(tr -cd '\0' < /tmp/prettier-diff.lst | wc -c) fichier(s) modifié(s) par rapport à la base"
+                xargs -0 -r pnpm exec prettier --check --ignore-unknown --no-error-on-unmatched-pattern < /tmp/prettier-diff.lst
+                exit $?
+              fi
+            fi
+          fi
+          pnpm format:check
+      # Issue #6 : CLAUDE.md est relu à CHAQUE tour du fil principal et de
+      # CHAQUE agent (66 218 appels d'agents en 3 jours, mesuré le 16/09/2026).
+      # Un CLAUDE.md qui regonfle au-delà de 15 000 caractères recoûte les
+      # ~490 $/semaine que le déplacement de sa table de variables vers
+      # `agent_docs/env-reference.md` vient d'économiser — le détail
+      # supplémentaire va dans agent_docs/, pas dans le fichier relu partout.
+      - name: CLAUDE.md ≤ 15 000 caractères
+        if: ${{ !cancelled() }}
+        run: |
+          n=$(wc -c < CLAUDE.md)
+          echo "CLAUDE.md : $n caractères (plafond 15000)"
+          if [ "$n" -gt 15000 ]; then
+            echo "::error::CLAUDE.md fait $n caractères, plafond 15000 (issue #6) — déplacer le détail vers agent_docs/ (env-reference.md, doctrine.md, regles-design-2026-08-23.md), garder un titre d'une ligne ici."
+            exit 1
+          fi
+
+      # ── test-contracts (ex-job) — moitié TS du round-trip cross-lang (#273) ;
+      # la moitié Python vit dans `test-ia` (apps/ia/tests/test_shared_schemas.py).
+      - name: Vitest (packages/shared + packages/contracts)
+        if: ${{ !cancelled() && needs.changes.outputs.contracts == 'true' }}
+        run: pnpm turbo test --filter=@bellum/shared --filter=@bellum/contracts
+
+      # ── test-site (ex-job) ──
+      - name: Vitest (apps/website)
+        if: ${{ !cancelled() && needs.changes.outputs.site == 'true' }}
+        run: pnpm turbo test --filter=@bellum/website
+      - name: Parité des quatre langues
+        if: ${{ !cancelled() && needs.changes.outputs.site == 'true' }}
+        run: pnpm --filter @bellum/website check:i18n
+
+      # ── test-backoffice (ex-job) ──
+      - name: Vitest — back-office
+        if: ${{ !cancelled() && needs.changes.outputs.backoffice == 'true' }}
+        run: pnpm exec turbo test --filter=@bellum/dashboard-manager
+
+      # ── test-figma-sync (ex-job) ──
+      - name: Vitest (packages/figma-sync)
+        if: ${{ !cancelled() && needs.changes.outputs.figma_sync == 'true' }}
+        run: pnpm turbo test --filter=@bellum/figma-sync
+      - name: Build — extraction des tokens + bundle du plugin
+        if: ${{ !cancelled() && needs.changes.outputs.figma_sync == 'true' }}
+        run: pnpm --filter @bellum/figma-sync build
+
+      # ── Python : eval (ex-job) + avancement (ex-job) ──
+      # Python 3.13 pour les deux ; `pip` du cache s'appuie sur les
+      # requirements de l'IA (le fichier existe toujours).
+      # ⚠️ MÊME condition que `setup-python` juste dessous, jamais plus étroite :
+      # conditionné à `ia == 'true'`, le relais sautait sur toute PR qui ne
+      # touche pas l'IA, et `setup-python` tombait sur `lsb_release` introuvable
+      # (mesuré le 30/09/2026, PR #3463, trois runs d'affilée).
+      - uses: ./.github/actions/lsb-release-shim
+        if: ${{ !cancelled() }}
+      - uses: actions/setup-python@v7
+        if: ${{ !cancelled() }}
+        with:
+          python-version: '3.13'
+          cache: pip
+          cache-dependency-path: apps/ia/requirements.txt
+      # Venv hermétique (lot CI C) : même lock que `Test (IA / Python)`, rien dans le Python partagé.
+      - uses: ./.github/actions/ia-venv
+        if: ${{ !cancelled() && needs.changes.outputs.ia == 'true' }}
+      - name: Eval gate — golden set vs baseline
+        if: ${{ !cancelled() && needs.changes.outputs.ia == 'true' }}
+        working-directory: apps/ia
+        run: |
+          "$IA_VENV/bin/python" -m app.eval.gate --base "origin/${{ github.base_ref }}"
+      # #2899/#2443.7 — la porte JUMELLE, dédiée au CHAT : rejoue les suites
+      # déterministes du chat et refuse toute perte de couverture des hard
+      # failures (`chat_gate_baseline.json`). Déterministe, sans clé.
+      - name: Eval gate — chat (suites déterministes + couverture hard failures)
+        if: ${{ !cancelled() && needs.changes.outputs.ia == 'true' }}
+        working-directory: apps/ia
+        run: |
+          "$IA_VENV/bin/python" -m app.eval.chat_gate --base "origin/${{ github.base_ref }}"
+      # Le SECOND harnais (`apps/ia/evals/`), SANS `--judge` (clé de production
+      # requise). `--require entities,zones` ne barre que les deux groupes
+      # réellement verts aujourd'hui.
+      - name: Eval harness — golden set déterministe (hors réseau)
+        if: ${{ !cancelled() && needs.changes.outputs.ia == 'true' }}
+        working-directory: apps/ia
+        run: |
+          "$IA_VENV/bin/python" -m evals.run_eval --require entities,zones
+
+      # ── test-avancement (ex-job) — SANS garde de portée ──
+      - name: Pip install pytest
+        if: ${{ !cancelled() }}
+        run: pip install pytest
+      - name: Pytest (tools/avancement, tools/issues)
+        if: ${{ !cancelled() }}
+        run: python -m pytest tools/avancement/test_mesure.py tools/issues/test_digest.py tools/issues/test_fusion_changelog.py tools/recette/test_portee.py tools/registres/test_coherence.py -q
+      # La garde des registres LIT LES REGISTRES (pas seulement ses tests
+      # unitaires) : sans gate de périmètre, une PR qui ne touche QUE les
+      # registres est celle qui peut y écrire un faux `recetté`.
+      - name: La cohérence des registres
+        if: ${{ !cancelled() }}
+        run: python tools/registres/coherence.py .claude/notes/registre-*.md
+
+  # ──────────────────────────────────────────────
+  # #4035.1 — « Démo (semis sur vraie base) » : la salle démo ne part plus cassée en prod.
+  #
+  # L'incident du 11/10/2026 (~8 h de « Préparation de ta démo… » pour tout prospect) : le semis écrivait
+  # `opportunities.stage = 'abandoned'`, refusé par `opportunities_stage_check`. Les specs du semis MOCKENT la base,
+  # donc aucune contrainte SQL n'y est appliquée : la CI était verte. Même famille le 28/09 (`duplicate key` au
+  # re-semis, salle servie « AS IS »). Louis : « faut toujours que la démo soit up sinon ça déploie pas ».
+  #
+  # Ce job est LA porte : un Postgres réel (pgvector), TOUTES les migrations (`apps/api/scripts/migrate-fresh-ci.ts`),
+  # puis une salle semée par le VRAI chemin de production (`DemoResetService.seedNewRoom`), re-semée une seconde
+  # fois sur la même salle (`resetWorkspace` : purge + semis, le chemin qui a cassé deux fois). La moindre requête
+  # refusée fait rougir le job, avec la requête et la contrainte dans le journal.
+  #
+  # ⚠️ PAS de `services:` — les runners auto-hébergés sont des CONTENEURS sans socket Docker
+  # (`infra/ci-runner-vps/docker-compose.yml`) : un conteneur de service y est impossible. Postgres + pgvector sont
+  # installés par apt (sudo sans mot de passe sur les deux flottes), dans une grappe À PART sur le port 5441 pour ne
+  # jamais heurter un Postgres déjà présent sur l'image.
+  # ⚠️ PAS couplé au healthcheck Railway de l'API (décision Louis 11/10) : un défaut de démo bloquerait le déploiement
+  # d'un correctif prod. La porte est CE job + la sonde post-déploiement (`demo-smoke.yml`).
+  # Budget visé < 6 min (apt ~1 min, migrations 12 s, semis ×2 ~35 s en local) ; le timeout est la marge, pas la cible.
+  # ──────────────────────────────────────────────
+  test-demo-db:
+    name: Démo (semis sur vraie base)
+    needs: [changes]
+    if: github.event_name == 'pull_request' && needs.changes.outputs.demo == 'true'
+    # Louis 12/10 : non bloquant le temps de stabiliser le job (exécuteur persistant). 15/10 : vert 13/13
+    # depuis le 13/10 → BLOQUANT (plus de `continue-on-error`, dans les `needs` ET la liste de `CI Status`).
+    runs-on: ${{ vars.CI_RUNS_ON || 'ubuntu-latest' }}
+    timeout-minutes: 20
+    permissions:
+      contents: read
+      actions: read
+    env:
+      POSTGRES_HOST: localhost
+      POSTGRES_PORT: '5441'
+      POSTGRES_USER: postgres
+      POSTGRES_PASSWORD: postgres
+      POSTGRES_DB: postgres
+      PG_TEST_URL: postgresql://postgres:postgres@localhost:5441/postgres
+      # Le test REFUSE de se sauter : sans interrupteur il échoue au lieu d'être « vert, 0 test joué ».
+      DEMO_DB_REQUIRED: '1'
+      REDIS_URL: redis://localhost:6379
+      # Valeurs de montage uniquement : le semis n'appelle ni Supabase, ni Stripe, ni Anthropic.
+      SUPABASE_URL: http://localhost:54321
+      SUPABASE_ANON_KEY: ci-anon
+      SUPABASE_SERVICE_ROLE_KEY: ci-service
+      SUPABASE_JWT_SECRET: ci-jwt
+      ANTHROPIC_API_KEY: ci-anthropic
+      STRIPE_SECRET_KEY: ci-stripe
+      INTERNAL_API_SECRET: ci-internal-secret-0123456789
+      IA_SERVICE_URL: http://localhost:8000
+      COOKIE_DOMAIN: localhost
+    steps:
+      # Runner auto-hébergé : un job tué laisse un _work dont l'index git ment (« not uptodate; will not
+      # remove ») et le checkout rend un dépôt VIDE (« No pnpm version »). On vide avant de cloner.
+      - name: Vider l'espace de travail du runner
+        run: find "$GITHUB_WORKSPACE" -mindepth 1 -maxdepth 1 -exec rm -rf {} + 2>/dev/null || true
+      - uses: actions/checkout@v7
+      - uses: pnpm/action-setup@v6
+      - uses: actions/setup-node@v7
+        with:
+          node-version: 22
+      # Porte d'étage (ci/1-etages) : un job de l'étage rapide déjà rouge ⇒ on s'arrête en `failure`, jamais `cancelled`.
+      - name: Porte d'étage
+        if: github.event_name == 'pull_request' && vars.CI_STAGE_GATE != 'false'
+        working-directory: ${{ github.workspace }}
+        env:
+          GITHUB_TOKEN: ${{ github.token }}
+        run: node tools/ci/stage-gate.mjs
+      - uses: ./.github/actions/store-pnpm
+        id: store
+      - run: pnpm install --frozen-lockfile
+      - name: Postgres 16 + pgvector + Redis (grappe dédiée, port 5441)
+        run: |
+          set -euo pipefail
+          . /etc/os-release
+          # Exécuteurs PERSISTANTS (Hetzner) : un run tué en plein apt laisse dpkg à moitié
+          # configuré pour tous les suivants (« dpkg was interrupted », 12/10). On répare d'abord.
+          sudo DEBIAN_FRONTEND=noninteractive dpkg --configure -a
+          sudo DEBIAN_FRONTEND=noninteractive apt-get update -qq
+          sudo DEBIAN_FRONTEND=noninteractive apt-get install -y -qq curl ca-certificates gnupg
+          sudo install -d /usr/share/postgresql-common/pgdg
+          sudo curl -fsSL -o /usr/share/postgresql-common/pgdg/apt.postgresql.org.asc https://www.postgresql.org/media/keys/ACCC4CF8.asc
+          echo "deb [signed-by=/usr/share/postgresql-common/pgdg/apt.postgresql.org.asc] https://apt.postgresql.org/pub/repos/apt ${VERSION_CODENAME}-pgdg main" | sudo tee /etc/apt/sources.list.d/pgdg.list >/dev/null
+          sudo DEBIAN_FRONTEND=noninteractive apt-get update -qq
+          sudo DEBIAN_FRONTEND=noninteractive apt-get install -y -qq postgresql-16 postgresql-16-pgvector redis-server
+          # Exécuteur Hetzner PERSISTANT : le cluster d'un run précédent survit — on repart d'une base vierge.
+          sudo pg_dropcluster --stop 16 demo 2>/dev/null || true
+          sudo pg_createcluster 16 demo --port 5441 --start
+          sudo -u postgres psql -p 5441 -v ON_ERROR_STOP=1 -c "ALTER USER postgres PASSWORD 'postgres'"
+          # Redis : seulement le montage des files (BullMQ / limiteur) ; aucun job ne tourne.
+          (redis-server --port 6379 --daemonize yes >/dev/null) || true
+          PGPASSWORD=postgres psql -h localhost -p 5441 -U postgres -v ON_ERROR_STOP=1 -c "select version()"
+      - name: Le minimum de Supabase que supposent les migrations (rôles, auth.users, pgvector)
+        run: PGPASSWORD=postgres psql -h localhost -p 5441 -U postgres -v ON_ERROR_STOP=1 -f tools/ci/demo-db-bootstrap.sql
+      - name: Construire les paquets dont dépend l'API
+        run: pnpm turbo build --filter='@bellum/api^...'
+      - name: Toutes les migrations, sur base vierge
+        working-directory: apps/api
+        run: npx ts-node --transpile-only scripts/migrate-fresh-ci.ts
+      - name: Semer la salle démo (neuve), puis la re-semer — sur la vraie base
+        working-directory: apps/api
+        timeout-minutes: 10
+        run: npx jest -w 1 src/modules/demo/demo-seed-real-db.db.spec.ts
+      # CI-3 — up → schéma ↔ entités → down → base vide → up, sur une base À PART (même grappe, 5441) : le semis
+      # ci-dessus a sali `postgres`. Remplace en vérité les miroirs SQL (docs/tests-inventory/migrations-miroirs.md).
+      # Sévérité des deux contrôles neufs : docs/ci.md §3 (`vars.CI_MIGRATIONS_*`). Le up est TOUJOURS bloquant.
+      - name: Migrations — aller-retour up/down sur une vraie base
+        if: vars.CI_MIGRATIONS_ROUNDTRIP != 'off'
+        working-directory: apps/api
+        timeout-minutes: 10
+        env:
+          POSTGRES_DB: migrations_rt
+          PG_TEST_URL: postgres://postgres:postgres@localhost:5441/migrations_rt
+          MIGRATIONS_DB_REQUIRED: '1'
+          MIGRATIONS_SCHEMA_REQUIRED: ${{ vars.CI_MIGRATIONS_SCHEMA_REQUIRED == 'on' && '1' || '0' }}
+          MIGRATIONS_DOWN_REQUIRED: ${{ vars.CI_MIGRATIONS_DOWN_REQUIRED == 'on' && '1' || '0' }}
+        run: |
+          set -euo pipefail
+          export PGPASSWORD=postgres
+          psql -h localhost -p 5441 -U postgres -v ON_ERROR_STOP=1 -c "ALTER SYSTEM SET fsync = off" -c "SELECT pg_reload_conf()"
+          psql -h localhost -p 5441 -U postgres -v ON_ERROR_STOP=1 -c "DROP DATABASE IF EXISTS migrations_rt" -c "CREATE DATABASE migrations_rt"
+          psql -h localhost -p 5441 -U postgres -d migrations_rt -v ON_ERROR_STOP=1 -f ../../tools/ci/demo-db-bootstrap.sql
+          psql -h localhost -p 5441 -U postgres -v ON_ERROR_STOP=1 -c "ALTER DATABASE migrations_rt SET search_path = public, extensions"
+          npx jest -w 1 src/database/migrations-roundtrip.db.spec.ts
+      # Plus de coupure globale du run (ci/1-etages) : voir la porte d'étage.
+
+  # #4118 — contrats d'architecture : couches API / web (dependency-cruiser, cycles existants
+  # nommés dans `.dependency-cruiser-known-violations.json`) et IA (import-linter, `.importlinter`).
+  # Chaque étape GARDE sa portée et reste `!cancelled()` : un rouge n'en masque pas un autre.
+  arch:
+    name: Contrats d'architecture
+    needs: changes
+    if: github.event_name == 'pull_request'
+    runs-on: ${{ vars.CI_RUNS_ON || 'ubuntu-latest' }}
+    timeout-minutes: 10
+    steps:
+      # Runner auto-hébergé : un job tué laisse un _work dont l'index git ment (« not uptodate; will not
+      # remove ») et le checkout rend un dépôt VIDE (« No pnpm version »). On vide avant de cloner.
+      - name: Vider l'espace de travail du runner
+        run: find "$GITHUB_WORKSPACE" -mindepth 1 -maxdepth 1 -exec rm -rf {} + 2>/dev/null || true
+      - uses: actions/checkout@v7
+      - uses: pnpm/action-setup@v6
+      - uses: actions/setup-node@v7
+        with:
+          node-version: 22
+      - uses: ./.github/actions/store-pnpm
+        id: store
+      - run: pnpm install --frozen-lockfile
+      - name: Contrats API (dependency-cruiser)
+        if: ${{ !cancelled() && needs.changes.outputs.api == 'true' }}
+        run: pnpm --filter @bellum/api lint:arch
+      - name: Contrats web (dependency-cruiser)
+        if: ${{ !cancelled() && needs.changes.outputs.web == 'true' }}
+        run: pnpm --filter @bellum/web lint:arch
+      - uses: actions/setup-python@v7
+        if: ${{ !cancelled() && needs.changes.outputs.ia == 'true' }}
+        with:
+          python-version: '3.13'
+      - name: Contrats IA (import-linter)
+        if: ${{ !cancelled() && needs.changes.outputs.ia == 'true' }}
+        working-directory: apps/ia
+        run: |
+          # <2.7 comme apps/ia/pyproject.toml (2.7+ exige rich>=14, « Only one live display »,
+          # 14/10). Lancé par `uvx` dans un environnement jetable : rien dans le Python partagé.
+          # Analyse statique (grimp) : aucune dépendance de l'IA n'est nécessaire.
+          command -v uv >/dev/null 2>&1 || { python3 -m pip install --user --quiet "uv==0.12.8"; export PATH="$HOME/.local/bin:$PATH"; }
+          uvx --from "import-linter>=2.0,<2.7" --with "rich<14" lint-imports --config .importlinter
+
+  # #4117 — GA-413 : la fiche `agent_docs` bouge avec le code qu'elle décrit (frontmatter `sources:`).
+  # Codes du script : 0 vérifié · 1 dérive · 2 rien à comparer · 3 plage illisible · 4 frontmatter invalide.
+  # 2 n'est PAS un vert du script : le job le traduit en « non applicable » EXPLICITE (message), 3 et 4 rougissent.
+  doc-suit-le-code:
+    name: La doc suit le code (agent_docs ↔ sources)
+    needs: changes
+    if: github.event_name == 'pull_request'
+    runs-on: ${{ vars.CI_RUNS_ON || 'ubuntu-latest' }}
+    timeout-minutes: 5
+    steps:
+      # Runner auto-hébergé : un job tué laisse un _work dont l'index git ment (« not uptodate; will not
+      # remove ») et le checkout rend un dépôt VIDE (« No pnpm version »). On vide avant de cloner.
+      - name: Vider l'espace de travail du runner
+        run: find "$GITHUB_WORKSPACE" -mindepth 1 -maxdepth 1 -exec rm -rf {} + 2>/dev/null || true
+      - uses: actions/checkout@v7
+        with:
+          fetch-depth: 0
+      - name: Comparer fiches et code sur la plage de la PR
+        env:
+          BASE: ${{ github.base_ref }}
+        run: |
+          set -uo pipefail
+          git fetch --no-tags --prune origin "+refs/heads/${BASE}:refs/remotes/origin/${BASE}"
+          # `|| rc=$?` : l'étape tourne en `bash -e` ; sans lui, le code 2 tuait le
+          # shell avant d'être traduit, et une PR sans fichier couvert virait au rouge.
+          rc=0
+          node scripts/garde-derive-doc.mjs "origin/${BASE}...HEAD" || rc=$?
+          if [ "$rc" -eq 2 ]; then
+            echo "::notice::Garde doc↔code NON APPLICABLE : aucun fichier couvert par un \`sources:\` n'a changé dans cette PR (code 2, pas un vert du script)."
+            exit 0
+          fi
+          exit "$rc"
+
+  # ──────────────────────────────────────────────
+  # LA DETTE DE FORMATAGE NE PEUT QUE BAISSER (#4772, 28/10/2026)
+  #
+  # Le contrôle Prettier d'une PR ne lit que SON diff : il empêche un fichier
+  # neuf ou modifié d'arriver non formaté, mais il ne voit pas les fichiers
+  # anciens que personne ne touche. 193 d'entre eux se sont accumulés sans
+  # faire rougir quoi que ce soit, et c'est une PR Dependabot qui les a
+  # révélés — en les payant.
+  #
+  # Ce job compte, et refuse que le compte remonte. Il ne tourne PAS sur une
+  # PR : `prettier --check .` depuis la racine coûte ≈ 12 min (706 s mesurées
+  # le 18/09/2026), et Actions facture à la minute pleine. Une fois par nuit
+  # sur `main`, c'est 12 min/jour ; sur chaque PR, ce serait 12 min × chaque
+  # poussée. Le verdict d'un rouge hors PR est l'issue `ci-main-rouge`, comme
+  # pour la suite complète.
+  #
+  # Le jour où le compte tombe à zéro, remplacer le plancher par 0 et ce job
+  # devient la garde que la dette ne revienne JAMAIS.
+  dette-formatage:
+    name: Dette de formatage (ne peut que baisser)
+    # Nuit et déclenchement manuel seulement (ci/1-etages) : plus sur chaque push main, où il doublait la suite complète.
+    if: github.event_name == 'schedule' || github.event_name == 'workflow_dispatch'
+    runs-on: ${{ vars.CI_RUNS_ON || 'ubuntu-latest' }}
+    timeout-minutes: 25
+    steps:
+      # Runner auto-hébergé : un job tué laisse un _work dont l'index git ment (« not uptodate; will not
+      # remove ») et le checkout rend un dépôt VIDE (« No pnpm version »). On vide avant de cloner.
+      - name: Vider l'espace de travail du runner
+        run: find "$GITHUB_WORKSPACE" -mindepth 1 -maxdepth 1 -exec rm -rf {} + 2>/dev/null || true
+      - uses: actions/checkout@v7
+      - uses: pnpm/action-setup@v6
+      - uses: actions/setup-node@v7
+        with:
+          # ⚠️ PAS `node-version-file: .nvmrc` : CE DÉPÔT N'A PAS DE `.nvmrc` (29/10/2026).
+          # Ce job est né avec cette ligne et n'a donc JAMAIS passé son `setup-node` —
+          # « The specified node version file at: …/.nvmrc does not exist », rouge avant
+          # d'avoir lu un seul fichier. La dette de formatage n'a jamais été mesurée par
+          # le job censé la garder : troisième cliquet décoratif du fichier après le
+          # `tee` sans `pipefail` de `Test (API)` et le plafond lu sur tous les chiffres.
+          # La version de Node se déclare ici comme dans les sept autres jobs de ce
+          # fichier ; `engines` de package.json dit `>=22.19.0 <25`.
+          node-version: 22
+      # PAS `cache: pnpm` : il sauvegarde dans le pas `Post` de CHAQUE job qui le
+      # porte, donc plusieurs écrivains sur la même clé du store — le premier
+      # arrivé gagne et les autres paient la compression pour se faire refuser.
+      # Le dépôt passe par l'action composite, qui ne fait que RESTAURER
+      # (garde `cache-pnpm-un-seul-ecrivain`).
+      - uses: ./.github/actions/store-pnpm
+        id: store
+      - run: pnpm install --frozen-lockfile
+      - name: Compter les fichiers non formatés
+        run: |
+          # ⚠️ LE PLAFOND SE LIT SUR UN NOMBRE, PAS SUR TOUS LES CHIFFRES DU FICHIER (29/10/2026).
+          # `tr -cd '0-9'` retirait tout ce qui n'est pas un chiffre du fichier ENTIER, commentaires
+          # compris. Le fichier porte sa raison écrite — « mesuré le 28/10/2026 (run 40762976633,
+          # PR #4638) : 193 — apps/api 52, apps/web 47 … » — donc le plafond calculé était la
+          # CONCATÉNATION de tous ces chiffres : 1932810202640762976633463819352473030141281362914144772,
+          # cinquante-cinq chiffres. `COMPTE -gt PLAFOND` ne pouvait jamais être vrai : le cliquet était
+          # décoratif depuis sa naissance, exactement comme le `tee` sans `pipefail` du job `Test (API)`.
+          # Trouvé par une autre session en voulant abaisser le plancher. Le premier nombre en DÉBUT de
+          # ligne, et lui seul. Garde : `un-plafond-de-cliquet-se-lit-sur-un-nombre`.
+          PLAFOND=$(grep -m1 -oE '^[0-9]+' .github/prettier-dette.txt)
+          if [ -z "$PLAFOND" ]; then
+            echo "::error::.github/prettier-dette.txt ne contient aucun nombre" >&2
+            exit 1
+          fi
+          # `--check` sort 1 dès qu'un fichier est mal formaté : on veut le COMPTE,
+          # pas le code de sortie, donc `|| true` et on compte les lignes `[warn]`
+          # qui nomment un fichier (la dernière, « Code style issues found… », est
+          # un résumé : elle est écartée).
+          pnpm exec prettier --check . > /tmp/prettier-dette.log 2>&1 || true
+          COMPTE=$(grep -c '^\[warn\] [^ ]*$' /tmp/prettier-dette.log || true)
+          COMPTE=${COMPTE:-0}
+          echo "fichiers non formatés : $COMPTE (plafond $PLAFOND)"
+          if [ "$COMPTE" -gt "$PLAFOND" ]; then
+            echo "::error::la dette de formatage REMONTE : $COMPTE fichiers pour un plafond de $PLAFOND." >&2
+            echo "Les fichiers en cause :" >&2
+            grep '^\[warn\] [^ ]*$' /tmp/prettier-dette.log >&2 || true
+            echo "Geste : pnpm exec prettier --write <fichiers>, puis baisser .github/prettier-dette.txt." >&2
+            exit 1
+          fi
+          if [ "$COMPTE" -lt "$PLAFOND" ]; then
+            echo "::notice::la dette a BAISSÉ ($COMPTE < $PLAFOND) — abaisse .github/prettier-dette.txt à $COMPTE pour la figer."
+          fi
+
+  ci-status:
+    name: CI Status
+    needs: [changes, quick, build, test, test-web, test-ia, arch, doc-suit-le-code, test-demo-db]
+    runs-on: ${{ vars.CI_RUNS_ON || 'ubuntu-latest' }}
+    # Le seul job de ce fichier qui n'avait pas de plafond (relevé le 25/10/2026).
+    # Sur une flotte auto-hébergée, un job sans `timeout-minutes` retient un
+    # runner jusqu'au délai par défaut de la plateforme — six heures — et c'est
+    # la vérification REQUISE : tant qu'elle n'a pas rendu son verdict, la PR
+    # attend. Cinq minutes suffisent : ce job ne lit que des résultats.
+    timeout-minutes: 5
+    # Pull request seulement : sur `push`, `schedule` et `workflow_dispatch`, seuls `Test (Web)` et
+    # `Test (API)` tournent et `CI Status` ne bloque rien (le verdict est l'issue `ci-main-rouge`).
+    if: always() && github.event_name == 'pull_request'
+    steps:
+      - name: Brouillon — CI non lancée
+        if: github.event.pull_request.draft == true
+        run: |
+          echo "PR en brouillon : la CI ne tourne pas. Passe-la « prête » pour la lancer."
+          exit 1
+      # #4869.2 — nomme le job rouge ou ANNULÉ (avec son plafond) avant la porte : un `cancelled` par
+      # `timeout-minutes` n'a aucune étape rouge et sortait « one or more jobs failed » sans le nommer (#4834).
+      - uses: actions/checkout@v7
+        with:
+          sparse-checkout: |
+            tools/ci
+            .github/workflows/ci.yml
+          sparse-checkout-cone-mode: false
+      - name: Nommer le job rouge ou annulé
+        if: always()
+        env:
+          NEEDS_JSON: ${{ toJSON(needs) }}
+        run: node tools/ci/ci-status.mjs
+      - name: Check CI status
+        run: |
+          results=(
+            # ⚠️ `changes` d'abord. S'il tombe, tous les autres sont SAUTÉS — et
+            # `skipped` passe cette porte. Sans cette ligne, un job de portée en
+            # panne rendrait la CI verte sur une PR dont rien n'a été testé :
+            # c'est la « garde borgne », transposée à la CI elle-même.
+            "${{ needs.changes.result }}"
+            # `quick` = lint + format + contracts + site + back-office + figma-sync
+            # + eval + avancement, fondus le 29/09/2026 (-7 slots par run). Un seul
+            # `result`, mais chaque étape est `!cancelled()` : l'échec de N'IMPORTE
+            # LAQUELLE rend le job `failure`. Aucune ancienne garde n'a disparu.
+            "${{ needs.quick.result }}"
+            # `build` = Build + Check types (deux steps, fondus le 05/10/2026) : un rouge
+            # sur l'un ou l'autre rend le job `failure`. Aucun job ne sort de la porte.
+            "${{ needs.build.result }}"
+            # `test` est une MATRICE (3 shards depuis le 16/10/2026). Une matrice s'agrège sous son
+            # seul `job_id` dans `needs` : `needs.test.result` vaut `failure`
+            # dès qu'UN shard tombe, et `success` seulement si les deux
+            # passent. Cette ligne garde donc les deux — il ne faut ni la
+            # dupliquer ni la remplacer par des entrées par shard, qui
+            # n'existent pas dans le contexte `needs`.
+            "${{ needs.test.result }}"
+            # `test-web` était dans `needs:` mais PAS dans cette liste : le job
+            # tournait, s'affichait rouge, et `CI Status` passait quand même.
+            # 312 fichiers de test ne gardaient donc rien — précisément la
+            # situation que le commentaire du bloc Tests dit avoir close en #645.
+            "${{ needs.test-web.result }}"
+            # Dans `needs:` ET dans cette liste — les deux. Un job absent d'ici
+            # tourne, rougit, et la CI passe quand même (`test-web`, `test-site`,
+            # `test-backoffice`, `test-figma-sync` en ont fait l'expérience).
+            "${{ needs.test-ia.result }}"
+            # #4118 — contrats d'architecture (dans `needs:` ET ici).
+            "${{ needs.arch.result }}"
+            # #4117 — la doc suit le code (GA-413).
+            "${{ needs.doc-suit-le-code.result }}"
+            # #4035.1 — « Démo (semis sur vraie base) » : sorti de la porte le 12/10 le temps de le stabiliser,
+            # REMIS le 15/10 (vert 13/13 depuis le 13/10). Dans `needs:` ET ici. Sauté (aucun fichier démo
+            # touché) = `skipped`, qui passe.
+            "${{ needs.test-demo-db.result }}"
+          )
+          for result in "${results[@]}"; do
+            if [[ "$result" == "failure" || "$result" == "cancelled" ]]; then
+              echo "CI failed: one or more jobs failed"
+              exit 1
+            fi
+          done
+          echo "CI passed"
+
+  # ──────────────────────────────────────────────
+  # SUITE COMPLÈTE ROUGE SUR MAIN → UNE ISSUE
+  #
+  # Sur une PR, seuls les tests concernés tournent : une régression que le graphe d'imports ne voit pas
+  # peut donc arriver sur main. La suite complète (push sur main, nuit, manuel) la rattrape, et ce job
+  # le DIT : il ouvre l'issue « Suite complète rouge sur main » (label `ci-main-rouge`), ou la commente
+  # si elle est déjà ouverte, avec le SHA, le lien du run et la plage de commits depuis le dernier run
+  # vert du même workflow sur main.
+  #
+  # ⚠️ TOUT job qui tourne sur main est dans ces `needs` (ou en est un ancêtre) : `dette-formatage` en
+  # était absent, il a rougi main du 22 au 29/10/2026 avec ce job `skipped` à chaque run (#4830).
+  # Garde : `apps/api/src/architecture/alarme-main-couvre-tous-les-jobs.spec.ts`.
+  # ──────────────────────────────────────────────
+  suite-complete-rouge:
+    name: Suite complète rouge sur main
+    needs: [test, test-web, test-ia, dette-formatage, warm-cache]
+    # Aussi quand un job lourd est `cancelled` (timeout…) : le script ci-dessous ne continue que si ce job
+    # annulé porte une ÉTAPE en failure (ci/1-etages) ; une annulation manuelle pure n'ouvre pas d'issue.
+    if: failure() && github.event_name != 'pull_request' && github.ref == 'refs/heads/main' || always() && contains(needs.*.result, 'cancelled') && github.event_name != 'pull_request' && github.ref == 'refs/heads/main'
+    runs-on: ${{ vars.CI_RUNS_ON || 'ubuntu-latest' }}
+    timeout-minutes: 5
+    permissions:
+      contents: read
+      actions: read
+      issues: write
+    steps:
+      - uses: actions/github-script@v9
+        env:
+          NEEDS: ${{ toJSON(needs) }}
+        with:
+          script: |
+            const { owner, repo } = context.repo
+            const sha = context.sha
+            const results = Object.values(JSON.parse(process.env.NEEDS)).map(n => n.result)
+            if (!results.includes('failure')) {
+              // Seulement des jobs annulés : rouge réel si l'un d'eux porte une étape en failure.
+              const { data } = await github.rest.actions.listJobsForWorkflowRun({ owner, repo, run_id: context.runId, per_page: 100, filter: 'latest' })
+              const hit = data.jobs.some(j => j.conclusion === 'cancelled' && (j.steps ?? []).some(s => s.conclusion === 'failure'))
+              if (!hit) {
+                console.log('Jobs annulés sans étape en échec : annulation, pas un rouge. Pas d’issue.')
+                return
+              }
+            }
+            const runUrl = `${context.serverUrl}/${owner}/${repo}/actions/runs/${context.runId}`
+            const title = 'Suite complète rouge sur main'
+            const label = 'ci-main-rouge'
+            let range = 'plage inconnue (aucun run vert précédent trouvé)'
+            try {
+              const { data } = await github.rest.actions.listWorkflowRuns({
+                owner, repo, workflow_id: 'ci.yml', branch: 'main', status: 'success', per_page: 1,
+              })
+              const last = data.workflow_runs[0]
+              if (last) {
+                const cmp = await github.rest.repos.compareCommits({ owner, repo, base: last.head_sha, head: sha })
+                const commits = cmp.data.commits.map(c => `- ${c.sha.slice(0, 10)} ${c.commit.message.split('\n')[0]}`)
+                range = `depuis le dernier run vert (${last.head_sha.slice(0, 10)}, ${last.html_url}) : ${commits.length} commit(s)\n${commits.join('\n')}`
+              }
+            } catch (error) {
+              range = `plage non calculée : ${error.message}`
+            }
+            const body = `Événement : \`${context.eventName}\`\nSHA : \`${sha}\`\nRun : ${runUrl}\n\nCommits ${range}`
+            try {
+              await github.rest.issues.createLabel({ owner, repo, name: label, color: 'b60205' })
+            } catch (error) {
+              // Le label existe déjà : tant mieux.
+            }
+            const open = await github.rest.issues.listForRepo({ owner, repo, state: 'open', labels: label, per_page: 1 })
+            if (open.data.length > 0) {
+              await github.rest.issues.createComment({ owner, repo, issue_number: open.data[0].number, body })
+            } else {
+              await github.rest.issues.create({ owner, repo, title, body, labels: [label] })
+            }

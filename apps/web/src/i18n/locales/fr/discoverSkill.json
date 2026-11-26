@@ -1,0 +1,109 @@
+{
+  "evidence": {
+    "count_one": "{{count}} offre {{skill}}",
+    "count_other": "{{count}} offres {{skill}}",
+    "latest": "la plus récente :",
+    "detailTitle": "Les offres qui citent {{skill}}",
+    "detailPartial": "Les {{shown}} plus récentes sur {{count}} offres",
+    "foundInDescription": "mot trouvé dans la description"
+  },
+  "intermediaries": {
+    "toggle": "Cabinets et ESN qui recrutent sur {{skill}} ({{count}})",
+    "hint": "Un cabinet recrute pour un client qu'il ne nomme pas ; une ESN est un concurrent. Ils sont rangés à part des clients finaux.",
+    "kind": {
+      "recruiter": "Cabinet de recrutement",
+      "esn": "ESN ou conseil informatique"
+    }
+  },
+  "empty": {
+    "no_offers": "Aucune offre récente ne cite {{skill}} dans cette zone (90 derniers jours, hors stages).",
+    "no_offers_in_city": "Aucune offre récente ne cite {{skill}} dans cette ville. Des offres existent ailleurs dans le département : retire la ville pour les voir.",
+    "only_intermediaries": "Seuls des cabinets et des ESN recrutent sur {{skill}} dans cette zone : ils sont listés à part, ci-dessous.",
+    "no_employer_identified": "Des offres citent {{skill}}, mais aucun employeur n'a pu être identifié avec certitude.",
+    "sources_unavailable": "Les offres d'emploi ne sont pas lisibles pour le moment : réessaie dans quelques minutes.",
+    "outside_headcount": "Des entreprises recrutent sur {{skill}} dans cette zone, mais aucune dans la tranche d'effectif choisie."
+  },
+  "notices": {
+    "intermediaries_one": "{{count}} cabinet ou ESN recrute aussi sur {{skill}} : rangé à part des clients finaux.",
+    "intermediaries_other": "{{count}} cabinets et ESN recrutent aussi sur {{skill}} : rangés à part des clients finaux.",
+    "showIntermediaries": "Voir les cabinets et ESN",
+    "outsideHeadcount_one": "{{count}} entreprise hors de la taille choisie.",
+    "outsideHeadcount_other": "{{count}} entreprises hors de la taille choisie.",
+    "outsideSector_one": "{{count}} entreprise écartée hors secteur.",
+    "outsideSector_other": "{{count}} entreprises écartées hors secteur.",
+    "removeHeadcount": "Retirer la taille",
+    "unresolved_one": "{{count}} employeur non identifié au registre avec certitude : listé sans fiche, identité en cours.",
+    "unresolved_other": "{{count}} employeurs non identifiés au registre avec certitude : listés sans fiche, identité en cours.",
+    "deadlineCut_zero": "Recherche coupée par le délai : des offres restent à lire.",
+    "deadlineCut_one": "Recherche coupée par le délai : {{count}} employeur reste à vérifier.",
+    "deadlineCut_other": "Recherche coupée par le délai : {{count}} employeurs restent à vérifier.",
+    "retry": "Relancer"
+  },
+  "provenance": {
+    "widened": "Voisin de ta demande : {{via}}",
+    "via": {
+      "hiring": "offres du même domaine",
+      "tender": "appel d'offres du domaine",
+      "capital": "levée de fonds",
+      "other": "fait voisin"
+    },
+    "freshFill": "Trouvé par une collecte d'offres fraîche",
+    "commonBase": "Repéré dans la base commune",
+    "jobsAsOf": "Offres au {{date}}",
+    "observedNeed": "Besoin {{label}}, {{date}}",
+    "observedNeedNature": "{{nature}} {{label}}, {{when}}",
+    "inYear": "en {{year}}",
+    "monthsAgo_one": "il y a {{count}} mois",
+    "monthsAgo_other": "il y a {{count}} mois",
+    "nature": { "recrutement": "Recrutement", "mission": "Mission", "projet": "Projet" }
+  },
+  "funnel": {
+    "line": "{{entered}} trouvés · {{kept}} retenus",
+    "lineKeptOnly": "{{kept}} retenus",
+    "separator": " — ",
+    "city": "{{count}} hors ville",
+    "zone": "{{count}} hors zone",
+    "trade": "{{count}} hors métier",
+    "headcount": "{{count}} hors taille",
+    "sector": "{{count}} hors secteur",
+    "individual": "{{count}} personnes physiques écartées",
+    "duplicate": "{{count}} doublons",
+    "portfolio": "{{count}} déjà au portefeuille",
+    "ceased": "{{count}} cessées",
+    "widened": " + {{count}} par l’élargissement"
+  },
+  "pending": {
+    "title_one": "{{count}} employeur prouvé par une offre — sans SIREN",
+    "title_other": "{{count}} employeurs prouvés par une offre — sans SIREN",
+    "locked": "L'offre prouve qu'ils recrutent ; leur identité au registre n'est pas établie. Sans SIREN, l'analyse, les contacts, l'enrichissement et l'ajout au CRM restent fermés.",
+    "state": {
+      "pending": "Identité en cours de vérification",
+      "ambiguous": "Plusieurs entreprises portent ce nom",
+      "unmatched": "Aucune entreprise du registre ne correspond avec certitude"
+    },
+    "reason": {
+      "homonym_on_site": "Plusieurs entités du groupe recrutent ici — aucune n’est choisie au hasard",
+      "brand_or_program": "Marque ou programme — entité non nommée"
+    },
+    "choose": "Choisir l'entreprise",
+    "chooseTitle": "Quelle entreprise est « {{name}} » ?",
+    "chooseThis": "C'est {{name}}",
+    "chooseError": "Le choix n'a pas été enregistré. Réessaie."
+  },
+  "table": {
+    "name": "Nom",
+    "type": "Type",
+    "city": "Ville",
+    "offers": "Offres",
+    "latest": "Offre la plus récente",
+    "date": "Date"
+  },
+  "offersRead": {
+    "only_one": "{{count}} offre lue",
+    "only_other": "{{count}} offres lues",
+    "ofTotal_one": "{{count}} offre lue sur {{total}} trouvées",
+    "ofTotal_other": "{{count}} offres lues sur {{total}} trouvées",
+    "atLeast_one": "{{count}} offre lue sur au moins {{total}} trouvées",
+    "atLeast_other": "{{count}} offres lues sur au moins {{total}} trouvées"
+  }
+}

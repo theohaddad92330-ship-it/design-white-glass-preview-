@@ -1,0 +1,568 @@
+{
+  "page": {
+    "title": "Messagerie",
+    "subtitle": "Répondre, relire, suivre. Chaque échange reste lié au bon dossier.",
+    "resolvedQuery": "Requête envoyée à ta messagerie",
+    "truncated": "La liste est tronquée : affine la recherche pour tout voir.",
+    "results_one": "{{count}} fil",
+    "results_other": "{{count}} fils",
+    "askLaura": "Quels mails dois-je traiter en premier ?",
+    "askLauraLabel": "Demander à {{copilot}}",
+    "kicker": "Conversations & validations"
+  },
+  "hero": {
+    "summary": {
+      "toTreat_one": "{{count}} réponse à traiter",
+      "toTreat_other": "{{count}} réponses à traiter",
+      "followUps_one": "{{count}} relance due",
+      "followUps_other": "{{count}} relances dues"
+    },
+    "treatFirst": "Traiter la première réponse"
+  },
+  "intents": {
+    "unread": "Non lus",
+    "no_reply": "Sans réponse",
+    "budget": "Budget",
+    "tjm": "TJM",
+    "cv": "CV reçus",
+    "job_description": "Fiches de poste",
+    "contract": "Contrats & signatures",
+    "tender": "Appels d'offres",
+    "invoice": "Factures",
+    "meeting": "Visios & réunions",
+    "positive_reply": "Réponses favorables",
+    "out_of_office": "Absences",
+    "attachments": "Avec pièce jointe",
+    "free": "Recherche libre"
+  },
+  "filters": {
+    "query": "Mot-clé, société…",
+    "counterpart": "Interlocuteur ou domaine",
+    "silenceDays": "Silence minimum",
+    "days_one": "{{count}} jour",
+    "days_other": "{{count}} jours",
+    "apply": "Chercher",
+    "searchToggle": "Rechercher dans ma messagerie"
+  },
+  "contactCompose": {
+    "title": "Écrire à {{name}}",
+    "titleFallback": "Écrire à ce contact",
+    "route": "Depuis {{from}} vers {{to}}",
+    "routeUnknownSender": "Depuis ta messagerie connectée vers {{to}}",
+    "to": "Destinataire",
+    "subject": "Objet",
+    "body": "Message",
+    "draft": "Déposer un brouillon",
+    "send": "Envoyer maintenant",
+    "draftExplain": "Le brouillon atterrit dans ta messagerie : tu le relis et tu l'envoies toi-même.",
+    "sendExplain": "L'envoi part de ta messagerie, vers ce destinataire uniquement. Un contact désabonné est refusé.",
+    "draftSuccess": "Brouillon déposé dans ta messagerie.",
+    "openDraft": "Ouvrir le brouillon",
+    "sendSuccess": "Message envoyé depuis ta messagerie.",
+    "skippedSuppressed": "Ce destinataire s'est désabonné : rien n'a été envoyé.",
+    "skippedOther": "Le message n'a pas été envoyé.",
+    "failed": "L'envoi a échoué : {{error}}",
+    "cancel": "Annuler",
+    "close": "Fermer"
+  },
+  "thread": {
+    "noSubject": "(sans objet)",
+    "unread": "Non lu",
+    "attachment": "Pièce jointe",
+    "awaiting": "En attente de réponse",
+    "esn": "ESN",
+    "silentFor_one": "Silencieux depuis {{count}} jour",
+    "silentFor_other": "Silencieux depuis {{count}} jours",
+    "messages_one": "{{count}} message",
+    "messages_other": "{{count}} messages",
+    "prepareDraft": "Préparer un brouillon",
+    "reply": "Préparer la réponse",
+    "followUp": "Relancer",
+    "moreActions": "Autres actions sur ce fil",
+    "accountTooltip": "Ouvrir le dossier {{name}}",
+    "contactTooltip": "Ouvrir la fiche de {{name}}",
+    "noCounterpart": "Interlocuteur inconnu"
+  },
+  "draft": {
+    "generating": "{{copilot}} rédige ta réponse…",
+    "generateFailed": "{{copilot}} n’a pas pu rédiger la réponse. Tu peux l’écrire toi-même ci-dessous.",
+    "replyTitle": "Répondre à ce fil",
+    "followUpTitle": "Relancer ce fil",
+    "description": "Le brouillon est déposé dans ta messagerie. Rien n'est envoyé : c'est toi qui envoies.",
+    "followUpDescription": "Une relance, préparée comme un nouveau brouillon dans ce fil. Rien n'est envoyé : c'est toi qui envoies.",
+    "to": "Destinataire",
+    "subject": "Objet",
+    "body": "Message",
+    "signatureNotice": "Ta signature réelle est ajoutée automatiquement quand nous avons pu la lire.",
+    "noSignatureNotice": "Aucune signature trouvée : le brouillon partira sans signature, à toi de l'ajouter.",
+    "submit": "Déposer le brouillon",
+    "submitting": "Dépôt en cours…",
+    "copy": "Copier",
+    "copied": "Brouillon copié dans le presse-papier",
+    "success": "Brouillon déposé dans ta messagerie.",
+    "openDraft": "Ouvrir le brouillon",
+    "cancel": "Annuler",
+    "close": "Fermer",
+    "sendFrom": "Envoyer depuis",
+    "sendsFrom": "Part de {{address}}",
+    "senderUnnamed": "Boîte {{n}}",
+    "sendExplain": "L'envoi part de ta messagerie, sur ton clic. Un contact désabonné est refusé.",
+    "send": "Envoyer",
+    "sending": "Envoi en cours…",
+    "sendSuccess": "Message envoyé depuis ta messagerie.",
+    "skippedSuppressed": "Ce destinataire s'est désabonné : rien n'a été envoyé.",
+    "skippedOther": "Le message n'a pas été envoyé.",
+    "sendFailed": "L'envoi a échoué : {{error}}",
+    "regenerate": "Régénérer"
+  },
+  "empty": {
+    "title": "Aucun fil pour cette recherche",
+    "subtitle": "Change d'intention ou élargis la fenêtre."
+  },
+  "notConnected": {
+    "title": "Aucune messagerie connectée",
+    "subtitle": "Connecte ta messagerie pour chercher tes fils, repérer les silences et préparer tes réponses ici.",
+    "cta": "Connecter ma messagerie"
+  },
+  "missingScope": {
+    "title": "Autorisation de lecture manquante",
+    "subtitle": "Ta messagerie est connectée mais ne nous autorise pas la lecture. Reconnecte-la pour activer cet écran.",
+    "cta": "Reconnecter"
+  },
+  "authorizationExpired": {
+    "title": "Autorisation expirée",
+    "subtitle": "Ta messagerie est toujours connectée, mais son autorisation a expiré. Reconnecte-la pour que la lecture reprenne."
+  },
+  "error": {
+    "title": "La recherche a échoué",
+    "subtitle": "Ce n’est pas « aucun fil » : c’est la lecture qui a échoué.",
+    "retry": "Réessayer"
+  },
+  "signature": {
+    "title": "Ta signature",
+    "label": "Ta signature",
+    "willBeAdded": "Elle sera ajoutée au bas de tes brouillons.",
+    "none": "Aucune signature : tes brouillons partiront sans.",
+    "placeholder": "Prénom Nom — Fonction, Société",
+    "save": "Enregistrer la signature",
+    "emptyMeaning": "Champ vidé : c’est la signature de ta messagerie qui reprend la main.",
+    "saved": "Signature enregistrée",
+    "failed": "La signature n’a pas pu être enregistrée",
+    "checking": "Signature : vérification…",
+    "detected": "Signature détectée : elle sera ajoutée à tes brouillons.",
+    "toConfigure": "Signature à configurer : tes brouillons partiront sans.",
+    "manage": "Gérer"
+  },
+  "intentsAria": "Filtrer par intention",
+  "capabilities": {
+    "title": "Ta messagerie est branchée, mais pas entièrement autorisée",
+    "granted": "Ce que je peux faire ici : {{list}}.",
+    "cta": "Revoir les autorisations",
+    "read": "lire tes fils",
+    "draft": "préparer des brouillons",
+    "send": "envoyer après ton clic",
+    "labels": "poser des étiquettes",
+    "outOfOffice": "voir ta réponse d’absence"
+  },
+  "connector": {
+    "connected": "Ta messagerie est connectée",
+    "connectedAs": "Ta messagerie est connectée · {{address}}",
+    "fetchedAt": "Fils relus à {{time}}",
+    "otherConnected_one": "+ {{count}} autre messagerie branchée",
+    "otherConnected_other": "+ {{count}} autres messageries branchées",
+    "manage": "Gérer la connexion"
+  },
+  "searchIntentsAria": "Filtrer par type de recherche",
+  "drawer": {
+    "unknownCounterpart": "Interlocuteur inconnu",
+    "openAccount": "Ouvrir le dossier {{name}}",
+    "noAccount": "Aucun compte rattaché avec certitude à ce fil.",
+    "history": "Derniers échanges",
+    "historyUnavailable": "Le détail des messages n'est pas disponible pour ce fil.",
+    "fromMe": "Toi",
+    "unknownSender": "Expéditeur inconnu",
+    "askLaura": "Prépare-moi une réponse au fil « {{subject}} »",
+    "askLauraLabel": "Demander à {{copilot}}"
+  },
+  "linkAccount": {
+    "title": "Rattacher ce fil à un compte",
+    "description": "Aucun compte n'a pu être déterminé avec certitude pour « {{subject}} ». Choisis-en un — ce rattachement restera visible pour ce fil.",
+    "selectAria": "Choisir un compte",
+    "placeholder": "Choisir un compte…",
+    "confirm": "Rattacher",
+    "submitting": "Rattachement…",
+    "failed": "Le rattachement a échoué."
+  },
+  "state": {
+    "unread": "Non lu",
+    "awaiting_reply": "En attente de réponse",
+    "treated": "Traité",
+    "irrelevant": "Non pertinent"
+  },
+  "priorityReason": {
+    "positive_reply_unread": "Réponse favorable, non lue",
+    "positive_reply": "Réponse favorable",
+    "unread": "Message non lu",
+    "awaiting_reply_late": "Sans réponse depuis longtemps — une relance serait utile",
+    "awaiting_reply": "En attente d'une réponse",
+    "treated": "Marqué comme traité",
+    "irrelevant": "Signalé non pertinent",
+    "none": "Rien de particulier"
+  },
+  "actions": {
+    "markTreated": "Marquer comme traité",
+    "unmarkTreated": "Retirer « traité »",
+    "markIrrelevant": "Signaler non pertinent",
+    "unmarkIrrelevant": "Retirer « non pertinent »",
+    "linkAccount": "Rattacher à un compte",
+    "snooze": "Reporter",
+    "createTask": "Créer une tâche"
+  },
+  "bridge": {
+    "title": "Ce mail peut devenir un objet de travail",
+    "positiveReply": "Une réponse favorable se transforme en affaire suivie — ou fait avancer celle qui existe.",
+    "positiveReplyCta": "Ouvrir le pipe",
+    "jobDescription": "Une fiche de poste devient un besoin à qualifier, puis à staffer.",
+    "jobDescriptionCta": "Ouvrir les besoins",
+    "cv": "Un CV reçu rejoint le vivier, avec ses compétences et sa disponibilité.",
+    "cvCta": "Ouvrir le vivier",
+    "tender": "Un appel d’offres se traite là où le bid/no-bid se décide.",
+    "tenderCta": "Ouvrir les appels d’offres",
+    "invoice": "Une facture se rapproche de la mission qu’elle concerne.",
+    "invoiceCta": "Ouvrir la facturation",
+    "meeting": "Une invitation se prépare — le rendez-vous et ce qu’il faut savoir avant.",
+    "meetingCta": "Ouvrir aujourd’hui"
+  },
+  "beeper": {
+    "title": "Conversations Beeper",
+    "pending": "Beeper attend ta validation : termine le branchement dans Intégrations.",
+    "unreachable": "Beeper est injoignable — {{reason}}",
+    "empty": "Aucune conversation récente dans Beeper.",
+    "failed": "La lecture de Beeper a échoué.",
+    "untitled": "Conversation",
+    "unread_one": "{{count}} non lu",
+    "unread_other": "{{count}} non lus",
+    "contactMatch": "Contact connu : {{name}} (par {{on}})",
+    "matchedOn": {
+      "email": "e-mail",
+      "phone": "téléphone",
+      "handle": "identifiant"
+    },
+    "prepareReply": "Préparer la réponse",
+    "replyTitle": "Répondre à {{name}}",
+    "replyDescription": "Sur {{network}}, par ton Beeper Desktop. Rien ne part sans ton clic.",
+    "you": "Toi",
+    "them": "Interlocuteur",
+    "noText": "(pièce jointe ou message sans texte)",
+    "replyLabel": "Ta réponse",
+    "neverAlone": "{{copilot}} peut la préparer ; c'est toi qui l'envoies. {{brand}} ne conserve pas la conversation.",
+    "prepareWithLaura": "Préparer avec {{copilot}}",
+    "askLaura": "Prépare ma réponse à {{name}} sur {{network}} (conversation Beeper {{chatId}}), dans le ton de l'échange.",
+    "send": "Envoyer sur Beeper",
+    "sent": "Envoyé par Beeper.",
+    "alreadySent": "Ce message était déjà parti : il n'est pas renvoyé.",
+    "sendFailed": "L'envoi n'a pas abouti : {{error}}"
+  },
+  "scheduled": {
+    "title": "À venir",
+    "subtitle": "Tes envois programmés partent seuls, par ta boîte, à l’heure que tu as choisie.",
+    "noSubject": "(sans objet)",
+    "listAria": "Envois programmés",
+    "toScheduleTitle": "Brouillons validés à programmer",
+    "state": {
+      "scheduled": "Programmé pour le {{date}}",
+      "sent_proven": "Envoyé le {{date}}",
+      "sent_unproven": "Parti, pas encore retrouvé dans tes éléments envoyés",
+      "unknown": "Issue inconnue : vérifie tes éléments envoyés. Aucune nouvelle tentative ne part.",
+      "cancelled": "Envoi annulé",
+      "failed": "Pas parti : {{reason}}"
+    },
+    "failure": {
+      "mailbox_unavailable": "ta boîte n’autorisait pas l’envoi",
+      "suppressed": "ce contact s’est désabonné",
+      "already_sent": "un e-mail lui a déjà été envoyé",
+      "validation_mismatch": "le brouillon a changé depuis ta validation",
+      "validation_missing": "la validation du brouillon est introuvable",
+      "workspace_changed": "tu avais changé d’espace",
+      "demo_send_blocked": "en démonstration, rien ne part",
+      "no_email": "ce contact n’a pas d’adresse e-mail",
+      "other": "l’envoi a été refusé"
+    },
+    "actions": {
+      "schedule": "Programmer l’envoi",
+      "reschedule": "Changer l’heure",
+      "cancel": "Annuler l’envoi",
+      "confirm": "Programmer",
+      "confirmReschedule": "Enregistrer l’heure",
+      "close": "Fermer"
+    },
+    "picker": {
+      "label": "Date et heure d’envoi",
+      "hint": "Heure de ton fuseau ({{timeZone}})."
+    },
+    "error": "Impossible d’enregistrer : {{message}}",
+    "empty": {
+      "title": "Aucun envoi programmé",
+      "subtitle": "Valide un brouillon puis choisis l’heure : il partira seul, par ta boîte, et tu pourras l’annuler avant le départ."
+    }
+  },
+  "tabs": {
+    "aria": "États de traitement de la messagerie",
+    "todo": "À traiter",
+    "drafts": "Brouillons",
+    "upcoming": "À venir",
+    "history": "Historique",
+    "treated": "Traités"
+  },
+  "header": {
+    "sources": "Sources",
+    "newMessage": "Nouveau message"
+  },
+  "absence": {
+    "link": "Réponse d’absence : à régler dans Réglages › Intégrations"
+  },
+  "drafts": {
+    "listAria": "Brouillons à relire",
+    "toReview": "À relire",
+    "noSubject": "(sans objet)",
+    "empty": {
+      "title": "Aucun brouillon à relire",
+      "subtitle": "Les messages que {{copilot}} te prépare apparaissent ici ; une fois validés, ils se programment dans « À venir »."
+    }
+  },
+  "history": {
+    "empty": {
+      "title": "Rien dans l’historique",
+      "subtitle": "Les échanges que tu marques comme traités ou non pertinents se retrouvent ici."
+    }
+  },
+  "todo": {
+    "empty": {
+      "title": "Rien à traiter pour cette recherche"
+    }
+  },
+  "m2": {
+    "tabsAria": "Vues de la messagerie",
+    "tabs": {
+      "inbox": "À traiter",
+      "drafts": "Brouillons",
+      "scheduled": "À venir",
+      "history": "Historique"
+    },
+    "drafts": {
+      "title": "Messages à relire",
+      "subtitle": "{{copilot}} prépare, tu relis, tu décides. Ce sont les mêmes brouillons que dans Contacts.",
+      "sequenceTitle": "Messages de la séquence",
+      "sequenceSubtitle": "Les envois de cette séquence qui attendent ta relecture avant leur départ.",
+      "backToAll": "Tous les brouillons",
+      "filtersAria": "Origine des brouillons",
+      "listAria": "Messages à relire",
+      "badge": "Brouillon",
+      "filters": {
+        "all": "Tous",
+        "contact": "Contacts",
+        "reply": "Réponses",
+        "sequence": "Séquence · envois à approuver"
+      },
+      "origin": {
+        "contact": "Contact",
+        "reply": "Réponse",
+        "sequence": "Séquence"
+      },
+      "status": {
+        "toReview": "À relire",
+        "validated": "Validé"
+      },
+      "originLegend": "Origine"
+    },
+    "detail": {
+      "unknownContact": "Contact inconnu",
+      "to": "À : {{address}}",
+      "noAddress": "Ce contact n’a pas d’adresse e-mail.",
+      "edit": "Modifier",
+      "contactCard": "Fiche contact",
+      "sequenceLine": "Message de séquence · version {{version}}.",
+      "sequenceAll": "Voir tous les messages de cette séquence",
+      "blockedTitle": "Ce message ne peut pas partir",
+      "blockedHint": "Tu peux garder le brouillon pour mémoire ou l’archiver.",
+      "confirm": "J’ai relu le message, son destinataire et ses pièces.",
+      "validate": "Valider le brouillon",
+      "validateNote": "Valider n’envoie rien : tu envoies ensuite, sur ton clic.",
+      "validatedAt": "Validé par toi le {{date}}",
+      "sendNow": "Envoyer",
+      "deposit": "Déposer dans ma boîte",
+      "sendNote": "Un message par destinataire, depuis {{address}}, sur ton clic. « Déposer dans ma boîte » le range en brouillon chez toi.",
+      "copy": "Copier le texte",
+      "copied": "Texte copié dans le presse-papier",
+      "archive": "Archiver le brouillon",
+      "reject": "Refuser cet envoi",
+      "aria": "Brouillon",
+      "copyMessage": "Copier le message",
+      "review": "Relire & valider"
+    },
+    "trace": {
+      "title": "Expéditeur, version & historique",
+      "sender": "Expéditeur : {{address}}",
+      "senderUnknown": "ta messagerie connectée",
+      "version": "Version {{n}}",
+      "kind": {
+        "edited": "modifiée par toi",
+        "styled": "préparée avec ton modèle",
+        "prepared": "préparée depuis la fiche contact",
+        "rephrased": "reformulée avec {{copilot}}",
+        "sequence": "préparée par la séquence"
+      },
+      "personalDraft": "Brouillon personnel : le même que sur la fiche du contact.",
+      "sequenceDraft": "Message de séquence : rien ne part avant ta validation."
+    },
+    "upcoming": {
+      "title": "Préparations à venir",
+      "listAria": "Échanges reportés",
+      "badge": "Reporté",
+      "returns": "Revient dans « À traiter » le {{date}}",
+      "noExternal": "Aucun e-mail ni rappel externe envoyé.",
+      "changeDate": "Changer la date",
+      "putBack": "Remettre à traiter",
+      "fromDate": "À partir du",
+      "save": "Enregistrer la date"
+    },
+    "history": {
+      "title": "Journal des échanges",
+      "listAria": "Échanges traités et messages envoyés",
+      "treated": "Traité",
+      "sent": "Envoyé",
+      "sentOn": "Envoyé le {{date}}",
+      "proof": "Retrouvé dans tes éléments envoyés : l’étape de séquence liée passe à « envoyé ».",
+      "putBack": "Remettre à traiter",
+      "visibility": "Lu depuis ta boîte, jamais conservé. Personnel à toi : jamais visible par un collègue ni par ton manager.",
+      "sentAria": "Message envoyé"
+    },
+    "empty": {
+      "title": "Rien dans cette vue.",
+      "description": "Les autres vues restent disponibles.",
+      "clear": "Retirer les filtres",
+      "inviteTitle": "Ton prochain échange commence ici.",
+      "inviteBody": "Sélectionne un échange, ou prépare un message depuis un contact.",
+      "newMessage": "Nouveau message"
+    },
+    "validate": {
+      "title": "Relire avant de valider",
+      "to": "À",
+      "from": "Depuis",
+      "note": "Cette validation porte sur ce destinataire et cette version. Modifier le contenu demandera une nouvelle relecture.",
+      "back": "Revenir au brouillon"
+    },
+    "bulk": {
+      "select": "Sélectionner",
+      "stop": "Terminer la sélection",
+      "count_one": "{{count}} sélectionné",
+      "count_other": "{{count}} sélectionnés",
+      "review": "Relire & valider la sélection",
+      "pickAria": "Sélectionner le brouillon pour {{name}}",
+      "title_one": "Relire et valider {{count}} brouillon",
+      "title_other": "Relire et valider {{count}} brouillons",
+      "skipped": "Écartés d’office, leur destinataire est refusé : {{names}}.",
+      "confirm_one": "J’ai relu ce brouillon, son destinataire et ses pièces.",
+      "confirm_other": "J’ai relu ces {{count}} brouillons, leurs destinataires et leurs pièces.",
+      "validate_one": "Valider le brouillon",
+      "validate_other": "Valider les {{count}} brouillons",
+      "failed": "La validation n’a pas abouti : rien n’a été envoyé, réessaie."
+    },
+    "declare": {
+      "action": "Marquer envoyé",
+      "sentOn": "Envoyé le",
+      "hint": "Tu l’as envoyé toi-même ? Indique le jour : tes relances J+3, J+6 et J+9 partent de cette date.",
+      "cadence": "Relances planifiées : {{steps}}.",
+      "note": "Déclaré par toi, le {{date}} : {{brand}} n’a rien envoyé et ne peut pas le vérifier. Tes relances partent de la date que tu as indiquée. Seul « Fait » clôture une action, et il ne vaut jamais preuve d’envoi.",
+      "noteUnscheduled": "Déclaré par toi, non vérifié. Aucune relance n’a pu être planifiée pour l’instant."
+    }
+  },
+  "snooze": {
+    "title": "Reprendre cet échange plus tard",
+    "behavior": "Retrouvable dans À venir.",
+    "confirm": "Reporter",
+    "failed": "Le report a échoué."
+  },
+  "task": {
+    "title": "Créer une tâche liée",
+    "action": "Action à faire",
+    "dueOn": "Échéance",
+    "context": "Contexte (facultatif)",
+    "confirm": "Créer la tâche",
+    "objective": "Donner suite à l’échange « {{subject}} »",
+    "expectedResult": "L’échange est traité et la suite est actée."
+  },
+  "reader": {
+    "aria": "Lecture de l’échange",
+    "back": "Retour aux messages",
+    "archive": "Archiver cet échange",
+    "contactCard": "Fiche contact",
+    "associate": "Associer",
+    "liveNote": "Lu depuis ta boîte, jamais conservé",
+    "noReplyNote": "Fil automatique (no-reply) : il n’y a personne à qui répondre.",
+    "prepareReply": "Préparer la réponse",
+    "markTreated": "Marquer traité",
+    "origin": "Origine & visibilité",
+    "originLine": "Boîte {{address}} · dernier message le {{date}}.",
+    "originAddress": "Boîte {{address}}.",
+    "visibility": "Personnel à toi : jamais visible par un collègue ni par ton manager. Un statut lu ne clôt pas le suivi commercial."
+  },
+  "list": {
+    "title": "Échanges à suivre",
+    "aria": "Échanges à suivre",
+    "foot": "Seuls les fils des 30 derniers jours sont listés. Pour remonter plus loin, affine la recherche."
+  },
+  "status": {
+    "capsLink": "Ce que {{copilot}} peut y faire",
+    "capsTitle": "Ta messagerie connectée",
+    "granted": "Autorisé",
+    "notGranted": "Non autorisé"
+  },
+  "filtersDialog": {
+    "title": "Filtrer les échanges",
+    "silenceAny": "Indifférent",
+    "silenceChoice_one": "{{count}} jour sans réponse",
+    "silenceChoice_other": "{{count}} jours sans réponse",
+    "unreadOnly": "Voir seulement les échanges non lus",
+    "apply": "Appliquer",
+    "description": "L’intention, le compte et le mot-clé se choisissent au-dessus de la liste ; ici, ce qui les complète."
+  },
+  "newMessage": {
+    "title": "À qui veux-tu écrire ?",
+    "description": "La préparation utilise la même fiche contact et le même brouillon que la Messagerie.",
+    "searchAria": "Rechercher un destinataire",
+    "searchPlaceholder": "Nom, compte ou fonction…",
+    "failed": "Le répertoire n’a pas pu être lu.",
+    "empty": "Aucun contact ne correspond.",
+    "choose": "Choisir"
+  },
+  "toolbar": {
+    "searchAria": "Rechercher dans la messagerie",
+    "searchPlaceholder": "Une personne, un compte, un sujet…",
+    "filters": "Filtres",
+    "filtersCount_one": "Filtres · {{count}}",
+    "filtersCount_other": "Filtres · {{count}}",
+    "intentLegend": "Intention",
+    "moreIntents_one": "+ {{count}} intention",
+    "moreIntents_other": "+ {{count}} intentions",
+    "lessIntents": "Moins d’intentions",
+    "allAccounts": "Tous les comptes",
+    "accounts_one": "{{count}} compte",
+    "accounts_other": "{{count}} comptes",
+    "accountsAria": "Filtrer les messages par compte : {{value}}"
+  },
+  "outOfOffice": {
+    "title": "Réponse d’absence",
+    "subtitle": "Ta réponse automatique chez ton fournisseur de messagerie. {{brand}} n’envoie rien lui-même.",
+    "enable": "Activer la réponse d’absence",
+    "from": "Du",
+    "to": "Au",
+    "message": "Message",
+    "contactsOnly": "Ne répondre qu’aux contacts connus",
+    "endRequired": "Choisis une date de fin.",
+    "save": "Enregistrer",
+    "saved": "Réponse d’absence enregistrée.",
+    "failed": "La réponse d’absence n’a pas pu être enregistrée.",
+    "missingScope": "Pour régler ta réponse d’absence ici, reconnecte ta messagerie en autorisant la gestion de cette réponse."
+  }
+}

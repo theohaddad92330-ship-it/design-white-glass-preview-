@@ -1,0 +1,161 @@
+{
+  "_synthetic": true,
+  "_note": "Dossier de test SYNTHÉTIQUE pour le banc d'éval. Les faits firmographiques sont les valeurs RÉELLES et vérifiables dans ce dépôt — app/eval/strategy/companies/carrefour.json, bloc `registry`, relevé le 2026-07-19 sur recherche-entreprises.api.gouv.fr (DINUM, adossé à INSEE Sirene). Les entités et les contacts sont des données de TEST, jamais des affirmations sur des personnes ou des filiales réelles. Le chiffre d'affaires est ABSENT : aucune source du dépôt ne le porte, et un chiffre inventé dans le gardien des chiffres inventés serait la faute même qu'il traque.",
+  "company": "Carrefour",
+  "research": {
+    "companyName": "Carrefour",
+    "sector": "Activités des sociétés holding (NAF 64.20Z)",
+    "siren": "652014051",
+    "employees": "3 à 5 salariés",
+    "headquarters": "MASSY, 91300, France",
+    "businessDescription": "Unité légale de tête enregistrée sous la dénomination CARREFOUR, code NAF 64.20Z (activités des sociétés holding), catégorie grande entreprise. Effectif de l'UNITÉ LÉGALE (cette holding), pas du groupe consolidé.",
+    "subsidiaries": [
+      {
+        "name": "Carrefour — entité de test A"
+      },
+      {
+        "name": "Carrefour — entité de test B"
+      }
+    ],
+    "entitiesExhaustive": [
+      {
+        "name": "Carrefour — direction de test",
+        "type": "direction"
+      },
+      {
+        "name": "Carrefour — hub IT de test",
+        "type": "hub it",
+        "isItEntity": true
+      }
+    ],
+    "angles": [
+      {
+        "title": "Renfort logistique et e-commerce",
+        "strategy": "Renforcer les équipes SI logistique et e-commerce."
+      },
+      {
+        "title": "Renfort caisse et paiement en magasin",
+        "strategy": "Renforcer les équipes SI caisse et paiement en magasin."
+      }
+    ],
+    "recentSignals": [
+      {
+        "signal": "Recrutements SI logistique",
+        "type": "recrutement",
+        "date": "2026"
+      },
+      {
+        "signal": "Recrutements SI caisse et paiement",
+        "type": "recrutement",
+        "date": "2026"
+      }
+    ],
+    "budgetSignals": [
+      {
+        "signal": "Recrutements SI logistique",
+        "source": "offres d'emploi"
+      },
+      {
+        "signal": "Recrutements SI caisse et paiement",
+        "source": "offres d'emploi"
+      }
+    ],
+    "confidence": {
+      "score": 78,
+      "tier": "high",
+      "factors": {
+        "sourceCoverage": 0.8
+      }
+    },
+    "sources": {
+      "tags": {
+        "siren": "PUBLIC",
+        "employees": "PUBLIC",
+        "headquarters": "PUBLIC",
+        "sector": "PUBLIC"
+      },
+      "citations": {}
+    }
+  },
+  "gate": {
+    "decision": "go",
+    "score": 3
+  },
+  "classified_contacts": [
+    {
+      "fullName": "Nora Vidal",
+      "title": "Chief Technology Officer",
+      "decisionRole": "technical",
+      "is_c_level": true
+    },
+    {
+      "fullName": "Baptiste Morel",
+      "title": "Engineering Manager — Logistique",
+      "decisionRole": "user"
+    },
+    {
+      "fullName": "Chloé Dumont",
+      "title": "Responsable Achats IT",
+      "decisionRole": "procurement"
+    }
+  ],
+  "plan": {
+    "actionPlan": {
+      "phases": [
+        {
+          "name": "Prise de contact",
+          "actions": [
+            {
+              "contact": "Nora Vidal",
+              "action": "Discuter renfort logistique et e-commerce."
+            }
+          ]
+        }
+      ]
+    },
+    "quick_wins": [
+      {
+        "contact": "Baptiste Morel",
+        "action": "Partager un retour d'expérience staffing."
+      }
+    ],
+    "contactMessages": [
+      {
+        "contact": "Nora Vidal",
+        "linkedinMessage": "Sujet renfort logistique et e-commerce."
+      },
+      {
+        "contact": "Baptiste Morel",
+        "linkedinMessage": "Sujet renfort caisse et paiement en magasin."
+      }
+    ],
+    "plays": [
+      {
+        "painSignal": "Recrutements SI logistique",
+        "preuve": {
+          "source": "offres d'emploi",
+          "signal": "Recrutements SI logistique"
+        },
+        "targetContact": "Nora Vidal",
+        "esnOffer": "Renfort SI logistique",
+        "angle": "Renfort logistique et e-commerce",
+        "firstAction": "Discuter renfort logistique et e-commerce.",
+        "readyMessage": "Sujet renfort logistique et e-commerce.",
+        "risk": "Concurrence ESN installées."
+      },
+      {
+        "painSignal": "Recrutements SI caisse et paiement",
+        "preuve": {
+          "source": "offres d'emploi",
+          "signal": "Recrutements SI caisse et paiement"
+        },
+        "targetContact": "Baptiste Morel",
+        "esnOffer": "Renfort SI caisse et paiement",
+        "angle": "Renfort caisse et paiement en magasin",
+        "firstAction": "Discuter renfort caisse et paiement en magasin.",
+        "readyMessage": "Sujet renfort caisse et paiement en magasin.",
+        "risk": "Concurrence ESN installées."
+      }
+    ]
+  }
+}

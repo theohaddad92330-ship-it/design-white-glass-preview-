@@ -1,0 +1,1043 @@
+/* Theme tokens. Dark is the default (SSR renders it with no `data-theme`); an
+   inline script in the root layout stamps `data-theme` before paint so switching
+   is flash-free. Never hard-code surface/text/border colours in pages — always
+   reference these variables so both themes stay in sync. */
+:root,
+:root[data-theme='dark'] {
+  --bg: #0b0e14;
+  --surface: #151a23;
+  --border: #232a36;
+  --text: #e6e9ef;
+  --muted: #8a93a6;
+  --accent: #8071f6;
+  /* #1674.1 — « --action » et « --accent » valaient EXACTEMENT la même
+     couleur (#8071f6) : #1642.4 promettait « les deux tokens divergeront »,
+     et ce jour est venu à la mesure du contraste, pas par hasard. `--accent`
+     sert aussi de TEXTE (lien, survol, rail) sur un fond sombre : il doit
+     rester CLAIR pour s'y lire. `--action` sert de FOND opaque sous un texte
+     BLANC (`EmptyState.module.css:25-26`) : il doit être assez SOMBRE pour
+     que le blanc s'y lise à 4,5:1. Une même nuance ne peut pas remplir les
+     deux rôles (blanc sur #8071f6 ne rend que 3,74:1) — d'où une teinte plus
+     profonde de la même famille violette, distincte, jamais réutilisée comme
+     texte. Gardé par `architecture/contraste-aa.test.ts`. */
+  --action: #5a3fd1;
+  /* #1674.1b — `.btn`/`.report-primary` peignaient `color: white`/`#fff` EN DUR
+     sur `--accent` : 3,74:1 en sombre, sous AA. Réutiliser `--action` (déjà
+     réservé au fond du bouton UNIQUE #1642.4) aurait cassé « un bouton
+     d'action par écran » — `.btn` apparaît 3× dans `feedback-card.tsx`.
+     `--accent-on-text` est un troisième token, dédié au TEXTE peint sur un
+     fond `--accent` (jamais réutilisé comme fond, jamais comme `--action`) :
+     une teinte foncée là où `--accent` est clair. Gardé par
+     `architecture/contraste-aa.test.ts`. */
+  --accent-on-text: #0d0a1a;
+  --green: #34d399;
+  --amber: #fbbf24;
+  --red: #f87171;
+  --blue: #60a5fa;
+  --danger: #e0533d;
+  --stop: #d85d50;
+  color-scheme: dark;
+}
+
+:root[data-theme='light'] {
+  --bg: #eef1f6;
+  --surface: #ffffff;
+  --border: #d5dbe6;
+  --text: #131826;
+  --muted: #586074;
+  --accent: #5d4de0;
+  /* #1674.1 — même raison qu'en sombre : une teinte plus profonde, réservée
+     au FOND opaque sous un texte blanc, jamais réutilisée comme texte. */
+  --action: #4936c0;
+  /* #1674.1b — même token qu'en sombre, valeur propre à ce thème : `--accent`
+     est ici plus foncé, donc le blanc s'y lit déjà à 5,83:1 — mais le token
+     reste déclaré (jamais un blanc en dur ailleurs) pour que la garde couvre
+     le VRAI style peint, pas une supposition. */
+  --accent-on-text: #ffffff;
+  /* Status colours darkened for AA contrast on the light (white) surface. */
+  --green: #097c52;
+  --amber: #a45b09;
+  --red: #ca3229;
+  --blue: #0767de;
+  --danger: #c83720;
+  --stop: #c0392b;
+  color-scheme: light;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+html,
+body {
+  margin: 0;
+  padding: 0;
+  background: var(--bg);
+  color: var(--text);
+  font-family:
+    ui-sans-serif,
+    system-ui,
+    -apple-system,
+    'Segoe UI',
+    Roboto,
+    Helvetica,
+    Arial,
+    sans-serif;
+  /* #1642.5 — échelle unifiée : 13px de base partout, 11px pour les
+     tableaux (DataTable.module.css). Avant : 14 ici, 11 dans Stat.module.css
+     (une simple étiquette, pas un tableau), 12 ET 13 mélangés dans
+     KpiTile.module.css — trois valeurs pour le même rôle de texte. */
+  font-size: 13px;
+}
+
+body {
+  transition:
+    background-color 0.18s ease,
+    color 0.18s ease;
+}
+
+/* #1674.5 — angle mort mesuré : cette transition bouge à CHAQUE bascule
+   clair/sombre, sur CHAQUE écran, et `globals.css` n'étant pas un
+   `.module.css`, elle échappait entièrement à `ui/reduced-motion.test.ts`.
+   Même modèle que `Skeleton.module.css` : `transition: none` en repli. */
+@media (prefers-reduced-motion: reduce) {
+  body {
+    transition: none;
+  }
+}
+
+/* Full-width responsive shell — fills wide screens (no more half-empty page)
+   while keeping tables/line-lengths readable, with breathing-room side padding
+   that scales with the viewport. Uniform across every page. */
+.wrap {
+  width: 100%;
+  max-width: 1600px;
+  margin: 0 auto;
+  /* Le haut est plus court que dans la barre horizontale : la barre de thème
+     de la coque occupe déjà cet espace. */
+  padding: 12px clamp(20px, 4vw, 56px) 32px;
+  /* CE QUI DÉBORDE DÉFILE DANS SON CONTENEUR, JAMAIS LE CORPS DE LA PAGE.
+     Mesuré en production le 06/09/2026 sur /clients : tableau de 1 312 px dans
+     une colonne de 1 292 px, `overflow-x: visible`, donc c'est le BODY qui
+     défilait (1 588 > 1 512) et la colonne « Actions » sortait de l'écran.
+     Le rail l'a révélé en prenant 220 px, il ne l'a pas créé : 39 des 46
+     tableaux du back-office n'ont aucun conteneur défilant. C'est un défaut de
+     POPULATION — en emballer 39 à la main garantit d'oublier le quarantième.
+     La borne vit donc ICI, une fois, pour tous.
+     ⚠️ `overflow-x: auto` fait calculer `overflow-y` à `auto` (règle CSS, pas
+     un choix). Ce serait un second défilement vertical imbriqué SI `.wrap`
+     avait une hauteur bornée — elle n'en a pas, elle grandit avec son contenu.
+     Vérifié en direct : scrollHeight == clientHeight, et aucun `position:
+     sticky` ni `fixed` dans `.wrap` (731 éléments balayés) qui cesserait de
+     coller en devenant enfant d'un contexte de défilement. */
+  overflow-x: auto;
+}
+
+h1 {
+  font-size: 20px;
+  margin: 0 0 4px;
+}
+
+.subtitle {
+  color: var(--muted);
+  margin: 0 0 24px;
+}
+
+.cards {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 16px;
+  margin-bottom: 28px;
+}
+
+/* Grille de KPI à 4 colonnes, partagée entre les pages qui affichent des
+   chiffres de tête (changelog, clients, couts, facturation, impersonations,
+   analysis/[id]…). Remplace les `style={{ gridTemplateColumns: 'repeat(4,
+   1fr)' }}` inline : un style inline est TOUJOURS plus spécifique qu'une
+   règle en media query, donc ces pages ignoraient silencieusement le repli
+   mobile de `.cards` et restaient bloquées à 4 colonnes égales, y compris
+   sous 768px. */
+.kpi-grid {
+  display: grid;
+  grid-template-columns: repeat(4, minmax(0, 1fr));
+  gap: 16px;
+  margin-bottom: 28px;
+}
+
+.card {
+  background: var(--surface);
+  border: 1px solid var(--border);
+  border-radius: 12px;
+  padding: 18px;
+}
+
+.card .label {
+  color: var(--muted);
+  font-size: 12px;
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+}
+
+.card .value {
+  font-size: 26px;
+  font-weight: 700;
+  margin-top: 6px;
+  font-variant-numeric: tabular-nums;
+}
+
+table {
+  width: 100%;
+  border-collapse: collapse;
+  background: var(--surface);
+  border: 1px solid var(--border);
+  border-radius: 12px;
+  overflow: hidden;
+}
+
+th,
+td {
+  text-align: left;
+  padding: 11px 14px;
+  border-bottom: 1px solid var(--border);
+}
+
+th {
+  color: var(--muted);
+  font-weight: 600;
+  font-size: 12px;
+  text-transform: uppercase;
+  letter-spacing: 0.04em;
+}
+
+tr:last-child td {
+  border-bottom: none;
+}
+
+td.num {
+  text-align: right;
+  font-variant-numeric: tabular-nums;
+}
+
+.badge {
+  display: inline-block;
+  padding: 2px 8px;
+  border-radius: 999px;
+  font-size: 12px;
+  border: 1px solid var(--border);
+}
+
+.badge.completed {
+  color: var(--green);
+  border-color: color-mix(in srgb, var(--green) 35%, transparent);
+}
+
+.badge.analyzing {
+  color: var(--amber);
+  border-color: color-mix(in srgb, var(--amber) 35%, transparent);
+}
+
+.badge.error,
+.badge.canceled {
+  color: var(--red);
+  border-color: color-mix(in srgb, var(--red) 35%, transparent);
+}
+
+.error {
+  background: var(--surface);
+  border: 1px solid color-mix(in srgb, var(--red) 35%, transparent);
+  border-radius: 12px;
+  padding: 18px;
+  color: var(--red);
+}
+
+.empty {
+  color: var(--muted);
+  padding: 24px;
+  text-align: center;
+}
+
+.link {
+  color: var(--accent);
+  text-decoration: none;
+}
+
+.link:hover {
+  text-decoration: underline;
+}
+
+ul {
+  margin: 0;
+  padding-left: 18px;
+}
+
+li {
+  margin: 4px 0;
+}
+
+/* ── Coque : rail latéral + colonne de contenu (#1644) ───────────────────── */
+.shell {
+  display: flex;
+  align-items: stretch;
+  min-height: 100vh;
+}
+
+/* `min-width: 0` : sans lui, un enfant de flex vaut `min-width: auto` et un
+   tableau large pousse la colonne au-delà du viewport — c'est la cause n°1 des
+   débordements horizontaux, déjà payée dans l'application cliente. */
+.shell__main {
+  flex: 1;
+  min-width: 0;
+}
+
+.shell__bar {
+  display: flex;
+  justify-content: flex-end;
+  padding: 12px clamp(20px, 4vw, 56px) 0;
+}
+
+/* ── Rail latéral ─────────────────────────────────────────────────────────── */
+.siderail {
+  width: 220px;
+  flex-shrink: 0;
+  display: flex;
+  flex-direction: column;
+  gap: 2px;
+  padding: 16px 12px;
+  border-right: 1px solid var(--border);
+  background: color-mix(in srgb, var(--surface) 70%, var(--bg));
+  position: sticky;
+  top: 0;
+  align-self: flex-start;
+  max-height: 100vh;
+  overflow-y: auto;
+}
+
+/* Replié : les icônes seules, la largeur exacte demandée par #1644. */
+.siderail--collapsed {
+  width: 56px;
+  padding: 16px 8px;
+  align-items: center;
+}
+
+.siderail__brand {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  flex-wrap: wrap;
+  margin-bottom: 16px;
+  color: var(--text);
+}
+
+.siderail__wordmark {
+  font-weight: 700;
+  letter-spacing: 0.02em;
+  font-size: 13px;
+}
+
+/* Le badge d'environnement (#1675) : une console qui peut supprimer un compte
+   dit en permanence si elle parle à la production. Le fond est opaque, donc le
+   texte ne se compose pas sur le fond du thème — il reste lisible des deux
+   côtés. */
+.siderail__env {
+  color: var(--bg);
+  font-size: 10px;
+  font-weight: 700;
+  letter-spacing: 0.08em;
+  border-radius: 4px;
+  padding: 2px 6px;
+  line-height: 1.4;
+}
+
+.siderail__item,
+.siderail__toggle {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  width: 100%;
+  color: var(--muted);
+  text-decoration: none;
+  font-size: 13px;
+  font-family: inherit;
+  text-align: left;
+  padding: 7px 10px;
+  border: 0;
+  border-radius: 8px;
+  background: transparent;
+  cursor: pointer;
+  /* ≥ 44 px en pointeur grossier se règle plus bas ; ici on garde la densité
+     d'une console de bureau, celle que #1642 demande. */
+  min-height: 32px;
+}
+
+.siderail__item:hover,
+.siderail__toggle:hover {
+  color: var(--text);
+  background: var(--surface);
+}
+
+.siderail__item.is-current {
+  color: var(--text);
+  background: var(--surface);
+  box-shadow: inset 2px 0 0 var(--accent);
+}
+
+.siderail__icon {
+  width: 16px;
+  text-align: center;
+  flex-shrink: 0;
+}
+
+.siderail__chevron {
+  margin-left: auto;
+  font-size: 10px;
+}
+
+.siderail__items {
+  display: flex;
+  flex-direction: column;
+  gap: 1px;
+  margin: 1px 0 4px;
+}
+
+/* Le décalage dit l'appartenance à la section sans une deuxième bordure. */
+.siderail__items .siderail__item {
+  padding-left: 34px;
+  font-size: 12px;
+}
+
+.siderail__foot {
+  margin-top: auto;
+  padding-top: 16px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 8px;
+}
+
+.siderail__collapse {
+  color: var(--muted);
+  background: transparent;
+  border: 0;
+  font-family: inherit;
+  font-size: 12px;
+  padding: 4px 6px;
+  border-radius: 6px;
+  cursor: pointer;
+}
+.siderail__collapse:hover {
+  color: var(--text);
+  background: var(--surface);
+}
+
+/* Le SHA servi, cliquable vers le commit (#1675) : ce qui permet de vérifier
+   que la console qu'on regarde est bien celle qu'on vient de déployer. */
+.siderail__sha {
+  color: var(--muted);
+  font-size: 11px;
+  text-decoration: none;
+  font-variant-numeric: tabular-nums;
+}
+.siderail__sha:hover {
+  color: var(--accent);
+}
+
+/* Theme switcher — dans la barre supérieure de la colonne de contenu. */
+.theme-toggle {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  background: var(--surface);
+  color: var(--text);
+  border: 1px solid var(--border);
+  border-radius: 8px;
+  padding: 6px 12px;
+  font-size: 13px;
+  font-family: inherit;
+  line-height: 1;
+  cursor: pointer;
+  white-space: nowrap;
+}
+.theme-toggle:hover {
+  border-color: var(--accent);
+  color: var(--accent);
+}
+
+/* Cibles tactiles : ≥ 44 px dès que le pointeur est grossier. */
+@media (pointer: coarse) {
+  .siderail__item,
+  .siderail__toggle,
+  .siderail__collapse,
+  .theme-toggle {
+    min-height: 44px;
+  }
+}
+
+/* ── Les trois seuils de largeur (#1674.9) ─────────────────────────────────
+   Avant ce lot : 0 occurrence de `768px`/`1280px` dans tout le dépôt — seul
+   `(pointer: coarse)` existait, et il ne dit rien de la LARGEUR. Trois états :
+     ≥ 1280px  — complet (aucun media query : c'est l'état par défaut ci-dessus)
+     768–1279  — rail replié en icônes (ci-dessous)
+     < 768     — comme 768–1279, PLUS un empilement à une colonne pour rester
+                 lisible sur un téléphone
+
+   ⚠️ CE QUE CE FICHIER NE FAIT PAS, ET POURQUOI
+   Le point qui compte le plus dans #1674.9 : « sous 768px, les boutons
+   d'action doivent être ABSENTS DU DOM, pas masqués en CSS — un
+   `display: none` laisse le bouton cliquable au clavier et atteignable par
+   script ». Cette règle ne peut PAS se tenir ici : elle demande de ne pas
+   RENDRE le bouton (une décision React, dans chaque écran qui en a un —
+   `DataTable`, `users/`, `revenus/`…), pas de le cacher visuellement après
+   coup. Cette feuille pose donc les DEUX seuils et le repli du rail (une
+   restylisation pure, sans perte d'information), et s'arrête volontairement
+   là où la réponse correcte n'est plus du CSS. Voir
+   `architecture/trois-seuils-responsive.test.tsx` pour la preuve de la
+   distinction, et le rapport du lot pour ce qui reste à câbler écran par
+   écran. */
+@media (max-width: 1280px) {
+  /* Le rail réplique visuellement `.siderail--collapsed` (icônes seules),
+     sans dépendre de l'état JS `collapsed` — un rail non replié par
+     l'utilisateur doit quand même tenir dans une tablette. Rien n'est retiré
+     du DOM ici : chaque libellé caché reste lisible par un lecteur d'écran,
+     seule sa PRÉSENTATION change (D81 : « une colonne masquée l'est en CSS
+     dans le MÊME rendu »). */
+  .siderail {
+    width: 56px;
+    padding: 16px 8px;
+    align-items: center;
+  }
+  /* Le libellé de chaque entrée (un `<span>` sans classe, juste après
+     `.siderail__icon`) — jamais l'icône elle-même ni, pour `.siderail__toggle`,
+     le chevron. */
+  .siderail__item > span:not(.siderail__icon),
+  .siderail__toggle > span:not(.siderail__icon):not(.siderail__chevron) {
+    display: none;
+  }
+  .siderail__wordmark,
+  .siderail__chevron,
+  .siderail__items,
+  .siderail__identite,
+  .siderail__sha {
+    display: none;
+  }
+  .siderail__collapse {
+    max-width: 100%;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+  }
+  /* `.kpi-grid` tient 3 colonnes en tablette — 4 colonnes égales ne rentrent
+     plus une fois le rail (même replié) et le padding déduits. */
+  .kpi-grid {
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+  }
+}
+
+@media (max-width: 768px) {
+  /* Listes/tableaux gardent leurs colonnes (D81) ; les grilles de CARTES,
+     elles, tiennent mal en dessous de leur largeur de conception — une
+     colonne unique reste lisible, un `.wrap` qui défile horizontalement ne
+     l'est pas. */
+  .cards {
+    grid-template-columns: 1fr;
+  }
+  .kv {
+    grid-template-columns: 1fr;
+  }
+  .kpi-grid {
+    grid-template-columns: 1fr;
+  }
+}
+
+/* ── Decision-role badges (contacts) ──────────────────────────────────────── */
+.badge.TECHNICAL,
+.badge.technical {
+  color: var(--blue);
+  border-color: color-mix(in srgb, var(--blue) 35%, transparent);
+}
+.badge.ECONOMIC,
+.badge.economic {
+  color: var(--red);
+  border-color: color-mix(in srgb, var(--red) 35%, transparent);
+}
+.badge.USER,
+.badge.user {
+  color: var(--green);
+  border-color: color-mix(in srgb, var(--green) 35%, transparent);
+}
+.badge.CHAMPION,
+.badge.champion {
+  color: var(--amber);
+  border-color: color-mix(in srgb, var(--amber) 35%, transparent);
+}
+
+/* ── Priority-zone badges (P1/P2/P3) ──────────────────────────────────────── */
+.badge.P1 {
+  color: var(--green);
+  border-color: color-mix(in srgb, var(--green) 45%, transparent);
+}
+.badge.P2 {
+  color: var(--amber);
+  border-color: color-mix(in srgb, var(--amber) 45%, transparent);
+}
+.badge.P3 {
+  color: var(--muted);
+}
+/* Perimeter tier below P1/P2 (perimeter_score < 10/20). */
+.badge.secondaire {
+  color: var(--muted);
+}
+
+/* ── Zone badges (influence × accessibility matrix — deck's 4 zones) ──────── */
+.badge.attaque_immediate {
+  color: var(--green);
+  border-color: color-mix(in srgb, var(--green) 45%, transparent);
+}
+.badge.influence_a_activer {
+  color: var(--amber);
+  border-color: color-mix(in srgb, var(--amber) 45%, transparent);
+}
+.badge.quick_win {
+  color: var(--blue);
+  border-color: color-mix(in srgb, var(--blue) 40%, transparent);
+}
+.badge.longue_traine {
+  color: var(--muted);
+}
+
+/* ── Source-tag badges (PUBLIC / HYPOTHÈSE) ───────────────────────────────── */
+.badge.PUBLIC {
+  color: var(--green);
+  border-color: color-mix(in srgb, var(--green) 40%, transparent);
+}
+.badge.HYPOTHESE {
+  color: var(--amber);
+  border-color: color-mix(in srgb, var(--amber) 40%, transparent);
+}
+.badge.INTERNE {
+  color: var(--blue);
+  border-color: color-mix(in srgb, var(--blue) 40%, transparent);
+}
+.badge.RISQUE {
+  color: var(--danger);
+  border-color: color-mix(in srgb, var(--danger) 45%, transparent);
+}
+
+/* ── Forms / buttons / code (API console, demo) ───────────────────────────── */
+.btn {
+  background: var(--accent);
+  /* #1674.1b — texte dédié, jamais un `white` en dur : voir --accent-on-text. */
+  color: var(--accent-on-text);
+  border: none;
+  border-radius: 8px;
+  padding: 8px 16px;
+  font-size: 14px;
+  cursor: pointer;
+}
+.btn:hover {
+  filter: brightness(1.1);
+}
+.btn.ghost {
+  background: var(--surface);
+  color: var(--text);
+  border: 1px solid var(--border);
+}
+.btn-sm {
+  background: var(--surface);
+  color: var(--text);
+  border: 1px solid var(--border);
+  border-radius: 7px;
+  padding: 4px 10px;
+  font-size: 12px;
+  cursor: pointer;
+  white-space: nowrap;
+}
+.btn-sm:hover {
+  border-color: var(--accent);
+  color: var(--accent);
+}
+.btn-sm:disabled {
+  opacity: 0.6;
+  cursor: default;
+}
+.link-muted {
+  background: none;
+  border: none;
+  color: var(--muted);
+  font-size: 12px;
+  cursor: pointer;
+  padding: 0;
+}
+.link-muted:hover {
+  color: var(--text);
+}
+
+input,
+textarea,
+select {
+  background: var(--bg);
+  color: var(--text);
+  border: 1px solid var(--border);
+  border-radius: 8px;
+  padding: 8px 12px;
+  font-size: 14px;
+  font-family: inherit;
+}
+
+pre.code {
+  background: var(--bg);
+  border: 1px solid var(--border);
+  border-radius: 10px;
+  padding: 14px;
+  overflow: auto;
+  font-size: 12.5px;
+  line-height: 1.5;
+}
+
+code {
+  background: var(--bg);
+  border: 1px solid var(--border);
+  border-radius: 6px;
+  padding: 1px 6px;
+  font-size: 12.5px;
+}
+
+.kv {
+  display: grid;
+  grid-template-columns: 180px 1fr;
+  gap: 6px 14px;
+  font-size: 14px;
+}
+.kv .k {
+  color: var(--muted);
+}
+
+.pill {
+  display: inline-block;
+  background: var(--surface);
+  border: 1px solid var(--border);
+  border-radius: 999px;
+  padding: 2px 10px;
+  font-size: 12px;
+  color: var(--muted);
+  margin: 2px 4px 2px 0;
+}
+
+.mono {
+  font-family: ui-monospace, SFMono-Regular, Menlo, monospace;
+}
+
+/* ── Signaler un défaut (widget d'opérateur) ───────────────────────────────
+   Le geste existait côté client depuis longtemps ; il manquait du côté de ceux
+   qui regardent le produit tourner toute la journée. Aucune couleur en dur :
+   les deux thèmes du back-office sont une promesse comme ceux de l'app. */
+.report-fab {
+  position: fixed;
+  right: 20px;
+  bottom: 20px;
+  z-index: 60;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  /* 48 px : au-dessus du plancher de 44 px des cibles tactiles. */
+  width: 48px;
+  height: 48px;
+  border-radius: 999px;
+  border: 1px solid var(--border);
+  background: var(--surface);
+  color: var(--accent);
+  cursor: pointer;
+  box-shadow: 0 4px 14px rgb(0 0 0 / 18%);
+}
+.report-fab:hover {
+  border-color: var(--accent);
+}
+.report-fab:focus-visible {
+  outline: 2px solid var(--accent);
+  outline-offset: 2px;
+}
+
+.report-panel {
+  position: fixed;
+  right: 20px;
+  /* Juste au-dessus du bouton, qui reste visible et cliquable pour refermer. */
+  bottom: 80px;
+  z-index: 60;
+  width: min(380px, calc(100vw - 40px));
+  border: 1px solid var(--border);
+  border-radius: 12px;
+  background: var(--surface);
+  box-shadow: 0 10px 30px rgb(0 0 0 / 22%);
+}
+.report-body {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  padding: 16px;
+}
+.report-title {
+  margin: 0;
+  font-size: 14px;
+  font-weight: 600;
+  color: var(--text);
+}
+.report-cats {
+  display: flex;
+  gap: 6px;
+}
+.report-cat {
+  flex: 1;
+  padding: 6px 10px;
+  border-radius: 8px;
+  border: 1px solid var(--border);
+  background: transparent;
+  color: var(--muted);
+  font-size: 13px;
+  font-family: inherit;
+  cursor: pointer;
+}
+.report-cat-on {
+  border-color: var(--accent);
+  color: var(--accent);
+}
+.report-input {
+  width: 100%;
+  resize: vertical;
+  padding: 8px 10px;
+  border-radius: 8px;
+  border: 1px solid var(--border);
+  background: var(--bg);
+  color: var(--text);
+  font-size: 13px;
+  font-family: inherit;
+  line-height: 1.45;
+}
+.report-hint {
+  margin: 0;
+  font-size: 12px;
+  color: var(--muted);
+}
+.report-error {
+  margin: 0;
+  font-size: 12px;
+  color: var(--red);
+}
+.report-ok {
+  margin: 0;
+  font-size: 14px;
+  font-weight: 600;
+  color: var(--green);
+}
+.report-actions {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  justify-content: flex-end;
+  flex-wrap: wrap;
+}
+.report-link {
+  margin-right: auto;
+  font-size: 13px;
+  color: var(--accent);
+}
+.report-primary,
+.report-secondary {
+  padding: 7px 14px;
+  border-radius: 8px;
+  font-size: 13px;
+  font-family: inherit;
+  cursor: pointer;
+  border: 1px solid var(--border);
+}
+.report-primary {
+  border-color: var(--accent);
+  background: var(--accent);
+  /* #1674.1b — texte dédié, jamais un `#fff` en dur : voir --accent-on-text. */
+  color: var(--accent-on-text);
+}
+.report-primary:disabled {
+  opacity: 0.55;
+  cursor: not-allowed;
+}
+.report-secondary {
+  background: transparent;
+  color: var(--text);
+}
+
+/* ── Le viseur ────────────────────────────────────────────────────────────
+   Le cadre est le SEUL retour visuel pendant le pointage : il doit se lire sur
+   les deux thèmes. Le violet seul disparaît sur le fond sombre, d'où le liseré
+   clair intérieur — l'un des deux contraste toujours avec ce qu'il y a
+   derrière. C'est la leçon apprise sur le viseur de l'application. */
+.picker-layer {
+  position: fixed;
+  inset: 0;
+  z-index: 70;
+  pointer-events: none;
+}
+.picker-box {
+  position: absolute;
+  border-radius: 2px;
+  border: 2px solid var(--accent);
+  background: color-mix(in srgb, var(--accent) 15%, transparent);
+  box-shadow:
+    inset 0 0 0 1px rgb(255 255 255 / 75%),
+    0 0 0 1px rgb(255 255 255 / 55%),
+    0 0 0 5px color-mix(in srgb, var(--accent) 40%, transparent);
+  transition:
+    top 75ms,
+    left 75ms,
+    width 75ms,
+    height 75ms;
+}
+/* #1674.5 — second angle mort : le viseur suit le pointeur en continu, hors
+   de `src/ui/` (il vit dans `globals.css`) donc hors de l'ancien corpus. */
+@media (prefers-reduced-motion: reduce) {
+  .picker-box {
+    transition: none;
+  }
+}
+/* Ce que les voyants lisent dans le cadre, dit en mots — et rien de plus. */
+.picker-sr {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  padding: 0;
+  margin: -1px;
+  overflow: hidden;
+  clip: rect(0, 0, 0, 0);
+  white-space: nowrap;
+  border: 0;
+}
+.picker-bar-wrap {
+  position: absolute;
+  inset-inline: 0;
+  top: 16px;
+  display: flex;
+  justify-content: center;
+  pointer-events: auto;
+}
+.picker-bar {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  padding: 8px 16px;
+  border-radius: 999px;
+  border: 1px solid var(--border);
+  background: var(--surface);
+  color: var(--text);
+  font-size: 13px;
+  box-shadow: 0 8px 24px rgb(0 0 0 / 25%);
+}
+.picker-skip,
+.picker-close {
+  border: 1px solid var(--border);
+  border-radius: 999px;
+  background: transparent;
+  color: var(--muted);
+  font-size: 12px;
+  font-family: inherit;
+  padding: 4px 10px;
+  cursor: pointer;
+}
+.picker-close {
+  padding: 4px 8px;
+}
+.picker-skip:hover,
+.picker-close:hover {
+  border-color: var(--accent);
+  color: var(--accent);
+}
+
+/* La PREUVE de ce qui a été saisi : une vignette qu'on peut regarder, pas une
+   promesse. Un rapporteur qui ne voit pas sa capture ne sait pas si elle montre
+   ce qu'il croit. */
+.report-shot {
+  width: 100%;
+  max-height: 160px;
+  object-fit: cover;
+  object-position: top;
+  border-radius: 8px;
+  border: 1px solid var(--border);
+}
+.report-hint code {
+  font-size: 11px;
+  word-break: break-all;
+}
+
+/* ── Connexion par identité et rôles (#1668, #1669) ───────────────────────── */
+
+/* Un formulaire de connexion n'est pas un tableau de bord : borné, il se lit
+   d'un coup d'œil au lieu de s'étaler sur 1 600 px. Même règle que la largeur
+   de lecture du produit client — le type de contenu décide de la largeur. */
+.wrap--etroit {
+  max-width: 520px;
+}
+
+.connexion {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}
+
+.connexion h2 {
+  font-size: 16px;
+  margin: 0;
+}
+
+.connexion label {
+  color: var(--muted);
+  font-size: 12px;
+  margin-top: 8px;
+}
+
+.connexion .btn {
+  margin-top: 16px;
+}
+
+/* Le QR code de l'enrôlement : fond blanc EXPLICITE et non hérité du thème —
+   un code sombre sur fond sombre ne se scanne pas. */
+.connexion__qr {
+  align-self: center;
+  width: 200px;
+  height: 200px;
+  background: #ffffff;
+  border-radius: 10px;
+  padding: 8px;
+}
+
+.connexion__graine {
+  word-break: break-all;
+  font-size: 12px;
+  margin: 0;
+}
+
+/* Qui est connecté, dans le rail — la console dit en permanence QUI agit, comme
+   elle dit déjà à quel environnement elle parle (#1675). */
+.siderail__identite {
+  border-top: 1px solid var(--border);
+  padding-top: 12px;
+  margin-top: 12px;
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+  min-width: 0;
+}
+
+.siderail__email {
+  font-size: 12px;
+  color: var(--muted);
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+
+.siderail__role {
+  font-size: 11px;
+  color: var(--muted);
+  border: 1px solid var(--border);
+  border-radius: 999px;
+  padding: 1px 8px;
+  align-self: flex-start;
+  text-transform: uppercase;
+  letter-spacing: 0.04em;
+}

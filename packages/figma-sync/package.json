@@ -1,0 +1,27 @@
+{
+  "name": "@bellum/figma-sync",
+  "version": "0.0.1",
+  "private": true,
+  "type": "module",
+  "description": "Plugin Figma de développement : construit le design system BellumAI dans Figma depuis le code (tokens.css → variables, styles, fondations, gabarits, pages).",
+  "scripts": {
+    "extract": "tsx --tsconfig tsconfig.extract.json src/extract/cli.ts",
+    "build": "tsx --tsconfig tsconfig.extract.json src/extract/cli.ts && tsx scripts/build.ts",
+    "check-types": "tsc --noEmit",
+    "test": "vitest run",
+    "test:watch": "vitest"
+  },
+  "dependencies": {
+    "zod": "^4.6.6"
+  },
+  "devDependencies": {
+    "@bellum/tooling": "workspace:*",
+    "@figma/plugin-typings": "^1.142.0",
+    "@types/node": "^22.0.0",
+    "esbuild": "^0.28.2",
+    "prettier": "^3.9.10",
+    "tsx": "^4.23.15",
+    "typescript": "^5.8.3",
+    "vitest": "^3.2.7"
+  }
+}

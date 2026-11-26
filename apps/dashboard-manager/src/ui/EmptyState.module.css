@@ -1,0 +1,43 @@
+/* #1642 — EmptyState : icône, phrase, action. */
+.empty {
+  display: grid;
+  justify-items: center;
+  gap: 10px;
+  padding: 40px 20px;
+  text-align: center;
+  color: var(--muted);
+}
+
+.icon {
+  font-size: 26px;
+}
+
+.message {
+  font-size: 13px;
+  max-width: 42ch;
+}
+
+/* #1642 — « --action, réservé au bouton primaire UNIQUE de chaque écran » :
+   une EmptyState est typiquement le seul appel à l'action visible d'un écran
+   vide, c'est le cas naturel du token. */
+.action {
+  margin-top: 4px;
+  background: var(--action);
+  color: white;
+  border: none;
+  border-radius: 8px;
+  padding: 8px 16px;
+  font-size: 13px;
+  font-family: inherit;
+  cursor: pointer;
+}
+
+.action:hover {
+  filter: brightness(1.1);
+}
+
+@media (pointer: coarse) {
+  .action {
+    min-height: 44px;
+  }
+}

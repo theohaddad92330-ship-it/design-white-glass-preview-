@@ -1,0 +1,95 @@
+{
+  "codes": ["not_retrieval_knowledge", "internal_codename", "contact_table"],
+  "coordinateWords": [
+    "email",
+    "mail",
+    "courriel",
+    "telephone",
+    "tel",
+    "phone",
+    "mobile",
+    "portable",
+    "gsm",
+    "linkedin"
+  ],
+  "identityWords": [
+    "nom",
+    "prenom",
+    "name",
+    "firstname",
+    "lastname",
+    "fullname",
+    "civilite",
+    "contact",
+    "societe",
+    "company",
+    "entreprise",
+    "organisation",
+    "organization",
+    "fonction",
+    "poste",
+    "job"
+  ],
+  "separators": [";", "\t", ","],
+  "typeLabels": {
+    "classifier_seed": "une graine de classifieur",
+    "template_metadata": "des métadonnées de gabarits",
+    "workflow_spec": "un contrat de workflow",
+    "eval_spec": "un jeu d’évaluation"
+  },
+  "defaultTypeLabel": "une spécification",
+  "internalCodenames": ["dataforge", "stelya", "oriondatapack", "bellumai"],
+  "thresholds": {
+    "headerScanLines": 5,
+    "maxLines": 200,
+    "minColumns": 3,
+    "minDataRows": 3,
+    "minPersonalColumns": 3
+  },
+  "messages": {
+    "not_retrieval_knowledge": "« {file} » est {label} : le manifeste d’ingestion le classe hors base de connaissance. Indexé, il remonterait comme réponse à une question commerciale, alors que c’est un fichier de configuration — sa place est dans le code, où il est versionné et testé.",
+    "contact_table": "Ce dépôt a la forme d’un carnet d’adresses : les colonnes « {columns} », et au moins {rows} lignes derrière. La base de connaissance n’indexe jamais un fichier de contacts — il deviendrait retrouvable par n’importe quelle question, indéfiniment, sans qu’aucune des personnes citées l’ait su. Pour faire entrer ces contacts dans Bellum, passe par l’assistant d’import, qui simule avant d’écrire et te montre ce qu’il a compris.",
+    "internal_codename": "« {file} » porte le nom d’un outil interne ({excluded}) : ce dépôt n’entre jamais dans la base de connaissance — il y resterait retrouvable par n’importe quelle question, indéfiniment, et une citation le montrerait à un client, qui ne doit jamais voir le nom d’un outil interne. Renomme le fichier avant de le déposer à nouveau."
+  },
+  "manifest": [
+    {
+      "file": "commercial_method_delta.md",
+      "type": "retrieval_knowledge",
+      "notRag": false
+    },
+    {
+      "file": "title_taxonomy_seed.json",
+      "type": "classifier_seed",
+      "notRag": true
+    },
+    {
+      "file": "outreach_scenario_registry.json",
+      "type": "template_metadata",
+      "notRag": true
+    },
+    {
+      "file": "meeting_question_library.json",
+      "type": "template_library",
+      "notRag": false
+    },
+    {
+      "file": "workflow_catalog_delta.json",
+      "type": "workflow_spec",
+      "notRag": true
+    },
+    {
+      "file": "golden_set_candidates.json",
+      "type": "eval_spec",
+      "notRag": true
+    }
+  ],
+  "excluded": [
+    "export CRM brut",
+    "doublon DATAFORGE V4",
+    "anciens prompts",
+    "données de compte propres à un client",
+    "images d'inspiration de design",
+    "ancienne grille tarifaire",
+    "listes d'outils propres à un fournisseur"
+  ]
+}

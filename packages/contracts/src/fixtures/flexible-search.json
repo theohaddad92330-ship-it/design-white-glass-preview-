@@ -1,0 +1,212 @@
+{
+  "_doc": "#4400.1 — jeu de cas COMMUN (TS `matchesFlexibleQuery` / Python `matches_flexible_query`) ET lexique d'abréviations du conseil IT. UNE source : les deux langages relisent ce fichier. Retour bêta ESN 21/10/2026.",
+  "lexicon": {
+    "dev": ["développeur", "développement", "developer", "programmeur"],
+    "archi": ["architecte", "architecture", "architect"],
+    "admin": ["administrateur", "administration"],
+    "sysadmin": ["administrateur systèmes", "administrateur système", "sysadmin", "sysops"],
+    "po": ["product owner", "propriétaire produit"],
+    "pm": ["project manager", "product manager", "chef de projet"],
+    "cdp": ["chef de projet", "responsable de projet"],
+    "rssi": ["responsable sécurité des systèmes d'information", "responsable sécurité", "ciso", "rssi"],
+    "dsi": ["directeur des systèmes d'information", "directeur systèmes d'information", "cio", "dsi"],
+    "infra": ["infrastructure"],
+    "réseau": ["réseau", "network"],
+    "rézo": ["réseau", "network"],
+    "ops": ["operations", "exploitation", "devops", "sysops"],
+    "devops": ["devops", "sre", "ops", "intégration continue"],
+    "data": ["data", "donnée"],
+    "bi": ["business intelligence", "décisionnel"],
+    "qa": ["qualité", "testeur", "test", "recette", "quality assurance"],
+    "fullstack": ["full stack", "fullstack"],
+    "front": ["front", "frontend", "front end"],
+    "back": ["back", "backend", "back end"],
+    "sap": ["sap", "abap", "s4hana"],
+    "moa": ["maîtrise d'ouvrage", "assistance maîtrise d'ouvrage", "moa", "amoa"],
+    "amoa": ["assistance maîtrise d'ouvrage", "maîtrise d'ouvrage", "amoa", "moa"],
+    "moe": ["maîtrise d'œuvre", "moe"],
+    "pmo": ["pmo", "project management office", "bureau des projets"],
+    "scrum": ["scrum", "scrum master", "agile"],
+    "cyber": ["cybersécurité", "cybersecurity", "sécurité informatique", "ssi", "sécurité", "security"],
+    "sécu": ["sécurité", "cybersécurité", "sécurité informatique", "ssi"],
+    "ssi": ["ssi", "sécurité des systèmes d'information", "sécurité informatique", "cybersécurité"]
+  },
+  "cases": [
+    {
+      "query": "archi cyber",
+      "text": "Architecte Cybersécurité",
+      "match": true,
+      "why": "préfixes sur les deux termes"
+    },
+    {
+      "query": "dev java",
+      "text": "Développeur Java",
+      "match": true,
+      "why": "abréviation étendue + terme exact"
+    },
+    {
+      "query": "archi cyber",
+      "text": "Chargé d'archives",
+      "match": false,
+      "why": "« archi » est préfixe d'« archives », mais « cyber » ne matche pas : ET"
+    },
+    {
+      "query": "archi",
+      "text": "Chargé d'archives",
+      "match": true,
+      "why": "préfixe seul : sans autre terme, la recherche reste souple"
+    },
+    {
+      "query": "ARCHITECTES",
+      "text": "architecte réseau",
+      "match": true,
+      "why": "casse et pluriel"
+    },
+    {
+      "query": "securite",
+      "text": "Responsable Sécurité",
+      "match": true,
+      "why": "accents"
+    },
+    {
+      "query": "developpeurs",
+      "text": "Développeur",
+      "match": true,
+      "why": "pluriel de la requête"
+    },
+    {
+      "query": "developpeur",
+      "text": "Développeurs Java",
+      "match": true,
+      "why": "pluriel du texte"
+    },
+    {
+      "query": "admin sys",
+      "text": "Administrateur Systèmes et Réseaux",
+      "match": true,
+      "why": "deux préfixes"
+    },
+    {
+      "query": "sysadmin",
+      "text": "Administrateur Systèmes Linux",
+      "match": true,
+      "why": "abréviation étendue en expression"
+    },
+    {
+      "query": "rssi",
+      "text": "RSSI adjoint",
+      "match": true,
+      "why": "le terme lui-même"
+    },
+    {
+      "query": "dsi",
+      "text": "Directeur des Systèmes d'Information",
+      "match": true,
+      "why": "expansion en expression"
+    },
+    {
+      "query": "po",
+      "text": "Product Owner Digital",
+      "match": true,
+      "why": "PO"
+    },
+    {
+      "query": "po",
+      "text": "Poste de comptable",
+      "match": false,
+      "why": "une abréviation de deux lettres ne se prend jamais en préfixe"
+    },
+    {
+      "query": "cdp",
+      "text": "Chef de projet SI",
+      "match": true,
+      "why": "CDP"
+    },
+    {
+      "query": "chef de proj",
+      "text": "Chef de projet SI",
+      "match": true,
+      "why": "préfixe du dernier mot"
+    },
+    {
+      "query": "moa",
+      "text": "Assistant à maîtrise d'ouvrage",
+      "match": true,
+      "why": "expression « maîtrise d'ouvrage » contiguë"
+    },
+    {
+      "query": "amoa",
+      "text": "AMOA Finance",
+      "match": true,
+      "why": "le terme lui-même"
+    },
+    {
+      "query": "fullstack",
+      "text": "Développeur Full-Stack",
+      "match": true,
+      "why": "tiret = espace"
+    },
+    {
+      "query": "devops",
+      "text": "Ingénieur DevOps",
+      "match": true,
+      "why": "exact"
+    },
+    {
+      "query": "sap",
+      "text": "Consultant SAP FI",
+      "match": true,
+      "why": "exact"
+    },
+    {
+      "query": "sap",
+      "text": "Sapeur-pompier",
+      "match": false,
+      "why": "SAP est une abréviation courte : jamais un préfixe"
+    },
+    {
+      "query": "java",
+      "text": "Développeur JavaScript",
+      "match": true,
+      "why": "préfixe de quatre lettres"
+    },
+    {
+      "query": "cyber data",
+      "text": "Architecte Cybersécurité",
+      "match": false,
+      "why": "« data » absent : ET"
+    },
+    {
+      "query": "",
+      "text": "Architecte",
+      "match": false,
+      "why": "requête vide : rien ne matche, jamais tout"
+    },
+    {
+      "query": "qa",
+      "text": "Testeur QA",
+      "match": true,
+      "why": "QA"
+    }
+  ],
+  "explain": [
+    {
+      "query": "archi cyber",
+      "expanded": [
+        "architecte",
+        "architecture",
+        "architect",
+        "cybersécurité",
+        "cybersecurity",
+        "sécurité informatique",
+        "ssi",
+        "sécurité",
+        "security"
+      ]
+    },
+    {
+      "query": "java",
+      "expanded": []
+    }
+  ]
+}

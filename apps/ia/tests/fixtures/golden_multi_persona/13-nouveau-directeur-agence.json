@@ -1,0 +1,106 @@
+{
+  "id": "13-nouveau-directeur-agence",
+  "persona": "Nouveau directeur d'agence",
+  "personaKind": "fictif",
+  "_source": "#2070 / #2085 — cas de référence du corpus de non-régression multi-persona",
+  "answers": {
+    "user_id": "golden-13-nouveau-directeur-agence",
+    "first_name": "Antoine",
+    "esn_name": "Agence Toulouse — reprise",
+    "consultant_size": "30-80",
+    "sales_team_size": "2-3 personnes",
+    "expertise_areas": [
+      "Développement applicatif (Web, Mobile, API)",
+      "DevOps, SRE & Automatisation"
+    ],
+    "positioning": "Multi-compétences ciblées - 3-5 domaines avec références solides",
+    "staffing_model": "Mix équilibré CDI / Freelances",
+    "target_sectors": [
+      "Aéronautique & Défense",
+      "Industrie manufacturière & Automobile"
+    ],
+    "target_company_types": [
+      "ETI (500-5 000 salariés)",
+      "PME (50-500 salariés)"
+    ],
+    "geo_zones": [
+      "Toulouse & Occitanie"
+    ],
+    "main_sales_pain": "Je ne sais pas par où commencer"
+  },
+  "referenceProfile": {
+    "esnArchetype": "midMarketChallenger",
+    "sellingPosture": "expertiseRare",
+    "idealAccountProfile": {
+      "size": "all",
+      "sectorsPriority": [
+        "Aéronautique & Défense",
+        "Industrie manufacturière & Automobile"
+      ],
+      "decisionLevel": "director",
+      "entryStrategy": "referral"
+    },
+    "analysisParameters": {
+      "braveQueriesCount": 15,
+      "firecrawlPagesCount": 8,
+      "contactsTarget": 30,
+      "analysisDepth": "standard",
+      "maxTokensResearch": 13000,
+      "focusAreas": [
+        "Développement applicatif (Web, Mobile, API)",
+        "DevOps, SRE & Automatisation",
+        "souveraineté",
+        "Industrie 4.0"
+      ]
+    },
+    "messagingStyle": {
+      "tone": "relationshipFirst",
+      "messageLength": "standard",
+      "valuePropositionAngle": "On reprend et on développe le portefeuille aéronautique de l'agence toulousaine, avec l'équipe technique déjà en place.",
+      "differentiationPoints": [
+        "Ancrage historique Toulouse aéronautique",
+        "Continuité de l'équipe technique",
+        "Nouveau pilotage commercial structuré"
+      ],
+      "avoid": [
+        "expertise reconnue",
+        "sur-mesure"
+      ]
+    },
+    "coachingInsights": {
+      "mainWeakness": "Mise en place d'une routine commerciale",
+      "keyAdvice": "Reprends d'abord la liste des comptes historiques de l'agence avant de chercher de nouveaux prospects : un nouveau directeur hérite d'une base qu'il ne connaît pas encore, pas d'une page blanche.",
+      "cadenceRecommendation": {
+        "analysesPerWeek": 5,
+        "messagesPerDay": 12,
+        "followUpsPerWeek": 7
+      },
+      "kpiTargets": {
+        "accountsPerMonth": 20,
+        "rdvPerMonth": 12,
+        "conversionRateTarget": "15-25%"
+      }
+    },
+    "bellumPhrases": {
+      "welcome": "Bienvenue Antoine, on va transformer ton expertise \"Développement applicatif (Web, Mobile, API)\" en pipeline qualifié sur \"Aéronautique & Défense\".",
+      "firstAnalysisCta": "Lancer une analyse sur une ETI du secteur Aéronautique & Défense.",
+      "weeklySummaryIntro": "Cette semaine, reprends contact avec un compte historique de l'agence toulousaine.",
+      "emptyState": "Aucun compte en pipeline — lance une analyse sur un compte historique de l'agence pour redémarrer le suivi.",
+      "scoreContext": "Le score se justifie par la correspondance sectorielle aéronautique et l'historique de relation détecté, jamais par un chiffre unique."
+    },
+    "welcomeSummary": {
+      "profileRecap": "Tu es une ESN \"Développement applicatif\" de 30-80 consultants, basée en \"Toulouse & Occitanie\", spécialisée \"Développement applicatif (Web, Mobile, API)\" et \"DevOps, SRE & Automatisation\", qui cible les \"ETI\" et \"PME\" \"Aéronautique & Défense\". Ton équipe commerciale compte 2-3 personnes.",
+      "searchesPersonalization": "Les recherches cibleront en priorité \"aéronautique\", \"industrie 4.0\" et \"souveraineté\".",
+      "contactsPersonalization": "Les contacts identifiés seront des \"Directeur Technique\" et \"Responsable Achats IT\" (pas des opérationnels juniors).",
+      "messagesPersonalization": "Les messages seront rédigés sur un ton \"relationnel\" (pas à vos côtés, main dans la main).",
+      "scoringPersonalization": "Le scoring évaluera la correspondance sectorielle aéronautique détectée chez la cible.",
+      "firstAnalysisSuggestions": []
+    }
+  },
+  "contradictions": [
+    "Reprise d'agence : l'ancienneté de l'ESN (consultant_size 30-80) ne doit pas laisser supposer une ancienneté équivalente du directeur commercial — le profil garde le vivier existant mais un pilotage tout juste installé."
+  ],
+  "limits": [
+    "Aucune suggestion d'entreprise au premier écran : le questionnaire ne fournit aucun nom de compte historique, malgré l'ancienneté de l'agence."
+  ]
+}

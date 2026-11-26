@@ -1,0 +1,186 @@
+{
+  "description": "#3223 (décision Louis 11/10/2026) — jeu ÉTIQUETÉ de référence du juge « recommandation générique ». Chaque cas est une réponse de Laura écrite pour l'évaluation (aucune conversation réelle), étiquetée à la main : `generique` = la recommandation pourrait être envoyée à n'importe quelle ESN ou pour n'importe quel compte ; `specifique` = elle s'appuie sur au moins deux éléments propres à CE compte, CETTE ESN ou CE commercial (règle #1925, `recommendation_specificity.py`) ; `sans_recommandation` = la réponse ne recommande rien (une liste, un fait, une salutation) et sort du dénominateur. Toute modification change `labelSetVersion` et invalide la calibration (le taux d'accord doit être re-mesuré).",
+  "labelled_by": "lot #3223 du 11/10/2026 — première version, à relire par un relecteur métier (méthode « humain métier », agent_docs/methode-revue-humaine-metier.md)",
+  "cases": [
+    {
+      "id": "g01",
+      "question": "Comment j'attaque ce compte ?",
+      "answer": "Je te recommande une approche multicanale : un premier e-mail, une relance par téléphone, puis un message LinkedIn. Mets en avant ton expertise et propose un rendez-vous de découverte pour comprendre leurs enjeux.",
+      "label": "generique"
+    },
+    {
+      "id": "g02",
+      "question": "Quel angle pour ouvrir la discussion ?",
+      "answer": "Le mieux est de parler de transformation digitale : toutes les entreprises cherchent à moderniser leur SI. Présente-toi comme un partenaire de confiance capable de les accompagner de bout en bout.",
+      "label": "generique"
+    },
+    {
+      "id": "g03",
+      "question": "Je fais quoi cette semaine sur ce compte ?",
+      "answer": "Surveille l'actualité de l'entreprise, identifie les décideurs clés et prépare un message personnalisé. Ensuite, relance régulièrement sans être insistant.",
+      "label": "generique"
+    },
+    {
+      "id": "g04",
+      "question": "Qui je dois contacter en premier ?",
+      "answer": "Commence par le DSI ou un directeur des achats : ce sont en général eux qui décident. Un message court qui met en avant la valeur ajoutée de ton ESN fonctionne bien.",
+      "label": "generique"
+    },
+    {
+      "id": "g05",
+      "question": "Tu me conseilles d'y aller ?",
+      "answer": "Oui, c'est un compte intéressant avec du potentiel. Je te conseille de te positionner rapidement avant la concurrence et de proposer une solution sur mesure adaptée à leurs besoins.",
+      "label": "generique"
+    },
+    {
+      "id": "g06",
+      "question": "Comment je relance après un premier rendez-vous ?",
+      "answer": "Envoie un récapitulatif de l'échange dans les 48 heures, propose une prochaine étape concrète et partage un cas client pertinent. N'hésite pas à relancer au bout d'une semaine sans réponse.",
+      "label": "generique"
+    },
+    {
+      "id": "g07",
+      "question": "Quelle offre je mets en avant ?",
+      "answer": "Mets en avant vos expertises reconnues, votre méthodologie éprouvée et la qualité de vos consultants. Les clients sont sensibles à la réactivité et à la proximité.",
+      "label": "generique"
+    },
+    {
+      "id": "g08",
+      "question": "Prépare-moi le plan d'action.",
+      "answer": "1. Cartographier les interlocuteurs. 2. Qualifier le besoin. 3. Proposer un atelier. 4. Envoyer une proposition. 5. Négocier et closer. Adapte le rythme selon les retours.",
+      "label": "generique"
+    },
+    {
+      "id": "g09",
+      "question": "Comment je me différencie ?",
+      "answer": "Insiste sur ce qui vous rend uniques : la qualité de service, l'engagement des équipes et la capacité à s'adapter. Un client cherche avant tout un partenaire fiable.",
+      "label": "generique"
+    },
+    {
+      "id": "g10",
+      "question": "Le compte vient de recruter, j'en fais quoi ?",
+      "answer": "Un recrutement est toujours un bon signal : il montre que l'entreprise investit. Profite-en pour proposer tes services et montrer que tu peux les aider à grandir.",
+      "label": "generique"
+    },
+    {
+      "id": "g11",
+      "question": "Je n'ai pas de contact sur ce compte, je fais comment ?",
+      "answer": "Utilise ton réseau, participe aux salons du secteur et publie du contenu pour gagner en visibilité. Avec le temps, les opportunités viendront.",
+      "label": "generique"
+    },
+    {
+      "id": "g12",
+      "question": "Rédige-moi un message pour le directeur.",
+      "answer": "Bonjour, je me permets de vous contacter car notre ESN accompagne de nombreuses entreprises dans leur transformation. Seriez-vous disponible pour un échange de 15 minutes ? Bien cordialement.",
+      "label": "generique"
+    },
+    {
+      "id": "s01",
+      "question": "Comment j'attaque ce compte ?",
+      "answer": "Passe par Claire Martin, responsable des applications Finance : elle a publié il y a trois semaines l'appel d'offres TMA SAP FI-CO, et ta référence chez Lactalis porte exactement sur la migration S/4 de la comptabilité. Propose-lui un retour d'expérience de 30 minutes sur leur clôture mensuelle, avant la date limite du 28/10.",
+      "label": "specifique"
+    },
+    {
+      "id": "s02",
+      "question": "Quel angle pour ouvrir la discussion ?",
+      "answer": "L'angle le plus solide : leur plan de sortie du datacenter de Vélizy annoncé au rapport annuel 2025. Tes deux consultants AWS certifiés libres au 15/11 et ta mission de migration chez Keolis te donnent une preuve directe. Ouvre sur la date de fermeture du site, pas sur le cloud en général.",
+      "label": "specifique"
+    },
+    {
+      "id": "s03",
+      "question": "Je fais quoi cette semaine sur ce compte ?",
+      "answer": "Deux gestes : relance Thomas Leroy (DSI adjoint) sur le devis du 03/10 resté sans réponse, en citant la contrainte de budget gelé jusqu'en janvier qu'il t'a donnée ; puis demande à Sophie, ta directrice d'agence, une introduction vers la direction achats via votre contrat cadre chez leur filiale Assurances.",
+      "label": "specifique"
+    },
+    {
+      "id": "s04",
+      "question": "Qui je dois contacter en premier ?",
+      "answer": "Commence par Julien Moreau, chef de projet data à Lyon : il est dans ta zone déclarée Auvergne-Rhône-Alpes, il a relayé leur recrutement de quatre data engineers en septembre, et tu as un consultant Databricks disponible. Le DSI groupe à Paris viendra après, ton entrée passe par la filiale lyonnaise.",
+      "label": "specifique"
+    },
+    {
+      "id": "s05",
+      "question": "Tu me conseilles d'y aller ?",
+      "answer": "Pas maintenant : le compte a 12 000 salariés et tu n'as encore aucun contact ni référence dans l'énergie ; ton objectif déclaré est d'ouvrir trois PME industrielles ce trimestre. Je te propose plutôt sa filiale de maintenance (380 salariés, Grenoble) où ta référence Schneider compte, et de revenir sur le groupe quand tu auras cette preuve.",
+      "label": "specifique"
+    },
+    {
+      "id": "s06",
+      "question": "Comment je relance après un premier rendez-vous ?",
+      "answer": "Renvoie à Nadia Benali le chiffrage des trois profils .NET qu'elle t'a demandé mardi, avec le planning de démarrage au 4 novembre qu'elle a posé comme condition, et joins la fiche de ta mission chez Crédit Agricole Technologies sur le même socle.",
+      "label": "specifique"
+    },
+    {
+      "id": "s07",
+      "question": "Quelle offre je mets en avant ?",
+      "answer": "Ton offre Cybersécurité OT, pas l'infogérance : ils ont subi l'incident sur l'usine de Dunkerque publié le 12/09, et ta référence chez ArcelorMittal porte sur la segmentation réseau d'ateliers. L'infogérance est déjà tenue par un prestataire jusqu'en 2027 d'après leur dernier appel d'offres.",
+      "label": "specifique"
+    },
+    {
+      "id": "s08",
+      "question": "Prépare-moi le plan d'action.",
+      "answer": "1. Cette semaine : e-mail à Marc Dubois (resp. RH SIRH) sur la fin de support de leur version Workday annoncée pour mars. 2. J+7 : appel, en citant ta mission Workday chez Saint-Gobain. 3. J+14 : demande d'introduction à la DRH via Marc. Tes deux consultants SIRH se libèrent fin novembre, le calendrier tient.",
+      "label": "specifique"
+    },
+    {
+      "id": "s09",
+      "question": "Comment je me différencie ?",
+      "answer": "Face aux deux ESN déjà référencées chez eux, ta différence est géographique et sectorielle : tu as une agence à Nantes, à vingt minutes de leur site de Saint-Herblain, et trois missions dans la mutuelle santé, leur métier. Mets ces deux faits en avant, pas ta taille.",
+      "label": "specifique"
+    },
+    {
+      "id": "s10",
+      "question": "Le compte vient de recruter, j'en fais quoi ?",
+      "answer": "Leur nouvelle directrice du digital, Camille Roux, arrive de Decathlon où ton ESN a mené la refonte du parcours e-commerce en 2024. Écris-lui dans son premier mois, en citant ce projet qu'elle connaît : c'est ton accès le plus court.",
+      "label": "specifique"
+    },
+    {
+      "id": "s11",
+      "question": "Je n'ai pas de contact sur ce compte, je fais comment ?",
+      "answer": "Ton CRM montre que Pierre Garnier, ton ancien client chez Orange Business, est depuis juin directeur des opérations IT chez eux. C'est ta voie d'accès : demande-lui un café en lui rappelant le projet de supervision que vous avez livré ensemble.",
+      "label": "specifique"
+    },
+    {
+      "id": "s12",
+      "question": "Rédige-moi un message pour le directeur.",
+      "answer": "Bonjour M. Lambert, votre annonce du 2 octobre sur la consolidation des trois ERP du groupe rejoint un chantier que nous venons de terminer chez Fives (passage à un SAP unique, 14 mois). Je peux vous en présenter le découpage en lots, si cela vous est utile avant votre comité de novembre.",
+      "label": "specifique"
+    },
+    {
+      "id": "n01",
+      "question": "Liste-moi les contacts du compte.",
+      "answer": "Voici les cinq contacts connus : Claire Martin (resp. applications Finance), Thomas Leroy (DSI adjoint), Nadia Benali (cheffe de projet), Julien Moreau (chef de projet data), Marc Dubois (resp. SIRH).",
+      "label": "sans_recommandation"
+    },
+    {
+      "id": "n02",
+      "question": "Quel est le chiffre d'affaires ?",
+      "answer": "Le dernier chiffre d'affaires publié est de 412 M€ (exercice 2024), selon les comptes déposés au registre.",
+      "label": "sans_recommandation"
+    },
+    {
+      "id": "n03",
+      "question": "Bonjour Laura",
+      "answer": "Bonjour ! Sur quel compte veux-tu avancer aujourd'hui ?",
+      "label": "sans_recommandation"
+    },
+    {
+      "id": "n04",
+      "question": "Combien d'actions j'ai en retard ?",
+      "answer": "Tu as trois actions en retard : une relance chez Fives, un appel chez Nexity et un e-mail chez Keolis.",
+      "label": "sans_recommandation"
+    },
+    {
+      "id": "n05",
+      "question": "Quand a eu lieu mon dernier échange avec eux ?",
+      "answer": "Ton dernier échange enregistré date du 3 octobre : un rendez-vous avec Thomas Leroy, noté « devis demandé ».",
+      "label": "sans_recommandation"
+    },
+    {
+      "id": "n06",
+      "question": "Où est leur siège ?",
+      "answer": "Je n'ai pas d'adresse de siège vérifiée pour ce compte : le registre ne la renvoie pas et aucun document de ton espace ne la mentionne.",
+      "label": "sans_recommandation"
+    }
+  ]
+}

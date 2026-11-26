@@ -1,0 +1,2271 @@
+{
+  "needsFilters": {
+    "block": "Known needs",
+    "blockHint": "By default every known need, recent and old, is searched. A choice here removes the rest.",
+    "fromConsultantLabel": "From a consultant",
+    "fromConsultantHint": "Sets their skills as search criteria.",
+    "periodLabel": "Needs period",
+    "periodHint": "By default the search covers every known need, recent and old. Picking a period removes the rest.",
+    "period": { "all": "All", "recent": "Recent (under 6 months)", "old": "Older" },
+    "natureLabel": "Need type",
+    "natureHint": "Nothing ticked: every type. Ticking removes the others.",
+    "nature": { "recrutement": "Hiring", "mission": "Assignment", "projet": "Project" }
+  },
+  "preparedByLaura": "Prepared by {{copilot}} from your conversation.",
+  "subtitle": "Find the accounts to work, the right contacts and a real reason to reach out.",
+  "rail": {
+    "hint": "Cross whatever you want: target, intent signals and fit combine into a single search.",
+    "mode": {
+      "include": "Included: I only keep this",
+      "exclude": "Excluded: I remove this"
+    },
+    "sectorsLabel": "Sectors",
+    "sectorsHint": "Several sectors cross — the registry is queried for each.",
+    "excludeSectorsLabel": "Excluded sectors",
+    "excludeSectorsHint": "Removes these sectors from the list, even when they match the other criteria.",
+    "externalRecourseObservedLabel": "External recourse",
+    "externalRecourseObservedHint": "Read from market data: at least one ESN observed on this account. Unticking never means \"no external recourse\" — it just removes the criterion.",
+    "externalRecourseObservedChip": "With observed external recourse",
+    "contractRecourseLabel": "Contract model",
+    "contractRecourseHint": "Observed on the job offers the company publishes itself and on its public procurement notices, read for the first rows returned — never inferred. An unobserved account leaves the list, and its number is shown here.",
+    "contractRecourseChip": "Uses freelancers / time and materials",
+    "contractRecourseUnknownCount_one": "{{count}} account removed for lack of observation — unknown, never counted as “no”.",
+    "contractRecourseUnknownCount_other": "{{count}} accounts removed for lack of observation — unknown, never counted as “no”.",
+    "decisionLevelHint": "Only keeps accounts where the workspace already knows at least one contact of that level, from the collected job title. An account with no known contact is left out.",
+    "groupRoleLabel": "Group / subsidiary",
+    "groupRoleHint": "Keeps only already-owned accounts whose capital link is known — a new, not-yet-analysed candidate doesn't carry this fact yet.",
+    "intentLabel": "Intent signals",
+    "intentHint": "Tick a signal to start from what's moving: open public tenders, public contracts won, hiring.",
+    "recencyHint": "Applies to intent signals and to the territory panel's reading.",
+    "keywordsLabel": "Skills",
+    "keywordsHint": "Filters job offers and the tech observed in market data (e.g. SAP, cybersecurity, cloud). Read from the market, never declared by the company: an account without enough data is never counted as “without this skill” — it drops out of the list.",
+    "keywordsPlaceholder": "e.g. SAP, data, cloud",
+    "keywordsHint_industrial": "Filters job offers and the tech observed in market data (e.g. maintenance, methods, quality). Read from the market, never declared by the company: an account without enough data is never counted as “without this skill” — it drops out of the list.",
+    "keywordsPlaceholder_industrial": "e.g. maintenance, automation",
+    "privateSectorLabel": "Private sector",
+    "privateSectorHint": "Keeps the private sector only: public sectors (local government, education and research…) are excluded, read from the same NAF code as “Public sector”. An account whose NAF code is unreadable is never dropped.",
+    "privateSectorChip": "Private sector only",
+    "workedLabel": "Already worked",
+    "workedHint": "Keeps only accounts the workspace has already worked: a client relationship, a won deal or a past mission. Combines with sector and the other filters.",
+    "workedChip": "Already-worked accounts",
+    "fitLabel": "Fit level",
+    "fitHint": "Keeps, among the results already shown, only those at the chosen fit level — applied instantly, without re-running the search.",
+    "fit": {
+      "any": "All fits",
+      "medium": "Medium fit or higher",
+      "high": "High fit only"
+    },
+    "needCriterion": "Type a keyword or set a criterion to explore.",
+    "activeCount_zero": "No criteria set",
+    "activeCount_one": "1 criterion set",
+    "activeCount_other": "{{count}} criteria set",
+    "inconsistentCriteria": "Two criteria conflict: together they can never return a result.",
+    "similarToggle": "Comparable accounts",
+    "activeCountRefining_one": "{{count}} criterion set, refining without starting a search",
+    "activeCountRefining_other": "{{count}} criteria set, refining without starting a search",
+    "refineOnly": "What you set refines a search without starting one: add a sector, a region, a size or a signal.",
+    "cdiOnlyLabel": "Contract type",
+    "cdiOnlyHint": "Only keep hiring signals where the permanent contract (CDI) is confirmed by the source.",
+    "cdiOnlyChip": "Permanent (CDI) only",
+    "freelanceOnlyChip": "Freelance only",
+    "cddOnlyChip": "Fixed-term (CDD) only",
+    "interimOnlyChip": "Temp agency only",
+    "onboardingSectors": "Suggested from your onboarding:",
+    "freelanceMissing": "No source in this search gives the offers’ contract type: “Freelance only” cannot keep anything.",
+    "remotePolicyLabel": "Remote work policy",
+    "remotePolicyHint": "Only keep hiring signals whose posting explicitly states its remote work policy.",
+    "remotePolicy": {
+      "sur_site": "On-site",
+      "hybride": "Hybrid",
+      "full_remote": "Full remote"
+    },
+    "deliveryFitLabel": "Delivery fit (external staffing)",
+    "deliveryFitHint": "Only keep hiring signals whose posting explicitly states its stance on external delivery (contractors, nearshore, offshore) — distinct from employees' remote work policy.",
+    "deliveryFit": {
+      "compatible": "Open to external delivery",
+      "potentially_compatible": "External delivery to verify",
+      "unknown": "Not evaluated",
+      "incompatible": "External delivery incompatible"
+    },
+    "deliveryFitAxis": {
+      "site_presence": "On-site presence",
+      "presence_frequency": "Presence frequency",
+      "authorized_countries": "Authorized countries",
+      "languages": "Languages",
+      "timezones": "Time zones",
+      "security": "Security",
+      "sensitive_data": "Sensitive data",
+      "mandated_equipment": "Mandated equipment",
+      "clearances": "Clearances",
+      "contractual_status": "Contractual status",
+      "team_model": "Team model",
+      "travel": "Travel",
+      "source_freshness": "Source and freshness"
+    },
+    "seniorityLabel": "Seniority sought",
+    "seniorityHint": "Only keep hiring signals whose title or displayed experience level confirms the seniority.",
+    "seniority": {
+      "junior": "Junior",
+      "confirme": "Mid-level",
+      "senior": "Senior"
+    },
+    "seniorityFit": {
+      "sold": "a level you place",
+      "not_sold": "a level you do not place"
+    },
+    "hiringSignalClass": {
+      "internal_hiring": "Salaried hiring",
+      "contracting": "Explicit contracting",
+      "staffing_signal": "Capacity signal, purchase model unproven",
+      "skill_demand_signal": "Skill sought, no contractual conclusion",
+      "agency_posting": "Posted by an intermediary"
+    },
+    "aggregateClass": {
+      "team_growth_signal": "Likely team expansion",
+      "replacement_signal": "Replacement or succession"
+    },
+    "jobFamily": {
+      "data_ia": "Data & AI",
+      "infrastructure_cloud": "Infrastructure & Cloud",
+      "cybersecurite": "Cybersecurity",
+      "produit_design": "Product & Design",
+      "qualite_test": "Quality & Test",
+      "developpement": "Development",
+      "direction_management": "Direction & Management",
+      "commercial_marketing": "Sales & Marketing"
+    },
+    "minAccountsSeenLabel": "Seen on at least N accounts",
+    "minAccountsSeenHint": "What your workspace's own accounts have already seen of this firm — not a market-wide fact.",
+    "minAccountsSeenPlaceholder": "E.g. 2",
+    "existingRelationshipLabel": "Existing relationship",
+    "existingRelationshipHint": "Only firms your workspace has already qualified as a partner or a competitor on at least one account — unticking never claims the relationship is unknown, it just drops the criterion.",
+    "existingRelationshipChip": "Relationship already qualified",
+    "rank2OpeningLabel": "Rank-2 opening",
+    "rank2OpeningHint": "Only firms already holding rank 2 on at least one of your workspace's accounts — an opening to formalise, not a rank-1 incumbent.",
+    "rank2OpeningChip": "Holds rank 2 somewhere",
+    "observedClientsLabel": "Observed clients",
+    "observedClientsHint": "Only firms our market data has observed on at least one of your workspace's accounts — people's career paths, not a declared presence. An account our market data couldn't resolve stays \"unknown\": it's never counted as \"not observed\".",
+    "observedClientsChip": "Observed at your clients",
+    "observedClientsUnknownCount_one": "{{count}} firm kept for lack of knowing (market data unknown)",
+    "observedClientsUnknownCount_other": "{{count}} firms kept for lack of knowing (market data unknown)",
+    "expertiseKnownLabel": "Expertise",
+    "expertiseKnownHint": "Only firms whose sector is known to the registry — the observable expertise. A sector unknown to the registry stays \"unknown\", never \"no expertise\"; the counter says how many were dropped for that reason alone.",
+    "expertiseKnownChip": "Known expertise",
+    "expertiseUnknownCount_one": "{{count}} firm dropped for lack of a known sector (never \"no expertise\")",
+    "expertiseUnknownCount_other": "{{count}} firms dropped for lack of a known sector (never \"no expertise\")",
+    "complementarityKnownLabel": "Complementarity",
+    "complementarityKnownHint": "Only firms with AT LEAST one complementarity axis measured (sector, size…). A totally unknown complementarity stays \"unknown\", never \"incompatible\"; the counter says how many were dropped for that reason alone.",
+    "complementarityKnownChip": "Known complementarity",
+    "complementarityUnknownCount_one": "{{count}} firm dropped for lack of a single measured axis (never \"incompatible\")",
+    "complementarityUnknownCount_other": "{{count}} firms dropped for lack of a single measured axis (never \"incompatible\")",
+    "moreFilters": "All filters",
+    "sectorGroupExpand": "Expand the {{group}} group",
+    "sectorGroupCollapse": "Collapse the {{group}} group",
+    "regionLabel": "Region",
+    "regionAll": "All of France",
+    "regionHint": "A whole region at once, without listing its departments.",
+    "cityRadiusLabel": "Radius around the city",
+    "cityRadiusHint": "No effect without a city above — a radius needs a center.",
+    "siteBasisLabel": "Zone basis (department, region)",
+    "siteBasisHint": "No effect without a department or region. The registry does not publish the headcount of an on-site team.",
+    "siteBasis": {
+      "presence": "Present in the zone (one site is enough)",
+      "headquarters": "Headquarters in the zone"
+    },
+    "cityRadius": {
+      "any": "Exact city",
+      "10": "10 km",
+      "25": "25 km",
+      "50": "50 km",
+      "100": "100 km"
+    },
+    "companyCategoryLabel": "Company size",
+    "companyCategoryHint": "{{brand}} definition: micro under 10 employees · SME 10 to 249 · mid-cap 250 to 999 · key account (GC) 1,000 and over.",
+    "sizeBand": {
+      "tpe": "Micro",
+      "pme": "SME",
+      "eti": "Mid-cap",
+      "gc": "GC"
+    },
+    "sizeRefineLabel": "Refine the SME range",
+    "signalHint": {
+      "tender": "An open public tender: the body is looking for a provider right now.",
+      "award": "A recently awarded public contract: a holder is in place and may need extra hands.",
+      "hiring": "IT job offers posted: the account is growing its team, so a budget exists.",
+      "capital": "A capital increase announced: fresh cash to invest.",
+      "deal": "A takeover or merger on the public register: the organisation changes, purchasing is up for review."
+    },
+    "summary": {
+      "title": "What your search keeps and drops",
+      "kept": "Keeps",
+      "dropped": "Drops",
+      "empty": "Nothing is set: the search neither keeps nor drops anything.",
+      "line": {
+        "zones": "Areas",
+        "sectors": "Sectors",
+        "size": "Sizes",
+        "intermediaries": "Intermediaries",
+        "excludedSectors": "Sectors",
+        "listed": "Listed companies",
+        "publicEmployers": "Public employers"
+      },
+      "esn": "IT firms to subcontract to"
+    },
+    "companyCategory": {
+      "pme": "SME",
+      "eti": "Mid-cap",
+      "ge": "Large company"
+    },
+    "revenueLabel": "Revenue (€)",
+    "revenueHint": "One bound is enough. Leaving it blank does not mean zero.",
+    "revenueMinPlaceholder": "Minimum",
+    "revenueMaxPlaceholder": "Maximum",
+    "legalFormLabel": "Legal form",
+    "legalFormHint": "Who decides and where the budget sits often follow the legal form.",
+    "legalFormAny": "All forms",
+    "legalForm": {
+      "sas": "SAS",
+      "sarl": "SARL",
+      "sa": "Public limited company",
+      "sci": "Real-estate civil company",
+      "association": "Registered association",
+      "ei": "Sole trader"
+    },
+    "startupSegmentLabel": "Registry",
+    "startupSegmentHint": "Three criteria already in the registry: under 8 years old (Jeune Entreprise Innovante threshold), SAS/SASU legal form, PME category — never a sole trader. No funding-round criterion: you can't search by round, but a publicly announced round shows on the company's card when it is spotted.",
+    "startupSegmentChip": "Startup",
+    "registryOnlyIdle": "Not applied: this criterion only exists in the criteria-based search. Untick the intent signals for it to take effect.",
+    "middleMarketLabel": "Size: preset",
+    "middleMarketChip": "Middle market",
+    "middleMarketHint": "250 to 4,999 employees, listed companies removed: a wider scope than the mid-cap size (250 to 999).",
+    "excludeListedLabel": "Listed companies",
+    "excludeListedChip": "Exclude listed companies",
+    "excludeListedHint": "Removes companies whose listing is established. A company whose listing is unknown stays in the list, and their number is shown under the list.",
+    "sectorSearchLabel": "Search a sector",
+    "sectorSearchPlaceholder": "Search a sector…",
+    "sectorSelectedLabel": "Selected sectors",
+    "sectorCapCounter": "{{count}}/{{max}} sectors",
+    "sectorRoomLeft_one": "{{count}} slot left",
+    "sectorRoomLeft_other": "{{count}} slots left",
+    "sectorRoomNone": "no slot left",
+    "sectorGroupPreview": "Will add {{add}} of {{total}} sub-sectors: limit of {{max}} sectors.",
+    "sectorCapHint": "{{max}} sectors maximum to keep the search precise: remove one before adding another.",
+    "sectorGroupCapHint_one": "1 subsector not added: cap of {{max}} sectors ({{names}}).",
+    "sectorGroupCapHint_other": "{{count}} subsectors not added: cap of {{max}} sectors ({{names}}).",
+    "sectorRemove": "Remove {{sector}}",
+    "sizeBandBounds": {
+      "tpe": "Micro: under 10 employees ({{brand}} definition).",
+      "pme": "SME: 10 to 249 employees ({{brand}} definition).",
+      "eti": "Mid-cap: 250 to 999 employees ({{brand}} definition).",
+      "gc": "Key account: 1,000 employees or more ({{brand}} definition)."
+    },
+    "zoneUnrecognized": "Zone not recognised: fix the city or department to run the search.",
+    "sectorGroupAll": "Select all",
+    "sectorGroupNone": "Clear all",
+    "sectorGroupAllAria": "Select all in {{group}}",
+    "sectorGroupNoneAria": "Clear all in {{group}}",
+    "roleFamilyObservedLabel": "Observed role family",
+    "roleFamilyObservedHint": "Read from market data: a role family observed on the account, a trace of the past, not a current team. Ranks the list: accounts observed with this family come first, none is removed.",
+    "roleFamilyObservedPlaceholder": "Data, DevOps…",
+    "roleFamilyObservedPlaceholder_industrial": "Methods, Quality, Maintenance…",
+    "ecosystemObservedLabel": "Ecosystems linked to",
+    "ecosystemObservedHint": "A services company seen in the market data around this name — an observed trace, not a current relationship. Ranks the list: accounts observed with this ecosystem come first, none is removed.",
+    "ecosystemObservedPlaceholder": "Name of a services company"
+  },
+  "sections": {
+    "search": "Search"
+  },
+  "modes": {
+    "registry": "By criteria",
+    "signals": "By detected opportunities",
+    "similar": "By comparable accounts"
+  },
+  "listingFilter": {
+    "removed_one": "{{count}} listed company removed from the list",
+    "removed_other": "{{count}} listed companies removed from the list",
+    "none": "No listed company was removed",
+    "unknown_one": "Listing not established for {{count}} account: it stays in the list, without being counted as “unlisted”.",
+    "unknown_other": "Listing not established for {{count}} accounts: they stay in the list, without being counted as “unlisted”.",
+    "sourceDown": "The listing could not be checked right now: no company was removed, and none is declared “unlisted”."
+  },
+  "zoneWidening": {
+    "counts_zero": "No account in {{place}} alone, {{widened}} added by widening — labelled on each row.",
+    "counts_one": "{{count}} account in {{place}}, {{widened}} added by widening — labelled on each row.",
+    "counts_other": "{{count}} accounts in {{place}}, {{widened}} added by widening — labelled on each row.",
+    "countsPlain_zero": "No account in {{place}} alone, {{widened}} added by widening.",
+    "countsPlain_one": "{{count}} account in {{place}}, {{widened}} added by widening.",
+    "countsPlain_other": "{{count}} accounts in {{place}}, {{widened}} added by widening.",
+    "strict": "Strict zone: {{place}} only",
+    "widenAgain": "Widen again around {{place}}",
+    "ceiling": "Zone limited to: {{step}} around {{place}}",
+    "steps": "Steps taken: {{steps}}",
+    "stopsAtRegion": "The search stops at the region: no widening to all of France."
+  },
+  "placeResolution": {
+    "corrected": "{{chosen}} (corrected from “{{typed}}”)",
+    "homonym": "Several towns named “{{typed}}”: the most populous kept ({{department}}). Others: {{others}}",
+    "none": "No town “{{typed}}” found: free-text address search"
+  },
+  "registry": {
+    "sectorLabel": "Sector",
+    "nafLabel": "NAF code",
+    "nafPlaceholder": "e.g. 62.02A",
+    "nafHint": "An explicit NAF code overrides the selected sector.",
+    "departmentsLabel": "Departments",
+    "departmentsPlaceholder": "e.g. 75, 92, 69",
+    "departmentsHint": "Comma-separated codes, or a name to pick from the list.",
+    "cityLabel": "City",
+    "cityPlaceholder": "e.g. Lyon",
+    "headcountLabel": "Headcount range",
+    "ageLabel": "Company age",
+    "submit": "Show matching accounts",
+    "needCriterion": "Add at least one criterion to run the search.",
+    "unapplied": "Not applied by {{sources}} — results are broader than requested.",
+    "unappliedEmpty": "Not applied by {{sources}}."
+  },
+  "headcount": {
+    "any": "Any",
+    "1-9": "1 to 9",
+    "10-49": "10 to 49",
+    "50-249": "50 to 249",
+    "250-999": "250 to 999",
+    "1000+": "1,000 and above",
+    "250-4999": "250 to 4,999"
+  },
+  "age": {
+    "any": "Any",
+    "lt3": "Under 3 years",
+    "3to10": "3 to 10 years",
+    "lt8": "Under 8 years (JEI threshold)",
+    "gt10": "Over 10 years"
+  },
+  "groupRole": {
+    "any": "Any",
+    "groupe": "Group head",
+    "filiale": "Subsidiary"
+  },
+  "signalsMode": {
+    "typesLabel": "Signal type",
+    "recencyLabel": "Recency window",
+    "departmentsLabel": "Departments",
+    "submit": "See who is moving",
+    "recency": {
+      "30": "Last 30 days",
+      "90": "Last 90 days",
+      "180": "Last 6 months"
+    }
+  },
+  "signalTypes": {
+    "tender": "Public tender open",
+    "award": "Public contract won",
+    "hiring": "Hiring",
+    "legal": "Legal event",
+    "tech": "Tech signal",
+    "business": "Business news",
+    "funding": "Funding round",
+    "ecosystem": "Startup ecosystem membership",
+    "capital": "Capital increase",
+    "deal": "Takeover or merger"
+  },
+  "resultType": {
+    "groupLabel": "Result type",
+    "label": {
+      "accounts": "Accounts",
+      "others": "Other actors",
+      "contacts": "Contacts",
+      "needs": "Needs and signals",
+      "calls": "Call list"
+    },
+    "hint": {
+      "accounts": "Companies to work, with their interest and how reachable they are.",
+      "others": "Declared partners, IT service firms, recruiters and temp agencies, told apart by type.",
+      "contacts": "The people your workspace already knows, crossed with your criteria.",
+      "needs": "The dated signals of the companies found, read one by one.",
+      "calls": "The companies from this search, crossed with the people your workspace already knows, ready to call."
+    },
+    "contactsOnAccounts_one": "{{count}} contact at {{accounts}} account",
+    "contactsOnAccounts_other": "{{count}} contacts at {{accounts}} accounts",
+    "count_one": "{{count}} result",
+    "count_other": "{{count}} results"
+  },
+  "callList": {
+    "title": "Call list",
+    "scope": "Each row crosses a company from this search with a person your workspace already knows — never a person found elsewhere. A relevant company with no known contact still shows up.",
+    "columns": {
+      "company": "Company",
+      "website": "Website",
+      "reason": "Reason",
+      "signal": "Signal",
+      "fullName": "Name",
+      "title": "Title",
+      "location": "Location",
+      "companySite": "Site",
+      "email": "Email",
+      "phone": "Phone",
+      "confidence": "Confidence",
+      "action": "Action"
+    },
+    "cell": {
+      "noContact": "No known contact",
+      "emailVerified": "verified",
+      "phoneNotFound": "Phone not found — reveal it from the contact page"
+    },
+    "findPeople": {
+      "one": "Find 10 people to call",
+      "all_one": "Find people to call for {{count}} company",
+      "all_other": "Find people to call for the {{count}} companies",
+      "subjectMany_one": "{{count}} company",
+      "subjectMany_other": "{{count}} companies",
+      "searching": "Searching…",
+      "progress": "Searching: {{done}} / {{total}} companies"
+    },
+    "funnel": {
+      "detected": "Detected",
+      "verified": "Verified",
+      "relevant": "Relevant",
+      "enriched": "Enriched"
+    },
+    "openWebsite": "Open website",
+    "export": "Export",
+    "exportFilename": "call-list",
+    "empty": "No relevant company for this search.",
+    "truncatedCompanies_one": "{{count}} company has more than {{max}} known contacts (only the {{max}} best ranked are listed) in your workspace — open its record to see them all.",
+    "truncatedCompanies_other": "{{count}} companies have more than {{max}} known contacts (only the {{max}} best ranked are listed) in your workspace — open their record to see them all.",
+    "excludedCompanies_one": "{{count}} company excluded by qualification does not appear in this table.",
+    "excludedCompanies_other": "{{count}} companies excluded by qualification do not appear in this table.",
+    "outOfPackCompanies_one": "{{count}} company outside your pack (public administration, retail) left out of the list.",
+    "outOfPackCompanies_other": "{{count}} companies outside your pack (public administration, retail) left out of the list."
+  },
+  "prospectingSession": {
+    "trigger": "Prepare a session",
+    "title": "Prepare a prospecting session",
+    "subtitle": "Turn this list into an executable session — order, pitch, time available — not just names.",
+    "durationLabel": "Time available (minutes)",
+    "objectiveLabel": "Session objective",
+    "objectivePlaceholder": "Qualify the need, reconnect…",
+    "modeLabel": "Mode",
+    "mode": {
+      "appels": "Calls",
+      "linkedin": "Professional network",
+      "email": "Email",
+      "mixte": "Mixed",
+      "reactivation": "Reactivation",
+      "compte": "Account",
+      "talent": "Talent"
+    },
+    "generate": "Generate the session",
+    "resultTitle": "Session ready",
+    "boundedOut_one": "{{count}} ready contact left out of the session, for lack of time.",
+    "boundedOut_other": "{{count}} ready contacts left out of the session, for lack of time.",
+    "duplicatesAvoided_one": "{{count}} duplicate avoided: a colleague already reached out to this contact recently.",
+    "duplicatesAvoided_other": "{{count}} duplicates avoided: colleagues already reached out to these contacts recently.",
+    "firstMessageTimeUnmeasured": "Time to first message: not measured — the session start time was not recorded.",
+    "editedMessageRateUnmeasured": "Edited message rate: not measured — this is a call session, the pitch and first question are displayed text, not an input field.",
+    "connectorSuccessUnmeasured": "Connector success: not measured — no send happens from this screen.",
+    "missing": "{{phones}} phone numbers available. {{emailsOnly}} emails only. {{toVerify}} identities to verify.",
+    "startWithAvailable": "Start with what's available",
+    "keepForLinkedin": "Keep the rest for the professional network",
+    "notReady": "Missing the coordinate this channel needs",
+    "collision": "Already contacted by {{name}} on {{date}}",
+    "logOutcome": "Log the outcome",
+    "outcomeLogged": "Outcome logged",
+    "export": "Export the checklist",
+    "exportFilename": "prospecting-session",
+    "thread": {
+      "next": "Next step: prepare the send"
+    },
+    "csv": {
+      "company": "Company",
+      "fullName": "Name",
+      "title": "Title",
+      "channel": "Channel",
+      "pitch": "Pitch",
+      "firstQuestion": "First question",
+      "ready": "Ready"
+    }
+  },
+  "personNameSearch": {
+    "count_one": "{{count}} homonym found",
+    "count_other": "{{count}} homonyms found",
+    "empty": "Nobody was found under this name: \"{{name}}\".",
+    "unavailable": "Search by name is not available right now.",
+    "error": "The search failed. Try again.",
+    "addAndEnrich": "Add and enrich",
+    "searching": "Searching: contact database, then the company officers register and web search if needed…",
+    "family": {
+      "contact_base": "contact database",
+      "legal_registry": "company officers register",
+      "web": "web search"
+    },
+    "down_contact_base": "The contact database did not answer.",
+    "down_legal_registry": "The company officers register did not answer.",
+    "down_web": "Web search did not answer.",
+    "tipWithOrganization": "Check the spelling of the name, or search again without the company.",
+    "tipWithoutOrganization": "Check the spelling of the name, or add the company to narrow the search.",
+    "retryWithoutOrganization": "Search without the company",
+    "foundIn": "Found in: {{families}}",
+    "match": {
+      "name_and_company": "Name and company match",
+      "partial_name_and_company": "Name partly masked, company matches",
+      "name_only": "Name only",
+      "partial_name": "Name partly masked"
+    },
+    "publicProfile": "Public profile",
+    "publicProfileOf": "Public profile of {{name}}",
+    "emptyIn": "I couldn't find {{name}}: {{where}}.",
+    "notIn": "not in {{place}}",
+    "place_contact_base": "your database",
+    "place_legal_registry": "public registers",
+    "place_web": "public professional profiles"
+  },
+  "projectionFields": {
+    "contactsLegend": "People criteria",
+    "needsLegend": "Needs criteria",
+    "callsLegend": "Call list criteria",
+    "contactsSearched": "Job title, company, location and relationship search your workspace. Level, expertise, reachable, dated role, worldwide and max count narrow the list found.",
+    "contactsRefine": "These criteria narrow the people from the companies your search found.",
+    "needsRefine": "These criteria narrow the needs your search found.",
+    "callsRefine": "These criteria narrow the call list drawn from the companies found."
+  },
+  "contactsResult": {
+    "explainWithLauraQuestion": "Explain why {{name}} ({{company}}) shows up in my Discover results, and how to approach them.",
+    "scope": "These people come from your workspace: Discover crosses what you have already collected, it does not go looking for people elsewhere.",
+    "companyScope": "Filtered to {{company}}",
+    "clearCompanyScope": "See everyone",
+    "companiesScopeLabel": "Filtered to your selection:",
+    "removeCompanyFilter": "Remove {{company}} from the filter",
+    "emptyCompanies": "No known contact for {{companies}} in your workspace.",
+    "emptyCompaniesAction": "Open the {{company}} record to search for contacts there",
+    "countryScope": "Limited to your workspace's country ({{country}}) — turn on \"Worldwide\" to also see other countries.",
+    "count_one": "{{count}} person in your workspace",
+    "count_other": "{{count}} people in your workspace",
+    "empty": "No one in your workspace matches these criteria.",
+    "seenAt": "Role seen on {{date}} · source {{source}}",
+    "seenAtOnly": "Role seen on {{date}}",
+    "sourceTag": {
+      "INTERNE": "entered in your workspace",
+      "PUBLIC": "public source",
+      "HYPOTHÈSE": "hypothesis to confirm",
+      "RISQUE": "detected employer differs from the account"
+    },
+    "channelAvailable": {
+      "email": "Email available",
+      "phone": "Phone available"
+    },
+    "openFiche": "Open the record",
+    "filters": {
+      "title": "Job title",
+      "relation": "Relationship",
+      "relationAny": "All relationships",
+      "reachableOnly": "Reachable",
+      "expertise": "Expertise",
+      "expertiseAny": "All expertises",
+      "location": "Location",
+      "maxResults": "Max results",
+      "maxResultsAny": "No cap",
+      "datedOnly": "Dated job title",
+      "worldwide": "Worldwide"
+    }
+  },
+  "needs": {
+    "siteCity": "Site: {{city}}",
+    "empty": "No dated signal in this search. Tick an intent signal in the search criteria to surface some.",
+    "withoutSignal_one": "{{count}} company found carries no dated signal: no need is inferred from it.",
+    "withoutSignal_other": "{{count}} companies found carry no dated signal: no need is inferred from them.",
+    "evidenceLevel": {
+      "direct": "Published by the employer",
+      "intermediated": "Published by an intermediary"
+    },
+    "evidenceLevelHint": {
+      "direct": "The named company published it itself: the signal really is about them.",
+      "intermediated": "An agency published on behalf of a client. The signal says nothing about the named company's need."
+    },
+    "openEvidence": "Open source",
+    "qualify": "Qualify",
+    "openQualificationQueue": "Leads to qualify → Opportunities",
+    "hiddenByDirect_one": "{{count}} need hidden — published by an intermediary, not the named employer.",
+    "hiddenByDirect_other": "{{count}} needs hidden — published by an intermediary, not the named employer.",
+    "hiddenByWindow_one": "{{count}} need hidden, outside the chosen freshness window.",
+    "hiddenByWindow_other": "{{count}} needs hidden, outside the chosen freshness window.",
+    "hiddenByZone_one": "{{count}} need hidden, outside the chosen departments.",
+    "hiddenByZone_other": "{{count}} needs hidden, outside the chosen departments.",
+    "requester": {
+      "manager": "Likely requester: {{function}}",
+      "team": "Team: {{team}}",
+      "evidence": "From the text of the offer",
+      "author": {
+        "rh": "Posted by HR",
+        "cabinet": "Posted by a recruitment agency"
+      },
+      "toIdentify": "Requesting team to identify — see the method",
+      "theOfferEntity": "the entity that posts the offer",
+      "method": {
+        "lire_offre": "Read the whole offer: team, reporting line, tools named, location.",
+        "fonction_rh_nomme_auteur": "The reporting line cited is an HR function: it names the author of the ad, not the requesting team.",
+        "chercher_fonction_operationnelle": "Look among the account’s contacts for an operational role in the offer’s field, at {{city}} — not across the whole group.",
+        "demander_au_premier_interlocuteur": "Ask your first contact: “Who owns this need on the business side?” — the recruiter is not the decision maker."
+      }
+    },
+    "hiddenByFreelance_one": "{{count}} need hidden — the contract is not freelance, or the source does not say.",
+    "hiddenByFreelance_other": "{{count}} needs hidden — the contract is not freelance, or the source does not say.",
+    "noFreelanceSignal_one": "No freelance signal in this search: {{count}} need hidden, its contract is not freelance or not stated by the source.",
+    "noFreelanceSignal_other": "No freelance signal in this search: {{count}} needs hidden, their contract is not freelance or not stated by the source."
+  },
+  "partners": {
+    "empty": "No IT service firm in this search: none of the known activity codes points to one.",
+    "unresolvedNaf_one": "{{count}} company could not be classified — its activity code is unknown. It is neither listed here nor declared \"not an IT service firm\".",
+    "unresolvedNaf_other": "{{count}} companies could not be classified — their activity codes are unknown. They are neither listed here nor declared \"not IT service firms\".",
+    "chipRemoved_one": "\"{{chip}}\" removed {{count}} IT service firm from this search.",
+    "chipRemoved_other": "\"{{chip}}\" removed {{count}} IT service firms from this search.",
+    "chipRemovedUnknown_one": "{{count}} of {{total}} was removed for lack of information — never because we know it's \"no\".",
+    "chipRemovedUnknown_other": "{{count}} of {{total}} were removed for lack of information — never because we know it's \"no\".",
+    "removeChipFilter": "Remove this filter",
+    "ambiguous": "Ambiguous activity",
+    "ambiguousHint": "This activity code covers IT service firms as much as consultancies that are not. The row appears on both sides, flagged.",
+    "observedTitle": "Observed",
+    "rank2": {
+      "declared": "Declared rank 2 — the firm says it is open to subcontracting",
+      "observed": "Rank 2 observed on at least one account in your workspace"
+    },
+    "qualify": "Analyse",
+    "positionConsultant": "Where to place a consultant? → Bench"
+  },
+  "similar": {
+    "title": "From your portfolio",
+    "description": "Accounts close to the ones you already work, computed from their sector and NAF code.",
+    "empty": "Your portfolio is still empty.",
+    "emptyHint": "Analyse a first account — suggestions will be built from it.",
+    "similarity": "{{percent}}% match",
+    "explore": "Explore this account",
+    "proximityStrong": "Matches your profile",
+    "proximityPartial": "Partly matches"
+  },
+  "qualifyMissing": "This company is no longer in the displayed list (search rerun, filter or hidden account), so it can’t be analyzed from here. Rerun the search, then click “Analyze”.",
+  "card": {
+    "sectorBasis": {
+      "naf": "sector read from the NAF code",
+      "declared_activity": "sector read from the declared activity",
+      "website": "sector read from the website"
+    },
+    "sizeUnpublished": "size not published",
+    "outOfTrade": "outside your line of work",
+    "belowTarget": "off target: fewer than 20 employees",
+    "personName": "Person’s name — to verify",
+    "personNameHelp": "The name looks like a person’s (a sole trader is registered under their own name): check it is a company before starting an analysis.",
+    "outOfTradeHelp": "Its only openings are outside the roles your workspace places: the account stays in the list, lower down.",
+    "outOfTradeOfferHelp": "This opening is not in the roles your workspace places: it is ranked lower, never hidden.",
+    "hiringDomainProfileError": "Your placed roles could not be read: we are not saying whether openings are in your field. Reload the page.",
+    "contractModel": {
+      "title": "Observed contract model",
+      "notObserved": "Contract model: not observed in its job offers or public procurement notices.",
+      "jobOffers_one": "{{count}} offer published: {{breakdown}} — {{period}}",
+      "jobOffers_other": "{{count}} offers published: {{breakdown}} — {{period}}",
+      "kind": {
+        "permanent_one": "{{count}} permanent",
+        "permanent_other": "{{count}} permanent",
+        "fixedTerm_one": "{{count}} fixed-term",
+        "fixedTerm_other": "{{count}} fixed-term",
+        "interim_one": "{{count}} temp (agency)",
+        "interim_other": "{{count}} temp (agency)",
+        "freelance_one": "{{count}} self-employed",
+        "freelance_other": "{{count}} self-employed",
+        "other_one": "{{count}} other type",
+        "other_other": "{{count}} other types"
+      },
+      "publicContracts_one": "{{count}} procurement notice placed: {{breakdown}} — {{period}}",
+      "publicContracts_other": "{{count}} procurement notices placed: {{breakdown}} — {{period}}",
+      "regie_one": "{{count}} says time and materials or technical assistance",
+      "regie_other": "{{count}} say time and materials or technical assistance",
+      "fixedPrice_one": "{{count}} says fixed price",
+      "fixedPrice_other": "{{count}} say fixed price",
+      "modeUnstated": "none states the model",
+      "disclaimer": "What was read, not a preference: a missing offer or notice does not mean “doesn’t use it”."
+    },
+    "sirenLabel": "SIREN",
+    "nafLabel": "NAF",
+    "headcountLabel": "Headcount",
+    "createdLabel": "Founded in {{year}}",
+    "groupRole": {
+      "groupe": "Group head",
+      "filiale": "Subsidiary"
+    },
+    "offersVolume_one": "{{count}} job in France over {{days}} days",
+    "offersVolume_other": "{{count}} jobs in France over {{days}} days",
+    "similarityHeadlineSector": "Same sector as <account>{{account}}</account>, in your portfolio",
+    "scoreLabel": "Score",
+    "scoreOutOf": "{{score}}/{{max}}",
+    "scoreUnavailable": "Score unavailable",
+    "scoreUnavailableHelp": "None of your criteria could be evaluated for this company — complete your ESN profile or set a territory to get a score.",
+    "scoreUnavailableHelp_industrial": "None of your criteria could be evaluated for this company — complete your profile or set a territory to get a score.",
+    "scoreUnmeasured": "Not evaluated, no data available: {{criteria}}.",
+    "scoreCriteria": {
+      "activity": "industry",
+      "geography": "territory",
+      "headcount": "headcount",
+      "signals": "dated signals",
+      "age": "company age",
+      "it_surface": "IT surface",
+      "it_surface_industrial": "industrial footprint",
+      "accessibility": "reachable contacts",
+      "evidence": "evidence quality",
+      "other": "other"
+    },
+    "scoreFactorsShow": "Show score breakdown",
+    "scoreFactorsHide": "Hide breakdown",
+    "scoreFactorsTitle": "How this score is computed",
+    "scoreFactorsEmpty": "No score breakdown provided for this candidate.",
+    "signalsTitle": "Why now",
+    "homonym": "Possible namesake: {{sirens}}",
+    "keywordNoSignal": "No signal mentions “{{keyword}}” in these results: the order is unchanged.",
+    "hiringDomainNoRoles": "No placed role is declared or deduced: job offers are not kept as a signal.",
+    "hiringDomainUnfilteredCta": "Declare your roles in My profile",
+    "hiringDomainOff_one": "{{count}} offer outside your placed roles: it is ranked at the end of the list.",
+    "hiringDomainOff_other": "{{count}} offers outside your placed roles: they are ranked at the end of the list.",
+    "signalsEmpty": "No recent trigger identified — not a priority to analyse",
+    "signalsNoneCompact": "Selected from your profile, no signal measured",
+    "signalsPending": "Signals still loading — the card updates on its own",
+    "signalsUnavailable": "Signals could not be read for now",
+    "knownNeeds_one": "{{count}} known need",
+    "knownNeeds_other": "{{count}} known needs",
+    "matchedCriteria": "Matches: {{criteria}}",
+    "matchedCriteriaAxis": {
+      "sector": "sector",
+      "zone": "area",
+      "headcount": "headcount",
+      "skills": "skill (signal)"
+    },
+    "notSearched": "{{axes}}",
+    "notSearchedAxis": {
+      "offers": "This company’s job offers and signals were not looked up for this list: only the first cards are, within the allotted time. Open its page to read them.",
+      "needs": "This account’s known needs could not be counted this time."
+    },
+    "signalToday": "today",
+    "signalDaysAgo": "{{count}}d ago",
+    "signalSourceLink": "View source",
+    "signalProbablyFilled": "probably filled",
+    "signalSimilarOfferCount": "+{{count}} similar offer",
+    "signalSimilarOfferCount_other": "+{{count}} similar offers",
+    "signalThirdPartyProviderMention": "mentions {{name}}",
+    "signalSiteCity": "{{city}}",
+    "siteCities": "Sites: {{cities}}",
+    "establishmentCount_one": "{{count}} establishment",
+    "establishmentCount_other": "{{count}} establishments",
+    "groupLink": "Subsidiary of {{group}}",
+    "brandMembers_one": "+ 1 group entity",
+    "brandMembers_other": "+ {{count}} group entities",
+    "brandMemberOf": "part of the {{group}} group",
+    "esnRecognition_offers": "Recognised as an ESN: its job offers say so",
+    "esnRecognition_referential": "Listed as an ESN",
+    "groupLinkProbable": "Probable subsidiary of {{group}}",
+    "geography": {
+      "headquartersAndSites_one": "HQ in {{city}} ({{department}}) · present in the zone ({{count}} site)",
+      "headquartersAndSites_other": "HQ in {{city}} ({{department}}) · present in the zone ({{count}} sites)",
+      "headquartersInZone": "HQ in {{city}} ({{department}}), in the zone",
+      "sitesOnly_one": "Present in the zone ({{count}} site)",
+      "sitesOnly_other": "Present in the zone ({{count}} sites)"
+    },
+    "deliveryFitAxesShow": "Detail on the 13 axes",
+    "deliveryFitAxesHide": "Hide detail",
+    "deliveryFitAxesTitle": "Delivery fit — detail by axis",
+    "angleTitle": "Suggested angle",
+    "angleBadge": "AI suggestion",
+    "angleDisclaimer": "Automatically generated — check before using.",
+    "rolesTitle": "Roles to find",
+    "rolesBadge": "Unverified",
+    "rolesDisclaimer": "Job functions to look for at this account — these are not identified people.",
+    "peopleTitle": "Named people",
+    "peopleSeenAt": "{{origin}} · observed on {{date}}",
+    "peopleOrigin": {
+      "registry": "published data",
+      "human": "entered in your workspace",
+      "provider": "enriched data",
+      "workspace": "your workspace"
+    },
+    "sourcesTitle": "Sources",
+    "sourcesToggle_one": "1 source",
+    "sourcesToggle_other": "{{count}} sources",
+    "partnerComplementarity": {
+      "title": "Complementarity",
+      "axis": {
+        "sectors": "Sectors",
+        "size": "Size",
+        "expertise": "Expertise",
+        "accounts": "Accounts"
+      },
+      "unmeasured": "not evaluated",
+      "scoreUnavailable": "Score not computable — fewer than 3 axes evaluated"
+    },
+    "fit": {
+      "high": "High fit",
+      "medium": "Medium fit",
+      "low": "Low fit",
+      "unrated": "Fit not rated"
+    },
+    "fitHint": "Tier derived from the score: “high” = at least 70% of the actually measurable maximum, on at least {{minMeasured}} of the {{blocks}} criteria (same rule as “high potential”); “medium” from 40%; “low” below. An account with no measurable criterion has no tier.",
+    "fitAxes": {
+      "subjects": {
+        "label": "Subjects",
+        "labelWithReason": "Subjects — {{reason}}"
+      },
+      "maturity": {
+        "label": "Maturity",
+        "labelWithReason": "Maturity — {{reason}}"
+      },
+      "mission": {
+        "label": "Mission size",
+        "labelWithReason": "Mission size — {{reason}}"
+      },
+      "precedent": {
+        "label": "Track record",
+        "labelWithReason": "Track record — {{reason}}",
+        "detailCustomer": "already a customer",
+        "detailProspect": "not a customer yet"
+      },
+      "appetite": {
+        "label": "External appetite",
+        "labelWithReason": "External appetite — {{reason}}"
+      },
+      "reasons": {
+        "block_unmeasured": "no data evaluated on this account",
+        "not_tracked": "not measured at the Discover stage"
+      }
+    },
+    "signalsCount_one": "{{count}} dated signal",
+    "signalsCount_other": "{{count}} dated signals",
+    "scoreBlockTotal": "{{points}}/{{max}}",
+    "scoreBlockTotalNoMax": "{{points}} pt",
+    "scoreBlockZero": "Measured, no points: this block earns nothing on this account.",
+    "addressabilityOutOf": "access {{score}}/{{max}}",
+    "addressabilityHint": "How far you can get into this account. Never added to the interest score: “interest 68/80 · access 4/20” says an account is perfect and out of reach.",
+    "addressabilityTitle": "Why you can get in",
+    "addressabilityUnmeasured": "Not evaluable yet: {{axes}}.",
+    "addressabilityAxes": {
+      "lock": "lock-in",
+      "proportion": "proportion",
+      "path": "way in",
+      "relation": "existing relationship",
+      "access_cost": "cost of access"
+    },
+    "barrierOutOf": "{{label}} · barrier {{score}}/10",
+    "barrierUnmeasurable": "Barrier not estimable",
+    "barrierHint": "How well this organisation knows how to buy from a firm like yours. Estimated from public proxies — never a promise.",
+    "barrierTitle": "What blocks, what opens",
+    "barrierStrategyTitle": "Approach strategy",
+    "barrierStrategy": {
+      "A": "Direct approach, short cycle: the decision-maker is the one recommending you.",
+      "B": "Target a business unit, never the head office.",
+      "C": "Go through an approved supplier, or wait for the window to open.",
+      "D": "Don't invest without a partner or a dated window."
+    },
+    "barrierBlocks": "Blocks: {{evidence}}",
+    "barrierOpens": "Opens: {{evidence}}",
+    "barrierMissing": "Barrier not estimable — missing: {{proxies}}.",
+    "barrierProxies": {
+      "statut": "the company’s status",
+      "effectif": "headcount",
+      "cotation": "stock listing",
+      "commande_publique": "exposure to public procurement",
+      "decentralisation": "number of establishments",
+      "anciennete": "date of creation"
+    },
+    "barrierClass": {
+      "A": "Likely open",
+      "B": "Open through an entity",
+      "C": "Semi-open",
+      "D": "Likely locked"
+    },
+    "corrections": {
+      "echeance_proche": "The current contract is coming up for renewal"
+    },
+    "notes": {
+      "title": "Notes",
+      "add": "Add note",
+      "saving": "Saving…",
+      "placeholder": "Write a note about this candidate…",
+      "aria": "Note on {{name}}",
+      "loading": "Loading notes…",
+      "loadError": "Notes could not be loaded. They still exist — it is the read that failed.",
+      "empty": "No notes for this candidate.",
+      "addError": "The note could not be added.",
+      "unknownAuthor": "Unknown author"
+    },
+    "wrongCompany": {
+      "action": "Wrong company",
+      "hint": "The signal shown does not belong to this SIREN",
+      "confirm": "This candidate will no longer be suggested in your searches.",
+      "confirmAction": "Confirm",
+      "cancel": "Cancel",
+      "reporting": "Saving…",
+      "reported": "Reported — this candidate will no longer be suggested.",
+      "reportError": "The report could not be saved."
+    },
+    "signalGroup": {
+      "hiring": "Hiring",
+      "business": "Projects and company news",
+      "other": "Tenders and legal filings"
+    },
+    "strongCount_one": "{{count}} strong signal",
+    "strongCount_other": "{{count}} strong signals",
+    "historicalCount_one": "{{count}} past need",
+    "historicalCount_other": "{{count}} past needs",
+    "inSpace": "Already in your workspace",
+    "expertiseTags": "Expertise mentioned",
+    "natureLineHiring": "Salaried job posted · ≠ open assignment",
+    "natureLineWork_study": "Work-study posted · ≠ open assignment",
+    "natureLineNeed": "Need described · to qualify",
+    "natureLineProject": "Project announced · need to qualify",
+    "natureLineLeader": "New decision-maker · contact to approach",
+    "natureLineDeal": "Contract announced · incumbent in place",
+    "natureLineSpace": "Already known to your workspace",
+    "natureLineEconomy": "Company news · context",
+    "natureLineEvent": "Event · context",
+    "natureLineFinancial": "Results published · context",
+    "natureLineTech": "Technology observed · context"
+  },
+  "portfolio": {
+    "parked": "Set aside",
+    "parkedWithReason": "Set aside on {{date}} — {{reason}}",
+    "new": "New",
+    "analyzed": "Already analysed",
+    "watched": "Watched",
+    "customer": "Customer",
+    "openAccount": "Open account"
+  },
+  "actions": {
+    "follow": "Follow this account",
+    "followHint": "Free — you will receive its next signals. No analysis.",
+    "unfollow": "Remove from my portfolio",
+    "addedToPortfolio": "Account added to your portfolio.",
+    "removedFromPortfolio": "Account removed from your portfolio.",
+    "seeInAccounts": "See in my accounts",
+    "portfolioFailed": "Your portfolio could not be updated.",
+    "dismiss": "Dismiss",
+    "dismissHint": "This account will no longer appear in your results.",
+    "analyze": "Build the full dossier",
+    "analyzeHint": "Builds the full dossier.",
+    "explainWithLaura": "Ask {{copilot}}",
+    "explainWithLauraQuestion": "Explain why {{name}} shows up in my Discover results, and what I can do about it.",
+    "preparePartnerApproach": "Prepare a partner approach",
+    "preparePartnerApproachQuestion": "Prepare a partner approach for {{name}}: how should I approach them?"
+  },
+  "selection": {
+    "count_one": "{{count}} selected",
+    "count_other": "{{count}} selected",
+    "addToTarget": "Add to a target list",
+    "exportSelection": "Export selection",
+    "dismissSelection": "Dismiss selection",
+    "clear": "Clear selection",
+    "checkboxLabel": "Select {{name}}",
+    "compareWithLaura": "Compare with {{copilot}}",
+    "compareWithLauraQuestion": "Compare these accounts and recommend a prioritisation: {{names}}.",
+    "compareUnavailable_one": "Compare: {{count}} selected account is already tracked, it takes two.",
+    "compareUnavailable_other": "Compare: {{count}} selected accounts are already tracked, it takes two.",
+    "assignSelection": "Assign",
+    "analyzeSelection": "Analyze"
+  },
+  "analyzeDialog": {
+    "perimeter": "Dossier scope: {{zone}}",
+    "perimeterFrance": "France",
+    "widenFrance": "Widen to France",
+    "perimeterBack": "Back to {{zone}}",
+    "title": "Launch analysis",
+    "previewTitle": "Selected companies",
+    "costUnmeasured": "The detail of at least one launch could not be read. Launching stays blocked until it is known.",
+    "costDemo": "Demo: no launch is charged here.",
+    "alreadyAnalyzedLabel": "Already analyzed",
+    "alreadyAnalyzed_one": "{{count}} company is already analyzed in your workspace: its dossier will be reopened at no charge.",
+    "alreadyAnalyzed_other": "{{count}} companies are already analyzed in your workspace: their dossiers will be reopened at no charge.",
+    "locked": "Your access is closed (trial ended) — an analysis can't be launched.",
+    "cancel": "Cancel",
+    "submit": "Launch analysis",
+    "success_one": "{{count}} analysis launched as a batch — follow it on the batch page.",
+    "success_other": "{{count}} analyses launched as one batch — follow them on the batch page.",
+    "failed_one": "{{count}} analysis could not be launched.",
+    "failed_other": "{{count}} analyses could not be launched.",
+    "previewCountLabel": "Analyses",
+    "countAnnounce_one": "{{count}} analysis will be started.",
+    "countAnnounce_other": "{{count}} analyses will be started.",
+    "previewModeLabel": "Mode"
+  },
+  "targetDialog": {
+    "title": "Add to a target list",
+    "previewTitle": "Selected items",
+    "newListOption": "Create a new target list",
+    "existingListOption": "Add to an existing target list",
+    "newListNameLabel": "Target list name",
+    "existingListLabel": "Target list",
+    "noExistingLists": "No target list yet — create the first one.",
+    "excludedNote_one": "{{count}} item has no account record in your workspace yet: it was not added.",
+    "excludedNote_other": "{{count}} items have no account record in your workspace yet: they were not added.",
+    "submit": "Add",
+    "cancel": "Cancel",
+    "success_one": "{{count}} account added to the target list.",
+    "success_other": "{{count}} accounts added to the target list.",
+    "seeTargetLists": "See my target lists",
+    "failed": "Adding to the target list failed."
+  },
+  "assignDialog": {
+    "title": "Assign",
+    "previewTitle": "Selected items",
+    "memberLabel": "Assign to",
+    "noMembers": "No other member in this workspace.",
+    "excludedNote_one": "{{count}} item has no account record in your workspace yet: it was not assigned.",
+    "excludedNote_other": "{{count}} items have no account record in your workspace yet: they were not assigned.",
+    "submit": "Assign",
+    "cancel": "Cancel",
+    "success_one": "{{count}} account assigned.",
+    "success_other": "{{count}} accounts assigned.",
+    "failed": "Assigning failed."
+  },
+  "commands": {
+    "presetsLabel": "Quick starts",
+    "presetsDialogHint": "Each starting point pre-fills the search criteria — you can still adjust them afterwards."
+  },
+  "filters": {
+    "hideOwned": "Hide accounts I am responsible for",
+    "hideWorked": "Hide accounts that are already customers or already analyzed in the workspace",
+    "roleFamily": "Role family",
+    "roleFamilyAny": "All families",
+    "roleFamilies": {
+      "it": "IT / CIO",
+      "cyber": "Cyber / Security",
+      "data": "Data",
+      "ia": "AI",
+      "infra": "Infra / Cloud",
+      "dev": "Dev / Engineering",
+      "finance": "Finance",
+      "achat": "Procurement",
+      "pmo": "PMO / Project",
+      "clevel": "Executive management",
+      "rh": "HR"
+    },
+    "signalNature": "Need nature",
+    "signalNatureAny": "All natures",
+    "directSignalsOnly": "Direct proof only",
+    "resultsCount_one": "{{count}} company shown",
+    "resultsCount_other": "{{count}} companies shown",
+    "hiddenCount_one": "{{count}} hidden",
+    "hiddenCount_other": "{{count}} hidden",
+    "hiddenReasonExcluded_one": "{{count}} excluded by the qualification panel",
+    "hiddenReasonExcluded_other": "{{count}} excluded by the qualification panel",
+    "hiddenReasonOwned_one": "{{count}} already in your portfolio",
+    "hiddenReasonOwned_other": "{{count}} already in your portfolio",
+    "hiddenReasonWorked_one": "{{count}} already a customer or analyzed in the workspace",
+    "hiddenReasonWorked_other": "{{count}} already customers or analyzed in the workspace",
+    "hiddenReasonDismissed_one": "{{count}} set aside",
+    "hiddenReasonDismissed_other": "{{count}} set aside",
+    "restoreDismissed": "Show dismissed accounts again",
+    "appliedCriteria": "Applied criteria",
+    "company": "Company",
+    "decisionLevel": "Decision level",
+    "decisionLevelAny": "All levels",
+    "decisionLevelValue": {
+      "c_level": "C-Level (sponsor)",
+      "n1": "N-1 (decision-maker)",
+      "n2": "N-2 (contributor)"
+    },
+    "resultsRange": "{{from}}–{{to}}"
+  },
+  "secondPass": {
+    "done_one": "{{count}} account already searched and shown.",
+    "done_other": "{{count}} accounts already searched and shown.",
+    "remaining": "Still to search: {{parts}}.",
+    "listRemains": "the rest of the company list",
+    "employersRemain_one": "{{count}} employer whose offers are not read yet",
+    "employersRemain_other": "{{count}} employers whose offers are not read yet",
+    "employersChecking_one": "{{count}} employer being checked",
+    "employersChecking_other": "{{count}} employers being checked"
+  },
+  "degraded": {
+    "summarySlow": "Did not answer in time: {{sources}}. Nothing is down, the list may just be incomplete.",
+    "summary": "Part of the search did not complete ({{sources}}). Run it again in a few minutes.",
+    "summaryAmbiguous_one": "{{count}} company not identified (several companies share its name).",
+    "summaryAmbiguous_other": "{{count}} companies not identified (several companies share their names).",
+    "detail": "Details",
+    "title": "Partial results",
+    "description": "A source did not answer: the list may be incomplete.",
+    "line": "{{source}} — {{reason}}",
+    "jobsSearching": "Job postings are still being looked up — the cards will update on their own.",
+    "jobsUnread_one": "Job postings could not be read for {{count}} card.",
+    "jobsUnread_other": "Job postings could not be read for {{count}} cards.",
+    "cardsUnread": "Some data could not be read for some cards — the company list itself is complete.",
+    "jobsUnreadSome": "Job postings could not be read for some cards — the company list itself is complete.",
+    "noReason": "unavailable",
+    "reason": {
+      "missing_api_key": "no access key — this source was not queried",
+      "unauthorized": "access refused — invalid or expired key",
+      "quota_exceeded": "quota exhausted",
+      "rate_limited": "too many requests — the source refused the request; the companies already read stay listed",
+      "upstream_error": "the source returned an error",
+      "request_rejected": "our search was refused — the fault is ours, not the source’s: no need to retry",
+      "network_error": "unreachable in time — no answer, not necessarily an outage; the companies already read stay listed",
+      "time_budget": "the search took too long — the list stays ranked by score. Run it again or narrow the area.",
+      "invalid_response": "unreadable response",
+      "empty_query": "no criterion — nothing was searched",
+      "siren_ambiguous_one": "1 company is not in the list: several companies share its name and none stands out. Add its city or sector to find it.",
+      "siren_ambiguous_other": "{{count}} companies are not in the list: several companies share their names and none stands out. Add the city or sector to find them.",
+      "siren_unreachable_one": "1 company could not be checked: the official source did not answer — it is not in the list. Run the search again in a few minutes.",
+      "siren_unreachable_other": "{{count}} companies could not be checked: the official source did not answer — they are not in the list. Run the search again in a few minutes.",
+      "siren_not_examined_one": "1 company found but not yet checked: the search stops after a limited time. Narrow the area or the period to surface it.",
+      "siren_not_examined_other": "{{count}} companies found but not yet checked: the search stops after a limited time. Narrow the area or the period to surface them.",
+      "unknown_sector_one": "Unrecognized sector, therefore NOT applied: {{fields}}. The list was not narrowed by that criterion.",
+      "unknown_sector_other": "Unrecognized sectors, therefore NOT applied: {{fields}}. The list was not narrowed by that criterion.",
+      "unknown": "unlisted cause — the source did not answer as expected"
+    }
+  },
+  "decisionLevelNotice": {
+    "title": "Decision level",
+    "loading": "Reading your workspace contacts to apply the decision level…",
+    "error": "Your workspace contacts could not be read: the decision level is not applied for now.",
+    "removedAccounts_one": "{{count}} account set aside: decision level unknown for its contacts.",
+    "removedAccounts_other": "{{count}} accounts set aside: decision level unknown for their contacts.",
+    "removedContacts_one": "{{count}} contact set aside: decision level cannot be determined from their title.",
+    "removedContacts_other": "{{count}} contacts set aside: decision level cannot be determined from their title.",
+    "emptyHint": "The list is empty because no contact known to your workspace has the chosen level. Untick the level to see every result again, or enrich contacts."
+  },
+  "capability": {
+    "title": "Results broader than requested",
+    "description_one": "{{sources}} cannot express one of your criteria: an answer came back, but without the requested narrowing. No company is missing — the list simply holds more than asked for.",
+    "description_other": "{{sources}} cannot express one of your criteria: answers came back, but without the requested narrowing. No company is missing — the list simply holds more than asked for."
+  },
+  "entityTypeFiltered": {
+    "title_one": "1 company removed by “End clients”",
+    "title_other": "{{count}} companies removed by “End clients”",
+    "description": "These are IT services firms, IT consultancies or freelance platforms: the filter keeps companies that buy the skill, not those that resell it. Remove “End clients” to see them again."
+  },
+  "coverage": {
+    "namesTitle": "Companies concerned",
+    "namesMore": "and {{count}} more",
+    "title_one": "1 company found but not yet checked",
+    "title_other": "{{count}} companies found but not yet checked",
+    "description": "The search stops after a limited time: these companies are neither kept nor rejected. Narrow the area or the period to surface them.",
+    "breakdown": "{{shown}} shown out of {{found}} found"
+  },
+  "profileSize": {
+    "proposed": "Your profile targets {{size}}",
+    "apply": "Filter on {{size}}",
+    "dismiss": "Ignore"
+  },
+  "incompleteSearch": {
+    "title_one": "1 account found — incomplete search",
+    "title_other": "{{count}} accounts found — incomplete search",
+    "description": "Too few accounts to build a conquest file. Widen the area or the criteria to complete the search.",
+    "action": "Widen the search",
+    "description_zone": "Too few accounts to build a conquest file. What the chosen area (city, department or region) rules out: not measured.",
+    "action_zone": "Widen the area",
+    "description_headcount": "Too few accounts to build a conquest file.",
+    "action_headcount": "Widen the headcount",
+    "description_skills": "Too few accounts to build a conquest file. What the skills searched for rule out: not measured.",
+    "action_skills": "Widen the skills",
+    "discardedBySize_zero": "No company ruled out by the chosen size.",
+    "discardedBySize_one": "{{count}} company ruled out by the chosen size.",
+    "discardedBySize_other": "{{count}} companies ruled out by the chosen size.",
+    "descriptionHeadcountUnmeasured": "What the chosen headcount range rules out: not measured.",
+    "discardedBySector_one": "{{count}} company ruled out as outside the sector.",
+    "discardedBySector_other": "{{count}} companies ruled out as outside the sector."
+  },
+  "row": {
+    "showDetails": "Show account detail",
+    "previewTitle": "Account preview",
+    "closePreview": "Close the preview",
+    "essentials": "Essentials"
+  },
+  "list": {
+    "undatedSeparator": "No recent signal",
+    "beyondRadiusSeparator": "Beyond {{km}} km"
+  },
+  "showMore": {
+    "action": "Show {{count}} more",
+    "loading": "Loading…"
+  },
+  "quickPass": {
+    "badge": "Quick pass: {{verdict}}",
+    "badgeHint": "Short verdict computed from what the search already returned — no collection. The detail (what counts, what is missing) is in the expanded row.",
+    "title": "Quick pass",
+    "verdict": {
+      "go": "Go",
+      "prudence": "Caution",
+      "non": "No"
+    },
+    "reason": {
+      "axesAllFavourable": "Everything we could evaluate is favourable.",
+      "reservesNamed": "Measured reservations — they are named below.",
+      "nothingToSell": "The scale ran on this account and found nothing to sell there.",
+      "notEnoughEvaluated": "Not enough to go on to decide on this account."
+    },
+    "axis": {
+      "interest": "Interest",
+      "access": "Access",
+      "signal": "Signal",
+      "named_contact": "Named contact"
+    },
+    "weighed": "What counts: {{axes}}",
+    "unevaluableAxes": "What's missing: {{axes}}",
+    "unevaluable": {
+      "noScorableCriterion": "no criterion of the scale could be evaluated",
+      "accessNotDerivable": "access cannot be derived from what we hold",
+      "signalsNotSearched": "dated sources were not queried on this account",
+      "notCollected": "people were not collected on this account"
+    }
+  },
+  "discardedHoldings": {
+    "title_one": "1 holding set aside in favour of its subsidiary",
+    "title_other": "{{count}} holdings set aside in favour of their subsidiary",
+    "reason_one": "Holding — its subsidiary {{names}} is kept",
+    "reason_other": "Holding — its subsidiaries {{names}} are kept"
+  },
+  "targetSectorFilter": {
+    "excludedTitle_one": "1 result excluded, outside your target",
+    "excludedTitle_other": "{{count}} results excluded, outside your target",
+    "excludedNone": "Target respected — no result excluded",
+    "excludedSectors": "Outside target: {{sectors}}",
+    "seeOutOfTarget": "Search outside my target",
+    "disabledTitle": "Target filter off",
+    "disabledDescription": "You're also seeing companies outside the target sectors declared on your profile.",
+    "backToTarget": "Back to my target"
+  },
+  "capacity": {
+    "notice_one": "{{count}} account proposed — {{band}}.",
+    "notice_other": "{{count}} accounts proposed — {{band}}.",
+    "noticeUndeclared_one": "Sales team size not declared — default volume ({{count}} account proposed).",
+    "noticeUndeclared_other": "Sales team size not declared — default volume ({{count}} accounts proposed).",
+    "firstBatch": "This is a first batch: pages show {{step}} at a time, and “Load more accounts” fetches others, with no cap.",
+    "band": {
+      "oneToThree": "your sales team is 1 to 3 people",
+      "fourToEight": "your sales team is 4 to 8 people",
+      "nineOrMore": "your sales team is 9 people or more"
+    }
+  },
+  "deliveryCapacity": {
+    "notice": {
+      "rampUp": "your declared ramp-up time: {{value}}",
+      "available": "your declared availability: {{value}}"
+    }
+  },
+  "targetChoice": {
+    "title": "Your target covers {{count}} sectors",
+    "description": "A search keeps {{max}} at most to stay precise. Choose the ones to keep.",
+    "groupLabel": "Your target's sectors",
+    "confirm": "Apply these sectors",
+    "cancel": "Cancel",
+    "close": "Close"
+  },
+  "sidebar": {
+    "savedTitle": "My searches and alerts",
+    "savedEmpty": "Save a scope to replay it in one click.",
+    "saveCta": "Save this search",
+    "savePlaceholder": "Name this search",
+    "saveConfirm": "Save",
+    "saveCancel": "Cancel",
+    "savedDelete": "Delete",
+    "savedApply": "Replay",
+    "savedCreateTarget": "Create a target from this search",
+    "savedCreateTargetNamed": "Create a target from the search {{name}}",
+    "savedCreateTargetSuccess": "Target \"{{list}}\" created from \"{{name}}\".",
+    "savedCreateTargetAdded_one": "{{count}} account added, found by this search.",
+    "savedCreateTargetAdded_other": "{{count}} accounts added, found by this search.",
+    "savedCreateTargetPartial_one": "{{added}} of {{found}} added — {{count}} technical failure, retry from Discover.",
+    "savedCreateTargetPartial_other": "{{added}} of {{found}} added — {{count}} technical failures, retry from Discover.",
+    "savedCreateTargetEmpty": "This search returned no result: the target list was created empty.",
+    "savedCreateTargetError": "Creating the target failed.",
+    "savedLoading": "Loading your searches…",
+    "savedLoadError": "I couldn't read your saved searches. That isn't the same as having none.",
+    "savedLocked": "Saved searches aren't included in your plan.",
+    "savedNeverRun": "Never replayed",
+    "savedLastRun": "Replayed on {{date}}",
+    "savedShared": "Shared with the workspace",
+    "savedDeleteNamed": "Delete the search {{name}}",
+    "saveObjectiveLabel": "Objective of this search",
+    "saveObjectivePlaceholder": "Why this scope? (optional)",
+    "saveFrequencyLabel": "Replay",
+    "saveSharedLabel": "Share with my workspace",
+    "frequency": {
+      "manual": "On demand",
+      "daily": "Every day",
+      "weekly": "Every week"
+    },
+    "channel": {
+      "in_app": "In the app",
+      "email": "By email",
+      "sms": "By SMS"
+    },
+    "size": {
+      "pme": "SMB",
+      "eti": "Mid-market",
+      "grandCompte": "Enterprise",
+      "all": "Any size"
+    },
+    "level": {
+      "cLevel": "C-level",
+      "director": "Director",
+      "manager": "Manager",
+      "operational": "Operational"
+    },
+    "historyTitle": "My recent searches",
+    "historyEmpty": "Your searches from the last 30 days appear here, one click to run again.",
+    "historyReplay": "Run this search again",
+    "historyUntitled": "Untitled search"
+  },
+  "topbar": {
+    "explainMethod": "Explain the method"
+  },
+  "method": {
+    "title": "Our method in 3 steps",
+    "profile": {
+      "title": "1. Your ESN profile",
+      "body": "Your priority sectors, the account size you target and your offers weight every company's score without you ticking a single box."
+    },
+    "market": {
+      "title": "2. Market signals",
+      "body": "Company registry, open and awarded public tenders, job postings. Every signal comes with its date and its source link: no date, no signal."
+    },
+    "score": {
+      "title": "3. Score and recommendation",
+      "body": "Eight criteria scored separately — line of business, geography, headcount, company age, IT surface, dated signals, accessibility and evidence quality. A criterion with no data is not scored zero: it leaves the scale and is flagged on the card."
+    },
+    "footer": "Exploring is free: only a full account analysis starts real background work.",
+    "close": "Close the explanation"
+  },
+  "autopilot": {
+    "cta": "Let {{brand}} suggest your next targets",
+    "basis": {
+      "profile": "Starting point built from your ESN profile:",
+      "profile_industrial": "Starting point built from your profile:",
+      "profileThin": "Your ESN profile yields no usable registry criterion — so we start from what is moving on the market:",
+      "profileThin_industrial": "Your profile gives no usable registry criterion — so we start from what is moving on the market:",
+      "noProfile": "Your ESN profile is not filled in yet — so we start from what is moving on the market:",
+      "noProfile_industrial": "Your profile is not filled in yet — so we start from what is moving on the market:"
+    },
+    "criteria": {
+      "sector": "Sector",
+      "headcount": "Headcount",
+      "window": "Window",
+      "sources": "Signals",
+      "excludeSector": "Excluded sectors",
+      "category": "Category",
+      "excludeListed": "Listing",
+      "region": "Area",
+      "decisionLevel": "Decision level",
+      "seniority": "Seniority sold"
+    },
+    "origins": {
+      "profileSectors": "your priority sectors",
+      "profileSize": "the account size you target",
+      "marketWindow": "beyond that, a signal is no longer actionable",
+      "marketSources": "the three dated sources of Discover",
+      "profileNoGo": "taken from your profile › Refused sectors",
+      "profileClientIdeal": "taken from your profile › Ideal client",
+      "profileTargets": "taken from your profile › Targets",
+      "profileZones": "taken from your profile › Locations and hunting areas",
+      "profileInterlocutors": "taken from your profile › Contacts",
+      "profileSold": "taken from your profile › Offer portfolio"
+    },
+    "values": {
+      "category": {
+        "GE": "Large company",
+        "ETI": "Mid-cap (ETI)",
+        "PME": "SME"
+      },
+      "listedRemoved": "listed companies removed"
+    },
+    "also": {
+      "title": "Also in your target, no filter here",
+      "fields": {
+        "priority_sectors": "Priority sectors (not recognised)",
+        "target_sectors": "Target sectors (not recognised)",
+        "reference_sectors": "Reference sectors (not recognised)",
+        "no_go_sectors": "Refused sectors (not recognised)",
+        "ideal_client_size": "Ideal client size (not translated)",
+        "ideal_client_structure": "Ideal client structure",
+        "target_company_types": "Target types",
+        "ideal_client_territory": "Ideal client territory",
+        "decision_maker_personas": "Contacts",
+        "ideal_client_maturity": "Client maturity",
+        "ideal_client_min_deal_size": "Minimum deal size",
+        "ideal_client_max_sales_cycle": "Tolerated sales cycle",
+        "ideal_client_accessibility": "Accessibility",
+        "ideal_client_referencement_constraints": "Vendor listing",
+        "ideal_client_current_state": "Current portfolio state",
+        "expertise_areas": "Expertise",
+        "offer_domains": "Offers",
+        "target_site": "Target sites"
+      }
+    }
+  },
+  "results": {
+    "sortLabel": "Sort by",
+    "sort": {
+      "score": "Interest",
+      "addressability": "Access",
+      "balanced": "Balanced (interest × access)",
+      "confidence": "Data confidence",
+      "signalRecency": "Most recent signal",
+      "headcount": "Size (headcount)",
+      "name": "Name"
+    },
+    "highPotential_one": "including {{count}} high-potential",
+    "highPotential_other": "including {{count}} high-potential",
+    "highPotentialRule": "High potential = score at or above 70% of the maximum actually measurable, on at least {{minMeasured}} of the {{blocks}} scale criteria. Click to show only those.",
+    "matchedVolume_one": "{{count}} matches in total",
+    "matchedVolume_other": "{{count}} match in total",
+    "matchedBeforeFilters_one": "{{count}} before filters",
+    "matchedBeforeFilters_other": "{{count}} before filters",
+    "matchedVolumeHint": "Number of accounts actually detected by the search, beyond those shown: registry verification is time-bounded and your on-screen filters narrow the display. Figure returned by the search, never estimated.",
+    "export": "Export",
+    "exportHint": "Downloads the list as shown (same filters, same sort) as CSV.",
+    "exportFilename": "discover",
+    "exportYes": "yes",
+    "exportNo": "no",
+    "exportColumns": {
+      "name": "Name",
+      "siren": "SIREN",
+      "nafCode": "NAF code",
+      "sector": "Sector",
+      "city": "City",
+      "department": "Department",
+      "headcount": "Headcount range",
+      "created": "Creation date",
+      "score": "Score",
+      "scoreMax": "Measured maximum score",
+      "confidence": "Data confidence",
+      "highPotential": "High potential",
+      "signals": "Signal count",
+      "lastSignal": "Latest signal",
+      "portfolio": "Portfolio state",
+      "sources": "Sources"
+    }
+  },
+  "states": {
+    "loadingTitle": "Querying the registry…",
+    "loadingHint": "Registry, public procurement and job boards are queried in parallel.",
+    "stop": "Stop",
+    "stopped": {
+      "title": "Search stopped",
+      "hint": "Your criteria are kept: adjust them and run the search again.",
+      "partial": "Search stopped: these are the results received before the stop, the list is not complete."
+    },
+    "emptyTitle": "No company matches",
+    "emptyHint": "The registry returned nothing for these criteria. Widen the area, open up the headcount range, or add an intent signal to start from what is happening.",
+    "emptyWiden": "Widen the area",
+    "emptySwitchSignals": "Search by detected opportunities",
+    "emptySectorTitle": "This sector could not be applied",
+    "emptySectorHint": "The registry could not express the chosen sector as a search criterion — this is not an answer about the market, it is a criterion that could not be applied. Try a precise NAF code instead, or widen to a neighbouring sector.",
+    "emptyInconsistentTitle": "Two criteria contradict each other",
+    "emptyInconsistentHint": "A sector is both selected and excluded, or the minimum revenue is above the maximum — this combination can never return a company. Fix the conflicting criterion.",
+    "blockingFilters": {
+      "filters": {
+        "sectors": "Sector",
+        "headcount": "Size",
+        "age": "Age",
+        "department": "Area",
+        "city": "City",
+        "cdiOnly": "Permanent only",
+        "freelanceOnly": "Freelance only",
+        "cddOnly": "Fixed-term only",
+        "interimOnly": "Temp agency only",
+        "remotePolicies": "Remote work",
+        "seniorities": "Seniority",
+        "decisionLevels": "Decision level",
+        "deliveryFitFilter": "Delivery fit",
+        "groupRole": "Group / subsidiary",
+        "workedOnly": "Already worked",
+        "contractRecourseObserved": "Uses contractors",
+        "excludeSectors": "Excluded sectors",
+        "excludePublicEmployers": "Public employers excluded",
+        "entityType": "Entity type"
+      },
+      "line_one": "Without the “{{filter}}” filter: {{count}} account",
+      "line_other": "Without the “{{filter}}” filter: {{count}} accounts"
+    },
+    "emptyFiltersTitle": "Too many filters stacked",
+    "emptyFiltersHint": "Several active filters (search or display) combine and leave no one. Remove one to see what remains.",
+    "emptySetAsideTitle": "Every account found was set aside",
+    "emptySetAsideHint": "Each account found is outside your target (zone, individual, duplicate, ceased company…) or hidden by you: no display filter is to blame. Widen the zone or loosen a criterion to see more.",
+    "emptyNeedsTitle": "No card carries a need in this period",
+    "emptyNeedsHint_one": "The “Known needs” filter removed 1 card from this search. Switch back to “All” to see it.",
+    "emptyNeedsHint_other": "The “Known needs” filter removed {{count}} cards from this search. Switch back to “All” to see them.",
+    "emptyCapitalTitle": "No recent capital increase",
+    "emptyCapitalHint": "No recent capital increase for these criteria. Widen the area or the period.",
+    "errorTitle": "The search failed",
+    "errorHint": "The service could not be reached. Nothing is shown rather than an approximate result.",
+    "errorHintTimeout": "The search is taking longer than expected on these criteria. Try again with fewer sectors or filters, or retry in a moment.",
+    "errorHintUpstream": "The search service is temporarily unavailable. Retry in a moment.",
+    "errorHintInvalidFilters": "The search includes criteria the engine could not process. Retry with different filters.",
+    "retry": "Retry",
+    "unverifiableTitle": "Result unverifiable — not a failure",
+    "unverifiableHint": "Nothing could be checked on this scope: this is not an answer about your filters, it is the absence of an answer. No company is shown, and none can be declared absent either.",
+    "unreadableTitle": "Make your request more specific",
+    "unreadableHint": "I couldn’t find a place, a sector or a type of company in your request. No company is shown rather than a list that doesn’t answer it.",
+    "unreadableExamples": "For example: “IT services firms in Toulouse”, “aerospace in Occitanie”, “software publishers in 31” — or pick a sector and an area on the left.",
+    "emptySkillsTitle": "No company shows “{{skills}}”",
+    "emptySkillsExpanded": "Expanded terms tried: {{terms}}.",
+    "emptySkillsHint": "Neither job offers nor the observed tech stack mention “{{skills}}” for these criteria. That is not proof of absence: only what is observed is seen. Drop a criterion (area, size, sector) or try a nearby word."
+  },
+  "presets": {
+    "accessible": {
+      "label": "Reachable accounts",
+      "hint": "50 to 249 employees: the size where you reach the decision-maker without a group-level vendor listing."
+    },
+    "middleMarket": {
+      "label": "Middle market",
+      "hint": "250 to 4,999 employees, listed companies removed: one chip, no need to tick two bands. An unknown listing removes nothing, and their number is shown under the list."
+    },
+    "hiring": {
+      "label": "Accounts that are hiring",
+      "hint": "IT roles posted in the last 90 days — committed hiring means the budget is already voted."
+    },
+    "transforming": {
+      "label": "Accounts in transformation",
+      "hint": "Public tenders open and awarded over 6 months: an organisation that buys is an organisation that changes."
+    },
+    "movingNow": {
+      "label": "Moving right now",
+      "hint": "Hiring, open public tenders and public contracts won — all three signals, last 30 days only."
+    },
+    "compatibleWithOffer": {
+      "label": "Compatible with my offer",
+      "hint": "The sectors declared in your offer portfolio (Settings › Profile), and the target area when one is set."
+    },
+    "likeReferences": {
+      "label": "Accounts like your references",
+      "hint": "The sectors of the accounts you have marked as “best reference” yourself."
+    },
+    "esnPartners": {
+      "label": "Find partners or IT firms",
+      "hint": "Active IT services firms: a public tender won or awarded, or hiring, in the last 6 months."
+    },
+    "decisionMakersOnExpertise": {
+      "label": "Decision-makers on an expertise",
+      "hint": "Lands on Contacts with the level set to N-1 (decision-maker) — pick the expertise you're after next."
+    },
+    "externalRecourseObserved": {
+      "label": "With observed external recourse",
+      "hint": "Read from market data: at least one ESN observed on the account. An unobserved account is never counted as \"no external recourse\"."
+    },
+    "subsidiariesOfGroups": {
+      "label": "Accessible subsidiaries of large groups",
+      "hint": "50 to 249-employee subsidiaries with a known capital link — the group head is locked down, the subsidiary is reachable without a group-wide vendor list."
+    },
+    "disabledReason": {
+      "no_offer_sectors": "No sector declared in your offer portfolio — open Settings › Profile to declare some.",
+      "no_best_reference": "No account marked “best reference” — mark one from a customer dossier's “More actions” menu."
+    }
+  },
+  "esnPeer": {
+    "label": "ESN: competitor or tier-2 partner, not an end client",
+    "help": "An IT services firm competes or subcontracts: treat it as a partnership or competitive watch, not an account to conquer. It is ranked after end clients in the list."
+  },
+  "declaredPartner": {
+    "label": "Declared partner, not an end client",
+    "help": "This workspace already declared this SIREN as a partner: not a guess from its business code, a fact you entered yourself."
+  },
+  "intermediary": {
+    "label": "Intermediary, not the final client",
+    "help": "Recruitment firm, matchmaking platform, temp agency, VMS, MSP or business referrer: what it posts describes a third party's need, not its own."
+  },
+  "qualification": {
+    "sectorAttachment": {
+      "activity": "matched by its activity",
+      "site": "matched by its website"
+    },
+    "verdict": {
+      "recommended": "Recommended",
+      "to_verify": "To verify",
+      "excluded": "Excluded"
+    },
+    "reason": {
+      "natural_person": "a natural person, not an organisation",
+      "unincorporated": "unincorporated grouping (joint ownership)",
+      "ceased": "administratively ceased entity",
+      "duplicate": "already in this list",
+      "out_of_zone": "outside the requested geographical scope",
+      "out_of_sector": "outside the requested sector",
+      "no_employees": "no declared employee — to confirm",
+      "micro_structure": "very small structure — to confirm",
+      "non_operating_vehicle": "legal vehicle with no operating activity",
+      "person_like_name": "the name looks like a person's",
+      "public_or_association": "public body or association — different buying cycle",
+      "unknown_legal_form": "unknown legal form",
+      "keyword_elsewhere": "your keyword is neither in the name nor in the activity — to confirm",
+      "holding_subsidiary_in_zone": "holding company headquartered outside the zone — its subsidiary located in the zone is shown instead"
+    }
+  },
+  "family": {
+    "label": {
+      "reachable": "You can go",
+      "via_intermediary": "Not direct, but there is a way",
+      "investigate": "Worth investigating",
+      "out_of_reach": "Too big for your size"
+    },
+    "help": {
+      "reachable": "Nothing seems to block the way in, and something is happening right now.",
+      "via_intermediary": "A supplier is already in place. The way in goes through them, or through the next tender.",
+      "investigate": "Interesting, but I don’t know whether you can get in. No public source says so for a private company.",
+      "out_of_reach": "Too big for your current size. Look at subsidiaries, or go through a referenced supplier."
+    },
+    "filter": "Family",
+    "filterAny": "All"
+  },
+  "advice": {
+    "scope": "Suggested scope",
+    "risk": {
+      "label": "Risk",
+      "viaIntermediary": "a provider is already in place",
+      "investigate": "access not yet established",
+      "deliveryIncompatible": "delivery incompatible with your offer"
+    },
+    "first": {
+      "label": "First action",
+      "viaIntermediary": "sound out the provider in place",
+      "reachableRole": "open with {{role}}",
+      "reachable": "identify the decision-maker",
+      "investigate": "check the access route before committing"
+    }
+  },
+  "effortSuggestion": {
+    "badge": "Suggested: {{level}}",
+    "help": {
+      "outOfReach": "Too big for your current size — suggested to park it, with this reason.",
+      "viaIntermediary": "A supplier is already in place — suggested partner route instead of direct effort.",
+      "reachable": "Nothing seems to block the way in and something is moving — suggested a short sprint to test it.",
+      "investigate": "No access evidence yet — suggested qualifying at volume before committing more."
+    }
+  },
+  "barrier": {
+    "filter": "Access class",
+    "filterAny": "All",
+    "class": {
+      "A": "A — Likely open",
+      "B": "B — Open through an entity",
+      "C": "C — Semi-open",
+      "D": "D — Likely locked"
+    }
+  },
+  "ambiguous": {
+    "title": "Some companies could not be identified",
+    "description": "Several companies share the same name and none stands out: they are set aside rather than matched at random. This is not an outage — add the city or sector to find them."
+  },
+  "reading": {
+    "suggestCity": "Search in {{city}}?",
+    "nameKeptFilters": "{{name}} — filters kept: {{criteria}}",
+    "clearKeptFilters": "clear all",
+    "title": "Your request, as it was applied",
+    "partialTitle": "Results filtered on part of your request",
+    "appliedLine": "Results filtered on {{criteria}}.",
+    "activityEsn": "digital services (IT services and consulting firms)",
+    "activitySector": "the “{{label}}” sector",
+    "nameCriterion": "the name “{{name}}”",
+    "hiringProfile": "Profile sought: “{{profile}}” — read as the role or technology being hired, not as a company name. The registry can’t filter on job offers: hiring signals show on the cards when they exist.",
+    "sizeUnread": "Not applied: “{{size}}” — size is not read from the sentence. Set it with the Size filter.",
+    "zoneUnrecognized": "Not taken into account: “{{zone}}” was not recognised as a zone — the search covers all of France. Set the zone with the filters on the left.",
+    "placeUnverified": "The place “{{place}}” couldn’t be checked in time: it is searched in addresses, not as an exact municipality.",
+    "notApplied_one": "Not taken into account: {{words}} — this criterion can’t be read in the registry. Set it with the filters on the left.",
+    "notApplied_other": "Not taken into account: {{words}} — these criteria can’t be read in the registry. Set them with the filters on the left.",
+    "preTitle": "Before you run it: your request will be read like this",
+    "preLine": "Area: {{place}} · keywords: {{keywords}}",
+    "prePlace": "{{place}}",
+    "preNoZone": "no area set",
+    "preNoKeywords": "none"
+  },
+  "splitSuggestion": {
+    "title": "{{copilot}} suggests splitting this search",
+    "reason": {
+      "mixed_sectors": "Several sectors are checked at once. A sub-search per sector gives results that are easier to work through.",
+      "mixed_zones": "This search covers a lot of results spread across several departments. A sub-search per department gives shorter lists."
+    }
+  },
+  "factors": {
+    "nafExact": "NAF {{code}} exact match",
+    "nafDivision": "NAF {{division}} — same division as {{code}}",
+    "sectorKeyword": "Sector targeted by your ESN profile",
+    "geoDepartmentRequested": "Department {{department}} — requested territory",
+    "geoCityRequested": "City {{city}} — requested territory",
+    "geoProfileZone": "Head office within your profile's territory",
+    "headcountRequested": "Headcount {{range}} — requested tier",
+    "headcountProfile": "Headcount {{range}} — targeted company type",
+    "signalsDated": "Dated signals ({{count}})",
+    "ageWindow": "Company age within the requested window",
+    "ageEstablished": "Company age — established since {{year}}",
+    "itSurfaceIt": "IT surface",
+    "itSurfaceIndustrial": "industrial surface",
+    "evidenceQuality": "evidence quality"
+  },
+  "axes": {
+    "lockTenderOpen": "Open tender — the door is open too",
+    "lockAwardIncumbent": "A supplier is already in place — entry goes through them",
+    "lockEstimateA": "Likely open — registry estimate",
+    "lockEstimateB": "Open through an entity — registry estimate",
+    "lockEstimateC": "Semi-open — registry estimate",
+    "lockEstimateD": "Likely locked — registry estimate",
+    "proportion": "Proportion — {{tier}} for an ESN of {{size}}",
+    "relation": "A relationship already exists — this isn't a cold entry"
+  },
+  "confidence": {
+    "title": "Data confidence",
+    "level": {
+      "low": "low",
+      "medium": "medium",
+      "high": "high"
+    },
+    "basedOn": "It rests on",
+    "facts": {
+      "signals_one": "{{count}} dated signal",
+      "signals_other": "{{count}} dated signals",
+      "registry_one": "{{count}} registry field out of 6",
+      "registry_other": "{{count}} registry fields out of 6",
+      "evidence_one": "{{count}} sourced factor",
+      "evidence_other": "{{count}} sourced factors"
+    }
+  },
+  "batches": {
+    "title": "Analyze a list of companies",
+    "entry": "Analyze a list",
+    "intro": "Paste names or SIREN numbers (one per line). Nothing is launched or charged before you click “Launch batch”.",
+    "sourceModeLabel": "List source",
+    "sourceModePaste": "Paste a list",
+    "sourceModeTargetList": "From a target list",
+    "targetListLabel": "Target list",
+    "targetListLoading": "Loading target lists…",
+    "targetListEmpty": "No target list has a company yet. Add one from My targets.",
+    "targetListPlaceholder": "Choose a list…",
+    "inputLabel": "Companies to analyze",
+    "inputPlaceholder": "BPCE\nEiffage\nEngie\n552120222",
+    "overLimit": "{{count}} company(ies) beyond the {{max}}-per-batch limit: they are not included.",
+    "previewAction": "Preview",
+    "previewTitle": "Before launching",
+    "previewFailed": "The preview could not be computed. Nothing was launched.",
+    "preview": {
+      "resolved": "Identified companies",
+      "toConfirm": "To confirm (ambiguous name)",
+      "duplicates": "Duplicates removed",
+      "alreadyAnalyzed": "Already analyzed — reopened at no charge",
+      "fresh": "New analyses",
+      "costDemo": "Demo workspace — nothing is charged",
+      "limit": "Batch limit",
+      "limitValue": "{{max}} companies",
+      "parallel": "Parallel runs",
+      "parallelValue": "{{count}} at a time",
+      "duration": "Duration",
+      "durationValue": "Not announced: no duration is measured in advance",
+      "actions": "Actions needed",
+      "actionsValue": "Pick the entity for {{count}} company(ies) after launch",
+      "demoLabel": "Mode"
+    },
+    "launch": "Launch batch",
+    "launchFailed": "The batch could not be created. Nothing was charged.",
+    "recentTitle": "Recent batches",
+    "recentEmpty": "Paste a list or start from a target list, then launch it: each batch keeps its status and its companies.",
+    "recentCompanies": "{{count}} company(ies)",
+    "stateColumn": "State",
+    "back": "Back to batches",
+    "loadFailed": "This batch could not be loaded.",
+    "cancel": "Cancel batch",
+    "cancelConfirm": "Confirm cancellation",
+    "cancelHint": "Running analyses stop. Completed analyses remain.",
+    "keep": "Keep running",
+    "retry": "Retry failures",
+    "openAccount": "Open the account",
+    "choose": "Pick {{name}}",
+    "chooseHint": "Several entities share this name: pick the right one to launch its analysis.",
+    "noCandidate": "No entity found for this name. Launch a new batch with its SIREN.",
+    "status": {
+      "needs_confirmation": "Awaiting confirmation",
+      "running": "Running",
+      "finished": "Finished",
+      "finished_with_failures": "Finished with failures",
+      "canceled": "Canceled"
+    },
+    "state": {
+      "resolved": "Identified",
+      "to_confirm": "To confirm",
+      "queued": "Queued",
+      "running": "Running",
+      "partial": "Partial",
+      "done": "Done",
+      "failed": "Failed",
+      "canceled": "Canceled",
+      "needs_resolution": "Ambiguous identity"
+    },
+    "failure": {
+      "insufficient_credits": "Action paused for your workspace",
+      "invalid_name": "Name rejected",
+      "launch_error": "Could not launch",
+      "other": "Launch failed"
+    },
+    "resolutionHint": "The analysis is done, but several legal entities share this name. Open the account to pick the right one, or exclude this company from the batch.",
+    "exclude": "Exclude from batch",
+    "charged": "{{count}} analysis(es) started in this batch",
+    "listTitle": "Your list",
+    "itemsTitle": "Companies in the batch",
+    "companyColumn": "Company",
+    "inputHint": "One name or SIREN per line · {{max}} companies at most",
+    "inputCounter": "{{count}} / {{max}} companies · one name or SIREN per line",
+    "targetListEmptyTitle": "No target list to reuse",
+    "targetListHint": "The list's accounts replace the pasted list; “Before launching” is recalculated.",
+    "quoteEmptyTitle": "Nothing is launched yet",
+    "quoteEmpty": "Preview your list: you'll see here the identified companies, the ones to confirm and the ones already analysed, before anything is launched.",
+    "recentCount": "{{count}} batch(es)",
+    "recentFailed": "Recent batches could not be loaded.",
+    "recentEmptyTitle": "Your first batch will show up here",
+    "lotColumn": "Batch",
+    "companiesColumn": "Companies",
+    "statusColumn": "Status",
+    "openColumn": "Open",
+    "open": "Open",
+    "openLot": "Open the “{{source}}” batch from {{date}}",
+    "detailTitle": "Analysis batch",
+    "detailMeta": "“{{source}}” batch · {{companies}} · {{date}}",
+    "todoColumn": "What to do",
+    "actionColumn": "Action",
+    "loading": "Loading the batch…",
+    "headline": {
+      "waiting": "{{count}} company(ies) waiting for your choice",
+      "running": "The batch is running in the background",
+      "failures": "{{count}} analysis(es) could not start",
+      "canceled": "Batch cancelled",
+      "finished": "Every analysis in the batch is done"
+    },
+    "source": {
+      "names": "Pasted list",
+      "identifiers": "Pasted SIRENs",
+      "target_list": "From a target list",
+      "discover": "From Discover",
+      "portfolio": "From the portfolio",
+      "import": "Imported list",
+      "laura": "Suggested by {{copilot}}",
+      "saved_search": "Saved search"
+    },
+    "discover": "Discover"
+  },
+  "sourceAxes": {
+    "detailTitle": "What your workspace already knows",
+    "total": "This is what your workspace sources could read for this account. It is a marker of what you already know, not a probability.",
+    "mark": {
+      "found": "found",
+      "nothing": "nothing found"
+    },
+    "unmeasured": "Cannot be checked for this account, for lack of data in your workspace — left out of the marker:",
+    "axis": {
+      "signal_history": "History",
+      "crm": "Deals and contacts",
+      "market_memory": "Observed on the market",
+      "dataforge": "Target",
+      "drive": "Documents",
+      "missions": "Missions"
+    },
+    "evidence": {
+      "history_one": "{{count}} older signal",
+      "history_other": "{{count}} older signals",
+      "history_recurring_one": "recurring need ({{count}} older signal)",
+      "history_recurring_other": "recurring need ({{count}} older signals)",
+      "history_none": "no older signal",
+      "crm_won": "deal won",
+      "crm_open": "deal in progress",
+      "crm_dormant": "dormant deal",
+      "crm_lost": "deal lost",
+      "crm_contacts_one": "{{count}} known contact",
+      "crm_contacts_other": "{{count}} known contacts",
+      "crm_none": "no known deal",
+      "market_recourse": "external sourcing observed",
+      "market_stack": "shared stack: {{stack}}",
+      "market_shared_people_one": "{{count}} current employee already known",
+      "market_shared_people_other": "{{count}} current employees already known",
+      "market_none": "nothing observed",
+      "reference_priority": "priority target",
+      "reference_secondary": "secondary target",
+      "reference_to_qualify": "to qualify",
+      "reference_other": "out of target",
+      "reference_needs_one": "{{count}} past need observed",
+      "reference_needs_other": "{{count}} past needs observed",
+      "reference_needs_won_one": "{{count}} past need observed, {{won}} won",
+      "reference_needs_won_other": "{{count}} past needs observed, {{won}} won",
+      "drive_one": "named in {{count}} document",
+      "drive_other": "named in {{count}} documents",
+      "drive_none": "no document",
+      "missions_one": "{{count}} past mission",
+      "missions_other": "{{count}} past missions",
+      "missions_bench_one": "{{count}} bench consultant worked there",
+      "missions_bench_other": "{{count}} bench consultants worked there",
+      "missions_ongoing_one": "{{count}} mission under way",
+      "missions_ongoing_other": "{{count}} missions under way",
+      "missions_none": "no mission",
+      "unmeasured": "not assessable"
+    },
+    "ago": {
+      "days_one": "{{count}} day ago",
+      "days_other": "{{count}} days ago",
+      "months_one": "{{count}} month ago",
+      "months_other": "{{count}} months ago",
+      "years_one": "{{count}} year ago",
+      "years_other": "{{count}} years ago"
+    }
+  },
+  "sectorCoverage": {
+    "thin_one": "Only one company known for this sector: our data is thin here, the list may be incomplete.",
+    "thin_other": "{{count}} companies known for this sector: our data is thin here, the list may be incomplete.",
+    "naf": "The sector is established for only {{known}} of {{total}} companies: the others could not be tied to a sector, so the list may be missing some."
+  },
+  "historyBlocks": {
+    "recentTitle": "Recent signals",
+    "historyTitle": "Accounts with a history",
+    "capOf": "{{shown}} of {{total}}",
+    "total_one": "{{count}} account",
+    "total_other": "{{count}} accounts",
+    "showOthers_one": "Show the other one ({{count}})",
+    "showOthers_other": "Show the other {{count}}",
+    "collapse": "Collapse",
+    "unlisted_one": "{{count}} other account, with no signal or history, is not listed.",
+    "unlisted_other": "{{count}} other accounts, with no signal or history, are not listed.",
+    "reason": {
+      "offersNamed_one": "{{count}} {{subject}} job offer {{period}}, the latest {{ago}}",
+      "offersNamed_other": "{{count}} {{subject}} job offers {{period}}, the latest {{ago}}",
+      "offers_one": "{{count}} job offer {{period}}, the latest {{ago}}",
+      "offers_other": "{{count}} job offers {{period}}, the latest {{ago}}",
+      "needsNamed_one": "{{count}} {{subject}} need {{period}}, the latest {{ago}}",
+      "needsNamed_other": "{{count}} {{subject}} needs {{period}}, the latest {{ago}}",
+      "needs_one": "{{count}} need {{period}}, the latest {{ago}}",
+      "needs_other": "{{count}} needs {{period}}, the latest {{ago}}",
+      "periodSame": "in {{year}}",
+      "periodRange": "between {{from}} and {{to}}",
+      "evidenceNotCounted": "The offer quoted above does not count as a recent signal: it is no longer open, or its date is not the posting date.",
+      "agoDays_one": "{{count}} day ago",
+      "agoDays_other": "{{count}} days ago",
+      "agoMonths_one": "{{count}} month ago",
+      "agoMonths_other": "{{count}} months ago",
+      "agoYears_one": "{{count}} year ago",
+      "agoYears_other": "{{count}} years ago"
+    }
+  },
+  "history": {
+    "show": "View full history ({{count}})",
+    "hide": "Collapse history",
+    "listLabel": "Full signal history"
+  },
+  "facts": {
+    "family": {
+      "hiring": "Hiring",
+      "project": "Projects",
+      "public_market": "Public contracts"
+    },
+    "nature": {
+      "hiring": "Hiring",
+      "work_study": "Work-study",
+      "need": "Need",
+      "project": "Project",
+      "leader": "Decision-maker",
+      "deal": "Contract",
+      "space": "Already known",
+      "economy": "News",
+      "event": "Event",
+      "financial": "Financial result",
+      "tech": "Technology"
+    },
+    "openSource": "{{site}} (new tab)",
+    "linkAnnouncement": "View the listing",
+    "linkAnnouncementOn": "View the listing · {{site}}",
+    "capitalIncrease": "Capital increase",
+    "linkSource": "View the source",
+    "title": "Dated facts",
+    "seenOn": "seen on {{date}}",
+    "weighedTitle": "What weighed in",
+    "strongLabel": "Strong signals on this company, newest first",
+    "contextTitle": "Context",
+    "contextLabel": "Context on this company, newest first",
+    "contract": {
+      "cdi": "Permanent",
+      "cdd": "Fixed-term",
+      "interim": "Temp agency",
+      "freelance": "Freelance",
+      "other": "Other contract",
+      "unspecified": "Contract not specified"
+    }
+  },
+  "zone": {
+    "regionRow": "{{name}} — all {{count}} departments",
+    "citySuggestions": "Suggested cities",
+    "cityUnknown": "Zone not recognised: pick a city from the list (towns over 5,000 inhabitants).",
+    "departmentSuggestions": "Suggested departments",
+    "departmentUnknown": "Zone not recognised: enter a department code (e.g. 69) or pick a suggestion."
+  },
+  "widening": {
+    "title": "Fewer than {{count}} exact results: the list opens to neighbours",
+    "titleMore": "Exact results first, then the list opens to neighbours",
+    "strictTitle": "Strict search: no widening to neighbours",
+    "axis": {
+      "skill_one": "Related skills ({{values}}): {{count}} result",
+      "skill_other": "Related skills ({{values}}): {{count}} results",
+      "sector_one": "Neighbouring sectors ({{values}}): {{count}} result",
+      "sector_other": "Neighbouring sectors ({{values}}): {{count}} results",
+      "size_one": "Neighbouring sizes ({{values}}): {{count}} result",
+      "size_other": "Neighbouring sizes ({{values}}): {{count}} results"
+    },
+    "chip": {
+      "skill": "related: {{value}}",
+      "sector": "neighbouring sector: {{value}}",
+      "size": "neighbouring size: {{value}}"
+    },
+    "sizeUnpublished": "size not published",
+    "backToStrict": "Back to strict",
+    "widenAgain": "Widen to neighbours",
+    "surface": {
+      "strictTitle": "Strict view: no widening",
+      "widenAgain": "Widen again",
+      "tier": {
+        "watch_intent_one": "Widened to accounts already handled: {{count}} result",
+        "watch_intent_other": "Widened to accounts already handled: {{count}} results",
+        "contacts_neighbour_roles_one": "Widened to neighbouring roles: {{count}} result",
+        "contacts_neighbour_roles_other": "Widened to neighbouring roles: {{count}} results"
+      }
+    }
+  },
+  "mySearches": {
+    "back": "Back to Discover",
+    "eyebrow": "Your work, kept",
+    "title": "My searches",
+    "subtitle": "Find the criteria, results and accounts you had selected.",
+    "newSearch": "New search",
+    "recentTitle": "Recent searches",
+    "recentWindow": "Last 30 days",
+    "recentEmpty": "Your searches from the last 30 days will show up here once you have run one.",
+    "resume": "Resume",
+    "savedCount_one": "{{count}} account in the saved result",
+    "savedCount_other": "{{count}} accounts in the saved result",
+    "savedTitle": "Saved",
+    "savedEmptyTitle": "Keep a scope at hand.",
+    "savedEmptyBody": "From the results, choose “Save”. The search can be resumed or used as the basis of a watch.",
+    "savedHelper": "A saved search keeps its criteria. It can be the basis of a watch.",
+    "lockedTitle": "Saved searches are not included in your plan.",
+    "sharedWithSpace": "Shared with the workspace",
+    "sharedBy": "Shared by {{name}}",
+    "manualRun": "Manual run",
+    "makeWatch": "make it a watch in My watches",
+    "tuneWatch": "adjust in My watches",
+    "createList": "Create a list",
+    "moreFor": "More actions for {{name}}",
+    "deleteSearch": "Delete the search",
+    "deleteKeeps": "Accounts and lists created stay",
+    "listsTitle": "Work lists",
+    "listsEmpty": "Select accounts to create your first list.",
+    "listsHelper": "Lists live in My targets: import, status, priority and owner are set there.",
+    "listCount_one": "{{count}} account",
+    "listCount_other": "{{count}} accounts",
+    "open": "Open",
+    "entry": "My searches",
+    "listCreatedFrom": "Created from {{source}} on {{date}}",
+    "savedOn": "Saved on {{date}}",
+    "sharedOn": "Shared by {{name}} on {{date}}"
+  },
+  "overview": {
+    "eyebrow": "Business development",
+    "newSearch": "New search",
+    "myTarget": "My target",
+    "myTargetTrim": "{{kept}} of {{total}} sectors applied (the search maximum).",
+    "myTargetAdjust": "Adjust my target",
+    "exploreTitle": "Which market do you want to explore?",
+    "tracksAria": "Ways to get started",
+    "trackTerritory": "A territory",
+    "trackExpertise": "An expertise",
+    "kpisAria": "Search indicators",
+    "kpiAccounts": "Accounts to explore",
+    "kpiNewForYou_one": "{{count}} new for your workspace",
+    "kpiNewForYou_other": "{{count}} new for your workspace",
+    "kpiNeeds": "Service needs",
+    "kpiNeedsHint": "Read before proposing a profile",
+    "kpiContacts": "Contacts",
+    "kpiContactsHint": "People to approach",
+    "breakdownTitle": "Account breakdown",
+    "breakdownNote": "Each segment stands for displayable accounts, not a score or a revenue potential.",
+    "breakdownTotal_one": "{{accounts}} account · {{sectors}} sector",
+    "breakdownTotal_other": "{{accounts}} accounts · {{sectors}} sectors",
+    "otherSectors": "Other sectors",
+    "bySize": "By size",
+    "sizeDefinition": "VSE < 10 · SME 10–249 · mid-cap 250–999 · large ≥ 1,000 employees",
+    "title": "Discover",
+    "trackTerritoryHint": "Your offer's sectors and area: compare accounts and their topics.",
+    "trackTerritoryHintRegionOnly": "Your offer's area: the sector is still yours to pick, you see the framing before launching.",
+    "trackTerritoryHintSectorsOnly": "Your offer's sectors: the area is still yours to pick, you see the framing before launching.",
+    "trackTerritoryHintNothing": "Your offer declares no sector or area: both are yours to pick.",
+    "trackExpertiseHint": "All of France, no sector imposed. You see the framing before launching.",
+    "trackExpertiseEmpty": "A specific skill",
+    "trackClient": "A type of client",
+    "trackClientHint": "The sectors of your best references.",
+    "kpiHistorical": "Past needs",
+    "kpiHistoricalHint": "Topics already met",
+    "kpiContactsPhone_one": "{{count}} with a phone",
+    "kpiContactsPhone_other": "{{count}} with a phone",
+    "breakdownCollapsed_one": "Breakdown · {{count}} sector",
+    "breakdownCollapsed_other": "Breakdown · {{count}} sectors",
+    "breakdownCollapse": "Collapse"
+  },
+  "chips": {
+    "aria": "Frame the search",
+    "territoryAll": "All of France",
+    "sectorsAll": "All sectors",
+    "sizesAll": "All sizes",
+    "skills": "Expertise",
+    "signals": "Needs & signals",
+    "signalsSome_one": "{{count}} signal",
+    "signalsSome_other": "{{count}} signals",
+    "firstAndMore": "{{first}} +{{count}}"
+  },
+  "market": {
+    "viewAria": "Account layout",
+    "viewList": "List view",
+    "viewRadar": "Technology radar",
+    "save": "Save",
+    "viewColumns": "Columns",
+    "moreActions": "More actions"
+  },
+  "quality": {
+    "summary_one": "What to know about this search · {{count}} point",
+    "summary_other": "What to know about this search · {{count}} points",
+    "iconLabel": "What to know about this search"
+  },
+  "pager": {
+    "aria": "Result pages",
+    "range_one": "{{from}}–{{to}} of {{count}} account",
+    "range_other": "{{from}}–{{to}} of {{count}} accounts",
+    "previous": "Previous page",
+    "next": "Next page",
+    "page": "Page {{page}}",
+    "loadMore": "Load more accounts"
+  },
+  "listControls": {
+    "filterLabel": "Filter the displayed results",
+    "filterPlaceholder": "Filter the displayed results…",
+    "selectPage": "This page",
+    "dismissed": "Dismissed",
+    "filters": "Filters",
+    "filtersTitle": "List filters",
+    "filtersDescription": "Narrow the accounts shown, without running the search again.",
+    "close": "Close",
+    "activeFilters": "Active filters",
+    "removeFilter": "Remove filter: {{label}}"
+  },
+  "framing": {
+    "title": "Frame the search",
+    "eyebrow": "Your search",
+    "sectionsCount_one": "{{count}} section · free path",
+    "sectionsCount_other": "{{count}} sections · free path",
+    "navAria": "Search sections",
+    "criteriaCount_zero": "No criteria selected",
+    "criteriaCount_one": "{{count}} criterion selected",
+    "criteriaCount_other": "{{count}} criteria selected",
+    "reset": "Reset criteria",
+    "step": "{{index}} / {{total}}",
+    "next": "Continue · {{section}}",
+    "previous": "Back",
+    "ready": "Your criteria are ready to apply.",
+    "accounts_one": "{{count}} account",
+    "accounts_other": "{{count}} accounts",
+    "accountsScope": "in the results shown",
+    "accountsUnknown": "The number of accounts shows once launched",
+    "accountsUnknownHint": "These criteria change the search itself: nothing is estimated before it runs.",
+    "cancel": "Cancel",
+    "apply": "Apply and explore",
+    "includeSectors": "Sectors to include",
+    "includeSectorsHint": "At least one of the chosen sectors",
+    "excludeSectors": "Sectors to exclude",
+    "excludeSectorsHint": "Explicit exclusions",
+    "registryBlock": "Age, legal scope and revenue",
+    "cityBlock": "City, radius and departments",
+    "regionsBlock": "Regions to include",
+    "regionsHint": "No region ticked = all of France",
+    "skillsBlock": "Your expertise",
+    "recourseBlock": "Documented external sourcing",
+    "recourseHint": "A past observation does not confirm an open need",
+    "signalTypesBlock": "Kinds of topics",
+    "hiringBlock": "Documented terms",
+    "hiringHint": "Read from published hiring, never inferred",
+    "accessBlock": "Access and level of known contacts",
+    "partnerBlock": "Partners and tier 2",
+    "similarBlock": "Like your accounts",
+    "similarHint": "Find companies comparable to an account in your portfolio: same size, sector and topics.",
+    "relationPromise": "A contact found does not guarantee a supplier listing. An IT services firm seen in an environment is not automatically open to tier 2.",
+    "sizeBlock": "Company size",
+    "structureBlock": "Structure and listing",
+    "companiesLabel": "Companies",
+    "companiesHint": "Companies and sectors",
+    "companiesEyebrow": "Targets",
+    "companiesTitle": "Which companies?",
+    "companiesIntro": "Choose your companies and sectors. With nothing selected, every sector stays open.",
+    "territoryLabel": "Territory",
+    "territoryHint": "City, radius and regions",
+    "territoryEyebrow": "Area",
+    "territoryTitle": "Where do you want to work?",
+    "territoryIntro": "Choose a city and a radius, or several regions. Your scope stays visible before launch.",
+    "expertiseLabel": "Expertise",
+    "expertiseHint": "Skills and environments",
+    "expertiseEyebrow": "Expertise",
+    "expertiseTitle": "Which expertise do you offer?",
+    "expertiseIntro": "Start from your expertise. No sector is imposed.",
+    "signalsLabel": "Signals",
+    "signalsHint": "Needs, projects and history",
+    "signalsEyebrow": "Topics",
+    "signalsTitle": "Which topics interest you?",
+    "signalsIntro": "Target current needs, projects or history. Each kind keeps its own meaning.",
+    "relationLabel": "Relationship",
+    "relationHint": "Access and known accounts",
+    "relationEyebrow": "Way in",
+    "relationTitle": "Which way in?",
+    "relationIntro": "Find your known accounts again or focus on new companies. Your call.",
+    "sizeLabel": "Size & structure",
+    "sizeHint": "Headcount, listing, group",
+    "sizeEyebrow": "Size",
+    "sizeTitle": "Which company size?",
+    "sizeIntro": "With nothing selected, every size stays open. Structure criteria add up with size.",
+    "marketObservedBlock": "Observed market",
+    "marketObservedHint": "These criteria read the market data; the framing's area and size narrow them."
+  },
+  "explore": {
+    "label": "A keyword, an expertise, a company or a person",
+    "placeholder": "A keyword, an expertise, a company… or a person: Marion Sagnard at Bedrock",
+    "submit": "Explore"
+  },
+  "lastSearch": {
+    "resume": "Resume your last search",
+    "resumeHint": "Your criteria come back; nothing runs before “Explore”.",
+    "demoPlay": "Run the “{{label}}” search",
+    "demoHint": "Example search from the demo; nothing runs before you click."
+  },
+  "listCut": {
+    "atLeast_one": "{{count}} account shown of at least {{total}} found",
+    "atLeast_other": "{{count}} accounts shown of at least {{total}} found",
+    "ofTotal_one": "{{count}} account shown of {{total}} found",
+    "ofTotal_other": "{{count}} accounts shown of {{total}} found"
+  },
+  "searchEffort": {
+    "queried_one": "{{count}} source queried",
+    "queried_other": "{{count}} sources queried",
+    "stopped": {
+      "limit": "{{queried}} — requested volume reached.",
+      "time": "{{queried}} — search stopped by the time allowed; “Load more accounts” continues it.",
+      "exhausted": "{{queried}} — the sources had nothing more to return for these criteria."
+    },
+    "signalsCut_one": "The signals of {{count}} company were cut short by the time allowed: they are added to its card as soon as they are read.",
+    "signalsCut_other": "The signals of {{count}} companies were cut short by the time allowed: they are added to their cards as soon as they are read."
+  },
+  "actors": {
+    "tabs": {
+      "others": "Other actors ({{count}})"
+    },
+    "pillsLabel": "Actor types shown",
+    "kind": {
+      "esn": "IT services firms",
+      "recruiter": "Recruiters",
+      "interim": "Temp agencies",
+      "partner": "Partners",
+      "adsite": "Job boards"
+    },
+    "columns": {
+      "name": "Name",
+      "type": "Type",
+      "city": "City",
+      "offers": "Offers",
+      "latest": "Most recent offer",
+      "date": "Date"
+    },
+    "emptyNone": "This search found no other actor (IT services firm, recruiter, temp agency, partner, job board).",
+    "emptyFiltered": "No actor matches the checked types."
+  }
+}

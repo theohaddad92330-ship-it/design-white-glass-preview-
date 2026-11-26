@@ -1,0 +1,4307 @@
+<!doctype html>
+<html lang="fr" class="dark">
+  <head>
+    <meta charset="utf-8" />
+    <title>Bellum · Onboarding · Accueil</title>
+    <style id="theo">
+      :root {
+        --primary: #5b3ee8;
+        --primary-hover: #3a26a0;
+        --accent: #5b3ee8;
+        --accent-bg: #f4f2ff;
+        --accent-line: #e0d9ff;
+        --bg: #ffffff;
+        --surface: #ffffff;
+        --surface2: #f4f4f5;
+        --sidebar: #ffffff;
+        --border: #e4e4e7;
+        --border2: #d4d4d8;
+        --text: #18181b;
+        --secondary: #52525b;
+        --muted: #6b6b73;
+        --success: #0a6b4a;
+        --success-bg: #dbf3e9;
+        --warning: #7d5206;
+        --warning-bg: #fbeed3;
+        --danger: #9c211a;
+        --danger-bg: #fce5e3;
+        --info: #14568c;
+        --info-bg: #dfeefb;
+        --sidebar-w: 224px;
+        --shadow: 0 12px 48px rgba(24, 24, 27, 0.12);
+        --r: 14px;
+        --on-primary: #fff;
+        color-scheme: light;
+      }
+      :root.dark {
+        --bg: #09090b;
+        --surface: #18181b;
+        --surface2: #232327;
+        --sidebar: #0e0e11;
+        --border: #2e2e33;
+        --border2: #3f3f46;
+        --text: #fafafa;
+        --secondary: #a1a1aa;
+        --muted: #a1a1aa;
+        --accent: #9e87ff;
+        --accent-bg: #221b3c;
+        --accent-line: #40305f;
+        --success: #6ee7b7;
+        --success-bg: #15332b;
+        --warning: #fcd34d;
+        --warning-bg: #3a2d17;
+        --danger: #fca5a5;
+        --danger-bg: #3a2024;
+        --info: #7dd3fc;
+        --info-bg: #182e40;
+        --shadow: 0 16px 56px #0008;
+        color-scheme: dark;
+      }
+      * {
+        box-sizing: border-box;
+      }
+      html,
+      body {
+        margin: 0px;
+        min-height: 100%;
+        scroll-behavior: auto;
+      }
+      body {
+        font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Helvetica, Arial, sans-serif;
+        font-size: 15px;
+        line-height: 1.5;
+        color: var(--text);
+        background: var(--bg);
+        -webkit-font-smoothing: antialiased;
+      }
+      button,
+      input,
+      select,
+      textarea {
+        font: inherit;
+      }
+      button,
+      a,
+      input,
+      select,
+      textarea {
+        -webkit-tap-highlight-color: transparent;
+      }
+      button {
+        color: inherit;
+        cursor: pointer;
+      }
+      button {
+        border: 0px;
+        background: none;
+      }
+      button:disabled {
+        opacity: 0.45;
+        cursor: not-allowed;
+      }
+      a {
+        color: inherit;
+        text-decoration: none;
+      }
+      button,
+      a {
+        touch-action: manipulation;
+      }
+      input,
+      select,
+      textarea {
+        color: var(--text);
+        background: var(--surface);
+        border: 1px solid var(--border2);
+        border-radius: 9px;
+        padding: 10px 12px;
+        min-height: 42px;
+        min-width: 0px;
+        outline: none;
+      }
+      input::placeholder,
+      textarea::placeholder {
+        color: var(--muted);
+      }
+      input[type='checkbox'] {
+        accent-color: var(--primary);
+        min-height: 0px;
+        width: 17px;
+        height: 17px;
+        padding: 0px;
+        cursor: pointer;
+      }
+      input:focus,
+      select:focus,
+      textarea:focus {
+        border-color: var(--accent);
+        box-shadow: 0 0 0 3px var(--accent-bg);
+      }
+      :focus-visible {
+        outline: 2px solid var(--accent);
+        outline-offset: 3px;
+      }
+      h1,
+      h2,
+      h3,
+      h4,
+      p {
+        margin: 0px;
+      }
+      h1 {
+        font-size: 30px;
+        font-weight: 650;
+        line-height: 1.2;
+        letter-spacing: -0.9px;
+      }
+      h2 {
+        font-size: 20px;
+        font-weight: 650;
+        letter-spacing: -0.35px;
+        line-height: 1.35;
+      }
+      h3 {
+        font-size: 16px;
+        font-weight: 650;
+        letter-spacing: -0.18px;
+      }
+      svg {
+        vertical-align: middle;
+      }
+      .icon {
+        width: 19px;
+        height: 19px;
+        flex: 0 0 auto;
+        display: inline-block;
+      }
+      .icon.small {
+        width: 16px;
+        height: 16px;
+      }
+      .small {
+        font-size: 13px;
+      }
+      .face {
+        border-radius: 50%;
+        object-fit: cover;
+        width: 30px;
+        height: 30px;
+        flex: 0 0 auto;
+      }
+      .face.lg {
+        width: 45px;
+        height: 45px;
+      }
+      .main-shell {
+        margin-left: var(--sidebar-w);
+        min-height: 100vh;
+      }
+      .topbar {
+        height: 64px;
+        border-bottom: 1px solid var(--border);
+        background: var(--bg);
+        padding: 0px 30px;
+        display: flex;
+        align-items: center;
+        gap: 14px;
+        position: sticky;
+        top: 0px;
+        z-index: 15;
+      }
+      .icon-btn {
+        display: inline-grid;
+        place-items: center;
+        width: 34px;
+        height: 34px;
+        border-radius: 8px;
+        color: var(--secondary);
+        flex: 0 0 auto;
+      }
+      .icon-btn:hover {
+        background: var(--surface2);
+        color: var(--text);
+      }
+      .canvas {
+        max-width: 1600px;
+        margin: 0px auto;
+        padding: 32px 34px 44px;
+        min-width: 0px;
+      }
+      .btn {
+        min-height: 39px;
+        padding: 9px 14px;
+        display: inline-flex;
+        align-items: center;
+        justify-content: center;
+        gap: 7px;
+        font-size: 13px;
+        font-weight: 600;
+        line-height: 1.35;
+        border-radius: 8px;
+        border: 1px solid var(--border);
+        background: var(--surface);
+        transition: background 0.12s;
+        white-space: normal;
+        text-align: center;
+      }
+      .btn:hover {
+        background: var(--surface2);
+      }
+      .btn.primary {
+        background: var(--primary);
+        color: rgb(255, 255, 255);
+        border-color: var(--primary);
+      }
+      .btn.primary:hover {
+        background: var(--primary-hover);
+      }
+      .btn.soft {
+        color: var(--accent);
+        border-color: var(--accent-line);
+        background: var(--accent-bg);
+      }
+      .btn.plain {
+        border-color: transparent;
+        background: none;
+        padding-left: 7px;
+        padding-right: 7px;
+      }
+      .btn.sm {
+        min-height: 33px;
+        padding: 6px 10px;
+        font-size: 12px;
+      }
+      .btn .icon {
+        height: 17px;
+        width: 17px;
+      }
+      dialog {
+        border: 1px solid var(--border);
+        border-radius: 16px;
+        padding: 0px;
+        box-shadow: var(--shadow);
+        color: var(--text);
+        background: var(--surface);
+        max-height: calc(-50px + 100dvh);
+        width: min(640px, -36px + 100vw);
+        overflow: auto;
+      }
+      dialog::backdrop {
+        background: rgba(9, 9, 11, 0.33);
+      }
+      .dialog-head {
+        position: sticky;
+        top: 0px;
+        background: var(--surface);
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        padding: 20px 24px;
+        border-bottom: 1px solid var(--border);
+        z-index: 2;
+      }
+      .dialog-head h2 {
+        font-size: 18px;
+      }
+      .dialog-body {
+        padding: 24px;
+      }
+      .dialog-footer {
+        display: flex;
+        justify-content: flex-end;
+        align-items: center;
+        gap: 10px;
+        border-top: 1px solid var(--border);
+        padding: 16px 24px;
+        background: var(--surface);
+        position: sticky;
+        bottom: 0px;
+      }
+      .toast-container {
+        position: fixed;
+        bottom: 22px;
+        left: calc(var(--sidebar-w) + 26px);
+        z-index: 100;
+        display: grid;
+        gap: 8px;
+        max-width: 480px;
+        pointer-events: none;
+      }
+      .toast {
+        padding: 12px 17px;
+        background: var(--text);
+        color: var(--bg);
+        border-radius: 9px;
+        box-shadow: var(--shadow);
+        font-size: 13px;
+        display: flex;
+        align-items: center;
+        gap: 10px;
+        animation: 0.18s ease-out 0s 1 normal none running toast-in;
+      }
+      @keyframes fade-in {
+        0% {
+          opacity: 0.5;
+          transform: translateY(2px);
+        }
+        100% {
+          opacity: 1;
+          transform: none;
+        }
+      }
+      @keyframes toast-in {
+        0% {
+          opacity: 0;
+          transform: translateY(8px);
+        }
+        100% {
+          opacity: 1;
+          transform: none;
+        }
+      }
+      @media (min-width: 1600px) {
+        .canvas {
+          padding: 38px 45px 50px;
+        }
+        .topbar {
+          padding: 0px 40px;
+        }
+      }
+      @media (max-width: 1250px) {
+        :root {
+          --sidebar-w: 207px;
+        }
+        .canvas {
+          padding: 28px 25px 40px;
+        }
+        .topbar {
+          padding: 0px 24px;
+        }
+      }
+      @media (max-width: 760px) {
+        :root {
+          --sidebar-w: 0px;
+        }
+        .nav-open::after {
+          content: '';
+          position: fixed;
+          inset: 0px;
+          background: rgba(0, 0, 0, 0.2);
+          z-index: 20;
+          pointer-events: none;
+        }
+        .topbar {
+          height: 57px;
+          padding: 0px 16px;
+          gap: 9px;
+        }
+        .canvas {
+          padding: 23px 18px 38px;
+        }
+        h1 {
+          font-size: 27px;
+        }
+        .btn {
+          font-size: 12px;
+          min-height: 38px;
+        }
+        .toast-container {
+          left: 16px;
+          right: 16px;
+          bottom: 18px;
+          max-width: none;
+        }
+        dialog,
+        dialog.wide {
+          width: calc(-22px + 100vw);
+          max-height: calc(-24px + 100dvh);
+        }
+        .dialog-head {
+          padding: 17px;
+        }
+        .dialog-body {
+          padding: 18px;
+        }
+        .dialog-footer {
+          padding: 14px 18px;
+        }
+      }
+      @media (prefers-reduced-motion: reduce) {
+        *,
+        ::before,
+        ::after {
+          animation: auto ease 0s 1 normal none running none !important;
+          transition: none !important;
+          scroll-behavior: auto !important;
+        }
+      }
+      @media print {
+        .sidebar,
+        .topbar,
+        .feedback-fab,
+        .toast-container,
+        .page-actions,
+        button {
+          display: none !important;
+        }
+        .main-shell {
+          margin: 0px;
+        }
+        .canvas {
+          padding: 15px;
+        }
+        body {
+          font-size: 12px;
+        }
+      }
+      body[data-page='onboarding'] .main-shell {
+        margin-left: 0px !important;
+      }
+      body[data-page='onboarding'] .canvas {
+        max-width: 1460px;
+        margin: 0px auto;
+        padding: 26px 28px 60px;
+      }
+      @media (max-width: 800px) {
+        body[data-page='onboarding'] .canvas {
+          padding: 17px 14px 42px;
+        }
+      }
+      :root {
+        --bg: #f5f5f8;
+        --surface: #ffffff;
+        --surface2: #f1f2f6;
+        --border: #e5e6ee;
+        --text: #1c1c28;
+        --secondary: #5d5e70;
+        --muted: #727385;
+        --r: 18px;
+        --sidebar-w: 232px;
+        --shadow: 0 3px 7px -5px #20203924, 0 12px 30px -24px #25244130;
+        --ink: #211e39;
+        --violet-wash: #eeebff;
+      }
+      html.dark {
+        --bg: #101014;
+        --surface: #1a1a22;
+        --surface2: #24242e;
+        --border: #30303c;
+        --text: #f0eff8;
+        --secondary: #b4b3c5;
+        --muted: #9695aa;
+        --shadow: 0 10px 26px -18px #0009;
+        --ink: #211e39;
+        --violet-wash: #29233f;
+      }
+      body {
+        font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Arial, sans-serif;
+        font-size: 15px;
+        letter-spacing: -0.012em;
+        background: var(--bg);
+        color: var(--text);
+      }
+      h1 {
+        font-size: 36px;
+        line-height: 1.13;
+        letter-spacing: -1.25px;
+        font-weight: 720;
+      }
+      h2 {
+        font-size: 23px;
+        letter-spacing: -0.55px;
+      }
+      h3 {
+        font-size: 17px;
+        line-height: 1.4;
+      }
+      .small {
+        font-size: 13px;
+        line-height: 1.55;
+      }
+      .btn {
+        font-size: 14px;
+        min-height: 42px;
+        border-radius: 10px;
+        letter-spacing: -0.1px;
+      }
+      .btn.sm {
+        font-size: 13px;
+        min-height: 35px;
+      }
+      .btn.primary {
+        box-shadow: rgba(91, 62, 232, 0.5) 0px 3px 9px -5px;
+      }
+      .btn.plain {
+        box-shadow: none;
+      }
+      .icon-btn {
+        width: 36px;
+        height: 36px;
+      }
+      .icon {
+        width: 20px;
+        height: 20px;
+      }
+      .topbar {
+        height: 64px;
+        background: var(--surface);
+        padding: 0px 30px;
+        z-index: 24;
+      }
+      .canvas {
+        max-width: 1720px;
+        padding: 34px 34px 55px;
+      }
+      body[data-page='onboarding'] .canvas {
+        max-width: 1480px;
+        padding-top: 24px;
+      }
+      body[data-page='onboarding'] .topbar {
+        background: transparent;
+        border-bottom: none;
+        box-shadow: none;
+      }
+      @media (max-width: 760px) {
+        body[data-page='onboarding'] .canvas {
+          padding-left: 14px;
+          padding-right: 14px;
+        }
+      }
+      @media (max-width: 1320px) {
+        :root {
+          --sidebar-w: 212px;
+        }
+        .canvas {
+          padding: 27px 25px 45px;
+        }
+        .topbar {
+          padding: 0px 23px;
+        }
+      }
+      @media (max-width: 960px) {
+        :root {
+          --sidebar-w: 190px;
+        }
+        .canvas {
+          padding: 24px 19px 40px;
+        }
+        .topbar {
+          padding: 0px 18px;
+        }
+      }
+      @media (max-width: 760px) {
+        :root {
+          --sidebar-w: 0px;
+        }
+        .main-shell {
+          margin-left: 0px;
+        }
+        .topbar {
+          height: 56px;
+          padding: 0px 13px;
+        }
+        .canvas {
+          padding: 23px 16px 40px;
+        }
+      }
+      .btn:focus-visible,
+      .icon-btn:focus-visible,
+      button:focus-visible,
+      a:focus-visible {
+        outline: 2px solid var(--primary);
+        outline-offset: 3px;
+      }
+      @keyframes d3-spin {
+        100% {
+          transform: rotate(360deg);
+        }
+      }
+      body:has(dialog.d3-dialog[open]) {
+        overflow: hidden;
+      }
+      html.dark {
+        color-scheme: dark;
+        --bg: #101014;
+        --surface: #1a1a22;
+        --surface2: #24242e;
+        --border: #30303c;
+        --text: #f0eff8;
+        --secondary: #b4b3c5;
+        --muted: #9695aa;
+        --primary: #6545ef;
+        --primary-hover: #7556f4;
+        --accent: #b4a0ff;
+        --accent-bg: #28223e;
+        --accent-line: #4a3b68;
+        --success: #62d4b0;
+        --success-bg: #19322c;
+        --warning: #eec07d;
+        --warning-bg: #352d21;
+        --danger: #f1a2a9;
+        --danger-bg: #38242b;
+        --info: #91beef;
+        --info-bg: #233043;
+        --shadow: 0 10px 26px -18px #0009;
+        --ink: #211e39;
+        --violet-wash: #29233f;
+      }
+      html,
+      body {
+        background: var(--bg);
+        color: var(--text);
+      }
+      html.dark body {
+        color-scheme: dark;
+      }
+      dialog {
+        background: var(--surface);
+        color: var(--text);
+        border: 1px solid var(--border);
+      }
+      dialog::backdrop {
+        background: rgba(8, 8, 11, 0.75);
+        backdrop-filter: blur(5px);
+      }
+      html.dark input,
+      html.dark textarea,
+      html.dark select {
+        color-scheme: dark;
+      }
+      input::placeholder,
+      textarea::placeholder {
+        color: var(--muted);
+        opacity: 1;
+      }
+      button:disabled {
+        opacity: 0.42;
+        cursor: not-allowed;
+      }
+      button:focus-visible,
+      a:focus-visible,
+      select:focus-visible,
+      input:focus-visible,
+      textarea:focus-visible,
+      [role='button']:focus-visible {
+        outline: 2px solid var(--accent);
+        outline-offset: 3px;
+      }
+      button,
+      a,
+      input,
+      select,
+      textarea {
+        -webkit-tap-highlight-color: transparent;
+      }
+      html.dark .source-line,
+      html.dark .dialog-head,
+      html.dark .dialog-footer {
+        border-color: var(--border);
+      }
+      html.dark .toast {
+        background: rgb(41, 40, 51);
+        color: var(--text);
+        border-color: rgb(72, 67, 84);
+      }
+      #dialog .dialog-footer {
+        flex-wrap: wrap;
+      }
+      #dialog .dialog-footer .btn {
+        line-height: 1.5;
+      }
+      #dialog:has(.d3-preview-layout) {
+        width: min(1260px, -32px + 100vw);
+      }
+      @media (max-width: 900px) {
+        .topbar {
+          padding-right: 17px;
+          padding-left: 17px;
+        }
+      }
+      @media (max-width: 560px) {
+        .btn {
+          word-break: normal;
+        }
+        dialog {
+          max-width: calc(-20px + 100vw) !important;
+          max-height: calc(-24px + 100dvh) !important;
+        }
+      }
+      @media print {
+        .sidebar,
+        .topbar,
+        .feedback-fab,
+        .a4-selection {
+          display: none !important;
+        }
+        .main-shell {
+          margin: 0px !important;
+        }
+        .canvas {
+          padding: 20px !important;
+        }
+        html {
+          print-color-adjust: exact;
+        }
+      }
+      :root.dark {
+        --secondary: #b8b6c7;
+        --muted: #a3a0b2;
+        --v7-line: #3b3947;
+        --v7-panel: #1c1b23;
+        --v7-ease: cubic-bezier(0.2, 0.7, 0.25, 1);
+      }
+      :where(button, a, input, select, textarea) {
+        scroll-margin-block: 90px;
+      }
+      :where(.btn, .icon-btn, .d3-chip, .d3-active-chip, .tag-button) {
+        transition:
+          background 140ms var(--v7-ease),
+          border-color 140ms var(--v7-ease),
+          color 140ms var(--v7-ease),
+          box-shadow 140ms var(--v7-ease),
+          transform 140ms var(--v7-ease);
+      }
+      .btn:not(:disabled):hover {
+        border-color: rgb(104, 97, 118);
+        box-shadow: rgba(255, 255, 255, 0.035) 0px 1px 0px inset;
+      }
+      .btn.primary:not(:disabled):hover {
+        background: var(--primary-hover);
+        border-color: rgb(158, 137, 255);
+        box-shadow:
+          rgba(91, 62, 232, 0.145) 0px 4px 18px,
+          rgba(255, 255, 255, 0.14) 0px 1px 0px inset;
+      }
+      :where(.btn, .icon-btn):not(:disabled):active {
+        transform: translateY(1px);
+      }
+      .icon-btn:not(:disabled):hover {
+        background: rgb(43, 39, 54);
+        color: rgb(243, 239, 255);
+        border-color: rgb(90, 80, 107);
+      }
+      :where(.btn, .icon-btn, a, [role='option'], [role='button']):focus-visible {
+        outline: 2px solid var(--accent);
+        outline-offset: 3px;
+      }
+      input::placeholder,
+      textarea::placeholder {
+        color: rgb(165, 160, 181);
+        opacity: 1;
+      }
+      input[type='checkbox'],
+      input[type='radio'] {
+        accent-color: var(--primary);
+        cursor: pointer;
+      }
+      #dialog .dialog-head > h2 {
+        font-size: 18px;
+        font-weight: 650;
+        color: var(--text);
+        letter-spacing: -0.3px;
+        line-height: 1.45;
+      }
+      #dialog .dialog-head {
+        padding: 19px 24px;
+        background: rgb(25, 24, 31);
+      }
+      #dialog .dialog-head .icon-btn {
+        width: 38px;
+        height: 38px;
+        border-radius: 12px;
+        border: 1px solid rgb(58, 55, 69);
+        color: rgb(210, 202, 223);
+      }
+      #dialog .dialog-footer {
+        z-index: 5;
+        background: rgb(25, 24, 31);
+        box-shadow: rgba(0, 0, 0, 0.063) 0px -8px 25px;
+      }
+      #dialog :where(input:not([type='checkbox']):not([type='radio']), textarea) {
+        border-radius: 12px;
+        border-color: rgb(69, 64, 79);
+        background: rgb(28, 26, 34);
+        font-size: 14px;
+      }
+      #dialog :where(input:not([type='checkbox']):not([type='radio']), textarea):hover {
+        border-color: rgb(114, 102, 127);
+      }
+      #dialog :where(input:not([type='checkbox']):not([type='radio']), textarea):focus {
+        border-color: var(--accent);
+        box-shadow: rgba(161, 130, 255, 0.094) 0px 0px 0px 3px;
+      }
+      #dialog .btn {
+        min-height: 43px;
+        font-size: 13.5px;
+        border-radius: 11px;
+      }
+      @keyframes v7-dialog-in {
+        0% {
+          opacity: 0.7;
+          transform: translateY(6px);
+        }
+        100% {
+          opacity: 1;
+          transform: translateY(0px);
+        }
+      }
+      @keyframes v7-panel-in {
+        0% {
+          opacity: 0.7;
+          transform: translateY(4px);
+        }
+        100% {
+          opacity: 1;
+          transform: translateY(0px);
+        }
+      }
+      .v7-select {
+        position: relative;
+        display: inline-flex;
+        min-width: 0px;
+        max-width: 100%;
+        vertical-align: middle;
+        align-items: center;
+      }
+      .v7-select > .v7-native-select {
+        display: none !important;
+      }
+      .v7-select-trigger {
+        min-height: 42px;
+        padding: 10px 12px;
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        gap: 13px;
+        width: 100%;
+        min-width: 0px;
+        border: 1px solid rgb(75, 67, 88);
+        border-radius: 11px;
+        background: rgb(32, 29, 40);
+        color: rgb(235, 228, 244);
+        text-align: left;
+        font-size: 13.5px;
+        font-weight: 450;
+        line-height: 1.45;
+        transition:
+          border-color 130ms,
+          background 130ms,
+          box-shadow 130ms;
+      }
+      .v7-select-trigger:hover {
+        background: rgb(44, 36, 55);
+        border-color: rgb(145, 118, 173);
+      }
+      .v7-select-trigger:focus-visible {
+        outline: rgb(182, 152, 241) solid 2px;
+        outline-offset: 3px;
+      }
+      .v7-select-trigger > .v7-select-value {
+        min-width: 0px;
+        white-space: normal;
+        overflow-wrap: anywhere;
+        text-align: left;
+        flex: 1 1 0%;
+      }
+      .v7-select-trigger > .icon {
+        width: 15px;
+        height: 15px;
+        flex: 0 0 auto;
+        color: rgb(186, 166, 217);
+      }
+      .v7-select-trigger:disabled {
+        cursor: not-allowed;
+        opacity: 0.55;
+      }
+      :where(.field, .d3-fields > label, .m5-field, .a4-field, .field-grid > label) > .v7-select {
+        display: flex;
+        width: 100%;
+      }
+      .v7-menu {
+        position: fixed;
+        z-index: 10050;
+        display: flex;
+        flex-direction: column;
+        min-width: 180px;
+        max-width: calc(-20px + 100vw);
+        padding: 7px;
+        background: rgb(36, 32, 45);
+        border: 1px solid rgb(106, 85, 126);
+        border-radius: 14px;
+        box-shadow:
+          rgba(0, 0, 0, 0.6) 0px 18px 50px,
+          rgba(221, 208, 255, 0.07) 0px 1px 0px inset;
+        color: rgb(238, 231, 250);
+        animation: v7-menu-in 120ms var(--v7-ease);
+        overflow: hidden;
+        box-sizing: border-box;
+      }
+      @keyframes v7-menu-in {
+        0% {
+          opacity: 0.55;
+          transform: translateY(-3px);
+        }
+        100% {
+          opacity: 1;
+          transform: translateY(0px);
+        }
+      }
+      .v7-menu-list {
+        overflow: auto;
+        overscroll-behavior: contain;
+        scrollbar-color: rgb(120, 97, 143) transparent;
+        scrollbar-width: thin;
+        min-height: 0px;
+        flex: 1 1 0%;
+        padding: 0px;
+      }
+      .v7-option {
+        display: flex;
+        gap: 10px;
+        align-items: center;
+        position: relative;
+        min-height: 42px;
+        padding: 10px 11px;
+        margin: 2px 0px;
+        border-radius: 8px;
+        font-size: 13.5px;
+        line-height: 1.5;
+        color: rgb(227, 219, 234);
+        cursor: pointer;
+        outline: none;
+        user-select: none;
+      }
+      .v7-option > .v7-option-copy {
+        min-width: 0px;
+        flex: 1 1 0%;
+        overflow-wrap: anywhere;
+        font-weight: 450;
+      }
+      .v7-option:hover,
+      .v7-option.is-active {
+        background: rgb(74, 54, 95);
+        color: rgb(255, 255, 255);
+      }
+      :where(.stepper a, .stepper button) {
+        min-height: 42px;
+        line-height: 1.5;
+        transition:
+          background 140ms,
+          color 140ms;
+        outline-offset: 3px;
+      }
+      :where(.stepper a, .stepper button):hover {
+        color: rgb(230, 213, 255);
+      }
+      :where(.a4-subnav a, .m5-nav-children a, .d3-dossier-tabs button) {
+        transition:
+          background 140ms,
+          color 140ms,
+          border-color 140ms;
+      }
+      @media (max-width: 760px) {
+        .v7-select-trigger {
+          min-height: 44px;
+        }
+      }
+      @media (prefers-reduced-motion: reduce) {
+        *,
+        ::before,
+        ::after {
+          scroll-behavior: auto !important;
+          animation-duration: 0.001ms !important;
+          animation-iteration-count: 1 !important;
+          transition-duration: 0.001ms !important;
+        }
+        .btn:not(:disabled):active {
+          transform: none;
+        }
+      }
+      .v7-select:has(.v7-select-error) {
+        flex-wrap: wrap;
+      }
+      .t8-root :is(h1, h2, h3, h4, p) {
+        margin: 0px;
+      }
+      .t8-root :is(button, a, input, textarea):focus-visible,
+      .t8-dialog :is(button, a, input, textarea):focus-visible {
+        outline: rgb(179, 154, 255) solid 2px;
+        outline-offset: 3px;
+      }
+      .t8-review-decisions :is(input, textarea) {
+        width: 100%;
+      }
+      .v12 :is(button, a, input, textarea, select):focus-visible {
+        outline: 2px solid var(--primary);
+        outline-offset: 4px;
+      }
+      html:not(.dark) .v7-select-trigger {
+        background: var(--surface);
+        border-color: var(--border);
+        color: var(--text);
+      }
+      html:not(.dark) .v7-select-trigger:hover,
+      html:not(.dark) .v7-select-trigger[aria-expanded='true'] {
+        background: var(--accent-bg);
+        border-color: var(--accent-line);
+      }
+      html:not(.dark) .v7-menu {
+        background: var(--surface);
+        border-color: var(--accent-line);
+        color: var(--text);
+        box-shadow: rgba(52, 34, 75, 0.15) 0px 12px 35px;
+      }
+      html:not(.dark) .v7-option {
+        color: var(--text);
+      }
+      html:not(.dark) .v7-option[aria-selected='true'],
+      html:not(.dark) .v7-option:hover,
+      html:not(.dark) .v7-option.is-active {
+        background: var(--accent-bg);
+        color: var(--accent);
+      }
+      .a14 :is(button, a, input, select, textarea):focus-visible,
+      .a14-guidance button:focus-visible {
+        outline: 2px solid var(--accent);
+        outline-offset: 3px;
+      }
+      html:not(.dark)
+        :is(
+          .a4-focus,
+          .a4-account-card.is-focus,
+          .a4-selection,
+          .m5-finance-hero,
+          .m5-collections-hero,
+          .t8-research-hero,
+          .t8-member-hero
+        ) {
+        --text: #f0eff8;
+        --secondary: #c7c4d7;
+        --muted: #b2afc3;
+        --surface: #1a1a22;
+        --surface2: #292632;
+        --border: #45404f;
+        --border2: #5b526b;
+        --accent: #c0aaff;
+        --accent-bg: #302541;
+        --accent-line: #514063;
+        color: var(--text);
+      }
+      html:not(.dark) #dialog .dialog-head,
+      html:not(.dark) #dialog .dialog-footer {
+        background: var(--surface);
+        border-color: var(--border);
+      }
+      html:not(.dark) #dialog .dialog-head .icon-btn {
+        color: var(--secondary);
+        border-color: var(--border);
+      }
+      html:not(.dark)
+        #dialog
+        :is(
+          input:not([type='checkbox']):not([type='radio']):not([type='range']):not([type='file']):not([type='hidden']),
+          textarea,
+          select
+        ) {
+        color: var(--text);
+        background: var(--surface);
+        border-color: var(--border);
+        color-scheme: light;
+      }
+      :root {
+        --v22-line: var(--border);
+        --v22-panel: var(--surface);
+        --v22-hover: var(--surface2);
+        --v22-ease: cubic-bezier(0.2, 0.7, 0.3, 1);
+        --v22-radius: 12px;
+        --v22-shadow: 0 12px 40px rgba(20, 18, 32, 0.12);
+      }
+      :root.dark {
+        --bg: #0b0b0e;
+        --surface: #151518;
+        --surface2: #1e1e23;
+        --sidebar: #131316;
+        --border: #2b2b32;
+        --border2: #3c3c45;
+        --text: #f2f2f5;
+        --secondary: #b2b1bd;
+        --muted: #9695a4;
+        --v22-panel: #151518;
+        --v22-hover: #202027;
+        --v22-shadow: 0 18px 58px #0008;
+      }
+      body.v22-design {
+        font-size: 14px;
+        letter-spacing: -0.08px;
+      }
+      .v22-design h1 {
+        font-weight: 650;
+        letter-spacing: -1px;
+        line-height: 1.17;
+      }
+      .v22-design h2 {
+        font-weight: 620;
+        letter-spacing: -0.5px;
+        line-height: 1.3;
+      }
+      .v22-design h3 {
+        font-weight: 620;
+        letter-spacing: -0.18px;
+      }
+      .v22-design .btn {
+        border-radius: 8px;
+        box-shadow: none;
+        transition:
+          background-color 130ms,
+          border-color 130ms,
+          color 130ms;
+        min-height: 36px;
+        font-weight: 560;
+      }
+      .v22-design .btn.primary,
+      .v22-design .laura-nav {
+        background: var(--primary);
+        color: rgb(255, 255, 255);
+        box-shadow: none;
+      }
+      .v22-design .btn.primary:hover,
+      .v22-design .laura-nav:hover {
+        background: var(--primary-hover);
+      }
+      .v22-design .btn.soft {
+        background: var(--accent-bg);
+        border: 1px solid var(--accent-line);
+        color: var(--accent);
+      }
+      .v22-design .btn.plain {
+        background: transparent;
+      }
+      .v22-design .btn.plain:hover {
+        background: var(--surface2);
+      }
+      .v22-design .icon-btn {
+        border-radius: 7px;
+        transition:
+          background-color 130ms,
+          color 130ms;
+      }
+      .v22-design .icon-btn:hover {
+        background: var(--surface2);
+      }
+      .v22-design .canvas {
+        padding-top: 28px;
+      }
+      .v22-design input:not([type='checkbox']):not([type='radio']),
+      .v22-design select,
+      .v22-design textarea {
+        border-radius: 8px;
+      }
+      .v22-design :where(button, a, input, textarea, select, summary):focus-visible {
+        outline: 2px solid var(--accent);
+        outline-offset: 3px;
+      }
+      .v22-design :where(button, a, input, textarea, select, summary) {
+        scroll-margin-top: 82px;
+        scroll-margin-bottom: 80px;
+      }
+      .v22-design .topbar {
+        background: var(--sidebar);
+        border-bottom: 1px solid var(--border);
+      }
+      .v22-design #dialog {
+        border-radius: 14px;
+        border: 1px solid var(--border2);
+        box-shadow: var(--v22-shadow);
+        background: var(--surface);
+        color: var(--text);
+      }
+      .v22-design #dialog::backdrop {
+        background: rgba(8, 8, 12, 0.62);
+        backdrop-filter: blur(3px);
+      }
+      .v22-design #dialog .dialog-head,
+      .v22-design #dialog .dialog-footer {
+        background: var(--surface);
+        box-shadow: none;
+      }
+      .v22-design #dialog .dialog-head {
+        border-bottom: 1px solid var(--border);
+        padding: 20px 24px;
+      }
+      .v22-design #dialog .dialog-head h2 {
+        font-size: 18px;
+        letter-spacing: -0.4px;
+      }
+      .v22-design #dialog .dialog-head .icon-btn {
+        background: transparent;
+        border: 0px;
+        border-radius: 7px;
+        color: var(--secondary);
+        width: 32px;
+        height: 32px;
+      }
+      .v22-design #dialog .dialog-body {
+        background: var(--surface);
+      }
+      .v22-design #dialog .dialog-footer {
+        border-top: 1px solid var(--border);
+        padding: 14px 24px;
+      }
+      .v22-design #dialog .btn {
+        border-radius: 8px;
+        min-height: 38px;
+        font-size: 13px;
+      }
+      .v22-design #dialog :where(input:not([type='checkbox']):not([type='radio']), select, textarea) {
+        background: var(--bg);
+        border-color: var(--border2);
+        color: var(--text);
+        border-radius: 8px;
+        font-size: 13px;
+      }
+      @keyframes v22-enter {
+        0% {
+          opacity: 0.7;
+        }
+        100% {
+          opacity: 1;
+        }
+      }
+      @media (max-width: 760px) {
+        .v22-design .canvas {
+          padding: 20px 17px 36px;
+        }
+        .v22-design #dialog .dialog-head {
+          padding: 17px 18px;
+        }
+        .v22-design #dialog .dialog-footer {
+          padding: 14px 18px;
+        }
+      }
+      @media (prefers-reduced-motion: reduce) {
+        .v22-design *,
+        .v22-design ::before,
+        .v22-design ::after {
+          animation: auto ease 0s 1 normal none running none !important;
+          transition: none !important;
+          scroll-behavior: auto !important;
+        }
+      }
+      .page-ob23 .canvas {
+        min-width: 0px;
+        overflow: visible;
+        padding: 30px 36px 20px !important;
+      }
+      .ob23 {
+        width: 100%;
+        max-width: 1140px;
+        margin: 0px auto;
+        padding-bottom: 32px;
+        color: var(--text);
+        font-size: 14px;
+      }
+      .ob23 h1,
+      .ob23 h2,
+      .ob23 h3,
+      .ob23 p {
+        margin: 0px;
+      }
+      .ob23 h2 {
+        font-size: 22px;
+        letter-spacing: -0.55px;
+        line-height: 1.3;
+        font-weight: 620;
+      }
+      .ob23 h3 {
+        font-size: 15px;
+        line-height: 1.4;
+        font-weight: 600;
+        letter-spacing: -0.15px;
+      }
+      .ob23 p {
+        line-height: 1.7;
+        color: var(--secondary);
+      }
+      .ob23 a {
+        color: inherit;
+      }
+      .ob23 .btn {
+        font-size: 13px;
+        white-space: normal;
+        min-height: 39px;
+        text-align: center;
+      }
+      .ob23 .btn.primary {
+        color: rgb(255, 255, 255);
+      }
+      .ob23 .btn.plain {
+        color: var(--secondary);
+      }
+      .ob23-kicker {
+        font-size: 10px;
+        font-weight: 650;
+        letter-spacing: 1.4px;
+        display: block;
+        color: var(--accent);
+        line-height: 1.6;
+      }
+      .ob23-heading {
+        display: flex;
+        justify-content: space-between;
+        align-items: flex-start;
+        gap: 25px;
+        margin: 7px 0px 28px;
+      }
+      .ob23-heading h1 {
+        font-size: clamp(26px, 2.45vw, 37px);
+        line-height: 1.17;
+        letter-spacing: -1px;
+        font-weight: 640;
+        margin: 12px 0px 13px;
+        max-width: 830px;
+      }
+      .ob23-heading h1:focus {
+        outline: none;
+      }
+      .ob23-heading > div:first-child {
+        flex: 1 1 0%;
+        min-width: 0px;
+      }
+      .ob23-heading > div > p {
+        max-width: 78ch;
+        font-size: 14px;
+        line-height: 1.7;
+      }
+      .ob23-actions {
+        display: flex;
+        align-items: center;
+        gap: 9px;
+        flex-wrap: wrap;
+      }
+      .ob23-small {
+        font-size: 12px !important;
+        color: var(--muted) !important;
+        line-height: 1.65 !important;
+      }
+      .ob23-save {
+        font-size: 11px;
+        color: var(--muted);
+        display: block;
+      }
+      .ob23-welcome {
+        display: grid;
+        grid-template-columns: 1.2fr 1fr;
+        border: 1px solid var(--border);
+        background: var(--surface);
+        border-radius: 13px;
+        overflow: hidden;
+      }
+      .ob23-welcome > div {
+        padding: 35px;
+      }
+      .ob23-welcome h2 {
+        font-size: 28px;
+        letter-spacing: -0.7px;
+        line-height: 1.25;
+        margin-bottom: 20px;
+      }
+      .ob23-welcome > div > p {
+        font-size: 14px;
+        max-width: 55ch;
+        margin-bottom: 25px;
+      }
+      .ob23-welcome-detail {
+        display: flex;
+        flex-wrap: wrap;
+        gap: 10px 18px;
+        margin-top: 31px;
+        border-top: 1px solid var(--border);
+        padding-top: 18px;
+        color: var(--muted);
+        font-size: 11px;
+        line-height: 1.6;
+      }
+      .ob23-welcome-detail span::before {
+        content: '✓';
+        color: var(--accent);
+        padding-right: 7px;
+      }
+      .ob23-itinerary {
+        background: var(--surface2);
+        padding: 30px 32px;
+        border-left: 1px solid var(--border);
+      }
+      .ob23-itinerary > div {
+        display: flex;
+        gap: 20px;
+        border-top: 1px solid var(--border);
+        padding: 23px 0px 0px;
+        margin-top: 23px;
+      }
+      .ob23-itinerary > div > span {
+        font-size: 12px;
+        color: var(--muted);
+        font-variant-numeric: tabular-nums;
+        padding-top: 3px;
+      }
+      .ob23-itinerary h3 {
+        font-size: 16px;
+        margin-bottom: 7px;
+      }
+      .ob23-itinerary p {
+        font-size: 13px;
+      }
+      .ob23-bottomline {
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        gap: 20px;
+        margin-top: 25px;
+        padding: 20px 0px;
+        border-bottom: 1px solid var(--border);
+      }
+      .ob23-bottomline > div {
+        display: flex;
+        align-items: center;
+        gap: 12px;
+      }
+      .ob23-bottomline .face {
+        width: 39px;
+        height: 39px;
+        border-radius: 50%;
+      }
+      .ob23-bottomline strong {
+        display: block;
+        font-size: 13px;
+        font-weight: 550;
+      }
+      .ob23-bottomline small {
+        font-size: 12px;
+        color: var(--muted);
+        display: block;
+        margin-top: 5px;
+        line-height: 1.5;
+      }
+      .ob23-how {
+        display: grid;
+        grid-template-columns: 1.25fr 1fr;
+        gap: 35px;
+      }
+      .ob23-numbered {
+        display: flex;
+        gap: 25px;
+        padding: 22px 0px;
+        border-top: 1px solid var(--border);
+      }
+      .ob23-numbered > span {
+        color: var(--accent);
+        font-variant-numeric: tabular-nums;
+        padding-top: 4px;
+      }
+      .ob23-numbered h2 {
+        font-size: 20px;
+        margin-bottom: 11px;
+      }
+      .ob23-numbered p {
+        font-size: 14px;
+      }
+      .ob23-panel {
+        border: 1px solid var(--border);
+        background: var(--surface);
+        border-radius: 12px;
+        padding: 25px;
+      }
+      .ob23-panel h2 {
+        font-size: 19px;
+        margin-bottom: 14px;
+      }
+      .ob23-panel > p {
+        font-size: 13px;
+      }
+      .ob23-impact {
+        margin: 20px 0px 0px;
+      }
+      .ob23-impact > div {
+        padding: 15px 0px;
+        border-top: 1px solid var(--border);
+        display: grid;
+        grid-template-columns: 125px 1fr;
+        gap: 14px;
+      }
+      .ob23-impact dt {
+        font-size: 12px;
+        font-weight: 600;
+      }
+      .ob23-impact dd {
+        font-size: 13px;
+        line-height: 1.65;
+        color: var(--secondary);
+        margin: 0px;
+      }
+      .ob23-laura {
+        border: 1px solid var(--border);
+        border-radius: 13px;
+        background: var(--surface);
+        overflow: hidden;
+      }
+      .ob23-laura-intro {
+        padding: 28px;
+        display: flex;
+        align-items: center;
+        gap: 22px;
+      }
+      .ob23-laura-intro .face {
+        width: 64px;
+        height: 64px;
+        border-radius: 50%;
+        flex-shrink: 0;
+      }
+      .ob23-laura-intro h2 {
+        margin-bottom: 10px;
+      }
+      .ob23-laura-intro p {
+        max-width: 78ch;
+      }
+      .ob23-examples {
+        display: grid;
+        grid-template-columns: repeat(3, minmax(0px, 1fr));
+        border-top: 1px solid var(--border);
+        border-bottom: 1px solid var(--border);
+        background: var(--bg);
+      }
+      .ob23-examples > div {
+        padding: 24px;
+        border-right: 1px solid var(--border);
+      }
+      .ob23-examples > div:last-child {
+        border: 0px;
+      }
+      .ob23-examples span {
+        font-size: 11px;
+        color: var(--accent);
+        font-weight: 600;
+      }
+      .ob23-examples p {
+        font-size: 13px;
+        margin-top: 14px;
+      }
+      .ob23-control {
+        padding: 23px 28px;
+      }
+      .ob23-control h3 {
+        margin-bottom: 8px;
+      }
+      .ob23-control p {
+        font-size: 13px;
+      }
+      .ob23-footer {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        gap: 18px;
+        margin-top: 28px;
+        border-top: 1px solid var(--border);
+        padding: 22px 0px 0px;
+      }
+      .ob23-footer > div {
+        display: flex;
+        align-items: center;
+        gap: 14px;
+        flex-wrap: wrap;
+      }
+      .ob23-footer > div:last-child {
+        justify-content: flex-end;
+      }
+      .ob23-footer .ob23-save {
+        font-size: 10px;
+      }
+      .ob23-info {
+        display: flex;
+        align-items: flex-start;
+        gap: 10px;
+        background: var(--surface2);
+        border-left: 2px solid var(--accent);
+        border-radius: 0px 7px 7px 0px;
+        padding: 14px 16px;
+        margin: 20px 0px;
+        font-size: 12px;
+        color: var(--secondary);
+        line-height: 1.65;
+      }
+      .ob23-info .icon {
+        color: var(--accent);
+        margin-top: 3px;
+        flex-shrink: 0;
+      }
+      .ob23-help {
+        margin: -7px 0px 24px;
+      }
+      .ob23-help summary {
+        display: flex;
+        align-items: center;
+        gap: 7px;
+        cursor: pointer;
+        color: var(--accent);
+        font-size: 12px;
+        padding: 8px 0px;
+      }
+      .ob23-status-answer {
+        display: flex;
+        gap: 12px;
+        align-items: center;
+        border: 1px dashed var(--border2);
+        padding: 14px;
+        border-radius: 7px;
+        color: var(--secondary);
+        font-size: 13px;
+      }
+      .ob23-status-answer span {
+        flex: 1 1 0%;
+      }
+      .ob23-status-answer small {
+        display: block;
+        font-size: 11px;
+        color: var(--muted);
+        margin-top: 5px;
+      }
+      .ob23-tags {
+        display: flex;
+        flex-wrap: wrap;
+        gap: 7px;
+        margin: 0px 0px 9px;
+      }
+      .ob23-tags > span {
+        display: flex;
+        align-items: center;
+        gap: 10px;
+        background: var(--accent-bg);
+        color: var(--accent);
+        font-size: 12px;
+        padding: 6px 9px;
+        border-radius: 5px;
+        overflow-wrap: anywhere;
+      }
+      .ob23-tags button {
+        background: none;
+        border: 0px;
+        color: inherit;
+        padding: 0px;
+        cursor: pointer;
+        display: flex;
+      }
+      .ob23-search {
+        display: flex;
+        align-items: center;
+        gap: 11px;
+        background: var(--surface);
+        border: 1px solid var(--border2);
+        border-radius: 8px;
+        padding: 0px 13px;
+        flex: 1 1 0%;
+        min-width: 0px;
+      }
+      .ob23-search:focus-within {
+        border-color: var(--accent);
+      }
+      .ob23-search .icon {
+        color: var(--muted);
+        flex-shrink: 0;
+      }
+      .ob23-search input {
+        padding: 13px 0px;
+        width: 100%;
+        min-width: 0px;
+        color: var(--text);
+        font-style: inherit;
+        font-variant: inherit;
+        font-weight: inherit;
+        font-stretch: inherit;
+        line-height: inherit;
+        font-family: inherit;
+        font-optical-sizing: inherit;
+        font-size-adjust: inherit;
+        font-kerning: inherit;
+        font-feature-settings: inherit;
+        font-variation-settings: inherit;
+        font-size: 13px;
+        border: 0px !important;
+        outline: none !important;
+        box-shadow: none !important;
+        background: transparent !important;
+      }
+      .ob23-group-list {
+        border-top: 1px solid var(--border);
+        margin-top: 12px;
+      }
+      .ob23-group-list > a {
+        display: flex;
+        align-items: center;
+        gap: 18px;
+        padding: 22px 6px;
+        border-bottom: 1px solid var(--border);
+      }
+      .ob23-group-list > a:hover {
+        background: var(--surface);
+      }
+      .ob23-group-list > a > div {
+        flex: 1 1 0%;
+        min-width: 0px;
+      }
+      .ob23-group-list p {
+        font-size: 12px;
+        margin-top: 7px;
+      }
+      .ob23-group-list > a > .icon {
+        color: var(--muted);
+        flex-shrink: 0;
+      }
+      #dialog.ob23-dialog {
+        width: min(800px, -28px + 100vw);
+        max-width: 800px;
+        max-height: 92dvh;
+        overflow: hidden;
+        padding: 0px;
+      }
+      #dialog.ob23-dialog .dialog-head {
+        flex-shrink: 0;
+        padding: 20px 24px !important;
+      }
+      #dialog.ob23-dialog .dialog-head h2 {
+        max-width: calc(100% - 45px);
+        font-size: 18px;
+        line-height: 1.4;
+      }
+      #dialog.ob23-dialog .dialog-body {
+        overflow-y: auto;
+        padding: 20px 24px;
+        min-height: 0px;
+      }
+      #dialog.ob23-dialog .dialog-footer {
+        flex-shrink: 0;
+        display: flex;
+        justify-content: flex-end;
+        gap: 8px;
+        flex-wrap: wrap;
+        padding: 15px 24px !important;
+      }
+      .ob23-picker > p {
+        font-size: 13px;
+        color: var(--secondary);
+        line-height: 1.65;
+        margin: 0px 0px 18px;
+      }
+      .ob23-picker-top {
+        display: flex;
+        gap: 14px;
+        align-items: center;
+      }
+      .ob23-picker-top > span {
+        font-size: 11px;
+        color: var(--muted);
+        white-space: nowrap;
+      }
+      .ob23-option-groups {
+        display: flex;
+        align-items: center;
+        gap: 14px;
+        margin-top: 12px;
+      }
+      .ob23-option-groups:empty {
+        display: none;
+      }
+      .ob23-option-groups label {
+        font-size: 11px;
+        color: var(--muted);
+      }
+      .ob23-option-groups select {
+        font-style: inherit;
+        font-variant: inherit;
+        font-weight: inherit;
+        font-stretch: inherit;
+        line-height: inherit;
+        font-family: inherit;
+        font-optical-sizing: inherit;
+        font-size-adjust: inherit;
+        font-kerning: inherit;
+        font-feature-settings: inherit;
+        font-variation-settings: inherit;
+        font-size: 12px;
+        padding: 8px 11px;
+        flex: 1 1 0%;
+        min-width: 0px;
+        border: 1px solid var(--border2);
+        background: var(--bg);
+        border-radius: 7px;
+        color: var(--text);
+      }
+      .ob23-selection-preview {
+        display: flex;
+        flex-wrap: wrap;
+        gap: 6px;
+        padding: 15px 0px;
+        margin-bottom: 5px;
+        border-bottom: 1px solid var(--border);
+      }
+      .ob23-selection-preview > button {
+        display: flex;
+        align-items: center;
+        gap: 8px;
+        padding: 5px 8px;
+        background: var(--accent-bg);
+        border: 1px solid var(--accent-line);
+        color: var(--accent);
+        border-radius: 5px;
+        font-style: inherit;
+        font-variant: inherit;
+        font-weight: inherit;
+        font-stretch: inherit;
+        line-height: inherit;
+        font-family: inherit;
+        font-optical-sizing: inherit;
+        font-size-adjust: inherit;
+        font-kerning: inherit;
+        font-feature-settings: inherit;
+        font-variation-settings: inherit;
+        font-size: 11px;
+        text-align: left;
+        cursor: pointer;
+        max-width: 100%;
+      }
+      .ob23-selection-preview > button > span {
+        overflow-wrap: anywhere;
+      }
+      .ob23-selection-preview > button > .icon {
+        flex-shrink: 0;
+        width: 12px;
+        height: 12px;
+      }
+      .ob23-option-list section > h3 {
+        font-size: 11px;
+        letter-spacing: 0.5px;
+        color: var(--secondary);
+        font-weight: 600;
+        margin: 18px 0px 10px;
+      }
+      .ob23-option-grid {
+        display: grid;
+        grid-template-columns: repeat(2, minmax(0px, 1fr));
+        gap: 8px;
+      }
+      .ob23-option-grid > label {
+        display: flex;
+        align-items: flex-start;
+        gap: 11px;
+        border: 1px solid var(--border);
+        border-radius: 8px;
+        padding: 13px 12px;
+        font-size: 13px;
+        line-height: 1.5;
+        cursor: pointer;
+        background: var(--surface);
+      }
+      .ob23-option-grid > label:hover {
+        border-color: var(--border2);
+        background: var(--surface2);
+      }
+      .ob23-option-grid > label.selected {
+        border-color: var(--accent-line);
+        background: var(--accent-bg);
+      }
+      .ob23-option-grid input {
+        accent-color: var(--primary);
+        width: 16px;
+        height: 16px;
+        flex-shrink: 0;
+        margin-top: 2px;
+      }
+      .ob23-option-grid strong {
+        font-size: 12px;
+        font-weight: 550;
+        color: var(--text);
+        overflow-wrap: anywhere;
+      }
+      .ob23-custom {
+        padding: 20px 0px 0px;
+        margin-top: 20px;
+        border-top: 1px solid var(--border);
+      }
+      .ob23-custom > label {
+        font-size: 12px;
+        font-weight: 550;
+        color: var(--text);
+        display: block;
+        margin-bottom: 9px;
+      }
+      .ob23-custom > div {
+        display: flex;
+        gap: 9px;
+      }
+      .ob23-custom input {
+        min-width: 0px;
+        flex: 1 1 0%;
+        padding: 10px 12px;
+        font: inherit;
+        border: 1px solid var(--border2);
+        border-radius: 8px;
+      }
+      .ob23-custom p {
+        color: var(--muted);
+        margin-top: 9px;
+        line-height: 1.6;
+        font-size: 10px !important;
+      }
+      .ob23-dialog-content p {
+        color: var(--secondary);
+        font-size: 13px;
+        line-height: 1.7;
+        margin: 0px 0px 18px;
+      }
+      .ob23-top-title {
+        font-size: 17px;
+        font-weight: 650;
+        display: flex;
+        align-items: center;
+        gap: 20px;
+        letter-spacing: -0.3px;
+        white-space: nowrap;
+      }
+      .ob23-top-title span {
+        font-size: 12px;
+        color: var(--muted);
+        font-weight: 400;
+        letter-spacing: 0px;
+      }
+      .ob23-top-actions {
+        display: flex;
+        gap: 6px;
+        align-items: center;
+        margin-left: auto;
+      }
+      .ob23-top-actions .btn {
+        font-size: 11px;
+        min-height: 32px;
+      }
+      .page-ob23 #topbar {
+        gap: 12px;
+      }
+      @media (max-width: 1150px) {
+        .page-ob23 .canvas {
+          padding: 25px 25px 20px !important;
+        }
+        .ob23-welcome > div {
+          padding: 26px;
+        }
+        .ob23-itinerary {
+          padding: 25px;
+        }
+        .ob23-welcome h2 {
+          font-size: 25px;
+        }
+        .ob23-top-title span {
+          display: none;
+        }
+        .ob23-heading h1 {
+          font-size: 30px;
+        }
+      }
+      @media (max-width: 950px) {
+        .ob23-heading {
+          flex-wrap: wrap;
+          gap: 10px;
+        }
+        .ob23-how {
+          gap: 22px;
+          grid-template-columns: 1fr;
+        }
+        .ob23-welcome {
+          grid-template-columns: 1fr;
+        }
+        .ob23-itinerary {
+          border-left: 0px;
+          border-top: 1px solid var(--border);
+          display: grid;
+          grid-template-columns: repeat(3, minmax(0px, 1fr));
+          gap: 18px;
+        }
+        .ob23-itinerary > .ob23-kicker {
+          grid-column: 1 / -1;
+        }
+        .ob23-itinerary > div {
+          border: 0px;
+          padding: 0px;
+          margin: 0px;
+          gap: 10px;
+        }
+        .ob23-itinerary h3 {
+          font-size: 14px;
+        }
+        .ob23-itinerary p {
+          font-size: 12px;
+        }
+        .ob23-footer > div:last-child .ob23-save {
+          display: none;
+        }
+        .ob23-examples {
+          grid-template-columns: 1fr;
+        }
+        .ob23-examples > div {
+          border-right: 0px;
+          border-bottom: 1px solid var(--border);
+        }
+        .ob23-examples p {
+          margin-top: 7px;
+        }
+      }
+      @media (max-width: 760px) {
+        .page-ob23 .canvas {
+          padding: 20px 17px !important;
+        }
+        .ob23-heading h1 {
+          font-size: 28px;
+          letter-spacing: -0.8px;
+        }
+        .ob23-heading > div > p {
+          font-size: 13px;
+        }
+        .ob23-top-actions .btn {
+          font-size: 10px;
+          max-width: 125px;
+          padding: 6px;
+        }
+        .ob23-top-title {
+          font-size: 16px;
+        }
+        .ob23-bottomline {
+          flex-direction: column;
+          align-items: flex-start;
+          gap: 12px;
+        }
+        .ob23-itinerary {
+          display: block;
+          padding: 22px;
+        }
+        .ob23-itinerary > div {
+          margin-top: 20px;
+        }
+        .ob23-welcome > div {
+          padding: 23px;
+        }
+        .ob23-welcome-detail {
+          margin-top: 22px;
+        }
+        .ob23-heading {
+          margin-bottom: 22px;
+        }
+        .ob23-laura-intro {
+          padding: 23px;
+          align-items: flex-start;
+          gap: 15px;
+        }
+        .ob23-laura-intro .face {
+          width: 43px;
+          height: 43px;
+        }
+        .ob23-laura-intro h2 {
+          font-size: 20px;
+        }
+        .ob23-control {
+          padding: 20px;
+        }
+        .ob23-footer {
+          flex-direction: column;
+          align-items: stretch;
+        }
+        .ob23-footer > div {
+          justify-content: space-between;
+        }
+        .ob23-footer > div:last-child {
+          justify-content: flex-end;
+        }
+        .ob23-footer > div:last-child .primary {
+          width: 100%;
+        }
+        .ob23-footer .btn {
+          padding: 10px 12px;
+        }
+        .ob23-option-grid {
+          grid-template-columns: 1fr;
+        }
+        #dialog.ob23-dialog .dialog-head {
+          padding: 17px !important;
+        }
+        #dialog.ob23-dialog .dialog-body {
+          padding: 17px;
+        }
+        #dialog.ob23-dialog .dialog-footer {
+          padding: 14px 17px !important;
+        }
+        .ob23-picker-top {
+          flex-direction: column;
+          align-items: stretch;
+          gap: 10px;
+        }
+        .ob23-picker-top > span {
+          text-align: right;
+        }
+        .ob23-option-groups {
+          align-items: flex-start;
+          flex-direction: column;
+          gap: 7px;
+        }
+        .ob23-option-groups select {
+          width: 100%;
+        }
+        .ob23-custom > div {
+          flex-wrap: wrap;
+        }
+        .ob23-custom input {
+          min-width: 150px;
+        }
+        .ob23-selection-preview {
+          max-height: 125px;
+          overflow-y: auto;
+        }
+        .ob23-option-grid strong {
+          font-size: 13px;
+        }
+        .ob23-group-list > a {
+          padding: 18px 0px;
+          gap: 12px;
+        }
+        .ob23-group-list h3 {
+          font-size: 14px;
+        }
+        .ob23-impact > div {
+          grid-template-columns: 1fr;
+          gap: 7px;
+        }
+      }
+      @media (prefers-reduced-motion: reduce) {
+        .ob23 * {
+          transition: none !important;
+          scroll-behavior: auto !important;
+        }
+      }
+      .ob23-footer {
+        position: sticky;
+        bottom: 0px;
+        background: var(--bg);
+        z-index: 3;
+        padding-bottom: 15px;
+      }
+      @media (max-width: 760px) {
+        .ob23-footer {
+          position: static;
+        }
+      }
+    </style>
+    <style id="addon">
+      :root {
+        --add: #b45309;
+        --add-ink: #fff;
+      }
+      :root.dark {
+        --add: #f59e0b;
+        --add-ink: #1c1917;
+      }
+      [hidden] {
+        display: none !important;
+      }
+      /* ---- plancher 12 px (D80) : les tailles de Théo sous 12 px remontent à 12 px ---- */
+      .ob23-kicker,
+      .ob23-steps > a > span,
+      .ob23-steps strong,
+      .ob23-steps small,
+      .ob23-control-hint,
+      .ob23-save,
+      .ob23-footer .ob23-save,
+      .ob23-qnum,
+      .ob23-field-foot select,
+      .ob23-field-foot .btn,
+      .ob23-picked > em,
+      .ob23-welcome-detail,
+      .ob23-status-answer small,
+      .ob23-index,
+      .ob23-theme-grid footer span,
+      .ob23-group-list small,
+      .ob23-review-summary small,
+      .ob23-strategy-index,
+      .ob23-next small,
+      .ob23-catalog-tools > span,
+      .ob23-audit-state small,
+      .ob23-examples span {
+        font-size: 12px !important;
+      }
+      .ob23-field-foot select {
+        min-height: 44px;
+      }
+      .ob23-steps > a {
+        min-height: 44px;
+      }
+      /* statut posé sur une question : la saisie se range sous l’état */
+      .ob23-field.is-status .ob23-selector,
+      .ob23-field.is-status .ob23-control-hint,
+      .ob23-field.is-status .ob23-input,
+      .ob23-field.is-status .ob23-tags,
+      .ob23-field.is-status .ob23-tag-entry {
+        display: none;
+      }
+      .toast-container {
+        left: 26px;
+      }
+      /* ---- composants ajoutés, dans le langage de Théo ---- */
+      .ob-badge {
+        display: inline-flex;
+        align-items: center;
+        gap: 6px;
+        font-size: 12px;
+        line-height: 1.5;
+        padding: 3px 9px;
+        border-radius: 999px;
+        border: 1px solid var(--border2);
+        color: var(--secondary);
+        background: var(--surface);
+        white-space: nowrap;
+      }
+      .ob-badge .icon {
+        width: 13px;
+        height: 13px;
+      }
+      .ob-badge.ok {
+        color: var(--success);
+        border-color: transparent;
+        background: var(--success-bg);
+      }
+      .ob-badge.warn {
+        color: var(--warning);
+        border-color: transparent;
+        background: var(--warning-bg);
+      }
+      .ob-badge.info {
+        color: var(--info);
+        border-color: transparent;
+        background: var(--info-bg);
+      }
+      .ob-badge.danger {
+        color: var(--danger);
+        border-color: transparent;
+        background: var(--danger-bg);
+      }
+      .ob-prefill {
+        display: flex;
+        align-items: center;
+        gap: 10px;
+        flex-wrap: wrap;
+        margin: 10px 0 0;
+        font-size: 12px;
+        color: var(--muted);
+      }
+      .ob-prefill .btn {
+        min-height: 44px;
+        font-size: 12px;
+      }
+      .ob-consequence {
+        margin-top: 10px;
+      }
+      .ob-consequence summary {
+        display: inline-flex;
+        align-items: center;
+        gap: 7px;
+        min-height: 44px;
+        cursor: pointer;
+        color: var(--accent);
+        font-size: 12px;
+        list-style: none;
+      }
+      .ob-consequence summary::-webkit-details-marker {
+        display: none;
+      }
+      .ob-consequence p {
+        font-size: 13px !important;
+        border-left: 2px solid var(--accent-line);
+        padding: 4px 0 4px 14px;
+        max-width: 70ch;
+      }
+      .ob-contradiction {
+        border: 1px solid var(--border);
+        border-left: 2px solid var(--warning);
+        border-radius: 0 9px 9px 0;
+        background: var(--surface);
+        padding: 18px 20px;
+        margin: 0 0 25px;
+      }
+      .ob-contradiction h3 {
+        margin: 6px 0 6px;
+      }
+      .ob-contradiction p {
+        font-size: 13px;
+        max-width: 70ch;
+      }
+      .ob-contradiction .ob23-actions {
+        margin-top: 14px;
+      }
+      .ob-bloc-head {
+        display: flex;
+        justify-content: space-between;
+        align-items: baseline;
+        gap: 16px;
+        margin: 8px 0 22px;
+        padding-top: 26px;
+        border-top: 1px solid var(--border);
+      }
+      .ob-bloc-head:first-child {
+        border-top: 0;
+        padding-top: 0;
+      }
+      .ob-bloc-head h2 {
+        font-size: 20px !important;
+      }
+      .ob-bloc-head span {
+        font-size: 12px;
+        color: var(--muted);
+        font-variant-numeric: tabular-nums;
+        white-space: nowrap;
+      }
+      .ob-drop {
+        border: 1px dashed var(--border2);
+        border-radius: 13px;
+        background: var(--surface);
+        padding: 26px;
+        display: grid;
+        grid-template-columns: minmax(0, 1fr) auto;
+        gap: 22px;
+        align-items: center;
+        margin: 0 0 30px;
+      }
+      .ob-drop h2 {
+        font-size: 19px !important;
+        margin-bottom: 8px !important;
+      }
+      .ob-drop p {
+        font-size: 13px;
+        max-width: 70ch;
+      }
+      .ob-drop ul {
+        list-style: none;
+        margin: 14px 0 0;
+        padding: 0;
+        display: flex;
+        flex-wrap: wrap;
+        gap: 8px;
+      }
+      .ob-file-row {
+        display: grid;
+        grid-template-columns: minmax(0, 1.2fr) minmax(0, 1fr);
+        gap: 16px;
+        align-items: start;
+        padding: 16px 0;
+        border-top: 1px solid var(--border);
+      }
+      .ob-file-row:first-of-type {
+        border-top: 0;
+      }
+      .ob-file-row h3 {
+        font-size: 14px !important;
+        display: flex;
+        align-items: center;
+        gap: 8px;
+        overflow-wrap: anywhere;
+      }
+      .ob-file-row p {
+        font-size: 12px !important;
+        color: var(--muted) !important;
+        margin-top: 5px !important;
+      }
+      .ob-file-row label {
+        display: block;
+        font-size: 12px;
+        color: var(--muted);
+        margin-bottom: 6px;
+      }
+      .ob-file-row select {
+        width: 100%;
+        min-height: 44px;
+        background: var(--surface);
+        border: 1px solid var(--border2);
+        border-radius: 8px;
+        color: var(--text);
+        font: inherit;
+        font-size: 13px;
+        padding: 8px 10px;
+      }
+      .ob-phases {
+        list-style: none;
+        margin: 16px 0 0;
+        padding: 0;
+        display: grid;
+        gap: 0;
+      }
+      .ob-phases li {
+        display: grid;
+        grid-template-columns: 28px minmax(0, 1fr) auto;
+        gap: 12px;
+        align-items: center;
+        padding: 12px 0;
+        border-top: 1px solid var(--border);
+        font-size: 13px;
+        color: var(--secondary);
+      }
+      .ob-phases li:first-child {
+        border-top: 0;
+      }
+      .ob-phases li .icon {
+        color: var(--muted);
+      }
+      .ob-phases li.done .icon {
+        color: var(--success);
+      }
+      .ob-phases li.now {
+        color: var(--text);
+      }
+      .ob-phases li.now .icon {
+        color: var(--accent);
+      }
+      .ob-phases small {
+        font-size: 12px;
+        color: var(--muted);
+      }
+      .ob-after {
+        display: grid;
+        grid-template-columns: minmax(0, 1.25fr) minmax(0, 1fr);
+        gap: 22px;
+        margin-top: 30px;
+        align-items: start;
+      }
+      .ob-card {
+        border: 1px solid var(--border);
+        border-radius: 13px;
+        background: var(--surface);
+        padding: 24px;
+      }
+      .ob-card > h2 {
+        font-size: 19px !important;
+        margin-bottom: 6px !important;
+      }
+      .ob-card > p {
+        font-size: 13px;
+      }
+      .ob-account {
+        display: grid;
+        grid-template-columns: 38px minmax(0, 1fr) auto;
+        gap: 14px;
+        align-items: center;
+        padding: 15px 0;
+        border-top: 1px solid var(--border);
+        text-decoration: none;
+      }
+      .ob-account:first-of-type {
+        margin-top: 14px;
+      }
+      .ob-account .ob-logo {
+        width: 38px;
+        height: 38px;
+        border-radius: 9px;
+        background: var(--surface2);
+        display: grid;
+        place-items: center;
+        font-size: 13px;
+        font-weight: 650;
+        color: var(--secondary);
+      }
+      .ob-account h3 {
+        font-size: 14px !important;
+      }
+      .ob-account p {
+        font-size: 12px !important;
+        margin-top: 3px !important;
+      }
+      .ob-check {
+        list-style: none;
+        margin: 14px 0 0;
+        padding: 0;
+      }
+      .ob-check li {
+        display: grid;
+        grid-template-columns: 24px minmax(0, 1fr) auto;
+        gap: 12px;
+        align-items: center;
+        padding: 13px 0;
+        border-top: 1px solid var(--border);
+      }
+      .ob-check li:first-child {
+        border-top: 0;
+      }
+      .ob-check li .icon {
+        color: var(--muted);
+      }
+      .ob-check li.done .icon {
+        color: var(--success);
+      }
+      .ob-check strong {
+        display: block;
+        font-size: 13px;
+        font-weight: 580;
+      }
+      .ob-check small {
+        display: block;
+        font-size: 12px;
+        color: var(--muted);
+        margin-top: 3px;
+        line-height: 1.5;
+      }
+      .ob-check .btn {
+        min-height: 44px;
+        font-size: 12px;
+      }
+      .ob-pending {
+        border: 1px solid var(--border);
+        border-radius: 13px;
+        background: var(--surface);
+        margin: 0 0 30px;
+        overflow: hidden;
+      }
+      .ob-pending > header {
+        display: flex;
+        justify-content: space-between;
+        align-items: baseline;
+        gap: 16px;
+        padding: 20px 22px;
+        border-bottom: 1px solid var(--border);
+      }
+      .ob-pending > header h2 {
+        font-size: 17px !important;
+      }
+      .ob-pending > header span {
+        font-size: 12px;
+        color: var(--muted);
+      }
+      .ob-pending a {
+        display: grid;
+        grid-template-columns: minmax(0, 1fr) auto 18px;
+        gap: 14px;
+        align-items: center;
+        padding: 14px 22px;
+        border-top: 1px solid var(--border);
+        text-decoration: none;
+        min-height: 44px;
+      }
+      .ob-pending a:first-of-type {
+        border-top: 0;
+      }
+      .ob-pending a:hover {
+        background: var(--surface2);
+      }
+      .ob-pending a strong {
+        font-size: 13px;
+        font-weight: 550;
+      }
+      .ob-pending a small {
+        display: block;
+        font-size: 12px;
+        color: var(--muted);
+        margin-top: 3px;
+      }
+      .ob-maturity {
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        gap: 16px;
+        border-top: 1px solid var(--border);
+        padding: 16px 0 0;
+        margin-top: 18px;
+      }
+      .ob-maturity p {
+        font-size: 13px;
+      }
+      .ob-access {
+        margin: 0 0 22px;
+      }
+      /* ---- mobile : le produit, pas un repli ---- */
+      @media (max-width: 767px) {
+        .ob-drop {
+          grid-template-columns: 1fr;
+          padding: 20px;
+        }
+        .ob-after {
+          grid-template-columns: 1fr;
+        }
+        .ob-file-row {
+          grid-template-columns: 1fr;
+        }
+        .ob-card {
+          padding: 18px;
+        }
+        .ob-account {
+          grid-template-columns: 38px minmax(0, 1fr);
+        }
+        .ob-account > .icon {
+          display: none;
+        }
+        .ob-check li {
+          grid-template-columns: 24px minmax(0, 1fr);
+        }
+        .ob-check li .btn {
+          grid-column: 2;
+          justify-self: start;
+        }
+        .ob-maturity {
+          flex-direction: column;
+          align-items: flex-start;
+        }
+        .ob-bloc-head {
+          flex-direction: column;
+          gap: 4px;
+        }
+      }
+      /* ---- couche de relecture (hors produit) ---- */
+      .rv {
+        position: fixed;
+        top: 6px;
+        right: 62px;
+        z-index: 200;
+        display: flex;
+        flex-direction: column;
+        align-items: flex-end;
+        gap: 8px;
+        font-family: inherit;
+        max-width: calc(100vw - 28px);
+      }
+      .rv-bar {
+        display: flex;
+        gap: 6px;
+        align-items: center;
+        background: var(--surface);
+        border: 1px solid var(--border2);
+        border-radius: 999px;
+        padding: 4px;
+        box-shadow: var(--shadow);
+      }
+      .rv-switch {
+        display: inline-flex;
+        align-items: center;
+        gap: 8px;
+        min-height: 44px;
+        padding: 0 14px 0 8px;
+        border-radius: 999px;
+        border: 0;
+        background: none;
+        color: var(--text);
+        font: inherit;
+        font-size: 13px;
+        font-weight: 650;
+        cursor: pointer;
+      }
+      .rv-switch .knob {
+        width: 34px;
+        height: 20px;
+        border-radius: 999px;
+        background: var(--border2);
+        position: relative;
+        transition: background 0.15s;
+      }
+      .rv-switch .knob::after {
+        content: '';
+        position: absolute;
+        top: 3px;
+        left: 3px;
+        width: 14px;
+        height: 14px;
+        border-radius: 50%;
+        background: #fff;
+        transition: transform 0.15s;
+      }
+      .rv-switch[aria-pressed='true'] .knob {
+        background: var(--add);
+      }
+      .rv-switch[aria-pressed='true'] .knob::after {
+        transform: translateX(14px);
+      }
+      .rv-theme {
+        width: 44px;
+        height: 44px;
+        border-radius: 50%;
+        border: 0;
+        background: none;
+        color: var(--secondary);
+        display: grid;
+        place-items: center;
+        cursor: pointer;
+      }
+      .rv-panel {
+        position: fixed;
+        right: 14px;
+        bottom: 14px;
+        width: min(340px, calc(100vw - 28px));
+        max-height: min(58dvh, 560px);
+        overflow: auto;
+        background: var(--surface);
+        border: 1px solid var(--border2);
+        border-radius: 14px;
+        box-shadow: var(--shadow);
+        padding: 14px 16px;
+        font-size: 13px;
+        color: var(--text);
+      }
+      .rv-panel h3 {
+        font-size: 12px;
+        letter-spacing: 0.06em;
+        text-transform: uppercase;
+        color: var(--muted);
+        margin: 12px 0 6px;
+      }
+      .rv-panel h3:first-child {
+        margin-top: 0;
+      }
+      .rv-panel ul {
+        list-style: none;
+        margin: 0;
+        padding: 0;
+        display: grid;
+        gap: 6px;
+      }
+      .rv-panel li {
+        line-height: 1.45;
+      }
+      .rv-panel li b {
+        color: var(--add);
+        font-weight: 700;
+      }
+      .rv-panel .rv-count {
+        font-size: 13px;
+        color: var(--secondary);
+      }
+      .rv-states {
+        display: flex;
+        flex-wrap: wrap;
+        gap: 6px;
+      }
+      .rv-states button {
+        min-height: 36px;
+        border: 1px solid var(--border2);
+        background: none;
+        color: var(--text);
+        border-radius: 999px;
+        padding: 0 12px;
+        font: inherit;
+        font-size: 12px;
+        cursor: pointer;
+      }
+      .rv-states button.on {
+        background: var(--add);
+        color: var(--add-ink);
+        border-color: var(--add);
+      }
+      body.show-adds [data-add] {
+        outline: 2px dashed var(--add);
+        outline-offset: 3px;
+        position: relative;
+      }
+      body.show-adds [data-add]::after {
+        content: attr(data-add);
+        position: absolute;
+        top: -4px;
+        left: 4px;
+        transform: translateY(-100%);
+        z-index: 30;
+        background: var(--add);
+        color: var(--add-ink);
+        font:
+          700 12px/1.35 ui-monospace,
+          SFMono-Regular,
+          Menlo,
+          monospace;
+        padding: 1px 6px;
+        border-radius: 5px;
+        pointer-events: none;
+        white-space: nowrap;
+      }
+      body.show-adds dialog[data-add] {
+        position: fixed;
+      }
+      body.show-adds .rv-r::after {
+        left: auto;
+        right: 4px;
+      }
+
+      body.show-adds .v7-option[data-add]::after {
+        top: 4px;
+        left: auto;
+        right: 6px;
+        transform: none;
+      }
+      .rv-notes {
+        margin: 48px 0 24px;
+        border-top: 1px dashed var(--border2);
+        padding-top: 24px;
+      }
+      .rv-notes h2 {
+        font-size: 18px;
+        margin-bottom: 4px;
+      }
+      .rv-notes > p {
+        font-size: 13px;
+        color: var(--muted);
+        margin-bottom: 16px;
+      }
+      .rv-notes ol {
+        display: grid;
+        gap: 12px;
+        padding-left: 20px;
+        max-width: 900px;
+      }
+      .rv-notes li {
+        font-size: 14px;
+        line-height: 1.6;
+        color: var(--secondary);
+      }
+      .rv-notes li strong {
+        color: var(--text);
+      }
+      body .topbar .top-right {
+        margin-right: 330px;
+      }
+      @media (max-width: 767px) {
+        .rv {
+          top: 6px;
+          right: 48px;
+        }
+        .rv-bar {
+          padding: 2px;
+        }
+        .rv-switch .lbl {
+          display: none;
+        }
+        .rv-switch {
+          padding: 0 8px;
+        }
+        body .topbar .top-right {
+          margin-right: 146px;
+        }
+        body .topbar .top-right .search-trigger {
+          display: none;
+        }
+      }
+      /* ---- couche de relecture : sous la barre haute de l’onboarding ---- */
+      .rv {
+        top: 8px;
+        right: 14px;
+      }
+      body .topbar .ob23-top-actions {
+        margin-right: 236px;
+      }
+      @media (max-width: 767px) {
+        .rv {
+          top: 8px;
+          right: 10px;
+        }
+        body .topbar .ob23-top-actions {
+          margin-right: 104px;
+        }
+      }
+      /* cibles ≥ 44 px (GA-32) sur les commandes de Théo */
+      .topbar .btn.sm,
+      .ob23 .btn,
+      .ob23 .btn.sm,
+      .ob23-help summary,
+      .ob23-allanswers summary,
+      .ob23 details > summary {
+        min-height: 44px;
+      }
+      .topbar .btn.sm {
+        font-size: 12px;
+      }
+      .topbar .icon-btn {
+        width: 44px;
+        height: 44px;
+      }
+      .ob23-top-title {
+        min-height: 44px;
+        display: inline-flex;
+        align-items: center;
+      }
+      .ob23-field-foot .v7-select-trigger {
+        min-height: 44px;
+      }
+      .ob23-live dt,
+      .ob23-live dd,
+      .ob23-live > small,
+      .ob23-live p,
+      .ob23-deeper > a,
+      .ob23-deeper p {
+        font-size: 12px !important;
+      }
+      .ob23-deeper > a {
+        min-height: 44px;
+      }
+      .ob-bloc-head {
+        grid-column: 1/-1;
+      }
+      .ob23-tags > span > button {
+        min-width: 44px;
+        min-height: 44px;
+        margin: -14px -12px -14px -6px;
+        display: inline-grid;
+        place-items: center;
+      }
+      .ob-file-row > div {
+        min-width: 0;
+      }
+      .ob-file-row .ob-badge {
+        white-space: normal;
+        align-items: flex-start;
+      }
+      dialog .btn {
+        min-height: 44px;
+      }
+      dialog .icon-btn {
+        width: 44px;
+        height: 44px;
+      }
+      .ob23-group-nav a {
+        min-height: 44px;
+      }
+      .ob23-group-nav a > span {
+        font-size: 12px !important;
+      }
+      .ob23-allanswers dt {
+        font-size: 12px !important;
+      }
+      .ob23-allanswers dd a {
+        min-width: 44px;
+        min-height: 44px;
+        display: inline-grid;
+        place-items: center;
+      }
+      .ob23-audit-state span,
+      .ob23-audit-state small,
+      .ob23-audit-intro aside small,
+      .ob23-section-head span,
+      .ob23-next span,
+      .ob23-strategies summary,
+      .ob23-strategies label,
+      .ob23-evidence span,
+      .ob23-evidence small,
+      .ob23-tension a {
+        font-size: 12px !important;
+      }
+      .ob23-evidence a,
+      .ob23-tension a,
+      .ob23-strategies summary {
+        min-height: 44px;
+        display: flex;
+        align-items: center;
+      }
+      .ob23-evidence a {
+        gap: 10px;
+      }
+      .ob23-strategies .v7-select-trigger {
+        min-height: 44px;
+      }
+      .ob23-validation p {
+        font-size: 12px !important;
+      }
+      @media (max-width: 767px) {
+        .ob23-heading {
+          flex-direction: column;
+          gap: 0;
+        }
+        .ob23-heading > .ob23-actions {
+          padding-top: 4px;
+          justify-content: flex-start;
+        }
+        .ob23-top-title span {
+          display: none;
+        }
+        body .topbar .ob23-top-actions {
+          margin-right: 112px;
+          gap: 2px;
+        }
+        .ob23-top-actions .btn.sm {
+          padding: 0 8px;
+        }
+      }
+      @media (max-width: 767px) {
+        .topbar .ob23-top-actions .btn.sm {
+          font-size: 0 !important;
+          width: 44px;
+          padding: 0;
+          justify-content: center;
+        }
+        .topbar .ob23-top-actions .btn.sm .icon {
+          margin: 0;
+        }
+      }
+    </style>
+    <meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover" />
+    <meta name="color-scheme" content="light dark" />
+    <meta
+      name="description"
+      content="Maquette appliquée — Onboarding › Accueil (Bienvenue, Comprendre Bellum, Laura). Théo V23 + fonctionnalités gardées. Données fictives de démonstration."
+    />
+  </head>
+  <body class="bellum-v18 v22-design page-ob23" data-page="onboarding">
+    <div class="main-shell">
+      <header class="topbar" id="topbar">
+        <a href="onboarding-accueil.html" class="ob23-top-title">Bellum <span>Ton contexte de travail</span></a>
+        <div class="ob23-top-actions">
+          <button type="button" class="btn plain sm" data-open="dlg-export">
+            <svg
+              class="icon small"
+              viewBox="0 0 24 24"
+              fill="none"
+              stroke="currentColor"
+              stroke-width="1.6"
+              stroke-linecap="round"
+              stroke-linejoin="round"
+              aria-hidden="true"
+            >
+              <path d="M12 3v12m-5-5 5 5 5-5M4 16v5h16v-5"></path></svg
+            >Exporter</button
+          ><button class="icon-btn" data-ob23="theme" aria-label="Changer le thème">
+            <svg
+              class="icon"
+              viewBox="0 0 24 24"
+              fill="none"
+              stroke="currentColor"
+              stroke-width="1.6"
+              stroke-linecap="round"
+              stroke-linejoin="round"
+              aria-hidden="true"
+            >
+              <circle cx="12" cy="12" r="4"></circle>
+              <path d="M12 2v2m0 16v2M2 12h2m16 0h2M5 5l1.5 1.5m11 11L19 19M5 19l1.5-1.5m11-11L19 5"></path>
+            </svg></button
+          ><a class="btn plain sm" href="#" data-toast="Tes réponses sont enregistrées. Tu reprendras ici depuis Laura."
+            ><svg
+              class="icon small"
+              viewBox="0 0 24 24"
+              fill="none"
+              stroke="currentColor"
+              stroke-width="1.6"
+              stroke-linecap="round"
+              stroke-linejoin="round"
+              aria-hidden="true"
+            >
+              <path d="m9 5 7 7-7 7"></path></svg
+            >Reprendre plus tard</a
+          >
+        </div>
+      </header>
+      <main id="content" class="canvas" tabindex="-1">
+        <div class="ob23" data-state-default="ecran:welcome">
+          <div data-when="ecran:welcome">
+            <header class="ob23-heading">
+              <div>
+                <span class="ob23-kicker">BIENVENUE DANS BELLUM</span>
+                <h1 tabindex="-1">Un contexte clair. Des décisions plus utiles.</h1>
+                <p>
+                  Avant de chercher des comptes ou de préparer une approche, donne à Laura les repères qui font la
+                  différence pour ton activité.
+                </p>
+              </div>
+            </header>
+            <div class="ob-access" data-state-default="acces:nouveau">
+              <div data-when="acces:invitation" data-add="O1.A1" hidden="">
+                <div class="ob23-info">
+                  <svg
+                    class="icon small"
+                    viewBox="0 0 24 24"
+                    fill="none"
+                    stroke="currentColor"
+                    stroke-width="1.6"
+                    stroke-linecap="round"
+                    stroke-linejoin="round"
+                    aria-hidden="true"
+                  >
+                    <circle cx="12" cy="12" r="9"></circle>
+                    <path d="M12 11v6m0-10h.01"></path></svg
+                  ><span
+                    ><strong>Marc Delorme t’a invitée dans l’espace Altimance.</strong> L’entreprise, l’offre et le
+                    marché sont déjà renseignés par ton équipe : tu ne précises que ton rôle, ton cap et ta façon de
+                    travailler avec Laura.</span
+                  >
+                </div>
+              </div>
+              <div data-when="acces:attente" data-add="O1.A1" hidden="">
+                <div class="ob23-info">
+                  <svg
+                    class="icon small"
+                    viewBox="0 0 24 24"
+                    fill="none"
+                    stroke="currentColor"
+                    stroke-width="1.6"
+                    stroke-linecap="round"
+                    stroke-linejoin="round"
+                    aria-hidden="true"
+                  >
+                    <circle cx="12" cy="12" r="9"></circle>
+                    <path d="M12 11v6m0-10h.01"></path></svg
+                  ><span
+                    ><strong>Ton accès attend la validation d’un administrateur de l’espace Altimance.</strong> Tu peux
+                    déjà poser ton contexte : il s’appliquera dès l’ouverture de ton accès. Marc Delorme a été
+                    prévenu.</span
+                  >
+                </div>
+              </div>
+              <div data-when="acces:herite" data-add="O1.A1" hidden="">
+                <div class="ob23-info">
+                  <svg
+                    class="icon small"
+                    viewBox="0 0 24 24"
+                    fill="none"
+                    stroke="currentColor"
+                    stroke-width="1.6"
+                    stroke-linecap="round"
+                    stroke-linejoin="round"
+                    aria-hidden="true"
+                  >
+                    <circle cx="12" cy="12" r="9"></circle>
+                    <path d="M12 11v6m0-10h.01"></path></svg
+                  ><span
+                    ><strong>Tu reprends un cadrage existant.</strong> Les réponses de ton ancien espace sont conservées
+                    en brouillon : rien n’est appliqué tant que tu ne les as pas relues.</span
+                  >
+                </div>
+              </div>
+            </div>
+            <section class="ob23-welcome">
+              <div>
+                <h2>On part de ton travail.<br />Pas d’un formulaire standard.</h2>
+                <p>
+                  ESN généraliste, cabinet spécialisé, ingénierie ou activité en création : décris ce que tu proposes,
+                  tes objectifs et les moyens dont tu disposes.
+                </p>
+                <div class="ob23-actions">
+                  <a class="btn primary" href="#how" data-go="ecran:how" data-top=""
+                    ><svg
+                      class="icon small"
+                      viewBox="0 0 24 24"
+                      fill="none"
+                      stroke="currentColor"
+                      stroke-width="1.6"
+                      stroke-linecap="round"
+                      stroke-linejoin="round"
+                      aria-hidden="true"
+                    >
+                      <path d="M5 12h14m-6-6 6 6-6 6"></path></svg
+                    >Commencer</a
+                  ><a class="btn plain" href="onboarding-catalogue.html">Explorer les thèmes</a>
+                </div>
+                <div class="ob23-welcome-detail">
+                  <span>Un premier cadrage guidé</span><span>Des précisions à ton rythme</span
+                  ><span>Une stratégie corrigeable</span>
+                </div>
+                <details class="ob23-help" data-add="O1.A2" style="margin: 18px 0 0">
+                  <summary>
+                    <svg
+                      class="icon small"
+                      viewBox="0 0 24 24"
+                      fill="none"
+                      stroke="currentColor"
+                      stroke-width="1.6"
+                      stroke-linecap="round"
+                      stroke-linejoin="round"
+                      aria-hidden="true"
+                    >
+                      <rect x="5" y="10" width="14" height="11" rx="2"></rect>
+                      <path d="M8 10V7a4 4 0 0 1 8 0v3m-4 5v2"></path>
+                    </svg>
+                    Ce que deviennent tes réponses
+                  </summary>
+                  <p>
+                    Elles personnalisent Laura dans ton espace, et seulement là. Tu peux les corriger à tout moment
+                    depuis Réglages › Profil, ou les effacer. Déclarer un outil ne le connecte pas ; aucune réponse
+                    n’autorise un envoi.
+                  </p>
+                </details>
+              </div>
+              <aside class="ob23-itinerary">
+                <span class="ob23-kicker">CE QUE TU RETROUVES À LA FIN</span>
+                <div>
+                  <span>01</span>
+                  <section>
+                    <h3>Ta situation, reformulée</h3>
+                    <p>Ton offre, tes contraintes et ton objectif dans un même contexte.</p>
+                  </section>
+                </div>
+                <div>
+                  <span>02</span>
+                  <section>
+                    <h3>Des orientations à choisir</h3>
+                    <p>Les raisons, le premier geste et les arbitrages à clarifier.</p>
+                  </section>
+                </div>
+                <div>
+                  <span>03</span>
+                  <section>
+                    <h3>Un travail prêt à démarrer</h3>
+                    <p>Une demande modifiable dans Laura, sans envoi automatique.</p>
+                  </section>
+                </div>
+              </aside>
+            </section>
+            <section class="ob23-bottomline">
+              <div>
+                <img
+                  class="face"
+                  src="data:image/jpeg;base64,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"
+                  alt="Laura, assistante IA"
+                /><span
+                  ><strong>Laura, l’IA métier de Bellum</strong
+                  ><small>Un même contexte dans tes comptes, tes talents et tes actions.</small></span
+                >
+              </div>
+            </section>
+          </div>
+          <div data-when="ecran:how" hidden="">
+            <header class="ob23-heading">
+              <div>
+                <span class="ob23-kicker">COMPRENDRE BELLUM</span>
+                <h1 tabindex="-1">De l’information au prochain geste.</h1>
+                <p>
+                  Bellum relie les comptes, les interlocuteurs, les besoins, les talents et les actions. Tu n’as pas à
+                  tout utiliser dès le départ.
+                </p>
+              </div>
+            </header>
+            <div class="ob23-how">
+              <section>
+                <div class="ob23-numbered">
+                  <span>01</span>
+                  <div>
+                    <h2>Comprendre où agir</h2>
+                    <p>
+                      Découvrir explore des entreprises ; Analyser construit un dossier. Un signal et une ancienne
+                      demande ne sont pas automatiquement un besoin ouvert.
+                    </p>
+                  </div>
+                </div>
+                <div class="ob23-numbered">
+                  <span>02</span>
+                  <div>
+                    <h2>Choisir une approche</h2>
+                    <p>
+                      Laura confronte ton offre et ton objectif aux informations autorisées disponibles. Elle doit
+                      distinguer les faits, les hypothèses et ce qu’il reste à qualifier.
+                    </p>
+                  </div>
+                </div>
+                <div class="ob23-numbered">
+                  <span>03</span>
+                  <div>
+                    <h2>Préparer et suivre</h2>
+                    <p>
+                      La bonne personne, le bon message ou le profil pertinent rejoignent les mêmes dossiers. Les
+                      actions externes restent soumises à leurs validations.
+                    </p>
+                  </div>
+                </div>
+              </section>
+              <aside class="ob23-panel">
+                <h2>Pourquoi ces questions ?</h2>
+                <p>
+                  Une ESN Data, un bureau d’études et une responsable ADV n’attendent pas les mêmes recommandations.
+                </p>
+                <dl class="ob23-impact">
+                  <div>
+                    <dt>Ton offre</dt>
+                    <dd>Les sujets et les équipes à explorer.</dd>
+                  </div>
+                  <div>
+                    <dt>Ton objectif</dt>
+                    <dd>L’ordre des comptes, les voies d’accès et le rythme.</dd>
+                  </div>
+                  <div>
+                    <dt>Tes contraintes</dt>
+                    <dd>Ce qu’il faut exclure ou vérifier avant d’agir.</dd>
+                  </div>
+                </dl>
+                <p class="ob23-small">
+                  Tu peux commencer sans connecter un outil. Les connexions réelles auront leurs propres permissions.
+                </p>
+              </aside>
+            </div>
+            <footer class="ob23-footer">
+              <div>
+                <a class="btn plain" href="#welcome" data-go="ecran:welcome" data-top=""
+                  ><svg
+                    class="icon small"
+                    viewBox="0 0 24 24"
+                    fill="none"
+                    stroke="currentColor"
+                    stroke-width="1.6"
+                    stroke-linecap="round"
+                    stroke-linejoin="round"
+                    aria-hidden="true"
+                  >
+                    <path d="M19 12H5m6-6-6 6 6 6"></path></svg
+                  >Retour</a
+                >
+              </div>
+              <div>
+                <span class="ob23-save" data-ob23-save="">Brouillon enregistré</span
+                ><a class="btn primary" href="#laura" data-go="ecran:laura" data-top=""
+                  ><svg
+                    class="icon small"
+                    viewBox="0 0 24 24"
+                    fill="none"
+                    stroke="currentColor"
+                    stroke-width="1.6"
+                    stroke-linecap="round"
+                    stroke-linejoin="round"
+                    aria-hidden="true"
+                  >
+                    <path d="M5 12h14m-6-6 6 6-6 6"></path></svg
+                  >Rencontrer Laura</a
+                >
+              </div>
+            </footer>
+          </div>
+          <div data-when="ecran:laura" hidden="">
+            <header class="ob23-heading">
+              <div>
+                <span class="ob23-kicker">TON COPILOTE</span>
+                <h1 tabindex="-1">Une IA métier, dans ton espace de travail.</h1>
+                <p>
+                  Laura est l’assistante développée pour Bellum. Elle s’appuie sur des modèles IA et les services métier
+                  du produit : ce n’est pas la promesse d’un modèle fondamental entraîné par Bellum.
+                </p>
+              </div>
+            </header>
+            <div class="ob23-laura">
+              <section class="ob23-laura-intro">
+                <img
+                  class="face lg"
+                  src="data:image/jpeg;base64,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"
+                  alt="Laura, assistante IA"
+                />
+                <div>
+                  <h2>Tu peux lui parler avec tes mots.</h2>
+                  <p>
+                    Un compte à ouvrir, un consultant à positionner, un rendez-vous à préparer ou un dossier ADV à
+                    débloquer : pars du résultat recherché.
+                  </p>
+                </div>
+              </section>
+              <div class="ob23-examples">
+                <div>
+                  <span>Commercial</span>
+                  <p>
+                    « Nous faisons du conseil en achats. Aide-moi à choisir les premières équipes à contacter sur ce
+                    compte. »
+                  </p>
+                </div>
+                <div>
+                  <span>Staffing</span>
+                  <p>
+                    « Voici ce profil et sa disponibilité. Quels besoins connus sont compatibles, et quels points
+                    faut-il vérifier ? »
+                  </p>
+                </div>
+                <div>
+                  <span>ADV / Finance</span>
+                  <p>« Quelles missions attendent encore une validation avant de préparer la facturation ? »</p>
+                </div>
+              </div>
+              <section class="ob23-control">
+                <h3>Tu gardes la main.</h3>
+                <p>
+                  Un accès à Laura est disponible dans les environnements de travail. Elle peut préparer, demander une
+                  précision utile et challenger une approche. Aucun choix dans ce questionnaire ne connecte un outil, ne
+                  partage un dossier ou n’autorise un envoi.
+                </p>
+              </section>
+            </div>
+            <footer class="ob23-footer">
+              <div>
+                <a class="btn plain" href="#how" data-go="ecran:how" data-top=""
+                  ><svg
+                    class="icon small"
+                    viewBox="0 0 24 24"
+                    fill="none"
+                    stroke="currentColor"
+                    stroke-width="1.6"
+                    stroke-linecap="round"
+                    stroke-linejoin="round"
+                    aria-hidden="true"
+                  >
+                    <path d="M19 12H5m6-6-6 6 6 6"></path></svg
+                  >Retour</a
+                >
+              </div>
+              <div>
+                <span class="ob23-save" data-ob23-save="">Brouillon enregistré</span
+                ><a class="btn primary" href="onboarding-essentiel.html"
+                  ><svg
+                    class="icon small"
+                    viewBox="0 0 24 24"
+                    fill="none"
+                    stroke="currentColor"
+                    stroke-width="1.6"
+                    stroke-linecap="round"
+                    stroke-linejoin="round"
+                    aria-hidden="true"
+                  >
+                    <path d="M5 12h14m-6-6 6 6-6 6"></path></svg
+                  >Renseigner mon contexte</a
+                >
+              </div>
+            </footer>
+          </div>
+          <section class="rv-notes" aria-labelledby="rv-notes-t">
+            <h2 id="rv-notes-t">Points à discuter</h2>
+            <p>Notes de conception pour Louis — hors produit. 2 ajouts, 6 retraits sur cet écran.</p>
+            <ol>
+              <li>
+                <strong>Trois temps, une page.</strong> Théo sépare Bienvenue, Comprendre et Laura en trois routes.
+                Gardés tels quels ; la maquette les enchaîne sur une même adresse (interrupteur « États »). À trancher :
+                garder trois écrans, ou fusionner « Comprendre » et « Laura » en un seul pour raccourcir l’entrée (deux
+                clics avant la première question).
+              </li>
+              <li>
+                <strong>Variantes d’accès</strong> (O1.A1) : invitation, attente de l’administrateur et cadrage repris
+                existent dans le produit et pas chez Théo. Rangées dans un seul bandeau sous le titre, dans le style «
+                info » de Théo. En invitation, faut-il masquer les questions entreprise déjà renseignées par l’équipe,
+                ou les montrer en lecture ?
+              </li>
+              <li>
+                <strong>Plan et paiement</strong> sortis du parcours (décision 22/10). Conséquence à valider : l’essai
+                démarre sans choix d’offre ; le premier rappel d’offre apparaît dans « Ce qui démarre après »
+                (lancement) et pointe vers Réglages › Facturation.
+              </li>
+              <li>
+                <strong>« Un exemple »</strong> de Théo retiré : il remplace le cadrage par un profil fictif. Si Louis
+                tient à une démonstration, elle devrait vivre dans le lien de démo, jamais dans un vrai profil.
+              </li>
+              <li>
+                <strong>Confidentialité</strong> (O1.A2) : l’étape dédiée du produit devient un repli de deux phrases.
+                Le texte doit être relu au regard de la base commune (c94) avant d’être promis.
+              </li>
+            </ol>
+          </section>
+        </div>
+      </main>
+    </div>
+
+    <dialog id="dialog" class="ob23-dialog" aria-labelledby="dialog-title">
+      <div class="dialog-head">
+        <h2 id="dialog-title">Choisir</h2>
+        <button type="button" class="icon-btn" data-act="close" aria-label="Fermer">
+          <svg
+            class="icon"
+            viewBox="0 0 24 24"
+            fill="none"
+            stroke="currentColor"
+            stroke-width="1.6"
+            stroke-linecap="round"
+            stroke-linejoin="round"
+            aria-hidden="true"
+          >
+            <path d="m6 6 12 12M6 18 18 6"></path>
+          </svg>
+        </button>
+      </div>
+      <div class="dialog-body"></div>
+      <div class="dialog-footer">
+        <button type="button" class="btn plain" data-ob23="cancel">Annuler</button
+        ><button type="button" class="btn plain" data-ob23="picker-clear">Vider la sélection</button
+        ><button type="button" class="btn primary" data-ob23="picker-apply">Appliquer mes choix</button>
+      </div>
+    </dialog>
+    <dialog id="dlg-export" class="ob23-dialog" aria-labelledby="dlg-export-t">
+      <div class="dialog-head">
+        <h2 id="dlg-export-t">Emporter ton cadrage</h2>
+        <button type="button" class="icon-btn" data-act="close" aria-label="Fermer">
+          <svg
+            class="icon"
+            viewBox="0 0 24 24"
+            fill="none"
+            stroke="currentColor"
+            stroke-width="1.6"
+            stroke-linecap="round"
+            stroke-linejoin="round"
+            aria-hidden="true"
+          >
+            <path d="m6 6 12 12M6 18 18 6"></path>
+          </svg>
+        </button>
+      </div>
+      <div class="dialog-body">
+        <div class="ob23-dialog-content">
+          <p>Le fichier contient tes réponses et leurs statuts, pas les autres données de ton espace.</p>
+          <p>
+            Le JSON permet de retrouver le cadrage dans un autre espace. Une importation reste un brouillon à relire.
+          </p>
+          <p class="ob23-small">
+            Ces fichiers peuvent contenir tes informations commerciales. Partage-les uniquement avec les personnes
+            concernées.
+          </p>
+        </div>
+      </div>
+      <div class="dialog-footer">
+        <button type="button" class="btn plain" data-close="">Fermer</button
+        ><button type="button" class="btn soft" data-close="" data-toast="Cadrage_Altimance.txt téléchargé.">
+          <svg
+            class="icon"
+            viewBox="0 0 24 24"
+            fill="none"
+            stroke="currentColor"
+            stroke-width="1.6"
+            stroke-linecap="round"
+            stroke-linejoin="round"
+            aria-hidden="true"
+          >
+            <path d="M14 2H4v20h16V8Z"></path>
+            <path d="M14 2v6h6M8 13h8M8 17h6"></path></svg
+          >Télécharger le texte</button
+        ><button type="button" class="btn primary" data-close="" data-toast="Cadrage_Altimance.json téléchargé.">
+          <svg
+            class="icon"
+            viewBox="0 0 24 24"
+            fill="none"
+            stroke="currentColor"
+            stroke-width="1.6"
+            stroke-linecap="round"
+            stroke-linejoin="round"
+            aria-hidden="true"
+          >
+            <path d="M12 3v12m-5-5 5 5 5-5M4 16v5h16v-5"></path></svg
+          >Exporter le JSON
+        </button>
+      </div>
+    </dialog>
+    <div class="toast-container" id="toasts" aria-live="polite"></div>
+    <div class="rv" aria-label="Relecture de la maquette">
+      <div class="rv-bar">
+        <button
+          type="button"
+          class="rv-theme"
+          id="rv-info"
+          aria-expanded="false"
+          aria-controls="rv-panel"
+          aria-label="Détail des ajouts, retraits et états"
+        >
+          <svg
+            class="icon"
+            viewBox="0 0 24 24"
+            fill="none"
+            stroke="currentColor"
+            stroke-width="1.6"
+            stroke-linecap="round"
+            stroke-linejoin="round"
+            aria-hidden="true"
+          >
+            <circle cx="12" cy="12" r="9"></circle>
+            <path d="M12 11v6m0-10h.01"></path>
+          </svg></button
+        ><button type="button" class="rv-switch" id="rv-switch" aria-pressed="false">
+          <span class="knob"></span><span class="lbl">Montrer les ajouts</span>
+        </button>
+      </div>
+      <div class="rv-panel" id="rv-panel" hidden="">
+        <p class="rv-count"><strong>2 ajouts</strong> par rapport à Théo, entourés en pointillé et étiquetés.</p>
+        <h3>États</h3>
+        <div class="rv-states">
+          <button type="button" data-go="ecran:welcome">Bienvenue</button
+          ><button type="button" data-go="ecran:how">Comprendre</button
+          ><button type="button" data-go="ecran:laura">Laura</button>
+        </div>
+        <div class="rv-states" style="margin-top: 6px">
+          <button type="button" data-go="acces:nouveau">Nouvel espace</button
+          ><button type="button" data-go="acces:invitation">Invitée</button
+          ><button type="button" data-go="acces:attente">En attente</button
+          ><button type="button" data-go="acces:herite">Cadrage repris</button>
+        </div>
+        <h3>Retiré</h3>
+        <ul>
+          <li>
+            <b>O1.R1</b> Choix de l’offre et paiement (<code>OnboardingPlanPage</code>, variante « retour de paiement »)
+            — après l’onboarding, dans Réglages › Facturation (décision Louis 22/10).
+          </li>
+          <li>
+            <b>O1.R2</b> « Un exemple » / « Voir un exemple de cadrage » de Théo — écrit un profil fictif dans le
+            cadrage (heurte « jamais de donnée fictive »).
+          </li>
+          <li>
+            <b>O1.R3</b> Étape séparée « Ton ESN » (<code>OnboardingCompanyPage</code>) — absorbée par le bloc 1 de
+            l’essentiel.
+          </li>
+          <li><b>O1.R4</b> Schéma <code>OnboardingWelcomeDiagram</code> — remplacé par l’itinéraire 01-03 de Théo.</li>
+          <li><b>O1.R5</b> Bouton « Passer l’onboarding » — absorbé par « Reprendre plus tard ».</li>
+          <li>
+            <b>O1.R6</b> Cartes d’aide <code>OnboardingIntroCard</code> / <code>OnboardingHelpCard</code> — remplacées
+            par « Comprendre » et « Laura ».
+          </li>
+        </ul>
+        <h3>Corrigé (doctrine)</h3>
+        <ul>
+          <li>
+            <b>D-1</b> Tutoiement : « ce que vous proposez, vos objectifs » → « ce que tu proposes, tes objectifs ».
+          </li>
+          <li>
+            <b>D-8</b> Mention « Aperçu local · restitution par règles de démonstration » retirée des trois temps.
+          </li>
+          <li>
+            <b>D-8</b> « Brouillon enregistré ici » → « Brouillon enregistré » (l’enregistrement n’est pas local au
+            navigateur).
+          </li>
+          <li><b>D80</b> Tailles sous 12 px remontées à 12 px (sur-titres, détails).</li>
+        </ul>
+      </div>
+    </div>
+    <script type="application/json" id="ob-data">
+      {
+        "q": {},
+        "s": {
+          "unknown": "Je ne sais pas",
+          "later": "À compléter plus tard",
+          "na": "Non applicable",
+          "check": "À vérifier avec mon équipe"
+        },
+        "icons": {
+          "down": "\u003cpath d=\"m6 9 6 6 6-6\"/>",
+          "close": "\u003cpath d=\"m6 6 12 12M6 18 18 6\"/>",
+          "search": "\u003ccircle cx=\"10.5\" cy=\"10.5\" r=\"6.5\"/>\u003cpath d=\"m16 16 4 4\"/>",
+          "clock": "\u003ccircle cx=\"12\" cy=\"12\" r=\"9\"/>\u003cpath d=\"M12 7v5l3 2\"/>",
+          "right": "\u003cpath d=\"m9 5 7 7-7 7\"/>",
+          "sun": "\u003ccircle cx=\"12\" cy=\"12\" r=\"4\"/>\u003cpath d=\"M12 2v2m0 16v2M2 12h2m16 0h2M5 5l1.5 1.5m11 11L19 19M5 19l1.5-1.5m11-11L19 5\"/>",
+          "moon": "\u003cpath d=\"M20.5 13A8.5 8.5 0 0 1 11 3.5 8.5 8.5 0 1 0 20.5 13Z\"/>"
+        }
+      }
+    </script>
+    <script>
+      ;(function () {
+        var d = document,
+          b = d.body,
+          DATA = JSON.parse((d.getElementById('ob-data') || { textContent: '{}' }).textContent || '{}')
+        var QD = DATA.q || {},
+          S = DATA.s || {}
+        function $(s, r) {
+          return (r || d).querySelector(s)
+        }
+        function $$(s, r) {
+          return Array.prototype.slice.call((r || d).querySelectorAll(s))
+        }
+        function esc(s) {
+          return String(s).replace(/[&<>"]/g, function (c) {
+            return { '&': '&amp;', '<': '&lt;', '>': '&gt;', '"': '&quot;' }[c]
+          })
+        }
+        function norm(s) {
+          return String(s || '')
+            .normalize('NFD')
+            .replace(/[̀-ͯ]/g, '')
+            .toLowerCase()
+        }
+        var ICON = DATA.icons || {}
+        function icon(n) {
+          return (
+            '<svg class="icon small" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">' +
+            (ICON[n] || '') +
+            '</svg>'
+          )
+        }
+        var toasts = $('#toasts')
+        function toast(t) {
+          var e = d.createElement('div')
+          e.className = 'toast'
+          e.setAttribute('role', 'status')
+          e.textContent = t
+          toasts.appendChild(e)
+          setTimeout(function () {
+            e.remove()
+          }, 3200)
+        }
+        window.obToast = toast
+        // ---- états (data-go / data-when)
+        function setState(g, v) {
+          $$('[data-when]').forEach(function (e) {
+            var hit = false,
+              mine = false
+            e.getAttribute('data-when')
+              .split('|')
+              .forEach(function (x) {
+                var kv = x.split(':')
+                if (kv[0] === g) {
+                  mine = true
+                  if (kv[1] === v) hit = true
+                }
+              })
+            if (mine) e.hidden = !hit
+          })
+          $$('[data-go^="' + g + ':"]').forEach(function (x) {
+            var on = x.getAttribute('data-go') === g + ':' + v
+            x.classList.toggle('on', on)
+            if (x.closest('.ob23-steps,.ob-rail')) {
+              x.classList.toggle('active', on)
+              if (on) x.setAttribute('aria-current', 'step')
+              else x.removeAttribute('aria-current')
+            }
+            if (x.closest('.rv-states')) x.setAttribute('aria-pressed', on ? 'true' : 'false')
+          })
+        }
+        window.tSetState = setState
+        $$('[data-state-default]').forEach(function (x) {
+          var kv = x.getAttribute('data-state-default').split(':')
+          setState(kv[0], kv[1])
+        })
+        // ---- menus (v7-select)
+        function closeMenus() {
+          $$('.t-menu').forEach(function (m) {
+            if (m.id === 't-selmenu') m.remove()
+            else m.hidden = true
+          })
+          $$('[aria-expanded="true"][data-menu],.v7-select-trigger[aria-expanded="true"]').forEach(function (x) {
+            x.setAttribute('aria-expanded', 'false')
+          })
+        }
+        function place(m, a) {
+          m.hidden = false
+          var r = a.getBoundingClientRect(),
+            w = m.offsetWidth,
+            h = m.offsetHeight
+          var left = Math.min(Math.max(8, r.left), innerWidth - w - 8),
+            top = r.bottom + 6
+          if (top + h > innerHeight - 8) top = Math.max(8, r.top - h - 6)
+          m.style.left = left + 'px'
+          m.style.top = top + 'px'
+        }
+        function selectMenu(t) {
+          var sel = t.parentNode.querySelector('select')
+          var host = t.closest('dialog') || b
+          var m = d.createElement('div')
+          m.className = 'v7-menu t-menu'
+          m.id = 't-selmenu'
+          m.setAttribute('role', 'listbox')
+          m.style.width = Math.max(t.offsetWidth, 220) + 'px'
+          var l = d.createElement('div')
+          l.className = 'v7-menu-list'
+          Array.prototype.forEach.call(sel.options, function (op, i) {
+            var x = d.createElement('button')
+            x.type = 'button'
+            x.className = 'v7-option' + (i === sel.selectedIndex ? ' is-active' : '')
+            x.setAttribute('role', 'option')
+            x.innerHTML = '<span class="v7-option-copy"></span>'
+            x.firstChild.textContent = op.text
+            x.onclick = function () {
+              sel.selectedIndex = i
+              t.querySelector('.v7-select-value').textContent = op.text
+              sel.dispatchEvent(new Event('change', { bubbles: true }))
+              closeMenus()
+            }
+            l.appendChild(x)
+          })
+          m.appendChild(l)
+          host.appendChild(m)
+          t.setAttribute('aria-expanded', 'true')
+          place(m, t)
+        }
+        // ---- sélecteur de réponses (modale de Théo)
+        var picker = null
+        function pickerOpen(btn) {
+          var key = btn.getAttribute('data-key'),
+            q = QD[key]
+          if (!q) return toast('Sélecteur non repris dans cette maquette.')
+          picker = {
+            key: key,
+            btn: btn,
+            values: JSON.parse(btn.getAttribute('data-values') || '[]'),
+            query: '',
+            group: 'all',
+          }
+          var dl = $('#dialog')
+          $('#dialog-title').textContent = q.label
+          pickerPaint()
+          dl.showModal()
+          var s = $('#ob23-option-search')
+          if (s) s.focus()
+        }
+        function groupsOf(q) {
+          var g = []
+          q.ch.forEach(function (c) {
+            if (g.indexOf(c[1]) < 0) g.push(c[1])
+          })
+          return g
+        }
+        function pickerPaint() {
+          var q = QD[picker.key],
+            single = q.kind === 'single',
+            gs = groupsOf(q),
+            many = gs.length > 1 || (gs.length === 1 && gs[0])
+          var list = q.ch.filter(function (c) {
+            return (
+              (picker.group === 'all' || c[1] === picker.group) &&
+              (!picker.query || norm(c[0]).indexOf(norm(picker.query)) >= 0)
+            )
+          })
+          var groupsHtml = ''
+          if (many) {
+            var opts =
+              '<option value="all">Toutes les familles (' +
+              q.ch.length +
+              ')</option>' +
+              gs
+                .map(function (g) {
+                  return (
+                    '<option value="' +
+                    esc(g) +
+                    '"' +
+                    (picker.group === g ? ' selected' : '') +
+                    '>' +
+                    esc(g) +
+                    ' (' +
+                    q.ch.filter(function (c) {
+                      return c[1] === g
+                    }).length +
+                    ')</option>'
+                  )
+                })
+                .join('')
+            var cur = picker.group === 'all' ? 'Toutes les familles (' + q.ch.length + ')' : picker.group
+            groupsHtml =
+              '<div id="ob23-option-groups" class="ob23-option-groups"><label for="ob23-option-group">Famille</label><span class="v7-select"><select id="ob23-option-group" class="v7-native-select" aria-hidden="true" tabindex="-1">' +
+              opts +
+              '</select><button type="button" class="v7-select-trigger" role="combobox" aria-haspopup="listbox" aria-expanded="false" aria-label="Famille"><span class="v7-select-value">' +
+              esc(cur) +
+              '</span>' +
+              icon('down') +
+              '</button></span></div>'
+          }
+          var bySection = {}
+          var order = []
+          list.forEach(function (c) {
+            if (!bySection[c[1]]) {
+              bySection[c[1]] = []
+              order.push(c[1])
+            }
+            bySection[c[1]].push(c[0])
+          })
+          var optionsHtml = order
+            .map(function (g) {
+              return (
+                '<section>' +
+                (g ? '<h3>' + esc(g) + '</h3>' : '') +
+                '<div class="ob23-option-grid">' +
+                bySection[g]
+                  .map(function (v) {
+                    var on = picker.values.indexOf(v) >= 0
+                    return (
+                      '<label class="' +
+                      (on ? 'selected' : '') +
+                      '"><input type="' +
+                      (single ? 'radio' : 'checkbox') +
+                      '" name="ob23-option" data-ob23-option value="' +
+                      esc(v) +
+                      '"' +
+                      (on ? ' checked' : '') +
+                      '><span><strong>' +
+                      esc(v) +
+                      '</strong></span></label>'
+                    )
+                  })
+                  .join('') +
+                '</div></section>'
+              )
+            })
+            .join('')
+          if (!optionsHtml)
+            optionsHtml =
+              '<p class="ob23-small">Aucune proposition ne correspond. Tu peux écrire ta propre réponse ci-dessous.</p>'
+          var preview = picker.values
+            .map(function (v) {
+              return (
+                '<button type="button" data-pick-remove="' +
+                esc(v) +
+                '" aria-label="Retirer ' +
+                esc(v) +
+                '"><span>' +
+                esc(v) +
+                '</span>' +
+                icon('close') +
+                '</button>'
+              )
+            })
+            .join('')
+          $('#dialog .dialog-body').innerHTML =
+            '<div class="ob23-picker"><p>' +
+            esc(
+              q.sub ||
+                (single
+                  ? 'Un choix. Tu peux le corriger ensuite.'
+                  : 'Plusieurs choix possibles. Tu peux les corriger ensuite.'),
+            ) +
+            '</p><div class="ob23-picker-top"><label class="ob23-search">' +
+            icon('search') +
+            '<input id="ob23-option-search" type="search" placeholder="Rechercher parmi tous les choix…" aria-label="Rechercher une proposition" value="' +
+            esc(picker.query) +
+            '"></label><span id="ob23-picked-count" aria-live="polite">' +
+            (picker.values.length
+              ? picker.values.length + (picker.values.length > 1 ? ' sélections' : ' sélection')
+              : 'Aucune sélection') +
+            '</span></div>' +
+            groupsHtml +
+            '<div id="ob23-selected-preview" class="ob23-selection-preview">' +
+            preview +
+            '</div><div id="ob23-option-list" class="ob23-option-list">' +
+            optionsHtml +
+            '</div><div class="ob23-custom"><label for="ob23-custom-value">Ton cas n’est pas dans la liste ?</label><div><input id="ob23-custom-value" type="text" maxlength="700" placeholder="Écris ta propre réponse"><button type="button" class="btn soft" data-pick-custom>Ajouter</button></div><p>Les choix personnalisés sont conservés, pas remplacés par la catégorie la plus proche.</p></div></div>'
+        }
+        function pickerApply() {
+          var btn = picker.btn,
+            v = picker.values
+          btn.setAttribute('data-values', JSON.stringify(v))
+          btn.classList.toggle('filled', v.length > 0)
+          var q = QD[picker.key]
+          btn.firstElementChild.innerHTML = v.length
+            ? '<span class="ob23-picked">' +
+              v
+                .slice(0, 4)
+                .map(function (x) {
+                  return '<span>' + esc(x) + '</span>'
+                })
+                .join('') +
+              (v.length > 4 ? '<em>+ ' + (v.length - 4) + '</em>' : '') +
+              '</span>'
+            : '<span class="ob23-placeholder">' +
+              (q.kind === 'single' ? 'Choisir une réponse' : 'Rechercher et choisir plusieurs réponses') +
+              '</span>'
+          var f = btn.closest('.ob23-field'),
+            sel = f && f.querySelector('[data-ob23-status]')
+          if (sel) {
+            sel.options[0].textContent = v.length ? 'Réponse renseignée' : 'Répondre quand tu peux'
+            sel.selectedIndex = 0
+          }
+          $('#dialog').close()
+          btn.focus()
+          picker = null
+        }
+        // ---- statuts de réponse
+        function applyStatus(sel) {
+          var f = sel.closest('.ob23-field'),
+            v = sel.value,
+            st = S[v]
+          if (!f) return
+          var box = f.querySelector('.ob23-status-answer')
+          if (st) {
+            if (!box) {
+              box = d.createElement('div')
+              box.className = 'ob23-status-answer'
+              var anchor = f.querySelector('.ob23-field-foot')
+              f.insertBefore(box, anchor)
+            }
+            box.innerHTML =
+              icon('clock') +
+              '<span>' +
+              esc(st) +
+              '<small>Ta réponse précédente est conservée, mais non utilisée.</small></span><button type="button" class="btn soft sm" data-status-restore>Répondre</button>'
+            f.classList.add('is-status')
+          } else {
+            if (box && !box.hasAttribute('data-static')) box.remove()
+            else if (box) box.hidden = true
+            f.classList.remove('is-status')
+          }
+        }
+        $$('[data-ob23-status]').forEach(function (s) {
+          s.addEventListener('change', function () {
+            applyStatus(s)
+          })
+        })
+        // ---- clics
+        d.addEventListener('click', function (e) {
+          var t = e.target.closest('button,a,summary,label,input')
+          if (
+            !e.target.closest('.t-menu') &&
+            !(t && (t.hasAttribute('data-menu') || t.classList.contains('v7-select-trigger')))
+          )
+            closeMenus()
+          if (!t) return
+          if (
+            t.hasAttribute('data-close') ||
+            t.getAttribute('data-act') === 'close' ||
+            t.getAttribute('data-ob23') === 'cancel'
+          ) {
+            var dl = t.closest('dialog')
+            if (dl) {
+              dl.close()
+              picker = null
+            }
+          }
+          if (t.hasAttribute('data-open')) {
+            e.preventDefault()
+            var o = d.getElementById(t.getAttribute('data-open'))
+            if (o) {
+              closeMenus()
+              $$('dialog[open]').forEach(function (x) {
+                if (x !== o) x.close()
+              })
+              o.showModal()
+            }
+          }
+          if (t.hasAttribute('data-menu')) {
+            e.preventDefault()
+            var m = d.getElementById(t.getAttribute('data-menu')),
+              was = !m.hidden
+            closeMenus()
+            if (!was) {
+              t.setAttribute('aria-expanded', 'true')
+              place(m, t)
+            }
+            return
+          }
+          if (t.classList.contains('v7-select-trigger')) {
+            e.preventDefault()
+            var open = t.getAttribute('aria-expanded') === 'true'
+            closeMenus()
+            if (!open) selectMenu(t)
+            return
+          }
+          if (t.hasAttribute('data-go')) {
+            e.preventDefault()
+            var kv = t.getAttribute('data-go').split(':')
+            setState(kv[0], kv[1])
+            if (t.hasAttribute('data-top')) scrollTo({ top: 0 })
+            if (t.hasAttribute('data-scroll')) {
+              var tg = d.getElementById(t.getAttribute('data-scroll'))
+              if (tg) tg.scrollIntoView({ block: 'start' })
+            }
+          }
+          if (t.hasAttribute('data-toast')) {
+            e.preventDefault()
+            toast(t.getAttribute('data-toast'))
+          }
+          if (t.getAttribute('data-ob23') === 'pick') {
+            e.preventDefault()
+            pickerOpen(t)
+            return
+          }
+          if (t.getAttribute('data-ob23') === 'theme') {
+            theme(!d.documentElement.classList.contains('dark'))
+            return
+          }
+          if (t.hasAttribute('data-pick-remove') && picker) {
+            var rv = t.getAttribute('data-pick-remove')
+            picker.values = picker.values.filter(function (x) {
+              return x !== rv
+            })
+            pickerPaint()
+            return
+          }
+          if (t.hasAttribute('data-pick-custom') && picker) {
+            var inp = $('#ob23-custom-value'),
+              cv = inp.value.trim()
+            if (cv) {
+              if (QD[picker.key].kind === 'single') picker.values = [cv]
+              else if (picker.values.indexOf(cv) < 0) picker.values.push(cv)
+              if (
+                !QD[picker.key].ch.some(function (c) {
+                  return c[0] === cv
+                })
+              )
+                QD[picker.key].ch.push([cv, 'Tes choix personnalisés'])
+              pickerPaint()
+            }
+            return
+          }
+          if (t.getAttribute('data-ob23') === 'picker-clear' && picker) {
+            picker.values = []
+            pickerPaint()
+            return
+          }
+          if (t.getAttribute('data-ob23') === 'picker-apply' && picker) {
+            pickerApply()
+            return
+          }
+          if (t.hasAttribute('data-status-restore')) {
+            var f = t.closest('.ob23-field'),
+              s2 = f.querySelector('[data-ob23-status]')
+            s2.selectedIndex = 0
+            applyStatus(s2)
+            var c = f.querySelector('.ob23-selector,.ob23-input')
+            if (c) c.focus()
+            return
+          }
+          if (t.getAttribute('data-act') === 'remove-tag') {
+            t.closest('span').remove()
+            return
+          }
+          if (t.getAttribute('data-act') === 'add-tag') {
+            var ti = t.parentNode.querySelector('input'),
+              tv = ti.value.trim()
+            if (tv) {
+              var sp = d.createElement('span')
+              sp.innerHTML =
+                esc(tv) +
+                '<button type="button" data-act="remove-tag" aria-label="Retirer ' +
+                esc(tv) +
+                '">' +
+                icon('close') +
+                '</button>'
+              t.closest('.ob23-field').querySelector('.ob23-tags').appendChild(sp)
+              ti.value = ''
+            }
+            return
+          }
+        })
+        d.addEventListener('change', function (e) {
+          var t = e.target
+          if (t.matches('[data-ob23-option]') && picker) {
+            var single = QD[picker.key].kind === 'single'
+            if (single) picker.values = t.checked ? [t.value] : []
+            else if (t.checked) {
+              if (picker.values.indexOf(t.value) < 0) picker.values.push(t.value)
+            } else
+              picker.values = picker.values.filter(function (x) {
+                return x !== t.value
+              })
+            pickerPaint()
+          }
+          if (t.id === 'ob23-option-group' && picker) {
+            picker.group = t.value
+            pickerPaint()
+          }
+          if (t.id === 'ob23-approve') {
+            var err = $('#ob23-validation-error')
+            if (err) err.textContent = ''
+          }
+        })
+        d.addEventListener('input', function (e) {
+          var t = e.target
+          if (t.id === 'ob23-option-search' && picker) {
+            picker.query = t.value
+            var pos = t.selectionStart
+            pickerPaint()
+            var n = $('#ob23-option-search')
+            n.focus()
+            n.setSelectionRange(pos, pos)
+          }
+          if (t.id === 'ob23-catalog-search') catalogueSearch(t.value)
+        })
+        d.addEventListener('keydown', function (e) {
+          if (e.key === 'Escape') closeMenus()
+          if (e.key === 'Enter' && e.target.matches('.ob23-tag-entry input')) {
+            e.preventDefault()
+            e.target.parentNode.querySelector('[data-act="add-tag"]').click()
+          }
+        })
+        // ---- recherche du catalogue
+        function catalogueSearch(v) {
+          var IDX = DATA.idx || [],
+            body = $('#ob23-catalog-body'),
+            root = $('#ob23-search-results'),
+            q = norm(v.trim())
+          if (!body || !root) return
+          body.hidden = !!q
+          if (!q) {
+            root.innerHTML = ''
+            return
+          }
+          var hits = IDX.filter(function (x) {
+            return norm(x[0] + ' ' + x[3]).indexOf(q) >= 0
+          })
+          root.innerHTML =
+            '<p class="ob23-small">' +
+            (hits.length
+              ? hits.length +
+                (hits.length > 1 ? ' questions trouvées' : ' question trouvée') +
+                ' · les 16 thèmes sont parcourus.'
+              : 'Aucune question ne correspond. Essaie un outil, un métier ou un secteur.') +
+            '</p><div class="ob23-group-list">' +
+            hits
+              .slice(0, 40)
+              .map(function (x) {
+                return (
+                  '<a href="onboarding-theme.html"><div><h3>' +
+                  esc(x[0]) +
+                  '</h3><p>' +
+                  esc(x[1]) +
+                  ' · ' +
+                  esc(x[2]) +
+                  '</p></div>' +
+                  icon('right') +
+                  '</a>'
+                )
+              })
+              .join('') +
+            '</div>'
+        }
+        // ---- validation (relecture)
+        var vb = $('[data-validate]')
+        if (vb)
+          vb.addEventListener('click', function (e) {
+            var c = $('#ob23-approve')
+            if (c && !c.checked) {
+              e.preventDefault()
+              $('#ob23-validation-error').textContent =
+                'Confirme la relecture du cadrage, ou reviens corriger une réponse.'
+              c.focus()
+            }
+          })
+        // ---- couche de relecture
+        var sw = $('#rv-switch'),
+          pn = $('#rv-panel')
+        function rv(on) {
+          b.classList.toggle('show-adds', on)
+          if (on)
+            $$('[data-add]').forEach(function (x) {
+              var r = x.getBoundingClientRect()
+              x.classList.toggle(
+                'rv-r',
+                r.left + x.getAttribute('data-add').length * 8 + 24 > d.documentElement.clientWidth,
+              )
+            })
+          sw.setAttribute('aria-pressed', on ? 'true' : 'false')
+          pn.hidden = !on || innerWidth < 768
+          $('#rv-info').setAttribute('aria-expanded', pn.hidden ? 'false' : 'true')
+          try {
+            localStorage.setItem('rv-adds', on ? '1' : '0')
+          } catch (_) {}
+        }
+        sw.addEventListener('click', function () {
+          rv(sw.getAttribute('aria-pressed') !== 'true')
+        })
+        var inf = $('#rv-info')
+        inf.addEventListener('click', function () {
+          pn.hidden = !pn.hidden
+          inf.setAttribute('aria-expanded', pn.hidden ? 'false' : 'true')
+        })
+        try {
+          if (localStorage.getItem('rv-adds') === '1') rv(true)
+        } catch (_) {}
+        function theme(dark) {
+          d.documentElement.classList.toggle('dark', dark)
+          $$('[data-ob23="theme"]').forEach(function (th) {
+            th.innerHTML =
+              '<svg class="icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">' +
+              (dark ? ICON.sun : ICON.moon) +
+              '</svg>'
+            th.setAttribute('aria-label', dark ? 'Passer en thème clair' : 'Passer en thème sombre')
+          })
+          try {
+            localStorage.setItem('rv-theme', dark ? 'dark' : 'light')
+          } catch (_) {}
+        }
+        try {
+          var st = localStorage.getItem('rv-theme')
+          theme(st ? st === 'dark' : true)
+        } catch (_) {
+          theme(true)
+        }
+        var qs = new URLSearchParams(location.search)
+        if (qs.get('adds') === '1') rv(true)
+        if (qs.get('theme')) theme(qs.get('theme') === 'dark')
+        if (qs.get('state')) {
+          qs.get('state')
+            .split(',')
+            .forEach(function (p) {
+              var kv = p.split(':')
+              setState(kv[0], kv[1])
+            })
+        }
+        if (qs.get('open')) {
+          var od = d.getElementById(qs.get('open'))
+          if (od) od.showModal()
+        }
+      })()
+    </script>
+  </body>
+</html>

@@ -1,0 +1,127 @@
+# ─────────────────────────────────────────────────────────────────────────────
+# E2E PLAYWRIGHT — NOCTURNE, EN QUARANTAINE depuis le 25/10/2026 (voir le bloc au-dessus du job)
+#
+# Ce job vivait dans `ci.yml`, sur chaque pull request, avec
+# `continue-on-error: true` ET absent des `needs` de `CI Status`. Mesuré sur
+# 45 exécutions (14/09/2026) : **42 verts, 1 annulé, ZÉRO rouge**, 1,8 min de
+# temps de job par exécution, et 108 s de médiane — à égalité avec `Build` et
+# `Check types` pour le job le plus long, donc sur le chemin critique du temps
+# d'attente.
+#
+# Une garde qui ne peut pas faire échouer une fusion ne garde rien ; une garde
+# qui n'a jamais rougi est indiscernable d'une garde décorative. Celle-ci était
+# les deux à la fois. Le déplacer ici change deux choses, dans le bon sens :
+#
+#   1. il ne coûte plus 1,8 min de job à CHAQUE pull request ;
+#   2. il devient BLOQUANT — pas d'une fusion, mais de lui-même : un rouge
+#      nocturne est un rouge, il notifie, et il faut aller le regarder.
+#
+# Ce qu'on perd, nommément : le signal arrive la nuit suivante et non à
+# l'ouverture de la PR. On ne perd RIEN de ce qui bloquait hier, puisque rien
+# ne bloquait. À promouvoir dans `CI Status` le jour où la suite aura prouvé
+# qu'elle sait dire non — c'est-à-dire le jour où elle aura rougi sur un vrai
+# défaut, pas avant.
+# ─────────────────────────────────────────────────────────────────────────────
+name: E2E (Playwright) — nocturne
+
+# Le même plafond de tas que `ci.yml`, et pour la même raison : ce job BUILD le
+# web avant de lancer Playwright, donc il tombait sur « Ineffective mark-compacts
+# near heap limit » exactement comme Build et Check types. Écrire le plafond dans
+# un seul workflow ne suffisait pas — c'est le build qui casse, pas la CI.
+env:
+  NODE_OPTIONS: --max-old-space-size=6144
+
+on:
+  schedule:
+    # 03:30 UTC — la fenêtre la plus calme mesurée sur 14 jours (10 exécutions
+    # de CI entre 03 h et 08 h, heure de Paris, sur 417).
+    - cron: '30 3 * * *'
+  workflow_dispatch:
+  # ⚠️ PLUS de déclencheur `pull_request` (22/10/2026). Mesuré le même jour : ce job coûtait ~8 min de
+  # runner par PR touchant `apps/web/**`, `packages/ui/**` ou `e2e/**` ; il était rouge en permanence sur
+  # 3 specs cassées SUR LA BASE (run schedule 39750422616 sur main, mêmes échecs : « Importer » en strict
+  # mode violation) ; et le ruleset « main — CI Status requise » (25155651) n'exige que « CI Status » :
+  # aucun merge n'en dépendait. Il occupait un des 10 runners pour un signal que personne ne lisait.
+  # Contrepartie assumée : la garde du plancher tactile 44px et de la portée mobile de `/onboarding`
+  # (projet `web-mobile`, #2639.1) n'est plus vue qu'à 03:30 UTC. Une PR qui touche `e2e/` la rejoue
+  # à la main : `gh workflow run e2e-nightly.yml --ref <branche>` (workflow_dispatch ci-dessus).
+  # Il n'y a pas de `push` sur main : la fenêtre nocturne suffit.
+
+concurrency:
+  group: e2e-${{ github.ref }}
+  cancel-in-progress: true
+
+permissions:
+  contents: read
+
+jobs:
+  # ── QUARANTAINE (hors chemin bloquant) ──────────────────────────────────────────────────────────────
+  # QUI : Louis, 25/10/2026. Ce job ne conditionne AUCUN merge : absent des `needs` et de la liste de `CI Status`.
+  # POURQUOI : sur les 30 derniers runs, 13 KO, 9 annulés, 7 verts, dernier vert le 22/10 (3 specs cassées sur la base).
+  # REMPLAÇANT dans le chemin bloquant : `Build` + `Test (Web)` agrégés par `CI Status` (aucun ne lance de navigateur) ;
+  #   fumée proposée, non encore câblée : `next start` + curl 200 sur /login dans `build`.
+  # RÉEXAMEN : 25/11/2026 (sortie : specs réparées + 10 nuits vertes, sinon suppression).
+  # DÉCISION : docs/decisions/2026-10-25-quarantaine-e2e.md
+  e2e:
+    name: E2E (Playwright smoke)
+    runs-on: ${{ vars.CI_RUNS_ON || 'ubuntu-latest' }}
+    # 25 → 40 (Louis, 13/10/2026) : sur les runners partagés chargés, l'installation
+    # prenait ~16 min et la suite (237 tests) était coupée vers le 200e test, sans
+    # aucun échec — 3 coupures d'affilée sur #4132, d'autres PR du jour aussi.
+    timeout-minutes: 40
+    steps:
+      - uses: actions/checkout@v7
+      - uses: pnpm/action-setup@v6
+      - uses: actions/setup-node@v7
+        with:
+          node-version: 22
+      - uses: ./.github/actions/store-pnpm
+        id: store
+      - run: pnpm install --frozen-lockfile
+      # ⚠️ Le SECOND écrivain du cache, et le plus important des deux.
+      #
+      # Un cache GitHub est cloisonné par RÉFÉRENCE : celui qu'écrit `format`
+      # dans `ci.yml` vit sur `refs/pull/N/merge` et n'est lisible que par cette
+      # PR-là. Seul un cache écrit sur la branche par DÉFAUT est visible par
+      # toutes les branches — donc par la première exécution de chaque PR neuve.
+      #
+      # Ce workflow tourne la nuit sur `main` : il est le seul endroit du dépôt
+      # qui peut alimenter ce cache-là. Sans ce pas, chaque PR neuve repartirait
+      # du réseau sur son premier job.
+      - name: Écrire le cache du store pnpm (visible par toutes les branches)
+        if: github.ref == 'refs/heads/main' && steps.store.outputs.restaure != 'true'
+        uses: actions/cache/save@v6
+        with:
+          path: ${{ steps.store.outputs.chemin }}
+          key: ${{ steps.store.outputs.cle }}
+      - name: Cache Turbo
+        uses: actions/cache@v6
+        with:
+          path: .turbo
+          key: turbo-e2e-${{ runner.os }}-${{ github.sha }}
+          restore-keys: turbo-e2e-${{ runner.os }}-
+      - name: Install Playwright browsers
+        run: pnpm --filter @bellum/e2e exec playwright install --with-deps chromium
+      # Même raison que pour jest/vitest dans `ci.yml` : le runner est PARTAGÉ,
+      # `os.cpus()` rend les cœurs de l'HÔTE, et Playwright en déduisait un
+      # worker par cœur — un Chromium par test, lancés tous en même temps.
+      # Mesuré : « Running 22 tests using 22 workers » puis crash en cascade
+      # (`browserType.launch: … has been closed`, `signal=SIGABRT`), y compris
+      # sur `main` en exécution nocturne. `playwright.config.ts` lit
+      # `PW_MAX_WORKERS` avec un défaut prudent si ce pas ne tourne pas.
+      - name: Plafond de workers (lu dans le conteneur, pas sur l'hôte)
+        run: |
+          n=$(bash .github/scripts/plafond-workers.sh 2048)
+          [ -n "${PW_MAX_WORKERS:-}" ] || echo "PW_MAX_WORKERS=$n" >> "$GITHUB_ENV"
+      - name: Playwright smoke tests
+        run: pnpm e2e
+      - name: Upload Playwright artifacts (report + traces)
+        if: failure()
+        uses: actions/upload-artifact@v7
+        with:
+          name: playwright-artifacts
+          path: |
+            e2e/playwright-report
+            e2e/test-results
+          retention-days: 7
+          if-no-files-found: ignore

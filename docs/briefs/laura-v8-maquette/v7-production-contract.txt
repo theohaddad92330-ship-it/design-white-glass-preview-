@@ -1,0 +1,80 @@
+# V7 — contrat d’intégration de la conversation guidée
+
+29 octobre 2026. Ce document décrit le raccordement à réaliser dans le SaaS. La V7 livrée est un prototype local avec scénarios et délais simulés. Le dépôt fourni est resté en lecture seule.
+
+## Ce que le code produit fournit aujourd’hui
+
+Dans `apps/api/src/modules/ia/ia.client.ts`, `ChatStreamEvent` et `parseChatStreamEvent` exposent les événements `delta` (texte), `step` (libellé) et `done` (issue et données). Dans `apps/web/src/features/chat/api/laura-turn.ts`, le client expose `onAccepted`, `onDelta` et `onStep`. Le champ `clarificationAsked` ne constitue pas un canal de réponse à une question d’un travail déjà actif.
+
+Le questionnaire de la V7 ne peut donc pas être raccordé en ajoutant seulement des boutons à la réponse texte. Il faut étendre le protocole de travail. Les plafonds de 90/105 secondes commentés dans le code sont des budgets d’exécution, pas une estimation à afficher à l’utilisateur.
+
+## Séparer dossier, profil et outils
+
+La sélection explicite d’un compte, consultant ou autre dossier détermine l’objet du travail. Le mode de personnalisation détermine les couches implicites ajoutées autour de cet objet. La sélection d’outils définit ce qui peut être mobilisé, sous réserve des autorisations du serveur.
+
+Références : `packages/contracts/src/schemas/laura-context-mode.ts`, `apps/ia/app/services/context_mode.py`, et le contrat de portée relevé dans la revue V5.
+
+| Mode | Sens à préserver |
+| --- | --- |
+| Mon profil activé : `my_activity` | Utiliser les couches autorisées du profil et de l’activité. |
+| Mon profil désactivé : `neutral` | Retirer profil, rôle, BU, mémoire durable, portefeuille, CRM, historique commercial, base documentaire et boîtes privées ajoutés implicitement. |
+| Mission ponctuelle : `one_off_mission` | Retirer le contexte habituel et conserver seulement le contexte autorisé de la mission ou du compte explicitement choisi. Ce n’est pas synonyme de neutre. |
+| Dossier explicite, pièces jointes et fil courant | Restent disponibles dans les limites du mode et de la portée. Désactiver le profil ne supprime pas les messages antérieurs. |
+| Portée stricte : `excludeWorkspaceData` | Exclusion supplémentaire des données et outils de l’espace ; ne pas la réduire à un changement d’apparence du switch. |
+
+À l’envoi, figer la portée, le mode, les outils et les paramètres avec la demande. La V7 applique cette règle aussi à une demande mise en file. Le switch affecte les prochains envois ; il ne recalcule pas silencieusement le travail actif.
+
+## Un seul travail, plusieurs précisions
+
+Contrat proposé, à spécifier avec le backend :
+
+1. Le serveur accepte une demande et fournit une identité de travail stable.
+2. Il émet des étapes observables : lecture de dossier, sources reçues, vérifications, synthèse. Les étapes ne décrivent pas son raisonnement interne.
+3. Une question porte `thread_id`, `run_id`, `question_id`, `revision`, son caractère nécessaire ou optionnel, ses options et les étapes qui peuvent continuer.
+4. La réponse utilisateur transmet les choix avec une clé d’idempotence. Le serveur confirme accepté, déjà accepté, obsolète ou travail terminé.
+5. Le serveur confirme les paramètres effectivement retenus. Le reçu visible est fondé sur cet accusé, pas sur le seul clic.
+6. La réponse finale conserve les choix utilisés et leurs conséquences. Elle reste attachée à la même demande.
+
+Le serveur garde l’autorité sur les droits, la portée et les outils. Un bouton ne peut pas élargir les données autorisées. Une reconnexion réconcilie événements et réponses déjà acceptées avant de permettre une nouvelle soumission.
+
+## États et délais
+
+| État | Affichage et comportement |
+| --- | --- |
+| Recherche active | Étape actuelle, bref détail concret, durée écoulée et fourchette seulement si elle est fiable. Les tâches indépendantes peuvent continuer pendant une question. |
+| Question nécessaire sans réponse | Une fois les lectures indépendantes terminées, afficher l’attente du choix. Arrêter le spinner et suspendre le temps de recherche. |
+| Question optionnelle intacte | Continuer avec les critères du dossier et les nommer. Ne pas attribuer ce défaut à un choix de l’utilisateur. |
+| Question optionnelle en cours d’édition | Attendre la validation ou l’abandon explicite. Ne pas clôturer pendant que l’utilisateur sélectionne. |
+| Précision acceptée | Reçu compact ; effet observable sur filtre, classement ou structure. Pas de nouveau message utilisateur à chaque clic. |
+| Durée dépassée | Dire que l’opération prend plus de temps et identifier l’étape encore active. Ne pas maintenir indéfiniment « encore quelques secondes ». |
+| Arrêt | Neutraliser callbacks et questions actifs ; conserver les résultats partiels et choix acceptés. Ne pas déclencher la file automatiquement. |
+| Reprise | Nouvelle identité d’exécution, paramètres repris visibles, ancien arrêt conservé dans le fil. |
+
+Dans l’aperçu, les recherches accompagnées utilisent une fourchette simulée de 12–20 secondes ; les petites recherches de contacts, 4–8 secondes. Ce sont des durées de démonstration, hors attente utilisateur. En production, calibrer les fourchettes sur la distribution observée des tâches comparables et les retirer si l’estimation est insuffisamment fiable.
+
+Le temps seul ne doit jamais générer un pourcentage de complétion. Les compteurs de comptes lus ou de sources reçues supposent des événements réels.
+
+## Ordre d’apparition, lecture et motion
+
+Dans le scénario accompagné : reçu de la demande, lecture du dossier, première question, lecture des sources, première piste disponible, synthèse puis résultat. Une seule question est ouverte à la fois. La seconde précise les priorités lorsque le type de pistes est fixé.
+
+La progression remplace uniquement la zone de travail de la réponse. L’horloge met à jour du texte ; elle ne reconstruit pas le questionnaire chaque seconde. Les changements d’étape et de question utilisent une annonce polie ; l’horloge ne s’annonce pas à chaque seconde. L’apparition d’une question ne vole pas le focus au composeur.
+
+Les transitions héritent du système Bellum existant, avec relief et accent mesurés. Le dévoilement des résultats est local à la réponse ; l’utilisateur qui lit plus haut n’est pas ramené de force à la fin. L’option de mouvement réduit conserve toutes les étapes et informations sans animation décorative.
+
+La V7 locale ne propose pas encore une réponse libre dans le questionnaire : les choix sont prédéfinis et la saisie principale crée une nouvelle demande mise en file. Une future réponse libre doit appartenir explicitement à la question active, avec les mêmes garanties d’identité et d’idempotence.
+
+## Contrôles d’intégration utiles
+
+Vérifier ancien clic après arrêt, double validation, question révisée, reconnexion, navigation entre fils, changement du profil, message en file et portée stricte. Le classement doit repartir de sa base lorsque les critères changent ; remettre les critères par défaut doit restaurer l’ordre initial.
+
+Les essais locaux sont documentés dans la recette V7. Ils ne démontrent ni le comportement du backend ni la qualité d’une génération réelle sur un texte arbitraire.
+
+## Références
+
+- [W3C — Status Messages](https://www.w3.org/WAI/WCAG22/Understanding/status-messages.html) : annonces d’état sans prise de focus.
+- [W3C — Switch Pattern](https://www.w3.org/WAI/ARIA/apg/patterns/switch/) : nom stable et état du contrôle binaire.
+- [Carbon — Loading patterns](https://www.carbondesignsystem.com/building-blocks/core/patterns/loading) : progression, communication d’état et résultats progressifs.
+- [Anthropic — Building effective agents](https://www.anthropic.com/engineering/building-effective-agents) : points d’intervention humains et retour d’information observable.
+
+Ces références éclairent le mécanisme d’interaction. Elles ne garantissent ni la rétention, ni une préférence esthétique, ni une latence pour Bellum.

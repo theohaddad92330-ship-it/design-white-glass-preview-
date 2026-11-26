@@ -1,0 +1,1249 @@
+{
+  "intro": "Reprends une base existante sans la casser. Rien n’est écrit tant que tu n’as pas vu la simulation.",
+  "chooseSource": "Choisir cette source",
+  "chooseSourceDisabled": "Ce format n’est pas encore lu : ré-exporte en CSV depuis ton outil, puis reviens ici.",
+  "requiredColumns": "Colonnes nécessaires : {{list}}",
+  "downloadTemplate": "Télécharger un modèle",
+  "willImport": "J’importe : {{list}}",
+  "wontImport": "Je n’importe pas : {{list}}",
+  "dropFile": "Dépose ton fichier",
+  "fileTooLarge": "Ce fichier est trop volumineux ({{max}} Mo maximum). Découpe-le en plusieurs fichiers et importe-les l’un après l’autre.",
+  "fileLooksLikeBinary": "Ce fichier a la structure d’un classeur Excel ou d’une archive ZIP, pas d’un texte lisible. Ré-exporte-le en CSV depuis ton outil, puis redépose-le ici.",
+  "simulate": "Simuler",
+  "apply": "Importer",
+  "targetListOffer": "Créer aussi une liste cible avec ces comptes (tier, raison, problématiques)",
+  "targetListName": "Nom de la liste cible",
+  "targetListDefaultName": "Ciblage importé",
+  "targetListCreated": "Liste cible « {{name}} » : {{added}} compte(s) ajouté(s), dont {{existing}} déjà dans ton espace (rattachés, jamais fusionnés). Aucune analyse n’a été lancée.",
+  "targetListNearDuplicates": "{{count}} compte(s) ressemblent à un compte déjà dans ton espace (même nom, autre domaine) : à vérifier, rien n’a été fusionné.",
+  "sessionError": "Impossible d’ouvrir la session d’import.",
+  "simulateError": "La simulation n’a pas abouti.",
+  "applyError": "L’import n’a pas abouti.",
+  "notWritten": "Rien n’a été écrit.",
+  "applied": "{{created}} créé(s), {{updated}} mis à jour.",
+  "rowsRead": "{{count}} ligne(s) lue(s)",
+  "creations": "{{count}} création(s)",
+  "updates": "{{count}} mise(s) à jour",
+  "duplicates": "{{count}} doublon(s) repéré(s) — aucune fusion sans ton clic",
+  "matchedAccounts": "{{count}} compte(s) rapproché(s) d’une fiche déjà connue",
+  "conflictsCount": "dont {{count}} conflit(s) — une valeur déjà renseignée serait remplacée",
+  "possibleDuplicatesCount": "{{count}} doublon(s) potentiel(s) signalé(s) — à vérifier, rien n’est fusionné ni écarté",
+  "possibleDuplicateLine": "ligne {{line}} — même {{keys}} qu’une autre ligne du fichier",
+  "errors": {
+    "unmeasured": "Erreurs d’écriture : pas encore mesurées — cet import n’a pas encore été exécuté.",
+    "zero": "Aucune ligne en échec à l’écriture.",
+    "count": "{{count}} ligne(s) n’a/n’ont pas pu être écrite(s) :",
+    "line": "ligne {{line}}",
+    "lineHeader": "Ligne",
+    "reasonHeader": "Raison",
+    "fieldHeader": "Champ"
+  },
+  "appliedWithErrors": "{{created}} créé(s), {{updated}} mis à jour. {{errors}} ligne(s) n’a/n’ont pas pu être écrite(s) — le détail est dans le rapport, avec leur numéro de ligne.",
+  "overwritten": "{{count}} valeur(s) déjà renseignée(s) seraient remplacées.",
+  "withoutLegalBasis": "{{count}} contact(s) arriveraient sans base légale renseignée.",
+  "missingRequired": "Colonne obligatoire absente : {{list}}. Corrige le fichier et relance la simulation.",
+  "ignoredColumns": "Colonnes non rattachées : {{list}}",
+  "sensitiveColumns": "Données sensibles détectées dans le fichier : {{list}}",
+  "sensitiveNotesCount": "{{count}} colonne(s) sensible(s) signalée(s)",
+  "truncated": "Le fichier dépasse la borne : seules les premières lignes ont été lues.",
+  "historyTitle": "Imports précédents",
+  "historyLine": "{{source}} — {{state}} · {{created}} créé(s), {{updated}} mis à jour",
+  "encodingRead": {
+    "utf-8": "Ton fichier est en UTF-8. Je m’adapte.",
+    "utf-8-bom": "Ton fichier est en UTF-8 avec marqueur d’ordre. Je m’adapte.",
+    "windows-1252": "Ton fichier utilise l’encodage Windows-1252 (l’export CSV par défaut d’Excel). Je m’adapte."
+  },
+  "delimiterRead": "Colonnes séparées par « {{delimiter}} » — c’est ce que {{brand}} a lu dans ton fichier.",
+  "skipReasons": {
+    "missing_required_field": "champ obligatoire absent",
+    "invalid_email": "adresse invalide",
+    "invalid_date": "date invalide ou ambiguë",
+    "unknown_company": "société inconnue",
+    "company_to_validate": "société à valider — la ligne n’est pas importée",
+    "unknown_owner": "propriétaire inconnu",
+    "duplicate_in_file": "doublon dans le fichier",
+    "out_of_scope_column": "colonne hors périmètre"
+  },
+  "states": {
+    "draft": "brouillon",
+    "simulated": "simulé",
+    "applied": "importé",
+    "rolled_back": "annulé",
+    "failed": "échec",
+    "partial": "interrompu"
+  },
+  "sources": {
+    "hubspot_export": "Export de ton CRM",
+    "boondmanager_export": "Export de ton ERP",
+    "crm_generic_export": "Export CRM générique",
+    "ats_export": "Export de ton ATS",
+    "talent_pool": "Vivier de consultants",
+    "missions": "Missions",
+    "contacts_only": "Contacts seuls",
+    "accounts_only": "Comptes seuls",
+    "projects": "Opportunités",
+    "notes": "Notes",
+    "activity_history": "Historique d’activité",
+    "cv_bulk": "CV en masse",
+    "salesconnect_legacy_export": "Ancien CRM (reprise nominative)",
+    "need_documents": "Documents de besoin",
+    "testimonials": "Témoignages clients",
+    "tender_records": "Appels d’offres",
+    "internal_directory": "Référentiel interne",
+    "deals_export": "Export de deals"
+  },
+  "sourcesLoading": "Je récupère les sources disponibles…",
+  "sourcesUnavailable": "Je n’ai pas pu récupérer les sources d’import. Ce n’est pas « aucune source » : c’est « je n’ai pas pu regarder ». Réessaie dans un moment.",
+  "appliedWithSkips": "{{created}} créé(s), {{updated}} mis à jour. {{skipped}} ligne(s) écartée(s) : la société n’existe pas encore dans ton espace. Importe les comptes d’abord.",
+  "rollback": {
+    "action": "Annuler cet import",
+    "done": "{{reverted}} objet(s) remis dans leur état d'avant · {{archived}} archivé(s) · {{kept}} laissé(s) parce que quelqu'un y a touché depuis.",
+    "windowClosed": "La fenêtre d'annulation est passée. L'instantané reste consultable.",
+    "error": "L'annulation n'a pas pu se faire."
+  },
+  "formatNotReadableHelp": "Cet assistant ne lit pas encore ce format. Dépose ce fichier dans « Dépose tes documents » en tête de page : {{brand}} le range là où il sert (les consultants et missions passent par « Importer un fichier »).",
+  "mapping": {
+    "title": "Ce que {{brand}} a reconnu dans ton fichier",
+    "recognised": "{{attached}} colonne(s) rattachée(s) sur {{total}}. Corrige ce qui ne va pas : rien n’est deviné.",
+    "unattached": "— non rattachée —",
+    "requiredMark": "(obligatoire)",
+    "unattachedList": "Ces colonnes n’iront nulle part : {{list}}. Rattache-les si elles comptent.",
+    "missingRequired": "Champ obligatoire sans colonne : {{list}}. L’import restera bloqué tant qu’il n’est pas rattaché.",
+    "stale": "La correspondance a changé depuis la simulation. Relance-la : {{brand}} écrit avec la correspondance SIMULÉE, pas avec celle affichée.",
+    "fields": {
+      "email": "adresse e-mail",
+      "name": "nom",
+      "firstName": "prénom",
+      "lastName": "nom de famille",
+      "phone": "téléphone",
+      "company": "société",
+      "siren": "SIREN",
+      "domain": "domaine",
+      "title": "fonction",
+      "owner": "propriétaire",
+      "startDate": "date de début",
+      "endDate": "date de fin",
+      "date": "date",
+      "dailyRate": "TJM",
+      "amount": "montant",
+      "skills": "compétences",
+      "body": "contenu",
+      "kind": "type",
+      "channel": "canal",
+      "label": "libellé",
+      "client": "client",
+      "role": "rôle",
+      "period": "période",
+      "account": "compte",
+      "lastEmployer": "dernier employeur",
+      "status": "statut",
+      "source": "provenance",
+      "tags": "étiquettes"
+    },
+    "confidence": {
+      "high": "confiance haute",
+      "medium": "confiance moyenne",
+      "low": "confiance basse"
+    },
+    "suggestion": "« {{header}} » ressemble à {{field}}.",
+    "acceptSuggestion": "Rattacher"
+  },
+  "stopped": {
+    "failed": "L’import s’est arrêté à la ligne {{line}} sur {{total}}. {{created}} créé(s) et {{updated}} mis à jour SONT en base — ils n’ont pas été perdus. Redépose le même fichier et relance : je reprendrai exactement où ça s’est arrêté.",
+    "unknown": "L’import s’est arrêté à la ligne {{line}} sur {{total}}. {{created}} créé(s) et {{updated}} mis à jour SONT en base. La ligne {{line}} est partie sans réponse : je ne sais pas si elle a été écrite, et je ne devine pas. Reprends l’import pour me dire quoi en faire."
+  },
+  "resume": {
+    "action": "Reprendre cet import",
+    "title": "Reprendre là où ça s’est arrêté",
+    "stoppedAt": "{{done}} ligne(s) sur {{total}} ont été écrites — {{created}} créé(s), {{updated}} mis à jour. Elles sont en base.",
+    "stoppedUnknown": "Cet import s’est arrêté et je ne sais pas combien de lignes ont été écrites. Ce n’est pas « aucune » : ne relance pas depuis le début, tu doublonnerais.",
+    "whyFailed": "La connexion n’a jamais abouti : la ligne suivante n’est certainement pas passée, elle sera rejouée.",
+    "whyUnknown": "La requête est partie sans que la réponse revienne. Je ne sais pas si cette ligne a été écrite.",
+    "detail": "Détail technique : {{detail}}",
+    "dropSameFile": "Redépose EXACTEMENT le même fichier, puis relance la simulation. Je vérifie que c’est bien lui avant de sauter la moindre ligne — reprendre au même numéro dans un autre fichier en sauterait autant, en silence.",
+    "uncertainQuestion": "La ligne {{line}} est partie sans réponse. Que veux-tu que j’en fasse ?",
+    "rewriteLine": "Réécrire la ligne {{line}}",
+    "skipLine": "Sauter la ligne {{line}}",
+    "rewriteRisk": "Si elle avait déjà été écrite, tu auras un doublon sur cette ligne — un seul, et tu sais lequel.",
+    "skipRisk": "Si elle n’avait pas été écrite, cette ligne sera absente — une seule, et tu sais laquelle.",
+    "mustChoose": "Choisis l’un des deux : je ne tranche pas à ta place sur une ligne dont j’ignore le sort."
+  },
+  "mappedColumns": "Colonnes reconnues : {{list}}",
+  "historyWhen": "le {{when}}",
+  "historyRows": "{{done}} ligne(s) traitée(s) sur {{total}}",
+  "historyEmpty": "Aucun import pour l’instant. Choisis une source ci-dessus : tes imports passés s’afficheront ici, avec ce qu’ils ont écrit et de quoi les annuler.",
+  "historyLoading": "Je récupère tes imports précédents…",
+  "historyUnavailable": "Je n’ai pas pu récupérer tes imports précédents. Ce n’est pas « aucun import » : c’est « je n’ai pas pu regarder ».",
+  "steps": {
+    "ariaLabel": "Les étapes de l’import",
+    "progress": "{{done}} étape(s) faite(s) sur {{total}}",
+    "choose_source": "Choisir la source",
+    "upload": "Déposer",
+    "map": "Reconnaître",
+    "normalise": "Normaliser",
+    "deduplicate": "Dédoublonner",
+    "simulate": "Simuler",
+    "apply": "Importer",
+    "status": {
+      "done": "fait",
+      "current": "en cours",
+      "todo": "à faire"
+    },
+    "phase": {
+      "source": "Source",
+      "columns": "Colonnes",
+      "check": "Vérification",
+      "result": "Résultat"
+    }
+  },
+  "byToolSummary": "Reprendre depuis un outil ou un format précis",
+  "byToolDescription": "Un export d’un autre outil, ou un format précis : l’assistant te guide champ par champ, avec une prévisualisation avant toute écriture.",
+  "byToolOpen": "Ouvrir l’assistant",
+  "hero": {
+    "title": "Donne à {{brand}} ton historique, même sans connecter tes outils.",
+    "subtitle": "Importe tes exports CRM, ATS, comptes, contacts, missions ou anciens fichiers. {{brand}} les structure pour enrichir ton contexte au lieu de repartir de zéro.",
+    "importIs": "Import : reprise ponctuelle d'une base existante.",
+    "connectionIs": "Connexion : des données synchronisées dans le temps.",
+    "seeIntegrations": "Voir les intégrations",
+    "askLaura": "Comment importer mes données dans {{brand}} ?",
+    "askLauraLabel": "Demander à {{copilot}}"
+  },
+  "families": {
+    "legacyTool": "Je récupère un ancien outil",
+    "talent": "Je récupère mes consultants",
+    "business": "Je récupère mon business"
+  },
+  "moreImports_one": "+{{count}} autre",
+  "moreImports_other": "+{{count}} autres",
+  "benefitByFamily": {
+    "legacyTool": "Reprends ce que ton ancien outil contenait, sans le ressaisir.",
+    "talent": "Récupère tes consultants, leurs compétences et leurs disponibilités.",
+    "business": "Remets ton activité en place : comptes, contacts, projets, historique."
+  },
+  "benefit": {
+    "hubspot_export": "Récupère tes comptes, contacts, affaires et notes depuis l'export de ton CRM.",
+    "crm_generic_export": "Récupère tes comptes, contacts et notes depuis l'export de n'importe quel CRM.",
+    "boondmanager_export": "Récupère tes clients, missions et consultants depuis l'export de ton ERP.",
+    "ats_export": "Récupère tes candidats et leurs compétences depuis l'export de ton ATS.",
+    "salesconnect_legacy_export": "Récupère ce que ton ancien outil de prospection contenait.",
+    "talent_pool": "Rends tes consultants disponibles au matching, avec leurs compétences.",
+    "cv_bulk": "Transforme un lot de CV en fiches consultants exploitables.",
+    "accounts_only": "Remets ton portefeuille de comptes en place, sans le ressaisir.",
+    "contacts_only": "Retrouve tes interlocuteurs et leurs coordonnées.",
+    "projects": "Reprends tes projets là où ils en sont.",
+    "missions": "Reprends tes missions en cours, avec leurs dates.",
+    "notes": "Rends tes notes relisables au bon endroit, sur le bon compte.",
+    "activity_history": "Redonne à {{brand}} la mémoire de tes échanges passés."
+  },
+  "unlocked": {
+    "title": "Ce que ces données vont débloquer",
+    "legacyTool": {
+      "portfolio": "Les comptes repris rejoignent ton portefeuille et deviennent analysables",
+      "noRediscovery": "Les contacts déjà connus ne sont pas redécouverts comme nouveaux — les rapprochements te sont proposés",
+      "history": "L'historique repris nourrit le journal, et {{copilot}} peut s'appuyer dessus"
+    },
+    "business": {
+      "portfolio": "Les comptes repris rejoignent ton portefeuille et deviennent analysables",
+      "noRediscovery": "Les contacts déjà connus ne sont pas redécouverts comme nouveaux — les rapprochements te sont proposés",
+      "history": "L'historique repris nourrit le journal, et {{copilot}} peut s'appuyer dessus"
+    },
+    "talent": {
+      "matching": "Tes consultants deviennent proposables sur les besoins ouverts",
+      "availability": "Leurs disponibilités et leurs compétences deviennent exploitables",
+      "submissions": "Le rapprochement besoin ↔ consultant s'appuie enfin sur ton vivier réel"
+    }
+  },
+  "universal": {
+    "importedFromFile": "Tiré de ton fichier {{name}}",
+    "title": "Importer un fichier",
+    "description": "Contacts, comptes… autant de lignes que ton fichier en contient. {{brand}} lit le fichier en arrière-plan, par paquets, et te montre l'avancée en direct.",
+    "typeLabel": "Ce que contient le fichier",
+    "scope": {
+      "label": "Qui voit ces contacts",
+      "workspace": "Mon équipe",
+      "personal": "Moi seul (personnel)",
+      "personalHint": "Ils arrivent dans « Mes contacts personnels » (liste Contacts et fiche du compte) : toi seul les vois. Ils ne figurent ni dans les listes d'équipe ni dans l'organigramme partagé."
+    },
+    "types": {
+      "account": "Comptes",
+      "contact": "Contacts",
+      "need": "Besoins",
+      "mission": "Missions",
+      "talent": "Consultants et candidats"
+    },
+    "notWritableYet": "reconnu, écriture au prochain lot",
+    "choose": "Choisir un fichier",
+    "formats": "CSV (virgule, point-virgule ou tabulation), XLSX ou JSON — sans limite de lignes.",
+    "trySample": "Essayer avec le fichier d'exemple",
+    "downloadSample": "Télécharger le fichier d'exemple",
+    "uploading": "Envoi du fichier — partie {{sent}} sur {{total}}…",
+    "running_one": "{{count}} ligne traitée…",
+    "running_other": "{{count}} lignes traitées…",
+    "canClose": "Tu peux fermer cette fenêtre : l'import continue et reprend tout seul là où il s'est arrêté en cas de coupure.",
+    "sheet": {
+      "label": "Onglet lu",
+      "help": "Ce classeur a plusieurs onglets : {{brand}} a retenu celui qui contient tes colonnes. Change d’onglet si ce n’est pas le bon.",
+      "option": "{{name}} — {{count}} ligne(s)"
+    },
+    "sheets": {
+      "title": "Feuilles à importer",
+      "help": "Chaque feuille reconnue est cochée : décoche celles que tu ne veux pas. Une feuille non reconnue n’est jamais importée au jugé.",
+      "recognised": "Colonnes reconnues pour ce type.",
+      "unrecognised": "Colonnes non reconnues — aucun type proposé, feuille laissée décochée.",
+      "noneChosen": "Coche au moins une feuille pour continuer.",
+      "reportTitle": "Bilan par feuille",
+      "read_one": "{{count}} lue",
+      "read_other": "{{count}} lues",
+      "created_one": "{{count}} créée",
+      "created_other": "{{count}} créées",
+      "review_one": "{{count}} à revoir",
+      "review_other": "{{count}} à revoir",
+      "rejected_one": "{{count}} écartée",
+      "rejected_other": "{{count}} écartées",
+      "toCreate_one": "{{count}} à créer",
+      "toCreate_other": "{{count}} à créer",
+      "notDone": "pas lue jusqu’au bout",
+      "typeOf": "Type de « {{name}} »",
+      "typePlaceholder": "Choisir un type",
+      "detected": "Lue comme : {{type}} — d’après les colonnes {{columns}}.",
+      "tie": "Deux types possibles : {{types}} — choisis-en un, rien n’est tranché pour toi.",
+      "corrected": "Type choisi par toi : {{type}}."
+    },
+    "mapping": {
+      "help": "Vérifie à quoi correspond chaque colonne. Une colonne sans équivalent n'est pas perdue : elle est conservée en « informations complémentaires » et affichée sur la fiche.",
+      "column": "Colonne du fichier",
+      "sample": "Exemple",
+      "field": "Champ {{brand}}",
+      "fieldFor": "Champ {{brand}} pour la colonne « {{column}} »",
+      "keepExtra": "Conserver en informations complémentaires",
+      "missing": "Aucune colonne pour : {{fields}}. Les lignes sans cette valeur seront listées dans le rapport, les autres importées.",
+      "launch": "Lancer l'import",
+      "becomes": "Devient",
+      "recognisedTitle": "Colonnes reconnues",
+      "recognised": "{{attached}} colonne(s) du fichier rattachée(s) sur {{total}}.",
+      "verify": "Vérifier avant d’importer",
+      "backToMapping": "Revoir les colonnes",
+      "verifying": "Vérification en cours…",
+      "verifyError": "La vérification n’a pas pu aboutir. Réessaie dans un instant."
+    },
+    "report": {
+      "done_one": "Lecture du fichier terminée — {{count}} ligne lue. Voici ce qui en est fait :",
+      "done_other": "Lecture du fichier terminée — {{count}} lignes lues. Voici ce qui en est fait :",
+      "interrupted_one": "Import interrompu après {{count}} ligne validée. Il reprendra au dernier paquet validé.",
+      "interrupted_other": "Import interrompu après {{count}} lignes validées. Il reprendra au dernier paquet validé.",
+      "imported_one": "{{count}} fiche créée",
+      "imported_other": "{{count}} fiches créées",
+      "duplicates_one": "{{count}} doublon proposé — rien n'a été fusionné, à toi de décider",
+      "duplicates_other": "{{count}} doublons proposés — rien n'a été fusionné, à toi de décider",
+      "rejected_one": "{{count}} ligne écartée, avec sa raison",
+      "rejected_other": "{{count}} lignes écartées, avec leur raison",
+      "download": "Télécharger le rapport",
+      "resume": "Reprendre l'import",
+      "close": "Fermer",
+      "exportRefused": "La règle de ton espace ne permet pas de télécharger ce rapport.",
+      "family": {
+        "account": {
+          "created_one": "{{count}} compte créé",
+          "created_other": "{{count}} comptes créés",
+          "matched_one": "{{count}} compte reconnu par sa référence CRM — complété sans rien écraser",
+          "matched_other": "{{count}} comptes reconnus par leur référence CRM — complétés sans rien écraser",
+          "duplicates_one": "{{count}} doublon proposé — rien n'a été fusionné, à toi de décider",
+          "duplicates_other": "{{count}} doublons proposés — rien n'a été fusionné, à toi de décider",
+          "rejected_one": "{{count}} ligne écartée, avec sa raison",
+          "rejected_other": "{{count}} lignes écartées, avec leur raison",
+          "toReconcile_one": "{{count}} compte à rapprocher, avec sa raison (rapport)",
+          "toReconcile_other": "{{count}} comptes à rapprocher, avec leur raison (rapport)",
+          "resolvedAccounts_one": "{{count}} compte résolu dans l'espace",
+          "resolvedAccounts_other": "{{count}} comptes résolus dans l'espace"
+        },
+        "contact": {
+          "created_one": "{{count}} contact créé",
+          "created_other": "{{count}} contacts créés",
+          "matched_one": "{{count}} contact reconnu par sa référence CRM — complété sans rien écraser",
+          "matched_other": "{{count}} contacts reconnus par leur référence CRM — complétés sans rien écraser",
+          "duplicates_one": "{{count}} doublon proposé — rien n'a été fusionné, à toi de décider",
+          "duplicates_other": "{{count}} doublons proposés — rien n'a été fusionné, à toi de décider",
+          "rejected_one": "{{count}} ligne écartée, avec sa raison",
+          "rejected_other": "{{count}} lignes écartées, avec leur raison",
+          "toReconcile_one": "{{count}} contact à rapprocher, avec sa raison (rapport)",
+          "toReconcile_other": "{{count}} contacts à rapprocher, avec leur raison (rapport)",
+          "alreadyKnown_one": "{{count}} contact dont la coordonnée est déjà dans l'espace",
+          "alreadyKnown_other": "{{count}} contacts dont la coordonnée est déjà dans l'espace",
+          "resolvedAccounts_one": "{{count}} compte résolu dans l'espace",
+          "resolvedAccounts_other": "{{count}} comptes résolus dans l'espace"
+        },
+        "need": {
+          "created_one": "{{count}} besoin créé",
+          "created_other": "{{count}} besoins créés",
+          "matched_one": "{{count}} besoin reconnu par sa référence CRM — complété sans rien écraser",
+          "matched_other": "{{count}} besoins reconnus par leur référence CRM — complétés sans rien écraser",
+          "duplicates_one": "{{count}} doublon proposé — rien n'a été fusionné, à toi de décider",
+          "duplicates_other": "{{count}} doublons proposés — rien n'a été fusionné, à toi de décider",
+          "rejected_one": "{{count}} ligne écartée, avec sa raison",
+          "rejected_other": "{{count}} lignes écartées, avec leur raison",
+          "toReconcile_one": "{{count}} besoin à rapprocher, avec sa raison (rapport)",
+          "toReconcile_other": "{{count}} besoins à rapprocher, avec leur raison (rapport)"
+        },
+        "talent": {
+          "created_one": "{{count}} consultant créé",
+          "created_other": "{{count}} consultants créés",
+          "matched_one": "{{count}} consultant reconnu par sa référence CRM — complété sans rien écraser",
+          "matched_other": "{{count}} consultants reconnus par leur référence CRM — complétés sans rien écraser",
+          "duplicates_one": "{{count}} doublon proposé — rien n'a été fusionné, à toi de décider",
+          "duplicates_other": "{{count}} doublons proposés — rien n'a été fusionné, à toi de décider",
+          "rejected_one": "{{count}} ligne écartée, avec sa raison",
+          "rejected_other": "{{count}} lignes écartées, avec leur raison",
+          "toReconcile_one": "{{count}} consultant à rapprocher, avec sa raison (rapport)",
+          "toReconcile_other": "{{count}} consultants à rapprocher, avec leur raison (rapport)"
+        },
+        "mission": {
+          "created_one": "{{count}} mission créée",
+          "created_other": "{{count}} missions créées",
+          "matched_one": "{{count}} mission reconnue par sa référence CRM — complétée sans rien écraser",
+          "matched_other": "{{count}} missions reconnues par leur référence CRM — complétées sans rien écraser",
+          "duplicates_one": "{{count}} doublon proposé — rien n'a été fusionné, à toi de décider",
+          "duplicates_other": "{{count}} doublons proposés — rien n'a été fusionné, à toi de décider",
+          "rejected_one": "{{count}} ligne écartée, avec sa raison",
+          "rejected_other": "{{count}} lignes écartées, avec leur raison",
+          "toReconcile_one": "{{count}} mission à rapprocher, avec sa raison (rapport)",
+          "toReconcile_other": "{{count}} missions à rapprocher, avec leur raison (rapport)"
+        },
+        "cv": {
+          "created_one": "{{count}} CV importé — fiche consultant créée",
+          "created_other": "{{count}} CV importés — fiches consultants créées",
+          "matched_one": "{{count}} fiche consultant existante mise à jour depuis son CV",
+          "matched_other": "{{count}} fiches consultants existantes mises à jour depuis leur CV",
+          "rejected_one": "{{count}} CV échoué, avec sa raison",
+          "rejected_other": "{{count}} CV échoués, avec leur raison",
+          "toReconcile_one": "{{count}} CV à rapprocher, avec sa raison (rapport)",
+          "toReconcile_other": "{{count}} CV à rapprocher, avec leur raison (rapport)"
+        },
+        "document": {
+          "created_one": "{{count}} document déposé et indexé",
+          "created_other": "{{count}} documents déposés et indexés",
+          "rejected_one": "{{count}} document échoué, avec sa raison",
+          "rejected_other": "{{count}} documents échoués, avec leur raison"
+        }
+      },
+      "people_one": "soit {{count}} personne distincte dans ta base",
+      "people_other": "soit {{count}} personnes distinctes dans ta base",
+      "queryable_one": "{{count}} fiche interrogeable par {{copilot}} (base d'équipe).",
+      "queryable_other": "{{count}} fiches interrogeables par {{copilot}} (base d'équipe).",
+      "queryableNone": "Rien de ce fichier n'est encore interrogeable par {{copilot}}.",
+      "familyTitle": {
+        "cv": "CV",
+        "document": "Documents"
+      }
+    },
+    "errors": {
+      "format": "Format non reconnu : choisis un fichier CSV, TSV, XLSX ou JSON.",
+      "generic": "L'import n'a pas pu démarrer. Réessaie dans un instant.",
+      "tooLarge": "Ce fichier fait {{sizeMb}} Mo ; la limite d’import est de {{max}}. Découpe-le en plusieurs fichiers plus petits."
+    },
+    "fieldsByType": {
+      "mission": {
+        "title": "Intitulé de la mission",
+        "company": "Client",
+        "consultant": "Consultant",
+        "start_date": "Date de début",
+        "end_date": "Date de fin",
+        "daily_rate": "TJM vendu"
+      }
+    },
+    "fields": {
+      "company_name": "Raison sociale",
+      "siren": "SIREN",
+      "website": "Site web",
+      "sector": "Secteur",
+      "employees": "Effectif",
+      "headquarters": "Siège",
+      "phone": "Téléphone",
+      "address": "Adresse",
+      "tags": "Étiquettes",
+      "full_name": "Nom complet",
+      "first_name": "Prénom",
+      "last_name": "Nom de famille",
+      "title": "Poste / intitulé",
+      "email": "E-mail",
+      "linkedin_url": "Profil professionnel (lien)",
+      "company": "Société",
+      "start_date": "Date de début",
+      "end_date": "Date de fin",
+      "daily_rate": "TJM",
+      "skills": "Compétences",
+      "location": "Lieu",
+      "consultant": "Consultant",
+      "available_from": "Disponible le",
+      "source_ref": "Référence CRM",
+      "company_alias": "Autres noms de la société (alias)",
+      "company_ref": "Référence CRM de la société",
+      "company_sector": "Secteur de la société",
+      "company_employees": "Effectif de la société",
+      "company_city": "Ville de la société",
+      "company_status": "Statut de la société (client / prospect)"
+    },
+    "extra": {
+      "title": "Informations complémentaires importées"
+    },
+    "source": {
+      "label": "CRM d'origine (facultatif)",
+      "placeholder": "Le nom du CRM dont vient ce fichier",
+      "hint": "Il sert à reconnaître tes comptes et contacts par leur référence dans ce CRM : un réimport à jour complète les fiches au lieu de les copier. Une référence n'est ni un SIREN ni un nom, et ne vaut que dans ton espace."
+    },
+    "sizeLimit": "Jusqu’à {{max}} par fichier.",
+    "history": {
+      "title": "Historique des imports",
+      "imported_one": "{{count}} fiche créée",
+      "imported_other": "{{count}} fiches créées",
+      "duplicates_one": "{{count}} doublon proposé",
+      "duplicates_other": "{{count}} doublons proposés",
+      "rejected_one": "{{count}} ligne écartée",
+      "rejected_other": "{{count}} lignes écartées",
+      "detail": "Voir le bilan",
+      "status": {
+        "uploading": "Fichier en cours d’envoi",
+        "queued": "En attente",
+        "processing": "En cours",
+        "done": "Terminé",
+        "failed": "Interrompu — à reprendre",
+        "interrupted": "Interrompu — l’envoi ne s’est pas terminé"
+      },
+      "reasonsRejected": "Ce qui n'a pas été importé, et pourquoi",
+      "reasonsToReconcile": "Ce qui attend ton geste",
+      "noBreakdown": "Cet import date d'avant le bilan par famille : seuls ses totaux sont connus.",
+      "reasons": {
+        "rejected": {
+          "missing_required_field_one": "{{count}} ligne sans nom — champ obligatoire absent",
+          "missing_required_field_other": "{{count}} lignes sans nom — champ obligatoire absent",
+          "unknown_company_one": "{{count}} ligne sans société : le contact n'a pas pu être rattaché",
+          "unknown_company_other": "{{count}} lignes sans société : les contacts n'ont pas pu être rattachés",
+          "type_not_writable_one": "{{count}} ligne d'un type pas encore importable",
+          "type_not_writable_other": "{{count}} lignes d'un type pas encore importable",
+          "write_failed_one": "{{count}} ligne refusée par la base à l'écriture",
+          "write_failed_other": "{{count}} lignes refusées par la base à l'écriture"
+        },
+        "to_reconcile": {
+          "company_to_validate_one": "{{count}} ligne en attente : société à valider",
+          "company_to_validate_other": "{{count}} lignes en attente : société à valider",
+          "unknown_company_ref_one": "{{count}} ligne en attente : référence société inconnue, sans nom",
+          "unknown_company_ref_other": "{{count}} lignes en attente : référence société inconnue, sans nom",
+          "probable_duplicate_account_one": "{{count}} compte créé avec un homonyme possible — rapprochement proposé",
+          "probable_duplicate_account_other": "{{count}} comptes créés avec un homonyme possible — rapprochement proposé",
+          "title_changed_one": "{{count}} fonction changée — correction proposée",
+          "title_changed_other": "{{count}} fonctions changées — corrections proposées"
+        }
+      },
+      "assistant": {
+        "taken": {
+          "target_personas_one": "{{count}} poste cible pris",
+          "target_personas_other": "{{count}} postes cibles pris",
+          "qualification_grid_one": "{{count}} critère de grille pris",
+          "qualification_grid_other": "{{count}} critères de grille pris",
+          "sequences_one": "{{count}} campagne prise",
+          "sequences_other": "{{count}} campagnes prises",
+          "knowledge_one": "{{count}} document indexé",
+          "knowledge_other": "{{count}} documents indexés",
+          "cv_one": "{{count}} CV pris",
+          "cv_other": "{{count}} CV pris"
+        },
+        "status": {
+          "done": "Terminé",
+          "failed": "Échec — rien n’a été importé"
+        },
+        "cv": {
+          "destination": "Lot de CV"
+        }
+      },
+      "count_one": "{{count}} import",
+      "count_other": "{{count}} imports",
+      "running_one": "{{count}} en cours",
+      "running_other": "{{count}} en cours",
+      "rows_one": "{{count}} ligne",
+      "rows_other": "{{count}} lignes",
+      "readOf": "{{done}} lignes lues sur {{total}}",
+      "read_one": "{{count}} ligne lue",
+      "read_other": "{{count}} lignes lues",
+      "resumed": "L'import reprend en arrière-plan.",
+      "columns": {
+        "import": "Import",
+        "date": "Date",
+        "result": "Résultat",
+        "status": "Statut",
+        "actions": "Actions"
+      },
+      "empty": {
+        "title": "Ton prochain import apparaîtra ici.",
+        "body": "Retrouve le bilan, les lignes à corriger et l'annulation des modifications encore réversibles."
+      },
+      "unavailable": {
+        "title": "{{brand}} n'a pas pu récupérer tes imports précédents.",
+        "body": "Ce n'est pas « aucun import » : tes données sont intactes. Réessaie dans un instant.",
+        "retry": "Réessayer"
+      },
+      "stoppedAt": "Arrêté à la ligne {{line}}",
+      "progress": "Avancement",
+      "countRunning": "{{count}} en cours",
+      "emptyTitle": "Ton prochain import apparaîtra ici.",
+      "emptyBody": "Retrouve le bilan, les lignes à corriger et l’annulation des modifications encore réversibles.",
+      "errorTitle": "{{brand}} n’a pas pu récupérer tes imports précédents.",
+      "errorBody": "Ce n’est pas « aucun import » : tes données sont intactes. Réessaie dans un instant.",
+      "kind": {
+        "file": "Import de fichier · {{type}}",
+        "pack": "Pack de contexte"
+      },
+      "original": {
+        "open": "Aperçu de l’original",
+        "title": "Original déposé",
+        "description": "Le fichier « {{name}} » tel qu’il a été déposé. Le lien d’aperçu expire au bout de cinq minutes.",
+        "frameTitle": "Aperçu de {{name}}",
+        "loading": "Ouverture de l’original…",
+        "error": "L’original n’a pas pu être ouvert. Réessaie dans un instant.",
+        "noBrowserPreview": "Ce format ne s’affiche pas dans le navigateur : télécharge l’original pour le relire.",
+        "download": "Télécharger l’original",
+        "absent": {
+          "earlier": "Importé avant que {{brand}} garde les originaux : pas d’aperçu.",
+          "too_big": "Fichier trop lourd pour être conservé : pas d’aperçu.",
+          "unavailable": "Original non conservé (stockage indisponible au dépôt).",
+          "failed_import": "Import échoué : rien n’a été créé, l’original n’a pas été gardé.",
+          "erased": "Original effacé suite à une demande d’effacement (RGPD)."
+        }
+      }
+    },
+    "validateCompanies": {
+      "action": "Valider les sociétés proposées",
+      "running": "Création des sociétés…",
+      "done_one": "{{count}} société créée. Rejoue ton fichier de contacts : ils s'y rattachent.",
+      "done_other": "{{count}} sociétés créées. Rejoue ton fichier de contacts : ils s'y rattachent.",
+      "nothing": "Ces sociétés existent déjà : rejoue ton fichier de contacts pour y rattacher les personnes.",
+      "error": "Les sociétés n'ont pas pu être créées. Réessaie."
+    }
+  },
+  "duplicateConflict": "ligne {{keys}} — CONFLIT : une valeur déjà renseignée serait remplacée",
+  "duplicateUpdate": "ligne {{keys}} — mise à jour d’une fiche déjà connue, aucune valeur remplie n’est écrasée",
+  "duplicateInFile": "ligne {{keys}} — doublon dans le fichier, ignoré",
+  "rejectMatch": {
+    "action": "Ce n’est pas la même personne",
+    "done": "Noté — les imports suivants ne mettront plus à jour cette fiche par cet e-mail.",
+    "error": "La correction n’a pas pu être enregistrée. Réessaie."
+  },
+  "duplicateKeys": {
+    "email": "e-mail",
+    "phone": "téléphone",
+    "linkedin_url": "profil LinkedIn",
+    "siren": "SIREN",
+    "domain": "domaine",
+    "normalizedName": "nom normalisé",
+    "name+company": "nom + société",
+    "name+lastEmployer": "nom + dernier employeur"
+  },
+  "detectedSource": {
+    "confirmed": "Ce fichier a la structure d’un export ERP — vérifiée sur ses colonnes.",
+    "mismatchBoondmanager": "Ce fichier a la structure d’un export ERP. Vérifie que c’est bien la source choisie.",
+    "atsLike": "Ce fichier ressemble à un export de suivi de candidats — vérifie que la source choisie est la bonne.",
+    "managementContacts": "Export de ton outil de gestion reconnu — ses colonnes société, e’mail, téléphone et références sont rattachées. Vérifie le rattachement ci-dessous avant d’importer."
+  },
+  "stage": {
+    "received": "Fichier reçu — rien n’est encore écrit",
+    "written": "Lignes écrites dans tes dossiers",
+    "readable": "Exploitable par {{copilot}} — elle lit déjà ces lignes"
+  },
+  "contextPack": {
+    "title": "Dépose tes documents",
+    "description": "Tiering de comptes, postes cibles, grille go/no-go, campagnes, offres, références : dépose tout d'un coup. {{brand}} range chacun là où il sert — tu vois où avant d'importer, et tu peux changer.",
+    "formats": "Formats lus : {{formats}}",
+    "choose": "Choisir des documents",
+    "inputLabel": "Choisir des documents à déposer",
+    "dropHint": "ou glisse-les ici",
+    "listLabel": "Documents déposés",
+    "classifying": "Lecture des colonnes…",
+    "selectLabel": "Destination de {{file}}",
+    "import": "Ajouter ces documents",
+    "importing": "Import en cours…",
+    "nothingYet": "Rien ne s'importe sans ton clic « Ajouter ces documents ».",
+    "replaces": "Remplace l'ensemble actuel de l'espace.",
+    "destination": {
+      "accounts": "Comptes (tiering)",
+      "target_personas": "Postes cibles",
+      "qualification_grid": "Grille go/no-go",
+      "sequences": "Séquences et scripts",
+      "knowledge": "Connaissances (lues par {{copilot}})"
+    },
+    "recognized": {
+      "accounts": "tiering de comptes",
+      "target_personas": "liste de postes cibles",
+      "qualification_grid": "grille go/no-go",
+      "sequences": "bibliothèque de séquences"
+    },
+    "reason": {
+      "headers": "reconnu comme {{what}} — colonnes {{columns}}",
+      "extension": "document — rangé dans les connaissances",
+      "no_rule": "aucune règle ne reconnaît ses colonnes — rangé dans les connaissances",
+      "multi_sheet": "classeur à {{count}} onglets — envoyé entier dans les connaissances (un onglet par fichier pour le ranger ailleurs)",
+      "unreadable": "colonnes non lues — rangé dans les connaissances",
+      "unavailable": "classement indisponible — rangé dans les connaissances",
+      "unsupported": "format « .{{ext}} » non pris en charge — non importé ; formats acceptés : {{formats}}",
+      "noExtension": "fichier sans extension non pris en charge — non importé ; formats acceptés : {{formats}}",
+      "sheet": "onglet « {{sheet}} » reconnu comme {{what}} — colonnes {{columns}}",
+      "otherSheet": "« {{sheet}} » : {{what}}",
+      "otherSheets": "autres onglets reconnus : {{others}} (un fichier par onglet pour les importer aussi)"
+    },
+    "taken": {
+      "accounts": "Import des comptes lancé — le décompte arrive dans l'historique des imports",
+      "target_personas_one": "{{count}} poste cible pris",
+      "target_personas_other": "{{count}} postes cibles pris",
+      "qualification_grid_one": "{{count}} critère de grille pris",
+      "qualification_grid_other": "{{count}} critères de grille pris",
+      "sequences_one": "{{count}} séquence prise",
+      "sequences_other": "{{count}} séquences prises",
+      "knowledge": "Document indexé — {{copilot}} le lit"
+    },
+    "skipped_one": "{{count}} ligne écartée",
+    "skipped_other": "{{count}} lignes écartées",
+    "link": {
+      "accounts": "Voir les comptes",
+      "target_personas": "Voir les postes cibles",
+      "qualification_grid": "Voir la grille go/no-go",
+      "sequences": "Voir les séquences",
+      "knowledge": "Voir les connaissances"
+    },
+    "failed": "Échec : {{message}}",
+    "missingColumns": "colonnes obligatoires introuvables ({{columns}}) — rien n'a été remplacé",
+    "unknownError": "l'import n'a pas abouti",
+    "missingColumn": {
+      "title": "intitulé",
+      "level": "niveau"
+    },
+    "scripts_one": "{{count}} script d’appel gardé avec sa campagne",
+    "mails_one": "{{count}} mail rangé en étape de séquence",
+    "mails_other": "{{count}} mails rangés en étapes de séquence",
+    "scripts_other": "{{count}} scripts d’appel gardés avec leur campagne",
+    "skippedLine": "ligne {{line}} — {{reason}} ({{label}})",
+    "skippedLineBare": "ligne {{line}} — {{reason}}",
+    "skipReasonValue": {
+      "level_invalid": "niveau décideur illisible « {{label}} » (un chiffre de 1 à 4 attendu)"
+    },
+    "skipReason": {
+      "no_campaign": "nom de campagne manquant",
+      "no_body": "texte manquant",
+      "bad_delay": "délai J+n illisible",
+      "bad_tier": "tier inconnu (A, B ou C attendu)",
+      "too_many_steps": "plus de 12 étapes dans cette campagne",
+      "level_missing": "niveau décideur manquant",
+      "level_invalid": "niveau décideur illisible",
+      "title_missing": "intitulé manquant"
+    }
+  },
+  "formatToDropzone": "Dépose ce fichier ci-dessus",
+  "qualificationGridSource": {
+    "title": "Grille go/no-go",
+    "benefit": "Tes critères de qualification, leur poids et ton seuil : {{brand}} les applique à chaque compte.",
+    "open": "Ouvrir la grille de l’espace"
+  },
+  "portfolio": {
+    "title": "Importer dans le portefeuille",
+    "intro": "Ajoute des entreprises ou des personnes à ton espace. Les doublons sont repérés avant l’ajout, rien n’est écrasé.",
+    "contains": "Ce fichier contient",
+    "kinds": {
+      "account": "Des comptes",
+      "contact": "Des contacts",
+      "targetList": "Une liste de cibles"
+    },
+    "sample": "Essayer avec un fichier d’exemple",
+    "sampleHint": "Deux entreprises d’exemple pour voir le contrôle avant l’ajout, sans rien dédoublonner à la main.",
+    "local": "Sélectionner mon document local",
+    "crm": "Connecter mon CRM",
+    "close": "Fermer",
+    "open": "Importer"
+  },
+  "assistant": {
+    "back": "Imports & sources",
+    "title": "Importer des contacts",
+    "subtitle": "Une source, une vérification, puis les bonnes fiches au bon endroit.",
+    "sourceLabel": "Source des contacts",
+    "source": {
+      "file": "Fichier",
+      "paste": "Coller un tableau",
+      "crm": "CRM",
+      "laura": "Avec {{copilot}}"
+    },
+    "paste": {
+      "label": "Colle ton tableau ici",
+      "placeholder": "Nom\tFonction\tE-mail\tEntreprise",
+      "hint": "Copie des cellules depuis un tableur : la première ligne porte les titres de colonnes. Rien n'est écrit tant que tu n'as pas validé.",
+      "check": "Contrôler le tableau"
+    },
+    "nothingWritten": "Rien n'est écrit avant ta validation : aucun contact créé, aucune inscription en séquence, aucun enrichissement payant.",
+    "arrival": {
+      "title": "Organiser l'arrivée"
+    },
+    "steps": {
+      "label": "Étapes de l'import",
+      "source": "Source",
+      "columns": "Colonnes",
+      "check": "Vérification",
+      "result": "Résultat"
+    },
+    "titleByType": {
+      "contact": "Importer des contacts",
+      "account": "Importer des comptes",
+      "need": "Importer des besoins",
+      "mission": "Importer des missions",
+      "talent": "Importer des consultants et candidats"
+    },
+    "drop": {
+      "title": "Glisse ton fichier ici."
+    },
+    "summary": {
+      "rowsColumns": "{{rows}} lignes · {{columns}} colonnes",
+      "columns_one": "{{count}} colonne",
+      "columns_other": "{{count}} colonnes",
+      "nothingChanged": "Aucune fiche modifiée"
+    },
+    "mapping": {
+      "title": "Retrouver les bons champs",
+      "emptySample": "Cellule vide dans les premières lignes"
+    },
+    "result": {
+      "openDirectory": "Ouvrir le répertoire",
+      "created_one": "créé",
+      "created_other": "créés",
+      "review_one": "à revoir",
+      "review_other": "à revoir",
+      "rejected_one": "non importé",
+      "rejected_other": "non importés"
+    }
+  },
+  "hub": {
+    "title": "Enrichir ton répertoire, sans le dupliquer.",
+    "subtitle": "Choisis une source. Les colonnes et les rapprochements sont revus avant tout ajout.",
+    "nothingAutomatic": "Aucune inscription automatique en séquence, aucun enrichissement payant.",
+    "newImport": "Nouvel import",
+    "sourcesLabel": "Choisir une source",
+    "benefitsLabel": "Ce que ces données vont débloquer",
+    "sources": {
+      "file": {
+        "title": "Fichier CSV ou Excel",
+        "body": "Un export de ton CRM ou un tableau de contacts.",
+        "meta": "CSV, TSV, XLSX ou JSON · sans limite de lignes"
+      },
+      "paste": {
+        "title": "Copier un tableau",
+        "body": "Colle une sélection depuis ton tableur.",
+        "meta": "En-têtes, aperçu et correspondance"
+      },
+      "addressBook": {
+        "title": "Carnet d'adresses",
+        "body": "Récupère tes cartes de contacts sans ressaisie.",
+        "meta": "JSON structuré ou CSV · un vCard se ré-exporte d'abord en CSV"
+      },
+      "crm": {
+        "title": "Mon CRM",
+        "body": "Branche l'outil que ton espace utilise : la reprise se simule avant de s'écrire.",
+        "meta": "Connexion ou export de ton outil"
+      },
+      "laura": {
+        "title": "Liste depuis un texte",
+        "body": "Prépare une structure avec {{copilot}} avant l'import.",
+        "prompt": "Prépare-moi une liste de contacts à partir de ce texte :",
+        "meta": "{{copilot}} propose les colonnes, tu valides"
+      },
+      "framing": {
+        "title": "Documents de cadrage",
+        "body": "Tiering de comptes, postes cibles, grille go / no-go, séquences, connaissances.",
+        "meta": "Se déposent plus bas, dans « Dépose tes documents »"
+      },
+      "cv": {
+        "title": "CV en masse",
+        "body": "Un dossier ou une archive ZIP de CV crée des fiches consultants.",
+        "meta": "Se fait dans Talents"
+      }
+    },
+    "benefits": {
+      "portfolio": {
+        "title": "Un portefeuille analysable",
+        "body": "Chaque contact rattaché à son compte nourrit le plan de compte et les signaux."
+      },
+      "laura": {
+        "title": "Un historique pour {{copilot}}",
+        "body": "{{copilot}} s'appuie sur tes échanges passés pour préparer la suite, sans repartir de zéro."
+      },
+      "noDuplicate": {
+        "title": "Aucun doublon créé",
+        "body": "Chaque ligne est rapprochée des fiches existantes avant d'entrer."
+      }
+    },
+    "cvNote": "Des CV en masse ? Ils se déposent dans Talents, qui crée les fiches consultants.",
+    "cvLink": "Ouvrir Talents",
+    "what": {
+      "title": "Que veux-tu importer ?",
+      "description": "Choisis le type de fiches : l'assistant lit ton fichier, tu revois les colonnes, rien n'est écrit avant ta validation.",
+      "cancel": "Annuler",
+      "types": {
+        "contact": "Interlocuteurs, coordonnées, responsables",
+        "account": "Entreprises, tiers, plans de compte",
+        "need": "Demandes et appels d'offres en cours",
+        "mission": "Missions en cours et passées, marges",
+        "talent": "Profils, disponibilités, compétences"
+      }
+    }
+  },
+  "overview": {
+    "title": "Imports",
+    "subtitle": "Prévisualiser et rapprocher avant de créer.",
+    "vivier": {
+      "title": "Vivier / consultants",
+      "body": "Texte ou CSV : prévisualisation des profils, données absentes et doublons.",
+      "action": "Importer dans le vivier"
+    },
+    "tool": {
+      "title": "Depuis un outil connecté",
+      "body": "Conserver l’identité des objets et relire les changements proposés.",
+      "action": "Ouvrir les connecteurs"
+    },
+    "export": {
+      "title": "Exporter le vivier",
+      "body": "Les consultants, au format CSV ou Excel, avec leurs compétences et disponibilités. Les notes privées sont exclues.",
+      "action": "Préparer l’export"
+    },
+    "checked": {
+      "title": "Ce qui sera vérifié",
+      "subtitle": "Une importation n’est pas une synchronisation permanente.",
+      "mapping": "Correspondance des champs",
+      "mappingBody": "L’aperçu montre ce qui sera créé, rapproché ou laissé incomplet.",
+      "duplicates": "Doublons et corrections",
+      "duplicatesBody": "Une identité ambiguë ne se fusionne pas par nom seulement. Une valeur corrigée ne s’écrase pas sans revue.",
+      "history": "Historique",
+      "historyAction": "Voir le journal"
+    }
+  },
+  "contactsImport": {
+    "title": "Contacts",
+    "kicker": "Relations & prospection",
+    "sources": {
+      "heading": "Enrichir ton répertoire, sans le dupliquer.",
+      "lead": "Choisis une source. Les colonnes et les rapprochements sont revus avant tout ajout.",
+      "newImport": "Nouvel import",
+      "guarantee": "Aucune inscription automatique en séquence, aucun enrichissement payant : rien n’est écrit avant ta validation.",
+      "file": {
+        "title": "Fichier CSV ou Excel",
+        "hint": "Un export de ton CRM ou un tableau de contacts.",
+        "meta": "CSV, TSV, XLSX · sans limite de lignes"
+      },
+      "paste": {
+        "title": "Copier un tableau",
+        "hint": "Colle une sélection depuis ton tableur.",
+        "meta": "En-têtes, aperçu et correspondance"
+      },
+      "addressBook": {
+        "title": "Carnet d’adresses",
+        "hint": "Récupère tes cartes de contacts sans ressaisie.",
+        "meta": "vCard (.vcf) ou JSON structuré"
+      },
+      "crm": {
+        "title": "Mon CRM",
+        "hint": "L’export de ton outil, ou sa connexion.",
+        "meta": "Les fiches se reconnaissent à leur référence au ré-import"
+      },
+      "laura": {
+        "title": "Liste depuis un texte",
+        "hint": "Prépare une structure avec {{copilot}} avant l’import.",
+        "meta": "{{copilot}} propose les colonnes, tu valides",
+        "question": "Prépare-moi une liste de contacts à importer à partir d’un texte que je vais te coller (compte rendu de salon, signature d’e-mail, liste libre) : propose-moi les colonnes et les lignes, que je valide avant l’import."
+      },
+      "others": "Autres imports",
+      "context": {
+        "title": "Documents de cadrage",
+        "hint": "Tiering de comptes, postes cibles, grille go / no-go, séquences, connaissances.",
+        "meta": "S’importent dans Réglages › Import"
+      },
+      "cv": {
+        "title": "CV en masse",
+        "hint": "Un dossier ou une archive ZIP de CV crée des fiches consultants.",
+        "meta": "Se fait dans Talents"
+      },
+      "unlocks": {
+        "title": "Ce que ces données vont débloquer",
+        "portfolio": {
+          "title": "Un portefeuille analysable",
+          "body": "Chaque contact rattaché à son compte nourrit le plan de compte et les signaux."
+        },
+        "history": {
+          "title": "Un historique pour {{copilot}}",
+          "body": "{{copilot}} s’appuie sur tes échanges passés pour préparer la suite, sans repartir de zéro."
+        },
+        "noDuplicate": {
+          "title": "Aucun doublon créé",
+          "body": "Chaque ligne est rapprochée des fiches existantes avant d’entrer."
+        }
+      }
+    },
+    "history": {
+      "title": "Historique des imports",
+      "summary_one": "{{count}} import",
+      "summary_other": "{{count}} imports",
+      "running_one": " · {{count}} en cours",
+      "running_other": " · {{count}} en cours",
+      "columns": {
+        "import": "Import",
+        "date": "Date",
+        "result": "Résultat",
+        "status": "Statut"
+      },
+      "linesBy": "{{count}} lignes",
+      "rowsRead": "{{read}} lignes lues",
+      "created": "{{count}} créés",
+      "completed": "{{count}} complétés",
+      "notImported": "{{count}} non importés",
+      "imported": "{{count}} lignes importées",
+      "keepsGoing": "Continue sans toi : tu peux fermer cette page.",
+      "stoppedAt": "Arrêté à la ligne {{line}}",
+      "stoppedAfter": "Arrêté après {{count}} lignes écrites",
+      "viewReport": "Voir le bilan",
+      "seeContacts_one": "Voir le contact de cet import",
+      "seeContacts_other": "Voir les {{count}} contacts de cet import",
+      "seeAccounts_one": "Voir le compte de cet import",
+      "seeAccounts_other": "Voir les {{count}} comptes de cet import",
+      "resume": "Reprendre",
+      "resumeError": "L’import n’a pas pu reprendre. Réessaie dans un instant.",
+      "empty": "Ton prochain import apparaîtra ici.",
+      "emptyHint": "Retrouve le bilan, les lignes à corriger et l’annulation des modifications encore réversibles.",
+      "unavailable": "{{brand}} n’a pas pu récupérer tes imports précédents.",
+      "unavailableHint": "Ce n’est pas « aucun import » : tes données sont intactes. Réessaie dans un instant.",
+      "retry": "Réessayer",
+      "loading": "Lecture de tes imports…"
+    },
+    "chooser": {
+      "title": "Que veux-tu importer ?",
+      "cvHint": "Des CV en masse ? Ils se déposent dans Talents, qui crée les fiches consultants.",
+      "cvLink": "Ouvrir Talents",
+      "types": {
+        "contact": {
+          "title": "Contacts",
+          "hint": "Interlocuteurs, coordonnées, responsables"
+        },
+        "account": {
+          "title": "Comptes",
+          "hint": "Entreprises, tiers, plans de compte"
+        },
+        "need": {
+          "title": "Besoins",
+          "hint": "Demandes et appels d’offres en cours"
+        },
+        "mission": {
+          "title": "Missions",
+          "hint": "Missions en cours et passées, marges"
+        },
+        "talent": {
+          "title": "Consultants et candidats",
+          "hint": "Profils, disponibilités, compétences"
+        },
+        "project": {
+          "title": "Projets",
+          "hint": "Affaires et leurs étapes"
+        },
+        "notes": {
+          "title": "Notes",
+          "hint": "Comptes rendus, notes de rendez-vous"
+        },
+        "activity": {
+          "title": "Historique d’activité",
+          "hint": "E-mails, appels et rendez-vous passés"
+        }
+      }
+    },
+    "assistant": {
+      "back": "Imports & sources",
+      "title": "Importer des contacts",
+      "lead": "Une source, une vérification, puis les bonnes fiches au bon endroit.",
+      "steps": {
+        "source": "Source",
+        "columns": "Colonnes",
+        "verification": "Vérification",
+        "result": "Résultat",
+        "label": "Étapes de l’import",
+        "current": "étape en cours",
+        "done": "étape faite"
+      },
+      "tabs": {
+        "file": "Fichier",
+        "paste": "Coller un tableau",
+        "addressBook": "Carnet",
+        "crm": "CRM",
+        "laura": "Avec {{copilot}}",
+        "label": "Source de l’import"
+      },
+      "drop": {
+        "title": "Dépose tes documents",
+        "lead": "Glisse ton fichier ici, ou clique pour le choisir.",
+        "formats": "CSV, TSV, XLSX, vCard ou JSON · sans limite de lignes ; l’import long continue en arrière-plan, après la vérification.",
+        "choose": "Choisir un fichier",
+        "template": "Télécharger le modèle CSV",
+        "sample": "Essayer avec un exemple"
+      },
+      "reassure": "Rien n’est écrit avant ta validation : aucun contact créé, aucune inscription en séquence, aucun enrichissement payant.",
+      "paste": {
+        "label": "Colle ton tableau (avec ses en-têtes)",
+        "placeholder": "Nom\tFonction\tEmail\tEntreprise",
+        "action": "Lire ce tableau",
+        "empty": "Colle d’abord un tableau."
+      },
+      "addressBook": {
+        "lead": "Dépose un fichier vCard (.vcf) ou un JSON structuré : chaque carte devient une ligne à vérifier.",
+        "choose": "Choisir un carnet",
+        "notRead": "Aucune carte lisible dans ce fichier."
+      },
+      "crm": {
+        "lead": "Dépose l’export de ton outil (CSV, XLSX ou JSON). Si tu dis d’où il vient, un ré-import reconnaît les fiches par leur référence.",
+        "connect": "Connecter ton outil dans Intégrations"
+      },
+      "laura": {
+        "lead": "{{copilot}} prépare la structure à partir d’un texte que tu lui donnes ; tu la valides, puis tu la déposes ici comme un fichier.",
+        "ask": "Demander à {{copilot}}"
+      },
+      "reading": "Lecture du fichier…",
+      "uploading": "Envoi du fichier — partie {{sent}} sur {{total}}",
+      "error": "Ce fichier n’a pas pu être lu. Réessaie ou choisis un autre fichier.",
+      "columns": {
+        "fileSummary": "{{rows}} lignes · {{columns}} colonnes",
+        "untouched": "Aucune fiche modifiée",
+        "sheet": "Feuille",
+        "autoRead": "Encodage et séparateur lus automatiquement.",
+        "findFields": "Retrouver les bons champs",
+        "findFieldsHint": "Les correspondances sont proposées. Vérifie-les avant de continuer.",
+        "example": "Exemple",
+        "emptyCell": "Cellule vide dans la première ligne",
+        "keepExtra": "Conserver en informations complémentaires",
+        "keepExtraSome": "Conserver en informations complémentaires les {{count}} colonnes sans équivalent ({{list}})",
+        "arrival": "Organiser l’arrivée",
+        "whoSees": "Qui voit ces contacts",
+        "team": "Mon équipe",
+        "justMe": "Moi seul",
+        "crmOrigin": "CRM d’origine (facultatif)",
+        "crmOriginPlaceholder": "Le nom de ton outil",
+        "crmOriginHint": "Le ré-import reconnaîtra les fiches par leur référence {{crm}}.",
+        "notes": "Un compte est rattaché seulement si son nom, son domaine ou son SIREN correspond sans ambiguïté à une fiche existante. Les autres noms d’entreprise sont conservés, sans créer de faux rattachement. Une adresse importée reste non vérifiée. Une opposition existante ne sera jamais effacée par le fichier.",
+        "changeSource": "Changer de source",
+        "verify": "Vérifier les contacts",
+        "verifying": "Vérification en cours…",
+        "missing": "Champ obligatoire non rattaché : {{fields}}. Les lignes concernées seront écartées et nommées au rapport."
+      },
+      "verification": {
+        "discardedLine": "Ligne {{line}} — {{reason}} ({{label}})",
+        "discardedLineBare": "Ligne {{line}} — {{reason}}",
+        "toCreate": "à créer",
+        "toComplete": "à compléter",
+        "discarded": "écartés / à revoir",
+        "noOverwrite": "Aucun écrasement automatique",
+        "sensitiveTitle": "Données sensibles détectées dans le fichier",
+        "sensitiveBody": "La ou les colonnes {{list}} signalent une donnée sensible : elles ne seront pas importées sans ton choix.",
+        "legalTitle": "Contacts sans base légale",
+        "legalBody_one": "{{count}} contact arriverait sans base légale documentée. Garde la mention d’intérêt légitime sur la fiche, ou ne l’importe pas.",
+        "legalBody_other": "{{count}} contacts arriveraient sans base légale documentée. Garde la mention d’intérêt légitime sur la fiche, ou ne les importe pas.",
+        "table": {
+          "choose": "Choisir",
+          "line": "Ligne",
+          "contact": "Contact",
+          "account": "Compte",
+          "check": "Contrôle",
+          "decision": "Décision"
+        },
+        "verdict": {
+          "create": "Nouveau contact",
+          "complete": "Déjà dans {{brand}}",
+          "duplicate": "Doublon proposé",
+          "invalid": "Ligne écartée",
+          "to_reconcile": "À rapprocher"
+        },
+        "reason": {
+          "duplicate": "Déjà présent dans le fichier ou dans {{brand}} — aucune fusion sans ton clic",
+          "missing_required_field": "Champ obligatoire absent",
+          "unknown_company": "Société introuvable",
+          "type_not_writable": "Type pas encore importable",
+          "write_failed": "Refusée par la base à l’écriture",
+          "company_to_validate": "Nouvelle société à qualifier : nom conservé, non rattaché",
+          "unknown_company_ref": "Référence société inconnue",
+          "probable_duplicate_account": "Société probablement déjà connue",
+          "title_changed": "La fonction diffère — la correction est proposée, l’actuelle est gardée",
+          "skipped_by_user": "Écartée par toi"
+        },
+        "decisionLabel": "Décision pour la ligne {{line}}",
+        "decisions": {
+          "import": "Importer",
+          "skip": "Ne pas importer"
+        },
+        "unnamed": "Sans nom",
+        "page": "{{from}}–{{to}} sur {{total}} lignes contrôlées",
+        "previous": "Précédent",
+        "next": "Suivant",
+        "truncated": "Le détail s’arrête à {{count}} lignes ; les compteurs couvrent tout le fichier.",
+        "confirm": "J’ai revu les correspondances. Je confirme l’ajout de {{create}} et la complétion de {{complete}}.",
+        "confirmCreate_one": "{{count}} contact",
+        "confirmCreate_other": "{{count}} contacts",
+        "confirmComplete_one": "{{count}} fiche",
+        "confirmComplete_other": "{{count}} fiches",
+        "backToColumns": "Revoir les colonnes",
+        "import": "Importer la sélection",
+        "importing": "Envoi à l’import…",
+        "nothing": "Rien à importer dans ce fichier tel qu’il est mappé.",
+        "confirmCreateOnly": "J’ai revu les correspondances. Je confirme l’ajout de {{create}}.",
+        "confirmCompleteOnly": "J’ai revu les correspondances. Je confirme la complétion de {{complete}}.",
+        "notSamePerson": "Ce n’est pas la même personne",
+        "notSamePersonDone": "Noté — les imports suivants ne mettront plus à jour cette fiche par cet e-mail.",
+        "notSamePersonError": "La correction n’a pas pu être enregistrée. Réessaie.",
+        "notImportedAsIs": "Ne sera pas importée telle quelle"
+      },
+      "result": {
+        "title": "Tes contacts sont dans le répertoire.",
+        "queued": "L’import continue en arrière-plan",
+        "queuedLead": "{{count}} lignes lues pour l’instant. Tu peux fermer cette fenêtre : l’import reprend tout seul s’il est interrompu. Tu retrouveras le bilan dans Imports & sources.",
+        "created": "créés",
+        "completed": "complétés",
+        "notImported": "non importés",
+        "openDirectory": "Ouvrir le répertoire",
+        "download": "Télécharger le rapport",
+        "backToSources": "Retour à Imports & sources",
+        "stopped": "L’import s’est interrompu après {{count}} lignes écrites. Les lignes déjà entrées sont conservées.",
+        "resume": "Reprendre l’import",
+        "kept": "Ce qui a été conservé",
+        "keptBody": "Une opposition existante n’est jamais effacée par le fichier ; une fiche déjà renseignée n’est pas écrasée ; les colonnes sans équivalent restent en informations complémentaires.",
+        "notImportedTitle": "Lignes non importées",
+        "protected": "Annulation protégée : les fiches retravaillées depuis l’import ne sont pas détruites.",
+        "toast": "Import terminé. Aucun message envoyé.",
+        "lineLabel": "Ligne {{line}}"
+      }
+    }
+  },
+  "page": {
+    "title": "Imports",
+    "subtitle": "Reprends tes comptes, tes contacts et ton vivier depuis un fichier ou un outil branché. L'aperçu montre ce qui sera créé, rapproché ou laissé incomplet — rien n'est écrit avant ta confirmation.",
+    "entriesTitle": "Autres entrées",
+    "entriesDescription": "Un import n’est pas une synchronisation permanente : l’aperçu montre ce qui sera créé, rapproché ou laissé incomplet.",
+    "fromToolTitle": "Depuis un outil connecté",
+    "fromToolDescription": "Conserver l’identité des objets et relire les changements proposés.",
+    "fromToolAction": "Ouvrir les connecteurs",
+    "vivierTitle": "Vivier / consultants",
+    "vivierDescription": "Texte, CSV ou documents : un aperçu des profils, des données absentes et des doublons avant de créer.",
+    "vivierAction": "Importer dans le vivier",
+    "checksTitle": "Ce qui sera vérifié",
+    "checksDescription": "Une importation n’est pas une synchronisation permanente.",
+    "checksFieldsTitle": "Correspondance des champs",
+    "checksFieldsDescription": "L’aperçu montre ce qui sera créé, rapproché ou laissé incomplet.",
+    "checksDuplicatesTitle": "Doublons et corrections",
+    "checksDuplicatesDescription": "Une identité ambiguë ne se fusionne pas sur le nom seul, et une valeur corrigée à la main ne s’écrase pas sans revue.",
+    "checksHistoryTitle": "Historique",
+    "checksHistoryDescription": "Tes imports passés, avec ce qu’ils ont créé.",
+    "checksJournalLink": "Voir le journal"
+  },
+  "theoBoxes": {
+    "file": {
+      "title": "Glisse ton fichier ici."
+    },
+    "columns": {
+      "title": "Retrouver les bons champs",
+      "hint": "Les correspondances sont proposées. Vérifie-les avant de continuer."
+    },
+    "check": {
+      "title": "Vérifier avant d’écrire"
+    }
+  }
+}

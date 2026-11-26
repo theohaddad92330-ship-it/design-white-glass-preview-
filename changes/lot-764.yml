@@ -1,0 +1,53 @@
+lot: lot-764
+issues: [4755, 4756]
+
+changelog:
+  id: 2026-10-31-lot-764
+  comment: 'Lot 764 (#4755 #4756) — Signaux › Historique lit la même chose que l’onglet « Signaux et besoins » de chaque compte'
+  fr:
+    date: 31 octobre 2026
+    title: L’historique de tous tes comptes voit tout ce que voit chaque compte
+    items:
+      - 'Signaux › Historique compte désormais les besoins passés de toutes les sources de l’onglet d’un compte : affaires du CRM branché, projets et besoins clos, offres, marchés, annonces, base commune.'
+      - Un compte qui n’avait que des affaires CRM ou des projets clos apparaît enfin dans l’historique.
+      - Les filtres (technos, métiers, zones, périodes, volume, secteurs, sources) s’appliquent à ces nouvelles lignes.
+      - Ouvrir un compte depuis l’historique arrive directement sur sa période Historique.
+  en:
+    date: October 31, 2026
+    title: Your accounts’ history now sees everything each account sees
+    items:
+      - 'Signals › History now counts past needs from every source of an account’s tab: deals from your connected CRM, closed projects and needs, job offers, tenders, notices, shared base.'
+      - An account that only had CRM deals or closed projects finally shows up in the history.
+      - The filters (tech, roles, areas, periods, volume, sectors, sources) apply to these new lines.
+      - Opening an account from the history lands straight on its History period.
+
+inserts:
+  - file: apps/api/src/modules/demo/demo-coverage.ts
+    text: |
+
+      /**
+       * Lot 764 (31/10/2026) — SIGNAUX › HISTORIQUE DE TOUT L'ESPACE (`GET /accounts/signal-history`) : SEEDÉ. Aucune
+       * table ni clé `raw_analysis` neuve : la route est la MÊME lecture que `GET /accounts/:id/signal-lines`
+       * (`AccountSignalLinesService`), servie pour tous les comptes de l'espace démo. Elle rend donc exactement les
+       * lignes passées de chaque onglet : Société Générale (besoins passés gagné et perdu avec TJM, affaires CRM closes,
+       * signaux anciens) et Sanofi (un besoin passé gagné de plus de six mois, semé par ce lot — avant lui, son seul
+       * besoin fermé avait 140 jours et son Historique restait vide). Base commune et mémoire marché vides à dessein,
+       * comme pour l'onglet. Appelant : `demo-signal-lines-coverage.spec.ts`.
+       */
+      export const DEMO_WORKSPACE_SIGNAL_HISTORY_COVERAGE: Readonly<{ state: 'seede'; reason: string }> = {
+        state: 'seede',
+        reason:
+          'Lot 764 (31/10/2026) — Signaux › Historique lit la même lecture que l’onglet « Signaux et besoins » pour tous les comptes démo : Société Générale (besoins passés gagné et perdu, affaires CRM closes, signaux anciens) et Sanofi (besoin passé gagné semé à 420 jours). Base commune et mémoire marché vides à dessein. Vérifié par `demo-signal-lines-coverage.spec.ts`.',
+      }
+  - file: agent_docs/demo-mode.md
+    before: '## Une marque = une ligne (#4892.1, Louis 31/10/2026)'
+    text: |
+      ## Signaux › Historique de tout l'espace : la même lecture que l'onglet (lot 764, 31/10/2026)
+
+      - **Ce qui se montre** : `GET /accounts/signal-history` rend, pour tous les comptes démo, les lignes **passées**
+        de leur onglet « Signaux et besoins » (même service `AccountSignalLinesService`, mêmes familles semées).
+      - **Société Générale** : ses besoins passés gagné et perdu (TJM), affaires CRM closes, signaux anciens.
+      - **Sanofi** : un second besoin fermé semé par ce lot dans `closedNeeds` (« Tierce maintenance applicative —
+        référentiel qualité des sites », gagné, 420 jours, TJM 640 €) ; le premier (140 jours) reste en Actuel. Sans
+        lui, l'Historique de Sanofi était vide en salle.
+      - **Classement** : `DEMO_WORKSPACE_SIGNAL_HISTORY_COVERAGE` (semée). Garde : `demo-signal-lines-coverage.spec.ts`.

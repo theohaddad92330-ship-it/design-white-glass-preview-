@@ -1,0 +1,44 @@
+lot: vieilles-l9-besoin-matching
+issues: [2176, 2178]
+
+changelog:
+  id: 2026-10-31-vieilles-l9-besoin-matching
+  comment: 'Lot L9 (#2176 #2178) — besoin non pourvu : gestes guidés, coût/marge selon les droits, CV original, expérience comparable'
+  fr:
+    date: 31 octobre 2026
+    title: Un besoin sans profil se débloque sur place
+    items:
+      - 'Aucun profil défendable ? Chaque arbitrage ouvre un geste guidé : clarifier, négocier un critère, élargir la zone ou le contrat, réactiver un profil indisponible, préparer une demande de recommandation en brouillon, lancer une recherche externe — rien ne part sans votre clic.'
+      - Les refus client déjà reçus proposent une mise à jour du besoin, que vous validez ; ils ne changent jamais le classement.
+      - La comparaison montre le coût et la marge de chaque profil à qui a le droit finance, et à personne d’autre.
+      - Le CV original d’un profil se télécharge depuis sa carte de matching.
+      - 'Nouvel axe affiché : « Expérience comparable », la part des compétences obligatoires déjà tenues en mission. Il ne pèse pas dans le score.'
+  en:
+    date: October 31, 2026
+    title: An unfilled need gets unstuck on the spot
+    items:
+      - 'No defensible profile? Each option opens a guided step: clarify, negotiate a criterion, widen the area or the contract, reactivate an unavailable profile, prepare a draft recommendation request, launch an external search — nothing goes out without your click.'
+      - Client rejections already received suggest an update to the need, which you confirm; they never change the ranking.
+      - The comparison shows each profile’s cost and margin to people with the finance right, and to no one else.
+      - A profile’s original CV can be downloaded from its matching card.
+      - 'New displayed axis: “Comparable experience”, the share of required skills already held on a mission. It does not weigh in the score.'
+
+inserts:
+  - file: apps/api/src/modules/demo/demo-coverage.ts
+    text: |
+
+      /**
+       * Lot L9 (#2176.13/.55/.62, #2178.11-.17/.33) — LE MATCHING D'UN BESOIN NON POURVU : SEEDÉ, SANS SEMIS DE PLUS ;
+       * L'ORIGINAL DU CV VIDE À DESSEIN.
+       *
+       * Ni table ni clé de `raw_analysis` neuve (les gardes de `demo-coverage.spec.ts` y sont aveugles, d'où cette entrée).
+       * L'axe « Expérience comparable » lit les compétences semées PROUVÉES en mission (`consultant_skills.source`) ;
+       * la ligne coût/marge lit le coût chargé posé par `seedStaffing` (Camille Roussel) et dit « Coût non renseigné »
+       * pour qui n'en a pas (`demo-matching-gestures-coverage.spec.ts`) ; les gestes guidés écrivent sur le besoin semé
+       * par le PATCH existant ; la proposition de mise à jour lit `submission_feedback`, déjà semée.
+       */
+      export const DEMO_MATCHING_UNFILLED_NEED_COVERAGE: Readonly<{ state: 'seede'; reason: string }> = {
+        state: 'seede',
+        reason:
+          "Lot L9 (31/10/2026) — axe « Expérience comparable » (poids 0) sur les compétences semées prouvées en mission ; coût/marge de la comparaison sous finance:read depuis le coût chargé de `seedStaffing`, « Coût non renseigné » sinon ; gestes guidés du zéro résultat sur les besoins semés ; proposition de mise à jour depuis `submission_feedback` semée. Le CV ORIGINAL reste vide à dessein (même raison que #4034 : aucun faux fichier, `storage_path` null) — le bouton dit « Aucun CV original conservé pour ce profil ».",
+      }

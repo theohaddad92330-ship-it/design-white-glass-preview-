@@ -1,0 +1,360 @@
+{
+  "page": {
+    "heading": "Intégrations",
+    "subtitle": "Branche tes outils : {{brand}} lit ce que tu as déjà et agit là où tu travailles."
+  },
+  "searchPlaceholder": "Chercher un outil",
+  "noMatch": "Aucun outil ne correspond.",
+  "demoConnection": "{{name}} (démonstration) — rien n’est branché pour de vrai.",
+  "noMatchClear": "Effacer la recherche et le filtre",
+  "states": {
+    "operational": "Opérationnel",
+    "read_only": "Lecture seule",
+    "limited_write": "Écriture partielle",
+    "authorization_expired": "Autorisation expirée",
+    "degraded": "Perturbé",
+    "sync_late": "Sans activité récente",
+    "not_connected": "Non branché",
+    "not_included_in_plan": "Non inclus"
+  },
+  "mcp": {
+    "name": "Assistant IA",
+    "description": "Interroge tes dossiers depuis ton assistant IA. La connexion et la révocation se font sur son écran dédié.",
+    "open": "Ouvrir",
+    "manage": "Gérer l’accès"
+  },
+  "callback": {
+    "connected": "{{name}} est branché.",
+    "failed": "{{name}} n'a pas pu être branché : {{reason}}",
+    "reasonUnknown": "raison inconnue"
+  },
+  "error": {
+    "title": "La liste des intégrations n'a pas pu être chargée",
+    "body": "Aucune conclusion à en tirer sur l'état de tes outils : c'est la lecture qui a échoué, pas les connexions.",
+    "retry": "Réessayer"
+  },
+  "testButton": "Tester",
+  "testHint": "Je fais une lecture réelle, sans rien modifier. Tu verras exactement ce que je récupère.",
+  "repairButton": "Réparer",
+  "diagnosticFailed": "Le diagnostic lui-même n’a pas abouti. Réessaie dans un moment.",
+  "lastProof": "Vérifié : {{sample}} — {{when}}",
+  "missingScope": "Accès manquant : {{scopes}}",
+  "grantedScopes": "Accès accordés : {{scopes}}",
+  "coveragePeriod": "Période couverte : {{value}}",
+  "coveragePeriodUnknown": "Période couverte : non précisée",
+  "latencyDeclared": "Latence déclarée par le fournisseur : {{value}} (au {{when}})",
+  "latencyMeasured": "Latence mesurée par {{brand}} : {{value}} (mesuré sur {{days}} jours, {{count}} synchronisations, au {{when}})",
+  "latencyNotMeasured": "Latence : non mesurée — {{reason}}",
+  "latencyUnknown": "Latence : non communiquée",
+  "betaFeature": "Fonctionnalité en bêta chez le fournisseur : {{feature}}",
+  "betaGeneric": "Cet outil est en bêta chez le fournisseur.",
+  "betaUnknown": "Statut bêta : non communiqué",
+  "dependentRoutines": "{{count}} automatisation(s) en dépendent.",
+  "neverDoesTitle": "Ce que je ne ferai jamais avec cet outil :",
+  "capabilityKeys": {
+    "read": "Lire",
+    "search": "Chercher",
+    "summarize": "Résumer",
+    "prepare": "Préparer",
+    "create": "Créer",
+    "update": "Modifier",
+    "send": "Envoyer",
+    "delete": "Supprimer",
+    "schedule": "Planifier",
+    "webhook": "Notifier"
+  },
+  "capabilityLevels": {
+    "l0_disconnected": "Non relié",
+    "l1_consult": "Consultation",
+    "l2_prepare": "Préparation",
+    "l3_notify": "Notification à sens unique",
+    "l4_write_confirmed": "Écriture confirmée",
+    "l5_send_confirmed": "Envoi confirmé",
+    "l6_automate": "Automatisation bornée"
+  },
+  "capabilityStates": {
+    "not_connected": "Non branché",
+    "read_only": "Lecture seule",
+    "limited_write": "Écriture limitée",
+    "authorization_expired": "Autorisation expirée",
+    "degraded": "Dégradé",
+    "sync_late": "Synchronisation en retard",
+    "operational": "Opérationnel",
+    "scope_missing": "Accès non accordé",
+    "untested": "Jamais vérifié"
+  },
+  "errorCodes": {
+    "not_connected": "cet outil n’est pas connecté",
+    "scope_missing": "je n’ai pas le droit de regarder",
+    "provider_api_disabled": "l’accès est éteint côté fournisseur",
+    "provider_unavailable": "l’outil n’a pas répondu",
+    "rate_limited": "trop de demandes d’un coup"
+  },
+  "optionalBadge": "Facultatif",
+  "preConsentTitle": "Avant de continuer, voici ce que je pourrai faire :",
+  "preConsentScopeLimited": "Rien d’autre n’est lu ni modifié : seules les capacités listées ci-dessus sont utilisées.",
+  "preConsentNever": "Je ne supprimerai jamais rien et je n’enverrai jamais un message sans ton clic. Tu peux retirer cet accès à tout moment.",
+  "preConsentContinueWithout": "Continuer sans {{name}}",
+  "preConsentConfirm": "J’ai lu, connecter",
+  "benefitsTitle": "Ce que cet outil branché m’autorise à faire :",
+  "builtOnTopTitle": "Ce que je bâtis par-dessus :",
+  "derivedCapabilities": {
+    "detect_conflicts": "Détecter les conflits entre tes rendez-vous — le calcul est le mien, l’outil ne fait que lister",
+    "free_slots": "Trouver tes créneaux libres, pour proposer une heure qui tient"
+  },
+  "lastError": "Dernier échec : {{reason}} — {{when}}",
+  "lastErrorUndated": "Dernier échec : {{reason}}",
+  "lastSync": "Dernière activité réelle : {{when}}",
+  "toolActions": {
+    "add_lead_to_campaign": "Ajouter un contact à une de tes séquences existantes, après ton clic",
+    "create_draft": "Préparer un brouillon — jamais l’envoyer à ta place",
+    "create_event": "Poser un rendez-vous, après ton clic",
+    "create_mission": "Créer une mission dans ton ERP, après l’accord d’un second responsable",
+    "enrich_contact": "Compléter la fiche d’un contact",
+    "export_contact": "Envoyer un contact vers cet outil",
+    "import_contacts": "Reprendre les contacts qui y sont déjà",
+    "list_campaigns": "Lire tes campagnes pour choisir où ajouter",
+    "list_events": "Lire ton agenda",
+    "list_pending_signatures": "Lister les signatures en attente",
+    "list_unpaid_invoices": "Lister les factures impayées",
+    "log_activity": "Y journaliser une activité",
+    "log_to_crm": "Y reporter ce qui s’est passé",
+    "lookup_company": "Retrouver une société au registre",
+    "manage_billing": "Préparer une facturation",
+    "read_calls": "Lire l’historique des appels",
+    "read_consultants": "Lire le vivier de consultants",
+    "read_data": "Lire les données de gestion",
+    "read_emails": "Lire tes échanges pour préparer une relance",
+    "read_file": "Lire un document",
+    "read_lead_statuses": "Relire ce qu’il en est advenu (envoyé, ouvert, répondu)",
+    "read_missions": "Lire les missions en cours",
+    "read_opportunities": "Lire les affaires en cours",
+    "read_pages": "Lire une page de ton espace de notes",
+    "run_analysis": "Lancer une analyse dessus",
+    "scrape_page": "Lire une page publique",
+    "search_contacts": "Y chercher un contact",
+    "search_files": "Chercher un document",
+    "search_offers": "Chercher des offres publiées",
+    "search_pages": "Chercher dans ton espace de notes",
+    "search_tenders": "Chercher des appels d’offres publiés",
+    "search_web": "Chercher sur le web ouvert",
+    "send_email": "Envoyer un message, après ton clic",
+    "send_event": "Y publier un événement du produit",
+    "send_message": "Envoyer un message, après ton clic",
+    "send_notification": "T’avertir dans ton canal d’équipe",
+    "send_to_signature": "Envoyer un document à signer, après ton clic",
+    "transcribe_recording": "Transcrire un enregistrement",
+    "log_call": "Ajouter un compte rendu d’appel à la fiche contact de ton ERP, après l’accord d’un second responsable",
+    "update_need_status": "Changer l’état d’un besoin dans ton ERP, après l’accord d’un second responsable",
+    "update_tjm": "Mettre à jour le TJM d’une mission, après l’accord d’un second responsable",
+    "view_profile": "Consulter un profil public"
+  },
+  "importEntry": {
+    "title": "Tu as déjà des fichiers ou un CRM ?",
+    "subtitle": "Importe tes fichiers (comptes, contacts, historique) avant de repartir de zéro. Un CRM branché se reprend tout seul : son avancée est sur sa carte."
+  },
+  "capabilityTiers": {
+    "read": "Lire",
+    "prepare": "Préparer",
+    "act": "Agir, après ta validation"
+  },
+  "details": {
+    "show": "Voir le détail",
+    "hide": "Masquer le détail"
+  },
+  "dataTypeKeys": {
+    "contacts": "contacts",
+    "companies": "entreprises",
+    "deals": "affaires",
+    "accounts": "comptes",
+    "opportunities": "opportunités",
+    "persons": "personnes",
+    "organizations": "organisations",
+    "people_records": "fiches de personnes",
+    "emails": "e-mails",
+    "threads": "fils de discussion",
+    "events": "événements d’agenda",
+    "availability": "disponibilités",
+    "documents": "documents",
+    "file_metadata": "noms de fichiers",
+    "pages": "pages",
+    "databases": "bases de données"
+  },
+  "firstSyncCta": {
+    "title": "Synchroniser et comprendre mes données",
+    "body": "On regarde ce que {{name}} sait déjà, et on te dit ce qu’on y a trouvé.",
+    "later": "Plus tard",
+    "resyncTitle": "Resynchroniser",
+    "resyncBody": "On relance une lecture de {{name}} et on met à jour ce résumé."
+  },
+  "syncPreview": {
+    "title": "Avant de synchroniser {{name}}",
+    "scope": "{{brand}} va lire les données de ton compte {{name}} connecté — rien d’autre.",
+    "objectsTitle": "Ce qui sera lu :",
+    "durationTitle": "Durée estimée : {{value}}",
+    "durationUnknown": "Durée estimée : non précisée",
+    "costTitle": "Coût : {{value}}",
+    "costUnknown": "Coût : non précisé",
+    "launch": "Synchroniser",
+    "later": "Plus tard"
+  },
+  "syncSummary": {
+    "title": "Résumé de la synchronisation",
+    "partialTitle": "Résumé partiel — une source a échoué",
+    "lastSyncTitle": "Dernière synchronisation",
+    "waitingSince": "En attente depuis {{count}} min",
+    "pollUnavailable": "État de la synchronisation indisponible — nouvel essai en cours.",
+    "running": "Synchronisation en cours…",
+    "cancel": "Annuler",
+    "canceledTitle": "Synchronisation annulée",
+    "empty": "Rien de nouveau depuis la dernière fois.",
+    "errorTitle": "La synchronisation a échoué",
+    "predatesCapacity": "Résumé disponible à la prochaine synchronisation — cette connexion a été synchronisée avant que ce résumé n’existe.",
+    "states": {
+      "running": "Synchronisation en cours…",
+      "pending": "En attente…",
+      "reading_sources": "Lecture des sources…",
+      "matching_accounts": "Rapprochement des entreprises…",
+      "matching_contacts": "Rapprochement des contacts…",
+      "detecting_events": "Détection des événements…",
+      "preparing_summary": "Préparation du résumé…",
+      "completed": "Terminé",
+      "partial": "Partiel — une source a échoué",
+      "failed": "Échoué",
+      "canceled": "Annulée"
+    },
+    "blocks": {
+      "found": "Ce que j'ai retrouvé",
+      "matched": "Ce que j'ai rapproché",
+      "unclear": "Ce que je n'ai pas compris",
+      "impact": "Ce que ça change",
+      "advice": "Ce que je conseille"
+    }
+  },
+  "tabs": {
+    "aria": "Sections de l'écran Intégrations",
+    "connectors": "Connecteurs",
+    "apiKeys": "Clés d'API",
+    "history": "Historique",
+    "label": "Intégrations"
+  },
+  "crmRead": {
+    "title": "Lecture des CRM",
+    "none": "Aucun CRM branché — rien n’est lu.",
+    "unavailable": "État de lecture indisponible — réessaie dans un instant.",
+    "lastRead": "dernière lecture {{date}}",
+    "neverRead": "jamais lu"
+  },
+  "grid": {
+    "title": "Tes outils, le même dossier",
+    "subtitle": "Choisir ce qui vient de chaque outil, relire les changements, retrouver leur résultat.",
+    "importFile": "Importer un fichier",
+    "guide": {
+      "title": "Comment travailler ici ?",
+      "heading": "Savoir ce qu’un outil permet de lire ou de préparer",
+      "intro": "Chaque connecteur dit ce qu’il lit, ce qu’il prépare et ce qui attend ta validation.",
+      "stepsTitle": "Le parcours utile",
+      "step1": "Choisis l’outil de ton espace.",
+      "step2": "Distingue lecture, préparation et écriture.",
+      "step3": "Relis les changements avant qu’ils n’entrent dans un dossier.",
+      "keepTitle": "À garder en tête",
+      "keep": "Aucun outil ne partage tes données avec une autre ESN. Tout est facultatif."
+    },
+    "tabsAria": "Sections des connecteurs",
+    "tabs": {
+      "connectors": "Connecteurs",
+      "review": "À relire",
+      "history": "Historique"
+    },
+    "families": {
+      "crm": "CRM, ERP et gestion d’activité",
+      "workspace": "Messagerie, agenda et documents",
+      "communication": "Canaux d’équipe",
+      "outreach": "Prospection et recrutement",
+      "admin": "Téléphonie, signature, facturation et assistants"
+    },
+    "status": {
+      "connected": "Branché",
+      "action_required": "À reconnecter",
+      "available": "Non branché",
+      "not_included_in_plan": "Non inclus dans ton offre",
+      "contractual": "Périmètre à contractualiser"
+    },
+    "actions": {
+      "journey": "Voir le parcours",
+      "reconnect": "Reconnecter"
+    },
+    "openAria": "{{action}} : {{name}}",
+    "pointers": {
+      "mcp": "Les assistants IA et les clés d’API se règlent dans Outils › Accès assistants / MCP.",
+      "notifications": "Comment {{copilot}} te prévient :"
+    },
+    "pointerMcpLink": "Accès assistants / MCP",
+    "pointerNotifLink": "Mon compte › Notifications",
+    "drawer": {
+      "close": "Fermer",
+      "guaranteesTitle": "Ce que tu gardes la main sur",
+      "readScope": "Périmètre de lecture",
+      "readScopeBody": "Limité à l’espace et aux objets autorisés. Aucune donnée partagée entre ESN.",
+      "noDuplicate": "Rapprochement sans doublon",
+      "noDuplicateBody": "Identité externe conservée ; une modification simultanée reste à arbitrer.",
+      "writesReviewed": "Écritures à relire",
+      "writesReviewedBody": "Aperçu des changements et validation. Aucun succès sans retour de l’outil."
+    },
+    "review": {
+      "intro": "Comparer les informations avant de mettre à jour un dossier. Aucun « Tout approuver » aveugle.",
+      "unavailable": "État de lecture indisponible — la lecture de tes outils a échoué, réessaie dans un instant.",
+      "empty": "Rien à relire : aucun écart entre {{brand}} et tes outils.",
+      "unnamed": "Fiche sans nom",
+      "received": "{{tool}} · reçu le {{date}}",
+      "inBellum": "Dans {{brand}}",
+      "inTool": "Dans {{tool}}",
+      "absent": "Non renseigné",
+      "keep": "Garder, {{field}}",
+      "keepBellum": "{{brand}}",
+      "lockNote": "Ta correction est gardée tant que tu ne choisis pas l’autre valeur.",
+      "apply": "Appliquer ces choix",
+      "applied": "Tes choix sont appliqués.",
+      "failed": "Les choix n’ont pas pu être appliqués.",
+      "demoPreview": "Aperçu : dans la salle de démonstration, rien n’est écrit."
+    },
+    "history": {
+      "intro": "Ce qui a réellement été fait avec tes outils, et le résultat que l’outil a rapporté.",
+      "empty": "Aucune opération pour l’instant : l’historique se remplit dès que tu relis ou écris dans un outil branché.",
+      "entity": {
+        "account": "sociétés",
+        "contact": "contacts",
+        "record": "fiches"
+      },
+      "operation": {
+        "read": "Lecture · {{count}} {{entity}} touchés",
+        "write": "Écriture validée par toi",
+        "first_sync": "Première synchronisation",
+        "readPlain": "Lecture"
+      },
+      "result": {
+        "done": "Fait",
+        "to_review": "À relire",
+        "confirmed": "Confirmé par l’outil",
+        "refused": "Refusé par l’outil",
+        "to_review_count_one": "{{count}} changement à relire",
+        "to_review_count_other": "{{count}} changements à relire"
+      }
+    }
+  },
+  "history": {
+    "intro": "Chaque opération menée avec tes outils, et le résultat que l’outil en rapporte.",
+    "loading": "On lit l’historique de tes outils…",
+    "failed": "Je n’ai pas pu lire l’historique de tes outils.",
+    "empty": "Aucune synchronisation n’a encore été lancée avec tes outils branchés.",
+    "emptyNoTool": "Aucun outil branché : l’historique apparaît dès la première synchronisation.",
+    "operationSync": "Synchronisation",
+    "columns": {
+      "date": "Date",
+      "tool": "Outil",
+      "operation": "Opération",
+      "result": "Résultat"
+    }
+  },
+  "notificationsMoved": "Comment {{copilot}} te prévient : Mon compte › Notifications."
+}

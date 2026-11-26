@@ -1,0 +1,118 @@
+{
+  "title": "Marché",
+  "subtitle": "Ce qui a bougé sur les territoires que tu suis, semaine après semaine.",
+  "addPlaceholder": "Département (31, 69…)",
+  "add": "Suivre",
+  "followedCount": "{{count}} territoire(s) suivi(s)",
+  "remove": "Ne plus suivre",
+  "loading": "Lecture de tes territoires…",
+  "error": "Impossible de lire tes territoires pour le moment.",
+  "empty": "Tu ne suis aucun territoire. Ajoute un département pour commencer à mesurer ce qui s'y passe.",
+  "department": "Département {{code}}",
+  "lastSnapshot": "Dernière photo le {{date}} · {{count}} photo(s) accumulée(s)",
+  "noSnapshot": "Aucune photo encore prise.",
+  "notMeasured": "non mesuré",
+  "valueGap": "la source n'a pas répondu cette semaine",
+  "measure": {
+    "offers": "Offres IT publiées",
+    "esnPresent": "ESN implantées",
+    "openTenders": "Appels d'offres ouverts",
+    "awardedContracts": "Marchés attribués"
+  },
+  "atLeast": "au moins {{value}}",
+  "boundedWhy": "La collecte s'arrête à {{ceiling}} : c'est un plancher, pas un total.",
+  "openPanel": "Voir le détail",
+  "openList": "Ouvrir la liste",
+  "trend": {
+    "structuralTitle": "Tendance de fond",
+    "currentTitle": "Tendance du moment",
+    "up": "+{{change}} depuis le {{date}}",
+    "down": "−{{change}} depuis le {{date}}",
+    "steady": "stable depuis le {{date}}",
+    "percent": "{{percent}} %",
+    "gap": {
+      "no_previous_snapshot": "variation non mesurée — une seule photo pour l'instant",
+      "no_current_snapshot": "variation non mesurée — la source n'a pas répondu cette semaine",
+      "bounded_reading": "variation non mesurée — au moins une des deux mesures est bornée",
+      "denominator_missing": "variation non mesurée — pas de dénominateur",
+      "periods_not_ordered": "variation non mesurée — photos non ordonnées",
+      "not_enough_history": "non mesuré — pas encore assez de recul"
+    }
+  },
+  "kind": {
+    "offers": "Offres",
+    "tenders": "Appels d'offres",
+    "awards": "Marchés attribués",
+    "new_esn": "Nouvelle ESN",
+    "esn_surge": "Accélération",
+    "esn_left": "Sortie"
+  },
+  "movement": {
+    "entered_one": "nouvelle entrée sur le territoire — {{count}} offre publiée",
+    "entered_other": "nouvelle entrée sur le territoire — {{count}} offres publiées",
+    "left_one": "n'apparaît plus — {{count}} offre la semaine dernière",
+    "left_other": "n'apparaît plus — {{count}} offres la semaine dernière",
+    "moved": "{{from}} → {{to}}",
+    "unreadable": "mouvement non lisible — les deux mesures manquent"
+  },
+  "panel": {
+    "movements": "Mouvements de la semaine",
+    "technologies": "Technologies demandées",
+    "technologiesWhy": "Comptées sur les seules offres collectées — l'ordre vaut, le volume est un plancher.",
+    "technologiesNone": "Pas de classement de technologies : trop peu d'offres collectées cette semaine pour qu'il dise quelque chose.",
+    "hiring": "Les ESN qui recrutent ici",
+    "hiringWhy": "Les dix premières de la dernière photo — la liste n'est pas exhaustive.",
+    "hiringNone": "Aucune ESN connue ne recrutait ici à la dernière photo.",
+    "esn": "Les ESN du référentiel implantées ici",
+    "esnKnown_one": "{{count}} ESN du référentiel a son siège dans ce département.",
+    "esnKnown_other": "{{count}} ESN du référentiel ont leur siège dans ce département.",
+    "esnPopulation": "ESN du référentiel",
+    "esnWhy": "Population différente du compte du registre public : ce sont les ESN que nous suivons nationalement, pas tous les établissements du département.",
+    "esnNone": "Aucune ESN du référentiel n'a son siège résolu dans ce département.",
+    "bySize": "Par taille",
+    "byRank": "Par rang déclaré",
+    "sizeUnknown": "taille non résolue",
+    "share": "{{count}} · {{share}} %",
+    "openness": {
+      "oui": "accepte le rang 2",
+      "non": "n'accepte pas le rang 2",
+      "inconnu": "rang non déclaré"
+    },
+    "risk": {
+      "vigilance": "vigilance",
+      "alerte": "alerte"
+    }
+  },
+  "links": {
+    "title": "Depuis ce territoire",
+    "accounts_one": "{{count}} compte de ton portefeuille a un site déclaré ici",
+    "accounts_other": "{{count}} comptes de ton portefeuille ont un site déclaré ici",
+    "accountsOf": "sur {{total}} comptes qui déclarent un site",
+    "accountsNone": "Aucun compte de ton portefeuille ne déclare de site ici.",
+    "partners_one": "{{count}} ESN partenaire a son siège ici",
+    "partners_other": "{{count}} ESN partenaires ont leur siège ici",
+    "partnersNone": "Aucune de tes ESN partenaires n'a son siège ici.",
+    "overview": "Ouvrir l'aperçu complet du territoire"
+  },
+  "zones": {
+    "empty": "Aucune zone « Marché local » dans cet espace : aucun compte ne peut encore porter la puce « Marché local ».",
+    "createTitle": "Créer une zone",
+    "labelPlaceholder": "Nom de la zone (ex. Lille)",
+    "labelAria": "Nom de la zone",
+    "scopeAria": "Pays de la zone",
+    "scopeFrance": "France (départements)",
+    "scopeSuisse": "Suisse (cantons)",
+    "codesPlaceholderFrance": "Départements (ex. 59, 62)",
+    "codesPlaceholderSuisse": "Cantons (ex. VD, GE)",
+    "codesAria": "Codes de la zone",
+    "submit": "Créer",
+    "error": "La zone n'a pas pu être créée."
+  },
+  "sections": {
+    "coverage": "Ce que tu sais de ton portefeuille",
+    "territories": "Territoires suivis"
+  },
+  "emptyTitle": "Aucun territoire suivi",
+  "removeNamed": "Ne plus suivre le département {{code}}",
+  "emptyAction": "Suivre un département"
+}

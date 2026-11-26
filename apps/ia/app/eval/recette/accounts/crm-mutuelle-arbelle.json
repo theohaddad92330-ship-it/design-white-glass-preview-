@@ -1,0 +1,190 @@
+{
+  "slug": "crm-mutuelle-arbelle",
+  "company": "Mutuelle Arbelle (fictif)",
+  "archetype": "connu_du_crm",
+  "issue": "#2130.13",
+  "nature": "fictif",
+  "as_of": "2026-09-15",
+  "_fiction": "Nom FICTIF assumé, marqué « (fictif) » : aucune entreprise réelle n'est décrite ici, aucun identifiant de registre n'est affirmé, et les sources vivent sur le domaine réservé .invalid (RFC 2606) — elles ne peuvent désigner aucune page réelle. Le cadrage #2130.1-7 laisse le choix entre un nom fictif assumé et une entreprise réelle dont chaque fait est sourcé ; faute de source vérifiable depuis ce poste sur cet archétype, c'est le nom fictif.",
+  "expected": {
+    "identite": {
+      "status": "attendu",
+      "contient": [
+        "Mutuelle Arbelle"
+      ]
+    },
+    "perimetre": {
+      "status": "attendu",
+      "contient": [
+        "Lentillac"
+      ]
+    },
+    "decideurs": {
+      "status": "attendu",
+      "contient": [
+        "Bruno Lesage"
+      ]
+    },
+    "contacts_a_ne_pas_recommander": {
+      "status": "attendu",
+      "contient": [
+        "Denis Vautrin"
+      ]
+    },
+    "equipes_cles": {
+      "status": "attendu",
+      "contient": [
+        "Sésame"
+      ]
+    },
+    "signaux": {
+      "status": "attendu",
+      "contient": [
+        "Sésame"
+      ]
+    },
+    "projets": {
+      "status": "attendu",
+      "contient": [
+        "deuxième tentative"
+      ]
+    },
+    "partenaires": {
+      "status": "attendu",
+      "contient": [
+        "Groupe Ferval"
+      ]
+    },
+    "acces": {
+      "status": "attendu",
+      "contient": [
+        "CRM",
+        "perdue en 2025-11"
+      ]
+    },
+    "recommandations": {
+      "status": "attendu",
+      "contient": [
+        "Sésame"
+      ]
+    },
+    "gaps": {
+      "status": "attendu",
+      "contient": [
+        "CRM"
+      ]
+    },
+    "sources": {
+      "status": "attendu",
+      "contient": [
+        "src-appel"
+      ]
+    },
+    "action_suivante": {
+      "status": "attendu",
+      "contient": [
+        "Nathalie Coste"
+      ]
+    }
+  },
+  "dossier": {
+    "identite": {
+      "name": "Mutuelle Arbelle",
+      "siren": null
+    },
+    "perimetre": {
+      "scope": "groupe",
+      "entities": [
+        "Mutuelle Arbelle — siège de Rochebrune",
+        "Mutuelle Arbelle — centre de gestion de Lentillac"
+      ]
+    },
+    "decideurs": [
+      {
+        "name": "Bruno Lesage",
+        "title": "Directeur des études informatiques",
+        "team": "Études"
+      },
+      {
+        "name": "Nathalie Coste",
+        "title": "Responsable achats",
+        "team": "Achats"
+      }
+    ],
+    "contacts_a_ne_pas_recommander": [
+      {
+        "name": "Denis Vautrin",
+        "reason": "interlocuteur de l'opportunité perdue, parti en 2026-01"
+      }
+    ],
+    "equipes_cles": [
+      "Études du portail adhérents Sésame",
+      "Centre de gestion de Lentillac"
+    ],
+    "signaux": [
+      {
+        "id": "sig-sesame",
+        "text": "Relance de la refonte du portail adhérents Sésame après son arrêt de 2025",
+        "date": "2026-08",
+        "source": "src-appel"
+      }
+    ],
+    "projets": [
+      {
+        "id": "prj-sesame",
+        "text": "Refonte du portail adhérents Sésame, deuxième tentative",
+        "source": "src-appel"
+      }
+    ],
+    "partenaires": [
+      "Groupe Ferval Services (fictif)"
+    ],
+    "acces": [
+      {
+        "text": "Compte connu du CRM de l'espace : opportunité « portail Sésame » perdue en 2025-11, motif prix",
+        "via": "crm"
+      }
+    ],
+    "recommandations": [
+      {
+        "id": "reco-sesame",
+        "text": "Revenir sur le portail Sésame avec un chiffrage par lots, l'opportunité perdue en 2025-11 ayant achoppé sur le prix.",
+        "why": "La refonte du portail Sésame est relancée en 2026-08, et le CRM garde la trace d'un échec sur le prix, pas sur la compétence.",
+        "target": "Bruno Lesage",
+        "evidence": [
+          "sig-sesame"
+        ]
+      }
+    ],
+    "gaps": [
+      "montant de l'opportunité perdue non repris du CRM"
+    ],
+    "sources": [
+      {
+        "id": "src-appel",
+        "url": "https://sources.fictif.invalid/crm-mutuelle-arbelle/src-appel",
+        "date": "2026-08-03"
+      }
+    ],
+    "action_suivante": {
+      "text": "Relire avec Nathalie Coste les motifs de l'opportunité « portail Sésame »",
+      "target": "Nathalie Coste",
+      "evidence": [
+        "src-appel"
+      ]
+    }
+  },
+  "cas": [
+    {
+      "id": "cas-plausible",
+      "text": "Proposer de raccorder le centre de gestion de Lentillac au portail Sésame.",
+      "why": "Le centre de Lentillac pourrait entrer dans le périmètre Sésame, sans que la source le dise.",
+      "target": "Bruno Lesage",
+      "evidence": [
+        "sig-sesame"
+      ],
+      "label": "plausible",
+      "_jugement": "Ni fausse ni établie : le raccordement est une hypothèse, assumée comme telle."
+    }
+  ]
+}

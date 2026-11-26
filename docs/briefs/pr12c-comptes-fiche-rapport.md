@@ -1,0 +1,16 @@
+# Rapport PR 12C — COMPTES-FICHE (#4507, #4508, #4509) · branche `claude/pr12c-comptes-fiche`
+
+- **#4507 conforme** (570f6c9b10) — barre « ← Portefeuille » · épingle · **Actualiser** (seul bouton plein ; « Analyser le compte » / « Terminer l'analyse » sur un dossier inachevé, rien pendant un run ni sur une archive) · « … ». Identité : sur-titre secteur · CA, nom, ligne ville · effectif · statut · responsable (avatar + prénom, absent = rien). « ✓ Dossier consultable · date · Périmètre & données » → panneau (`AccountScopePanel`). Démo : Airbus/EDF/Renault/Thales remplis, responsable posé par le semis (`demo-account-header-coverage.spec.ts`).
+- **#4508 conforme** — `account-context-row` retirée de tous les onglets (test `it.each(TAB_KEYS)`), `ChainProgressBlock` compact retiré de « Ce que je sais ». `ChainProgressBlock` garde 5 appelants (missions, besoins, projets).
+- **#4509 conforme sauf** — section `orgLeads`, `readOrgGraphLeads`, variante `org`, clés `contactsTab.orgLeads` (fr/en) retirées ; « citées dans un signal » reste. **Bloqué : créer la fiche depuis un nœud d'Organigramme n'existe pas** (`OrgPersonPanel` ne propose que des corrections) — non recréé, lot RESTES.
+- **Où sont allés les gestes** : « … » = prochaine action (par état), Compléter le compte, Demander à Laura, Commenter (→ Historique), Planifier un créneau, Mettre à jour dans mon CRM, Aperçu PDF, Télécharger PDF, Brief, Partager, Attribuer (sous-menu + Libérer), Demander une validation, Ajouter un co-équipier (fenêtre = même `AccountTeamCard`), puis l'existant. Panneau = statut d'analyse, nb d'analyses, fraîcheur, cadrage, présence CRM + lot d'affaires, SIREN (lien registre), siège, statut commercial + historique, décision de priorité, identité (nom commercial, pays, zone, intermédiaire, étiquettes), prochaine action, équipe (BU, dernière activité, contributeurs), verdicts ✓ – ✕ ?. Collisions avec un collègue : sous l'identité, seulement quand il y en a.
+- **Droits** inchangés et testés : Attribuer / Valider toujours proposés (le serveur tranche), « Ajouter un co-équipier » seulement sur `can_edit`.
+
+**À trancher par Louis**
+
+1. « signaler » lu comme la porte de priorité (icône drapeau) : rangée dans « Périmètre & données », pas dans « … » (son composant, hors périmètre, porte son propre déclencheur).
+2. « Exporter » lu comme Brief + Télécharger PDF. Sur-titre « taille » = CA (le modèle n'a pas de catégorie de taille).
+3. Sans `can_edit`, la liste des co-équipiers n'est plus visible (la carte était lisible par tous).
+4. Plus atteignables depuis la fiche : la fenêtre de détail du parcours du compte, la recherche dans le dossier (`?find=`). Sans appelant, laissés : `AccountDossierSearch`, `AccountDetailHeroPrimaryAction`, `AccountDetailStickyPrimaryAction` (barre collante mobile démontée), `CompleteCrmAccountButton`. Épingle : la fiche ne porte pas `is_favorite`, l'état est lu sur « Mes favoris ».
+
+**Tests** : `tsc -p apps/web` 0 error TS ; `vitest src/architecture` 241 fichiers (GA-333 rouge → corrigé, vert) ; specs vertes : en-tête (20), menu « … », collaboration, AccountDetail contextRow/verdictAboveFold/tabRace, Contacts sans pistes d'org., Ce que je sais, i18n (29 fichiers), changelog ; API : démo en-tête (jest, 6). SHA : 570f6c9b10, ec55b4e02e (prettier maquettes), d3e3ed6ca3, 5d90dcb689.

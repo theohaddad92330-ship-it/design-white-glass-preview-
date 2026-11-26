@@ -1,0 +1,13 @@
+# Entrée du lock de la CI (apps/ia/requirements.lock) — lot CI C.
+# Le lock = requirements.txt + ce qu'il faut en plus pour lancer la suite et les
+# gardes. Railway, lui, installe toujours requirements.txt (non touché ici).
+#
+# Régénérer : voir l'en-tête de requirements.lock (une seule commande).
+-r requirements.txt
+# Suite parallèle : `pytest -n $CI_IA_XDIST --dist loadfile` (job Test (IA / Python)).
+pytest-xdist==3.8.0
+# tests/test_import_contracts.py et le job `quick` lancent `lint-imports`.
+# <2.7 : import-linter >=2.7 exige rich>=14.2 et plante (« Only one live display »).
+import-linter>=2.0,<2.7
+# Avant le lock, la CI forçait rich<14 APRÈS requirements.txt : on garde cette borne.
+rich<14

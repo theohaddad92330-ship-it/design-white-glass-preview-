@@ -1,0 +1,37 @@
+import { DEFAULT_BRAND_NAME } from '@bellum/contracts'
+import { forwardRef, type SVGProps } from 'react'
+import { cn } from '../lib/utils'
+
+/**
+ * Le glyphe du produit — le cerveau seul, sans carré de fond.
+ *
+ * Prend la couleur d'accent par défaut ; se surcharge par `className`
+ * (utilitaires de texte Tailwind) ou par un `fill` explicite.
+ *
+ * ⚠️ **`aria-label` se PASSE** — marque blanche, 01/09/2026. Le repli nomme
+ * notre produit parce que c'est NOTRE glyphe, mais un espace qui a posé son
+ * nom sans poser de logo affiche ce dessin sous SA marque : un lecteur d'écran
+ * qui annoncerait « BellumAI » à cet endroit-là serait le seul endroit de
+ * l'écran à trahir le fournisseur. `BrandMark` passe donc toujours le nom
+ * résolu, et le spread de `props` ci-dessous vient APRÈS l'attribut — c'est ce
+ * qui rend la surcharge possible.
+ */
+export const Logo = forwardRef<SVGSVGElement, SVGProps<SVGSVGElement>>(function Logo({ className, ...props }, ref) {
+  return (
+    <svg
+      ref={ref}
+      xmlns="http://www.w3.org/2000/svg"
+      viewBox="0 0 200 200"
+      preserveAspectRatio="xMidYMid meet"
+      fill="currentColor"
+      role="img"
+      aria-label={DEFAULT_BRAND_NAME}
+      className={cn('text-[var(--bellum-primary-500)]', className)}
+      {...props}
+    >
+      <g transform="translate(0,200) scale(0.1,-0.1)" stroke="none">
+        <path d="M1157 1454 c29 -14 63 -38 76 -53 17 -21 35 -29 69 -33 88 -10 173 -79 204 -165 19 -55 17 -141 -5 -189 -18 -39 -18 -41 0 -75 26 -50 25 -134 -4 -181 -36 -59 -88 -93 -162 -107 -72 -13 -131 3 -198 55 -73 57 -124 81 -137 68 -8 -8 9 -21 52 -44 103 -55 207 -175 208 -241 0 -26 -40 -69 -64 -69 -27 0 -46 20 -74 76 -25 49 -75 95 -140 128 -68 35 -91 56 -106 100 -26 75 18 156 96 176 58 16 117 -4 210 -71 87 -63 116 -71 168 -44 59 31 64 74 15 118 -42 37 -45 72 -10 113 55 63 52 150 -8 200 l-32 27 -8 -34 c-29 -116 -73 -171 -124 -153 -42 15 -52 54 -25 107 27 54 28 83 2 124 -36 60 -139 91 -205 61 -43 -19 -28 -28 48 -28 82 0 97 -9 97 -55 0 -48 -29 -68 -105 -73 -65 -4 -101 8 -205 68 -94 54 -190 -5 -190 -117 0 -38 -5 -54 -21 -69 -72 -65 -25 -154 81 -154 66 0 118 36 154 107 20 40 56 52 90 29 37 -24 40 -49 12 -103 -29 -57 -75 -102 -136 -134 -36 -19 -61 -24 -126 -24 -72 0 -86 3 -129 30 -96 60 -131 180 -81 280 14 26 28 66 32 89 9 55 35 104 76 142 58 55 94 69 184 69 61 0 87 4 100 16 81 71 216 85 321 33z" />
+      </g>
+    </svg>
+  )
+})

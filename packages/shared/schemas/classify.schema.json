@@ -1,0 +1,416 @@
+{
+  "$schema": "http://json-schema.org/draft-07/schema#",
+  "$id": "https://bellum.ai/schemas/classify.schema.json",
+  "title": "BellumClassifyOutput",
+  "description": "Contrat de SORTIE de l'étape 3 « classify » (agent Classifier) : la fusion de BELLUM-CONTACTS (classification par contact) et BELLUM-ORGANIGRAMME (structure org + graphe de décision). Source de vérité zod = @bellum/contracts (`classifiedDataSchema`), miroir Pydantic = `apps/ia/app/models/classified_data.py`. ⚠️ Dérive de format de fil ASSUMÉE et documentée : le prompt + Pydantic émettent `organigramme` (FR, alias de `orgChart`), `approach_order` (snake, alias de `approachOrder`) et `connection_path` (snake, alias de `connectionPath`) — les deux graphies sont documentées ici, un consommateur doit lire les clés LEGACY. Permissif (passthrough, tout optionnel) : une itération de prompt peut ajouter des champs sans casser un consommateur.",
+  "x-bellum-branchable": {
+    "_comment": "Sortie de l'etape classify : les 6 blocs du fil + les champs garantis de chaque contact classifie (`bucket`/`hierarchyLevel` sont des computed_field Pydantic, donc TOUJOURS emis).",
+    "root": ["contacts", "organigramme", "decisionChain", "uncoveredZones", "stakeholderMap", "approach_order"],
+    "items": {
+      "contacts": ["fullName", "title", "role", "priority", "bucket", "hierarchyLevel"]
+    }
+  },
+  "type": "object",
+  "additionalProperties": true,
+  "properties": {
+    "contacts": {
+      "type": "array",
+      "description": "Contacts classifiés (`EnrichedContact`). Chaque ligne porte les axes de triage déterministes calculés côté IA (`bucket`, `hierarchyLevel`) — jamais demandés au LLM, donc TOUJOURS présents.",
+      "items": {
+        "$ref": "#/definitions/enrichedContact"
+      }
+    },
+    "organigramme": {
+      "type": "array",
+      "description": "LEGACY (clé de fil réelle, FR) — structure org par entité. Alias de `orgChart`.",
+      "items": {
+        "$ref": "#/definitions/orgEntity"
+      }
+    },
+    "orgChart": {
+      "type": "array",
+      "description": "Graphie camelCase du même bloc que `organigramme` (nom du champ Pydantic/zod). Le fil émet `organigramme` aujourd'hui.",
+      "items": {
+        "$ref": "#/definitions/orgEntity"
+      }
+    },
+    "decisionChain": {
+      "type": ["object", "null"],
+      "additionalProperties": true,
+      "description": "Chaîne de décision de l'achat : étapes, acteurs, durée estimée, autorité budgétaire.",
+      "properties": {
+        "description": {
+          "type": ["string", "null"]
+        },
+        "steps": {
+          "type": "array",
+          "items": {
+            "type": "object",
+            "additionalProperties": true,
+            "properties": {
+              "step": {
+                "type": ["string", "null"]
+              },
+              "actors": {
+                "type": "array",
+                "items": {
+                  "type": "string"
+                }
+              },
+              "duration": {
+                "type": ["string", "null"]
+              }
+            }
+          }
+        },
+        "estimatedCycleLength": {
+          "type": ["string", "null"]
+        },
+        "budgetAuthority": {
+          "type": ["string", "null"]
+        }
+      }
+    },
+    "uncoveredZones": {
+      "type": "array",
+      "description": "Zones blanches : périmètres où AUCUN contact n'a été trouvé, avec la recherche suggérée pour les couvrir.",
+      "items": {
+        "type": "object",
+        "additionalProperties": true,
+        "properties": {
+          "zone": {
+            "type": ["string", "null"]
+          },
+          "entity": {
+            "type": ["string", "null"],
+            "description": "Entité concernée (nom repris de ENTITIES). Annexe organigramme p19 : une zone blanche se lit par entité, famille ET niveau — sans ces axes la case n'est pas relançable. Vide = le modèle n'a pas su situer la zone."
+          },
+          "family": {
+            "type": ["string", "null"],
+            "description": "Famille métier concernée (Data, Cyber, Achats, Finance…)."
+          },
+          "level": {
+            "type": ["string", "null"],
+            "description": "Niveau hiérarchique visé, axe STRUCTURE : L0 gouvernance · L1 exécutif · L2 direction · L3 management · L4 expert/opérationnel · L5 achats/contrôle."
+          },
+          "importance": {
+            "type": "string",
+            "description": "Criticité de la zone non couverte.",
+            "enum": ["critique", "importante", "secondaire"]
+          },
+          "suggestedSearch": {
+            "type": ["string", "null"]
+          },
+          "suggestedTitle": {
+            "type": ["string", "null"]
+          }
+        }
+      }
+    },
+    "stakeholderMap": {
+      "type": "array",
+      "description": "Posture de chaque partie prenante vis-à-vis du projet (advocate / neutral / opponent / unknown).",
+      "items": {
+        "type": "object",
+        "additionalProperties": true,
+        "properties": {
+          "fullName": {
+            "type": ["string", "null"]
+          },
+          "stance": {
+            "type": "string",
+            "enum": ["advocate", "neutral", "opponent", "unknown"]
+          },
+          "reasoning": {
+            "type": ["string", "null"]
+          }
+        }
+      }
+    },
+    "approach_order": {
+      "type": "array",
+      "description": "LEGACY (clé de fil réelle, snake_case) — ordre d'approche des contacts. Alias de `approachOrder`.",
+      "items": {
+        "$ref": "#/definitions/approachStep"
+      }
+    },
+    "approachOrder": {
+      "type": "array",
+      "description": "Graphie camelCase du même bloc que `approach_order` (nom du champ zod). Le fil émet `approach_order` aujourd'hui.",
+      "items": {
+        "$ref": "#/definitions/approachStep"
+      }
+    },
+    "buyingCommittee": {
+      "type": ["object", "null"],
+      "additionalProperties": true,
+      "description": "Comité d'achat (Knowledge Pack v2) — assemblé déterministiquement à partir des contacts classifiés (rôle + quadrant Power/Interest) puis attaché au graphe org (`raw_analysis.org.buyingCommittee`). Absent quand aucun membre n'est typable."
+    },
+    "hierarchyRelations": {
+      "type": "array",
+      "description": "Relations TYPÉES proposées par BELLUM ACCOUNT MAPPING (annexe organigramme p9/p25). ⚠️ Ce sont des PROPOSITIONS, jamais des faits : l'assembleur les fait passer par le resolver déterministe (`org_resolver`), qui les traite en grounding C (provenance `llm`), plafonne leur confiance à 49 et les range en `influenceEdges`. Aucune affirmation du modèle ne devient une ligne hiérarchique vérifiée. Une relation sans `evidence` citée est ignorée.",
+      "items": {
+        "$ref": "#/definitions/orgRelationClaim"
+      }
+    },
+    "influenceMap": {
+      "type": "array",
+      "description": "Carte d'influence métier (annexe p13/p27) : qui pèse sur quel sujet, avec quelle posture. Hypothétique par construction, donc obligatoirement porteuse d'un `reasoning` — sans lui, le lien n'est pas émis.",
+      "items": {
+        "$ref": "#/definitions/orgInfluenceClaim"
+      }
+    },
+    "rejected": {
+      "type": "array",
+      "description": "Éléments écartés par le modèle et leur raison (annexe p10 « rejeté + mémorisé »). Informatif : l'ardoise des rejets qui pilote le graphe reste celle du compte, persistée côté API.",
+      "items": {
+        "type": "object",
+        "additionalProperties": true,
+        "properties": {
+          "name": {
+            "type": ["string", "null"]
+          },
+          "reason": {
+            "type": ["string", "null"]
+          }
+        }
+      }
+    }
+  },
+  "definitions": {
+    "enrichedContact": {
+      "type": "object",
+      "additionalProperties": true,
+      "description": "Un contact classifié, tel que le classifier l'émet (`app/models/outputs/contacts.py::EnrichedContact`). ⚠️ Forme DIFFÉRENTE de `contacts.schema.json` : celle-ci est la sortie brute de l'étape (`role`, `influenceLevel`, `summary`…), l'autre est la ligne `topContacts[]` telle que la télémétrie l'envoie au front après persistance (`decisionRole`, `profileSummary`, `sourceTag`…).",
+      "properties": {
+        "fullName": {
+          "type": ["string", "null"]
+        },
+        "title": {
+          "type": ["string", "null"]
+        },
+        "entity": {
+          "type": ["string", "null"],
+          "description": "Entité / filiale de rattachement."
+        },
+        "family": {
+          "type": ["string", "null"],
+          "description": "Famille métier (IT / Cyber / Data / IA / Infra / Dev / PMO / Finance / C-Level / Achat / RH / Autre). Vide = non classifié (NULL en base)."
+        },
+        "role": {
+          "type": ["string", "null"],
+          "description": "Rôle décisionnel MEDDIC : economic | technical | user | champion | influencer | blocker (legacy : sponsor | operational | purchasing). Vide = non classifié (NULL en base). Devient `decisionRole` une fois persisté."
+        },
+        "priority": {
+          "type": ["integer", "number"],
+          "minimum": 0,
+          "maximum": 5,
+          "description": "Priorité contextuelle du LLM. 0 = sentinelle « non classifié »."
+        },
+        "summary": {
+          "type": ["string", "null"],
+          "description": "Devient `profileSummary` une fois persisté."
+        },
+        "whyContact": {
+          "type": ["string", "null"]
+        },
+        "linkedinUrl": {
+          "type": ["string", "null"]
+        },
+        "reportingTo": {
+          "type": ["string", "null"]
+        },
+        "influenceLevel": {
+          "type": ["string", "null"],
+          "description": "decision-maker | influencer | executor. Axe distinct de `role` — alimente le calcul de `bucket`."
+        },
+        "bestApproach": {
+          "type": ["string", "null"]
+        },
+        "personalizedHook": {
+          "type": ["string", "null"]
+        },
+        "careerLevers": {
+          "type": "array",
+          "items": {
+            "type": "string"
+          },
+          "description": "Leviers de carrière (deck / ORION) — ce qui met le décideur en valeur en interne, pour orienter le pitch."
+        },
+        "implicitFears": {
+          "type": "array",
+          "items": {
+            "type": "string"
+          },
+          "description": "Peurs organisationnelles implicites — à désamorcer, jamais à exploiter."
+        },
+        "connection_path": {
+          "type": ["string", "null"],
+          "description": "LEGACY (clé de fil réelle, snake_case) — chemin de mise en relation. Le Pydantic `EnrichedContact.connection_path` n'a PAS d'alias camelCase, donc le fil émet du snake alors que zod déclare `connectionPath`. Dérive documentée, pas corrigée ici (renommage = ticket dédié)."
+        },
+        "connectionPath": {
+          "type": ["string", "null"],
+          "description": "Graphie camelCase déclarée par zod (`enrichedContactSchema.connectionPath`). Le fil émet `connection_path` aujourd'hui — lire la clé LEGACY."
+        },
+        "source": {
+          "type": ["string", "null"],
+          "description": "Provenance : apollo | ia_reconstruction | pappers | manual. Alimente la fraîcheur du score /100."
+        },
+        "email": {
+          "type": ["string", "null"]
+        },
+        "phone": {
+          "type": ["string", "null"]
+        },
+        "emailVerified": {
+          "type": "boolean"
+        },
+        "bucket": {
+          "type": "string",
+          "description": "Triage déterministe par rôle — calculé côté IA (`compute_contact_bucket`), donc TOUJOURS présent sur une analyse fraîche.",
+          "enum": ["decideur", "sponsor", "operationnel", "influenceur", "a_verifier", "bruit"]
+        },
+        "hierarchyLevel": {
+          "type": "string",
+          "description": "Palier org (deck), dérivé du titre (`classify_hierarchy_level`) — axe distinct de `role` et `influenceLevel`. Toujours présent.",
+          "enum": ["governance", "c_level", "achats", "direction", "management", "expert", "operationnel", "unknown"]
+        },
+        "qualifStatus": {
+          "type": "string",
+          "description": "Statut de qualification déterministe (S5) — axe distinct du `bucket` (rôle) et du `userStatus` (CRM).",
+          "enum": [
+            "priorite_immediate",
+            "a_enrichir",
+            "a_verifier",
+            "autre_angle",
+            "achats",
+            "sponsor",
+            "bruit",
+            "entite_inconnue",
+            "hors_scope",
+            "faux_positif"
+          ]
+        },
+        "apolloId": {
+          "type": ["string", "null"],
+          "description": "Identifiant Apollo ré-attaché depuis les seeds de la phase 2 (le LLM ne l'émet jamais) — seule clé de People-Match qui survit à l'obfuscation du nom en tier search."
+        }
+      }
+    },
+    "orgEntity": {
+      "type": "object",
+      "additionalProperties": true,
+      "description": "Une entité de l'organigramme reconstruit.",
+      "properties": {
+        "entity": {
+          "type": ["string", "null"]
+        },
+        "level": {
+          "type": ["string", "null"],
+          "description": "groupe | filiale | BU | direction | departement."
+        },
+        "contacts": {
+          "type": "array",
+          "items": {
+            "type": "string"
+          }
+        },
+        "missingRoles": {
+          "type": "array",
+          "items": {
+            "type": "string"
+          },
+          "description": "Rôles attendus mais non couverts sur cette entité — nourrit les zones blanches."
+        }
+      }
+    },
+    "approachStep": {
+      "type": "object",
+      "additionalProperties": true,
+      "description": "Une étape de la séquence d'approche (qui contacter, dans quel ordre, et ce que ça débloque).",
+      "properties": {
+        "step": {
+          "type": ["integer", "number"]
+        },
+        "contact": {
+          "type": ["string", "null"]
+        },
+        "role": {
+          "type": ["string", "null"]
+        },
+        "why_first": {
+          "type": ["string", "null"]
+        },
+        "channel": {
+          "type": ["string", "null"],
+          "description": "Canal concret de l'étape (LinkedIn, email, événement, introduction par X). Annexe p26 : « pour chaque étape : contact exact, objectif, canal, preuve, risque, résultat attendu, contact suivant et fallback »."
+        },
+        "expected_outcome": {
+          "type": ["string", "null"]
+        },
+        "unlocks": {
+          "type": ["string", "null"]
+        },
+        "fallback": {
+          "type": ["string", "null"],
+          "description": "Que faire si la porte ne s'ouvre pas."
+        }
+      }
+    },
+    "orgRelationClaim": {
+      "type": "object",
+      "additionalProperties": true,
+      "description": "Une relation typée PROPOSÉE par le modèle. `evidence` est l'élément fourni en entrée qui l'établit : sans lui, la relation n'est pas émise (garde-fou p27 « si manager/reporting inconnu, n'ajoute pas de lien »).",
+      "properties": {
+        "from": {
+          "type": ["string", "null"],
+          "description": "`fullName` exact d'un contact fourni. Un nom absent de l'entrée est ignoré — le modèle ne peut pas introduire une personne."
+        },
+        "to": {
+          "type": ["string", "null"],
+          "description": "`fullName` exact du N+1, OU nom exact d'une entité fournie."
+        },
+        "type": {
+          "type": ["string", "null"],
+          "description": "Relation du contrat OrgGraph : reports_to · member_of · sponsors · owns_budget · procures_for. Toute autre valeur est ignorée."
+        },
+        "evidence": {
+          "type": ["string", "null"],
+          "description": "L'élément FOURNI qui établit le lien (titre exact, entité de rattachement, source citée)."
+        },
+        "reasoning": {
+          "type": ["string", "null"]
+        }
+      }
+    },
+    "orgInfluenceClaim": {
+      "type": "object",
+      "additionalProperties": true,
+      "description": "Un lien d'influence métier hypothétique (p13/p27).",
+      "properties": {
+        "from": {
+          "type": ["string", "null"]
+        },
+        "to": {
+          "type": ["string", "null"]
+        },
+        "topic": {
+          "type": ["string", "null"],
+          "description": "Sujet métier concret (programme nommé, budget, décision en cours)."
+        },
+        "stance": {
+          "type": ["string", "null"],
+          "description": "Posture vis-à-vis du sujet : supporter · neutral · detractor · unknown (vocabulaire `orgInfluenceStanceSchema`, distinct du `stance` de `stakeholderMap` qui reste advocate/opponent)."
+        },
+        "confidence": {
+          "type": ["integer", "number", "null"],
+          "description": "Auto-évaluation 0-100. Elle ne peut qu'ABAISSER le score déterministe (`org_confidence`), jamais le relever : une preuve absente ne se rattrape pas par une confiance élevée."
+        },
+        "reasoning": {
+          "type": ["string", "null"],
+          "description": "Obligatoire — un lien d'influence sans raisonnement n'est pas émis."
+        }
+      }
+    }
+  }
+}

@@ -1,0 +1,122 @@
+{
+  "page": {
+    "title": "Pipe",
+    "intro": "The workspace’s native pipe: the opportunities your team entered and their amounts. Every total is unweighted — no success percentage is applied.",
+    "loading": "Loading…",
+    "loadError": "This reading could not be loaded. Nothing is lost — the reading failed.",
+    "introOwn": "Your open deals and the movement of your pipe. The team, the probable revenue and the CRM stay with the manager."
+  },
+  "waterfall": {
+    "title": "Pipe movement",
+    "period": "From {{range}}",
+    "basis_one": "{{count}} open opportunity at opening, {{closing}} at closing",
+    "basis_other": "{{count}} open opportunities at opening, {{closing}} at closing",
+    "unweighted": "Entered amounts, unweighted.",
+    "withoutAmount_one": "{{count}} open opportunity has no amount: it stays out of these bars.",
+    "withoutAmount_other": "{{count}} open opportunities have no amount: they stay out of these bars.",
+    "unexplainedHint": "A gap the history cannot explain (deals that predate the change log).",
+    "bars": {
+      "opening": "Opening",
+      "created": "Entered the pipe",
+      "raised": "Amounts raised",
+      "lowered": "Amounts lowered",
+      "lost": "Lost",
+      "signed": "Signed",
+      "removed": "Left without outcome",
+      "unexplained": "Unexplained gap",
+      "closing": "Closing"
+    },
+    "barsHint": {
+      "created": "Created in the period, or moved into the pipe from a lead.",
+      "removed": "Put to sleep or sent back upstream, neither won nor lost."
+    }
+  },
+  "inspection": {
+    "title": "Open opportunities",
+    "subtitle": "Edit in place: the category you declare and the expected signing date.",
+    "empty": "No open opportunity in the pipe.",
+    "columns": {
+      "account": "Account",
+      "label": "Opportunity",
+      "amount": "Amount",
+      "stage": "Stage",
+      "category": "Declared category",
+      "closeOn": "Expected signing",
+      "owner": "Owner",
+      "daysInStage": "In stage",
+      "signals": "Signals"
+    },
+    "amountUnknown": "Not measured",
+    "closeOnUnset": "Not set",
+    "closeOnEdit": "Expected signing date — {{label}}",
+    "categoryEdit": "Declared category — {{label}}",
+    "ownerUnassigned": "Unassigned",
+    "daysInStage_one": "{{count}} day",
+    "daysInStage_other": "{{count}} days",
+    "saveError": "Saving failed. The previous value is kept.",
+    "noSignal": "No signal",
+    "totals": {
+      "title": "Totals by declared category",
+      "basis": "Open opportunities, unweighted amounts.",
+      "count_one": "{{count}} opportunity",
+      "count_other": "{{count}} opportunities",
+      "withoutAmount_one": "of which {{count}} without an amount",
+      "withoutAmount_other": "of which {{count}} without an amount",
+      "noAmount": "Not measured"
+    }
+  },
+  "signals": {
+    "title": "Risk signals",
+    "no_activity": "No activity for {{days}} d",
+    "close_overdue": "Expected date overdue by {{days}} d",
+    "close_pushed": "Expected date pushed back {{count}} times",
+    "amount_lowered": "Amount lowered from {{from}} to {{to}}",
+    "stage_stale": "{{days}} d in this stage, beyond the stage median"
+  },
+  "byOwner": {
+    "title": "By salesperson",
+    "basis": "The workspace’s native pipe — not a third-party CRM.",
+    "empty": "No opportunity to assign yet.",
+    "unassigned": "Unassigned",
+    "columns": {
+      "owner": "Salesperson",
+      "open": "Open pipe",
+      "signed": "Signed in the period",
+      "winRate": "Win rate",
+      "cycle": "Median sales cycle"
+    },
+    "open": "{{amount}} — {{count}} opportunities",
+    "signed_one": "{{amount}} — {{count}} signed",
+    "signed_other": "{{amount}} — {{count}} signed",
+    "signedNone": "No signature in the period",
+    "winRate": "{{value}}% — {{won}} signed out of {{total}} closed ({{days}} rolling days)",
+    "winRateSmall": "{{won}} signed out of {{total}} closed ({{days}} rolling days) — base too small for a percentage",
+    "winRateNone": "Nothing closed in {{days}} rolling days",
+    "cycle_one": "{{count}} day — median of {{sample}} signed over {{days}} d",
+    "cycle_other": "{{count}} days — median of {{sample}} signed over {{days}} d",
+    "cycleNone": "No signature in {{days}} d"
+  },
+  "crm": {
+    "title": "Connected CRM pipeline"
+  },
+  "laura": {
+    "purpose": "The workspace’s native pipe: this month’s movement, open opportunities with their risk signals, results per salesperson. Every amount is unweighted; the category is the salesperson’s declaration, with no percentage."
+  },
+  "tracker": {
+    "title": "Open needs tracker",
+    "potential": "Potential revenue (daily total)",
+    "daily": "{{amount}} / day",
+    "noRate": "No rate shared on the open needs",
+    "withoutRate_one": "{{count}} need without a rate: counted apart, never as €0.",
+    "withoutRate_other": "{{count}} needs without a rate: counted apart, never as €0.",
+    "floor": "Read on {{read}} of {{total}} needs: this total is a floor.",
+    "lastTjm": "Last known daily rate",
+    "lastTjmBasis": "Target rate of the need “{{title}}”.",
+    "lastTjmBasisDated": "Target rate of the need “{{title}}”, last movement on {{date}}.",
+    "noLastTjm": "No known daily rate: no open need carries one."
+  },
+  "tabs": {
+    "pipe": "Pipe",
+    "parcours": "Journeys"
+  }
+}

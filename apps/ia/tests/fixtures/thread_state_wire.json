@@ -1,0 +1,201 @@
+{
+  "version": 1,
+  "objects": [
+    {
+      "kind": "contact",
+      "id": "c-1",
+      "label": "Jean Dupont"
+    },
+    {
+      "kind": "account",
+      "id": "acc-1",
+      "label": "ACME Industrie"
+    },
+    {
+      "kind": "consultant",
+      "id": "t-1",
+      "label": "Alice Martin"
+    },
+    {
+      "kind": "consultant",
+      "id": "t-2",
+      "label": "Bruno Petit"
+    }
+  ],
+  "focus": [
+    {
+      "kind": "contact",
+      "id": "c-1",
+      "label": "Jean Dupont"
+    },
+    {
+      "kind": "account",
+      "id": "acc-1",
+      "label": "ACME Industrie"
+    }
+  ],
+  "last_list": {
+    "tool": "search_talents",
+    "items": [
+      {
+        "kind": "consultant",
+        "id": "t-1",
+        "label": "Alice Martin"
+      },
+      {
+        "kind": "consultant",
+        "id": "t-2",
+        "label": "Bruno Petit"
+      }
+    ]
+  },
+  "searches": [
+    {
+      "tool": "search_market_memory",
+      "criteria": {
+        "technology": "Java",
+        "employee_min": 500
+      }
+    },
+    {
+      "tool": "find_accounts",
+      "criteria": {
+        "sectors": [
+          "industry"
+        ],
+        "department": "31"
+      }
+    },
+    {
+      "tool": "search_talents",
+      "criteria": {
+        "query": "data"
+      }
+    }
+  ],
+  "proposals": [
+    {
+      "action": "prepare_mail_draft",
+      "target_kind": null,
+      "target_id": null,
+      "target_label": null
+    },
+    {
+      "action": "prepare_message",
+      "target_kind": "contact",
+      "target_id": "c-1",
+      "target_label": "Jean Dupont"
+    },
+    {
+      "action": "find_accounts",
+      "target_kind": null,
+      "target_id": null,
+      "target_label": null,
+      "tool": "find_accounts"
+    }
+  ],
+  "questions": [
+    {
+      "question": "Quel compte ?",
+      "options": [
+        "ACME",
+        "BETA"
+      ],
+      "source_turn": 1
+    }
+  ],
+  "ruled_out": [
+    {
+      "option": "GAMMA",
+      "reason": "déjà client"
+    }
+  ],
+  "assumptions": [
+    "Toulouse"
+  ],
+  "goal": "Ouvrir un point d'entrée Data chez ACME",
+  "excluded": [
+    {
+      "criterion": "grands groupes",
+      "reason": "hors cible cette année"
+    }
+  ],
+  "decisions": [
+    "Ne pas relancer avant le comité du 30/09"
+  ],
+  "current_job": "Préparer 3 messages pour la shortlist ACME",
+  "current_step": "Vérification des critères d'accès avant l'envoi",
+  "next_step": "Proposer les brouillons une fois la vérification terminée",
+  "accepted": [
+    "Latecoere retenu comme cible prioritaire"
+  ],
+  "persistent_scope": {
+    "entry_entity": {
+      "kind": "account",
+      "id": "acc-bb",
+      "label": "BoursoBank"
+    },
+    "entry_relation": "filiale",
+    "root_entity": {
+      "kind": "account",
+      "id": "acc-sg",
+      "label": "Groupe Société Générale"
+    },
+    "included_entities": [
+      {
+        "kind": "account",
+        "id": "acc-bb",
+        "label": "BoursoBank"
+      }
+    ],
+    "excluded_entities": [
+      {
+        "kind": "account",
+        "id": "acc-homonym",
+        "label": "Générale (homonyme)"
+      }
+    ],
+    "unresolved_entities": [
+      "Filiale citée sans compte identifié"
+    ]
+  },
+  "treated_entities": [
+    {
+      "entity": "BoursoBank",
+      "reason": "filiales et volumes déjà donnés"
+    }
+  ],
+  "precautions": [
+    "Cette donnée n'est pas mesurée, à confirmer avant l'envoi"
+  ],
+  "facets": {
+    "group": "BoursoBank et ses filiales",
+    "projects": "Migration cloud, refonte CRM"
+  },
+  "correction": {
+    "correction_type": "wrong_scope",
+    "summary": "J'ai utilisé la mauvaise couche",
+    "invalidates": []
+  },
+  "constraints": [
+    {
+      "constraint_type": "geography",
+      "value": "Île-de-France",
+      "hardness": "soft",
+      "origin": "explicit",
+      "priority": "secondary",
+      "relaxation_cost": "low",
+      "business_impact": "zone de chalandise",
+      "source_turn": 1
+    },
+    {
+      "constraint_type": "sector",
+      "value": "banque",
+      "hardness": "hard",
+      "origin": "inferred",
+      "source_turn": 1
+    }
+  ],
+  "turns": 1,
+  "last_account_verdict": null
+}

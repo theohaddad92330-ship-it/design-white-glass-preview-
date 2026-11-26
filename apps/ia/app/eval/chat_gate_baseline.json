@@ -1,0 +1,14 @@
+{
+  "_comment": "Committed floor for the chat eval gate (app.eval.chat_gate). Regenerate with `python -m app.eval.chat_gate --update-baseline` after an INTENTIONAL corpus/annotation change — never to paper over a regression. `covered_hard_failures` is the subset of ChatHardFailure that the corpus annotation (Canonique.hard_failures, #2443.5) derives from at least one canonical scenario — NOT every hard failure the repo tests (VENDOR_NAMED, for instance, is guarded elsewhere: test_copilote_prompt_blocks.py) — see chat_gate.py's docstring.",
+  "covered_hard_failures": [
+    "absence_shown_as_zero",
+    "capability_invented",
+    "cross_workspace_leak",
+    "fabricated_result",
+    "identity_error",
+    "permission_bypassed",
+    "probability_displayed",
+    "secret_leaked"
+  ],
+  "corpus_scenario_count": 224
+}

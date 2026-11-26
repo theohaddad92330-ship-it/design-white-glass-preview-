@@ -1,0 +1,131 @@
+{
+  "_synthetic": true,
+  "_note": "Dossier de test SYNTHÉTIQUE pour le banc d'éval. Les faits firmographiques sont les valeurs RÉELLES et vérifiables dans ce dépôt — app/eval/golden/axa.json, bloc `_source`, relevé le 20/09/2026 sur recherche-entreprises.api.gouv.fr (DINUM, adossé à INSEE Sirene). Les entités et les contacts sont des données de TEST, jamais des affirmations sur des personnes ou des filiales réelles. Le chiffre d'affaires est ABSENT : aucune source du dépôt ne le porte, et un chiffre inventé dans le gardien des chiffres inventés serait la faute même qu'il traque.",
+  "company": "AXA",
+  "research": {
+    "companyName": "AXA",
+    "sector": "Fonds de placement et entités financières similaires (NAF 64.30Z)",
+    "siren": "572093920",
+    "employees": "3 à 5 salariés",
+    "headquarters": "PARIS, 75008, France",
+    "businessDescription": "Unité légale de tête enregistrée sous la dénomination AXA, code NAF 64.30Z (fonds de placement et entités financières similaires), catégorie grande entreprise. Effectif de l'UNITÉ LÉGALE (la holding), pas du groupe consolidé — AXA France IARD et AXA France Vie sont des filiales distinctes, non incluses ici.",
+    "subsidiaries": [
+      {
+        "name": "AXA — entité de test A"
+      },
+      {
+        "name": "AXA — entité de test B"
+      }
+    ],
+    "entitiesExhaustive": [
+      {
+        "name": "AXA — direction de test",
+        "type": "direction"
+      },
+      {
+        "name": "AXA — hub IT de test",
+        "type": "hub it",
+        "isItEntity": true
+      }
+    ],
+    "angles": [
+      {
+        "title": "Renfort conformité et risques",
+        "strategy": "Renforcer les équipes SI conformité et gestion des risques."
+      }
+    ],
+    "recentSignals": [
+      {
+        "signal": "Recrutements SI conformité",
+        "type": "recrutement",
+        "date": "2026"
+      }
+    ],
+    "budgetSignals": [
+      {
+        "signal": "Recrutements SI conformité",
+        "source": "offres d'emploi"
+      }
+    ],
+    "confidence": {
+      "score": 78,
+      "tier": "high",
+      "factors": {
+        "sourceCoverage": 0.8
+      }
+    },
+    "sources": {
+      "tags": {
+        "siren": "PUBLIC",
+        "employees": "PUBLIC",
+        "headquarters": "PUBLIC",
+        "sector": "PUBLIC"
+      },
+      "citations": {}
+    }
+  },
+  "gate": {
+    "decision": "go",
+    "score": 3
+  },
+  "classified_contacts": [
+    {
+      "fullName": "Anaïs Robert",
+      "title": "Chief Information Officer",
+      "decisionRole": "technical",
+      "is_c_level": true
+    },
+    {
+      "fullName": "Julien Marchand",
+      "title": "Engineering Manager — Conformité",
+      "decisionRole": "user"
+    },
+    {
+      "fullName": "Inès Caron",
+      "title": "Responsable Achats IT",
+      "decisionRole": "procurement"
+    }
+  ],
+  "plan": {
+    "actionPlan": {
+      "phases": [
+        {
+          "name": "Prise de contact",
+          "actions": [
+            {
+              "contact": "Anaïs Robert",
+              "action": "Discuter renfort conformité et risques."
+            }
+          ]
+        }
+      ]
+    },
+    "quick_wins": [
+      {
+        "contact": "Julien Marchand",
+        "action": "Partager un retour d'expérience staffing."
+      }
+    ],
+    "contactMessages": [
+      {
+        "contact": "Anaïs Robert",
+        "linkedinMessage": "Sujet renfort conformité et risques."
+      }
+    ],
+    "plays": [
+      {
+        "painSignal": "Recrutements SI conformité",
+        "preuve": {
+          "source": "offres d'emploi",
+          "signal": "Recrutements SI conformité"
+        },
+        "targetContact": "Anaïs Robert",
+        "esnOffer": "Renfort SI conformité",
+        "angle": "Renfort conformité et risques",
+        "firstAction": "Discuter renfort conformité et risques.",
+        "readyMessage": "Sujet renfort conformité et risques.",
+        "risk": "Concurrence ESN installées."
+      }
+    ]
+  }
+}

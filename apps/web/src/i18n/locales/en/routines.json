@@ -1,0 +1,550 @@
+{
+  "page": {
+    "title": "Routines",
+    "heading": "What {{brand}} does for you without being asked",
+    "subtitle": "Every routine is visible, adjustable and switchable. None runs before you have seen it here.",
+    "runNow": "Run the ones that are due",
+    "running": "Running…",
+    "ranNone": "No routine was due right now.",
+    "ranSome_one": "{{count}} routine ran.",
+    "ranSome_other": "{{count}} routines ran."
+  },
+  "library": {
+    "filterLabel": "Filter by cadence",
+    "filterAll": "All cadences",
+    "emptyCadence": "No routine at this cadence.",
+    "showAll": "See all routines",
+    "backToLibrary": "Back to the library",
+    "notFoundTitle": "Automation not found",
+    "notFoundBody": "It's no longer in the catalog, or its name changed.",
+    "loading": "Loading the sheet…"
+  },
+  "config": {
+    "title": "Configuration"
+  },
+  "activation": {
+    "title": "Before turning this routine on",
+    "schedule": "When: {{schedule}} · Channel: {{channel}}",
+    "simulateHint": "You can simulate it on your data before turning it on: nothing is written or sent.",
+    "noSimulation": "No simulation on your data for this routine: the above comes from its sheet, not from a trial run.",
+    "confirm": "Turn on",
+    "cancel": "Cancel"
+  },
+  "cadence": {
+    "daily": "Every day",
+    "weekdays": "Monday to Friday",
+    "weekly": "Once a week",
+    "continuous": "Continuously",
+    "monthly": "Once a month",
+    "quarterly": "Once a quarter"
+  },
+  "weekday": {
+    "1": "Monday",
+    "2": "Tuesday",
+    "3": "Wednesday",
+    "4": "Thursday",
+    "5": "Friday",
+    "6": "Saturday",
+    "7": "Sunday"
+  },
+  "field": {
+    "hour": "Time",
+    "weekday": "Day",
+    "enabled": "Enabled",
+    "at": "at {{hour}}:00",
+    "condition": "Triggers when: {{condition}}",
+    "reads": "What it reads: {{reads}}",
+    "acceptance": "Proof it works: {{acceptance}}",
+    "fallback": "If it can't: {{fallback}}",
+    "channel": "Channel",
+    "example": "Example: {{example}}",
+    "stopCondition": "Stops when: {{stopCondition}}",
+    "version": "v{{version}}",
+    "maxItemsPerRun": "Follow-ups per run",
+    "maxItemsPerRunOption": "{{count}} per run",
+    "autonomy": "Autonomy",
+    "owner": "Owner",
+    "ownerSelf": "Owner: you",
+    "risk": "Risk: {{level}} out of 4 — {{meaning}}",
+    "roles": "For: {{roles}}",
+    "steps": "Steps: {{steps}}",
+    "preparedActions": "Leaves: {{actions}}"
+  },
+  "level": {
+    "n1_prepare": "Prepares",
+    "n4_bounded_auto": "Notifies without sending",
+    "n5_extended_auto": "Acts on its own, unbounded, never sends",
+    "n0_inform": "Keeps the result without notifying"
+  },
+  "updated": {
+    "badge": "Update available",
+    "acknowledge": "Mark as seen",
+    "changes": "What changes in v{{version}}",
+    "diff": {
+      "before": "Before",
+      "after": "Now",
+      "notSet": "not set",
+      "field": {
+        "stopCondition": "Stop condition",
+        "maxItemsPerRun": "Follow-ups per run"
+      }
+    }
+  },
+  "status": {
+    "active": "Active",
+    "paused": "Paused",
+    "disabled": "Disabled",
+    "draft": "Draft",
+    "error": "In error",
+    "deprecated": "Retired"
+  },
+  "channel": {
+    "in_app": "In the app",
+    "email": "Email"
+  },
+  "blocker": {
+    "mailbox_not_connected": "Your mailbox is not connected: this routine has nothing to read.",
+    "agenda_not_connected": "Your calendar is not connected: this routine has nothing to read.",
+    "no_accounts": "No watched account: this routine has nothing to watch.",
+    "fix": "Connect",
+    "ats_not_connected": "Your ATS is not connected: this routine has nothing to read.",
+    "crm_not_connected": "Your CRM is not connected: this routine has nothing to read."
+  },
+  "lastRun": {
+    "never": "Never ran",
+    "at": "Last run: {{date}}",
+    "failed": "Failed"
+  },
+  "nextTrigger": {
+    "at": "Next run: {{date}}"
+  },
+  "history": {
+    "show": "Show history",
+    "hide": "Hide history",
+    "loading": "Loading history…",
+    "empty": "No run recorded.",
+    "proof": "View proof"
+  },
+  "dryRun": {
+    "show": "Simulate",
+    "hide": "Hide simulation",
+    "loading": "Running simulation…",
+    "error": "Simulation unavailable — we can't conclude nothing would be prepared.",
+    "empty": "No unanswered thread to review right now.",
+    "summary": "{{count}} unanswered thread(s) found. Simulation: nothing is written, nothing is sent.",
+    "would": "A draft would be prepared",
+    "silentFor": "silent for {{days}} days",
+    "reasons": {
+      "no_thread": "No thread to review",
+      "no_contact": "No identified contact",
+      "mailbox_not_ready": "Mailbox not ready for a draft",
+      "no_credit": "Enrichment balance exhausted"
+    }
+  },
+  "error": {
+    "title": "Routines could not be loaded",
+    "retry": "Try again"
+  },
+  "simulation": {
+    "reads": "It would read: {{reads}}",
+    "condition": "It would trigger when: {{condition}}",
+    "outcome": "It would produce: {{outcome}}",
+    "ready": "All its prerequisites are in place: it could run today.",
+    "note": "Simulation: nothing is written, nothing is sent, no result is quantified."
+  },
+  "approvalSettings": {
+    "title": "Workspace action autonomy",
+    "description": "What {{brand}} does on its own, and how far. Set by a workspace manager.",
+    "postureLabel": "Workspace autonomy level",
+    "loading": "Reading autonomy settings…",
+    "error": "Autonomy settings could not be read.",
+    "postures": {
+      "n2_user_approval": {
+        "label": "One click from the author",
+        "hint": "Every action waits for the person who started it to approve it."
+      },
+      "n3_manager_approval": {
+        "label": "A manager approves",
+        "hint": "Every action waits for a team manager’s approval."
+      },
+      "n4_bounded_auto": {
+        "label": "Bounded automatic",
+        "hint": "Internal work runs on its own while it stays under the two thresholds below; above them, a manager approves."
+      },
+      "n5_extended_auto": {
+        "label": "Extended autonomy",
+        "hint": "Internal work runs on its own, with no volume or spend ceiling."
+      }
+    },
+    "bulkThreshold": {
+      "label": "Targets per run",
+      "unboundedLabel": "No ceiling — targets per run"
+    },
+    "unbounded": "No ceiling",
+    "saveThresholds": "Save thresholds",
+    "invalid": "A threshold is a whole number from 1, or “no ceiling”.",
+    "readOnly": "Only a workspace manager sets these thresholds.",
+    "neverWithoutGo": "Whatever the level, {{brand}} never sends an email or writes to your CRM without your go.",
+    "saved": "Workspace autonomy saved",
+    "saveFailed": "Workspace autonomy could not be saved."
+  },
+  "lib": {
+    "eyebrow": "Automation library",
+    "title": "Ready-made follow-ups to adapt",
+    "subtitle": "Pick the outcome you want. {{copilot}} then helps you set the scope and the steps.",
+    "describe": "Describe what I need",
+    "describeQuestion": "I would like an automatic follow-up that is not in the library. Help me describe it, choose what triggers it and set it up.",
+    "searchLabel": "Search for a routine",
+    "searchPlaceholder": "A meeting, a mission, a follow-up…",
+    "familyLabel": "Routine category",
+    "familyAll": "All",
+    "count_one": "{{count}} template",
+    "count_other": "{{count}} templates",
+    "seeFunctioning": "See how it works",
+    "adapt": "Adapt",
+    "showMore": "Show more",
+    "noMatch": "No routine matches this search.",
+    "reset": "Show everything",
+    "toConnect": "to connect",
+    "updated": "Updated",
+    "advancedTitle": "Automatic follow-ups and manual run",
+    "retry": "Try again",
+    "listLabel": "Library routines"
+  },
+  "guide": {
+    "title": "How do I work here?",
+    "summary": "What an automation is, and the useful path",
+    "heading": "Describe a trigger and a controlled preparation",
+    "intro": "An automation is a sequence that starts on a signal. It links an event to a preparation or a task; it never replaces your approval to send.",
+    "stepsTitle": "The useful path",
+    "step1": "Pick the scenario that suits your organisation.",
+    "step2": "Check the criteria, internal recipients and exclusions.",
+    "step3": "Test the trigger and inspect what was created.",
+    "keepTitle": "Keep in mind",
+    "keep": "An automation starts off. What it prepares lands in To handle; nothing leaves without your action."
+  },
+  "subnav": {
+    "label": "Automations",
+    "mine": "My automations",
+    "library": "Routine library",
+    "journal": "Trial journal"
+  },
+  "family": {
+    "organisation": "Organisation",
+    "meetings": "Meetings",
+    "prospecting": "Prospecting",
+    "missions_invoices": "Missions & invoices",
+    "talents_staffing": "Talents & staffing",
+    "watch": "Watch"
+  },
+  "tool": {
+    "mailbox": "Your mailbox",
+    "agenda": "Your calendar",
+    "ats": "Your ATS",
+    "crm": "Your CRM",
+    "workspace": "Your workspace"
+  },
+  "fn": {
+    "close": "Close",
+    "tabsLabel": "How a routine works",
+    "tabs": {
+      "how": "How it works",
+      "settings": "Settings"
+    },
+    "adaptWithLaura": "Adapt with {{copilot}}",
+    "adaptQuestion": "Help me adapt the routine “{{name}}”: what it watches, when it runs and what it prepares for me.",
+    "blockedTitle": "Activation blocked",
+    "rubric": {
+      "when": "When",
+      "reads": "What is read",
+      "result": "Result of the starting template",
+      "stop": "When it stops",
+      "proof": "Proof that it works",
+      "fallback": "If it cannot",
+      "example": "Example"
+    },
+    "version": "Version {{version}}",
+    "validates": {
+      "title": "What you approve",
+      "never": "Nothing is sent without your action, whatever this setting.",
+      "autonomy": "{{copilot}}’s general level of autonomy is set in",
+      "autonomyLink": "Settings › {{copilot}}"
+    },
+    "closeWindow": "Close the window"
+  },
+  "journal": {
+    "eyebrow": "Trial journal",
+    "title": "The journal of your trials",
+    "subtitle": "What was tested before being kept. A trial is never proof that something was actually sent.",
+    "loadError": "The journal could not be read.",
+    "empty": "No trial recorded. Test a rule: the check and its result will appear here.",
+    "emptyAsk": "Create with {{copilot}}",
+    "emptyQuestion": "Help me create an automation rule, then test it before keeping it.",
+    "kind": {
+      "draft": "Draft trial",
+      "live": "Rule trial"
+    },
+    "read_one": "{{count}} situation read",
+    "read_other": "{{count}} situations read",
+    "readNone": "No situation to read today",
+    "wouldAct_one": "Would have prepared {{count}} action to approve",
+    "wouldAct_other": "Would have prepared {{count}} actions to approve",
+    "wouldActNone": "Would have prepared nothing",
+    "failed": "Not possible: {{reason}}",
+    "openRule": "Open the rule",
+    "openRuleFor": "Open the rule: {{name}}",
+    "footnote": "A trial reads the real data of your workspace but creates no task and no message.",
+    "col": {
+      "rule": "Rule",
+      "kind": "Trial",
+      "result": "Result",
+      "when": "When"
+    },
+    "listLabel": "Recent trials"
+  },
+  "editor": {
+    "close": "Close",
+    "cancel": "Cancel",
+    "title": "Adjust your automation",
+    "subtitle": "Talk through the need, check the flow and keep control of every result.",
+    "back": "Back to automations",
+    "notFoundTitle": "Automation not found",
+    "notFoundBody": "It was archived, or it is not yours.",
+    "laura": {
+      "title": "{{copilot}}, with you",
+      "tagline": "Guided design · nothing turns on without you",
+      "intro": "Here is the scenario as kept. You can refine it, test it, then save the new version.",
+      "placeholder": "Tell {{copilot}} how to refine the rule",
+      "note": "Changes trigger nothing.",
+      "refine": "Refine",
+      "question": "This is my automation rule “{{name}}”: {{sentence}}. I want to refine it like this: {{text}}",
+      "bubbleName": "{{copilot}}"
+    },
+    "scenario": {
+      "kicker": "Your scenario",
+      "adjust": "Settings",
+      "when": "When {{signal}}",
+      "version": "Version {{version}}",
+      "versionDraft": "Version {{version}} · draft",
+      "costIncluded": "Included in your plan",
+      "costUses": "Counts toward your usage",
+      "enabled": "The rule is running",
+      "scope": "My authorised accounts"
+    },
+    "result": {
+      "email_to_review": "An email to review",
+      "call_to_make": "A call to make",
+      "enroll_sequence": "An enrolment in a sequence"
+    },
+    "chain": {
+      "label": "The rule’s flow",
+      "trigger": "Trigger",
+      "laura": "Preparation · {{copilot}}",
+      "lauraTitle": "{{copilot}} prepares what follows",
+      "lauraEnroll": "Enrols the contact in the “{{sequence}}” sequence; {{copilot}} prepares the texts. Nothing is sent.",
+      "laura_email_to_review": "Prepares an email to review for the contact concerned. Nothing is sent.",
+      "laura_call_to_make": "Prepares a call to make, with its outline. Nothing is dialled for you.",
+      "human": "Human approval",
+      "humanTitle": "You keep the decision",
+      "humanBody": "Open the result, check it and decide what happens next.",
+      "scout": "Spotting · {{copilot}}",
+      "scoutTitle": "{{copilot}} spots what matters",
+      "scoutBody": {
+        "mission_end": "The workspace missions and their end date.",
+        "hiring": "The hirings detected at the accounts you follow.",
+        "new_decision_maker": "The new decision makers spotted at the accounts you follow.",
+        "tender": "The tenders published by the accounts you follow.",
+        "target_change": "What changes at the targets you follow.",
+        "inactive_account": "The accounts left without action for the chosen delay."
+      }
+    },
+    "stops": {
+      "title": "What stops the follow-up",
+      "body": "The same signal never triggers the rule twice. A contact already in a sequence, reached less than 30 days ago, opted out of prospecting or a customer is set aside, and the rule records it. Turned off or archived, it no longer runs."
+    },
+    "tools": {
+      "title": "Required tools and starting template capability",
+      "body": "What the rule reads comes from your workspace and the tools you connected; nothing else is consulted.",
+      "connections": "See my connections"
+    },
+    "prepared": {
+      "count_one": "What it prepared · {{count}} action in 30 days",
+      "count_other": "What it prepared · {{count}} actions in 30 days",
+      "unmeasured": "What it prepared · not measured yet"
+    },
+    "try": {
+      "title": "Try before keeping",
+      "body": "The test reads your workspace data. It creates no task and no message.",
+      "run": "Test the flow",
+      "running": "Testing…",
+      "pausedPromise": "No new run while paused: the trial only reads for you.",
+      "kept": "Nothing is written during this test; the trial is kept in the journal."
+    },
+    "actions": {
+      "activate": "Activate version {{version}}",
+      "testToActivate": "Test the flow to be able to activate. Any change puts the rule back to draft.",
+      "duplicate": "Duplicate",
+      "archive": "Archive this rule",
+      "saveDraft": "Save the draft",
+      "delete": "Delete"
+    },
+    "archive": {
+      "title": "Archive this automation?",
+      "body": "The rule turns off and leaves the list. The tasks, drafts and proofs already created are kept.",
+      "confirm": "Archive"
+    },
+    "toast": {
+      "draftSaved": "Version {{version}} saved as a draft. The current version keeps running.",
+      "activated": "Version {{version}} is active.",
+      "duplicated": "Copy created, turned off.",
+      "archived": "Rule archived."
+    },
+    "settings": {
+      "title": "Adjust this automation",
+      "description": "What you change here becomes a draft: the running rule does not move until you have tested and activated it.",
+      "when": "When",
+      "what": "What",
+      "howMuch": "How much",
+      "name": "Automation name",
+      "trigger": "Trigger",
+      "days": "Days without action",
+      "daysRange": "Between {{min}} and {{max}} days.",
+      "result": "Result to prepare",
+      "sequence": "Sequence",
+      "cap": "Usage cap over 30 days",
+      "capNone": "None",
+      "capHelp": "Leave empty for no cap. At the cap, the rule sets the signal aside and records it.",
+      "externalSend": "External sending",
+      "externalSendBody": "Never on its own: every send goes through your approval, immediate or scheduled. A preparation does not give permission to send.",
+      "resetsTest": "Any change puts the configuration back to draft and requires a new test before activation.",
+      "apply": "Apply to draft"
+    },
+    "node": {
+      "trigger": "The trigger",
+      "scout": "The spotting",
+      "prepare": "The preparation",
+      "human": "Your decision",
+      "adjust": "Settings",
+      "open": "See the detail: {{name}}"
+    },
+    "remove": {
+      "title": "Delete this rule?",
+      "body": "It is removed for good. Prefer “Archive” if you want to keep its tasks, drafts and proofs.",
+      "confirm": "Delete"
+    },
+    "switch": {
+      "title": "Before switching",
+      "from": "Version {{version}} · the one running",
+      "to": "Version {{version}} · the next one",
+      "loading": "Reading the comparison…",
+      "error": "The comparison could not be loaded: you can’t switch without having seen it.",
+      "differencesTitle": "What changes",
+      "noDifferences": "No setting changes between the two versions.",
+      "change": "{{before}} → {{after}}",
+      "none": "none",
+      "days": "{{count}} days",
+      "field": {
+        "name": "Name",
+        "signal": "Signal",
+        "action_kind": "Kind of action",
+        "playbook_key": "Sequence",
+        "prepared_action": "Prepared action",
+        "inactive_days": "Inactivity delay"
+      },
+      "value": {
+        "enroll_sequence": "Enrol in a sequence",
+        "prepare_action": "Prepare an action"
+      },
+      "migrationTitle": "What is already in progress",
+      "migrationEngaged_one": "{{count}} firing already logged stays as it is: it is neither replayed nor erased. The new version only picks up signals not seen yet.",
+      "migrationEngaged_other": "{{count}} firings already logged stay as they are: they are neither replayed nor erased. The new version only picks up signals not seen yet.",
+      "migrationNone": "Nothing has been logged for this rule yet: there is nothing to carry over.",
+      "migrationSignal": "Version {{to}} listens to a different signal: what version {{from}} already picked up stays attached to the old signal.",
+      "impactTitle": "Impact",
+      "impactMeasured_one": "Read without running anything, version {{version}} would act this morning on {{count}} situation out of {{read}} read.",
+      "impactMeasured_other": "Read without running anything, version {{version}} would act this morning on {{count}} situations out of {{read}} read.",
+      "impactUnmeasured": "Impact not measured: this rule’s source could not be read right now. You can still switch.",
+      "kept": "Version {{version}} is kept: nothing is deleted."
+    }
+  },
+  "journey": {
+    "title": "Activation journey",
+    "understand": "Understand",
+    "example": "See an example",
+    "exampleMissing": "No hand-written example for this routine yet: the simulation below says what it would read.",
+    "simulate": "Simulate",
+    "configure": "Configure",
+    "validate": "Validate",
+    "validateBody": "Activating first opens a summary to validate: what it reads, its autonomy level, its stop condition. Nothing starts before you agree, and no routine sends anything outside.",
+    "activate": "Activate",
+    "errorStatus": "Stopped after three failures in a row: it only restarts if you reactivate it, once the cause is fixed.",
+    "observe": "Observe",
+    "lastOutcome": "Last run: {{outcome}}",
+    "observationError": "The history could not be read: nothing was measured.",
+    "observationNone": "No run in the last 30 days: nothing was measured.",
+    "observationRuns_one": "{{count}} run in the last 30 days",
+    "observationRuns_other": "{{count}} runs in the last 30 days",
+    "observationNotified_one": "{{count}} notification",
+    "observationNotified_other": "{{count}} notifications",
+    "observationFailed_one": "{{count}} failure",
+    "observationFailed_other": "{{count}} failures",
+    "runNow": "Run now",
+    "runNowDone": "Ran: {{outcome}}",
+    "runNowRefused": {
+      "demo": "Demo room: routines are shown here, they do not run.",
+      "blocked": "A tool it reads is not connected: it cannot run.",
+      "already_running": "Just launched: one run per minute."
+    }
+  },
+  "owner": {
+    "self": "You"
+  },
+  "scope": {
+    "personal": "Scope: your items",
+    "workspace": "Scope: the workspace"
+  },
+  "validation": {
+    "review_before_acting": "Validation: you review before acting",
+    "user_sends": "Validation: you send it yourself",
+    "user_approves_write": "Validation: you approve every write"
+  },
+  "risk": {
+    "0": "it reads and informs you",
+    "1": "it gives you a recap",
+    "2": "it writes a task in {{brand}}",
+    "3": "it prepares a message, you send it",
+    "4": "it proposes a write in your tool, which you approve"
+  },
+  "role": {
+    "commercial": "Sales",
+    "recruiter": "Recruiting",
+    "manager": "Management",
+    "adv": "Sales admin",
+    "delivery": "Delivery",
+    "general": "Everyone"
+  },
+  "step": {
+    "read": "reads",
+    "check_condition": "checks its condition",
+    "prepare": "prepares",
+    "notify": "notifies you",
+    "await_validation": "waits for your approval",
+    "record_proof": "keeps the proof"
+  },
+  "preparedAction": {
+    "notification": "a notification",
+    "digest": "a recap",
+    "message_draft": "a message draft",
+    "task": "a task",
+    "crm_update_proposal": "a CRM update to approve"
+  },
+  "content": {
+    "title": "Notification content",
+    "default": "The routine’s default text applies. Write a template for your workspace: {{token}} receives what the routine found.",
+    "custom": "Your workspace’s template — {{token}} receives what the routine found.",
+    "save": "Save for the workspace",
+    "reset": "Back to default",
+    "error": "Content unreadable for now — the default text applies.",
+    "loading": "Loading content…"
+  }
+}

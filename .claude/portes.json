@@ -1,0 +1,162 @@
+{
+  "_lire": "Porte avant push (~/Desktop/SKILLS_TEMPLATES/scripts/porte-avant-push.py). Chaque CI rouge corrigée ajoute UNE règle ici : on l'écrit une fois, la machine la relance toujours.",
+  "base": "origin/main",
+  "titre_commit_max": 100,
+  "paquets": [
+    {
+      "racine": "apps/api",
+      "motif": "\\.ts$",
+      "lie": "npx jest --findRelatedTests {fichiers} --passWithNoTests",
+      "gardes": "src/architecture",
+      "lance_gardes": "npx jest {specs}"
+    },
+    {
+      "racine": "apps/web",
+      "motif": "\\.(ts|tsx)$",
+      "lie": "npx vitest related {fichiers} --run --passWithNoTests",
+      "gardes": "src/architecture",
+      "lance_gardes": "npx vitest run {specs}"
+    },
+    {
+      "racine": "packages/contracts",
+      "motif": "\\.ts$",
+      "lie": "npx vitest related {fichiers} --run --passWithNoTests"
+    },
+    {
+      "racine": "apps/ia",
+      "motif": "\\.py$",
+      "python": true,
+      "lie": "$(m=$(git rev-parse --path-format=absolute --git-common-dir)/../apps/ia/.venv/bin/python; if [ -x .venv/bin/python ]; then echo .venv/bin/python; elif [ -x \"$m\" ]; then echo \"$m\"; else echo python3; fi) -m pytest -q {fichiers}"
+    }
+  ],
+  "regles": [
+    {
+      "si": "^apps/api/src/.*\\.controller\\.ts$",
+      "dans": "apps/api",
+      "lancer": "npx jest src/architecture/endpoint-guards.spec.ts src/modules/business-unit/business-unit-scope.spec.ts src/architecture/copilot-bridge-finance-doors.spec.ts",
+      "pourquoi": "route neuve : permission déclarée (GA-05), ouverture de compte classée (GA-333), refus finance (GA-320) — 29/09"
+    },
+    {
+      "si": "^apps/api/src/.*\\.(worker|module|processor)\\.ts$",
+      "dans": "apps/api",
+      "lancer": "npx jest src/modules/auth/auth.e2e.spec.ts",
+      "pourquoi": "worker/module neuf non neutralisé dans l'e2e (« Worker requires a connection ») — 29/09"
+    },
+    {
+      "si": "^apps/api/src/migrations/",
+      "dans": "apps/api",
+      "lancer": "npx jest src/architecture/migration-neuve-est-la-plus-grande.spec.ts src/database/prochain-horodatage-migration.spec.ts",
+      "pourquoi": "horodatage de migration ≤ main ou en double (GA-372) ; renommer fichier ET classe"
+    },
+    {
+      "si": "^apps/api/src/modules/demo/|^apps/api/src/.*\\.entity\\.ts$",
+      "dans": "apps/api",
+      "lancer": "npx jest src/modules/demo/demo-coverage.spec.ts",
+      "pourquoi": "table ou clé neuve non classée en démo (craft rule n°9)"
+    },
+    {
+      "si": "^packages/contracts/src/changelog/",
+      "dans": "packages/contracts",
+      "lancer": "npx vitest run src/changelog",
+      "pourquoi": "changelog fusionné : clé en double, FR sans EN"
+    },
+    {
+      "si": "^packages/contracts/src/schemas/doctrine-registry",
+      "dans": "packages/contracts",
+      "lancer": "npx vitest run src/schemas/doctrine-registry.test.ts",
+      "pourquoi": "compte du registre de doctrine (GA-38)"
+    },
+    {
+      "si": "^apps/ia/app/(prompts/|services/chat_tools\\.py)",
+      "dans": "apps/ia",
+      "lancer": "$(m=$(git rev-parse --path-format=absolute --git-common-dir)/../apps/ia/.venv/bin/python; if [ -x .venv/bin/python ]; then echo .venv/bin/python; elif [ -x \"$m\" ]; then echo \"$m\"; else echo python3; fi) -m pytest -q tests/test_prompt_fingerprint.py tests/test_prompt_golden.py tests/test_copilote_*_eval.py",
+      "pourquoi": "empreinte des prompts périmée : régénérer avec UPDATE_PROMPT_GOLDEN=1, jamais à la main ; un bloc neuf qui reprend l'ancre d'un AUTRE bloc casse sa garde « retirée = absente » (#3249 vs niveaux de vérité, 29/09)"
+    },
+    {
+      "si": "^apps/web/src/.*\\.tsx$",
+      "dans": "apps/web",
+      "lancer": "npx vitest run src/architecture",
+      "pourquoi": "toutes les gardes web (66 s) : une classe Tailwind (GA-255 truncate sans shrink) n'est citée par aucune garde nommément — 29/09"
+    },
+    {
+      "si": "^\\.github/workflows/ci\\.yml$",
+      "dans": "apps/api",
+      "lancer": "npx jest 'architecture/(api-response-fields-are-read|gate-qualite-ia-est-un-check-requis|cache-pnpm-un-seul-ecrivain|les-plafonds-de-workers-traversent-turbo|workflows-run-on-configurable-runner|ci-status-garde-tous-les-jobs)'",
+      "pourquoi": "toutes les gardes qui lisent ci.yml : #3649 a fondu check-types dans build, trois planchers (needs ≥ 7, installations ≥ 5) ont rougi main — 05/10"
+    },
+    {
+      "si": "^\\.github/workflows/ci\\.yml$",
+      "dans": "apps/web",
+      "lancer": "npx vitest run src/test/ci-shards.test.ts src/architecture/les-deux-projets-couvrent-la-suite.test.ts",
+      "pourquoi": "gardes web qui relisent la matrice de shards de ci.yml — 05/10"
+    },
+    {
+      "si": "^apps/ia/(requirements\\.txt|pyproject\\.toml|pytest\\.ini)$",
+      "dans": "apps/ia",
+      "lancer": "$(m=$(git rev-parse --path-format=absolute --git-common-dir)/../apps/ia/.venv/bin/python; if [ -x .venv/bin/python ]; then echo .venv/bin/python; elif [ -x \"$m\" ]; then echo \"$m\"; else echo python3; fi) -m pytest -q tests/test_dependency_declaration_guard.py tests/test_graph_phase_timeout.py",
+      "pourquoi": "montée de dépendances (pytest-asyncio 1.x) : un import direct non déclaré (httpcore) et un test dont le noeud abandonné figeait le teardown ont rougi puis coupé le job Test (IA) à 58 % — 13/10"
+    },
+    {
+      "si": "^(apps/web/src/routes/settings/|apps/api/src/modules/copilot-bridge/laura-settings-catalog\\.ts|apps/ia/app/services/chat_tools\\.py)",
+      "dans": "apps/ia",
+      "lancer": "$(m=$(git rev-parse --path-format=absolute --git-common-dir)/../apps/ia/.venv/bin/python; if [ -x .venv/bin/python ]; then echo .venv/bin/python; elif [ -x \"$m\" ]; then echo \"$m\"; else echo python3; fi) -m pytest -q tests/test_settings_screens_catalog.py tests/test_settings_screens_posture.py",
+      "pourquoi": "un écran de réglages neuf doit entrer dans SETTINGS_SCREENS de Laura (IA) : /settings/do-not-contact a rougi Pytest, fail-fast, tout annulé (#4170, 14/10)"
+    },
+    {
+      "si": "^apps/ia/app/.*\\.py$",
+      "dans": "apps/ia",
+      "lancer": "$(m=$(git rev-parse --path-format=absolute --git-common-dir)/../apps/ia/.venv/bin/python; if [ -x .venv/bin/python ]; then echo .venv/bin/python; elif [ -x \"$m\" ]; then echo \"$m\"; else echo python3; fi) -m pytest -q tests/test_suite_hermeticity.py",
+      "pourquoi": "une variable d'env neuve lue par app/ doit être classée dans tests/env_hermeticity.py : CHAT_SEARCH_GROUP_LOOKUP_MAX (#3705.5) a rougi l'intégration R-z et la CI a tout annulé — 10/10"
+    },
+    {
+      "si": "^packages/contracts/src/changelog/labels\\.fr\\.ts$",
+      "dans": "apps/web",
+      "lancer": "npx vitest run src/i18n/lexicon.test.ts",
+      "pourquoi": "le tutoiement (§6) lit aussi le changelog compilé : « combien sont faites » a rougi l'intégration R-z (fail-fast, tout annulé) — 10/10 ; contracts doit être rebuild avant"
+    },
+    {
+      "si": "^apps/ia/app/(routers/discover_signals|services/france_travail[a-z_]*)\\.py$",
+      "dans": "apps/ia",
+      "lancer": "$(m=$(git rev-parse --path-format=absolute --git-common-dir)/../apps/ia/.venv/bin/python; if [ -x .venv/bin/python ]; then echo .venv/bin/python; elif [ -x \"$m\" ]; then echo \"$m\"; else echo python3; fi) -m pytest -q tests/test_discover_signals_bound.py tests/test_discover_territory_employer_filter.py tests/test_discover_signals.py",
+      "pourquoi": "un argument neuf (profile=) passé à list_hiring_companies a cassé le stub positionnel de test_discover_signals_bound — R-ab rouge (fail-fast, tout annulé) — 10/10"
+    },
+    {
+      "si": "^packages/contracts/src/billing/credit-weights\\.ts$",
+      "dans": "apps/api",
+      "lancer": "npx jest src/modules/credits/plan-catalog.golden.spec.ts",
+      "pourquoi": "RAB2 a changé le prix de analysesAffordable (8→10) sans le golden API ANALYSES_PER_CYCLE — R-ab rouge (fail-fast, tout annulé) — 10/10"
+    },
+    {
+      "si": "^apps/(web|dashboard-manager)/src/",
+      "dans": "packages/figma-sync",
+      "lancer": "npx vitest run src/spec/validate.test.ts src/spec/route-coverage.test.ts",
+      "pourquoi": "maquette figma-sync : une note UX cite fichier:ligne du web — un composant raccourci la rend fausse (#4091, 13/10 : « expected 46 >= 59 ») ; une route neuve sans spec ni exception, ou un test rangé sous routes/ (#4170, 14/10 : « 2 route(s) sans spec ni exception »)"
+    },
+    {
+      "si": "^(apps|packages)/.*\\.tsx?$",
+      "dans": "apps/web",
+      "lancer": "pnpm -w lint:exports:types",
+      "pourquoi": "knip : un type exporté consommé dans son seul fichier fait rougir « Contrôles rapides » (#4091 puis #4130, 13/10 — 2 fois sur le même chantier)"
+    },
+    {
+      "si": "^apps/web/src/(routeTree\\.gen\\.ts|routes/)",
+      "dans": "apps/web",
+      "lancer": "! grep -E '^const [A-Za-z0-9_]+ = ' src/routeTree.gen.ts | sort | uniq -d | grep .",
+      "pourquoi": "routeTree.gen.ts fusionné deux fois (merge git) = déclaration en double, SyntaxError au chargement du routeur ; régénérer avec @tanstack/router-generator — #4236, 15/10"
+    },
+    {
+      "si": "^(apps/api/src/modules/demo/|packages/contracts/src/changelog/)",
+      "dans": "packages/figma-sync",
+      "lancer": "npx vitest run src/extract",
+      "pourquoi": "extraits figma-sync (generated/demo.json, feed.json) périmés quand la démo ou le changelog bougent : CI de #4266 rouge le 18/10 (SNCF 61 ≠ 60 contacts), déjà rouge sur main — relancer `pnpm extract`"
+    },
+    {
+      "si": "^packages/contracts/src/fixtures/",
+      "dans": "apps/web",
+      "lancer": "npx vitest run src/features/accounts src/features/discover src/features/target-lists",
+      "pourquoi": "une fixture partagée de contracts change le comportement web sans toucher un fichier web : #3901.7 (18/10) a rougi opportunity-cards.test.ts en CI, invisible aux « tests liés »"
+    }
+  ],
+  "ci_en_vol_max": 1,
+  "ci_workflow": "CI"
+}

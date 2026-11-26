@@ -1,0 +1,30 @@
+lot: vieilles-l15-missions
+issues: [2408]
+
+changelog:
+  id: 2026-11-01-vieilles-l15-missions
+  comment: 'L15 Missions (#2408) — les exceptions remontent dans la liste, la satisfaction se déclare et se filtre'
+  fr:
+    date: 1er novembre 2026
+    title: Missions — les exceptions viennent à vous
+    items:
+      - 'La liste signale cinq exceptions de plus : satisfaction basse, relation menacée, absence prolongée, consultant non sécurisé, action sans porteur.'
+      - 'La satisfaction se déclare sur la fiche (basse, moyenne, bonne) : une colonne et un filtre la lisent, et ce qui n’est pas déclaré reste « non mesuré ».'
+      - 'Cinq vues prêtes : à traiter cette semaine, CRA manquants, factures bloquées, paiements en retard, marge non mesurée.'
+      - 'Un filtre par société, et deux tuiles en tête de page sous le droit finance : CA facturable non facturé, factures échues.'
+  en:
+    date: November 1, 2026
+    title: Missions — exceptions come to you
+    items:
+      - 'The list flags five more exceptions: low satisfaction, relationship at risk, extended absence, consultant not secured, action without owner.'
+      - 'Satisfaction is declared on the mission (low, medium, good): a column and a filter read it, and anything undeclared stays “not measured”.'
+      - 'Five ready-made views: to handle this week, missing timesheets, blocked invoices, late payments, margin not measured.'
+      - 'A legal-entity filter, and two tiles at the top under the finance right: billable not yet invoiced, overdue invoices.'
+
+inserts:
+  - file: agent_docs/demo-mode.md
+    text: |
+
+      - **L15 Missions** (#2408.16/.17, 01/11/2026) — `seedMissionFeedback` pose un NIVEAU déclaré sur ses deux entrées
+        (client « bonne », consultant « basse ») : colonne Satisfaction et exception « Satisfaction basse » remplies sur
+        /missions ; `DEMO_STAFFING.absences` ajoute un arrêt long EN COURS (Marc Ouedraogo) → « Absence prolongée ».

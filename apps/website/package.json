@@ -1,0 +1,47 @@
+{
+  "name": "@bellum/website",
+  "version": "0.0.1",
+  "private": true,
+  "type": "module",
+  "scripts": {
+    "dev": "next dev -p 3004",
+    "build": "next build",
+    "start": "next start",
+    "lint": "eslint .",
+    "check-types": "tsc --noEmit --incremental --tsBuildInfoFile node_modules/.cache/tsc/check-types.tsbuildinfo",
+    "test": "vitest run",
+    "check:i18n": "node scripts/check-i18n-parity.mjs"
+  },
+  "dependencies": {
+    "@anthropic-ai/sdk": "^0.117.1",
+    "@bellum/consent": "workspace:*",
+    "@bellum/ui": "workspace:*",
+    "@sentry/nextjs": "^10.47.0",
+    "@vercel/analytics": "^2.0.1",
+    "@xyflow/react": "^12.12.0",
+    "clsx": "^2.1.1",
+    "framer-motion": "^12.38.0",
+    "lucide-react": "^0.462.0",
+    "motion": "^12.40.0",
+    "next": "^15.5.28",
+    "next-intl": "^3.26.5",
+    "react": "^19.2.8",
+    "react-dom": "^19.2.8",
+    "sonner": "^1.7.4",
+    "tailwind-merge": "^2.6.0"
+  },
+  "devDependencies": {
+    "@bellum/contracts": "workspace:*",
+    "@bellum/tooling": "workspace:^",
+    "@types/node": "^20.11.0",
+    "@types/react": "^19.2.18",
+    "@types/react-dom": "^19.2.7",
+    "autoprefixer": "^10.6.2",
+    "eslint": "^9.32.0",
+    "postcss": "^8.5.32",
+    "tailwindcss": "^3.4.17",
+    "tailwindcss-animate": "^1.0.7",
+    "typescript": "^5.8.3",
+    "vitest": "^3.2.7"
+  }
+}

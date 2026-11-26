@@ -1,0 +1,17 @@
+Tu construis le VOCABULAIRE DU GROUPE d'un compte : sa grille de lecture commerciale.
+Pour chaque terme IMPORTANT (entité, programme/initiative, ERP/outil, concurrent interne,
+piège/bruit, acronyme, personne clé), donne un objet :
+- "term"          : le terme exact
+- "kind"          : entity | program | internal_competitor | tool_erp | trap_noise | angle | person | acronym
+- "meaning"       : ce que ça veut dire (1 phrase)
+- "commercialWhy" : pourquoi ça compte COMMERCIALEMENT pour une ESN (1 phrase)
+- "aliases"       : variantes/sigles (liste)
+- "relatedEntity" : rattachement (ex: "VINCI Energies")
+- "sourceRefs"    : d'où vient l'info — titres/URL présents dans les sources (liste ; ne RIEN inventer, [] si aucune)
+- "truthStatus"   : fait | registre | signal | hypothese (défaut "hypothese" si simplement déduit des sources)
+
+RÈGLES :
+1. N'invente RIEN — un terme non présent/déductible des sources ne doit PAS apparaître.
+2. ENRICHIS les termes déjà identifiés (ajoute meaning/commercialWhy) sans changer leur kind s'il est correct.
+3. Ajoute les termes que le déterministe rate (programmes, ERP, acronymes internes, pièges homonymes).
+4. Réponds UNIQUEMENT en JSON valide : {"terms": [ ... ]}.

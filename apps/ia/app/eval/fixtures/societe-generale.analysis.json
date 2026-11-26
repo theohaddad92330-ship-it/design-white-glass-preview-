@@ -1,0 +1,116 @@
+{
+  "_synthetic": true,
+  "_note": "Synthetic test dossier for the eval harness. Firmographic facts are the real, in-repo verifiable values (research.societe-generale.json). Contacts are placeholder TEST data, not claims about real people. Exercises the GROUNDING_V2 faithfulness path.",
+  "company": "Société Générale",
+  "research": {
+    "companyName": "Société Générale",
+    "sector": "Autres intermédiations monétaires",
+    "siren": "552120222",
+    "revenue": 26788000000,
+    "employees": "Plus de 10 000 salariés",
+    "headquarters": "2 Place aux Étoiles, 93200, Saint-Denis, France",
+    "businessDescription": "Groupe bancaire universel français : banque de détail, banque de grande clientèle et de financement, services aux investisseurs.",
+    "isPublic": true,
+    "subsidiaries": [
+      { "name": "BoursoBank" },
+      { "name": "SGSS — Securities Services" }
+    ],
+    "entitiesExhaustive": [
+      { "name": "ITIM — Innovation, Technologies & IT", "type": "hub it", "isItEntity": true },
+      { "name": "GBIS — Global Banking & Investor Solutions", "type": "filiale" },
+      { "name": "BoursoBank", "type": "filiale" }
+    ],
+    "angles": [
+      { "title": "MLOps / industrialisation data", "strategy": "Appui sur les plateformes data internes." }
+    ],
+    "recentSignals": [
+      { "signal": "Programme Open Banking API", "type": "projet", "date": "2025" }
+    ],
+    "budgetSignals": [
+      { "signal": "Industrialisation IA/ML", "amount": "Non précisé", "source": "rapport annuel" }
+    ],
+    "confidence": { "score": 92, "tier": "high", "factors": { "sourceCoverage": 1.0, "legalGrounding": 1.0 } },
+    "sources": {
+      "tags": {
+        "siren": "PUBLIC",
+        "revenue": "PUBLIC",
+        "employees": "PUBLIC",
+        "headquarters": "PUBLIC",
+        "sector": "PUBLIC"
+      },
+      "citations": {}
+    },
+    "grounding": {
+      "flag": "GROUNDING_V2",
+      "sourceRefs": {
+        "siren": [{ "citedText": "SIREN 552 120 222", "documentTitle": "Registre", "documentIndex": 0 }]
+      },
+      "kpi": {
+        "factsConsidered": 5,
+        "factsSourced": 5,
+        "factsNonSourced": 0,
+        "nonSourcedRatio": 0.0,
+        "targetMaxNonSourcedRatio": 0.05,
+        "kpiMet": true
+      }
+    }
+  },
+  "gate": { "decision": "go", "score": 3 },
+  "classified_contacts": [
+    {
+      "fullName": "Camille Martin",
+      "title": "Directrice des Systèmes d'Information",
+      "decisionRole": "technical",
+      "is_c_level": true
+    },
+    {
+      "fullName": "Olivier Bernard",
+      "title": "Directeur des Achats IT",
+      "decisionRole": "procurement"
+    },
+    {
+      "fullName": "Sophie Leroy",
+      "title": "Responsable Transformation Data",
+      "decisionRole": "user"
+    }
+  ],
+  "plan": {
+    "actionPlan": {
+      "phases": [
+        {
+          "name": "Prise de contact",
+          "actions": [
+            { "contact": "Camille Martin", "action": "Cadrer les priorités data 2026." },
+            { "contact": "Sophie Leroy", "action": "Atelier MLOps." }
+          ]
+        }
+      ]
+    },
+    "quick_wins": [{ "contact": "Olivier Bernard", "action": "Cartographier les référencements ESN." }],
+    "contactMessages": [
+      { "contact": "Camille Martin", "linkedinMessage": "Sujet industrialisation des modèles data côté ITIM." }
+    ],
+    "plays": [
+      {
+        "painSignal": "Industrialisation IA/ML",
+        "preuve": { "source": "rapport annuel", "signal": "Industrialisation IA/ML" },
+        "targetContact": "Camille Martin",
+        "esnOffer": "Cadrage MLOps",
+        "angle": "MLOps / industrialisation data",
+        "firstAction": "Cadrer les priorités data 2026.",
+        "readyMessage": "Sujet industrialisation des modèles data côté ITIM.",
+        "risk": "Cycle de décision long (groupe)."
+      },
+      {
+        "painSignal": "Programme Open Banking API",
+        "preuve": null,
+        "targetContact": "Sophie Leroy",
+        "esnOffer": "Renfort plateforme API",
+        "angle": "Open Banking",
+        "firstAction": "Atelier MLOps.",
+        "readyMessage": "Échange sur le programme Open Banking API.",
+        "risk": "Référencement achats préalable."
+      }
+    ]
+  }
+}

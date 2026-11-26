@@ -1,0 +1,103 @@
+{
+  "id": "01-technicien-petite-esn",
+  "persona": "Technicien créant une petite ESN",
+  "personaKind": "fictif",
+  "_source": "#2070 / #2085 — cas de référence du corpus de non-régression multi-persona",
+  "answers": {
+    "user_id": "golden-01-technicien-petite-esn",
+    "first_name": "Karim",
+    "esn_name": "KTech Solutions",
+    "consultant_size": "1-10",
+    "sales_team_size": "Je suis seul (fondateur / indépendant)",
+    "expertise_areas": [
+      "Cloud & Infrastructure (AWS, Azure, GCP, Hosting)",
+      "DevOps, SRE & Automatisation"
+    ],
+    "positioning": "Expertise de niche - spécialisé sur 1-2 domaines pointus",
+    "staffing_model": "Uniquement des CDI internes",
+    "target_sectors": [
+      "Tech & Startups / Scale-ups",
+      "E-commerce & Marketplaces"
+    ],
+    "target_company_types": [
+      "PME (50-500 salariés)",
+      "Startups & Scale-ups"
+    ],
+    "geo_zones": [
+      "Paris & Île-de-France"
+    ],
+    "main_sales_pain": "Je ne sais pas par où commencer"
+  },
+  "referenceProfile": {
+    "esnArchetype": "soloHunter",
+    "sellingPosture": "expertiseRare",
+    "idealAccountProfile": {
+      "size": "pme",
+      "sectorsPriority": [
+        "Tech & Startups / Scale-ups",
+        "E-commerce & Marketplaces"
+      ],
+      "decisionLevel": "manager",
+      "entryStrategy": "bottomUp"
+    },
+    "analysisParameters": {
+      "braveQueriesCount": 8,
+      "firecrawlPagesCount": 5,
+      "contactsTarget": 15,
+      "analysisDepth": "standard",
+      "maxTokensResearch": 10000,
+      "focusAreas": [
+        "Cloud & Infrastructure (AWS, Azure, GCP, Hosting)",
+        "DevOps, SRE & Automatisation"
+      ]
+    },
+    "messagingStyle": {
+      "tone": "directExpert",
+      "messageLength": "standard",
+      "valuePropositionAngle": "On déploie et on maintient votre infra cloud AWS/Azure avec des seniors DevOps déjà passés par 3 scale-ups.",
+      "differentiationPoints": [
+        "Spécialisation cloud pointue",
+        "Pas d'intermédiaire commercial",
+        "Livraison directe par le fondateur"
+      ],
+      "avoid": [
+        "expertise reconnue",
+        "leader du marché",
+        "sur-mesure"
+      ]
+    },
+    "coachingInsights": {
+      "mainWeakness": "Mise en place d'une routine commerciale",
+      "keyAdvice": "Bloque deux créneaux fixes par semaine pour la prospection, avant de coder. Sans rituel posé, la prospection glisse toujours après la delivery.",
+      "cadenceRecommendation": {
+        "analysesPerWeek": 2,
+        "messagesPerDay": 6,
+        "followUpsPerWeek": 3
+      },
+      "kpiTargets": {
+        "accountsPerMonth": 6,
+        "rdvPerMonth": 6,
+        "conversionRateTarget": "15-25%"
+      }
+    },
+    "bellumPhrases": {
+      "welcome": "Bienvenue Karim, on va transformer ton expertise \"Cloud & Infrastructure (AWS, Azure, GCP, Hosting)\" en pipeline qualifié sur \"Tech & Startups / Scale-ups\".",
+      "firstAnalysisCta": "Lancer une analyse sur une Startup & Scale-up du secteur Tech & Startups / Scale-ups.",
+      "weeklySummaryIntro": "Cette semaine, deux comptes à approcher sur ton créneau cloud.",
+      "emptyState": "Aucun compte en pipeline pour l'instant — lance ta première analyse pour voir arriver des cibles.",
+      "scoreContext": "Le score se justifie par la correspondance avec ton expertise cloud et par la fraîcheur des signaux techniques trouvés, jamais par un chiffre unique."
+    },
+    "welcomeSummary": {
+      "profileRecap": "Tu es une ESN \"Cloud & Infrastructure\" de 1-10 consultants, basée en \"Paris & Île-de-France\", spécialisée \"Cloud & Infrastructure (AWS, Azure, GCP, Hosting)\" et \"DevOps, SRE & Automatisation\", qui cible les \"PME\" \"Tech & Startups / Scale-ups\". Tu travailles uniquement en CDI internes et prospectes seul.",
+      "searchesPersonalization": "Les recherches cibleront en priorité \"cloud\", \"DevOps\" et \"scale-up\".",
+      "contactsPersonalization": "Les contacts identifiés seront des \"CTO\" et \"Head of Infra\" (pas des opérationnels juniors).",
+      "messagesPersonalization": "Les messages seront rédigés sur un ton \"expert direct\" (pas consultative corporate).",
+      "scoringPersonalization": "Le scoring évaluera la correspondance entre ta stack cloud et les technologies mentionnées par l'entreprise cible.",
+      "firstAnalysisSuggestions": []
+    }
+  },
+  "contradictions": [],
+  "limits": [
+    "Aucune suggestion d'entreprise au premier écran : le questionnaire ne fournit aucun nom de compte, la liste reste vide plutôt qu'inventée."
+  ]
+}

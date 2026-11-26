@@ -1,0 +1,613 @@
+{
+  "dataSources": {
+    "companyData": "la source de données d’entreprises",
+    "publicCompanyRegistry": "le registre public des entreprises",
+    "companyRegistry": "le registre des entreprises",
+    "professionalDirectory": "l’annuaire professionnel",
+    "enrichment": "la source d’enrichissement",
+    "webSearch": "la recherche web",
+    "websiteReading": "la lecture des sites web",
+    "analysisModel": "le modèle d’analyse",
+    "boamp": "les avis de marchés publics",
+    "decp": "les données de la commande publique",
+    "franceTravail": "les offres d’emploi publiques",
+    "bodacc": "les annonces légales",
+    "insee": "le registre officiel des entreprises",
+    "inpi": "le registre officiel des entreprises",
+    "apec": "les offres d’emploi publiques",
+    "wttj": "les offres d’emploi publiques",
+    "search": "la recherche",
+    "companyIdentification": "l’identification des entreprises",
+    "dataCollection": "la collecte de données",
+    "marketMemory": "les observations du marché",
+    "fundingFeed": "la presse spécialisée (levées de fonds)",
+    "pressNews": "la presse (actualités récentes)",
+    "unknown": "une source de données"
+  },
+  "actions": {
+    "save": "Enregistrer",
+    "cancel": "Annuler",
+    "delete": "Supprimer",
+    "edit": "Modifier",
+    "confirm": "Confirmer",
+    "close": "Fermer",
+    "back": "Retour",
+    "returnToConversation": "Revenir à la conversation",
+    "continueWithLaura": "Continuer avec {{copilot}}",
+    "next": "Suivant",
+    "previous": "Précédent",
+    "continue": "Continuer",
+    "retry": "Réessayer",
+    "search": "Rechercher",
+    "filter": "Filtrer",
+    "clear": "Effacer",
+    "copy": "Copier",
+    "copied": "Copié",
+    "export": "Exporter",
+    "refresh": "Actualiser",
+    "add": "Ajouter",
+    "remove": "Retirer",
+    "create": "Créer",
+    "update": "Mettre à jour",
+    "submit": "Valider",
+    "send": "Envoyer",
+    "stop": "Arrêter",
+    "view": "Voir",
+    "viewAll": "Tout voir",
+    "seeMore": "Voir plus",
+    "seeLess": "Voir moins",
+    "download": "Télécharger",
+    "upload": "Importer",
+    "select": "Sélectionner",
+    "apply": "Appliquer",
+    "reset": "Réinitialiser",
+    "dismiss": "Ignorer",
+    "done": "Terminé",
+    "yes": "Oui",
+    "no": "Non",
+    "open": "Ouvrir",
+    "share": "Partager",
+    "manage": "Gérer",
+    "connect": "Connecter",
+    "disconnect": "Déconnecter",
+    "learnMore": "En savoir plus"
+  },
+  "states": {
+    "loading": "Chargement…",
+    "saving": "Enregistrement…",
+    "empty": "Aucune donnée",
+    "noResults": "Aucun résultat",
+    "error": "Une erreur est survenue",
+    "loadError": "Cette liste n’a pas pu être chargée. Ce n’est pas « aucun résultat » : réessaie dans un instant.",
+    "comingSoon": "Bientôt disponible",
+    "required": "Obligatoire",
+    "optional": "Facultatif"
+  },
+  "toast": {
+    "genericError": "Une erreur est survenue. Merci de réessayer.",
+    "saved": "Modifications enregistrées",
+    "copied": "Copié dans le presse-papiers",
+    "networkError": "Connexion impossible. Vérifie ton réseau.",
+    "rateLimited": "Trop de requêtes - patiente quelques secondes avant de réessayer."
+  },
+  "errors": {
+    "generic": "Une erreur est survenue.",
+    "unexpected": "Une erreur inattendue s'est produite.",
+    "notFound": "Introuvable",
+    "unauthorized": "Accès non autorisé",
+    "tryAgain": "Merci de réessayer.",
+    "noReasonGiven": "Le serveur a échoué sans indiquer de raison (erreur {{status}})."
+  },
+  "errorScreens": {
+    "crash": {
+      "title": "Oups.",
+      "message": "Une erreur inattendue est survenue.",
+      "sub1": "L'équipe a été notifiée automatiquement.",
+      "sub2": "Recharge la page pour reprendre ton travail.",
+      "cta": "Recharger l'application"
+    },
+    "staleBuild": {
+      "title": "Nouvelle version.",
+      "message": "L'application vient d'être mise à jour.",
+      "sub1": "Cet onglet utilisait la version précédente.",
+      "sub2": "Rechargement en cours — ton travail est conservé.",
+      "cta": "Recharger maintenant"
+    },
+    "invalidLink": {
+      "title": "Lien invalide",
+      "message": "Ce lien est invalide ou a expiré.",
+      "sub1": "Pour continuer, demande un nouveau lien ou retourne à la page d’accueil.",
+      "sub2": "Si le problème persiste, contacte notre support.",
+      "cta": "Retour à l’accueil",
+      "expired": {
+        "title": "Lien expiré",
+        "message": "Ce lien de réinitialisation a dépassé sa durée de validité.",
+        "sub1": "Demande un nouveau lien : celui-ci ne peut plus servir, même en le rechargeant."
+      },
+      "used": {
+        "title": "Lien déjà utilisé",
+        "message": "Ce lien n'est valable qu'une fois, et il a déjà servi.",
+        "sub1": "Si tu viens de définir ton mot de passe, il est peut-être déjà actif : essaie de te connecter avant de redemander un lien."
+      },
+      "password_rejected": {
+        "title": "Mot de passe refusé",
+        "message": "Le lien a bien fonctionné — c'est le mot de passe choisi qui n'a pas été accepté.",
+        "sub1": "Reprends avec un mot de passe différent de l'ancien et d'au moins huit caractères. Inutile de redemander un lien."
+      }
+    },
+    "notFound": {
+      "title": "Page introuvable",
+      "message": "La page que tu cherches n'existe pas ou a été déplacée.",
+      "sub1": "Vérifie l'URL ou reviens à l'accueil.",
+      "cta": "Retour à l'accueil"
+    },
+    "unauthorized": {
+      "title": "Accès refusé",
+      "message": "Tu n'as pas les droits nécessaires pour accéder à cette page.",
+      "sub1": "Connecte-toi avec un compte autorisé.",
+      "cta": "Se connecter"
+    },
+    "supportReference": {
+      "label": "Référence support :"
+    },
+    "temporaryFailure": {
+      "title": "Problème temporaire",
+      "message": "Le service est momentanément indisponible.",
+      "sub1": "Réessaie dans quelques instants.",
+      "sub2": "Si le problème persiste, contacte le support."
+    }
+  },
+  "comingSoon": {
+    "sectionSoon": "Cette section arrive bientôt."
+  },
+  "update": {
+    "newVersion": "Une nouvelle version de l’application est disponible"
+  },
+  "productGating": {
+    "discover": {
+      "title": "Découvrir arrive bientôt",
+      "description": "Cette fonctionnalité est visible dans la navigation, mais reste désactivée tant que son accès produit n’est pas prêt."
+    },
+    "knowledge": {
+      "title": "Connaissances arrive bientôt",
+      "description": "La base de connaissances est en préparation et n’est pas encore accessible fonctionnellement."
+    },
+    "chat": {
+      "title": "Chat IA arrive bientôt",
+      "description": "{{copilot}} reste désactivée côté produit tant que la fonctionnalité n’est pas prête."
+    }
+  },
+  "planFeatures": {
+    "names": {
+      "exports": "les exports PDF / CSV",
+      "chat_ai": "{{copilot}}",
+      "discover": "Découvrir",
+      "watchlist": "la Veille",
+      "knowledge_base": "la Base de connaissance",
+      "team_workspace": "l'espace partagé",
+      "needs": "les Besoins",
+      "talent_pool": "le Vivier",
+      "crm_native": "le CRM {{brand}}",
+      "ats_native": "l'ATS {{brand}}",
+      "manager_cockpit": "le Pilotage",
+      "crm_sync": "l'export vers le CRM",
+      "mcp_assistant": "l'assistant IA externe (MCP)",
+      "public_api": "l'API publique",
+      "rfp": "les Appels d'offres"
+    },
+    "short": {
+      "exports": "Exports PDF / CSV",
+      "chat_ai": "{{copilot}}",
+      "discover": "Découvrir",
+      "watchlist": "Veille",
+      "knowledge_base": "Base de connaissance",
+      "team_workspace": "Espace partagé",
+      "needs": "Besoins",
+      "talent_pool": "Vivier",
+      "crm_native": "CRM {{brand}}",
+      "ats_native": "ATS {{brand}}",
+      "manager_cockpit": "Pilotage",
+      "crm_sync": "Export CRM",
+      "mcp_assistant": "Assistant IA (MCP)",
+      "public_api": "API publique",
+      "rfp": "Appels d'offres"
+    },
+    "pitches": {
+      "exports": "Emporte le dossier et tes listes hors de {{brand}}.",
+      "chat_ai": "Pose tes questions sur un compte et fais préparer tes messages.",
+      "discover": "Trouve les comptes à cibler au lieu de les saisir un par un.",
+      "watchlist": "Tes comptes suivis te préviennent quand quelque chose bouge.",
+      "knowledge_base": "Tes documents nourrissent les analyses et les messages de l'équipe.",
+      "team_workspace": "Comptes, contacts et commentaires partagés entre commerciaux.",
+      "needs": "Les besoins détectés chez tes comptes, suivis comme un pipe.",
+      "talent_pool": "Tes consultants alignés sur un besoin, CV réécrit pour la mission.",
+      "crm_native": "Projets, pipeline, activités et tâches, sans ressaisie dans un autre outil.",
+      "ats_native": "Du projet au profil présenté : matching expliqué, positionnements, retours client.",
+      "manager_cockpit": "Objectifs, activité et couverture de l'équipe en un écran.",
+      "crm_sync": "Pousse un contact dans ton CRM en un clic.",
+      "mcp_assistant": "Branche Claude ou Cursor sur tes dossiers {{brand}}.",
+      "public_api": "Tes données {{brand}} dans tes propres outils.",
+      "rfp": "Lis, distribue et prépare un appel d'offres sans perdre une exigence."
+    },
+    "locked": {
+      "title": "{{feature}} n'est pas inclus dans ton offre",
+      "availableFrom": "Disponible à partir de l'offre {{plan}}",
+      "notIncluded": "Non inclus dans ton offre",
+      "titleWithPlan": "{{feature}} est inclus à partir de l'offre {{plan}}",
+      "unlocks": "Ce que {{plan}} débloque",
+      "unlocksWithPrice": "Ce que {{plan}} débloque ({{price}} €/mois)",
+      "cta": "Voir les offres",
+      "navLocked": "Inclus à partir de l'offre supérieure",
+      "description": "Ton offre actuelle n'inclut pas {{feature}}. Change d'offre pour y accéder.",
+      "upgradeCta": "Passer à {{plan}} pour en profiter"
+    }
+  },
+  "language": {
+    "label": "Langue",
+    "select": "Choisir la langue"
+  },
+  "onboardingPermanentLink": {
+    "label": "Revoir mon questionnaire"
+  },
+  "onboardingRefreshBanner": {
+    "title": "Questionnaire en cours",
+    "body": "Tu as demandé à revoir ton questionnaire — tes réponses précédentes restent enregistrées.",
+    "resumeButton": "Reprendre",
+    "laterButton": "Plus tard"
+  },
+  "demo": {
+    "bannerTitle": "Mode démo",
+    "bannerBody": "Espace de démonstration : aucune analyse réelle lancée, et les réponses de {{copilot}} sont préparées à l’avance. Les dossiers portent sur de vraies entreprises, à partir d’informations publiques : c’est un jeu d’exemples, pas ton portefeuille réel.",
+    "exitButton": "Quitter la démonstration",
+    "entry": {
+      "introTitle": "Tu es sur la démo de {{brand}}",
+      "introBody": "Les dossiers que tu vas ouvrir portent sur de VRAIES entreprises, construits à partir d'informations publiques : c'est exactement ce que le produit sait faire. Un seul compte est fictif — celui qui porte les missions et la facturation — et son nom le dit. Explore librement.",
+      "highlights": {
+        "accounts": "Cinq dossiers de conquête complets : signaux, entités du groupe, plan d'action.",
+        "contacts": "Les décideurs, leur organigramme et leurs coordonnées enrichies.",
+        "actions": "Les messages d’approche prêts à envoyer, et {{copilot}} pour t’aider."
+      },
+      "start": "Lancer la démo",
+      "startForfait": "Lancer la démo forfait / conseil",
+      "startForfaitHint": "Un second espace : des projets à cadrer et des forfaits gagnés suivis, le staffing au second plan.",
+      "introFootnote": "Aucune analyse relancée, aucun compte à créer.",
+      "preparingTitle": "Préparation de ta démo…",
+      "preparingBody": "On remet l'espace de démonstration à neuf : dossiers d'exemple, contacts et plans d'action. Cela peut prendre plus d’une minute.",
+      "preparingSlow": "C'est toujours en cours — le semis complet peut durer plus d’une minute. Reste sur cette page.",
+      "refusedTitle": "Lien de démo invalide",
+      "refusedBody": "Ce lien n'est plus valide. Demande un nouveau lien à ton interlocuteur {{brand}}.",
+      "unavailableTitle": "Démo indisponible",
+      "unavailableBody": "L'espace de démonstration n'est pas encore prêt sur cet environnement. Réessaie dans quelques minutes.",
+      "timeoutTitle": "La démo met trop de temps à démarrer",
+      "timeoutBody": "Le serveur n'a pas répondu à temps. Rien n'est perdu : réessaie, ou déconnecte-toi de ton compte puis relance le lien.",
+      "retry": "Réessayer",
+      "backToLogin": "Aller à la connexion",
+      "form": {
+        "sessionExpiredNotice": "Ta session de démonstration a expiré. Recommence ci-dessous — c’est le même lien.",
+        "title": "Avant de lancer la démo",
+        "subtitle": "Quelques informations pour mieux comprendre ton contexte et t’accompagner après ta découverte de {{brand}}.",
+        "firstNameLabel": "Prénom",
+        "firstNamePlaceholder": "Marie",
+        "lastNameLabel": "Nom",
+        "lastNamePlaceholder": "Dupont",
+        "emailLabel": "Adresse e-mail professionnelle",
+        "emailPlaceholder": "prenom@entreprise.com",
+        "jobTitleLabel": "Fonction",
+        "jobTitlePlaceholder": "Sélectionne ta fonction",
+        "jobTitleOptions": {
+          "business_developer": "Business Developer / Business Manager",
+          "manager": "Manager / Responsable d’équipe",
+          "agency_director": "Directeur d’agence / BU",
+          "sales_director": "Directeur commercial / Head of Sales",
+          "esn_founder": "Fondateur / Dirigeant d’ESN",
+          "freelance": "Freelance / Indépendant",
+          "other": "Autre"
+        },
+        "companyLabel": "Nom de l’entreprise",
+        "companyPlaceholder": "Acme",
+        "phoneLabel": "Numéro de téléphone",
+        "phoneOptionalHint": "Facultatif",
+        "submit": "Accéder à la démo",
+        "footnote": "Ces informations nous permettront de te recontacter, de répondre à tes questions et de te proposer l’offre la plus adaptée à ta structure. Aucun engagement. Dans la démo, tu entres sous un profil fictif de commerciale d’exemple : c’est son nom, et non le tien, que tu verras dans la salle. L’identité saisie ici ne sert qu’à te recontacter, elle n’apparaît pas dans les dossiers.",
+        "consent": "En continuant, tu acceptes que {{brand}} utilise ces informations pour te recontacter au sujet du produit. <privacy>Consulte notre politique de confidentialité</privacy>.",
+        "requiredFirstName": "Merci de renseigner ton prénom.",
+        "requiredLastName": "Merci de renseigner ton nom.",
+        "requiredCompany": "Merci de renseigner le nom de ton entreprise.",
+        "requiredJobTitle": "Merci de sélectionner ta fonction.",
+        "emailInvalid": "Merci de saisir une adresse e-mail valide.",
+        "emailProfessionalRequired": "Merci d’utiliser ton adresse e-mail professionnelle, par exemple prenom@entreprise.com.",
+        "successTitle": "Merci {{firstName}}. Bonne découverte de {{brand}} 👋",
+        "genericError": "Une erreur est survenue. Réessaie dans un instant.",
+        "preparing": "La démo se prépare, ça peut prendre quelques minutes. Reste sur cette page : ça reprend tout seul.",
+        "preparingRoom": "On prépare ta salle de démonstration… ça peut prendre quelques minutes. Reste sur cette page.",
+        "preparingTimeout": "La préparation prend plus de temps que prévu. Ta salle reste réservée : clique de nouveau sur « Accéder à la démo » dans un instant.",
+        "progressLabel": "Préparation de la démo",
+        "waited_one": "{{count}} seconde d’attente",
+        "waited_other": "{{count}} secondes d’attente"
+      },
+      "kicker": "{{brand}}",
+      "preparingStay": "Reste sur cette page : elle s'ouvre toute seule.",
+      "badge": {
+        "demo": "Démo",
+        "preparing": "En cours",
+        "slow": "Toujours en cours",
+        "refused": "Lien invalide",
+        "unavailable": "Indisponible",
+        "timeout": "Trop long"
+      }
+    }
+  },
+  "banners": {
+    "region": "Annonces",
+    "dismiss": "Fermer l’annonce"
+  },
+  "lauraContext": {
+    "reason": "Pourquoi cet écran : {{reason}}",
+    "continueQuestion": "Peux-tu continuer sur ce qu’on vient de voir ?"
+  },
+  "signalDate": {
+    "undated": "Non daté",
+    "range": "{{from}}–{{to}}",
+    "relative": {
+      "day_one": "il y a {{count}} jour",
+      "day_other": "il y a {{count}} jours",
+      "week_one": "il y a {{count}} semaine",
+      "week_other": "il y a {{count}} semaines",
+      "month_one": "il y a {{count}} mois",
+      "month_other": "il y a {{count}} mois",
+      "year_one": "il y a {{count}} an",
+      "year_other": "il y a {{count}} ans"
+    },
+    "toVerify": "date à vérifier"
+  },
+  "deadline": {
+    "withinDays_one": "sous {{count}} jour",
+    "withinDays_other": "sous {{count}} jours"
+  },
+  "unknownValue": "non mesuré",
+  "staleValue": "information du {{date}}, à revérifier",
+  "objectMention": {
+    "open": "Ouvrir {{name}}",
+    "openUnnamed": "Ouvrir cette fiche"
+  },
+  "trend": {
+    "thisMonth_one": "{{formatted}} ce mois-ci",
+    "thisMonth_other": "{{formatted}} ce mois-ci",
+    "delta": "{{sign}}{{percent}} % vs mois précédent",
+    "deltaAbsolute": "{{sign}}{{change}} vs mois précédent",
+    "noBaseline": "rien le mois précédent",
+    "none": "aucun ce mois-ci",
+    "stock": "état courant, sans historique",
+    "noSnapshot": "pas de photo le mois dernier"
+  },
+  "hygiene": {
+    "ratio": "{{count}} sur {{total}}"
+  },
+  "estimate": {
+    "label": "estimé",
+    "nuance": {
+      "probable": "Lien probable, jamais confirmé.",
+      "hypothesis": "Hypothèse à valider.",
+      "suggested": "Valeur suggérée, à confirmer."
+    },
+    "verifiedOn": "estimé, vérifié le {{date}}",
+    "notEvidence": "Valeur estimée par {{brand}} — pas une preuve."
+  },
+  "provenance": {
+    "human": "Information de ton équipe",
+    "connector": "lu dans un outil connecté",
+    "pipeline": "calculé par l'analyse",
+    "model": "Hypothèse à valider",
+    "inferred": "estimé — pas une preuve",
+    "public": "source publique",
+    "on": "le {{date}}",
+    "human_correction": "Corrigé par ton équipe",
+    "current_data": "données de ton espace",
+    "dataforge": "Historique observé",
+    "market_memory": "Historique observé",
+    "inference": "Hypothèse à valider",
+    "registry_identity": "Information vérifiée · registre officiel",
+    "connected_tools": "outils branchés",
+    "public_sources": "sources publiques actuelles",
+    "unknownSource": "provenance non renseignée",
+    "unknownDate": "date inconnue",
+    "decisionReason": {
+      "no_previous": "aucune valeur précédente : la nouvelle est enregistrée",
+      "higher_or_equal_authority": "vient d'une source au moins aussi fiable : la correction est retenue",
+      "unchanged": "identique à la valeur déjà en place : rien n'a changé",
+      "blank_never_overwrites": "un champ vide ne peut jamais effacer une valeur déjà connue",
+      "lower_authority": "vient d'une source moins fiable que celle déjà en place : la valeur actuelle est conservée"
+    }
+  },
+  "score": {
+    "outOf": "{{score}}/{{max}}",
+    "unarbitrated": "non arbitré",
+    "noScore": "pas assez d'éléments pour calculer une note",
+    "notEvaluableCount": "{{count}} axe(s) non évaluable(s)",
+    "notEvaluable": "Non évaluable : {{axes}}",
+    "accountGauge": "Score du compte : {{score}}/{{max}}",
+    "accountUnknown": "Score du compte : non mesuré"
+  },
+  "computedAt": {
+    "today": "Recalculé à {{time}}.",
+    "on": "Calculé le {{date}}.",
+    "unknown": "Date de calcul inconnue."
+  },
+  "completeness": {
+    "complete": "Calculé sur les {{total}} {{of}}.",
+    "partial": "Calculé sur {{counted}} {{of}} sur {{total}} — {{share}} %.",
+    "unknownTotal": "Calculé sur {{counted}} {{of}} ; la population totale n'a pas pu être comptée.",
+    "nothingToCount": "Rien à calculer : aucun élément dans le périmètre ({{of}}).",
+    "excluded": "Hors du calcul : {{items}}.",
+    "excludedHint": "Voir ce qui est hors du calcul"
+  },
+  "effectPanel": {
+    "cancel": "Annuler",
+    "confirm": "Confirmer"
+  },
+  "propagation": {
+    "source": "Voir les missions d’où vient ce chiffre",
+    "sourceAccount": "Voir les missions de ce compte, d’où vient ce chiffre",
+    "sourceConsultant": "Voir les missions de ce consultant, d’où vient ce chiffre"
+  },
+  "sectorGroups": {
+    "industrie": "Industrie et fabrication",
+    "energie": "Énergie",
+    "process": "Procédés et matières",
+    "construction": "Construction et immobilier",
+    "transport": "Transport et logistique",
+    "finance": "Banque, finance, assurance",
+    "sante": "Santé et sciences du vivant",
+    "commerce": "Commerce et services",
+    "tech": "Technologies et médias",
+    "public": "Secteur public"
+  },
+  "effects": {
+    "description": "Le détail de ce qui va changer, et où."
+  },
+  "browser": {
+    "previous": "Élément précédent",
+    "next": "Élément suivant",
+    "position": "{{position}} sur {{total}}"
+  },
+  "messageInsight": {
+    "why": "Pourquoi ce message",
+    "whyEmail": "Pourquoi ce mail est pertinent",
+    "rationale": "Raison du choix",
+    "decisionRole": "Rôle dans la décision",
+    "forbidden": "Ce qui est évité pour cette relation",
+    "length": "Longueur visée",
+    "knowledgeSources": "Sources documentaires",
+    "lexiconWarning": "Mots que ton ESN s'interdit, encore présents : {{terms}}",
+    "dataUsed": "Données utilisées",
+    "alternativeAngle": "Angle alternatif",
+    "useThisAngle": "Utiliser cet angle",
+    "changeTone": "Changer le ton",
+    "genericWarning": "Message peu personnalisé",
+    "genericHint": "Pour l'enrichir : {{items}}",
+    "missingBrief": "Non déterminé avant la rédaction : {{items}}",
+    "missing": {
+      "objective": "l'objectif du message",
+      "persona": "le niveau hiérarchique du contact",
+      "decisionRole": "le rôle dans la décision"
+    },
+    "tone": {
+      "tutoiement": "Tutoiement",
+      "vouvoiement": "Vouvoiement",
+      "plus_court": "Plus court",
+      "plus_direct": "Ton plus direct"
+    },
+    "element": {
+      "esn_expertise": "expertise de ton ESN",
+      "territory": "territoire",
+      "capacity": "taille / capacité",
+      "client_reference": "référence client",
+      "dated_signal": "signal daté",
+      "precise_entity": "entité précise",
+      "precise_contact": "contact précis",
+      "available_consultant": "consultant disponible",
+      "access_path": "voie d'accès",
+      "known_constraint": "contrainte connue",
+      "user_objective": "objectif commercial"
+    }
+  },
+  "commercialStage": {
+    "help": "Le stade commercial, sur l'échelle commune à Projets, Besoins et Missions.",
+    "signal": "Signal",
+    "piste": "Piste",
+    "opportunite": "Opportunité",
+    "besoin_confirme": "Besoin confirmé",
+    "match": "Rapprochement",
+    "shortlist": "Shortlist",
+    "positionnement": "Positionnement",
+    "retenu": "Retenu",
+    "mission": "Mission",
+    "perdu": "Perdu",
+    "en_veille": "En veille"
+  },
+  "documentPreview": {
+    "loading": "Chargement de l’aperçu…",
+    "failed": "L’aperçu de ce document n’a pas pu être chargé.",
+    "notKept": "Original non conservé",
+    "notKeptHint": "Ce document a été déposé avant la conservation des originaux : voici son texte.",
+    "renderFailed": "L’aperçu fidèle n’a pas pu être construit : voici le texte du document.",
+    "download": "Télécharger l’original",
+    "downloadFailed": "Le téléchargement n’a pas pu démarrer. Réessaie dans un instant.",
+    "sheetsLabel": "Onglets du classeur",
+    "emptySheet": "Cet onglet ne contient aucune cellule.",
+    "rowsTruncated": "Seules les {{count}} premières lignes sont affichées : télécharge l’original pour tout voir.",
+    "pdfTitle": "Aperçu PDF de {{name}}",
+    "slideLabel": "Diapositive {{number}}",
+    "slideUntitled": "Sans titre",
+    "slideNotes": "Notes",
+    "noSlides": "Cette présentation ne contient aucune diapositive lisible.",
+    "emptyDocument": "Ce document ne contient aucun texte lisible.",
+    "open": "Aperçu",
+    "openLabel": "Ouvrir l’aperçu de {{name}}"
+  },
+  "signalSource": {
+    "collectedBeforeLink": "collecte antérieure au lien source",
+    "open": {
+      "bodacc": "Voir l'annonce",
+      "press": "Voir l'article",
+      "job": "Voir l'offre",
+      "tender": "Voir l'appel d'offres",
+      "official": "Voir la page officielle",
+      "other": "Voir la source"
+    }
+  },
+  "privacySwitch": {
+    "label": "Privé",
+    "hint": "Seuls son porteur et les gestionnaires de l’équipe voient cet objet dans les dossiers associés d’un contact.",
+    "error": "Impossible de changer la confidentialité pour l’instant."
+  },
+  "figureScope": {
+    "period": {
+      "now": "Aujourd'hui",
+      "lastDays": "{{days}} derniers jours",
+      "nextDays": "{{days}} prochains jours",
+      "month": "{{month}}"
+    },
+    "sources": {
+      "bellum": "tes actions {{brand}}",
+      "crm": "ton CRM",
+      "mailbox": "ta messagerie",
+      "calendar": "ton agenda",
+      "public_registry": "registres publics",
+      "portfolio": "ton portefeuille",
+      "workspace": "ton espace",
+      "deals": "tes affaires"
+    },
+    "sourcesNone": "aucune source lisible"
+  },
+  "inlineEdit": {
+    "add": "Ajouter",
+    "edit": "Modifier {{label}}",
+    "empty": "Non renseigné",
+    "saving": "Enregistrement…",
+    "error": "Enregistrement impossible : {{message}} — la valeur précédente est conservée.",
+    "unknownError": "une erreur est survenue.",
+    "notProvided": "Non renseigné",
+    "saveFailed": "L’enregistrement n’a pas abouti. Ta saisie est conservée : réessaie.",
+    "editingHint": "Modification en cours — Entrée enregistre, Échap annule.",
+    "unlockAction": "Corriger",
+    "unlock": "Corriger {{label}}"
+  },
+  "sourceChip": {
+    "open": "Ouvrir la source : {{site}}",
+    "more_one": "+{{count}} source",
+    "more_other": "+{{count}} sources"
+  },
+  "originSource": {
+    "open": "Ouvrir la source : {{site}}"
+  },
+  "softBrake": {
+    "title": "Tu as beaucoup utilisé {{brand}} ce mois-ci — on en parle ?",
+    "description": "Cette action est en pause pour l’instant. Écris à l’équipe : on regarde ça avec toi.",
+    "contact": "Contacter l’équipe"
+  },
+  "absence": {
+    "line": "{{what}} — {{reason}}",
+    "default": "aucune donnée trouvée pour ce compte"
+  }
+}

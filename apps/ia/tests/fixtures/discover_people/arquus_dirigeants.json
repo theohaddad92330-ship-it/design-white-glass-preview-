@@ -1,0 +1,51 @@
+{
+  "_comment": "#2544.2 — la MÊME capture réelle que `discover_establishment/arquus_bfc_dept.json` (GET recherche-entreprises.api.gouv.fr/search?q=arquus&departement=58, le 18/09/2026), avec le bloc `dirigeants` que l'autre fixture avait trimmé. STRUCTURE et valeurs NON PERSONNELLES verbatim de la réponse réelle : les clés `nom`/`prenoms`/`annee_de_naissance`/`date_de_naissance`/`qualite`/`nationalite`/`type_dirigeant`, la présence d'une `personne morale` (le commissaire aux comptes) à côté d'une `personne physique`, et l'ABSENCE totale de champ d'adresse, d'établissement ou de SIRET sur un dirigeant. ⚠️ L'IDENTITÉ de la personne physique est remplacée : publier le nom ET la date de naissance de quelqu'un de réel dans un dépôt est exactement ce que ce contrat refuse — la garde lit la FORME, pas cette personne-là. Le SIRET qui apparaît plus bas est celui de l'ÉTABLISSEMENT de Garchizy, jamais celui d'un dirigeant : c'est précisément la confusion que le contrat interdit.",
+  "results": [
+    {
+      "siren": "662043405",
+      "nom_complet": "ARQUUS (VOLVO GROUP GOVERNMENTAL SALES, RENAULT TRUCKS DEFENSE, ACMAT, ACMAT DEFENSE, ARQUUS)",
+      "nom_raison_sociale": "ARQUUS",
+      "nature_juridique": "5710",
+      "tranche_effectif_salarie": "42",
+      "categorie_entreprise": "GE",
+      "activite_principale": "30.40Z",
+      "date_creation": "1900-01-01",
+      "date_mise_a_jour_rne": "2026-08-25T16:33:12",
+      "nombre_etablissements_ouverts": 8,
+      "siege": {
+        "libelle_commune": "VERSAILLES",
+        "departement": "78",
+        "code_postal": "78000",
+        "etat_administratif": "A"
+      },
+      "matching_etablissements": [
+        {
+          "libelle_commune": "GARCHIZY",
+          "code_postal": "58600",
+          "commune": "58121",
+          "region": "27",
+          "est_siege": false,
+          "etat_administratif": "A",
+          "siret": "66204340500106"
+        }
+      ],
+      "dirigeants": [
+        {
+          "nom": "MARCHAND",
+          "prenoms": "CLAUDE DOMINIQUE",
+          "annee_de_naissance": "1963",
+          "date_de_naissance": "1963-12",
+          "qualite": "Président de SAS",
+          "nationalite": null,
+          "type_dirigeant": "personne physique"
+        },
+        {
+          "siren": "572028041",
+          "denomination": "CABINET D'AUDIT EXEMPLE",
+          "qualite": "Commissaire aux comptes titulaire",
+          "type_dirigeant": "personne morale"
+        }
+      ]
+    }
+  ]
+}

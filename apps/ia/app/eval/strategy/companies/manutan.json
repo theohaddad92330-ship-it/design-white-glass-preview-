@@ -1,0 +1,39 @@
+{
+  "slug": "manutan",
+  "company": "Manutan",
+  "fixture": null,
+  "_capture_status": "not_captured",
+  "_capture_note": "Aucune sortie de référence capturée pour ce compte. `python -m app.eval.strategy.run baseline` lance le pipeline réel et écrit le dossier + les tokens strategy ; ce champ passe alors à \"captured\" et `fixture` pointe le dossier produit. Tant qu'il vaut \"not_captured\", aucune donnée métier de ce compte n'existe dans le repo.",
+  "segment": "eti",
+  "sector_hint": "Distribution B2B / e-commerce",
+  "registry": {
+    "_source": "https://recherche-entreprises.api.gouv.fr (Annuaire des Entreprises, DINUM — adossé à INSEE Sirene). Données publiques, vérifiables, non inventées.",
+    "fetched_at": "2026-07-19",
+    "siren": "334668852",
+    "denomination": "MANUTAN",
+    "categorie_entreprise": "ETI",
+    "naf_siege": "46.69B",
+    "activite_principale": null,
+    "tranche_effectif_salarie": "32",
+    "tranche_effectif_label": "250 à 499 salariés",
+    "annee_effectif": "2023",
+    "commune_siege": "GONESSE",
+    "code_postal_siege": "95500",
+    "etat_administratif": "A",
+    "_effectif_note": "Effectif de l'UNITÉ LÉGALE (ce SIREN), pas du groupe consolidé. Une holding de tête affiche donc une tranche basse — ce n'est pas la taille du groupe."
+  },
+  "expect": {
+    "siren": "334668852",
+    "sectorPresent": true,
+    "minEntities": 1,
+    "minPlays": 2,
+    "requiredFacts": [
+      "sector",
+      "siren",
+      "employees",
+      "headquarters",
+      "businessDescription"
+    ]
+  },
+  "_expect_note": "Attentes STRUCTURELLES uniquement. `siren` est la seule valeur factuelle, vérifiée via l'API publique ci-dessus. `isPublic` / `hasSubsidiaries` sont volontairement ABSENTS : non vérifiables via cette source, donc non affirmés."
+}

@@ -1,0 +1,33 @@
+lot: laura-retour-conversation-l14
+issues: [4967]
+
+changelog:
+  id: 2026-11-01-laura-retour-conversation-l14
+  comment: 'Laura L14 (#4967) — au retour sur Laura, on retombe sur la conversation attendue, pas sur l’accueil'
+  fr:
+    date: 1er novembre 2026
+    title: Laura vous ramène à votre conversation
+    items:
+      - 'Quand vous revenez sur Laura, vous retombez directement sur la conversation dont la recherche tourne encore, ou dont la réponse est arrivée pendant votre absence.'
+      - 'Une réponse déjà vue ne vous ramène plus : l’accueil reste l’accueil, et « Nouvelle conversation » ou un lien précis sont toujours respectés.'
+  en:
+    date: November 1, 2026
+    title: Laura takes you back to your conversation
+    items:
+      - 'When you come back to Laura, you land directly on the conversation whose search is still running, or whose answer arrived while you were away.'
+      - 'An answer you already saw no longer brings you back: the home stays the home, and “New conversation” or a specific link is always respected.'
+
+inserts:
+  - file: apps/api/src/modules/demo/demo-coverage.ts
+    text: |
+
+      /**
+       * « LE RETOUR SUR LAURA RAMÈNE-T-IL AU FIL ATTENDU EN DÉMONSTRATION ? » (#4967, LOT L14)
+       * VIDE À DESSEIN — aucun tour serveur n'y tourne jamais (le tour est scripté, #1320) : le retour sur `/chat`
+       * nu y est désactivé (`useLauraReturn`, `useIsDemo`), l'accueil reste l'accueil. Aucune table neuve.
+       */
+      export const DEMO_LAURA_RETURN_COVERAGE: Readonly<{ state: 'vide_a_dessein'; reason: string }> = {
+        state: 'vide_a_dessein',
+        reason:
+          "Le tour de Laura est scripté en démonstration (#1320) : aucun tour serveur « en cours » ni réponse arrivée pendant l'absence, donc rien où retomber ; le retour sur /chat nu y est désactivé.",
+      }

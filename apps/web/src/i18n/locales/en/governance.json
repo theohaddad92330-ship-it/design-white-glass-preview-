@@ -1,0 +1,101 @@
+{
+  "fields": {
+    "title": "Custom fields",
+    "counter": "{{used}} / {{max}} used",
+    "hint": "Ten per object at most, and that is a decision: an unlimited system produces forty undocumented columns in a year, twelve of which say the same thing — and no report stays readable.",
+    "label": "Field label",
+    "placeholder": "Contract reference, Segment…",
+    "add": "Add",
+    "archive": "Archive",
+    "archiveHint": "Archive: the field stops being offered, its values stay readable.",
+    "empty": "No custom field.",
+    "created": "Field created.",
+    "archived": "Field archived — its values stay readable.",
+    "error": "The field could not be saved.",
+    "loadError": "Fields could not be loaded.",
+    "types": {
+      "text": "Text",
+      "number": "Number",
+      "date": "Date",
+      "boolean": "Yes / no",
+      "select": "List"
+    }
+  },
+  "duplicates": {
+    "title": "Duplicates spotted",
+    "hint": "{{brand}} merges near-certain duplicates on its own (same address and same name), in {{brand}} only — never in your CRM — and you can undo it. The others it PROPOSES: you decide.",
+    "confidence": "{{value}} % confidence",
+    "merged": "I merged them",
+    "dismissed": "Not the same person",
+    "empty": "No pending duplicate.",
+    "decided": "Decision recorded — this pair will not come back.",
+    "error": "The decision could not be recorded.",
+    "entity": {
+      "account": "Account",
+      "contact": "Contact"
+    },
+    "examined": "{{accounts}} accounts and {{contacts}} contacts examined.",
+    "alreadyDecided_one": "{{count}} pair already decided.",
+    "alreadyDecided_other": "{{count}} pairs already decided.",
+    "setAside_one": "{{count}} archived or merged account is left out of the comparison.",
+    "setAside_other": "{{count}} archived or merged accounts are left out of the comparison.",
+    "noReport": "The last search reported nothing: this is not a measurement.",
+    "skipped_disabled": "No search ran: duplicate search is switched off by the operator.",
+    "skipped_demo": "No search ran: duplicate search does not run on a demo workspace.",
+    "scanFailed": "The duplicate search did not complete: this is not “no duplicate”. It retries the next time this opens.",
+    "loadError": "Duplicates could not be loaded.",
+    "setAsideTitle": "Accounts set aside",
+    "setAsidePair": "“{{left}}” ({{leftStatus}}) and “{{right}}” ({{rightStatus}}) share the same name, but one of them is set aside: the pair is not proposed.",
+    "restore": "Unarchive",
+    "restored": "Account unarchived: it now joins the comparison.",
+    "restoreError": "The account could not be unarchived.",
+    "status": {
+      "active": "active",
+      "archived": "archived",
+      "merged": "merged"
+    },
+    "autoMerged": {
+      "title": "Merged by {{brand}}",
+      "line": "“{{absorbed}}” joined “{{kept}}”.",
+      "lineSameName": "“{{name}}” (duplicate) was merged into the record we kept.",
+      "why": "{{reason}} — {{value}}% confidence. Merged in {{brand}} only: your CRM was not touched.",
+      "undo": "Undo the merge",
+      "undone": "Merge undone: the record is back, and this pair will not be matched again.",
+      "undoError": "The merge could not be undone."
+    },
+    "sectionTitle": "Duplicates to settle",
+    "sectionTitleAutoMerged": "Merged duplicates",
+    "bannerOpen_one": "{{count}} duplicate to review",
+    "bannerOpen_other": "{{count}} duplicates to review",
+    "bannerOpenHint": "{{brand}} proposes the merge; nothing is merged without you, except a certain identity (≥ 0.99), always reversible.",
+    "bannerAutoHint": "A certain identity was merged inside {{brand}} only; you can undo each merge.",
+    "reviewAction": "Review duplicates",
+    "autoMergedAction": "See merges",
+    "closeLabel": "Close",
+    "reasonCodes": {
+      "same_email": "Same email address",
+      "same_name": "Same name",
+      "same_name_same_company": "Same name, same company",
+      "same_name_no_company": "Same name, company unknown",
+      "same_local_part": "Same start of address",
+      "unknown": "Suggested match"
+    }
+  },
+  "placeholderEmails": {
+    "title": "Template addresses",
+    "hint": "An address like “firstname.lastname@…” reaches nobody. Count first: nothing is written until you confirm. The previous value stays in the record’s history, and an address set by hand is never touched.",
+    "simulate": "Count template addresses",
+    "simulated_one": "{{count}} template address to clear",
+    "simulated_other": "{{count}} template addresses to clear",
+    "kept_one": " ({{count}} kept by hand, left as is)",
+    "kept_other": " ({{count}} kept by hand, left as is)",
+    "none": "No template address in this workspace.",
+    "execute_one": "Clear {{count}} address",
+    "execute_other": "Clear {{count}} addresses",
+    "executeBounded": "Clear {{limit}} addresses of {{count}}",
+    "done_one": "{{count}} address cleared, the previous value is in the record’s history.",
+    "done_other": "{{count}} addresses cleared, the previous value is in each record’s history.",
+    "remaining": "Some remain: count again for the next batch.",
+    "error": "The count did not complete. Try again."
+  }
+}

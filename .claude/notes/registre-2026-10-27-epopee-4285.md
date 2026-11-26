@@ -1,0 +1,8 @@
+# Registre épopée #4285 — vague L (27/10/2026) — preuve de CÂBLAGE
+
+| Point | Origine | État | Appelant (fichier:ligne) | Preuve en recette (geste à l'écran) |
+| --- | --- | --- | --- | --- |
+| #4285.1 | #3941.3 levées rattachées aux cartes | déjà là | `funding_feed.py` `funding_signals` ← `apps/ia/app/routers/discover.py:2825` (source `funding_feed` fusionnée l.2895) → `CandidateFacts.tsx:108` (ligne + lien) ; BODACC capital `discover.py:2831` | Démo : Découvrir → carte « Askelia Partners (démo) » : « Levée de fonds : 12 M€ · série B » daté + lien. Prod : « 0 levée sur 20 cartes » = aucun titre de flux ne nomme ces sociétés (rapprochement par nom ENTIER, jamais partiel) — comportement voulu, pas un câblage rompu. |
+| #4285.2 | #3941.6 pré-seed / French Tech | reformulé | décision Louis 17/10 : BODACC B « augmentation de capital », jamais « levée » | — |
+| #4285.3 | #4282.1 radar par technologie | déjà là | route `routes/discover/radar.tsx` ← bouton `Discover.tsx:2638` → `DiscoverQuickPresetsDialog.tsx:64` ; API `technology-radar-api.ts` → `technology-radar.controller.ts` (module `ia-proxy.module.ts:221`) → `routers/discover.py:3934` → `technology_radar.py:374` (cache 30 j `TTL_SIGNALS`) ; Laura : `chat_tools.py:16854` → `radar_chat_tools.execute_technology_radar` | Découvrir → « Recherches rapides » → entrée radar → taper « SAP » : 7 blocs (`TechnologyRadarView.tsx:60-209`). Laura : « radar SAP France ». Démo : `demo-technology-radar.ts`. |
+| #4285.3-droits | — | livré | `technology-radar.controller.spec.ts` | Voit : tout utilisateur authentifié dont le plan porte Découvrir. Modifie : personne (lecture seule). REFUSÉ : anonyme (JwtGuard), plan sans Découvrir (PlanFeatureGuard) — test « NON » ajouté. |

@@ -1,0 +1,527 @@
+{
+  "page": {
+    "title": "Mon profil",
+    "subtitle": "Gère les informations de ton ESN et la sécurité de ton compte."
+  },
+  "identity": {
+    "title": "Identité",
+    "sectionSubtitle": "Visible dans ton espace personnel.",
+    "rowTitle": "Nom et prénom",
+    "emptyValue": "À compléter",
+    "subtitle": "Ton nom et prénom apparaissent dans ton espace personnel.",
+    "firstNameLabel": "Prénom",
+    "firstNamePlaceholder": "Jean",
+    "lastNameLabel": "Nom",
+    "lastNamePlaceholder": "Dupont",
+    "emailLabel": "Email",
+    "emailHint": "Le changement d'email est confirmé par un code envoyé à la nouvelle adresse.",
+    "timezoneLabel": "Fuseau horaire",
+    "timezonePlaceholder": "Choisis ton fuseau horaire",
+    "timezoneHint": "Il décide de quel jour est « demain » quand tu demandes une relance à {{copilot}}, et de l’heure de tes routines.",
+    "timezoneDetectedHint": "Proposé d’après ton navigateur ({{timezone}}) — enregistre pour le confirmer, ou choisis-en un autre. Tant que rien n’est enregistré, le fuseau de référence est Europe/Paris.",
+    "toast": {
+      "saved": "Identité enregistrée"
+    },
+    "signatureTitle": "Ta signature de messagerie",
+    "signatureHint": "Elle est ajoutée au bas des brouillons que {{brand}} prépare. Vide, c'est celle de ta messagerie qui s'applique.",
+    "businessRole": {
+      "label": "Rôle métier",
+      "unset": "Non renseigné",
+      "saved": "Rôle métier enregistré",
+      "error": "Le rôle métier n’a pas pu être enregistré",
+      "hint": "Ton rôle ordonne ta page « Ma journée » : les mêmes blocs, dans l’ordre de ton métier."
+    },
+    "securityNote": "Le mot de passe et la double authentification se règlent dans",
+    "securityNoteLink": "Sécurité"
+  },
+  "businessUnits": {
+    "title": "Mes périmètres",
+    "subtitle": "Les BU, agences ou équipes dont tu fais partie. Les prochaines analyses en tiennent compte : le verdict d’un compte cite ton périmètre.",
+    "restricted": "Ton accès est limité à tes périmètres : pour en rejoindre un autre, demande l’accès à son responsable.",
+    "loading": "Lecture des périmètres de ton espace…",
+    "error": "Impossible de lire les périmètres de ton espace. Réessaie dans un instant.",
+    "empty": "Ton espace n’a encore défini aucun périmètre.",
+    "member": "Tu en fais partie",
+    "archived": "Archivé",
+    "join": "Rejoindre",
+    "joinAria": "Rejoindre {{name}}",
+    "requestAccess": "Demander l’accès",
+    "requestAccessAria": "Demander l’accès à {{name}}",
+    "requestPending": "Demande envoyée",
+    "memberCount_one": "{{count}} membre",
+    "memberCount_other": "{{count}} membres",
+    "kinds": {
+      "business_unit": "BU",
+      "agency": "Agence",
+      "sales_team": "Équipe commerciale",
+      "territory": "Territoire",
+      "new_venture": "Nouvelle activité",
+      "solo": "Indépendant"
+    },
+    "toast": {
+      "joined": "Tu as rejoint {{name}}.",
+      "joinError": "Impossible de rejoindre ce périmètre.",
+      "requested": "Demande d’accès envoyée pour {{name}}.",
+      "requestError": "Impossible d’envoyer la demande.",
+      "created": "{{name}} est créé.",
+      "createError": "Impossible de créer ce périmètre."
+    },
+    "territory": {
+      "title": "Modèle de territoire",
+      "subtitle": "Les 7 axes que ton territoire peut porter. Trois sont déjà des réponses de ton profil, modifiables ici ; les quatre autres n'existent pas encore dans le produit — nommés, jamais devinés.",
+      "unset": "Non renseigné — {{reason}}",
+      "axes": {
+        "agenciesRegionsCountries": {
+          "title": "Agences, régions et pays",
+          "hint": "Deux réponses distinctes : où ton ESN est implantée (agences/bureaux), et les zones qu'elle cible (régions, pays, national, international — encore une seule liste, pas trois axes séparés)."
+        },
+        "remoteAndTravel": {
+          "title": "Remote accepté et déplacements"
+        },
+        "localSectors": {
+          "title": "Secteurs locaux",
+          "reason": "aucun secteur n'est encore croisé avec une zone — les secteurs ciblés restent nationaux."
+        },
+        "reservedAccounts": {
+          "title": "Comptes réservés et comptes groupe accessibles",
+          "reason": "aucune réservation de compte entre espaces n'existe encore."
+        },
+        "territoryRules": {
+          "title": "Règles territoriales",
+          "reason": "aucun moteur de règles territoriales n'existe encore."
+        },
+        "exclusiveOrShared": {
+          "title": "Périmètre exclusif ou partagé",
+          "reason": "dépend des comptes réservés, qui n'existent pas encore."
+        },
+        "capabilityStatus": {
+          "title": "Ce que tu peux couvrir"
+        }
+      }
+    }
+  },
+  "errors": {
+    "saveFailed": "Échec de la sauvegarde"
+  },
+  "email": {
+    "changeEmail": "Changer d'adresse email",
+    "dialogDescription": "Pour confirmer la nouvelle adresse, nous lui enverrons un code à 6 caractères. Cette modification s'applique à ton compte {{brand}}.",
+    "newEmailLabel": "Nouvelle adresse email",
+    "emailPlaceholder": "tu@entreprise.com",
+    "currentEmail": "Adresse actuelle : {{email}}",
+    "sending": "Envoi…",
+    "sendCode": "Envoyer le code",
+    "otpLabel": "Code de confirmation",
+    "codeSentHint": "Code envoyé à {{email}}. Vérifie aussi ton dossier spam.",
+    "changeAddress": "Changer d'adresse",
+    "verifying": "Vérification…",
+    "toast": {
+      "codeSent": "Code envoyé à {{email}}",
+      "updated": "Adresse email mise à jour"
+    },
+    "errors": {
+      "sendFailed": "Impossible d'envoyer le code.",
+      "invalidCode": "Code invalide ou expiré."
+    }
+  },
+  "esn": {
+    "title": "Profil ESN",
+    "subtitle": "Modifiable à tout moment.",
+    "shared": {
+      "badge": "Profil de l'entreprise (partagé)",
+      "subtitleEditable": "Partagé avec toute l'équipe — tes modifications s'appliquent à tous les membres.",
+      "subtitleLocked": "Les champs entreprise sont partagés par l'équipe et modifiables par le propriétaire ou un admin.",
+      "lockedField": "Champ de l'entreprise — modifiable par le propriétaire ou un admin."
+    },
+    "correction": {
+      "reportButton": "Signaler une erreur",
+      "dialogTitle": "Signaler une information fausse",
+      "dialogDescription": "Rien n'est modifié : ta demande part directement aux administrateurs de ton espace.",
+      "reasonLabel": "Pourquoi cette information est-elle fausse ?",
+      "reasonPlaceholder": "Explique ce qui a changé…",
+      "submit": "Envoyer le signalement",
+      "cancel": "Annuler",
+      "successTitle": "Signalement envoyé aux administrateurs de ton espace.",
+      "errorBody": "Impossible d'envoyer ton signalement. Réessaie."
+    },
+    "personal": {
+      "title": "Mes préférences personnelles",
+      "hint": "Ton frein commercial principal reste personnel : il n'affecte que tes propres analyses."
+    },
+    "impactedAccounts": {
+      "notice_one": "{{count}} compte a été analysé avec un profil ESN plus ancien que celui d'aujourd'hui.",
+      "notice_other": "{{count}} comptes ont été analysés avec un profil ESN plus ancien que celui d'aujourd'hui."
+    },
+    "stages": {
+      "companyInfo": "Nom, taille, équipe commerciale",
+      "offerExpertise": "Domaines, positionnement, modèle",
+      "targetMarket": "Secteurs, types, zone, frein"
+    },
+    "answerStatus": {
+      "confirmed": "Confirmé",
+      "unconfirmed": "Non confirmé — à valider"
+    },
+    "knowledgeBasis": {
+      "declared": "Déclaré par toi",
+      "prefilled_confirmed": "Prérempli et confirmé",
+      "imported": "Importé",
+      "observed": "Observé",
+      "deduced": "Déduit",
+      "unknown": "Origine non établie"
+    },
+    "confirmAnswer": {
+      "button": "Confirmer",
+      "error": "La confirmation n’a pas abouti. Réessaie dans un instant."
+    },
+    "stageAnswers": "{{filled}}/{{total}} réponses"
+  },
+  "marketMemory": {
+    "title": "Ton entreprise dans les observations du marché",
+    "lead": "Voilà ce que {{brand}} observe.",
+    "paths": "{{paths}} parcours observés autour de ton entreprise.",
+    "roleFamilies": "Familles principales : {{families}}.",
+    "destinations": "Écosystèmes de destination les plus fréquents : {{destinations}}.",
+    "matchedOn": {
+      "name": "Rapproché de « {{company}} » par son nom. Si ce n’est pas ton entreprise, ces observations ne la concernent pas.",
+      "domain": "Rapproché de « {{company}} » par son site.",
+      "alias": "Rapproché de « {{company}} » par une équivalence enregistrée. Si ce n’est pas ton entreprise, ces observations ne la concernent pas."
+    },
+    "insufficient": "Ton entreprise n’est pas suffisamment couverte dans nos observations.",
+    "undeclared": "Renseigne le nom de ton entreprise ci-dessus : sans lui, {{brand}} n’a rien à observer.",
+    "unavailable": "Ces observations n’ont pas pu être lues. Réessaie dans un moment."
+  },
+  "stage": {
+    "autoSaveHint": "Modifications enregistrées automatiquement.",
+    "guidedModeLink": "Revoir ce questionnaire en mode guidé, avec l'aide de {{copilot}}",
+    "guidedModeError": "La demande n'a pas pu être enregistrée. Réessaie dans un instant."
+  },
+  "security": {
+    "title": "Sécurité",
+    "description": "Gère ton mot de passe et l'accès à ton compte.",
+    "passwordTitle": "Mot de passe",
+    "passwordDescription": "Tu recevras un email pour le réinitialiser.",
+    "sending": "Envoi...",
+    "changePassword": "Changer le mot de passe",
+    "toast": {
+      "resetSent": "Nous t'avons envoyé un lien de réinitialisation par email."
+    },
+    "errors": {
+      "sendFailed": "Impossible d'envoyer l'email."
+    }
+  },
+  "danger": {
+    "title": "Zone dangereuse",
+    "description": "La suppression de ton compte est définitive et entraîne la perte de toutes tes données.",
+    "rowTitle": "Supprimer mon compte",
+    "rowDescription": "Cette action efface toutes tes données - comptes, contacts, plans d'action.",
+    "confirmPrompt": "Es-tu certain ? Cette action est irréversible.",
+    "deleting": "Suppression...",
+    "confirmCta": "Oui, supprimer mon compte",
+    "toast": {
+      "deleted": "Compte supprimé."
+    },
+    "errors": {
+      "deleteFailed": "Impossible de supprimer le compte."
+    }
+  },
+  "saveStatus": {
+    "saving": "Enregistrement...",
+    "saved": "Enregistré",
+    "error": "Échec de l'enregistrement"
+  },
+  "autoSave": {
+    "taskTitle": "Sauvegarde du profil",
+    "taskLabel": "Sauvegarde",
+    "toast": {
+      "saved": "Profil enregistré"
+    }
+  },
+  "context": {
+    "section": {
+      "title": "Profil {{brand}}",
+      "rowTitle": "Résumé, personnalisation et coaching",
+      "rowDescAvailable": "Résumé du profil, personnalisation des analyses et coaching adapté.",
+      "rowDescPending": "Sera disponible après la première génération."
+    },
+    "header": {
+      "title": "Ton profil {{brand}}",
+      "subtitle": "Ce que les agents utilisent pour personnaliser tes analyses."
+    },
+    "status": {
+      "succeeded": "Disponible",
+      "generating": "En cours",
+      "failed": "Échec — raison non enregistrée",
+      "failedWithReason": "Échec — {{reason}}",
+      "notGenerated": "Non généré"
+    },
+    "failure": {
+      "model_error": "Le modèle n’a pas rendu de profil exploitable.",
+      "model_unreachable": "Le service d’analyse n’a pas répondu.",
+      "persist_failed": "Le profil a été produit mais n’a pas pu être enregistré."
+    },
+    "toc": {
+      "recap": "Résumé",
+      "personalization": "Personnalisation",
+      "coaching": "Coaching"
+    },
+    "emptyState": {
+      "description": "Aucun profil généré pour le moment. Lance une génération pour personnaliser les analyses des autres agents."
+    },
+    "generate": {
+      "loading": "Génération en cours…",
+      "cta": "Régénérer mon profil"
+    },
+    "regenerate": {
+      "cta": "Régénérer mon contexte IA",
+      "title": "Régénérer ton contexte IA ?",
+      "description": "{{brand}} va relancer l'analyse de ton profil et remplacer le contexte actuel. La version actuelle reste consultable et restaurable dans « Versions ».",
+      "confirm": "Régénérer",
+      "toastStarted": "Régénération lancée…",
+      "toastError": "Impossible de lancer la régénération. Réessaie dans un instant."
+    },
+    "regenerateSection": {
+      "cta": "Régénérer cette section",
+      "title": "Régénérer cette section ?",
+      "description": "{{brand}} va relancer l'analyse de ton profil, mais ne remplace que cette section — le reste de ton contexte IA ne bouge pas.",
+      "confirm": "Régénérer",
+      "toastSuccess": "Section régénérée.",
+      "toastError": "Impossible de régénérer cette section. Réessaie dans un instant."
+    },
+    "versions": {
+      "title": "Versions",
+      "subtitle": "Historique de ton contexte IA. Restaure une version précédente à tout moment.",
+      "versionLabel": "Version {{version}}",
+      "current": "Actuelle",
+      "superseded": "Remplacée",
+      "lastValidated": "Dernière validée",
+      "restore": "Restaurer",
+      "confirmTitle": "Restaurer la version {{version}} ?",
+      "confirmDescription": "Cette version remplacera ton contexte IA actuel. L'opération est réversible : la version actuelle reste dans l'historique.",
+      "confirmCta": "Restaurer",
+      "toastRestored": "Version {{version}} restaurée",
+      "toastError": "Restauration impossible. Réessaie dans un instant."
+    },
+    "coaching": {
+      "title": "Coaching personnalisé",
+      "vigilance": "Point de vigilance"
+    },
+    "impactedAccounts": {
+      "title": "Comptes concernés par ce changement",
+      "description_one": "{{count}} compte a été analysé avec un profil antérieur.",
+      "description_other": "{{count}} comptes ont été analysés avec un profil antérieur.",
+      "hint": "Rien n'est rejoué automatiquement : ouvre un dossier pour proposer son recalcul, à son coût."
+    },
+    "recap": {
+      "title": "Ton profil {{brand}}",
+      "edit": "Modifier mon profil",
+      "correct": "Corriger ce résumé",
+      "corrected": "Corrigé",
+      "correctionSave": "Enregistrer",
+      "correctionCancel": "Annuler"
+    },
+    "personalization": {
+      "title": "Ce que {{brand}} personnalise pour toi",
+      "searches": "Recherches personnalisées",
+      "contacts": "Contacts personnalisés",
+      "messages": "Messages personnalisés",
+      "scoring": "Scoring personnalisé"
+    },
+    "suggestions": {
+      "title": "Lancer ta première analyse",
+      "subtitle": "Clique sur une suggestion ci-dessous pour lancer ta première analyse et continuer.",
+      "columns": { "account": "Compte", "sector": "Secteur visé", "reason": "Pourquoi", "action": "Action" },
+      "analyze": "Analyser"
+    },
+    "archetype": {
+      "soloHunter": "Chasseur solo",
+      "boutiqueExpert": "Boutique experte",
+      "midMarketChallenger": "Challenger mid-market",
+      "scaleUp": "Scale-up",
+      "enterprisePlayer": "Enterprise player"
+    },
+    "posture": {
+      "expertiseRare": "Expertise rare",
+      "volumeFlexible": "Volume flexible",
+      "strategicConsulting": "Conseil stratégique",
+      "nearshoreCompetitive": "Nearshore compétitif",
+      "nicheVerticals": "Verticaux de niche"
+    },
+    "accountSize": {
+      "pme": "PME",
+      "eti": "ETI",
+      "grandCompte": "Grand compte",
+      "all": "Toutes tailles"
+    },
+    "task": {
+      "title": "Mise à jour du profil {{brand}}",
+      "label": "Profil",
+      "inProgress": "En cours",
+      "subtitle": "{{step}}…",
+      "done": "Profil à jour."
+    },
+    "toast": {
+      "updated": "Ton profil {{brand}} a été mis à jour."
+    }
+  },
+  "targetPersonas": {
+    "title": "Postes que tu vises",
+    "description": "Importe tes intitulés cibles avec leur niveau décideur : ils ordonnent les contacts d'un compte (jamais ne les filtrent) et la raison s'affiche sur chaque fiche.",
+    "format": "Colonnes : catégorie, intitulé, niveau décideur (1 à 4). Fichier csv (séparateur ; ou ,) ou xlsx.",
+    "levelsTitle": "Les quatre niveaux",
+    "levels": {
+      "1": "Niveau 1 — signataire / acheteur final",
+      "2": "Niveau 2 — décideur",
+      "3": "Niveau 3 — prescripteur",
+      "4": "Niveau 4 — influenceur"
+    },
+    "count_one": "{{count}} poste cible enregistré.",
+    "count_other": "{{count}} postes cibles enregistrés.",
+    "empty": "Aucun poste cible importé : l'ordre des contacts ne change pas.",
+    "replaceHint": "Un nouvel import remplace l'ensemble des postes cibles.",
+    "chooseCsv": "Importer un csv",
+    "chooseXlsx": "Importer un xlsx",
+    "working": "Import en cours…",
+    "failed": "L'import a échoué.",
+    "summary_one": "{{count}} poste importé.",
+    "summary_other": "{{count}} postes importés.",
+    "fed": "{{count}} intitulé(s) de niveau 1-2 ajouté(s) à tes interlocuteurs décideurs.",
+    "missingColumn": {
+      "title": "Colonne « intitulé » introuvable : rien n'a été importé.",
+      "level": "Colonne « niveau décideur » introuvable : rien n'a été importé."
+    },
+    "rejectedTitle": "Lignes ignorées ({{count}})",
+    "rejected": {
+      "level_missing": "ligne {{line}} : niveau absent",
+      "level_invalid": "ligne {{line}} : niveau invalide (attendu de 1 à 4)",
+      "title_missing": "ligne {{line}} : intitulé absent"
+    },
+    "locked": "Seul un responsable de l'espace peut importer les postes cibles."
+  },
+  "offerPortfolio": {
+    "title": "Portefeuille d'offre",
+    "subtitle": "Ce que ton entreprise vend, à quels secteurs, sur quels sites — et le vocabulaire qu'elle emploie.",
+    "loading": "Chargement du portefeuille",
+    "locked": "Seul un responsable d'équipe peut modifier le portefeuille de la société.",
+    "understood": {
+      "title": "Ce que {{brand}} a compris",
+      "sentence": "Tu es une {{companyType}}, et tu vends principalement : {{domains}}.",
+      "positioning": "Ton mode d'intervention : {{positioning}}.",
+      "noDomains": "aucun domaine sélectionné",
+      "unknown": "Aucun domaine d'offre sélectionné : {{brand}} ne peut pas encore dire ce que tu vends. Complète ton offre dans le profil.",
+      "notConfigured": "Rien n'est encore configuré ici — ce que tu vois plus bas est vide, pas un choix par défaut.",
+      "positioningLabel": "Mode d’intervention",
+      "lockedReason": "Réservé aux administrateurs de l’espace — tu peux signaler une erreur."
+    },
+    "companyType": {
+      "esn_it": "société de services numériques",
+      "finance": "société de conseil en finance",
+      "supply_chain": "société de conseil en supply chain",
+      "product_design": "société de conseil en produit et design",
+      "pmo": "société de conseil en pilotage de projets",
+      "rh": "société de conseil en ressources humaines",
+      "generic": "société de conseil",
+      "industrial_engineering": "société de conseil en ingénierie industrielle",
+      "ia": "société de conseil en intelligence artificielle",
+      "cyber": "société de conseil en cybersécurité",
+      "hse": "société de conseil en environnement et HSE"
+    },
+    "sectors": {
+      "title": "Secteurs d'application visés",
+      "hint": "Le marché dans lequel tes prestations sont délivrées. Sert au rapprochement avec les projets et l'expérience de tes consultants — vide veut dire « pas de ciblage déclaré », jamais « tous »."
+    },
+    "site": {
+      "title": "Politique de site",
+      "hint": "Une préférence, pas une règle : un site sous le seuil reste proposé s'il porte un signal fort.",
+      "minHeadcount": "Effectif minimum sur site",
+      "noThreshold": "aucun seuil"
+    },
+    "siteTypes": {
+      "siege": "Siège",
+      "R&D": "Centre R&D",
+      "usine": "Usine",
+      "datacenter": "Datacenter",
+      "agence": "Agence",
+      "bureau commercial": "Bureau commercial",
+      "centre de services": "Centre de services",
+      "bureau d’études": "Bureau d'études",
+      "entrepôt": "Entrepôt",
+      "site énergie": "Site énergie",
+      "chantier": "Chantier"
+    },
+    "lexicon": {
+      "movedTitle": "Lexique de l’espace",
+      "movedHint": "Les mots interdits et le nom que ton équipe donne à chaque objet du produit vivent maintenant sur leur propre écran — un réglage ne s’édite qu’à un seul endroit.",
+      "movedLink": "Ouvrir le lexique"
+    },
+    "soldSeniority": {
+      "title": "Niveaux que tu places",
+      "hint": "Coche les niveaux de consultants que la société vend. Non renseigné, les offres d'emploi ne sont pas comparées à ton offre.",
+      "levels": {
+        "junior": "Junior",
+        "confirme": "Confirmé",
+        "senior": "Senior"
+      }
+    },
+    "feedbackReuse": {
+      "label": "Partager avec la recette produit de {{brand}} le verdict de mes premières analyses (juste, partiel, faux, manquant)",
+      "hint": "Fermé par défaut. Seul le verdict part — jamais le nom du compte ni le texte d'une précision. S'applique aux verdicts donnés à partir de maintenant : ceux déjà donnés restent privés à ton espace."
+    }
+  },
+  "placedRoles": {
+    "title": "Métiers que tu places",
+    "label": "Métiers que tu places",
+    "description": "Les métiers que ton entreprise place réellement (développeur, data, cloud…). Une offre d'emploi hors de ces métiers passe après les autres dans « Pourquoi maintenant ». La même réponse que la question du complément de profil : la modifier ici la modifie là-bas.",
+    "placeholder": "Ex. Développeur, Data, Cloud",
+    "empty": "Aucun métier déclaré : les offres d'emploi restent « non évaluables », jamais pénalisées.",
+    "locked": "Seul un administrateur de l'espace peut modifier les métiers placés.",
+    "saved": "Métiers placés enregistrés",
+    "error": "Les métiers placés n'ont pas pu être enregistrés.",
+    "inferred": {
+      "title": "Déduits de ton contexte",
+      "badge": "déduit",
+      "whenNotDeclared": "Tant que tu n'en déclares aucun, ces métiers élargissent tes signaux de recrutement et passent en tête — ils n'en retirent jamais. Confirme-les ou retire-les.",
+      "whenDeclared": "Tes métiers déclarés font foi : ceux-ci restent des propositions tant que tu ne les confirmes pas.",
+      "questionTitle": "Quels métiers places-tu ?",
+      "questionBody": "Rien dans ton contexte (profil, offre, vivier, missions) ne permet encore de le déduire, et on ne devine pas. Dis-le ci-dessus : tes signaux de recrutement suivront tes métiers.",
+      "evidenceLine": "{{source}} · « {{excerpt}} »",
+      "source": {
+        "onboarding": "Ton profil",
+        "offer_portfolio": "Ton offre",
+        "talent_pool": "Ton vivier",
+        "missions": "Une mission gagnée"
+      },
+      "moreEvidence_one": "+ {{count}} autre indice",
+      "moreEvidence_other": "+ {{count}} autres indices",
+      "confirm": "Confirmer",
+      "confirmAria": "Confirmer {{role}}",
+      "dismiss": "Retirer",
+      "dismissAria": "Retirer {{role}}",
+      "dismissed": "Métier retiré : il ne reviendra pas.",
+      "full": "Six métiers déclarés au plus : retires-en un pour confirmer celui-ci."
+    }
+  },
+  "framing": {
+    "eyebrow": "Paramètres · Profil",
+    "subtitle": "Tu peux ajuster ton contexte sans recommencer le produit. Corrige un thème, puis relis ce que {{copilot}} en déduit.",
+    "seeAudit": "Voir mon audit",
+    "export": "Exporter mon cadrage",
+    "reread": "Relire mon cadrage par thème",
+    "continue": "Continuer le questionnaire",
+    "answerCount_one": "{{count}} réponse renseignée",
+    "answerCount_other": "{{count}} réponses renseignées",
+    "noAnswer": "Aucune réponse renseignée pour l’instant.",
+    "maturity": {
+      "title": "Ta maturité commerciale",
+      "subtitle": "Calculée sur tes réponses et sur ton activité. Un axe non évaluable sort du calcul : il n’est pas compté comme zéro."
+    },
+    "context": {
+      "title": "Ce que {{copilot}} sait de ton ESN",
+      "subtitle": "Le détail derrière le cadrage. Chaque ligne se corrige ici, sans repasser le questionnaire."
+    },
+    "sensitive": {
+      "title": "Reconfigurer ou repartir de zéro",
+      "subtitle": "Réponses à revoir, zone sensible"
+    },
+    "title": "Ton profil de travail"
+  }
+}

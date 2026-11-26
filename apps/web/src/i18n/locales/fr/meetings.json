@@ -1,0 +1,143 @@
+{
+  "cascade": {
+    "title": "Ton rendez-vous est traité.",
+    "titleWithName": "Ton rendez-vous avec {{name}} est traité.",
+    "subtitle_one": "{{count}} sortie préparée · aucune action externe envoyée",
+    "subtitle_other": "{{count}} sorties préparées · aucune action externe envoyée",
+    "sourcedFromTranscript": "transcript sourcé",
+    "sourcedFromNotes": "notes sourcées",
+    "empty": "Rien à préparer : ces notes ne portent aucune décision, aucune action, aucun signal.",
+    "dropped_one": "{{count}} sortie a été écartée : rien dans les notes ne la justifiait.",
+    "dropped_other": "{{count}} sorties ont été écartées : rien dans les notes ne les justifiait.",
+    "excerptLabel": "Extrait source",
+    "notesDerived": "Notes prises à la main — aucune phrase n’est citée telle quelle.",
+    "moreExcerpts_one": "et {{count}} autre extrait",
+    "moreExcerpts_other": "et {{count}} autres extraits",
+    "showExcerpts": "Voir les extraits",
+    "hideExcerpts": "Masquer les extraits",
+    "stage": {
+      "pickDeal": "Quelle affaire déplacer ?",
+      "placeholder": "Choisis une affaire",
+      "currentStage": "aujourd’hui : {{stage}}",
+      "unknownStage": "stade actuel non lu",
+      "noCrm": "Aucun CRM branché : il n’y a nulle part où déplacer une affaire.",
+      "noDeals": "Aucune affaire ouverte trouvée dans ton CRM pour ce compte. Le stade proposé reste lisible ci-dessus.",
+      "pending": "Ce que tu valides ici est une PROPOSITION : elle attend un accord au Centre d’actions, et expire au bout de trois jours.",
+      "loading": "Lecture des stades de ton CRM…",
+      "pickStage": "Vers quel stade du pipeline « {{pipeline}} » ?",
+      "stagePlaceholder": "Choisis un stade",
+      "pipeline": "Pipeline : {{pipeline}}",
+      "noExactMatch": "Le stade proposé (« {{stage}} ») ne correspond exactement à aucun stade de ce pipeline : choisis-le toi-même.",
+      "dealPipelineUnknown": "Le pipeline de cette affaire n’a pas été retrouvé dans ton CRM : aucun stade ne peut lui être proposé.",
+      "unreadable": {
+        "scope": "Ton CRM n’autorise pas la lecture de ses stades : reconnecte-le depuis Réglages › Intégrations. Rien ne peut être proposé d’ici là.",
+        "empty": "Ton CRM n’a renvoyé aucun pipeline d’affaires : aucun stade ne peut être proposé.",
+        "other": "Les stades de ton CRM n’ont pas pu être lus : rien ne peut être proposé d’ici là."
+      }
+    },
+    "userStatement": "Ta déclaration — pas une phrase du client.",
+    "depositDraft": {
+      "label": "Adresse du destinataire",
+      "placeholder": "nom@entreprise.com",
+      "done": "Brouillon déposé dans ta messagerie.",
+      "openLink": "Ouvrir le brouillon"
+    }
+  },
+  "outputs": {
+    "recap": "Compte rendu structuré",
+    "opportunity": "Opportunité détectée",
+    "need": "Besoin exprimé",
+    "contacts_one": "{{count}} contact mentionné",
+    "contacts_other": "{{count}} contacts mentionnés",
+    "next_steps_one": "{{count}} next step",
+    "next_steps_other": "{{count}} next steps",
+    "follow_up_email": "Mail de suivi",
+    "crm_stage": "Mise à jour CRM",
+    "reminder": "Relance",
+    "learnings_one": "Objection & engagement",
+    "learnings_other": "Objections & engagements",
+    "client_issue": "Problème client"
+  },
+  "states": {
+    "to_validate": "À valider",
+    "draft": "Brouillon",
+    "draft_go_no_go": "Brouillon GO/NO-GO",
+    "to_confirm": "À confirmer",
+    "dated_and_owned": "Datés et assignés",
+    "partially_dated": "Sans date ni propriétaire pour certains",
+    "separate_draft": "Brouillon séparé",
+    "stage_proposed": "Stade proposé",
+    "scheduled_draft": "Brouillon planifié",
+    "account_memory": "Mémoire compte",
+    "to_qualify": "Projet à qualifier",
+    "potential_need": "Besoin potentiel"
+  },
+  "bands": {
+    "a0": "A0",
+    "a1": "A1",
+    "a2": "A2",
+    "a3": "A3",
+    "a0Help": "A0 — {{brand}} lit, calcule et explique. Aucune écriture.",
+    "a1Help": "A1 — {{brand}} prépare un brouillon. Rien n’est posé.",
+    "a2Help": "A2 — écriture interne, après ton accord.",
+    "a3Help": "A3 — cette sortie vise l’extérieur. Elle reste un brouillon séparé et ne part jamais avec le lot."
+  },
+  "actions": {
+    "validate": "Valider",
+    "ignore": "Ignorer",
+    "copyDraft": "Copier le brouillon",
+    "copied": "Copié",
+    "depositDraft": "Déposer en brouillon",
+    "depositingDraft": "Dépôt en cours…"
+  },
+  "panel": {
+    "title": "Avant validation",
+    "internalWrites": "Écritures internes : {{list}}.",
+    "noInternalWrites": "Aucune écriture interne à valider.",
+    "externalDrafts_one": "Action externe : {{list}} reste un brouillon séparé.",
+    "externalDrafts_other": "Actions externes : {{list}} restent des brouillons séparés.",
+    "noExternalDrafts": "Aucune action externe : rien ne vise l’extérieur dans ce rendez-vous.",
+    "sources": "Sources : {{list}}",
+    "validateInternal_one": "Valider {{count}} écriture interne",
+    "validateInternal_other": "Valider {{count}} écritures internes",
+    "externalNeverBatched": "Les brouillons vers l’extérieur ne sont jamais emportés par ce bouton. Tu les relis et tu les envoies toi-même."
+  },
+  "counts": {
+    "recap": "1 compte rendu",
+    "opportunity": "1 opportunité",
+    "need": "1 besoin",
+    "contacts_one": "{{count}} contact",
+    "contacts_other": "{{count}} contacts",
+    "next_steps_one": "{{count}} tâche",
+    "next_steps_other": "{{count}} tâches",
+    "crm_stage": "1 stade CRM",
+    "learnings_one": "{{count}} apprentissage",
+    "learnings_other": "{{count}} apprentissages",
+    "client_issue": "1 problème client"
+  },
+  "sources": {
+    "transcript": "transcript",
+    "notes": "notes",
+    "crm": "CRM",
+    "calendar": "agenda",
+    "imported_report": "compte rendu importé",
+    "email": "e-mail collé",
+    "user_statement": "ta déclaration"
+  },
+  "outcomes": {
+    "done": "Écrit.",
+    "partial": "Écrit en partie.",
+    "failed": "Rien n’a été écrit.",
+    "skipped": "Rien à écrire.",
+    "blocked": "Pas encore branché ici.",
+    "proposed": "Proposé — rien n’est écrit tant que tu ne l’as pas validé au Centre d’actions.",
+    "blockedMissing": "Pas encore branché ici — il manque : {{capability}}.",
+    "capability": {
+      "crm": "ton CRM",
+      "contacts": "le répertoire de contacts",
+      "needs": "les besoins",
+      "notes": "le carnet du compte",
+      "account_memory": "la mémoire du compte"
+    }
+  }
+}

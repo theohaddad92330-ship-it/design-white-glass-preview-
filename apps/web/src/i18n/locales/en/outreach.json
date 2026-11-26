@@ -1,0 +1,1874 @@
+{
+  "library": {
+    "shared": {
+      "team": "Shared with the team",
+      "personal": "Personal",
+      "by": "By {{name}}",
+      "updatedOn": "Updated on {{date}}",
+      "share": "Share with the team",
+      "makePersonal": "Make personal",
+      "filterAll": "All",
+      "filterTeam": "From the team"
+    },
+    "title": "Your campaign library",
+    "subtitle": "Import the campaigns you have already written (sector, tier, D+n steps, subject, body with variables: first name, company, signature), then apply one to a contact. Everything is prepared, nothing is sent on its own: you send.",
+    "loading": "Loading your library…",
+    "empty": "No campaign imported yet.",
+    "tier": "Tier {{tier}}",
+    "steps_one": "{{count}} step",
+    "steps_other": "{{count}} steps",
+    "remove": "Remove",
+    "import": {
+      "cta": "Import a file",
+      "input": "Campaigns file (.xlsx or .csv)",
+      "tooLarge": "This file is larger than 4 MB.",
+      "failed": "I could not read this file: an .xlsx workbook or a .csv is expected.",
+      "summary": "{{templates}} campaign(s) imported, {{steps}} step(s). Statistics columns and tabs are not imported.",
+      "unknownVariables_one": "Unknown variable left as-is in the text: {{variables}}.",
+      "unknownVariables_other": "Unknown variables left as-is in the text: {{variables}}.",
+      "skipped": "{{count}} row(s) skipped:",
+      "skippedLine": "Row {{line}} — {{reason}} (campaign: {{campaign}})",
+      "reasons": {
+        "no_campaign": "campaign name missing",
+        "no_body": "message body missing",
+        "bad_delay": "unreadable D+n delay",
+        "bad_tier": "unknown tier (A, B or C expected)",
+        "too_many_steps": "more than 12 steps in this campaign"
+      },
+      "summaryScripts_one": "{{count}} call script kept.",
+      "summaryScripts_other": "{{count}} call scripts kept."
+    },
+    "apply": {
+      "cta": "Apply to a contact",
+      "search": "Search a contact",
+      "pick": "Apply to {{name}}",
+      "done": "Sequence “{{name}}” prepared for {{contact}}. Nothing is sent.",
+      "blockedStep": "Step {{step}} blocked — {{variables}}",
+      "failed": "I could not apply this campaign."
+    },
+    "callScripts_one": "{{count}} call script",
+    "callScripts_other": "{{count}} call scripts"
+  },
+  "page": {
+    "title": "Sequences",
+    "heading": "Your sequences",
+    "subtitle": "Find your campaigns and move forward step by step, without losing your drafts.",
+    "loading": "Loading your sequences…",
+    "create": "Create a sequence",
+    "automationsLink": {
+      "text": "A sequence that starts on a signal is an automation: same engine, same steps, same approval. You will find yours in the tab",
+      "cta": "Automations",
+      "ctaCount_one": "Automations · {{count}}",
+      "ctaCount_other": "Automations · {{count}}"
+    },
+    "empty": {
+      "title": "You have no sequence yet.",
+      "description": "Start from your contacts, import a list, or ask {{copilot}} to draft your first cadence.",
+      "cta": "Pick contacts",
+      "noIntegration": "Connect your mailbox so I can prepare your sends. Without it, every message is still there to copy by hand.",
+      "ctaConnect": "Connect my mailbox"
+    },
+    "noMailboxTitle": "No mailbox connected",
+    "noMailboxDescription": "Your imported campaigns are here and can be prepared; nothing is sent until your mailbox is connected.",
+    "stillPossible": "reviewing sequences and drafting their messages",
+    "moreOptions": "More options: templates by situation, contact list, sending, deliverability",
+    "importedCampaigns": "Your imported campaigns are here: apply one to a contact to create its sequence.",
+    "library": "Template library",
+    "moreActions": "More options"
+  },
+  "whatItIs": {
+    "title": "What a sequence is, and what it is not",
+    "sequenceLabel": "Sequence",
+    "sequenceText": "a cadence of planned touches around one contact: first message, follow-up, proof, close-loop.",
+    "automationLabel": "Automation",
+    "automationText": "an action triggered by a rule or an event, without you being there.",
+    "journeyLabel": "Journey",
+    "journeyText": "where a deal stands in your process, stage by stage.",
+    "openAutomations": "See your automations",
+    "openJourneys": "See your journeys"
+  },
+  "kpi": {
+    "active": "Active sequences",
+    "dueToday": "Due today",
+    "replied": "Replies received",
+    "blocked": "Blocked",
+    "filtered": "Filtered on “{{label}}”",
+    "clear": "Clear the filter"
+  },
+  "channels": {
+    "title": "What the engine can actually do, per channel",
+    "email": "Email",
+    "emailReady": "Your mailbox is connected. The message is PREPARED and dated — you send it, or delegate sending through a bounded mandate.",
+    "emailMissing": "No mailbox connected. Messages are still prepared, and can be copied.",
+    "reminder": "Reminder",
+    "reminderWhat": "A dated reminder inside {{brand}}, for what you do yourself — a call, a message on a network.",
+    "task": "Task",
+    "taskWhat": "A dated task, for what happens before writing — check a signal, align with the delivery team.",
+    "nothingAuto": "Nothing goes out on its own: without a mandate, every email waits for your action. A mandate is your explicit, bounded, revocable action; private messages on a network and calls are never sent automatically.",
+    "onlyThree": "The engine knows these three step kinds and no others. A channel that is not listed here is not “coming soon”: it does not exist.",
+    "capability": {
+      "delegable": "Delegable by mandate",
+      "manual_only": "For you"
+    }
+  },
+  "deliverability": {
+    "title": "Deliverability",
+    "subtitle": "What actually arrived — beyond the fact that it was sent.",
+    "sent": "Sent",
+    "bounced": "Bounced",
+    "bounceRate": "Bounce rate",
+    "reasons": "Bounce reasons",
+    "domainReputation": "Domain reputation",
+    "complaints": "Complaints",
+    "notMeasuredDomainReputation": "No domain reputation connector is plugged in today.",
+    "notMeasuredComplaints": "No complaint webhook is plugged in today.",
+    "empty": "No send measured yet."
+  },
+  "columns": {
+    "sequence": "Sequence",
+    "mode": "Campaign mode",
+    "target": "Contact",
+    "account": "Account",
+    "channel": "Next step",
+    "steps": "Progress",
+    "nextDue": "Due",
+    "status": "Status",
+    "replies": "Replies",
+    "stops": "Stops",
+    "noRole": "Job title not filled in",
+    "noAccount": "No company",
+    "audience": "Audience",
+    "stepCount": "Steps",
+    "open": "Open",
+    "state": "State"
+  },
+  "detail": {
+    "title": "{{name}}",
+    "stopCondition": {
+      "live": "Stop condition: a reply or a firm refusal stops the cadence — no follow-up after that.",
+      "refused": "Stopped on a refusal: no follow-up will go out, the remaining steps are skipped.",
+      "bounced": "Stopped: the address failed, no follow-up will go out."
+    },
+    "timeline": "The cadence, step by step",
+    "close": "Close",
+    "openContact": "Open the contact",
+    "openAccount": "Open the account",
+    "stepDone": "Done on {{date}}",
+    "stepSkipped": "Skipped",
+    "stepPending": "Upcoming",
+    "stepDue": "Due today",
+    "stepLate": "Late",
+    "dateRange": "Dates: {{range}}",
+    "engagementSignalLabel": "Reported signal",
+    "engagementSignalUnspecified": "Nothing reported",
+    "engagementSignal": {
+      "opened": "Opened",
+      "clicked": "Clicked"
+    },
+    "backToList": "Back to sequences",
+    "frame": {
+      "title": "Frame of this campaign",
+      "channel": "Channel",
+      "stopRules": "Stop rules",
+      "stopRulesValue": "reply, opt-out, exclusion or pause",
+      "done": "Steps done"
+    },
+    "notFound": "This sequence does not exist (any more)."
+  },
+  "templates": {
+    "pick": "Pick a cadence",
+    "steps_one": "{{count}} touch",
+    "steps_other": "{{count}} touches",
+    "spanDays_one": "{{count}} day",
+    "spanDays_other": "{{count}} days",
+    "prospection_3_touches": {
+      "when": "The general case: a known contact, a first message, a reminder, a follow-up.",
+      "outcome": "Get a first answer, even a no."
+    },
+    "cold_linkedin": {
+      "when": "Cold account, over a network: no pressure before they accept. Following up on someone who has not accepted yet is being ignored twice.",
+      "outcome": "Open the conversation, not sell."
+    },
+    "cold_email": {
+      "when": "Cold account, by email: each touch carries DIFFERENT information. Repeating the same message three times is not a cadence.",
+      "outcome": "Land a conversation, or a clear answer that closes the door."
+    },
+    "fresh_signal": {
+      "when": "A very fresh signal: move fast, but check the signal first — a misread signal burns the account for six months.",
+      "outcome": "Be the first to raise it, with the right angle."
+    },
+    "profile_push": {
+      "when": "An available profile to put forward: availability and proof, never a generic CV. The window is short.",
+      "outcome": "Get a date to present the profile."
+    },
+    "existing_client": {
+      "when": "An active client: internal alignment comes BEFORE the follow-up. Writing without knowing what the delivery team is doing is the surest way to contradict yourself.",
+      "outcome": "Open an adjacent need."
+    },
+    "single_message": {
+      "when": "A single message is enough: a precise question, an answer to give — no cadence to build for a contact you already know.",
+      "outcome": "Get an answer to ONE question, without committing to a follow-up."
+    },
+    "call_session": {
+      "when": "A call session: phone first, not a written message waiting for a reply — useful when the conversation is worth more than text.",
+      "outcome": "Get a live exchange, or a callback time."
+    },
+    "light_sequence": {
+      "when": "A light cadence: two touches, widely spaced — so as not to pressure a contact you don't want to rush.",
+      "outcome": "Stay visible without seeming to insist."
+    },
+    "nurturing": {
+      "when": "A relationship to NURTURE, not convert right away: the pace is monthly, never an insistent follow-up.",
+      "outcome": "Stay the person they think of the day the need appears."
+    },
+    "post_meeting_followup": {
+      "when": "Right after a meeting: the recap fixes what was said before it fades, then two tight follow-ups while the meeting is still fresh.",
+      "outcome": "Move the decision forward while the meeting is still top of mind."
+    },
+    "referred_contact": {
+      "when": "A referral you received: the person already knows why you are reaching out, but the source is only named if they authorized it.",
+      "outcome": "Turn the referral into a real exchange."
+    },
+    "dormant_connection": {
+      "when": "An existing link gone quiet: acknowledge the time passed, give a real reason to reconnect, without false closeness.",
+      "outcome": "Reopen a link that had gone cold."
+    },
+    "esn_partner": {
+      "when": "An ESN partner — a referral source or subcontracting relationship: a business relationship between two companies, not a prospect to convert.",
+      "outcome": "Build a lasting collaboration, kept up over time."
+    },
+    "purpose": {
+      "prospection_3_touches.0": "First contact — why you, why now",
+      "prospection_3_touches.1": "Follow-up reminder — check the message landed",
+      "prospection_3_touches.2": "Follow-up and close-loop — propose a next step, or close cleanly",
+      "cold_linkedin.0": "Connection request — no pitch, no pressure",
+      "cold_linkedin.1": "Message after acceptance — introduce yourself, one sentence",
+      "cold_linkedin.2": "Value follow-up — bring something, do not ask again",
+      "cold_linkedin.3": "Final follow-up — leave the door open and stop there",
+      "cold_email.0": "First contact — the problem you know how to solve",
+      "cold_email.1": "Value follow-up — something they did not know",
+      "cold_email.2": "Social proof — a comparable case, with numbers",
+      "cold_email.3": "Close-loop — say this is the last one",
+      "fresh_signal.0": "Check the signal — a misread signal burns the account for six months",
+      "fresh_signal.1": "First contact — name the signal and what it implies",
+      "fresh_signal.2": "Follow-up — while the subject is still warm",
+      "fresh_signal.3": "Close-loop — close before the signal goes cold",
+      "profile_push.0": "Profile push — availability and proof, never a generic CV",
+      "profile_push.1": "Follow-up — the window is short",
+      "profile_push.2": "Follow-up — last chance before repositioning the profile",
+      "profile_push.3": "Close-loop and release — the profile does not stay available forever",
+      "existing_client.0": "Sync with the delivery team — know before you write",
+      "existing_client.1": "Adjacent proposal — start from what already runs",
+      "existing_client.2": "Follow-up — leave room for the internal decision",
+      "single_message.0": "Single message — the whole question, no follow-up planned",
+      "call_session.0": "Call — the conversation is worth more than text here",
+      "call_session.1": "Call back if unreachable — a second window, not an endless follow-up",
+      "light_sequence.0": "First contact — introduce the subject without forcing it",
+      "light_sequence.1": "Spaced follow-up — a reminder, not pressure",
+      "nurturing.0": "First share — a useful piece of information, asking nothing",
+      "nurturing.1": "Second touch — stay visible, at a monthly pace",
+      "nurturing.2": "Third touch — the regularity that builds memory, not urgency",
+      "post_meeting_followup.0": "Recap — what was said, before it fades",
+      "post_meeting_followup.1": "Follow-up — while the meeting is still fresh",
+      "post_meeting_followup.2": "Close-loop — get a decision or a clear reason to wait",
+      "referred_contact.0": "First message — name the source only if authorized, keep the context",
+      "referred_contact.1": "Follow-up — a question tied to the project, not pressure",
+      "referred_contact.2": "Close-loop — offer a next step, or close cleanly",
+      "dormant_connection.0": "Reconnect — acknowledge the old link, say why now",
+      "dormant_connection.1": "Follow-up — a concrete reason to reconnect",
+      "dormant_connection.2": "Close-loop — close cleanly if nothing moves",
+      "esn_partner.0": "Collaboration proposal — what each side gains, no sales pitch",
+      "esn_partner.1": "Follow-up — check the proposal landed, without pressing",
+      "esn_partner.2": "Partner check-in — keep the link alive, not close a sale"
+    },
+    "name": {
+      "prospection_3_touches": "Prospecting — 3 touches",
+      "cold_linkedin": "Cold account — via the network",
+      "cold_email": "Cold account — email",
+      "fresh_signal": "Fresh signal",
+      "profile_push": "Profile push",
+      "existing_client": "Active client — expansion",
+      "single_message": "Single message",
+      "call_session": "Call session",
+      "light_sequence": "Light sequence",
+      "nurturing": "Nurturing",
+      "post_meeting_followup": "Follow-up after a meeting",
+      "referred_contact": "Referral",
+      "dormant_connection": "Reactivation — existing link",
+      "esn_partner": "Partner"
+    }
+  },
+  "audience": {
+    "title": "For whom",
+    "pickContacts": "Pick from my contacts",
+    "importList": "Import a list",
+    "importFromCrm": "Import from my CRM",
+    "importHint": "Importing goes through the import screen, with its preview, its deduplication and its account matching.",
+    "crmHint": "No compatible CRM is connected. Once it is, your contacts arrive through the same import.",
+    "search": "Search a contact",
+    "selected_one": "{{count}} contact selected",
+    "selected_other": "{{count}} contacts selected",
+    "noEmail": "No email",
+    "optedOut": "Asked not to be contacted again",
+    "excluded": "Excluded",
+    "empty": "No contact matches.",
+    "willCreate_one": "One sequence will be created, on this contact.",
+    "willCreate_other": "{{count}} sequences will be created, one per contact — each pauses as soon as the person replies.",
+    "noEmailConfirm_one": "{{count}} contact without an email selected — I confirm anyway, its first touch won’t be able to go out.",
+    "noEmailConfirm_other": "{{count}} contacts without an email selected — I confirm anyway, their first touch won’t be able to go out.",
+    "ownedByColleagues_one": "1 selected contact is already owned by a colleague:",
+    "ownedByColleagues_other": "{{count}} selected contacts are already owned by a colleague:",
+    "ownedByColleagueNamed": "{{contact}} — owned by {{name}}",
+    "ownedByColleagueGeneric": "{{contact}} — owned by another workspace member",
+    "duplicateEmails_one": "1 selected contact shares its email address with another:",
+    "duplicateEmails_other": "{{count}} selected contacts share their email address with another:",
+    "duplicateEmailEntry": "{{contact}} — {{email}}",
+    "alreadyInSequence_one": "1 selected contact already has a sequence in progress:",
+    "alreadyInSequence_other": "{{count}} selected contacts already have a sequence in progress:",
+    "homonyms_one": "1 name is shared by several selected records — same person or not, your call (nothing is merged):",
+    "homonyms_other": "{{count}} names are shared by several selected records — same person or not, your call (nothing is merged):",
+    "homonymEntry": "{{contact}} ({{detail}})",
+    "homonymEntryNoEmail": "{{contact}} (no email)"
+  },
+  "kind": {
+    "email": "Email",
+    "reminder": "Reminder",
+    "task": "Task",
+    "linkedin_invite": "LinkedIn invitation",
+    "linkedin_message": "LinkedIn message",
+    "call": "Call"
+  },
+  "card": {
+    "title": "Outreach sequences",
+    "empty": "This contact isn’t part of any sequence.",
+    "create": "Add to a sequence",
+    "lastStep": "Last step: {{step}} · {{date}}",
+    "nextAction": "Next action: {{step}} · {{date}}",
+    "open": "Open in Actions → Sequences",
+    "neverAutoSend": "Nothing goes out without your approval — unless you delegate sending yourself, through a bounded, revocable mandate (Actions → Sequences)."
+  },
+  "messagesCard": {
+    "title": "Prepared messages",
+    "recipient": "To: {{name}}",
+    "version": "Version {{version}}",
+    "approved": "Approved: version {{version}}",
+    "resume": "Resume the draft",
+    "openQueue": "Open the approval queue"
+  },
+  "callCard": {
+    "openPage": "Open the call support",
+    "title": "Call",
+    "explain": "Scheduling creates an upcoming task (reason, objective, expected outcome) under Actions › Sequences › Calls. A call already made is logged, not scheduled.",
+    "upcoming": "Calls to make",
+    "upcomingLink": "See in Actions › Sequences › Calls",
+    "prepare": "Prepare my call",
+    "log": "Log a call",
+    "propose": "Schedule a call",
+    "dialogTitle": "Schedule a call",
+    "reasonLabel": "Reason for the call",
+    "reasonPlaceholder": "E.g. Follow-up after silence",
+    "objectiveLabel": "Objective of the call",
+    "objectivePlaceholder": "E.g. Schedule a meeting",
+    "expectedOutcomeLabel": "Expected outcome",
+    "expectedOutcomePlaceholder": "E.g. A confirmed meeting date",
+    "cancel": "Cancel",
+    "submit": "Save"
+  },
+  "prospectingThread": {
+    "banner": "Prospecting thread — \"prepare the send\" step",
+    "next": "Next step: see the CRM trace"
+  },
+  "prospectingMetrics": {
+    "title": "Prospecting telemetry",
+    "subtitle": "By journey — never by person.",
+    "timeToFirstMessage": "Time to first message",
+    "modifiedMessageRate": "Modified message rate",
+    "connectorSuccessRate": "Connector success rate",
+    "duplicatesAvoided": "Duplicates avoided",
+    "notMeasured": "Not enough sessions yet, or no fact measured on this journey",
+    "seconds_one": "{{count}} second",
+    "seconds_other": "{{count}} seconds"
+  },
+  "campaign": {
+    "preparedFromAccount": "Prefilled from the account file",
+    "preparedByLaura": "Campaign prepared by {{copilot}}",
+    "preparedCallList": "Call list prepared by {{copilot}}",
+    "persona": "Target persona: {{value}}",
+    "relation": "Relationship: {{value}}",
+    "tone": "Tone: {{value}}",
+    "mode": "Mode: {{value}}",
+    "channels": "Wanted channels: {{value}}",
+    "resolving": "Checking this campaign’s contacts…",
+    "audienceReady_one": "{{count}} contact ready for this campaign.",
+    "audienceReady_other": "{{count}} contacts ready for this campaign.",
+    "noneUsable": "None of these contacts can be used for a campaign. Pick others, or complete their records.",
+    "resume": "Resume",
+    "dropped": {
+      "title": "Left out of this campaign:",
+      "optedOut": "{{name}} — excluded contact.",
+      "optedOutWithReason": "{{name}} — excluded contact: {{reason}}",
+      "missing": "{{name}} — not found in your portfolio.",
+      "unreadable": "{{name}} — record not read, I don’t know whether it is still there."
+    },
+    "relationValue": {
+      "cold": "cold outreach",
+      "warm": "relationship already started",
+      "referred": "referred by a third party",
+      "existing": "existing client"
+    },
+    "channelValue": {
+      "email": "email",
+      "linkedin": "direct message",
+      "phone": "phone"
+    },
+    "modeValue": {
+      "nurturing": "nurturing, relationship to maintain"
+    },
+    "lead": "Audience, content and follow-up in the same campaign file.",
+    "pause": "Pause",
+    "resumed": "Sequence resumed: due steps land in To do.",
+    "paused": "Sequence paused.",
+    "cancelled": "Sequence stopped.",
+    "menu": {
+      "duplicate": "Duplicate…",
+      "resume": "Resume",
+      "cancel": "Stop the sequence…",
+      "cancelShort": "Stop the sequence"
+    },
+    "pauseDialog": {
+      "title": "Pause the sequence?",
+      "body": "No more steps land in To do. Drafts already prepared stay yours; scheduled sends are suspended. On resume, each contact restarts from their step."
+    },
+    "cancelDialog": {
+      "title": "Stop the sequence?",
+      "body_one": "The sequence stops for this contact and moves to “Stopped”. Steps done and replies stay in the history; it can be duplicated.",
+      "body_other": "The sequence stops for all {{count}} contacts and moves to “Stopped”. Steps done and replies stay in the history; it can be duplicated."
+    },
+    "bridge": {
+      "title": "This sequence’s messages",
+      "done_one": "{{count}} step done",
+      "done_other": "{{count}} steps done",
+      "replies_one": "{{count}} reply",
+      "replies_other": "{{count}} replies",
+      "stopped_one": "{{count}} contact stopped, without stopping the whole audience",
+      "stopped_other": "{{count}} contacts stopped, without stopping the whole audience",
+      "open": "Messages & replies"
+    },
+    "prepareDrafts": "Prepare the drafts for “{{step}}”",
+    "prepareDraftsHint": "Prepared per recipient. Each draft lands in To do: you validate, then send or schedule the time.",
+    "prepareDraftsPrompt": "Prepare the drafts for the step “{{step}}” for: {{names}}. One draft per recipient, that I review in To do before anything is sent.",
+    "started": "Started {{date}}",
+    "messages": "The sequence’s messages",
+    "audience": "Audience",
+    "day": "D{{day}}",
+    "seeMessage": "See the message",
+    "purpose": {
+      "email": "An email written by {{copilot}} for each recipient, to review in To do.",
+      "reminder": "An internal reminder, at your pace.",
+      "task": "A task prepared for each contact.",
+      "linkedin_invite": "A professional-network invitation, without a note, for you to send.",
+      "linkedin_message": "A professional-network message written by {{copilot}}, for you to send.",
+      "call": "A call to make, with its outline prepared by {{copilot}}."
+    },
+    "step": {
+      "done_one": "Done · {{count}} contact, on {{date}}",
+      "done_other": "Done · {{count}} contacts, on {{date}}",
+      "dueToday_one": "To validate today · {{count}} contact",
+      "dueToday_other": "To validate today · {{count}} contacts",
+      "late_one": "Late · {{count}} contact",
+      "late_other": "Late · {{count}} contacts",
+      "planned": "Planned for {{date}}",
+      "skipped_one": "Skipped for {{count}} (reply or stop)",
+      "skipped_other": "Skipped for {{count}} (reply or stop)"
+    },
+    "person": {
+      "replied": "Replied",
+      "refused": "Stopped · opt-out",
+      "bounced": "Stopped · invalid address",
+      "stopped": "Stopped",
+      "meeting": "Meeting booked",
+      "completed": "Completed",
+      "paused": "Paused",
+      "dueNow": "{{kind}} to validate · {{date}}",
+      "next": "Next step: {{kind}} on {{date}}",
+      "idle": "No step coming"
+    },
+    "thisContact": "this contact",
+    "stopFor": "Stop for {{name}}",
+    "stopForShort": "Stop for this contact",
+    "openContact": "Open {{name}}’s page",
+    "stoppedFor": "Sequence stopped for {{name}} only; the rest of the audience carries on.",
+    "edit": {
+      "cta": "Edit the sequence",
+      "title": "Edit the sequence",
+      "lead": "Each person has their own cadence: an edit applies to them alone. Add, remove or reorder their steps, change their channel and delay.",
+      "who": "Cadence of"
+    },
+    "dry": {
+      "eyebrow": "Test how it works",
+      "title": "See what comes next before it arrives?",
+      "lead": "A dry run shows what the sequence will prepare, for whom and when. No message is sent.",
+      "cta": "Run a dry run",
+      "dialogTitle": "Dry run",
+      "dialogLead": "Here is what the sequence will prepare if nothing changes. Nothing is created: no task, no message.",
+      "empty": "Nothing is coming: every step is done or skipped, or the sequence is stopped.",
+      "note": "No message is sent. Drafts land in To do, already written.",
+      "what": {
+        "email": "drafts to validate in To do",
+        "call": "call task",
+        "task": "task to do"
+      }
+    },
+    "frame": {
+      "send": "Sending",
+      "sendValue": "Each step validated by you · now or at the time you choose",
+      "stopValue": "Reply, opt-out, meeting booked, pause"
+    },
+    "calls": {
+      "title": "Sequence calls",
+      "prepare": "Prepare the call",
+      "preparePrompt": "Prepare the outline for my call with {{name}}: context, three points to raise, the opening question. I’ll review before calling.",
+      "log": "Log the outcome"
+    },
+    "replies": {
+      "title": "Messages & replies",
+      "lead": "Who replied, what is done, what waits for your validation.",
+      "tab": {
+        "replies": "Replies · {{count}}",
+        "done": "Done · {{count}}",
+        "prepared": "Prepared · {{count}}"
+      },
+      "empty": {
+        "replies": "No reply yet.",
+        "done": "No step done yet.",
+        "prepared": "No draft is waiting for your validation."
+      },
+      "doneCount_one": "{{count}} step done",
+      "doneCount_other": "{{count}} steps done",
+      "hint": "A reply stops the follow-ups for that contact. The full text stays in your mailbox.",
+      "mailbox": "Open the mailbox"
+    },
+    "duplicate": {
+      "title": "Duplicate the sequence",
+      "lead": "Steps and cadence are copied. You pick the new audience at the next step; nothing starts before you review it.",
+      "name": "Name of the copy",
+      "copyName": "{{name}} (copy)",
+      "go": "Duplicate and pick the audience"
+    },
+    "resumePreparation": "Resume preparing",
+    "moreActions": "More actions"
+  },
+  "preview": {
+    "title": "Message preview, contact by contact",
+    "unknown": "Preview not loaded for this contact — the draft is written at creation, then you review it in “To validate”. Nothing is sent without your approval.",
+    "blocked": "Step blocked — {{variables}}. Complete the contact record or your profile, then recreate the sequence.",
+    "noDraft": "No draft prepared — automatic writing did not succeed, or the contact has no address. Write the subject and body yourself in “Edit”: they will go to “To validate”."
+  },
+  "sample": {
+    "title": "Sample before validation",
+    "cta": "See a message sample",
+    "loading": "Generating…",
+    "hint": "One message generated, for a real contact of the campaign — not all {{count}} at once.",
+    "noCandidate": "No contact in this audience has an email address: no sample possible.",
+    "error": "The sample could not be generated. Try again."
+  },
+  "dialog": {
+    "title": "Create a sequence",
+    "description": "A cadence of dated follow-ups. Email steps prepare the message and set a reminder — nothing is sent automatically: sending stays your move.",
+    "templateLabel": "Template",
+    "previewLabel": "Due dates preview",
+    "nameLabel": "Sequence name",
+    "create": "Create the sequence",
+    "creating": "Creating…",
+    "back": "Back"
+  },
+  "sequence": {
+    "nextDue": "Next due: {{date}}",
+    "noNextDue": "No upcoming step",
+    "notNowRevalidation": {
+      "due": "The wait since “not now” is over — {{poste}}. Context, signal and relevance remain your call.",
+      "posteValid": "still in the role",
+      "posteStale": "has since changed companies"
+    },
+    "stepDone": "Done",
+    "pause": "Pause",
+    "resume": "Resume",
+    "cancel": "Cancel the sequence",
+    "addStep": "Add a follow-up",
+    "stepEdit": "Edit",
+    "stepRemove": "Remove",
+    "stepLabelField": "Label",
+    "stepDueAtField": "Due date",
+    "stepNoteField": "Note",
+    "stepObjectiveField": "Objective",
+    "stepSubjectField": "Email subject",
+    "stepBodyField": "Email body",
+    "stepDraftHint": "This step has no draft: write the subject and body. They will go to “To validate” — nothing is sent without your approval.",
+    "stepSave": "Save",
+    "stepCancelEdit": "Cancel",
+    "duplicate": "Duplicate",
+    "stepOwnerField": "Step owner",
+    "stepOwnerNone": "Nobody in particular",
+    "stepOwnerLine": "Owner: {{name}}"
+  },
+  "duplicateDialog": {
+    "title": "Duplicate to another contact",
+    "description": "Resumes the same step rhythm for someone else. The original and its enrolment stay untouched.",
+    "searchPlaceholder": "Search for a contact…",
+    "noResults": "No matching contact"
+  },
+  "status": {
+    "active": "Active",
+    "paused": "Paused",
+    "completed": "Completed",
+    "cancelled": "Cancelled",
+    "prepared": "Prepared",
+    "scheduled": "Scheduled",
+    "awaiting_connection": "Waiting for a connection",
+    "awaiting_validation": "Waiting for you",
+    "ready_to_copy": "Ready to copy",
+    "responded": "Replied",
+    "failed": "Failed",
+    "refused": "Declined",
+    "bounced": "Invalid address"
+  },
+  "stepKind": {
+    "email": "Email (manual send)",
+    "reminder": "Reminder",
+    "task": "Task",
+    "linkedin_invite": "LinkedIn invitation (manual step)",
+    "linkedin_message": "LinkedIn message (manual step)",
+    "call": "Call (manual step)"
+  },
+  "toast": {
+    "riskTitle": "This contact has probably left the company",
+    "riskConfirm": "Enrol anyway",
+    "created": "Sequence scheduled",
+    "createdMany_one": "{{count}} sequence scheduled",
+    "createdMany_other": "{{count}} sequences scheduled",
+    "createFailed": "Could not create the sequence",
+    "createPartial": "{{done}} of {{total}} created. The others failed — nothing was sent either way.",
+    "draftFailed": "Draft not prepared for {{names}} — {{reasons}}. The sequence is created: write the subject and body in “Edit”.",
+    "draftReason": {
+      "no_email": "no email address",
+      "generation_failed": "automatic writing did not respond",
+      "save_failed": "the draft could not be saved"
+    },
+    "actionFailed": "Action failed",
+    "stepAdded": "Follow-up added to the sequence",
+    "stepUpdated": "Step updated",
+    "stepRemoved": "Step removed — archived, not deleted",
+    "engagementSignalDeclared": "Signal recorded",
+    "callProposed": "Call proposed",
+    "duplicated": "Sequence duplicated",
+    "duplicateFailed": "Could not duplicate the sequence",
+    "collisionTitle": "Sequence already active — a colleague's",
+    "collisionCollaborate": "Copy a message for {{owner}}",
+    "collisionOwnerFallback": "this colleague",
+    "collisionMessage": "Hi {{owner}}, you already have an active sequence on {{contact}} (\"{{sequence}}\"). Can you tell me where it stands, or would you like to move on this contact together?",
+    "collisionCopied": "Message copied — yours to send",
+    "collisionCopyFailed": "Could not copy the message",
+    "meetingBooked": "Meeting booked: the sequence is finished.",
+    "vacationStarted_one": "{{count}} sequence paused.",
+    "vacationStarted_other": "{{count}} sequences paused.",
+    "vacationResumed_one": "{{count}} sequence resumed.",
+    "vacationResumed_other": "{{count}} sequences resumed.",
+    "excludedSkipped_one": "{{count}} excluded contact was not enrolled.",
+    "excludedSkipped_other": "{{count}} excluded contacts were not enrolled."
+  },
+  "laura": {
+    "prepare": "Ask {{copilot}} to draft a cadence",
+    "preparePrompt": "Draft a sequence for me: tell me which contacts you would pick and why, which cadence, which steps and on which dates, and who cannot be included. I review before anything is created.",
+    "total": "Sequences in total",
+    "mailboxMissing": "Mailbox not connected: nothing can be sent"
+  },
+  "custom": {
+    "title": "Custom cadence",
+    "when": "No template fits: compose your touches, their channel and their rhythm.",
+    "kindLabel": "Touch type",
+    "dayLabel": "Day",
+    "purposeLabel": "What this touch brings",
+    "purposePlaceholder": "e.g. Social proof — a comparable case",
+    "addStep": "Add a touch",
+    "removeStep": "Remove this touch",
+    "maxReached": "{{count}} touches is the maximum — beyond that, it is no longer a cadence."
+  },
+  "campaignFilter": {
+    "label": "Campaign:",
+    "option": "{{label}} ({{count}})"
+  },
+  "approval": {
+    "title": "Approval center",
+    "views": "Approval center views",
+    "view": {
+      "to_review": "To review",
+      "modified": "Modified",
+      "blocked": "Blocked",
+      "ready": "Ready",
+      "scheduled": "Scheduled",
+      "executed": "Executed",
+      "failed": "Failed"
+    },
+    "emptyView": "No message in this view.",
+    "approve": "Approve",
+    "approveAll": "Approve the {{count}} compliant ones shown",
+    "done": "{{count}} message(s) approved. Nothing was sent: sending stays your move.",
+    "partial": "{{approved}} approved, {{excluded}} excluded",
+    "failed": "Approval failed.",
+    "excluded": {
+      "changed_since_display": "changed since it was shown",
+      "blocked": "blocked",
+      "not_reviewable": "no longer awaiting review",
+      "forbidden": "outside your rights",
+      "not_found": "not found"
+    },
+    "unknownRecipient": "Unknown recipient",
+    "notMeasured": "Not measured",
+    "field": {
+      "source": "Prepared from",
+      "date": "Updated",
+      "reason": "Reason",
+      "cost": "Cost",
+      "permission": "Required permission",
+      "version": "Version"
+    },
+    "permission": {
+      "messages_send": "Send messages (your own)",
+      "team_manage": "Team management (another member’s message)"
+    },
+    "channel": {
+      "email": "Email",
+      "linkedin": "Professional network",
+      "phone": "Phone",
+      "manual": "Manual"
+    },
+    "intent": {
+      "open_relationship": "Open a relationship",
+      "qualify_context": "Qualify a context",
+      "ask_orientation": "Ask for guidance",
+      "reactivate": "Reactivate",
+      "get_introduction": "Get an introduction",
+      "push_profile": "Push a profile",
+      "follow_meeting": "Follow up a meeting",
+      "follow_up": "Follow up",
+      "nurture": "Nurture",
+      "get_feedback": "Get feedback",
+      "prepare_partnership": "Prepare a partnership",
+      "clarify_need": "Clarify a need"
+    },
+    "source": {
+      "laura": "{{copilot}}",
+      "contacts": "Contacts",
+      "targets": "My targets",
+      "accounts": "Accounts",
+      "opportunities": "Opportunities",
+      "needs": "Needs",
+      "pool": "Talent pool",
+      "actions": "Actions",
+      "sequences": "Sequences",
+      "today": "My day"
+    },
+    "blockersLabel": "What blocks approval",
+    "blocker": {
+      "opted_out": "Asked not to be contacted",
+      "missing_channel_address": "No address for this channel",
+      "empty_message": "Empty message",
+      "unverified_relationship_claim": "The message assumes an unverified relationship",
+      "unverifiable_claim": "Missing proof",
+      "generic_message": "This message would fit any other company",
+      "multiple_asks": "More than one question — keep it to a single, easy one",
+      "corporate_jargon": "Wording is too generic or too familiar",
+      "wrong_recipient": "The message greets someone other than its recipient",
+      "relationship_scenario_mismatch": "Wrong scenario: the relationship with this person is somewhere else",
+      "scope_unclear": "The message cites nothing we know about the account — the subject stays vague",
+      "no_next_step": "No next step proposed",
+      "contradicts_history": "The message contradicts the history with this person",
+      "sequence_inconsistent": "This step repeats, or re-introduces, another step of the sequence",
+      "too_long_for_channel": "Too long for this channel",
+      "forced_meeting": "A meeting is imposed in the very first message — phrase it as a question",
+      "unverified_tech_claim": "A technology is stated as fact but not confirmed for this account — remove it or ask it as a question"
+    },
+    "risksLabel": "Risks to check",
+    "risk": {
+      "stale_contact": "Probably left the company",
+      "edited_by_user": "Edited by hand"
+    },
+    "proof": "Approved as version {{version}} on {{date}}",
+    "showDiff": "Compare versions",
+    "hideDiff": "Hide comparison",
+    "diff": {
+      "personalization": "Source template → personalized version",
+      "userEdit": "Personalized version → final version",
+      "op": {
+        "added": "added:",
+        "removed": "removed:"
+      }
+    },
+    "flag": "Flag a problem",
+    "flagged": "Problem flagged. The message is left untouched.",
+    "flaggedAs": "Flagged: {{kinds}}",
+    "flagKind": {
+      "wrong_fact": "Wrong fact",
+      "wrong_cta": "Wrong call to action",
+      "wrong_persona": "Wrong persona"
+    },
+    "edit": "Edit",
+    "subject": "Subject",
+    "body": "Message",
+    "hooks": {
+      "button": "Other hooks",
+      "loading": "Looking for hooks…",
+      "none": "No sourced alternative hook for this contact: nothing is suggested.",
+      "failed": "Alternative hooks are unavailable right now.",
+      "listLabel": "Alternative hooks",
+      "anchor": "Anchor: {{hook}}",
+      "use": "Use this hook"
+    },
+    "saveVersion": "Save a new version",
+    "cancelEdit": "Cancel",
+    "edited": "New version saved.",
+    "editInvalidated": "New version saved: the change is substantial, the message goes back to review.",
+    "calls": "Calls to make",
+    "callMoveTo": "Mark “{{status}}”",
+    "callMoveCause": "Outcome set from “Calls to make”",
+    "callMoveError": "The call status could not be updated",
+    "documentSource": "Source: {{titles}}",
+    "marketMemorySource": "Market observations: {{refs}} — never clear this variable for external use on their own.",
+    "variables": {
+      "toggle": "Variables",
+      "hide": "Hide variables",
+      "readFailed": "I could not read this message’s variables. Reopen the panel in a moment.",
+      "empty": "No variable annotated on this version of the message.",
+      "name": "Variable",
+      "value": "Value",
+      "source": "Source",
+      "asOf": "Fact date",
+      "confidence": "Confidence",
+      "externalUse": "External use",
+      "marketMemory": "Market observations",
+      "submit": "Annotate",
+      "saved": "Variable annotated.",
+      "failed": "The variable could not be annotated.",
+      "marketSource": "Observed on the market: {{ref}}",
+      "meta": "{{source}} · as of {{date}}",
+      "confidenceKind": {
+        "confirmed": "Confirmed",
+        "probable": "Probable",
+        "unverified": "Unverified"
+      },
+      "externalUseKind": {
+        "allowed": "Allowed",
+        "forbidden": "Forbidden",
+        "unknown": "Not established"
+      },
+      "externalUseBadge": {
+        "allowed": "External use allowed",
+        "forbidden": "External use forbidden",
+        "unknown": "External use not established"
+      },
+      "notCleared_other": "{{count}} variables not to be quoted externally without clearance.",
+      "notCleared_one": "{{count}} variable not to be quoted externally without clearance."
+    }
+  },
+  "canonicalStatus": {
+    "label": "Sequence state",
+    "draft": "Draft",
+    "needs_review": "Needs review",
+    "ready": "Ready",
+    "waiting_for_connection": "Waiting for connection",
+    "scheduled": "Scheduled",
+    "active": "Active",
+    "paused": "Paused",
+    "completed": "Completed",
+    "stopped": "Stopped",
+    "failed": "Failed",
+    "archived": "Archived"
+  },
+  "messageStatus": {
+    "idea": "Idea",
+    "drafting": "Drafting",
+    "drafted": "Drafted",
+    "needs_review": "Needs review",
+    "approved": "Approved",
+    "scheduled": "Scheduled",
+    "sending": "Sending",
+    "sent": "Sent",
+    "delivered": "Delivered",
+    "bounced": "Bounced",
+    "replied": "Replied",
+    "failed": "Failed",
+    "cancelled": "Cancelled",
+    "expired": "Expired",
+    "copied_manual": "Copied by hand"
+  },
+  "callStatus": {
+    "proposed": "Proposed",
+    "ready": "Ready",
+    "scheduled": "Scheduled",
+    "due": "Due",
+    "started": "In progress",
+    "completed": "Completed",
+    "no_answer": "No answer",
+    "wrong_person": "Wrong person",
+    "callback": "Callback agreed",
+    "qualified": "Qualified",
+    "refused": "Refused",
+    "cancelled": "Cancelled"
+  },
+  "audienceBuilder": {
+    "title": "Build an audience",
+    "subtitle": "Pick a source and a channel: the list returns eligible contacts, each for their own sequence, and names those left out.",
+    "sourceLabel": "Source",
+    "source": {
+      "workspace_contacts": "All contacts in the workspace",
+      "crm": "Contacts synced from your CRM",
+      "import": "Contacts that came in through a file import",
+      "dormant_accounts": "Contacts of dormant accounts",
+      "partners": "Contacts of your partner firms",
+      "event_participants": "Event participants",
+      "need": "People of a need"
+    },
+    "channelLabel": "Channel",
+    "channel": {
+      "any": "All channels",
+      "email": "Email",
+      "phone": "Phone"
+    },
+    "capAccountLabel": "Contacts per account",
+    "capAccount": {
+      "none": "No per-account cap",
+      "1": "1 contact per account",
+      "2": "2 contacts per account",
+      "3": "3 contacts per account"
+    },
+    "capDayLabel": "Launch cap",
+    "capDay": {
+      "none": "No launch cap",
+      "20": "20 contacts at most",
+      "50": "50 contacts at most"
+    },
+    "capContactLabel": "Sequences per contact",
+    "capContact": {
+      "none": "No per-contact cap",
+      "1": "1 sequence already armed at most",
+      "2": "2 sequences already armed at most",
+      "3": "3 sequences already armed at most"
+    },
+    "capChannelLabel": "Contacts per channel",
+    "capChannel": {
+      "none": "No cap per channel",
+      "20": "At most 20 contacts per channel",
+      "50": "At most 50 contacts per channel"
+    },
+    "cappedCounter": "Cut by the cap",
+    "includeCollisions": "Include contacts already in a sequence",
+    "preview": "Preview the audience",
+    "error": "The audience could not be read. Try again.",
+    "counter": {
+      "total": "In the source",
+      "eligible": "Eligible",
+      "missing_coordinates": "Missing contact details",
+      "unverified_identity": "Unverified identities",
+      "already_in_sequence": "Already in a sequence",
+      "already_contacted": "Already contacted",
+      "duplicates": "Possible duplicates",
+      "other_owner": "Owned by a colleague",
+      "excluded_accounts": "Excluded accounts",
+      "left_contacts": "Contacts who left",
+      "team_collisions": "Team collisions",
+      "personal_contacts": "Personal mailboxes"
+    },
+    "monoContact": "One sequence per person",
+    "flag": {
+      "identityUnverified": "Identity not verified",
+      "ownedByOther": "Owned by a colleague"
+    },
+    "duplicate": "Possible duplicate ({{key}}): {{names}}",
+    "duplicateKey": {
+      "email": "email",
+      "phone": "phone"
+    },
+    "duplicateHint": "Check the records — nothing is merged.",
+    "unnamed": "excluded contact",
+    "stopReason": {
+      "do_not_call": "do not call",
+      "unsubscribed": "unsubscribed",
+      "bounced": "address bounced"
+    },
+    "stopReasonLine": "Reason for the stop: {{reason}}",
+    "excludedTitle": "Left out of the audience",
+    "reason": {
+      "erasure_requested": "Erasure requested — person not named",
+      "opted_out": "Asked not to be contacted",
+      "account_excluded": "Account set aside",
+      "contact_left": "Left the company",
+      "already_in_sequence": "Already in an active sequence",
+      "cooldown": "Contacted less than 14 days ago",
+      "missing_coordinates": "No contact detail for this channel",
+      "frequency_cap": "Beyond the chosen frequency cap",
+      "personal_contact": "Only coordinate: a personal mailbox"
+    },
+    "prepare_one": "Prepare {{count}} sequence",
+    "prepare_other": "Prepare {{count}} sequences",
+    "noneEligible": "No eligible contact with these criteria.",
+    "eventLabel": "Event",
+    "eventOption": "{{subject}} — {{date}} ({{count}} participants)",
+    "eventError": "The event list could not be read.",
+    "noEvent": "No event with identified participants: this source fills as soon as a captured meeting or call names a contact.",
+    "eventKind": {
+      "meeting": "Meeting",
+      "call": "Call"
+    },
+    "needLabel": "Need",
+    "needOption": "{{title}} ({{count}} people)",
+    "needError": "The needs list could not be read.",
+    "noNeed": "No need with an identified person: this source fills as soon as a need names a requester or a decision maker."
+  },
+  "mandates": {
+    "title": "Sends under a signed mandate",
+    "intro": "Nothing goes out on its own without your signature. Each use has its own mandate: you sign it, it is bounded (duration, volume, time window, per your plan), revocable at any time, renewable by signing again, and it stops at the first reply. Opt-outs, exclusions and erasures are checked again before every send.",
+    "connectMailbox": "Connect a mailbox",
+    "noMailbox": "Without a connected mailbox, no mandate can be signed: nothing could be sent or tracked.",
+    "scope": {
+      "workspace_sequences": "Email steps of your sequences",
+      "laura_send": "{{copilot}} sends what she prepared",
+      "payment_reminder": "Overdue payment reminders",
+      "meeting_follow_up": "Follow-up email after a meeting"
+    },
+    "status": {
+      "none": "No mandate: every message waits for your approval",
+      "active": "Signed mandate, active until {{date}}",
+      "paused": "Paused",
+      "not_started": "Signed mandate, not started yet",
+      "expired": "Mandate expired",
+      "exhausted": "Send cap reached",
+      "revoked": "Mandate revoked"
+    },
+    "sent": "{{sent}} of {{max}} sent",
+    "sign": "Sign the mandate",
+    "renew": "Renew",
+    "revoke": "Revoke",
+    "pause": "Pause",
+    "resume": "Resume",
+    "pausedHint": "Nothing is sent while the mandate is paused. Resume whenever you like: no need to sign it again.",
+    "dialog": {
+      "title": "Sign a sending mandate",
+      "description": "Use: {{scope}}. While this mandate is active, emails for this use are sent from your mailbox without a new click, within the bounds below.",
+      "bounds": "{{days}} days · at most {{max}} sends · between {{start}}:00 and {{end}}:00",
+      "checkbox": "I sign this mandate and I know I can revoke it at any time.",
+      "confirm": "Sign",
+      "cancel": "Cancel"
+    },
+    "toast": {
+      "signed": "Mandate signed.",
+      "renewed": "Mandate renewed."
+    }
+  },
+  "delegation": {
+    "title": "Sending delegation",
+    "open": "Delegate sending",
+    "intro": "Only email can be delegated: a mandate you approve, limited to contacts, a time window, a duration and a volume. It stops at the first reply and can be revoked at any time. Private messages on a network and calls remain tasks for you.",
+    "noMailbox": "Without a connected mailbox, no delegation is possible: nothing could go out or be tracked.",
+    "manualOnly": "No delegation: every email waits for your approval before it goes out.",
+    "summary": "{{sent}}/{{max}} sent · {{contacts}} contact(s) · {{start}}:00–{{end}}:00 · until {{date}}",
+    "pause": "Pause",
+    "resume": "Resume",
+    "revoke": "Revoke",
+    "lifecycle": {
+      "active": "Active",
+      "paused": "Paused",
+      "revoked": "Revoked",
+      "expired": "Expired",
+      "exhausted": "Volume reached",
+      "not_started": "Not started"
+    },
+    "stopped": {
+      "replied_one": "{{count}} stopped — reply received",
+      "replied_other": "{{count}} stopped — reply received",
+      "opposed_one": "{{count}} stopped — opted out",
+      "opposed_other": "{{count}} stopped — opted out",
+      "excluded_one": "{{count}} stopped — excluded",
+      "excluded_other": "{{count}} stopped — excluded",
+      "erased_one": "{{count}} stopped — person erased",
+      "erased_other": "{{count}} stopped — person erased",
+      "consent_expired_one": "{{count}} stopped — consent expired",
+      "consent_expired_other": "{{count}} stopped — consent expired"
+    },
+    "held": {
+      "mailbox_unavailable_one": "{{count}} on hold — sending mailbox not connected",
+      "mailbox_unavailable_other": "{{count}} on hold — sending mailbox not connected",
+      "replies_unreadable_one": "{{count}} on hold — reply reading unavailable",
+      "replies_unreadable_other": "{{count}} on hold — reply reading unavailable",
+      "sender_mismatch_one": "{{count}} on hold — sender differs from the mandate",
+      "sender_mismatch_other": "{{count}} on hold — sender differs from the mandate",
+      "content_changed_one": "{{count}} on hold — text edited since review",
+      "content_changed_other": "{{count}} on hold — text edited since review"
+    },
+    "toast": {
+      "created": "Delegation approved: only these messages, contacts and window are allowed.",
+      "failed": "The delegation could not be approved."
+    },
+    "dialog": {
+      "title": "Delegate sending for this campaign",
+      "recap": "Sender: {{sender}}. Only checked messages go out, exactly as you reviewed them; any change requires a new approval.",
+      "label": "Campaign name",
+      "startHour": "Window start (h)",
+      "endHour": "Window end (h)",
+      "days": "Duration (days, max 30)",
+      "max": "Volume (max 200)",
+      "bounds": "Quiet hours always apply. Past the duration or volume, or at the first reply, the rest stops.",
+      "none": "No reviewable email message to delegate yet.",
+      "noneMailbox": "No message could be reviewed: the sending mailbox isn't connected.",
+      "noneSequence": "No approved email sequence exists yet to delegate.",
+      "senderMissingReason": "Sender: — — sending mailbox not connected.",
+      "connectMailbox": "Connect your mailbox",
+      "createSequence": "Create a sequence",
+      "unnamed": "Contact",
+      "stops": "Stops on a reply, an opt-out, a pause or a revocation. If reply reading is unavailable, sending is suspended — never guessed.",
+      "validate": "Approve delegation"
+    }
+  },
+  "multichannel": {
+    "gesture": {
+      "linkedinCopyOpen": "Copy the message and open the profile",
+      "linkedinSent": "Mark as sent",
+      "linkedinNoDraft": "No message is prepared for this step: write it before sending it on LinkedIn.",
+      "linkedinCopied": "Message copied.",
+      "linkedinCopyFailed": "Could not copy: select the text and copy it by hand.",
+      "linkedinNoProfile": "No LinkedIn profile is known for this contact.",
+      "callScript": "Call outline",
+      "callNoScript": "No call outline is prepared for this step.",
+      "callDone": "Mark as done",
+      "manualNote": "Manual step: you send or call, {{brand}} does not drive LinkedIn or the phone. “Mark as sent” is a declaration, not proof of delivery.",
+      "outcomeLabel": "Outcome",
+      "outcomeUnspecified": "Nothing declared"
+    },
+    "outcome": {
+      "accepted": "Invitation accepted",
+      "pending": "Invitation pending",
+      "reached": "Reached",
+      "voicemail": "Voicemail",
+      "no_answer": "No answer"
+    },
+    "gate": {
+      "awaiting": "Awaiting acceptance"
+    },
+    "skipped": {
+      "linkedin_invite_not_accepted": "Skipped: the LinkedIn invitation was not accepted by the due date."
+    },
+    "delay": {
+      "business": "D+{{days}} business days",
+      "calendar": "D+{{days}}"
+    },
+    "meeting": {
+      "button": "Meeting booked"
+    },
+    "reorder": {
+      "up": "Move step up",
+      "down": "Move step down"
+    },
+    "stats": {
+      "title_one": "Stats by step — {{count}} sequence",
+      "title_other": "Stats by step — {{count}} sequences",
+      "step": "Step",
+      "prepared": "Prepared",
+      "done": "Sent or done",
+      "replied": "Replied",
+      "meeting": "Meeting",
+      "stepName": "{{n}}. {{kind}}",
+      "footnote": "“—” means not measured (nothing is done yet at this step), never zero. “Done” is a declaration, not proof of delivery."
+    },
+    "vacation": {
+      "banner_one": "{{count}} sequence on holiday pause — resumes on {{date}}. Remaining due dates will be shifted by the length of the pause.",
+      "banner_other": "{{count}} sequences on holiday pause — resume on {{date}}. Remaining due dates will be shifted by the length of the pause.",
+      "resume": "Resume now",
+      "start": "Pause all my sequences until…",
+      "dialogTitle": "Holiday pause",
+      "dialogDescription": "All your active sequences are paused. When they resume, the remaining due dates are shifted by the length of the pause: no burst of follow-ups.",
+      "untilLabel": "Resume on",
+      "confirm": "Pause",
+      "bannerTitle": "Vacation mode until {{date}}",
+      "bannerBody_one": "Your active sequence is suspended: no step lands in To do. It resumes where it left off.",
+      "bannerBody_other": "Your {{count}} active sequences are suspended: no step lands in To do. They resume where they left off.",
+      "fromLabel": "From",
+      "menuItem": "Vacation mode…",
+      "menuHint": "suspend all your sequences"
+    },
+    "exclusions": {
+      "title_one": "{{count}} contact cannot be enrolled as is",
+      "title_other": "{{count}} contacts cannot be enrolled as is",
+      "unnamed": "Unnamed contact",
+      "reason": {
+        "active_sequence": "already in an active sequence",
+        "recently_contacted": "contacted less than 30 days ago",
+        "rgpd_opposition": "asked not to be contacted",
+        "already_client": "account is already a client"
+      },
+      "notForceable": "can never be enrolled",
+      "override": "Enroll anyway (I lift these exclusions, except a GDPR objection, which can never be lifted)",
+      "clientUnknown": "For some accounts we do not know whether they are already clients: nothing is guessed.",
+      "forceJustification": "Exclusion lifted by the user at enrollment"
+    },
+    "editor": {
+      "newStepKind": "Channel of the new step",
+      "kindField": "Channel",
+      "delayFieldBusiness": "Delay (business days after creation)",
+      "delayFieldCalendar": "Delay (calendar days after creation)",
+      "variablesHint": "Available variables: prenom, nom, entreprise, poste. Write them between double braces, with a fallback value after a bar: {{example}}.",
+      "emptyVariables": "Variable with no value and no fallback: {{variables}}. The message would go out with a gap.",
+      "emptyVariablesConfirm": "Save anyway, I will complete the message myself"
+    }
+  },
+  "playbooks": {
+    "family": {
+      "legend": "Filter templates by family",
+      "all": "All",
+      "prospecting": "Prospecting",
+      "development": "Development",
+      "meeting": "Meeting",
+      "staffing": "Staffing",
+      "mission_follow_up": "Mission follow-up",
+      "admin": "Admin"
+    },
+    "title": "Start from a template",
+    "subtitle": "Pick the situation, not the channel. Each template prepares the steps; you review, edit and send yourself.",
+    "unit": "Delays are in business days (D = business day).",
+    "guide": "Guide me in 4 questions",
+    "use": "Use this template",
+    "day": "D+{{count}} business days",
+    "day0": "D0",
+    "steps_one": "{{count}} step",
+    "steps_other": "{{count}} steps",
+    "span": "over {{count}} business days",
+    "tipLabel": "Tip",
+    "otherTitle": "Other cadences",
+    "otherHint": "The earlier cadences remain available, filed by situation.",
+    "templateUse": "Choose “{{name}}”",
+    "rangedHere": "Cadences filed here",
+    "scratch": "Build by hand",
+    "trigger": {
+      "hiring_signal": {
+        "name": "Hiring signal",
+        "when": "An open role at the client: you arrive with a profile at the right time."
+      },
+      "new_cio": {
+        "name": "New CIO appointed",
+        "when": "A new decision maker is mapping their scope before buying anything."
+      },
+      "tender": {
+        "name": "Tender",
+        "when": "A formal, dated need: frame it fast and prove it with close references."
+      },
+      "win_back": {
+        "name": "Winning back a former client",
+        "when": "A client from the past: pick up the thread without starting over."
+      },
+      "after_meeting": {
+        "name": "After a meeting",
+        "when": "You just talked: turn the meeting into a decision."
+      },
+      "bench_consultant": {
+        "name": "Consultant between assignments",
+        "when": "An available profile and a short window: offer it fast, without discounting it."
+      },
+      "regie_to_forfait": {
+        "name": "From time & materials to fixed price",
+        "when": "A client on time & materials: show that a fixed-price project is possible."
+      },
+      "warm_contact": {
+        "name": "Warm contact (trade show, visit)",
+        "when": "Someone you met: keep the link alive before it cools down."
+      }
+    },
+    "intent": {
+      "get_reply": "Get a reply",
+      "qualify_need": "Qualify the need",
+      "book_exchange": "Book a conversation",
+      "show_proof": "Show proof",
+      "stay_visible": "Stay visible",
+      "close_loop": "Close politely",
+      "check_deadline": "Check the deadline"
+    },
+    "tip": {
+      "hiring_signal": {
+        "0": "Name the exact role and a close achievement. One question only.",
+        "1": "No note: the name and title are enough, the note comes later.",
+        "2": "Present a typical profile (stack, seniority), never a full CV.",
+        "3": "Prepare 3 points: the role, the profile, the opening question.",
+        "4": "Soft close: “I will stop following up, the door stays open”."
+      },
+      "new_cio": {
+        "0": "Congratulate without selling: one sentence about the new role.",
+        "1": "Offer a review of the current situation, not a demo. They keep control.",
+        "2": "Tell a comparable client’s story, with numbers if you have them.",
+        "3": "Call with a single opening question about their scope.",
+        "4": "Close: say you remain available once their priorities are set."
+      },
+      "tender": {
+        "0": "Ask one precise framing question (scope, budget, timeline) rather than introducing yourself.",
+        "1": "Call to get the answer to your question, not to pitch.",
+        "2": "Attach two references close to the need, not your whole showcase.",
+        "3": "Open the tender and note the deadline: it is your real due date."
+      },
+      "win_back": {
+        "0": "Recall the past collaboration, then ONE new thing useful to them.",
+        "1": "Light tone: you already know each other, no introduction.",
+        "2": "Ask for news before talking about an offer.",
+        "3": "Propose 15 minutes, never a long meeting."
+      },
+      "after_meeting": {
+        "0": "Summarize what was said and the next steps, with dates.",
+        "1": "Send the promised resource without adding a new ask.",
+        "2": "Call to remove the last doubt, not to chase.",
+        "3": "Ask where the decision stands and what is missing to move on."
+      },
+      "bench_consultant": {
+        "0": "Anonymized profile: seniority, stack, availability. No name.",
+        "1": "Invite without a note; the reason for your message is in the email.",
+        "2": "Call early: an available profile does not stay available.",
+        "3": "Offer two alternative profiles to widen the way in.",
+        "4": "Say you are releasing the profile: it is honest and prompts an answer."
+      },
+      "regie_to_forfait": {
+        "0": "A concrete case of a fixed-price project delivered for a close client.",
+        "1": "A short message pointing to the case, no pitch.",
+        "2": "Ask about their NEXT project rather than the current contract.",
+        "3": "Call with the case in hand and offer to frame a scope together."
+      },
+      "warm_contact": {
+        "0": "Invite with a reminder of where and when you met.",
+        "1": "An email that picks up one precise point from your conversation.",
+        "2": "Call to propose a short, concrete next step."
+      }
+    },
+    "wizard": {
+      "title": "Prepare a guided sequence",
+      "description": "Four questions, then {{copilot}} prepares each step’s messages. You review everything before enrolling.",
+      "stepCounter": "Question {{current}} of {{total}}",
+      "q1": "Who do you want to contact?",
+      "q1Hint": "Search a contact in your workspace.",
+      "q1Search": "Search a contact",
+      "q1Chosen": "Chosen contact: {{name}}",
+      "q1None": "No contact found.",
+      "q2": "Why now?",
+      "q2Hint": "The signal that makes you write today.",
+      "q2Prefilled": "Signal already known for this contact: {{name}}.",
+      "q2None": "No specific signal",
+      "q3": "What are you offering?",
+      "q3Hint": "What you offer, in one idea.",
+      "offer": {
+        "regie": "Time & materials (a consultant on assignment)",
+        "forfait": "A fixed-price project",
+        "profil": "An available profile"
+      },
+      "q4": "What do you want to get?",
+      "q4Hint": "The outcome of this sequence.",
+      "goal": {
+        "reply": "A reply",
+        "qualify": "Qualify the need",
+        "exchange": "A conversation (call or meeting)",
+        "reactivate": "Reactivate the relationship"
+      },
+      "next": "Next",
+      "back": "Back",
+      "proposed": "Suggested template: {{name}}",
+      "proposedHint": "You can pick another one.",
+      "change": "Change template",
+      "prepare": "{{copilot}} prepares the messages",
+      "preparing": "{{copilot}} is preparing…",
+      "prepared": "Messages ready: review and edit before enrolling.",
+      "notPrepared": "{{copilot}} could not prepare this step. Write the message yourself, or leave it empty.",
+      "subject": "Subject",
+      "body": "Message",
+      "noText": "This step has no text: the action is done by hand.",
+      "enroll": "Enroll the sequence",
+      "enrolling": "Enrolling…",
+      "enrolled": "Sequence created for {{name}}: {{count}} steps ready.",
+      "failed": "The sequence could not be created.",
+      "draftOnly": "Nothing is sent on its own: the email is prepared, network and phone actions stay manual.",
+      "blocked": "This contact cannot be enrolled: {{reason}}"
+    },
+    "quality": {
+      "label": "Message quality",
+      "summary": "{{ok}} of {{total}} criteria met",
+      "allOk": "All criteria are met.",
+      "toFix": "To review: {{list}}",
+      "notEvaluated": "Quality not evaluated: the text is empty.",
+      "notApplicable": "not applicable on this channel: {{list}}",
+      "criteria": {
+        "length": "over 120 words",
+        "single_question": "not exactly one question",
+        "personalization": "no personalization",
+        "short_subject": "subject missing or too long",
+        "empty_variable": "empty variable",
+        "jargon": "jargon"
+      },
+      "jargonFound": "Jargon found: {{list}}",
+      "criteriaOk": {
+        "length": "under 120 words",
+        "single_question": "a single question",
+        "personalization": "personalized",
+        "short_subject": "short subject",
+        "empty_variable": "no empty variable",
+        "jargon": "no jargon"
+      }
+    }
+  },
+  "journey": {
+    "progress": "Step {{current}} of {{total}}",
+    "stepsLabel": "Sequence steps",
+    "steps": {
+      "audience": "Audience",
+      "review": "Check",
+      "objective": "Goal",
+      "messages": "Messages"
+    },
+    "title": {
+      "audience": "Who do you want to contact?",
+      "review": "Review before saving",
+      "objective": "What result do you expect?",
+      "messages": "Prepare the message and the follow-ups"
+    },
+    "trigger": {
+      "manual": "Now, for contacts I pick",
+      "manualHint": "You tick the people; the first step is dated today.",
+      "signal": "Automatically, when something happens at an account",
+      "signalHint": "For instance when an account is hiring: the first message is prepared for the contact concerned, and waits for your approval.",
+      "legend": "When to start",
+      "manualShort": "As soon as I save it",
+      "signalShort": "When a signal arrives"
+    },
+    "signal": {
+      "help": "When should the sequence start?",
+      "days": "Number of days without action",
+      "becomes": "It becomes an automation.",
+      "becomesBody": "Same engine, same steps: only the start changes. It is created switched off, in the Automations tab.",
+      "start": "Starting signal"
+    },
+    "contacts": {
+      "search": "Search a contact",
+      "picked_one": "{{count}} contact picked",
+      "picked_other": "{{count}} contacts picked",
+      "loading": "Loading your contacts…",
+      "none": "No contact matches.",
+      "searchPlaceholder": "Search a person or an account…"
+    },
+    "review": {
+      "when": "When {{signal}},",
+      "then": "the contact concerned enters the sequence “{{sequence}}”.",
+      "who_one": "For {{names}}",
+      "who_other": "For {{count}} contacts: {{names}}",
+      "model": "Template: {{model}}",
+      "lastCheck": "Last check on the next step: duplicates, excluded contacts, contacts followed by a colleague.",
+      "nothingLeaves": "Nothing goes out without your approval: every message lands in “To do”.",
+      "thenPrepare": "then {{action}} for the contact concerned.",
+      "startsOff": "It starts off: you turn it on in one click. It respects sequence exclusions (contact already in a sequence, contacted less than 30 days ago, opt-out, client account).",
+      "help": "This summary shows the consequences before the sequence starts.",
+      "name": "Name",
+      "audience": "Audience",
+      "objective": "Goal",
+      "cadence": "Chosen cadence",
+      "stop": "Stop",
+      "stopValue": "Reply, opt-out, meeting booked or pause: no more follow-up for that contact.",
+      "confirm": "I have read the audience and the messages. I want to save this sequence.",
+      "audienceValue_one": "{{count}} contact: {{names}}",
+      "audienceValue_other": "{{count}} contacts: {{names}}",
+      "sender": "Sender",
+      "senderValue": "{{address}} · your connected mailbox",
+      "ready": "Ready"
+    },
+    "back": "Back",
+    "cancel": "Cancel",
+    "next": "Continue",
+    "launch": "Check and save",
+    "activate": "Create the trigger",
+    "signalCreated": "Trigger created, off: turn it on in “Sequences on a signal” when you are ready.",
+    "prepared": "Only: {{action}}",
+    "preparedHint": "No sequence: a single prepared action, which you approve or skip.",
+    "heading": "Create a sequence",
+    "subtitle": "A guided flow. Your audience and your texts are kept.",
+    "saveDraft": "Leave and keep",
+    "draftSaved": "Your sequence in progress is kept: pick it up from this screen.",
+    "resume": "Resume my sequence in progress",
+    "audience": {
+      "help": "Pick a precise audience. Nothing is sent at this step.",
+      "name": "Sequence name",
+      "namePlaceholder": "Data opening · key accounts",
+      "list": "Selection",
+      "noEmail": "No work email",
+      "counter": "{{picked}} selected · {{shown}} contacts shown · exclusions are still respected.",
+      "noEmailWarning_one": "{{count}} selected contact has no work email: add it on their record or pick the call as channel.",
+      "noEmailWarning_other": "{{count}} selected contacts have no work email: add it on their records or pick the call as channel.",
+      "lastCheck": "Duplicates, opt-outs, your workspace exclusions and contacts followed by a colleague are checked one last time when you save, contact by contact.",
+      "business": "Business selection"
+    },
+    "objective": {
+      "help": "The template serves your goal. It does not force a meeting request.",
+      "open_conversation": {
+        "title": "Open a conversation",
+        "hint": "Check the scope and find the right person."
+      },
+      "present_expertise": {
+        "title": "Present an expertise",
+        "hint": "Link your know-how to the person’s context."
+      },
+      "resume_exchange": {
+        "title": "Resume an exchange",
+        "hint": "Continue a relationship, taking the history into account."
+      },
+      "prepared_only": {
+        "title": "Only a prepared action",
+        "hint": "No sequence: one message prepared for each contact, to validate in “To handle”."
+      },
+      "note": "Templates stay editable. They invent no need, reference or availability."
+    },
+    "messages": {
+      "help": "Each contact receives these touches, on these days. {{copilot}} prepares the text of each one for each person; you read it in “To handle”.",
+      "touch": "Touch {{n}} · D{{day}}",
+      "channel": "Channel",
+      "day": "Day after start",
+      "remove": "Remove this touch",
+      "add": "Add a step",
+      "max": "A sequence has {{count}} touches at most.",
+      "menu": "Touch {{n}} actions",
+      "note": "Each step lands in “To handle” on its date. You validate it and send it right away, or choose the send time.",
+      "signalHelp": "{{copilot}} prepares the first message of the “{{sequence}}” sequence for each contact concerned, every time it fires. You read it before anything is sent.",
+      "preparedHelp": "One single message is prepared for each contact. You read it and send it from “To handle”.",
+      "dayBadge": "D{{day}}",
+      "title": {
+        "first": "First message",
+        "followUp": "Follow-up without a reply",
+        "last": "Last follow-up"
+      },
+      "contextFirst": "First message of the sequence. Goal: {{objective}}. Without assuming a need, without inventing any fact or reference.",
+      "contextFollowUp": "Follow-up no. {{n}} with no reply to the previous message. Sequence goal: {{objective}}. Pick the original question back up without false urgency, very short.",
+      "previewFor": "Preview for",
+      "noPreview": "Pick at least one contact with a work email to see the written message.",
+      "writing": "{{copilot}} is writing the message…",
+      "writeFailed": "I couldn’t write this message.",
+      "retry": "Try again",
+      "subject": "Subject",
+      "body": "Message · preview for {{name}}",
+      "regenerate": "Regenerate",
+      "up": "Move step up",
+      "down": "Move step down",
+      "delay": "Delay after the first message (days)",
+      "unresolved": "Variables to fill in: {{variables}}. This person’s step stays blocked while they are empty."
+    },
+    "side": {
+      "title": "Your sequence",
+      "name": "Name",
+      "audience": "Audience",
+      "objective": "Goal",
+      "cadence": "Cadence",
+      "send": "Sending",
+      "sendValue": "Each step validated by you · now or at the chosen time",
+      "none": "Not chosen yet",
+      "nameNone": "Not named yet",
+      "audience_one": "{{count}} contact selected",
+      "audience_other": "{{count}} contacts selected",
+      "signal": "Start: {{signal}}",
+      "kept": "Your progress is kept. You can go back to the previous step or leave and resume later."
+    },
+    "import": {
+      "cta": "Import",
+      "file": "A CSV or Excel list",
+      "crm": "From your CRM",
+      "lists": "One of my lists"
+    },
+    "exclusions": {
+      "title_one": "{{count}} contact to check",
+      "title_other": "{{count}} contacts to check",
+      "detail": "See the detail",
+      "dialogTitle": "Exclusions for this audience",
+      "dialogLead": "What is checked now, person by person. Your workspace exclusions (domains, client accounts, opted-out contacts) apply to every sequence.",
+      "followedBy": "Followed by {{name}} · confirm with them before the first send",
+      "colleague": "a colleague",
+      "hint": "An opt-out is final: the person no longer receives any outreach. The rest can be lifted, contact by contact, when you save.",
+      "understood": "Understood"
+    },
+    "previous": "Previous"
+  },
+  "starter": {
+    "eyebrow": "Prepare a campaign",
+    "title": "A simple path.",
+    "lead": "Audience, goal, messages, review. You move forward, adjust, and pick up where you left off.",
+    "fromScratch": "Start from scratch",
+    "pill": {
+      "audience": {
+        "name": "Audience",
+        "hint": "The right people"
+      },
+      "objective": {
+        "name": "Goal",
+        "hint": "A precise intent"
+      },
+      "messages": {
+        "name": "Messages",
+        "hint": "A suited cadence"
+      },
+      "review": {
+        "name": "Review",
+        "hint": "Before anything goes live"
+      }
+    },
+    "withModel": "Start with a template",
+    "modelCount_one": "{{count}} template available. Here are three starting points, all customisable.",
+    "modelCount_other": "{{count}} templates available. Here are three starting points, all customisable.",
+    "exploreLibrary": "Explore the whole library",
+    "createModel": "Create my template",
+    "model": {
+      "byHand": "Compose by hand",
+      "guided": "With the guided assistant"
+    },
+    "useModel": "Use this template",
+    "useModelNamed": "Use the {{name}} template",
+    "card": {
+      "prospection": {
+        "kind": "Prospecting",
+        "name": "Open a conversation",
+        "hint": "One relevant fact. One orienting question."
+      },
+      "development": {
+        "kind": "Development",
+        "name": "Make an expertise known",
+        "hint": "Tie your know-how to the client’s scope."
+      },
+      "followup": {
+        "kind": "Follow-up",
+        "name": "Pick an exchange back up",
+        "hint": "Start from the relationship, not from a cold message."
+      }
+    },
+    "titleLine2": "An approach that stays yours.",
+    "stepsLabel": "The four steps of a campaign"
+  },
+  "list": {
+    "title": "Your campaigns",
+    "stateFilter": "Filter by state",
+    "allStates": "All states",
+    "pickContacts": "Pick contacts",
+    "summaryCampaigns_one": "{{count}} campaign",
+    "summaryCampaigns_other": "{{count}} campaigns",
+    "summaryActive_one": "{{count}} active",
+    "summaryActive_other": "{{count}} active",
+    "summaryScheduled_one": "{{count}} scheduled",
+    "summaryScheduled_other": "{{count}} scheduled",
+    "statesPicked_one": "{{count}} state",
+    "statesPicked_other": "{{count}} states",
+    "moreFilters": "More filters",
+    "modelFilter": "Template",
+    "accountFilter": "Account",
+    "clearFilters": "Clear all filters",
+    "noMatch": "No campaign matches these filters."
+  },
+  "row": {
+    "nextDue": "Next step on {{date}}",
+    "noNextDue": "No step coming up",
+    "replies_one": "{{count}} reply",
+    "replies_other": "{{count}} replies",
+    "contacts_one": "{{count}} contact",
+    "contacts_other": "{{count}} contacts",
+    "steps_one": "{{count}} step",
+    "steps_other": "{{count}} steps",
+    "open": "Open {{name}}",
+    "showPeople": "Show the people of {{label}}"
+  },
+  "libraryView": {
+    "back": "Your sequences",
+    "eyebrow": "Sequences · templates",
+    "title": "Your template library",
+    "lead": "Business approaches, not imposed messages. Pick a starting point, adapt it, then prepare your audience.",
+    "searchPlaceholder": "Re-engaging a contact, an interview, an assignment…",
+    "searchLabel": "Search a template",
+    "usageLegend": "Use",
+    "authorLegend": "Source",
+    "moreFilters": "More filters",
+    "author": {
+      "starter": "Starter templates",
+      "team": "From the team",
+      "personal": "Personal",
+      "imported": "Imported"
+    },
+    "count_one": "{{count}} template",
+    "count_other": "{{count}} templates",
+    "importedCount_one": "{{count}} imported",
+    "importedCount_other": "{{count}} imported",
+    "noResult": "No template matches. Widen your search or remove a filter.",
+    "importedTitle": "Imported from your file",
+    "importedLead_one": "{{count}} imported campaign, to review before use.",
+    "importedLead_other": "{{count}} imported campaigns, to review before use.",
+    "importedHint": "Campaign imported from your file, to review before use.",
+    "seeMessages": "See the messages",
+    "seeMessagesNamed": "See the messages of {{name}}",
+    "use": "Use",
+    "useThisModel": "Use this template",
+    "seeSkipped": "See skipped rows",
+    "previewNote": "Variables in double braces are filled in with real facts. Nothing is sent without you: each step lands in To do, already written by {{copilot}}.",
+    "stepDay": "Step {{n}} · D{{day}}",
+    "script": "Call script",
+    "prepareWithLaura": "Prepare with {{copilot}}",
+    "menu": {
+      "scratch": "Start from scratch",
+      "web": "From a web page",
+      "guided": "With the guided assistant"
+    },
+    "templateHint": {
+      "prospection_3_touches": "Three touches to open a relationship, without pushing.",
+      "cold_linkedin": "A cold account, through the professional network, no pressure.",
+      "cold_email": "Four emails, each with a different piece of information.",
+      "fresh_signal": "A recent signal to use while it is still relevant.",
+      "profile_push": "Put an available profile in front of the right contacts.",
+      "existing_client": "Grow a client account that is already active.",
+      "single_message": "A single message, prepared for each contact.",
+      "call_session": "A call session prepared contact by contact.",
+      "light_sequence": "A light cadence to keep the link without insisting.",
+      "nurturing": "Keep a relationship alive over time.",
+      "post_meeting_followup": "Follow up on a meeting with a precise next step.",
+      "referred_contact": "Start from a referral to open the conversation.",
+      "dormant_connection": "Reactivate an existing link without starting over.",
+      "esn_partner": "Propose a collaboration to an ESN partner."
+    },
+    "import": {
+      "cta": "Import",
+      "title": "Import campaigns",
+      "lead": "An .xlsx or .csv file, 4 MB at most: one row per step, with the campaign name, the delay, the subject and the message. The tier (A, B, C) is optional.",
+      "drop": "Drop your file here",
+      "browse": "Browse my computer",
+      "last": "Last import",
+      "skippedHint": "Skipped rows are not imported; fix them in your file and import it again."
+    },
+    "model": {
+      "title": "Create my template",
+      "lead": "Name, use, up to three steps. The steps open already written by {{copilot}}: you review and adapt.",
+      "name": "Template name",
+      "namePlaceholder": "E.g. Follow-up after a purchasing committee",
+      "usage": "Use",
+      "when": "When to use this template",
+      "whenPlaceholder": "After a first meeting with no follow-up",
+      "condition": "Condition to check (optional)",
+      "conditionPlaceholder": "The contact received a proposal",
+      "proposed": "Outline proposed by {{copilot}}, to adapt.",
+      "regenerate": "Regenerate",
+      "regeneratePrompt": "Suggest another three-step outline for a “{{usage}}” template: {{when}}. I’ll review before saving.",
+      "step": "Step {{n}}",
+      "stepOptional": "Step {{n}} · optional",
+      "day": "Days after the first message",
+      "subject": "Subject",
+      "message": "Message",
+      "hint": "Available variables: {{firstName}}, {{companyName}}, {{signature}}. No client fact or figure is added automatically.",
+      "save": "Save my template",
+      "saved": "Template saved in your library, as personal.",
+      "starter": {
+        "prospecting": {
+          "0": {
+            "subject": "Your scope at {{companyName}}",
+            "body": "Hello {{firstName}},\n\nI’m trying to understand who owns this topic at {{companyName}}. Is it within your scope, or would you point me to someone else on the team?\n\nBest regards,\n{{signature}}"
+          },
+          "1": {
+            "subject": "Re: Your scope at {{companyName}}",
+            "body": "Hello {{firstName}},\n\nFollowing up on my earlier message. Is there anything I should clarify so that you can answer?\n\nBest regards,\n{{signature}}"
+          },
+          "2": {
+            "subject": "Last message on this topic",
+            "body": "Hello {{firstName}},\n\nI don’t want to keep chasing you, so I’ll pause this follow-up. Just tell me if another time suits you better.\n\nBest regards,\n{{signature}}"
+          }
+        },
+        "development": {
+          "0": {
+            "subject": "A topic that could help at {{companyName}}",
+            "body": "Hello {{firstName}},\n\nWe have supported teams close to yours on a related topic. If it could matter to {{companyName}}, I can tell you a few words about it.\n\nKind regards,\n{{signature}}"
+          },
+          "1": {
+            "subject": "Re: A topic that could help",
+            "body": "Hello {{firstName}},\n\nPicking up my previous message: would you like me to send a concrete example, no strings attached?\n\nKind regards,\n{{signature}}"
+          },
+          "2": {
+            "subject": "To wrap up",
+            "body": "Hello {{firstName}},\n\nWithout a reply I’ll assume this isn’t a priority. I remain available if that changes.\n\nKind regards,\n{{signature}}"
+          }
+        },
+        "meeting": {
+          "0": {
+            "subject": "Following our conversation",
+            "body": "Hello {{firstName}},\n\nThank you for your time. So that nothing gets lost, here is what I took from our meeting and the next step I suggest.\n\nBest regards,\n{{signature}}"
+          },
+          "1": {
+            "subject": "Re: Following our conversation",
+            "body": "Hello {{firstName}},\n\nI’m checking whether the proposed next step suits you, or whether you’d rather adjust it.\n\nBest regards,\n{{signature}}"
+          },
+          "2": {
+            "subject": "Decision point",
+            "body": "Hello {{firstName}},\n\nCould we set a short call to settle the next step? I’ll fit your calendar.\n\nBest regards,\n{{signature}}"
+          }
+        },
+        "staffing": {
+          "0": {
+            "subject": "A profile for your need at {{companyName}}",
+            "body": "Hello {{firstName}},\n\nI’m writing about your need. An available profile matches what you are looking for; I can present it in a few lines.\n\nKind regards,\n{{signature}}"
+          },
+          "1": {
+            "subject": "Re: A profile for your need",
+            "body": "Hello {{firstName}},\n\nI’m coming back to the profile I mentioned. Shall I send its presentation, or has the need changed?\n\nKind regards,\n{{signature}}"
+          },
+          "2": {
+            "subject": "Profile still available",
+            "body": "Hello {{firstName}},\n\nThis profile stays available for a few more days. Let me know if you want to move forward; otherwise I’ll close this follow-up.\n\nKind regards,\n{{signature}}"
+          }
+        },
+        "mission_follow_up": {
+          "0": {
+            "subject": "A check-in after the start",
+            "body": "Hello {{firstName}},\n\nA few weeks after the start, I wanted to make sure all is well: onboarding, access, scope. Is there anything to adjust?\n\nKind regards,\n{{signature}}"
+          },
+          "1": {
+            "subject": "Re: A check-in after the start",
+            "body": "Hello {{firstName}},\n\nI’m checking whether you had time to think it over. Three minutes are enough.\n\nKind regards,\n{{signature}}"
+          },
+          "2": {
+            "subject": "Looking ahead",
+            "body": "Hello {{firstName}},\n\nTo plan ahead without assuming anything, could we talk about your priorities for the coming months?\n\nKind regards,\n{{signature}}"
+          }
+        },
+        "admin": {
+          "0": {
+            "subject": "Activity report to confirm",
+            "body": "Hello {{firstName}},\n\nCould you validate the activity report concerned? I’m available if anything needs clarifying.\n\nKind regards,\n{{signature}}"
+          },
+          "1": {
+            "subject": "Re: Activity report",
+            "body": "Hello {{firstName}},\n\nI’m following up on the report awaiting your validation.\n\nKind regards,\n{{signature}}"
+          },
+          "2": {
+            "subject": "Last reminder on this report",
+            "body": "Hello {{firstName}},\n\nCould you tell me whether this report is being processed on your side?\n\nKind regards,\n{{signature}}"
+          }
+        }
+      }
+    },
+    "laura": {
+      "title": "Prepare a template with {{copilot}}",
+      "lead": "Describe the recipient, the goal and what you can really bring. The template stays editable.",
+      "goal": "Your goal",
+      "suggestion": "Follow up with IT buyers after a committee, without pressure, offering a 20-minute call",
+      "prepare": "Prepare an outline",
+      "prompt": "Prepare a sequence template for this goal: {{goal}}. Three written steps that I review before saving them to my library."
+    },
+    "web": {
+      "title": "A template from a web page",
+      "lead": "{{copilot}} reads the page (your offer, a published case study) and proposes a three-step outline. What is not on the page stays as a variable to fill in.",
+      "address": "Page address",
+      "placeholder": "https://www.your-firm.com/offer/data-platform",
+      "read": "Read the page",
+      "prompt": "Read this page: {{url}}. Propose a three-step sequence template, written from its content, without inventing anything; what is missing stays as a variable. I’ll review before saving."
+    },
+    "usageAll": "All uses",
+    "authorAll": "All authors",
+    "picked_one": "{{count}} selected",
+    "picked_other": "{{count}} selected",
+    "toReview": "to review",
+    "copy": "Customise a copy",
+    "copyName": "{{name}} (copy)",
+    "crumb": "Templates"
+  }
+}

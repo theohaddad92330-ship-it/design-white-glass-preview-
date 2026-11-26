@@ -1,0 +1,77 @@
+{
+  "_synthetic": true,
+  "_note": "Synthetic test dossier for the eval harness. Firmographic facts are the real, in-repo verifiable values (research.doctolib.json). Contacts are placeholder TEST data, not claims about real people. Exercises the deterministic sources.tags faithfulness path.",
+  "company": "Doctolib",
+  "research": {
+    "companyName": "Doctolib",
+    "sector": "Édition de logiciels applicatifs",
+    "siren": "794598813",
+    "revenue": 300000000,
+    "employees": "2 500 à 3 000 salariés",
+    "headquarters": "54 Quai Charles de Gaulle, 69006, Lyon, France",
+    "businessDescription": "Éditeur d'un logiciel de prise de rendez-vous médicaux et de téléconsultation pour les professionnels et établissements de santé.",
+    "isPublic": false,
+    "subsidiaries": [{ "name": "Filiale test A" }, { "name": "Filiale test B" }],
+    "entitiesExhaustive": [
+      { "name": "Doctolib France", "type": "direction" },
+      { "name": "Plateforme Engineering", "type": "hub it", "isItEntity": true }
+    ],
+    "angles": [{ "title": "Scalabilité plateforme", "strategy": "Renforcer l'équipe engineering." }],
+    "recentSignals": [{ "signal": "Expansion européenne", "type": "projet", "date": "2025" }],
+    "budgetSignals": [{ "signal": "Recrutements ingénierie data", "source": "offres d'emploi" }],
+    "confidence": { "score": 84, "tier": "high", "factors": { "sourceCoverage": 0.9 } },
+    "sources": {
+      "tags": {
+        "siren": "PUBLIC",
+        "revenue": "PUBLIC",
+        "employees": "PUBLIC",
+        "headquarters": "PUBLIC",
+        "sector": "PUBLIC"
+      },
+      "citations": {}
+    }
+  },
+  "gate": { "decision": "go", "score": 3 },
+  "classified_contacts": [
+    {
+      "fullName": "Nadia Rossi",
+      "title": "Chief Technology Officer",
+      "decisionRole": "technical",
+      "is_c_level": true
+    },
+    {
+      "fullName": "Thomas Girard",
+      "title": "Engineering Manager",
+      "decisionRole": "user"
+    },
+    {
+      "fullName": "Léa Fontaine",
+      "title": "Responsable Achats IT",
+      "decisionRole": "procurement"
+    }
+  ],
+  "plan": {
+    "actionPlan": {
+      "phases": [
+        {
+          "name": "Prise de contact",
+          "actions": [{ "contact": "Nadia Rossi", "action": "Discuter scalabilité plateforme." }]
+        }
+      ]
+    },
+    "quick_wins": [{ "contact": "Thomas Girard", "action": "Partager un retour d'expérience staffing." }],
+    "contactMessages": [{ "contact": "Nadia Rossi", "linkedinMessage": "Sujet scalabilité de la plateforme." }],
+    "plays": [
+      {
+        "painSignal": "Recrutements ingénierie data",
+        "preuve": { "source": "offres d'emploi", "signal": "Recrutements ingénierie data" },
+        "targetContact": "Nadia Rossi",
+        "esnOffer": "Renfort data engineering",
+        "angle": "Scalabilité plateforme",
+        "firstAction": "Discuter scalabilité plateforme.",
+        "readyMessage": "Sujet scalabilité de la plateforme.",
+        "risk": "Concurrence ESN installées."
+      }
+    ]
+  }
+}

@@ -1,0 +1,201 @@
+{
+  "slug": "transport-public-reseau-transcites",
+  "company": "Réseau Transcités (fictif)",
+  "archetype": "transport_public",
+  "issue": "#2130.4",
+  "nature": "fictif",
+  "as_of": "2026-09-15",
+  "_fiction": "Nom FICTIF assumé, marqué « (fictif) » : aucune entreprise réelle n'est décrite ici, aucun identifiant de registre n'est affirmé, et les sources vivent sur le domaine réservé .invalid (RFC 2606) — elles ne peuvent désigner aucune page réelle. Le cadrage #2130.1-7 laisse le choix entre un nom fictif assumé et une entreprise réelle dont chaque fait est sourcé ; faute de source vérifiable depuis ce poste sur cet archétype, c'est le nom fictif.",
+  "expected": {
+    "identite": {
+      "status": "attendu",
+      "contient": [
+        "Réseau Transcités"
+      ]
+    },
+    "perimetre": {
+      "status": "attendu",
+      "contient": [
+        "Beaulac-Nord"
+      ]
+    },
+    "decideurs": {
+      "status": "attendu",
+      "contient": [
+        "Frédéric Aubanel"
+      ]
+    },
+    "contacts_a_ne_pas_recommander": {
+      "status": "attendu",
+      "contient": [
+        "Vincent Loubet"
+      ]
+    },
+    "equipes_cles": {
+      "status": "attendu",
+      "contient": [
+        "Tempo"
+      ]
+    },
+    "signaux": {
+      "status": "attendu",
+      "contient": [
+        "Tempo"
+      ]
+    },
+    "projets": {
+      "status": "attendu",
+      "contient": [
+        "sans contact"
+      ]
+    },
+    "partenaires": {
+      "status": "attendu",
+      "contient": [
+        "Sillon Mobilité"
+      ]
+    },
+    "acces": {
+      "status": "attendu",
+      "contient": [
+        "appel d'offres"
+      ]
+    },
+    "recommandations": {
+      "status": "attendu",
+      "contient": [
+        "Tempo"
+      ]
+    },
+    "gaps": {
+      "status": "attendu",
+      "contient": [
+        "Tempo"
+      ]
+    },
+    "sources": {
+      "status": "attendu",
+      "contient": [
+        "src-avis"
+      ]
+    },
+    "action_suivante": {
+      "status": "attendu",
+      "contient": [
+        "questions écrites"
+      ]
+    }
+  },
+  "dossier": {
+    "identite": {
+      "name": "Réseau Transcités",
+      "siren": null
+    },
+    "perimetre": {
+      "scope": "groupe",
+      "entities": [
+        "Réseau Transcités — dépôt de tramways de Beaulac-Nord",
+        "Réseau Transcités — poste de commande centralisé de Mérindol-Ville"
+      ]
+    },
+    "decideurs": [
+      {
+        "name": "Frédéric Aubanel",
+        "title": "Directeur des systèmes d'exploitation",
+        "team": "Poste de commande centralisé"
+      },
+      {
+        "name": "Élodie Sarran",
+        "title": "Responsable des marchés publics",
+        "team": "Marchés"
+      }
+    ],
+    "contacts_a_ne_pas_recommander": [
+      {
+        "name": "Vincent Loubet",
+        "reason": "membre de la commission d'appel d'offres : aucun contact commercial pendant la procédure"
+      }
+    ],
+    "equipes_cles": [
+      "Poste de commande centralisé de Mérindol-Ville",
+      "Billettique Tempo"
+    ],
+    "signaux": [
+      {
+        "id": "sig-tempo",
+        "text": "Avis de marché pour la refonte de la billettique Tempo, remise des offres en 2026-11",
+        "date": "2026-08",
+        "source": "src-avis"
+      }
+    ],
+    "projets": [
+      {
+        "id": "prj-tempo",
+        "text": "Refonte de la billettique Tempo et validation sans contact",
+        "source": "src-avis"
+      }
+    ],
+    "partenaires": [
+      "Groupement Sillon Mobilité (fictif)"
+    ],
+    "acces": [
+      {
+        "text": "Accès par appel d'offres public uniquement pendant la procédure Tempo",
+        "via": "marché public"
+      }
+    ],
+    "recommandations": [
+      {
+        "id": "reco-tempo",
+        "text": "Constituer une réponse au marché de refonte de la billettique Tempo avant la remise des offres de 2026-11, sans démarcher la commission.",
+        "why": "L'avis de marché Tempo fixe la remise des offres à 2026-11 et interdit tout contact commercial pendant la procédure.",
+        "target": "Élodie Sarran",
+        "evidence": [
+          "sig-tempo",
+          "prj-tempo"
+        ]
+      }
+    ],
+    "gaps": [
+      "montant estimé du marché Tempo non relevé"
+    ],
+    "sources": [
+      {
+        "id": "src-avis",
+        "url": "https://sources.fictif.invalid/transport-public-reseau-transcites/src-avis",
+        "date": "2026-08-29"
+      }
+    ],
+    "action_suivante": {
+      "text": "Poser les questions écrites du marché Tempo par la plateforme de la consultation",
+      "target": "Élodie Sarran",
+      "evidence": [
+        "sig-tempo"
+      ]
+    }
+  },
+  "cas": [
+    {
+      "id": "cas-generique",
+      "text": "Accompagner ce réseau dans sa transformation digitale grâce à une équipe d'experts dédiée.",
+      "why": "Un renfort d'expertise permettra de gagner en performance sur les projets en cours.",
+      "target": "Frédéric Aubanel",
+      "evidence": [
+        "src-avis"
+      ],
+      "label": "generic",
+      "_jugement": "Aucun fait propre au compte : la phrase se pose telle quelle sur n'importe quel autre."
+    },
+    {
+      "id": "cas-plausible",
+      "text": "Proposer un lot de supervision du poste de commande centralisé de Mérindol-Ville après la refonte Tempo.",
+      "why": "La refonte Tempo pourrait toucher le poste de commande centralisé, sans que l'avis de marché le dise.",
+      "target": "Frédéric Aubanel",
+      "evidence": [
+        "sig-tempo"
+      ],
+      "label": "plausible",
+      "_jugement": "Hypothèse assumée : ni fausse, ni établie."
+    }
+  ]
+}

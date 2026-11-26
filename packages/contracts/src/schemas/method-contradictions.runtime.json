@@ -1,0 +1,101 @@
+[
+  {
+    "contradiction_id": "ouverture_j_espere_que_vous_allez_bien",
+    "title": "« J’espère que vous allez bien » en ouverture",
+    "version": "1.0.0",
+    "decided_at": "2026-09-30",
+    "origin": "Recette #3382 ; instance trouvée dans apps/ia/app/prompts/bellum_outreach.py:122",
+    "sources": [
+      {
+        "ref": "apps/ia/app/prompts/bellum_outreach.py:122 (consigne de sortie, avant correction)",
+        "tier": "historical_example",
+        "status": "superseded",
+        "statement": "La consigne de sortie demandait de commencer par « J’espère que vous allez bien »."
+      },
+      {
+        "ref": "agent_docs/addendum-final-2026-08-02.md:86 + apps/ia/app/prompts/bellum_outreach.py:42",
+        "tier": "doctrine",
+        "status": "canonical",
+        "statement": "« J’espère que vous allez bien » est conditionné à un historique réel : sur un premier contact, il signale l’envoi de masse."
+      }
+    ],
+    "decisions": [
+      {
+        "channels": [],
+        "condition": "premier contact sans historique",
+        "winner_ref": "agent_docs/addendum-final-2026-08-02.md:86 + apps/ia/app/prompts/bellum_outreach.py:42",
+        "decision": "Jamais en ouverture d’un premier contact : on commence par le pourquoi de ce message, adressé à cette personne."
+      },
+      {
+        "channels": [],
+        "condition": "historique réel avec la personne",
+        "winner_ref": "agent_docs/addendum-final-2026-08-02.md:86 + apps/ia/app/prompts/bellum_outreach.py:42",
+        "decision": "Permis, seulement parce qu’un historique réel avec cette personne existe et peut être cité."
+      }
+    ]
+  },
+  {
+    "contradiction_id": "script_appel_referencement_affirme",
+    "title": "« Nous sommes référencés » affirmé dans le script d’appel",
+    "version": "1.0.0",
+    "decided_at": "2026-09-30",
+    "origin": "Recette #3382 ; script d’appel variante A (#3442)",
+    "sources": [
+      {
+        "ref": "apps/ia/app/knowledge/content_library.py:105 (corps du script, « Nous sommes {{référencés}} »)",
+        "tier": "approved_script",
+        "status": "complementary",
+        "statement": "Le script affirme le référencement en ouverture."
+      },
+      {
+        "ref": "apps/ia/app/knowledge/content_library.py:109-113 (conditions du même script) + CLAUDE.md « JAMAIS de données fictives »",
+        "tier": "invariant",
+        "status": "canonical",
+        "statement": "Le référencement doit être réel ; aucun référencement ne peut être suggéré sans preuve."
+      }
+    ],
+    "decisions": [
+      {
+        "channels": ["phone"],
+        "condition": "référencement prouvé",
+        "winner_ref": "apps/ia/app/knowledge/content_library.py:109-113 (conditions du même script) + CLAUDE.md « JAMAIS de données fictives »",
+        "decision": "La phrase peut être dite, avec le nom du référencement réel."
+      },
+      {
+        "channels": ["phone"],
+        "condition": "référencement non prouvé",
+        "winner_ref": "apps/ia/app/knowledge/content_library.py:109-113 (conditions du même script) + CLAUDE.md « JAMAIS de données fictives »",
+        "decision": "La phrase est retirée : aucun référencement n’est suggéré ni affirmé sans preuve."
+      }
+    ]
+  },
+  {
+    "contradiction_id": "clause_aucune_demarche_commerciale",
+    "title": "« Ma démarche n’est pas commerciale » dans le script d’appel",
+    "version": "1.0.0",
+    "decided_at": "2026-09-30",
+    "origin": "Recette #3382 ; script d’appel variante A (#3442) contre l’addendum du 02/08",
+    "sources": [
+      {
+        "ref": "apps/ia/app/knowledge/content_library.py:105 (« Ma démarche n’est pas commerciale »)",
+        "tier": "approved_script",
+        "status": "superseded",
+        "statement": "Le script annonce que la démarche n’est pas commerciale."
+      },
+      {
+        "ref": "agent_docs/addendum-final-2026-08-02.md:87",
+        "tier": "doctrine",
+        "status": "canonical",
+        "statement": "La clause « aucune démarche commerciale » est supprimée des trois prompts."
+      }
+    ],
+    "decisions": [
+      {
+        "channels": [],
+        "condition": null,
+        "winner_ref": "agent_docs/addendum-final-2026-08-02.md:87",
+        "decision": "La clause n’est jamais écrite ni dite : la démarche est commerciale et se présente comme telle."
+      }
+    ]
+  }
+]

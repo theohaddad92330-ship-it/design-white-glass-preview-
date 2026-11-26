@@ -1,0 +1,52 @@
+# #4111 — prompt d'analyse `bellum_org_declare` : JSON valide au schéma Pydantic
+# `OrgDeclareOutput`, chargé depuis le code (jamais recopié ici), et aucune personne inventée.
+description: Prompt d'analyse org_declare — JSON au schéma (promptfoo, #4111)
+
+prompts:
+  - '{{text}}'
+
+providers:
+  - id: file://provider.py
+    label: org-declare
+    config:
+      mode: org_declare
+
+tests:
+  - description: organigramme décrit -> JSON au schéma, noms recopiés
+    vars:
+      account: Acme Industries
+      text: "Chez Acme, Claire Martin est DSI et Paul Durand, responsable infrastructure, est rattaché à Claire Martin."
+    assert:
+      - type: python
+        metric: schema
+        value: file://asserts.py:org_schema
+      - type: python
+        metric: no-invented-name
+        value: file://asserts.py:org_names_in_source
+      - type: contains
+        metric: names-kept
+        value: Claire Martin
+
+  - description: personne désignée par sa fonction seule -> pas de nom inventé
+    vars:
+      account: Acme Industries
+      text: "Le DSI est très investi et la directrice achats suit tous les dossiers de près."
+    assert:
+      - type: python
+        metric: schema
+        value: file://asserts.py:org_schema
+      - type: python
+        metric: empty-without-names
+        value: file://asserts.py:org_empty_when_no_name
+
+  - description: texte hors sujet -> liste vide au schéma
+    vars:
+      account: ''
+      text: "Il fait beau aujourd'hui et le déjeuner était excellent."
+    assert:
+      - type: python
+        metric: schema
+        value: file://asserts.py:org_schema
+      - type: python
+        metric: empty-without-names
+        value: file://asserts.py:org_empty_when_no_name

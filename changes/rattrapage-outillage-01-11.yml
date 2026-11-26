@@ -1,0 +1,15 @@
+lot: rattrapage-outillage-01-11
+issues: [4869, 4873, 4895, 4714]
+
+inserts:
+  - file: agent_docs/chantiers-livres.md
+    text: |
+
+      ## Rattrapage outillage — 01/11/2026
+
+      - **CI Status nomme le job annulé** (#4869.2) — `tools/ci/ci-status.mjs` : un job coupé par `timeout-minutes` sort `cancelled` sans étape rouge ; il est maintenant NOMMÉ avec son plafond avant la porte. Appelant : l'étape « Nommer le job rouge ou annulé » de `ci-status` (`ci.yml`).
+      - **`test-ia` en 3 shards et la nuit** (#4869.3, #4869.5) — `tools/ci/shard-ia.mjs` (par taille, union = la suite, garde `ci-shard-ia.test.ts`) ; `if:` = pull_request (portée ia) OU `schedule` ; `test-ia` ajouté aux `needs` de `suite-complete-rouge` (le rouge de nuit sonne).
+      - **Routine hebdomadaire des jobs sans succès** (#4873.2) — `.github/workflows/jobs-sans-succes.yml` (lundi 07:00 UTC) lance `tools/ci/jobs-sans-succes.mjs`.
+      - **Dependabot : le groupe `majeures` npm sort Nest, TypeORM, jest, React, Next, ESLint, Sentry, Stripe, Anthropic SDK, lucide-react** (#4895.4) — chacun devient son chantier.
+      - **figma-sync lit lucide-react 1.x** (#4895.6) — `briefcase` n'est pas retirée : la 1.x livre `.mjs`, le lecteur cherchait `.js`.
+      - **Exception doctrine `crm-sync`** (#4714.1, #4714.2) — `c147_synchro_crm_remplit_un_champ_vide_jamais_n_ecrase` ; garde `crm-sync-exception-champ-vide.spec.ts`. Reste ouvert, dit : `CRM_SYNC_OVERWRITE`.

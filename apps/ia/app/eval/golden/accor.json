@@ -1,0 +1,24 @@
+{
+  "slug": "accor",
+  "company": "Accor",
+  "fixture": "accor.analysis.json",
+  "_source": "Attentes STRUCTURELLES. Le SIREN est la seule valeur factuelle affirmée, relevée sur recherche-entreprises.api.gouv.fr (DINUM, adossé à INSEE Sirene) le 20/09/2026 : siren 602036444, dénomination ACCOR, catégorie GE, NAF 70.10Z (activités des sièges sociaux), tranche d'effectif 42 (1 000 à 1 999 salariés, effectif de l'UNITÉ LÉGALE — pas du groupe consolidé), siège à Issy-les-Moulineaux (92130). `isPublic` et `hasSubsidiaries` sont volontairement ABSENTS — non vérifiables depuis cette source, donc non affirmés.",
+  "expect": {
+    "siren": "602036444",
+    "sectorPresent": true,
+    "minEntities": 2,
+    "minPlays": 1,
+    "requiredFacts": [
+      "sector",
+      "siren",
+      "employees",
+      "headquarters",
+      "businessDescription"
+    ],
+    "committeeRoles": [
+      "technical_buyer",
+      "procurement"
+    ]
+  },
+  "_roleFloor": "Plancher de rôles #2631.1 (décision Louis 21/09/2026, doctrine c77_gate_qualite_ia_bloque_sur_role_cle) : les sièges du comité d'achat qui doivent RESTER couverts sur ce compte nommé. Relevé sur le corpus committé le 21/09/2026 via assemble_buying_committee — on déclare ce que le dossier DONNE, jamais un rôle inventé pour faire passer le compte. Un siège qui disparaît fait échouer la CI même si la moyenne du banc monte ; un dossier SANS contact est « non évaluable », pas « perdu »."
+}

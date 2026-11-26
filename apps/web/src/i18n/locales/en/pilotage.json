@@ -1,0 +1,1478 @@
+{
+  "page": {
+    "title": "Pipeline health",
+    "introTitle": "Here is where your system is slipping, {{firstName}}.",
+    "introTitleWithoutName": "Here is where your system is slipping.",
+    "introSubtitle": "{{brand}} follows the whole commercial chain and shows you only where a decision is needed.",
+    "introSubtitleMeasuredNone": "{{brand}} tracks {{total}} links in your commercial chain: none are dropping today.",
+    "introSubtitleMeasured_one": "{{brand}} tracks {{total}} links in your commercial chain: {{count}} is dropping.",
+    "introSubtitleMeasured_other": "{{brand}} tracks {{total}} links in your commercial chain: {{count}} are dropping.",
+    "askLauraLabel": "Ask {{copilot}} what to fix",
+    "askLauraQuestion": "Where is my commercial chain slipping, why, which files are affected, and what decision should I take first?"
+  },
+  "laura": {
+    "purpose": "Spot where the commercial system is slipping and what's waiting on a decision.",
+    "actionOpen": "Open the record concerned",
+    "actionAssign": "Assign the intervention to a team member"
+  },
+  "intro": "The sales chain, link by link. Every step has an alert threshold: a link that drops off is visible before the result.",
+  "glossary": {
+    "trigger": "What is a link?",
+    "title": "Link",
+    "definition": "A measured step of the sales chain (Acquisition, Conversation, Qualification…), with its own alert threshold: a link that drops off is visible before the result."
+  },
+  "coverageOf": "links",
+  "coverageWhy": "The others are waiting for data: they stay grey, never red.",
+  "coverageNone": "That is expected on a workspace that is just starting: the tiles fill in as you go, and nothing turns red until something has actually flowed.",
+  "loading": "Loading indicators…",
+  "alerts": "{{count}} alert",
+  "alerts_other": "{{count}} alerts",
+  "alertsGoTo": "{{count}} alert — go to the link that is dropping off",
+  "alertsGoTo_other": "{{count}} alerts — go to the links that are dropping off, one by one",
+  "notMeasured": "not measured",
+  "rate": {
+    "exact": "{{value}}%",
+    "belowOne": "< 1%",
+    "aboveNinetyNine": "> 99%"
+  },
+  "over": {
+    "replyRate": "out of {{formattedCount}} email sent",
+    "replyRate_other": "out of {{formattedCount}} emails sent",
+    "qualificationRate": "out of {{formattedCount}} need taken on",
+    "qualificationRate_other": "out of {{formattedCount}} needs taken on",
+    "conversionRate": "out of {{formattedCount}} decided need",
+    "conversionRate_other": "out of {{formattedCount}} decided needs",
+    "correctionRate": "out of {{formattedCount}} contact",
+    "correctionRate_other": "out of {{formattedCount}} contacts"
+  },
+  "status": {
+    "ok": "above the threshold",
+    "alerte": "below the alert threshold",
+    "nothingToJudge": "read, nothing to judge",
+    "unread": "not measured"
+  },
+  "population": {
+    "openAria": "{{label}} — open the list",
+    "actions": {
+      "signals": "{{label}}: {{value}} — view accounts that just signalled",
+      "meetings": "{{label}}: {{value}} — view the contacts met",
+      "needsQualified": "{{label}}: {{value}} — view the qualified needs",
+      "benchAvailable": "{{label}}: {{value}} — view the available bench",
+      "activeClients": "{{label}}: {{value}} — view the active accounts"
+    }
+  },
+  "levels": {
+    "acquisition": {
+      "title": "Acquisition",
+      "subtitle": "targeted contacts, signals, pushed profiles"
+    },
+    "conversation": {
+      "title": "Conversation",
+      "subtitle": "emails sent, reply rate"
+    },
+    "qualification": {
+      "title": "Qualification",
+      "subtitle": "meetings, qualified needs (qualification)"
+    },
+    "sourcing": {
+      "title": "Sourcing",
+      "subtitle": "available bench profiles"
+    },
+    "conversion": {
+      "title": "Conversion",
+      "subtitle": "converted needs"
+    },
+    "economie": {
+      "title": "Economics",
+      "subtitle": "day rate, margin, DSO"
+    },
+    "expansion": {
+      "title": "Expansion",
+      "subtitle": "active clients"
+    },
+    "qualite": {
+      "title": "{{brand}} quality",
+      "subtitle": "corrections, wrong contacts"
+    }
+  },
+  "metrics": {
+    "contactsTargeted": "Targeted contacts",
+    "signals": "Signals",
+    "profilesPushed": "Pushed profiles",
+    "emailsSent": "Emails sent",
+    "replyRate": "Reply rate",
+    "meetings": "Meetings",
+    "needsQualified": "Qualified needs",
+    "qualificationRate": "Qualification rate",
+    "benchAvailable": "Available bench",
+    "conversions": "Conversions",
+    "conversionRate": "Conversion rate",
+    "tjm": "Day rate",
+    "margin": "Margin",
+    "dso": "DSO",
+    "marginBand": "Margin band",
+    "activeClients": "Active clients",
+    "correctionRate": "Correction rate",
+    "rejectedItems": "Corrected items"
+  },
+  "learning": {
+    "title": "What works best for you",
+    "intro": "What your team did with its past needs. These counts prioritise your next analyses — all else equal, offers that already converted here come first.",
+    "empty": "Nothing yet: no need has been moved (converted, turned into an action or marked obsolete). The loop stays silent as long as there is nothing to learn.",
+    "unlabelled": "No sector or offer attached",
+    "converted": "{{count}} converted",
+    "converted_other": "{{count}} converted",
+    "transformed": "{{count}} turned into an action",
+    "transformed_other": "{{count}} turned into actions",
+    "obsolete": "{{count}} marked obsolete",
+    "obsolete_other": "{{count}} marked obsolete",
+    "dataUsed": "Based on needs your team moved by hand — converted, turned into an action or marked obsolete. Since your workspace opened: this count is not limited to any window.",
+    "occurrences": "{{count}} need moved",
+    "occurrences_other": "{{count}} needs moved",
+    "tooFewMoves": "Too few moves to read a trend: at least {{count}} on a single pattern are needed. These counts stay true, they do not yet say what works.",
+    "seeSimilar": "See similar accounts",
+    "seeSimilarAria": "See {{sector}} accounts in Discover"
+  },
+  "pipeline": {
+    "title": "CRM pipeline",
+    "subtitle": "Computed from your CRM history, not from an estimate.",
+    "loading": "Reading the pipeline…",
+    "notConnected": "No CRM is connected to this workspace. Nothing is shown rather than an empty pipeline.",
+    "scopeMissing": "I am not allowed to read your CRM. Reconnect it: access already granted does not widen on its own.",
+    "authorizationExpired": "Your CRM is still connected, but its authorisation has expired. Reconnect it from Settings › Integrations: it will not renew on its own.",
+    "failed": "Your CRM did not answer. This is not “your pipeline is empty”: the read failed.",
+    "openIntegrations": "Open Settings › Integrations",
+    "periodAria": "Pipeline period",
+    "period": {
+      "month": "Month",
+      "quarter": "Quarter",
+      "year": "Year"
+    },
+    "open": "Open deals",
+    "won": "Won in period",
+    "winRate": "Win rate",
+    "noClosedDeal": "no closed deal yet",
+    "onDecided": "out of {{count}} decided deal",
+    "onDecided_other": "out of {{count}} decided deals",
+    "cycle": "Average cycle",
+    "notMeasurable": "not measurable",
+    "days": "{{count}} day",
+    "days_other": "{{count}} days",
+    "cycleExcluded": "{{count}} badly dated deal excluded",
+    "cycleExcluded_other": "{{count}} badly dated deals excluded",
+    "byStage": "By stage",
+    "dealsCount": "{{count}} deal",
+    "dealsCount_other": "{{count}} deals",
+    "amountUnknown": "{{count}} with no amount",
+    "outcomeUnknown": "{{count}} closed deal with no readable outcome — neither won nor lost",
+    "outcomeUnknown_other": "{{count}} closed deals with no readable outcome — neither won nor lost",
+    "coverage": "{{count}} deal read · synced on {{date}}",
+    "coverage_other": "{{count}} deals read · synced on {{date}}",
+    "neverSynced": "Never synced.",
+    "truncated": "read stopped at its bound, the pipeline is larger than what is shown"
+  },
+  "finance": {
+    "title": "Finance and capacity",
+    "subtitle": "Five readings, never merged into one figure. The gap between them is the information.",
+    "forbidden": "These figures belong to the finance scope. They exist, but your seat cannot read them.",
+    "unavailable": "Could not read. Nothing is shown rather than a figure at zero.",
+    "floor": "{{count}} line without an amount — the total is a floor",
+    "floor_other": "{{count}} lines without an amount — the total is a floor",
+    "noAmount": "{{count}} line exists, and it carries no amount. This is not “zero euros”.",
+    "noAmount_other": "{{count}} lines exist, none carries an amount. This is not “zero euros”.",
+    "lines": "{{count}} line",
+    "lines_other": "{{count}} lines",
+    "detail": "See detail",
+    "detailAria": "{{title}} — see detail",
+    "export": {
+      "button": "Export",
+      "generatedAt": "Exported on {{date}}",
+      "period": "Period: {{month}}",
+      "currentView": "Current view, no period selected",
+      "columns": {
+        "block": "Block",
+        "metric": "Metric",
+        "value": "Value"
+      },
+      "entity": "Company: {{name}}",
+      "allEntities": "Company: all"
+    },
+    "revenue": {
+      "title": "Revenue",
+      "hint": "Four figures saying four different things. Adding them up would mean nothing.",
+      "signed": "Signed",
+      "produced": "Delivered",
+      "invoiced": "Invoiced",
+      "collected": "Collected",
+      "collectedCaption": "over {{month}} · source: invoicing tracking",
+      "tooltip": {
+        "signed": "Counts missions SIGNED in the period, at their contractual amount. Excludes days delivered, what was invoiced and what was collected — the three other lines.",
+        "produced": "Days actually worked × daily rate, over the period shown. Excludes missions without a daily rate, which leave the total and are counted separately.",
+        "invoiced": "What went out to the accounting tool in the period. Excludes months not yet invoiced.",
+        "collected": "What the client actually paid in the period. Excludes invoices still awaiting payment."
+      },
+      "reasons": {
+        "no_source": "No source for this figure in the chosen period — invoicing tracking has recorded nothing for that month. This is not « zero euros ».",
+        "no_source_screen": "No source for this figure in the chosen period — invoicing tracking has recorded nothing for that month. This is not « zero euros »: the Collections card below reads that same tracking over the last twelve months.",
+        "no_amount": "Rows exist, none carries an amount. The figure stays unknown.",
+        "unavailable": "Read failed. Nothing is shown rather than a zero."
+      }
+    },
+    "forecast": {
+      "title": "Forecast",
+      "hint": "Three lines, no weighting: this quarter's probable revenue, calibrated deal by deal, lives on the pipeline.",
+      "secured": "Secured",
+      "likely": "Likely",
+      "hoped": "Hoped for",
+      "tooltip": {
+        "secured": "Missions in progress, up to their known end date. Excludes the sales pipe and renewals not yet engaged.",
+        "likely": "Renewals where a step has already happened (a proposal sent, a verbal agreement). Excludes the pipe not yet engaged, and carries no probability weighting.",
+        "hoped": "The sales pipe, at its nominal amount. Excludes any weighting tied to how likely a signature is — never a weighted figure.",
+        "contractedMargin": "The margin of the missions ALREADY SIGNED over the horizon — their day rate and loaded cost are recorded, nothing is guessed. Excludes the “hoped” line entirely: a pipeline deal has no cost, and lending it the others’ margin would be a hypothesis. No weighting of any kind: every contracted mission counts at its real rate."
+      },
+      "contractedMargin": "Margin on contracted lines",
+      "contractedMarginScope": "secured and likely only",
+      "contractedMarginAbsent": "not served by this server version",
+      "contractedMarginNotEnough_one": "computed on {{have}} mission, {{need}} are needed",
+      "contractedMarginNotEnough_other": "computed on {{have}} missions, {{need}} are needed",
+      "contractedMarginUnmeasured_one": "{{count}} mission has no recorded cost, left out",
+      "contractedMarginUnmeasured_other": "{{count}} missions have no recorded cost, left out"
+    },
+    "capacity": {
+      "title": "Capacity",
+      "hint": "How many days the team can still sell this month.",
+      "capacityDays": "Total days available",
+      "committedDays": "Days already committed",
+      "availableDays": "Days left to sell",
+      "unmeasured": "{{count}} person not counted",
+      "unmeasured_other": "{{count}} people not counted",
+      "benchRate": "Bench rate",
+      "onBench": "{{count}} consultant without a mission",
+      "onBench_other": "{{count}} consultants without a mission",
+      "benchNotMeasurable": "not measurable — {{have}} consultant out of the {{need}} needed",
+      "tooltip": {
+        "capacityDays": "Working days in the month × number of people on the team. Excludes people whose assignment could not be read, counted separately.",
+        "committedDays": "Days already committed to signed missions this month. Excludes the sales pipe, which is not sold yet.",
+        "benchRate": "Consultants without an active assignment, ÷ consultants counted, subject to the measurability threshold. Excludes consultants not counted.",
+        "availableDays": "What is left to sell = days available − days committed. Excludes the whole computation as soon as one of the two terms is missing."
+      }
+    },
+    "margin": {
+      "title": "Margin",
+      "hint": "Weighted by days: a one-day mission does not weigh the same as a one-year one.",
+      "aggregate": "Workspace margin",
+      "threshold": "Alert threshold",
+      "thresholdOff": "not set",
+      "unmeasured": "{{count}} mission without figures",
+      "unmeasured_other": "{{count}} missions without figures",
+      "below": "{{count}} mission below the threshold",
+      "below_other": "{{count}} missions below the threshold",
+      "unmeasuredShare": "Unmeasured margin",
+      "unmeasuredShareValue": "{{value}}%",
+      "unmeasuredShareNone": "no mission to measure this month",
+      "unmeasuredShareNote": "share of missions whose margin cannot be computed",
+      "notEnough": "target not compared — {{have}} mission of the {{need}} needed",
+      "notEnough_other": "target not compared — {{have}} missions of the {{need}} needed",
+      "tooltip": {
+        "aggregate": "Margin weighted by the days declared, over the period shown. Excludes missions without a daily rate or a loaded cost, counted separately.",
+        "unmeasuredShare": "The share of missions whose margin could not be computed, as a percentage of the whole. Excludes the margin itself — it measures our own blind spot, not financial health.",
+        "threshold": "The threshold below which a mission triggers a COMMERCIAL margin alert — set from Settings › Finance. Excludes missions without a known cost, which can never be compared against it.",
+        "base": "The number of missions the margin above is computed on, for the period shown. Excludes missions with no daily rate or loaded cost: they are counted separately."
+      },
+      "base": "Margin base",
+      "baseValue": "{{count}} mission measured",
+      "baseValue_other": "{{count}} missions measured"
+    },
+    "dso": {
+      "title": "Payment delay",
+      "hint": "A median, over paid invoices only: one invoice settled after legal action does not move the whole portfolio. A dispute is not a late payment — contested invoices are left out, and counted separately.",
+      "days": "Average delay",
+      "value": "{{count}} day",
+      "value_other": "{{count}} days",
+      "needMore": "not measurable — {{count}} invoice out of the {{need}} needed",
+      "needMore_other": "not measurable — {{count}} invoices out of the {{need}} needed",
+      "undatable": "{{count}} invoice set aside for missing dates",
+      "undatable_other": "{{count}} invoices set aside for missing dates",
+      "disputed": "{{count}} contested invoice, outside the calculation",
+      "disputed_other": "{{count}} contested invoices, outside the calculation",
+      "disputedNone": "no contested invoice",
+      "disputedUnknown": "contested invoices: not counted",
+      "tooltip": {
+        "days": "The median payment delay, over paid invoices across the WHOLE history. Excludes contested invoices and invoices still unpaid, counted separately."
+      }
+    },
+    "channels": {
+      "title": "Margin by channel",
+      "hint": "The gap between direct and going through an intermediary: this is what justifies a referencing effort, or not.",
+      "direct": "Direct",
+      "partner": "Through a partner",
+      "subcontracting": "Subcontracting",
+      "unknown": "Channel not set",
+      "portage": "Umbrella company",
+      "missions": "{{count}} mission",
+      "missions_other": "{{count}} missions",
+      "unmeasured": "{{count}} mission without figures",
+      "unmeasured_other": "{{count}} missions without figures",
+      "gap": "Cost of intermediation",
+      "gapUnknown": "one of the two margins is missing",
+      "tooltip": {
+        "margin": "The average margin of this channel's missions, weighted by their days, over the period shown. Excludes missions without a daily rate or a loaded cost, counted separately.",
+        "gap": "The margin gap between the direct channel and the intermediated one, in points. Excludes the comparison as soon as one of the two margins is not measurable."
+      }
+    },
+    "scope": {
+      "own": "Your perimeter: your accounts and your missions.",
+      "outside_one": "{{count}} mission belongs to nobody and is in no total.",
+      "outside_other": "{{count}} missions belong to nobody and are in no total."
+    },
+    "restricted": "Managers only: this figure covers the whole workspace.",
+    "screen": {
+      "period": "Period",
+      "outOfPeriod": "The forecast, the capacity and the payment delay do not follow this period: they look ahead, at the current month, and across the whole history."
+    },
+    "alerts": {
+      "title": "What is holding money back",
+      "hint": "What to do today, from the most blocking to the least. These amounts do not add up: it is the same money seen through several blockers.",
+      "empty": "Nothing is blocking invoicing for {{month}}.",
+      "missions_one": "{{count}} mission",
+      "missions_other": "{{count}} missions",
+      "amountUnknown": "amount not priced",
+      "floor_one": "including {{count}} with no amount — the total is a floor",
+      "floor_other": "including {{count}} with no amount — the total is a floor",
+      "folded_one": "{{count}} other queue folded away.",
+      "folded_other": "{{count}} other queues folded away.",
+      "see": "Open"
+    },
+    "target": {
+      "title": "Attainment",
+      "reading": "Margin {{margin}} · target {{target}}",
+      "aria": "{{label}}: {{value}} of the target",
+      "none": "No target set. No percentage until someone sets one — “0%” would be a claim.",
+      "marginUnknown": "This month’s margin could not be computed: nothing to compare.",
+      "marginNotEnough": "Too few priced missions to compare: two missions carry no verdict.",
+      "field": "Margin target (%)",
+      "placeholder": "e.g. 30",
+      "save": "Save",
+      "saved": "Target saved.",
+      "saveFailed": "Could not save. Nothing was changed.",
+      "invalid": "A target sits between 1 and {{max}}%. Leave it empty to clear the month’s target.",
+      "hint": "One target per month. Leaving it empty clears it: the ring goes quiet rather than showing a target nobody stands behind."
+    },
+    "introducers": {
+      "title": "Introduced business",
+      "hint": "What going through an introducer costs, in margin points.",
+      "line": "Line",
+      "realised": "Actual",
+      "gross": "Total margin (sold direct)",
+      "commission": "− introducer’s commission",
+      "net": "= net margin (via introducer)",
+      "forecastAbsent": "Forecast: not measured. Nothing in the product computes a forecast margin — the forecast is revenue, deliberately unweighted. Inventing one here would be a fabricated figure."
+    },
+    "timesheets": {
+      "title": "Timesheets",
+      "hint": "Three states, not eight: on a dashboard the only question is what blocks a month of invoicing.",
+      "validated": "Validated",
+      "pending": "Pending",
+      "conflict": "In conflict",
+      "countOnly": "{{count}}",
+      "countAndShare": "{{count}} ({{share}}%)",
+      "population_one": "of {{count}} expected timesheet",
+      "population_other": "of {{count}} expected timesheets",
+      "notRequired_one": "{{count}} on a fixed price, out of the count",
+      "notRequired_other": "{{count}} on a fixed price, out of the count",
+      "unclassified_one": "{{count}} in a state not grouped here",
+      "unclassified_other": "{{count}} in states not grouped here"
+    },
+    "adv": {
+      "title": "Sales administration",
+      "hint": "This month’s files, and what keeps them from being invoiceable.",
+      "starts": "New starts",
+      "renewals": "Renewals",
+      "renewalsNoDelta": "No comparison possible: renewals to act on are computed against today, not against a month.",
+      "queue": "The queue, by reason",
+      "queueEmpty": "No reason is blocking a file this month.",
+      "reserved_one": "{{count}} reason not measured yet — it is not counted as zero.",
+      "reserved_other": "{{count}} reasons not measured yet — they are not counted as zero.",
+      "startsNoDelta": "No comparison: the reference month could not be counted. That is not “the same as before”."
+    },
+    "activity": {
+      "title": "Recent activity",
+      "hint": "What moved, most recent first. The band above says what to do; this one says whether it is moving.",
+      "seeAll": "See all activity ({{count}})",
+      "empty": "Nothing moved over the period read.",
+      "folded_one": "{{count}} more event folded away.",
+      "folded_other": "{{count}} more events folded away.",
+      "kinds": {
+        "mission_started": "Mission started",
+        "timesheet_validated": "Timesheet validated by the client",
+        "timesheet_rejected": "Timesheet sent back to its author"
+      },
+      "notDated": {
+        "invoice_sent": "“Invoice sent” will not appear: the product issues no invoices.",
+        "payment_received": "“Payment received” does not appear: collections are known as monthly amounts, with no event date."
+      },
+      "seeLess": "Show only the last 5"
+    },
+    "entities": {
+      "label": "Company",
+      "all": "All companies",
+      "hint_one": "{{count}} company recorded. Pick it to keep only what it carries.",
+      "hint_other": "{{count}} companies recorded. Pick one to keep only what it carries.",
+      "blind": "Three blocks do not follow this company and stay on the whole workspace: {{blocks}}.",
+      "blindReads": {
+        "capacity": "capacity (it counts people, not missions)",
+        "dso": "payment delay (a median that needs the whole history)",
+        "forecastHoped": "the forecast’s “hoped” line (an opportunity has no mission yet)",
+        "forecastHorizons": "the forecast by horizon (a team view, across all companies)"
+      }
+    },
+    "snapshot": {
+      "title": "What the monthly snapshot compares",
+      "hint": "Two figures photographed every month. Margin is not photographed: its change is absent here rather than recomputed.",
+      "activeClients": "Active clients",
+      "missions_without_cost": "Missions with no cost entered"
+    },
+    "missionRevenue": {
+      "title": "Revenue by mission",
+      "hint": "What was delivered and billable this month ({{month}}), mission by mission.",
+      "empty": "No mission has a month read for this period.",
+      "preparedUnknown": "no daily rate or timesheet lets us cost this month",
+      "notInvoiced": "not invoiced yet",
+      "columns": {
+        "mission": "Mission",
+        "period": "Period",
+        "prepared": "Delivered and billable",
+        "invoiced": "Invoiced"
+      }
+    },
+    "collections": {
+      "title": "Collections",
+      "paidCaption": "over 12 months · invoicing tracking",
+      "hint": "What came in, what's expected, what's overdue — the last twelve months, read from the same invoicing tracking as revenue (which follows the chosen period).",
+      "period": "Period: invoices of the last 12 months, as of today — does not follow the selector",
+      "toTreat": {
+        "title": "To handle, by client",
+        "lines": "{{count}} invoice to handle",
+        "lines_other": "{{count}} invoices to handle",
+        "overdue": "{{count}} overdue",
+        "overdue_other": "{{count}} overdue",
+        "oldest": "oldest: {{count}} day overdue",
+        "oldest_other": "oldest: {{count}} days overdue",
+        "withoutClient": "{{count}} invoice to handle with no client attached.",
+        "withoutClient_other": "{{count}} invoices to handle with no client attached.",
+        "amountUnknown": "amount due not entered"
+      }
+    },
+    "managementTool": {
+      "title": "Your management tool",
+      "hint": "What {{brand}} knows about the management tool you connected.",
+      "connected": "{{name}} is connected.",
+      "notConnected": "No management tool is connected.",
+      "noReadYet": "{{brand}} does not read financial figures from it yet: what you see on this screen comes only from what {{brand}} computes.",
+      "connect": "Connect (Settings › Integrations)"
+    },
+    "notMeasured": "Not measured",
+    "forecastHorizons": {
+      "absentLegend": "no data allows it to be priced yet",
+      "title": "Forecast by horizon",
+      "hint": "Amounts grouped by declared status, never weighted by a probability. Each scenario states its assumptions.",
+      "horizonLabel": "Horizon",
+      "horizons": {
+        "week": "Week",
+        "month": "Month",
+        "quarter": "Quarter",
+        "semester": "Half-year"
+      },
+      "viewLabel": "View",
+      "view": {
+        "full": "Full",
+        "manager": "Manager (5 lines)"
+      },
+      "window": "From {{from}} to {{until}} (excluded)",
+      "money": {
+        "revenue": "Forecast revenue",
+        "invoicing": "Planned invoicing",
+        "cash": "Expected cash"
+      },
+      "components": {
+        "title": "From backlog to cash",
+        "backlog": "Signed backlog",
+        "renewal": "Declared renewals",
+        "pipeline": "Dated pipeline (nominal amount)",
+        "toInvoice": "Delivered, to invoice",
+        "receivable": "Invoiced, due within the horizon",
+        "overdue": "Invoiced, past due",
+        "disputed": "Invoiced, disputed"
+      },
+      "withoutAmount_one": "{{count}} line without an amount",
+      "withoutAmount_other": "{{count}} lines without an amount",
+      "assumedCurrency_one": "{{count}} line without a currency, read as euros",
+      "assumedCurrency_other": "{{count}} lines without a currency, read as euros",
+      "confidence": {
+        "basis": {
+          "contract": "Signed contract",
+          "declaration": "Declaration",
+          "nominal": "Nominal amount",
+          "invoice": "Issued invoice"
+        },
+        "axis": {
+          "contract": "Contract",
+          "source": "Source",
+          "history": "History"
+        },
+        "state": {
+          "yes": "yes",
+          "no": "no",
+          "not_measured": "not assessed"
+        }
+      },
+      "scenarios": {
+        "title": "Four scenarios",
+        "committed": "Committed",
+        "baseline": "Baseline",
+        "upside": "Upside",
+        "downside": "Downside",
+        "deduplicated_one": "{{count}} duplicate removed",
+        "deduplicated_other": "{{count}} duplicates removed",
+        "excluded_one": "{{count}} blocked or at-risk mission removed",
+        "excluded_other": "{{count}} blocked or at-risk missions removed"
+      },
+      "hypotheses": {
+        "signedOnly": "Only signed missions count.",
+        "knownEndDate": "Up to the known end date: a mission without one is not extended.",
+        "weekdaysFullTime": "Every working day is billed (public holidays not removed).",
+        "renewalsDeclared": "Declared renewals (signed or announced by the client) go ahead.",
+        "pipelineNominal": "All pipeline dated within the horizon signs, at its nominal amount.",
+        "blockedStops": "Missions declared blocked or at risk stop today.",
+        "currencyAssumedEur": "Amounts without a currency are read as euros.",
+        "deduplicated": "An opportunity that became a mission is counted once."
+      },
+      "gap": {
+        "title": "Why cash is not revenue",
+        "empty": "Nothing to explain: no measurable amount on this horizon.",
+        "invoicingDelay": "Invoicing delay: work delivered in the horizon is invoiced at month end and paid at the due date",
+        "notYetInvoiced": "Delivered, not yet invoiced",
+        "overdue": "Invoiced, past due",
+        "disputed": "Invoiced, disputed"
+      },
+      "capacity": {
+        "title": "Capacity",
+        "available": "Available",
+        "reserved": "Reserved",
+        "bench": "Gaps (unassigned)",
+        "uncoveredNeeds": "Uncovered needs",
+        "days": "{{value}} d"
+      },
+      "amendments": {
+        "title": "Of which amendments",
+        "empty": "No amendment takes effect in this horizon.",
+        "accepted_one": "{{count}} accepted",
+        "accepted_other": "{{count}} accepted",
+        "simulated_one": "{{count}} simulated",
+        "simulated_other": "{{count}} simulated",
+        "hint": "Counted, never priced — an amendment's new term has no fixed shape to convert into an amount without guessing it."
+      },
+      "decisions": {
+        "title": "Suggested decisions",
+        "empty": "No decision to suggest on this horizon.",
+        "count_one": "{{count}} line",
+        "count_other": "{{count}} lines",
+        "folded_one": "{{count}} more decision in the full view",
+        "folded_other": "{{count}} more decisions in the full view",
+        "see": "See",
+        "seeAria": "See: {{title}}",
+        "secureRenewal": "Secure the renewal",
+        "unblockMission": "Unblock the mission",
+        "accelerateInvoicing": "Speed up invoicing",
+        "chaseOverdue": "Chase late payments",
+        "resolveDispute": "Handle the dispute",
+        "completePipeline": "Date and size the pipeline",
+        "staffBench": "Place unassigned consultants"
+      }
+    },
+    "poOverview": {
+      "title": "Purchase orders",
+      "hint": "How many missions tracked by a purchase order are ok, to watch, or overrun — and how many amendments touch these same missions.",
+      "empty": "No mission tracks a purchase order yet.",
+      "buckets": {
+        "ok": "Ok",
+        "approaching": "To watch",
+        "overrun": "Overrun",
+        "unmeasured": "Unmeasured"
+      },
+      "amendments": {
+        "accepted_one": "{{count}} amendment accepted",
+        "accepted_other": "{{count}} amendments accepted",
+        "simulated_one": "{{count}} amendment simulated",
+        "simulated_other": "{{count}} amendments simulated"
+      }
+    },
+    "period": {
+      "month": "Period: {{month}}",
+      "versus": "Period: {{month}}, compared with {{previous}}",
+      "ahead": "Period: ahead — does not follow the selector",
+      "currentMonth": "Period: current month — does not follow the selector",
+      "allHistory": "Period: whole paid history — does not follow the selector",
+      "today": "Period: as of today — does not follow the selector"
+    },
+    "rows": {
+      "collections": {
+        "title": "Collections",
+        "hint": "What came in, what is still due, what is overdue — and the clients to chase."
+      },
+      "billing": {
+        "title": "Invoicing",
+        "hint": "What is prepared, what is invoiced (and how we know), what is left to prepare. An invoice is prepared here, never issued."
+      },
+      "margin": {
+        "title": "Margin and revenue",
+        "hint": "Revenue by mission and by client, the margin with its base, the average daily rate."
+      },
+      "detail": {
+        "title": "Detail",
+        "hint": "Everything else, folded: capacity, forecast, timesheets, sales admin, alerts, activity."
+      }
+    },
+    "billing": {
+      "title": "Prepared, invoiced, to prepare",
+      "hint": "Read from the same tracking as revenue by mission.",
+      "prepared": "Prepared",
+      "preparedNote": "Ready to issue in your tool — nothing is sent.",
+      "invoiced": "Invoiced",
+      "provenBy": "{{count}} confirmed by {{tool}}",
+      "provenBy_other": "{{count}} confirmed by {{tool}}",
+      "provenNoTool": "{{count}} confirmed by the connector",
+      "provenNoTool_other": "{{count}} confirmed by the connector",
+      "declared": "{{count}} declared by the team, no proof",
+      "declared_other": "{{count}} declared by the team, no proof",
+      "toPrepare": "To prepare",
+      "toPrepareNote": "Validated time, not invoiced: something else is missing (rate, purchase order, contact).",
+      "lines": "{{count}} line",
+      "lines_other": "{{count}} lines",
+      "amountUnknown": "amount not computed"
+    },
+    "revenueByClient": {
+      "title": "Revenue by client",
+      "hint": "The revenue-by-mission figures above, grouped by client.",
+      "missions": "{{count}} mission",
+      "missions_other": "{{count}} missions",
+      "withoutClient": "{{count}} mission with no client attached, not listed.",
+      "withoutClient_other": "{{count}} missions with no client attached, not listed.",
+      "averageRate": "Average daily rate",
+      "rateBase": "over {{measured}} mission with a known rate, {{count}} in total",
+      "rateBase_other": "over {{measured}} missions with a known rate, {{count}} in total"
+    },
+    "tabs": {
+      "carnet": "From backlog to cash",
+      "encaissements": "Collections to handle",
+      "marge": "Margin and delivery",
+      "adv": "Sales administration"
+    }
+  },
+  "catalogue": {
+    "owner": "Owner",
+    "threshold": "Threshold",
+    "cause": "Likely cause",
+    "decision": "Decision",
+    "owners": {
+      "direction": "Leadership",
+      "business": "Sales",
+      "recruitment": "Recruitment",
+      "delivery": "Delivery",
+      "finance": "Finance",
+      "product": "Product"
+    }
+  },
+  "hygiene": {
+    "title": "Data quality",
+    "subtitle": "What gets in the way of working. Each line opens the list of objects concerned.",
+    "unavailable": "Could not read. That is not « everything is clean ».",
+    "notRead": "not read",
+    "ratio": "{{count}} of {{total}}",
+    "checks": {
+      "accounts_without_next_action": "Tracked accounts with no next action",
+      "contacts_without_email": "Contacts with no address",
+      "projects_without_amount": "Open projects with no amount",
+      "missions_without_end_date": "Active missions with no end date",
+      "needs_without_skills": "Needs with no typed skill",
+      "talents_unknown_availability": "Consultants with unknown availability",
+      "unresolved_duplicates": "Unresolved duplicates",
+      "missions_without_cost": "Missions with no loaded cost",
+      "contacts_flagged_incorrect": "Contacts flagged incorrect"
+    }
+  },
+  "quality": {
+    "state": {
+      "breached": "To handle",
+      "ok": "Held",
+      "unknown": "Not read"
+    },
+    "ratio": "of {{total}}",
+    "emptyPopulation": "no {{population}} in your workspace — nothing to measure",
+    "population": {
+      "accounts_without_next_action": "tracked account",
+      "contacts_without_email": "contact",
+      "projects_without_amount": "open project",
+      "missions_without_end_date": "active assignment",
+      "needs_without_skills": "open need",
+      "talents_unknown_availability": "consultant",
+      "unresolved_duplicates": "flagged duplicate",
+      "missions_without_cost": "active assignment",
+      "contacts_flagged_incorrect": "contact flagged incorrect"
+    },
+    "noDestination": "The screen that fixes it does not exist in this version.",
+    "openAria": "{{action}} — {{check}}",
+    "checks": {
+      "accounts_without_next_action": {
+        "says": "Work nobody has planned.",
+        "action": "Open the list"
+      },
+      "contacts_without_email": {
+        "says": "Nothing reaches them until there is an address.",
+        "action": "Enrich"
+      },
+      "projects_without_amount": {
+        "says": "They weigh in no pipeline.",
+        "action": "Enter the amount"
+      },
+      "missions_without_end_date": {
+        "says": "No renewal alert will ever fire on them.",
+        "action": "Set the end date"
+      },
+      "needs_without_skills": {
+        "says": "Matching cannot process them.",
+        "action": "Type the skills"
+      },
+      "talents_unknown_availability": {
+        "says": "Neither entered, nor derivable from an assignment.",
+        "action": "Confirm availability"
+      },
+      "unresolved_duplicates": {
+        "says": "Spotted, and never arbitrated.",
+        "action": "Arbitrate"
+      },
+      "missions_without_cost": {
+        "says": "Their margin is not measurable.",
+        "action": "Enter the cost"
+      },
+      "contacts_flagged_incorrect": {
+        "says": "The record names the wrong person — it stays on file, but shouldn't be used until someone revisits it.",
+        "action": "Revisit the record"
+      }
+    }
+  },
+  "rituals": {
+    "title": "Team rituals",
+    "subtitle": "The agenda of each meeting, with its duration and the figures to open. This is what makes the system someone else's to run.",
+    "unavailable": "Rituals unavailable.",
+    "minutes": "{{count}} min",
+    "minutes_other": "{{count}} min",
+    "open": "Open the screen",
+    "owner": {
+      "manager": "Owned by the manager",
+      "sales_ops": "Owned by sales ops",
+      "team": "Owned by the team"
+    },
+    "roles": {
+      "manager": "Manager",
+      "sales_ops": "Sales ops",
+      "team": "Team"
+    },
+    "participants": "Participants",
+    "expectedDecisions": "Expected decision",
+    "hide": "Hide",
+    "show": "Show again",
+    "hiddenTitle": "Hidden rituals ({{count}})",
+    "hiddenTitle_other": "Hidden rituals ({{count}})",
+    "noEffect": "No measurable effect recently",
+    "noEffectSince": "No measurable effect since {{month}}",
+    "proposeHide": "No watched indicator has moved: does this ritual still earn its place?",
+    "proposeHideSince": "Nothing has moved since {{month}}: does this ritual still earn its place?",
+    "proposeHideAction": "Hide this ritual",
+    "notEvaluable": "Measurement in progress ({{monthsCovered}}/3 months)",
+    "lastHeld": "Last held",
+    "neverHeld": "never marked as held",
+    "nextDate": "Next session expected on {{date}}",
+    "markHeld": "Mark as held today",
+    "createAction": "Create an action",
+    "actionsCreated_one": "{{count}} action created from this ritual",
+    "actionsCreated_other": "{{count}} actions created from this ritual"
+  },
+  "contribution": {
+    "title": "Measurable {{brand}} impact",
+    "line": {
+      "accounts_opened_one": "{{count}} account opened via Discover",
+      "accounts_opened_other": "{{count}} accounts opened via Discover",
+      "needs_from_signal_one": "{{count}} need detected from a signal",
+      "needs_from_signal_other": "{{count}} needs detected from a signal",
+      "submissions_from_matching_one": "{{count}} submission from a match",
+      "submissions_from_matching_other": "{{count}} submissions from a match",
+      "missions_signed_one": "{{count}} mission signed on those accounts",
+      "missions_signed_other": "{{count}} missions signed on those accounts"
+    },
+    "population": {
+      "accounts_opened": "accounts opened via Discover",
+      "needs_from_signal": "needs detected from a signal",
+      "submissions_from_matching": "submissions from a match",
+      "missions_signed": "missions signed on those accounts"
+    },
+    "unattributed_one": "{{count}} older account, whose origin was not recorded.",
+    "unattributed_other": "{{count}} older accounts, whose origin was not recorded.",
+    "unattributedPopulation": "older accounts, whose origin was not recorded",
+    "method": "Only what {{brand}} can link with certainty to a recorded action or origin.",
+    "since": "Since {{date}}",
+    "groups": {
+      "direct": "Direct attribution",
+      "directHint": "The origin is recorded: these objects exist because a {{brand}} action produced them.",
+      "partial": "Partial attribution",
+      "partialHint": "The link is real, the outcome is not: a salesperson won it.",
+      "unattributed": "Unattributable history",
+      "unattributedHint": "What nobody can trace — neither to {{brand}} nor to anything else. It is what gives the two groups above their scale."
+    },
+    "unattributedNone": "None: every one of your accounts has a recorded origin."
+  },
+  "rex": {
+    "subtitle": "What finished missions taught us, and what losses tell us.",
+    "tabsLabel": "Lessons learned",
+    "tabs": {
+      "pending": "To collect",
+      "collected": "Collected feedback",
+      "losses": "Documented losses",
+      "rules": "Learned rules"
+    },
+    "question_one": "Which feedback to collect while it is fresh? “{{mission}}” has been waiting for {{count}} day.",
+    "question_other": "Which feedback to collect while it is fresh? “{{mission}}” has been waiting for {{count}} days.",
+    "questionNoDate": "Which feedback to collect while it is fresh? “{{mission}}” is waiting.",
+    "questionCta": "Collect this feedback",
+    "col": { "mission": "Mission", "end": "End", "waiting": "Waiting" },
+    "waitingDays_one": "for {{count}} day",
+    "waitingDays_other": "for {{count}} days",
+    "formTitle": "Feedback on “{{mission}}”",
+    "title": "Assignment retrospectives",
+    "metaDescription": "What finished assignments taught, and the ones whose feedback nobody has collected yet.",
+    "intro": "A retrospective takes two minutes while it is fresh. Three months later it is gone, and with it the only raw material a proof can come from.",
+    "loading": "Reading finished assignments…",
+    "unavailable": "Could not read the list. This is not “no retrospectives”.",
+    "unnamedAccount": "account not found in this workspace",
+    "unnamedMission": "assignment not found in this workspace",
+    "empty": {
+      "title": "No finished assignment in this workspace.",
+      "description": "A retrospective is collected when an assignment ends. They will show up here as soon as the first one finishes.",
+      "action": "See assignments"
+    },
+    "pending": {
+      "title": "To collect",
+      "count_one": "{{count}} finished assignment is waiting for its retrospective",
+      "count_other": "{{count}} finished assignments are waiting for their retrospective",
+      "none": "No finished assignment is waiting for its retrospective.",
+      "endedOn": "ended on {{date}}",
+      "noEndDate": "no end date",
+      "collect": "Collect the retrospective",
+      "noRight": "Your role cannot write to records: a workspace manager can collect these retrospectives."
+    },
+    "collected": {
+      "title": "Collected retrospectives",
+      "count_one": "{{count}} retrospective collected",
+      "count_other": "{{count}} retrospectives collected",
+      "none": "No retrospective collected yet. The assignments above are waiting for theirs.",
+      "on": "collected on {{date}}",
+      "worked": "What worked",
+      "failed": "What went wrong",
+      "team": "Team",
+      "skills": "Skills",
+      "constraints": "Constraints",
+      "offer": "Offer",
+      "expertise": "Expertise",
+      "access_path": "Access path",
+      "first_door": "First door",
+      "proof_used": "Proof used",
+      "cycle_duration": "Cycle duration",
+      "partner": "Partner"
+    },
+    "form": {
+      "legend": "Retrospective on {{mission}}",
+      "summary": "What the assignment taught",
+      "summaryPlaceholder": "The sponsor changed after two months…",
+      "worked": "What worked well",
+      "workedPlaceholder": "The architect and developer pairing…",
+      "failed": "What went wrong",
+      "failedPlaceholder": "Access to the test environment…",
+      "team": "Team involved",
+      "teamPlaceholder": "Julie (lead), Marc (dev)…",
+      "skills": "Skills used",
+      "skillsPlaceholder": "React, PostgreSQL…",
+      "constraints": "Constraints faced",
+      "constraintsPlaceholder": "Tight budget, limited VPN access…",
+      "offer": "Offer proposed",
+      "offerPlaceholder": "Audit of the existing setup, then TMA…",
+      "expertise": "Expertise used",
+      "expertisePlaceholder": "Cloud architecture, DevOps…",
+      "access_path": "Access path",
+      "access_pathPlaceholder": "Panel listing, introduced by a partner…",
+      "first_door": "First door",
+      "first_doorPlaceholder": "CIO, procurement…",
+      "proof_used": "Proof used",
+      "proof_usedPlaceholder": "Comparable client reference, prior estimate…",
+      "cycle_duration": "Cycle duration",
+      "cycle_durationPlaceholder": "4 months from first contact to signature…",
+      "partner": "Partner involved",
+      "partnerPlaceholder": "Partner name, if any…",
+      "save": "Save",
+      "cancel": "Cancel",
+      "saved": "Retrospective saved.",
+      "saveFailed": "I could not save this retrospective.",
+      "strategy": "Approach strategy",
+      "buying_model": "Buying model",
+      "organisation": "Decision-making organisation",
+      "choicePlaceholder": "Choose…",
+      "choiceNone": "Not specified"
+    },
+    "learning": {
+      "title": "Rules learned from losses",
+      "intro": "A rule only comes from at least two documented losses. A manager rules on it; adopting does not activate it — activation is a second step, and deactivating it removes it from what {{copilot}} knows.",
+      "unavailable": "Can’t be read. This is not “no rule”: the learned rules could not be loaded.",
+      "needTwoRex": "No learned rule: at least two documented losses are needed to propose one.",
+      "none": "No learned rule yet. Cite at least two similar losses to propose one.",
+      "cancel": "Cancel",
+      "adoptedToast": "Proposal adopted — the rule is created, disabled, awaiting activation review.",
+      "rejectedToast": "Proposal rejected.",
+      "decideFailed": "The decision was not saved",
+      "activationFailed": "The activation was not saved",
+      "proposeFailed": "The proposal was not saved",
+      "proposed": "Proposal saved — a manager has to rule on it.",
+      "propose": {
+        "open": "Propose a rule",
+        "pick": "Cited losses (at least two)",
+        "rexLabel": "Loss of {{date}}",
+        "needTwo": "Pick at least two similar losses.",
+        "domain": "Domain",
+        "observation": "What these losses have in common (one sentence)",
+        "submit": "Propose"
+      },
+      "proposals": {
+        "supportedBy_one": "Backed by {{count}} loss",
+        "supportedBy_other": "Backed by {{count}} losses",
+        "adopt": "Adopt",
+        "reject": "Reject",
+        "status": {
+          "pending": "To rule on",
+          "adopted": "Adopted",
+          "rejected": "Rejected"
+        }
+      },
+      "rules": {
+        "active": "Active — {{copilot}} knows it",
+        "pendingReview": "Awaiting activation review",
+        "disabled": "Disabled",
+        "disabledReason": "Disabled: {{reason}}",
+        "activate": "Activate",
+        "deactivate": "Deactivate",
+        "reasonLabel": "Why deactivate it?",
+        "confirmDeactivate": "Deactivate the rule"
+      },
+      "follow": {
+        "open": "Follow on an action",
+        "account": "Account",
+        "label": "Action to take",
+        "submit": "Add to plan",
+        "reason": "Apply the workspace’s learned rule and measure how it turns out.",
+        "expectedOutcome": "The rule is applied and its outcome is measured.",
+        "done": "Action added to the plan, tied to the rule.",
+        "error": "The action could not be added.",
+        "measure_one": "{{count}} action followed · {{positive}} positive · {{negative}} negative · {{open}} without a declared outcome",
+        "measure_other": "{{count}} actions followed · {{positive}} positive · {{negative}} negative · {{open}} without a declared outcome",
+        "contradicted": "Your results contradict it: no positive outcome across several actions. Deactivating it is up to you."
+      },
+      "lost": {
+        "intro": "A documented loss says what happened, what the client said, and what we suspect — each sentence carries its nature (confirmed fact, client feedback, hypothesis).",
+        "none": "No documented loss yet. A loss is documented from the deal, when it closes.",
+        "title": "Documented losses",
+        "declared": "Declared reason: {{motif}}",
+        "suspected": "Hypothesis (unconfirmed): {{motif}}"
+      }
+    },
+    "strategies": {
+      "conquete_directe": "Direct conquest",
+      "extension_de_compte": "Account expansion",
+      "via_partenaire": "Via a partner",
+      "defense_de_base": "Installed-base defence"
+    },
+    "buyingModels": {
+      "appel_offres": "Tender",
+      "accord_cadre": "Framework agreement",
+      "referencement": "Vendor listing",
+      "gre_a_gre": "Direct award"
+    },
+    "organisations": {
+      "decideur_unique": "Single decision-maker",
+      "comite_restreint": "Small committee",
+      "comite_elargi": "Broad committee"
+    }
+  },
+  "target": {
+    "label": "Target {{bound}}",
+    "completeness": "completeness",
+    "zero": "0",
+    "below": "< {{value}}",
+    "above": "> {{value}}",
+    "band": "{{min}} – {{max}}",
+    "units": {
+      "percent": "{{value}}%",
+      "days": "{{value}} days",
+      "count": "{{value}}"
+    },
+    "status": {
+      "on_target": "on target",
+      "off_target": "off target",
+      "unmeasured": "not compared — nothing measured yet"
+    },
+    "completenessHint": "Two targets measure not the firm but what we do not know about it: they say how far the other figures can be trusted.",
+    "notComparable": "target not compared — {{have}} of the {{need}} needed"
+  },
+  "delta": {
+    "notMeasured": "not measured",
+    "firstMonth": "first month — the comparison starts next month",
+    "noPrevious": "no snapshot for the reference month",
+    "noCurrent": "no snapshot for this month",
+    "denominatorMissing": "unknown population — no rate can be computed",
+    "notOrdered": "periods cannot be compared",
+    "vsPreviousMonth": "vs last month",
+    "vsYearAgo": "vs a year ago",
+    "points": "{{value}} pts",
+    "countThisMonth": "{{value}} this month",
+    "versus": "vs {{month}}",
+    "withPeriod": "{{change}} {{period}}",
+    "percentAside": "({{sign}}{{value}}%)",
+    "stable": "stable {{period}}",
+    "outOf_one": "out of {{count}}",
+    "outOf_other": "out of {{count}}"
+  },
+  "decisions": {
+    "title": "What is waiting on a decision",
+    "alerts_one": "1 link is slipping",
+    "alerts_other": "{{count}} links are slipping",
+    "alertsHint": "See which one in the chain below.",
+    "needs_one": "1 lead to review",
+    "needs_other": "{{count}} leads to review",
+    "needsHint": "Detected from a signal — nobody has stated it yet.",
+    "unmeasured_one": "1 link without measurement",
+    "unmeasured_other": "{{count}} links without measurement",
+    "unmeasuredHint": "A connection is missing, not a fix.",
+    "staleFocus_one": "1 account in Focus for over 30 days",
+    "staleFocus_other": "{{count}} accounts in Focus for over 30 days",
+    "staleFocusHint": "Maximum effort is running out of steam — worth a review.",
+    "noGoToRevisit_one": "1 parked account to revisit",
+    "noGoToRevisit_other": "{{count}} parked accounts to revisit",
+    "noGoToRevisitHint": "The review window for the parking reason has passed.",
+    "accountsWithoutOwner_one": "1 account without an owner",
+    "accountsWithoutOwner_other": "{{count}} accounts without an owner",
+    "accountsWithoutOwnerHint": "Nobody is assigned to this account.",
+    "accountsWithoutDate_one": "1 account without a next review",
+    "accountsWithoutDate_other": "{{count}} accounts without a next review",
+    "accountsWithoutDateHint": "No review date has been set.",
+    "strategyNoGo_one": "1 account NO-GO on its strategy",
+    "strategyNoGo_other": "{{count}} accounts NO-GO on their strategy",
+    "strategyNoGoHint": "All five dimensions (Perimeter, Problem, People, Proof, Passage) are empty.",
+    "strategyBlocked_one": "1 account blocked on its strategy",
+    "strategyBlocked_other": "{{count}} accounts blocked on their strategy",
+    "strategyBlockedHint": "Four of the five dimensions still need filling in.",
+    "accountsWithoutMovement_one": "1 active account without movement for over 30 days",
+    "accountsWithoutMovement_other": "{{count}} active accounts without movement for over 30 days",
+    "accountsWithoutMovementHint": "In execution (extension/volume), but no recent activity.",
+    "watchToWake_one": "1 account on watch received a signal",
+    "watchToWake_other": "{{count}} accounts on watch received a signal",
+    "watchToWakeHint": "A signal arrived since it went on watch — reopen it or let it sleep.",
+    "open": "Open"
+  },
+  "chain": {
+    "title": "The commercial chain",
+    "secondaryTitle": "Cross-cutting readings — they cover the whole chain, not one step",
+    "linkAria": "{{label}} — step {{position}} of {{total}}"
+  },
+  "provenance": {
+    "source": "Source: {{tables}}",
+    "sourceNone": "No source read",
+    "window": "Current state, not a period",
+    "denominator_one": "Out of {{formattedCount}}",
+    "denominator_other": "Out of {{formattedCount}}",
+    "computedAt": "Computed at {{time}}",
+    "tables": {
+      "contacts": "contacts",
+      "accounts": "accounts",
+      "activities": "activity",
+      "project_needs": "needs",
+      "consultants": "talent pool",
+      "missions": "missions",
+      "mission_commercial_terms": "commercial terms",
+      "record_field_audits": "record corrections",
+      "mission_timesheets": "Mission timesheets",
+      "invoice_readiness": "invoice readiness"
+    }
+  },
+  "accroche": {
+    "title": "Your steering, in three figures",
+    "alerting_one": "{{count}} link in the chain is slipping",
+    "alerting_other": "{{count}} links in the chain are slipping",
+    "unmeasured_one": "{{count}} link not measured",
+    "unmeasured_other": "{{count}} links not measured",
+    "healthy_one": "{{count}} link holding",
+    "healthy_other": "{{count}} links holding",
+    "link": "Open steering"
+  },
+  "interestPenetrabilityPortfolio": {
+    "title": "Portfolio — interest × penetrability",
+    "subtitle": "Where each account sits on the interest × penetrability matrix from its sheet — one more projection, never a second score.",
+    "empty": "No account in this scope.",
+    "accountCount_one": "{{count}} account",
+    "accountCount_other": "{{count}} accounts",
+    "moreCount_one": "+{{count}} more",
+    "moreCount_other": "+{{count}} more",
+    "unavailable_one": "{{count}} account with a position not yet determined (not enough known factors)",
+    "unavailable_other": "{{count}} accounts with a position not yet determined (not enough known factors)",
+    "truncated": "Reading limited to the first {{limit}} accounts out of {{total}} — the portfolio is too large to read in full here."
+  },
+  "partnerGovernance": {
+    "title": "Rank 2: your partners' framework",
+    "intro_one": "{{count}} partner relationship. What is framed, and what to validate before sending a profile.",
+    "intro_other": "{{count}} partner relationships. What is framed, and what to validate before sending a profile.",
+    "allFramed": "Nothing to frame: no active relationship has a missing rule.",
+    "more_one": "+ {{count}} more relationship to frame",
+    "more_other": "+ {{count}} more relationships to frame",
+    "open": "Open Partners"
+  },
+  "toComplete": {
+    "title": "Data to complete",
+    "hint": "What gets in the way of work. Each line opens the list to fix.",
+    "unavailable": "Could not be read. This is not “all clean”: the checks could not be read.",
+    "noBaseline": "no snapshot last month for these lists — trends will appear at the next monthly snapshot"
+  },
+  "staffing": {
+    "title": "Staffing",
+    "subtitle": "Who is available, who is on the bench, which missions end, and how consultants are utilised. Nothing is weighted.",
+    "loading": "Loading staffing…",
+    "error": "Staffing is unavailable right now.",
+    "capacity": {
+      "title": "Capacity and demand · 12 weeks",
+      "intro": "Per week: capacity in days (consultants × working days, minus leave and public holidays) against the days requested by signed missions and, separately, by dated open needs. The two demands are not added together and not weighted.",
+      "empty": "No consultant and no demand to compare over the next 12 weeks.",
+      "undated_one": "{{count}} open need without a start date is not counted.",
+      "undated_other": "{{count}} open needs without a start date are not counted.",
+      "week": "Week of {{date}}",
+      "legendCapacity": "Capacity",
+      "legendSigned": "Signed missions",
+      "legendNeeds": "Open needs",
+      "days": "{{value}} d",
+      "workingDays": "{{count}} working days · {{consultants}} consultants",
+      "columns": {
+        "week": "Week",
+        "capacity": "Capacity",
+        "signed": "Signed missions",
+        "needs": "Open needs"
+      }
+    },
+    "bench": {
+      "title": "Bench",
+      "intro": "Consultants without a mission today. Cumulated days: working days of the current month, from the 1st to {{date}}, excluding leave.",
+      "empty": "No consultant on the bench today.",
+      "costKnown": "Bench cost for the month: {{amount}} (days × daily cost, consultants whose cost is filled in).",
+      "costNone": "Cost not filled in: no consultant on the bench has a daily cost, so no amount is computed.",
+      "withoutCost_one": "{{count}} consultant without a daily cost is not priced.",
+      "withoutCost_other": "{{count}} consultants without a daily cost are not priced.",
+      "columns": {
+        "name": "Consultant",
+        "since": "Since",
+        "days": "Days this month",
+        "skills": "Skills",
+        "cost": "Cost this month"
+      },
+      "sinceUnknown": "No known mission",
+      "costUnknown": "Cost not filled in",
+      "costRestricted": "Finance only"
+    },
+    "endings": {
+      "title": "Mission endings",
+      "intro": "Ongoing missions ending within the next 30, 60 or 90 days, with whether a renewal is known.",
+      "within30": "Within 30 days",
+      "within60": "31 to 60 days",
+      "within90": "61 to 90 days",
+      "empty": "No mission ends in this window.",
+      "endsOn": "Ends {{date}} (in {{count}} d)",
+      "renewal": {
+        "known": "Renewal known",
+        "in_discussion": "Renewal under discussion",
+        "unknown": "Renewal not known"
+      },
+      "noConsultant": "Consultant not filled in",
+      "noAccount": "Client not filled in"
+    },
+    "tace": {
+      "title": "TACE · utilisation rate",
+      "intro": "Billed days ÷ available working days. Weekends, public holidays and leave are removed from the denominator.",
+      "formula": "TACE = billed days ÷ available working days. Available working days = days of the month excluding weekends, French public holidays and the consultant's leave/absences. Planned: days from assignments (load %). Actual: days entered in timesheets.",
+      "formulaLabel": "TACE formula",
+      "period": "{{month}} · {{from}} to {{to}}",
+      "global": "Overall",
+      "planned": "Planned",
+      "actual": "Actual",
+      "notMeasured": "Not measured: no time entered",
+      "value": "{{percent}}%",
+      "base": "{{days}} d out of {{available}} d available",
+      "belowThreshold": "Below the {{threshold}}% threshold",
+      "noThreshold": "No alert threshold set: no alert until the firm sets one.",
+      "threshold": {
+        "label": "TACE alert threshold (%)",
+        "hint": "Workspace setting. Empty = no alert.",
+        "save": "Save",
+        "reset": "Reset to not set",
+        "invalid": "Between 1 and 100.",
+        "current": "Current threshold: {{value}}%",
+        "saved": "Threshold saved",
+        "failed": "Could not save"
+      },
+      "columns": {
+        "name": "Consultant",
+        "planned": "Planned",
+        "actual": "Actual"
+      },
+      "empty": "No consultant to show for this month."
+    },
+    "laura": {
+      "purpose": "The firm's capacity versus demand, bench, mission endings and utilisation rate.",
+      "bench": "Consultants on the bench",
+      "endings": "Mission endings within 30 days",
+      "threshold": "TACE alert threshold",
+      "thresholdMissing": "TACE alert threshold not set: no alert",
+      "actualMissing": "Actual TACE not measured: no time entered this month",
+      "action": "Set the TACE alert threshold"
+    },
+    "facts": {
+      "region": "Staffing figures",
+      "bench": "Bench",
+      "benchMeta": "profiles available this month",
+      "endings": "Mission endings",
+      "endingsMeta": "within 30, 60 and 90 days",
+      "tace": "Utilisation this month",
+      "taceMeta": "billed days over working days",
+      "missing": "Missing expertise",
+      "missingMeta": "requested, no profile"
+    }
+  },
+  "weekDelta": {
+    "lostList": "See the lost deals",
+    "lostRex": "See the lessons learned (REX)",
+    "title": "What moved",
+    "period_one": "over the last day",
+    "period_other": "over the last {{count}} days",
+    "periodMissions": "coming within {{count}} days",
+    "unweighted": "Unweighted sums, entered amounts only.",
+    "amount": "{{amount}} unweighted",
+    "amountUnknown": "amount not entered",
+    "countLabel": "{{label}}: {{count}}",
+    "unreadAll": "What moved could not be read.",
+    "loading": "Reading the week…",
+    "open": "Show the list",
+    "close": "Collapse the list",
+    "listLabel": "{{label}} — list",
+    "noAccount": "account not set",
+    "noConsultant": "consultant not set",
+    "counters": {
+      "created": "created",
+      "advanced": "advanced",
+      "regressed": "moved back",
+      "lost": "lost",
+      "won": "signed",
+      "missionsEnding": "missions ending",
+      "cashIn": "collected"
+    },
+    "formulas": {
+      "created": "Deals created during the period (first detection date). Buying signals and leads spotted by an analysis but never picked up are not counted.",
+      "advanced": "Opportunities whose stage moved further along the pipe during the period. A move to lost, signed or dormant is counted separately.",
+      "regressed": "Opportunities that went back to an earlier pipe stage during the period.",
+      "lost": "Opportunities moved to the “lost” stage during the period.",
+      "won": "Opportunities moved to the “signed” stage during the period.",
+      "missionsEnding": "Running missions whose planned end falls within the next {{days}} days.",
+      "cashIn": "Payments recorded during the period, amount paid, grouped by client."
+    },
+    "cashLine_one": "1 payment",
+    "cashLine_other": "{{count}} payments",
+    "summaryCash": "{{amount}} collected"
+  },
+  "stages": {
+    "detected": "Detected",
+    "potential": "Potential",
+    "qualified": "Qualified",
+    "confirmed": "Need expressed",
+    "profiles_submitted": "Profiles submitted",
+    "negotiation": "Negotiation",
+    "won": "Signed",
+    "lost": "Lost",
+    "dormant": "Dormant"
+  },
+  "objective": {
+    "title": "This month’s target",
+    "month": "{{month}}",
+    "none": "No target entered",
+    "noneLink": "Enter a target in Team",
+    "target": "Declared target",
+    "targetHint": "Sum of the revenue targets entered for {{month}}.",
+    "realised": "Achieved",
+    "realisedHint": "Signed in {{month}} (opportunities moved to “signed” and closed within the month).",
+    "remaining": "Left to sign",
+    "remainingHint": "Target − achieved, never negative.",
+    "coverage": "Pipe coverage",
+    "coverageValue": "× {{ratio}}",
+    "coverageHint": "Open unweighted pipe ({{pipe}}) ÷ left to sign ({{remaining}}).",
+    "coverageNone": "Nothing to cover: the target is reached.",
+    "pace": "Expected pace",
+    "paceValue": "{{amount}} per working day",
+    "paceHint": "Left to sign ÷ {{days}} working days remaining in {{month}}, today included.",
+    "notMeasured": "Not measured",
+    "unread": "This month’s target could not be read.",
+    "loading": "Reading the target…",
+    "capTitle": "{{month}} target",
+    "signedThisMonth": "Signed this month",
+    "ringLabel": "{{percent}}% of the target signed",
+    "ringCaption": "of the target signed",
+    "coverageLine": "Pipe coverage × {{ratio}} · expected pace {{pace}}",
+    "coverageUnknown": "Pipe coverage: not measured",
+    "toReach": "{{amount}} to reach the target",
+    "reached": "The target is reached",
+    "edit": "Adjust my target",
+    "detail": "Detail"
+  },
+  "cockpit": {
+    "chainTitle": "The chain",
+    "chainOpen": "Show chain details",
+    "chainClose": "Collapse chain details",
+    "chainRowLabel": "The eight links of the chain",
+    "title": "Steer your activity",
+    "subtitle": "Sales decisions before the counters",
+    "chainFoldTitle": "The sales chain · {{count}} links",
+    "chainFoldAlerts_one": "1 link is slipping",
+    "chainFoldAlerts_other": "{{count}} links are slipping",
+    "chainFoldMeta": "Computed on {{measured}} links · {{unmeasured}} not measured",
+    "detailFoldTitle": "Detail · what {{copilot}} contributed, what works for you",
+    "detailFoldMeta": "Four readings",
+    "export": {
+      "label": "Export the summary",
+      "title": "Pilotage summary",
+      "file": "pilotage-summary"
+    },
+    "tiles": {
+      "region": "Today’s figures",
+      "pipe": "Open pipe",
+      "pipeMeta": "Unweighted",
+      "won": "Deals won",
+      "wonMeta": "Signed in {{month}}",
+      "bench": "Available profiles",
+      "benchMeta": "Can be staffed this month",
+      "actions": "Actions to do",
+      "actionsMeta": "Across the whole workspace"
+    },
+    "cash": {
+      "title": "From mission to cash",
+      "period": "{{month}} invoices.",
+      "none": "No invoice for {{month}}: nothing to follow for now.",
+      "collected": "collected",
+      "toFollow": "to follow",
+      "drafts": "in draft",
+      "separate": "The sales pipe is not cash collected. The two stay separate.",
+      "invoices": "Find the invoices"
+    },
+    "stages": {
+      "title": "Where does the decision sit?",
+      "advice": "Start with the deals whose next decision is known, then qualify the areas that are still unclear."
+    },
+    "decisions": {
+      "region": "Decisions to take",
+      "title_one": "One decision to take",
+      "title_other": "{{count}} decisions to take",
+      "all": "See all decisions",
+      "dialogTitle": "All decisions",
+      "dialogDescription": "Open decisions, ranked by severity. You can assign or dismiss them here: nothing leaves without your gesture."
+    },
+    "evolution": {
+      "title": "Pipeline over time",
+      "unit": "Value of open deals · unweighted",
+      "opening": "On {{date}}",
+      "closing": "On {{date}}",
+      "moves": {
+        "created": "{{amount}} created",
+        "signed": "{{amount}} signed",
+        "lost": "{{amount}} lost"
+      },
+      "withoutAmount_one": "1 deal without an amount, outside the bars.",
+      "withoutAmount_other": "{{count}} deals without an amount, outside the bars.",
+      "legend": "Unweighted pipeline",
+      "notCash": "Amounts are not a cash-in forecast.",
+      "open": "See pipeline movement"
+    }
+  },
+  "pipe": {
+    "title": "Pipeline",
+    "purpose": "Read the quarter's probable revenue, deal by deal."
+  },
+  "theo": {
+    "page": {
+      "title": "Steer your activity",
+      "subtitle": "Commercial decisions before the counters."
+    },
+    "anchors": {
+      "label": "Pilotage sections"
+    },
+    "sections": {
+      "cockpit": "Cockpit",
+      "pipe": "Pipe",
+      "staffing": "Staffing",
+      "finance": "Finance"
+    },
+    "period": {
+      "label": "Period: {{month}}"
+    },
+    "cap": {
+      "title": "The month’s target",
+      "percent": "{{percent}}% of the target signed",
+      "ringLabel": "{{percent}}% of the target signed",
+      "signed": "Signed this month",
+      "target": "Declared target",
+      "toGo": "{{amount}} to reach the target",
+      "reached": "Target reached",
+      "detail": "Details",
+      "coverageLine": "Pipe coverage {{coverage}} · expected pace {{pace}}"
+    },
+    "decisions": {
+      "title": "Three decisions to make",
+      "seeAll": "See all decisions · {{count}}",
+      "fold": "Fold the decisions"
+    },
+    "section": {
+      "pipe": {
+        "title": "Pipe",
+        "intro": "Open deals in detail. The probable revenue lives here, and only here.",
+        "access": "Management and sales operations",
+        "own": "Your deals",
+        "open": "Open deals"
+      },
+      "staffing": {
+        "title": "Staffing",
+        "intro": "Capacity against demand, and mission endings before they become bench time.",
+        "access": "Management and sales operations",
+        "open": "Open Talents"
+      },
+      "finance": {
+        "title": "Finance",
+        "intro": "{{brand}} tracks finance, it does not do the accounting. “Invoiced” is read from your invoicing tool’s proof.",
+        "access": "Management · finance right"
+      },
+      "locked": "This section is not open to your role.",
+      "lockedPipe": "Your activity and your deals stay visible in Deals and in My day.",
+      "lockedStaffing": "The profiles and missions you follow stay visible in Talents and Missions.",
+      "lockedFinance": "Your signed revenue stays in the cockpit above; the workspace finance requires the finance right.",
+      "lockedCockpit": "The workspace cockpit is reserved to management roles. Your pipe and your journey stay right below."
+    },
+    "rex": {
+      "line": "Lessons learned on lost deals live in Missions.",
+      "link": "Open the lessons learned"
+    }
+  }
+}

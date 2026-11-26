@@ -1,0 +1,41 @@
+Enrichis les contacts de "ACME" avec une analyse approfondie.
+
+===== CONTACTS BRUTS =====
+CONTACTS_SAMPLE
+
+===== ENTITES DE L'ENTREPRISE =====
+ENTITIES_SAMPLE
+
+===== ANGLES D'ATTAQUE IDENTIFIES =====
+ANGLES_SAMPLE
+
+===== POINTS DE DOULEUR =====
+PAINS_SAMPLE
+
+===== SCHEMA JSON ATTENDU =====
+{
+  "contacts": [
+    "(Enrichir CHAQUE contact fourni) Pour chaque personne :",
+    {
+      "fullName": "prenom nom exact (tel que fourni)",
+      "title": "poste exact",
+      "entity": "entite/filiale/BU de rattachement",
+      "family": "IT / Infrastructure | Cybersecurite | Data / BI / Analytics | IA / ML | Developpement / Architecture | PMO / Transformation | Finance / Controle de gestion | Direction generale / C-Level | Achat / Procurement | RH / Talent | Autre",
+      "role": "economic | technical | user | champion | procurement | influencer | blocker",
+      "priority": "1-5 (1 = priorite maximale)",
+      "summary": "3-4 phrases : (1) parcours et expertise probable de cette personne, (2) son role dans les decisions IT/digital, (3) ses enjeux probables vu son poste, (4) comment l'aborder",
+      "whyContact": "UNE phrase courte et factuelle (role, signal observe, ou lien) sur pourquoi cette personne est pertinente pour les offres SPECIFIQUES de l'ESN — pas un paragraphe qui developpe l'angle d'attaque ou le pain point. Tutoie le commercial ou reste impersonnel, sans prenom repete ni genre invente, et jamais un texte identique d'un contact a l'autre.",
+      "linkedinUrl": "URL LinkedIn si disponible, sinon chaine vide",
+      "reportingTo": "titre du N+1 (ex: 'DSI'), ou chaine VIDE si rien dans les elements fournis ne l'indique. C'est une SUPPOSITION, pas une observation : elle s'affiche comme une piste a verifier, jamais comme une ligne de l'organigramme. Ne devine pas pour remplir le champ — le laisser vide est une reponse juste.",
+      "influenceLevel": "decision-maker | influencer | executor",
+      "bestApproach": "cold-linkedin | warm-intro | event | content-sharing | direct-call — la meilleure approche pour cette personne avec justification",
+      "personalizedHook": "1-2 phrases d'accroche personnalisee pour cette personne, basee sur son poste et les enjeux de son entite",
+      "careerLevers": ["(2-3) leviers de carriere de cette personne : ce qui la ferait progresser / briller en interne (ex: 'reussir la migration cloud sans incident', 'etre visible au COMEX sur l'IA'). Oriente le pitch vers SON interet."],
+      "implicitFears": ["(2-3) peurs organisationnelles implicites vu son poste : ce qu'elle craint (ex: 'un incident securite mediatise', 'perdre le controle d'un projet strategique', 'un audit DORA qui epingle son perimetre'). A desamorcer, jamais a exploiter frontalement."],
+      "connection_path": "linkedin_direct | via_introduction:Prenom Nom | sector_event:Nom evenement | cold_email:<adresse trouvee> — comment concretement atteindre ce contact",
+      "source": "apollo | ia_reconstruction | pappers | manual — origine de ce contact. Si ia_reconstruction, ajouter une note de verification recommandee."
+    }
+  ]
+}
+
+IMPORTANT : Chaque contact doit recevoir un traitement APPROFONDI. Le summary et le whyContact ne doivent PAS etre generiques — ils doivent etre specifiques au croisement entre cette personne, cette entreprise et cette ESN.

@@ -1,0 +1,807 @@
+{
+  "panel": {
+    "aria": "Module d'approche contact",
+    "title": "Approche contact"
+  },
+  "controls": {
+    "minimize": "Réduire",
+    "expand": "Agrandir",
+    "collapse": "Réduire le panneau"
+  },
+  "channel": {
+    "phoneToReveal": "numéro à révéler",
+    "email": "Email",
+    "linkedin": "LinkedIn",
+    "phone": "Appel",
+    "task": "Tâche",
+    "meeting": "Réunion",
+    "action": {
+      "email": "Préparer un email",
+      "linkedin": "Préparer un message LinkedIn",
+      "phone": "Préparer mon appel",
+      "task": "Préparer une tâche de prise de contact",
+      "recommendation": "Préparer un message de recommandation",
+      "introduction_request": "Préparer une demande d’introduction",
+      "partner_message": "Préparer un message partenaire",
+      "follow_up_email": "Préparer un e-mail de suivi",
+      "profile_push": "Préparer le push d’un profil consultant",
+      "linkedin_connection_note": "Préparer une note de connexion LinkedIn"
+    },
+    "review": {
+      "email": "Relire l’email",
+      "linkedin": "Relire le message",
+      "phone": "Relire le script d’appel",
+      "task": "Relire la tâche",
+      "recommendation": "Relire la recommandation",
+      "introduction_request": "Relire la demande d’introduction",
+      "partner_message": "Relire le message partenaire",
+      "follow_up_email": "Relire l’e-mail de suivi",
+      "profile_push": "Relire le push de profil",
+      "linkedin_connection_note": "Relire la note de connexion"
+    },
+    "draft": {
+      "email": "Email suggéré",
+      "linkedin": "Message LinkedIn",
+      "phone": "Pitch d'appel",
+      "task": "Tâche de prise de contact",
+      "recommendation": "Message de recommandation",
+      "introduction_request": "Demande d’introduction",
+      "partner_message": "Message partenaire",
+      "follow_up_email": "E-mail de suivi",
+      "profile_push": "Push de profil consultant",
+      "linkedin_connection_note": "Note de connexion LinkedIn (300 caractères au plus)"
+    },
+    "voicemail": "Message vocal",
+    "recommendation": "Recommandation",
+    "sms": "SMS",
+    "whatsapp": "WhatsApp",
+    "introduction_request": "Demande d’introduction",
+    "partner_message": "Message partenaire",
+    "follow_up_email": "E-mail de suivi",
+    "profile_push": "Push de profil",
+    "linkedin_connection_note": "Note de connexion LinkedIn"
+  },
+  "composer": {
+    "objectionsNone": "Objections à anticiper : aucune relevée dans le dossier de ce compte. Elles s’y ajoutent à la prochaine analyse.",
+    "parameters": {
+      "toggle": "Paramètres du message",
+      "hint": "Choisir un objectif prépare aussitôt le brouillon ; les autres paramètres cadrent le prochain message. Laissé vide, {{copilot}} le déduit du dossier.",
+      "derived": "Déduit du dossier",
+      "objective": "Objectif",
+      "relationship": "Stade de la relation",
+      "persona": "Persona",
+      "signal": "Signal",
+      "offer": "Offre",
+      "proof": "Preuve",
+      "cta": "Appel à l’action",
+      "placeholders": {
+        "signal": "Le fait qui justifie d’écrire maintenant",
+        "offer": "L’offre à mettre en avant",
+        "proof": "Une référence ou un résultat à citer",
+        "scope": "L’entité, la BU ou le site visé",
+        "constraints": "La forme à respecter (longueur, mots à éviter)",
+        "problem": "Le problème que cette personne peut vivre",
+        "service": "Ex. TMA applicative, renfort data",
+        "period": "Ex. T1 2027, avant l’été",
+        "experience": "Ex. mission similaire en 2024 (hypothèse)"
+      },
+      "objectives": {
+        "ouverture_compte": "Ouvrir le compte",
+        "relance": "Relancer",
+        "reprise_relation": "Reprendre la relation",
+        "demande_information": "Comprendre un périmètre ou valider un contexte",
+        "recommandation": "Être orienté vers le bon interlocuteur",
+        "positionnement_expertise": "Faire connaître une expertise",
+        "nurturing": "Garder le lien",
+        "suivi_rendez_vous": "Faire suite au rendez-vous",
+        "renouvellement": "Préparer le renouvellement",
+        "suivi_document": "Faire suite à un document envoyé",
+        "introduction": "Demander une introduction",
+        "partenariat": "Explorer un partenariat",
+        "proposer_profil": "Proposer un profil",
+        "valider_contexte": "Valider un contexte",
+        "approche_directe": "Approche directe (sans signal)"
+      },
+      "personas": {
+        "decideur": "Décideur",
+        "gouvernance": "Gouvernance",
+        "direction": "Direction",
+        "manager": "Manager",
+        "acheteur": "Acheteur",
+        "expert": "Expert",
+        "operationnel": "Opérationnel"
+      },
+      "ctas": {
+        "question_facile": "Une question facile",
+        "sortie_elegante": "Une sortie élégante",
+        "ce_qui_a_change": "Demander ce qui a changé",
+        "echange_court": "Proposer un échange court",
+        "vers_qui": "Demander vers qui se tourner",
+        "aucune_demande": "Aucune demande",
+        "prochaine_etape": "Confirmer la prochaine étape",
+        "demander_intro": "Demander la mise en relation",
+        "explorer_partenariat": "Proposer un échange sur le partenariat"
+      },
+      "scope": "Périmètre visé",
+      "constraints": "Contraintes",
+      "problem": "Problème à adresser",
+      "optionalToggle": "Précisions facultatives",
+      "service": "Type de prestation",
+      "period": "Période",
+      "experience": "Expérience passée"
+    },
+    "approvedTemplates": {
+      "toggle": "Modèle approuvé",
+      "chooseScenario": "Choisir un scénario",
+      "loading": "Recherche des modèles…",
+      "none": "Aucun modèle approuvé pour ce scénario et ce canal.",
+      "sourceVersion": "Source : {{source}} · version {{version}}",
+      "level": "Niveau : {{level}}",
+      "levelGeneric": "Tous niveaux (compte)",
+      "blocked": {
+        "variables_missing": "Un modèle correspond, mais une information du dossier lui manque pour être proposé prêt à envoyer. Il manque : {{missing}}.",
+        "evidence_missing": "Un modèle correspond, mais la preuve qu'il exige n'est pas encore au dossier. Il manque : {{missing}}."
+      },
+      "scenarios": {
+        "invitation_acceptee": "Invitation acceptée",
+        "connexion_dormante": "Connexion dormante",
+        "contact_recommande": "Contact recommandé",
+        "approche_froide": "Approche froide",
+        "contexte_partenaire": "Contexte partenaire",
+        "appel_sans_contexte": "Appel sans contexte",
+        "prospection_inversee_consultant": "Prospection inversée (consultant)",
+        "objections_client": "Objections client",
+        "objections_consultant": "Objections consultant",
+        "cloture_elegante": "Clôture élégante"
+      },
+      "missingNames": {
+        "prenom": "le prénom du contact",
+        "entreprise": "le nom de l’entreprise",
+        "recent_signal": "un signal récent sur le contact"
+      }
+    },
+    "placeholder": "Décris l'approche à essayer...",
+    "contextAria": "Contexte de personnalisation",
+    "generate": "Générer un message personnalisé",
+    "objections_one": "{{count}} objection à anticiper",
+    "objections_other": "{{count}} objections à anticiper",
+    "style": {
+      "none": "Aucun style",
+      "createForThread": "Créer un style pour ce fil",
+      "createClose": "Fermer",
+      "createDescription": "Ce style ne s’applique qu’à la conversation avec ce contact. Il naît brouillon : active-le depuis la liste des styles."
+    },
+    "myAngles": {
+      "toggle": "Mes angles",
+      "hint": "Les angles que tu as écrits toi-même — ils ne viennent pas de l’analyse du dossier. Choisir un angle le pose dans le message ; rien ne part sans toi.",
+      "none": "Tu n’as pas encore écrit d’angle.",
+      "error": "Tes angles n’ont pas pu être chargés ou enregistrés. Réessaie dans un instant.",
+      "new": "Nouvel angle",
+      "edit": "Modifier l’angle « {{title}} »",
+      "remove": "Retirer l’angle « {{title}} »",
+      "form": {
+        "newTitle": "Nouvel angle",
+        "editTitle": "Modifier l’angle",
+        "description": "Un angle est une phrase d’accroche que tu réutilises. Il reste personnel et ne sera jamais réécrit par le modèle.",
+        "title": "Titre",
+        "content": "Contenu de l’angle",
+        "cancel": "Annuler",
+        "save": "Enregistrer"
+      }
+    }
+  },
+  "objections": {
+    "title": "Objections à anticiper"
+  },
+  "emptyState": {
+    "title": "Générer une approche",
+    "description": "Ajoute un angle dans le champ ci-dessous pour créer un {{draft}} adapté à {{name}}.",
+    "customAngle": "Angle personnalisé",
+    "shortFollowUp": "Relance courte"
+  },
+  "keepApproach": {
+    "keep": "Garder l’approche directe",
+    "kept": "Approche directe gardée — retirer",
+    "hint": "{{copilot}} l’applique à tes prochains messages ; un objectif choisi passe toujours avant."
+  },
+  "preset": {
+    "email": "Rédiger un email court avec un objet clair, adapté à ce que je veux obtenir de ce contact.",
+    "linkedin": "Rédiger un message LinkedIn court, naturel et orienté échange.",
+    "phone": "Préparer un pitch d'appel court avec une question d'ouverture concrète.",
+    "task": "Rédiger une tâche de prise de contact : qui joindre, par quel canal, pour obtenir quoi.",
+    "customAngle": "Mettre en avant un angle métier concret lié aux priorités du contact.",
+    "shortFollowUp": "Rédiger une relance courte, directe et facile à répondre."
+  },
+  "generation": {
+    "sessionExpired": "Ta session a expiré — reconnecte-toi, puis réessaie.",
+    "rateLimited": "Trop de rédactions en une minute, réessaie dans un instant.",
+    "unavailable": "Le service de rédaction est momentanément indisponible.",
+    "writing": "Rédaction du message…",
+    "failed": "La génération du message a échoué. Réessaie dans un instant.",
+    "retry": "Réessayer",
+    "defaultPrompt": "Génère une approche personnalisée.",
+    "templateRationale": "Modèle approuvé — source : {{source}}, version {{version}}. Texte exact, variables remplacées."
+  },
+  "message": {
+    "suggested": "Approche suggérée",
+    "copy": "Copier le message",
+    "openLinkedin": "Ouvrir LinkedIn",
+    "copyAndOpenLinkedin": "Copier et ouvrir LinkedIn",
+    "copyAndOpenLinkedinHint": "Copie le message et ouvre le profil LinkedIn — il ne reste qu'à cliquer « Message » et coller",
+    "send": "Envoyer",
+    "sending": "Envoi…",
+    "supersededBadge": "Version antérieure",
+    "receipt": {
+      "nature": {
+        "verified": "Expédié par {{brand}}",
+        "declared": "Déclaré par toi, non vérifié",
+        "handed_off": "Pris en charge par le service d'envoi",
+        "sent_mailbox": "Envoyé depuis ta messagerie"
+      },
+      "to": "Destinataire",
+      "channel": "Canal",
+      "sentAt": "Date",
+      "channelLabel": {
+        "email": "E-mail",
+        "linkedin": "Réseau professionnel"
+      }
+    },
+    "sentSummary": {
+      "from": "Depuis",
+      "fromIndividualMessage": "Le message individuel préparé pour ce contact",
+      "nextStep": "Prochaine étape : {{label}}, prévue le {{date}}",
+      "findIt": "À retrouver",
+      "findItMailbox": "Dans les éléments envoyés de ta messagerie",
+      "bounced": "Non délivré",
+      "bouncedValue": "L'adresse a rebondi",
+      "attachments": "Pièces jointes"
+    },
+    "markSent": {
+      "action": "Marquer envoyé",
+      "tooltip": "Tu as envoyé ce message toi-même ? Indique-le : {{brand}} ne l’a pas envoyé et ne peut pas le vérifier, mais il planifie tes relances à J+3, J+6 et J+9.",
+      "error": "Impossible de marquer ce message comme envoyé. Réessaie."
+    },
+    "declareSent": {
+      "action": "J’ai envoyé ce message",
+      "tooltip": "{{brand}} n’envoie rien sur LinkedIn. Si tu as collé et envoyé le message toi-même, indique-le pour qu’il apparaisse dans ton activité."
+    },
+    "dismiss": {
+      "action": "Écarter",
+      "tooltip": "Ne pas utiliser ce brouillon — rien n’est envoyé ni déclaré."
+    },
+    "edit": {
+      "action": "Éditer",
+      "tooltip": "Retoucher le message avant de l'envoyer",
+      "done": "Terminer",
+      "subjectLabel": "Objet de l'email",
+      "subjectPlaceholder": "Objet…",
+      "bodyLabel": "Corps du message"
+    },
+    "cannotSend": {
+      "noEmail": "Ce contact n'a pas d'adresse email",
+      "noDraft": "Aucun message à envoyer",
+      "suppressed": "Ce contact s'est désinscrit — il ne peut plus être recontacté par email",
+      "sendInProgress": "Un envoi est déjà en cours pour ce contact",
+      "homonym_conflict": "Identité à confirmer — ce contact partage son nom avec un autre du même compte : autorisez la recommandation depuis la fiche contact avant d'envoyer",
+      "entity_mismatch": "Identité à confirmer — l'entité de ce contact résout hors du périmètre du compte : autorisez la recommandation depuis la fiche contact avant d'envoyer"
+    },
+    "confirm": {
+      "title": "Envoyer cet email ?",
+      "description": "L'email part immédiatement, tel qu'il est relu ci-dessous. Cette action est irréversible.",
+      "to": "À",
+      "subject": "Objet",
+      "noSubject": "(sans objet)",
+      "send": "Envoyer l'email",
+      "from": "De",
+      "fromUnknown": "Adresse d'expédition en cours de vérification",
+      "replyTo": "Réponses à",
+      "body": "Message",
+      "demo": "Démonstration : ce dialogue est réel, mais aucun message ne part depuis une salle de démo.",
+      "channel": {
+        "label": "Envoyer depuis",
+        "mailbox": "Ma messagerie ({{address}})",
+        "workspace": "L'adresse de l'espace ({{address}})",
+        "mailboxStuck": "Ta messagerie connectée ({{address}}) ne peut pas envoyer pour l'instant — il faut la reconnecter. Rien ne part depuis l'adresse de l'espace sans que tu le choisisses.",
+        "mailboxToPick": "Ma messagerie (à choisir)"
+      },
+      "fromToChoose": "À choisir ci-dessus",
+      "attachments": "Pièces jointes",
+      "noAttachments": "Aucune",
+      "signature": "Signature",
+      "noSignature": "Non ajoutée : le message part tel que relu ci-dessous",
+      "attachmentsPick": {
+        "label": "Joindre des documents",
+        "limit": "{{total}} sur {{max}} au plus, {{count}} pièces au maximum.",
+        "blocked": {
+          "interest_not_confirmed": "se joint après un intérêt confirmé"
+        },
+        "refusal": {
+          "too_many": "{{count}} pièces au plus : retire-en une.",
+          "too_large": "Le total dépasse la limite : retire une pièce.",
+          "type_refused": "Un document n'est pas d'un type qui se joint à un e-mail.",
+          "empty": "Un document choisi est vide."
+        }
+      },
+      "senderPick": "Boîte d'envoi",
+      "senderPlaceholder": "Choisis la boîte d'où part le message",
+      "senderUnnamed": "Boîte {{n}}"
+    },
+    "uncertain": {
+      "title": "L'envoi n'a pas répondu : le message est peut-être parti.",
+      "help": "Regarde ta boîte d'envoi avant de renvoyer, pour ne pas écrire deux fois à cette personne.",
+      "notSent": "Rien n'est parti — rouvrir l'envoi",
+      "sent": "Le message y est"
+    }
+  },
+  "trigger": {
+    "noCredits": "Tu as beaucoup utilisé {{brand}} ce mois-ci — on en parle ?",
+    "creditsLoading": "Vérification du solde…",
+    "enrichTooltip": "Récupérer email, LinkedIn ou téléphone",
+    "enrich": "Enrichir",
+    "contact": "Contacter",
+    "availableChannels": "Canaux disponibles",
+    "availableChannelsLinkedinOnly": "Seul canal disponible : LinkedIn",
+    "linkedinOnly": "À approcher via LinkedIn — aucun e-mail ni téléphone connu",
+    "completeMissing": "Compléter les infos manquantes",
+    "addToSequence": "Ajouter à une séquence",
+    "alreadyEnriched": "Déjà enrichi le {{date}} — rien de plus trouvé",
+    "retryAnyway": "Réessayer quand même",
+    "noData": "Aucune donnée de contact trouvée",
+    "addToPlan": "Ajouter au plan"
+  },
+  "callBar": {
+    "noPhone": "Aucun numéro enregistré pour ce contact — le support se prépare quand même.",
+    "consign": "J’ai passé cet appel — consigner"
+  },
+  "launcher": {
+    "reopen": "Rouvrir l'approche de {{name}}",
+    "approach": "Approche"
+  },
+  "tab": {
+    "askBellum": "Demande à {{brand}}",
+    "chatTooltip": "Chatter avec {{brand}}",
+    "contactTooltip": "Contacter : {{name}}",
+    "writing": "{{copilot}} rédige encore ce message — il sera là à ton retour.",
+    "closeAria": "Fermer {{name}}"
+  },
+  "history": {
+    "openAria": "Voir l'historique des chats",
+    "title": "Historique des chats",
+    "loading": "Chargement de l’historique...",
+    "error": "Impossible de charger l’historique.",
+    "empty": "Aucun chat récent.",
+    "group": {
+      "yesterday": "Hier",
+      "lastWeek": "Semaine dernière",
+      "threeWeeksAgo": "Il y a 3 semaines",
+      "older": "Plus ancien"
+    },
+    "age": {
+      "hours": "{{value}}h",
+      "days": "{{value}}d",
+      "weeks": "{{value}}w"
+    }
+  },
+  "agent": {
+    "panelAria": "Chat {{brand}}",
+    "title": "Demande à {{brand}}",
+    "subtitle": "Chat partagé · génération et contexte commercial",
+    "unavailable": "{{brand}} agent est indisponible pour le moment.",
+    "loading": "Chargement de la conversation...",
+    "loadError": "Impossible de charger le chat.",
+    "writing": "{{brand}} rédige...",
+    "replyAria": "Réponse {{brand}}",
+    "copyReply": "Copier la réponse",
+    "noReply": "Pas de réponse."
+  },
+  "conversations": {
+    "general": {
+      "title": "Questions libres",
+      "subtitle": "Priorités, comptes, objections",
+      "prompt": "Aide-moi à prioriser mes prochaines actions commerciales."
+    },
+    "accountContext": {
+      "title": "Compte actif",
+      "subtitle": "Contexte du dossier ouvert",
+      "prompt": "Résume le compte actif et propose une prochaine action concrète."
+    },
+    "analysis": {
+      "title": "Analyse récente",
+      "subtitle": "Synthèse en plan d’action",
+      "prompt": "Transforme la dernière analyse en plan d’action court."
+    }
+  },
+  "quickPrompts": {
+    "priorityAccount": {
+      "label": "Compte prioritaire",
+      "prompt": "Quel compte dois-je prioriser aujourd’hui ?"
+    },
+    "shortFollowUp": {
+      "label": "Relance courte",
+      "prompt": "Prépare une relance courte pour mon meilleur contact."
+    },
+    "objections": {
+      "label": "Objections",
+      "prompt": "Quelles objections dois-je anticiper sur ce dossier ?"
+    }
+  },
+  "agentComposer": {
+    "disclaimer": "{{copilot}} peut se tromper. Vérifie les informations importantes.",
+    "inputAria": "Message Ask {{brand}}",
+    "placeholder": "Pose ta question à {{brand}}...",
+    "attachFile": "Joindre un fichier",
+    "mention": "Mentionner",
+    "insertAnalysis": "Insérer une analyse",
+    "addAccount": "Ajouter un compte",
+    "tokenAnalysis": "Analyse récente",
+    "tokenAccount": "Compte actif",
+    "contextNotice": "Le chat utilise uniquement le contexte accessible à ta session."
+  },
+  "nav": {
+    "newChat": "Nouveau chat",
+    "newChatAria": "Ouvrir un nouveau chat",
+    "conversations": "Conversations",
+    "modes": "Modes",
+    "noRecentChats": "Aucun chat récent"
+  },
+  "mention": {
+    "loading": "Chargement de l’espace de travail...",
+    "error": "Impossible de charger les éléments.",
+    "empty": "Aucun élément disponible.",
+    "sections": {
+      "accounts": "Comptes",
+      "contacts": "Contacts",
+      "signals": "Signaux"
+    },
+    "eyebrow": {
+      "account": "Compte",
+      "contact": "Contact",
+      "signal": "Signal"
+    },
+    "score": "Score {{score}}"
+  },
+  "preSend": {
+    "allClear": "Contrôle avant envoi : rien à signaler",
+    "failures_one": "{{count}} point à revoir avant d’envoyer",
+    "failures_other": "{{count}} points à revoir avant d’envoyer",
+    "killerMistake": "Erreur qui tue : {{mistake}}"
+  },
+  "task": {
+    "create": "Créer la tâche",
+    "createdButton": "Tâche créée",
+    "created": "Tâche ajoutée à tes actions",
+    "createError": "La tâche n’a pas pu être créée",
+    "expectedOutcome": "Une réponse de {{name}}, ou un prochain échange fixé",
+    "noAccount": "Ce contact n’est rattaché à aucun compte : la tâche n’aurait pas de plan où vivre.",
+    "channelLabel": "Canal",
+    "channelUnspecified": "Non précisé"
+  },
+  "callTask": {
+    "plan": "Planifier cet appel",
+    "seeInCalls": "Voir dans Appels à passer",
+    "create": "Ajouter aux appels à passer",
+    "createdButton": "Appel ajouté",
+    "created": "Appel ajouté à tes appels à passer",
+    "createError": "L’appel n’a pas pu être ajouté"
+  },
+  "brief": {
+    "aria": "Brief du message",
+    "objective": "Objectif",
+    "relationship": "Relation",
+    "angle": "Angle",
+    "angleDerived": "le signal le plus actionnable du dossier",
+    "toSpecify": "À préciser : {{what}}",
+    "correct": "Corriger le brief",
+    "source": {
+      "formulaire": "choisi par toi",
+      "angle": "déduit de ton angle",
+      "relation": "déduit de la relation au compte",
+      "defaut": "par défaut, compte sans historique"
+    }
+  },
+  "versionTrace": {
+    "objective": "Objectif : {{objective}}",
+    "template": "Modèle approuvé : {{source}}, version {{version}}",
+    "style": "Style de message appliqué",
+    "unchanged": "Texte identique à la version précédente : rien n'a été adapté.",
+    "backToGenerated": "Revenir à la version générée",
+    "backToMine": "Reprendre ma version corrigée"
+  },
+  "approachQuiz": {
+    "title": "Pour rédiger à {{name}}, une seule question : que veux-tu obtenir ? (Le reste se déduit du dossier.)",
+    "question": {
+      "objective": "1. Quel est l'objectif du message ?",
+      "angle": "Facultatif — sur quoi t'appuyer pour l'accroche ?",
+      "tone": "Facultatif — quel ton ?"
+    },
+    "angle": {
+      "signal": "Un signal récent du compte",
+      "role": "Les enjeux de son rôle",
+      "reference": "Une référence client comparable",
+      "question": "Une question ouverte sur ses priorités"
+    },
+    "tone": {
+      "formal": "Formel, vouvoiement",
+      "direct": "Direct et concis",
+      "warm": "Chaleureux et personnel"
+    },
+    "angleInstruction": {
+      "signal": "Accroche sur un signal récent du compte, cité précisément.",
+      "role": "Accroche sur les enjeux propres à son rôle dans l'organisation.",
+      "reference": "Accroche sur une référence client comparable de notre ESN, si le dossier en contient une.",
+      "question": "Accroche par une question ouverte sur ses priorités du moment."
+    },
+    "toneInstruction": {
+      "formal": "Ton formel, vouvoiement, phrases sobres.",
+      "direct": "Ton direct et concis : cinq phrases au plus, une seule demande.",
+      "warm": "Ton chaleureux et personnel, sans familiarité."
+    },
+    "cancel": "Annuler",
+    "submit": "Rédiger l'e-mail"
+  },
+  "approachPage": {
+    "title": {
+      "email": "Préparer ton e-mail",
+      "linkedin": "Préparer ton message LinkedIn",
+      "call": "Préparer ton appel"
+    },
+    "back": "Retour au contact",
+    "goal": {
+      "title": "Ce que tu veux obtenir",
+      "placeholder": "{{copilot}} choisit d'après le dossier",
+      "orientation": "Obtenir une orientation",
+      "resume": "Reprendre un échange",
+      "expertise": "Présenter une expertise"
+    },
+    "channel": {
+      "title": "Canal de préparation",
+      "email": "E-mail",
+      "linkedin": "LinkedIn",
+      "call": "Appel"
+    },
+    "basis": {
+      "title": "Sur quoi {{copilot}} s'appuie",
+      "account": "Signaux du compte",
+      "contact": "Signaux du contact",
+      "auto": "Aucun choix : {{copilot}} choisit elle-même l'accroche et te dit laquelle (« Élément utilisé »). Angle libre : dans les précisions.",
+      "rewrite": "Réécrire avec ce choix"
+    },
+    "precisions": {
+      "title": "Précisions facultatives",
+      "hint": "relation, persona, appel à l'action, style, modèle approuvé…",
+      "angle": "Angle libre (facultatif)"
+    },
+    "draft": {
+      "title": "Ton brouillon",
+      "to": "À",
+      "from": "De",
+      "subject": "Objet",
+      "body": "Corps du message",
+      "toMissing": "E-mail à renseigner",
+      "toLinkedin": "À {{name}} · LinkedIn",
+      "fromSpace": "Adresse de ton espace",
+      "keepHand": "Tu gardes la main sur chaque formulation.",
+      "edit": "Modifier le texte",
+      "noLinkedin": "Aucune adresse LinkedIn connue pour ce contact : tu peux préparer le message, pas l'ouvrir.",
+      "linkedinNotConnected": "Canal non connecté : rien ne part de {{brand}}. Tu copies le message et tu l'envoies toi-même.",
+      "attachments": "Tu les choisis au moment d'envoyer.",
+      "signature": "Ajoutée quand tu déposes le brouillon dans ta boîte.",
+      "dismissed": "Brouillon écarté. Rien n'a été envoyé.",
+      "writeAnother": "Rédiger un nouveau message",
+      "titleLinkedin": "Message prêt à personnaliser",
+      "linkedinKind": "Message LinkedIn",
+      "attachmentsLabel": "Pièces jointes",
+      "signatureLabel": "Signature",
+      "linkedinCount": "{{count}} / {{limit}} caractères pour une note de connexion."
+    },
+    "status": {
+      "draft": "Non envoyé",
+      "validated": "Validé · pas encore envoyé",
+      "writing": "Rédaction en cours"
+    },
+    "actions": {
+      "adapt": "Adapter au nouvel objectif",
+      "copy": "Copier",
+      "copied": "Copié",
+      "save": "Enregistrer le brouillon",
+      "saved": "Brouillon enregistré dans la Messagerie, sans envoi.",
+      "saveFailed": "Le brouillon n'a pas pu être enregistré. Réessaie.",
+      "validate": "Valider le brouillon",
+      "afterValidation": "Après validation",
+      "afterValidationHint": "Envoyer, déposer dans ta boîte ou copier ne se débloque qu'une fois le brouillon relu et validé.",
+      "deposit": "Déposer dans ma boîte",
+      "depositing": "Dépôt…",
+      "deposited": "Brouillon déposé dans ta boîte, sans envoi.",
+      "depositFailed": "Le dépôt dans ta boîte a échoué. Réessaie.",
+      "depositNeedsMailbox": "Connecte ta messagerie (Réglages › Intégrations) pour déposer le brouillon dans ta boîte.",
+      "depositNeedsEmail": "Renseigne l'e-mail du contact pour déposer le brouillon dans ta boîte.",
+      "markSent": "Marquer comme envoyé par moi",
+      "markedSent": "Déclaré envoyé par toi",
+      "dismiss": "Écarter ce brouillon",
+      "versions": "Versions",
+      "createTask": "Créer une tâche",
+      "proof": "Voir la preuve",
+      "versionsCount": "Versions · {{count}}",
+      "regenerate": "Régénérer",
+      "sentOtherwise": "Envoyé autrement ?"
+    },
+    "generation": {
+      "writing": "{{copilot}} rédige le message…",
+      "writingHint": "Cela prend une quinzaine de secondes. Tu peux préciser l'objectif en attendant.",
+      "failed": "La rédaction a échoué.",
+      "failedKeep": "Ton brouillon précédent est intact.",
+      "retry": "Réessayer"
+    },
+    "guard": {
+      "suppressed": "{{name}} a demandé à ne plus être sollicité.",
+      "suppressedBody": "L'envoi est refusé : tu peux préparer et garder le brouillon, rien ne partira vers cette adresse.",
+      "identity": "Identité à confirmer avant d'envoyer.",
+      "identityBody": "Un doute subsiste sur {{name}} : confirme le bon contact sur sa fiche. L'envoi reste bloqué d'ici là.",
+      "verify": "Vérifier"
+    },
+    "context": {
+      "title": "Le contexte à garder",
+      "contact": "Contact",
+      "account": "Compte",
+      "goal": "Objectif",
+      "subject": "Sujet",
+      "element": "Élément utilisé",
+      "none": "Aucun élément du dossier n'est cité dans ce message.",
+      "notSet": "Non précisé",
+      "freeAngle": "Angle libre : aucun fait du dossier imposé."
+    },
+    "avoid": {
+      "title": "Éviter le message passe-partout",
+      "ruleOne": "Une question d'orientation ne doit pas se terminer automatiquement par une demande de rendez-vous.",
+      "ruleTwo": "Aucune référence, aucun budget et aucune disponibilité ne sont ajoutés pour rendre le message plus convaincant.",
+      "objections": "Objections à anticiper",
+      "ruleTwoCall": "Aucune référence, aucun budget et aucune disponibilité ne sont ajoutés pour rendre l'appel plus convaincant."
+    },
+    "proof": {
+      "title": "Les éléments de ce dossier",
+      "description": "Ce que {{copilot}} a utilisé pour ce message, séparé entre observé, historique et interprétation.",
+      "observed": "Observé dans le dossier",
+      "history": "Historique, distinct du présent",
+      "esn": "Ce que ton ESN apporte",
+      "interpretation": "Interprétation commerciale",
+      "disclaimer": "Une recommandation n'est pas une preuve supplémentaire.",
+      "empty": "{{copilot}} n'a cité aucun élément du dossier dans ce message.",
+      "close": "Fermer"
+    },
+    "validate": {
+      "title": "Relire avant de valider",
+      "description": "Relis le destinataire, l'objet et le texte tels qu'ils partiraient.",
+      "to": "À",
+      "from": "Depuis",
+      "checklist": "Contrôle avant envoi",
+      "scope": "Cette validation porte sur ce destinataire et cette version. Elle ne déclenche aucun envoi. Modifier le contenu demandera une nouvelle relecture.",
+      "confirm": "J'ai vérifié le destinataire, le contenu et les pièces de ce brouillon.",
+      "back": "Revenir au brouillon",
+      "submit": "Valider le brouillon",
+      "submitting": "Validation…",
+      "failed": "La validation n'a pas pu être enregistrée. Réessaie.",
+      "done": "Brouillon validé. Rien n'est parti.",
+      "pill": "Validé pour {{name}}"
+    },
+    "versions": {
+      "title": "Versions du brouillon",
+      "description": "Chaque modification ajoute une version ; aucune n'est effacée.",
+      "version": "Version",
+      "author": "Auteur",
+      "when": "Date",
+      "current": "actuelle",
+      "validated": "validée",
+      "resume": "Reprendre",
+      "you": "Toi",
+      "laura": "{{copilot}}",
+      "empty": "Aucune version enregistrée pour l'instant. « Enregistrer le brouillon » en ajoute une.",
+      "close": "Fermer",
+      "backToGenerated": "Revenir à la version générée"
+    },
+    "notFound": {
+      "title": "Ce canal ne se prépare pas ici",
+      "body": "Seuls l'e-mail et LinkedIn ont une page d'approche. Les autres canaux restent proposés depuis la fiche du contact."
+    },
+    "call": {
+      "before": "Ce qu'il faut savoir avant d'appeler",
+      "prepared": "Support préparé",
+      "opening": "Ton ouverture",
+      "questions": "Trois questions pour qualifier",
+      "objections": "Si l'on te répond…",
+      "regenerate": "Régénérer le support",
+      "copy": "Copier le support",
+      "nextStep": "Prochaine étape",
+      "noCall": "{{copilot}} n'appelle jamais à ta place : « Appeler » ouvre ton téléphone, c'est toi qui composes.",
+      "plan": {
+        "open": "Planifier cet appel",
+        "reason": "Raison de l’appel",
+        "objective": "Objectif de l’appel",
+        "needsScript": "L’ouverture doit être rédigée, ou saisis toi-même la raison et l’objectif pour planifier quand même.",
+        "title": "Planifier cet appel",
+        "description": "L'appel rejoint tes « appels à passer », avec ce support attaché.",
+        "day": "Jour",
+        "hour": "Heure",
+        "cancel": "Annuler",
+        "close": "Fermer"
+      },
+      "kind": "Appel de qualification",
+      "phonePro": "ligne pro",
+      "copyPhone": "Copier",
+      "copiedPhone": "Copié",
+      "dial": "Appeler",
+      "lastSent": "Dernier message envoyé le {{date}}.",
+      "lastExchange": "Dernier échange le {{date}} : {{subject}}.",
+      "lastExchangeNoSubject": "Dernier échange le {{date}}.",
+      "otherApproach": "Autre approche"
+    },
+    "breadcrumb": "Préparer l'approche",
+    "more": {
+      "label": "Plus de canaux",
+      "caption": "Autres canaux",
+      "followUp": "E-mail de suivi",
+      "profile": "Proposer un profil consultant",
+      "introduction": "Demander une introduction",
+      "partner": "Message à un partenaire",
+      "connectionNote": "Note de connexion LinkedIn"
+    },
+    "templates": {
+      "title": "Partir d'un modèle approuvé",
+      "body": "Les modèles validés par ton équipe, choisis selon la situation.",
+      "choose": "Choisir"
+    },
+    "grounding": {
+      "title": "Sur quoi {{copilot}} s'appuie",
+      "hint": "Coche les faits sur lesquels le message s'appuie, puis « Régénérer » : {{copilot}} n'en cite aucun autre.",
+      "account": "Signaux du compte",
+      "contact": "Signaux et besoins du contact",
+      "free": "Angle libre",
+      "freeHint": "Aucun fait imposé : {{copilot}} suit l'angle que tu écris dans les précisions.",
+      "none": "Aucun signal connu sur ce compte ni sur ce contact. Prépare avec un angle libre : {{copilot}} n'en invente aucun.",
+      "homonym": "Peut concerner un homonyme — vérifie l'identité avant de t'y appuyer.",
+      "callOffer": "L’appel s’ouvre sur l’offre : {{offer}}",
+      "callNoOffer": "Aucune offre d’emploi liée à cet appel : le script reste général."
+    },
+    "enrichPrepare": {
+      "button": "Enrichir puis préparer",
+      "loading": "Enrichissement en cours…",
+      "noEmail": "Aucun e-mail trouvé pour ce contact : rien n’a été préparé.",
+      "toLinkedin": "Préparer un message sur le réseau professionnel"
+    }
+  },
+  "linkedinDelegation": {
+    "aria": "Envoi LinkedIn délégué",
+    "title": "Envoi LinkedIn délégué",
+    "loading": "Chargement du mandat d’envoi…",
+    "error": "Impossible de lire l’état de l’envoi LinkedIn.",
+    "retry": "Réessayer",
+    "none": "Aucun mandat : rien ne part sans ton accord.",
+    "period": "Mandat actif du {{from}} au {{until}} · {{limit}} par jour",
+    "revoked": "Mandat révoqué le {{date}} : plus rien ne part.",
+    "inactive": "Mandat terminé le {{date}} : plus rien ne part.",
+    "remaining": "Reste aujourd’hui : {{remaining}} sur {{limit}}",
+    "notOpen": {
+      "title": "Voie d’envoi non ouverte",
+      "hint": "Rien ne part d’ici. Copie le message et envoie-le toi-même depuis LinkedIn."
+    },
+    "grant": "Donner un mandat de {{days}} jours",
+    "grantHint": "Au maximum {{limit}} messages par jour, révocable à tout moment, arrêté dès que la personne répond.",
+    "send": "Envoyer ce message via LinkedIn",
+    "revoke": "Révoquer le mandat",
+    "result": {
+      "sent": "Envoyé : le fournisseur d’envoi a rendu une preuve.",
+      "unknown": "Pas de réponse du fournisseur : le message est peut-être parti. Ne le renvoie pas, vérifie sur LinkedIn.",
+      "notOpen": "Voie d’envoi non ouverte : rien n’est parti.",
+      "failed": "Le fournisseur a refusé l’envoi. Rien n’est parti.",
+      "refused": {
+        "no_mandate": "Aucun mandat : rien n’est parti.",
+        "revoked": "Mandat révoqué : rien n’est parti.",
+        "not_yet_valid": "Le mandat ne commence pas encore : rien n’est parti.",
+        "expired": "Mandat expiré : rien n’est parti.",
+        "recipient_replied": "Cette personne a répondu : la suite s’arrête, rien n’est parti.",
+        "previous_unknown": "Un envoi précédent à cette personne est resté incertain : vérifie sur LinkedIn avant de réessayer.",
+        "daily_limit_reached": "Quota du jour atteint : rien n’est parti, réessaie demain.",
+        "demo": "En démonstration, rien ne part jamais."
+      }
+    }
+  }
+}

@@ -1,0 +1,68 @@
+{
+  "_comment": [
+    "Frozen wire fixture: the RAW bodies the IA service (FastAPI) returns on",
+    "GET /companies/search, for the two paths that produce a different shape —",
+    "the French registry default and a country-pack market (US / SEC EDGAR).",
+    "",
+    "This file is the single binding between the two sides of the contract:",
+    "  - apps/ia/tests/test_companies_wire_contract.py asserts the LIVE FastAPI",
+    "    response is byte-equal to it, so it can never go stale;",
+    "  - companies.fixtures.test.ts strict-parses it with companySuggestionSchema,",
+    "    so a field the Python side renames/adds fails the TS build instead of",
+    "    silently arriving `undefined` in the browser.",
+    "",
+    "Regenerating: change the Python shape -> the pytest fails -> update this file",
+    "-> the contracts test tells you whether the new shape is contract-legal.",
+    "",
+    "Identifiers are REAL public registry values (Capgemini SIREN, Apple CIK) —",
+    "no fabricated data, per project rule."
+  ],
+  "fr": {
+    "success": true,
+    "suggestions": [
+      {
+        "name": "Capgemini",
+        "siren": "330703844",
+        "city": "",
+        "sector": "Conseil",
+        "postal_code": null,
+        "employees_min": null,
+        "employees_max": null,
+        "creation_date": null,
+        "country": null,
+        "registryId": null,
+        "registryIdLabel": null,
+        "is_esn_naf": null,
+        "is_intermediary": false,
+        "headcount_label": null,
+        "size_class": null,
+        "legal_name": null,
+        "is_active": true
+      }
+    ]
+  },
+  "us": {
+    "success": true,
+    "suggestions": [
+      {
+        "name": "Apple Inc.",
+        "siren": "",
+        "city": "Cupertino, CA",
+        "sector": "",
+        "postal_code": null,
+        "employees_min": null,
+        "employees_max": null,
+        "creation_date": null,
+        "country": "US",
+        "registryId": "0000320193",
+        "registryIdLabel": "CIK",
+        "is_esn_naf": null,
+        "is_intermediary": false,
+        "headcount_label": null,
+        "size_class": null,
+        "legal_name": null,
+        "is_active": null
+      }
+    ]
+  }
+}

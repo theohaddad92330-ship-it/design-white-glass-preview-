@@ -1,0 +1,931 @@
+{
+  "$schema": "http://json-schema.org/draft-07/schema#",
+  "$id": "https://bellum.ai/schemas/research.schema.json",
+  "title": "BellumResearchOutput",
+  "description": "Contrat de SORTIE = le blob raw_analysis STOCKÉ (ce que le front lit via GET /internal/telemetry/:id). Clés en snake_case pour la recherche (phase 1) — l'API sérialise raw_analysis en snake_case (applyResearch). Le sous-objet `plan` (phase 4) est en camelCase (actionPlan, contactMessages…) SAUF quelques clés snake (quick_wins, if_no_response). Le graphe `org` (phase 3) est optionnel (absent si non produit). ⚠️ Les champs par CONTACT (decisionRole, bucket, hierarchyLevel, sourceTag, careerLevers, implicitFears…) ne sont PAS ici : ils sont sur topContacts[] (camelCase, télémétrie). Cf. table ③ frontPayload. Permissif (passthrough, tout optionnel).",
+  "x-bellum-branchable": {
+    "_comment": "Champs qu'un consommateur BRANCHE (front, API, Python). Leur disparition d'un payload reel n'est PAS detectee par le schema (permissif, rien de `required`) : c'est CETTE liste qui la fait echouer, des deux cotes (vitest + pytest). Cle unique lue par TS et Py.",
+    "root": [
+      "business_description",
+      "sector",
+      "employees",
+      "headquarters",
+      "website",
+      "siren",
+      "subsidiaries",
+      "meaningful_subsidiaries",
+      "angles",
+      "pains",
+      "priority_score",
+      "confidence",
+      "sources",
+      "salesContext"
+    ],
+    "items": {}
+  },
+  "type": "object",
+  "additionalProperties": true,
+  "properties": {
+    "business_description": {
+      "type": "string"
+    },
+    "sector": {
+      "type": "string"
+    },
+    "employees": {
+      "type": "string"
+    },
+    "revenue": {
+      "type": "string"
+    },
+    "headquarters": {
+      "type": "string"
+    },
+    "website": {
+      "type": "string"
+    },
+    "companyLogoUrl": {
+      "type": ["string", "null"],
+      "description": "Logo entreprise cible (Théo) dérivé du domaine du site (CDN logo public sans clé) — le front charge l'URL et retombe sur un placeholder si absent. null si pas de domaine exploitable. La photo des contacts vient d'Apollo (photoUrl)."
+    },
+    "accountVocabulary": {
+      "type": "object",
+      "additionalProperties": true,
+      "description": "Vocabulaire du groupe (Théo) — la grille de lecture par compte. { version, terms[] }. Chaque terme : term · kind (entity|program|internal_competitor|tool_erp|trap_noise|angle|person|acronym) · meaning · commercialWhy · aliases · relatedEntity · truthStatus · sourceRefs. Slice 1 = tag déterministe (entités/concurrents/programmes/stack) ; meaning/commercialWhy enrichis par le prompt AccountVocabularyBuilder ensuite. Voir agent_docs/knowledge-architecture.md."
+    },
+    "is_public": {
+      "type": "boolean"
+    },
+    "siren": {
+      "type": "string"
+    },
+    "creation_date": {
+      "type": "string"
+    },
+    "subsidiaries": {
+      "type": "array",
+      "description": "Raw legal entities from the Pappers corporate graph, annotated with relevance.",
+      "items": {
+        "type": "object",
+        "additionalProperties": true,
+        "properties": {
+          "id": {
+            "type": "string"
+          },
+          "siren": {
+            "type": "string"
+          },
+          "name": {
+            "type": "string"
+          },
+          "relevance": {
+            "type": "string",
+            "enum": ["operating", "noise", "out_of_sector"]
+          },
+          "relevanceReason": {
+            "type": "string"
+          }
+        }
+      }
+    },
+    "meaningful_subsidiaries": {
+      "type": "array",
+      "description": "Operating entities only — legal noise (SCI / holdings / GIE) filtered out, EXCEPT IT/digital entities (GIE informatique…) which are always kept and flagged isItEntity.",
+      "items": {
+        "type": "object",
+        "additionalProperties": true
+      }
+    },
+    "subsidiaries_summary": {
+      "type": "object",
+      "additionalProperties": true,
+      "properties": {
+        "total": {
+          "type": "integer"
+        },
+        "meaningful": {
+          "type": "integer"
+        },
+        "filtered": {
+          "type": "integer"
+        },
+        "filteredReasons": {
+          "type": "object"
+        }
+      }
+    },
+    "entities_exhaustive": {
+      "type": "array",
+      "description": "The entity org map (BU / directions / IT hub), tiered into priority zones.",
+      "items": {
+        "type": "object",
+        "additionalProperties": true,
+        "properties": {
+          "name": {
+            "type": "string"
+          },
+          "type": {
+            "type": "string"
+          },
+          "parent": {
+            "type": "string"
+          },
+          "region": {
+            "type": "string"
+          },
+          "relevance": {
+            "type": "string",
+            "enum": ["operating", "noise", "out_of_sector"],
+            "description": "Pertinence pour une ESN IT (S2). operating = cible vendable ; noise = véhicule juridique ; out_of_sector = mauvais secteur (BTP/agri) — gardé et labellisé mais SANS play commercial."
+          },
+          "relevanceReason": {
+            "type": "string"
+          },
+          "getsPlay": {
+            "type": "boolean",
+            "description": "true seulement si operating — porte du gate S2 : une entité getsPlay=false ne reçoit ni contacts, ni angles, ni plan 30/60/90, ni messages."
+          },
+          "perimeterScore": {
+            "type": "integer",
+            "description": "Perimeter Fit Score /20 (03_BUSINESS_RULES §2) — 5 critères × /4 : entité opérationnelle, sponsor/owner, signal, fit offre, accessibilité 14j."
+          },
+          "perimeterTier": {
+            "type": "string",
+            "enum": ["P1", "P2", "secondaire"],
+            "description": "Tier du périmètre déduit du /20 : P1 (≥14), P2 (10-13), secondaire (<10)."
+          },
+          "stack": {
+            "type": "array",
+            "items": {
+              "type": "string"
+            },
+            "description": "Stack technique propre à cette BU si connue (ex. GBIS = Java/C++/quant, BoursoBank = mobile/data/anti-fraude) — [] si inconnu (#275)."
+          },
+          "zone": {
+            "type": "string",
+            "enum": ["attaque_immediate", "influence_a_activer", "quick_win", "longue_traine"],
+            "description": "Zone de la matrice influence × accessibilité (les 4 priorités du deck) : attaque_immediate (P1 + accessible), influence_a_activer (P1 + accès à construire), quick_win (sous-P1 + accessible), longue_traine (reste)."
+          },
+          "engagement": {
+            "type": "object",
+            "description": "Playbook d'engagement déterministe pour la zone (quadrant Pouvoir × Intérêt du deck) : quoi faire et à quelle fréquence recontacter.",
+            "properties": {
+              "quadrant": {
+                "type": "string",
+                "enum": ["CHAMPIONS", "À SATISFAIRE", "RELAIS TERRAIN", "MONITOR"],
+                "description": "Quadrant Pouvoir × Intérêt (mappé 1:1 depuis zone)."
+              },
+              "cadence": {
+                "type": "string",
+                "enum": ["hebdomadaire", "mensuelle", "bi-mensuelle", "trimestrielle"],
+                "description": "Fréquence de recontact recommandée."
+              },
+              "contactTier": {
+                "type": "string",
+                "enum": ["A", "B", "C"],
+                "description": "Priorité d'outreach (A = agir en premier, C = veille)."
+              },
+              "action": {
+                "type": "string",
+                "description": "Règle d'engagement en une phrase."
+              }
+            }
+          },
+          "estimated_headcount": {
+            "type": "string"
+          },
+          "what_to_sell": {
+            "type": "array",
+            "items": {
+              "type": "string"
+            },
+            "description": "Angles ESN à vendre à CETTE entité (data, cloud, cyber, run/TMA, paiements, mobile…). Rempli par l'IA pour les entités opérationnelles majeures ; [] pour la longue traîne (#275)."
+          },
+          "priority_tier": {
+            "type": "string",
+            "enum": ["P1", "P2", "P3"],
+            "description": "Zone de chasse — P1 attaque immédiate, P2 second temps, P3 longue traîne (calculé, influence × pertinence IT)."
+          },
+          "priority_rank": {
+            "type": "integer",
+            "description": "Rang global de la priorité (1 = top)."
+          },
+          "is_it_entity": {
+            "type": "boolean",
+            "description": "Entité IT/digitale du groupe (GIE informatique, Euro-Information, DSI mutualisée…) — cible #1 d'un ESN, forcée en P1 (détecté par nom, à terme NAF 62.0x via INSEE)."
+          },
+          "influence_band": {
+            "type": "string",
+            "enum": ["high", "medium", "low"],
+            "description": "Axe influence de la matrice — pouvoir de décision / budget IT de l'entité (aligné sur le tier : P1 high, P2 medium, P3 low)."
+          },
+          "accessibility_band": {
+            "type": "string",
+            "enum": ["high", "medium", "low"],
+            "description": "Axe accessibilité de la matrice — facilité d'entrée pour un ESN (calculé : itAutonomy autonome→high / centralise→low, entité IT→high, sous-DSI/département→low)."
+          }
+        }
+      }
+    },
+    "entity_tier_counts": {
+      "type": "object",
+      "description": "Nombre d'entités par zone de priorité.",
+      "additionalProperties": true,
+      "properties": {
+        "P1": {
+          "type": "integer"
+        },
+        "P2": {
+          "type": "integer"
+        },
+        "P3": {
+          "type": "integer"
+        }
+      }
+    },
+    "entity_zones": {
+      "type": "object",
+      "description": "Nombre d'entités par zone de la matrice influence × accessibilité (les 4 priorités du deck).",
+      "additionalProperties": true,
+      "properties": {
+        "attaque_immediate": {
+          "type": "integer"
+        },
+        "influence_a_activer": {
+          "type": "integer"
+        },
+        "quick_win": {
+          "type": "integer"
+        },
+        "longue_traine": {
+          "type": "integer"
+        }
+      }
+    },
+    "it_entities": {
+      "type": "array",
+      "description": "Les entités IT/digitales détectées (sous-ensemble de entitiesExhaustive avec isItEntity=true) — l'arme principale de la prospection ESN.",
+      "items": {
+        "type": "object",
+        "additionalProperties": true
+      }
+    },
+    "priority_perimeters": {
+      "type": "array",
+      "description": "Les 2-4 périmètres/zones de chasse les plus actionnables (03_BUSINESS_RULES §2), scorés /20 et triés — 'pas le groupe, les périmètres actionnables'. Le plan (prioritySubAccounts) se construit sur cette liste.",
+      "items": {
+        "type": "object",
+        "additionalProperties": true,
+        "properties": {
+          "name": {
+            "type": "string"
+          },
+          "tier": {
+            "type": "string",
+            "enum": ["P1", "P2", "secondaire"]
+          },
+          "perimeterScore": {
+            "type": "integer"
+          },
+          "whatToSell": {
+            "type": "array",
+            "items": {
+              "type": "string"
+            }
+          },
+          "entryRole": {
+            "type": "string",
+            "description": "Rôle d'entrée recommandé (déduit de l'accessibilité) : bottom-up / middle-out / top-down."
+          },
+          "confidence": {
+            "type": "string",
+            "enum": ["high", "medium", "low"]
+          },
+          "why": {
+            "type": "string"
+          }
+        }
+      }
+    },
+    "sites_france": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "additionalProperties": true
+      }
+    },
+    "program_names": {
+      "type": "array",
+      "items": {
+        "anyOf": [{ "type": "string" }, { "type": "object", "additionalProperties": true }]
+      }
+    },
+    "technology_stack": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "additionalProperties": true
+      }
+    },
+    "regulations": {
+      "type": "array",
+      "items": {
+        "type": "string"
+      }
+    },
+    "it_challenges": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "additionalProperties": true
+      }
+    },
+    "pains": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "additionalProperties": true
+      }
+    },
+    "angles": {
+      "type": "array",
+      "description": "Angles d'attaque : title, strategy, specific_offer, estimated_deal_size, entry_contact_persona, prerequisites.",
+      "items": {
+        "type": "object",
+        "additionalProperties": true
+      }
+    },
+    "axesEcartes": {
+      "type": "array",
+      "description": "La LOGIQUE DE SÉLECTION (Théo) : les angles/offres réels mais ÉCARTÉS pour le profil ESN courant — pas mis en top-3, avec la raison et comment les réactiver. Chaque item : angle · raison · commentReactiver (ex: 'SAP écarté car ton offre est data/cloud → relance sous un profil ESN SAP'). Le pendant structuré des 3 plays recommandés. Cappé à 6, entrées sans angle nommé écartées.",
+      "items": {
+        "type": "object",
+        "additionalProperties": true,
+        "properties": {
+          "angle": {
+            "type": "string"
+          },
+          "raison": {
+            "type": "string"
+          },
+          "commentReactiver": {
+            "type": "string"
+          }
+        }
+      }
+    },
+    "recent_signals": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "additionalProperties": true
+      }
+    },
+    "qualified_hypotheses": {
+      "type": "array",
+      "description": "Signaux publics transformés en hypothèses actionnables (deck « signaux → hypothèses »). Convergence : 1 signal → a_verifier, 3+ → confirmee (#275).",
+      "items": {
+        "type": "object",
+        "additionalProperties": true,
+        "properties": {
+          "hypothesis": {
+            "type": "string"
+          },
+          "confidence": {
+            "type": "string",
+            "enum": ["confirmee", "probable", "a_verifier"]
+          },
+          "based_on_signals": {
+            "type": "array",
+            "items": {
+              "type": "string"
+            }
+          },
+          "based_on_signal_ids": {
+            "type": "array",
+            "description": "Les `recent_signals[].id` sur lesquels l'hypothèse repose (#2687) — la même assertion que `based_on_signals`, par identifiant plutôt qu'en prose. C'est le SEUL lien hypothèse → signal : `based_on_signals` est du texte libre reformulé, et apparier dessus serait un rapprochement par proximité.",
+            "items": {
+              "type": "string"
+            }
+          },
+          "esn_angle": {
+            "type": "string"
+          },
+          "first_action": {
+            "type": "string",
+            "description": "La première action qui TESTE l'hypothèse sans la présenter comme un fait. Le prompt la réclamait déjà ; elle n'était pas un champ du modèle, donc elle n'atteignait jamais la base (#2687)."
+          }
+        }
+      }
+    },
+    "budget_signals": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "additionalProperties": true
+      }
+    },
+    "competitors": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "additionalProperties": true
+      }
+    },
+    "esn_synergies": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "additionalProperties": true
+      }
+    },
+    "esn_presence": {
+      "type": "array",
+      "description": "« Les ESN concurrentes déjà présentes » (Matteo/Théo, tome 1 §14). Vue actionnable, dérivée déterministe des competitors détectés (presse/scrape) + battlecard ESN connues. Chaque entrée : name · isKnownEsn · presence (confirmée|probable, conservé pour le back-office) · certainty (forte|moyenne|faible — deux corroborations, une, aucune) · evidence (preuve de présence) · scope (périmètre estimé chez ce client, null si inconnu) · detectedAt (date ISO du run, null si non fournie — jamais fabriquée à la lecture) · sourceRefs[] · competeAngle (comment concurrencer) · partnershipAngle (rang-2 : co/sous-traitance) · weaknesses[] · tjmRange. Une ESN présente sur un compte PRIVÉ est une INFÉRENCE, jamais un fait. Voir app/services/esn_presence.py.",
+      "items": {
+        "type": "object",
+        "additionalProperties": true
+      }
+    },
+    "people_mentioned": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "additionalProperties": true
+      }
+    },
+    "executives": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "additionalProperties": true
+      }
+    },
+    "c_level": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "additionalProperties": true
+      }
+    },
+    "linkedin_search_keywords": {
+      "type": "object",
+      "additionalProperties": true
+    },
+    "organigramme_logic": {
+      "type": "string"
+    },
+    "comment_ouvrir_compte": {
+      "type": "string",
+      "description": "Stratégie d'ouverture de compte."
+    },
+    "rdv_script": {
+      "type": "object",
+      "additionalProperties": true,
+      "description": "Script de RDV : opening · positioning · exploration · proposal · closing, + bridges (phrases de transition) et storyFrames (mini-histoires pour créer le rapport)."
+    },
+    "power_questions": {
+      "type": "array",
+      "items": {
+        "type": "string"
+      }
+    },
+    "objections": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "additionalProperties": true
+      }
+    },
+    "concrete_activity": {
+      "type": "string"
+    },
+    "it_implications_for_esn": {
+      "type": "string"
+    },
+    "legal_form": {
+      "type": "string"
+    },
+    "capital": {
+      "type": ["number", "string", "null"]
+    },
+    "pappers_url": {
+      "type": "string"
+    },
+    "financials_history": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "additionalProperties": true
+      }
+    },
+    "data_freshness": {
+      "type": "object",
+      "additionalProperties": true
+    },
+    "priority_justification": {
+      "type": "string"
+    },
+    "priority_score": {
+      "type": "number",
+      "minimum": 0,
+      "maximum": 10
+    },
+    "confidence": {
+      "type": "object",
+      "additionalProperties": true,
+      "properties": {
+        "score": {
+          "type": "number",
+          "minimum": 0,
+          "maximum": 100
+        },
+        "tier": {
+          "type": "string",
+          "enum": ["low", "medium", "high"]
+        },
+        "factors": {
+          "type": "object"
+        }
+      }
+    },
+    "sources": {
+      "type": "object",
+      "additionalProperties": true,
+      "description": "B3 deterministic source attribution.",
+      "properties": {
+        "registry": {
+          "type": "array",
+          "items": {
+            "type": "object",
+            "additionalProperties": true
+          }
+        },
+        "facts": {
+          "type": "object"
+        },
+        "evidence": {
+          "type": "object",
+          "description": "Per key fact: a cited extract + the date of the data + its refs.",
+          "additionalProperties": {
+            "type": "object",
+            "additionalProperties": true,
+            "properties": {
+              "extract": {
+                "type": "string"
+              },
+              "date": {
+                "type": ["string", "null"]
+              },
+              "refs": {
+                "type": "array",
+                "items": {
+                  "type": "string"
+                }
+              }
+            },
+            "required": ["extract"]
+          }
+        },
+        "tags": {
+          "type": "object",
+          "description": "Per field: PUBLIC (sourced/official) vs HYPOTHÈSE (AI interpretation) — deck p.6.",
+          "additionalProperties": {
+            "type": "string",
+            "enum": ["PUBLIC", "HYPOTHÈSE", "RISQUE", "INTERNE"]
+          }
+        },
+        "coverage": {
+          "type": "object"
+        }
+      }
+    },
+    "naf_code": {
+      "type": "string",
+      "description": "Code NAF/APE (ex. 62.01Z = programmation informatique). INSEE / recherche-entreprises — discrimine l'activité IT d'une entité."
+    },
+    "registry_annuaire": {
+      "type": "object",
+      "additionalProperties": true,
+      "description": "Fiche registre officielle (recherche-entreprises / annuaire-entreprises) — dirigeants, tranche d'effectif, nb d'établissements, NAF, SIREN."
+    },
+    "detected_tech_stack": {
+      "type": "array",
+      "items": {
+        "type": "string"
+      },
+      "description": "Stack technique RÉELLE observée sur le site (tech-detect, façon Wappalyzer) — framework / CMS / cloud / CDN / analytics. Ce que l'ESN peut adresser, pas une supposition du LLM."
+    },
+    "legal_signals": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "additionalProperties": true
+      },
+      "description": "Annonces légales récentes (BODACC) — dépôts de comptes, modifications, procédures. Signaux de changement / vie de l'entreprise."
+    },
+    "news": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "additionalProperties": true
+      },
+      "description": "Actualités récentes (Brave News) — titre, URL, fraîcheur. Accroches de prospection datées."
+    },
+    "it_job_signals": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "additionalProperties": true
+      },
+      "description": "Offres d'emploi IT récentes (France Travail, domaine M18) — intitulé, lieu, date, compétences listées. Signaux de recrutement = budget/projet en cours + stack."
+    },
+    "beneficial_owners": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "additionalProperties": true
+      },
+      "description": "Bénéficiaires effectifs (INPI RNE) — qui contrôle réellement l'entité (nom, % détention/vote)."
+    },
+    "plan": {
+      "type": "object",
+      "additionalProperties": true,
+      "description": "Plan d'action (phase 4), fusionné dans raw_analysis.plan — clés AS-IS camelCase. Le front lit ici, PAS au top-level : `actionPlan` est à raw_analysis.plan.actionPlan, les messages prêts à `raw_analysis.plan.contactMessages`.",
+      "properties": {
+        "actionPlan": {
+          "type": "object",
+          "additionalProperties": true,
+          "description": "strategy · justification · phases[] (IMMEDIAT/MOIS 1/… → actions[])."
+        },
+        "plays": {
+          "type": "array",
+          "items": {
+            "type": "object",
+            "additionalProperties": true
+          },
+          "description": "Les ≤3 plays consolidés (03_BUSINESS_RULES §5), assemblés déterministe depuis périmètres+angles+offres+contacts. Chaque play : perimeter · tier · painSignal · esnOffer · targetContact · targetContactRole · angle · firstAction · evidenceLevel · risk · readyMessage · readyMessageChannel. painSignal/firstAction/risk sont liés au périmètre par nom (pas seulement par position) ; readyMessage = le M1 prêt à envoyer du contact ciblé (linkedin|email|phone), null si pas de contact/message. Pièce manquante = 'à qualifier'/'à identifier' (règle 70%), jamais inventée."
+        },
+        "groupRelationship": {
+          "type": "object",
+          "additionalProperties": true,
+          "description": "Logique Axians (Théo #4) : présent seulement quand l'ESN vendeuse appartient au groupe cible (nom ESN détecté dans les entités du groupe). { isInsider · esn · group · matchedEntity · note }. Le plan est alors piloté en COMPLÉMENT de l'IT interne (jamais frontal). Absent = relation standard (prospection/upsell/incumbent)."
+        },
+        "offersToPropose": {
+          "type": "array",
+          "items": {
+            "type": "object",
+            "additionalProperties": true
+          }
+        },
+        "quickWins": {
+          "type": "array",
+          "items": {
+            "type": "object",
+            "additionalProperties": true
+          }
+        },
+        "ifNoResponse": {
+          "type": "object",
+          "additionalProperties": true
+        },
+        "evaluation": {
+          "type": "object",
+          "additionalProperties": true,
+          "description": "Verdict : goNoGo (GO/NO-GO/CONDITIONNEL) · globalScore (0-10) · risks[]."
+        },
+        "prioritySubAccounts": {
+          "type": "array",
+          "items": {
+            "type": "object",
+            "additionalProperties": true
+          },
+          "description": "Feuille de route 30j par zone : name · why · entryContact · suggestedOffer · nextAction · approachAngle (top_down/bottom_up/middle_out) · deadline."
+        },
+        "competitiveStrategy": {
+          "type": "object",
+          "additionalProperties": true
+        },
+        "contactMessages": {
+          "type": "array",
+          "items": {
+            "type": "object",
+            "additionalProperties": true
+          },
+          "description": "Messages prêts à envoyer (bellum_messages) — appliqués sur les contacts persistés."
+        }
+      }
+    },
+    "org": {
+      "type": "object",
+      "additionalProperties": true,
+      "description": "Graphe de décision (phase 3), fusionné dans raw_analysis.org.",
+      "properties": {
+        "decisionChain": {
+          "type": "object",
+          "additionalProperties": true,
+          "description": "description · steps[] · estimatedCycleLength · budgetAuthority."
+        },
+        "uncoveredZones": {
+          "type": "array",
+          "items": {
+            "type": "object",
+            "additionalProperties": true
+          },
+          "description": "Zones blanches (où l'ESN n'a personne) : zone · importance · suggestedTitle/suggestedSearch."
+        },
+        "stakeholderMap": {
+          "type": "array",
+          "items": {
+            "type": "object",
+            "additionalProperties": true
+          },
+          "description": "Carte politique : fullName · stance (advocate/neutral/opponent) · reasoning."
+        },
+        "approachOrder": {
+          "type": "array",
+          "items": {
+            "type": "object",
+            "additionalProperties": true
+          },
+          "description": "Séquence d'approche (sandwich) : step · contact · role · why_first · unlocks."
+        }
+      }
+    },
+    "activity_label": {
+      "type": ["string", "null"],
+      "description": "Libellé d'activité (Pappers) — `CompanyProfile.activity_label`."
+    },
+    "branch_count": {
+      "type": ["integer", "number", "null"],
+      "description": "Nombre d'établissements (Pappers)."
+    },
+    "branches": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "additionalProperties": true
+      },
+      "description": "Établissements/branches (Pappers)."
+    },
+    "cities": {
+      "type": "array",
+      "items": {
+        "type": "string"
+      },
+      "description": "Villes des établissements (Pappers) — noms bruts, pas des objets."
+    },
+    "consolidated_status": {
+      "type": ["string", "null"],
+      "description": "Statut consolidé de l'entité (Pappers) — actif / cessée."
+    },
+    "corporate_graph": {
+      "type": ["object", "null"],
+      "additionalProperties": true,
+      "description": "Graphe capitalistique brut (Pappers) — nœuds légaux liés. `null` quand Pappers ne le renvoie pas (`CompanyProfile.corporate_graph: CorporateGraph | None`)."
+    },
+    "corporate_purpose": {
+      "type": ["string", "null"],
+      "description": "Objet social (Pappers)."
+    },
+    "headquarters_address": {
+      "type": "object",
+      "additionalProperties": true,
+      "description": "Adresse structurée du siège (Pappers)."
+    },
+    "headquarters_display": {
+      "type": ["string", "null"],
+      "description": "Siège formaté pour affichage (copie de `headquarters`)."
+    },
+    "rcs_court": {
+      "type": ["string", "null"],
+      "description": "Greffe RCS (Pappers)."
+    },
+    "rcs_status": {
+      "type": ["string", "null"],
+      "description": "Statut RCS (Pappers)."
+    },
+    "_api_metrics": {
+      "type": "object",
+      "additionalProperties": true,
+      "description": "Télémétrie de collecte (Brave/Firecrawl/Pappers counts) — cf. dashboard panel Collecte."
+    },
+    "phase_telemetry": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "additionalProperties": true
+      },
+      "description": "Télémétrie par phase (coût/durée/tokens/sources) — un objet PAR phase, poussé par le worker NestJS (`raw_analysis.phase_telemetry`)."
+    },
+    "adjusted_score_factors": {
+      "type": "object",
+      "additionalProperties": true,
+      "description": "Facteurs de score bruts (offer_fit_raw, accessibility_raw, urgency_raw, cycle_fit_raw)."
+    },
+    "truth_statuses": {
+      "type": "object",
+      "description": "Les 5 statuts de verite (cadrage §4) : legende + map categorie->statut (fait/signal/hypothese/recommandation/risque). Deterministe, pour que le front badge chaque bloc et n affiche jamais une hypothese comme un fait.",
+      "properties": {
+        "legend": {
+          "type": "array",
+          "items": {
+            "type": "object",
+            "properties": {
+              "status": {
+                "type": "string",
+                "enum": ["fait", "registre", "signal", "hypothese", "recommandation", "risque", "inconnu"]
+              },
+              "label": {
+                "type": "string"
+              }
+            }
+          }
+        },
+        "categories": {
+          "type": "object",
+          "additionalProperties": {
+            "type": "object",
+            "properties": {
+              "status": {
+                "type": "string"
+              },
+              "label": {
+                "type": "string"
+              }
+            }
+          }
+        }
+      }
+    },
+    "registry_id": {
+      "type": ["string", "null"],
+      "description": "Identifiant de registre national resolu par le country pack (CIK US / corp id CA / UID CH / BCE BE / RCS LU). ABSENT sur un run FR — le pack est un no-op strict pour le defaut francais. Miroir zod : `researchDataSchema.registryId`."
+    },
+    "registry_country": {
+      "type": ["string", "null"],
+      "description": "Pays du registre ci-dessus. Miroir zod : `researchDataSchema.registryCountry`."
+    },
+    "salesContext": {
+      "type": "object",
+      "description": "SalesContext deterministe (annexe methodo p3-6) : le triplet (stade ESN x archetype compte x etat relation) qui branche score/contacts/actions/plan/messages. Emis par phase1_research.build_sales_context. Chaque axe infere cite sa preuve (invariant p31). Cf. packages/contracts/src/schemas/sales-context.ts (source de verite zod).",
+      "additionalProperties": true,
+      "properties": {
+        "salesContextVersion": {
+          "type": "number"
+        },
+        "esnProfile": {
+          "type": "object",
+          "additionalProperties": true,
+          "properties": {
+            "stage": {
+              "type": "string"
+            }
+          }
+        },
+        "account": {
+          "type": "object",
+          "additionalProperties": true,
+          "properties": {
+            "archetype": {
+              "type": "string"
+            },
+            "derivation": {
+              "type": "string"
+            },
+            "confidence": {
+              "type": "number"
+            },
+            "evidence": {
+              "type": "array",
+              "items": {
+                "type": "string"
+              }
+            }
+          }
+        },
+        "relationship": {
+          "type": "object",
+          "additionalProperties": true,
+          "properties": {
+            "state": {
+              "type": "string"
+            },
+            "derivation": {
+              "type": "string"
+            },
+            "confidence": {
+              "type": "number"
+            },
+            "evidence": {
+              "type": "array",
+              "items": {
+                "type": "string"
+              }
+            }
+          }
+        }
+      }
+    }
+  }
+}

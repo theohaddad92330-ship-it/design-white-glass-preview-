@@ -1,0 +1,96 @@
+{
+  "title": "Sales administration",
+  "heading": "What is missing before a mission can start or be renewed",
+  "subtitle": "One row per file, its reason, and the screen where you fix it.",
+  "monthLabel": "Month shown",
+  "searchLabel": "Search a file",
+  "searchPlaceholder": "Client, mission…",
+  "export": "Export",
+  "tableLabel": "Sales administration files",
+  "loadFailed": "The list could not be loaded. This is not “nothing to handle”: try again in a moment.",
+  "renewalsTruncated": "The renewal list may be incomplete: your workspace holds more than this screen can read at once. Some files may be missing, with no error shown elsewhere.",
+  "empty": "No file to handle in this selection.",
+  "emptyWhy": "This month's starts and the upcoming renewals show up here. Change month or drop a filter to widen it.",
+  "qualityTitle": "File quality — click a reason to keep only that one",
+  "deltaUnmeasured": "Change from last month: not measured",
+  "daysCount": "{{count}} day",
+  "daysCount_other": "{{count}} days",
+  "unknownAccountReason": "This mission is not attached to any account.",
+  "unknownMissionReason": "This mission has no title.",
+  "tiles": {
+    "all": "All",
+    "starts": "Starts",
+    "renewals": "Renewals",
+    "active": "Running",
+    "ready_to_invoice": "Ready to invoice",
+    "in_negotiation": "In negotiation"
+  },
+  "tileReasons": {
+    "all": "How many files the period holds.",
+    "starts": "Missions whose start date falls in the month shown.",
+    "renewals": "Missions whose renewal window is open.",
+    "active": "Files carried by a running mission.",
+    "ready_to_invoice": "Files whose month is already ready to invoice.",
+    "in_negotiation": "A mission has no “in negotiation” state."
+  },
+  "kinds": {
+    "start": "Start",
+    "renewal": "Renewal"
+  },
+  "states": {
+    "complete": "File complete"
+  },
+  "columns": {
+    "account": "Client",
+    "mission": "Mission",
+    "kind": "File",
+    "age": "Waiting for",
+    "blockers": "What is missing",
+    "terms": "Payment terms",
+    "paymentDetails": "Details sent"
+  },
+  "blockers": {
+    "missing_billing_contact": "Billing contact missing",
+    "missing_po": "Purchase order missing",
+    "missing_client_reference": "Client reference missing",
+    "missing_billing_entity": "Billing entity to be named",
+    "unknown_payment_terms": "Payment terms unknown",
+    "payment_details_not_transmitted": "Payment details not sent",
+    "kyc_not_validated": "Entity identity check"
+  },
+  "repairs": {
+    "set_billing_contact": "Set the billing contact on the mission",
+    "ask_po": "Ask the client for the purchase order",
+    "set_client_reference": "Enter the reference the client requires on the invoice",
+    "set_billing_entity": "Name the entity the invoice is addressed to",
+    "set_payment_terms": "Enter the payment terms",
+    "record_payment_details_sent": "Record that the payment details were sent",
+    "validate_kyc": "Check the entity's identity on the client record"
+  },
+  "reasons": {
+    "unknown_payment_terms": "Nobody entered a payment delay. Without it, no due date can be worked out.",
+    "payment_details_not_transmitted": "The payment details were never sent to the client.",
+    "kyc_not_measured": "This reason is not computed yet. Zero would read as “nothing to check”, which nobody has measured.",
+    "unknownOpening": "We do not know when this file opened: the mission has neither a start date in the month nor an end date."
+  },
+  "repair": {
+    "title": "Fix the file — {{mission}}",
+    "untitledMission": "mission with no title",
+    "save": "Save",
+    "cancel": "Close",
+    "failed": "Saving failed. Nothing was changed."
+  },
+  "fields": {
+    "clientReference": "Client reference",
+    "clientReferencePlaceholder": "Supplier number, order reference…",
+    "paymentTerms": "Payment terms (days)",
+    "paymentTermsPlaceholder": "30, 45, 60…",
+    "billingEntity": "Billing entity",
+    "billingEntityNone": "No entity named",
+    "billingEntityFailed": "This client's entities could not be read. The list is not empty: it is unknown.",
+    "paymentDetails": "Payment details",
+    "paymentDetailsNote": "We only record that you sent them, and when. No bank details are kept here.",
+    "markTransmitted": "Mark as sent",
+    "markNotTransmitted": "Undo the sending"
+  }
+}

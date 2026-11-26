@@ -1,0 +1,82 @@
+{
+  "counts": {
+    "overdue_one": "{{count}} en retard",
+    "overdue_other": "{{count}} en retard",
+    "today_one": "{{count}} pour aujourd’hui",
+    "today_other": "{{count}} pour aujourd’hui",
+    "clear": "Rien d’urgent."
+  },
+  "buckets": {
+    "overdue": "En retard",
+    "today": "Aujourd’hui",
+    "tomorrow": "Demain",
+    "this_week": "Cette semaine",
+    "later": "Plus tard"
+  },
+  "priority": {
+    "normal": "Normale",
+    "high": "Prioritaire"
+  },
+  "actions": {
+    "add": "Ajouter une tâche",
+    "complete": "Marquer comme faite",
+    "delete": "Supprimer",
+    "undo": "Annuler",
+    "history": "Historique",
+    "postponeTomorrow": "Reporter à demain",
+    "postponeNextWeek": "Reporter à la semaine prochaine",
+    "undoPostpone": "Annuler le report"
+  },
+  "states": {
+    "empty": "Aucune tâche ouverte.",
+    "loadError": "Tes tâches n’ont pas pu être chargées. Elles sont toujours là — c’est la lecture qui a échoué.",
+    "more_one": "et {{count}} autre tâche",
+    "more_other": "et {{count}} autres tâches",
+    "completedNotice": "« {{title}} » marquée terminée · aucun message envoyé",
+    "historyEmpty": "Aucune tâche terminée.",
+    "closedStatus": {
+      "done": "Terminée le {{date}}",
+      "cancelled": "Annulée le {{date}}"
+    },
+    "postponedNotice": {
+      "tomorrow": "« {{title}} » reportée à demain",
+      "next_week": "« {{title}} » reportée à lundi prochain"
+    }
+  },
+  "composer": {
+    "title": "Nouvelle tâche",
+    "subtitle": "Une tâche sans échéance ne remonte dans aucune vue : la date est donc obligatoire, et pré-remplie à aujourd’hui.",
+    "titleLabel": "Intitulé",
+    "titlePlaceholder": "Rappeler le DSI sur les deux profils",
+    "detailsLabel": "Détail",
+    "detailsPlaceholder": "Par téléphone plutôt que par mail — il ne répond pas aux relances écrites.",
+    "expectedResultLabel": "Résultat attendu (obligatoire)",
+    "expectedResultPlaceholder": "RDV pris avec le DSI",
+    "objectiveLabel": "Objectif (obligatoire)",
+    "objectivePlaceholder": "Obtenir une date de décision",
+    "ownerLabel": "Qui s’en occupe",
+    "ownerMe": "Moi",
+    "dueLabel": "Échéance",
+    "shortcuts": {
+      "today": "Aujourd’hui",
+      "tomorrow": "Demain",
+      "nextWeek": "Dans une semaine"
+    },
+    "missing": "Pour créer, il manque : {{fields}}.",
+    "fieldNames": {
+      "title": "l’intitulé",
+      "due": "l’échéance",
+      "objective": "l’objectif",
+      "expectedResult": "le résultat attendu"
+    },
+    "submit": "Créer"
+  },
+  "toast": {
+    "created": "Tâche créée.",
+    "createError": "La tâche n’a pas pu être créée.",
+    "done": "Tâche terminée.",
+    "saveError": "La modification n’a pas pu être enregistrée.",
+    "deleted": "Tâche supprimée.",
+    "deleteError": "La suppression a échoué."
+  }
+}

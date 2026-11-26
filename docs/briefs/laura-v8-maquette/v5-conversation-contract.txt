@@ -1,0 +1,335 @@
+# Laura V5 — fil commercial complet et contrat de conversation
+
+29 octobre 2026. Conception de contenu et d’interaction ; aucune modification de l’application, des styles ou des données par cet auteur.
+
+Base relue : sources V4 avant intégration du fil V5. Les réserves de code sont des points d’entrée pour cette intégration ; elles ne constituent pas un verdict sur le code que le propriétaire peut modifier en parallèle.
+
+## 1. Décision de conception
+
+L’entrée principale doit montrer une conversation déjà constituée, du premier échange au brouillon final. Théo doit pouvoir la parcourir immédiatement, ouvrir les comptes, développer une liste, lire la stratégie, comparer les interlocuteurs et modifier le brouillon. Il ne doit pas reconstruire ce parcours en lançant une succession de scénarios.
+
+Le fil suit une seule intention : préparer une approche commerciale pour Camille autour de Nantes. Les changements de longueur répondent aux questions posées. Une question de disponibilité appelle deux phrases ; une comparaison appelle trois arguments ; une demande de panorama appelle les 24 comptes ; une demande de plan détaillé appelle la stratégie complète.
+
+Les états de recherche, d’arrêt et de résultat partiel appartiennent à l’histoire racontée. À l’ouverture, ils ne constituent pas des tâches réellement en cours. Le rejeu est volontaire et crée une nouvelle tentative ; il ne réécrit pas les échanges historiques. Le composeur reste disponible pour poursuivre après la dernière réponse.
+
+### Sources de cette proposition
+
+| Référence | Source locale relue | Ce qu’elle établit |
+|---|---|---|
+| S1 | `dist/data.js` : `consultant`, `accounts`, `contacts`, `conversationSamples`, `longListing`, `strategy`, `draft` | Personnes, compétences, disponibilité, 24 comptes, six missions, réserves et contenu long déjà disponibles. |
+| S2 | `dist/app.js` : `seed`, `renderBody`, `replyBody`, `resultBody`, `listingBody`, `longBody`, `workBody`, `partialBody`, `prepareDraft` | Formats réellement réutilisables, déroulement local, limites des composants et actions actuelles. |
+| S3 | `dist/styles.css` : variables de mouvement, `data-response-size`, bulles, listes, panneaux et règles de réduction du mouvement | Mesures et animations existantes. |
+| S4 | `dist/integrations.js` et gestion des outils dans `dist/app.js` | Logos existants, sélection par conversation, distinction sélection/connexion, états simulés. |
+| S5 | `BRIEF.md` et `review/v4-production-contract.md` | Direction validée, limites de la simulation, acceptation/deltas/étapes du flux produit, arrêt, idempotence, raccourcis et comportement mobile. |
+
+Les références S1 à S4 sont des lectures directes de cette passe. S5 est une note de revue précédente du dépôt produit, réutilisée sans annoncer une nouvelle vérification du backend. Les durées et textes marqués « proposés » ci-dessous sont des décisions de conception, pas des observations réseau.
+
+## 2. Le fil, du premier message au brouillon
+
+**Titre proposé :** « Camille · de la sélection à la première approche ».
+
+**Contexte initial :** Camille Moreau, data engineer ; Python, SQL, Airflow et Azure ; Nantes et alentours ; disponibilité à partir du 16 novembre. Aucun autre profil ni aucune compétence supplémentaire n’est introduit. Les contacts, entreprises et annonces restent ceux du jeu fictif S1.
+
+**Ouverture :** position au début lors de la première découverte de ce nouveau fil. Lors des visites suivantes, restaurer la position de lecture. Un lien discret permet de rejoindre la dernière réponse. L’indication de démonstration est portée par le cadre de l’aperçu ; elle ne se transforme pas en avertissement répété dans chaque phrase.
+
+### 01 — Une question courte
+
+**Théo :** « Camille est disponible à partir de quand, déjà ? »
+
+**Laura :** « À partir du 16 novembre. Sa fiche indique Nantes et alentours ; les déplacements et la fréquence de présence restent à confirmer avec elle. »
+
+**Format :** `reply`, sans titre, un paragraphe, `sourceIds:['src-camille']`. Réutiliser `availability` ou sa variante courte par `replyData`. La réponse reste une petite bulle ajustée au texte, avec le portrait de Laura. Aucune carte, aucun tableau et aucune question de confirmation.
+
+### 02 — Les compétences, sans embellissement
+
+**Théo :** « Et tu pars bien de quelles compétences ? »
+
+**Laura :** « Python, SQL, Airflow et Azure : ce sont les compétences documentées dans sa fiche. Son expérience porte sur la construction de pipelines et leur mise en production. dbt n’est pas renseigné ; je le garderai comme point à vérifier si une mission le demande. »
+
+**Format :** `reply`, `sampleKey:'skills'`, variante de texte par `replyData`, source Camille. Ne pas transformer « non renseigné » en « ne connaît pas ». Les mots clés peuvent être renforcés typographiquement sans colorer chaque technologie. [S1]
+
+### 03 — Un seul choix utile
+
+**Théo :** « Aide-moi à la positionner autour de Nantes. »
+
+**Laura :** « Je garde Nantes et alentours. Tu veux privilégier des missions déjà publiées ou des comptes à prospecter ? »
+
+La carte de choix réutilise les deux options du prototype : « Des missions annoncées » et « Des comptes à prospecter », avec l’alternative de précision libre. Dans l’historique prérempli, le choix est déjà résolu :
+
+**Théo :** « Les deux. »
+
+**Reçu visible :** « Périmètre retenu · comptes et missions · Nantes et alentours ».
+
+Le reçu remplace l’état bloquant. Un éventuel bouton « Modifier ce périmètre » prépare une nouvelle demande explicite, sans changer les réponses déjà présentes. Un ancien choix n’est pas une clarification encore attendue.
+
+**Réserve d’implémentation observée :** le `choiceBody` actuel n’a pas de traitement « résolu ». De plus, `dispatchPrompt` retrouve le dernier `kind:'choice'` sans tester sa résolution. Une fixture historique doit donc être rendue comme reçu, ou porter un état traité à la fois par le rendu et par la recherche de choix en attente. Une propriété ajoutée aux données, sans branchement logique, ne suffit pas. [S2]
+
+### 04 — Travail, premier résultat, arrêt volontaire
+
+La demande précédente a déclenché une recherche générale. L’historique conserve les étapes observées dans cette simulation :
+
+1. « Demande prise en compte ».
+2. « Profil et périmètre consultés ».
+3. « Lecture des annonces ».
+4. « Premier résultat disponible » : Atelier Numérique, deux offres data récentes à Nantes.
+
+Théo a utilisé **Arrêter**. L’état final de cette carte historique affiche :
+
+**Laura :** « Recherche interrompue à ta demande. Le premier résultat reste disponible. »
+
+Le compte Atelier est encore ouvrable. Les étapes suivantes restent non accomplies ; aucune étape active ne clignote. L’activité détaillée indique l’arrêt, sans assimiler celui-ci à une panne. Un bouton de rejeu, s’il existe, annonce une nouvelle tentative.
+
+**Fixture réutilisable :** `work`, `target:'accounts'`, `type:'all'`, `stage:3`, `status:'interrupted'`, `accountIds` du périmètre, événements et choix retenu. Aucune `activeRun` n’est attachée à cette entrée historique.
+
+### 05 — Une reprise sur un périmètre plus petit
+
+**Théo :** « Reprends uniquement sur Atelier Numérique, Méridien Industrie et Novalis Services. Je préfère vérifier ces trois pistes d’abord. »
+
+**Laura :** « Atelier et Méridien sont documentés. La source de Novalis n’a pas répondu pendant cette tentative ; je garde cette piste à vérifier. »
+
+La carte `partial` conserve les trois lignes actuelles : Atelier et Méridien « Consultée », Novalis « À vérifier ». Les deux actions gardent leur portée précise :
+
+- « Continuer avec les 2 comptes » lance les contacts d’Atelier et Méridien.
+- « Réessayer la source » cible uniquement Novalis.
+
+Ce résultat est partiel parce qu’une source manque, pas parce qu’aucun compte n’a été trouvé. L’ancien premier résultat et l’arrêt restent plus haut dans le fil. Le titre actuel de la carte « Deux comptes documentés. Une piste reste à confirmer. » convient. [S1, S2]
+
+### 06 — Réessayer la source manquante
+
+**Théo :** « Réessaie seulement Novalis. »
+
+**Laura, à l’issue de la nouvelle tentative :** « La source de Novalis est disponible dans cette tentative. L’annonce décrit une mission de six mois autour de SQL, Python et dbt. La place de dbt, l’ouverture de la mission et la présence restent à vérifier. »
+
+**Format :** `results` avec `accountIds:['novalis']`, `type:'all'` et sa source ; la carte de compte reste ouvrable. Si le titre d’introduction demeure générique dans le renderer, les informations exactes restent accessibles dans le compte et ses sources. Le résultat est une nouvelle réponse. La carte partielle précédente ne disparaît pas et ne change pas rétroactivement.
+
+**État réel du prototype :** la correction V4 utilise déjà une nouvelle tentative, sans message existant, limitée à `D.accounts[2].id` et avec `type:'all'`. Le succès de cette étape reste simulé. [S2]
+
+### 07 — Une réponse intermédiaire, avant une grande liste
+
+**Théo :** « Sur ces trois comptes, lesquels tu privilégierais, et pourquoi ? »
+
+Réutiliser **intégralement** `D.conversationSamples.medium`, avec `accountIds:['atelier','meridien','novalis']`. Le titre est « Je commencerais par ces trois comptes. ». La réponse contient l’introduction, les trois recommandations et la réserve commune sur le 16 novembre, le rôle et la présence. Ce contenu est déjà rédigé et sourcé dans S1.
+
+Exemples du niveau de précision à préserver :
+
+- Atelier : rapprochement Python, SQL et Airflow ; un recrutement CDI ne confirme pas une prestation.
+- Méridien : cohérence avec Azure ; budget de conseil et calendrier non établis.
+- Novalis : mission publiée ; dbt absent de la fiche de Camille et autonomie attendue à préciser.
+
+Les deux suites existantes restent pertinentes : identifier les interlocuteurs ou développer la stratégie. La largeur intermédiaire et la numérotation discrète rendent ce contenu lisible sans le transformer en trois grandes cartes autonomes. [S1, S3]
+
+### 08 — Des alternatives avec « Voir plus »
+
+**Théo :** « Et si ces trois pistes ne donnent rien, quelles alternatives tu garderais ? »
+
+**Laura :** « Je garderais ces six pistes en réserve. Les quatre premiers comptes offrent des rapprochements techniques ; Orme et Silva publient des missions avec une présence sur site à confirmer avec Camille. »
+
+**Format :** `results`, `accountIds:['noroit','lumen','cordee','hublot','orme','silva']`, `expanded:false`, `type:'all'`.
+
+Trois lignes apparaissent au repos : Noroît Énergie, Lumen Données, Cordée Distribution. Le pied affiche **« 3 sur 6 comptes »** et **« Voir les 6 comptes »**. Le clic ajoute Hublot Logiciels, Orme Conseil et Silva Conseil dans la même réponse. Le libellé devient « Réduire la liste ».
+
+Le contenu de chaque ligne vient de son compte S1 : motif de rapprochement, statut mission/signal et date. Les réserves complètes sont accessibles par le panneau de détail. Le bouton contacts nomme les premiers comptes ou la sélection ; il ne laisse pas penser que les six seront traités si seuls trois sont visés. [S2]
+
+### 09 — Le panorama complet demandé explicitement
+
+**Théo :** « Montre-moi toute la sélection, classée par priorité, y compris les pistes plus secondaires. »
+
+**Laura :** réutiliser `D.longListing` et les **24 comptes**, sans résumé qui supprime la matière demandée. Le `kind:'listing'` s’ouvre sur `listView:'overview'`.
+
+| Groupe existant | Comptes à conserver dans cet ordre |
+|---|---|
+| Rapprochements les plus directs | Atelier Numérique, Méridien Industrie, Noroît Énergie, Lumen Données, Cordée Distribution, Hublot Logiciels |
+| Missions annoncées | Novalis Services, Orme Conseil, Vela Services, Silva Conseil, Tréma Partenaires, Albane Services |
+| Périmètre à préciser | Sillage Technologies, Aster Mobilité, Aronde Fabrication, Talweg Industrie, Boréale Équipements, Écluse Réseaux |
+| Pistes secondaires | Cobalt Solutions, Estuaire Logistique, Rive Studio, Océane Pilotage, Vigie Habitat, Caprive Gestion |
+
+Les onglets Par priorité / Tous les comptes / Missions sont des vues de la même sélection. Le filtre, la sélection et le tri restent propres à cette réponse. Les indications sur dbt, le décalage du 9 au 16 novembre chez Tréma et la présence sur site des missions restent visibles dans les conseils de lecture. [S1, S2]
+
+Cette demande de panorama justifie la longueur. Ne pas la remplacer par six cartes suivies d’un renvoi obligatoire vers une autre page.
+
+### 10 — Le plan détaillé, entièrement dans le fil
+
+**Théo :** « Fais-moi le plan d’action détaillé. On commence par Atelier, Méridien et Novalis, et on garde les autres en réserve. »
+
+**Laura :** réutiliser `D.strategy` intégralement, `kind:'long'`, `strategyView:'full'`. Le titre existant est « Une approche ciblée pour Camille ».
+
+La réponse conserve, dans cet ordre :
+
+1. L’introduction et les trois recommandations de synthèse.
+2. Le sommaire cliquable.
+3. Les premières conversations.
+4. La qualification du besoin.
+5. Les bons interlocuteurs.
+6. L’approche à préparer.
+7. Le suivi et les arbitrages.
+8. La prochaine action et l’accès facultatif à la note.
+
+Les cinq sections de données comprennent 1 165 mots au total en comptant leurs paragraphes, listes et textes de points de contrôle ; l’introduction, les titres, la synthèse et la conclusion s’y ajoutent. Ce décompte provient du fichier relu, pas d’un objectif de remplissage. L’onglet « L’essentiel » reste facultatif ; le premier rendu de cette demande est l’analyse complète. [S1, S2]
+
+La longue réponse ne reçoit ni corps de texte agrandi ni scroll interne. Chaque section dispose d’un titre compact, de paragraphes courts, d’une liste utile et d’un point de décision. La lecture se poursuit dans le défilement principal. Le clic sur le sommaire déplace vers une section de la même réponse.
+
+### 11 — Retour à une question très simple
+
+**Théo :** « Chez Atelier, par qui je commence ? »
+
+**Laura :** « Élise Bernard, la responsable data. Son rôle est le plus proche du travail sur les pipelines. Maxime Roux peut servir de relais si l’échange porte ensuite sur les priorités de l’équipe. »
+
+**Format :** `reply` sans titre, un paragraphe ; `accountIds:['atelier']` ; sources `src-contact-elise-bernard`, `src-contact-maxime-roux`. Cette proposition ne lui attribue ni budget, ni accord de prestation, ni pouvoir de décision non documenté. [S1]
+
+Ce petit échange immédiatement après une longue analyse est un contrôle essentiel : le choix « Approfondi » ou la longueur du message précédent ne doivent pas imposer un pavé à une question simple.
+
+### 12 — Les interlocuteurs de deux comptes
+
+**Théo :** « Garde Atelier et Méridien pour les premières approches. Montre-moi leurs interlocuteurs. »
+
+**Laura :** `contacts`, `accountIds:['atelier','meridien']`, soit quatre personnes : Élise Bernard, Maxime Roux, Antoine Leclerc, Sarah Petit.
+
+L’introduction actuelle « 4 interlocuteurs à examiner » convient, avec la réserve sur les coordonnées. Les fonctions et biographies viennent de S1. Aucun nouveau décideur n’est créé pour remplir la liste. Le détail d’un contact permet de retrouver son compte, et le retour conserve le point de lecture.
+
+L’activité éventuelle de recherche est consultable en historique, sans spinner au repos. L’action principale prépare une approche pour le contact explicitement choisi ; le libellé ou le contexte doit rendre ce choix compréhensible.
+
+### 13 — Un brouillon précis, sans envoi
+
+**Théo :** « Commence par Élise chez Atelier. Prépare un message court, sans l’envoyer. »
+
+**Laura :** « Voici un premier message pour Élise. Il pose une seule question sur un éventuel renfort pendant le recrutement. »
+
+**Objet :** « Un renfort possible sur vos pipelines data »
+
+**Brouillon proposé, fondé sur les données existantes :**
+
+> Bonjour Élise,
+>
+> J’ai vu vos recrutements autour des pipelines data chez Atelier Numérique. J’accompagne Camille, data engineer à Nantes, qui travaille avec Python, SQL et Airflow et sera disponible à partir du 16 novembre.
+>
+> Envisagez-vous aussi un renfort ponctuel sur ces travaux pendant le recrutement ?
+>
+> Bonne journée,  
+> Théo
+
+**Fixture :** `draft`, `contactId:'elise-bernard'`, sources du contact, d’Atelier et de Camille. Le contenu correspondant doit être initialisé dans `S.drafts['elise-bernard']`. Semer uniquement `contactId` ferait retomber `draftFor` sur le brouillon général actuel ; cela ne garantit pas cette personnalisation. [S2]
+
+Dans le fil : destinataire, objet, mention « Brouillon · non envoyé », extrait lisible et deux actions « Modifier le brouillon » / « Copier ». Cliquer Modifier ouvre la page existante. Aucun éditeur ou popup ne s’ouvre automatiquement au chargement de la conversation complète. Le texte édité est conservé au retour.
+
+### 14 — Une dernière réponse courte pour poursuivre
+
+**Théo :** « Très bien. Qu’est-ce qu’il reste à vérifier avant de l’utiliser ? »
+
+**Laura :** « Les coordonnées d’Élise, puis la disponibilité et les modalités de présence de Camille. Le message est un brouillon non envoyé ; il demande si un renfort est envisagé, sans annoncer une mission déjà ouverte. »
+
+**Format :** `reply`, un paragraphe, sans nouvelle carte. Le composeur vide invite à poursuivre. Les actions toujours disponibles sur les contenus précédents restent utilisables, mais aucune tâche ne démarre seule.
+
+## 3. Registre des fixtures à réutiliser
+
+| Type | Champs utiles existants | Usage V5 / précaution |
+|---|---|---|
+| `user/text` | `text`, `attachments?` | Questions naturelles et choix explicitement formulés. |
+| `assistant/reply` | `sampleKey`, `replyData:{title?,paragraphs,points?,followups?}`, `accountIds?`, `sourceIds` | Disponibilité, compétences, recommandation intermédiaire, réponse sur Élise, dernier rappel. |
+| `choice` | Périmètre du message ; rendu actuel à deux options | État historique résolu à traiter explicitement. Ne pas laisser le parseur le considérer comme en attente. |
+| `work` | `target`, `stage`, `status`, `events:[{label,at}]`, `activityOpen`, `area`, `type`, `accountIds`, `choice` | Historique interrompu : statut interrompu et aucun timer. Un travail animé exige une vraie exécution locale de démonstration, seulement après clic. |
+| `partial` | `accountIds`, `sourceIds` | Renderer actuellement fixé aux trois premiers comptes. Compatible avec ce fil, pas encore composant générique multi-périmètre. |
+| `results` | `accountIds`, `selected:[]`, `filter:''`, `sort:'relevance'`, `expanded:false`, `type:'all'`, `area`, `sourceIds` | Novalis seul, puis six alternatives avec trois lignes initiales. |
+| `listing` | Les champs résultats + `listView:'overview'` | Les 24 comptes et trois vues existantes, sans inventer une autre liste. |
+| `long` | `strategyView:'full'`, `sourceIds:D.strategy.sourceIds` | Texte complet `D.strategy`. Éviter de recopier ce contenu dans une seconde définition qui pourrait diverger. |
+| `contacts` | `accountIds:['atelier','meridien']`, `events?`, `sourceIds` | Quatre contacts exacts. Les coordonnées absentes restent absentes. |
+| `draft` | `contactId:'elise-bernard'`, `sourceIds` + état du brouillon nommé | Le nom et le compte ne doivent pas dépendre du dernier panneau visité. |
+
+Les introductions spécifiques ci-dessus constituent le contrat éditorial. Certains renderers S2 ont encore une introduction fixe : leur adaptation éventuelle relève de l’intégration V5 par le propriétaire du code. Ce document ne prétend pas que ces variantes sont déjà rendues.
+
+La constitution initiale doit utiliser ces fixtures et leurs identifiants, sans faire passer successivement toutes les phrases par le routeur d’intentions fini. Ce routeur n’est pas un moteur de compréhension générale : par exemple, la présence de « Nantes » peut déclencher une recherche avant la branche de clarification. Pour le rejeu, les clics portent donc une intention et un périmètre explicites ; les saisies libres restent limitées aux scénarios pris en charge.
+
+## 4. Contrat d’état, d’ordre et de temps
+
+### Trois horloges distinctes
+
+**Rendu historique :** délai zéro. Tout le contenu semé est disponible dès le premier rendu. Ne pas rejouer 14 tours avec des temporisations. Revenir dans le fil ou afficher une ancienne réponse ne redéclenche pas la motion d’arrivée.
+
+**Motion d’interface :** les variables actuelles sont 160 ms, 260 ms et 400 ms. Une transition de couleur, une entrée de bulle ou un panneau ne mesure pas le travail de Laura. Le corps ne se compose pas lettre par lettre. [S3]
+
+**Latence simulée :** `startWork` utilise actuellement un premier pas à 1 400 ms puis trois intervalles de 1 700 ms, soit un terminal vers 6 500 ms. Ces nombres servent à inspecter les étapes ; ils ne représentent pas une performance produit et ne déterminent jamais un pourcentage. [S2]
+
+### Matrice de comportement
+
+| État | Contenu visible | Action possible | Ordre d’apparition | Timing proposé | Contrainte serveur / vérité à conserver |
+|---|---|---|---|---|---|
+| Fil historique ouvert | Tous les échanges, listes et texte complet demandés ; états passés explicitement terminés/interrompus | Lire, développer, détails, copier, poursuivre | Ordre historique stable, sans dévoilement chronométré | 0 ms de délai ; aucune cascade sur les messages existants | Aucun travail actif déduit de la présence d’une ancienne carte. |
+| Envoi d’une nouvelle question | Question locale ; composeur vidé pour cet envoi ; petite indication de transmission si nécessaire | Arrêter lorsque le transport le permet ; continuer à saisir | Question, puis emplacement de réponse | Immédiat ; fondu local 160 ms au maximum | Avant `onAccepted`, ne pas prétendre que le serveur a accepté ou compris. |
+| Réponse simple disponible | Texte court et source utile | Lire, copier ; suite seulement si pertinente | Identité et texte, puis actions discrètes | 160 ms de fondu ; aucun temps d’attente ajouté pour « faire IA » | Afficher à réception. La simulation peut répondre immédiatement. |
+| Clarification réellement nécessaire | Une question, deux options utiles et précision libre | Choisir ou reformuler | Question, options dans le même bloc | 160 ms ; clic utilisable immédiatement | La confirmation n’est justifiée que si le choix modifie le traitement. L’attente de réponse utilisateur n’est pas une activité d’outil. |
+| Choix validé | Reçu du périmètre retenu ; activité qui démarre si acceptée | Arrêter l’activité ou continuer à écrire | Reçu stable, puis activité | Reçu immédiat ; état visuel 160 ms | Ne pas doubler le tour ni continuer sur une option non confirmée. |
+| Recherche active | Dernier libellé réel, historique dépliable ; aucune fausse barre | Arrêter ; consulter les acquis | Activité reçue, puis éléments arrivés | Mise à jour immédiate de l’état ; fondu 160 ms | Le flux produit documenté ne donne ni total d’étapes ni statut terminal par étape. Une checklist complète demanderait un enrichissement du contrat. |
+| Premier résultat reçu | Carte réellement disponible, source et réserve ; reste du travail distinct | Ouvrir le compte pendant l’attente | Texte d’annonce bref, première carte | 260 ms, déplacement vertical de 4 px au plus | Ne pas afficher un résultat avant de l’avoir. Un premier résultat ne vaut pas succès global. |
+| Attente prolongée | Dernière activité reçue, éventuel temps écoulé factuel | Arrêter ; conserver le brouillon | Mise à jour du statut, sans messages répétitifs | Proposition : après 10 s sans nouvel événement, indiquer l’attente ; après 30 s, rappeler le contrôle d’arrêt si utile | Ne jamais cocher une étape au seul passage du temps. Si le flux est silencieux, dire « Aucune nouvelle activité reçue » plutôt qu’inventer ce que fait le moteur. |
+| Résultat complet court ou moyen | Conclusion, éléments justificatifs, réserves, actions | Détails, sources, ajuster | Activité repliée, introduction, contenu, actions | Bulle 160 ms ; trois points existants 180 ms avec décalages 0/60/120 ms | Succès seulement après terminal connu ; les actions ne doivent pas apparaître avant la portée complète. |
+| Résultats en liste | Nombre exact, lignes disponibles, filtre et compteur | Sélection, Voir plus, détails, contacts | Introduction ; ensemble de lignes ; pied et actions | 260 ms ; décalage de 85 ms limité aux trois premières lignes nouvelles | Aucune cascade de 24 × 85 ms. Filtrage et tri ne simulent pas une nouvelle recherche réseau. |
+| Développement Voir plus | Trois lignes conservées et trois supplémentaires à leur suite | Réduire, ouvrir une ligne | Lignes nouvelles à leur position définitive ; compteur mis à jour | Structure immédiate ; fondu 160 ms au maximum | Aucun appel serveur si les six lignes sont déjà connues. Conserver sélection et focus du bouton. |
+| Texte long reçu | Introduction, synthèse, sections complètes ; contenu pendant la réception réelle | Lire plus haut, sommaire, arrêter si encore en cours | Ordre sémantique des fragments reçus ; titres et paragraphes stables | Aucun délai par phrase ; regroupement de rendu court, par exemple 20–50 ms, uniquement pour réduire les mises à jour DOM | Ne pas attendre artificiellement la réponse entière. Un flux texte ne prouve pas l’existence de cartes structurées ; rendre ce qui est réellement reçu. |
+| Résultat partiel | Acquis inchangés, élément manquant nommé, limite explicite | Continuer sur les acquis ou réessayer la seule source | Résultats acquis ; réserve ; deux suites | 160 ms ; pas d’effacement de la carte partielle lors de la relance | Conserver la portée et l’origine des données ; l’échec d’une source n’efface pas les autres. |
+| Arrêt volontaire | Contenu déjà reçu ; libellé d’interruption ; activité arrêtée | Nouvelle tentative ; modifier la demande | Indicateur arrêté immédiatement, contenu conservé | Aucun délai d’animation imposé au bouton Arrêter | Après acceptation, conserver la réponse reçue dans la session ; avant acceptation, restaurer le brouillon selon le contrat produit. La persistance du partiel après rechargement reste à raccorder. |
+| Reprise / relance | Ancien état visible, nouvelle tentative identifiée | Arrêter la nouvelle tentative | Nouvelle réponse en fin de fil, liée à la demande reprise | Aucune attente cosmétique ; étapes simulées seulement dans le rejeu | Distinguer véritable reprise de flux et nouvelle exécution. Un effet externe au résultat inconnu ne propose pas Réessayer. |
+| Détail d’un compte/contact | Panneau avec titre, onglet et données réelles du contexte | Onglets, sources, fermeture/retour | Conteneur stable, contenu utile ; pas trois fenêtres superposées | 260 ms ; déplacement de 12 px au plus, comme le panneau existant | Le changement de vue n’altère ni sélection ni tâche. Si données à relire, conserver celles déjà connues. |
+| Brouillon préparé | Destinataire, objet, extrait, « non envoyé » | Modifier, copier | Confirmation courte puis document | 160–260 ms, une seule entrée | Aucun envoi déclenché. Une connexion mail n’est pas nécessaire à une édition locale ; elle l’est à une action externe selon les capacités réelles. |
+| Réduction du mouvement | Même contenu et mêmes états | Toutes les actions | Même ordre logique, sans translation ni pulsation | 0 ms visuel ; transitions de secours quasi nulles selon CSS existant | Réduire le mouvement ne termine ni n’accélère une tâche réseau. Les temporisations de démonstration restent une couche séparée. |
+
+### Règles de disposition
+
+| Format | Mesure existante à conserver | Organisation |
+|---|---|---|
+| Question Théo | Largeur ajustée, maximum 68 caractères de mesure environ et 88 % du conteneur au desktop | Alignement à droite, retours à la ligne préservés ; pièces jointes sous le texte. |
+| Laura courte | Largeur ajustée, maximum 560 px | Portrait 26 px dans la bulle, aucun titre nécessaire, un ou deux paragraphes. |
+| Laura intermédiaire | Maximum 680 px | Introduction brève, trois points nommés, réserve commune, une ou deux suites. |
+| Résultats / panorama | Largeur du fil, plafond existant 940 px | Lignes denses ; groupe, compteur et onglets précis ; les détails restent secondaires. |
+| Analyse longue | Bulle large, prose limitée à 76–80 caractères de mesure | Synthèse puis sections ; un seul défilement principal ; aucune hauteur maximale sur l’analyse. |
+
+Les tailles actuelles du corps sont proches de 13–13,5 px, avec interligne autour de 1,75 ; les titres de réponse sont proches de 17–17,5 px. La V5 n’a aucune raison de les agrandir. Le dégradé demeure local au haut de la bulle ; le texte développé repose sur une surface calme. La hiérarchie vient de la densité, des espacements et de la typographie, sans attribuer une couleur à chaque paragraphe. [S3]
+
+À l’arrivée d’un nouveau résultat, le comportement dépend de la lecture : si la personne suit la fin, garder le début de la réponse utilisable ; si elle relit plus haut, ne pas l’arracher à sa position et afficher « Voir la suite ». Les seuils locaux 110/120 px et le seuil produit documenté 80 px sont des implémentations distinctes ; ne pas les harmoniser au hasard sans recette. [S2, S5]
+
+La réduction d’une longue liste conserve le bouton déclencheur dans la zone visible, au besoin par ajustement d’ancrage immédiat. Le retour d’un panneau retrouve le même compte et la même position. Le focus n’attend jamais la fin d’un fondu pour devenir utilisable. Les mises à jour de progression utilisent une annonce polie par changement utile, pas une annonce par caractère.
+
+## 5. Parcours secondaires qui doivent rester concrets
+
+**Compte :** ligne → panneau Synthèse → Signaux → source dépliée → retour. La réserve n’est pas cachée derrière trois niveaux. Ouvrir la fiche complète est un choix, pas une étape imposée pour comprendre pourquoi le compte apparaît.
+
+**Contact :** ligne de contact → détail → compte associé ou brouillon → retour. Le contact du brouillon reste fixé à son identifiant ; visiter ensuite un autre contact ne change pas le destinataire.
+
+**Outils :** la rangée du composeur garde les logos existants et reflète les outils disponibles pour ce fil. Le sélecteur distingue « connecté », « sélectionné dans ce fil » et « à reconnecter ». Le catalogue global reste accessible sans étaler toutes les marques dans chaque réponse. Le contexte d’une source historique n’est pas réécrit si un outil est désélectionné aujourd’hui. [S4]
+
+**Écritures :** le fil principal s’arrête au brouillon ; il ne nécessite pas un ajout CRM artificiel pour démontrer une action. Les validations CRM et l’issue inconnue restent des parcours ciblés à tester séparément. Si une capacité manque, expliquer le prérequis de cette action précise ; ne pas bloquer la lecture des résultats ni la rédaction locale.
+
+## 6. Recette de régression utile
+
+Ces critères sont des tests à réaliser par le propriétaire de l’intégration. Cette note ne les présente pas comme exécutés.
+
+| Priorité | Parcours à exécuter | Résultat attendu |
+|---|---|---|
+| P0 | Ouvrir le fil complet dans un stockage neuf | Toute la séquence existe ; aucune source ni personne supplémentaire ; 24 comptes, six missions, quatre contacts d’Atelier/Méridien ; aucun timer historique actif. |
+| P0 | Relire un ancien choix puis poser « Les deux » à la fin | Aucun ancien tour n’est réécrit. Seule une clarification effectivement en attente peut être résolue. |
+| P0 | Relancer la carte interrompue au milieu du fil | La carte et les messages qui la suivent restent intacts. La nouvelle tentative s’ajoute en fin de fil, avec son périmètre d’origine. |
+| P0 | Réessayer Novalis après avoir filtré un autre résultat sur Signaux CDI | La relance reste limitée à Novalis, `type:'all'` ; les deux comptes acquis restent visibles ; résultat distinct de un compte. |
+| P0 | Lancer des contacts depuis une sélection précise dans une ancienne réponse | Le libellé et les identifiants réellement transmis coïncident. Aucun remplacement par les trois derniers comptes discutés. |
+| P0 | Démarrer un travail dans A, écrire un brouillon dans B, terminer/arrêter A | Aucun texte, document, choix d’outil, message ou résultat de A ne remplace ceux de B. |
+| P0 | Recharger pendant une tentative locale | Aucune boucle de timer orpheline ; état interrompu cohérent et reprise volontaire. Distinguer cette persistance locale du contrat réel encore à raccorder. |
+| P1 | Voir les six alternatives, sélectionner deux comptes, filtrer, ouvrir une source, revenir | Même message, sélection conservée y compris hors filtre, bon compteur et même point de lecture ; aucun scroll forcé en bas. |
+| P1 | Passer Par priorité → Missions → fiche → précédent/suivant navigateur | Onglet, filtre, sélection et fil d’origine restaurés ; aucune entrée d’historique supplémentaire créée par `popstate`. |
+| P1 | Renommer le fil en « Camille — première approche », puis ouvrir Saved et recherche globale | Identifiant immuable ; libellé actuel partout ; mêmes messages, brouillon, outils et activité ; aucun nouveau scénario créé. |
+| P1 | Renommer avec espaces seuls puis annuler/Échap | Titre précédent conservé, focus rendu au déclencheur, aucune mutation du contexte métier. |
+| P1 | Enregistrer une réponse du fil complet, renommer, ouvrir depuis les favoris | La bonne réponse est retrouvée dans le bon fil. Le nouveau titre ne sert jamais de clé de routage. |
+| P1 | Désélectionner HubSpot dans A, conserver sa sélection dans B | Connexion globale conservée ; sélection propre au fil ; absence de « déconnexion » trompeuse. |
+| P1 | Outil à reconnecter, outil non sélectionné, puis outil réparé | États distincts et action conditionnelle exacte ; pas de succès externe fictif ; le prototype reste explicitement simulé. |
+| P1 | Préparer le brouillon Élise, ouvrir Antoine ailleurs, revenir, éditer et copier | Destinataire, compte et texte restent ceux d’Élise ; le texte modifié ne retombe pas sur le brouillon général. |
+| P1 | Répondre brièvement après la stratégie longue et tester Adaptatif/Concis/Approfondi | La nouvelle demande gouverne la longueur. Les réserves métier ne disparaissent pas lors d’une réduction. |
+| P1 | Entrée/Maj+Entrée/IME, Cmd/Ctrl+K, Cmd/Ctrl+J, Tab et Échap dans les panneaux | Aucun envoi involontaire ; raccourcis conformes au registre ; focus visible et restauré. |
+| P1 | Arrêter au cours d’une animation, ouvrir le panneau avant la fin du fondu | Action immédiate et contenu stable ; aucune temporisation d’apparition ne bloque le contrôle. |
+| P1 | Mobile étroit, clavier ouvert, nom de pièce jointe très long | Composeur accessible, cibles tactiles conservées, retrait visible, aucune sortie horizontale et zones sûres respectées. |
+| P1 | Lire le début de la stratégie pendant qu’un autre résultat arrive en bas | Lecture conservée ; annonce discrète de la suite ; aucun retour forcé à la dernière ligne. |
+| P1 | Activer reduced-motion système, puis préférence locale ; rejouer le travail | Aucun déplacement ni pulsation ; états, arrêt, délais de simulation et contenu demeurent fonctionnels. |
+
+### Risques concrets identifiés à l’intégration
+
+1. **Ancien choix encore actif :** la sélection de la dernière carte `choice` doit exclure les reçus historiques. Le texte libre « Les deux, en distinguant les missions… » peut en outre tomber dans la branche missions à cause de la priorité du test actuel ; une fixture ne doit pas masquer cette ambiguïté si le parcours est rejouable.
+2. **Relance qui remplace le passé :** `restart-work` réutilise actuellement le message interrompu. Pour ce fil complet, ajouter une tentative au lieu de transformer une carte ancienne, sinon les échanges ultérieurs deviennent incohérents.
+3. **Mauvais brouillon :** `draftFor` initialise un brouillon général si aucun texte spécifique n’existe. Initialiser et conserver le brouillon Élise explicitement ; vérifier le retour depuis l’éditeur.
+
+Ces trois points ont une valeur directe pour la livraison demandée. Le reste du contrat réutilise les composants existants et fixe leur comportement ; il n’ouvre pas un nouveau chantier d’authentification, de graphes, de prix, de décor animé ou de connecteurs.
+

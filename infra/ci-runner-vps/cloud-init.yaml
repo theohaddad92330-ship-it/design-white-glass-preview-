@@ -1,0 +1,250 @@
+#cloud-config
+# Provisionnement d'un CX43 Hetzner en hôte de runners CI — à coller dans le
+# champ « Cloud config » de la création du serveur.
+#
+# Ce fichier fait UNIQUEMENT la machine : docker, un compte non-root, le
+# pare-feu, le recyclage nocturne et le nettoyage. Il ne contient AUCUN secret et n'enrôle aucun
+# runner — le PAT arrive plus tard, par `.env`, à la main (voir `runbook.md`).
+# Un cloud-init est visible dans la console Hetzner et dans les métadonnées de
+# l'instance : rien de secret n'a rien à y faire.
+
+package_update: true
+package_upgrade: true
+
+packages:
+  - ca-certificates
+  - curl
+  - git
+  - jq
+  - unattended-upgrades
+
+users:
+  - name: ci
+    groups: [docker, sudo]
+    shell: /bin/bash
+    sudo: ['ALL=(ALL) NOPASSWD:ALL']
+    # ⚠️⚠️ OBLIGATOIRE — y coller TA clé publique avant de créer le serveur.
+    # Ce n'est pas un confort : la clé choisie dans l'interface Hetzner est
+    # injectée sur `root` SEULEMENT, et `runcmd` pose plus bas
+    # `PermitRootLogin no`. Un compte `ci` sans clé + un root interdit, c'est
+    # une machine facturée où plus personne n'entre, sauf par la console web.
+    ssh_authorized_keys:
+      - ssh-ed25519 AAAA... ton-email@exemple.com
+
+write_files:
+  # Le pare-feu : rien d'entrant sauf SSH. Un runner n'a besoin que de SORTIR
+  # (il interroge GitHub en long-polling, GitHub ne le contacte jamais). Toute
+  # ouverture entrante serait une surface offerte pour rien.
+  - path: /etc/ufw/applications.d/ci-runner
+    content: |
+      [ci-runner]
+      title=Runners CI
+      description=Sortant seulement
+      ports=
+
+  # Le recyclage nocturne. Cron 03:10 UTC, pour une raison mesurée : un conteneur de runner pèse
+  # 0,46 Go à froid et 3,74 Go après un job, avec une décroissance d'environ
+  # 1 Go/h. Sur un forfait fixe cette mémoire ne coûte rien, mais elle finit par
+  # faire échouer des jobs pour des raisons étrangères au code.
+  #
+  # 02:40 UTC, soit AVANT la fenêtre E2E nocturne (03:30 UTC sur `main`) : un
+  # `restart` pendant que l'E2E tourne tuerait son job. L'E2E part donc sur une
+  # flotte fraîche.
+  - path: /etc/cron.d/ci-runner-recycle
+    content: |
+      SHELL=/bin/bash
+      PATH=/usr/local/bin:/usr/bin:/bin
+      40 2 * * * ci cd /home/ci/belllum-monorepo/infra/ci-runner-vps && docker compose restart >> /var/log/ci-runner-recycle.log 2>&1
+    permissions: '0644'
+
+  # Le nettoyage automatique (toutes les 30 min) : /tmp des conteneurs, dossier de
+  # travail corrompu, cache de build. Le POURQUOI est dans l'en-tête du script et
+  # dans `runbook.md` (« Nettoyage automatique »). `defer: true` : le compte `ci`
+  # n'existe pas encore quand write_files s'exécute par défaut. Copie de
+  # infra/ci-runner-vps/nettoie-runners.sh — à garder identique.
+  - path: /home/ci/belllum-monorepo/infra/ci-runner-vps/nettoie-runners.sh
+    owner: ci:ci
+    permissions: '0755'
+    defer: true
+    content: |
+      #!/usr/bin/env bash
+      #
+      # Nettoyage automatique des runners CI : /tmp des conteneurs, dossier de travail
+      # corrompu, cache de build. Lancé toutes les 30 min par
+      # /etc/cron.d/ci-runner-nettoyage (voir cloud-init.yaml et runbook.md).
+      #
+      # POURQUOI — constat du 02/11/2026, mesuré par SSH :
+      #  (a) le /tmp de chaque conteneur runner gardait ~2 000 dossiers d'environ
+      #      150 Mo laissés par les jobs (≈ 41 Go par runner) : 3 hôtes à 84-90 % de
+      #      disque ; après purge, 37-39 %.
+      #  (b) le dossier de travail /home/pwuser/_work/belllum-monorepo/belllum-monorepo
+      #      (runner NON éphémère) avait un index git corrompu : `actions/checkout`
+      #      échouait sur « Path '…' not uptodate; will not remove from working tree »,
+      #      ne posait pas package.json, puis `pnpm/action-setup` disait « No pnpm
+      #      version is specified ». Le même runner (vps-255ad2ca13ac,
+      #      vps-72429e6ffe41, vps-68fb497eb239) recassait chaque relance, PR et main.
+      #
+      # RÈGLES
+      #  - /tmp : toujours purgé (même runner occupé) au-delà de 6 h, sauf jest_rs :
+      #    un job n'utilise que du récent.
+      #  - dossier de travail : seulement si le runner est LIBRE (pas de Runner.Worker)
+      #    ET (pas de package.json OU `git reset --hard HEAD` y échoue). Un dossier
+      #    sain n'est jamais supprimé : il garde node_modules et .turbo.
+      #  - disque / ≥ 85 % : `docker builder prune -af` (jamais de volumes : le store
+      #    pnpm y vit).
+      #
+      # DRY_RUN=1 : affiche sans rien modifier (le reset est remplacé par
+      # `git status --porcelain`).
+      set -uo pipefail
+
+      WORKDIR="${WORKDIR:-/home/pwuser/_work/belllum-monorepo/belllum-monorepo}"
+      SEUIL_DISQUE="${SEUIL_DISQUE:-85}"
+      DRY_RUN="${DRY_RUN:-0}"
+      HOTE="$(hostname)"
+
+      log() { printf '%s %s %s\n' "$(date -u +%Y-%m-%dT%H:%M:%SZ)" "$HOTE" "$*"; }
+
+      [ "$DRY_RUN" = "1" ] && log "DRY_RUN=1 : rien n'est modifié"
+
+      conteneurs="$(docker ps --format '{{.Names}}' | grep runner || true)"
+      if [ -z "$conteneurs" ]; then
+        log "aucun conteneur runner en cours"
+      fi
+
+      for c in $conteneurs; do
+        # (1) /tmp : toujours, même occupé.
+        if [ "$DRY_RUN" = "1" ]; then
+          n="$(docker exec "$c" sh -c "find /tmp -mindepth 1 -maxdepth 1 -mmin +360 ! -name jest_rs | wc -l" 2>/dev/null || echo '?')"
+          log "$c: /tmp — $n entrée(s) de plus de 6 h seraient supprimées"
+        else
+          docker exec "$c" sh -c "find /tmp -mindepth 1 -maxdepth 1 -mmin +360 ! -name jest_rs -exec rm -rf {} +" \
+            || log "$c: purge de /tmp en échec"
+          log "$c: /tmp purgé"
+        fi
+
+        # (2) dossier de travail : seulement si le runner est libre.
+        if docker exec "$c" pgrep -f Runner.Worker >/dev/null 2>&1; then
+          log "$c: occupé (Runner.Worker), dossier de travail laissé"
+          continue
+        fi
+        if ! docker exec "$c" test -d "$WORKDIR"; then
+          continue
+        fi
+
+        raison=""
+        if ! docker exec "$c" test -f "$WORKDIR/package.json"; then
+          raison="package.json absent"
+        elif [ "$DRY_RUN" = "1" ]; then
+          docker exec "$c" sh -c "cd '$WORKDIR' && git status --porcelain >/dev/null 2>&1" \
+            || raison="git status en échec"
+        else
+          docker exec "$c" sh -c "cd '$WORKDIR' && git reset -q --hard HEAD" >/dev/null 2>&1 \
+            || raison="git reset --hard en échec"
+        fi
+
+        if [ -z "$raison" ]; then
+          log "$c: dossier de travail sain, conservé"
+        elif [ "$DRY_RUN" = "1" ]; then
+          log "$c: dossier de travail corrompu ($raison) — serait supprimé"
+        else
+          docker exec "$c" rm -rf "$WORKDIR" \
+            && log "$c: dossier de travail corrompu ($raison) — supprimé, le prochain checkout reclone" \
+            || log "$c: suppression du dossier de travail en échec ($raison)"
+        fi
+      done
+
+      # (3) disque de l'hôte.
+      usage="$(df --output=pcent / | tail -1 | tr -dc '0-9')"
+      if [ -n "$usage" ] && [ "$usage" -ge "$SEUIL_DISQUE" ]; then
+        if [ "$DRY_RUN" = "1" ]; then
+          log "disque / à ${usage} % (≥ ${SEUIL_DISQUE}) — docker builder prune -af serait lancé"
+        else
+          log "disque / à ${usage} % (≥ ${SEUIL_DISQUE}) — docker builder prune -af"
+          docker builder prune -af >/dev/null 2>&1 || log "docker builder prune en échec"
+        fi
+      else
+        log "disque / à ${usage:-?} %"
+      fi
+
+  - path: /var/log/ci-runner-nettoyage.log
+    owner: ci:ci
+    permissions: '0644'
+    defer: true
+    content: ''
+
+  - path: /etc/cron.d/ci-runner-nettoyage
+    content: |
+      SHELL=/bin/bash
+      PATH=/usr/local/bin:/usr/bin:/bin
+      */30 * * * * ci /home/ci/belllum-monorepo/infra/ci-runner-vps/nettoie-runners.sh >> /var/log/ci-runner-nettoyage.log 2>&1
+    permissions: '0644'
+
+  # Le journal de docker mange un disque en quelques semaines sinon. 160 Go
+  # paraissent beaucoup jusqu'à ce qu'un runner s'arrête sur « no space left ».
+  - path: /etc/docker/daemon.json
+    content: |
+      {
+        "log-driver": "json-file",
+        "log-opts": { "max-size": "10m", "max-file": "3" }
+      }
+    permissions: '0644'
+
+runcmd:
+  # Docker par le dépôt officiel — celui des dépôts Ubuntu est trop ancien pour
+  # `docker compose` v2, dont ce montage dépend.
+  - install -m 0755 -d /etc/apt/keyrings
+  - curl -fsSL https://download.docker.com/linux/ubuntu/gpg -o /etc/apt/keyrings/docker.asc
+  - chmod a+r /etc/apt/keyrings/docker.asc
+  # ⚠️ L'architecture se DEMANDE à dpkg, elle ne s'écrit pas en dur. La première
+  # version de ce fichier portait `arch=arm64` parce qu'elle visait un CAX ; le
+  # jour où la gamme ARM s'est révélée en rupture et où l'hôte est devenu un CX
+  # x86, cette ligne seule aurait fait échouer `apt-get update` — sur un serveur
+  # déjà facturé, et avec un message qui parle de signature, pas d'architecture.
+  - echo "deb [arch=$(dpkg --print-architecture) signed-by=/etc/apt/keyrings/docker.asc] https://download.docker.com/linux/ubuntu $(. /etc/os-release && echo $VERSION_CODENAME) stable" > /etc/apt/sources.list.d/docker.list
+  - apt-get update
+  - apt-get install -y docker-ce docker-ce-cli containerd.io docker-buildx-plugin docker-compose-plugin
+  - systemctl enable --now docker
+
+  # Pare-feu : sortant libre, entrant fermé sauf SSH.
+  - ufw default deny incoming
+  - ufw default allow outgoing
+  - ufw allow OpenSSH
+  - ufw --force enable
+
+  # Pas de mot de passe, pas de root : un VPS avec un port 22 ouvert voit des
+  # milliers de tentatives par jour.
+  - sed -i 's/^#\?PasswordAuthentication.*/PasswordAuthentication no/' /etc/ssh/sshd_config
+  - sed -i 's/^#\?PermitRootLogin.*/PermitRootLogin no/' /etc/ssh/sshd_config
+  - systemctl restart ssh
+
+  # ── Le swap, et pourquoi il n'est PAS un aveu de sous-dimensionnement ─────
+  # Un runner GitHub donne 7 Go pour 2 vCPU, soit 3,5 Go par cœur. Un CX43 donne
+  # 15,6 Go pour 8, soit 1,95 — la machine est riche en CPU et pauvre en RAM pour
+  # ce que ces jobs attendent, et aucune gamme Hetzner partagée ne corrige ce
+  # rapport à ce prix. Trois runners à 4,5 Go tiennent la moyenne mais pas les
+  # pics : mesuré le 16/09/2026, les SIX conteneurs avaient pour pic exactement
+  # leur plafond, et l'un s'est fait tuer en `CONSTRAINT_MEMCG`.
+  #
+  # Le swap ne rend pas la mémoire qui manque — il change la NATURE de l'échec.
+  # Sans lui un pic tue le job, et le rouge ne parle pas du code. Avec lui le job
+  # ralentit le temps du pic et rend un verdict juste. Sur une CI, un vert lent
+  # vaut infiniment mieux qu'un rouge faux.
+  #
+  # ⚠️ `swappiness=10` et non le défaut 60 : on ne veut PAS que le noyau échange
+  # par confort pour agrandir son cache de pages, seulement qu'il ait une issue
+  # sous pression réelle.
+  #
+  # ⚠️ Docker : `mem_limit` posé SANS `memswap_limit` donne au conteneur autant de
+  # swap que de RAM. C'est exactement la soupape voulue, et c'est pour ça que le
+  # compose ne fixe pas `memswap_limit`.
+  - fallocate -l 8G /swapfile
+  - chmod 600 /swapfile
+  - mkswap /swapfile
+  - swapon /swapfile
+  - sh -c 'grep -q "^/swapfile" /etc/fstab || echo "/swapfile none swap sw 0 0" >> /etc/fstab'
+  - sh -c 'echo "vm.swappiness=10" > /etc/sysctl.d/99-ci-swap.conf'
+  - sysctl -p /etc/sysctl.d/99-ci-swap.conf
+
+  - systemctl enable --now unattended-upgrades
+
+final_message: "Hôte prêt. Suite dans infra/ci-runner-vps/runbook.md — le PAT n'a pas encore été posé."

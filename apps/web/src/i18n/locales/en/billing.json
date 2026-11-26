@@ -1,0 +1,237 @@
+{
+  "meta": {
+    "pageTitle": "{{brand}} AI - Billing",
+    "pageDescription": "Plans and billing"
+  },
+  "header": {
+    "title": "Billing",
+    "subtitle": "Manage your subscription, payment method and invoices."
+  },
+  "planNames": {
+    "trial": "Free trial",
+    "decouverte": "Discovery",
+    "starter": "Starter-Solo",
+    "team": "Team",
+    "growth": "Growth",
+    "beta": "Beta"
+  },
+  "badge": {
+    "planLabel": "Plan"
+  },
+  "noLicense": {
+    "title": "No active licence",
+    "body": "The demo shows the product without an account. To work your real accounts, you need a licence.",
+    "cta": "View plans"
+  },
+  "upgrade": {
+    "title": "Boost it with AI",
+    "subtitleTrial": "Choose a plan before your trial ends",
+    "subtitleUpgrade": "Move up a plan to go further"
+  },
+  "cta": {
+    "choosePlan": "Choose a plan",
+    "changePlan": "Change plan"
+  },
+  "currentPlanCard": {
+    "yourPlanLabel": "Your current plan",
+    "statusSubscribed": "Subscribed",
+    "statusTrial": "Trial",
+    "remainingAnalyses": "Credits remaining",
+    "manageCta": "Manage subscription",
+    "upgradeCta": "Upgrade your plan"
+  },
+  "paymentMethodCard": {
+    "title": "Payment method",
+    "subtitle": "Managed through the secure Stripe portal.",
+    "addCardCta": "Add a card",
+    "savedCardTitle": "Saved card",
+    "savedCardSubtitle": "Details and billing available in the Stripe portal.",
+    "emptyTitle": "No payment method",
+    "emptySubtitle": "Add a card to prepare a future subscription - no immediate charge."
+  },
+  "invoiceHistoryCard": {
+    "columnDate": "Date",
+    "columnAmount": "Amount",
+    "columnStatus": "Status",
+    "title": "Invoice history",
+    "subtitle": "Your latest transactions",
+    "empty": "No invoice available yet."
+  },
+  "planPicker": {
+    "title": "Choose a plan",
+    "description": "Move up a plan to unlock more usage. Secure payment through Stripe, cancel any time.",
+    "extraSeatsTitle": "Extra seats",
+    "extraSeatsSubtitle": "One user included · +{{price}}€/mo per additional seat",
+    "extraSeatsSubtitleFrom": "One user included · from +{{price}}€/mo per additional seat, depending on the plan",
+    "removeSeatAria": "Remove a seat",
+    "addSeatAria": "Add a seat",
+    "singleSeatOnly": "One user per subscription. From two on, we build an Enterprise plan with you."
+  },
+  "plansGrid": {
+    "title": "Choose a plan",
+    "subtitle": "Select the plan that fits your needs",
+    "monthlyLabel": "Monthly",
+    "annualLabel": "Annual",
+    "annualSwitchAria": "Annual billing",
+    "recommendedBadge": "Recommended",
+    "perMonth": "/mo",
+    "orPerYear": "or {{amount}}/yr",
+    "extraSeatPrice": "+{{price}}/mo per additional seat",
+    "currentPlanCta": "Current plan",
+    "selectCta": "Choose",
+    "loadingCta": "Loading...",
+    "descriptionLargeTeam": "For large sales teams",
+    "descriptionGrowingTeam": "For growing teams",
+    "descriptionActiveRep": "For active sales reps",
+    "descriptionDiscover": "To discover {{brand}}",
+    "unconfirmedPrices": "Indicative prices: the current catalog could not be confirmed. The amount charged is the one shown at checkout.",
+    "annualSaving": "You save {{amount}} a year",
+    "engagement": "Initial 30-day commitment, then automatic monthly renewal. Cancel any time before the next cycle.",
+    "billedInEuros": "Your workspace is billed in euros: the price is not published in your local currency yet.",
+    "singleSeatOnly": "1 user — beyond that, Enterprise"
+  },
+  "planFeatures": {
+    "analysesPerMonth": "{{count}} analyses/month",
+    "analysesPerMonthFairUse": "{{count}} analyses/month (fair use)",
+    "enrichments": "{{count}} enrichments",
+    "users_one": "{{count}} user",
+    "users_other": "{{count}} users",
+    "starterSuite": "Full dossier, contacts & PDF / CSV exports",
+    "coreIncluded": "Full dossier, accounts & contacts",
+    "teamSuite": "{{copilot}}, history & everything in Starter-Solo",
+    "sharedWorkspace": "Shared workspace & pooled credits",
+    "growthConnectors": "CRM export, public API & AI assistant (MCP)",
+    "prioritySupport_one": "Priority support · {{count}} user",
+    "prioritySupport_other": "Priority support · {{count}} users",
+    "betaProgram": "Design-partner program",
+    "everythingIn": "Everything in {{plan}}, plus:",
+    "usageIncluded": "Analyses and enrichment included",
+    "usageIncludedFairUse": "Included usage, fair use"
+  },
+  "plan": {
+    "title": "Your subscription",
+    "statusActive": "Current",
+    "statusTrial": "Trial",
+    "seatsLabel": "Seats",
+    "seatsOver_one": "{{count}} seat more than your subscription",
+    "seatsOver_other": "{{count}} seats more than your subscription",
+    "manageCta": "Manage my subscription",
+    "renewalRow": "Renewal"
+  },
+  "shared": {
+    "ownerNotice": "Your plan is managed by the workspace owner.",
+    "emptyInvoiceText": "No invoice available yet."
+  },
+  "invoices": {
+    "title": "Billing history",
+    "loading": "Loading invoices…",
+    "statusPaid": "Paid",
+    "statusPending": "Pending",
+    "viewOnStripe": "View invoice on Stripe",
+    "unavailable": "Invoice unavailable",
+    "viewAria": "View invoice",
+    "labelWithNumber": "Invoice {{number}}",
+    "labelFallback": "{{brand}} invoice",
+    "columns": {
+      "invoice": "Invoice",
+      "status": "Status",
+      "amount": "Amount"
+    }
+  },
+  "toast": {
+    "checkoutMissingUrl": "Unable to start the payment.",
+    "portalMissingUrl": "Unable to access the billing portal.",
+    "paymentSetupMissingUrl": "Unable to start adding a card.",
+    "paymentConnectionError": "Error connecting to the payment service.",
+    "portalConnectionError": "Error connecting to the portal.",
+    "stripeInitError": "Error initializing Stripe."
+  },
+  "viewModel": {
+    "planLabel": "{{brand}} {{plan}}",
+    "renewalAvailable": "Renewal available in Stripe",
+    "renewalNone": "No active renewal",
+    "renewalManual": "Billed by invoice — contact your account manager",
+    "trialExpiry": "Trial — expires on {{date}}",
+    "renewalOn": "Renews on {{date}}"
+  },
+  "unavailable": {
+    "title": "Billing unavailable",
+    "body": "We couldn't load your subscription and balance. No figures are shown until the data is confirmed.",
+    "retry": "Retry"
+  },
+  "subscribePromo": {
+    "activeTitle": "You're exploring {{brand}}",
+    "activeBody_one": "{{count}} day left. Subscribe for lasting access.",
+    "activeBody_other": "{{count}} days left. Subscribe for lasting access.",
+    "activeBodyFallback": "Subscribe for lasting access, with no time window.",
+    "neverStartedTitle": "Your workspace is waiting for a licence",
+    "neverStartedBody": "No trial has started: pick a licence to run analyses on your real accounts.",
+    "expiredTitle": "Your access is locked",
+    "expiredBody": "Your trial has ended. Subscribe to keep using {{brand}}.",
+    "ownerOnly": "Only the workspace owner can choose an offer.",
+    "cta": "See plans",
+    "dismiss": "Dismiss"
+  },
+  "checkoutReturn": {
+    "subscription_paid": {
+      "title": "Payment received",
+      "body": "Your {{plan}} plan is active."
+    },
+    "subscription_abandoned": {
+      "title": "Payment interrupted",
+      "body": "Nothing was charged. Your plan is waiting whenever you want it."
+    },
+    "topup_paid": {
+      "title": "Payment received",
+      "body": "Your payment has been recorded."
+    },
+    "topup_abandoned": {
+      "title": "Payment interrupted",
+      "body": "Nothing was charged."
+    },
+    "card_saved": {
+      "title": "Card saved",
+      "body": "No amount was charged — it will be used for your next payments."
+    },
+    "card_abandoned": {
+      "title": "Card setup interrupted",
+      "body": "No card was saved, and nothing was charged."
+    },
+    "activationPending": "Your payment went through. Activating the plan takes a few seconds.",
+    "recheck": "Check again",
+    "dismiss": "Dismiss"
+  },
+  "includedActions": {
+    "message_generation": "message drafting",
+    "copilot_message": "{{copilot}}",
+    "export_or_note": "exports and notes",
+    "need_matching": "matching your talent pool",
+    "territory_snapshot": "territory snapshots"
+  },
+  "pricingEntries": {
+    "demo": {
+      "name": "Demonstration",
+      "priceLabel": "No account needed",
+      "features": {
+        "guided": "A guided walkthrough, whenever you ask for one",
+        "simulated": "Simulated files: accounts, contacts, buying signals",
+        "laura": "{{copilot}} in read-only, so you can see how she reasons",
+        "readOnly": "No enrichment, no exports"
+      }
+    },
+    "enterprise": {
+      "name": "Enterprise",
+      "priceLabel": "On request",
+      "features": {
+        "fromTwo": "From two users onwards",
+        "pooledCredits": "Pooled usage, negotiated allowance",
+        "manager": "Manager view: shared actions, routines and talent pool",
+        "rollout": "Guided rollout and priority support"
+      }
+    }
+  },
+  "tabs": {
+    "subscription": "Subscription",
+    "invoices": "Invoices & payment"
+  }
+}

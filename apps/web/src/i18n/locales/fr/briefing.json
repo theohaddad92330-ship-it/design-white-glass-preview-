@@ -1,0 +1,1453 @@
+{
+  "page": {
+    "title": "Ma journée",
+    "headingWithName": "Bonjour {{name}}. Voici où investir ton temps aujourd’hui.",
+    "heading": "Bonjour. Voici où investir ton temps aujourd’hui.",
+    "subtitle": "Voilà ce qui a changé, ce qui est urgent et ce que {{brand}} te recommande de faire ensuite.",
+    "subtitleWithDecisions_one": "{{count}} sujet mérite une décision aujourd’hui.",
+    "subtitleWithDecisions_other": "{{count}} sujets méritent une décision aujourd’hui.",
+    "generatedAt": "Actualisé à {{time}}",
+    "refresh": "Actualiser",
+    "refreshDetail": "Relit ton agenda, ta messagerie et tes tâches",
+    "loading": "Chargement du brief du jour…",
+    "loadingSlow": "Ça prend plus de temps que prévu. Tu peux relancer la lecture.",
+    "export": {
+      "cta": "Exporter",
+      "detail": "Copie le brief du jour dans le presse-papiers — rien n’est envoyé",
+      "header": "Aujourd’hui — {{time}}",
+      "done": "Brief copié dans le presse-papiers",
+      "failed": "Impossible de copier le brief"
+    },
+    "share": {
+      "cta": "Partager",
+      "detail": "Copie le lien de cette page, avec ta vue actuelle",
+      "done": "Lien copié dans le presse-papiers",
+      "failed": "Impossible de copier le lien"
+    }
+  },
+  "decisions": {
+    "title": "Tes décisions",
+    "category": {
+      "protect": "Protéger l’existant",
+      "nextMove": "Prochain mouvement",
+      "simplify": "Simplifier"
+    },
+    "dispersion": "Plusieurs sujets administratifs sont ouverts en même temps — celui-ci les regroupe."
+  },
+  "readAs": {
+    "label": "Lire comme",
+    "standardOrder": "ordre standard",
+    "change": "Changer dans Réglages › Profil",
+    "role": {
+      "owner": "Dirigeant",
+      "admin": "Manager",
+      "sales": "Commercial",
+      "recruiter": "Recruteur"
+    },
+    "stadeLabel": "Stade de l’ESN",
+    "stade": {
+      "freelance": "0 à 5 consultants",
+      "petite": "6 à 15 consultants",
+      "structuration": "16 à 50 consultants",
+      "etablie": "plus de 50 consultants"
+    }
+  },
+  "actions": {
+    "title": "À faire maintenant",
+    "empty": "Ta journée est calme avec les sources actuellement lisibles.",
+    "emptyPartial": "Aucune action à te proposer : les sources ci-dessous ne sont pas toutes connectées.",
+    "conflict": "Deux rendez-vous se chevauchent de {{minutes}} min : {{first}} et {{second}}",
+    "meetingPrep": "Prépare {{subject}}",
+    "positiveReply": "{{counterpart}} a répondu favorablement sur « {{subject}} » — enchaîne",
+    "positiveReplyNoSubject": "{{counterpart}} a répondu favorablement — enchaîne",
+    "followUp": "{{counterpart}} n'a pas répondu depuis {{days}} jours sur « {{subject}} »",
+    "followUpNoSubject": "{{counterpart}} n'a pas répondu depuis {{days}} jours",
+    "followUpEsn": "{{counterpart}} (ESN) n'a pas répondu depuis {{days}} jours sur « {{subject}} »",
+    "followUpEsnNoSubject": "{{counterpart}} (ESN) n'a pas répondu depuis {{days}} jours",
+    "freshSignal": "{{company}} a bougé",
+    "needStale": "Besoin « {{title}} » ouvert depuis {{days}} jours, sans shortlist",
+    "needResumeDue": "Besoin « {{title}} » : la reprise prévue est échue",
+    "missionEnding": "Mission « {{label}} » : fin dans {{days}} jours",
+    "paymentOverdue": "Mission « {{label}} » : paiement en retard de {{days}} jours",
+    "paymentOverdueMonth": "Mission « {{label}} » — facture du mois {{month}} : paiement en retard de {{days}} jours",
+    "rfpDue": "Appel d'offres « {{title}} » : échéance dans {{days}} jours",
+    "consultantAvailable": "{{name}} se libère dans {{days}} jours",
+    "availabilityReconfirm": "Disponibilité de {{name}} non reconfirmée depuis {{days}} jours",
+    "missionNoEndDate": "Mission « {{label}} » : aucune date de fin enregistrée",
+    "connectorBrokenMailbox": "Ta messagerie a perdu son droit d'écriture",
+    "connectorBrokenAgenda": "Ton agenda a perdu son droit d'écriture",
+    "renewalNotEngaged": "Mission « {{title}} » : renouvellement dans {{days}} jours, aucune conversation engagée",
+    "submissionNoResponse": "Profil de {{name}} envoyé, aucun retour depuis {{days}} jours",
+    "rfpRequirementGap_one": "Appel d'offres « {{title}} » : {{count}} exigence non couverte",
+    "rfpRequirementGap_other": "Appel d'offres « {{title}} » : {{count}} exigences non couvertes",
+    "accountNoOwner": "{{company}} n'a aucun propriétaire assigné",
+    "projectNoNextAction": "{{company}} — « {{label}} » : aucune prochaine action programmée",
+    "projectStale": "{{company}} — « {{label}} » : sans mouvement depuis {{days}} jours",
+    "craMissing": "Mission « {{label}} » : CRA du mois précédent manquant",
+    "invoiceReady": "Mission « {{label}} » : facture du mois précédent prête à préparer",
+    "invoicingBlockedMissingRate": "Mission « {{label}} » : aucun TJM renseigné, la facture ne peut pas être préparée",
+    "invoicingBlockedMissingPo": "Mission « {{label}} » : aucun bon de commande renseigné, alors que le client en exige un",
+    "invoicingBlockedMissingBillingContact": "Mission « {{label}} » : aucun interlocuteur de facturation renseigné",
+    "invoicingBlockedMissingStartDate": "Mission « {{label}} » : aucune date de début renseignée",
+    "invoicingBlockedMissingCost": "Mission « {{label}} » : aucun coût chargé renseigné",
+    "contactBounced": "{{name}} : le dernier e-mail a rebondi",
+    "meetingNoFollowup": "Écris le suivi de {{subject}}",
+    "urgencyTier": {
+      "urgent": "Urgent",
+      "important": "Important",
+      "opportunity": "Opportunité",
+      "administrative": "Administratif"
+    },
+    "banner": {
+      "count_one": "TON ACTION",
+      "count_other": "TES {{count}} ACTIONS",
+      "shown": "{{count}} visibles",
+      "hidden_one": "{{count}} autre",
+      "hidden_other": "{{count}} autres",
+      "nothingSent": "rien ne sera envoyé",
+      "preparedNotSent_one": "{{count}} élément préparé — rien n’a été envoyé",
+      "preparedNotSent_other": "{{count}} éléments préparés — rien n’a été envoyé",
+      "sources": "Sources : {{list}}",
+      "sourcesUnknown": "Aucune source lisible sur ces actions."
+    },
+    "more": {
+      "title_one": "… et {{count}} autre action",
+      "title_other": "… et {{count}} autres actions",
+      "subtitle": "Ouvre-les : elles sont classées comme les autres, rien ne part sans toi.",
+      "open_one": "Voir l'autre action",
+      "open_other": "Voir les {{count}} autres",
+      "close": "Replier",
+      "viewAllLink": "Tout voir dans le Centre d'actions"
+    },
+    "suggested": "Suggéré par {{brand}}",
+    "preparedForYou": {
+      "title": "{{brand}} a préparé ceci pour toi",
+      "kind": {
+        "draft_message_one": "{{count}} brouillon prêt à relire",
+        "draft_message_other": "{{count}} brouillons prêts à relire",
+        "shortlist_one": "{{count}} liste courte prête",
+        "shortlist_other": "{{count}} listes courtes prêtes",
+        "checklist_one": "{{count}} check-list prête",
+        "checklist_other": "{{count}} check-lists prêtes"
+      }
+    },
+    "prepared": "Préparation disponible",
+    "expires": "Valable jusqu'au {{date}}",
+    "dateUnknown": "date inconnue",
+    "cta": {
+      "reply": "Préparer une reprise",
+      "follow_up": "Préparer une relance",
+      "account": "Analyser l'opportunité",
+      "need_stale": "Voir le besoin",
+      "mission_end": "Voir la mission",
+      "payment_overdue": "Voir la mission",
+      "rfp_due": "Voir l'appel d'offres",
+      "conflict": "Voir les deux rendez-vous",
+      "consultant_available": "Voir sa fiche",
+      "connector_broken": "Reconnecter l'outil",
+      "project": "Voir le projet",
+      "contact": "Voir le contact",
+      "critical_data_missing": "Compléter la donnée"
+    },
+    "invoiceBlockedTimesheetNotSubmitted": "Mission « {{label}} » : le relevé du mois n'a pas été soumis",
+    "invoiceBlockedTimesheetNotValidated": "Mission « {{label}} » : le relevé attend la validation du client",
+    "invoiceBlockedTimesheetDisputed": "Mission « {{label}} » : le client conteste le relevé",
+    "invoiceBlockedTimesheetAnomalies": "Mission « {{label}} » : le relevé porte des anomalies",
+    "invoiceBlockedUnexplainedGap": "Mission « {{label}} » : un écart de jours reste inexpliqué",
+    "invoiceBlockedTimesheetRejected": "Mission « {{label}} » : le relevé a été rejeté",
+    "invoiceBlockedPoPeriodMismatch": "Mission « {{label}} » : le bon de commande ne couvre pas le mois",
+    "invoiceBlockedLegalContractInactive": "Mission « {{label}} » : aucun contrat actif ne couvre ce client",
+    "criticalDataMissionConsultant": "Mission « {{label}} » : aucun consultant affecté",
+    "criticalDataBillingContactEmail": "{{label}} : interlocuteur de facturation sans e-mail",
+    "missionStarting": "Mission « {{label}} » : démarrage dans {{days}} jours",
+    "missionAmendmentPending": "Mission « {{label}} » : « {{document}} » envoyé il y a {{days}} jours, non signé",
+    "contactLeft": "{{name}} n'est plus en poste chez {{company}}",
+    "connectorBrokenCrm": "Ton CRM est à reconnecter"
+  },
+  "conflictDialog": {
+    "title": "Deux rendez-vous en même temps",
+    "description": "Ils se chevauchent de {{minutes}} min.",
+    "noSubject": "Rendez-vous sans titre",
+    "openInAgenda": "Ouvrir dans l'agenda",
+    "move": "Déplacer",
+    "warn": "Prévenir",
+    "delegate": "Proposer de déléguer",
+    "delegateDialog": {
+      "title": "Proposer de déléguer ce rendez-vous",
+      "description": "Un brouillon à finir et à envoyer depuis ta messagerie. Rien n’est modifié dans ton agenda : l’organisateur et les invités restent les mêmes.",
+      "subject": "Peux-tu prendre « {{subject}} » ?",
+      "body": "Bonjour,\n\nJe suis pris sur deux rendez-vous en même temps. Peux-tu prendre ma place sur « {{subject}} », prévu {{when}} ?\n\n"
+    },
+    "responses": {
+      "label": "Réponses : {{list}}",
+      "accepted": "{{count}} acceptées",
+      "accepted_one": "{{count}} acceptée",
+      "tentative": "{{count}} peut-être",
+      "tentative_one": "{{count}} peut-être",
+      "declined": "{{count}} refusées",
+      "declined_one": "{{count}} refusée",
+      "pending": "{{count}} en attente",
+      "pending_one": "{{count}} en attente"
+    },
+    "warnDialog": {
+      "title": "Prévenir un invité",
+      "description": "Un brouillon à finir et à envoyer depuis ta messagerie — pour quelqu'un sans fiche CRM.",
+      "emailLabel": "Adresse e-mail",
+      "emailPlaceholder": "prenom.nom@exemple.com",
+      "invalidEmail": "Adresse e-mail invalide.",
+      "subject": "À propos de « {{subject}} »",
+      "body": "Bonjour,\n\nJe reviens vers vous au sujet de notre rendez-vous « {{subject}} », prévu {{when}}.\n\n",
+      "send": "Ouvrir dans ma messagerie",
+      "cancel": "Annuler"
+    },
+    "resolution": {
+      "move": "Déplacer après l'autre rendez-vous",
+      "buffer": "Déplacer avec {{duration}} de battement",
+      "shorten": "Raccourcir jusqu'au début de l'autre rendez-vous",
+      "shortenTitle": "Raccourcir ce rendez-vous ?",
+      "confirmShorten": "Raccourcir",
+      "shortened": "Rendez-vous raccourci.",
+      "shortenedNotified": "Rendez-vous raccourci. Les invités ont été prévenus.",
+      "shortenedSilent": "Rendez-vous raccourci, sans prévenir les invités.",
+      "failed": "Ce changement n'a pas abouti."
+    },
+    "importance": {
+      "client": "Importance : élevée (rendez-vous client)",
+      "internal": "Importance : standard (point interne)",
+      "same": "Même type de rendez-vous : le type ne les départage pas. Le choix de ce qui bouge est à toi.",
+      "different": "Le rendez-vous client pèse davantage que le point interne. Aucun des deux ne prime d’office, même le client : rien ne bouge sans ta confirmation."
+    }
+  },
+  "artifacts": {
+    "meetingAttendees_one": "1 participant externe identifié",
+    "meetingAttendees_other": "{{count}} participants externes identifiés",
+    "angle": "Angle proposé : {{title}}"
+  },
+  "facts": {
+    "meeting": "Rendez-vous client à venir : {{subject}}.",
+    "meetingNoSubject": "Un rendez-vous client est à venir.",
+    "meetingEnded": "Rendez-vous client terminé sans suite écrite : {{subject}}.",
+    "meetingEndedNoSubject": "Un rendez-vous client s'est terminé sans suite écrite.",
+    "freshSignal": "{{signal}}"
+  },
+  "context": {
+    "conflict": "Deux personnes t'attendent au même moment : il faut en déplacer une.",
+    "meetingWithin": "Il commence dans moins de {{hours}} h.",
+    "positiveReply": "Le dernier message du fil est entrant et favorable.",
+    "silence_one": "Ton dernier message remonte à {{count}} jour, sans réponse.",
+    "silence_other": "Ton dernier message remonte à {{count}} jours, sans réponse.",
+    "silenceUndated": "Ton dernier message est resté sans réponse — sa date n'est pas lisible.",
+    "freshSignal": "Signal apparu dans les {{hours}} dernières heures.",
+    "freshSignalUndated": "Date de détection inconnue — ce n'est pas « aujourd'hui ».",
+    "freshSignalTracked": "Signal suivi depuis cette date ; on ne sait pas quand il est apparu.",
+    "meetingImminent": "Il commence dans moins de {{minutes}} min : c’est le moment d’ouvrir le brief.",
+    "needStale": "Ouvert depuis plus de {{days}} jours sans aucun profil proposé.",
+    "needResumeDue": "Mis en veille avec une reprise prévue le {{date}}.",
+    "missionEnding": "Se termine dans {{days}} jours : la suite se prépare maintenant.",
+    "missionEndingWithin": "Elle entre dans la fenêtre des {{days}} jours avant sa fin.",
+    "paymentOverdue": "Échéance dépassée depuis {{days}} jours, sans règlement constaté.",
+    "rfpDue": "Échéance de remise dans {{days}} jours.",
+    "consultantAvailable": "Toutes ses affectations en cours se terminent dans {{days}} jours.",
+    "availabilityReconfirm": "Disponibilité saisie il y a plus de {{days}} jours, jamais reconfirmée depuis.",
+    "missionNoEndDate": "Aucune date de fin enregistrée — invisible des échéances tant qu'elle n'en a pas.",
+    "connectorBroken": "Droit d'écriture retiré — les automatisations qui en dépendent se sont tues.",
+    "renewalNotEngaged": "Aucune conversation de renouvellement engagée — pas un e-mail, pas un appel constaté.",
+    "submissionNoResponse": "Envoyé depuis {{days}} jours, sans le moindre retour du client.",
+    "rfpRequirementGap_one": "{{count}} exigence obligatoire non couverte à ce jour.",
+    "rfpRequirementGap_other": "{{count}} exigences obligatoires non couvertes à ce jour.",
+    "accountNoOwner": "Aucun propriétaire assigné — un compte actif sans commercial responsable.",
+    "projectNoNextAction": "Aucune tâche encore ouverte n'est rattachée à cette affaire.",
+    "projectStale": "Aucun mouvement d'étape depuis plus de {{days}} jours.",
+    "craMissing": "Le mois précédent est clos et aucun relevé d'activité n'a été déposé.",
+    "invoiceReady": "Aucun bloqueur restant — le mois peut être préparé pour facturation.",
+    "invoicingBlockedMissingRate": "Sans TJM, aucun montant ne peut être préparé.",
+    "invoicingBlockedMissingPo": "Le client exige un bon de commande pour facturer cette mission.",
+    "invoicingBlockedMissingBillingContact": "Personne à qui adresser la facture n'est renseigné.",
+    "invoicingBlockedMissingStartDate": "Sans date de début, le mois couvert ne peut pas être déterminé.",
+    "invoicingBlockedMissingCost": "Sans coût chargé, la marge ne peut pas être calculée.",
+    "contactBounced": "Le dernier e-mail envoyé n'a pas atteint sa boîte — coordonnée à vérifier.",
+    "meetingNoFollowup": "Aucune note écrite dans les {{hours}} h qui ont suivi le rendez-vous.",
+    "invoiceBlocked": "La porte « prêt à facturer » bloque sur ce point, et il se lève de ton côté.",
+    "invoiceBlockedAwaitingThirdParty": "Le blocage attend le client : rien à lever aujourd'hui de ton côté.",
+    "criticalDataMissionConsultant": "Sans consultant affecté, ni relevé ni facture ne peuvent se calculer.",
+    "criticalDataBillingContactEmail": "Sans e-mail, la facture préparée n'a nulle part où partir.",
+    "missionStarting": "Démarre dans moins de {{days}} jours.",
+    "missionAmendmentPending_one": "Envoyé il y a {{count}} jour, toujours pas signé.",
+    "missionAmendmentPending_other": "Envoyé il y a {{count}} jours, toujours pas signé.",
+    "contactLeft": "Départ repéré dans les {{days}} derniers jours.",
+    "connectorDisconnected": "La connexion ne se renouvelle plus : il faut te reconnecter."
+  },
+  "dailyGestures": {
+    "title": "Ce qui attend ta décision",
+    "subtitle": "Suivi de mission, relevés, facturation, besoins — ce que le produit ne peut pas décider seul.",
+    "empty": "Rien n’attend de décision aujourd’hui.",
+    "more_one": "et {{count}} autre",
+    "more_other": "et {{count}} autres"
+  },
+  "weakestLink": {
+    "title": "Le maillon faible",
+    "loading": "Calcul du maillon faible en cours…",
+    "error": "Le diagnostic du maillon faible n’a pas pu être calculé pour le moment.",
+    "notEnoughSignal": "Pas encore assez de signal pour désigner un maillon faible principal.",
+    "evidence": "Ce qu’on observe",
+    "contradictoryEvidence": "Ce qui nuance",
+    "recommendedExperiment": "Ce qu’on te propose d’essayer",
+    "actionsToStop": "Ce qu’on arrête, en attendant",
+    "reviewDate": "Prochaine réévaluation : {{date}}",
+    "secondary": "Les autres maillons à surveiller",
+    "notEvaluated": "Maillons non évalués",
+    "unwired_one": "{{count}} autre famille n’a pas encore de signal mesuré.",
+    "unwired_other": "{{count}} autres familles n’ont pas encore de signal mesuré.",
+    "areas": {
+      "pas_de_pipeline_qualifie": "Pipeline qualifié",
+      "comptes_ouverts_non_etendus": "Extension des comptes ouverts",
+      "offre_ou_positionnement_trop_larges": "Offre et positionnement",
+      "mauvais_ciblage": "Ciblage",
+      "absence_de_voie_dacces": "Voie d’accès",
+      "qualification_insuffisante": "Qualification",
+      "vivier_insuffisant": "Vivier",
+      "talents_mal_securises": "Sécurisation des talents",
+      "marge_trop_faible": "Marge",
+      "delivery_fragile": "Delivery",
+      "absence_de_suivi_ou_de_prochaine_action": "Suivi et prochaine action",
+      "donnees_dispersees": "Données",
+      "absence_de_rituels": "Rituels",
+      "dependance_a_une_seule_personne": "Dépendance à une personne",
+      "capacite_commerciale_trop_faible": "Capacité commerciale",
+      "activite_mal_priorisee": "Priorisation de l’activité"
+    },
+    "families": {
+      "pas_de_pipeline_qualifie": "Pas de pipeline qualifié",
+      "comptes_ouverts_non_etendus": "Comptes ouverts mais non étendus",
+      "offre_ou_positionnement_trop_larges": "Offre ou positionnement trop larges",
+      "mauvais_ciblage": "Mauvais ciblage",
+      "absence_de_voie_dacces": "Absence de voie d’accès",
+      "qualification_insuffisante": "Qualification insuffisante",
+      "vivier_insuffisant": "Vivier insuffisant",
+      "talents_mal_securises": "Talents mal sécurisés",
+      "marge_trop_faible": "Marge trop faible",
+      "delivery_fragile": "Delivery fragile",
+      "absence_de_suivi_ou_de_prochaine_action": "Absence de suivi ou de prochaine action",
+      "donnees_dispersees": "Données dispersées",
+      "absence_de_rituels": "Absence de rituels",
+      "dependance_a_une_seule_personne": "Dépendance à une seule personne",
+      "capacite_commerciale_trop_faible": "Capacité commerciale trop faible",
+      "activite_mal_priorisee": "Activité mal priorisée"
+    }
+  },
+  "preparations": {
+    "title": "Préparations"
+  },
+  "activeAnalysis": {
+    "single": "Analyse en cours : {{company}}",
+    "multiple_one": "Analyse en cours : {{company}} (+{{count}} autre)",
+    "multiple_other": "Analyse en cours : {{company}} (+{{count}} autres)",
+    "since": "depuis {{minutes}} min"
+  },
+  "quickModes": {
+    "title": "Modes de travail rapides",
+    "subtitle": "Un créneau libre, pas de rendez-vous urgent : voici ce qui vaut le coup avec le temps que tu as.",
+    "cta": "Ouvrir",
+    "managerNote": "En tant que manager, arbitre aussi pour l’équipe.",
+    "modes": {
+      "prospect": {
+        "title": "Prospecter",
+        "description": "Repartir de Découvrir avec des comptes frais à travailler.",
+        "sessionSummary_one": "{{duration}} min · {{count}} compte",
+        "sessionSummary_other": "{{duration}} min · {{count}} comptes"
+      },
+      "prepare_meetings": {
+        "title": "Préparer mes rendez-vous",
+        "description": "Les prochains rendez-vous de ton agenda, avec leur préparation.",
+        "sessionSummary_one": "{{duration}} min · {{count}} rendez-vous",
+        "sessionSummary_other": "{{duration}} min · {{count}} rendez-vous"
+      },
+      "handle_followups": {
+        "title": "Traiter mes relances",
+        "description": "Les fils sans réponse et les relances à qualifier.",
+        "descriptionCrmOnly": "Aucune messagerie connectée : relances via le CRM et les tâches seulement.",
+        "sessionSummary_one": "{{duration}} min · {{count}} relance",
+        "sessionSummary_other": "{{duration}} min · {{count}} relances"
+      },
+      "position_consultant": {
+        "title": "Positionner un consultant",
+        "description": "Des profils du vivier à proposer sur un besoin.",
+        "sessionSummary_one": "{{duration}} min · {{count}} profil",
+        "sessionSummary_other": "{{duration}} min · {{count}} profils"
+      },
+      "secure_missions": {
+        "title": "Sécuriser mes missions",
+        "description": "Fins de mission, renouvellements et paiements en retard.",
+        "sessionSummary_one": "{{duration}} min · {{count}} mission",
+        "sessionSummary_other": "{{duration}} min · {{count}} missions"
+      },
+      "refresh_pipe": {
+        "title": "Remettre mon pipe à jour",
+        "description": "Faire un point sur les affaires en cours.",
+        "sessionSummary_one": "{{duration}} min · {{count}} affaire",
+        "sessionSummary_other": "{{duration}} min · {{count}} affaires"
+      }
+    }
+  },
+  "sinceLastVisit": {
+    "title": "Ce qui a bougé depuis ta dernière visite",
+    "loading": "Lecture en cours…",
+    "firstVisit": "C'est ta première visite : je pose le repère maintenant. Dès la prochaine ouverture, tu verras ici ce qui a bougé entre-temps.",
+    "unreadable": "Je n'ai pas pu lire ce qui a bougé. Ce n'est pas « il ne s'est rien passé » — c'est la lecture qui a échoué.",
+    "upToDate": "Tu es à jour : rien n'a bougé depuis le {{date}}.",
+    "window": "Depuis le {{date}}",
+    "more_one": "et {{count}} autre — voir le journal",
+    "more_other": "et {{count}} autres — voir le journal",
+    "openJournal": "Voir le journal",
+    "digestUnreadable": "Je n'ai pas pu compter ce qui a bougé. Ce n'est pas « rien n'a bougé ».",
+    "journalUnreadable": "Le journal n'a pas répondu. Ce qui est écrit au-dessus, lui, a bien été lu.",
+    "lines": {
+      "account_signals": {
+        "value_one": "{{count}} nouveau signal sur {{accounts}}",
+        "value_other": "{{count}} nouveaux signaux sur {{accounts}}",
+        "valueOnly_one": "{{count}} nouveau signal sur tes comptes",
+        "valueOnly_other": "{{count}} nouveaux signaux sur tes comptes",
+        "accounts_one": "{{count}} compte",
+        "accounts_other": "{{count}} comptes",
+        "unavailable": "Les signaux de tes comptes n'ont pas pu être lus. Ce n'est pas « aucun signal »."
+      },
+      "replies_received": {
+        "value_one": "{{count}} réponse reçue",
+        "value_other": "{{count}} réponses reçues",
+        "notConnected": "Aucune messagerie connectée : je ne peux pas te dire si on t'a répondu. Ce n'est pas « aucune réponse ».",
+        "missingScope": "Ta messagerie ne nous autorise pas la lecture : les réponses reçues ne sont pas mesurables.",
+        "unavailable": "Les réponses reçues n'ont pas pu être lues. Ce n'est pas « aucune réponse »."
+      },
+      "job_changes": {
+        "value_one": "{{count}} contact a changé d'entreprise — une porte neuve",
+        "value_other": "{{count}} contacts ont changé d'entreprise — autant de portes neuves",
+        "partial": "Trop de contacts enrichis depuis ta dernière visite pour les compter d'un coup — le détail est dans tes contacts.",
+        "unavailable": "Les changements de poste n'ont pas pu être lus. Ce n'est pas « personne n'a bougé »."
+      },
+      "missions_moving": {
+        "value_one": "{{count}} mission passe sous {{days}} jours de fin",
+        "value_other": "{{count}} missions passent sous {{days}} jours de fin",
+        "unavailable": "Les échéances de missions n'ont pas pu être lues. Ce n'est pas « aucune échéance »."
+      },
+      "attack_angles_added": {
+        "value_one": "{{count}} nouvel angle d’attaque",
+        "value_other": "{{count}} nouveaux angles d’attaque",
+        "unavailable": "Les angles d’attaque n’ont pas pu être lus. Ce n’est pas « aucune opportunité »."
+      },
+      "night_routines_run": {
+        "value_one": "{{count}} routine de nuit a trouvé quelque chose",
+        "value_other": "{{count}} routines de nuit ont trouvé quelque chose",
+        "unavailable": "Les routines de nuit n’ont pas pu être lues. Ce n’est pas « rien trouvé »."
+      }
+    },
+    "longAbsence": {
+      "heading": "Après une longue absence, l'essentiel :",
+      "topLine": "Le plus important : {{text}}",
+      "openTasks_one": "{{count}} tâche encore ouverte t'attend.",
+      "openTasks_other": "{{count}} tâches encore ouvertes t'attendent.",
+      "expiredItems_one": "{{count}} action a expiré sans être traitée.",
+      "expiredItems_other": "{{count}} actions ont expiré sans être traitées.",
+      "treatedByColleague_one": "{{count}} action a été traitée par un collègue.",
+      "treatedByColleague_other": "{{count}} actions ont été traitées par un collègue."
+    },
+    "myActivity": "Mon activité récente"
+  },
+  "agenda": {
+    "prepProposal": {
+      "cta": "Préparer le RDV"
+    },
+    "title": "Ton agenda",
+    "toPrepare": "À préparer",
+    "conflicts": "Conflits",
+    "external": "Client",
+    "internal": "Interne",
+    "allDay": "Journée entière",
+    "picker": {
+      "placeholder": "Agenda par défaut",
+      "all": "Tous mes agendas",
+      "incomplete": "Un de tes agendas n'a pas répondu : la liste est peut-être incomplète.",
+      "failed": "Ce choix n'a pas pu être enregistré. Réessaie.",
+      "count": "{{count}} agendas",
+      "default": "Par défaut",
+      "readOnly": "Lecture seule"
+    },
+    "board": {
+      "day": "Jour",
+      "week": "Semaine",
+      "today": "Aujourd’hui",
+      "previous": "Période précédente",
+      "next": "Période suivante",
+      "now": "Maintenant",
+      "join": "Rejoindre",
+      "live": "En cours",
+      "liveLeft_one": "En cours · {{count}} min restante",
+      "liveLeft_other": "En cours · {{count}} min restantes",
+      "liveLeftHours_one": "En cours · {{count}} h restante",
+      "liveLeftHours_other": "En cours · {{count}} h restantes",
+      "inMinutes_one": "Dans {{count}} min",
+      "inMinutes_other": "Dans {{count}} min",
+      "remaining_zero": "Plus de rendez-vous aujourd’hui",
+      "remaining_one": "{{count}} rendez-vous à venir",
+      "remaining_other": "{{count}} rendez-vous à venir",
+      "meetingTime": "{{hours}} en réunion",
+      "externalGuests_one": "{{count}} invité externe",
+      "externalGuests_other": "{{count}} invités externes",
+      "room": "Salle : {{name}}",
+      "roomSeats_one": "Salle : {{name}} · {{count}} place",
+      "roomSeats_other": "Salle : {{name}} · {{count}} places",
+      "roomTooSmall_one": "Salle trop petite : {{people}} personnes pour {{count}} place",
+      "roomTooSmall_other": "Salle trop petite : {{people}} personnes pour {{count}} places",
+      "kind": {
+        "private_busy": "Indisponible (détails privés)",
+        "cancelled": "Annulé",
+        "out_of_office": "Absence",
+        "focus_time": "Temps de concentration",
+        "working_location": "Lieu de travail",
+        "birthday": "Anniversaire",
+        "email_event": "Évènement issu d’un e-mail",
+        "proposed": "Créneau proposé, pas encore accepté",
+        "external_meeting": "Rendez-vous externe",
+        "internal_meeting": "Réunion interne",
+        "personal_block": "Bloc personnel, sans invité"
+      },
+      "emptyDay": "Aucun rendez-vous ce jour.",
+      "undated_one": "{{count}} évènement sans date exploitable.",
+      "undated_other": "{{count}} évènements sans date exploitable.",
+      "partial": "Un de tes agendas n'a pas répondu : il peut manquer des rendez-vous ici.",
+      "partialNamed": "« {{name}} » n'a pas répondu : il peut manquer des rendez-vous ici.",
+      "failed": "Tes rendez-vous n'ont pas pu être chargés.",
+      "conflict": "Conflit",
+      "proposed": "Proposé",
+      "proposedHint": "Proposé — en attente de réponse, pas encore confirmé.",
+      "createdByBellum": "Confirmé — proposé par {{brand}}",
+      "recurring": "Récurrent",
+      "recurringHint": "Récurrent — fait partie d'une série.",
+      "prepare": "Préparer le rendez-vous",
+      "prepareNow": "Ouvrir le brief maintenant",
+      "cancelled_one": "{{count}} rendez-vous annulé",
+      "cancelled_other": "{{count}} rendez-vous annulés",
+      "weekSummary_one": "{{count}} rendez-vous cette semaine",
+      "weekSummary_other": "{{count}} rendez-vous cette semaine",
+      "points_one": "{{count}} point",
+      "points_other": "{{count}} points",
+      "addEvent": "Ajouter un rendez-vous",
+      "reschedule": "Reprogrammer",
+      "seeWeek": "Voir la semaine",
+      "seeDay": "Voir la journée"
+    },
+    "grid": {
+      "untitled": "Sans titre",
+      "busy": "Indisponible",
+      "freeSlot": "{{duration}} de libre",
+      "unknownDuration": "Durée non renseignée — affichée à 30 min par convention.",
+      "attendees_one": "{{count}} invité",
+      "attendees_other": "{{count}} invités",
+      "hourSuffix": "h"
+    },
+    "reschedule": {
+      "title": "Déplacer ce rendez-vous ?",
+      "timeLabel": "Heure de départ",
+      "guests_one": "{{count}} invité sera prévenu",
+      "guests_other": "{{count}} invités seront prévenus",
+      "externals_one": "dont {{count}} externe",
+      "externals_other": "dont {{count}} externes",
+      "notify": "Prévenir les invités",
+      "alwaysNotifies": "Ton agenda prévient toujours les invités d'une modification : cette case ne peut pas être décochée.",
+      "noGuests": "Personne d'autre n'est invité : aucun message ne partira.",
+      "cancel": "Annuler",
+      "confirm": "Déplacer",
+      "moved": "Rendez-vous déplacé.",
+      "movedNotified": "Rendez-vous déplacé. Les invités ont été prévenus.",
+      "movedSilent": "Rendez-vous déplacé, sans prévenir les invités.",
+      "failed": "Le déplacement n'a pas abouti.",
+      "dateLabel": "Jour",
+      "notifyPreview": "Les invités recevront la mise à jour de l’agenda : nouvel horaire {{after}} (au lieu de {{before}})."
+    },
+    "prep": {
+      "openAccount": "Ouvrir le dossier",
+      "noAccount": "Aucun compte de ton portefeuille ne correspond à ce rendez-vous.",
+      "personalMeeting": "Réunion personnelle — aucun dossier client ne s’y rattache.",
+      "close": "Fermer",
+      "chooseAccount": {
+        "title": "Plusieurs entreprises de ton portefeuille sont invitées à ce rendez-vous — laquelle prépare-t-on ?"
+      },
+      "correctAccount": {
+        "label": "Pas le bon compte ?",
+        "attach": "Rattacher à un compte",
+        "auto": "Déduit automatiquement"
+      }
+    },
+    "newEvent": {
+      "title": "Poser un rendez-vous",
+      "subject": "Sujet",
+      "subjectPlaceholder": "Cadrage — refonte du parcours",
+      "guests": "Invités",
+      "guestsPlaceholder": "prenom.nom@societe.fr, autre@societe.fr",
+      "invalidGuests": "Adresse illisible : {{list}}",
+      "conferencing": "Ajouter un lien visio",
+      "calendar": "Calendrier",
+      "recurrence": "Récurrence",
+      "recurrenceNone": "Ne se répète pas",
+      "recurrenceDaily": "Tous les jours",
+      "recurrenceWeekly": "Toutes les semaines",
+      "recurrenceMonthly": "Tous les mois",
+      "reminder": "Rappel",
+      "reminderDefault": "Rappel par défaut de l'agenda",
+      "reminderAtStart": "À l'heure du rendez-vous",
+      "reminderMinutes_one": "{{count}} min avant",
+      "reminderMinutes_other": "{{count}} min avant",
+      "reminderHours_one": "{{count}} h avant",
+      "reminderHours_other": "{{count}} h avant",
+      "reminderDays_one": "{{count}} jour avant",
+      "reminderDays_other": "{{count}} jours avant",
+      "create": "Créer",
+      "created": "Rendez-vous créé.",
+      "failed": "La création n'a pas abouti.",
+      "inviteNotice_one": "Valider envoie une invitation à {{count}} invité.",
+      "inviteNotice_other": "Valider envoie une invitation à chacun des {{count}} invités.",
+      "noInviteNotice": "Sans invité, le rendez-vous n’est posé que dans ton agenda : aucune invitation ne part.",
+      "demoNotPossible": "Cet espace est une démonstration : l'agenda s'y consulte, il ne s'y écrit pas.",
+      "date": "Date",
+      "startTime": "Heure",
+      "durationMinutes": "Durée (minutes)"
+    },
+    "brief": {
+      "title": "Brief — {{subject}} · {{company}}",
+      "titleNoAccount": "Brief — {{subject}}",
+      "at": "Rendez-vous à {{time}}",
+      "remote": "visio",
+      "computedAt": "brief calculé à {{at}}",
+      "computedOn": "brief calculé le {{at}}",
+      "export": "Exporter le brief",
+      "exported": "Brief copié — colle-le où tu veux.",
+      "exportFailed": "Le brief n’a pas pu être copié.",
+      "blockIndex": "{{index}}",
+      "noContact": "Aucun contact de ce compte ne correspond aux invités de ce rendez-vous. On ne prépare pas la mauvaise personne.",
+      "block": {
+        "who": "Qui",
+        "history": "Ce qu’on s’est dit",
+        "moving": "Ce qui bouge chez eux",
+        "stakes": "Ses enjeux probables",
+        "around": "Autour d’elle",
+        "positionable": "Ce que tu peux positionner",
+        "outcome": "Ce que tu veux obtenir",
+        "objections": "Objections probables",
+        "facts": "Trois faits utiles",
+        "limits": "Ce que ce brief ne sait pas",
+        "linked": "Opportunités et missions liées",
+        "risks": "Risques",
+        "to_verify": "Ce qui reste à vérifier",
+        "rex": "REX à citer",
+        "workshop_proposal": "Proposer l’atelier",
+        "pitch": "Ton pitch",
+        "r1_recap": "Ce que le R1 a appris"
+      },
+      "ground": {
+        "sourced": "{{sources}} · relevé du {{date}}",
+        "mixed": "{{sources}} · relevé du {{date}} — {{probable}} probable",
+        "inferred": "Déduit — à confirmer pendant le rendez-vous",
+        "derived": "Calculé à partir {{from}}"
+      },
+      "sourceJoin": " + ",
+      "source": {
+        "crm": "ton CRM",
+        "mailbox": "ta messagerie",
+        "agenda": "ton agenda",
+        "contact_record": "la fiche contact",
+        "account_analysis": "l’analyse du dossier",
+        "job_postings": "les offres publiées",
+        "press": "la presse",
+        "registry": "un registre public",
+        "bench": "ton vivier",
+        "telephony": "ta téléphonie",
+        "workspace": "ton espace"
+      },
+      "probable": {
+        "influence": "l’influence",
+        "sponsorship": "le parrainage",
+        "stakes": "les enjeux",
+        "risk": "le risque"
+      },
+      "derivedFrom": {
+        "meeting_type": "du type de rendez-vous",
+        "relationship_state": "de l’état de la relation",
+        "brief_coverage": "de ce que le dossier a pu lire",
+        "esn_profile": "du profil de ton espace",
+        "prior_meeting": "des comptes rendus de rendez-vous",
+        "workspace_knowledge": "de ce que ton espace sait déjà"
+      },
+      "stance": {
+        "listen_not_pitch": "Écouter, pas pitcher.",
+        "reconnect_not_resell": "Reconnecter, pas revendre.",
+        "advance_not_restate": "Faire avancer, pas redire.",
+        "prove_not_promise": "Prouver, pas promettre.",
+        "serve_not_sell": "Servir, pas vendre.",
+        "align_not_report": "Aligner, pas rapporter.",
+        "qualify_not_assume": "Vérifier, pas supposer.",
+        "secure_not_concede": "Sécuriser, pas céder.",
+        "frame_not_present": "Cadrer avec eux, pas présenter.",
+        "renew_on_results": "Renouveler sur les résultats, pas sur l’habitude.",
+        "prepare_not_script": "Préparer le consultant, pas lui souffler ses réponses."
+      },
+      "outcome": {
+        "qualify_need": "Comprendre le besoin réel et ce qu’il sert.",
+        "agree_next_step": "Repartir avec une prochaine étape datée.",
+        "map_real_need": "Obtenir la cartographie de son besoin réel.",
+        "date_to_present_profile": "Obtenir une date pour présenter un profil.",
+        "confirm_decision_path": "Confirmer qui décide et selon quel circuit.",
+        "collect_profile_feedback": "Recueillir ce qui manque au profil présenté.",
+        "collect_satisfaction": "Savoir ce qui marche et ce qui coince aujourd’hui.",
+        "detect_upcoming_need": "Repérer le prochain besoin avant qu’il ne sorte.",
+        "align_on_delivery": "S’aligner sur l’avancement et les arbitrages.",
+        "clarify_joint_pipeline": "Clarifier ce qu’on peut porter ensemble.",
+        "clarify_problem": "Préciser le problème à résoudre.",
+        "clarify_budget_timing": "Préciser le budget et le calendrier.",
+        "map_purchasing_circuit": "Comprendre le circuit d’achat : étapes, référencement, validations.",
+        "clarify_conditions": "Clarifier les conditions : tarifs, paiement, contrat.",
+        "book_workshop": "Repartir avec un atelier daté, et qui y sera.",
+        "frame_workshop_need": "Cadrer le besoin : périmètre, contraintes, critères de succès.",
+        "brief_opportunities": "Briefer les opportunités qui en sortent, une par une.",
+        "confirm_renewal_decision": "Confirmer la décision de reconduire, ses conditions et son calendrier.",
+        "prepare_consultant": "Le consultant arrive préparé : besoin, interlocuteurs, points à prouver."
+      },
+      "noObjective": {
+        "internal": "Point interne : pas d’objectif commercial. On n’en invente pas un.",
+        "personal": "Réunion personnelle : pas d’objectif commercial, et aucun dossier client ne s’y rattache.",
+        "ambiguous": "L’état de la relation ne dit pas de quel rendez-vous il s’agit. Plutôt qu’un objectif deviné, aucun.",
+        "unknownRelationship": "L’état de la relation n’a pas encore été établi sur ce compte. Sans lui, l’objectif serait deviné."
+      },
+      "questions": "{{count}} questions",
+      "questions_one": "{{count}} question",
+      "accessPath": "Chemin d’accès",
+      "guestLocalTime": "{{name}} : {{time}} ({{zone}})",
+      "missingParticipants": {
+        "title_one": "{{count}} contact connu du compte, non invité",
+        "title_other": "{{count}} contacts connus du compte, non invités"
+      },
+      "roleProbable": "{{role}} probable",
+      "role": {
+        "technical": "Référent technique",
+        "economic": "Décideur budget",
+        "procurement": "Achats",
+        "user": "Utilisateur",
+        "champion": "Relais interne",
+        "influencer": "Influenceur",
+        "blocker": "Gardien",
+        "sponsor": "Sponsor",
+        "operational": "Opérationnel",
+        "purchasing": "Achats",
+        "unknown": "Rôle à établir"
+      },
+      "laura": {
+        "title": "{{copilot}} peut t’aider maintenant",
+        "questions": "Générer tes questions dans ton ton",
+        "compare": "Comparer les profils à positionner",
+        "influence": "Ouvrir la carte d’influence du compte",
+        "ask": "Demander à {{copilot}}",
+        "prompt": "Prépare-moi le rendez-vous avec {{contact}} chez {{company}} : mes questions dans mon ton, les profils à positionner, et la carte d’influence."
+      },
+      "loading": "Lecture du dossier en cours…",
+      "limit": {
+        "history_unread": "L’historique des échanges n’a pas pu être lu.",
+        "no_dated_signal": "Aucun signal daté sur l’entreprise.",
+        "relationship_unknown": "L’état de la relation n’est pas établi.",
+        "relations_unknown": "L’entourage de la personne n’est pas résolu.",
+        "bench_unread": "Le vivier n’a pas pu être lu.",
+        "linked_unread": "Les opportunités et missions liées n’ont pas pu être lues."
+      },
+      "check": {
+        "probable_role": "{{name}} — rôle à confirmer : {{role}}",
+        "inferred_block": "À confirmer : {{block}}",
+        "meeting_type": "Le type de rendez-vous, donc l’objectif."
+      },
+      "fact": {
+        "sector": "Secteur : {{value}}",
+        "employees": "Effectif : {{value}}",
+        "revenue": "Chiffre d’affaires : {{value}}",
+        "groupRoleSubsidiary": "Filiale du groupe {{siren}}",
+        "groupRoleSubsidiaryUnknown": "Filiale d’un groupe",
+        "groupRoleParent": "Tête de groupe"
+      },
+      "linkedKind": {
+        "opportunity": "Opportunité",
+        "mission": "Mission",
+        "need": "Besoin"
+      },
+      "linkedForThisMeeting": "{{label}} — ce rendez-vous",
+      "risk": {
+        "left": "{{name}} — l’employeur relevé ne correspond plus à ce compte",
+        "blocker": "{{name}} — bloqueur identifié"
+      },
+      "more_one": "+{{count}} ligne au dossier",
+      "more_other": "+{{count}} lignes au dossier",
+      "readingTime": "lecture : ~{{count}} min",
+      "confidential": "confidentiel",
+      "recurring": "récurrent",
+      "meetingType": {
+        "label": "Type de rendez-vous",
+        "auto": "Déduit du dossier",
+        "first_contact": "Premier rendez-vous",
+        "warm_reactivation": "Réactivation",
+        "open_opportunity": "Opportunité ouverte",
+        "profile_presentation": "Présentation de profil",
+        "active_client_review": "Revue client",
+        "steering_committee": "Comité de pilotage",
+        "partner_meeting": "Rendez-vous partenaire",
+        "internal_meeting": "Point interne",
+        "qualification": "Qualification",
+        "procurement": "Achats",
+        "r1_discovery": "R1 — premier rendez-vous",
+        "r2_workshop": "R2 — atelier",
+        "renewal": "Renouvellement",
+        "consultant_interview": "Entretien consultant"
+      },
+      "live": {
+        "enter": "Je suis en rendez-vous",
+        "leave": "Revenir au brief",
+        "recapAlready": "Compte rendu déjà rédigé",
+        "objectives": "Objectifs",
+        "checklist": "Questions à poser",
+        "progress": "{{done}} sur {{total}} posées",
+        "brief": "Le brief, en bref",
+        "notes": "Prise de notes",
+        "noAccount": "Rattache ce rendez-vous à un compte pour structurer tes notes.",
+        "noRecording": "Rien n’est enregistré pendant le rendez-vous : seules tes notes comptent."
+      },
+      "flow": {
+        "title": "Le déroulé",
+        "step": {
+          "opening": "Ouverture : qui tu es, pourquoi eux, pourquoi maintenant.",
+          "rex": "Un REX à citer : un client comparable, un résultat.",
+          "discovery": "Les questions de découverte : écoute plus que tu ne parles.",
+          "workshop_proposal": "Proposer un atelier pour creuser le besoin.",
+          "client_need": "Le besoin client, dans ses mots.",
+          "framing": "Le cadrage : périmètre, contraintes, calendrier.",
+          "opportunities_brief": "Le brief des opportunités qui en sortent.",
+          "next_step": "La prochaine étape, datée, avec un responsable."
+        }
+      },
+      "pitch": {
+        "noProfile": "Pas de pitch : ton profil ne dit ni le nom de ton ESN ni ses offres. Renseigne-les dans Mon profil.",
+        "sentence": {
+          "who": "Nous sommes {{esn}}, nous accompagnons nos clients sur {{offers}}.",
+          "stake": "Chez {{account}}, nous lisons un enjeu : {{stake}}.",
+          "answer": "Notre offre {{offer}} répond précisément à cet enjeu : {{stake}}.",
+          "answer_no_stake": "Sur {{offers}}, nous intervenons là où vos équipes ont besoin de renfort.",
+          "proof": "Nous l’avons déjà fait : {{rex}}.",
+          "ask": "J’aimerais comprendre où vous en êtes, pour voir si cela vous parle.",
+          "ask_workshop": "Je vous propose un atelier de deux heures pour creuser ce sujet ensemble.",
+          "ask_next_step": "L’objectif aujourd’hui : repartir avec une prochaine étape claire et datée."
+        }
+      },
+      "rex": {
+        "none": "Aucun REX dans ton espace — ajoute-en dans Connaissances (une preuve client, un cas client) ou déclare tes références dans Mon profil.",
+        "item": "{{kind}} · {{label}}",
+        "itemDated": "{{kind}} · {{label}} ({{date}})",
+        "kind": {
+          "mission": "Mission",
+          "document": "Preuve client",
+          "reference": "Référence"
+        }
+      },
+      "workshop": {
+        "propose": "Propose un atelier de deux heures pour cadrer le besoin avec ceux qui le portent.",
+        "attendees": "Demande qui doit y être : le décideur, le porteur du besoin, un référent technique.",
+        "date": "Fixe la date avant de raccrocher — un atelier sans date n’existe pas."
+      },
+      "r1": {
+        "found": "R1 du {{date}} : {{label}}",
+        "need": "Besoin créé depuis : {{label}}",
+        "none": "Aucun R1 connu sur ce compte : ce R2 part sans ce que le premier rendez-vous aurait appris. Note le prochain compte rendu pour qu’il serve.",
+        "unread": "Les comptes rendus de ce compte n’ont pas pu être lus : on ne sait pas s’il y a eu un R1."
+      },
+      "unknownsLine": "Non établi : {{list}}",
+      "unknown": {
+        "decision_role": "rôle de décision",
+        "tenure": "ancienneté dans le poste",
+        "undated_signals": "signaux sans date (écartés)",
+        "relation_roles": "rôle de décision de certaines personnes",
+        "availability_unverified": "disponibilité non vérifiée de certains profils (écartés)"
+      }
+    },
+    "compact": {
+      "lead": "Ton agenda du jour :",
+      "client_one": "{{count}} client",
+      "client_other": "{{count}} clients",
+      "internal_one": "{{count}} interne",
+      "internal_other": "{{count}} internes",
+      "proposed_one": "{{count}} proposé, en attente de réponse",
+      "proposed_other": "{{count}} proposés, en attente de réponse",
+      "freeSlots_one": "{{count}} créneau libre entre tes rendez-vous",
+      "freeSlots_other": "{{count}} créneaux libres entre tes rendez-vous",
+      "capacity_one": "{{count}} dossier ouvrable aujourd'hui",
+      "capacity_other": "{{count}} dossiers ouvrables aujourd'hui"
+    },
+    "plan": {
+      "banner": "Choisis un créneau libre pour planifier un rendez-vous avec {{name}}. L’invitation part quand tu valides.",
+      "bannerNoEmail": "Choisis un créneau libre pour planifier un rendez-vous avec {{name}}. Aucun e-mail connu : rien n’est envoyé, ajoute un invité si besoin.",
+      "switchToDay": "Vue Jour"
+    },
+    "slotProposal": {
+      "pick": "Proposer un créneau à un compte",
+      "pickPlaceholder": "Proposer un créneau…"
+    }
+  },
+  "mail": {
+    "title": "Ta messagerie",
+    "empty": "Aucun fil à traiter.",
+    "awaitingReply": "Sans réponse",
+    "unread": "Non lus",
+    "positiveReplies": "Réponses favorables",
+    "days_one": "{{count}} jour",
+    "days_other": "{{count}} jours",
+    "more_one": "et {{count}} autre fil",
+    "more_other": "et {{count}} autres fils"
+  },
+  "waitingOnOthers": {
+    "title": "En attente des autres",
+    "profilesLabel": "Profils envoyés au client",
+    "profileDays_one": "{{count}} jour sans retour du client",
+    "profileDays_other": "{{count}} jours sans retour du client"
+  },
+  "slotProposalPriorityAccounts": {
+    "title": "Comptes à prioriser pour un rendez-vous",
+    "empty": "Aucun compte à score mesuré à prioriser pour l’instant."
+  },
+  "accounts": {
+    "title": "Comptes qui ont bougé",
+    "empty": "Aucun nouveau signal sur tes comptes suivis depuis 48 heures.",
+    "signalOn": "Signal repéré le {{date}}",
+    "signalTrackedSince": "Signal suivi depuis le {{date}}",
+    "signalUndated": "Date de détection inconnue",
+    "more_one": "et {{count}} autre compte",
+    "more_other": "et {{count}} autres comptes",
+    "access": {
+      "relationship": "relation déjà connue de ton espace",
+      "history": "échange déjà tracé",
+      "verified_email": "e-mail vérifié",
+      "email": "e-mail non vérifié",
+      "phone": "téléphone",
+      "professional_profile": "profil professionnel",
+      "searched_nothing_found": "aucun canal trouvé après recherche"
+    }
+  },
+  "runningJobs": {
+    "title": "En cours",
+    "empty": "Rien en cours pour le moment.",
+    "open": "Ouvrir",
+    "cancel": "Annuler",
+    "steps_one": "{{count}} étape sur {{total}} terminée",
+    "steps_other": "{{count}} étapes sur {{total}} terminées",
+    "estimatedDuration": "Durée prévue : {{minutes}} min",
+    "pendingValidations_one": "{{count}} validation attendue",
+    "pendingValidations_other": "{{count}} validations attendues",
+    "intermediateResults_one": "{{count}} résultat intermédiaire",
+    "intermediateResults_other": "{{count}} résultats intermédiaires"
+  },
+  "criticalRisks": {
+    "title": "Risques critiques",
+    "empty": "Aucun risque critique détecté pour le moment.",
+    "signalsCount_one": "{{count}} signal en collision",
+    "signalsCount_other": "{{count}} signaux en collision",
+    "kind": {
+      "financial": "Impayé",
+      "mission": "Renouvellement non engagé",
+      "contractual": "Exigence d’AO non couverte"
+    }
+  },
+  "discoverAlerts": {
+    "title": "Alertes de Découvrir",
+    "emptySince": "Aucun déclenchement depuis le {{date}}.",
+    "emptyNever": "Aucun déclenchement depuis qu’on surveille.",
+    "source": {
+      "public_information": "Information publique",
+      "refreshed_analysis": "Analyse actualisée",
+      "workspace_declaration": "Déclaré dans ton espace"
+    },
+    "kind": {
+      "new_signal": "Nouveau signal",
+      "new_matching_company": "Nouvelle entreprise",
+      "new_confirmed_need": "Besoin confirmé",
+      "new_relationship": "Nouvelle relation",
+      "analysis_refreshed": "Analyse actualisée",
+      "mission_ended": "Fin de mission",
+      "new_access_path": "Nouvelle voie d’accès"
+    },
+    "on": "{{kind}} · {{source}} · le {{date}}",
+    "undated": "{{kind}} · {{source}} · date inconnue"
+  },
+  "state": {
+    "notConnected": "Non connecté",
+    "missingScope": "Autorisation à renouveler",
+    "unavailable": "Indisponible",
+    "partial": "Liste incomplète",
+    "agendaNotConnected": "Aucun agenda connecté. Connecte-le pour voir tes rendez-vous et tes créneaux libres ici.",
+    "agendaMissingScope": "Ton agenda est connecté mais ne nous autorise pas la lecture. Reconnecte-le pour activer cette partie.",
+    "agendaUnavailable": "Ton agenda n'a pas répondu. Rien n'est perdu : réessaie dans un moment.",
+    "agendaPartial": "Un de tes agendas n'a pas répondu : il peut manquer des rendez-vous ici.",
+    "agendaProviderDisabled": "L'accès à ton agenda est éteint côté fournisseur : l'API Agenda n'est pas activée pour le compte connecté. Tant qu'elle ne l'est pas, tes rendez-vous ne remonteront pas.",
+    "mailboxPartial": "Une de tes boîtes n'a pas répondu : il peut manquer des messages ici.",
+    "mailboxProviderDisabled": "L'accès à ta messagerie est éteint côté fournisseur : l'API n'est pas activée pour le compte connecté.",
+    "mailboxNotConnected": "Aucune messagerie connectée. Connecte-la pour voir tes relances et tes non-lus ici.",
+    "mailboxMissingScope": "Ta messagerie est connectée mais ne nous autorise pas la lecture. Reconnecte-la pour activer cette partie.",
+    "mailboxUnavailable": "Ta messagerie n'a pas répondu. Rien n'est perdu : réessaie dans un moment.",
+    "connectAgenda": "Connecter mon agenda",
+    "connectMailbox": "Connecter ma messagerie",
+    "reconnect": "Reconnecter",
+    "check": "Vérifier l'accès",
+    "tasksUnavailable": "Tes tâches n’ont pas pu être lues. Elles sont toujours là — c’est la lecture qui a échoué."
+  },
+  "error": {
+    "title": "Le brief n'a pas pu être chargé",
+    "retry": "Réessayer"
+  },
+  "tasks": {
+    "title": "Tes tâches",
+    "overdue_one": "{{count}} en retard",
+    "overdue_other": "{{count}} en retard",
+    "today_one": "{{count}} pour aujourd’hui",
+    "today_other": "{{count}} pour aujourd’hui",
+    "empty": "Aucune tâche ouverte.",
+    "add": "Ajouter une tâche",
+    "buckets": {
+      "overdue": "En retard",
+      "today": "Aujourd’hui",
+      "tomorrow": "Demain",
+      "this_week": "Cette semaine",
+      "later": "Plus tard"
+    },
+    "showList": "Voir mes tâches"
+  },
+  "source": {
+    "capability": {
+      "agenda": "ton agenda",
+      "mailbox": "ta messagerie",
+      "signals": "les signaux de tes comptes",
+      "tasks": "tes tâches",
+      "needs": "tes besoins ouverts",
+      "missions": "tes missions",
+      "invoices": "ta facturation",
+      "rfps": "tes appels d'offres"
+    }
+  },
+  "activity": {
+    "title": "Mon activité",
+    "loading": "Lecture en cours…",
+    "unmeasured": "Non mesuré",
+    "more": "Tout le détail dans les Décisions",
+    "partial": "{{served}} blocs sur {{expected}}.",
+    "failed": {
+      "pipe": "Le pipe n’a pas répondu.",
+      "revenue": "Le chiffre d’affaires n’a pas répondu.",
+      "missions": "Le calcul de marge n’a pas répondu.",
+      "capacity": "Le calcul de capacité n’a pas répondu.",
+      "sinceLastVisit": "Le journal n’a pas répondu."
+    },
+    "blank": "Aucun compte suivi. Lance une recherche ou importe ta base.",
+    "blankSearch": "Lancer une recherche",
+    "blankImport": "Importer ma base",
+    "pipe": {
+      "title": "Mon pipe",
+      "withoutAmount_one": "et {{count}} affaire sans montant — jamais comptée zéro.",
+      "withoutAmount_other": "et {{count}} affaires sans montant — jamais comptées zéro.",
+      "stageWithoutAmount_one": "{{count}} sans montant",
+      "stageWithoutAmount_other": "{{count}} sans montant",
+      "intake_one": "{{count}} projet détecté que personne n’a encore repris.",
+      "intake_other": "{{count}} projets détectés que personne n’a encore repris."
+    },
+    "revenue": {
+      "title": "Mon chiffre d’affaires",
+      "titleMonth": "Mon chiffre d’affaires — {{month}}",
+      "signed": "Signé",
+      "produced": "Produit",
+      "invoiced": "Facturé",
+      "collected": "Encaissé",
+      "floor_one": "{{count}} ligne sans montant — le total est un plancher.",
+      "floor_other": "{{count}} lignes sans montant — le total est un plancher.",
+      "reasons": {
+        "no_source": "Aucune source pour ce chiffre — rien n’a encore été enregistré. Ce n’est pas « zéro euro ».",
+        "no_amount": "Des lignes existent, aucune ne porte de montant. Le chiffre reste inconnu.",
+        "unavailable": "Lecture impossible. Rien n’est affiché plutôt qu’un chiffre à zéro."
+      }
+    },
+    "missions": {
+      "title": "Mes missions en cours",
+      "empty": "Aucune mission en cours. Une mission naît d’un projet gagné.",
+      "emptyAction": "Ouvrir mon pipe",
+      "unknownAccount": "Client hors de ton périmètre",
+      "assigneesUnknown": "Consultant non lu — la lecture des affectations a échoué.",
+      "noAssignee": "Personne n’est affecté",
+      "noStartDate": "début inconnu",
+      "noEndDate": "date de fin inconnue",
+      "daysLeft_one": "{{count}} jour restant",
+      "daysLeft_other": "{{count}} jours restants",
+      "overdue_one": "échéance dépassée depuis {{count}} jour",
+      "overdue_other": "échéance dépassée depuis {{count}} jours",
+      "margin": "{{percent}} % de marge",
+      "marginNotMeasured": "non mesurable — coût chargé non saisi",
+      "marginForbidden": "marge hors de ton périmètre",
+      "nextAction": "Prochaine action — {{title}} (pour le {{due}})",
+      "noNextAction": "Aucune prochaine action — en poser une",
+      "more_one": "et {{count}} autre mission",
+      "more_other": "et {{count}} autres missions",
+      "openAll": "Voir toutes mes missions"
+    },
+    "capacity": {
+      "title": "Ce qu’il reste à vendre — {{count}} mois",
+      "days_one": "{{count}} jour à vendre",
+      "days_other": "{{count}} jours à vendre",
+      "scope": "Sur les consultants de l’espace, affectations en cours déduites.",
+      "unmeasured_one": "{{count}} mois sur trois n’a rien pu rendre. Une somme partielle aurait l’air d’un total.",
+      "unmeasured_other": "{{count}} mois sur trois n’ont rien pu rendre. Une somme partielle aurait l’air d’un total."
+    },
+    "openDashboard": "Voir mon tableau de bord",
+    "openPipe": "Voir mon pipe",
+    "openMissions": "Voir mes missions"
+  },
+  "sources": {
+    "title": "Sources utilisées aujourd’hui",
+    "manage": "Gérer les connexions",
+    "manageNone": "Connecter mes outils",
+    "connected": "connecté",
+    "partial": "accès incomplet",
+    "missingScope": "accès à renouveler",
+    "unavailable": "lecture en échec",
+    "notConnected": "non connecté",
+    "complete": "Brief complet",
+    "incomplete": "Brief incomplet",
+    "drawer": {
+      "errorLabel": "Erreur technique",
+      "freshnessLabel": "Dernière lecture"
+    }
+  },
+  "laura": {
+    "prioritize": "Demander à {{copilot}} de prioriser ma journée",
+    "prioritizePrompt": "Regarde ma journée : mes priorités, mon agenda, ma messagerie, mes tâches et ce qui a changé depuis hier. Par quoi je commence, et pourquoi ?"
+  },
+  "meetingPrep": {
+    "description": "Ce qu’il faut avoir en tête avant ce rendez-vous, tiré de ton espace."
+  },
+  "surfaceState": {
+    "notConnected": {
+      "title": "Je peux déjà t’aider sans tes outils.",
+      "reason": "Aucun agenda et aucune messagerie ne sont branchés sur cet espace.",
+      "stillPossible": "Je travaille avec ton audit commercial, tes comptes et ce que tu importes.",
+      "unlocks": "Branche-les et j’ajoute tes rendez-vous, les réponses qui t’attendent et tes relances."
+    },
+    "connectedNotSynced": {
+      "title": "Ton outil est connecté, mais je ne l’ai pas encore lu.",
+      "reason": "La première lecture n’a pas eu lieu : rien n’est parti tout seul à la connexion.",
+      "stillPossible": "Tu peux continuer sur tes comptes et ton audit pendant ce temps.",
+      "unlocks": "Une première lecture et ta journée se remplit avec tes vrais rendez-vous et tes vrais échanges."
+    },
+    "syncing": {
+      "title": "Je suis en train de lire tes sources.",
+      "reason": "La lecture est en cours : ce qui manque ici n’est pas absent, il n’est pas encore arrivé.",
+      "stillPossible": "Tu peux quitter cet écran, la lecture continue sans toi.",
+      "unlocks": "À la fin, je te dis ce que j’ai retrouvé et ce que je n’ai pas compris."
+    },
+    "readyEmpty": {
+      "title": "J’ai regardé, et il n’y a rien pour aujourd’hui.",
+      "reason": "Tes sources ont répondu : c’est un fait, pas une panne de lecture.",
+      "stillPossible": "C’est le moment d’aller chercher : un compte à analyser, un message à préparer.",
+      "unlocks": "Dès qu’un rendez-vous, une réponse ou un signal arrive, il apparaît ici."
+    },
+    "partial": {
+      "title": "Il me manque une source : cette liste est incomplète.",
+      "reason": "Une de tes sources n’a pas répondu. Ce que tu vois est vrai, ce n’est pas tout.",
+      "stillPossible": "Tu peux travailler ce que j’ai déjà, rien n’est perdu.",
+      "unlocks": "La source qui manque peut porter exactement ce qui remplirait ta journée."
+    },
+    "missingScope": {
+      "title": "Ton outil est branché, mais il ne m’autorise pas à lire.",
+      "reason": "L’autorisation accordée ne couvre pas la lecture dont j’ai besoin.",
+      "stillPossible": "Tu peux travailler à partir d’un import en attendant.",
+      "unlocks": "Une autorisation renouvelée et cette partie de ta journée s’active."
+    },
+    "permissionDenied": {
+      "title": "Cet accès ne t’est pas ouvert dans cet espace.",
+      "reason": "C’est un droit, pas une panne : quelqu’un administre cet accès et il ne t’a pas été donné.",
+      "stillPossible": "Tout ce qui ne dépend pas de cet accès reste à toi.",
+      "unlocks": "L’accès ouvert, cette partie apparaît sans rien d’autre à faire."
+    },
+    "stale": {
+      "title": "Ce que je te montre ici date.",
+      "reason": "La dernière lecture est ancienne : ces lignes peuvent être fausses aujourd’hui.",
+      "stillPossible": "Tu peux les lire en sachant de quand elles sont — la date est écrite.",
+      "unlocks": "Une nouvelle lecture et tu retrouves l’état réel de ta journée."
+    },
+    "unavailable": {
+      "title": "Ta source n’a pas répondu.",
+      "reason": "La lecture a échoué maintenant. Rien n’est perdu de ce qui était déjà là.",
+      "stillPossible": "Le reste de ta journée est intact, et tu peux réessayer.",
+      "unlocks": "Dès que la source répond, cette partie revient telle quelle."
+    },
+    "error": {
+      "title": "Quelque chose a cassé de mon côté.",
+      "reason": "Ce n’est pas un vide : je n’ai pas pu faire ce que j’avais à faire.",
+      "stillPossible": "Ce qui était déjà calculé reste affiché, et daté.",
+      "unlocks": "Une fois la panne passée, rien n’est à refaire de ton côté."
+    },
+    "gesture": {
+      "connect": "Connecter mes outils",
+      "reconnect": "Renouveler l’autorisation",
+      "sync": "Lancer la première synchronisation",
+      "retry": "Réessayer",
+      "requestAccess": "Demander l’accès",
+      "audit": "Mettre à jour mon audit",
+      "analyseAccount": "Analyser un premier compte",
+      "import": "Importer un fichier",
+      "discover": "Ouvrir Découvrir",
+      "prepareMessage": "Préparer un message depuis un compte"
+    }
+  },
+  "hero": {
+    "summary": {
+      "meetings_one": "{{count}} rendez-vous",
+      "meetings_other": "{{count}} rendez-vous",
+      "replies_one": "{{count}} réponse à traiter",
+      "replies_other": "{{count}} réponses à traiter",
+      "followUps_one": "{{count}} relance",
+      "followUps_other": "{{count}} relances",
+      "overdueTasks_one": "{{count}} tâche en retard",
+      "overdueTasks_other": "{{count}} tâches en retard",
+      "blockers_one": "{{count}} blocage",
+      "blockers_other": "{{count}} blocages"
+    },
+    "notEnoughContext": "Je peux encore mieux t’aider : branche tes outils ou analyse un compte, et je te dirai par quoi commencer."
+  },
+  "card": {
+    "aria": "{{tier}} · {{headline}}",
+    "lastOutcome": "Dernier résultat déclaré : {{outcome}}",
+    "qualification": {
+      "verdict": "Grille de qualification : {{verdict}}"
+    },
+    "axes": {
+      "weighed": "Passe devant sur : {{list}}",
+      "dominatesPriority": "Passe devant : une échéance ou un engagement plus pressant.",
+      "dominatesConfidence": "Passe devant : un fait mieux confirmé.",
+      "notEvaluable": "Non évaluable : {{list}}",
+      "notEvaluableCount_one": "{{count}} axe non évaluable",
+      "notEvaluableCount_other": "{{count}} axes non évaluables",
+      "name": {
+        "consequence": "conséquence",
+        "urgency": "urgence",
+        "actionableNow": "faisable maintenant",
+        "roleFit": "ton rôle et tes objectifs",
+        "dataConfidence": "confiance de la donnée",
+        "effort": "effort",
+        "commitment": "engagement pris",
+        "dependency": "dépendance",
+        "opportunity": "opportunité"
+      }
+    },
+    "roleFit": {
+      "mark": "Prioritaire pour moi",
+      "marked": "Prioritaire pour moi",
+      "markAria": "Marquer ce type de carte comme prioritaire pour mon rôle",
+      "markedAria": "Retirer ce type de carte de tes priorités"
+    },
+    "transform": {
+      "cta": "Transformer en tâche",
+      "done": "Déjà transformée en tâche"
+    },
+    "confidence": {
+      "verified": "Fait vérifié",
+      "reported": "Fait rapporté",
+      "inferred": "Déduit — à confirmer"
+    },
+    "explain": {
+      "label": "Pourquoi ?",
+      "question": "Pourquoi la carte « {{headline}} » est-elle dans mon brief aujourd'hui ?"
+    },
+    "estimatedTime_one": "{{count}} min",
+    "estimatedTime_other": "{{count}} min",
+    "disposition": {
+      "postpone": "Reporter",
+      "dismiss": "Pas pertinent",
+      "done": "Déjà traité",
+      "postponeLegend": "Reporter à quand ?",
+      "postponeOptions": {
+        "this_afternoon": "Cet après-midi",
+        "tomorrow": "Demain",
+        "this_week": "Cette semaine",
+        "custom": "Date personnalisée"
+      },
+      "customDateLabel": "Choisir la date",
+      "customConfirm": "Reporter à cette date",
+      "reasonsLegend": "Pourquoi n’est-ce pas pertinent ?",
+      "reasons": {
+        "wrong_priority": "Mauvaise priorité",
+        "already_handled": "Déjà fait",
+        "wrong_data": "Donnée fausse",
+        "not_now": "Pas maintenant",
+        "out_of_scope": "Hors périmètre",
+        "other": "Autre"
+      },
+      "wrongDataHint": "Une donnée fausse se corrige sur sa fiche :",
+      "error": "Le geste n’a pas été enregistré. Réessaie."
+    }
+  },
+  "tiles": {
+    "label": "Ce qui attend aujourd’hui",
+    "queue": {
+      "label": "À faire maintenant",
+      "hint": "Rangé du plus urgent au moins urgent"
+    },
+    "drafts": {
+      "label": "Brouillons à relire",
+      "hint": "Préparés par {{copilot}} · rien ne part sans toi"
+    },
+    "missions": {
+      "label": "Missions à anticiper",
+      "hint": "Fins de mission et missions sans date de fin"
+    },
+    "replies": {
+      "label": "Réponses à traiter",
+      "hint": "Messagerie · depuis hier soir"
+    },
+    "signals": {
+      "label": "Nouveaux signaux",
+      "hint": "Alertes de Découvrir depuis ta dernière visite"
+    }
+  },
+  "scope": {
+    "label": "Pour qui est cette journée",
+    "me": "Moi",
+    "team": "Équipe"
+  },
+  "today": {
+    "updated": "Brief actualisé à {{time}} · {{day}}",
+    "menu": {
+      "label": "Plus d’actions sur le brief"
+    },
+    "start": {
+      "kicker": "Commencer ici",
+      "kickerWithName": "Commencer ici · {{name}}",
+      "nothing": "Rien d’urgent ne t’attend pour l’instant",
+      "advance": "Faire avancer cette action",
+      "seeAccount": "Voir le compte"
+    },
+    "plan": {
+      "title": "Le plan de {{name}}",
+      "allTasks": "Toutes tes tâches"
+    },
+    "decisions": {
+      "note": "Ce qui attend ton arbitrage, rangé par nature.",
+      "label": "Nature des décisions",
+      "arbitrations_one": "Arbitrage · {{count}}",
+      "arbitrations_other": "Arbitrages · {{count}}",
+      "gestures": "Gestes de suivi"
+    },
+    "agendaCard": {
+      "title": "Les rendez-vous du jour",
+      "open": "Ouvrir le rendez-vous",
+      "seeAgenda": "Agenda"
+    },
+    "agendaView": {
+      "conflicts_one": "{{count}} conflit",
+      "conflicts_other": "{{count}} conflits",
+      "toPrepare_one": "{{count}} à préparer",
+      "toPrepare_other": "{{count}} à préparer"
+    },
+    "teamReturn": {
+      "note": "Espace collectif · les filtres ne changent pas le rôle connecté.",
+      "dayOf": "Journée de {{name}}",
+      "myDay": "Revenir à Ma journée"
+    }
+  },
+  "day": {
+    "title": "Ta journée",
+    "tiles": {
+      "pipe": {
+        "label": "Affaires en cours",
+        "detail_one": "{{count}} affaire à toi",
+        "detail_other": "{{count}} affaires à toi",
+        "withoutAmount_one": "dont {{count}} sans montant",
+        "withoutAmount_other": "dont {{count}} sans montant",
+        "unmeasured": "Aucun montant saisi sur tes {{count}} affaires",
+        "none": "Aucune affaire en cours"
+      }
+    },
+    "startHere": {
+      "why": "Pourquoi celle-ci ?",
+      "whyTitle": "Pourquoi celle-ci passe en premier",
+      "close": "Fermer"
+    },
+    "profiles": {
+      "title": "Les profils suivis",
+      "availability": "Disponibilité déclarée : {{date}}",
+      "all": "Tout le vivier"
+    },
+    "deals": {
+      "title": "Les affaires à faire avancer",
+      "withoutAmount": "montant non saisi",
+      "all": "Toutes mes affaires",
+      "owner": "responsable {{name}}",
+      "noNextAction": "aucune prochaine action"
+    }
+  },
+  "verdict": {
+    "meetingPrep": "Arrive avec le contexte du compte et une question précise.",
+    "followUp": "La balle est dans ton camp : c'est à toi de relancer.",
+    "reply": "Un oui attend ta réponse : il passe avant les relances.",
+    "account": "Un mouvement chez ce client ouvre peut-être une porte : vérifie s'il te concerne.",
+    "missionEnd": "La suite de cette mission se décide avant sa fin, pas après.",
+    "conflict": "Un des deux rendez-vous doit bouger.",
+    "task": "Une tâche promise se tient ou se replanifie.",
+    "needStale": "Ce besoin attend une shortlist pour avancer.",
+    "paymentOverdue": "Ce paiement est en retard : une relance de facturation s'impose.",
+    "rfpDue": "L'échéance est fixée par l'acheteur : elle ne bougera pas.",
+    "consultantAvailable": "Ce consultant se libère : sa prochaine mission se cherche avant son dernier jour.",
+    "availabilityReconfirm": "Une disponibilité non reconfirmée n'est plus une information sûre.",
+    "missionNoEndDate": "Sans date de fin, ni renouvellement ni intercontrat ne s'anticipent.",
+    "connectorBroken": "Reconnecte l'outil : ce qui en dépend ne tourne pas.",
+    "renewalNotEngaged": "La fenêtre de renouvellement est ouverte et la conversation n'a pas commencé.",
+    "submissionNoResponse": "Ce profil attend un retour du client : relance-le.",
+    "rfpRequirementGap": "Une exigence obligatoire n'est pas couverte dans la réponse.",
+    "accountNoOwner": "Personne ne porte ce compte : désigne quelqu'un.",
+    "projectNoNextAction": "Cette affaire n'a plus de prochaine étape prévue.",
+    "projectStale": "Cette affaire n'a pas changé d'étape depuis longtemps.",
+    "craMissing": "Pas de relevé, pas de facture : le CRA passe d'abord.",
+    "invoiceReady": "Tout est prêt : la facture du mois peut être préparée.",
+    "invoicingBlockedMissingData": "Une seule donnée manque pour facturer : complète-la.",
+    "contactBounced": "Cette adresse ne fonctionne plus : trouve la bonne avant le prochain envoi.",
+    "meetingNoFollowup": "Écris la suite du rendez-vous tant qu'elle est fraîche.",
+    "invoiceBlocked": "La facture du mois est bloquée par le point nommé.",
+    "criticalDataMissing": "Une donnée critique manque, et la suite en dépend.",
+    "missionStarting": "Le démarrage se prépare avant le premier jour : accès, matériel, lancement.",
+    "missionAmendmentPending": "L'avenant n'engage personne tant qu'il n'est pas signé.",
+    "contactLeft": "Ton interlocuteur est parti : identifie qui reprend le sujet."
+  },
+  "consequence": {
+    "missionEnd": "Sans suite signée, le consultant passe en intercontrat à la fin de la mission.",
+    "paymentOverdue": "Tant qu'il n'est pas réglé, ce montant manque à la trésorerie.",
+    "rfpDue": "Passée l'échéance, la réponse n'est plus recevable.",
+    "connectorBroken": "Les automatisations qui dépendent de cet outil restent à l'arrêt.",
+    "renewalNotEngaged": "Sans conversation engagée, la mission s'arrête à sa date de fin.",
+    "rfpRequirementGap": "Une exigence obligatoire sans réponse peut rendre l'offre non conforme.",
+    "craMissing": "Sans relevé, la facture du mois ne peut pas être préparée.",
+    "invoiceReady": "Tant qu'elle n'est pas préparée, le mois reste non facturé.",
+    "invoicingBlockedMissingData": "Tant que la donnée manque, la facture du mois ne peut pas partir.",
+    "contactBounced": "Les messages envoyés à cette adresse n'arrivent pas.",
+    "invoiceBlocked": "Tant que le blocage tient, la facture du mois ne peut pas partir.",
+    "criticalDataMissing": "Tant que la donnée manque, le geste qui en dépend reste impossible.",
+    "missionAmendmentPending": "Tant qu'il n'est pas signé, les conditions de l'avenant ne s'appliquent pas.",
+    "contactLeft": "Les messages qui lui sont adressés chez ce client ne trouvent plus personne."
+  },
+  "arrival": {
+    "title": "Par où commencer",
+    "analyze": {
+      "label": "Analyser un compte",
+      "hint": "Je tape un nom, j’obtiens le dossier de conquête."
+    },
+    "discover": {
+      "label": "Trouver des comptes",
+      "hint": "Je cherche des comptes qui correspondent à mon offre."
+    },
+    "laura": {
+      "label": "Parler à {{copilot}}",
+      "hint": "Je décris mon besoin, {{copilot}} propose la suite."
+    }
+  }
+}

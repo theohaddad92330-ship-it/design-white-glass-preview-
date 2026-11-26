@@ -1,0 +1,262 @@
+{
+  "pageTitle": "Partners",
+  "tabs": {
+    "mine": "My partners",
+    "discover": "To discover",
+    "onAccounts": "On my accounts"
+  },
+  "roles": {
+    "concurrent": "Competitor",
+    "client": "Client",
+    "fournisseur": "Supplier"
+  },
+  "stages": {
+    "identifie": "Identified",
+    "qualifie": "Qualified",
+    "contacte": "Contacted",
+    "en_discussion": "In discussion",
+    "cadre_signe": "Agreement signed",
+    "flux_actif": "Active flow",
+    "dormant": "Dormant",
+    "retire": "Withdrawn"
+  },
+  "axes": {
+    "volume": "Volume",
+    "fiabilite": "Reliability",
+    "marge": "Margin",
+    "acces": "Access",
+    "reciprocite": "Reciprocity"
+  },
+  "axesShow": "Show the axes",
+  "axesHide": "Hide the axes",
+  "axisPoints": "{{points}} / {{max}}",
+  "scale": "Out of {{max}} points actually measurable — axes that cannot be evaluated stay out of the maths.",
+  "availability": {
+    "absent": "Not measured",
+    "notCollected": "Nobody collects it"
+  },
+  "clause": {
+    "label": "Non-solicitation clause in the framework agreement",
+    "unknown": "Not declared",
+    "no": "No clause",
+    "yes": "Yes, there is one"
+  },
+  "governance": {
+    "status": {
+      "observed": "Observed",
+      "to_qualify": "To qualify",
+      "qualified": "Qualified",
+      "rules_missing": "Rules missing",
+      "active": "Active",
+      "paused": "Paused",
+      "blocked": "Blocked",
+      "historical": "Historical"
+    },
+    "framedCount": "{{framed}}/{{total}} framework points set",
+    "nextValidation": "Next validation: {{dimension}}",
+    "missingShow": "See what's missing ({{count}})",
+    "missingHide": "Hide what's missing",
+    "dimension": {
+      "entry_door": "Entry door held",
+      "accounts_accessible": "Accessible accounts",
+      "accounts_forbidden": "Forbidden accounts",
+      "profiles_sought": "Profiles sought",
+      "domains_covered": "Domains covered",
+      "margin_floor": "Margin floor",
+      "margin_share": "Margin share",
+      "account_ownership": "Account ownership",
+      "action_ownership": "Action ownership",
+      "non_circumvention": "Non-circumvention",
+      "presentation_terms": "Presentation terms",
+      "payment_terms": "Payment",
+      "delays": "Delays",
+      "counterpart_contacts": "Counterpart on each side",
+      "duration": "Duration",
+      "exit_conditions": "Exit conditions",
+      "referencing_proof": "Referencing proof",
+      "confidentiality": "Confidentiality"
+    },
+    "edit": {
+      "open": "Edit framework",
+      "title": "Partner framework — {{name}}",
+      "description": "What isn't framed yet stays empty rather than guessed. Leaving a field empty clears it.",
+      "save": "Save",
+      "cancel": "Cancel",
+      "notSet": "Not framed",
+      "listPlaceholder": "Comma-separated",
+      "ourContactName": "Our contact — name",
+      "ourContactNamePlaceholder": "Name",
+      "ourContactEmail": "Our contact — email",
+      "ourContactEmailPlaceholder": "Email",
+      "ownership": {
+        "ours": "Us",
+        "partner": "The partner",
+        "shared": "Shared"
+      },
+      "confidentiality": {
+        "public": "Public",
+        "restricted": "Restricted",
+        "confidential": "Confidential"
+      }
+    }
+  },
+  "recommendation": {
+    "renforcer": "Worth strengthening — the flow is there and it holds.",
+    "maintenir": "Keep as is.",
+    "reduire": "Worth reducing — what it brings does not cover what it costs.",
+    "viser_rang_1": "You can aim for tier 1 on their accounts: broad access, thin margin, proof in hand."
+  },
+  "mine": {
+    "empty": "No partner recorded yet. A partner is a firm you hand needs to — or that hands needs to you.",
+    "flow": "{{received}} need(s) received · {{given}} handed back, over 90 days",
+    "add": "Add a partner",
+    "form": {
+      "name": "Partner name",
+      "namePlaceholder": "e.g. Klanik",
+      "role": "Role",
+      "roleNone": "Not decided yet",
+      "stage": "Stage",
+      "submit": "Save",
+      "cancel": "Cancel",
+      "error": "This partner could not be saved. Nothing was created."
+    },
+    "contactLabel": "Contact: {{name}}",
+    "scoreWindow": "Computed over your last twelve months — needs received, needs given back and missions completed.",
+    "scoreInternalOnly": "Only from what your workspace has actually lived with this partner. No public data goes into this score.",
+    "analyse": "Analyse this ESN",
+    "analyseAria": "Analyse {{name}} — run its commercial analysis",
+    "loading": "Reading your partners…",
+    "error": "Could not read your partners right now.",
+    "emptyTitle": "No partner yet"
+  },
+  "discover": {
+    "loading": "Looking for firms in your area…",
+    "sourceZones": "From your profile: {{zones}}",
+    "empty": "No firm from the directory is registered in this area yet.",
+    "noGeoSignal": {
+      "unset": "Your profile does not specify a geographic area yet. Fill it in under Settings › Profile to see the firms in your area here.",
+      "unmappable": "The areas set on your profile ({{zones}}) do not point to a precise territory. Run a more precise search below."
+    },
+    "match": {
+      "location": "{{city}} ({{department}})",
+      "locationDepartmentOnly": "Department {{department}}",
+      "subcontracting": {
+        "oui": "open to subcontracting",
+        "non": "not open to subcontracting",
+        "inconnu": "unknown stance"
+      },
+      "analyse": "Analyse this ESN",
+      "analyseAria": "Analyse {{name}} — run its commercial analysis"
+    },
+    "refresh": "Refresh",
+    "preciseSearchLead": "For a more precise search (a department, a region, a city, a hiring window):",
+    "link": "Search in Discover",
+    "columns": {
+      "esn": "ESN",
+      "location": "Where",
+      "subcontracting": "Subcontracting",
+      "analyse": "Analysis"
+    }
+  },
+  "onAccounts": {
+    "empty": "No firm detected on your accounts yet.",
+    "accounts": "{{count}} account",
+    "accounts_other": "{{count}} accounts",
+    "rank1": "tier 1 on {{count}}",
+    "certainty": {
+      "forte": "strong evidence",
+      "moyenne": "probable evidence",
+      "faible": "to be checked"
+    },
+    "hint": "Each line reads twice: an incumbent competitor, and a door to come in as a tier-2 supplier.",
+    "summary": "{{esn}} ESNs in place, across {{accounts}} of your accounts · {{rank1}} at rank 1",
+    "analyse": "Analyse this ESN",
+    "analyseAria": "Analyse {{name}} — run its commercial analysis",
+    "openDetailAria": "View {{name}}’s detail",
+    "dialogDescription": "Detail of this firm across all your accounts: how many it is in place on, at rank 1, and how confident the detection is.",
+    "previousEsn": "Previous firm",
+    "nextEsn": "Next firm",
+    "accountsListTitle": "Accounts where it is in place",
+    "externalWorkforceObserved": "Observed on the market on {{count}} account",
+    "externalWorkforceObserved_other": "Observed on the market on {{count}} accounts",
+    "observationUnresolved": "{{count}} account not measurable from market observations",
+    "observationUnresolved_other": "{{count}} accounts not measurable from market observations",
+    "rank2Observed": "Seen at tier 2 {{count}} time — last on {{date}}",
+    "rank2Observed_other": "Seen at tier 2 {{count}} times — last on {{date}}",
+    "columns": {
+      "esn": "ESN",
+      "accounts": "Accounts",
+      "rank1": "Rank 1",
+      "certainty": "Certainty"
+    }
+  },
+  "page": {
+    "introTitle": "Your partners, {{firstName}}",
+    "introTitleWithoutName": "Your partners",
+    "introSubtitle": "Find the ESNs you already exchange with, those to activate, those to watch, and those that can help you open or deliver at your clients.",
+    "askLauraLabel": "Ask {{copilot}} to analyse this relationship",
+    "askLauraQuestion": "Analyse my relationship with this partner: what the score says, the risks, the opportunities, and whether to activate, maintain or pause it."
+  },
+  "stageCurrent": "Stage: {{stage}}",
+  "stageChange": "Change stage",
+  "stageChangeHide": "Close",
+  "axisBarLabel": "{{axis}}: {{points}} out of {{max}}",
+  "band": {
+    "title": "Where your relationships stand",
+    "total": "{{count}} partner recorded",
+    "total_other": "{{count}} partners recorded",
+    "filtered": "Filtered on “{{stage}}”. Click the chip again to see them all.",
+    "emptyFiltered": "No partner left at this stage. Click the chip again to see them all."
+  },
+  "flow": {
+    "uncounted": "Nobody counts the exchanges with this partner yet: not the needs received, not the ones you hand over, not the missions run together. These counters exist in the database but nothing feeds them today — showing “0” here would suggest you have done nothing together.",
+    "state": {
+      "active": "Active flow",
+      "dormant": "Dormant",
+      "uncounted": "Not measured"
+    },
+    "reciprocityValue": "{{percent}}% of the flow comes from them",
+    "reciprocityBar": "Reciprocity: {{percent}}% of the needs exchanged come from this partner",
+    "needsReceived": "{{count}} need received over 90 days",
+    "needsReceived_other": "{{count}} needs received over 90 days",
+    "needsGiven": "{{count}} handed back",
+    "needsGiven_other": "{{count}} handed back",
+    "missionsCompleted": "{{count}} mission completed together",
+    "missionsCompleted_other": "{{count}} missions completed together",
+    "missionsActive": "{{count}} mission running",
+    "missionsActive_other": "{{count}} missions running"
+  },
+  "subtitle": {
+    "mine": "The relationships you already maintain: where each stands, what circulates, and what to launch next.",
+    "discover": "The ESNs that match your profile, computed from your geographic area — with a territory search if you need one.",
+    "onAccounts": "ESNs already in place at your clients. Each line reads twice: an installed competitor, and a door into rank 2."
+  },
+  "cvPush": {
+    "toggle": "CVs proposed to this partner",
+    "pickConsultant": "Consultant",
+    "pickConsultantPlaceholder": "Choose a consultant",
+    "prepare": "Prepare the review",
+    "empty": "No CV proposed to this partner yet.",
+    "unknownConsultant": "Removed consultant",
+    "tjm": "Day rate €{{tjm}}",
+    "margin": "Negotiated share: {{percent}}%",
+    "declareSent": "Declare sent",
+    "status": {
+      "preparee": "Prepared",
+      "envoyee_declaree": "Sent (declared)"
+    },
+    "outcome": {
+      "en_attente": "Awaiting reply",
+      "retenu": "Retained",
+      "refuse": "Declined"
+    },
+    "seniority": {
+      "inconnu": "Seniority not declared",
+      "junior": "Junior",
+      "confirme": "Mid-level",
+      "senior": "Senior",
+      "expert": "Expert"
+    }
+  },
+  "tabsLabel": "Partner views"
+}

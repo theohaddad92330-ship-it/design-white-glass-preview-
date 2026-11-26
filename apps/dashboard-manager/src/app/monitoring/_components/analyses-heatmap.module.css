@@ -1,0 +1,113 @@
+/* #1650 — la grille des analyses lancées.
+   Aucune couleur n'est écrite ici : tout passe par les tokens de `globals.css`,
+   sans quoi rien ne suivrait le thème. Les CINQ INTENSITÉS ne sont pas
+   redéfinies non plus — elles viennent de `src/ui/Heatmap.module.css` (#1642),
+   qui les tient en OPACITÉS de `--accent` pour que les deux thèmes restent à
+   parité. Ce fichier ne porte que la mise en page et l'état de focus. */
+
+/* Ce qui déborde défile dans SON conteneur, jamais le corps de la page. */
+.defilant {
+  overflow-x: auto;
+  padding-bottom: 4px;
+}
+
+.grille {
+  display: grid;
+  gap: 2px;
+  align-items: center;
+  /* Douze colonnes de tranches ne descendent pas indéfiniment : sous cette
+     largeur la grille défile dans `.defilant` au lieu d'écraser les cases. */
+  min-width: 560px;
+}
+
+.enteteHeure {
+  font-size: 11px;
+  color: var(--muted);
+  text-align: center;
+  line-height: 1.2;
+}
+
+.enteteJour {
+  font-size: 11px;
+  color: var(--muted);
+  white-space: nowrap;
+  padding-right: 8px;
+  text-align: right;
+}
+
+/* Ce qui se clique se tabule : un vrai <button>, pas un <div onClick>. Il est
+   transparent — c'est son enfant qui porte la peinture, pour que l'opacité des
+   paliers ne délave pas l'anneau de focus. */
+.cellule {
+  display: block;
+  width: 100%;
+  padding: 0;
+  border: 0;
+  background: none;
+  cursor: pointer;
+  border-radius: 3px;
+}
+
+.cellule:focus-visible {
+  outline: 2px solid var(--accent);
+  outline-offset: 2px;
+}
+
+.cellule[aria-current='true'] {
+  outline: 1px solid var(--accent);
+  outline-offset: 1px;
+}
+
+.peinture {
+  display: block;
+  width: 100%;
+}
+
+/* Le détail : le nombre exact ET les espaces concernés. Il vit à l'écran, dans
+   une région annoncée — pas dans un attribut `title`, qui n'existe ni pour le
+   clavier, ni pour un lecteur d'écran, ni sur une tablette. */
+.detail {
+  margin-top: 12px;
+  padding: 10px 12px;
+  border: 1px solid var(--border);
+  border-radius: 6px;
+  font-size: 13px;
+  min-height: 62px;
+}
+
+.detailVide {
+  color: var(--muted);
+}
+
+.detailTitre {
+  font-weight: 700;
+}
+
+.espaces {
+  margin: 6px 0 0;
+  padding: 0;
+  list-style: none;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 6px;
+  max-height: 96px;
+  overflow-y: auto;
+}
+
+.legende {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  font-size: 12px;
+  color: var(--muted);
+  margin-top: 10px;
+  flex-wrap: wrap;
+}
+
+/* L'échantillon de légende NE redéfinit pas la couleur : il porte la même
+   classe `.cell` que les cases, avec son `data-intensity`, donc les cinq
+   paliers de la légende ne peuvent pas diverger de ceux de la grille. */
+.echantillon {
+  display: inline-block;
+  width: 14px;
+}

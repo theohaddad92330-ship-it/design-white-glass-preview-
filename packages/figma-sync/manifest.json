@@ -1,0 +1,13 @@
+{
+  "name": "BellumAI — Figma Sync (dev)",
+  "id": "bellum-figma-sync-dev",
+  "api": "1.0.0",
+  "main": "dist/code.js",
+  "ui": "dist/ui.html",
+  "editorType": ["figma"],
+  "documentAccess": "dynamic-page",
+  "networkAccess": {
+    "allowedDomains": ["none"],
+    "reasoning": "Le plugin n'appelle aucun réseau : tokens et specs sont embarqués au build."
+  }
+}

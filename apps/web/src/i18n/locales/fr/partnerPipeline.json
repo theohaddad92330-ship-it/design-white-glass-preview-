@@ -1,0 +1,262 @@
+{
+  "pageTitle": "Partenaires",
+  "tabs": {
+    "mine": "Mes partenaires",
+    "discover": "À découvrir",
+    "onAccounts": "Sur mes comptes"
+  },
+  "roles": {
+    "concurrent": "Concurrent",
+    "client": "Client",
+    "fournisseur": "Fournisseur"
+  },
+  "stages": {
+    "identifie": "Identifié",
+    "qualifie": "Qualifié",
+    "contacte": "Contacté",
+    "en_discussion": "En discussion",
+    "cadre_signe": "Cadre signé",
+    "flux_actif": "Flux actif",
+    "dormant": "Dormant",
+    "retire": "Retiré"
+  },
+  "axes": {
+    "volume": "Volume",
+    "fiabilite": "Fiabilité",
+    "marge": "Marge",
+    "acces": "Accès",
+    "reciprocite": "Réciprocité"
+  },
+  "axesShow": "Voir les axes",
+  "axesHide": "Masquer les axes",
+  "axisPoints": "{{points}} / {{max}}",
+  "scale": "Sur {{max}} points réellement mesurables — les axes non évaluables sortent du calcul.",
+  "availability": {
+    "absent": "Non mesuré",
+    "notCollected": "Personne ne le collecte"
+  },
+  "clause": {
+    "label": "Clause de non-sollicitation au cadre",
+    "unknown": "Non déclarée",
+    "no": "Pas de clause",
+    "yes": "Oui, il y en a une"
+  },
+  "governance": {
+    "status": {
+      "observed": "Observé",
+      "to_qualify": "À qualifier",
+      "qualified": "Qualifié",
+      "rules_missing": "Règles manquantes",
+      "active": "Actif",
+      "paused": "En pause",
+      "blocked": "Bloqué",
+      "historical": "Historique"
+    },
+    "framedCount": "{{framed}}/{{total}} points du cadre posés",
+    "nextValidation": "Prochaine validation : {{dimension}}",
+    "missingShow": "Voir ce qui manque ({{count}})",
+    "missingHide": "Masquer ce qui manque",
+    "dimension": {
+      "entry_door": "Porte d’entrée détenue",
+      "accounts_accessible": "Comptes accessibles",
+      "accounts_forbidden": "Comptes interdits",
+      "profiles_sought": "Profils recherchés",
+      "domains_covered": "Domaines couverts",
+      "margin_floor": "Marge plancher",
+      "margin_share": "Partage de marge",
+      "account_ownership": "Propriété du compte",
+      "action_ownership": "Ownership des actions",
+      "non_circumvention": "Non-contournement",
+      "presentation_terms": "Modalités de présentation",
+      "payment_terms": "Paiement",
+      "delays": "Délais",
+      "counterpart_contacts": "Interlocuteur de chaque côté",
+      "duration": "Durée",
+      "exit_conditions": "Conditions de sortie",
+      "referencing_proof": "Preuve de référencement",
+      "confidentiality": "Confidentialité"
+    },
+    "edit": {
+      "open": "Éditer le cadre",
+      "title": "Cadre partenaire — {{name}}",
+      "description": "Ce qui n’est pas encore cadré reste vide plutôt que deviné. Laisser un champ vide l’efface.",
+      "save": "Enregistrer",
+      "cancel": "Annuler",
+      "notSet": "Non cadré",
+      "listPlaceholder": "Sépare par des virgules",
+      "ourContactName": "Notre interlocuteur — nom",
+      "ourContactNamePlaceholder": "Nom",
+      "ourContactEmail": "Notre interlocuteur — e-mail",
+      "ourContactEmailPlaceholder": "E-mail",
+      "ownership": {
+        "ours": "Nous",
+        "partner": "Le partenaire",
+        "shared": "Partagée"
+      },
+      "confidentiality": {
+        "public": "Publique",
+        "restricted": "Restreinte",
+        "confidential": "Confidentielle"
+      }
+    }
+  },
+  "recommendation": {
+    "renforcer": "À renforcer — le flux est là et il tient.",
+    "maintenir": "À maintenir.",
+    "reduire": "À réduire — ce que ça rapporte ne couvre pas ce que ça coûte.",
+    "viser_rang_1": "Tu peux viser le rang 1 sur ses comptes : accès large, marge faible, preuves en main."
+  },
+  "mine": {
+    "empty": "Aucun partenaire enregistré. Un partenaire, c'est une ESN à qui tu confies des besoins — ou qui t'en confie.",
+    "flow": "{{received}} besoin(s) reçu(s) · {{given}} confié(s) en retour, sur 90 jours",
+    "add": "Ajouter un partenaire",
+    "form": {
+      "name": "Nom de l’ESN",
+      "namePlaceholder": "ex. Klanik",
+      "role": "Rôle",
+      "roleNone": "Pas encore décidé",
+      "stage": "Étape",
+      "submit": "Enregistrer",
+      "cancel": "Annuler",
+      "error": "Ce partenaire n’a pas pu être enregistré. Rien n’a été créé."
+    },
+    "contactLabel": "Contact : {{name}}",
+    "scoreWindow": "Calculé sur tes douze derniers mois — besoins reçus, besoins confiés en retour et missions menées à terme.",
+    "scoreInternalOnly": "Uniquement à partir de ce que ton espace a vécu avec ce partenaire. Aucune donnée publique n’entre dans ce score.",
+    "analyse": "Analyser cette ESN",
+    "analyseAria": "Analyser {{name}} — lance son analyse commerciale",
+    "loading": "Lecture de tes partenaires…",
+    "error": "Impossible de lire tes partenaires pour le moment.",
+    "emptyTitle": "Aucun partenaire pour l’instant"
+  },
+  "discover": {
+    "loading": "Recherche des ESN de ta zone…",
+    "sourceZones": "D'après ton profil : {{zones}}",
+    "empty": "Aucune ESN du référentiel n'est enregistrée dans cette zone pour l'instant.",
+    "noGeoSignal": {
+      "unset": "Ton profil ne précise pas encore de zone géographique. Renseigne-la dans Réglages › Profil pour voir ici les ESN de ta zone.",
+      "unmappable": "Les zones renseignées dans ton profil ({{zones}}) ne désignent pas un territoire précis. Lance une recherche plus précise ci-dessous."
+    },
+    "match": {
+      "location": "{{city}} ({{department}})",
+      "locationDepartmentOnly": "Département {{department}}",
+      "subcontracting": {
+        "oui": "ouverte à la sous-traitance",
+        "non": "pas ouverte à la sous-traitance",
+        "inconnu": "position inconnue"
+      },
+      "analyse": "Analyser cette ESN",
+      "analyseAria": "Analyser {{name}} — lance son analyse commerciale"
+    },
+    "refresh": "Actualiser",
+    "preciseSearchLead": "Pour une recherche plus précise (un département, une région, une ville, une fenêtre de recrutement) :",
+    "link": "Chercher dans Découvrir",
+    "columns": {
+      "esn": "ESN",
+      "location": "Où",
+      "subcontracting": "Sous-traitance",
+      "analyse": "Analyse"
+    }
+  },
+  "onAccounts": {
+    "empty": "Aucune ESN détectée chez tes comptes pour l'instant.",
+    "accounts": "{{count}} compte",
+    "accounts_other": "{{count}} comptes",
+    "rank1": "rang 1 sur {{count}}",
+    "certainty": {
+      "forte": "indices solides",
+      "moyenne": "indices probables",
+      "faible": "à vérifier"
+    },
+    "hint": "Chaque ligne se lit deux fois : c'est un concurrent en place, et c'est une porte pour entrer en rang 2.",
+    "summary": "{{esn}} ESN en place, sur {{accounts}} de tes comptes · {{rank1}} en rang 1",
+    "analyse": "Analyser cette ESN",
+    "analyseAria": "Analyser {{name}} — lance son analyse commerciale",
+    "openDetailAria": "Voir le détail de {{name}}",
+    "dialogDescription": "Détail de cette ESN sur l'ensemble de tes comptes : sur combien elle est en place, en rang 1, et de quelle certitude.",
+    "previousEsn": "ESN précédente",
+    "nextEsn": "ESN suivante",
+    "accountsListTitle": "Comptes où elle est en place",
+    "externalWorkforceObserved": "Observée sur le marché sur {{count}} compte",
+    "externalWorkforceObserved_other": "Observée sur le marché sur {{count}} comptes",
+    "observationUnresolved": "{{count}} compte non mesurable à partir des observations du marché",
+    "observationUnresolved_other": "{{count}} comptes non mesurables à partir des observations du marché",
+    "rank2Observed": "Vue en rang 2 {{count}} fois — la dernière le {{date}}",
+    "rank2Observed_other": "Vue en rang 2 {{count}} fois — la dernière le {{date}}",
+    "columns": {
+      "esn": "ESN",
+      "accounts": "Comptes",
+      "rank1": "Rang 1",
+      "certainty": "Certitude"
+    }
+  },
+  "page": {
+    "introTitle": "Tes partenaires, {{firstName}}",
+    "introTitleWithoutName": "Tes partenaires",
+    "introSubtitle": "Retrouve les ESN avec lesquelles tu échanges déjà, celles à activer, celles à surveiller, et celles qui peuvent t’aider à ouvrir ou délivrer chez tes clients.",
+    "askLauraLabel": "Demander à {{copilot}} d’analyser cette relation",
+    "askLauraQuestion": "Analyse ma relation avec ce partenaire : ce que dit son score, les risques, les opportunités, et s’il faut l’activer, le maintenir ou le mettre en pause."
+  },
+  "stageCurrent": "Étape : {{stage}}",
+  "stageChange": "Changer d’étape",
+  "stageChangeHide": "Fermer",
+  "axisBarLabel": "{{axis}} : {{points}} sur {{max}}",
+  "band": {
+    "title": "Où en sont tes relations",
+    "total": "{{count}} partenaire enregistré",
+    "total_other": "{{count}} partenaires enregistrés",
+    "filtered": "Filtré sur « {{stage}} ». Re-clique la pastille pour tout revoir.",
+    "emptyFiltered": "Plus aucun partenaire à cette étape. Re-clique la pastille pour tout revoir."
+  },
+  "flow": {
+    "uncounted": "Personne ne compte encore les échanges avec ce partenaire : ni les besoins reçus, ni ceux que tu lui confies, ni les missions menées ensemble. Ces compteurs existent en base, mais aucun chemin ne les alimente aujourd’hui — afficher « 0 » ici laisserait croire que tu n’as rien fait avec lui.",
+    "state": {
+      "active": "Flux actif",
+      "dormant": "Dormant",
+      "uncounted": "Non mesuré"
+    },
+    "reciprocityValue": "{{percent}} % de ce qui circule vient de lui",
+    "reciprocityBar": "Réciprocité : {{percent}} % des besoins échangés viennent de ce partenaire",
+    "needsReceived": "{{count}} besoin reçu sur 90 jours",
+    "needsReceived_other": "{{count}} besoins reçus sur 90 jours",
+    "needsGiven": "{{count}} confié en retour",
+    "needsGiven_other": "{{count}} confiés en retour",
+    "missionsCompleted": "{{count}} mission menée à terme ensemble",
+    "missionsCompleted_other": "{{count}} missions menées à terme ensemble",
+    "missionsActive": "{{count}} mission en cours",
+    "missionsActive_other": "{{count}} missions en cours"
+  },
+  "subtitle": {
+    "mine": "Les relations que tu entretiens déjà : où en est chacune, ce qui circule, et ce qu’il faut lancer ensuite.",
+    "discover": "Les ESN qui collent à ton profil, calculées depuis ta zone géographique — et une recherche par territoire si tu en as besoin.",
+    "onAccounts": "Les ESN déjà en place chez tes clients. Chaque ligne se lit deux fois : un concurrent installé, et une porte pour entrer en rang 2."
+  },
+  "cvPush": {
+    "toggle": "CV proposés à ce partenaire",
+    "pickConsultant": "Consultant",
+    "pickConsultantPlaceholder": "Choisir un consultant",
+    "prepare": "Préparer la revue",
+    "empty": "Aucun CV proposé à ce partenaire pour l’instant.",
+    "unknownConsultant": "Consultant retiré",
+    "tjm": "TJM {{tjm}} €",
+    "margin": "Partage négocié : {{percent}} %",
+    "declareSent": "Déclarer envoyé",
+    "status": {
+      "preparee": "Préparé",
+      "envoyee_declaree": "Envoyé (déclaré)"
+    },
+    "outcome": {
+      "en_attente": "Retour en attente",
+      "retenu": "Retenu",
+      "refuse": "Refusé"
+    },
+    "seniority": {
+      "inconnu": "Séniorité non déclarée",
+      "junior": "Junior",
+      "confirme": "Confirmé",
+      "senior": "Senior",
+      "expert": "Expert"
+    }
+  },
+  "tabsLabel": "Les vues des partenaires"
+}

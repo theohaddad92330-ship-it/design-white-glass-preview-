@@ -1,0 +1,122 @@
+{
+  "$schema": "http://json-schema.org/draft-07/schema#",
+  "$id": "https://bellum.ai/schemas/contacts.schema.json",
+  "title": "BellumContactOutput",
+  "description": "Contrat de SORTIE d'une ligne `topContacts[]` = le contact enrichi + classifié (phases 2 Contacts et 3 Classifier fusionnées, tel que la télémétrie l'envoie au front). Clés en camelCase. Source de vérité zod = @bellum/contracts (`enrichedContactSchema` / `contactsDataSchema`). Les champs de triage (`bucket`, `hierarchyLevel`, `decisionRole`, `qualifStatus`) sont calculés déterministiquement par l'IA. Permissif (passthrough, tout optionnel) : Apollo/enrichissement peuvent ajouter des champs sans casser le front — documentés ici quand un consommateur branche dessus. Cf. table ③ frontPayload du /contract.",
+  "x-bellum-branchable": {
+    "_comment": "Une ligne topContacts[] : les champs que le front lit (table (3) frontPayload du /contract). Le schema decrit UNE ligne ; la fixture est le tableau — chaque ligne doit les porter.",
+    "root": [
+      "fullName",
+      "title",
+      "entity",
+      "family",
+      "decisionRole",
+      "priority",
+      "sourceTag",
+      "email",
+      "phone",
+      "linkedinUrl",
+      "message",
+      "bucket",
+      "hierarchyLevel"
+    ],
+    "items": {}
+  },
+  "type": "object",
+  "additionalProperties": true,
+  "properties": {
+    "fullName": {
+      "type": ["string", "null"]
+    },
+    "title": {
+      "type": ["string", "null"]
+    },
+    "entity": {
+      "type": ["string", "null"],
+      "description": "Entité / filiale de rattachement du contact."
+    },
+    "family": {
+      "type": ["string", "null"],
+      "description": "Famille de rôle (deck) — regroupe les titres en catégories métier."
+    },
+    "decisionRole": {
+      "type": ["string", "null"],
+      "description": "Rôle décisionnel MEDDIC : economic | technical | user | champion | a_verifier. NULL si non déterminé (le front affiche « — »)."
+    },
+    "priority": {
+      "type": ["integer", "number"],
+      "description": "Priorité de contact (0-5), calculée déterministiquement."
+    },
+    "bucket": {
+      "type": "string",
+      "description": "Triage déterministe par rôle.",
+      "enum": ["decideur", "sponsor", "operationnel", "influenceur", "a_verifier", "bruit"]
+    },
+    "hierarchyLevel": {
+      "type": "string",
+      "description": "Palier org (deck), dérivé du titre — axe distinct de decisionRole/bucket.",
+      "enum": ["governance", "c_level", "direction", "management", "expert", "operationnel"]
+    },
+    "sourceTag": {
+      "type": ["string", "null"],
+      "description": "Provenance de la donnée contact : INTERNE (CRM) | PUBLIC | HYPOTHESE | RISQUE."
+    },
+    "email": {
+      "type": ["string", "null"]
+    },
+    "emailVerified": {
+      "type": "boolean"
+    },
+    "phone": {
+      "type": ["string", "null"]
+    },
+    "linkedinUrl": {
+      "type": ["string", "null"]
+    },
+    "message": {
+      "type": ["string", "null"],
+      "description": "Message d'approche personnalisé prêt à envoyer."
+    },
+    "whyContact": {
+      "type": ["string", "null"],
+      "description": "Justification : pourquoi contacter cette personne maintenant."
+    },
+    "profileSummary": {
+      "type": ["string", "null"]
+    },
+    "photoUrl": {
+      "type": ["string", "null"]
+    },
+    "city": {
+      "type": ["string", "null"]
+    },
+    "country": {
+      "type": ["string", "null"]
+    },
+    "userStatus": {
+      "type": ["string", "null"],
+      "description": "Statut CRM côté utilisateur (axe distinct du triage IA)."
+    },
+    "apolloDetails": {
+      "type": ["object", "null"],
+      "additionalProperties": true,
+      "description": "Bloc brut d'enrichissement Apollo (permissif)."
+    },
+    "qualifStatus": {
+      "type": "string",
+      "description": "Statut de qualification deterministe (S5) — axe distinct du `bucket` (role) et du `userStatus` (CRM). Miroir zod : `enrichedContactSchema.qualifStatus`.",
+      "enum": [
+        "priorite_immediate",
+        "a_enrichir",
+        "a_verifier",
+        "autre_angle",
+        "achats",
+        "sponsor",
+        "bruit",
+        "entite_inconnue",
+        "hors_scope",
+        "faux_positif"
+      ]
+    }
+  }
+}

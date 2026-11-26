@@ -1,0 +1,908 @@
+{
+  "page": {
+    "subtitle": "Templates, playbooks and personal documents to enrich the AI."
+  },
+  "tabs": {
+    "templates": "Templates",
+    "playbooks": "Playbooks",
+    "method": "Method",
+    "crm": "CRM data",
+    "documents": "My documents",
+    "assets": "Outreach assets",
+    "style": "Style memory",
+    "library": "Library"
+  },
+  "assets": {
+    "empty": "No asset in the catalog.",
+    "errorState": "The catalog could not be read.",
+    "newButton": "New asset",
+    "editAria": "Edit {{title}}",
+    "deleteAria": "Delete {{title}}",
+    "category": {
+      "case_study": "Case study",
+      "company_brochure": "Brochure",
+      "resume": "Resume",
+      "other": "Other"
+    },
+    "usageRights": {
+      "always": "Free to send",
+      "after_interest_confirmed": "Send after confirmed interest"
+    },
+    "editor": {
+      "newTitle": "New asset",
+      "editTitle": "Edit asset",
+      "titleLabel": "Title",
+      "titlePlaceholder": "2026 brochure",
+      "descriptionLabel": "Description",
+      "descriptionPlaceholder": "Short description (optional)",
+      "categoryLabel": "Category",
+      "usageRightsLabel": "Usage rights"
+    },
+    "toast": {
+      "created": "Asset created",
+      "updated": "Asset updated",
+      "deleted": "Asset deleted",
+      "saveFailed": "Unable to save. Try again.",
+      "deleteFailed": "Unable to delete."
+    },
+    "file": {
+      "attach": "Attach a file (email attachment)",
+      "uploading": "Uploading file…",
+      "attached": "File attached: it can now be added to an email.",
+      "attachFailed": "The file could not be attached.",
+      "removed": "File removed.",
+      "removeFailed": "The file could not be removed.",
+      "removeAria": "Remove the file of “{{title}}”",
+      "tooLarge": "This file exceeds {{max}}: it could not be sent as an attachment."
+    }
+  },
+  "documents": {
+    "searchPlaceholder": "Search documents...",
+    "addButton": "Add a document",
+    "importFromDrive": "Import from your document space",
+    "dropHint": "Drag and drop one or more files, or click to select",
+    "dropFormats": "{{formats}} — max {{maxMb}} MB per file",
+    "ingestFailed": "Ingestion failed",
+    "titleLabel": "Title",
+    "titlePlaceholder": "E.g. LinkedIn prospecting template",
+    "categoryLabel": "Category",
+    "languageLabel": "Document language",
+    "languageUnset": "Not set",
+    "language": {
+      "fr": "French",
+      "en": "English",
+      "de": "German"
+    },
+    "scopeLabel": "Scope",
+    "scope": {
+      "workspace": "My whole ESN",
+      "personal": "My personal space",
+      "account": "One specific account",
+      "knowledge_base": "Durable knowledge base"
+    },
+    "accountLabel": "Account",
+    "accountPlaceholder": "Choose an account…",
+    "accountSelectAria": "Choose this document's account",
+    "emptyTitle": "No documents",
+    "emptyCta": "Add your first document",
+    "untitled": "Untitled",
+    "fromChat": "Attached from the chat",
+    "category": {
+      "account_fact": "Account fact",
+      "sector_insight": "Sector insight",
+      "winning_angle": "Winning angle",
+      "access_fact": "Access fact",
+      "partner_fact": "Partner fact",
+      "territory_insight": "Territory insight",
+      "objection_answer": "Objection answer",
+      "client_proof": "Client proof",
+      "esn_profile_fact": "IT consultancy profile fact"
+    },
+    "processingStatus": {
+      "received": "Received",
+      "processing": "Processing",
+      "usable": "Usable",
+      "partial": "Partly usable",
+      "to_fix": "To fix"
+    },
+    "replaceAria": "Replace",
+    "deleteAria": "Delete “{{name}}”",
+    "deleteDialog": {
+      "title": "Delete “{{name}}”?",
+      "description": "This document will be permanently deleted from your knowledge base. This cannot be undone.",
+      "confirm": "Delete permanently",
+      "cancel": "Keep the document"
+    },
+    "replaceBanner": "Replacing “{{title}}” — the old document is archived, never deleted.",
+    "replaceCancel": "Cancel replacement",
+    "uploadPhase": {
+      "idle": "Upload",
+      "reading": "Reading file…",
+      "extracting": "Extracting text…",
+      "indexing": "Indexing…",
+      "done": "✓ Indexed",
+      "error": "Retry"
+    },
+    "toast": {
+      "indexed": "Document indexed",
+      "replaced": "Document replaced",
+      "ingestFailed": "Unable to ingest the document. Try again in a moment.",
+      "replaceFailed": "Unable to replace the document. Try again in a moment.",
+      "deleteFailed": "Unable to delete the document."
+    },
+    "file": {
+      "status": {
+        "pending": "Waiting",
+        "reading": "Reading file…",
+        "extracting": "Extracting text…",
+        "indexing": "Indexing…",
+        "done": "Indexed",
+        "error": "Refused"
+      },
+      "reason": {
+        "unsupported": "Format “{{ext}}” is not supported. Accepted formats: {{formats}}.",
+        "noExtension": "Unrecognised format (no extension). Accepted formats: {{formats}}.",
+        "empty": "Empty file.",
+        "tooLarge": "File too large (max {{maxMb}} MB).",
+        "failed": "Could not ingest this file. Try again in a moment."
+      },
+      "listAria": "Files to upload",
+      "remove": "Remove {{name}}",
+      "multiTitleHint": "Each file keeps its own name as its title.",
+      "summary": "{{done}} indexed, {{failed}} refused"
+    },
+    "columns": {
+      "document": "Document",
+      "usage": "Usage",
+      "access": "Access",
+      "status": "Status",
+      "actions": "Actions"
+    }
+  },
+  "library": {
+    "kind": {
+      "template": "Template",
+      "playbook": "Playbook",
+      "method_playbook": "Method playbook"
+    },
+    "errorState": "Content unavailable right now. Try again.",
+    "editAria": "Edit",
+    "toast": {
+      "deleted": "{{kind}} deleted",
+      "created": "{{kind}} created",
+      "deleteFailed": "Unable to delete.",
+      "requiredFields": "Title and content are required.",
+      "saveFailed": "Unable to save. Try again.",
+      "copied": "Copied to clipboard",
+      "copyFailed": "Copy failed"
+    }
+  },
+  "templates": {
+    "new": "New template",
+    "view": "View template",
+    "empty": "No templates yet. Create the first one."
+  },
+  "playbooks": {
+    "new": "New playbook",
+    "view": "View playbook",
+    "empty": "No playbooks yet. Create the first one."
+  },
+  "method": {
+    "description": "ESN \"account plan\" method guides: multi-contact mapping, procurement access path, champion → sponsor, C-level approach. Ready to apply, editable by your team.",
+    "new": "New guide",
+    "view": "Read the guide",
+    "empty": "No method guides yet. Create the first one."
+  },
+  "modal": {
+    "copyButton": "Copy content",
+    "copiedButton": "✓ Copied",
+    "edit": "Edit",
+    "hint": "Replace the {{placeholder}} fields with your own details. Need an AI-generated message?",
+    "openCopilot": "Open {{copilot}}"
+  },
+  "editor": {
+    "editTitle": "Edit {{noun}}",
+    "newTitle": "New {{noun}}",
+    "titleLabel": "Title",
+    "titlePlaceholderTemplate": "First-touch email",
+    "titlePlaceholderPlaybook": "Enterprise account approach",
+    "descriptionLabel": "Description",
+    "descriptionPlaceholder": "Short description (optional)",
+    "categoryLabel": "Category",
+    "categoryPlaceholder": "Email, Call…",
+    "bodyLabel": "Content",
+    "bodyPlaceholder": "Copyable content. Use {{placeholder}} for the fields to fill in."
+  },
+  "crm": {
+    "connectedTitle": "CRM connected",
+    "accountFallback": "Your CRM account",
+    "since": " · since {{date}}",
+    "connectTitle": "Connect your CRM",
+    "connectBody": "Allow {{brand}} to create contacts in your CRM in one click from your account files. Pick which CRM in Settings › Integrations.",
+    "connectCta": "Connect your CRM",
+    "notConfiguredTitle": "CRM sync",
+    "notConfiguredBody": "CRM sync will be enabled on your workspace soon.",
+    "toast": {
+      "connected": "CRM connected",
+      "connectFailed": "CRM connection failed ({{reason}})",
+      "reasonUnknown": "unknown",
+      "startFailed": "Unable to start the CRM connection",
+      "disconnected": "CRM disconnected",
+      "disconnectFailed": "Unable to disconnect"
+    }
+  },
+  "style": {
+    "description": "Paste a message you've already written so {{copilot}} can learn your style — she always analyses first, never learns silently.",
+    "importKindLabel": "Message type",
+    "importKind": {
+      "linkedin_message": "LinkedIn message",
+      "email": "Email",
+      "phone_pitch": "Phone pitch",
+      "follow_up": "Follow-up",
+      "introduction": "Introduction",
+      "partner_message": "Partner message",
+      "profile_push": "Profile push"
+    },
+    "sourceTypeLabel": "Style source",
+    "sourceType": {
+      "validated_example": "Validated example",
+      "imported_template": "Imported template",
+      "sent_message": "Actually sent message",
+      "accepted_edit": "Accepted edit",
+      "brand_guide": "Brand guide",
+      "signature": "Signature",
+      "user_preference": "User preference",
+      "formality": "Formal / informal address",
+      "language": "Language",
+      "forbidden_words": "Forbidden words",
+      "allowed_cta": "Allowed CTAs",
+      "length": "Length",
+      "punctuation": "Punctuation",
+      "opening_formula": "Opening line",
+      "closing_formula": "Closing line"
+    },
+    "textLabel": "Message to analyse",
+    "textPlaceholder": "Paste here the message you want {{copilot}} to learn the style from…",
+    "analyzeButton": "Analyse",
+    "result": {
+      "conserve": "What I'm keeping",
+      "neReproduitPas": "What I won't reproduce",
+      "propose": "What I'm proposing"
+    },
+    "templates": {
+      "title": "Learned styles",
+      "subtitle": "What {{copilot}} kept from a message's tone, structure and forbidden words — never a style imposed without showing it.",
+      "empty": "No style learned yet.",
+      "errorState": "Styles could not be read.",
+      "persona": "Persona: {{persona}}",
+      "forbidden": "Forbidden: {{list}}",
+      "pitch": "Pitch: {{pitch}}",
+      "tone": "Tone: {{tone}}",
+      "signature": "Signature: {{signature}}",
+      "version": "Version {{version}}",
+      "usage": "Modified {{modification}} · Validated {{validation}} · Replied {{response}} · Unsubscribed {{unsubscribe}}",
+      "usageUnmeasured": "Usage: not measured"
+    },
+    "preview": {
+      "title": "Compare layers",
+      "subtitle": "The same example for \"{{objective}}\", under each style layer.",
+      "compareButton": "Compare",
+      "closeAria": "Close comparison",
+      "contactPlaceholder": "Search a real contact…",
+      "clearContactAria": "Change contact",
+      "contextPlaceholder": "Free-text angle (optional) — same as the composer.",
+      "generate": "Generate preview",
+      "errorState": "Generation failed. Try again.",
+      "layerEmpty": "Not configured at this level.",
+      "layer": {
+        "generic": "Generic",
+        "workspace": "Workspace",
+        "user": "User",
+        "final": "Final"
+      }
+    },
+    "proposals": {
+      "title": "Proposed rules",
+      "subtitle": "A proposal never hardens into a lasting rule on its own — each one waits for a decision.",
+      "empty": "No rule proposed yet.",
+      "errorState": "Proposed rules could not be read.",
+      "adopt": "Adopt",
+      "reject": "Reject",
+      "adoptAria": "Adopt this rule",
+      "rejectAria": "Reject this rule"
+    },
+    "status": {
+      "draft": "Draft",
+      "validated": "Validated",
+      "active": "Active",
+      "deprecated": "Deprecated",
+      "archived": "Archived",
+      "adopted": "Adopted",
+      "rejected": "Rejected"
+    },
+    "signal": {
+      "wording_preference": "Wording preference",
+      "structure_preference": "Structure preference",
+      "tone_preference": "Tone preference",
+      "spelling_or_grammar_fix": "Spelling fix",
+      "false_or_fabricated_data_correction": "False data correction",
+      "isolated_aggressive_tone": "Isolated aggressive tone"
+    },
+    "toast": {
+      "analyzed": "Message analysed",
+      "analyzeFailed": "Analysis failed",
+      "adopted": "Rule adopted",
+      "rejected": "Rule rejected",
+      "decideFailed": "Could not decide. Try again.",
+      "transitioned": "Style set to \"{{status}}\"",
+      "transitionFailed": "Could not change the status."
+    },
+    "transition": {
+      "draft": {
+        "validated": "Validate",
+        "archived": "Archive"
+      },
+      "validated": {
+        "active": "Activate",
+        "draft": "Back to draft",
+        "archived": "Archive"
+      },
+      "active": {
+        "deprecated": "Deprecate",
+        "archived": "Archive"
+      },
+      "deprecated": {
+        "active": "Reactivate",
+        "archived": "Archive"
+      }
+    },
+    "create": {
+      "open": "Create a style",
+      "objective": "Objective",
+      "channel": "Channel",
+      "scope": "Scope",
+      "scopes": {
+        "workspace": "Whole workspace",
+        "user": "Only me",
+        "business_unit": "My team — {{name}}",
+        "conversation": "This thread"
+      },
+      "persona": "Persona",
+      "forbidden": "Forbidden (one per line)",
+      "pitch": "Pitch (optional)",
+      "tone": "Tone (optional)",
+      "signature": "Signature (optional)",
+      "submit": "Save style",
+      "cancel": "Cancel",
+      "tooMany": "{{max}} forbidden items at most.",
+      "toast": {
+        "created": "Style created as a draft — activate it from the list so it is used.",
+        "failed": "The style could not be created."
+      },
+      "channels": {
+        "email": "Email",
+        "linkedin": "Professional network",
+        "phone": "Phone",
+        "manual": "Manual",
+        "voicemail": "Voicemail",
+        "recommendation": "Recommendation message",
+        "task": "Task",
+        "sms": "SMS",
+        "whatsapp": "WhatsApp",
+        "introduction_request": "Introduction request",
+        "partner_message": "Partner message",
+        "follow_up_email": "Follow-up email",
+        "profile_push": "Consultant profile push",
+        "linkedin_connection_note": "LinkedIn connection note"
+      }
+    },
+    "learning": {
+      "title": "What your messages taught {{copilot}}",
+      "subtitle": "Counts over this workspace's messages, never a rate and never a message read. Nothing here is applied without your approval.",
+      "errorState": "The summary could not be read.",
+      "empty": "No signal yet: the summary appears once a message is approved, rejected or sent.",
+      "express": {
+        "title": "Your decisions",
+        "approvedWithoutEdit": "{{count}} approved as written",
+        "approvedAfterEdit": "{{count}} approved after editing",
+        "rejected": "{{count}} rejected"
+      },
+      "behavioral": {
+        "title": "After sending",
+        "sent": "{{count}} sent",
+        "replied": "{{count}} replies",
+        "meetingBooked": "{{count}} meetings booked",
+        "optOut": "{{count}} opt-outs",
+        "bounced": "{{count}} undelivered",
+        "medianDelay": "Median reply delay: {{hours}} h",
+        "medianDelayUnmeasured": "Median reply delay: not measured"
+      },
+      "quality": {
+        "title": "Reported problems",
+        "wrongFact": "{{count}} wrong facts",
+        "wrongCta": "{{count}} wrong calls to action",
+        "wrongPersona": "{{count}} wrong personas"
+      },
+      "rule": {
+        "title": "Proposed rule",
+        "basedOn": "Based on {{count}} judged messages. Proposed, never applied without approval.",
+        "none": "No rule proposed yet: the sample is too small to conclude."
+      },
+      "globalRule": {
+        "title": "Rule shared across workspaces",
+        "basedOn": "Learned from {{count}} judged messages, aggregated and anonymised across several workspaces. Proposed, never applied without approval."
+      },
+      "history": {
+        "title": "Rules already proposed",
+        "version": "Version {{version}}"
+      },
+      "status": {
+        "proposed": "Proposed",
+        "adopted": "Adopted",
+        "rejected": "Rejected"
+      }
+    }
+  },
+  "memory": {
+    "title": "What {{copilot}} keeps in mind",
+    "subtitle": "Pinned facts {{copilot}} keeps in mind.",
+    "pinPlaceholder": "Pin a fact…",
+    "pinInputAria": "Pin a fact to memory",
+    "pinAria": "Pin",
+    "unavailable": "Memory unavailable right now.",
+    "empty": "No pinned facts.",
+    "removeAria": "Remove this fact",
+    "more": "Show more",
+    "less": "Show less",
+    "kindAria": "What kind of thing {{brand}} retains",
+    "kind": {
+      "fact": "Fact",
+      "preference": "Preference",
+      "correction": "Field correction",
+      "workspace_rule": "Company rule",
+      "sourced_observation": "Sourced observation",
+      "hypothesis": "Hypothesis to check",
+      "temporary_context": "Temporary context",
+      "goal": "Goal"
+    },
+    "kindHint": {
+      "fact": "Something observed.",
+      "preference": "The way you work.",
+      "correction": "What you corrected: in {{copilot}}’s answers, a correction comes before everything else.",
+      "workspace_rule": "A rule that holds for your whole company — every member sees it.",
+      "sourced_observation": "Something observed, with its source named.",
+      "hypothesis": "A lead to check: {{copilot}} uses it to shed light, never to decide.",
+      "temporary_context": "Context that only holds for a while.",
+      "goal": "What you're aiming for — {{copilot}} uses it to steer its suggestions."
+    },
+    "origin": {
+      "manual": "Pinned by hand",
+      "copilot": "Note from {{copilot}} — to verify",
+      "copilotConfirmed": "Note from {{copilot}} — confirmed",
+      "analysis": "From a dossier"
+    },
+    "untilAria": "Valid until (optional)",
+    "until": "Until {{date}}",
+    "recordedAt": "Kept on {{date}}",
+    "durationLegend": "Until when?",
+    "duration": {
+      "none": "No deadline",
+      "days30": "30 days",
+      "months3": "3 months",
+      "months12": "1 year"
+    },
+    "scopeLegend": "For whom?",
+    "scope": {
+      "user": "Just you",
+      "workspace": "Your whole company",
+      "business_unit": "{{name}}",
+      "conversation": "This conversation"
+    },
+    "scopeWho": {
+      "user": "Visible to you only: your colleagues don't see it, and {{copilot}} only uses it for you.",
+      "workspace": "Visible to every member of your workspace: {{copilot}} uses it for each of them.",
+      "business_unit": "Visible to the members of {{name}}: {{copilot}} uses it for them, and for nobody else in your workspace.",
+      "conversation": "Used in this thread only, never listed under Knowledge. Kept for as long as the conversation exists."
+    },
+    "toast": {
+      "pinned": "Fact pinned to {{copilot}}'s memory",
+      "pinFailed": "Failed to pin the fact",
+      "unpinFailed": "Failed to remove the fact"
+    }
+  },
+  "memoryLedger": {
+    "title": "What {{copilot}} keeps in mind",
+    "subtitle": "Everything {{copilot}} retains, in plain words. Any line can be forgotten in one click — and a forgotten line also leaves the context she re-reads.",
+    "loading": "Reading memory…",
+    "unreadable": "This layer could not be read. That is not “no lines”: what it holds stays unknown until the next load.",
+    "unavailable": "Memory could not be read. Nothing is shown because nothing was read — not because {{copilot}} retains nothing.",
+    "forget": "Forget",
+    "forgetAria": "Forget this line: {{text}}",
+    "recordedAt": "Kept on {{date}}",
+    "until": "Until {{date}}",
+    "scopedToAccount": "On one account",
+    "object": {
+      "contact": "Contact: {{name}}",
+      "need": "Need: {{name}}",
+      "consultant": "Consultant: {{name}}",
+      "mission": "Mission: {{name}}",
+      "notFound": {
+        "contact": "Contact not found",
+        "need": "Need not found",
+        "consultant": "Consultant not found",
+        "mission": "Mission not found"
+      }
+    },
+    "reply": {
+      "title": "How {{copilot}} answers you",
+      "intro": "These settings change the form of her answers, never the substance: what she doesn't know, she still says. A request in your message (\"go into detail\", \"in one sentence\") comes first.",
+      "default": "Default",
+      "defaultHint": "{{copilot}} fits the answer to each question",
+      "unreadable": "Your answer settings couldn't be read. That doesn't make them \"default\": they stay unknown until the next load.",
+      "saved": "Setting saved",
+      "saveFailed": "The setting wasn't saved",
+      "language": "{{copilot}} answers in your interface language.",
+      "languageLink": "Change the language",
+      "replyLength": {
+        "label": "Answer length",
+        "short": "Short",
+        "detailed": "Detailed"
+      },
+      "replyTone": {
+        "label": "Tone",
+        "direct": "Direct",
+        "teaching": "Explanatory"
+      },
+      "replyFormat": {
+        "label": "Preferred format",
+        "text": "Text",
+        "lists": "Lists"
+      },
+      "replySources": {
+        "label": "Source explanations",
+        "minimal": "Minimal",
+        "detailed": "Detailed"
+      }
+    },
+    "messageApproach": {
+      "title": "Your approach in your messages",
+      "intro": "The direct approach announces what you offer and asks one question to qualify the need, with no signal or article added. Once saved, it applies to your next messages; an objective chosen in the composer always comes first. You can remove it at any time.",
+      "label": "Message approach",
+      "direct": "Direct approach",
+      "defaultHint": "Each message follows the objective you choose",
+      "unreadable": "Your approach setting could not be read. That does not mean \"default\": it stays unknown until the next load.",
+      "saved": "Approach saved",
+      "saveFailed": "The approach was not saved"
+    },
+    "protectedTime": {
+      "title": "Your protected time",
+      "intro": "The hours when you can actually work. Without them, {{copilot}} only counts the gaps between two meetings — never the time before the first one or after the last.",
+      "start": "Start",
+      "end": "End",
+      "clear": "Stop protecting",
+      "invalidRange": "The end time must be after the start time.",
+      "saved": "Protected time saved",
+      "saveFailed": "Protected time wasn't saved"
+    },
+    "agendaPreferences": {
+      "title": "Your agenda preferences",
+      "intro": "How long it takes you to open a case, and how many slots you always want kept in reserve. {{copilot}} also keeps that reserve free when organising your day. Without them, {{copilot}} counts capacity with the same defaults for everyone.",
+      "duration": "Minutes per case",
+      "reserve": "Reserved slots",
+      "clear": "Reset to defaults",
+      "invalidDuration": "The duration per case must be between 15 and 240 minutes.",
+      "invalidReserve": "The reserve must be between 0 and 10 slots.",
+      "saved": "Agenda preferences saved",
+      "saveFailed": "Agenda preferences weren't saved"
+    },
+    "scopeChange": {
+      "workspace": "Share with your company",
+      "user": "Keep for you only",
+      "workspaceAria": "Share with your company: {{text}}",
+      "userAria": "Keep for you only: {{text}}"
+    },
+    "expiredOn": "Expired on {{date}}",
+    "correction": {
+      "questionnaire": "Correct in your profile questionnaire",
+      "stage": "Edit in your profile: {{stage}}"
+    },
+    "section": {
+      "personalPreferences": {
+        "title": "Personal preferences",
+        "description": "How you like to work: the preferences you pinned for yourself, and the free-form settings {{copilot}} re-reads on every exchange. Nobody else sees them.",
+        "empty": "No preference kept for you."
+      },
+      "personalObjectives": {
+        "title": "Personal goals",
+        "description": "What you are aiming for, pinned for you alone: {{copilot}} uses it for you, never for a colleague.",
+        "empty": "No personal goal kept.",
+        "declared": "Your goal and your target come from your profile questionnaire. They are not forgotten from here: they are corrected where you entered them."
+      },
+      "esnRules": {
+        "title": "Company rules",
+        "description": "What applies to your whole company: every member sees it, and {{copilot}} uses it for each of them.",
+        "empty": "No rule shared with your company."
+      },
+      "accountContext": {
+        "title": "Account context",
+        "description": "What only applies to one account.",
+        "empty": "Nothing is kept about a specific account."
+      },
+      "corrections": {
+        "title": "Field corrections",
+        "description": "What you corrected in the field: in {{copilot}}'s answers, a correction comes before everything else, even more recent data.",
+        "empty": "No field correction."
+      },
+      "referenceDocuments": {
+        "title": "Reference documents",
+        "description": "Memory keeps no documents. The ones {{copilot}} consults live in your knowledge base: for every question asked in the chat, she looks there for the useful passages.",
+        "link": "Open the knowledge base"
+      },
+      "temporary": {
+        "title": "Temporary items",
+        "description": "What only applies until a date. Once expired, the item stays here with its date, and {{copilot}} no longer uses it.",
+        "empty": "Nothing has a deadline."
+      },
+      "teamContext": {
+        "title": "My team's context",
+        "description": "What only applies to your team or business unit — neither the whole company nor a single account.",
+        "empty": "Nothing is kept about your team."
+      }
+    },
+    "source": {
+      "manualMine": "Pinned by you",
+      "manualBy": "Pinned by {{name}}",
+      "manual": "Pinned by hand",
+      "copilotMine": "Kept from an answer by {{copilot}}, saved by you",
+      "copilotBy": "Kept from an answer by {{copilot}}, saved by {{name}}",
+      "copilot": "Kept from an answer by {{copilot}}",
+      "analysisMine": "From a dossier, saved by you",
+      "analysisBy": "From a dossier, saved by {{name}}",
+      "analysis": "From a dossier"
+    },
+    "why": {
+      "correction": "Why: it is a correction — {{copilot}} puts it before everything else, even more recent data.",
+      "copilotNote": "Why: it is a note from {{copilot}} that nobody confirmed — it informs her answers without settling anything. Check it.",
+      "declared": "Why: a person declared it, nothing was inferred — {{copilot}} gives it priority.",
+      "confirmedNote": "Why: a person reviewed and corrected it — {{copilot}} treats it as a declared fact.",
+      "hypothesis": "Why: it is a hypothesis to check — {{copilot}} uses it to shed light, it does not decide with it."
+    },
+    "surfaces": {
+      "label": "Where {{copilot}} uses it:",
+      "chat": "her answers in the chat",
+      "externalAssistant": "the answers of your external AI assistant, if it is connected",
+      "otherAccount": "On another account, {{copilot}} does not use it.",
+      "unused": "Not used by {{copilot}} today: its deadline has passed."
+    },
+    "consultations": {
+      "count_one": "Consulted by {{copilot}} in {{count}} answer, on {{date}}",
+      "count_other": "Consulted by {{copilot}} in {{count}} answers, most recently on {{date}}",
+      "countUndated_one": "Consulted by {{copilot}} in {{count}} answer",
+      "countUndated_other": "Consulted by {{copilot}} in {{count}} answers",
+      "never": "Not consulted by {{copilot}} yet",
+      "neverExpired": "Never consulted by {{copilot}} before its deadline",
+      "open": "Open the conversation",
+      "openAria": "Open the conversation where {{copilot}} last consulted “{{text}}”"
+    },
+    "edit": {
+      "action": "Edit",
+      "aria": "Edit: {{text}}",
+      "label": "Item text",
+      "save": "Save",
+      "cancel": "Cancel",
+      "updated": "Item updated",
+      "updateFailed": "The change could not be saved"
+    },
+    "confirm": {
+      "action": "Confirm as a fact",
+      "aria": "Confirm as a fact, without changing the text: {{text}}",
+      "confirmed": "Note confirmed as a fact"
+    },
+    "expiry": {
+      "add": "Add a deadline",
+      "change": "Change the deadline",
+      "addAria": "Add a deadline: {{text}}",
+      "changeAria": "Change the deadline: {{text}}",
+      "label": "Valid until",
+      "save": "Save the deadline",
+      "remove": "Remove the deadline",
+      "cancel": "Cancel"
+    },
+    "history": {
+      "show": "History",
+      "aria": "History: {{text}}",
+      "loading": "Reading the history…",
+      "unavailable": "The history could not be read. Nothing is shown because nothing was read — not because nothing changed.",
+      "original": "Original text: “{{value}}”",
+      "change": "{{before}} → {{after}}",
+      "noExpiry": "no deadline",
+      "event": {
+        "created": "Created by {{name}} on {{date}}",
+        "createdUnknown": "Created on {{date}}",
+        "text_changed": "Text edited by {{name}} on {{date}}",
+        "text_changedUnknown": "Text edited on {{date}}",
+        "scope_changed": "Visibility changed by {{name}} on {{date}}",
+        "scope_changedUnknown": "Visibility changed on {{date}}",
+        "expiry_changed": "Deadline changed by {{name}} on {{date}}",
+        "expiry_changedUnknown": "Deadline changed on {{date}}"
+      }
+    },
+    "layer": {
+      "facts": {
+        "title": "What you pinned",
+        "description": "Facts, preferences and corrections pinned by hand or kept from an answer. Each one is for you only or for your whole company — the badge says which, and you can change it on what you pinned.",
+        "empty": "Nothing is pinned."
+      },
+      "preferences": {
+        "title": "How you like to work",
+        "description": "The free-form settings {{copilot}} re-reads on every exchange. Personal: nobody else sees them.",
+        "empty": "No preference kept.",
+        "emptyOther": "No other preference kept."
+      },
+      "conversations": {
+        "title": "The thread of your exchanges",
+        "description": "A rolling summary: two excerpts per exchange, what you wrote and what {{copilot}} answered. This is the exact text she re-reads on your next message.",
+        "empty": "No exchange summarised."
+      },
+      "refusals": {
+        "title": "What you turned down",
+        "description": "What {{copilot}} offered and what you did with it. This is what stops her offering the same thing again.",
+        "empty": "No suggestion in the recent past."
+      },
+      "identity": {
+        "title": "What {{copilot}} knows about you",
+        "description": "What you declared about your role and the way you sell. {{copilot}} reads it back on every exchange — it sets her tone and how much advice she gives.",
+        "empty": "Nothing declared: {{copilot}} knows nothing about you beyond what you write to her.",
+        "declared": "You wrote these lines yourself. They are not forgotten here: they are corrected where you entered them.",
+        "declaredLink": "Edit in My account"
+      },
+      "workspace": {
+        "title": "What {{copilot}} knows about your company",
+        "description": "Your company profile, exactly as it goes into {{copilot}}'s context on every exchange. Shared: your colleagues read the same lines.",
+        "empty": "No profile filled in: {{copilot}} reasons without knowing anything about your company.",
+        "declared": "This profile is entered in settings. It is not forgotten from this screen: erasing it here would wipe the whole workspace's configuration.",
+        "declaredLink": "Edit the company profile"
+      }
+    },
+    "detail": {
+      "preference": "Preference",
+      "correction": "Correction",
+      "copilotNote": "Note from {{copilot}} — to verify",
+      "confirmedNote": "Note from {{copilot}} — confirmed",
+      "confirmedNoteBy": "Note from {{copilot}} — confirmed by {{name}}",
+      "confirmedNoteByOn": "Note from {{copilot}} — confirmed by {{name}} on {{date}}",
+      "acted": "You followed up",
+      "refused": "You turned it down",
+      "ignored": "No answer",
+      "closed_unread": "Closed unread",
+      "firstName": "First name",
+      "skipEnrichmentCostConfirmation": "Enrich one contact without asking about the cost again",
+      "sellerRole": "Your role",
+      "proactivity": "Level of support",
+      "sellerGoal": "Your goal",
+      "monthlyTarget": "Monthly target",
+      "portfolioSize": "Portfolio size",
+      "accountsRelationshipStatus": "Relationship with your accounts",
+      "salesBlockers": "What blocks you",
+      "mainChallenge": "Your main difficulty",
+      "companyName": "Company name",
+      "size": "Company size",
+      "salesTeamSize": "Sales team size",
+      "positioning": "Positioning",
+      "offers": "Offers",
+      "sectors": "Target sectors",
+      "geoZone": "Geographic area",
+      "targetCompanyTypes": "Target company types",
+      "staffingModel": "Staffing model",
+      "offerPortfolioNames": "Offer portfolio",
+      "personas": "Decision-maker personas",
+      "noGoSectors": "Excluded sectors",
+      "salesCycle": "Sales cycle",
+      "avgTJM": "Average day rate",
+      "references": "References",
+      "dealSize": "Deal size",
+      "targetMargin": "Target margin",
+      "rampUpCapacity": "Ramp-up capacity",
+      "goToMarketChannels": "Go-to-market channels"
+    },
+    "never": {
+      "title": "What {{copilot}} never memorises",
+      "messageBodies": "The content of your messages. It is kept in your activity log, which is yours — it is never handed to {{copilot}}, nor to a colleague.",
+      "otherWorkspace": "Data from another workspace. Every read carries your workspace's scope, with no exception.",
+      "colleagueOutOfScope": "Anything belonging to a colleague outside your scope. Your preferences and your refusals are personal.",
+      "deletedByUser": "Anything you forgot. A forgotten line leaves the screen AND the context {{copilot}} re-reads: it is archived, never re-read again — here we archive, we do not destroy.",
+      "accidentalSecret": "A secret shared by mistake. Remove it here: {{copilot}} stops re-reading it from the next message on."
+    },
+    "toast": {
+      "forgotten": "Line forgotten",
+      "forgetFailed": "Could not forget the line",
+      "scope": {
+        "user": "Now visible to you only",
+        "workspace": "Now shared with your whole company"
+      },
+      "scopeFailed": "Could not change who sees it"
+    },
+    "forgetAll": {
+      "action": "Forget everything",
+      "title": "Forget everything?",
+      "goes": "What is permanently deleted: the facts YOU pinned, your preferences, the summary of all your exchanges with {{copilot}}, the trace of her proposals, and your feedback on {{copilot}}'s replies (in this workspace).",
+      "stays": "What stays: facts pinned by your colleagues — they are not yours — plus your profile and your company's, which are corrected in settings; and the corrections you applied to an account's file stay, for the team.",
+      "confirmationsStay": "Your confirmations on the team's notes stay visible.",
+      "irreversible": "This cannot be undone. Nothing will bring these lines back.",
+      "confirm": "Yes, forget everything",
+      "pending": "Erasing…",
+      "doneOne": "One line forgotten.",
+      "done": "{{count}} lines forgotten.",
+      "doneNone": "There was nothing to forget.",
+      "partial": "Part of it could not be erased: {{layers}}. Those lines are still there — try again.",
+      "failed": "Nothing was erased."
+    },
+    "add": {
+      "action": "Add an item",
+      "title": "Add to my memory",
+      "description": "What you write here is kept for you alone and joins {{copilot}}’s context. You can remove it at any time.",
+      "factLabel": "What I want to remember",
+      "recheckLabel": "To recheck on (optional)",
+      "note": "This addition is deliberate. It changes neither your business, your expertise, nor an account’s facts. A piece of news is not turned into a confirmed need.",
+      "confirm": "Save",
+      "cancel": "Cancel"
+    }
+  },
+  "close": "Close",
+  "messageLibrary": {
+    "intro": "Message examples approved by your workspace. An example with a claim no real data supports stays readable, but is never offered as ready to send.",
+    "empty": "No example in your workspace library yet. Import the shipped sequences: they stay under review until real data backs their claims.",
+    "importButton": "Import the shipped sequences",
+    "completeButton": "Add the missing shipped templates",
+    "importError": "The import did not complete (record-write permission required).",
+    "errorState": "The library could not be read.",
+    "claims": {
+      "title": "Claims to check before this example can be offered",
+      "titleDone": "Claims checked",
+      "confirm": "I checked it",
+      "verified": "Checked",
+      "error": "The check could not be saved."
+    },
+    "facts": {
+      "titleDone": "Facts confirmed",
+      "title": "Facts to confirm before this example can be offered",
+      "confirm": "Confirm",
+      "confirmed": "Confirmed",
+      "error": "The confirmation could not be saved.",
+      "pending": "Mandatory facts to confirm: {{facts}}."
+    },
+    "blocked": {
+      "archived": "Archived: never offered as ready to send.",
+      "review": "To review before it can be offered."
+    },
+    "status": {
+      "approuve": "Approved",
+      "a_revoir": "To review",
+      "historique": "Historical",
+      "interdit": "Forbidden"
+    },
+    "mode": {
+      "verbatim": "Word for word",
+      "inspiration": "Inspiration"
+    },
+    "channel": {
+      "linkedin_draft": "LinkedIn",
+      "email_draft": "Email",
+      "call_brief": "Call"
+    },
+    "add": {
+      "button": "Add an example",
+      "title": "Add an example",
+      "description": "Your example joins the workspace library. It stays under review: it is never offered as a ready-to-send message until you have re-read it.",
+      "titleLabel": "Title",
+      "channelLabel": "Channel",
+      "textLabel": "Message text",
+      "shareWithTeam": "Share with the team",
+      "submit": "Add",
+      "success": "Example added to the library.",
+      "error": "The example could not be added (record write permission required).",
+      "origin": "Added by the team",
+      "source": "Entered from the library"
+    }
+  }
+}

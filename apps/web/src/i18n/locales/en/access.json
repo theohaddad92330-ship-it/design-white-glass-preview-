@@ -1,0 +1,473 @@
+{
+  "banner": {
+    "plan_locked": {
+      "title": "This screen belongs to another plan",
+      "description": "It stays visible so you know it exists. The workspace owner can open it from Billing.",
+      "action": "See the plans"
+    },
+    "permission": {
+      "title": "Your role does not open this screen",
+      "description": "Ask a manager in your workspace for access: they can grant it without changing your role."
+    },
+    "no_integration": {
+      "title": "No connected tool provides this data",
+      "description": "Connect the tool in Settings › Integrations. Nothing is lost: the screen fills in as soon as it is connected.",
+      "action": "Connect a tool"
+    },
+    "degraded": {
+      "title": "Part of this screen is unavailable",
+      "description": "The rest works normally. The affected actions stay greyed out until the tool is connected.",
+      "action": "Connect {{capability}}",
+      "actionContinue": "Continue without {{capability}}"
+    },
+    "stillPossible": "What still works without it: {{value}}.",
+    "missing": "Missing: {{items}}",
+    "capability": {
+      "crm": "your CRM",
+      "email": "your mailbox",
+      "calendar": "your calendar",
+      "documents": "your documents",
+      "ats": "your ATS",
+      "generic": "this tool"
+    },
+    "missingName": {
+      "exports": "PDF / CSV exports",
+      "chat_ai": "{{copilot}}",
+      "discover": "Discover",
+      "watchlist": "Watchlist",
+      "knowledge_base": "the knowledge base",
+      "team_workspace": "the shared workspace",
+      "needs": "Needs",
+      "talent_pool": "the Talent pool",
+      "crm_native": "the {{brand}} CRM",
+      "ats_native": "the {{brand}} ATS",
+      "manager_cockpit": "Management cockpit",
+      "crm_sync": "CRM export",
+      "mcp_assistant": "the AI assistant (MCP)",
+      "public_api": "the public API",
+      "rfp": "tenders",
+      "generic": "a feature of your plan"
+    },
+    "missingPermission": "a permission on your workspace"
+  },
+  "loading": "Loading…",
+  "declared": "Saved.",
+  "declareFailed": "Could not save",
+  "freshOn": "{{source}} · {{date}}",
+  "staleOn": "{{source}} · dated {{date}}, worth re-checking",
+  "undated": "{{source}} · no known date",
+  "status": {
+    "title": "Your access status on this account",
+    "value": {
+      "inconnu": "Unknown",
+      "referenced": "Referenced",
+      "to_build": "To build"
+    },
+    "help": {
+      "none": "Nothing set. Say whether an ESN is already referenced here, or whether access has to be built: the contacts are ordered accordingly.",
+      "inconnu": "You set “unknown”: the contacts keep the usual ordering.",
+      "referenced": "Referenced access: operational contacts and buyers come first. Nobody is removed, the list is only ordered differently.",
+      "to_build": "Access to build: decision makers and sponsors come first. Nobody is removed, the list is only ordered differently."
+    }
+  },
+  "level": {
+    "title": "Account access",
+    "state": {
+      "direct": "Direct access",
+      "rang2": "Second-tier access",
+      "rang3_plus": "Third tier or more",
+      "inconnu": "Access unknown"
+    },
+    "help": {
+      "direct": "No rank-1 incumbent is in place on this account: the direct path is open.",
+      "rang2": "A rank-1 incumbent is in place, and a partner is declared on this account — the door goes through them.",
+      "rang3_plus": "A competing rank-1 incumbent is in place and no partner is declared on this account — no known door today.",
+      "inconnu": "It is not yet known whether a rank-1 incumbent is in place on this account."
+    },
+    "fact": {
+      "no_incumbent": "Based on {{entities}}: no rank-1 incumbent is in place there.",
+      "incumbent_with_partner": "Based on {{entities}}: a rank-1 incumbent is in place there, and {{partner}} is declared as a partner there.",
+      "incumbent_without_partner": "Based on {{entities}}: a rank-1 incumbent is in place there, with no partner declared."
+    }
+  },
+  "personalPaths": {
+    "title": "Personal access paths",
+    "help": "Who, on your team or in your network, already has a door ajar at this account.",
+    "voie": {
+      "consultant_en_place": "Consultant already in place",
+      "ancien_collegue": "Former colleague",
+      "relation_commune": "Common relation",
+      "client_existant": "Existing client",
+      "partenaire_rang2": "Second-tier partner",
+      "esn_referencee": "Already-referenced partner",
+      "ancien_manager": "Former manager",
+      "personne_changement_poste": "Someone who changed jobs",
+      "evenement_rencontre": "Met at an event",
+      "reseau_alumni": "Alumni network",
+      "recommandation_directe": "Direct recommendation"
+    },
+    "certainty": {
+      "verified_access": "Verified access",
+      "probable_relation": "Probable relation",
+      "simple_affinity": "Simple affinity",
+      "historic_observation": "Observed history"
+    },
+    "risk": {
+      "stale": "Worth re-checking — old information.",
+      "unconfirmed": "Unconfirmed — qualify it before relying on it.",
+      "undeclared_detection": "Detected automatically, never declared by anyone on the team."
+    },
+    "proof": "Proof: {{proof}}",
+    "warmth": "Link warmth: {{level}}",
+    "warmthLevel": {
+      "distant": "distant",
+      "cordial": "cordial",
+      "close": "close"
+    },
+    "source": {
+      "workspace_declared_link": "Declared by your team",
+      "partner_registry_proven": "Actual placements recorded",
+      "partner_registry_declared": "Declared by your team",
+      "partner_registry_observed": "Current source",
+      "crm_relationship": "Active CRM relationship",
+      "detected_signal": "Detected signal"
+    },
+    "sourceSince": "{{source}} · since {{date}}",
+    "sourceUndated": "{{source}} · no known date",
+    "ask": {
+      "consultant_en_place": "Acceptable ask: an on-the-ground opinion, before any sales pitch.",
+      "ancien_collegue": "Acceptable ask: an informal chat to understand who decides.",
+      "relation_commune": "Acceptable ask: an introduction, if the person is willing.",
+      "client_existant": "Acceptable ask: widen the scope with a contact you already have.",
+      "partenaire_rang2": "Acceptable ask: a word on the framework of the relationship, before naming anyone.",
+      "esn_referencee": "Acceptable ask: understand how to go through its referencing, not around it.",
+      "ancien_manager": "Acceptable ask: advice on the best way in.",
+      "personne_changement_poste": "Acceptable ask: a congratulations message with an open question, no proposal.",
+      "evenement_rencontre": "Acceptable ask: recall the meeting and suggest a short chat.",
+      "reseau_alumni": "Acceptable ask: a peer conversation, no pitch.",
+      "recommandation_directe": "Acceptable ask: introduce yourself with the recommender’s name, once they agree."
+    },
+    "action": {
+      "verified_access": "Action: lean on this route now.",
+      "probable_relation": "Action: confirm it with the person before relying on it.",
+      "simple_affinity": "Action: a shared point, not a relationship — do not rely on it without strengthening it.",
+      "historic_observation": "Action: re-check it still holds, otherwise don’t use it."
+    }
+  },
+  "lock": {
+    "title": "What locks it",
+    "state": {
+      "ouvert": "No supplier panel detected",
+      "semi_ouvert": "Reachable through an intermediary",
+      "verrouille": "Panel closed",
+      "inconnu": "I don’t know"
+    },
+    "help": {
+      "ouvert": "Nothing seems to block the way in. Worth confirming on first contact.",
+      "semi_ouvert": "A supplier is in place. The way in goes through them, or through the next tender.",
+      "verrouille": "The panel is closed. Do not invest without a tier-1 partner — or aim for the renewal window, when it is known.",
+      "inconnu": "I don’t know whether this account is on a supplier panel. No public source says so for a private company — it’s a question for the first contact."
+    }
+  },
+  "barrier": {
+    "title": "How this account buys",
+    "help": "Estimated from six public indicators, never declared by the account. It is not a promise: it explains why the door opens faster or slower.",
+    "badge": "{{label}} · barrier {{value}}/10",
+    "class": {
+      "A": "Likely open",
+      "B": "Open through an entity",
+      "C": "Semi-open",
+      "D": "Likely locked"
+    },
+    "provenance": "Public registry · estimated on {{date}}",
+    "provenanceUndated": "Public registry · no known date",
+    "unmeasurable": "Barrier not estimable. Missing: {{proxies}}.",
+    "unmeasurableHelp": "Below three measured indicators, no class is produced. “Not estimable” does not mean “open”.",
+    "absent": "No barrier estimated for this account.",
+    "absentHelp": "It is computed on every analysis, from the public registry. A dossier analysed before it existed does not carry one.",
+    "headcountStale": "headcount to re-check — read before its reading was fixed; the header carries the current value",
+    "notMeasured": "not measured",
+    "proxies": {
+      "statut": "Company status",
+      "effectif": "Headcount",
+      "cotation": "Stock listing",
+      "commande_publique": "Exposure to public procurement",
+      "decentralisation": "Number of establishments",
+      "anciennete": "Age"
+    },
+    "corrections": {
+      "echeance_proche": "The current contract is coming up for renewal"
+    }
+  },
+  "addressability": {
+    "title": "Addressability",
+    "help": "Can you get in at this account? Five axes, never folded into the interest score: “interesting” and “reachable” are two different questions.",
+    "badge": "{{value}}/{{max}}",
+    "measuredOn_one": "based on {{count}} axis out of {{total}}",
+    "measuredOn_other": "based on {{count}} axes out of {{total}}",
+    "notMeasured": "No axis could be measured for this account.",
+    "unmeasuredTitle": "What we could not look at — these axes leave the denominator, they are not worth zero:",
+    "absent": "Addressability not available for this account.",
+    "absentHelp": "This account has not been analysed since addressability started being computed. Run a new analysis to get it.",
+    "declarative": "Declarative",
+    "pathCta": "Explore partners",
+    "axes": {
+      "lock": "Lock",
+      "proportion": "Proportion",
+      "path": "Path",
+      "relation": "Relation",
+      "access_cost": "Access cost"
+    },
+    "unmeasuredReason": {
+      "lock": "no public procurement record in its name, and not enough public data to estimate the buying barrier.",
+      "proportion": "one of the two sides is missing: the account's headcount bracket, or your firm's size in your profile.",
+      "path": "no aggregated access route feeds this axis yet.",
+      "relation": "no cross-check possible: your CRM is not connected, or it found nothing on this account.",
+      "relationKnown_one": "{{count}} contact your team already knows is attached to this account (import from your CRM): the relationship has not been recalculated with it yet.",
+      "relationKnown_other": "{{count}} contacts your team already knows are attached to this account (import from your CRM): the relationship has not been recalculated with them yet.",
+      "access_cost": "access cost is declared, never estimated — you can enter it further down this tab."
+    }
+  },
+  "modes": {
+    "title": "Ways in",
+    "help": "Seven doors, five of them indirect. None is closed for lack of data: not knowing is not an obstacle.",
+    "direct_reference": "Direct, on the supplier panel",
+    "direct_hors_panel": "Direct, off panel",
+    "filiale_bu": "Through a subsidiary or business unit",
+    "rang2_soustraitance": "Rank 2, under a firm already in place",
+    "portage_marketplace": "Through an umbrella company or marketplace",
+    "cotraitance": "Joint bid, with a lead contractor",
+    "introduction_relation": "Through an introduction",
+    "openDetailAria": "View the detail of the \"{{mode}}\" route",
+    "dialogDescription": "This entry route's detail: how it usually plays out, who to talk to, and what to check next.",
+    "previousMode": "Previous route",
+    "nextMode": "Next route",
+    "detailLabels": {
+      "recommendedPath": "Recommended path",
+      "prerequisite": "Prerequisite",
+      "firstPerson": "First person to see",
+      "questionToAsk": "Question to ask",
+      "nextCondition": "Next condition",
+      "fallback": "Fallback",
+      "notRecommended": "Route to avoid",
+      "notRecommendedMissing": "No route is currently discouraged in the catalog."
+    },
+    "detail": {
+      "direct_reference": {
+        "recommendedPath": "Approach the buyer or IT department directly, leaning on your existing referencing — panel, framework agreement or live contract.",
+        "prerequisite": "Already be referenced on this account (panel, framework agreement or active public contract).",
+        "firstPerson": "The buyer or business sponsor managing the current referencing.",
+        "questionToAsk": "What is the next tender or order wave under this referencing?",
+        "nextCondition": "Get a date or scope for the next consultation.",
+        "fallback": "If the referencing stalls, check whether it is still active or explore an off-panel direct entry.",
+        "notRecommended": "If the need is not something IT or the referenced buyer handles, this route does not apply."
+      },
+      "direct_hors_panel": {
+        "recommendedPath": "Approach a business sponsor directly, outside the referenced buying process, on a one-off or urgent need.",
+        "prerequisite": "A real need not covered by the panel already in place — a measurable pain point.",
+        "firstPerson": "An operational manager facing the need, rather than the buyer.",
+        "questionToAsk": "Can this need be handled outside the usual buying process, directly?",
+        "nextCondition": "Get this sponsor to validate a possible exception or direct purchase.",
+        "fallback": "If the buying process requires the panel, switch to entering through a subsidiary or an introduction."
+      },
+      "filiale_bu": {
+        "recommendedPath": "Enter through a subsidiary or business unit that is less locked than headquarters.",
+        "prerequisite": "An identified subsidiary whose lock status differs from the group's.",
+        "firstPerson": "This subsidiary's IT or procurement manager, not headquarters'.",
+        "questionToAsk": "Does this subsidiary have its own budget and buying decision?",
+        "nextCondition": "Confirm the subsidiary's budget autonomy before investing sales time.",
+        "fallback": "If every known subsidiary routes back to headquarters, fall back to an introduction or a joint bid.",
+        "notRecommended": "If the targeted subsidiary has no budget or buying decision of its own, this route escalates to headquarters and loses its point."
+      },
+      "rang2_soustraitance": {
+        "recommendedPath": "Position yourself as a subcontractor to a firm already in place on this account.",
+        "prerequisite": "An identified tier-1 firm, with declared or observed openness to subcontracting.",
+        "firstPerson": "That firm's account or delivery manager.",
+        "questionToAsk": "Do you have a workload spike or a skill gap on this account?",
+        "nextCondition": "Get a precise subcontracting need, with a scope and a volume.",
+        "fallback": "If the incumbent firm is not open to tier 2, look for another incumbent firm or a direct entry."
+      },
+      "portage_marketplace": {
+        "recommendedPath": "Go through an umbrella company or marketplace already referenced on this account.",
+        "prerequisite": "An identified umbrella partner, active on this account or sector.",
+        "firstPerson": "The umbrella partner's or marketplace's contact for this account.",
+        "questionToAsk": "Which profiles or assignments does this partner already place on this account?",
+        "nextCondition": "Be registered or referenced with the partner for this specific account.",
+        "fallback": "If no active umbrella partner is identified, explore a joint bid or an introduction."
+      },
+      "cotraitance": {
+        "recommendedPath": "Answer a tender jointly, alongside a lead partner already legitimate on this account.",
+        "prerequisite": "An identified lead partner, in a position to carry the bid, with a genuinely complementary offer.",
+        "firstPerson": "The prospective lead partner's manager or bid owner.",
+        "questionToAsk": "Are you looking for a co-bidder on this account's next tenders?",
+        "nextCondition": "Formalise the joint-bid agreement before the tender is published.",
+        "fallback": "Without a willing lead partner, fall back to a direct off-panel entry or an introduction."
+      },
+      "introduction_relation": {
+        "recommendedPath": "Go through an existing relationship — personal, a colleague's, or a past one — to get introduced.",
+        "prerequisite": "An active or reactivatable relationship with someone on the client side (CRM, history, team network).",
+        "firstPerson": "Whoever holds the relationship — you or a colleague, never named if not visible to you.",
+        "questionToAsk": "Is this relationship willing to make an introduction, and to whom?",
+        "nextCondition": "Get an actual introduction to a contact on the client side.",
+        "fallback": "If the relationship cannot introduce you, look for a direct entry or one through a subsidiary."
+      }
+    }
+  },
+  "feasibility": {
+    "available": "identified",
+    "possible": "to explore",
+    "blocked": "closed"
+  },
+  "cost": {
+    "title": "What getting in costs",
+    "unknown": "Cost of access unknown.",
+    "placeholder": "e.g. 3% commission through the umbrella company",
+    "estimateBasis": "Declared by your workspace on {{company}} on {{date}}, same lock — to confirm here.",
+    "declare": "Record"
+  },
+  "history": {
+    "title": "What we know, and since when"
+  },
+  "kind": {
+    "lock": "Lock-in",
+    "mode": "Way in",
+    "cost": "Cost of access",
+    "path": "Path"
+  },
+  "entities": {
+    "absentKnown_one": "{{count}} entity found by the analysis, it is not declared: without a declaration, it is not ranked.",
+    "absentKnown_other": "{{count}} entities found by the analysis, none is declared: without a declaration, they are not ranked.",
+    "absentNone": "No entity is known for this account: the group is the only readable door for now.",
+    "title": "Which entity to go through",
+    "help": "The group can be closed while its entities are not. On an account too big for your size, this is often the only way in.",
+    "rank1UnknownAll": "First-tier incumbent not established on the {{count}} known entities: no door to rank yet.",
+    "rank1UnknownSome": "First-tier incumbent not established on {{count}} other entity(ies).",
+    "rank1": {
+      "yes": "a rank 1 is in place",
+      "no": "no known rank 1",
+      "unknown": "rank 1 unknown"
+    },
+    "avoidGroup": "On this account, do not aim at the head office: the estimated barrier is high. Enter through an entity.",
+    "reasons": {
+      "none": "no known fact on this perimeter",
+      "kind": {
+        "bu": "business unit identified",
+        "subsidiary": "subsidiary identified",
+        "division": "division identified",
+        "unknown": "perimeter identified"
+      },
+      "contacts_one": "{{count}} contact already identified",
+      "contacts_other": "{{count}} contacts already identified",
+      "sites_one": "{{count}} site selected",
+      "sites_other": "{{count}} sites selected",
+      "rank1": "rank 1 in place",
+      "rank1Named": "known rank 1: {{value}}"
+    },
+    "scoreFact": "{{label}} +{{points}}",
+    "scoreAxesCount_one": "{{count}} axis out of {{total}} evaluated",
+    "scoreAxesCount_other": "{{count}} axes out of {{total}} evaluated",
+    "scoreLine": "{{value}} points, {{axesCount}}: {{axes}}.",
+    "scoreMissing": "Not provided: {{axes}}.",
+    "axes": {
+      "kind": "type",
+      "contacts": "contacts",
+      "sites": "sites",
+      "rank1": "tier-1"
+    }
+  },
+  "ecosystem": {
+    "title": "Ecosystem density",
+    "dense": "Dense services ecosystem",
+    "help": "Several IT-services-firm↔environment relationships have been observed. A direct approach may deserve extra qualification.",
+    "cta": "Explore partners"
+  },
+  "community": {
+    "title": "What the community says",
+    "confirmed_one": "{{count}} workspace confirms: {{value}}.",
+    "confirmed_other": "{{count}} distinct workspaces confirm: {{value}}. None of them knows who the others are.",
+    "locked": "This is known to the community. Turn sharing on in your workspace settings to see it — a workspace that does not contribute does not consume.",
+    "conflict": "Workspaces disagree: {{values}}. While they diverge, the information stays unknown.",
+    "value_one": "{{value}} ({{count}} workspace)",
+    "value_other": "{{value}} ({{count}} workspaces)"
+  },
+  "question": {
+    "ask": {
+      "after_refusal": "Was that refusal on the merits, or a referencing problem?",
+      "mission_end": "Does this client buy through a supplier panel?",
+      "first_contact": "Did this account mention referencing?",
+      "sprint3_qualification": "This account is in volume qualification: do you know whether its panel is open?"
+    },
+    "answer": {
+      "panel_ferme": "Yes, closed panel",
+      "panel_ouvert": "Yes, open",
+      "refus_fond": "On the merits",
+      "refus_referencement": "Referencing",
+      "skip": "Not discussed"
+    },
+    "thanksRecorded": "Noted. Three workspaces saying it makes the information reliable for everyone.",
+    "thanksNothing": "Noted. We won’t ask again on this account.",
+    "failed": "The answer could not be saved"
+  },
+  "contradiction": {
+    "line": "“{{name}}” is declared a competitor under Partners, but the account is locked on that entity under Access.",
+    "help": "Both cannot be true at once: check which one is up to date (correct either)."
+  },
+  "warning": {
+    "procedure_collective": {
+      "dated": "Insolvency proceeding published on {{date}}",
+      "undated": "Insolvency proceeding published (date unknown)",
+      "help": "This is not a closed door — a company in difficulty is often easy to reach. It is a risk: check it before investing time.",
+      "openAnnouncement": "View the announcement"
+    }
+  },
+  "gate": {
+    "fallback": "This action needs a tool you haven't connected yet. Head to Settings › Integrations.",
+    "mailbox_send": "Connect your mailbox so I can prepare and send drafts.",
+    "mailbox_read": "Connect your mailbox so I can spot threads with no reply.",
+    "agenda_write": "Connect your calendar so I can book meetings and reminders.",
+    "crm_write": "Connect your CRM to export contacts and log conversations.",
+    "documents_read": "Connect your document space so I can find CVs and proposals.",
+    "mailbox_write": "Connect your mailbox to write from {{brand}} — without it, a draft has nowhere to start from."
+  },
+  "axes": {
+    "lockTenderOpen": "Open tender — the door is open too",
+    "lockAwardIncumbent": "A supplier is already in place — entry goes through them",
+    "lockEstimateA": "Likely open — registry estimate",
+    "lockEstimateB": "Open through an entity — registry estimate",
+    "lockEstimateC": "Semi-open — registry estimate",
+    "lockEstimateD": "Likely locked — registry estimate",
+    "proportion": "Proportion — {{tier}} for an ESN of {{size}}",
+    "relation": "A relationship already exists — this isn't a cold entry",
+    "pathStrong": "Documented partner path — strong evidence, to qualify",
+    "pathIntermediate": "Emerging partner path — intermediate evidence, to qualify"
+  },
+  "dataforge_access": {
+    "title": "Account access · Common base",
+    "lead": "How to get in at this account, based on what the common base observed on the market.",
+    "accessibility": {
+      "label": "Accessibility",
+      "high": "Easy to reach",
+      "medium": "Moderately accessible",
+      "low": "Hard to reach"
+    },
+    "barriers": {
+      "label": "Barriers",
+      "platform": "Purchasing platform",
+      "public_procurement": "Public procurement",
+      "referencing": "Vendor referencing"
+    },
+    "route": {
+      "label": "Recommended buying route",
+      "platform": "Purchasing platform",
+      "tender": "Tender",
+      "referencing": "Vendor referencing",
+      "supplier_portal": "Supplier portal"
+    },
+    "priority": {
+      "label": "Priority level",
+      "high": "High priority",
+      "medium": "Medium priority",
+      "low": "Low priority"
+    }
+  }
+}

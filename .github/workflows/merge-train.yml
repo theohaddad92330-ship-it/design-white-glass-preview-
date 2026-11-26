@@ -1,0 +1,60 @@
+name: Merge train
+
+# La file de fusion maison. Détail, label, ordre, rouge, coupure : docs/ci.md « La file de fusion ».
+# Un passage = UN pas sur la PR de tête (mettre à jour, attendre, fusionner, éjecter), sans état.
+# Interrupteur : `vars.MERGE_TRAIN` = 'off' → rien. Absent ou autre = actif.
+
+on:
+  schedule: [{ cron: '*/10 * * * *' }]
+  workflow_dispatch:
+    inputs:
+      dry_run:
+        description: 'Lire et décider, ne rien écrire'
+        type: boolean
+        default: true
+  pull_request:
+    types: [labeled]
+
+# Un seul train à la fois ; un passage en cours n'est jamais coupé (il pourrait être en pleine fusion).
+concurrency:
+  group: merge-train
+  cancel-in-progress: false
+
+permissions:
+  contents: write
+  pull-requests: write
+  checks: read
+  actions: read
+
+jobs:
+  train:
+    name: File de fusion
+    # `labeled` : seul `ci:train` réveille le train (les autres labels ne coûtent qu'un job sauté).
+    if: ${{ vars.MERGE_TRAIN != 'off' && (github.event_name != 'pull_request' || github.event.label.name == 'ci:train') }}
+    runs-on: ${{ vars.CI_RUNS_ON || 'ubuntu-latest' }}
+    timeout-minutes: 10
+    steps:
+      - uses: actions/checkout@v7
+      - uses: actions/setup-node@v7
+        with:
+          node-version: 22
+      # Jeton : `MERGE_TRAIN_TOKEN` (PAT ou app) s'il existe, sinon `GITHUB_TOKEN`. Une fusion, une
+      # mise à jour de branche ou une réouverture faites par `GITHUB_TOKEN` NE DÉCLENCHENT PAS les
+      # workflows `push` / `pull_request` : sans jeton dédié, le train ne met pas les branches à jour
+      # (`--can-update` absent) et relance ci.yml + sentry-release.yml sur main après chaque fusion.
+      - name: Passage du train
+        env:
+          GITHUB_TOKEN: ${{ github.token }}
+          MERGE_TRAIN_TOKEN: ${{ secrets.MERGE_TRAIN_TOKEN }}
+          GITHUB_REPOSITORY: ${{ github.repository }}
+          DRY_RUN: ${{ github.event_name == 'workflow_dispatch' && inputs.dry_run }}
+          HAS_PAT: ${{ secrets.MERGE_TRAIN_TOKEN != '' }}
+        run: |
+          args=()
+          [ "$DRY_RUN" = "true" ] && args+=(--dry-run)
+          if [ "$HAS_PAT" = "true" ]; then
+            args+=(--can-update)
+          else
+            args+=(--dispatch ci.yml,sentry-release.yml)
+          fi
+          node tools/ci/merge-train.mjs "${args[@]}"

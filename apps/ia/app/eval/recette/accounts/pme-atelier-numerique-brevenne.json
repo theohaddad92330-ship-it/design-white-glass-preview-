@@ -1,0 +1,201 @@
+{
+  "slug": "pme-atelier-numerique-brevenne",
+  "company": "Atelier Numérique Brévenne (fictif)",
+  "archetype": "pme",
+  "issue": "#2130.8",
+  "nature": "fictif",
+  "as_of": "2026-09-15",
+  "_fiction": "Nom FICTIF assumé, marqué « (fictif) » : aucune entreprise réelle n'est décrite ici, aucun identifiant de registre n'est affirmé, et les sources vivent sur le domaine réservé .invalid (RFC 2606) — elles ne peuvent désigner aucune page réelle. Le cadrage #2130.1-7 laisse le choix entre un nom fictif assumé et une entreprise réelle dont chaque fait est sourcé ; faute de source vérifiable depuis ce poste sur cet archétype, c'est le nom fictif.",
+  "expected": {
+    "identite": {
+      "status": "attendu",
+      "contient": [
+        "Atelier Numérique Brévenne"
+      ]
+    },
+    "perimetre": {
+      "status": "attendu",
+      "contient": [
+        "48 salariés",
+        "Chazelles-sur-Orne"
+      ]
+    },
+    "decideurs": {
+      "status": "attendu",
+      "contient": [
+        "Martine Gaudry"
+      ]
+    },
+    "contacts_a_ne_pas_recommander": {
+      "status": "attendu",
+      "contient": [
+        "Lucas Bernier"
+      ]
+    },
+    "equipes_cles": {
+      "status": "attendu",
+      "contient": [
+        "Nacre"
+      ]
+    },
+    "signaux": {
+      "status": "attendu",
+      "contient": [
+        "Nacre"
+      ]
+    },
+    "projets": {
+      "status": "attendu",
+      "contient": [
+        "application web"
+      ]
+    },
+    "partenaires": {
+      "status": "attendu",
+      "contient": [
+        "Oriane Tech"
+      ]
+    },
+    "acces": {
+      "status": "attendu",
+      "contient": [
+        "décide seule"
+      ]
+    },
+    "recommandations": {
+      "status": "attendu",
+      "contient": [
+        "Nacre"
+      ]
+    },
+    "gaps": {
+      "status": "attendu",
+      "contient": [
+        "Nacre"
+      ]
+    },
+    "sources": {
+      "status": "attendu",
+      "contient": [
+        "src-offre"
+      ]
+    },
+    "action_suivante": {
+      "status": "attendu",
+      "contient": [
+        "Martine Gaudry"
+      ]
+    }
+  },
+  "dossier": {
+    "identite": {
+      "name": "Atelier Numérique Brévenne",
+      "siren": null
+    },
+    "perimetre": {
+      "scope": "entreprise",
+      "entities": [
+        "Atelier Numérique Brévenne — 48 salariés, site unique de Chazelles-sur-Orne"
+      ]
+    },
+    "decideurs": [
+      {
+        "name": "Martine Gaudry",
+        "title": "Dirigeante",
+        "team": "Direction"
+      },
+      {
+        "name": "Hugo Ferrand",
+        "title": "Responsable technique",
+        "team": "Atelier logiciel"
+      }
+    ],
+    "contacts_a_ne_pas_recommander": [
+      {
+        "name": "Lucas Bernier",
+        "reason": "en alternance, sans rôle de décision"
+      }
+    ],
+    "equipes_cles": [
+      "Atelier logiciel de l'outil de devis Nacre"
+    ],
+    "signaux": [
+      {
+        "id": "sig-nacre",
+        "text": "Ouverture d'un poste de développeur pour l'outil de devis Nacre",
+        "date": "2026-08",
+        "source": "src-offre"
+      }
+    ],
+    "projets": [
+      {
+        "id": "prj-nacre",
+        "text": "Réécriture de l'outil de devis Nacre en application web",
+        "source": "src-offre"
+      }
+    ],
+    "partenaires": [
+      "Oriane Tech (fictif)"
+    ],
+    "acces": [
+      {
+        "text": "La dirigeante décide seule des achats de prestation",
+        "via": "direction"
+      }
+    ],
+    "recommandations": [
+      {
+        "id": "reco-nacre",
+        "text": "Proposer un développeur en régie de trois mois pour la réécriture web de l'outil de devis Nacre, tant que le poste ouvert en 2026-08 reste à pourvoir.",
+        "why": "Dans cette entreprise de 48 salariés la dirigeante décide seule, et la réécriture de Nacre attend un recrutement encore ouvert.",
+        "target": "Martine Gaudry",
+        "evidence": [
+          "sig-nacre",
+          "prj-nacre"
+        ]
+      }
+    ],
+    "gaps": [
+      "budget de la réécriture de Nacre non connu"
+    ],
+    "sources": [
+      {
+        "id": "src-offre",
+        "url": "https://sources.fictif.invalid/pme-atelier-numerique-brevenne/src-offre",
+        "date": "2026-08-26"
+      }
+    ],
+    "action_suivante": {
+      "text": "Appeler Martine Gaudry pour qualifier le calendrier de la réécriture de Nacre",
+      "target": "Martine Gaudry",
+      "evidence": [
+        "sig-nacre"
+      ]
+    }
+  },
+  "cas": [
+    {
+      "id": "cas-revue-architecture",
+      "text": "Proposer une revue d'architecture de la réécriture web de Nacre avant le recrutement.",
+      "why": "L'atelier logiciel porte seul l'outil de devis Nacre, et un poste de développeur vient d'ouvrir.",
+      "target": "Hugo Ferrand",
+      "evidence": [
+        "prj-nacre",
+        "sig-nacre"
+      ],
+      "label": "useful_and_correct",
+      "_jugement": "Chaque élément vient du dossier, et la revue sert la personne qui porte l'outil."
+    },
+    {
+      "id": "cas-indecidable",
+      "text": "Proposer de sortir Nacre du site de Chazelles-sur-Orne vers un hébergement externe.",
+      "why": "Rien au dossier ne dit où l'outil de devis Nacre est hébergé aujourd'hui.",
+      "target": "Martine Gaudry",
+      "evidence": [
+        "prj-nacre"
+      ],
+      "label": "unknown",
+      "_jugement": "Le dossier ne permet pas de trancher : ni utile ni fausse, indécidable."
+    }
+  ]
+}

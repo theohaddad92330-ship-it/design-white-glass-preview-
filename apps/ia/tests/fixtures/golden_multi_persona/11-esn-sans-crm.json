@@ -1,0 +1,105 @@
+{
+  "id": "11-esn-sans-crm",
+  "persona": "ESN sans CRM",
+  "personaKind": "fictif",
+  "_source": "#2070 / #2085 — cas de référence du corpus de non-régression multi-persona",
+  "answers": {
+    "user_id": "golden-11-esn-sans-crm",
+    "first_name": "David",
+    "esn_name": "NoTool Consulting",
+    "consultant_size": "10-30",
+    "sales_team_size": "2-3 personnes",
+    "expertise_areas": [
+      "Développement applicatif (Web, Mobile, API)"
+    ],
+    "positioning": "Généraliste - large spectre selon les besoins client",
+    "staffing_model": "Mix équilibré CDI / Freelances",
+    "target_sectors": [
+      "E-commerce & Marketplaces",
+      "Retail & Grande distribution"
+    ],
+    "target_company_types": [
+      "PME (50-500 salariés)"
+    ],
+    "geo_zones": [
+      "Bordeaux & Nouvelle-Aquitaine"
+    ],
+    "main_sales_pain": "Je ne sais pas par où commencer"
+  },
+  "referenceProfile": {
+    "esnArchetype": "boutiqueExpert",
+    "sellingPosture": "volumeFlexible",
+    "contradiction": {
+      "statement": "Tu te positionnes « généraliste — large spectre selon les besoins client », mais tu n'as déclaré qu'un seul domaine d'expertise (développement applicatif).",
+      "reasoning": "Un positionnement généraliste suppose plusieurs domaines couverts ; une seule expertise déclarée ressemble plutôt à un profil spécialisé qui n'aurait pas encore complété le reste de la liste — à vérifier avec toi, pas une conclusion établie."
+    },
+    "idealAccountProfile": {
+      "size": "pme",
+      "sectorsPriority": [
+        "E-commerce & Marketplaces",
+        "Retail & Grande distribution"
+      ],
+      "decisionLevel": "manager",
+      "entryStrategy": "bottomUp"
+    },
+    "analysisParameters": {
+      "braveQueriesCount": 12,
+      "firecrawlPagesCount": 6,
+      "contactsTarget": 18,
+      "analysisDepth": "standard",
+      "maxTokensResearch": 11000,
+      "focusAreas": [
+        "Développement applicatif (Web, Mobile, API)"
+      ]
+    },
+    "messagingStyle": {
+      "tone": "relationshipFirst",
+      "messageLength": "standard",
+      "valuePropositionAngle": "On développe vos applications e-commerce, avec un suivi de projet direct — aucun outil imposé côté client.",
+      "differentiationPoints": [
+        "Suivi de projet sans dépendance à un CRM client",
+        "Développement full-stack e-commerce",
+        "Ancrage régional Nouvelle-Aquitaine"
+      ],
+      "avoid": [
+        "expertise reconnue",
+        "sur-mesure"
+      ]
+    },
+    "coachingInsights": {
+      "mainWeakness": "Mise en place d'une routine commerciale",
+      "keyAdvice": "Suis tes comptes dans Bellum comme mémoire commerciale unique avant de penser à un CRM : la routine de suivi compte plus que l'outil au démarrage.",
+      "cadenceRecommendation": {
+        "analysesPerWeek": 3,
+        "messagesPerDay": 8,
+        "followUpsPerWeek": 4
+      },
+      "kpiTargets": {
+        "accountsPerMonth": 12,
+        "rdvPerMonth": 8,
+        "conversionRateTarget": "15-25%"
+      }
+    },
+    "bellumPhrases": {
+      "welcome": "Bienvenue David, on va transformer ton expertise \"Développement applicatif (Web, Mobile, API)\" en pipeline qualifié sur \"E-commerce & Marketplaces\".",
+      "firstAnalysisCta": "Lancer une analyse sur une PME du secteur E-commerce & Marketplaces.",
+      "weeklySummaryIntro": "Cette semaine, choisis un compte et suis-le jusqu'au bout — sans te disperser.",
+      "emptyState": "Aucun compte en pipeline — lance ta première analyse pour commencer à construire ton suivi commercial.",
+      "scoreContext": "Le score se justifie par la correspondance sectorielle et la fraîcheur des signaux trouvés, jamais par un chiffre unique."
+    },
+    "welcomeSummary": {
+      "profileRecap": "Tu es une ESN \"Développement applicatif\" de 10-30 consultants, basée en \"Bordeaux & Nouvelle-Aquitaine\", spécialisée \"Développement applicatif (Web, Mobile, API)\", qui cible les \"PME\" \"E-commerce & Marketplaces\". Ton équipe commerciale compte 2-3 personnes et ne dispose d'aucun CRM.",
+      "searchesPersonalization": "Les recherches cibleront en priorité \"e-commerce\", \"marketplace\" et \"développement applicatif\".",
+      "contactsPersonalization": "Les contacts identifiés seront des \"Responsable E-commerce\" et \"CTO\" (pas des opérationnels juniors).",
+      "messagesPersonalization": "Les messages seront rédigés sur un ton \"relationnel\" (pas à vos côtés, main dans la main).",
+      "scoringPersonalization": "Le scoring évaluera la correspondance sectorielle e-commerce détectée chez la cible.",
+      "firstAnalysisSuggestions": []
+    }
+  },
+  "contradictions": [
+    "Aucun CRM déclaré : l'audit ne doit ni supposer une synchronisation CRM existante, ni proposer une action qui présuppose un historique de relance déjà outillé."
+  ],
+  "limits": [
+    "Aucune suggestion d'entreprise au premier écran : sans CRM ni compte existant, la liste reste vide plutôt qu'inventée."
+  ]
+}

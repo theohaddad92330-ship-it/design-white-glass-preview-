@@ -1,0 +1,132 @@
+{
+  "trigger": {
+    "ariaLabel": "Signaler un problème"
+  },
+  "dialog": {
+    "title": "Signaler un problème",
+    "description": "Décris ce qui ne va pas. Tout ce qui accompagne ton message est listé ci-dessous, et rien ne part avant que tu l'envoies."
+  },
+  "picker": {
+    "hint": "Clique sur l'élément à signaler",
+    "skip": "Sans pointer",
+    "capturing": "Capture en cours…",
+    "hoverRegion": "Élément survolé",
+    "hovering": "Élément survolé : {{element}}"
+  },
+  "context": {
+    "screenshotAlt": "Capture d'écran jointe",
+    "noElement": "Capture de la page jointe (aucun élément pointé).",
+    "elementAttached": "Élément pointé joint au rapport.",
+    "elementNamed": "« {{element}} »",
+    "removeScreenshot": "Retirer la capture"
+  },
+  "attachments": {
+    "label": "Pièces jointes",
+    "hint": "Colle une image (Ctrl/Cmd+V), glisse-la sur ce panneau, ou choisis un fichier — images, PDF ou texte, 4 Mo max chacun, 5 au total.",
+    "dropHint": "Dépose le fichier pour l'ajouter au signalement",
+    "imageAlt": "Aperçu de {{name}}",
+    "remove": "Retirer {{name}}",
+    "errors": {
+      "type": "{{name}} — type de fichier non accepté (images, PDF ou texte uniquement).",
+      "size": "{{name}} dépasse la taille maximale par fichier (4 Mo).",
+      "count": "Cinq pièces jointes maximum par signalement.",
+      "total": "La taille totale des pièces jointes dépasse le plafond autorisé."
+    }
+  },
+  "categories": {
+    "bug": "Bug",
+    "metier": "Métier",
+    "autre": "Autre"
+  },
+  "form": {
+    "placeholder": "Que s'est-il passé ? Qu'attendais-tu ?",
+    "submit": "Envoyer le signalement",
+    "remaining_one": "Encore {{count}} caractère",
+    "remaining_other": "Encore {{count}} caractères"
+  },
+  "preview": {
+    "title": "Ce qui sera envoyé",
+    "intro": "Avec ton message, et seulement quand tu l'envoies :",
+    "email": "Ton adresse e-mail : {{email}}",
+    "emailNone": "Aucune adresse e-mail",
+    "page": "La page : {{page}}",
+    "network_one": "{{count}} appel en échec",
+    "network_other": "{{count}} appels en échec",
+    "networkNone": "Aucun appel en échec",
+    "breadcrumbs_one": "Ton dernier geste",
+    "breadcrumbs_other": "Tes {{count}} derniers gestes",
+    "breadcrumbsNone": "Aucun geste récent",
+    "console": "Les messages récents de la console",
+    "consoleNone": "Aucun message de la console",
+    "errors": "Les erreurs récentes",
+    "errorsNone": "Aucune erreur récente",
+    "environment": "Ton navigateur et la version de l'application",
+    "online": "En ligne",
+    "offline": "Hors ligne"
+  },
+  "done": {
+    "title": "Merci pour ton retour !",
+    "subtitleWithReference": "Signalement n° {{number}} enregistré avec son contexte. Cite ce numéro si tu en reparles à l'équipe.",
+    "subtitleStoredOnly": "Ton signalement est enregistré, mais aucun numéro n'a pu lui être attribué — l'équipe le voit quand même.",
+    "follow": "Suivre mes signalements"
+  },
+  "demo": {
+    "message": "La démonstration n'envoie pas de signalement : rien de ce que tu écrirais ici ne partirait vers l'équipe. Dans ton propre espace, ce bouton transmet le problème avec son contexte, et tu le suis dans Réglages › Mes signalements."
+  },
+  "myReports": {
+    "title": "Mes signalements",
+    "subtitle": "Ce que tu as signalé, et où en est chacun.",
+    "legend": "« En cours » : quelqu'un s'en occupe. « Fermé sans suite » : clos sans correction.",
+    "reference": "Signalement n° {{number}}",
+    "noReference": "Sans numéro",
+    "sentOn": "Envoyé le {{date}}",
+    "status": {
+      "received": "Reçu",
+      "in_progress": "En cours",
+      "fixed": "Corrigé",
+      "closed_unresolved": "Fermé sans suite",
+      "unavailable": "État indisponible"
+    },
+    "states": {
+      "loading": "Chargement de tes signalements…",
+      "emptyTitle": "Aucun signalement",
+      "emptyMessage": "Tu n'as encore rien signalé.",
+      "emptyDetail": "Un signalement apparaît ici dès qu'il est envoyé, avec son état.",
+      "emptyAction": "Signaler un problème",
+      "emptyDetailDemo": "La démonstration n'envoie pas de signalement. Dans ton propre espace, ceux que tu envoies s'affichent ici avec leur état.",
+      "error": "Tes signalements n'ont pas pu être chargés.",
+      "retry": "Réessayer",
+      "partial_one": "L'état de {{count}} signalement n'a pas pu être lu pour le moment.",
+      "partial_other": "L'état de {{count}} signalements n'a pas pu être lu pour le moment.",
+      "partialDetail": "Réessaie dans une minute : ce que tu as écrit reste là."
+    },
+    "reportAction": "Préparer un signalement",
+    "listTitle": "Ce que tu as signalé",
+    "note": "Pour un retour utile : le parcours suivi, ce qui s’est passé et ce que tu attendais.",
+    "columns": {
+      "report": "Signalement",
+      "category": "Catégorie",
+      "sentOn": "Envoyé",
+      "status": "État"
+    }
+  },
+  "help": {
+    "title": "Aide & signalements",
+    "subtitle": "Décrire le résultat attendu, garder une trace de ce qui bloque.",
+    "report": {
+      "title": "Préparer un signalement",
+      "body": "Ce que tu faisais, ce qui s’est passé, ce que tu attendais. Rien n’est envoyé avant que tu relises.",
+      "action": "Préparer un signalement"
+    },
+    "shortcuts": {
+      "title": "Raccourcis",
+      "body": "Les commandes qui facilitent la navigation.",
+      "action": "Consulter"
+    },
+    "data": {
+      "title": "Conserver mon travail",
+      "body": "Exporter tes données avant de quitter l’espace.",
+      "action": "Mes données"
+    }
+  }
+}

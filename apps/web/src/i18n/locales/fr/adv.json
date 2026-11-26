@@ -1,0 +1,96 @@
+{
+  "title": "Administration des ventes",
+  "heading": "Ce qui manque pour qu'une mission puisse démarrer ou être reconduite",
+  "subtitle": "Une ligne par dossier, son motif, et l'écran où tu le règles.",
+  "monthLabel": "Mois observé",
+  "searchLabel": "Rechercher un dossier",
+  "searchPlaceholder": "Client, mission…",
+  "export": "Exporter",
+  "tableLabel": "Dossiers d'administration des ventes",
+  "loadFailed": "La liste n'a pas pu être chargée. Ce n'est pas « aucun dossier à traiter » : réessaie dans un instant.",
+  "renewalsTruncated": "La liste des renouvellements peut être incomplète : ton espace en compte plus que ce que cet écran peut lire en une fois. Certains dossiers peuvent manquer, sans qu'aucune erreur ne le signale ailleurs.",
+  "empty": "Aucun dossier à traiter sur cette sélection.",
+  "emptyWhy": "Les démarrages du mois et les renouvellements à venir apparaissent ici. Change de mois ou retire un filtre pour élargir.",
+  "qualityTitle": "Qualité des dossiers — clique un motif pour ne garder que lui",
+  "deltaUnmeasured": "Écart avec le mois précédent : non mesuré",
+  "daysCount": "{{count}} jour",
+  "daysCount_other": "{{count}} jours",
+  "unknownAccountReason": "Cette mission n'est rattachée à aucun compte.",
+  "unknownMissionReason": "Cette mission n'a pas d'intitulé.",
+  "tiles": {
+    "all": "Tous",
+    "starts": "Démarrages",
+    "renewals": "Renouvellements",
+    "active": "En cours",
+    "ready_to_invoice": "À facturer",
+    "in_negotiation": "En négociation"
+  },
+  "tileReasons": {
+    "all": "Le nombre de dossiers de la période.",
+    "starts": "Les missions dont la date de début tombe dans le mois observé.",
+    "renewals": "Les missions dont la fenêtre de renouvellement est ouverte.",
+    "active": "Les dossiers portés par une mission en cours.",
+    "ready_to_invoice": "Les dossiers dont le mois est déjà prêt à facturer.",
+    "in_negotiation": "Une mission n'a pas d'état « en négociation »."
+  },
+  "kinds": {
+    "start": "Démarrage",
+    "renewal": "Renouvellement"
+  },
+  "states": {
+    "complete": "Dossier complet"
+  },
+  "columns": {
+    "account": "Client",
+    "mission": "Mission",
+    "kind": "Dossier",
+    "age": "Ancienneté",
+    "blockers": "Ce qui manque",
+    "terms": "Règlement",
+    "paymentDetails": "Coordonnées transmises"
+  },
+  "blockers": {
+    "missing_billing_contact": "Contact de facturation manquant",
+    "missing_po": "Bon de commande manquant",
+    "missing_client_reference": "Référence cliente manquante",
+    "missing_billing_entity": "Entité de facturation à désigner",
+    "unknown_payment_terms": "Conditions de règlement inconnues",
+    "payment_details_not_transmitted": "Coordonnées de règlement non transmises",
+    "kyc_not_validated": "Vérification d'identité de l'entité"
+  },
+  "repairs": {
+    "set_billing_contact": "Renseigner le contact de facturation sur la mission",
+    "ask_po": "Demander le bon de commande au client",
+    "set_client_reference": "Saisir la référence que le client exige sur la facture",
+    "set_billing_entity": "Désigner l'entité à qui la facture s'adresse",
+    "set_payment_terms": "Saisir les conditions de règlement",
+    "record_payment_details_sent": "Déclarer les coordonnées de règlement transmises",
+    "validate_kyc": "Vérifier l'identité de l'entité sur la fiche du client"
+  },
+  "reasons": {
+    "unknown_payment_terms": "Personne n'a saisi de délai de règlement. Sans lui, aucune échéance n'est calculable.",
+    "payment_details_not_transmitted": "Les coordonnées de règlement n'ont jamais été transmises au client.",
+    "kyc_not_measured": "Ce motif n'est pas encore calculé. Zéro se lirait « rien à vérifier », ce que personne n'a mesuré.",
+    "unknownOpening": "On ignore quand ce dossier s'est ouvert : la mission n'a ni date de début dans le mois, ni date de fin."
+  },
+  "repair": {
+    "title": "Régler le dossier — {{mission}}",
+    "untitledMission": "mission sans intitulé",
+    "save": "Enregistrer",
+    "cancel": "Fermer",
+    "failed": "L'enregistrement a échoué. Rien n'a été modifié."
+  },
+  "fields": {
+    "clientReference": "Référence cliente",
+    "clientReferencePlaceholder": "Numéro fournisseur, référence de commande…",
+    "paymentTerms": "Conditions de règlement (jours)",
+    "paymentTermsPlaceholder": "30, 45, 60…",
+    "billingEntity": "Entité de facturation",
+    "billingEntityNone": "Aucune entité désignée",
+    "billingEntityFailed": "Les entités de ce client n'ont pas pu être lues. La liste n'est pas vide : elle est inconnue.",
+    "paymentDetails": "Coordonnées de règlement",
+    "paymentDetailsNote": "On enregistre seulement le fait que tu les as transmises, et la date. Aucune coordonnée bancaire n'est conservée ici.",
+    "markTransmitted": "Déclarer transmises",
+    "markNotTransmitted": "Revenir sur la transmission"
+  }
+}

@@ -1,0 +1,235 @@
+{
+  "$schema": "http://json-schema.org/draft-07/schema#",
+  "$id": "https://bellum.ai/schemas/commercial-brief.schema.json",
+  "title": "BellumCommercialBrief",
+  "description": "Brief commercial d'un compte : ce qu'on sait et ce que ça veut dire pour le commercial, KPI, graphiques, sites, prix par canal, ESN présentes, personnes, sections tabulaires et garde-fous. Source de vérité : packages/contracts/src/schemas/commercial-brief.ts (zod), parité tenue par commercial-brief.test.ts. Les contrôles MÉTIER (siège contredit, entité sortie non marquée, prix moyenné, performance commerciale propre…) vivent dans packages/contracts/src/commercial-brief/controls.ts. Contrat FERMÉ : aucune clé inconnue.",
+  "type": "object",
+  "additionalProperties": false,
+  "required": [
+    "account_name",
+    "generated_at",
+    "scope",
+    "headquarters",
+    "kpis",
+    "what_i_know",
+    "charts",
+    "entities",
+    "sites",
+    "prices",
+    "esn",
+    "people",
+    "sections",
+    "guardrails"
+  ],
+  "definitions": {
+    "text": { "type": "string", "minLength": 1, "pattern": "\\S" },
+    "iso2": { "type": "string", "pattern": "^[A-Z]{2}$", "description": "Code pays ISO 3166-1 alpha-2 (FR)." },
+    "reliability": {
+      "type": "string",
+      "minLength": 1,
+      "pattern": "\\S",
+      "description": "Colonne FIABILITÉ du classeur source, recopiée telle quelle quand elle existe."
+    }
+  },
+  "properties": {
+    "account_name": { "$ref": "#/definitions/text", "description": "Nom du compte." },
+    "generated_at": { "type": "string", "format": "date-time", "description": "Horodatage ISO 8601 de génération." },
+    "scope": {
+      "enum": ["france", "suisse"],
+      "description": "Périmètre du brief : la France (tous les comptes), ou la Suisse (ABB Suisse, décision du 04/10/2026) — jamais mêlés."
+    },
+    "headquarters": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["label", "city"],
+      "description": "Le siège SOCIAL du compte (ex. BPCE : Tours Duo, Paris 13e — jamais un site secondaire d'une filiale).",
+      "properties": {
+        "label": { "$ref": "#/definitions/text" },
+        "city": { "$ref": "#/definitions/text" },
+        "address": { "$ref": "#/definitions/text" }
+      }
+    },
+    "kpis": {
+      "type": "array",
+      "maxItems": 6,
+      "description": "Bandeau de KPI (six au plus). Jamais un prix moyen inter-canaux.",
+      "items": {
+        "type": "object",
+        "additionalProperties": false,
+        "required": ["label", "value"],
+        "properties": {
+          "label": { "$ref": "#/definitions/text" },
+          "value": { "anyOf": [{ "$ref": "#/definitions/text" }, { "type": "number" }] },
+          "caption": { "$ref": "#/definitions/text" }
+        }
+      }
+    },
+    "what_i_know": {
+      "type": "array",
+      "minItems": 1,
+      "description": "Onglet « Ce que je sais » : une rubrique libre (IDENTITÉ, STRUCTURE, PAR OÙ ENTRER…), ce qu'on sait, ce que ça veut dire pour le commercial.",
+      "items": {
+        "type": "object",
+        "additionalProperties": false,
+        "required": ["rubric", "known", "meaning"],
+        "properties": {
+          "rubric": { "$ref": "#/definitions/text" },
+          "known": { "$ref": "#/definitions/text" },
+          "meaning": {
+            "$ref": "#/definitions/text",
+            "description": "Ce que ça veut dire — jamais une recopie de `known`."
+          }
+        }
+      }
+    },
+    "charts": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "additionalProperties": false,
+        "required": ["title", "items"],
+        "properties": {
+          "title": { "$ref": "#/definitions/text" },
+          "items": {
+            "type": "array",
+            "items": {
+              "type": "object",
+              "additionalProperties": false,
+              "required": ["label", "value"],
+              "properties": { "label": { "$ref": "#/definitions/text" }, "value": { "type": "number" } }
+            }
+          }
+        }
+      }
+    },
+    "entities": {
+      "type": "array",
+      "description": "Entités du groupe. `exited` = sortie du groupe (cédée, scindée) : toute personne qui y est rattachée doit porter `exited: true`.",
+      "items": {
+        "type": "object",
+        "additionalProperties": false,
+        "required": ["name", "status"],
+        "properties": {
+          "name": { "$ref": "#/definitions/text" },
+          "nature": { "$ref": "#/definitions/text" },
+          "status": { "type": "string", "enum": ["active", "exited"] },
+          "country": { "$ref": "#/definitions/iso2" },
+          "note": { "$ref": "#/definitions/text" },
+          "reliability": { "$ref": "#/definitions/reliability" }
+        }
+      }
+    },
+    "sites": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "additionalProperties": false,
+        "required": ["name", "city", "country", "kind"],
+        "properties": {
+          "name": { "$ref": "#/definitions/text" },
+          "city": { "$ref": "#/definitions/text" },
+          "country": { "$ref": "#/definitions/iso2" },
+          "kind": { "type": "string", "enum": ["headquarters", "secondary", "industrial", "other"] },
+          "why": { "$ref": "#/definitions/text" },
+          "reliability": { "$ref": "#/definitions/reliability" }
+        }
+      }
+    },
+    "prices": {
+      "type": "array",
+      "description": "Prix journaliers, chacun avec son CANAL. Aucun canal « mixte », aucune moyenne inter-canaux.",
+      "items": {
+        "type": "object",
+        "additionalProperties": false,
+        "required": ["label", "amount_eur_per_day", "channel"],
+        "properties": {
+          "label": { "$ref": "#/definitions/text" },
+          "amount_eur_per_day": { "type": "number", "exclusiveMinimum": 0 },
+          "channel": { "type": "string", "enum": ["direct", "msp", "portage", "framework", "sector_reference"] },
+          "note": { "$ref": "#/definitions/text" },
+          "reliability": { "$ref": "#/definitions/reliability" }
+        }
+      }
+    },
+    "esn": {
+      "type": "array",
+      "description": "ESN présentes chez le compte, chacune avec son niveau de preuve et la preuve elle-même.",
+      "items": {
+        "type": "object",
+        "additionalProperties": false,
+        "required": ["name", "evidence_level", "proof"],
+        "properties": {
+          "name": { "$ref": "#/definitions/text" },
+          "evidence_level": { "type": "string", "enum": ["confirmed", "observed", "hint"] },
+          "proof": { "$ref": "#/definitions/text" },
+          "perimeter": { "$ref": "#/definitions/text" },
+          "reliability": { "$ref": "#/definitions/reliability" }
+        }
+      }
+    },
+    "people": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "additionalProperties": false,
+        "required": ["name"],
+        "properties": {
+          "name": { "$ref": "#/definitions/text" },
+          "function": { "$ref": "#/definitions/text" },
+          "entity": { "$ref": "#/definitions/text" },
+          "department": { "$ref": "#/definitions/text" },
+          "manager": { "$ref": "#/definitions/text" },
+          "city": { "$ref": "#/definitions/text" },
+          "email": { "$ref": "#/definitions/text" },
+          "mobile": { "$ref": "#/definitions/text" },
+          "phone": { "$ref": "#/definitions/text" },
+          "linkedin": { "$ref": "#/definitions/text" },
+          "hook": { "$ref": "#/definitions/text" },
+          "role": { "type": "string", "enum": ["decision_maker", "manager", "contact", "external", "alumni"] },
+          "exited": { "type": "boolean" },
+          "reliability": { "$ref": "#/definitions/reliability" }
+        }
+      }
+    },
+    "sections": {
+      "type": "array",
+      "description": "Sections tabulaires génériques (achats, technos, besoins, projets, postes ouverts, plan d'action, hypothèses…).",
+      "items": {
+        "type": "object",
+        "additionalProperties": false,
+        "required": ["key", "title", "columns", "rows"],
+        "properties": {
+          "key": { "$ref": "#/definitions/text" },
+          "title": { "$ref": "#/definitions/text" },
+          "columns": {
+            "type": "array",
+            "items": {
+              "type": "object",
+              "additionalProperties": false,
+              "required": ["key", "label"],
+              "properties": { "key": { "$ref": "#/definitions/text" }, "label": { "$ref": "#/definitions/text" } }
+            }
+          },
+          "rows": {
+            "type": "array",
+            "items": {
+              "type": "object",
+              "additionalProperties": { "type": ["string", "number", "boolean", "null"] }
+            }
+          }
+        }
+      }
+    },
+    "guardrails": {
+      "type": "array",
+      "minItems": 1,
+      "description": "Garde-fous, affichés EN FIN de brief.",
+      "items": {
+        "type": "object",
+        "additionalProperties": false,
+        "required": ["point", "detail"],
+        "properties": { "point": { "$ref": "#/definitions/text" }, "detail": { "$ref": "#/definitions/text" } }
+      }
+    }
+  }
+}

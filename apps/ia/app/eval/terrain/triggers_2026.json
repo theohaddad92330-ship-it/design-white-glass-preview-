@@ -1,0 +1,208 @@
+{
+  "_source": "BellumAI_Meta_Analyse_Besoins_Workflows_Requetes.pdf (extrait Drive 25/09/2026, anonymisé)",
+  "_section": "9. 25 automatic triggers PRIO 1",
+  "_anonymise": "\"Theo\" est le prenom d'exemple utilise par le document dans ses messages produit (comme \"Jonathan\" pour les specs) — pas un nom de repondant de l'audit (section 3), donc pas anonymise par la note du document source.",
+  "_1948": "1948.5 — Corpus existant : 25 triggers recurrents",
+  "triggers": [
+    {
+      "id": 1,
+      "trigger": "Digest matin quotidien",
+      "quand": "Tous les jours 08:30",
+      "outils": "Agenda, Gmail, HubSpot, Boond, Drive",
+      "action_agent": "Brief du jour: RDV, emails urgents, relances, opportunites, fins mission, docs.",
+      "message_produit": "Theo, voici ton brief du jour..."
+    },
+    {
+      "id": 2,
+      "trigger": "Preparation RDV -24h client",
+      "quand": "-24h avant RDV externe",
+      "outils": "Agenda, Gmail, Drive",
+      "action_agent": "Lire event, docs lies, draft confirmation, pas ajouter l'utilisateur comme invite.",
+      "message_produit": "Theo, j'ai prepare le mail de confirmation..."
+    },
+    {
+      "id": 3,
+      "trigger": "Checklist RDV -1h",
+      "quand": "-60 min avant RDV",
+      "outils": "Agenda, Drive",
+      "action_agent": "Contexte, objectif, risques, next steps, liens docs.",
+      "message_produit": "Theo, RDV dans 1h avec..."
+    },
+    {
+      "id": 4,
+      "trigger": "Merci & next steps post-RDV",
+      "quand": "+30 min apres RDV",
+      "outils": "Agenda, Gmail, HubSpot",
+      "action_agent": "Draft merci+CR, log meeting, task J+2.",
+      "message_produit": "Theo, le brouillon merci + CR est pret..."
+    },
+    {
+      "id": 5,
+      "trigger": "Annulation client -> replanif",
+      "quand": "A detection cancel externe",
+      "outils": "Agenda, Gmail",
+      "action_agent": "3 creneaux alternatifs + draft replanif.",
+      "message_produit": "Theo, EDF a annule. 3 creneaux proposes..."
+    },
+    {
+      "id": 6,
+      "trigger": "Aucun RDV dans 3 jours",
+      "quand": "Tous les jours 17:00",
+      "outils": "Agenda",
+      "action_agent": "Scanner J+3, proposer blocs prospection.",
+      "message_produit": "Theo, aucun RDV prevu d'ici 3 jours..."
+    },
+    {
+      "id": 7,
+      "trigger": "Relances no-reply 7j",
+      "quand": "Tous les jours 09:15",
+      "outils": "Gmail",
+      "action_agent": "No-reply outbound >7j, drafts personnalises, tags.",
+      "message_produit": "Theo, 8 prospects sans reponse..."
+    },
+    {
+      "id": 8,
+      "trigger": "Reponses positives digest",
+      "quand": "Tous les jours 11:00",
+      "outils": "Gmail, HubSpot",
+      "action_agent": "Classifier intent positif, proposer RDV, update CRM.",
+      "message_produit": "Theo, 3 reponses positives ce matin..."
+    },
+    {
+      "id": 9,
+      "trigger": "Suivi budget",
+      "quand": "Tous les jours 14:00",
+      "outils": "Gmail, HubSpot",
+      "action_agent": "Detecter budget/tarif, note + task HubSpot.",
+      "message_produit": "Theo, 2 echanges budget detectes..."
+    },
+    {
+      "id": 10,
+      "trigger": "Detection AO + echeancier",
+      "quand": "A reception AO ou 10:30",
+      "outils": "Gmail, Drive, HubSpot",
+      "action_agent": "Detecter AO, resumer, dossier Drive, tasks J-5/J-2/H-4.",
+      "message_produit": "Theo, AO detecte chez..."
+    },
+    {
+      "id": 11,
+      "trigger": "Contrats en attente signature",
+      "quand": "Tous les jours 16:00",
+      "outils": "Gmail, Drive, HubSpot",
+      "action_agent": "Detecter contrat/signature, statut, drafts, tasks.",
+      "message_produit": "Theo, 2 contrats a relancer..."
+    },
+    {
+      "id": 12,
+      "trigger": "Factures impayees rappel soft",
+      "quand": "Lundi 10:00",
+      "outils": "Gmail, Drive",
+      "action_agent": "Detecter factures non acquittees, draft relance.",
+      "message_produit": "Theo, 3 factures en souffrance..."
+    },
+    {
+      "id": 13,
+      "trigger": "Fin mission a 30j",
+      "quand": "Tous les jours 08:45",
+      "outils": "Boond, Gmail",
+      "action_agent": "Missions fin <30j, drafts client/consultant, task.",
+      "message_produit": "Theo, 4 fins de mission dans 30 jours..."
+    },
+    {
+      "id": 14,
+      "trigger": "Intercontrat >30j",
+      "quand": "Lundi 09:30",
+      "outils": "Boond, HubSpot, Gmail",
+      "action_agent": "Consultants interco, clients ouverts, drafts push profils.",
+      "message_produit": "Theo, 3 consultants en interco..."
+    },
+    {
+      "id": 15,
+      "trigger": "Leads a relancer HubSpot",
+      "quand": "Tous les jours 10:00",
+      "outils": "HubSpot, Gmail",
+      "action_agent": "View To follow-up, drafts par segment.",
+      "message_produit": "Theo, 7 leads a relancer aujourd'hui..."
+    },
+    {
+      "id": 16,
+      "trigger": "Sequence post-proposition J+7",
+      "quand": "stage proposition envoyee",
+      "outils": "HubSpot, Gmail",
+      "action_agent": "Deals sans activite 7j, draft + task.",
+      "message_produit": "Theo, 5 propositions sans suite..."
+    },
+    {
+      "id": 17,
+      "trigger": "Nettoyage doublons HubSpot",
+      "quand": "Mercredi 18:00",
+      "outils": "HubSpot",
+      "action_agent": "Detecter doublons, pre-merge, validation.",
+      "message_produit": "Theo, 12 doublons suspects detectes..."
+    },
+    {
+      "id": 18,
+      "trigger": "CV entrants -> indexation",
+      "quand": "10:00, 14:00, 18:00",
+      "outils": "Gmail, Drive",
+      "action_agent": "PJ CV, stocker Drive, indexer stack/annees/dispo.",
+      "message_produit": "Theo, 5 nouveaux CV indexes..."
+    },
+    {
+      "id": 19,
+      "trigger": "Meet link manquant",
+      "quand": "A creation/maj event",
+      "outils": "Agenda",
+      "action_agent": "Ajouter Google Meet si absent.",
+      "message_produit": "Theo, j'ai ajoute un lien Meet..."
+    },
+    {
+      "id": 20,
+      "trigger": "Conflits agenda",
+      "quand": "Continu + 08:15",
+      "outils": "Agenda",
+      "action_agent": "Detecter overlaps, suggérer deplacements, draft replanif.",
+      "message_produit": "Theo, 1 conflit demain 11h..."
+    },
+    {
+      "id": 21,
+      "trigger": "Weekly recap",
+      "quand": "Vendredi 16:00",
+      "outils": "Agenda, HubSpot, Gmail, Boond",
+      "action_agent": "KPIs semaine, actions ouvertes, plan semaine suivante.",
+      "message_produit": "Theo, recap semaine: 9 RDV..."
+    },
+    {
+      "id": 22,
+      "trigger": "Weekly forecast",
+      "quand": "Vendredi 11:00",
+      "outils": "Agenda",
+      "action_agent": "RDV N+1, plages vides, alertes, blocs.",
+      "message_produit": "Theo, semaine prochaine: 6 RDV..."
+    },
+    {
+      "id": 23,
+      "trigger": "Monday kickstart",
+      "quand": "Lundi 08:15",
+      "outils": "Agenda, HubSpot",
+      "action_agent": "Agenda previsionnel, relances, AO, tasks majeures.",
+      "message_produit": "Theo, planning de la semaine initialise..."
+    },
+    {
+      "id": 24,
+      "trigger": "Data hygiene mensuelle",
+      "quand": "1er ouvre 09:30",
+      "outils": "HubSpot, Drive",
+      "action_agent": "Emails invalides, props manquantes, export correctif.",
+      "message_produit": "Theo, nettoyage CRM mensuel pret..."
+    },
+    {
+      "id": 25,
+      "trigger": "Quarterly business review",
+      "quand": "1er jour trimestre 10:00",
+      "outils": "HubSpot, Boond, Drive",
+      "action_agent": "Q-1 CA/conversion/interco/marge, PDF QBR, RDV revue.",
+      "message_produit": "Theo, QBR T-1 genere..."
+    }
+  ]
+}

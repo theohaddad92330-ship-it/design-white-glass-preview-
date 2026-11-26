@@ -1,0 +1,16 @@
+lot: fix-contacts-assign-route-capturee
+issues: [2160, 4504]
+
+changelog:
+  id: 2026-11-01-fix-contacts-assign-route-capturee
+  comment: 'Fix (#2160.9, #4504.3) — « Attribuer » un contact répondait 400 : PATCH /contacts/assign captée par PATCH /contacts/:id'
+  fr:
+    date: 1 novembre 2026
+    title: 'Attribuer un contact fonctionne de nouveau'
+    items:
+      - 'Attribuer ou retirer l’attribution d’un ou plusieurs contacts n’échoue plus avec une erreur de validation : la route est de nouveau atteinte avant la fiche contact.'
+  en:
+    date: November 1, 2026
+    title: 'Assigning a contact works again'
+    items:
+      - 'Assigning or unassigning one or more contacts no longer fails with a validation error: the route is reached again before the contact record.'

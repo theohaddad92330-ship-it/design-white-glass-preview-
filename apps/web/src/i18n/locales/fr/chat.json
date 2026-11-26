@@ -1,0 +1,2827 @@
+{
+  "panel": {
+    "aria": "{{copilot}} — fil partagé",
+    "closeAria": "Fermer {{title}}"
+  },
+  "header": {
+    "titleDefault": "{{copilot}}",
+    "titleWithAccount": "{{copilot}} · {{name}}",
+    "subtitle": "Conversation collaborative, contexte contrôlé",
+    "showConversationsAria": "Afficher les conversations",
+    "showContextAria": "Afficher le contexte",
+    "closeAria": "Fermer {{copilot}}"
+  },
+  "main": {
+    "aria": "Conversation avec {{copilot}}"
+  },
+  "conversations": {
+    "title": "Conversations",
+    "aria": "Conversations récentes",
+    "searchSrLabel": "Rechercher une conversation",
+    "searchPlaceholder": "Rechercher...",
+    "loadError": "Impossible de charger les conversations.",
+    "empty": "Aucune conversation trouvée.",
+    "generalTitle": "{{copilot}}",
+    "now": "Maintenant",
+    "unnamedAccount": "Compte sans nom",
+    "savedUntitled": "Fil sans titre",
+    "draftTitle": "Nouvelle conversation",
+    "newThreadAria": "Nouvelle conversation avec {{name}}",
+    "threadsAria": "Conversations de {{name}}",
+    "groupEmpty": "Aucune conversation — démarre-en une."
+  },
+  "nav": {
+    "answerReady": "Une réponse de {{copilot}} est prête"
+  },
+  "home": {
+    "greetingNoName": "Sur quoi avance-t-on ?",
+    "subtitle": "Je peux travailler sur ton portefeuille et ton vivier — puis vérifier ce qui mérite une action aujourd'hui.",
+    "subtitleWithMarketMemory": "Je peux travailler sur ton portefeuille, ton vivier et les référentiels marché {{brand}} — puis vérifier ce qui mérite une action aujourd'hui.",
+    "suggestions": {
+      "findCompatibleAccounts": {
+        "label": "Trouver des comptes compatibles",
+        "prompt": "Trouve-moi des comptes compatibles avec mon offre, dans mon secteur cible.",
+        "benefit": "Une liste de comptes à prioriser, avec la raison de chacun."
+      },
+      "analyzeCompany": {
+        "label": "Analyser une entreprise",
+        "prompt": "Je veux analyser une entreprise.",
+        "benefit": "Un dossier de conquête complet en quelques minutes."
+      },
+      "zoneOpportunities": {
+        "label": "Opportunités autour de ma zone",
+        "prompt": "Montre-moi les opportunités autour de ma zone géographique.",
+        "benefit": "Ce qui recrute et ce qui s'ouvre près de chez toi."
+      },
+      "whereInvestTime": {
+        "label": "Quels comptes travailler cette semaine ?",
+        "prompt": "Compare mes comptes et dis-moi lesquels méritent réellement mon temps cette semaine, preuves à l'appui.",
+        "benefit": "Les comptes qui méritent réellement ton temps, avec la raison de chacun."
+      },
+      "consultantAvailable": {
+        "label": "Positionner un consultant disponible",
+        "prompt": "J'ai un consultant disponible : où est-ce que je devrais le positionner ?",
+        "benefit": "Les comptes et projets qui correspondent le mieux à son profil.",
+        "promptFor": "{{name}} est disponible : où le positionner ?"
+      },
+      "matchVivier": {
+        "label": "Rapprocher mon vivier des besoins connus",
+        "prompt": "Matche mon vivier avec les besoins et projets détectés en ce moment.",
+        "benefit": "Les rapprochements possibles entre ton vivier et la demande déjà détectée."
+      },
+      "matchingEnvironments": {
+        "label": "Environnements compatibles",
+        "prompt": "Quels environnements correspondent le mieux aux compétences de mon vivier ?",
+        "benefit": "Les comptes dont la stack correspond à ce que ton vivier sait faire."
+      },
+      "findAccessPath": {
+        "label": "Trouver par qui entrer dans un compte",
+        "prompt": "Trouve-moi par qui entrer dans un compte où je n'arrive pas à entrer.",
+        "benefit": "Les portes d'entrée classées par facilité, avec la raison de chaque rang.",
+        "promptFor": "Trouve-moi par qui entrer chez {{name}}."
+      },
+      "whatsChanged": {
+        "label": "Ce qui a changé",
+        "prompt": "Dis-moi ce qui a changé depuis lundi sur mes comptes prioritaires, et ce que ça déclenche.",
+        "benefit": "Les signaux récents qui méritent une action cette semaine."
+      },
+      "rank2PartnerUsage": {
+        "label": "Chercher une entrée via mes partenaires",
+        "prompt": "Fais remonter les usages rang 2 possibles avec mes partenaires actuels.",
+        "benefit": "Les comptes où un partenaire que tu connais déjà pourrait ouvrir une porte — une voie potentielle, à confirmer avec lui."
+      },
+      "prepareMeeting": {
+        "label": "Préparer mon prochain rendez-vous",
+        "prompt": "Prépare mon prochain rendez-vous.",
+        "benefit": "Un brief à relire : enjeux, interlocuteurs et questions à poser. Sans agenda branché, je te demande ce qui manque."
+      }
+    },
+    "suggestionFamilies": {
+      "decide": "Décider",
+      "analyse": "Analyser",
+      "discover": "Découvrir",
+      "find": "Trouver",
+      "position": "Positionner",
+      "prepare": "Préparer",
+      "act": "Agir",
+      "steer": "Piloter"
+    },
+    "knownAccount": {
+      "label": "J’ai un compte en tête",
+      "prompt": "Je veux positionner un profil sur un compte que j’ai déjà en tête. Quel compte, et quel profil ?",
+      "promptFor": "Je veux positionner un profil chez {{name}}. Profil recherché : "
+    },
+    "catalogLink": "Toutes les idées de demandes",
+    "resume": {
+      "label": "Reprendre : {{title}}",
+      "dismiss": "Ne plus proposer cette reprise",
+      "region": "Reprendre un travail"
+    },
+    "pickTarget": {
+      "account": "Quel compte ?",
+      "consultant": "Quel consultant ?",
+      "cancel": "Annuler"
+    },
+    "sections": {
+      "start": {
+        "title": "Commencer un travail",
+        "hint_one": "Une façon de commencer",
+        "hint_other": "{{count}} façons de commencer"
+      }
+    },
+    "hello": "Bonjour {{name}}."
+  },
+  "opener": {
+    "withName": "Bonjour {{firstName}}. {{body}}",
+    "withoutName": "Bonjour. {{body}}",
+    "demo": "Cet espace est une démonstration, sur des dossiers fictifs : choisis une des questions proposées pour voir comment je travaille.",
+    "account": "Je travaille sur {{account}}. Je peux te dire ce qui a bougé, qui contacter et quoi lui dire. Par quoi on commence ?",
+    "newcomer": "Je connais encore peu ton activité. Le meilleur point de départ : analyser un compte que tu connais bien, ou compléter ton contexte. Donne-moi un nom d’entreprise, je lance.",
+    "neutral": "Sur quoi avance-t-on ?",
+    "justOnboardedWithName": "Merci {{firstName}}. Je te propose de tester tout de suite un compte que tu connais bien, ou un consultant disponible : c’est le meilleur moyen de vérifier que j’ai bien compris ton métier. Donne-moi un nom d’entreprise ou de consultant, je m’en occupe.",
+    "justOnboarded": "Merci. Je te propose de tester tout de suite un compte que tu connais bien, ou un consultant disponible : c’est le meilleur moyen de vérifier que j’ai bien compris ton métier. Donne-moi un nom d’entreprise ou de consultant, je m’en occupe.",
+    "brief": {
+      "greetingWithName": "Bonjour {{firstName}}. Voici ta journée en trois temps.",
+      "greeting": "Bonjour. Voici ta journée en trois temps.",
+      "scopeLead": "Ce brief porte sur ta journée à toi, pas sur celle de ton équipe.",
+      "changed": {
+        "title": "Ce qui a changé",
+        "account": "{{company}} a bougé",
+        "accountsMore_one": "et {{count}} autre compte suivi a bougé",
+        "accountsMore_other": "et {{count}} autres comptes suivis ont bougé",
+        "conflicts_one": "{{count}} chevauchement dans ton agenda",
+        "conflicts_other": "{{count}} chevauchements dans ton agenda",
+        "positiveReplies_one": "{{count}} réponse favorable dans ta messagerie",
+        "positiveReplies_other": "{{count}} réponses favorables dans ta messagerie",
+        "unread_one": "{{count}} message non lu d’un interlocuteur externe",
+        "unread_other": "{{count}} messages non lus d’interlocuteurs externes",
+        "overdue_one": "{{count}} tâche en retard",
+        "overdue_other": "{{count}} tâches en retard",
+        "nothing": "Rien de neuf dans ce que j’ai pu lire.",
+        "unreadable": "Je n’ai pas pu lire tes sources : je ne sais pas encore ce qui a changé."
+      },
+      "silence": {
+        "agenda": {
+          "not_connected": "Ton agenda n’est pas connecté : je ne vois pas tes rendez-vous.",
+          "missing_scope": "Ton agenda est connecté mais ne m’autorise pas la lecture : je ne vois pas tes rendez-vous.",
+          "unavailable": "Ton agenda n’a pas répondu : je ne sais pas ce qui y a changé.",
+          "provider_disabled": "L’accès à ton agenda est éteint côté fournisseur : je ne vois pas tes rendez-vous, et ça ne repassera pas tout seul.",
+          "partial": "Un de tes agendas n’a pas répondu : il peut manquer des rendez-vous."
+        },
+        "mailbox": {
+          "not_connected": "Ta messagerie n’est pas connectée : je ne vois ni tes relances ni tes réponses.",
+          "missing_scope": "Ta messagerie est connectée mais ne m’autorise pas la lecture : je ne vois ni tes relances ni tes réponses.",
+          "unavailable": "Ta messagerie n’a pas répondu : je ne sais pas ce qui y a changé.",
+          "provider_disabled": "L’accès à ta messagerie est éteint côté fournisseur : je ne vois ni tes relances ni tes réponses, et ça ne repassera pas tout seul.",
+          "partial": "Une de tes boîtes n’a pas répondu : il peut manquer des messages."
+        },
+        "tasks": "Tes tâches n’ont pas pu être lues."
+      },
+      "prepared": {
+        "title": "Ce que j’ai préparé",
+        "nothing": "Rien de prêt pour l’instant : je n’ai préparé ni brouillon ni liste à ta place. Dis-moi par où commencer et je m’y mets.",
+        "unreadable": "Sans tes sources, je ne peux pas te dire ce qui est prêt."
+      },
+      "advice": {
+        "title": "Ce que je te conseille",
+        "first": "Je commencerais par ceci : {{headline}}.",
+        "firstWithAction": "Je commencerais par ceci : {{headline}}. {{action}}",
+        "nothing": "Rien ne ressort en priorité de ce que j’ai pu lire. Par quoi on commence ?",
+        "nothingMissing": "Rien ne ressort en priorité de ce que j’ai pu lire, et une partie de tes sources m’échappe. Par quoi on commence ?",
+        "unreadable": "Je ne te conseille rien à l’aveugle : {{retry}}, ou dis-moi par quoi commencer.",
+        "retry": "réessaie depuis Ma journée"
+      }
+    }
+  },
+  "messages": {
+    "noReply": "Pas de réponse.",
+    "connectionError": "Erreur de connexion au service IA. Réessaie.",
+    "quotaExplainer": "Seules tes demandes comptent : quand {{copilot}} te pose une question de précision, ta réponse ne consomme rien.",
+    "typingAria": "{{copilot}} rédige une réponse",
+    "assistantName": "{{copilot}}",
+    "replyCut": "La réponse a été coupée en route — souvent une mise à jour du service. Ta question est bien partie : relance-la.",
+    "relaunch": "Relancer",
+    "networkLost": "Connexion perdue — rien n’a été envoyé. Vérifie ta connexion, puis renvoie ton message.",
+    "sessionExpired": "Ta session a expiré. Reconnecte-toi, puis renvoie ton message — il n’a pas été perdu.",
+    "replied": "{{copilot}} a répondu.",
+    "authorLabel": "Message de {{firstName}}",
+    "stopped": "Réponse arrêtée — le texte déjà reçu reste affiché.",
+    "interruptedByNavigation": "Cet échange a été interrompu quand tu as changé de fil — la réponse ne s’est jamais terminée. Renvoie ta question pour réessayer.",
+    "replyNotSaved": "Cette réponse s’affiche, mais elle n’a pas pu être enregistrée — le fil peut rester « en attente » dans la liste tant que tu ne renvoies pas ta question.",
+    "stoppedAnnouncement": "Réponse arrêtée.",
+    "cancelledAnnouncement": "Envoi annulé — ton texte est revenu dans le champ.",
+    "notSentKept": "Ton message n’est pas parti : il est gardé en brouillon dans la conversation où tu l’as écrit.",
+    "knownIncident": "Incident connu, en cours de résolution : {{message}}",
+    "copyQuestion": "Copier ma question",
+    "questionCopied": "Question copiée",
+    "questionCopyFailed": "Copie impossible"
+  },
+  "quota": {
+    "reached_one": "Tu as atteint le plafond de {{count}} demande à {{copilot}} sur 24 h glissantes.",
+    "reached_other": "Tu as atteint le plafond de {{count}} demandes à {{copilot}} sur 24 h glissantes.",
+    "reopensToday": "Il se rouvre vers {{time}}.",
+    "reopensTomorrow": "Il se rouvre demain vers {{time}}.",
+    "reopensGradually": "Il se rouvre au fil des heures, à mesure que tes demandes passent les 24 h.",
+    "stillAvailable": "En attendant, le reste fonctionne : tes écrans, la recherche, les fiches, les analyses, les enrichissements, les exports et les actions déjà préparées.",
+    "planLimit": "C’est le plafond de ton plan.",
+    "planLimitLink": "C’est le plafond de ton plan — [ce que comprend le tien](/billing).",
+    "low_one": "Il te reste {{count}} demande à {{copilot}} sur 24 h glissantes. Les actions déjà préparées restent accessibles.",
+    "low_other": "Il te reste {{count}} demandes à {{copilot}} sur 24 h glissantes. Les actions déjà préparées restent accessibles.",
+    "lowPlan_one": "Il te reste {{count}} demande à {{copilot}} sur 24 h glissantes — ton plan en prévoit {{limit}}. Les actions déjà préparées restent accessibles.",
+    "lowPlan_other": "Il te reste {{count}} demandes à {{copilot}} sur 24 h glissantes — ton plan en prévoit {{limit}}. Les actions déjà préparées restent accessibles.",
+    "exhausted": "Plus aucune demande à {{copilot}} pour l’instant. {{reopening}} Les actions déjà préparées restent accessibles.",
+    "exhaustedPlan": "Plus aucune demande à {{copilot}} pour l’instant — ton plan en prévoit {{limit}} sur 24 h glissantes. {{reopening}} Les actions déjà préparées restent accessibles."
+  },
+  "composer": {
+    "aria": "Message à {{copilot}}",
+    "placeholder": "Écris ton message...",
+    "sendHint": "Entrée envoie · Maj+Entrée saute une ligne",
+    "sendHintMod": "Ctrl/Cmd+Entrée envoie · Entrée saute une ligne",
+    "attachAria": "Ajouter un fichier",
+    "attachForConversation": "Pour cette conversation",
+    "attachForConversationHint": "Lu par {{copilot}} pour cette question, jamais listé dans Connaissances, jamais conservé.",
+    "attachToBase": "Ajouter à la base de mon ESN",
+    "attachToBaseHint": "Rejoint Connaissances : toute ton ESN peut s’en servir. Conservé jusqu’à ce que tu le supprimes.",
+    "attachCamera": "Prendre une photo",
+    "importMode": "Importer dans {{brand}}",
+    "importCvs": "Un dossier de CV",
+    "importCvsHint": "Crée ou met à jour les fiches du vivier, chaque CV à vérifier nommé.",
+    "importRecords": "Des comptes ou contacts",
+    "importRecordsHint": "Un export CSV : simulation avant import, créations, mises à jour et doublons annoncés.",
+    "mention": "Mentionner un membre",
+    "moreTools": "Ajouter à ce message",
+    "connectedTools": {
+      "stateConnected": "Connecté",
+      "stateNeedsReconnect": "Connecté, autorisation expirée",
+      "stateLimited": "Accès limité : lecture seule ou écriture partielle, vérifie avant de compter sur l'envoi"
+    },
+    "connectorRemove": "Retirer {{name}} de ta question",
+    "connector": {
+      "menuLabel": "Utiliser une source",
+      "family": {
+        "crm": "ton CRM",
+        "email": "ta messagerie",
+        "calendar": "ton agenda",
+        "linkedin": "les réseaux professionnels",
+        "prospection": "la recherche de coordonnées",
+        "documents": "tes documents",
+        "communication": "tes canaux d'équipe",
+        "jobs": "les sources d'offres d'emploi",
+        "tenders": "tes appels d'offres suivis",
+        "data": "les sources publiques et le web",
+        "finance": "ta facturation",
+        "mcp": "ton assistant IA externe",
+        "ats": "ton ATS",
+        "telephony": "ton outil d'appel",
+        "admin_docs": "tes signatures et tes factures"
+      }
+    },
+    "disclaimer": "Les réponses peuvent contenir des erreurs. Vérifie les informations critiques.",
+    "sendDisabledReason": "Tape un message pour l’envoyer.",
+    "openDisabledReason": "Tape un texte pour ouvrir cet écran.",
+    "attachPersonal": "Mon espace personnel",
+    "attachPersonalHint": "Pour toi seul : tes collègues ne le voient pas, {{copilot}} s’en sert dans tes fils. Conservé jusqu’à ce que tu le supprimes.",
+    "attachAccount": "Ce compte uniquement",
+    "attachAccountHint": "Sert seulement quand on parle de ce compte, jamais d’un autre. Toute ton ESN peut s’en servir. Conservé jusqu’à ce que tu le supprimes.",
+    "attachKnowledgeBase": "Base de connaissance durable",
+    "attachKnowledgeBaseHint": "Rejoint la base durable de ton ESN : toute l’équipe s’en sert, dans chaque analyse. Conservé jusqu’à ce que tu le supprimes.",
+    "researchMode": {
+      "label": "Mode de recherche",
+      "options": {
+        "auto": "Standard",
+        "rapide": "Rapide",
+        "verifie": "Vérifié",
+        "approfondi": "Approfondi"
+      },
+      "estimate": {
+        "unknown": "Durée non mesurée",
+        "durationUnderSecond": "< 1 s (sur {{sampleSize}} tours)",
+        "duration": "≈ {{seconds}} s (sur {{sampleSize}} tours)",
+        "durationAndCost": "≈ {{seconds}} s · {{cost}} $ (sur {{sampleSize}} tours)",
+        "durationUnderSecondAndCost": "< 1 s · {{cost}} $ (sur {{sampleSize}} tours)"
+      },
+      "policy": {
+        "tier": {
+          "auto": "{{copilot}} choisit la profondeur",
+          "fast": "Réponse directe",
+          "deep": "Analyse approfondie"
+        },
+        "search": {
+          "excluded": "sans recherche web",
+          "allowed": "recherche web permise"
+        },
+        "upgrade": "Te propose Vérifié quand l’actualité compte, sans dépenser en silence."
+      }
+    },
+    "sources": {
+      "trigger": "Sources",
+      "triggerCount": "Sources, {{count}} nommée(s) dans ta demande",
+      "title": "Sources branchées à ton espace",
+      "scope": "Cocher une source la nomme dans ta demande — c’est une mention. {{copilot}} n’est pas limitée à ces sources et aucune autre n’est exclue."
+    }
+  },
+  "offline": {
+    "sendBlocked": "Pas de connexion — ce message n’est pas parti. Il reste dans la saisie, réessaie une fois reconnecté."
+  },
+  "queue": {
+    "title": "En attente · {{count}}",
+    "listLabel": "Messages en attente",
+    "item": "Message en attente {{position}} sur {{total}}",
+    "edit": "Modifier",
+    "editAria": "Modifier le message en attente {{position}}",
+    "editField": "Texte du message en attente {{position}}",
+    "save": "Enregistrer",
+    "cancel": "Annuler",
+    "remove": "Retirer",
+    "removeAria": "Retirer le message en attente {{position}}",
+    "resume": "Reprendre",
+    "queueAction": "Mettre en attente",
+    "queuedAnnouncement": "La demande est ajoutée à la suite.",
+    "removedAnnouncement": "Message retiré de la file.",
+    "full": "La file est pleine ({{max}} messages au maximum) — ce message reste dans la saisie.",
+    "attachmentsRefused": "Un message avec pièce jointe ne peut pas attendre — il reste dans la saisie, envoie-le une fois la réponse terminée.",
+    "suspended": {
+      "failure": "La réponse en cours a échoué : {{reason}} La file attend, rien n’est parti.",
+      "restored": "File retrouvée après le rechargement : elle attend ton feu vert, rien n’est parti.",
+      "refused": "Le message suivant n’a pas pu partir (pas de connexion ?). La file attend."
+    }
+  },
+  "install": {
+    "prompt": "Installe {{brand}} sur ton téléphone pour y accéder d’un geste.",
+    "action": "Installer",
+    "dismiss": "Ignorer l’invite d’installation"
+  },
+  "deepLink": {
+    "inaccessible": "Cette conversation n’est plus accessible — elle a peut-être été supprimée, ou tu n’as plus les droits pour la voir. Tu peux démarrer un nouvel échange ci-dessous."
+  },
+  "voice": {
+    "start": "Dicter un message vocal",
+    "requesting": "Autorisation du micro…",
+    "recordingAria": "Message vocal en cours d’enregistrement",
+    "listening": "J’écoute",
+    "clock": "{{elapsed}} / {{max}}",
+    "stop": "Terminer",
+    "stopAria": "Terminer l’enregistrement et le transcrire",
+    "cancel": "Annuler",
+    "cancelAria": "Annuler le message vocal sans rien envoyer",
+    "transcribing": "Transcription…",
+    "language": {
+      "label": "Langue de la dictée",
+      "fr": "Français",
+      "en": "Anglais",
+      "auto": "Détecter automatiquement"
+    },
+    "conversation": {
+      "start": "Démarrer la conversation vocale",
+      "aria": "Conversation vocale en cours",
+      "listening": "J’écoute",
+      "sending": "Envoi…",
+      "speaking": "{{copilot}} répond",
+      "error": "Le dernier envoi a échoué — je réécoute",
+      "interrupt": "Interrompre",
+      "interruptAria": "Interrompre la lecture et reprendre l’écoute",
+      "stop": "Arrêter",
+      "levelAria": "Niveau du micro",
+      "silent": "Aucun son capté — vérifie ton micro",
+      "stopAria": "Arrêter la conversation vocale"
+    },
+    "uncertain": "Passages incertains à relire : {{segments}}.",
+    "livePreview": {
+      "partialAria": "Aperçu en direct, partiel",
+      "partial": "Partiel : {{text}}",
+      "unsupported": "Aperçu en direct non disponible sur ce navigateur."
+    },
+    "uncertainWords": {
+      "label": "À vérifier avant d’envoyer :"
+    },
+    "notice": {
+      "title": "Avant ton premier message vocal",
+      "body": "Ta voix est transcrite en texte. Tu relis et corriges ce texte dans la saisie, puis c’est toi qui l’envoies.",
+      "retention_one": "L’enregistrement est conservé {{count}} jour, puis supprimé.",
+      "retention_other": "L’enregistrement est conservé {{count}} jours, puis supprimé.",
+      "sharing": "Les membres de ton espace qui lisent ce fil peuvent le réécouter.",
+      "stop": "« Terminer » arrête l’écoute et transcrit ce qui a été dit ; « Annuler » n’envoie rien.",
+      "refinementWired": "Accent et bruit ambiant : un modèle de reconnaissance robuste s’ajoute à la transcription. Pour un message qui mélange français et anglais, la langue de chaque partie est repérée.",
+      "refinementNotWired": "Reconnaissance fine de l’accent ou du bruit ambiant : pas encore branchée — la transcription reste standard. Pour un message qui mélange français et anglais, la langue de chaque partie est repérée.",
+      "accept": "Activer le micro",
+      "decline": "Pas maintenant"
+    },
+    "permissionDeniedHint": "Micro refusé — clique sur le cadenas à côté de l’adresse, autorise le micro, puis recharge la page.",
+    "permissionDeniedDismiss": "Masquer ce message",
+    "errors": {
+      "permissionDenied": "Accès au micro refusé. Autorise le micro pour ce site dans les réglages de ton navigateur, ou tape ta question.",
+      "noMicrophone": "Aucun micro détecté. Branche un micro, ou tape ta question.",
+      "microphoneBusy": "Le micro est déjà utilisé par une autre application. Ferme-la, ou tape ta question.",
+      "unsupported": "Ton navigateur ne sait pas enregistrer de message vocal. Tape ta question : {{copilot}} répond pareil.",
+      "tooLarge": "Cet enregistrement est trop long pour être envoyé : un message vocal dure au plus {{seconds}} secondes. Coupe ta question en deux, ou tape-la.",
+      "quota": "Tu as atteint la limite de messages pour le moment. Ce que tu as tapé reste dans la saisie ; réessaie plus tard.",
+      "unavailable": "Les messages vocaux sont indisponibles pour le moment. Tape ta question : {{copilot}} répond pareil.",
+      "unreadable": "Je n’ai pas pu transcrire cet enregistrement. Rapproche-toi du micro et réessaie, ou tape ta question.",
+      "network": "Connexion perdue — l’enregistrement n’a pas été envoyé. Vérifie ta connexion, puis réessaie.",
+      "sessionExpired": "Ta session a expiré. Reconnecte-toi, puis réessaie.",
+      "failed": "La transcription n’a pas abouti. Réessaie dans un instant, ou tape ta question."
+    },
+    "replay": "Réécouter",
+    "replayAria": "Réécouter ce message vocal",
+    "replayLoading": "Chargement…",
+    "replayGone": "L’enregistrement n’est plus disponible.",
+    "replayFailed": "Impossible de charger l’enregistrement. Réessaie."
+  },
+  "attach": {
+    "tooLarge": "Fichier trop volumineux (max ~8 Mo).",
+    "unsupported": "« {{name}} » : format « {{ext}} » non supporté. Formats acceptés : {{formats}}.",
+    "unsupportedNoExtension": "« {{name}} » : format non reconnu (pas d'extension). Formats acceptés : {{formats}}.",
+    "empty": "« {{name}} » est vide.",
+    "dropHint": "Dépose ton fichier ici — pour cette conversation",
+    "adding": "Ajout de « {{name}} »…",
+    "added": "Document ajouté — {{copilot}} peut désormais s'y référer.",
+    "addedToBase": "Document ajouté à la base de ton ESN — {{copilot}} peut s’y référer.",
+    "failed": "Échec de l'ajout du document.",
+    "remove": "Retirer et supprimer {{name}}",
+    "removeFromBase": "Retirer {{name}} et le supprimer de la base de ton ESN",
+    "removeFailed": "« {{name}} » n’a pas pu être supprimé. Réessaie.",
+    "scope": {
+      "conversation": "ce fil",
+      "workspace": "base de l’ESN",
+      "changeAria": "Changer la portée de « {{name}} »",
+      "changeFailed": "La portée de « {{name}} » n’a pas pu être changée. Réessaie.",
+      "personal": "mon espace",
+      "account": "ce compte",
+      "knowledge_base": "base durable"
+    },
+    "preview": {
+      "open": "Aperçu de « {{name}} »",
+      "loading": "Chargement de l’aperçu…",
+      "failed": "L’aperçu de ce document n’a pas pu être chargé.",
+      "imageAlt": "Image source — « {{name}} »",
+      "citationsCaption_one": "Zone surlignée : où cette ligne a été lue dans l’image.",
+      "citationsCaption_other": "Zones surlignées : où ces {{count}} lignes ont été lues dans l’image.",
+      "citationLine": "« {{quote}} »",
+      "objects": {
+        "cropProposed": "Recadrage proposé : les bords du document ont été détectés. L’image n’est pas modifiée.",
+        "showCropped": "Voir recadrée",
+        "showWhole": "Voir l’image entière",
+        "noBounds": "Bords du document non détectés : l’image reste entière.",
+        "tableTitle": "Tableau lu dans l’image — {{rows}} lignes, {{columns}} colonnes",
+        "emptyCells": "Une case vide reste vide : rien n’y a été lu."
+      }
+    },
+    "limits": "{{formats}} · {{maxMb}} Mo max · {{max}} par message",
+    "evicted": "{{max}} documents au plus par message : « {{name}} » a été retiré pour laisser la place.",
+    "zip": {
+      "added_one": "{{count}} pièce jointe ajoutée depuis l'archive.",
+      "added_other": "{{count}} pièces jointes ajoutées depuis l'archive.",
+      "someFailed_one": "{{count}} fichier de l'archive n'a pas été retenu : {{names}}.",
+      "someFailed_other": "{{count}} fichiers de l'archive n'ont pas été retenus : {{names}}.",
+      "duplicates_one": "{{count}} doublon dans l'archive, joint une seule fois : {{names}}.",
+      "duplicates_other": "{{count}} doublons dans l'archive, joints une seule fois : {{names}}."
+    },
+    "multiple": {
+      "skipped_one": "{{max}} pièces au plus par message : {{count}} fichier non joint — {{names}}. Pour un import massif, passe par l'import dédié.",
+      "skipped_other": "{{max}} pièces au plus par message : {{count}} fichiers non joints — {{names}}. Pour un import massif, passe par l'import dédié."
+    },
+    "status": {
+      "uploading": "Téléversement…",
+      "analyzing": "Analyse…",
+      "ready": "Prêt",
+      "partial": "Partiellement lisible",
+      "refused": "Refusé",
+      "error": "Erreur",
+      "partialToast": "Document ajouté — une partie n'a pas pu être lue (probablement un scan). {{copilot}} s'appuie sur le reste.",
+      "refusedToast": "Document refusé — le fichier n'a pas pu être vérifié.",
+      "dismiss": "Retirer « {{name}} » de la liste",
+      "retry": "Réessayer l’envoi de « {{name}} »"
+    },
+    "classification": {
+      "cv": "CV probable",
+      "crmExport": "Export CRM probable",
+      "needsSheet": "Tableau de besoins probable",
+      "rfp": "Appel d’offres probable",
+      "invoice": "Facture probable",
+      "screenshot": "Capture probable",
+      "toVerify": "à vérifier"
+    },
+    "importSuggestion": {
+      "account": "Ce fichier ressemble à un export de comptes — dépose-le plutôt via Import pour l’ajouter à ta base.",
+      "contact": "Ce fichier ressemble à un export de contacts — dépose-le plutôt via Import pour l’ajouter à ta base.",
+      "project": "Ce fichier ressemble à un export de projets ou d’affaires — dépose-le plutôt via Import pour l’ajouter à ta base.",
+      "need": "Ce fichier ressemble à un tableau de besoins ou d’appels d’offres — dépose-le plutôt via Import pour l’ajouter à ta base.",
+      "talent": "Ce fichier ressemble à un vivier de consultants — dépose-le plutôt via Import pour l’ajouter à ta base.",
+      "mission": "Ce fichier ressemble à un export de missions — dépose-le plutôt via Import pour l’ajouter à ta base."
+    },
+    "importProposalReady": {
+      "account": "Une proposition d’import de comptes a été préparée à partir de ce fichier — à revoir et valider toi-même dans Réglages > Import.",
+      "contact": "Une proposition d’import de contacts a été préparée à partir de ce fichier — à revoir et valider toi-même dans Réglages > Import.",
+      "project": "Une proposition d’import de projets ou d’affaires a été préparée à partir de ce fichier — à revoir et valider toi-même dans Réglages > Import.",
+      "need": "Une proposition d’import de besoins a été préparée à partir de ce fichier — à revoir et valider toi-même dans Réglages > Import.",
+      "talent": "Une proposition d’import de consultants a été préparée à partir de ce fichier — à revoir et valider toi-même dans Réglages > Import.",
+      "mission": "Une proposition d’import de missions a été préparée à partir de ce fichier — à revoir et valider toi-même dans Réglages > Import."
+    }
+  },
+  "prompts": {
+    "general1": {
+      "label": "Ce qui a changé",
+      "prompt": "Dis-moi ce qui a changé depuis lundi sur mes comptes prioritaires, et ce que ça déclenche."
+    },
+    "general2": {
+      "label": "Où investir mon temps",
+      "prompt": "Compare mes comptes suivis et dis-moi lesquels méritent réellement mon temps cette semaine, preuves à l'appui."
+    },
+    "general3": {
+      "label": "Premiers messages",
+      "prompt": "Prépare un premier message et un email pour mes contacts prioritaires, en adaptant le ton à chaque niveau hiérarchique."
+    },
+    "general4": {
+      "label": "Mettre le CRM à jour",
+      "prompt": "Compare mes comptes chauds avec mon CRM, repère les doublons et prépare les prochaines tâches à valider."
+    },
+    "general5": {
+      "label": "Préparer mon prochain rendez-vous",
+      "prompt": "Prépare mon prochain rendez-vous : contexte du compte, participants, historique, questions à poser et objections probables."
+    },
+    "general6": {
+      "label": "Projets × vivier",
+      "prompt": "Croise les projets que tu as détectés avec mon vivier et propose des experts réellement disponibles, avec leurs preuves et leurs manques."
+    },
+    "general7": {
+      "label": "Trouver des donneurs d'ordre",
+      "prompt": "Trouve des donneurs d'ordre accessibles dans mon secteur cible et explique, pour chacun, pourquoi il est accessible maintenant."
+    },
+    "general8": {
+      "label": "Répartition d'équipe",
+      "prompt": "Montre les doublons de couverture entre commerciaux et propose une répartition qui ne confond pas activité et performance."
+    },
+    "account1": {
+      "label": "Par où commencer",
+      "prompt": "Sur {{company}} : par où commencer, avec quel interlocuteur, et pourquoi lui plutôt qu'un autre ?"
+    },
+    "account2": {
+      "label": "Donneurs d'ordre accessibles",
+      "prompt": "Trouve les donneurs d'ordre accessibles dans le périmètre {{company}} et explique pourquoi chacun l'est."
+    },
+    "account3": {
+      "label": "Premiers messages",
+      "prompt": "Prépare un premier message et un email pour les contacts prioritaires de {{company}}, un angle par contact."
+    },
+    "account4": {
+      "label": "Ce qui a changé",
+      "prompt": "Qu'est-ce qui a changé chez {{company}} depuis ma dernière analyse, et qu'est-ce que ça change pour mon approche ?"
+    },
+    "account5": {
+      "label": "Préparer le rendez-vous",
+      "prompt": "Prépare mon rendez-vous {{company}} : contexte, questions à poser, objections probables et prochaines étapes."
+    },
+    "account6": {
+      "label": "Projets × vivier",
+      "prompt": "Croise les projets détectés chez {{company}} avec mon vivier et propose des experts disponibles, preuves et manques compris."
+    },
+    "account7": {
+      "label": "Prochaines tâches CRM",
+      "prompt": "Prépare les prochaines tâches CRM pour {{company}} : ce qui serait créé, sur quels objets, et ce qu'il reste à valider."
+    },
+    "account8": {
+      "label": "Appel d'offres",
+      "prompt": "Analyse le dernier appel d'offres rattaché à {{company}}, donne un bid/no-bid argumenté et prépare le plan de réponse."
+    },
+    "analysis1": {
+      "label": "Signaux à traiter",
+      "prompt": "Résume les signaux récents de ce compte et dis-moi lesquels méritent une action commerciale immédiate."
+    },
+    "analysis2": {
+      "label": "Objections probables",
+      "prompt": "Liste les objections probables sur ce compte et la réponse à préparer pour chacune."
+    },
+    "analysis3": {
+      "label": "Prochaine action CRM",
+      "prompt": "Transforme cette analyse en prochaine action CRM : quel objet, quelle échéance, quel coût."
+    },
+    "showMore_one": "+ 1 autre amorce",
+    "showMore_other": "+ {{count}} autres amorces"
+  },
+  "context": {
+    "title": "Ce que {{copilot}} utilise",
+    "accounts": "Comptes",
+    "analyses": "Actions rapides",
+    "sessionTitle": "Session partagée",
+    "activeAccount": "Compte actif : {{name}}",
+    "noActiveAccount": "Aucun compte actif.",
+    "unnamed": "Sans nom",
+    "score": "Score {{score}}"
+  },
+  "privacy": {
+    "title": "Confidentialité",
+    "body": "{{copilot}} utilise uniquement les comptes, analyses et documents explicitement liés à cette conversation."
+  },
+  "members": {
+    "title": "Membres",
+    "unavailable": "Membres indisponibles pour le moment.",
+    "fallbackName": "Membre",
+    "you": "{{name}} (tu)",
+    "copilotRole": "{{copilot}}",
+    "copilotPermission": "Lecture contexte",
+    "presenceAria": "Présence {{presence}}",
+    "permission": {
+      "manage": "Peut gérer",
+      "comment": "Peut commenter",
+      "integrations": "Intégrations",
+      "readonly": "Lecture seule"
+    }
+  },
+  "disclosure": {
+    "toggle": "Contexte utilisé",
+    "sourcesSuffix_one": " · {{count}} source",
+    "sourcesSuffix_other": " · {{count}} sources",
+    "activeTitle": "Ce qui a servi à cette réponse",
+    "permissionsTitle": "Tes droits",
+    "noPermissions": "Aucun droit d'écriture sur cet espace — lecture seule.",
+    "sourcesTitle": "Sources citées",
+    "sourceExcerptLabel": "Extrait consulté",
+    "sourceScopeLabel": "Périmètre :",
+    "sourceConfidenceLabel": "Confiance :",
+    "sourceConfidence": {
+      "high": "forte",
+      "medium": "moyenne",
+      "low": "faible"
+    },
+    "sourceRelatesToLabel": "Concerne :",
+    "sourceNextVerificationLabel": "Prochaine vérification :",
+    "notConsultedTitle": "Non consulté",
+    "noContext": "Aucun contexte spécifique — réponse d'ordre général.",
+    "noDocument": "Aucun document de la base de connaissance utilisé.",
+    "kindMethod": "Méthode {{brand}}",
+    "kindDocument": "Ton document",
+    "kindCrm": "CRM",
+    "kindAccount": "Dossier de compte",
+    "kindMarketObservation": "Observations du marché",
+    "kindMarketSignal": "Signal marché",
+    "marketObservationCaption": "Observation structurelle — ne décrit pas nécessairement la situation actuelle.",
+    "profile": "Profil ESN",
+    "profileNamed": "Profil ESN : {{name}}",
+    "account": "Compte",
+    "accountNamed": "Compte : {{name}}",
+    "contacts_one": "{{count}} contact",
+    "contacts_other": "{{count}} contacts",
+    "plan": "Plan d'action",
+    "accountFacts": "Faits du compte ({{count}})",
+    "workspaceRecall": "Mémoire de l'espace ({{count}})",
+    "portfolio": "Portefeuille ({{count}})",
+    "memory": "Mémoire ({{count}} fait(s))",
+    "summary": "Cette réponse utilise {{parts}}.",
+    "summaryProfile": "ton profil",
+    "summaryAccounts_one": "{{count}} compte",
+    "summaryAccounts_other": "{{count}} comptes",
+    "summaryContacts_one": "{{count}} contact",
+    "summaryContacts_other": "{{count}} contacts",
+    "summaryPlan": "ton plan d'action",
+    "summaryAccountFacts_one": "{{count}} fait du compte",
+    "summaryAccountFacts_other": "{{count}} faits du compte",
+    "summaryWorkspaceRecall_one": "{{count}} élément de la mémoire de l'espace",
+    "summaryWorkspaceRecall_other": "{{count}} éléments de la mémoire de l'espace",
+    "summaryDocs_one": "{{count}} source citée",
+    "summaryDocs_other": "{{count}} sources citées",
+    "summaryMemory_one": "{{count}} élément mémorisé",
+    "summaryMemory_other": "{{count}} éléments mémorisés",
+    "freshnessToday": "aujourd'hui",
+    "freshnessYesterday": "hier",
+    "freshnessDays_one": "il y a {{count}} jour",
+    "freshnessDays_other": "il y a {{count}} jours",
+    "actionConnectCrm": "Connecter",
+    "actionConnectEmail": "Connecter",
+    "actionAddKnowledge": "Ajouter un document",
+    "actionAnalyseAccount": "Lancer une analyse",
+    "receipt": {
+      "title": "Reçu de connaissance",
+      "usedTitle": "Utilisé pour cette réponse :",
+      "usedNone": "Rien de cette liste n'a servi cette réponse.",
+      "notRequestedTitle": "Non demandé :",
+      "unavailableTitle": "Indisponible :",
+      "forbiddenTitle": "Interdit par le mode :",
+      "excludedTitle": "Exclu par toi pour ce fil :",
+      "stateUnavailable": "tenté, indisponible pour cette réponse",
+      "stateForbidden": "actions momentanément coupées",
+      "resultCount_one": "{{count}} résultat",
+      "resultCount_other": "{{count}} résultats",
+      "layer": {
+        "workspace": "Ton espace",
+        "crm": "Ton CRM",
+        "messaging": "Ta messagerie",
+        "agenda": "Ton agenda",
+        "documents": "Tes documents",
+        "accountDossier": "Dossier de compte",
+        "dataforge": "Référentiel sectoriel {{brand}}",
+        "marketMemory": "Observations du marché",
+        "currentPublicSources": "Sources publiques actuelles",
+        "bellumMethod": "Méthode {{brand}}",
+        "inference": "Raisonnement"
+      }
+    },
+    "sourcePlan": {
+      "title": "Plan de sources",
+      "scopeLine": "Stratégie de cette réponse : {{scope}}",
+      "calledTitle": "Couches appelées :",
+      "calledNone": "Aucune couche appelée pour ce plan.",
+      "unavailableTitle": "Attendues, non obtenues :",
+      "publicSearchAvoided": "Recherche publique évitée, conformément à ta demande.",
+      "scope": {
+        "internalOnly": "seulement en interne",
+        "currentPublic": "actualité publique",
+        "combined": "vue combinée",
+        "workspaceFirst": "ton activité d'abord"
+      },
+      "layer": {
+        "explicitRequest": "Ta demande explicite",
+        "threadMemory": "Mémoire de cette conversation",
+        "profile": "Ton profil",
+        "workspace": "Ton espace",
+        "connectedSystems": "Tes outils connectés",
+        "accountDossier": "Dossier de compte",
+        "dataforge": "Référentiel sectoriel {{brand}}",
+        "marketMemory": "Observations du marché",
+        "publicSources": "Sources publiques actuelles",
+        "methodologicalInference": "Raisonnement méthodologique"
+      }
+    },
+    "turnObservability": {
+      "title": "Approfondissement",
+      "passes_one": "{{count}} passage sur {{total}} utilisé pour cette réponse",
+      "passes_other": "{{count}} passages sur {{total}} utilisés pour cette réponse",
+      "scopeNote": "Ces passages concernent la recherche de cette réponse, pas une relance de l’analyse du compte.",
+      "pass": "PASS {{level}} — {{name}}",
+      "passName": {
+        "0": "contexte local",
+        "1": "vérification ciblée",
+        "2": "recherche thématique",
+        "3": "contradictions à trancher"
+      },
+      "stop": {
+        "marginal_gain": "Arrêt : le dernier passage n’a rien apporté de neuf.",
+        "passes_exhausted": "Arrêt : tous les niveaux d’approfondissement ont été parcourus.",
+        "other": "Approfondissement arrêté."
+      },
+      "budgetExhausted": "Le délai du tour a été atteint avant la fin du plan prévu.",
+      "degradedAnswer": "Cette réponse a été rendue en mode dégradé."
+    },
+    "searchUniverse": {
+      "title": "Périmètre de recherche",
+      "populationLine": "Demande visée : {{population}}",
+      "geographiesTitle": "Géographies :",
+      "rolesTitle": "Rôles :",
+      "groupRoot": "Groupe du fil : {{root}}",
+      "groupExcluded": "Hors périmètre : {{names}}",
+      "exclusionsTitle": "Exclu :",
+      "coverage": {
+        "detected": "{{count}} détecté(s)",
+        "resolved": "{{count}} classé(s)",
+        "relevant": "{{count}} correspondent aux rôles recherchés",
+        "verified": "{{count}} vérifié(s) récemment",
+        "enriched": "{{count}} disposent d’une coordonnée exploitable",
+        "basis": "Lecture de ton espace, pas du marché."
+      }
+    },
+    "signals_one": "{{count}} signal",
+    "signals_other": "{{count}} signaux",
+    "summarySignals_one": "{{count}} signal",
+    "summarySignals_other": "{{count}} signaux",
+    "summaryPortfolio_one": "ton portefeuille ({{count}} compte)",
+    "summaryPortfolio_other": "ton portefeuille ({{count}} comptes)",
+    "privacyLink": "Voir le détail de confidentialité",
+    "memoryUses": {
+      "title": "Mémoire consultée pour cette réponse",
+      "caption": "{{copilot}} avait ces éléments en tête : ils ont été transmis avec la question, ce qui ne prouve pas qu’elle s’en est servie.",
+      "loading": "Lecture de la mémoire consultée…",
+      "unavailable": "La mémoire consultée n’a pas pu être relue pour le moment.",
+      "none": "Aucune trace conservée pour cette réponse.",
+      "private_one": "{{count}} élément privé — visible par son auteur seulement",
+      "private_other": "{{count}} éléments privés — visibles par leur auteur seulement",
+      "removed_one": "{{count}} élément retiré depuis",
+      "removed_other": "{{count}} éléments retirés depuis",
+      "scope": {
+        "user": "Toi uniquement",
+        "workspace": "Toute ton ESN"
+      },
+      "manage": "Gérer la mémoire de {{copilot}}",
+      "earlierAnswer": "Pour une réponse relue, seule la mémoire consultée est conservée : ses autres sources ne l’étaient pas."
+    },
+    "portfolioNamed_one": "{{count}} compte de ton portefeuille : {{list}}",
+    "portfolioNamed_other": "{{count}} comptes de ton portefeuille : {{list}}",
+    "portfolioNamedMore": "{{names}} et {{count}} autres",
+    "portfolioPartial_one": "{{count}} compte sur {{total}} : {{list}}",
+    "portfolioPartial_other": "{{count}} comptes sur {{total}} : {{list}}",
+    "surfaces": {
+      "discover": {
+        "summary": "Cette recherche utilise {{parts}}.",
+        "activeTitle": "Ce qui sert à cette recherche",
+        "sourcesTitle": "Autres couches lues",
+        "noDocument": "Aucune autre couche lue."
+      },
+      "analyze": {
+        "summary": "Cette analyse utilisera {{parts}}.",
+        "activeTitle": "Ce que l'analyse lira",
+        "sourcesTitle": "Autres couches lues",
+        "noDocument": "Aucune autre couche lue."
+      },
+      "analysis_batch": {
+        "summary": "Ce lot utilisera {{parts}}.",
+        "activeTitle": "Ce que chaque analyse du lot lira",
+        "sourcesTitle": "Autres couches lues",
+        "noDocument": "Aucune autre couche lue."
+      }
+    }
+  },
+  "pending": {
+    "title": "Action à valider",
+    "obsolete": "Obsolète — cette réponse a été remplacée par une nouvelle tentative.",
+    "describeMessage": {
+      "email": "Préparer un email pour {{name}}",
+      "linkedin": "Préparer un message LinkedIn pour {{name}}",
+      "phone": "Préparer un script d'appel pour {{name}}"
+    },
+    "describeReminder": "Programmer un rappel sur {{name}} le {{date}}",
+    "describeEnrich": "Enrichir les coordonnées de {{name}} ({{company}})",
+    "describeCrm": "Envoyer {{name}} vers {{provider}}",
+    "describeCrmNote": "Écrire une note CRM sur {{name}}",
+    "describeFind": "Lancer une recherche Découvrir : {{criteria}}",
+    "guaranteeMessage": "{{brand}} n’envoie rien : tu relis, tu envoies.",
+    "guaranteeReminder": "Rien n’est enregistré tant que tu n’as pas validé.",
+    "guaranteeCrm": "Crée ou met à jour la fiche dans {{provider}}, rien d’autre.",
+    "guaranteeCrmNote": "Ajoute une note sur la fiche déjà existante dans ton CRM, rien d’autre.",
+    "guaranteeFind": "Ouvre Découvrir pré-rempli sur ces critères. Explorer est libre.",
+    "audienceTitle": "{{count}} destinataires que tu as nommés : un brouillon chacun, à valider un par un. Rien n’est envoyé.",
+    "audienceSkipped": "Écarté : {{name}} — {{reason}}",
+    "audienceSkippedUnknown": "un contact",
+    "messageDemo": "Salle de démonstration : aucun brouillon n'est généré ici. En production, le brouillon s'affiche sur cette carte, à relire — rien n'est envoyé.",
+    "confirmMessage": "Préparer le message",
+    "confirmReminder": "Programmer le rappel",
+    "confirmCrm": "Envoyer vers {{provider}}",
+    "confirmCrmNote": "Écrire la note",
+    "confirmFind": "Ouvrir Découvrir",
+    "dismiss": "Ignorer",
+    "running": "En cours…",
+    "assignTo": "Assigner à",
+    "assignedTo": "Assigné à {{name}}",
+    "assignError": "Assignation impossible, réessaie.",
+    "memberFallback": "Un collègue",
+    "reminderDone": "Rappel enregistré.",
+    "crmNoteDone": "Note CRM écrite.",
+    "claimed": {
+      "selfAt": "Tu avais déjà lancé cette action à {{time}} — elle n'a pas été refaite.",
+      "byAt": "Déjà lancée par {{actor}} à {{time}} — elle n'a pas été refaite.",
+      "systemAt": "Déjà lancée automatiquement à {{time}} — elle n'a pas été refaite.",
+      "selfRunning": "Tu as déjà lancé cette action — elle est encore en cours.",
+      "byRunning": "{{actor}} a déjà lancé cette action — elle est encore en cours.",
+      "systemRunning": "Cette action a déjà été lancée automatiquement — elle est encore en cours."
+    },
+    "enrichEmail": "email",
+    "enrichPhone": "téléphone",
+    "enrichDone": "Coordonnées trouvées : {{found}}.",
+    "enrichNotFound": "Aucune coordonnée trouvée.",
+    "crmCreated": "Fiche créée dans {{provider}}.",
+    "crmUpdated": "Fiche mise à jour dans {{provider}}.",
+    "criteriaDepartment": "département {{code}}",
+    "criteriaCity": "ville de {{city}}",
+    "criteriaHeadcount": "effectif {{range}}",
+    "sector": {
+      "it": "Informatique & numérique",
+      "finance": "Banque, assurance, finance",
+      "energy": "Énergie",
+      "industry": "Industrie",
+      "health": "Santé & médico-social",
+      "retail": "Commerce & distribution",
+      "transport": "Transport & logistique",
+      "telecom": "Télécoms",
+      "construction": "Construction & BTP",
+      "public": "Secteur public"
+    },
+    "signal": {
+      "tender": "appel d'offres ouvert",
+      "award": "marché attribué",
+      "hiring": "recrutement en cours"
+    },
+    "failed": "L'action n'a pas pu être exécutée.",
+    "copy": "Copier",
+    "copied": "Message copié",
+    "draftOnly": "Message préparé — à envoyer depuis ta messagerie",
+    "unknownContact": "ce contact",
+    "crmGeneric": "ton CRM",
+    "describeCreateContact": "Créer la fiche {{brand}} de {{name}} ({{company}})",
+    "guaranteeCreateContact": "Crée la fiche dans {{brand}} à partir de ta ligne CRM, rien d’autre. Aucun envoi.",
+    "confirmCreateContact": "Créer la fiche",
+    "contactCreated": "Fiche créée pour {{name}}.",
+    "contactAlreadyExists": "{{name}} avait déjà une fiche — rien n'a été créé en double.",
+    "contactAmbiguous_one": "{{count}} fiche répond déjà à ce nom ou à cet e-mail : rien n'est créé ni fusionné. Ouvre Contacts pour trancher.",
+    "contactAmbiguous_other": "{{count}} fiches répondent déjà à ce nom ou à cet e-mail : rien n'est créé ni fusionné. Ouvre Contacts pour trancher.",
+    "openContact": "Ouvrir la fiche",
+    "previewRole": "Poste",
+    "previewEmail": "E-mail",
+    "previewOrigin": "D'où ça vient",
+    "originCrm": "une ligne de ton CRM",
+    "previewReminder": "Rappel qui suivra",
+    "writesContactRecord": "une fiche contact dans {{brand}}, rattachée à ce compte",
+    "describeCreateTargetList": "Créer une cible ({{company}})",
+    "guaranteeCreateTargetList": "Crée une liste dans « Mes cibles » avec ce compte, rien d’autre.",
+    "confirmCreateTargetList": "Créer la cible",
+    "createTargetListDefaultName": "Cible — {{company}}",
+    "createTargetListDone": "Liste « {{list}} » créée.",
+    "previewListName": "Nom de la liste",
+    "writesTargetList": "une liste dans « Mes cibles », avec ce compte",
+    "describeAddToPortfolio": "Ajouter au portefeuille ({{company}})",
+    "guaranteeAddToPortfolio": "Ajoute ce compte à ton portefeuille, rien d’autre.",
+    "confirmAddToPortfolio": "Ajouter au portefeuille",
+    "addToPortfolioDone": "{{company}} ajouté à ton portefeuille.",
+    "previewSector": "Secteur",
+    "previewWebsite": "Site web",
+    "writesPortfolio": "ce compte dans ton portefeuille",
+    "previewTitle": "Ce que cette action va faire",
+    "limitScope": "Limiter le périmètre de cette conversation",
+    "previewTarget": "Cible",
+    "previewChannel": "Canal",
+    "previewAngle": "Angle",
+    "previewWhen": "Quand",
+    "previewTimezone": "Fuseau retenu",
+    "previewNote": "Note",
+    "previewOrg": "Entreprise",
+    "previewDestination": "Destination",
+    "previewFieldCurrentValue": "{{field}} — valeur actuelle",
+    "previewCriteria": "Critères",
+    "previewWrites": "Ce qui sera écrit",
+    "plan": {
+      "steps_one": "Plan en {{count}} étape",
+      "steps_other": "Plan en {{count}} étapes",
+      "validation": "rien ne s’exécute sans ton clic, étape par étape"
+    },
+    "writesDraftOnly": "un message préparé dans {{brand}} — rien n'est envoyé",
+    "writesReminder": "un rappel daté dans ton journal d'actions",
+    "writesEnrich": "email et téléphone sur la fiche contact, si trouvés",
+    "writesCrm": "une fiche contact créée ou mise à jour",
+    "writesCrmNote": "une note ajoutée à la fiche existante",
+    "writesNothing": "rien — l'écran Découvrir s'ouvre pré-rempli",
+    "channel": {
+      "email": "email",
+      "linkedin": "message privé",
+      "phone": "appel"
+    },
+    "describeMailDraft": "Déposer un brouillon d'email pour {{to}}",
+    "guaranteeMailDraft": "Le brouillon atterrit dans {{mailbox}}. Rien n’est envoyé.",
+    "confirmMailDraft": "Déposer le brouillon",
+    "describeCalendarEvent": "Créer l'événement « {{title}} » le {{date}}",
+    "guaranteeCalendarEvent": "Rien n’est créé avant ton clic. Aucune invitation n’est envoyée sans invité déclaré.",
+    "confirmCalendarEvent": "Créer l'événement",
+    "calendarEventDone": "Événement créé dans ton agenda.",
+    "previewGuests": "Invités",
+    "writesCalendarEvent": "Un événement dans ton agenda",
+    "mailDraftSaved": "Brouillon déposé dans {{mailbox}}.",
+    "mailDraftSavedWithLink": "Brouillon déposé dans {{mailbox}} — tu peux le relire et l'envoyer.",
+    "mailDraftNoProof": "Le brouillon est prêt dans {{brand}}, mais {{mailbox}} n'a pas confirmé son dépôt. Rien n'a été déposé.",
+    "deleteDraft": "Supprimer le brouillon",
+    "draftRemoved": "Brouillon supprimé de ta messagerie.",
+    "yourMailbox": "ta messagerie",
+    "previewSubject": "Objet",
+    "previewContent": "Contenu",
+    "previewContext": "Contexte utilisé",
+    "previewContextThread": "Répond au fil existant",
+    "previewContextNew": "Nouveau message",
+    "previewTone": "Ton",
+    "previewSignature": "Pièces jointes et signature",
+    "previewSignatureIncluded": "Ta signature sera ajoutée. Aucune pièce jointe.",
+    "writesMailDraft": "un brouillon dans {{mailbox}} (aucun envoi)",
+    "describeScreen": "Ouvrir {{label}}",
+    "guaranteeScreen": "Aucune écriture : ce clic ouvre un écran, rien de plus.",
+    "confirmScreen": "Ouvrir l’écran",
+    "previewScreen": "Écran",
+    "previewHighlight": "À regarder en arrivant",
+    "describeConsultant": "Ouvrir une fiche consultant pré-remplie pour {{name}}",
+    "guaranteeConsultant": "Rien n’est enregistré : le formulaire s’ouvre pré-rempli, c’est toi qui valides.",
+    "confirmConsultant": "Ouvrir le formulaire",
+    "previewConsultant": "Consultant",
+    "writesScreenOnly": "rien — ouverture d’écran",
+    "describePushProfile": "Ouvrir le panneau de matching pour proposer un profil",
+    "describeToggleRoutine": {
+      "on": "Activer {{label}}",
+      "off": "Désactiver {{label}}"
+    },
+    "guaranteeToggleRoutine": "Change seulement ton abonnement à cette routine, dans Réglages. Rien n’est envoyé.",
+    "confirmToggleRoutine": {
+      "on": "Activer",
+      "off": "Désactiver"
+    },
+    "previewRoutine": "Routine",
+    "previewState": "Nouvel état",
+    "previewSchedule": "Nouvel horaire",
+    "routineHour": "{{hour}} h",
+    "routineChannel": {
+      "in_app": "dans l’application",
+      "email": "par e-mail"
+    },
+    "routineStateOn": "Activée",
+    "routineStateOff": "Désactivée",
+    "writesRoutineToggle": "l’abonnement à cette routine, dans Réglages",
+    "routineToggled": {
+      "on": "Routine activée : {{label}}.",
+      "off": "Routine désactivée : {{label}}."
+    },
+    "unknownRoutine": "cette routine",
+    "describeUpdateSetting": "Changer « {{label}} »",
+    "guaranteeUpdateSetting": "Change seulement ce réglage, dans Réglages. Rien n’est envoyé.",
+    "confirmUpdateSetting": "Appliquer",
+    "previewSettingOld": "Valeur actuelle",
+    "previewSettingNew": "Nouvelle valeur",
+    "settingValueOn": "Activé",
+    "settingValueOff": "Désactivé",
+    "settingValueUnknown": "non mesuré",
+    "writesSettingUpdate": "ce réglage, dans Réglages",
+    "settingUpdated": "Réglage mis à jour : {{label}}.",
+    "unknownSetting": "ce réglage",
+    "describePinFact": "Épingler ce que tu as compris dans ta mémoire",
+    "guaranteePinFact": "Épingle ce texte dans Réglages › Mémoire — visible et supprimable à tout moment.",
+    "confirmPinFact": "Épingler",
+    "previewFact": "À retenir",
+    "writesPinFact": "un fait épinglé, dans Réglages › Mémoire",
+    "previewMemoryBefore": "Avant",
+    "previewMemoryBeforeValue": "Rien n’est encore épinglé sur ce sujet.",
+    "previewRemembered": "Ce que je retiens",
+    "previewChanges": "Ce que cela modifiera",
+    "changesUserAll": "Les réponses de {{copilot}}, pour toi — et rien pour tes collègues.",
+    "changesUserAccount": "Les réponses de {{copilot}} sur ce compte, pour toi — et rien pour tes collègues.",
+    "changesWorkspaceAll": "Les réponses de {{copilot}}, pour tous les membres de ton ESN.",
+    "changesWorkspaceAccount": "Les réponses de {{copilot}} sur ce compte, pour tous les membres de ton ESN.",
+    "changesBusinessUnitAll": "Les réponses de {{copilot}}, pour les membres de {{name}} — et pour personne d'autre.",
+    "changesBusinessUnitAccount": "Les réponses de {{copilot}} sur ce compte, pour les membres de {{name}} — et pour personne d'autre.",
+    "changesConversationAll": "Les réponses de {{copilot}} dans cette conversation seulement — rien au-delà d'elle.",
+    "changesConversationAccount": "Les réponses de {{copilot}} sur ce compte, dans cette conversation seulement — rien au-delà d'elle.",
+    "factPinnedScope": {
+      "user": "Épinglé pour toi uniquement.",
+      "workspace": "Épinglé pour toute ton ESN — tes collègues le verront aussi.",
+      "business_unit": "Épinglé pour les membres de {{name}} — et pour personne d'autre dans ton espace.",
+      "conversation": "Épinglé pour cette conversation seulement — il partira avec elle."
+    },
+    "describeAnalysisPlain": "Lancer l'analyse de {{company}}",
+    "guaranteeAnalysis": "Rien n'est lancé ni débité avant ton clic. Compte 3 à 6 minutes.",
+    "confirmAnalysis": "Lancer l'analyse",
+    "previewDossier": "Dossier",
+    "dossierAnalysedOn": "Analysé le {{date}}",
+    "dossierNeverAnalysed": "Jamais analysé",
+    "previewReason": "Pourquoi ce compte",
+    "previewObjectsCount": "Contacts déjà connus",
+    "objectsCountValue_one": "{{count}} contact déjà connu",
+    "objectsCountValue_other": "{{count}} contacts déjà connus",
+    "writesAnalysis": "un dossier de conquête sur ce compte — contacts, angles, plan d'action",
+    "analysisNeedsPlan": "Le lancement n'a pas abouti : la préparation a expiré. Redemande-moi l'analyse.",
+    "analysisStarted": "L'analyse de {{company}} est lancée — elle prend 3 à 6 minutes. Tu la suivras sur son dossier.",
+    "analysisAlreadyFresh": "Un dossier récent existait déjà pour {{company}} : rien n’a été relancé.",
+    "describeCampaign": "Préparer une campagne sur {{count}} contact — {{objective}}",
+    "describeCampaign_other": "Préparer une campagne sur {{count}} contacts — {{objective}}",
+    "describeCallList": "Préparer une liste d'appels sur {{count}} contact — {{objective}}",
+    "describeCallList_other": "Préparer une liste d'appels sur {{count}} contacts — {{objective}}",
+    "guaranteeCampaign": "Ouvre Séquences pré-rempli. Aucune séquence n'est créée avant ton clic, écran par écran, contact par contact.",
+    "confirmCampaign": "Ouvrir Séquences",
+    "previewObjective": "Objectif",
+    "previewAudience": "Audience",
+    "previewPersona": "Persona visé",
+    "previewRelation": "Relation",
+    "campaignAudience_one": "{{count}} contact",
+    "campaignAudience_other": "{{count}} contacts",
+    "campaignRelation": {
+      "cold": "prise de contact à froid",
+      "warm": "relation déjà entamée",
+      "referred": "recommandé par un tiers",
+      "existing": "client existant"
+    },
+    "describeCompileNeed": "Besoin compilé — {{title}}, chez {{company}}",
+    "describeCompileNeedNoCompany": "Besoin compilé — {{title}}",
+    "guaranteeCompileNeed": "Ouvre le créateur de besoin. Rien n'est enregistré avant ton clic, et chaque valeur ci-dessus vient d'une phrase de ta source.",
+    "confirmCompileNeed": "Ouvrir le créateur de besoin",
+    "describeMissionAmendment": "Enregistrer une proposition d'avenant — {{event}}",
+    "guaranteeMissionAmendment": "L'avenant reste « proposé » : rien n'est mis en vigueur, un humain le valide dans le dossier de la mission.",
+    "confirmMissionAmendment": "Enregistrer la proposition",
+    "missionAmendmentProposed": "Avenant enregistré comme proposé — à valider dans le dossier de la mission.",
+    "simulateImpactIntro": "Simuler l'impact sur le revenu et la marge, avant de valider",
+    "needUntitled": "sans intitulé",
+    "needWorkToDo": "Le travail à réaliser",
+    "needOutcome": "Le résultat attendu",
+    "needSkills": "Compétences",
+    "needMissing": "Ce qui manque pour comprendre",
+    "needMissingWork": "le travail à réaliser",
+    "needMissingOutcome": "le résultat attendu",
+    "needMissingSkills": "les critères bloquants",
+    "needContradictions": "Ce qui se contredit",
+    "needContradictionsValue_one": "{{count}} champ où la source dit deux choses",
+    "needContradictionsValue_other": "{{count}} champs où la source dit deux choses",
+    "needConfirmation": "Qui le tient",
+    "needConfirmation_confirme_par_le_client": "le client l'a dit",
+    "needConfirmation_rapporte": "rapporté",
+    "needConfirmation_hypothese": "hypothèse",
+    "needDropped": "Écarté",
+    "needDroppedValue_one": "{{count}} valeur sans citation ou hors champ",
+    "needDroppedValue_other": "{{count}} valeurs sans citation ou hors champ",
+    "needSource": {
+      "chat_message": "ton message",
+      "free_brief": "un texte collé",
+      "email": "un email",
+      "meeting_report": "un compte rendu",
+      "transcript": "une transcription",
+      "document": "un document",
+      "screenshot": "une capture d'écran",
+      "crm_record": "une fiche CRM",
+      "field_notes": "des notes de terrain",
+      "job_posting": "une offre d'emploi",
+      "rfp": "un appel d'offres"
+    },
+    "describeOpportunityUpdate": "Mettre à jour l'opportunité {{label}}",
+    "guaranteeOpportunityUpdate": "Rien n'est écrit avant ton clic, et seuls les champs montrés changent — gagné ou perdu se décident sur l'écran de l'opportunité.",
+    "confirmOpportunityUpdate": "Appliquer la mise à jour",
+    "writesOpportunityUpdate": "Met à jour l'opportunité (étape, montant estimé, prochaine étape, risque) par les routes de son écran.",
+    "opportunityUpdated": "Opportunité mise à jour — {{label}}.",
+    "opportunityField": {
+      "stage": "Étape",
+      "estimated_amount": "Montant estimé",
+      "next_step": "Prochaine étape",
+      "risk": "Risque"
+    },
+    "describeNeedTransition": "Passer ce besoin à « {{status}} »",
+    "guaranteeNeedTransition": "Rien n'est écrit avant ton clic — le statut ne change que sur cette route, la même que le dossier du besoin.",
+    "confirmNeedTransition": "Appliquer la transition",
+    "writesNeedTransition": "Change le statut du besoin par la porte d'état de son dossier.",
+    "needTransitionDone": "Statut du besoin mis à jour.",
+    "describeLongJob_bulk_matching": "Classer le vivier contre {{count}} besoin(s), en tâche de fond",
+    "describeLongJob_multi_source_search": "Chercher des consultants hors vivier pour ce besoin, source par source",
+    "guaranteeLongJob": "Rien ne part avant ton clic. Le travail tourne ensuite en tâche de fond ; son avancement se suit sur l’écran des besoins.",
+    "confirmLongJob": "Lancer en tâche de fond",
+    "writesLongJob": "Met un travail en file ; aucun profil n'est poussé ni aucun message envoyé.",
+    "longJobStarted": "Travail lancé en tâche de fond — l'avancement se suit sur l'écran des besoins.",
+    "longJobDemo": "Démonstration : le lancement n’est pas exécuté dans cette salle — en production, le matching tourne en tâche de fond.",
+    "longJobFailed": "Le travail n'a pas pu être lancé.",
+    "describeVivierExport": {
+      "ats": "Exporter le vivier au format ATS",
+      "bulk": "Exporter le vivier en lot"
+    },
+    "guaranteeVivierExport": "Lance le même export que le bouton de l’écran Réglages › Mes données › Exports — rien d’autre.",
+    "confirmVivierExport": {
+      "ats": "Exporter (ATS)",
+      "bulk": "Exporter en lot"
+    },
+    "vivierExportDone": "Export du vivier téléchargé.",
+    "vivierExportEmpty": "Le vivier est vide : rien à exporter.",
+    "vivierExportFailed": "L'export du vivier n'a pas pu être lancé.",
+    "vivierExportDemo": "Démonstration : l'export n’est pas lancé dans cette salle — en production, le fichier se télécharge.",
+    "describeBugReport": "Envoyer un signalement de bug à l'équipe",
+    "guaranteeBugReport": "Envoie ce constat par le même formulaire que « Signaler un problème », catégorie bug — rien d’autre. Rien ne part avant ton clic.",
+    "confirmBugReport": "Envoyer le signalement",
+    "previewBugObserved": "Constat",
+    "previewBugRoute": "Écran",
+    "previewBugJoined": "Joint",
+    "bugReportJoined": "l'adresse de la page, le navigateur et la version de l'application",
+    "bugReportRouteLine": "Écran : {{route}}",
+    "bugReportSent": "Signalement envoyé — il se suit dans Réglages › Mes signalements.",
+    "bugReportDemo": "Démonstration : le signalement n’est pas envoyé dans cette salle — dans un espace réel, il part avec son contexte.",
+    "describeBulkEnrich_one": "Enrichir les coordonnées de {{count}} contact, en un lot",
+    "describeBulkEnrich_other": "Enrichir les coordonnées de {{count}} contacts, en un lot",
+    "confirmBulkEnrich_one": "Enrichir {{count}} contact",
+    "confirmBulkEnrich_other": "Enrichir {{count}} contacts",
+    "writesBulkEnrich": "Complète les fiches de ces contacts ; aucun message n'est envoyé.",
+    "previewBulkEnrichContacts": "Contacts",
+    "bulkEnrichDone": "{{found}} contact(s) enrichi(s) sur {{total}}.",
+    "bulkEnrichStopped": "Lot arrêté après {{processed}} contact(s) sur {{total}} ({{found}} enrichi(s)) — rien n'a été débité pour la suite.",
+    "bulkEnrichDemo": "Démonstration : l’enrichissement n’est pas exécuté dans cette salle.",
+    "describePeopleSearch": "Chercher de nouvelles personnes chez {{company}} sur les rôles non pourvus",
+    "confirmPeopleSearch": "Lancer la recherche",
+    "writesPeopleSearch": "Ajoute au compte les personnes trouvées, comme contacts à vérifier ; aucun message n'est envoyé.",
+    "previewPeopleSearchAccount": "Compte",
+    "previewPeopleSearchRoles": "Rôles cherchés",
+    "previewPeopleSearchExpertise": "Expertise cherchée",
+    "previewPeopleSearchSector": "Secteur du client",
+    "previewPeopleSearchScope": "Périmètre",
+    "peopleSearchDone_one": "{{count}} nouvelle personne ajoutée au compte, à vérifier avant toute approche.",
+    "peopleSearchDone_other": "{{count}} nouvelles personnes ajoutées au compte, à vérifier avant toute approche.",
+    "peopleSearchUnavailable": "La recherche n'a pas pu aboutir — ce n'est pas une absence de personnes sur cette expertise, et rien n'a été débité. Relance-la plus tard.",
+    "peopleSearchNone": "Personne de nouveau trouvé sur ces rôles — rien n'a été débité. Une autre voie : demander une introduction à un contact déjà connu du compte.",
+    "peopleSearchDemo": "Démonstration : la recherche n’est pas lancée dans cette salle.",
+    "describeContactDeparture": "Passer {{name}} en historique",
+    "guaranteeContactDeparture": "Rien n'est écrit avant ton clic — le contact n'est jamais supprimé, et les relances en cours sur lui s'arrêtent.",
+    "confirmContactDeparture": "Passer en historique",
+    "writesContactDeparture": "Archive le contact (historique) et arrête les séquences en cours ; le contact n'est jamais supprimé.",
+    "previewContactDepartureContact": "Contact",
+    "contactDepartureDone": "{{name}} est passé en historique.",
+    "previewLongJobKind": "Travail",
+    "previewLongJobNeeds": "Besoins",
+    "longJobKind": {
+      "bulk_matching": "Matching massif",
+      "multi_source_search": "Recherche hors vivier"
+    },
+    "previewNeedTransitionFrom": "Statut actuel",
+    "previewNeedTransitionTo": "Statut visé",
+    "previewNeedTransitionReason": "Motif",
+    "previewNeedTransitionMissing": "Preuves à réunir",
+    "commercialEvidence": {
+      "interpretation": "Interprétation du signal",
+      "qualification": "Qualification",
+      "criteria_review": "Revue des critères",
+      "unknowns_review": "Revue des inconnues",
+      "consultant_agreement": "Accord du consultant",
+      "client_agreement": "Accord du client"
+    },
+    "expenseReportDecisionValidate": "valider",
+    "expenseReportDecisionReject": "refuser",
+    "describeExpenseReportDecision": "{{decision}} cette note de frais",
+    "guaranteeExpenseReportDecision": "Rien n'est écrit avant ton clic — la décision ne s'applique que sur cette route, la même que l'écran des notes de frais.",
+    "confirmExpenseReportDecision": "Appliquer la décision",
+    "writesExpenseReportDecision": "Décide de la note de frais par la porte de son écran.",
+    "expenseReportValidated": "Note de frais validée.",
+    "expenseReportRejected": "Note de frais refusée.",
+    "previewExpenseReportBearer": "Porteur",
+    "previewExpenseReportAccount": "Compte",
+    "previewExpenseReportPeriod": "Mois",
+    "previewExpenseReportDecision": "Décision",
+    "previewExpenseReportReason": "Motif",
+    "previewMissionAmendmentEvent": "Type de changement",
+    "previewMissionAmendmentDiff": "Changement proposé",
+    "previewMissionAmendmentEffective": "Date d'effet",
+    "previewMissionAmendmentProof": "Preuve",
+    "previewMissionAmendmentPauseCause": "Cause de la pause",
+    "writesMissionAmendment": "Enregistre une proposition d'avenant, en attente de validation dans le dossier de la mission",
+    "openMission": "Ouvrir la mission",
+    "missionAmendmentEvent": {
+      "daily_rate_change": "TJM",
+      "legal_entity_change": "Société qui facture",
+      "work_site_change": "Lieu d'exécution",
+      "remote_policy_change": "Politique de télétravail",
+      "pause_start": "Début de pause",
+      "pause_end": "Fin de pause",
+      "end_date_change": "Date de fin",
+      "start_date_change": "Date de début",
+      "contract_kind_change": "Nature du contrat",
+      "role_title_change": "Intitulé du rôle",
+      "billing_contact_change": "Contact de facturation",
+      "po_terms_change": "Conditions du bon de commande",
+      "consultant_replacement": "Remplacement de consultant",
+      "scope_change": "Périmètre",
+      "renewal_terms_change": "Conditions de renouvellement",
+      "termination_notice": "Préavis de fin"
+    },
+    "missionAmendmentPauseCause": {
+      "mission_pause": "Mission en pause",
+      "consultant_absence": "Absence du consultant",
+      "client_closure": "Fermeture client",
+      "non_billable_days": "Jours non facturables"
+    },
+    "leadDecisionDismissed": "écarter",
+    "leadDecisionSnoozed": "reporter",
+    "describeLeadDecision": "{{decision}} cette piste à qualifier",
+    "guaranteeLeadDecision": "Rien n'est écrit avant ton clic, et rien n'est supprimé : la décision se reprend depuis l'écran Opportunités, sur la même route.",
+    "confirmLeadDecision": "Appliquer la décision",
+    "writesLeadDecision": "Écarte ou reporte la piste par la porte de l'onglet Opportunités.",
+    "leadDismissed": "Piste écartée.",
+    "leadSnoozed": "Piste reportée.",
+    "previewLeadLabel": "Piste",
+    "previewLeadAccount": "Compte",
+    "previewLeadDecision": "Décision",
+    "previewLeadReason": "Motif",
+    "previewLeadUntil": "Reportée jusqu'au",
+    "leadDismissReason": {
+      "out_of_target": "Hors cible",
+      "no_real_demand": "Pas de demande réelle",
+      "bad_timing": "Mauvais timing",
+      "no_access": "Pas d’accès",
+      "false_data": "Donnée fausse",
+      "already_handled": "Déjà traité",
+      "other": "Autre"
+    },
+    "guaranteeEnrich": "Cherche les coordonnées de ce contact auprès de nos sources d’enrichissement.",
+    "confirmEnrich": "Enrichir",
+    "guaranteeBulkEnrich": "Cherche les coordonnées de chaque contact de la liste auprès de nos sources d’enrichissement.",
+    "guaranteePeopleSearch": "Cherche des personnes correspondant au rôle. Aucune personne n’est contactée : celles trouvées deviennent des contacts à vérifier."
+  },
+  "cards": {
+    "plan": {
+      "label": "Plan de {{copilot}}",
+      "title_one": "Plan en {{count}} étape",
+      "title_other": "Plan en {{count}} étapes",
+      "step": "Étape {{step}} : {{status}}",
+      "status": {
+        "todo": "à faire",
+        "running": "en cours",
+        "done": "faite",
+        "failed": "échouée",
+        "blocked": "bloquée",
+        "unknown": "résultat inconnu",
+        "dropped": "écartée"
+      },
+      "runAll": "Lancer tout le plan",
+      "runFirst": "Seulement l’étape {{step}}",
+      "chained_one": "{{count}} étape préparée dans {{brand}}",
+      "chained_other": "{{count}} étapes préparées dans {{brand}}",
+      "gated": "Étape {{step}} : écrit hors de {{brand}}, elle attend ta validation sur sa carte.",
+      "unknown": "Le résultat de l’étape {{step}} est inconnu : le plan ne reprend pas tout seul.",
+      "refused": "Étape {{step}} : {{reason}}",
+      "blockedBy": {
+        "failed": "Bloquée : l’étape {{step}} a échoué.",
+        "blocked": "Bloquée : l’étape {{step}} n’a pas pu partir.",
+        "unknown": "Bloquée : le résultat de l’étape {{step}} est inconnu."
+      },
+      "waitingOn_one": "Attend l’étape {{steps}}.",
+      "waitingOn_other": "Attend les étapes {{steps}}.",
+      "brief": {
+        "objective": "Objectif : {{text}}",
+        "expectedResults": "Résultats attendus : {{items}}",
+        "missingData": "Données manquantes : {{items}}",
+        "impossible": "Ne sera pas fait : {{items}}",
+        "horizon": "Le plan court jusqu’au {{date}} (le rappel le plus lointain)."
+      }
+    },
+    "state": {
+      "suggested": "Suggérée",
+      "prepared": "Préparée",
+      "awaiting_review": "En attente de validation",
+      "running": "En cours",
+      "executed": "Exécutée",
+      "partial": "Partielle",
+      "failed": "Échouée",
+      "snoozed": "Reportée",
+      "rejected": "Refusée",
+      "expired": "Expirée",
+      "superseded": "Obsolète",
+      "unknown_outcome": "Résultat inconnu",
+      "blocked": "Rien n’est parti"
+    },
+    "gesture": {
+      "confirm": "Valider",
+      "reject": "Refuser",
+      "snooze": "Reporter",
+      "retry": "Réessayer",
+      "cancel": "Annuler",
+      "modify": "Modifier"
+    },
+    "edit": {
+      "title": "Modifier avant de valider",
+      "save": "Enregistrer",
+      "cancel": "Annuler",
+      "note": "Enregistrer ne lance rien : le coût est recalculé, puis tu valides.",
+      "field": {
+        "angle": "Angle du message",
+        "at": "Date et heure",
+        "note": "Note",
+        "contact_name": "Nom du contact",
+        "contact_email": "E-mail",
+        "contact_title": "Fonction",
+        "company": "Entreprise",
+        "to": "Destinataire",
+        "subject": "Objet",
+        "body": "Message",
+        "title": "Titre",
+        "starts_at": "Début (ISO 8601)",
+        "fact": "Le fait à retenir"
+      }
+    },
+    "preview": {
+      "title": "Ce que ça va faire",
+      "target": "Objet concerné",
+      "destination": "Destination",
+      "content": "Contenu ou modification",
+      "dataUsed": "Donnée utilisée",
+      "connection": "Connexion utilisée",
+      "notDone": "Ce qui ne sera pas fait"
+    },
+    "result": {
+      "title": "Ce qui s’est passé",
+      "outcome": "Résultat",
+      "when": "Quand",
+      "target": "Objet",
+      "destination": "Destination",
+      "connection": "Outil utilisé",
+      "ref": "Identifiant ou lien",
+      "actor": "Acteur",
+      "next": "Prochaine étape",
+      "succeeded": "Ce qui a malgré tout réussi",
+      "notDone": "Ce qui n’a pas été fait",
+      "toVerify": "Ce qui doit être vérifié",
+      "open": "Ouvrir",
+      "viewDetail": "Voir le détail",
+      "contactSupport": "Contacter le support"
+    },
+    "working": "En cours…",
+    "unknownOutcomeNote": "On ne sait pas si l’action est partie : rien n’est rejoué automatiquement.",
+    "gestureFailedUnknown": "Le geste n’a pas pu aboutir."
+  },
+  "replyOptions": {
+    "group": "Réponses proposées"
+  },
+  "clarification": {
+    "ruledOut": "Déjà écarté :",
+    "assumptions": "Je pars sur {{items}}. Tu peux corriger.",
+    "canCorrect": "Tu peux corriger."
+  },
+  "replyDisclosure": {
+    "show": {
+      "why": "Voir pourquoi"
+    },
+    "hide": "Masquer le détail"
+  },
+  "structured": {
+    "aria": "Réponse structurée"
+  },
+  "blocks": {
+    "kind": {
+      "verdict": "Verdict",
+      "account_ranking": "Classement de comptes",
+      "contact_list": "Contacts",
+      "comparison": "Comparaison",
+      "action_plan": "Plan d’action",
+      "consultant_shortlist": "Consultants à proposer",
+      "meeting_brief": "Brief de rendez-vous",
+      "consultant_brief": "Brief consultant provisoire",
+      "missing_data": "Ce qui manque",
+      "account_card": "Fiche compte",
+      "timeline": "Historique",
+      "file_export": "Fichier exportable",
+      "approach": "Approche",
+      "account_volume_sprint": "Sprint de comptes",
+      "count_contract": "Comptage",
+      "account_map": "Cartographie de comptes",
+      "post_meeting_summary": "Compte rendu enregistré",
+      "manager_review": "Revue de compte manager"
+    },
+    "why": "Pourquoi",
+    "limits": "Ce qui manque",
+    "route": "Route recommandée :",
+    "contact": "Personne utile maintenant :",
+    "whyNow": "Pourquoi maintenant :",
+    "action": "Action :",
+    "followUps": "Suites depuis ce compte",
+    "nextAction": "Prochaine action :",
+    "rankedBy": "Classé selon :",
+    "alreadyInWorkspace": "Déjà dans ton espace",
+    "newTarget": "Nouvelle cible",
+    "notEvaluated": "Non évalué :",
+    "openSource": "Ouvrir la source : {{site}}",
+    "source": "Source :",
+    "basis": {
+      "proof": "Preuve",
+      "interpretation": "Interprétation",
+      "history": "Historique"
+    },
+    "criterion": "Critère",
+    "showMore_one": "Afficher l’autre résultat",
+    "showMore_other": "Afficher les {{count}} autres résultats",
+    "showLess": "Réduire la liste",
+    "contactCount_one": "{{count}} contact",
+    "contactCount_other": "{{count}} contacts",
+    "followUp": {
+      "sent": "Dernier envoi : {{date}}",
+      "prepared": "Relance préparée : {{date}}"
+    },
+    "missing": "Ce qui manque encore",
+    "need": "Besoin :",
+    "fit": "Ce qui correspond",
+    "gaps": "Écarts",
+    "availability": "Disponibilité :",
+    "objective": "Objectif :",
+    "when": "Quand :",
+    "owner": "Qui :",
+    "attendees": "Participants",
+    "talkingPoints": "Points à aborder",
+    "pitch": "Pitch :",
+    "questions": "Questions à poser",
+    "risks": "Risques",
+    "unknowns": "Ce qu’on ne sait pas",
+    "role": "Rôle :",
+    "previousRoles": "Rôles précédents",
+    "seniority": "Niveau d’expérience :",
+    "techFocus": "Dominante technique :",
+    "functionalFocus": "Dominante fonctionnelle :",
+    "technologies": "Technologies connues",
+    "sectors": "Secteurs connus",
+    "contractType": "Type de contrat :",
+    "mobility": "Mobilité :",
+    "workMode": "Remote ou présentiel :",
+    "rateTarget": "TJM ou coût cible :",
+    "failed": "Ce qui a échoué",
+    "howToGet": "Comment l’obtenir :",
+    "stillPossible": "Ce qui reste faisable",
+    "decisions": "Décisions",
+    "actions": "Actions",
+    "recordedAt": "Enregistré le :",
+    "reminder": "Relance :",
+    "managerReviewVerdict": "Verdict :",
+    "managerReviewChangeDigest": "Ce qui a changé :",
+    "managerReviewActionsCompleted": "Actions réalisées",
+    "managerReviewActionsStalled": "Actions non avancées",
+    "managerReviewDecisionsRequested": "Décisions en attente",
+    "managerReviewArbitrations": "Arbitrages demandés",
+    "managerReviewImportantFacts": "Faits importants",
+    "managerReviewStatusAttention": "Attention",
+    "managerReviewStatusStable": "Stable",
+    "managerReviewStatusNotEvaluable": "Non évaluable",
+    "managerReviewReasonStalledActions": "action(s) non avancée(s)",
+    "managerReviewReasonRisks": "risque(s) signalé(s)",
+    "managerReviewReasonCoverageGaps": "lacune(s) de couverture",
+    "managerReviewReasonDecisionsPending": "décision(s) en attente",
+    "managerReviewReasonArbitrationsPending": "arbitrage(s) en attente",
+    "preparing": "Mise en forme de la réponse…",
+    "superseded": "Cette liste a été actualisée plus bas dans la conversation.",
+    "openFiche": "Ouvrir la fiche complète",
+    "timelineEmpty": "Aucun historique enregistré pour ce compte.",
+    "dateUnreadable": "Date illisible",
+    "download_one": "Télécharger la ligne",
+    "download_other": "Télécharger les {{count}} lignes",
+    "listCount_one": "{{count}} compte dans cette liste",
+    "listCount_other": "{{count}} comptes dans cette liste",
+    "shownOfTotal": "{{shown}} sur {{total}} affichés",
+    "copyLink": "Copier le lien de cette carte",
+    "linkCopied": "Lien copié",
+    "linkCopyFailed": "Copie impossible",
+    "angle": "Angle d’accroche :",
+    "useCase": "Cas d’usage :",
+    "noUseCase": "aucune preuve concrète dans le dossier",
+    "fullListCount": "Liste complète (observations du marché) :",
+    "fullListOpen": "Ouvrir la liste complète dans Découvrir",
+    "sprint": "Sprint exécutable :",
+    "focus": "À travailler à fond :",
+    "focusNone": "Aucun compte n’a encore de porte d’entrée vérifiée — à qualifier avant de lancer un premier mouvement.",
+    "entryPoint": "Porte d’entrée :",
+    "firstMove": "Premier mouvement :",
+    "deduplicated": "Après déduplication :",
+    "resolvedIdentity": "Après résolution d’identité :",
+    "coverage": "Couverture :",
+    "mapPartial": "Cartographie partielle",
+    "mapCompleteness": {
+      "complete": "Complète",
+      "partial": "Partielle",
+      "sparse": "Clairsemée"
+    },
+    "mapContextKind": {
+      "territory": "Territoire",
+      "sector": "Secteur",
+      "size": "Taille",
+      "filter": "Filtre"
+    },
+    "countContract": {
+      "confidence": "Confiance :",
+      "sources": "Sources :",
+      "belowThreshold": "moins de {{threshold}} {{unit}}",
+      "scope": {
+        "compte": "Compte",
+        "entreprise": "Entreprise",
+        "espace": "Espace de travail"
+      },
+      "sourceLayer": {
+        "bellum_workspace": "Espace de travail {{brand}}",
+        "market_memory": "Historique observé"
+      },
+      "unit": {
+        "personne_one": "personne",
+        "personne_other": "personnes",
+        "parcours_one": "parcours",
+        "parcours_other": "parcours",
+        "mission_one": "mission",
+        "mission_other": "missions",
+        "experience_one": "expérience",
+        "experience_other": "expériences",
+        "observation_one": "observation",
+        "observation_other": "observations",
+        "entreprise_one": "entreprise",
+        "entreprise_other": "entreprises",
+        "filiale_one": "filiale",
+        "filiale_other": "filiales",
+        "projet_one": "projet",
+        "projet_other": "projets",
+        "contact_one": "contact",
+        "contact_other": "contacts",
+        "signal_one": "signal",
+        "signal_other": "signaux",
+        "source_one": "source",
+        "source_other": "sources",
+        "offre_one": "offre",
+        "offre_other": "offres",
+        "relation_one": "relation",
+        "relation_other": "relations"
+      }
+    },
+    "framing": {
+      "title": "Cadrage de l'analyse",
+      "intro": "Prérempli depuis ta demande à {{copilot}}. Il met en tête du dossier ce qui touche ta demande, et le nomme ; rien n'est écarté de l'analyse.",
+      "skills": "Compétences",
+      "removeSkill": "Retirer {{skill}}",
+      "addSkill": "Ajouter une compétence",
+      "zone": "Zone",
+      "removeZone": "Retirer la zone {{zone}}",
+      "offers_one": "Joindre l'offre relevée sur la carte ({{count}})",
+      "offers_other": "Joindre les {{count}} offres relevées sur la carte",
+      "launch": "Lancer l'analyse",
+      "cancel": "Annuler"
+    },
+    "resultsToolbar": {
+      "filterPlaceholder": "Filtrer par nom…",
+      "filterAria": "Filtrer les résultats affichés",
+      "noMatches": "Aucun résultat pour « {{query}} ».",
+      "sortAria": "Trier les résultats affichés",
+      "sortByRank": "Ordre de {{copilot}}",
+      "sortByName": "Nom (A→Z)",
+      "selectAria": "Sélectionner {{name}}",
+      "selectedCount_one": "{{count}} sélectionné",
+      "selectedCount_other": "{{count}} sélectionnés",
+      "exportSelection_one": "Enregistrer le compte sélectionné",
+      "exportSelection_other": "Enregistrer les {{count}} sélectionnés",
+      "exportAll_one": "Exporter le compte en CSV",
+      "exportAll_other": "Exporter les {{count}} comptes en CSV",
+      "analyzeSelection": "Analyser la sélection",
+      "analyzeLaunched_one": "{{count}} analyse lancée — suis-la dans tes tâches de fond.",
+      "analyzeLaunched_other": "{{count}} analyses lancées — suis-les dans tes tâches de fond.",
+      "analyzeFailed": "L'analyse n'a pas pu être lancée. Réessaie.",
+      "previewTitle": "Ce que cette analyse va faire",
+      "costDemo": "Espace de démonstration : aucune analyse réelle n’est lancée.",
+      "costUnmeasured": "Le coût exact d'au moins un lancement n'a pas pu être lu — non mesuré. On ne devine pas un montant : le lancement reste bloqué tant qu'il n'est pas connu.",
+      "alreadyAnalyzedLabel": "Déjà analysés",
+      "alreadyAnalyzed_one": "{{count}} compte déjà analysé : rien n'est débité pour lui.",
+      "alreadyAnalyzed_other": "{{count}} comptes déjà analysés : rien n'est débité pour eux.",
+      "previewCountLabel": "Analyses",
+      "countAnnounce_one": "{{count}} analyse sera lancée.",
+      "countAnnounce_other": "{{count}} analyses seront lancées."
+    },
+    "exportHeaders": {
+      "name": "Nom",
+      "verdict": "Verdict",
+      "why": "Pourquoi",
+      "whyNow": "Pourquoi maintenant",
+      "limits": "Limites",
+      "source": "Source",
+      "rank": "Rang",
+      "level": "Niveau",
+      "notEvaluated": "Non évalué",
+      "sourceDate": "Date de la source",
+      "sourceBasis": "Nature de la source",
+      "rankedBy": "Classé selon",
+      "basis": {
+        "proof": "Preuve",
+        "interpretation": "Interprétation",
+        "history": "Historique"
+      }
+    },
+    "edit": "Modifier le plan",
+    "editStepsLabel": "Une étape par ligne",
+    "editSave": "Enregistrer une nouvelle version",
+    "editCancel": "Annuler",
+    "editFailed": "La modification n’a pas pu être enregistrée.",
+    "versionLabel": "Version {{version}} — modifiée",
+    "mapOrigin": "D’où vient la sélection :",
+    "mapProves": "Ce qu’elle prouve :",
+    "mapNotProven": "Ce qu’elle ne prouve pas :",
+    "mapRetained_one": "{{count}} compte retenu",
+    "mapRetained_other": "{{count}} comptes retenus",
+    "mapReserve": "Réserve principale :",
+    "mapCaution": "Prudence :",
+    "mapReserveTitle": "Réserve principale",
+    "mapTags": "Tags",
+    "mapMemory": "Ce que révèlent les observations du marché",
+    "mapMethodLimit": "Limite méthodologique :",
+    "substance": {
+      "title": "Ce que cette réponse n’établit pas",
+      "list_not_ranking": "Un seul compte : c’est une fiche, pas un classement.",
+      "no_dated_source": "{{kind}} : aucune des {{total}} lignes ne porte de source datée.",
+      "few_dated_sources": "{{kind}} : {{found}} lignes sur {{total}} portent une source datée.",
+      "mostly_unmeasured": "{{kind}} : {{found}} cellules renseignées sur {{total}} — le reste n’est pas mesuré."
+    },
+    "nextGesture": "Prochain geste",
+    "seeAccount": "Voir le dossier",
+    "contactNoRecord": "Prénom seul : pas de fiche à ouvrir depuis cette carte.",
+    "seeInOrgChart": "Voir dans l'organigramme",
+    "reveal": {
+      "groupAria": "Personnes trouvées hors de ton espace",
+      "button": "Obtenir l’e-mail",
+      "buttonAria": "Obtenir l’e-mail de {{name}}",
+      "running": "Recherche de l’adresse…",
+      "notFound": "Adresse introuvable — rien n’est débité.",
+      "paused": "Action en pause.",
+      "error": "Recherche indisponible pour le moment — réessaie plus tard, rien n’est débité.",
+      "mailTo": "Destinataire du mail préparé : {{email}}. C’est toi qui l’envoies."
+    }
+  },
+  "save": {
+    "saved": "Sauvegardé en mémoire",
+    "savedAs": "Enregistré comme « {{kind}} »",
+    "as": "Enregistrer comme…",
+    "close": "Fermer le choix",
+    "aria": "Sauvegarder cette réponse dans la mémoire de {{copilot}}"
+  },
+  "demo": {
+    "notice": "Espace de démonstration — {{copilot}} répond ici à partir d'échanges préparés, sur des dossiers fictifs.",
+    "thinking": "{{copilot}} rédige…",
+    "pickQuestion": "Choisis une question",
+    "inputDisabled": "La saisie libre est désactivée en démonstration",
+    "inputDisabledAria": "Saisie désactivée en mode démonstration",
+    "offScript": "En espace de démonstration, mes réponses sont préparées à l’avance — aucun appel n’est fait au modèle. Choisis une des questions proposées et je te montre ce que je sais faire sur les dossiers de cette salle."
+  },
+  "scope": {
+    "portfolio": "Tout mon espace",
+    "none": "Sans dossier ciblé",
+    "strictNone": "Sans les données de l’espace",
+    "dialog": {
+      "title": "Nouvelle conversation",
+      "subtitle": "Choisis le dossier sur lequel démarrer cette conversation. {{copilot}} ne lit que les données de ton espace, et te dit sous chaque réponse ce qu’elle a utilisé.",
+      "marketNote": "Les référentiels marché {{brand}} peuvent être interrogés lorsque ta question le nécessite.",
+      "broad": "Vue d’ensemble",
+      "watched": "Comptes suivis",
+      "activeAccounts_one": "{{count}} compte analysé",
+      "activeAccounts_other": "{{count}} comptes analysés",
+      "noneHint": "Aucun dossier ouvert. Les comptes de ton espace restent consultables si ta question en a besoin — ce n’est pas une exclusion.",
+      "strictNoneHint": "Exclusion stricte : le portefeuille, les dossiers de comptes et le CRM ne sont pas lus pour cette conversation.",
+      "portfolioReadNote": "disponibles ; {{copilot}} ne consulte que ce que ta question demande, et le dit sous chaque réponse",
+      "searchPlaceholder": "Chercher un compte…",
+      "searchLabel": "Chercher un compte",
+      "unnamedAccount": "Compte sans nom",
+      "noMatch": "Aucun compte ne correspond.",
+      "noAccount": "Aucun compte analysé dans ce portefeuille pour l’instant.",
+      "conversations_one": "{{count}} conversation",
+      "conversations_other": "{{count}} conversations",
+      "effectAccount": "{{copilot}} ne lira plus que {{company}} : ses contacts, son plan, ses signaux. Un nouveau fil s’ouvre ; tes conversations précédentes restent dans ta liste.",
+      "effectPortfolio": "{{copilot}} lira tous les comptes de ton espace — les tiens et ceux de tes collègues —, leurs contacts, leurs plans, leurs signaux. Un nouveau fil s’ouvre ; tes conversations précédentes restent dans ta liste.",
+      "effectNone": "{{copilot}} n’ouvre aucun dossier ciblé, mais peut consulter les comptes de ton espace si ta question le demande. Un nouveau fil s’ouvre ; tes conversations précédentes restent dans ta liste.",
+      "effectStrictNone": "{{copilot}} ne lira ni le portefeuille de l’espace, ni les dossiers de comptes, ni le CRM, et les outils qui les lisent lui sont retirés. Un nouveau fil s’ouvre sans les échanges précédents, qui restent dans ta liste ; revenir au choix précédent rouvre l’ancien fil, et ne défait aucune action déjà réalisée.",
+      "changeable": "Tu pourras changer cela à tout moment.",
+      "cancel": "Annuler",
+      "confirm": "Ouvrir la conversation",
+      "allAccounts": "Comptes",
+      "precise": "Un dossier précis",
+      "tabs": {
+        "account": "Un compte",
+        "consultant": "Un consultant",
+        "need": "Un besoin",
+        "mission": "Une mission",
+        "contact": "Une personne",
+        "opportunity": "Une opportunité",
+        "job_offer": "Une offre d’emploi"
+      },
+      "consultantSearchPlaceholder": "Chercher un consultant…",
+      "consultantSearchLabel": "Chercher un consultant",
+      "needSearchPlaceholder": "Chercher un besoin…",
+      "needSearchLabel": "Chercher un besoin",
+      "missionSearchPlaceholder": "Chercher une mission…",
+      "missionSearchLabel": "Chercher une mission",
+      "contactSearchPlaceholder": "Chercher une personne, son poste, sa société…",
+      "contactSearchLabel": "Chercher une personne",
+      "opportunitySearchPlaceholder": "Chercher une affaire, un compte…",
+      "opportunitySearchLabel": "Chercher une opportunité",
+      "jobOfferSearchPlaceholder": "Chercher un poste, un compte…",
+      "jobOfferSearchLabel": "Chercher une offre d’emploi",
+      "noConsultant": "Aucun consultant ne correspond.",
+      "noNeed": "Aucun besoin ouvert ne correspond.",
+      "noMission": "Aucune mission en cours ne correspond.",
+      "noContact": "Aucune personne ne correspond.",
+      "noOpportunity": "Aucune opportunité ne correspond.",
+      "noJobOffer": "Aucune offre d’emploi repérée ne correspond.",
+      "clearPrecise": "Effacer le dossier choisi",
+      "unnamedContact": "Personne sans nom",
+      "loading": "Chargement…",
+      "loadError": "La liste n’a pas pu être chargée. Réessaie dans un instant.",
+      "unnamedConsultant": "Consultant sans nom",
+      "availableFrom": "Disponible à partir du {{date}}",
+      "effectConsultant": "{{copilot}} lira la fiche de {{name}} : son poste, ses compétences, sa disponibilité, ses zones. Les comptes de ton espace restent lisibles. Un nouveau fil s’ouvre ; tes conversations précédentes restent dans ta liste.",
+      "effectNeed": "{{copilot}} lira le besoin {{need}} : le rôle, les compétences demandées, le démarrage, la shortlist. Les comptes de ton espace restent lisibles. Un nouveau fil s’ouvre ; tes conversations précédentes restent dans ta liste.",
+      "effectMission": "{{copilot}} lira la mission {{mission}} : son compte, son rôle, son calendrier et qui est dessus. Les comptes de ton espace restent lisibles. Un nouveau fil s’ouvre ; tes conversations précédentes restent dans ta liste.",
+      "effectContact": "{{copilot}} lira la fiche de {{name}} : son poste, son rôle dans la décision, son historique d’échanges — pas le dossier entier de son compte. Ses coordonnées ne partent pas. Un nouveau fil s’ouvre ; tes conversations précédentes restent dans ta liste.",
+      "effectOpportunity": "{{copilot}} lira l’affaire {{deal}} : son compte, sa nature, l’offre visée, son étape et depuis quand. Les comptes de ton espace restent lisibles. Un nouveau fil s’ouvre ; tes conversations précédentes restent dans ta liste.",
+      "effectJobOffer": "{{copilot}} lira l’offre d’emploi {{offer}} : le poste, sa date, son lieu, les compétences demandées et le compte qui recrute. Un nouveau fil s’ouvre ; tes conversations précédentes restent dans ta liste.",
+      "score": "Score de priorité : {{score}} sur 10"
+    },
+    "state": {
+      "neverAnalysed": "Jamais analysé",
+      "analysing": "Analyse en cours",
+      "customer": "Client",
+      "opportunity": "Opportunité en cours"
+    },
+    "change": "Changer ce que {{copilot}} lit",
+    "unknownAccount": "Un compte",
+    "unknownConsultant": "Un consultant",
+    "unknownNeed": "Un besoin",
+    "portfolioWithCount_one": "Tout mon espace · {{count}} compte analysé",
+    "portfolioWithCount_other": "Tout mon espace · {{count}} comptes analysés",
+    "unknownMission": "Une mission",
+    "unknownContact": "Une personne",
+    "unknownOpportunity": "Une opportunité",
+    "unknownJobOffer": "Une offre d’emploi",
+    "changed": {
+      "label": "Périmètre changé : {{from}} → {{to}}",
+      "back": "Revenir à {{scope}}",
+      "dismiss": "Masquer cette annonce"
+    },
+    "shared": {
+      "label_one": "Partagée avec {{names}}",
+      "label_other": "Partagée avec {{count}} collègues",
+      "title": "Ont aussi écrit dans ce fil : {{names}}. Les membres de ton espace peuvent le lire."
+    }
+  },
+  "suggestions": {
+    "seeAll": "Voir tout"
+  },
+  "memoryBar": {
+    "title": "Mémoire",
+    "loading": "Lecture de la mémoire…",
+    "unavailable": "Mémoire indisponible",
+    "empty": "Mémoire · rien d’enregistré pour l’instant",
+    "detailsAria": "Ouvrir la mémoire complète",
+    "dialogDescription": "Ce que {{copilot}} a enregistré et peut relire. Retirer un élément ne modifie pas les anciens messages qui le citent ; il n’est plus relu pour les prochains.",
+    "summary_one": "Mémoire · {{count}} élément enregistré",
+    "summary_other": "Mémoire · {{count}} éléments enregistrés"
+  },
+  "provenance": {
+    "asOf": "Donnée du {{date}}",
+    "missing_one": "{{count}} donnée manquante",
+    "missing_other": "{{count}} données manquantes",
+    "sources_one": "{{count}} source",
+    "sources_other": "{{count}} sources",
+    "copy": "Copier la réponse",
+    "copied": "Réponse copiée",
+    "copyFailed": "Copie impossible",
+    "partial": {
+      "turn_timeout": "Réponse partielle — délai dépassé",
+      "turn_error": "Réponse partielle — interrompue par une erreur",
+      "default": "Réponse partielle"
+    },
+    "basis": {
+      "title": "Fondement de la réponse",
+      "foundation": {
+        "market_memory": "Observations du marché",
+        "recent_web": "Sources web récentes",
+        "workspace": "Données de l’espace et connecteurs",
+        "inference": "Inférence {{brand}}"
+      },
+      "foundedOn": "Fondée sur",
+      "scope": "Périmètre",
+      "scopeAccount": "compte {{name}}",
+      "scopePortfolio_one": "{{count}} compte du portefeuille sur {{total}}",
+      "scopePortfolio_other": "{{count}} comptes du portefeuille sur {{total}}",
+      "scopePortfolioNoTotal_one": "{{count}} compte du portefeuille",
+      "scopePortfolioNoTotal_other": "{{count}} comptes du portefeuille",
+      "certainty": "Certitude",
+      "certaintyTier": {
+        "high": "élevée",
+        "medium": "moyenne",
+        "low": "faible"
+      },
+      "undated": "Fraîcheur : source non datée"
+    }
+  },
+  "feedback": {
+    "openAria": "Donner un retour sur cette réponse",
+    "givenAria": "Ton retour sur cette réponse : {{verdict}}. Le modifier ou le retirer",
+    "question": "Qu’en penses-tu ?",
+    "verdict": {
+      "utile": "Utile",
+      "pas_pertinent": "Pas pertinent",
+      "donnee_fausse": "Donnée fausse",
+      "deja_fait": "Déjà fait",
+      "pas_maintenant": "Pas maintenant",
+      "mauvaise_priorite": "Mauvaise priorité"
+    },
+    "reasonQuestion": "Qu’est-ce qui ne va pas ?",
+    "reason": {
+      "mauvais_compte": "Mauvais compte",
+      "mauvais_contact": "Mauvais contact",
+      "mauvais_timing": "Mauvais timing",
+      "hors_positionnement": "Hors positionnement",
+      "deja_traite": "Déjà traité",
+      "autre": "Autre",
+      "trop_long": "Trop long",
+      "doublon": "Doublon",
+      "source_douteuse": "Source douteuse",
+      "contact_parti": "Contact parti",
+      "concurrent_en_place": "Concurrent déjà en place",
+      "budget_insuffisant": "Budget insuffisant"
+    },
+    "noReason": "Envoyer sans motif",
+    "otherLabel": "Dis-m’en plus (facultatif)",
+    "categoryLabel": "Préciser (facultatif)",
+    "categoryNone": "Sans précision",
+    "category": {
+      "faux": "Faux",
+      "donnee_ancienne": "Donnée ancienne",
+      "hors_sujet": "Hors sujet",
+      "trop_generique": "Trop générique",
+      "mauvaise_action": "Mauvaise action",
+      "mauvais_compte": "Mauvais compte",
+      "mauvais_contact": "Mauvais contact",
+      "permission_incorrecte": "Permission incorrecte",
+      "fichier_mal_compris": "Fichier mal compris",
+      "ton": "Ton",
+      "trop_long": "Trop long",
+      "manque_capacite": "Manque une capacité",
+      "bug_interface": "Bug interface",
+      "lenteur": "Lenteur",
+      "cout_inattendu": "Coût inattendu",
+      "autre": "Autre"
+    },
+    "wrongField": "Qu’est-ce qui est faux ?",
+    "wrongValue": "La bonne information (facultatif)",
+    "scopeLabel": "Où corriger ?",
+    "scope": {
+      "reply": "Dans cette réponse seulement",
+      "account": "Aussi dans le dossier de ce compte, pour toute l’équipe"
+    },
+    "wrongPreview": {
+      "title": "Vérifie avant d’envoyer :"
+    },
+    "review": "Vérifier",
+    "confirm": "Confirmer",
+    "edit": "Modifier",
+    "send": "Envoyer",
+    "back": "Retour",
+    "given": "Ton retour : {{verdict}}",
+    "change": "Modifier",
+    "withdraw": "Retirer mon retour",
+    "withdrawn": "Ton retour est retiré : il ne pèse plus sur les réponses de {{copilot}}.",
+    "ack": {
+      "saved": "C’est noté. {{copilot}} en tient compte dans ses prochaines réponses — pour toi seulement.",
+      "scoped": "Ce retour porte sur cette réponse : {{copilot}} n’en tire pas de règle générale.",
+      "accountCorrected": "La correction est aussi portée au dossier du compte, pour l’équipe.",
+      "retryNow": "Réessayer avec la correction",
+      "retryCostUnknown": "Coût non annoncé : un nouveau tour peut relancer un outil payant.",
+      "suggestion": "Tu as signalé {{count}} fois une réponse trop longue. {{copilot}} te propose d’en faire une préférence de réponse.",
+      "keep": "Garder des réponses courtes",
+      "kept": "C’est réglé : {{copilot}} te répondra plus court. Tu peux le changer dans Réglages › Mémoire de {{copilot}}.",
+      "where": "Ton retour reste attaché à cette réponse : tu peux le modifier ou le retirer ici.",
+      "demo": "En démonstration, ton retour n’est pas gardé : les réponses de {{copilot}} y sont préparées d’avance."
+    },
+    "error": "Ton retour n’a pas pu être enregistré. Réessaie.",
+    "forbidden": "Tu n’as pas le droit de corriger le dossier de ce compte. Choisis « Dans cette réponse seulement »."
+  },
+  "share": {
+    "action": "Partager dans l’espace",
+    "notice": "Les membres de ton espace pourront lire cette conversation.",
+    "copyAction": "Copier le lien",
+    "done": "Lien copié",
+    "copied": "Lien de la conversation copié",
+    "failed": "Copie impossible — voici le lien : {{url}}",
+    "snapshotNotice": "Ou une version figée : la conversation telle qu’elle est maintenant, sans ce qui sera écrit ensuite.",
+    "snapshotAction": "Copier une version figée",
+    "snapshotCopied": "Version {{version}} figée — lien copié",
+    "snapshotFailed": "La version n’a pas pu être figée. Réessaie.",
+    "forbidden": "Cette conversation porte sur un compte hors de ton portefeuille : elle ne s’ouvre pas ici.",
+    "restrictedSourceNotice": "Ce fil cite au moins un extrait tiré d’une connexion personnelle (ex. ta messagerie) : un collègue qui ouvre ce lien pourra le lire, même sans accès à cette connexion lui-même."
+  },
+  "version": {
+    "banner": "Version figée n° {{version}} — ce qui a été écrit après n’apparaît pas ici.",
+    "live": "Voir la conversation vivante"
+  },
+  "conversationObject": {
+    "action": "Détails",
+    "title": "Détails de la conversation",
+    "loading": "Lecture de la conversation…",
+    "unavailable": "Aucun détail pour l’instant : la conversation n’est pas encore enregistrée, ou sa lecture a échoué.",
+    "failed": "Le geste n’a pas abouti. Réessaie.",
+    "unknownMember": "Membre sans nom",
+    "owner": {
+      "opener": "Propriétaire : {{name}} (a ouvert la conversation)",
+      "declared": "Propriétaire : {{name}}",
+      "none": "Propriétaire : personne à nommer (compte supprimé)",
+      "pick": "Transférer à…",
+      "transfer": "Transférer",
+      "done": "Conversation transférée"
+    },
+    "attach": {
+      "attached": "Rattachée à un compte.",
+      "none": "Rattachée à aucun compte.",
+      "toScope": "Rattacher au compte de la portée",
+      "detach": "Détacher du compte",
+      "done": "Conversation rattachée au compte",
+      "detached": "Conversation détachée du compte"
+    },
+    "branch": {
+      "explore": "Explorer une autre hypothèse",
+      "notice": "Ouvre une nouvelle conversation reliée à celle-ci ; {{copilot}} y reprend son résumé. Celle-ci ne change pas.",
+      "openParent": "Ouvrir la conversation d’origine",
+      "done": "Nouvelle conversation ouverte"
+    },
+    "legalHold": {
+      "on": "Conservation légale depuis le {{date}} : la conversation ne peut pas être retirée.",
+      "reason": "Raison : {{reason}}",
+      "off": "Aucune conservation légale.",
+      "reasonPlaceholder": "Pourquoi cette conservation ? (obligatoire)",
+      "reasonLabel": "Raison de la conservation légale",
+      "reviewByLabel": "Date de revue (optionnelle)",
+      "reviewBy": "À revoir avant le {{date}}.",
+      "reviewOverdue": "Revue en retard depuis le {{date}}.",
+      "place": "Poser une conservation légale",
+      "lift": "Lever la conservation légale",
+      "placed": "Conservation légale posée",
+      "lifted": "Conservation légale levée"
+    },
+    "versions": {
+      "title": "Versions figées partagées",
+      "item": "Version {{version}} — jusqu’au {{date}}"
+    },
+    "auditSnapshot": {
+      "title": "Ouverte depuis l’audit commercial",
+      "version": "Version de l’audit au moment de l’ouverture : {{version}}",
+      "versionUnknown": "non mesurée",
+      "strategy": "Stratégie retenue : {{strategy}}",
+      "firstActionsTitle": "Premiers mouvements proposés à l’ouverture",
+      "unknownsTitle": "Ce qui n’avait pas pu être établi à l’ouverture"
+    }
+  },
+  "participants": {
+    "action": "Participants",
+    "title": "Qui peut lire ce fil",
+    "notice": "Lié à ton espace : tous ses membres peuvent lire cette conversation. Ce n’est ni un fil privé, ni un lien public.",
+    "loading": "Lecture des membres…",
+    "loadFailed": "La liste des membres n’a pas pu être lue. La règle ne change pas : tous les membres de l’espace peuvent lire ce fil.",
+    "empty": "La liste des membres est vide pour l’instant. La règle ne change pas : tous les membres de l’espace peuvent lire ce fil.",
+    "you": "Toi",
+    "unknown": "Membre sans nom"
+  },
+  "presence": {
+    "label_one": "{{names}} est aussi ici",
+    "label_other": "{{count}} collègues sont aussi ici",
+    "title": "Sur ce fil en ce moment : {{names}}."
+  },
+  "summary": {
+    "action": "Résumé",
+    "mailboxRead": "{{copilot}} a lu un fil de ta messagerie dans cette conversation. Son contenu n’est pas rejoué ici.",
+    "title": "Résumé du fil",
+    "loading": "Lecture du résumé…",
+    "loadFailed": "Le résumé n’a pas pu être lu. Réessaie.",
+    "empty": "Aucun résumé pour ce fil pour l’instant.",
+    "updatedAt": "Mis à jour le {{date}}",
+    "edit": "Modifier",
+    "editLabel": "Texte du résumé",
+    "save": "Enregistrer",
+    "cancel": "Annuler",
+    "saved": "Résumé mis à jour",
+    "saveFailed": "La correction n’a pas pu être enregistrée.",
+    "sections": {
+      "decisions": "Décisions prises",
+      "objects": "Objets concernés",
+      "pending": "Actions en attente",
+      "pendingOn": "{{action}} — {{target}}",
+      "corrections": "Corrections",
+      "excluded": "Exclu : {{text}}",
+      "excludedWithReason": "Exclu : {{text}} ({{reason}})",
+      "ruled_out": "Écarté : {{text}}",
+      "ruled_outWithReason": "Écarté : {{text}} ({{reason}})",
+      "questions": "Questions posées par {{copilot}}",
+      "sources": "Sources principales",
+      "sourceCount_one": "{{label}} — citée dans {{count}} réponse",
+      "sourceCount_other": "{{label}} — citée dans {{count}} réponses"
+    }
+  },
+  "replyTransform": {
+    "menuLabel": "Ajuster cette réponse",
+    "trigger": "Ajuster",
+    "ids": {
+      "deepen": "Approfondir",
+      "synthesize": "Synthétiser",
+      "more_accounts": "Voir plus de comptes",
+      "less_detail": "Voir moins de détails",
+      "justify": "Mieux justifier",
+      "priorities_only": "Voir seulement les priorités",
+      "action_plan": "Reformater en plan d’action",
+      "exportable_list": "Reformater en liste exportable"
+    },
+    "demo": {
+      "setAside_one": "{{count}} élément mis de côté.",
+      "setAside_other": "{{count}} éléments mis de côté.",
+      "planTitle": "Plan d’action",
+      "tableHead": {
+        "rank": "#",
+        "item": "Élément",
+        "detail": "Détail"
+      },
+      "unavailable": "En démonstration, « {{action}} » n’a pas de réponse préparée : il demande de nouvelles données que seule la version complète de {{copilot}} va chercher. Les gestes qui se déduisent de la réponse elle-même (synthétiser, moins de détails, priorités, plan d’action, liste exportable) fonctionnent ici.",
+      "nothing": "Cette réponse n’a pas d’éléments à retravailler pour « {{action}} »."
+    },
+    "deepenWithQuote": "Approfondir (avec devis)"
+  },
+  "retry": {
+    "menuLabel": "Plus d’actions sur cette réponse",
+    "retry": "Réessayer",
+    "editLastMessage": "Modifier ma demande",
+    "alternativeAngle": "Répondre avec un autre angle",
+    "share": "Partager cette réponse",
+    "report": "Signaler un problème",
+    "superseded": "Réponse remplacée à {{time}} — conservée pour mémoire.",
+    "obsolete": "Proposition obsolète — cette réponse a été remplacée.",
+    "branchOf": {
+      "retry": "Reprise de la réponse de {{time}} — la même demande, rejouée.",
+      "angle": "Reprise de la réponse de {{time}} — un autre angle demandé.",
+      "edit": "Reprise de la réponse de {{time}} — la demande a été modifiée.",
+      "unknownTime": "Cette réponse reprend un échange plus haut dans le fil."
+    },
+    "dataOrigin": {
+      "reused": "{{copilot}} a réutilisé les mêmes données que la réponse précédente.",
+      "refreshed": "{{copilot}} a relancé une recherche — les sources ont changé."
+    },
+    "angleSuffix": " (Réponds avec un angle différent de ta réponse précédente — ne répète pas les mêmes mots.)"
+  },
+  "conversationsPanel": {
+    "aria": "Tes conversations avec {{copilot}}",
+    "title": "Conversations",
+    "collapse": "Replier les conversations",
+    "expand": "Déplier les conversations",
+    "mobileOpen": "Voir tes conversations"
+  },
+  "sidebarThreads": {
+    "dossiers": {
+      "title": "Tes dossiers"
+    },
+    "new": "Nouvelle conversation",
+    "search": "Rechercher…",
+    "loading": "Chargement…",
+    "unavailable": "Historique indisponible",
+    "empty": "Aucune conversation",
+    "noMatch": "Aucune conversation ne contient « {{query}} ».",
+    "untitled": "Sans titre",
+    "startedBy": "Ouverte par {{firstName}}",
+    "status": {
+      "answered": "Reçu",
+      "answeredLabel": "{{copilot}} a répondu",
+      "awaiting": "En attente",
+      "awaitingLabel": "En attente de la réponse de {{copilot}}",
+      "unknown": "Réponse non reçue",
+      "unknownLabel": "Ta question est restée sans réponse de {{copilot}} — renvoie-la.",
+      "closed": "Terminé",
+      "closedLabel": "Conversation rangée"
+    },
+    "menu": "Options de la conversation",
+    "archive": "Ranger",
+    "unarchive": "Ressortir",
+    "rename": "Renommer",
+    "renameLabel": "Titre de la conversation",
+    "renamed": "Conversation renommée.",
+    "delete": "Retirer",
+    "showArchived": "Voir les conversations rangées",
+    "showActive": "Revenir aux conversations",
+    "emptyArchived": "Aucune conversation rangée",
+    "archived": "Conversation rangée.",
+    "unarchived": "Conversation ressortie.",
+    "deleted": "Conversation retirée.",
+    "deleteConfirm": "Retirer cette conversation de la liste ? Ses messages sont conservés, rangés — retrouvables dans « Voir les conversations rangées ». Son titre et ses documents joints partent, eux, pour de bon. Ce que tu as sauvegardé depuis {{copilot}} est ailleurs et reste.",
+    "actionFailed": "L'action n'a pas pu être enregistrée.",
+    "selectMode": "Sélectionner",
+    "exitSelectMode": "Terminer la sélection",
+    "selectThread": "Sélectionner « {{title}} »",
+    "selectedCount_one": "{{count}} conversation sélectionnée",
+    "selectedCount_other": "{{count}} conversations sélectionnées",
+    "archiveSelected": "Ranger la sélection",
+    "archivedSelected_one": "{{count}} conversation rangée.",
+    "archivedSelected_other": "{{count}} conversations rangées.",
+    "clearSelection": "Annuler",
+    "grouping": {
+      "label": "Ranger les conversations",
+      "byDate": "Par date",
+      "byAccount": "Par compte"
+    },
+    "groups": {
+      "today": "Aujourd’hui",
+      "thisWeek": "Cette semaine",
+      "older": "Plus ancien",
+      "undated": "Sans date",
+      "noAccount": "Sans compte",
+      "unknownAccount": "Compte introuvable"
+    },
+    "duplicate": "Dupliquer",
+    "duplicated": "Conversation dupliquée — c’est un fil indépendant.",
+    "export": "Exporter",
+    "exportScopes": {
+      "full": "Fil complet",
+      "fullHint": "tous les messages",
+      "extract": "Extrait",
+      "extractHint": "les 30 derniers messages"
+    },
+    "exportFormats": {
+      "md": "Markdown (.md)",
+      "pdf": "PDF (.pdf)",
+      "json": "Copie structurée (.json)"
+    },
+    "exportFailed": "L’export n’a pas pu être téléchargé.",
+    "searching": "Recherche dans tout l’historique…",
+    "sharedFilter": {
+      "label": "Partagées",
+      "title": "Ne montrer que les conversations ouvertes par un collègue",
+      "empty": "Aucune conversation ouverte par un collègue"
+    }
+  },
+  "deepen": {
+    "actionsLabel": "Approfondir",
+    "actions": {
+      "verify_now": "Vérifier maintenant",
+      "deepen_answer": "Approfondir cette réponse",
+      "deepen_top_five": "Approfondir les cinq premiers",
+      "refresh_contacts": "Actualiser uniquement les contacts",
+      "compare_subsidiaries": "Comparer les filiales",
+      "verify_position": "Vérifier un poste",
+      "access_paths": "Chercher les voies d’accès",
+      "full_dossier": "Construire le dossier complet"
+    },
+    "dimension": {
+      "signals": "Signaux",
+      "contacts": "Contacts",
+      "entities": "Entités",
+      "strategy": "Stratégie",
+      "identity_group": "Identité et groupe",
+      "subsidiaries": "Filiales et sites",
+      "positions": "Postes",
+      "ecosystem": "Écosystème",
+      "buying_path": "Voie d’achat",
+      "projects": "Projets"
+    },
+    "quoting": "Calcul de ce qui est déjà payé…",
+    "error": "Le devis n’a pas pu être calculé. Réessaie.",
+    "nothingToRun": "Tout est déjà à jour : rien à relancer.",
+    "line": {
+      "reuse": "{{section}} — {{account}} : à jour, réutilisé",
+      "run": "{{section}} — {{account}} : sera relancé",
+      "same_phase": "{{section}} — {{account}} : inclus dans la même recherche",
+      "no_dossier": "{{account}} : aucun dossier à approfondir, lance d’abord l’analyse"
+    },
+    "launch": "Lancer l’approfondissement",
+    "cancel": "Annuler",
+    "running": "Approfondissement en cours… {{done}}/{{total}}",
+    "summary": {
+      "title": "Ce que l’approfondissement a changé",
+      "confirmed": "Confirmé sans changement : {{list}}",
+      "changed": "Changé : {{list}}",
+      "added": "Nouveau : {{list}}",
+      "dropped": "Écarté, redevenu inconnu : {{list}}",
+      "unmeasured": "Non mesuré par cet axe : {{list}}",
+      "failed": "Non abouti, rien débité : {{list}}"
+    },
+    "steps": {
+      "label": "Étapes de ce travail",
+      "quick": "Rapide",
+      "verified": "Vérifié",
+      "deepened": "Approfondi"
+    },
+    "toRun": "Approfondissement prêt à lancer."
+  },
+  "contextContract": {
+    "label": "Contexte",
+    "modeGroup": "Contexte de la recherche",
+    "modes": {
+      "my_activity": "Mon activité",
+      "one_off_mission": "Mission ponctuelle",
+      "neutral": "Neutre"
+    },
+    "oneOffNote": "Mode Mission ponctuelle : ton profil habituel est écarté, seul le brief et les objets choisis comptent.",
+    "neutralNote": "Mode Neutre : ton profil habituel est ignoré pour cette demande. Ce n’est ni une conversation privée ni une exclusion des données de l’espace.",
+    "profileVersioned": "{{name}} · v{{version}}",
+    "profilePerimeterWithSectors": "Périmètre : {{size}} · {{sectors}}.",
+    "profilePerimeterSizeOnly": "Périmètre : {{size}}.",
+    "portfolio": "Ton portefeuille — comptes déjà suivis signalés",
+    "summaryPortfolio": "ton portefeuille",
+    "crmUsed": "Ton CRM — présence du compte croisée",
+    "summaryCrm": "ton CRM",
+    "crmNotConnected": "Aucun CRM connecté",
+    "crmNotReadHere": "Ton CRM n'est pas lu par cette recherche",
+    "profileIgnored": "Profil habituel ignoré — mode {{mode}}",
+    "crmIgnored": "CRM branché écarté — mode {{mode}}"
+  },
+  "dayClosure": {
+    "title": "Clôture du {{date}}",
+    "guarantee": "Rien n'est modifié avant ton clic sur « Valider », et chaque tâche se décide une par une. Rien n'est envoyé.",
+    "tasksUnavailable": "Tes tâches n'ont pas pu être lues : cette clôture est incomplète.",
+    "sections": {
+      "results": "Ce qui a avancé",
+      "commitments": "Engagements pris aujourd'hui",
+      "waitingOn": "Qui attend une réponse",
+      "blocked": "Échecs ou blocages",
+      "toDecide": "À décider, tâche par tâche",
+      "toValidate": "Données à valider",
+      "firstTomorrow": "Première action de demain"
+    },
+    "checkedNote": "Coché par toi : un geste déclaratif, pas une preuve d'envoi.",
+    "dueOn": "échéance {{date}}",
+    "noReason": "Raison non notée",
+    "unknownThread": "Fil sans objet",
+    "silentDays_one": "sans réponse depuis {{count}} jour",
+    "silentDays_other": "sans réponse depuis {{count}} jours",
+    "waitingState": {
+      "not_connected": "Ta messagerie n'est pas connectée : les réponses attendues ne sont pas lues.",
+      "missing_scope": "Ta messagerie ne nous autorise pas à la lire : reconnecte-la dans Réglages › Intégrations.",
+      "unavailable": "Ta messagerie n'a pas répondu : les réponses attendues ne sont pas lues."
+    },
+    "toValidateUnavailable": "Les cartes à valider n'ont pas pu être lues.",
+    "openActions": "Ouvrir Actions",
+    "decisionFor": "Décision pour « {{title}} »",
+    "decision": {
+      "postpone": "Reporter",
+      "delegate": "Déléguer",
+      "requalify": "Requalifier",
+      "drop": "Abandonner",
+      "done": "Marquer faite"
+    },
+    "fields": {
+      "newDate": "Nouvelle échéance",
+      "owner": "À qui la confier",
+      "chooseOwner": "Choisir une personne…",
+      "newTitle": "Nouveau libellé",
+      "dropReason": "Raison de l'abandon (facultatif)",
+      "doneNote": "Résultat (facultatif)"
+    },
+    "noDecisionNote": "Une tâche sans décision ne change pas : rien n'est reporté d'office.",
+    "review_one": "Voir le changement",
+    "review_other": "Voir les {{count}} changements",
+    "diffTitle": "Ce qui va changer",
+    "diff": {
+      "postpone": "{{title}} : échéance {{before}} → {{after}}",
+      "delegate": "{{title}} : confiée à {{after}}",
+      "requalify": "« {{before}} » → « {{after}} »",
+      "drop": "{{title}} : abandonnée (archivée, pas supprimée)",
+      "done": "{{title}} : marquée faite"
+    },
+    "validate_one": "Valider ce changement",
+    "validate_other": "Valider ces {{count}} changements",
+    "back": "Modifier",
+    "applied": "Mise à jour.",
+    "failed": "Échec : rien n'a changé pour cette tâche.",
+    "demoNothingSaved": "Espace de démonstration : ces changements ne sont pas enregistrés."
+  },
+  "focusPlan": {
+    "title": "Plan pour le {{date}}",
+    "guarantee": "Rien n'est créé dans ton agenda : cette carte propose, elle n'écrit rien.",
+    "noBlockPlaced": "Aucun bloc n'a pu être placé aujourd'hui.",
+    "energy": {
+      "low": "Énergie déclarée : basse — le plan laisse plus de marge.",
+      "normal": "Énergie déclarée : normale.",
+      "high": "Énergie déclarée : haute — le plan tient un peu plus de temps."
+    },
+    "blockType": {
+      "meeting_prep": "Préparer un rendez-vous",
+      "call_session": "Session d'appels",
+      "account_research": "Recherche de comptes",
+      "enrichment": "Enrichissement",
+      "pipeline_review": "Revue pipe",
+      "matching": "Matching",
+      "consultant_followup": "Suivi consultant",
+      "admin_tasks": "Tâches administratives",
+      "follow_ups": "Relances",
+      "manager_review": "Revue manager",
+      "data_correction": "Correction de données"
+    },
+    "dueOn": "échéance {{date}}",
+    "deferredTitle": "Non placé",
+    "deferredReason": {
+      "capacite_atteinte": "capacité de la journée atteinte",
+      "echeance_depassee": "aucun créneau libre avant l’échéance",
+      "bloc_trop_long": "plus long que ce qu’une journée libre peut accueillir",
+      "outil_non_branche": "s’appuie sur un outil que ton espace n’a pas branché"
+    },
+    "margin": "{{duration}} laissées libres dans la journée.",
+    "unreadSources": "Non pris en compte : {{sources}}.",
+    "unreadSource": {
+      "tools": "les outils branchés",
+      "role": "ton rôle",
+      "team_policy": "la politique d’équipe"
+    },
+    "connectedTools": "Outils branchés pris en compte : {{tools}}.",
+    "connectedToolsNone": "Aucun outil branché pris en compte.",
+    "toolFamily": {
+      "calendar": "agenda",
+      "email": "messagerie",
+      "crm": "CRM",
+      "telephony": "téléphonie"
+    },
+    "teamPolicy": "Politique d’équipe : {{rules}}.",
+    "teamPolicyNone": "Aucune politique d’équipe saisie.",
+    "teamPolicyRule": {
+      "prospecting": "prospection protégée {{ranges}}",
+      "forbidden": "aucun bloc {{ranges}}",
+      "maxMeetings_one": "{{count}} réunion max par jour",
+      "maxMeetings_other": "{{count}} réunions max par jour",
+      "callTarget_one": "objectif de {{count}} appel par jour",
+      "callTarget_other": "objectif de {{count}} appels par jour"
+    },
+    "teamPolicyRange": "{{start}}–{{end}}",
+    "teamPolicyRangeDays": "{{start}}–{{end}} ({{days}})",
+    "weekdayShort": {
+      "1": "lun.",
+      "2": "mar.",
+      "3": "mer.",
+      "4": "jeu.",
+      "5": "ven.",
+      "6": "sam.",
+      "7": "dim."
+    },
+    "meetingsOverCap": "{{count}} réunions déjà à l’agenda ce jour-là, pour un plafond d’équipe de {{cap}}.",
+    "callTargetUncovered": "Aucune session d’appels dans ce plan, pour un objectif d’équipe de {{count}} appels par jour.",
+    "durationMinutes_one": "{{count}} min",
+    "durationMinutes_other": "{{count}} min",
+    "durationHours_one": "{{count}} h",
+    "durationHours_other": "{{count}} h",
+    "durationHoursMinutes": "{{hours}} h {{minutes}}",
+    "confirmBlock": "Ajouter à mon agenda",
+    "blockConfirmed": "Confirmé — proposé par {{brand}}",
+    "confirmBlockError": "L'ajout à l'agenda a échoué.",
+    "demoNothingSaved": "Espace de démonstration : l'agenda s'y consulte, il ne s'y écrit pas.",
+    "cancelBlock": "Annuler",
+    "blockCancelled": "Annulé — retiré de ton agenda",
+    "cancelBlockError": "L'annulation a échoué.",
+    "outcome": {
+      "realized": "Réalisé",
+      "interrupted": "Interrompu",
+      "postponed": "Reporté",
+      "recorded": "Marqué : {{outcome}}",
+      "noteLabel": "Résultat du bloc, en une phrase",
+      "notePlaceholder": "Résultat (facultatif)",
+      "minutesLabel": "Durée réelle, en minutes",
+      "minutesPlaceholder": "Durée réelle (min)",
+      "saveDetails": "Enregistrer",
+      "edit": "Modifier",
+      "error": "Le marquage a échoué."
+    },
+    "dismissBlock": "Retirer",
+    "allBlocksDismissed": "Tous les blocs proposés ont été retirés de cette liste.",
+    "copyPlan": "Copier le plan",
+    "planCopied": "Plan copié",
+    "planCopyFailed": "Copie impossible"
+  },
+  "weeklyPlan": {
+    "title": "Plan de la semaine du {{date}}",
+    "noDayPlaced": "Aucun bloc n'a pu être placé cette semaine.",
+    "margin": "{{duration}} laissées libres sur la semaine."
+  },
+  "deepenJob": {
+    "resumeBanner": {
+      "default": "Une étude Approfondie a été interrompue : « {{label}} ». {{copilot}} la reprend en fond, sans que tu aies à écrire « continue ».",
+      "withSteps": "Une étude Approfondie a été interrompue après {{count}} étape(s) : « {{label}} ». {{copilot}} la reprend en fond, sans que tu aies à écrire « continue »."
+    },
+    "stopped": {
+      "creditCeiling": "Tu as beaucoup utilisé {{brand}} ce mois-ci : l’étude Approfondie « {{label}} » est en pause. Écris à l’équipe, on en parle et {{copilot}} reprend ensuite là où elle s’est arrêtée.",
+      "maxResumes": "L’étude Approfondie « {{label}} » est arrêtée après {{count}} reprises automatiques. Continue la conversation pour reprendre là où {{copilot}} s’est arrêtée.",
+      "resumeFailed": "L’étude Approfondie « {{label}} » n’a pas pu repartir toute seule. Continue la conversation pour reprendre là où {{copilot}} s’est arrêtée."
+    }
+  },
+  "lauraJob": {
+    "title": "Job de {{copilot}}",
+    "aria": "Job de {{copilot}} : {{intent}}",
+    "state": {
+      "draft": "Brouillon",
+      "to_confirm": "À confirmer",
+      "planned": "Planifié",
+      "running": "En cours",
+      "awaiting_approval": "En attente de validation",
+      "partial": "Partiel",
+      "done": "Terminé",
+      "failed": "Échoué",
+      "cancelled": "Annulé",
+      "superseded": "Obsolète",
+      "blocked": "Rien n’est parti",
+      "unknown": "À vérifier"
+    },
+    "expectedOutcome": "Résultat attendu : {{text}}",
+    "scope": "Périmètre : {{text}}",
+    "assumptions": "Hypothèses : {{items}}",
+    "sources": "Sources : {{items}}",
+    "steps": "Étapes",
+    "units": "× {{count}}",
+    "after": "après « {{label}} »",
+    "needsApproval": "validation requise",
+    "capability": {
+      "read_workspace": "Lecture de l’espace",
+      "search_market_memory": "Observations du marché",
+      "account_analysis": "Analyse de compte",
+      "account_refresh": "Actualisation de dossier",
+      "contact_enrichment": "Enrichissement de contact",
+      "message_generation": "Préparation de message",
+      "need_matching": "Classement du vivier",
+      "territory_snapshot": "Photo de territoire",
+      "crm_write": "Écriture CRM"
+    },
+    "durationMeasured_one": "Durée prévue : {{minutes}} min, d’après {{count}} étape mesurée",
+    "durationMeasured_other": "Durée prévue : {{minutes}} min, d’après {{count}} étapes mesurées",
+    "preview": {
+      "reused": "Réutilise ce que l’espace sait déjà : {{items}}",
+      "newActions": "Fera du neuf : {{items}}",
+      "limitsTitle": "Limites",
+      "maxTargets_one": "« {{label}} » : au plus {{count}} contact du périmètre",
+      "maxTargets_other": "« {{label}} » : au plus {{count}} contacts du périmètre",
+      "noTargets": "« {{label}} » : aucun contact dans le périmètre, cette étape ne partira pas",
+      "notExecutable": "« {{label}} » ne s’exécute pas encore dans un travail : rien ne partira pour elle",
+      "maxAccountTargets_one": "« {{label}} » : au plus {{count}} compte du périmètre",
+      "maxAccountTargets_other": "« {{label}} » : au plus {{count}} comptes du périmètre",
+      "noAccountTargets": "« {{label}} » : aucun compte dans le périmètre, cette étape ne partira pas",
+      "missingCriteria": "« {{label}} » : aucun filtre (technologie, zone, besoin ou département) — rien ne partira pour elle",
+      "targetsFromStep": "« {{label}} » : ses contacts viendront de l’étape « {{from}} »",
+      "ceilings": "Plafonds : au plus {{contacts}} contacts et {{accounts}} comptes par travail"
+    },
+    "validations_one": "{{count}} étape attendra ta validation",
+    "validations_other": "{{count}} étapes attendront ta validation",
+    "work": {
+      "kicker": {
+        "running": "Recherche en cours",
+        "awaiting": "En attente de ta validation",
+        "done": "Recherche terminée",
+        "interrupted": "Recherche interrompue à ta demande",
+        "failed": "Recherche échouée",
+        "partial": "Recherche partielle",
+        "unknown": "À vérifier"
+      },
+      "current": "Étape en cours : {{label}}",
+      "progress": "{{done}} sur {{total}}",
+      "detail": "Voir le détail"
+    },
+    "nothingLaunched": "Rien n’est lancé : ce plan n’a encore rien exécuté ni débité.",
+    "draftMissing": "Brouillon : précise le périmètre pour qu’il devienne confirmable.",
+    "approved": "validée",
+    "stepStatus": {
+      "todo": "À faire",
+      "running": "En cours",
+      "done": "Fait",
+      "failed": "Échouée",
+      "blocked": "Bloquée",
+      "unknown": "À vérifier",
+      "dropped": "Sautée"
+    },
+    "note": {
+      "not_executable_in_job": "cette capacité ne s’exécute pas encore dans un job — rien n’est parti, rien n’est débité",
+      "dependency_not_done": "une étape dont elle dépend n’a pas abouti",
+      "no_target_in_scope": "aucune cible dans le périmètre",
+      "refused": "refusée (droit, mandat ou outil non branché)",
+      "capability_failed": "la capacité a échoué",
+      "timeout": "on ne sait pas si elle est partie — rien ne sera rejoué tout seul",
+      "missing_criteria": "aucun filtre pour cette étape — rien n’est parti, rien n’est débité"
+    },
+    "awaiting_one": "attend {{count}} analyse en cours",
+    "awaiting_other": "attend {{count}} analyses en cours",
+    "result": "résultat : {{summary}}",
+    "created": "Créé : {{items}}",
+    "errors": "Erreurs : {{items}}",
+    "gesture": {
+      "confirm": "Confirmer et lancer",
+      "approve": "Valider « {{label}} »",
+      "resume": "Reprendre",
+      "cancel": "Annuler"
+    },
+    "error": {
+      "insufficient": "Tu as beaucoup utilisé {{brand}} ce mois-ci — on en parle ? Écris à l’équipe pour qu’on regarde ça ensemble.",
+      "conflict": "Ce travail vient de changer d’état — la carte est à jour.",
+      "generic": "Le geste n’a pas abouti. Réessaie dans un instant."
+    },
+    "synthesis": {
+      "title": "Synthèse — ce que ce travail a produit",
+      "accounts_one": "{{count}} compte analysé :",
+      "accounts_other": "{{count}} comptes analysés :",
+      "contacts_one": "{{count}} contact trouvé :",
+      "contacts_other": "{{count}} contacts trouvés :",
+      "messages_one": "{{count}} message préparé, à relire :",
+      "messages_other": "{{count}} messages préparés, à relire :",
+      "nothing": "Ce travail n'a produit ni compte analysé, ni contact, ni message.",
+      "failed": "Étapes échouées : {{items}}",
+      "unknown": "Issue inconnue, à vérifier de ton côté : {{items}}"
+    }
+  },
+  "callBrief": {
+    "identityWithTitle": "{{name}} — {{title}}",
+    "describe": "Brief d'appel pour {{name}}",
+    "guarantee": "Rien n'est envoyé ni enregistré : cette carte prépare ton appel, elle ne le passe pas.",
+    "section": {
+      "context": "Contexte",
+      "reason": "Pourquoi appeler maintenant",
+      "objective": "Objectif de l'appel",
+      "opening": "Ouverture",
+      "nextQuestions": "Questions suivantes",
+      "objection": "Objection probable",
+      "fallback": "Repli",
+      "expectedOutcome": "Résultat attendu",
+      "branches": "Si la personne…"
+    },
+    "openingFrameNotice": "Un cadre, pas un script à réciter mot pour mot.",
+    "branch": {
+      "wrongRole": {
+        "title": "… n'est pas la bonne personne",
+        "guidance": "Demande une orientation, sans insister."
+      },
+      "notNow": {
+        "title": "… dit « pas maintenant »",
+        "guidance": "Conviens d'une date précise pour rappeler."
+      },
+      "interest": {
+        "title": "… montre de l'intérêt",
+        "guidance": "Qualifie immédiatement."
+      },
+      "refusal": {
+        "title": "… refuse",
+        "guidance": "Respecte le refus et demande, si possible, le critère principal."
+      },
+      "noNeed": {
+        "title": "… dit n'avoir aucun besoin",
+        "guidance": "Vérifie si le besoin est absent, déjà couvert en interne, ou hors timing."
+      },
+      "referral": {
+        "title": "… t'oriente vers quelqu'un d'autre",
+        "guidance": "Cherche à comprendre la voie d'achat avant de raccrocher."
+      },
+      "voicemail": {
+        "title": "… ne répond pas (répondeur)",
+        "guidance": "Laisse ou non un message vocal, selon la policy du workspace."
+      }
+    },
+    "noRecordingNotice": "{{copilot}} n'écoute jamais cet appel — aucun enregistrement sans consentement explicite (Réglages › Intégrations).",
+    "liveModeOn": "Activer le mode live",
+    "liveModeOff": "Quitter le mode live",
+    "live": {
+      "timer": "Minuteur",
+      "checklist": "Prochaines questions",
+      "factsToVerify": "Faits à vérifier",
+      "notes": "Notes",
+      "notesPlaceholder": "Ce que tu veux te rappeler après l'appel…",
+      "notesNotSaved": "Ces notes ne sont pas enregistrées — reporte ce qui compte dans l'historique de l'appel ensuite."
+    },
+    "offerStart": "Point de départ",
+    "offerUnnamed": "Offre d’emploi",
+    "openOffer": "Ouvrir l’offre"
+  },
+  "accountVerdict": {
+    "GO_NOW": "Mouvement immédiat",
+    "GO_VIA_PARTNER": "Plutôt via un partenaire",
+    "GO_AFTER_PROOF": "D’abord une preuve",
+    "WATCH": "À surveiller",
+    "NO_GO_NOW": "Pas maintenant",
+    "NOT_EVALUABLE": "Non évaluable"
+  },
+  "toolChips": {
+    "add": "Ajouter un outil",
+    "group": "Tes outils avec {{copilot}}",
+    "reconnect": "À reconnecter",
+    "limited": "Accès limité"
+  },
+  "toolsSources": {
+    "trigger": "Outils et sources",
+    "triggerCount": "Outils et sources · {{selected}}/{{total}}",
+    "title": "Outils de cette conversation",
+    "scope": "Les puces au-dessus de la saisie choisissent ce que {{copilot}} lit pour cette conversation.",
+    "stateRead": "Lu dans cette conversation",
+    "stateExcluded": "Écarté de cette conversation",
+    "notConnected": "Non connecté : {{families}}. Se branche dans Réglages › Intégrations.",
+    "familyStillRead": "Reste lu via {{name}} (même type d'outil).",
+    "noDisconnect": "Cette sélection ne déconnecte aucun compte.",
+    "reconnect": "À reconnecter",
+    "noSend": "Cocher un outil d'envoi l'autorise à préparer, jamais à envoyer : tu valides chaque action.",
+    "manage": "Gérer les connexions",
+    "done": "Terminé",
+    "demoNote": "Salle de démonstration : aucun outil n'est branché et les réponses d'exemple ne consultent aucune source. Dans ton espace, tu choisis ici ce que {{copilot}} lit."
+  },
+  "replyFamily": {
+    "textFallback": "Cette réponse est restée en texte alors que sa forme est connue.",
+    "retry": "Refaire en carte",
+    "prompt": {
+      "account_map": "Reprends ta dernière réponse sous forme de cartographie de comptes en carte, avec ce qu'elle couvre et ce qu'elle ne couvre pas.",
+      "account_analysis": "Reprends ta dernière réponse sous forme d'analyse du compte en carte structurée.",
+      "contacts_list": "Reprends ta dernière réponse sous forme de liste de contacts en carte.",
+      "action_plan": "Reprends ta dernière réponse sous forme de plan d'action en carte.",
+      "meeting_brief": "Reprends ta dernière réponse sous forme de brief de rendez-vous en carte.",
+      "post_meeting_summary": "Reprends ta dernière réponse sous forme de compte rendu du rendez-vous en carte : décisions, actions et relance.",
+      "market_memory_summary": "Reprends ta dernière réponse sous forme de synthèse des observations du marché en carte.",
+      "sequence_audience": "Reprends ta dernière réponse sous forme d'audience de la séquence en carte.",
+      "opportunity_review": "Reprends ta dernière réponse sous forme de revue des opportunités en carte.",
+      "account_priorities": "Priorise à nouveau ces comptes, en carte : un niveau par compte et sa raison.",
+      "account_ranking": "Classe-moi à nouveau ces comptes, en carte : les critères du classement et la raison de chaque rang.",
+      "account_manager_overview": "Refais ce point manager en carte : un niveau par compte et sa raison, sur tout le portefeuille.",
+      "account_next_step": "Reprends ta dernière réponse en carte : la prochaine action sur ce compte, pourquoi, et ce qui manque."
+    }
+  },
+  "replyKit": {
+    "howToFill": "Pour le combler :",
+    "action": {
+      "validate": "Valider la préparation",
+      "edit": "Modifier",
+      "dismiss": "Ignorer",
+      "youSend": "{{copilot}} prépare, c’est toi qui envoies.",
+      "validated": "Préparation validée — rien n’a été envoyé.",
+      "dismissed": "Ignoré."
+    },
+    "basis": {
+      "scopeAria": "Périmètre de la réponse"
+    },
+    "header": {
+      "partialBadge": "Partielle"
+    }
+  },
+  "replyMailboxRead": {
+    "label": "{{copilot}} a lu ce fil",
+    "source": "{{copilot}} a lu un fil de ta messagerie pour répondre. Son contenu n’est pas rejoué ici."
+  },
+  "replyBadges": {
+    "withSources": "{{label}} : {{names}}",
+    "status": {
+      "mapping_partial": "Cartographie partielle",
+      "to_qualify": "À qualifier",
+      "priority": "Prioritaire",
+      "to_watch": "À surveiller",
+      "qualification_needed": "Qualification complémentaire nécessaire",
+      "historical_signal": "Signal historique",
+      "current_signal_verified": "Signal actuel vérifié",
+      "scope_to_confirm": "Périmètre à confirmer",
+      "no_current_proof": "Aucune preuve actuelle",
+      "action_to_validate": "Action à valider"
+    },
+    "confidence": {
+      "high": "Confiance élevée",
+      "medium": "Confiance moyenne",
+      "low": "À vérifier"
+    },
+    "freshness": {
+      "current": "À jour",
+      "recent": "Récent",
+      "dated": "Ancien"
+    },
+    "proof": {
+      "verified": "Vérifié",
+      "declared": "Déclaré",
+      "inferred": "Déduit"
+    },
+    "action": {
+      "draft": "Brouillon",
+      "proposal": "Proposition",
+      "to_validate": "À valider"
+    }
+  },
+  "workspaceNext": {
+    "label": "Pour avancer",
+    "fact": {
+      "workspace_no_account": "Ton espace ne compte encore aucun compte analysé.",
+      "workspace_accounts_no_contact_one": "Ton espace compte {{count}} compte analysé et aucun contact enregistré.",
+      "workspace_accounts_no_contact_other": "Ton espace compte {{count}} comptes analysés et aucun contact enregistré.",
+      "workspace_contacts_no_action_one": "Ton espace compte {{count}} contact et aucune action enregistrée.",
+      "workspace_contacts_no_action_other": "Ton espace compte {{count}} contacts et aucune action enregistrée."
+    },
+    "step": {
+      "analyze_account": "Analyser un compte",
+      "import_accounts": "Importer mes comptes",
+      "find_contacts": "Trouver des contacts",
+      "prepare_message": "Préparer un message"
+    },
+    "prompt": {
+      "analyze_account": "Analyse l’entreprise suivante pour moi : ",
+      "import_accounts": "Aide-moi à importer mes comptes existants.",
+      "find_contacts": "Trouve les contacts à approcher dans mes comptes analysés.",
+      "prepare_message": "Prépare un premier message pour l’un de mes contacts."
+    }
+  },
+  "replyActions": {
+    "label": "Suite possible",
+    "worklistName": "Liste de travail du {{date}}",
+    "worklistFailed": "La liste de travail n'a pas pu être créée. Rien n'a été modifié ; réessaie dans un instant.",
+    "refinePrompt": "Affine cette recherche — {{criteria}}. Je veux :",
+    "kind": {
+      "view_account": "Voir le compte",
+      "find_contacts": "Trouver les contacts",
+      "prepare_approach": "Préparer l'approche",
+      "refine_search": "Affiner la recherche",
+      "create_worklist": "Créer une liste de travail",
+      "qualify_further": "Lancer une qualification complémentaire",
+      "dismiss": "Ignorer"
+    },
+    "criteria": {
+      "sectors": "secteurs",
+      "signals": "signaux",
+      "department": "département",
+      "region": "région",
+      "headcount": "effectif",
+      "keywords": "mots-clés"
+    }
+  },
+  "export": {
+    "copyStructured": "Copier en version structurée",
+    "copyCompact": "Copier la version courte",
+    "download": "Télécharger en fichier Markdown",
+    "copied": "Réponse copiée",
+    "fileFallback": "reponse-laura"
+  },
+  "headerMenu": {
+    "action": "Plus d’actions sur la conversation"
+  },
+  "conversationMenu": {
+    "action": "Conversation",
+    "title": "Informations sur la conversation",
+    "access": "Accès"
+  },
+  "newReplies": {
+    "pill": "Nouvelle réponse plus bas"
+  },
+  "linkedinPost": {
+    "declare": "Ajouter ce post comme signal du compte"
+  },
+  "listFold": {
+    "showMore_one": "Voir {{count}} autre",
+    "showMore_other": "Voir les {{count}} autres",
+    "collapse": "Replier"
+  },
+  "addCv": {
+    "cta": "Ajouter un CV",
+    "title": "Ajouter un CV",
+    "description": "Dépose le CV ici : la fiche est créée ou mise à jour dans ton vivier, à relire. Tu restes dans la conversation.",
+    "done": "J’ai ajouté le CV de {{name}} à mon vivier. Relance la comparaison sur le besoin de cette conversation avec ce profil en plus, sans oublier les profils déjà examinés.",
+    "doneUnnamed": "J’ai ajouté un CV à mon vivier. Relance la comparaison sur le besoin de cette conversation avec ce profil en plus, sans oublier les profils déjà examinés."
+  },
+  "footer": {
+    "rowLabel": "Actions sur cette réponse",
+    "sources": "Sources",
+    "context": "Contexte",
+    "sourcesAlert": "Sources — réponse partielle à vérifier",
+    "aside": {
+      "why": "Pourquoi",
+      "sources": "Sources citées par {{copilot}}",
+      "limits": "Limites de cette analyse",
+      "method": "Méthode",
+      "notes": "Précisions de {{copilot}}",
+      "detail": "Détail"
+    }
+  }
+}

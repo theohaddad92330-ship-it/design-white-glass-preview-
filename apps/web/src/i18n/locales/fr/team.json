@@ -1,0 +1,393 @@
+{
+  "movedToAdmin": {
+    "title": "La gestion des personnes est dans Équipe › Administration",
+    "body": "Membres, invitations, rôles, droits, visibilité du portefeuille et règles d’équipe se règlent à un seul endroit. Ici restent le partage de données et le marché de l’espace.",
+    "cta": "Ouvrir Équipe › Administration"
+  },
+  "header": {
+    "title": "Équipe",
+    "subtitle": "Gère les membres de {{name}} et leurs accès.",
+    "workspaceFallback": "ton espace de travail",
+    "roleAndStageHint": "Ton rôle et la taille de ton ESN orientent les recommandations de {{copilot}} : ils se règlent dans ton <profileLink>profil</profileLink>.",
+    "seats": "{{used}} / {{total}} sièges",
+    "seatsOver_one": "{{count}} siège de plus que l’abonnement",
+    "seatsOver_other": "{{count}} sièges de plus que l’abonnement",
+    "theoTitle": "Un espace bien administré",
+    "theoTagline": "Des responsabilités lisibles, des accès explicites et des passations sans perte."
+  },
+  "tabs": {
+    "label": "Équipe : sous-vues",
+    "members": "Membres & invitations",
+    "rights": "Droits & visibilité",
+    "rules": "Règles d’équipe",
+    "membres": "Membres & invitations",
+    "droits": "Droits & visibilité",
+    "regles": "Règles d’équipe"
+  },
+  "states": {
+    "loading": "Chargement de l'équipe…"
+  },
+  "errors": {
+    "load": "Impossible de charger ton équipe. Réessaie dans un instant."
+  },
+  "sections": {
+    "members_one": "Membres ({{count}})",
+    "members_other": "Membres ({{count}})",
+    "invitations_one": "Invitation en attente ({{count}})",
+    "invitations_other": "Invitations en attente ({{count}})",
+    "people": "Les personnes de l’espace",
+    "peopleSummary_one": "{{count}} membre actif · {{seats}} places dans ton offre.",
+    "peopleSummary_other": "{{count}} membres actifs · {{seats}} places dans ton offre.",
+    "rights": "Le rôle ne remplace pas le consentement.",
+    "rightsHint": "Qui voit quels comptes, et ce qui sort de l’espace. Un droit propre à une personne se règle depuis son bouton « Rôle ».",
+    "rules": "Les règles donnent le cadre.",
+    "rulesHint": "Le marché de l’espace et la politique d’équipe que {{copilot}} applique aux journées de chacun.",
+    "pendingTitle": "Invitations en attente"
+  },
+  "invite": {
+    "title": "Inviter un collaborateur",
+    "seatsFull": "Tous tes sièges sont utilisés. <upgradeLink>Passe à un forfait supérieur</upgradeLink> pour inviter plus de personnes.",
+    "emailPlaceholder": "collaborateur@ton-esn.fr",
+    "submit": "Inviter",
+    "open": "Inviter un membre",
+    "description": "L’e-mail part quand tu confirmes. Tu pourras le renvoyer ou le révoquer depuis la liste.",
+    "dialogDescription": "L’invitation part quand tu confirmes ; tu peux la renvoyer ou la révoquer.",
+    "close": "Fermer"
+  },
+  "member": {
+    "fallbackName": "Membre",
+    "you": "(tu)",
+    "fallbackTarget": "ce membre",
+    "removeAria": "Retirer {{name}}",
+    "crossTeamSupport": "Renfort transversal",
+    "crossTeamSupportHelp": "Épaule les autres sur tous les comptes, sans en porter.",
+    "crossTeamSupportOnAria": "Retirer {{name}} du renfort transversal",
+    "crossTeamSupportOffAria": "Désigner {{name}} en renfort transversal",
+    "active": "Accès actif",
+    "handover": "Passation",
+    "role": "Rôle",
+    "roleAria": "Rôle de {{name}}",
+    "roleTitle": "Rôle de {{name}}",
+    "roleHint": "Le rôle décide de ce que la personne voit et fait dans l’espace.",
+    "ownRights": "Droits en propre",
+    "roleBounded": "Droits explicitement bornés : un rôle technique n’accorde pas une vue financière, et aucun rôle n’ouvre une messagerie personnelle."
+  },
+  "handover": {
+    "title": "Le départ de {{name}}",
+    "description": "Regarde ce que cette personne porte avant de décider. Transférer son portefeuille ne retire pas son siège — c'est souvent le geste du préavis.",
+    "transfers": {
+      "title": "Ce qui change de main",
+      "loading": "Lecture de son portefeuille…",
+      "failed": "Impossible de lire son portefeuille. Réessaie dans un instant."
+    },
+    "kinds": {
+      "accounts": "Comptes portés",
+      "contacts": "Contacts portés",
+      "tasks": "Tâches ouvertes",
+      "opportunities": "Opportunités",
+      "needs": "Besoins",
+      "missions": "Missions",
+      "actions": "Actions ouvertes déléguées",
+      "followups": "Relances ouvertes"
+    },
+    "plan": {
+      "title": "Répartir entre plusieurs collègues",
+      "help": "Choisis un destinataire par type. Tu vois le récapitulatif avant que quoi que ce soit ne bouge ; rien n'est supprimé.",
+      "recipientAria": "Destinataire pour : {{kind}}",
+      "none": "Ne pas transférer",
+      "recap": "Voir le récapitulatif",
+      "recapTitle": "Récapitulatif avant validation",
+      "recapLine": "{{count}} · {{kind}}",
+      "recapUnknown": "{{kind}} : comptage non abouti",
+      "validate": "Valider la répartition",
+      "toast": {
+        "done": "Portefeuille réparti",
+        "failed": "La répartition n'a pas pu être effectuée"
+      }
+    },
+    "countFailed": "le comptage n'a pas abouti",
+    "personal": {
+      "title": "Ce qui ne se transmet pas",
+      "help": "Ces éléments sont personnels : ils restent chez leur propriétaire et ne sont donnés à personne."
+    },
+    "personalKinds": {
+      "mailbox": "sa messagerie connectée",
+      "calendar": "son agenda connecté",
+      "copilotConversations": "ses conversations avec {{copilot}}",
+      "personalSettings": "ses préférences et ses vues"
+    },
+    "learned": "Ce que ton équipe a appris sur ces comptes — fiches, notes, historique, angles — appartient à l'espace : rien n'est perdu et rien n'a besoin d'être déplacé.",
+    "successor": {
+      "title": "Qui reprend",
+      "placeholder": "Choisis un membre",
+      "aria": "Choisir la personne qui reprend le portefeuille",
+      "none": "Aucun autre membre ne peut porter un portefeuille aujourd'hui. Invite quelqu'un, ou retire le siège : le portefeuille retournera dans la file des comptes non attribués."
+    },
+    "confirm": "Transférer le portefeuille",
+    "removeAnyway": "Retirer sans transférer",
+    "toast": {
+      "done": "Portefeuille transféré",
+      "failed": "Le transfert n'a pas pu être effectué"
+    }
+  },
+  "invitations": {
+    "pendingExpires": "En attente · expire le {{date}}",
+    "revokeAria": "Révoquer l'invitation de {{email}}",
+    "resend": "Renvoyer",
+    "resendAria": "Renvoyer l'invitation à {{email}}",
+    "resendSent": "E-mail envoyé : le nouveau lien est valable 7 jours.",
+    "resendNotSent": "E-mail non parti : le lien est renouvelé, mais rien n'a été envoyé. Réessaie ou transmets-le toi-même.",
+    "emptyTitle": "Personne n’attend d’invitation.",
+    "emptyHint": "Invite avec le rôle utile : l’e-mail part quand tu confirmes, et tu peux le renvoyer ou le révoquer."
+  },
+  "readOnly": {
+    "viewer": "Ton rôle (Lecteur) est en lecture seule : tu ne peux pas modifier l’équipe.",
+    "other": "Seuls le propriétaire, les admins et les Sales Ops peuvent inviter ou retirer des membres."
+  },
+  "toast": {
+    "inviteSent": "Invitation envoyée à {{email}}",
+    "inviteError": "Impossible d'envoyer l'invitation",
+    "invitationRevoked": "Invitation révoquée",
+    "revokeError": "Révocation impossible",
+    "memberRemoved": "Membre retiré",
+    "removeError": "Suppression impossible",
+    "roleUpdated": "Rôle mis à jour",
+    "roleError": "Changement de rôle impossible",
+    "permissionsUpdated": "Droits mis à jour",
+    "permissionsError": "Les droits n’ont pas pu être enregistrés",
+    "crossTeamSupportOn": "Renfort transversal désigné",
+    "crossTeamSupportOff": "Renfort transversal retiré",
+    "crossTeamSupportError": "La désignation n’a pas pu être enregistrée",
+    "invitationResent": "Invitation renvoyée à {{email}}",
+    "invitationResentNotSent": "Le lien de {{email}} est renouvelé, mais l'e-mail n'est pas parti",
+    "resendError": "Renvoi impossible"
+  },
+  "accept": {
+    "roles": {
+      "owner": "propriétaire",
+      "admin": "admin",
+      "member": "membre"
+    },
+    "needAuth": {
+      "title": "Rejoindre l'équipe",
+      "description": "Connecte-toi à {{brand}} pour accepter cette invitation. Utilise l'adresse email à laquelle l'invitation a été envoyée.",
+      "login": "Se connecter",
+      "noAccount": "Pas encore de compte ?",
+      "signup": "Créer un compte"
+    },
+    "accepting": {
+      "title": "Acceptation en cours…",
+      "description": "Nous t'ajoutons à l'espace de travail."
+    },
+    "success": {
+      "title": "Bienvenue dans {{workspaceName}}",
+      "description": "Tu as rejoint l'équipe en tant que {{role}}.",
+      "cta": "Accéder à l'espace"
+    },
+    "error": {
+      "title": "Invitation indisponible",
+      "fallback": "L'invitation n'a pas pu être acceptée",
+      "back": "Retour à l'application"
+    },
+    "kicker": "Invitation",
+    "badge": { "accepting": "En cours", "success": "Rejoint", "error": "Échec" }
+  },
+  "workspaces": {
+    "title": "Mes espaces de travail",
+    "subtitle": "Tu appartiens à plusieurs espaces. Changer d'espace change les comptes, contacts et analyses que tu vois — rien n'est déplacé ni fusionné.",
+    "personal": "Perso",
+    "active": "Actif",
+    "switch": "Basculer",
+    "meta": "{{role}} · {{count}} membre",
+    "meta_other": "{{role}} · {{count}} membres",
+    "switched": "Tu travailles maintenant dans {{name}}",
+    "switchError": "Impossible de changer d'espace de travail"
+  },
+  "community": {
+    "title": "Partager les informations d’accessibilité",
+    "help": "Ce que ton équipe déclare sur l’accès à un compte — panel fermé, entrée par une filiale, porteur imposé — remonte anonymement. Dès que trois espaces distincts confirment la même chose, l’information devient fiable et te revient sur tes propres comptes.",
+    "never": "Ne remontent jamais : le nom d’un consultant placé, un TJM, un contact, le contenu d’un échange, ni l’identité de l’espace qui a déclaré. Un espace qui ne partage pas ne consomme pas.",
+    "ownerOnly": "Seul le propriétaire de l’espace peut activer ce partage.",
+    "enabled": "Partage activé. Tes déclarations d’accès alimentent la communauté, et tu reçois les siennes.",
+    "disabled": "Partage coupé. Plus rien ne sort de cet espace — et plus rien n’y entre.",
+    "failed": "Le réglage n’a pas pu être enregistré"
+  },
+  "portfolio": {
+    "title": "Qui voit quels comptes",
+    "help": "Par défaut, chaque membre voit tout le portefeuille de l’espace — c’est ce qui évite d’appeler deux fois la même entreprise. Certaines ESN ne peuvent pas travailler comme ça : commissionnement individuel, équipes concurrentes sur le même marché, sous-traitance.",
+    "options": {
+      "open": {
+        "label": "Ouvert à toute l’équipe",
+        "help": "Chaque membre voit tout le portefeuille de l’espace."
+      },
+      "restricted": {
+        "label": "Cloisonné par commercial",
+        "help": "Chaque commercial voit ses comptes et ceux que personne ne porte. Les responsables continuent de voir tout le portefeuille — sans quoi ils ne peuvent ni l’attribuer ni le rééquilibrer."
+      }
+    },
+    "unreadable": "Le réglage en cours n’est pas encore affichable ici : aucune option n’est présentée comme active tant qu’on ne l’a pas lue. Choisir une option l’applique à tout l’espace.",
+    "ownerOnly": "Seul le propriétaire de l’espace peut changer ce réglage : c’est le seul qui modifie d’un coup ce que toute l’équipe voit.",
+    "applied": {
+      "open": "Portefeuilles ouverts à toute l’équipe.",
+      "restricted": "Portefeuilles cloisonnés par commercial. Les comptes non attribués restent visibles de tous."
+    },
+    "failed": "Le cloisonnement n’a pas pu être enregistré"
+  },
+  "permissions": {
+    "title": "Droits en propre — {{name}}",
+    "explain": "Tu accordes ces droits à {{name}}, en plus de son rôle ({{role}}). Le geste est enregistré au journal d’activité, au nom de {{grantedBy}}.",
+    "ownerHasEverything": "Le propriétaire a déjà tous les droits.",
+    "fromRole": "Inclus dans son rôle",
+    "granted": "Accordé en propre",
+    "save": "Enregistrer les droits",
+    "cancel": "Annuler",
+    "open": "Droits en propre",
+    "openAria": "Droits en propre de {{name}}",
+    "extraCount_one": "+{{count}} droit en propre",
+    "extraCount_other": "+{{count}} droits en propre",
+    "value": {
+      "analysis:run": "Lancer une analyse",
+      "contacts:enrich": "Enrichir des contacts",
+      "data:export": "Exporter des données",
+      "messages:send": "Envoyer des messages",
+      "records:write": "Créer et corriger des fiches",
+      "team:manage": "Gérer l’équipe",
+      "integrations:manage": "Gérer les outils connectés",
+      "billing:manage": "Gérer la facturation",
+      "finance:read": "Voir le coût et la marge",
+      "finance:write": "Modifier la facturation d’une mission",
+      "finance:read:own": "Voir le chiffre de son périmètre",
+      "crm:read": "Interroger un outil connecté depuis la conversation",
+      "profile:report": "Signaler une information d’entreprise fausse"
+    }
+  },
+  "joinRequests": {
+    "title": "Demandes d’accès ({{count}})",
+    "since": "Demande du {{date}}",
+    "unknown": "Une personne sans nom renseigné",
+    "accept": "Accepter",
+    "refuse": "Refuser",
+    "acceptAria": "Accepter la demande de {{who}}",
+    "refuseAria": "Refuser la demande de {{who}}",
+    "error": "La décision n’a pas été enregistrée. Réessaie dans un instant."
+  },
+  "teamPolicy": {
+    "title": "Politique d’équipe",
+    "subtitle": "Les règles que {{copilot}} applique quand elle organise la journée ou la semaine de chacun.",
+    "readOnly": "Saisie par un gestionnaire de l’espace.",
+    "loading": "Chargement de la politique d’équipe…",
+    "error": "La politique d’équipe n’a pas pu être chargée.",
+    "none": "Aucune politique d’équipe saisie : {{copilot}} organise les journées sans règle d’équipe.",
+    "prospecting": {
+      "label": "Plages protégées pour la prospection",
+      "hint": "Aucune réunion : seuls les appels, la recherche, l’enrichissement et les relances y sont proposés."
+    },
+    "forbidden": {
+      "label": "Créneaux interdits",
+      "hint": "Aucun bloc n’y est proposé."
+    },
+    "windowsEmpty": "Aucune plage saisie.",
+    "windowFrom": "Début de la plage {{index}}",
+    "windowTo": "Fin de la plage {{index}}",
+    "removeWindow": "Retirer la plage {{range}}",
+    "windowDays": "Jours de la plage {{index}} (aucun choisi : chaque jour)",
+    "weekday": {
+      "1": {
+        "short": "lun.",
+        "long": "Lundi"
+      },
+      "2": {
+        "short": "mar.",
+        "long": "Mardi"
+      },
+      "3": {
+        "short": "mer.",
+        "long": "Mercredi"
+      },
+      "4": {
+        "short": "jeu.",
+        "long": "Jeudi"
+      },
+      "5": {
+        "short": "ven.",
+        "long": "Vendredi"
+      },
+      "6": {
+        "short": "sam.",
+        "long": "Samedi"
+      },
+      "7": {
+        "short": "dim.",
+        "long": "Dimanche"
+      }
+    },
+    "addWindow": "Ajouter une plage",
+    "windowInvalid": "Une plage finit après son début, et deux plages ne se chevauchent pas.",
+    "maxMeetings": {
+      "label": "Réunions maximum par jour",
+      "unset": "Non saisi",
+      "invalid": "Entre {{min}} et {{max}}."
+    },
+    "callTarget": {
+      "label": "Objectif d’appels par jour",
+      "unset": "Non saisi",
+      "invalid": "Entre {{min}} et {{max}}."
+    },
+    "save": "Enregistrer la politique",
+    "saved": "Politique d’équipe enregistrée.",
+    "saveFailed": "La politique d’équipe n’a pas pu être enregistrée."
+  },
+  "workspaceMerge": {
+    "title": "Rapatrier mon espace personnel",
+    "subtitle": "Recopie les comptes et contacts de « {{source}} » dans « {{target}} ». Rien ne bouge avant ta validation ET celle d’un administrateur de {{target}}. Ton espace personnel est ensuite archivé : ses données restent lisibles, rien n’est supprimé.",
+    "preview": "Voir l’aperçu",
+    "previewAgain": "Refaire l’aperçu",
+    "empty": "Ton espace personnel ne contient aucun compte ni contact à rapatrier.",
+    "line": "{{table}} : {{parts}}",
+    "tables": {
+      "accounts": "Comptes",
+      "contacts": "Contacts"
+    },
+    "parts": {
+      "moving_one": "{{count}} recopié",
+      "moving_other": "{{count}} recopiés",
+      "duplicates_one": "{{count}} doublon proposé à la fusion",
+      "duplicates_other": "{{count}} doublons proposés à la fusion",
+      "held_one": "{{count}} en attente de son compte",
+      "held_other": "{{count}} en attente de leur compte"
+    },
+    "proposalsTitle": "Déjà présents dans {{target}} — fusion proposée, jamais faite seule :",
+    "keys": {
+      "siren": "même SIREN",
+      "registry": "même identifiant de registre",
+      "email": "même e-mail",
+      "linkedin": "même profil du réseau professionnel"
+    },
+    "hash": "Empreinte de l’aperçu : {{hash}}",
+    "confirm": "Valider cet aperçu",
+    "cancel": "Annuler la demande",
+    "awaiting": "Aperçu validé. En attente de la décision d’un administrateur de {{target}}.",
+    "running": "Rapatriement en cours : {{done}} lignes traitées sur {{total}}.",
+    "failed": "Le rapatriement s’est interrompu. Rien n’a été recopié deux fois : la reprise repart de la dernière ligne traitée.",
+    "resume": "Reprendre le rapatriement",
+    "done": "Rapatrié dans {{target}}. Ton espace personnel est archivé : ses données restent lisibles, rien n’a été supprimé.",
+    "rejected": "Un administrateur de {{target}} a refusé ce rapatriement. Tu peux refaire un aperçu.",
+    "error": "Le geste n’a pas été enregistré. Réessaie dans un instant.",
+    "admin": {
+      "title_one": "Rapatriement d’espace à décider ({{count}})",
+      "title_other": "Rapatriements d’espace à décider ({{count}})",
+      "who": "« {{source}} » vers cet espace",
+      "approve": "Accepter",
+      "reject": "Refuser",
+      "approveAria": "Accepter le rapatriement de {{source}}",
+      "rejectAria": "Refuser le rapatriement de {{source}}"
+    }
+  },
+  "rulesAside": {
+    "eyebrow": "Un seul moteur d’action",
+    "title": "Les règles donnent le cadre.",
+    "titleAccent": "Les actions font le reste.",
+    "body": "Les tâches restent dans Actions, les campagnes dans Séquences. Les automatismes ne disposent pas d’un droit d’envoi implicite.",
+    "cta": "Voir les automatisations"
+  }
+}

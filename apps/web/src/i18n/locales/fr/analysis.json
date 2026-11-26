@@ -1,0 +1,164 @@
+{
+  "progressCard": {
+    "inProgress": "Analyse en cours...",
+    "progressLabel": "Progression",
+    "durationHint": "L'analyse prend généralement 3 à 6 minutes. Tu peux quitter cette page.",
+    "cancel": "Annuler l'analyse",
+    "badgePartial": "Analyse partielle (sources dégradées)",
+    "badgeComplete": "Analyse complète",
+    "progressUnknown": "En cours",
+    "progressUnknownHint": "Progression indisponible — l’analyse continue côté serveur.",
+    "partialsTitle": "Déjà trouvé",
+    "partialsSamples": "dont {{names}}",
+    "partialsBy": "par l’étape « {{phase}} »",
+    "partialKind": {
+      "contacts_one": "1 contact",
+      "contacts_other": "{{count}} contacts",
+      "angles_one": "1 angle d’attaque",
+      "angles_other": "{{count}} angles d’attaque"
+    },
+    "refreshing": "Actualisation en cours",
+    "refreshingHint": "Le dossier affiché date de la précédente analyse — il sera remplacé à la fin.",
+    "quietHint": "Cette analyse est plus longue que d’habitude. Elle continue côté serveur : rien n’est relancé ni débité une seconde fois.",
+    "continueBrowsing": "Continuer à consulter",
+    "stepOf": "Étape {{index}} sur {{total}} : {{label}}",
+    "steps": {
+      "scope": "périmètre",
+      "crosscheck": "recoupement des sources",
+      "account_sheet": "fiche compte",
+      "decision_makers": "décideurs",
+      "orga_chain": "organigramme",
+      "classification": "stratégie et scoring",
+      "messages": "messages",
+      "quality_check": "contrôle qualité",
+      "save": "sauvegarde",
+      "reuse_existing": "réutilisation des données existantes",
+      "current_research": "recherche actuelle",
+      "thematic_research": "recherche thématique complémentaire"
+    }
+  },
+  "sourceHealth": {
+    "ok": "OK",
+    "degraded": "Dégradé",
+    "down": "Indisponible",
+    "skipped": "Non utilisé"
+  },
+  "previews": {
+    "scope": {
+      "eyebrow": "Ce que {{brand}} cadre",
+      "title": "Une première lecture du compte se dessine.",
+      "body": "{{brand}} consolide le périmètre, le positionnement et les signaux publics pour poser une base de travail fiable."
+    },
+    "crosscheck": {
+      "eyebrow": "Ce que {{brand}} vérifie",
+      "title": "Les signaux utiles commencent à se confirmer.",
+      "body": "{{brand}} confronte les sources publiques, repère les contradictions et isole les signaux qui mériteront d'être repris dans le dossier."
+    },
+    "account_sheet": {
+      "eyebrow": "Ce que {{brand}} construit",
+      "title": "La fiche entreprise prend forme.",
+      "body": "Le dossier prend forme autour des enjeux business, de l'écosystème et des éléments de contexte déjà vérifiés."
+    },
+    "decision_makers": {
+      "eyebrow": "Ce que {{brand}} identifie",
+      "title": "Les interlocuteurs les plus utiles remontent.",
+      "body": "Les contacts les plus pertinents sont identifiés selon leur rôle, leur influence et leur proximité avec le sujet."
+    },
+    "orga_chain": {
+      "eyebrow": "Ce que {{brand}} relie",
+      "title": "La chaîne de décision devient plus lisible.",
+      "body": "{{brand}} reconstitue les liens entre équipes, entités et niveaux de responsabilité pour clarifier qui pèse vraiment dans la décision."
+    },
+    "classification": {
+      "eyebrow": "Ce que {{brand}} affine",
+      "title": "Les priorités de contact se précisent.",
+      "body": "Chaque contact est reclassé par priorité, angle d’approche et niveau de maturité pour préparer une prise de contact crédible."
+    },
+    "messages": {
+      "eyebrow": "Ce que {{brand}} prépare",
+      "title": "Une première séquence d’approche est en train d’émerger.",
+      "body": "Les messages et le plan d'action sont générés à partir des signaux les plus solides pour produire un angle déjà exploitable."
+    },
+    "quality_check": {
+      "eyebrow": "Ce que {{brand}} contrôle",
+      "title": "Une dernière relecture retient ce qui n'aurait pas dû passer.",
+      "body": "Le Judge anti-hallucination relit le dossier et signale ce qui est affirmé sans source réelle avant qu'il n'arrive jusqu'à toi."
+    },
+    "save": {
+      "eyebrow": "Ce que {{brand}} termine",
+      "title": "Le dossier s'écrit sur ton compte.",
+      "body": "Les résultats, le coût et l'historique de ce run sont sauvegardés pour que le dossier soit là la prochaine fois que tu l'ouvres."
+    },
+    "reuse_existing": {
+      "eyebrow": "Ce que {{brand}} réutilise",
+      "title": "Ce que tu sais déjà sert de point de départ.",
+      "body": "Les faits, contacts et analyses déjà présents sur ce compte sont repris : {{brand}} ne les cherche pas une seconde fois."
+    },
+    "current_research": {
+      "eyebrow": "Ce que {{brand}} cherche",
+      "title": "L'actualité du compte est en cours de recherche.",
+      "body": "{{brand}} interroge le web pour retrouver ce qui se dit du compte en ce moment."
+    },
+    "thematic_research": {
+      "eyebrow": "Ce que {{brand}} complète",
+      "title": "Les sources thématiques complètent la lecture.",
+      "body": "Offres d'emploi, marchés publics et attributions sont recoupés pour affiner les signaux du compte."
+    }
+  },
+  "phases": {
+    "collecting": "Recherche et sources…",
+    "research": "Recherche et sources",
+    "research_complete": "Cartographie du groupe",
+    "contacts": "Contacts et rôles",
+    "contacts_complete": "Contacts et rôles",
+    "classify": "Stratégie et scoring",
+    "classify_complete": "Stratégie et scoring",
+    "plan": "Plan d'action",
+    "quality_check": "Contrôle qualité",
+    "save": "Sauvegarde",
+    "analysis_done": "Analyse terminée !"
+  },
+  "run": {
+    "startingPhase": "Lancement...",
+    "startEvent": "Lancement de l’analyse",
+    "doneEvent": "Analyse terminée",
+    "rejoinedPhase": "Analyse en cours (reprise du suivi)",
+    "retryingPhase": "Nouvelle tentative {{attempt}}/{{maxAttempts}}…",
+    "interruptedMessage": "L’analyse a été interrompue avant la fin. Relance-la — elle repartira de la dernière étape réussie.",
+    "canceledMessage": "L’analyse a été annulée."
+  },
+  "toast": {
+    "done": "Analyse terminée - ton dossier est prêt."
+  },
+  "tasks": {
+    "sheetTitle": "Ce qui tourne",
+    "sheetSubtitle": "Mise à jour en temps réel",
+    "sectionErrors": "Erreurs",
+    "sectionAnalyses": "Analyses",
+    "sectionSaves": "Sauvegardes",
+    "analysisLabel": "Analyse",
+    "dismissAria": "Retirer de la liste",
+    "pillCount_one": "{{count}} tâche",
+    "pillCount_other": "{{count}} tâches",
+    "runningAria_one": "{{count}} tâche en cours",
+    "runningAria_other": "{{count}} tâches en cours",
+    "errorAria": "Tâche en échec",
+    "completedAria": "Tâche terminée",
+    "status": {
+      "running": "En cours",
+      "completed": "Terminé",
+      "error": "Échec"
+    },
+    "seeFound": "Voir ce qui est déjà trouvé",
+    "cancelAnalysis": "Annuler l’analyse"
+  },
+  "operations": {
+    "status": {
+      "pending": "En attente",
+      "running": "En cours",
+      "completed": "Terminée",
+      "partial": "Partielle",
+      "interrupted": "Interrompue"
+    }
+  }
+}

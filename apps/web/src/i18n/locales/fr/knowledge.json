@@ -1,0 +1,908 @@
+{
+  "page": {
+    "subtitle": "Templates, playbooks et documents personnels pour enrichir l'IA."
+  },
+  "tabs": {
+    "templates": "Templates",
+    "playbooks": "Playbooks",
+    "method": "Méthode",
+    "crm": "Données CRM",
+    "documents": "Mes documents",
+    "assets": "Assets outreach",
+    "style": "Mémoire de style",
+    "library": "Bibliothèque"
+  },
+  "assets": {
+    "empty": "Aucun asset dans le catalogue.",
+    "errorState": "Le catalogue n'a pas pu être lu.",
+    "newButton": "Nouvel asset",
+    "editAria": "Modifier {{title}}",
+    "deleteAria": "Supprimer {{title}}",
+    "category": {
+      "case_study": "Cas client",
+      "company_brochure": "Plaquette",
+      "resume": "CV",
+      "other": "Autre"
+    },
+    "usageRights": {
+      "always": "Envoi libre",
+      "after_interest_confirmed": "Envoi après intérêt confirmé"
+    },
+    "editor": {
+      "newTitle": "Nouvel asset",
+      "editTitle": "Modifier l'asset",
+      "titleLabel": "Titre",
+      "titlePlaceholder": "Plaquette 2026",
+      "descriptionLabel": "Description",
+      "descriptionPlaceholder": "Courte description (optionnel)",
+      "categoryLabel": "Catégorie",
+      "usageRightsLabel": "Droits d'usage"
+    },
+    "toast": {
+      "created": "Asset créé",
+      "updated": "Asset modifié",
+      "deleted": "Asset supprimé",
+      "saveFailed": "Impossible d'enregistrer. Réessaie.",
+      "deleteFailed": "Suppression impossible."
+    },
+    "file": {
+      "attach": "Joindre un fichier (pièce jointe d'e-mail)",
+      "uploading": "Envoi du fichier…",
+      "attached": "Fichier rattaché : il peut être joint à un e-mail.",
+      "attachFailed": "Le fichier n'a pas pu être rattaché.",
+      "removed": "Fichier retiré.",
+      "removeFailed": "Le fichier n'a pas pu être retiré.",
+      "removeAria": "Retirer le fichier de « {{title}} »",
+      "tooLarge": "Ce fichier dépasse {{max}} : il ne pourrait pas partir en pièce jointe."
+    }
+  },
+  "documents": {
+    "searchPlaceholder": "Rechercher un document...",
+    "addButton": "Ajouter un document",
+    "importFromDrive": "Importer depuis ton espace documentaire",
+    "dropHint": "Glisse-dépose un ou plusieurs fichiers, ou clique pour sélectionner",
+    "dropFormats": "{{formats}} — max {{maxMb}} Mo par fichier",
+    "ingestFailed": "Échec de l'ingestion",
+    "titleLabel": "Titre",
+    "titlePlaceholder": "Ex : Template de prospection LinkedIn",
+    "categoryLabel": "Catégorie",
+    "languageLabel": "Langue du document",
+    "languageUnset": "Non renseigné",
+    "language": {
+      "fr": "Français",
+      "en": "Anglais",
+      "de": "Allemand"
+    },
+    "scopeLabel": "Portée",
+    "scope": {
+      "workspace": "Toute mon ESN",
+      "personal": "Mon espace personnel",
+      "account": "Un compte précis",
+      "knowledge_base": "Base de connaissance durable"
+    },
+    "accountLabel": "Compte",
+    "accountPlaceholder": "Choisir un compte…",
+    "accountSelectAria": "Choisir le compte de ce document",
+    "emptyTitle": "Aucun document",
+    "emptyCta": "Ajouter ton premier document",
+    "untitled": "Sans titre",
+    "fromChat": "Jointe depuis le chat",
+    "category": {
+      "account_fact": "Fait sur un compte",
+      "sector_insight": "Enseignement sectoriel",
+      "winning_angle": "Angle gagnant",
+      "access_fact": "Fait d'accès",
+      "partner_fact": "Fait partenaire",
+      "territory_insight": "Enseignement territorial",
+      "objection_answer": "Réponse à une objection",
+      "client_proof": "Preuve client",
+      "esn_profile_fact": "Fait de profil ESN"
+    },
+    "processingStatus": {
+      "received": "Reçu",
+      "processing": "En cours de traitement",
+      "usable": "Exploitable",
+      "partial": "Partiellement exploitable",
+      "to_fix": "À corriger"
+    },
+    "replaceAria": "Remplacer",
+    "deleteAria": "Supprimer « {{name}} »",
+    "deleteDialog": {
+      "title": "Supprimer « {{name}} » ?",
+      "description": "Ce document sera supprimé définitivement de ta base de connaissances. Cette action ne peut pas être annulée.",
+      "confirm": "Supprimer définitivement",
+      "cancel": "Garder le document"
+    },
+    "replaceBanner": "Remplace « {{title}} » — l'ancien document est archivé, jamais supprimé.",
+    "replaceCancel": "Annuler le remplacement",
+    "uploadPhase": {
+      "idle": "Envoyer",
+      "reading": "Lecture du fichier…",
+      "extracting": "Extraction du texte…",
+      "indexing": "Indexation…",
+      "done": "✓ Indexé",
+      "error": "Réessayer"
+    },
+    "toast": {
+      "indexed": "Document indexé",
+      "replaced": "Document remplacé",
+      "ingestFailed": "Impossible d'ingester le document. Réessaie dans un moment.",
+      "replaceFailed": "Impossible de remplacer le document. Réessaie dans un moment.",
+      "deleteFailed": "Impossible de supprimer le document."
+    },
+    "file": {
+      "status": {
+        "pending": "En attente",
+        "reading": "Lecture du fichier…",
+        "extracting": "Extraction du texte…",
+        "indexing": "Indexation…",
+        "done": "Indexé",
+        "error": "Refusé"
+      },
+      "reason": {
+        "unsupported": "Format « {{ext}} » non supporté. Formats acceptés : {{formats}}.",
+        "noExtension": "Format non reconnu (pas d'extension). Formats acceptés : {{formats}}.",
+        "empty": "Fichier vide.",
+        "tooLarge": "Fichier trop volumineux (max {{maxMb}} Mo).",
+        "failed": "Impossible d'ingérer ce fichier. Réessaie dans un moment."
+      },
+      "listAria": "Fichiers à envoyer",
+      "remove": "Retirer {{name}}",
+      "multiTitleHint": "Chaque fichier garde son nom comme titre.",
+      "summary": "{{done}} indexé(s), {{failed}} refusé(s)"
+    },
+    "columns": {
+      "document": "Document",
+      "usage": "Usage",
+      "access": "Accès",
+      "status": "État",
+      "actions": "Actions"
+    }
+  },
+  "library": {
+    "kind": {
+      "template": "Template",
+      "playbook": "Playbook",
+      "method_playbook": "Playbook méthode"
+    },
+    "errorState": "Contenu indisponible pour le moment. Réessaie.",
+    "editAria": "Éditer",
+    "toast": {
+      "deleted": "{{kind}} supprimé",
+      "created": "{{kind}} créé",
+      "deleteFailed": "Suppression impossible.",
+      "requiredFields": "Titre et contenu sont requis.",
+      "saveFailed": "Impossible d'enregistrer. Réessaie.",
+      "copied": "Copié dans le presse-papier",
+      "copyFailed": "Copie impossible"
+    }
+  },
+  "templates": {
+    "new": "Nouveau template",
+    "view": "Voir le template",
+    "empty": "Aucun template. Crée le premier."
+  },
+  "playbooks": {
+    "new": "Nouveau playbook",
+    "view": "Voir le playbook",
+    "empty": "Aucun playbook. Crée le premier."
+  },
+  "method": {
+    "description": "Guides de méthode « plan de compte » ESN : multi-contacts, chemin d’accès achats, champion → sponsor, approche C-level. Prêts à appliquer, éditables par ton équipe.",
+    "new": "Nouveau guide",
+    "view": "Lire le guide",
+    "empty": "Aucun guide de méthode. Crée le premier."
+  },
+  "modal": {
+    "copyButton": "Copier le contenu",
+    "copiedButton": "✓ Copié",
+    "edit": "Éditer",
+    "hint": "Remplace les champs {{placeholder}} par tes éléments. Besoin d'un message généré par l'IA ?",
+    "openCopilot": "Ouvre {{copilot}}"
+  },
+  "editor": {
+    "editTitle": "Éditer le {{noun}}",
+    "newTitle": "Nouveau {{noun}}",
+    "titleLabel": "Titre",
+    "titlePlaceholderTemplate": "Email de premier contact",
+    "titlePlaceholderPlaybook": "Approche grands comptes",
+    "descriptionLabel": "Description",
+    "descriptionPlaceholder": "Courte description (optionnel)",
+    "categoryLabel": "Catégorie",
+    "categoryPlaceholder": "Email, Appel…",
+    "bodyLabel": "Contenu",
+    "bodyPlaceholder": "Contenu copiable. Utilise {{placeholder}} pour les champs à remplir."
+  },
+  "crm": {
+    "connectedTitle": "CRM connecté",
+    "accountFallback": "Ton compte CRM",
+    "since": " · depuis le {{date}}",
+    "connectTitle": "Connecter ton CRM",
+    "connectBody": "Autorise {{brand}} à créer des contacts dans ton CRM en un clic depuis tes dossiers. Le choix du CRM se fait dans Réglages › Intégrations.",
+    "connectCta": "Connecter ton CRM",
+    "notConfiguredTitle": "Synchronisation CRM",
+    "notConfiguredBody": "La synchronisation CRM sera activée prochainement sur ton espace.",
+    "toast": {
+      "connected": "CRM connecté",
+      "connectFailed": "Connexion au CRM échouée ({{reason}})",
+      "reasonUnknown": "inconnu",
+      "startFailed": "Impossible de démarrer la connexion au CRM",
+      "disconnected": "CRM déconnecté",
+      "disconnectFailed": "Déconnexion impossible"
+    }
+  },
+  "style": {
+    "description": "Colle un message déjà écrit pour que {{copilot}} apprenne ton style — elle analyse d'abord, sans jamais rien apprendre en silence.",
+    "importKindLabel": "Nature du message",
+    "importKind": {
+      "linkedin_message": "Message LinkedIn",
+      "email": "E-mail",
+      "phone_pitch": "Pitch téléphonique",
+      "follow_up": "Relance",
+      "introduction": "Introduction",
+      "partner_message": "Message partenaire",
+      "profile_push": "Push profil"
+    },
+    "sourceTypeLabel": "Source de style",
+    "sourceType": {
+      "validated_example": "Exemple validé",
+      "imported_template": "Template importé",
+      "sent_message": "Message réellement envoyé",
+      "accepted_edit": "Modification acceptée",
+      "brand_guide": "Guide de marque",
+      "signature": "Signature",
+      "user_preference": "Préférence utilisateur",
+      "formality": "Tutoiement / vouvoiement",
+      "language": "Langue",
+      "forbidden_words": "Mots interdits",
+      "allowed_cta": "CTA autorisés",
+      "length": "Longueur",
+      "punctuation": "Ponctuation",
+      "opening_formula": "Formule d'ouverture",
+      "closing_formula": "Formule de clôture"
+    },
+    "textLabel": "Message à analyser",
+    "textPlaceholder": "Colle ici le message dont tu veux que {{copilot}} apprenne le style…",
+    "analyzeButton": "Analyser",
+    "result": {
+      "conserve": "Ce que je conserve",
+      "neReproduitPas": "Ce que je ne reproduis pas",
+      "propose": "Ce que je propose"
+    },
+    "templates": {
+      "title": "Styles appris",
+      "subtitle": "Ce que {{copilot}} a retenu du ton, de la structure et des interdits d'un message — jamais un style imposé sans le montrer.",
+      "empty": "Aucun style appris pour l'instant.",
+      "errorState": "Les styles n'ont pas pu être lus.",
+      "persona": "Persona : {{persona}}",
+      "forbidden": "Interdits : {{list}}",
+      "pitch": "Pitch : {{pitch}}",
+      "tone": "Ton : {{tone}}",
+      "signature": "Signature : {{signature}}",
+      "version": "Version {{version}}",
+      "usage": "Modifié {{modification}} · Validé {{validation}} · Répondu {{response}} · Désinscrit {{unsubscribe}}",
+      "usageUnmeasured": "Usage : non mesuré"
+    },
+    "preview": {
+      "title": "Comparer les couches",
+      "subtitle": "Le même exemple pour « {{objective}} », sous chaque couche de style.",
+      "compareButton": "Comparer",
+      "closeAria": "Fermer le comparatif",
+      "contactPlaceholder": "Chercher un contact réel…",
+      "clearContactAria": "Changer de contact",
+      "contextPlaceholder": "Angle libre (optionnel) — comme dans le composer.",
+      "generate": "Générer l'aperçu",
+      "errorState": "La génération a échoué. Réessaie.",
+      "layerEmpty": "Non configuré à ce niveau.",
+      "layer": {
+        "generic": "Générique",
+        "workspace": "Espace",
+        "user": "Utilisateur",
+        "final": "Finale"
+      }
+    },
+    "proposals": {
+      "title": "Règles proposées",
+      "subtitle": "Une proposition ne devient jamais une règle durable toute seule — chacune attend une décision.",
+      "empty": "Aucune règle proposée pour l'instant.",
+      "errorState": "Les règles proposées n'ont pas pu être lues.",
+      "adopt": "Adopter",
+      "reject": "Refuser",
+      "adoptAria": "Adopter cette règle",
+      "rejectAria": "Refuser cette règle"
+    },
+    "status": {
+      "draft": "Brouillon",
+      "validated": "Validé",
+      "active": "Actif",
+      "deprecated": "Déprécié",
+      "archived": "Archivé",
+      "adopted": "Adoptée",
+      "rejected": "Refusée"
+    },
+    "signal": {
+      "wording_preference": "Préférence de formulation",
+      "structure_preference": "Préférence de structure",
+      "tone_preference": "Préférence de ton",
+      "spelling_or_grammar_fix": "Correction d'orthographe",
+      "false_or_fabricated_data_correction": "Correction d'une donnée fausse",
+      "isolated_aggressive_tone": "Ton agressif isolé"
+    },
+    "toast": {
+      "analyzed": "Message analysé",
+      "analyzeFailed": "Échec de l'analyse",
+      "adopted": "Règle adoptée",
+      "rejected": "Règle refusée",
+      "decideFailed": "Décision impossible. Réessaie.",
+      "transitioned": "Style passé à « {{status}} »",
+      "transitionFailed": "Changement de statut impossible."
+    },
+    "transition": {
+      "draft": {
+        "validated": "Valider",
+        "archived": "Archiver"
+      },
+      "validated": {
+        "active": "Activer",
+        "draft": "Repasser en brouillon",
+        "archived": "Archiver"
+      },
+      "active": {
+        "deprecated": "Déprécier",
+        "archived": "Archiver"
+      },
+      "deprecated": {
+        "active": "Réactiver",
+        "archived": "Archiver"
+      }
+    },
+    "create": {
+      "open": "Créer un style",
+      "objective": "Objectif",
+      "channel": "Canal",
+      "scope": "Portée",
+      "scopes": {
+        "workspace": "Tout l’espace",
+        "user": "Moi seul",
+        "business_unit": "Mon équipe — {{name}}",
+        "conversation": "Ce fil"
+      },
+      "persona": "Persona",
+      "forbidden": "Interdits (un par ligne)",
+      "pitch": "Pitch (optionnel)",
+      "tone": "Ton (optionnel)",
+      "signature": "Signature (optionnel)",
+      "submit": "Enregistrer le style",
+      "cancel": "Annuler",
+      "tooMany": "{{max}} interdits au maximum.",
+      "toast": {
+        "created": "Style créé en brouillon — active-le depuis la liste pour qu’il serve.",
+        "failed": "Le style n’a pas pu être créé."
+      },
+      "channels": {
+        "email": "E-mail",
+        "linkedin": "Réseau professionnel",
+        "phone": "Téléphone",
+        "manual": "Manuel",
+        "voicemail": "Message vocal",
+        "recommendation": "Message de recommandation",
+        "task": "Tâche",
+        "sms": "SMS",
+        "whatsapp": "WhatsApp",
+        "introduction_request": "Demande d’introduction",
+        "partner_message": "Message partenaire",
+        "follow_up_email": "E-mail de suivi",
+        "profile_push": "Push de profil consultant",
+        "linkedin_connection_note": "Note de connexion LinkedIn"
+      }
+    },
+    "learning": {
+      "title": "Ce que tes messages ont appris à {{copilot}}",
+      "subtitle": "Des décomptes sur les messages de l'espace, jamais un taux ni un message lu. Rien ici n'est appliqué sans ton accord.",
+      "errorState": "L'agrégat n'a pas pu être lu.",
+      "empty": "Aucun signal pour l'instant : l'agrégat apparaît dès qu'un message est validé, rejeté ou envoyé.",
+      "express": {
+        "title": "Tes décisions",
+        "approvedWithoutEdit": "{{count}} validés tels quels",
+        "approvedAfterEdit": "{{count}} validés après modification",
+        "rejected": "{{count}} rejetés"
+      },
+      "behavioral": {
+        "title": "Après l'envoi",
+        "sent": "{{count}} envoyés",
+        "replied": "{{count}} réponses",
+        "meetingBooked": "{{count}} rendez-vous obtenus",
+        "optOut": "{{count}} arrêts demandés",
+        "bounced": "{{count}} non remis",
+        "medianDelay": "Délai médian de réponse : {{hours}} h",
+        "medianDelayUnmeasured": "Délai médian de réponse : non mesuré"
+      },
+      "quality": {
+        "title": "Problèmes signalés",
+        "wrongFact": "{{count}} faux faits",
+        "wrongCta": "{{count}} appels à l'action incorrects",
+        "wrongPersona": "{{count}} personas incorrects"
+      },
+      "rule": {
+        "title": "Règle proposée",
+        "basedOn": "Sur {{count}} messages jugés. Proposée, jamais appliquée sans accord.",
+        "none": "Aucune règle proposée pour l'instant : l'échantillon est trop faible pour conclure."
+      },
+      "globalRule": {
+        "title": "Règle commune à tous les espaces",
+        "basedOn": "Apprise sur {{count}} messages jugés, agrégés et anonymisés sur plusieurs espaces. Proposée, jamais appliquée sans accord."
+      },
+      "history": {
+        "title": "Règles déjà proposées",
+        "version": "Version {{version}}"
+      },
+      "status": {
+        "proposed": "Proposée",
+        "adopted": "Adoptée",
+        "rejected": "Refusée"
+      }
+    }
+  },
+  "memory": {
+    "title": "Ce que {{copilot}} garde en tête",
+    "subtitle": "Faits épinglés que {{copilot}} garde en tête.",
+    "pinPlaceholder": "Épingler un fait…",
+    "pinInputAria": "Épingler un fait à la mémoire",
+    "pinAria": "Épingler",
+    "unavailable": "Mémoire indisponible pour le moment.",
+    "empty": "Aucun fait épinglé.",
+    "more": "Voir plus",
+    "less": "Voir moins",
+    "removeAria": "Retirer ce fait",
+    "kindAria": "Nature de ce que {{brand}} retient",
+    "kind": {
+      "fact": "Fait",
+      "preference": "Préférence",
+      "correction": "Correction terrain",
+      "workspace_rule": "Règle d’ESN",
+      "sourced_observation": "Observation sourcée",
+      "hypothesis": "Hypothèse à vérifier",
+      "temporary_context": "Contexte temporaire",
+      "goal": "Objectif"
+    },
+    "kindHint": {
+      "fact": "Un constat.",
+      "preference": "Ta façon de travailler.",
+      "correction": "Ce que tu corriges : dans les réponses de {{copilot}}, une correction passe avant tout le reste.",
+      "workspace_rule": "Une règle qui vaut pour toute ton ESN — chaque membre la voit.",
+      "sourced_observation": "Un constat qui cite sa source.",
+      "hypothesis": "Une piste à vérifier : {{copilot}} s’en sert pour éclairer, jamais pour trancher.",
+      "temporary_context": "Un contexte qui ne vaut qu’un temps.",
+      "goal": "Ce que tu vises — {{copilot}} s’en sert pour orienter ses suggestions."
+    },
+    "origin": {
+      "manual": "Épinglé à la main",
+      "copilot": "Note de {{copilot}} — à vérifier",
+      "copilotConfirmed": "Note de {{copilot}} — confirmée",
+      "analysis": "Issu d'un dossier"
+    },
+    "untilAria": "Valable jusqu'au (facultatif)",
+    "until": "Jusqu'au {{date}}",
+    "recordedAt": "Retenu le {{date}}",
+    "durationLegend": "Jusqu’à quand ?",
+    "duration": {
+      "none": "Sans échéance",
+      "days30": "30 jours",
+      "months3": "3 mois",
+      "months12": "1 an"
+    },
+    "scopeLegend": "Pour qui ?",
+    "scope": {
+      "user": "Toi uniquement",
+      "workspace": "Toute ton ESN",
+      "business_unit": "{{name}}",
+      "conversation": "Cette conversation"
+    },
+    "scopeWho": {
+      "user": "Visible par toi uniquement : tes collègues ne le voient pas, et {{copilot}} ne s'en sert que pour toi.",
+      "workspace": "Visible par tous les membres de ton espace : {{copilot}} s'en sert pour chacun d'eux.",
+      "business_unit": "Visible par les membres de {{name}} : {{copilot}} s'en sert pour eux, et pour personne d'autre dans ton espace.",
+      "conversation": "Sert à ce fil seulement, jamais listé dans Connaissances. Conservé tant que la conversation existe."
+    },
+    "toast": {
+      "pinned": "Fait épinglé à la mémoire de {{copilot}}",
+      "pinFailed": "Échec de l'épinglage",
+      "unpinFailed": "Échec du retrait"
+    }
+  },
+  "memoryLedger": {
+    "title": "Ce que {{copilot}} garde en tête",
+    "subtitle": "Tout ce qui est retenu, en clair. Chaque ligne s'oublie d'un clic — et une ligne oubliée disparaît aussi du contexte que {{copilot}} relit.",
+    "loading": "Lecture de la mémoire…",
+    "unreadable": "Cette couche n'a pas pu être lue. Ce n'est pas « aucune ligne » : ce qu'elle contient reste inconnu jusqu'au prochain chargement.",
+    "unavailable": "La mémoire n'a pas pu être lue. Rien n'est affiché parce que rien n'a été lu — pas parce que {{copilot}} ne retient rien.",
+    "forget": "Oublier",
+    "forgetAria": "Oublier cette ligne : {{text}}",
+    "recordedAt": "Retenu le {{date}}",
+    "until": "Jusqu'au {{date}}",
+    "scopedToAccount": "Sur un dossier",
+    "object": {
+      "contact": "Contact : {{name}}",
+      "need": "Besoin : {{name}}",
+      "consultant": "Consultant : {{name}}",
+      "mission": "Mission : {{name}}",
+      "notFound": {
+        "contact": "Contact introuvable",
+        "need": "Besoin introuvable",
+        "consultant": "Consultant introuvable",
+        "mission": "Mission introuvable"
+      }
+    },
+    "reply": {
+      "title": "Comment {{copilot}} te répond",
+      "intro": "Ces réglages changent la forme de ses réponses, jamais le fond : ce qu'elle ne sait pas, elle continue de le dire. Une demande dans ton message (« détaille », « en une phrase ») passe avant.",
+      "default": "Par défaut",
+      "defaultHint": "{{copilot}} adapte la réponse à chaque question",
+      "unreadable": "Tes réglages de réponse n'ont pas pu être lus. Ce n'est pas « par défaut » pour autant : ils restent inconnus jusqu'au prochain chargement.",
+      "saved": "Réglage enregistré",
+      "saveFailed": "Le réglage n'a pas été enregistré",
+      "language": "{{copilot}} te répond dans la langue de l'interface.",
+      "languageLink": "Changer la langue",
+      "replyLength": {
+        "label": "Longueur des réponses",
+        "short": "Courtes",
+        "detailed": "Détaillées"
+      },
+      "replyTone": {
+        "label": "Ton",
+        "direct": "Direct",
+        "teaching": "Pédagogique"
+      },
+      "replyFormat": {
+        "label": "Format préféré",
+        "text": "Texte",
+        "lists": "Listes"
+      },
+      "replySources": {
+        "label": "Explication des sources",
+        "minimal": "Minimale",
+        "detailed": "Détaillée"
+      }
+    },
+    "messageApproach": {
+      "title": "Ton approche dans tes messages",
+      "intro": "L'approche directe annonce ce que tu proposes et pose une question pour qualifier le besoin, sans signal ni article ajouté. Enregistrée, elle s'applique à tes prochains messages ; un objectif choisi dans le composer passe toujours avant. Tu peux la retirer à tout moment.",
+      "label": "Approche des messages",
+      "direct": "Approche directe",
+      "defaultHint": "Chaque message suit l'objectif que tu choisis",
+      "unreadable": "Ton réglage d'approche n'a pas pu être lu. Ce n'est pas « par défaut » pour autant : il reste inconnu jusqu'au prochain chargement.",
+      "saved": "Approche enregistrée",
+      "saveFailed": "L'approche n'a pas été enregistrée"
+    },
+    "protectedTime": {
+      "title": "Ton temps protégé",
+      "intro": "Les heures où tu peux vraiment travailler. Sans elles, {{copilot}} ne compte que les trous entre deux rendez-vous — jamais le temps avant le premier ni après le dernier.",
+      "start": "Début",
+      "end": "Fin",
+      "clear": "Ne plus protéger",
+      "invalidRange": "L'heure de fin doit être après l'heure de début.",
+      "saved": "Temps protégé enregistré",
+      "saveFailed": "Le temps protégé n'a pas été enregistré"
+    },
+    "agendaPreferences": {
+      "title": "Tes préférences d'agenda",
+      "intro": "Combien de temps te faut-il pour ouvrir un dossier, et combien de créneaux veux-tu toujours garder en réserve. {{copilot}} garde aussi cette réserve libre quand elle organise ta journée. Sans elles, {{copilot}} compte la capacité avec les mêmes repères pour tout le monde.",
+      "duration": "Minutes par dossier",
+      "reserve": "Créneaux en réserve",
+      "clear": "Revenir aux valeurs par défaut",
+      "invalidDuration": "La durée par dossier doit être comprise entre 15 et 240 minutes.",
+      "invalidReserve": "La réserve doit être comprise entre 0 et 10 créneaux.",
+      "saved": "Préférences d'agenda enregistrées",
+      "saveFailed": "Les préférences d'agenda n'ont pas été enregistrées"
+    },
+    "scopeChange": {
+      "workspace": "Partager avec ton ESN",
+      "user": "Garder pour toi uniquement",
+      "workspaceAria": "Partager avec ton ESN : {{text}}",
+      "userAria": "Garder pour toi uniquement : {{text}}"
+    },
+    "expiredOn": "Échu le {{date}}",
+    "correction": {
+      "questionnaire": "Corriger dans ton questionnaire de profil",
+      "stage": "Modifier dans ton profil : {{stage}}"
+    },
+    "section": {
+      "personalPreferences": {
+        "title": "Préférences personnelles",
+        "description": "Ta façon de travailler : les préférences que tu as épinglées pour toi, et les réglages libres que {{copilot}} relit à chaque échange. Personne d'autre ne les voit.",
+        "empty": "Aucune préférence retenue pour toi."
+      },
+      "personalObjectives": {
+        "title": "Objectifs personnels",
+        "description": "Ce que tu vises, épinglé pour toi seul : {{copilot}} s'en sert pour toi, jamais pour un collègue.",
+        "empty": "Aucun objectif personnel retenu.",
+        "declared": "Ton objectif et ta cible viennent de ton questionnaire de profil. Ils ne s'oublient pas d'ici : ils se corrigent là où tu les as saisis."
+      },
+      "esnRules": {
+        "title": "Règles de l'ESN",
+        "description": "Ce qui vaut pour toute ton ESN : chaque membre le voit, et {{copilot}} s'en sert pour chacun.",
+        "empty": "Aucune règle partagée avec ton ESN."
+      },
+      "accountContext": {
+        "title": "Contexte d'un compte",
+        "description": "Ce qui ne vaut que sur un dossier.",
+        "empty": "Rien n'est retenu sur un compte en particulier."
+      },
+      "corrections": {
+        "title": "Corrections terrain",
+        "description": "Ce que tu as corrigé sur le terrain : dans les réponses de {{copilot}}, une correction passe avant tout le reste, y compris une donnée plus récente.",
+        "empty": "Aucune correction terrain."
+      },
+      "referenceDocuments": {
+        "title": "Documents de référence",
+        "description": "La mémoire ne garde pas de document. Ceux que {{copilot}} consulte vivent dans ta base de connaissance : à chaque question posée dans le chat, elle y cherche les passages utiles.",
+        "link": "Ouvrir la base de connaissance"
+      },
+      "temporary": {
+        "title": "Éléments temporaires",
+        "description": "Ce qui ne vaut que jusqu'à une date. Une fois échu, l'élément reste ici avec sa date, et {{copilot}} ne s'en sert plus.",
+        "empty": "Rien n'a d'échéance."
+      },
+      "teamContext": {
+        "title": "Contexte de mon équipe",
+        "description": "Ce qui ne vaut que pour ton équipe ou ta BU — ni toute l'ESN, ni un seul compte.",
+        "empty": "Rien n'est retenu sur ton équipe."
+      }
+    },
+    "source": {
+      "manualMine": "Épinglé par toi",
+      "manualBy": "Épinglé par {{name}}",
+      "manual": "Épinglé à la main",
+      "copilotMine": "Retenu d'une réponse de {{copilot}}, enregistré par toi",
+      "copilotBy": "Retenu d'une réponse de {{copilot}}, enregistré par {{name}}",
+      "copilot": "Retenu d'une réponse de {{copilot}}",
+      "analysisMine": "Issu d'un dossier, enregistré par toi",
+      "analysisBy": "Issu d'un dossier, enregistré par {{name}}",
+      "analysis": "Issu d'un dossier"
+    },
+    "why": {
+      "correction": "Pourquoi : c'est une correction — {{copilot}} la fait passer avant tout, même avant une donnée plus récente.",
+      "copilotNote": "Pourquoi : c'est une note de {{copilot}} jamais confirmée — elle éclaire ses réponses sans rien trancher. Vérifie-la.",
+      "declared": "Pourquoi : une personne l'a déclaré, rien n'est déduit — {{copilot}} le respecte en priorité.",
+      "confirmedNote": "Pourquoi : une personne l'a relue et corrigée — {{copilot}} la traite comme un fait déclaré.",
+      "hypothesis": "Pourquoi : c'est une hypothèse à vérifier — {{copilot}} s'en sert pour éclairer, elle ne tranche pas avec."
+    },
+    "surfaces": {
+      "label": "Où {{copilot}} s'en sert :",
+      "chat": "ses réponses dans le chat",
+      "externalAssistant": "les réponses de ton assistant IA externe, s'il est branché",
+      "otherAccount": "Sur un autre compte, {{copilot}} ne s'en sert pas.",
+      "unused": "Non utilisé par {{copilot}} aujourd'hui : son échéance est passée."
+    },
+    "consultations": {
+      "count_one": "Consulté par {{copilot}} dans {{count}} réponse, le {{date}}",
+      "count_other": "Consulté par {{copilot}} dans {{count}} réponses, la dernière le {{date}}",
+      "countUndated_one": "Consulté par {{copilot}} dans {{count}} réponse",
+      "countUndated_other": "Consulté par {{copilot}} dans {{count}} réponses",
+      "never": "Pas encore consulté par {{copilot}}",
+      "neverExpired": "Jamais consulté par {{copilot}} avant son échéance",
+      "open": "Ouvrir la conversation",
+      "openAria": "Ouvrir la conversation où {{copilot}} l’a consulté en dernier : « {{text}} »"
+    },
+    "edit": {
+      "action": "Modifier",
+      "aria": "Modifier : {{text}}",
+      "label": "Texte de l'élément",
+      "save": "Enregistrer",
+      "cancel": "Annuler",
+      "updated": "Élément modifié",
+      "updateFailed": "La modification n'a pas pu être enregistrée"
+    },
+    "confirm": {
+      "action": "Confirmer comme fait",
+      "aria": "Confirmer comme fait, sans changer le texte : {{text}}",
+      "confirmed": "Note confirmée comme fait"
+    },
+    "expiry": {
+      "add": "Ajouter une échéance",
+      "change": "Changer l'échéance",
+      "addAria": "Ajouter une échéance : {{text}}",
+      "changeAria": "Changer l'échéance : {{text}}",
+      "label": "Valable jusqu'au",
+      "save": "Enregistrer l'échéance",
+      "remove": "Retirer l'échéance",
+      "cancel": "Annuler"
+    },
+    "history": {
+      "show": "Historique",
+      "aria": "Historique : {{text}}",
+      "loading": "Lecture de l'historique…",
+      "unavailable": "L'historique n'a pas pu être lu. Rien n'est affiché parce que rien n'a été lu — pas parce que rien n'a changé.",
+      "original": "Texte d'origine : « {{value}} »",
+      "change": "{{before}} → {{after}}",
+      "noExpiry": "sans échéance",
+      "event": {
+        "created": "Créé par {{name}} le {{date}}",
+        "createdUnknown": "Créé le {{date}}",
+        "text_changed": "Texte modifié par {{name}} le {{date}}",
+        "text_changedUnknown": "Texte modifié le {{date}}",
+        "scope_changed": "Portée changée par {{name}} le {{date}}",
+        "scope_changedUnknown": "Portée changée le {{date}}",
+        "expiry_changed": "Échéance changée par {{name}} le {{date}}",
+        "expiry_changedUnknown": "Échéance changée le {{date}}"
+      }
+    },
+    "layer": {
+      "facts": {
+        "title": "Ce que tu as épinglé",
+        "description": "Les faits, préférences et corrections épinglés à la main ou retenus d'une réponse. Chacun vaut pour toi uniquement ou pour toute ton ESN — le badge le dit, et tu peux changer la portée de ce que tu as épinglé.",
+        "empty": "Rien n'est épinglé."
+      },
+      "preferences": {
+        "title": "Ta façon de travailler",
+        "description": "Les réglages libres que {{copilot}} relit à chaque échange. Personnels : personne d'autre ne les voit.",
+        "empty": "Aucune préférence retenue.",
+        "emptyOther": "Aucune autre préférence retenue."
+      },
+      "conversations": {
+        "title": "Le fil de tes échanges",
+        "description": "Un résumé roulant : deux extraits par échange, ce que tu as écrit et ce que {{copilot}} a répondu. C'est le texte exact qu'elle relit au message suivant.",
+        "empty": "Aucun échange résumé."
+      },
+      "refusals": {
+        "title": "Ce que tu as refusé",
+        "description": "Ce que {{copilot}} t'a proposé et ce que tu en as fait. C'est ce qui l'empêche de reproposer la même chose.",
+        "empty": "Aucune proposition dans le passé récent."
+      },
+      "identity": {
+        "title": "Ce que {{copilot}} sait de toi",
+        "description": "Ce que tu as toi-même déclaré sur ton rôle et ta façon de vendre. {{copilot}} le relit à chaque échange — c'est ce qui règle son ton et son niveau de conseil.",
+        "empty": "Rien n'est déclaré : {{copilot}} ne sait rien de toi au-delà de ce que tu lui écris.",
+        "declared": "Tu as écrit ces lignes toi-même. Elles ne s'oublient pas : elles se corrigent là où tu les as saisies.",
+        "declaredLink": "Modifier dans Mon compte"
+      },
+      "workspace": {
+        "title": "Ce que {{copilot}} sait de ton ESN",
+        "description": "Le profil de ton entreprise, tel qu'il part dans le contexte de {{copilot}} à chaque échange. Partagé : tes collègues lisent les mêmes lignes.",
+        "empty": "Aucun profil renseigné : {{copilot}} raisonne sans rien savoir de ton entreprise.",
+        "declared": "Ce profil est saisi dans les réglages. Il ne s'oublie pas depuis cet écran : l'effacer ici viderait la configuration de tout l'espace.",
+        "declaredLink": "Modifier le profil de l'ESN"
+      }
+    },
+    "detail": {
+      "preference": "Préférence",
+      "correction": "Correction",
+      "copilotNote": "Note de {{copilot}} — à vérifier",
+      "confirmedNote": "Note de {{copilot}} — confirmée",
+      "confirmedNoteBy": "Note de {{copilot}} — confirmée par {{name}}",
+      "confirmedNoteByOn": "Note de {{copilot}} — confirmée par {{name}} le {{date}}",
+      "acted": "Tu as suivi",
+      "refused": "Tu as refusé",
+      "ignored": "Sans réponse",
+      "closed_unread": "Fermé sans lire",
+      "firstName": "Prénom",
+      "skipEnrichmentCostConfirmation": "Enrichir un contact sans redemander le coût",
+      "sellerRole": "Ton rôle",
+      "proactivity": "Niveau d'accompagnement",
+      "sellerGoal": "Ton objectif",
+      "monthlyTarget": "Objectif mensuel",
+      "portfolioSize": "Taille de ton portefeuille",
+      "accountsRelationshipStatus": "Relation à tes comptes",
+      "salesBlockers": "Ce qui te bloque",
+      "mainChallenge": "Ta difficulté principale",
+      "companyName": "Raison sociale",
+      "size": "Taille de l'ESN",
+      "salesTeamSize": "Taille de l'équipe commerciale",
+      "positioning": "Positionnement",
+      "offers": "Offres",
+      "sectors": "Secteurs cibles",
+      "geoZone": "Zone géographique",
+      "targetCompanyTypes": "Types d'entreprises visées",
+      "staffingModel": "Modèle de staffing",
+      "offerPortfolioNames": "Portefeuille d'offre",
+      "personas": "Personas décideurs",
+      "noGoSectors": "Secteurs exclus",
+      "salesCycle": "Cycle de vente",
+      "avgTJM": "TJM moyen",
+      "references": "Références",
+      "dealSize": "Taille d'affaire",
+      "targetMargin": "Marge visée",
+      "rampUpCapacity": "Capacité de montée en charge",
+      "goToMarketChannels": "Canaux d'entrée"
+    },
+    "never": {
+      "title": "Ce que {{copilot}} ne mémorise jamais",
+      "messageBodies": "Le contenu de tes messages. Il est conservé dans ton journal d'activité, qui est à toi — il n'est jamais donné à lire ni à {{copilot}}, ni à un collègue.",
+      "otherWorkspace": "Les données d'un autre espace. Chaque lecture porte la portée de ton espace, sans exception.",
+      "colleagueOutOfScope": "Ce qui appartient à un collègue hors de ton périmètre. Tes préférences et tes refus sont personnels.",
+      "deletedByUser": "Ce que tu as oublié. Une ligne oubliée quitte l'écran ET le contexte que {{copilot}} relit : elle est archivée, plus jamais relue — ici on archive, on ne détruit pas.",
+      "accidentalSecret": "Un secret partagé par erreur. Retire-le ici : {{copilot}} cesse de le relire dès la ligne suivante."
+    },
+    "toast": {
+      "forgotten": "Ligne oubliée",
+      "forgetFailed": "Échec de l'oubli",
+      "scope": {
+        "user": "Désormais visible par toi uniquement",
+        "workspace": "Désormais partagé avec toute ton ESN"
+      },
+      "scopeFailed": "La portée n'a pas pu être changée"
+    },
+    "forgetAll": {
+      "action": "Tout oublier",
+      "title": "Tout oublier ?",
+      "goes": "Ce qui part définitivement : les faits que TU as épinglés, tes préférences, le résumé de tous tes échanges avec {{copilot}}, la trace de ses propositions et tes retours sur les réponses de {{copilot}} (dans cet espace).",
+      "stays": "Ce qui reste : les faits épinglés par tes collègues — ils ne t'appartiennent pas —, ainsi que ton profil et celui de ton ESN, qui se corrigent dans les réglages ; et les corrections que tu as portées au dossier d'un compte restent, pour l'équipe.",
+      "confirmationsStay": "Tes confirmations sur les notes de l'équipe restent visibles.",
+      "irreversible": "C'est irréversible. Rien ne permettra de retrouver ces lignes.",
+      "confirm": "Oui, tout oublier",
+      "pending": "Effacement…",
+      "doneOne": "Une ligne oubliée.",
+      "done": "{{count}} lignes oubliées.",
+      "doneNone": "Il n'y avait rien à oublier.",
+      "partial": "Une partie n'a pas pu être effacée : {{layers}}. Ces lignes sont toujours là — réessaie.",
+      "failed": "Rien n'a été effacé."
+    },
+    "add": {
+      "action": "Ajouter un élément",
+      "title": "Ajouter à ma mémoire",
+      "description": "Ce que tu écris ici est retenu pour toi seul et rejoint le contexte de {{copilot}}. Tu peux le retirer à tout moment.",
+      "factLabel": "Ce que je veux retenir",
+      "recheckLabel": "À revérifier le (facultatif)",
+      "note": "Cet ajout est volontaire. Il ne change ni ton métier, ni tes expertises, ni les faits d’un compte. Une actualité n’est pas transformée en besoin confirmé.",
+      "confirm": "Enregistrer",
+      "cancel": "Annuler"
+    }
+  },
+  "close": "Fermer",
+  "messageLibrary": {
+    "intro": "Des exemples de messages approuvés par ton espace. Un exemple dont une affirmation n’est pas soutenue par une donnée réelle reste lisible, mais n’est jamais proposé comme message prêt à envoyer.",
+    "empty": "Aucun exemple dans la bibliothèque de ton espace. Importe les séquences livrées : elles restent à revoir tant qu’une donnée réelle ne soutient pas leurs affirmations.",
+    "importButton": "Importer les séquences livrées",
+    "completeButton": "Ajouter les modèles livrés manquants",
+    "importError": "L’import n’a pas abouti (droit d’écriture des fiches requis).",
+    "errorState": "La bibliothèque n’a pas pu être lue.",
+    "claims": {
+      "title": "Affirmations à vérifier avant de proposer cet exemple",
+      "titleDone": "Affirmations vérifiées",
+      "confirm": "J’ai vérifié",
+      "verified": "Vérifié",
+      "error": "La vérification n’a pas pu être enregistrée."
+    },
+    "facts": {
+      "titleDone": "Faits confirmés",
+      "title": "Faits à confirmer avant de proposer cet exemple",
+      "confirm": "Confirmer",
+      "confirmed": "Confirmé",
+      "error": "La confirmation n’a pas pu être enregistrée.",
+      "pending": "Faits obligatoires à confirmer : {{facts}}."
+    },
+    "blocked": {
+      "archived": "Archivé : jamais proposé comme message prêt à envoyer.",
+      "review": "À revoir avant de pouvoir être proposé."
+    },
+    "status": {
+      "approuve": "Approuvé",
+      "a_revoir": "À revoir",
+      "historique": "Historique",
+      "interdit": "Interdit"
+    },
+    "mode": {
+      "verbatim": "Mot pour mot",
+      "inspiration": "Inspiration"
+    },
+    "channel": {
+      "linkedin_draft": "LinkedIn",
+      "email_draft": "E-mail",
+      "call_brief": "Appel"
+    },
+    "add": {
+      "button": "Ajouter un exemple",
+      "title": "Ajouter un exemple",
+      "description": "Ton exemple rejoint la bibliothèque de l’espace. Il reste à revoir : il n’est jamais proposé comme message prêt à envoyer tant que tu ne l’as pas relu.",
+      "titleLabel": "Titre",
+      "channelLabel": "Canal",
+      "textLabel": "Texte du message",
+      "shareWithTeam": "Partager avec l’équipe",
+      "submit": "Ajouter",
+      "success": "Exemple ajouté à la bibliothèque.",
+      "error": "L’exemple n’a pas pu être ajouté (droit d’écriture des fiches requis).",
+      "origin": "Ajouté par l’équipe",
+      "source": "Saisi depuis la bibliothèque"
+    }
+  }
+}

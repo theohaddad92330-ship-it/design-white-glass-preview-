@@ -1,0 +1,393 @@
+{
+  "movedToAdmin": {
+    "title": "People management is in Team › Administration",
+    "body": "Members, invitations, roles, rights, portfolio visibility and team rules are set in one place. Data sharing and the workspace market stay here.",
+    "cta": "Open Team › Administration"
+  },
+  "header": {
+    "title": "Team",
+    "subtitle": "Manage the members of {{name}} and their access.",
+    "workspaceFallback": "your workspace",
+    "roleAndStageHint": "Your role and your firm’s size shape {{copilot}}’s recommendations: set them in your <profileLink>profile</profileLink>.",
+    "seats": "{{used}} / {{total}} seats",
+    "seatsOver_one": "{{count}} seat more than the subscription",
+    "seatsOver_other": "{{count}} seats more than the subscription",
+    "theoTitle": "A well-run workspace",
+    "theoTagline": "Clear responsibilities, explicit access and handovers without loss."
+  },
+  "tabs": {
+    "label": "Team: sub-views",
+    "members": "Members & invitations",
+    "rights": "Rights & visibility",
+    "rules": "Team rules",
+    "membres": "Members & invitations",
+    "droits": "Rights & visibility",
+    "regles": "Team rules"
+  },
+  "states": {
+    "loading": "Loading team…"
+  },
+  "errors": {
+    "load": "Unable to load your team. Please try again in a moment."
+  },
+  "sections": {
+    "members_one": "Members ({{count}})",
+    "members_other": "Members ({{count}})",
+    "invitations_one": "Pending invitation ({{count}})",
+    "invitations_other": "Pending invitations ({{count}})",
+    "people": "The people in the workspace",
+    "peopleSummary_one": "{{count}} active member · {{seats}} seats on your plan.",
+    "peopleSummary_other": "{{count}} active members · {{seats}} seats on your plan.",
+    "rights": "A role does not replace consent.",
+    "rightsHint": "Who sees which accounts, and what leaves the workspace. A right specific to one person is set from their “Role” button.",
+    "rules": "Rules set the frame.",
+    "rulesHint": "The workspace market and the team policy {{copilot}} applies to everyone’s day.",
+    "pendingTitle": "Pending invitations"
+  },
+  "invite": {
+    "title": "Invite a teammate",
+    "seatsFull": "All your seats are in use. <upgradeLink>Upgrade your plan</upgradeLink> to invite more people.",
+    "emailPlaceholder": "teammate@your-company.com",
+    "submit": "Invite",
+    "open": "Invite a member",
+    "description": "The email goes out when you confirm. You can resend or revoke it from the list.",
+    "dialogDescription": "The invitation is sent when you confirm; you can resend or revoke it.",
+    "close": "Close"
+  },
+  "member": {
+    "fallbackName": "Member",
+    "you": "(you)",
+    "fallbackTarget": "this member",
+    "removeAria": "Remove {{name}}",
+    "crossTeamSupport": "Cross-team support",
+    "crossTeamSupportHelp": "Backs up the others on every account without owning any.",
+    "crossTeamSupportOnAria": "Remove {{name}} from cross-team support",
+    "crossTeamSupportOffAria": "Set {{name}} as cross-team support",
+    "active": "Active access",
+    "handover": "Handover",
+    "role": "Role",
+    "roleAria": "Role of {{name}}",
+    "roleTitle": "{{name}}’s role",
+    "roleHint": "The role decides what the person sees and does in the workspace.",
+    "ownRights": "Own rights",
+    "roleBounded": "Explicitly bounded rights: a technical role does not grant a financial view, and no role opens a personal mailbox."
+  },
+  "handover": {
+    "title": "{{name}} is leaving",
+    "description": "See what this person is carrying before you decide. Handing over their portfolio does not remove their seat — that is usually the notice-period move.",
+    "transfers": {
+      "title": "What changes hands",
+      "loading": "Reading their portfolio…",
+      "failed": "Unable to read their portfolio. Please try again in a moment."
+    },
+    "kinds": {
+      "accounts": "Accounts owned",
+      "contacts": "Contacts owned",
+      "tasks": "Open tasks",
+      "opportunities": "Opportunities",
+      "needs": "Needs",
+      "missions": "Assignments",
+      "actions": "Delegated open actions",
+      "followups": "Open follow-ups"
+    },
+    "plan": {
+      "title": "Split between several colleagues",
+      "help": "Pick one recipient per type. You see the summary before anything moves; nothing is deleted.",
+      "recipientAria": "Recipient for: {{kind}}",
+      "none": "Do not transfer",
+      "recap": "See the summary",
+      "recapTitle": "Summary before you confirm",
+      "recapLine": "{{count}} · {{kind}}",
+      "recapUnknown": "{{kind}}: count did not complete",
+      "validate": "Confirm the split",
+      "toast": {
+        "done": "Portfolio split",
+        "failed": "The split could not be done"
+      }
+    },
+    "countFailed": "the count did not complete",
+    "personal": {
+      "title": "What is never handed over",
+      "help": "These are personal: they stay with their owner and are given to nobody."
+    },
+    "personalKinds": {
+      "mailbox": "their connected mailbox",
+      "calendar": "their connected calendar",
+      "copilotConversations": "their conversations with {{copilot}}",
+      "personalSettings": "their preferences and saved views"
+    },
+    "learned": "What your team learned about these accounts — records, notes, history, angles — belongs to the workspace: nothing is lost and nothing needs moving.",
+    "successor": {
+      "title": "Who takes over",
+      "placeholder": "Pick a member",
+      "aria": "Pick the person taking over the portfolio",
+      "none": "No other member can carry a portfolio today. Invite someone, or remove the seat: the portfolio will go back to the unassigned queue."
+    },
+    "confirm": "Hand over the portfolio",
+    "removeAnyway": "Remove without handing over",
+    "toast": {
+      "done": "Portfolio handed over",
+      "failed": "The handover could not be completed"
+    }
+  },
+  "invitations": {
+    "pendingExpires": "Pending · expires on {{date}}",
+    "revokeAria": "Revoke the invitation for {{email}}",
+    "resend": "Resend",
+    "resendAria": "Resend the invitation to {{email}}",
+    "resendSent": "Email sent: the new link is valid for 7 days.",
+    "resendNotSent": "Email not sent: the link is renewed, but nothing went out. Try again or pass it on yourself.",
+    "emptyTitle": "Nobody is waiting for an invitation.",
+    "emptyHint": "Invite with the right role: the email goes out when you confirm, and you can resend or revoke it."
+  },
+  "readOnly": {
+    "viewer": "Your role (Viewer) is read-only: you cannot modify the team.",
+    "other": "Only the owner, admins and Sales Ops can invite or remove members."
+  },
+  "toast": {
+    "inviteSent": "Invitation sent to {{email}}",
+    "inviteError": "Unable to send the invitation",
+    "invitationRevoked": "Invitation revoked",
+    "revokeError": "Unable to revoke the invitation",
+    "memberRemoved": "Member removed",
+    "removeError": "Unable to remove the member",
+    "roleUpdated": "Role updated",
+    "roleError": "Unable to change the role",
+    "permissionsUpdated": "Permissions updated",
+    "permissionsError": "The permissions could not be saved",
+    "crossTeamSupportOn": "Cross-team support set",
+    "crossTeamSupportOff": "Cross-team support removed",
+    "crossTeamSupportError": "The change could not be saved",
+    "invitationResent": "Invitation resent to {{email}}",
+    "invitationResentNotSent": "The link for {{email}} is renewed, but the email did not go out",
+    "resendError": "Unable to resend the invitation"
+  },
+  "accept": {
+    "roles": {
+      "owner": "owner",
+      "admin": "admin",
+      "member": "member"
+    },
+    "needAuth": {
+      "title": "Join the team",
+      "description": "Sign in to {{brand}} to accept this invitation. Use the email address the invitation was sent to.",
+      "login": "Sign in",
+      "noAccount": "No account yet?",
+      "signup": "Create an account"
+    },
+    "accepting": {
+      "title": "Accepting…",
+      "description": "We're adding you to the workspace."
+    },
+    "success": {
+      "title": "Welcome to {{workspaceName}}",
+      "description": "You've joined the team as {{role}}.",
+      "cta": "Go to the workspace"
+    },
+    "error": {
+      "title": "Invitation unavailable",
+      "fallback": "The invitation could not be accepted",
+      "back": "Back to the app"
+    },
+    "kicker": "Invitation",
+    "badge": { "accepting": "In progress", "success": "Joined", "error": "Failed" }
+  },
+  "workspaces": {
+    "title": "My workspaces",
+    "subtitle": "You belong to several workspaces. Switching changes the accounts, contacts and analyses you see — nothing is moved or merged.",
+    "personal": "Personal",
+    "active": "Active",
+    "switch": "Switch",
+    "meta": "{{role}} · {{count}} member",
+    "meta_other": "{{role}} · {{count}} members",
+    "switched": "You are now working in {{name}}",
+    "switchError": "Unable to switch workspace"
+  },
+  "community": {
+    "title": "Share access intelligence",
+    "help": "What your team declares about entering an account — closed panel, way in through a subsidiary, mandated prime — is pooled anonymously. As soon as three distinct workspaces confirm the same thing, it becomes reliable and comes back to you on your own accounts.",
+    "never": "Never pooled: a placed consultant’s name, a day rate, a contact, the content of an exchange, or the identity of the workspace that declared it. A workspace that does not share does not consume.",
+    "ownerOnly": "Only the workspace owner can turn this on.",
+    "enabled": "Sharing on. Your access declarations feed the community, and you receive its own.",
+    "disabled": "Sharing off. Nothing leaves this workspace — and nothing enters it.",
+    "failed": "The setting could not be saved"
+  },
+  "portfolio": {
+    "title": "Who sees which accounts",
+    "help": "By default every member sees the workspace's whole portfolio — that is what stops two reps calling the same company. Some firms cannot work that way: individual commission, competing teams on one market, subcontracting.",
+    "options": {
+      "open": {
+        "label": "Open to the whole team",
+        "help": "Every member sees the workspace's entire portfolio."
+      },
+      "restricted": {
+        "label": "Partitioned per rep",
+        "help": "Each rep sees their own accounts and the ones nobody owns. Managers keep seeing the whole portfolio — without it they can neither assign nor rebalance it."
+      }
+    },
+    "unreadable": "The current setting cannot be displayed here yet: no option is shown as active until it has been read. Picking one applies it to the whole workspace.",
+    "ownerOnly": "Only the workspace owner can change this setting: it is the only one that changes what the whole team sees at once.",
+    "applied": {
+      "open": "Portfolios opened to the whole team.",
+      "restricted": "Portfolios partitioned per rep. Unassigned accounts stay visible to everyone."
+    },
+    "failed": "The partitioning could not be saved"
+  },
+  "permissions": {
+    "title": "Own permissions — {{name}}",
+    "explain": "You are granting these permissions to {{name}}, on top of their role ({{role}}). The action is recorded in the activity log, under {{grantedBy}}.",
+    "ownerHasEverything": "The owner already has every permission.",
+    "fromRole": "Included in their role",
+    "granted": "Granted on their own",
+    "save": "Save the permissions",
+    "cancel": "Cancel",
+    "open": "Own permissions",
+    "openAria": "Own permissions for {{name}}",
+    "extraCount_one": "+{{count}} own permission",
+    "extraCount_other": "+{{count}} own permissions",
+    "value": {
+      "analysis:run": "Run an analysis",
+      "contacts:enrich": "Enrich contacts",
+      "data:export": "Export data",
+      "messages:send": "Send messages",
+      "records:write": "Create and correct records",
+      "team:manage": "Manage the team",
+      "integrations:manage": "Manage connected tools",
+      "billing:manage": "Manage billing",
+      "finance:read": "See cost and margin",
+      "finance:write": "Change a mission's billing",
+      "finance:read:own": "See their own scope's revenue",
+      "crm:read": "Query a connected tool from the conversation",
+      "profile:report": "Report a wrong company information"
+    }
+  },
+  "joinRequests": {
+    "title": "Access requests ({{count}})",
+    "since": "Requested on {{date}}",
+    "unknown": "Someone with no name on file",
+    "accept": "Accept",
+    "refuse": "Decline",
+    "acceptAria": "Accept the request from {{who}}",
+    "refuseAria": "Decline the request from {{who}}",
+    "error": "The decision was not saved. Try again in a moment."
+  },
+  "teamPolicy": {
+    "title": "Team policy",
+    "subtitle": "The rules {{copilot}} applies when she organises everyone’s day or week.",
+    "readOnly": "Set by a workspace manager.",
+    "loading": "Loading the team policy…",
+    "error": "The team policy couldn’t be loaded.",
+    "none": "No team policy set: {{copilot}} organises days without team rules.",
+    "prospecting": {
+      "label": "Protected prospecting windows",
+      "hint": "No meetings: only calls, research, enrichment and follow-ups are suggested there."
+    },
+    "forbidden": {
+      "label": "Forbidden slots",
+      "hint": "No block is suggested there."
+    },
+    "windowsEmpty": "No window set.",
+    "windowFrom": "Start of window {{index}}",
+    "windowTo": "End of window {{index}}",
+    "removeWindow": "Remove window {{range}}",
+    "windowDays": "Days of window {{index}} (none chosen: every day)",
+    "weekday": {
+      "1": {
+        "short": "Mon",
+        "long": "Monday"
+      },
+      "2": {
+        "short": "Tue",
+        "long": "Tuesday"
+      },
+      "3": {
+        "short": "Wed",
+        "long": "Wednesday"
+      },
+      "4": {
+        "short": "Thu",
+        "long": "Thursday"
+      },
+      "5": {
+        "short": "Fri",
+        "long": "Friday"
+      },
+      "6": {
+        "short": "Sat",
+        "long": "Saturday"
+      },
+      "7": {
+        "short": "Sun",
+        "long": "Sunday"
+      }
+    },
+    "addWindow": "Add a window",
+    "windowInvalid": "A window ends after it starts, and two windows never overlap.",
+    "maxMeetings": {
+      "label": "Maximum meetings per day",
+      "unset": "Not set",
+      "invalid": "Between {{min}} and {{max}}."
+    },
+    "callTarget": {
+      "label": "Daily call target",
+      "unset": "Not set",
+      "invalid": "Between {{min}} and {{max}}."
+    },
+    "save": "Save the policy",
+    "saved": "Team policy saved.",
+    "saveFailed": "The team policy couldn’t be saved."
+  },
+  "workspaceMerge": {
+    "title": "Bring my personal space over",
+    "subtitle": "Copies the accounts and contacts of “{{source}}” into “{{target}}”. Nothing moves before your approval AND an administrator of {{target}}’s. Your personal space is then archived: its data stays readable, nothing is deleted.",
+    "preview": "See the preview",
+    "previewAgain": "Preview again",
+    "empty": "Your personal space has no account or contact to bring over.",
+    "line": "{{table}}: {{parts}}",
+    "tables": {
+      "accounts": "Accounts",
+      "contacts": "Contacts"
+    },
+    "parts": {
+      "moving_one": "{{count}} copied",
+      "moving_other": "{{count}} copied",
+      "duplicates_one": "{{count}} duplicate proposed for merging",
+      "duplicates_other": "{{count}} duplicates proposed for merging",
+      "held_one": "{{count}} waiting for its account",
+      "held_other": "{{count}} waiting for their account"
+    },
+    "proposalsTitle": "Already in {{target}} — merge proposed, never done on its own:",
+    "keys": {
+      "siren": "same SIREN",
+      "registry": "same registry ID",
+      "email": "same email",
+      "linkedin": "same professional-network profile"
+    },
+    "hash": "Preview fingerprint: {{hash}}",
+    "confirm": "Approve this preview",
+    "cancel": "Cancel the request",
+    "awaiting": "Preview approved. Waiting for a decision from an administrator of {{target}}.",
+    "running": "Bringing over: {{done}} of {{total}} rows processed.",
+    "failed": "The transfer stopped. Nothing was copied twice: resuming starts again from the last processed row.",
+    "resume": "Resume the transfer",
+    "done": "Brought into {{target}}. Your personal space is archived: its data stays readable, nothing was deleted.",
+    "rejected": "An administrator of {{target}} declined this transfer. You can preview again.",
+    "error": "That didn’t go through. Try again in a moment.",
+    "admin": {
+      "title_one": "Space transfer to decide ({{count}})",
+      "title_other": "Space transfers to decide ({{count}})",
+      "who": "“{{source}}” into this workspace",
+      "approve": "Accept",
+      "reject": "Decline",
+      "approveAria": "Accept the transfer of {{source}}",
+      "rejectAria": "Decline the transfer of {{source}}"
+    }
+  },
+  "rulesAside": {
+    "eyebrow": "One action engine",
+    "title": "Rules set the frame.",
+    "titleAccent": "Actions do the rest.",
+    "body": "Tasks stay in Actions, campaigns in Sequences. Automations have no implicit right to send.",
+    "cta": "See automations"
+  }
+}

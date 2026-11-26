@@ -1,0 +1,131 @@
+{
+  "_synthetic": true,
+  "_note": "Dossier de test SYNTHÉTIQUE pour le banc d'éval. Les faits firmographiques sont les valeurs RÉELLES et vérifiables dans ce dépôt — app/eval/golden/cacib.json, bloc `_source`, relevé le 20/09/2026 sur recherche-entreprises.api.gouv.fr (DINUM, adossé à INSEE Sirene). Les entités et les contacts sont des données de TEST, jamais des affirmations sur des personnes ou des filiales réelles. Le chiffre d'affaires est ABSENT : aucune source du dépôt ne le porte, et un chiffre inventé dans le gardien des chiffres inventés serait la faute même qu'il traque.",
+  "company": "CACIB (Crédit Agricole Corporate and Investment Bank)",
+  "research": {
+    "companyName": "Crédit Agricole Corporate and Investment Bank",
+    "sector": "Autres intermédiations monétaires (NAF 64.19Z)",
+    "siren": "304187701",
+    "employees": "5 000 à 9 999 salariés",
+    "headquarters": "MONTROUGE, 92120, France",
+    "businessDescription": "Unité légale enregistrée sous la dénomination CREDIT AGRICOLE CORPORATE AND INVESTMENT BANK, code NAF 64.19Z (autres intermédiations monétaires), catégorie grande entreprise.",
+    "subsidiaries": [
+      {
+        "name": "CACIB — entité de test A"
+      },
+      {
+        "name": "CACIB — entité de test B"
+      }
+    ],
+    "entitiesExhaustive": [
+      {
+        "name": "CACIB — direction de test",
+        "type": "direction"
+      },
+      {
+        "name": "CACIB — hub IT de test",
+        "type": "hub it",
+        "isItEntity": true
+      }
+    ],
+    "angles": [
+      {
+        "title": "Renfort trading et post-marché",
+        "strategy": "Renforcer les équipes SI trading et post-marché."
+      }
+    ],
+    "recentSignals": [
+      {
+        "signal": "Recrutements SI marchés de capitaux",
+        "type": "recrutement",
+        "date": "2026"
+      }
+    ],
+    "budgetSignals": [
+      {
+        "signal": "Recrutements SI marchés de capitaux",
+        "source": "offres d'emploi"
+      }
+    ],
+    "confidence": {
+      "score": 78,
+      "tier": "high",
+      "factors": {
+        "sourceCoverage": 0.8
+      }
+    },
+    "sources": {
+      "tags": {
+        "siren": "PUBLIC",
+        "employees": "PUBLIC",
+        "headquarters": "PUBLIC",
+        "sector": "PUBLIC"
+      },
+      "citations": {}
+    }
+  },
+  "gate": {
+    "decision": "go",
+    "score": 3
+  },
+  "classified_contacts": [
+    {
+      "fullName": "Étienne Roy",
+      "title": "Chief Technology Officer",
+      "decisionRole": "technical",
+      "is_c_level": true
+    },
+    {
+      "fullName": "Manon Perrin",
+      "title": "Engineering Manager — Trading",
+      "decisionRole": "user"
+    },
+    {
+      "fullName": "Adrien Faure",
+      "title": "Responsable Achats IT",
+      "decisionRole": "procurement"
+    }
+  ],
+  "plan": {
+    "actionPlan": {
+      "phases": [
+        {
+          "name": "Prise de contact",
+          "actions": [
+            {
+              "contact": "Étienne Roy",
+              "action": "Discuter renfort trading et post-marché."
+            }
+          ]
+        }
+      ]
+    },
+    "quick_wins": [
+      {
+        "contact": "Manon Perrin",
+        "action": "Partager un retour d'expérience staffing."
+      }
+    ],
+    "contactMessages": [
+      {
+        "contact": "Étienne Roy",
+        "linkedinMessage": "Sujet renfort trading et post-marché."
+      }
+    ],
+    "plays": [
+      {
+        "painSignal": "Recrutements SI marchés de capitaux",
+        "preuve": {
+          "source": "offres d'emploi",
+          "signal": "Recrutements SI marchés de capitaux"
+        },
+        "targetContact": "Étienne Roy",
+        "esnOffer": "Renfort SI marchés de capitaux",
+        "angle": "Renfort trading et post-marché",
+        "firstAction": "Discuter renfort trading et post-marché.",
+        "readyMessage": "Sujet renfort trading et post-marché.",
+        "risk": "Concurrence ESN installées."
+      }
+    ]
+  }
+}

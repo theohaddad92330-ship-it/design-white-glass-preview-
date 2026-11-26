@@ -1,0 +1,38 @@
+lot: laura-arriere-plan-l6
+issues: [4967, 4611]
+
+changelog:
+  id: 2026-11-01-laura-arriere-plan-l6
+  comment: 'Laura L6 (#4967 #4611) — la recherche continue côté serveur, et Laura dit où en sont les recherches et les jobs'
+  fr:
+    date: 1er novembre 2026
+    title: La recherche de Laura continue sans vous
+    items:
+      - 'Changer d’écran, de conversation ou recharger la page n’arrête plus une recherche de Laura : elle se termine et sa réponse vous attend dans la conversation.'
+      - 'Au retour sur la conversation, une recherche encore en cours le dit, et le bouton Arrêter reste le seul geste qui l’interrompt.'
+      - '« Où en est ma recherche ? » : Laura lit l’avancement mesuré des recherches en cours et des travaux en plusieurs étapes, sans interrompre la recherche.'
+  en:
+    date: November 1, 2026
+    title: Laura’s search keeps going without you
+    items:
+      - 'Switching screens or conversations, or reloading the page, no longer stops a Laura search: it finishes and its answer waits for you in the conversation.'
+      - 'Back in the conversation, a search still running says so, and the Stop button remains the only way to interrupt it.'
+      - '“Where is my search?”: Laura reads the measured progress of running searches and multi-step jobs, without interrupting the search.'
+
+inserts:
+  - file: apps/api/src/modules/demo/demo-coverage.ts
+    text: |
+
+      /**
+       * « LA RECHERCHE DE LAURA EN ARRIÈRE-PLAN (#4967, LOT L6) SE VOIT-ELLE EN DÉMONSTRATION ? »
+       * VIDE À DESSEIN — en salle, le tour de Laura est SCRIPTÉ côté navigateur (#1320) et `POST /ia/chat`
+       * refuse l'espace de démonstration : aucun tour serveur n'y tourne jamais, donc ni « tourne encore »
+       * (`GET /ia/chat/turns/running`, désactivé par `useServerRunningTurn(…, !isDemo)`), ni la famille
+       * `chat_research` de l'avancement n'ont rien à montrer. La famille `laura_job` lit `workflow_runs`,
+       * déjà SEEDÉE. Aucune table neuve : le registre des tours est une mémoire de processus.
+       */
+      export const DEMO_LAURA_BACKGROUND_TURN_COVERAGE: Readonly<{ state: 'vide_a_dessein'; reason: string }> = {
+        state: 'vide_a_dessein',
+        reason:
+          "Le tour de Laura est scripté en démonstration (#1320) et `POST /ia/chat` refuse la salle : aucun tour serveur, donc rien « en cours » ni de famille `chat_research` à montrer. `laura_job` lit `workflow_runs`, déjà seedée.",
+      }

@@ -1,0 +1,193 @@
+{
+  "slug": "multi-filiales-groupe-orsalis",
+  "company": "Groupe Orsalis (fictif)",
+  "archetype": "multi_filiales",
+  "issue": "#2130.10",
+  "nature": "fictif",
+  "as_of": "2026-09-15",
+  "_fiction": "Nom FICTIF assumé, marqué « (fictif) » : aucune entreprise réelle n'est décrite ici, aucun identifiant de registre n'est affirmé, et les sources vivent sur le domaine réservé .invalid (RFC 2606) — elles ne peuvent désigner aucune page réelle. Le cadrage #2130.1-7 laisse le choix entre un nom fictif assumé et une entreprise réelle dont chaque fait est sourcé ; faute de source vérifiable depuis ce poste sur cet archétype, c'est le nom fictif.",
+  "expected": {
+    "identite": {
+      "status": "attendu",
+      "contient": [
+        "Groupe Orsalis"
+      ]
+    },
+    "perimetre": {
+      "status": "attendu",
+      "contient": [
+        "Orsalis Distribution",
+        "Orsalis Santé",
+        "Orsalis Services"
+      ]
+    },
+    "decideurs": {
+      "status": "attendu",
+      "contient": [
+        "Laure Benoît"
+      ]
+    },
+    "contacts_a_ne_pas_recommander": {
+      "status": "attendu",
+      "contient": [
+        "Éric Solal"
+      ]
+    },
+    "equipes_cles": {
+      "status": "attendu",
+      "contient": [
+        "Talvère"
+      ]
+    },
+    "signaux": {
+      "status": "attendu",
+      "contient": [
+        "Vitaline"
+      ]
+    },
+    "projets": {
+      "status": "attendu",
+      "contient": [
+        "Vitaline"
+      ]
+    },
+    "partenaires": {
+      "status": "attendu",
+      "contient": [
+        "Brenne Qualité"
+      ]
+    },
+    "acces": {
+      "status": "attendu",
+      "contient": [
+        "achète séparément"
+      ]
+    },
+    "recommandations": {
+      "status": "attendu",
+      "contient": [
+        "Orsalis Santé"
+      ]
+    },
+    "gaps": {
+      "status": "attendu",
+      "contient": [
+        "Orsalis Distribution"
+      ]
+    },
+    "sources": {
+      "status": "attendu",
+      "contient": [
+        "src-filiale"
+      ]
+    },
+    "action_suivante": {
+      "status": "attendu",
+      "contient": [
+        "Orsalis Santé"
+      ]
+    }
+  },
+  "dossier": {
+    "identite": {
+      "name": "Groupe Orsalis",
+      "siren": null
+    },
+    "perimetre": {
+      "scope": "groupe",
+      "entities": [
+        "Orsalis Distribution — filiale logistique (Vénosque)",
+        "Orsalis Santé — filiale dispositifs médicaux (Aubrelle)",
+        "Orsalis Services — centre de services partagés (Talvère)"
+      ]
+    },
+    "decideurs": [
+      {
+        "name": "Thierry Maubert",
+        "title": "Directeur des systèmes d'information du groupe",
+        "team": "Orsalis Services"
+      },
+      {
+        "name": "Laure Benoît",
+        "title": "Directrice des systèmes d'information",
+        "team": "Orsalis Santé"
+      }
+    ],
+    "contacts_a_ne_pas_recommander": [
+      {
+        "name": "Éric Solal",
+        "reason": "rattaché à Orsalis Distribution, filiale hors du besoin identifié"
+      }
+    ],
+    "equipes_cles": [
+      "Centre de services partagés de Talvère",
+      "Qualité logicielle d'Orsalis Santé"
+    ],
+    "signaux": [
+      {
+        "id": "sig-vitaline",
+        "text": "Orsalis Santé engage la mise en conformité logicielle de sa gamme de pompes Vitaline",
+        "date": "2026-07",
+        "source": "src-filiale"
+      }
+    ],
+    "projets": [
+      {
+        "id": "prj-vitaline",
+        "text": "Mise en conformité logicielle des pompes Vitaline, portée par Orsalis Santé",
+        "source": "src-filiale"
+      }
+    ],
+    "partenaires": [
+      "Brenne Qualité (fictif)"
+    ],
+    "acces": [
+      {
+        "text": "Chaque filiale achète séparément ; le centre de Talvère ne référence que les prestations transverses",
+        "via": "organisation"
+      }
+    ],
+    "recommandations": [
+      {
+        "id": "reco-vitaline",
+        "text": "Adresser Orsalis Santé à Aubrelle, et non le centre de Talvère, pour la conformité logicielle des pompes Vitaline.",
+        "why": "Les filiales achètent séparément, et le chantier Vitaline appartient à Orsalis Santé.",
+        "target": "Laure Benoît",
+        "evidence": [
+          "sig-vitaline",
+          "prj-vitaline"
+        ]
+      }
+    ],
+    "gaps": [
+      "organisation d'Orsalis Distribution non relevée"
+    ],
+    "sources": [
+      {
+        "id": "src-filiale",
+        "url": "https://sources.fictif.invalid/multi-filiales-groupe-orsalis/src-filiale",
+        "date": "2026-07-02"
+      }
+    ],
+    "action_suivante": {
+      "text": "Ouvrir la conversation avec Laure Benoît sur le seul périmètre d'Orsalis Santé",
+      "target": "Laure Benoît",
+      "evidence": [
+        "sig-vitaline"
+      ]
+    }
+  },
+  "cas": [
+    {
+      "id": "cas-generique-groupe",
+      "text": "Proposer un partenariat stratégique pour accompagner la croissance de toutes les filiales.",
+      "why": "Un groupe de cette taille a toujours besoin de renfort sur ses projets informatiques.",
+      "target": "Thierry Maubert",
+      "evidence": [
+        "src-filiale"
+      ],
+      "label": "generic",
+      "_jugement": "Aucun fait du compte : la phrase tient telle quelle sur n'importe quel groupe."
+    }
+  ]
+}

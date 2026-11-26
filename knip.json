@@ -1,0 +1,49 @@
+{
+  "$schema": "https://unpkg.com/knip@6/schema.json",
+  "ignoreWorkspaces": ["apps/ia"],
+  "workspaces": {
+    ".": {
+      "ignore": ["**/*.generated.ts"]
+    },
+    "apps/api": {
+      "entry": [
+        "src/main.ts",
+        "src/scripts/*.ts",
+        "src/scripts/commercial-brief/convert-brief-xlsx.ts",
+        "src/scripts/commercial-brief/convert-account-dossier.ts"
+      ],
+      "project": ["src/**/*.ts"]
+    },
+    "apps/dashboard-manager": {
+      "project": ["src/**/*.{ts,tsx}"],
+      "ignore": ["src/app/_components/charts.logic.ts"]
+    },
+    "apps/web": {
+      "project": ["src/**/*.{ts,tsx}"],
+      "ignore": ["src/routeTree.gen.ts"]
+    },
+    "packages/contracts": {
+      "project": ["src/**/*.ts"],
+      "ignore": ["src/database.types.ts"]
+    },
+    "packages/errors": {
+      "project": ["src/**/*.ts"]
+    },
+    "packages/http": {
+      "project": ["src/**/*.ts"]
+    },
+    "packages/utils": {
+      "project": ["src/**/*.ts"],
+      "ignore": ["src/tlds.generated.ts"]
+    },
+    "packages/observable": {
+      "project": ["src/**/*.ts"]
+    },
+    "packages/char": {
+      "project": ["src/**/*.ts"]
+    },
+    "packages/tooling": {
+      "entry": ["eslint/*.mjs", "configs/*.ts", "prettier/*.cjs", "commitlint/*.cjs"]
+    }
+  }
+}

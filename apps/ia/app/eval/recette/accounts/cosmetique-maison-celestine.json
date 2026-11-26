@@ -1,0 +1,201 @@
+{
+  "slug": "cosmetique-maison-celestine",
+  "company": "Maison Célestine Cosmétiques (fictif)",
+  "archetype": "cosmetique",
+  "issue": "#2130.6",
+  "nature": "fictif",
+  "as_of": "2026-09-15",
+  "_fiction": "Nom FICTIF assumé, marqué « (fictif) » : aucune entreprise réelle n'est décrite ici, aucun identifiant de registre n'est affirmé, et les sources vivent sur le domaine réservé .invalid (RFC 2606) — elles ne peuvent désigner aucune page réelle. Le cadrage #2130.1-7 laisse le choix entre un nom fictif assumé et une entreprise réelle dont chaque fait est sourcé ; faute de source vérifiable depuis ce poste sur cet archétype, c'est le nom fictif.",
+  "expected": {
+    "identite": {
+      "status": "attendu",
+      "contient": [
+        "Maison Célestine Cosmétiques"
+      ]
+    },
+    "perimetre": {
+      "status": "attendu",
+      "contient": [
+        "Vaugrenier-les-Pins"
+      ]
+    },
+    "decideurs": {
+      "status": "attendu",
+      "contient": [
+        "Inès Faucher"
+      ]
+    },
+    "contacts_a_ne_pas_recommander": {
+      "status": "attendu",
+      "contient": [
+        "Sophie Lamarre"
+      ]
+    },
+    "equipes_cles": {
+      "status": "attendu",
+      "contient": [
+        "Iris"
+      ]
+    },
+    "signaux": {
+      "status": "attendu",
+      "contient": [
+        "Iris"
+      ]
+    },
+    "projets": {
+      "status": "attendu",
+      "contient": [
+        "référentiel unique"
+      ]
+    },
+    "partenaires": {
+      "status": "attendu",
+      "contient": [
+        "Atelier Corvis"
+      ]
+    },
+    "acces": {
+      "status": "attendu",
+      "contient": [
+        "conformité produits"
+      ]
+    },
+    "recommandations": {
+      "status": "attendu",
+      "contient": [
+        "Iris"
+      ]
+    },
+    "gaps": {
+      "status": "attendu",
+      "contient": [
+        "Iris"
+      ]
+    },
+    "sources": {
+      "status": "attendu",
+      "contient": [
+        "src-rapport"
+      ]
+    },
+    "action_suivante": {
+      "status": "attendu",
+      "contient": [
+        "Olivier Pradel"
+      ]
+    }
+  },
+  "dossier": {
+    "identite": {
+      "name": "Maison Célestine Cosmétiques",
+      "siren": null
+    },
+    "perimetre": {
+      "scope": "groupe",
+      "entities": [
+        "Maison Célestine — site de formulation de Vaugrenier-les-Pins",
+        "Maison Célestine — plateforme logistique de Brécy-sur-Aube"
+      ]
+    },
+    "decideurs": [
+      {
+        "name": "Inès Faucher",
+        "title": "Directrice des systèmes d'information",
+        "team": "Direction des systèmes d'information"
+      },
+      {
+        "name": "Olivier Pradel",
+        "title": "Responsable conformité produits",
+        "team": "Réglementaire"
+      }
+    ],
+    "contacts_a_ne_pas_recommander": [
+      {
+        "name": "Sophie Lamarre",
+        "reason": "a demandé à ne plus être sollicitée"
+      }
+    ],
+    "equipes_cles": [
+      "Cellule traçabilité des formules Iris",
+      "Informatique de Vaugrenier-les-Pins"
+    ],
+    "signaux": [
+      {
+        "id": "sig-iris",
+        "text": "Refonte de la base de formules Iris avant la déclaration des ingrédients de 2027",
+        "date": "2026-05",
+        "source": "src-rapport"
+      }
+    ],
+    "projets": [
+      {
+        "id": "prj-iris",
+        "text": "Migration de la base de formules Iris vers un référentiel unique",
+        "source": "src-rapport"
+      }
+    ],
+    "partenaires": [
+      "Atelier Corvis Conseil (fictif)"
+    ],
+    "acces": [
+      {
+        "text": "Référencement fournisseur instruit par la conformité produits",
+        "via": "référencement"
+      }
+    ],
+    "recommandations": [
+      {
+        "id": "reco-iris",
+        "text": "Proposer un lot de reprise de données pour la migration de la base de formules Iris.",
+        "why": "La base Iris doit rejoindre un référentiel unique avant la déclaration des ingrédients de 2027, et la cellule traçabilité porte le chantier.",
+        "target": "Inès Faucher",
+        "evidence": [
+          "sig-iris",
+          "prj-iris"
+        ]
+      }
+    ],
+    "gaps": [
+      "nombre de formules de la base Iris non relevé"
+    ],
+    "sources": [
+      {
+        "id": "src-rapport",
+        "url": "https://sources.fictif.invalid/cosmetique-maison-celestine/src-rapport",
+        "date": "2026-05-20"
+      }
+    ],
+    "action_suivante": {
+      "text": "Demander à Olivier Pradel le calendrier de la déclaration des ingrédients de 2027",
+      "target": "Olivier Pradel",
+      "evidence": [
+        "sig-iris"
+      ]
+    }
+  },
+  "cas": [
+    {
+      "id": "cas-trompeur",
+      "text": "Prendre le relais de la migration Iris, déjà lancée et en retard.",
+      "why": "Le chantier Iris est engagé depuis des mois et glisse.",
+      "target": "Inès Faucher",
+      "evidence": [
+        "sig-iris"
+      ],
+      "label": "misleading",
+      "_jugement": "Affirme avec assurance un retard que la source ne dit pas : elle annonce une refonte À VENIR. La machine ne sait pas le voir — elle ne prétend rien."
+    },
+    {
+      "id": "cas-utile",
+      "text": "Préparer une note sur l'effet de la déclaration des ingrédients de 2027 sur la base Iris.",
+      "why": "La conformité produits porte l'échéance de 2027 qui déclenche la refonte de la base Iris.",
+      "target": "Olivier Pradel",
+      "evidence": [
+        "sig-iris"
+      ],
+      "label": "useful_and_correct",
+      "_jugement": "Chaque élément vient du dossier, et la note sert l'interlocuteur qui porte l'échéance."
+    }
+  ]
+}

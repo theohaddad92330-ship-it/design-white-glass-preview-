@@ -1,0 +1,116 @@
+{
+  "id": "12-esn-mature-plusieurs-commerciaux",
+  "persona": "ESN mature avec plusieurs commerciaux",
+  "personaKind": "fictif",
+  "_source": "#2070 / #2085 — cas de référence du corpus de non-régression multi-persona",
+  "answers": {
+    "user_id": "golden-12-esn-mature-plusieurs-commerciaux",
+    "first_name": "Laurence",
+    "esn_name": "Mature Consulting Group",
+    "consultant_size": "200-500",
+    "sales_team_size": "8-15 personnes",
+    "expertise_areas": [
+      "Gestion de projet & PMO",
+      "Transformation digitale & Conduite du changement",
+      "Conseil en stratégie SI"
+    ],
+    "positioning": "Conseil & Delivery - cadrage + exécution",
+    "staffing_model": "Mix équilibré CDI / Freelances",
+    "target_sectors": [
+      "Banque d'investissement & Marchés",
+      "Assurance & Mutuelles"
+    ],
+    "target_company_types": [
+      "CAC40 / SBF120 (grands comptes)",
+      "ETI (500-5 000 salariés)"
+    ],
+    "geo_zones": [
+      "National (toute la France)"
+    ],
+    "main_sales_pain": "Former et coordonner mon équipe commerciale",
+    "go_to_market_channels": [
+      "Partenaires ESN",
+      "Direct client final"
+    ],
+    "partner_relationship": "Partenaires réguliers, contrats en place",
+    "partners_regular_count": "Plus de 10",
+    "partners_occasional_count": "6-10"
+  },
+  "referenceProfile": {
+    "esnArchetype": "enterprisePlayer",
+    "sellingPosture": "strategicConsulting",
+    "idealAccountProfile": {
+      "size": "grandCompte",
+      "sectorsPriority": [
+        "Banque d'investissement & Marchés",
+        "Assurance & Mutuelles"
+      ],
+      "decisionLevel": "cLevel",
+      "entryStrategy": "multiThread"
+    },
+    "analysisParameters": {
+      "braveQueriesCount": 20,
+      "firecrawlPagesCount": 12,
+      "contactsTarget": 90,
+      "analysisDepth": "deep",
+      "maxTokensResearch": 19000,
+      "focusAreas": [
+        "Gestion de projet & PMO",
+        "Transformation digitale & Conduite du changement",
+        "Conseil en stratégie SI",
+        "DORA",
+        "NIS2"
+      ]
+    },
+    "messagingStyle": {
+      "tone": "consultative",
+      "messageLength": "detailed",
+      "valuePropositionAngle": "On pilote vos programmes de transformation stratégique, cadrage inclus, avec une équipe conseil déployée à l'échelle CAC40.",
+      "differentiationPoints": [
+        "Équipe conseil + delivery unifiée à l'échelle",
+        "Référence sur programmes CAC40 assurance/banque",
+        "Méthodologie de cadrage éprouvée"
+      ],
+      "avoid": [
+        "leader du marché",
+        "sur-mesure",
+        "partenaire de confiance"
+      ]
+    },
+    "coachingInsights": {
+      "mainWeakness": "Rituels et playbooks équipe",
+      "keyAdvice": "Pose un rituel hebdomadaire de partage de playbooks entre commerciaux : avec 8 à 15 personnes en prospection, l'écart de performance vient presque toujours d'un manque de méthode partagée, pas d'un manque d'effort.",
+      "cadenceRecommendation": {
+        "analysesPerWeek": 12,
+        "messagesPerDay": 30,
+        "followUpsPerWeek": 40
+      },
+      "kpiTargets": {
+        "accountsPerMonth": 70,
+        "rdvPerMonth": 35,
+        "conversionRateTarget": "25-35%",
+        "partnersPerMonth": 12
+      }
+    },
+    "bellumPhrases": {
+      "welcome": "Bienvenue Laurence, on va transformer ton expertise \"Gestion de projet & PMO\" en pipeline qualifié sur \"Banque d'investissement & Marchés\".",
+      "firstAnalysisCta": "Lancer une analyse sur un grand compte CAC40 / SBF120 du secteur Banque d'investissement & Marchés.",
+      "weeklySummaryIntro": "Cette semaine, partage un playbook gagnant avec le reste de l'équipe commerciale.",
+      "emptyState": "Aucun compte en pipeline — lance une analyse sur un grand compte pour alimenter l'équipe.",
+      "scoreContext": "Le score se justifie par la couverture du comité d'achat et la maturité du programme de transformation détecté, jamais par un chiffre unique."
+    },
+    "welcomeSummary": {
+      "profileRecap": "Tu es une ESN \"Conseil & Delivery\" de 200-500 consultants, basée en \"National (toute la France)\", spécialisée \"Gestion de projet & PMO\", \"Transformation digitale & Conduite du changement\" et \"Conseil en stratégie SI\", qui cible les \"CAC40 / SBF120\" et \"ETI\" \"Banque d'investissement & Marchés\". Ton équipe commerciale compte 8-15 personnes.",
+      "searchesPersonalization": "Les recherches cibleront en priorité \"transformation stratégique\", \"programme de conduite du changement\" et \"conformité DORA\".",
+      "contactsPersonalization": "Les contacts identifiés seront des \"COMEX\" et \"Directeur Transformation\" (pas des opérationnels juniors).",
+      "messagesPersonalization": "Les messages seront rédigés sur un ton \"consultatif\" (pas générique corporate).",
+      "scoringPersonalization": "Le scoring évaluera la maturité du programme de transformation stratégique détecté chez la cible.",
+      "firstAnalysisSuggestions": []
+    }
+  },
+  "contradictions": [],
+  "limits": [
+    "Aucune suggestion d'entreprise au premier écran : le questionnaire d'onboarding ne fournit aucun compte réel, malgré la maturité de l'équipe commerciale.",
+    "Cible partenaires à la borne basse de la plage enterprisePlayer (10-20) : la base déclarée « Plus de 10 » ne dit pas combien exactement, la plage ne l'invente pas."
+  ]
+}

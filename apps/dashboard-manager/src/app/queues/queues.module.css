@@ -1,0 +1,250 @@
+/* #1662 — L'ÉCRAN DES FILES, refait au design system.
+   Aucune couleur en dur : toutes viennent des tokens de `globals.css`, donc
+   elles suivent les deux thèmes. Aucune librairie UI. */
+
+.entete {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+  gap: 12px;
+}
+
+/* ── Le sélecteur de file ────────────────────────────────────────────────────
+   Une PUCE par file, et chacune dit trois choses : son nom, son état en un MOT
+   (jamais une couleur seule — un daltonien ne lit que le mot), et depuis quand
+   son plus vieux job attend. */
+.files {
+  display: flex;
+  gap: 10px;
+  flex-wrap: wrap;
+  margin: 0 0 20px;
+}
+
+.file {
+  display: block;
+  min-width: 210px;
+  /* ≥ 44 px de haut en pointeur grossier : c'est une cible tactile. */
+  min-height: 44px;
+  padding: 10px 14px;
+  border: 1px solid var(--border);
+  border-radius: 12px;
+  background: var(--surface);
+  color: var(--muted);
+  text-decoration: none;
+}
+
+.file:hover {
+  border-color: color-mix(in srgb, var(--accent) 45%, var(--border));
+}
+
+.fileActive {
+  border-color: var(--accent);
+  color: var(--text);
+  background: color-mix(in srgb, var(--accent) 8%, var(--surface));
+}
+
+.fileNom {
+  display: flex;
+  align-items: baseline;
+  gap: 8px;
+  font-weight: 600;
+  color: var(--text);
+}
+
+.fileLigne {
+  display: flex;
+  align-items: baseline;
+  gap: 8px;
+  flex-wrap: wrap;
+  margin-top: 4px;
+  font-size: 12px;
+}
+
+/* ── L'état, en un MOT + une pastille ────────────────────────────────────────
+   La pastille aide à balayer ; le mot porte l'information. Retirer la couleur
+   ne doit rien enlever de ce qui se lit. */
+.etat {
+  display: inline-flex;
+  align-items: center;
+  gap: 5px;
+  font-size: 12px;
+  font-weight: 600;
+}
+
+.puce {
+  width: 8px;
+  height: 8px;
+  border-radius: 999px;
+  background: currentColor;
+}
+
+.etatIncident {
+  color: var(--red);
+}
+
+.etatAttente {
+  color: var(--amber);
+}
+
+.etatRepos {
+  color: var(--muted);
+}
+
+/* L'ancienneté : mesurée, elle se lit comme un fait ; inconnue, elle se lit
+   comme un doute — et jamais comme un zéro. */
+.attente {
+  font-size: 12px;
+  color: var(--muted);
+}
+
+.attenteInconnue {
+  color: var(--amber);
+}
+
+.attenteDetail {
+  display: block;
+  margin-top: 2px;
+  font-size: 12px;
+  color: var(--muted);
+}
+
+/* ── Les onglets d'état ──────────────────────────────────────────────────── */
+.onglets {
+  display: flex;
+  gap: 4px;
+  flex-wrap: wrap;
+  margin: 0 0 12px;
+  border-bottom: 1px solid var(--border);
+}
+
+.onglet {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  /* ≥ 44 px : les onglets sont des cibles tactiles comme les autres. */
+  min-height: 44px;
+  padding: 0 12px;
+  color: var(--muted);
+  text-decoration: none;
+  border-bottom: 2px solid transparent;
+  font-size: 13px;
+}
+
+.onglet:hover {
+  color: var(--text);
+}
+
+.ongletActif {
+  color: var(--text);
+  font-weight: 700;
+  border-bottom-color: var(--accent);
+}
+
+.compte {
+  font-variant-numeric: tabular-nums;
+}
+
+.compteIncident {
+  color: var(--red);
+  font-weight: 700;
+}
+
+/* ── La barre au-dessus du tableau ───────────────────────────────────────── */
+.barre {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 12px;
+  flex-wrap: wrap;
+  margin: 0 0 12px;
+}
+
+.total {
+  font-size: 12px;
+  color: var(--muted);
+}
+
+/* ── Le tableau des jobs ─────────────────────────────────────────────────── */
+.cellulePrincipale {
+  display: grid;
+  gap: 2px;
+}
+
+.identifiant {
+  font-family: ui-monospace, SFMono-Regular, Menlo, monospace;
+  font-size: 12px;
+  color: var(--text);
+}
+
+.secondaire {
+  font-size: 12px;
+  color: var(--muted);
+}
+
+/* La charge utile : des paires clé/valeur, jamais un bloc brut. */
+.donnees {
+  display: flex;
+  gap: 4px 10px;
+  flex-wrap: wrap;
+  max-width: 380px;
+}
+
+.donnee {
+  display: inline-flex;
+  align-items: baseline;
+  gap: 4px;
+  font-size: 12px;
+}
+
+.donneeCle {
+  color: var(--muted);
+}
+
+.donneeValeur {
+  font-family: ui-monospace, SFMono-Regular, Menlo, monospace;
+  color: var(--text);
+}
+
+.echec {
+  display: grid;
+  gap: 2px;
+  max-width: 420px;
+  white-space: normal;
+}
+
+.echecRaison {
+  color: var(--red);
+  font-size: 12px;
+  font-weight: 600;
+}
+
+.echecPile {
+  font-family: ui-monospace, SFMono-Regular, Menlo, monospace;
+  font-size: 12px;
+  color: var(--muted);
+  word-break: break-all;
+}
+
+.actions {
+  display: inline-flex;
+  gap: 6px;
+  flex-wrap: wrap;
+}
+
+/* Cibles tactiles : ≥ 44 px dès que le pointeur est grossier.
+   ⚠️ `.btn-sm` est une classe GLOBALE, posée par `ActionButton` — une règle
+   de module ne l'atteint qu'avec `:global()`. La borne globale de
+   `globals.css` ne couvre aujourd'hui que le rail et le sélecteur de thème ;
+   plutôt que d'y toucher (fichier partagé, plusieurs lots en vol), l'écran
+   porte la sienne, sur SES boutons. */
+@media (pointer: coarse) {
+  .actions :global(.btn-sm),
+  .barre :global(.btn-sm) {
+    min-height: 44px;
+  }
+}
+
+/* ── Pagination ──────────────────────────────────────────────────────────── */
+/* #1672.4 — la pagination de cet écran vit désormais dans `DataTable` lui-
+   même (props `page`/`pageSize`/`total`/`onPageChange`, `.pager` de
+   `DataTable.module.css`) : ce module n'a plus besoin de la sienne. */

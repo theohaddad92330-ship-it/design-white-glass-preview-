@@ -1,0 +1,86 @@
+{
+  "identite": {
+    "name": "Atelier Numérique Brévenne",
+    "siren": null
+  },
+  "perimetre": {
+    "scope": "entreprise",
+    "entities": [
+      "Atelier Numérique Brévenne — 48 salariés, site unique de Chazelles-sur-Orne"
+    ]
+  },
+  "decideurs": [
+    {
+      "name": "Martine Gaudry",
+      "title": "Dirigeante",
+      "team": "Direction"
+    },
+    {
+      "name": "Hugo Ferrand",
+      "title": "Responsable technique",
+      "team": "Atelier logiciel"
+    }
+  ],
+  "contacts_a_ne_pas_recommander": [
+    {
+      "name": "Lucas Bernier",
+      "reason": "en alternance, sans rôle de décision"
+    }
+  ],
+  "equipes_cles": [
+    "Atelier logiciel de l'outil de devis Nacre"
+  ],
+  "signaux": [
+    {
+      "id": "sig-nacre",
+      "text": "Ouverture d'un poste de développeur pour l'outil de devis Nacre",
+      "date": "2026-08",
+      "source": "src-offre"
+    }
+  ],
+  "projets": [
+    {
+      "id": "prj-nacre",
+      "text": "Réécriture de l'outil de devis Nacre en application web",
+      "source": "src-offre"
+    }
+  ],
+  "partenaires": [
+    "Oriane Tech (fictif)"
+  ],
+  "acces": [
+    {
+      "text": "La dirigeante décide seule des achats de prestation",
+      "via": "direction"
+    }
+  ],
+  "recommandations": [
+    {
+      "id": "reco-generique",
+      "text": "Proposer un accompagnement sur la transformation digitale avec une équipe d'experts dédiée.",
+      "why": "Comme toute entreprise, ce compte doit moderniser ses outils pour gagner en performance.",
+      "target": "Martine Gaudry",
+      "evidence": [
+        "src-offre"
+      ]
+    }
+  ],
+  "gaps": [
+    "budget de la réécriture de Nacre non connu"
+  ],
+  "sources": [
+    {
+      "id": "src-offre",
+      "url": "https://sources.fictif.invalid/pme-atelier-numerique-brevenne/src-offre",
+      "date": "2026-08-26"
+    }
+  ],
+  "action_suivante": {
+    "text": "Appeler Martine Gaudry pour qualifier le calendrier de la réécriture de Nacre",
+    "target": "Martine Gaudry",
+    "evidence": [
+      "sig-nacre"
+    ]
+  },
+  "_cas": "Cas #2130.38 — LE MÊME dossier que pme-atelier-numerique-brevenne.json, à une chose près : la recommandation ne porte plus aucun fait du compte. `python -m app.eval.recette --account pme-atelier-numerique-brevenne --dossier app/eval/recette/cas/recommandation-generique.dossier.json` sort en 1. Le témoin est le dossier de référence lui-même, qui passe."
+}

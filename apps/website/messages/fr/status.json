@@ -1,0 +1,49 @@
+{
+  "meta": {
+    "title": "Statut des services",
+    "description": "État en temps réel des services BellumAI : application, base de données, analyses et moteur IA."
+  },
+  "hero": {
+    "badge": "Statut système",
+    "title": "État des services BellumAI",
+    "subtitle": "Cette page reflète l'état de nos services en temps réel. Elle s'actualise automatiquement toutes les 30 secondes."
+  },
+  "overall": {
+    "loading": "Vérification en cours…",
+    "operational": "Tous les systèmes sont opérationnels",
+    "degraded": "Dégradation partielle en cours",
+    "down": "Incident majeur en cours",
+    "unreachable": "Impossible de joindre nos services"
+  },
+  "overallDetail": {
+    "degraded": "Une partie des services est ralentie ou indisponible. L'application reste accessible.",
+    "down": "Nos services sont actuellement indisponibles. Nous travaillons à leur rétablissement.",
+    "unreachable": "La vérification du statut n'aboutit pas — nos services sont peut-être indisponibles. Réessayez dans quelques instants."
+  },
+  "components": {
+    "api": {
+      "name": "Application & API",
+      "description": "Connexion, comptes et dossiers de conquête"
+    },
+    "database": {
+      "name": "Base de données",
+      "description": "Stockage de vos comptes, contacts et analyses"
+    },
+    "redis": {
+      "name": "Files de traitement & temps réel",
+      "description": "Analyses en arrière-plan et notifications"
+    },
+    "ia_engine": {
+      "name": "Moteur IA",
+      "description": "Génération des dossiers et de l'intelligence commerciale"
+    }
+  },
+  "componentStatus": {
+    "operational": "Opérationnel",
+    "down": "Indisponible",
+    "unknown": "Inconnu"
+  },
+  "lastChecked": "Dernière vérification : {time}",
+  "autoRefresh": "Actualisation automatique toutes les 30 secondes.",
+  "historyNote": "Historique de disponibilité et journal des incidents : bientôt disponibles. Cette page affiche pour l'instant l'état en temps réel."
+}

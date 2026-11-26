@@ -1,0 +1,251 @@
+{
+  "header": {
+    "title": "Données & exports",
+    "claim": "Tes données t'appartiennent",
+    "subtitle": "Consulte ce que {{brand}} conserve dans ton espace, récupère ce qui t'appartient, et comprends ce qui reste partagé avec ton équipe.",
+    "claimNamed": "Tes données restent sous ton contrôle, {{name}}",
+    "screenTitle": "Mes données",
+    "description": "Repartir avec ton travail, sans emporter celui d’un autre utilisateur."
+  },
+  "objects": {
+    "identity": "Mon identité",
+    "esnProfile": "Mon profil ESN",
+    "accounts": "Comptes suivis",
+    "contacts": "Contacts",
+    "talents": "Talents et compétences",
+    "documents": "Documents déposés",
+    "actions": "Activités et historique",
+    "billing": "Abonnement",
+    "credits": "Mouvements de crédits",
+    "devices": "Appareils connectés",
+    "smsChannel": "Numéro pour les alertes SMS"
+  },
+  "table": {
+    "object": "Objet",
+    "rows": "Lignes",
+    "download": "Télécharger",
+    "rowsCount_one": "{{count}} ligne",
+    "rowsCount_other": "{{count}} lignes",
+    "downloadNamed": "Télécharger {{object}} en {{format}}",
+    "rowsUnknown": "non mesuré",
+    "purposeLine": "Pourquoi : {{reason}}",
+    "retentionLine": "Conservée : {{duration}}",
+    "provenanceLine": "D'où : {{source}}",
+    "deletionLine": "Si tu supprimes ton compte : {{fate}}"
+  },
+  "exportAll": {
+    "action": "Préparer mon export",
+    "loading": "Préparation…",
+    "lastNever": "dernier export : jamais",
+    "lastOn": "dernier export : {{date}}",
+    "success": "L'export est parti dans tes téléchargements.",
+    "error": "Je n'ai pas pu préparer cet export. Réessaie dans un instant."
+  },
+  "withheld": {
+    "title": "Ce que tu n'emportes pas",
+    "intro": "Cette liste se calcule à partir de ce que l'export sait produire. Elle ne peut donc pas prendre du retard sur le produit.",
+    "sharedMarket": "Le référentiel partagé — annuaire d'ESN, registres publics, photos de territoire. Il est financé collectivement et sert à tous les espaces : personne ne l'emporte, personne ne le perd.",
+    "sharedOperator": "Les modèles, les règles de calcul et les composants internes du produit. C'est ce que nous fabriquons, pas ce que tu nous confies.",
+    "workspaceOwned": "Ce qui appartient à l'espace de travail et non à toi seul — projets, missions, facturation. Une copie personnelle qui les emporterait te remettrait le travail de tes collègues.",
+    "unclassified": "Ce dont on n'a pas encore tranché l'appartenance. Tant que la question est ouverte, la donnée ne part pas : on préfère l'écrire plutôt que de deviner."
+  },
+  "exportHistory": {
+    "title": "Mes exports",
+    "intro": "L'historique de tes exports personnels, tel que nous l'avons journalisé — rien de plus.",
+    "full": "Export complet",
+    "object": "Export : {{object}}",
+    "entry": "{{kind}} — {{date}}",
+    "entryWithFormat": "{{kind}} ({{format}}) — {{date}}",
+    "count_one": "· {{count}} export",
+    "count_other": "· {{count}} exports",
+    "colExport": "Export",
+    "colDate": "Date"
+  },
+  "deletion": {
+    "title": "Supprimer mon espace",
+    "action": "Aller à la suppression"
+  },
+  "states": {
+    "loadingMessage": "On compte ce que tu peux emporter.",
+    "errorMessage": "Je n'ai pas pu lire ce que tu peux emporter.",
+    "retry": "Réessayer",
+    "partialMessage": "La liste est là, mais certains comptes n'ont pas pu être lus.",
+    "partialDetail": "Les objets concernés affichent « non mesuré » — ils restent exportables."
+  },
+  "perimeter": {
+    "personal": "Mes données personnelles",
+    "workspace": "Les données de l'espace de travail",
+    "technical": "Données techniques",
+    "files": "Fichiers",
+    "market": "Marché",
+    "memory": "Mémoire"
+  },
+  "memoryCard": {
+    "subtitle": "Ce que {{copilot}} retient de toi et de ton équipe, en clair.",
+    "rowsCount_one": "{{count}} ligne retenue",
+    "rowsCount_other": "{{count}} lignes retenues"
+  },
+  "classification": {
+    "public": "Public",
+    "interne": "Interne à l'espace",
+    "confidentiel": "Confidentiel",
+    "personnel": "Donnée personnelle",
+    "sensible": "Sensible",
+    "technique": "Technique"
+  },
+  "purpose": {
+    "profile": "Te reconnaître et personnaliser ton espace.",
+    "esnProfile": "Adapter chaque analyse au métier de ton ESN.",
+    "accounts": "Garder la mémoire de ta prospection sur ce compte.",
+    "contacts": "Retrouver et relancer les bonnes personnes.",
+    "talents": "Rapprocher un besoin d'un consultant qui correspond.",
+    "documents": "Nourrir les réponses de {{copilot}} sur ton contexte.",
+    "actions": "Garder la trace de ce que tu as fait et quand.",
+    "billing": "Facturer ton abonnement et gérer tes quotas.",
+    "credits": "Justifier chaque crédit consommé ou reversé.",
+    "devices": "Repérer une connexion inhabituelle.",
+    "smsChannel": "Te prévenir par SMS des alertes urgentes."
+  },
+  "retention": {
+    "profile": "Tant que ton compte existe.",
+    "esnProfile": "Chaque version reste, pour comprendre comment ton profil a évolué.",
+    "accounts": "Tant que l'espace le suit, puis archivé — jamais supprimé.",
+    "contacts": "Tant que l'espace le suit, puis archivé — jamais supprimé.",
+    "talents": "Tant que l'espace le suit, puis archivé — jamais supprimé.",
+    "documents": "Tant que le document reste déposé dans ton espace.",
+    "actions": "Conservé comme journal — c'est la mémoire de ton activité.",
+    "billing": "Conservé au-delà du compte pour les obligations comptables.",
+    "credits": "Conservé au-delà du compte pour les obligations comptables.",
+    "devices": "30 jours d'inactivité, puis retiré.",
+    "smsChannel": "Tant que le numéro est actif."
+  },
+  "provenance": {
+    "declaredByYou": "Saisie par toi.",
+    "declaredByYourTeam": "Déclarée par un membre de ton espace.",
+    "researchedByYourTeam": "Recherchée par ton espace, à partir de sources publiques et de tes propres imports.",
+    "collectedOrImported": "Collectée par ton espace ou importée depuis ton CRM.",
+    "uploadedByYourTeam": "Déposée par un membre de ton espace.",
+    "loggedByYourTeam": "Enregistrée automatiquement quand une action est faite dans {{brand}}.",
+    "computedByBellum": "Calculée par {{brand}} à partir de ton abonnement et de ton usage.",
+    "observedByBellum": "Observée par {{brand}} à chaque connexion."
+  },
+  "deletionReason": {
+    "anonymizedOnErasure": "anonymisée (nom, coordonnées et contenu personnel effacés).",
+    "untouchedWorkspaceOwned": "non concernée — donnée de l'espace, elle suit son propre cycle de vie.",
+    "retainedNonNominative": "conservée, non nominative.",
+    "retainedPseudonymized": "conservée, pseudonymisée pour l'audit.",
+    "retainedForAccounting": "conservée, pour les obligations comptables.",
+    "revokedOnErasure": "révoquée.",
+    "deletedOnErasure": "supprimée."
+  },
+  "withheldTitle": {
+    "workspace_owned": "Données partagées de l'espace",
+    "shared_market": "Référentiels communs",
+    "shared_operator": "Technologie {{brand}}",
+    "unclassified": "Appartenance non tranchée"
+  },
+  "perimeterSummary": {
+    "personal": "Ce que tu emportes où que tu ailles : ton identité, ton abonnement.",
+    "workspace": "Ce qui vit dans l'espace de travail et suit les droits de ton équipe.",
+    "files": "Les documents déposés dans ton espace, ceux que {{copilot}} lit pour te répondre.",
+    "technical": "Ce que {{brand}} observe pour ta sécurité : tes appareils et connexions.",
+    "objectsOnly_one": "{{count}} objet exportable",
+    "objectsOnly_other": "{{count}} objets exportables",
+    "objectsAndRows_one": "{{objects}} objets exportables · {{count}} ligne",
+    "objectsAndRows_other": "{{objects}} objets exportables · {{count}} lignes",
+    "regionLabel": "Résumé de tes périmètres de données"
+  },
+  "recap": {
+    "title": "Voici ce que ton export contiendra",
+    "subtitle": "Rien n'est téléchargé avant que tu confirmes.",
+    "notIncludedTitle": "Non inclus",
+    "format": "Un fichier JSON unique. Pour un CSV, télécharge l'objet qui t'intéresse depuis la liste.",
+    "cancel": "Annuler",
+    "confirm": "Télécharger mon export"
+  },
+  "sensitive": {
+    "zone": "Zone sensible",
+    "title": "Supprimer mon compte {{brand}}",
+    "lead": "Un geste sans retour. Prends le temps de lire ce qu'il fait avant de l'engager.",
+    "understand": "Comprendre la suppression",
+    "hide": "Masquer le détail",
+    "erased": "Effacé : ton identité, tes contacts, tes consultants et tes documents déposés sont anonymisés ; tes sessions sont révoquées et ton abonnement est annulé.",
+    "when": "Quand : tout de suite, à la confirmation. Il n'y a pas de délai de rétractation.",
+    "kept_one": "Conservé, sans ton nom : la ligne de facturation, le journal des crédits, le journal des actions et les données d'entreprises — obligations comptables. Elles sont purgées après {{count}} jour.",
+    "kept_other": "Conservé, sans ton nom : la ligne de facturation, le journal des crédits, le journal des actions et les données d'entreprises — obligations comptables. Elles sont purgées après {{count}} jours.",
+    "members": "Tes collègues : ce qui appartient à l'espace de travail y reste. C'est ton compte qui part, pas le travail de ton équipe.",
+    "irreversible": "Irréversible : rien de ce qui est anonymisé ne se restaure, ni par toi ni par nous.",
+    "exportFirst": "Exporte d'abord. Après, il n'y a plus rien à exporter."
+  },
+  "laura": {
+    "whatIsInMyExport": "Que contient exactement mon export de données ?",
+    "whatIsInMyExportLabel": "Que contient mon export ?",
+    "whyNotIncluded": "Pourquoi certaines données ne sont-elles pas incluses dans mon export ?",
+    "whyNotIncludedLabel": "Pourquoi cette donnée n'est-elle pas incluse ?",
+    "mineVsWorkspace": "Quelle différence entre mes données personnelles et celles de l'espace de travail ?",
+    "mineVsWorkspaceLabel": "Mes données ou celles de l'espace ?"
+  },
+  "privacyPage": {
+    "title": "Confidentialité & registre",
+    "subtitle": "Ce que {{brand}} fait de tes données, pour combien de temps, et comment exercer tes droits.",
+    "policy": {
+      "title": "Politique de confidentialité",
+      "body": "Le texte publié, tel que le lit n’importe quel visiteur.",
+      "open": "Lire la politique de confidentialité"
+    },
+    "register": {
+      "title": "Registre des durées de conservation",
+      "body": "Chaque catégorie de données et sa durée, lues telles que l’application les applique.",
+      "category": "Catégorie",
+      "duration": "Durée",
+      "why": "Pourquoi",
+      "lifetime": "Tant que le compte existe",
+      "days_one": "{{count}} jour",
+      "days_other": "{{count}} jours",
+      "sweepOn": "La purge automatique est active : passé ce délai, les données sont supprimées sans geste de ta part.",
+      "sweepOff": "La purge automatique est suspendue sur cet environnement : les durées ci-dessus sont publiées mais pas appliquées pour l’instant.",
+      "empty": "Aucune durée de conservation n’est publiée pour l’instant.",
+      "error": "Le registre n’a pas pu être chargé.",
+      "retry": "Réessayer",
+      "loading": "Je charge le registre…"
+    },
+    "rights": {
+      "title": "Tes droits",
+      "body": "Accès, export, effacement : tout se fait depuis Données & exports.",
+      "open": "Ouvrir Données & exports"
+    },
+    "link": {
+      "label": "Politique de confidentialité et registre",
+      "open": "Voir la politique et le registre"
+    },
+    "sectionTitle": "Confidentialité & conservation"
+  },
+  "cards": {
+    "personal": {
+      "title": "Export personnel",
+      "body": "Ce qui t’appartient dans l’espace : tes préférences, tes notes et les éléments que {{copilot}} a mémorisés. Un fichier JSON ; les conversations et données d’un autre membre ne sont pas incluses.",
+      "action": "Exporter mes données"
+    },
+    "workspace": {
+      "title": "Export de l’espace",
+      "body": "Dossiers et configurations partagées : comptes, signaux, affaires et vivier. Les mémoires et préférences personnelles en sont exclues.",
+      "action": "Voir les objets exportables"
+    },
+    "remove": {
+      "title": "Retirer mes informations personnelles",
+      "body": "Un geste explicite, qui ne supprime pas les dossiers partagés. Exporte d’abord ce que tu veux garder.",
+      "action": "Voir comment retirer mes données"
+    }
+  },
+  "blocks": {
+    "personalHint": "Ce qui t’appartient dans l’espace.",
+    "personalAllTitle": "Mes préférences, notes et éléments mémorisés",
+    "personalAllHint": "Un fichier JSON, après un récapitulatif. Les conversations et données d’un autre membre ne sont pas incluses.",
+    "workspaceHint": "Les dossiers et configurations partagés, objet par objet."
+  },
+  "tabs": {
+    "label": "Sections de Mes données",
+    "exports": "Exports",
+    "imports": "Imports"
+  }
+}

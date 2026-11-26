@@ -1,0 +1,11 @@
+{
+  "extends": "@bellum/tooling/typescript/base.json",
+  "compilerOptions": {
+    "noEmit": true,
+    "resolveJsonModule": true,
+    "noImplicitReturns": true,
+    "lib": ["ES2023"],
+    "types": ["node", "@figma/plugin-typings"]
+  },
+  "include": ["src", "scripts", "vitest.config.ts"]
+}

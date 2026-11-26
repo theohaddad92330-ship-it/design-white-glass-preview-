@@ -1,0 +1,1062 @@
+{
+  "states": {
+    "loading": "Loading team statistics…"
+  },
+  "errors": {
+    "forbidden": "This view is restricted to managers (workspace owner or admin).",
+    "load": "Unable to load team statistics."
+  },
+  "missionsHygiene": {
+    "endDate": "Missions without an end date",
+    "endDateHint": "No renewal alert will ever fire on these.",
+    "cost": "Missions without a loaded cost",
+    "costHint": "Their margin cannot be measured until the cost is entered."
+  },
+  "totals": {
+    "accounts": "Accounts",
+    "contacts": "Contacts",
+    "emailsSent": "Emails sent"
+  },
+  "sharedActions": {
+    "title": "Actions to handle (shared)",
+    "summary": "{{open}} open · {{overdue}} overdue · {{delegated}} delegated",
+    "tabs": {
+      "all": "All",
+      "mine": "My actions",
+      "delegated": "Delegated to me"
+    },
+    "badgeOverdue": "Overdue",
+    "due": "Due {{date}}",
+    "noDue": "No due date",
+    "assignedTo": "Assigned to {{name}}",
+    "ownedBy": "{{name}}’s plan",
+    "truncated_one": "The most urgent action is shown; the queue holds {{total}}.",
+    "truncated_other": "The {{count}} most urgent actions are shown; the queue holds {{total}}.",
+    "emptyFiltered": "No open action in this view.",
+    "empty": "No open action across the team."
+  },
+  "routines": {
+    "title": "Team routines",
+    "subtitle": "Read-only overview — each member alone still controls their own routines.",
+    "lastFailed": "Last run failed"
+  },
+  "playbooks": {
+    "title": "Shared playbooks",
+    "subtitle": "Your team’s sales methods, shared across the workspace.",
+    "openKnowledge": "Open Knowledge",
+    "kind": {
+      "playbook": "Playbook",
+      "method_playbook": "Method"
+    },
+    "truncated_one": "1 playbook shown of {{total}}.",
+    "truncated_other": "{{count}} playbooks shown of {{total}}."
+  },
+  "activity": {
+    "unknownMember": "Unknown member",
+    "events": {
+      "analysis_started": "started an analysis",
+      "analysis_completed": "completed an analysis",
+      "message_sent": "sent a message",
+      "message_copied": "copied a message",
+      "export": "exported data",
+      "rdv_obtained": "booked a meeting",
+      "response_received": "received a reply",
+      "deal_signed": "signed a deal",
+      "crm_task_created": "created a CRM task",
+      "plan_action_added": "added an action to the plan",
+      "plan_action_completed": "completed a plan action",
+      "plan_action_uncompleted": "reopened a plan action",
+      "plan_action_assigned": "delegated a plan action",
+      "plan_action_rescheduled": "rescheduled a plan action",
+      "plan_action_message_sent": "sent a message from the plan",
+      "plan_action_contact_opened": "opened a contact from the plan",
+      "plan_action_enrichment_requested": "requested an enrichment",
+      "plan_action_skipped": "skipped a plan action",
+      "plan_action_opened": "opened a plan action",
+      "plan_action_message_generated": "generated a message from the plan",
+      "plan_action_message_copied": "copied a message from the plan",
+      "plan_action_call_prepared": "prepared a call",
+      "plan_action_call_logged": "logged a call",
+      "plan_action_linkedin_opened": "opened a professional-network profile from the plan",
+      "account_score_changed": "saw an account score change",
+      "profile_updated": "updated the ESN profile",
+      "need_play_generated": "prepared a need attack plan",
+      "commercial_status_changed": "changed the commercial status",
+      "unknown": "did something"
+    }
+  },
+  "footer": {
+    "hosting": "Your team data is hosted in the European Union."
+  },
+  "coverage": {
+    "title": "Accounts by owner",
+    "summary": "{{assigned}} / {{total}} accounts assigned ({{percent}}%)",
+    "unassigned_one": "{{count}} account has no owner.",
+    "unassigned_other": "{{count}} accounts have no owner.",
+    "allAssigned": "Every active account has an owner.",
+    "empty": "No accounts yet."
+  },
+  "coverageMap": {
+    "title": "Coverage map",
+    "subtitle": "Who covers which sector, which territory, which persona — and above all what nobody covers.",
+    "axis": {
+      "sectors": "Sectors",
+      "territories": "Territories",
+      "personas": "Personas"
+    },
+    "unit": {
+      "accounts_one": "{{count}} account",
+      "accounts_other": "{{count}} accounts",
+      "contacts_one": "{{count}} contact",
+      "contacts_other": "{{count}} contacts"
+    },
+    "whiteSpace": "Uncovered perimeter — nobody owns these accounts.",
+    "unassigned_one": "including {{count}} account with no owner",
+    "unassigned_other": "including {{count}} accounts with no owner",
+    "persona": {
+      "technical": "Technical (CIO, CTO, CISO)",
+      "economic": "Economic (budget)",
+      "procurement": "Procurement",
+      "user": "Business / user",
+      "champion": "Champion",
+      "influencer": "Influencer",
+      "blocker": "Blocker"
+    }
+  },
+  "unassigned": {
+    "title": "Accounts without an owner",
+    "subtitle": "Pick an owner for each account. An account with no owner is followed by nobody.",
+    "placeholder": "Assign to…",
+    "assignLabel": "Assign {{company}} to a member",
+    "noSector": "Unknown sector",
+    "score": "priority {{score}}",
+    "more_one": "and {{count}} more unassigned account.",
+    "more_other": "and {{count}} more unassigned accounts."
+  },
+  "assign": {
+    "assigned": "Account assigned.",
+    "released": "Account moved back to the to-assign list.",
+    "forbidden": "You are not allowed to assign this account.",
+    "failed": "Unable to assign this account."
+  },
+  "pipeline": {
+    "title": "Contacts to handle",
+    "status": {
+      "new": "New",
+      "contacted": "Contacted",
+      "replied": "Replied",
+      "meeting": "Meeting",
+      "won": "Won",
+      "lost": "Lost",
+      "archived": "Archived"
+    }
+  },
+  "roles": {
+    "owner": "Owner",
+    "admin": "Admin",
+    "sales_ops": "Sales Ops",
+    "sales": "Sales",
+    "tech_admin": "Technical admin",
+    "member": "Member",
+    "viewer": "Read-only"
+  },
+  "table": {
+    "inactiveCause": {
+      "role": "Read-only role",
+      "noPortfolio": "No account assigned"
+    }
+  },
+  "pipelineValue": {
+    "title": "Shared pipeline",
+    "scope": "Deals still in play. Signed, lost and dormant are not in this total.",
+    "valued_one": "{{formatted}} valued opportunity",
+    "valued_other": "{{formatted}} valued opportunities",
+    "noneValued": "No valued opportunity yet.",
+    "stageValued": "{{valued}}/{{total}} valued",
+    "withoutAmount_one": "{{formatted}} opportunity with no amount — not counted in the total.",
+    "withoutAmount_other": "{{formatted}} opportunities with no amount — not counted in the total."
+  },
+  "objectives": {
+    "title": "Team objectives",
+    "subtitle": "Each rep sets their monthly target; attainment is read from real data.",
+    "myTitle": "My objective this month",
+    "teamTitle": "Team attainment",
+    "teamEmpty": "No objective declared this month.",
+    "axis": {
+      "meetings": "Meetings",
+      "accounts": "Accounts",
+      "revenue": "Revenue",
+      "revenueEur": "Revenue (€)"
+    },
+    "progress": "{{achieved}} / {{target}} ({{percent}}%)",
+    "save": "Save my objective",
+    "saving": "Saving…",
+    "saved": "Objective saved.",
+    "define": "Set my objective",
+    "adjust": "Adjust my objectives",
+    "dialogTitle": "Your objectives this month"
+  },
+  "teamComments": {
+    "title": "Open topics",
+    "subtitle": "Comments tied to work and files. Private conversations are not aggregated.",
+    "inputLabel": "The point to share",
+    "placeholder": "An idea, field feedback, a coordination point…",
+    "share": "Share a point",
+    "sharing": "Sending…",
+    "empty": "No shared topic yet. Start the conversation.",
+    "onAccount": "About {{company}}",
+    "region": "Team exchanges",
+    "shareTitle": "Share a team point",
+    "shareBody": "The point stays in the Team space. Nothing leaves it.",
+    "shareSend": "Share",
+    "accountLabel": "Related account",
+    "noAccount": "No account",
+    "mentionLabel": "Mention",
+    "status": {
+      "open": "To discuss",
+      "resolved": "Resolved"
+    },
+    "reply": "Reply",
+    "replyTitle": "Reply to the topic",
+    "replyLabel": "Your reply",
+    "replySend": "Reply",
+    "replies": "Replies",
+    "resolve": "Mark resolved",
+    "reopen": "Reopen"
+  },
+  "coaching": {
+    "sectionTitle": "Coaching",
+    "staleOpportunities_one": "{{count}} opportunity with no action for {{days}} days",
+    "staleOpportunities_other": "{{count}} opportunities with no action for {{days}} days",
+    "why": "A dated fact to bring to a one-on-one — never a score, never a ranking between reps."
+  },
+  "board": {
+    "fallbackTitle": "Your team",
+    "members": "Team members",
+    "period": {
+      "label": "Dashboard period",
+      "days_7": "7 days",
+      "days_30": "30 days",
+      "days_90": "90 days",
+      "delta": "{{sign}}{{value}} vs the previous {{days}} days",
+      "stable": "flat vs the previous {{days}} days"
+    },
+    "review": {
+      "label": "Prepare my team review",
+      "question": "Prepare my team review: what needs a decision, deals without a next step, and where everyone stands this period."
+    },
+    "manageMembers": "Manage members",
+    "toHandle": {
+      "eyebrow": "To handle",
+      "title_one": "{{count}} item to decide",
+      "title_other": "{{count}} items to decide",
+      "clear": "Nothing to decide.",
+      "overdue": {
+        "title_one": "{{count}} overdue action in the team",
+        "title_other": "{{count}} overdue actions in the team",
+        "cta": "See the actions"
+      },
+      "duplicate": {
+        "title": "{{company}} is worked by {{names}}",
+        "cta": "Open the account"
+      },
+      "duplicateMore_one": "and {{count}} more account worked twice",
+      "duplicateMore_other": "and {{count}} more accounts worked twice",
+      "awaitingEsn": {
+        "title": "{{name}} is waiting for you to describe the company",
+        "cta": "Describe the company"
+      },
+      "unassigned": {
+        "title_one": "{{count}} account with no owner",
+        "title_other": "{{count}} accounts with no owner",
+        "cta": "Assign them"
+      },
+      "stale": {
+        "title_one": "{{count}} account idle for {{days}} days or more",
+        "title_other": "{{count}} accounts idle for {{days}} days or more",
+        "cta": "See who holds them"
+      },
+      "whiteSpace": {
+        "title_one": "{{count}} scope nobody covers",
+        "title_other": "{{count}} scopes nobody covers",
+        "cta": "See coverage"
+      },
+      "pendingInvitations": {
+        "title_one": "{{count}} invitation awaiting an answer",
+        "title_other": "{{count}} invitations awaiting an answer",
+        "cta": "See the invitations"
+      }
+    },
+    "pulse": {
+      "eyebrow": "Team pulse",
+      "title": "What the team did over {{days}} days",
+      "analyses": "Analyses run",
+      "actionsDone": "Actions done",
+      "meetings": "Meetings won (declared)",
+      "meetingsHint": "Declared by the rep, not checked against a calendar.",
+      "activeAccounts": "Active accounts",
+      "openNeeds": "Needs opened",
+      "openNeedsHint": "Needs that appeared during the period."
+    },
+    "reps": {
+      "eyebrow": "By rep",
+      "title_one": "{{count}} person in the team",
+      "title_other": "{{count}} people in the team",
+      "sortedByName": "Sorted by name — never by performance.",
+      "columns": {
+        "member": "Member",
+        "portfolio": "Portfolio",
+        "openActions": "Open actions",
+        "overdue": "Of which overdue",
+        "activity": "Activity ({{days}} d)",
+        "lastSeen": "Last seen"
+      },
+      "open": "See {{name}}’s portfolio",
+      "portfolioTitle": "{{name}}’s portfolio",
+      "portfolioDescription": "What {{name}} holds in the workspace today.",
+      "portfolioLoading": "Reading the portfolio…",
+      "portfolioFailed": "The portfolio could not be read.",
+      "seeAccounts": "Open the account list"
+    },
+    "pipelineReview": {
+      "eyebrow": "Pipeline review",
+      "title_one": "{{count}} deal needs a move",
+      "title_other": "{{count}} deals need a move",
+      "titleClear": "No deal waiting for a move",
+      "reasons": {
+        "no_next_step": "No next step",
+        "no_activity": "No activity for over {{days}} days",
+        "stuck": "Same stage for over {{days}} days"
+      },
+      "owner": "Owner: {{name}}",
+      "noOwner": "No owner",
+      "truncated": "{{count}} shown out of {{total}}."
+    },
+    "staffing": {
+      "eyebrow": "Staffing",
+      "title": "{{needs}} · {{available}}",
+      "needs_one": "{{count}} open need",
+      "needs_other": "{{count}} open needs",
+      "available_one": "{{count}} consultant available",
+      "available_other": "{{count}} consultants available",
+      "titleCoverage": "Who covers what",
+      "soon_one": "{{count}} more available within a month",
+      "soon_other": "{{count}} more available within a month",
+      "openNeeds": "See the needs",
+      "openConsultants": "See the talent pool"
+    },
+    "activity": {
+      "eyebrow": "Team activity",
+      "title_one": "{{count}} move recorded over {{days}} days",
+      "title_other": "{{count}} moves recorded over {{days}} days",
+      "filter": "Filter by member",
+      "everyone": "Whole team",
+      "truncated": "The {{count}} most recent are shown; the period has {{total}}.",
+      "emptyMember": "Nothing recorded for this person over the period.",
+      "adminJournal": "Admin log (invitations, roles)",
+      "kindLabel": "Kind of fact",
+      "kinds": {
+        "all": "All recorded facts",
+        "research": "Searches & analyses",
+        "delegations": "Actions & delegations",
+        "followup": "Sales follow-up"
+      },
+      "periodLabel": "Journal period",
+      "empty": "No fact recorded over the last {{days}} days.",
+      "export": {
+        "label": "Export this view",
+        "file": "team-journal",
+        "columns": {
+          "when": "Date",
+          "who": "Member",
+          "what": "Fact",
+          "account": "Account"
+        }
+      }
+    },
+    "details": {
+      "eyebrow": "Detail and history",
+      "adoption": "Adoption",
+      "missions": "Mission hygiene",
+      "contacts": "Contacts to handle"
+    },
+    "cap": {
+      "region": "This month’s target",
+      "eyebrow": "The {{month}} target",
+      "won": "of contracts won",
+      "declaredTarget": "Declared target",
+      "percent": "{{percent}}% of the target",
+      "remaining": "{{amount}} left to sign",
+      "contributors": "{{count}} / {{total}} contributors with a target",
+      "scope": "Estimated amounts of deals won this month. Neither invoiced revenue nor payments received.",
+      "helpLabel": "How to read the sales target",
+      "helpClose": "Close",
+      "helpTitle": "The sales target",
+      "helpBody": "This month’s signed figure is the sum of the entered estimated amounts of deals at the Won stage, dated in the selected month. The collective target adds up the declared targets of the visible members. A missing amount is not turned into zero.",
+      "helpRate": "The attainment rate is a division, signed / target. It does not predict the next wins.",
+      "detail": "Detail"
+    },
+    "priorities": {
+      "region": "Where you can help",
+      "eyebrow": "Where you can help",
+      "title_one": "{{count}} priority to look at",
+      "title_other": "{{count}} priorities to look at",
+      "whyButton": "Why",
+      "overdue": {
+        "title_one": "{{count}} action to pick up",
+        "title_other": "{{count}} actions to pick up",
+        "cta": "Reschedule",
+        "why": "The due date has passed on {{company}}. Rescheduling shows where the team is stuck; nothing is sent."
+      },
+      "follow": {
+        "cta": "Review the next step",
+        "whyStuck": "The deal has been in the same stage for more than {{days}} days.",
+        "whyQuiet": "No activity on the deal for more than {{days}} days."
+      },
+      "dateless": {
+        "title": "A deal with no dated action",
+        "cta": "Create the next action",
+        "why": "No open action on {{company}}: the deal has no next step."
+      }
+    },
+    "counters": {
+      "region": "Team counters",
+      "actions": "Actions to do",
+      "actionsLate_one": "Of which {{count}} overdue",
+      "actionsLate_other": "Of which {{count}} overdue",
+      "noLate": "No overdue recorded",
+      "deals": "Deals to follow",
+      "dealsSub": "The detail, not a productivity score",
+      "topics": "Shared topics",
+      "topicsSub": "Team discussions"
+    },
+    "who": {
+      "title": "Who carries what",
+      "subtitle": "How the work is shared, with no ranking of people.",
+      "accounts": "accounts",
+      "deals": "deals",
+      "openActions_one": "{{count}} open action",
+      "openActions_other": "{{count}} open actions",
+      "late_one": "{{count}} overdue",
+      "late_other": "{{count}} overdue",
+      "lateUnknown": "Overdue not measured",
+      "portfolios": "The portfolios",
+      "open": "Open {{name}}’s portfolio",
+      "nothingSigned": "Nothing signed",
+      "onTarget": "of {{amount}}"
+    },
+    "glance": {
+      "region": "{{copilot}}’s take",
+      "cta": "Prepare the decisions",
+      "overdue": {
+        "title": "Start by clearing the blocker.",
+        "body_one": "{{count}} action is overdue in the team. Finishing it in {{brand}} is not the same as a message sent.",
+        "body_other": "{{count}} actions are overdue in the team. Finishing them in {{brand}} is not the same as a message sent."
+      },
+      "follow": {
+        "title": "Follow up on the deals going nowhere.",
+        "body_one": "{{count}} deal is waiting for a move.",
+        "body_other": "{{count}} deals are waiting for a move."
+      },
+      "computed": "Reading computed from the team’s facts, no model call."
+    },
+    "moves": {
+      "title": "Latest moves",
+      "all": "See all"
+    },
+    "reviewCta": "Prepare the team review",
+    "solo": {
+      "title": "Your workspace has only one member.",
+      "body": "Team management opens with the second member. Until then, everything is set up in Settings › Team.",
+      "cta": "Invite a colleague"
+    },
+    "title": "Team.",
+    "tagline": "The sales target, the deals and everyone’s decisions.",
+    "eyebrow": "Collective steering",
+    "tabs": {
+      "label": "Team spaces",
+      "vue": "Overview",
+      "objectifs": "Goals & deals",
+      "plans": "Plans & actions",
+      "recherches": "Searches",
+      "activite": "Activity & exchanges",
+      "administration": "Administration"
+    },
+    "sub": {
+      "objectifs": "Goals of the month",
+      "affaires": "Deal review",
+      "portefeuilles": "Portfolios",
+      "journal": "Activity log",
+      "echanges": "Team exchanges"
+    },
+    "headline": {
+      "vue": {
+        "title": "Team",
+        "tagline": "The sales target, the files and everyone’s decisions."
+      },
+      "objectifs": {
+        "title": "Ambitions, and what follows",
+        "tagline": "Tell apart contracts to win, the open pipe and the amounts collected."
+      },
+      "plans": {
+        "title": "Plans & actions",
+        "tagline": "What is planned, who carries it, and what is late."
+      },
+      "activite": {
+        "title": "What moves, what is discussed",
+        "tagline": "A feed of sales facts and shared decisions. Not presence monitoring."
+      }
+    },
+    "filters": {
+      "label": "Page filters",
+      "scope": "Scope",
+      "everyone": "The whole team",
+      "objectives": "Goals",
+      "period": "Activity over"
+    },
+    "actor": {
+      "title": "A view, not a right",
+      "description": "Compare the management, sales and technical administration journeys. This only simulates access to the Team space.",
+      "you": "you",
+      "sees": "Opens the Team space",
+      "doesNotSee": "Does not open the Team space",
+      "noteTitle": "Switching view does not change your rights.",
+      "note": "You see what this role would see, without acting in its place."
+    },
+    "potential": {
+      "eyebrow": "Potential to convert",
+      "openPipe": "of open pipe",
+      "open": "Open the deals",
+      "footer_one": "{{count}} open deal · unweighted amounts",
+      "footer_other": "{{formatted}} open deals · unweighted amounts"
+    },
+    "confuse": {
+      "title": "Do not confuse",
+      "cap": {
+        "title": "The target to sign",
+        "body": "The sum of the targets members declared for the month."
+      },
+      "won": {
+        "title": "Deals won",
+        "body": "Their entered estimated amounts, attributed to the deal owner."
+      },
+      "cash": {
+        "title": "The figure actually collected",
+        "body": "Invoice payments are followed in Missions. They do not add to the contracts won.",
+        "cta": "See the collections"
+      }
+    },
+    "chosen": {
+      "title": "A target chosen, not silently imposed",
+      "body": "Each member declares their target. Management can propose an adjustment to confirm."
+    },
+    "deals": {
+      "title": "Move deals forward, one decision at a time.",
+      "subtitle": "The same deals as in the pipeline: facts and dates, nothing estimated for you.",
+      "fullPipe": "Full pipeline",
+      "stageFilter": "Deal stage",
+      "count_one": "1 deal · {{amount}}",
+      "count_other": "{{count}} deals · {{amount}}",
+      "countNoAmount_one": "1 deal, no amount entered",
+      "countNoAmount_other": "{{count}} deals, no amount entered",
+      "amountsHelp": "Understand the amounts",
+      "amountsTitle": "The open pipeline",
+      "amountsBody": "Each amount is the one entered on the deal, unweighted. It is not signed revenue, not invoiced, not collected. A deal without an amount stays visible and is left out of the sum.",
+      "columns": {
+        "deal": "Deal & account",
+        "owner": "Owner",
+        "stage": "Stage",
+        "amount": "Estimated amount",
+        "next": "Next decision",
+        "actions": "Actions"
+      },
+      "noAmount": "No amount",
+      "targetDate": "Target decision: {{date}}",
+      "noTargetDate": "No decision date",
+      "review": "Review",
+      "reviewTitle": "Review the deal’s next step",
+      "targetDateLabel": "Target decision (expected signature)",
+      "ownerLabel": "Deal owner",
+      "accountPlan": "See {{company}}’s plan",
+      "save": "Save next step",
+      "saveError": "The next step could not be saved. Nothing changed on the deal.",
+      "footnote": "Open amounts are not signed revenue. Deals without an amount stay visible.",
+      "empty": "No open deal in the workspace yet.",
+      "loadError": "Deals could not be read."
+    },
+    "portfolios": {
+      "title": "The right owner, the right next action.",
+      "subtitle": "Creating an account and owning the relationship are not the same thing.",
+      "openAccounts": "Open Accounts",
+      "search": "Search an account",
+      "situation": "Portfolio situation",
+      "situations": {
+        "followed": "Followed accounts",
+        "noAction": "No open action",
+        "noOwner": "No owner"
+      },
+      "count_one": "1 account",
+      "count_other": "{{count}} accounts",
+      "countShown_one": "1 account shown",
+      "countShown_other": "{{count}} accounts shown",
+      "noOwner": "No owner",
+      "noAction": "No open action",
+      "noActionHint": "Next step still to decide",
+      "noHorizon": "No due date",
+      "assign": "Assign",
+      "assignTitle": "Assign {{company}}",
+      "assignBody": "The new owner carries the relationship. Nothing changes until you confirm.",
+      "newOwner": "New owner",
+      "confirm": "Confirm assignment",
+      "more": "Show more accounts",
+      "empty": "No account in the workspace yet.",
+      "emptyFiltered": "No account matches this situation.",
+      "loadError": "Accounts could not be read."
+    }
+  },
+  "review": {
+    "title": "The team review.",
+    "tagline": "A short path to turn findings into decisions.",
+    "stepsLabel": "Team review steps",
+    "steps": {
+      "1": "Topics",
+      "2": "Decisions",
+      "3": "Review"
+    },
+    "stepOf": "Step {{step}} / 3",
+    "next": "Continue",
+    "previous": "Back",
+    "leave": "Leave for now",
+    "save": "Save the decisions",
+    "saved_one": "{{count}} decision saved in the plan.",
+    "saved_other": "{{count}} decisions saved in the plan.",
+    "failed": "The review could not be saved. Nothing changed.",
+    "topics": {
+      "late": {
+        "kicker": "An action to pick up",
+        "why": "This action is past its due date. Finishing it in {{brand}} is not the same as a message sent."
+      },
+      "follow": {
+        "kicker": "A deal to follow up",
+        "whyStuck": "The deal has been in the same stage for more than {{days}} days. Check the terms and the calendar, without treating it as won.",
+        "whyQuiet": "No activity on the deal for more than {{days}} days."
+      },
+      "dateless": {
+        "kicker": "A deal with no dated action",
+        "why": "No open action on the account: the deal has no trackable next step."
+      }
+    },
+    "s1": {
+      "title": "What needs unblocking together?",
+      "hint": "Select the topics for the review. Selecting changes no action.",
+      "laura_one": "{{copilot}} prepared this topic from the team’s overdue actions and deals. Untick what does not deserve the review.",
+      "laura_other": "{{copilot}} prepared these {{count}} topics from the team’s overdue actions and deals. Untick what does not deserve the review.",
+      "empty": "Nothing needs a decision today: no overdue action, no deal without follow-up. You can still note a point to share.",
+      "noteLabel": "Another point to share",
+      "notePlaceholder": "A topic, a decision, a question…"
+    },
+    "s2": {
+      "title": "Who does what, and by when?",
+      "hint": "Check the decisions. Existing actions are updated, never duplicated.",
+      "decision": "Decision {{index}}",
+      "decisionExisting": "Decision {{index}} · existing action",
+      "decisionLabel": "Decision {{index}}",
+      "action": "Next action",
+      "owner": "Owner",
+      "due": "Due date",
+      "skip": "Review with no new action",
+      "skipHint": "The review will be saved with its note, creating or changing no action.",
+      "noneChosen": "Review with no new action: no topic was chosen. The review will be saved with its note, creating or changing no action."
+    },
+    "s3": {
+      "title": "A report that leads to action.",
+      "hint": "Final check. No email will be sent and no deal will change stage.",
+      "update": "Update of the existing action",
+      "create": "New action in the plan",
+      "noAction": "Review with no new action: no action will be created or changed.",
+      "note": "Your note: {{note}}"
+    }
+  },
+  "team": {
+    "nav": {
+      "overview": "Overview",
+      "business": "Targets & deals",
+      "plans": "Plans & actions"
+    },
+    "loading": "Loading…",
+    "loadError": "This view can’t be loaded right now.",
+    "target": {
+      "close": "Close",
+      "titleMine": "Your targets for the month",
+      "titlePropose": "Propose a target to {{name}}",
+      "axis": {
+        "target_revenue": "Revenue to sign (€)",
+        "target_meetings": "Meetings booked",
+        "target_accounts": "Accounts added this month",
+        "target_qualified_needs": "Qualified needs",
+        "target_placements": "Starts",
+        "target_margin_percent": "Target margin (%)",
+        "target_consultants_on_mission": "Consultants on assignment"
+      },
+      "emptyMeansUndefined": "An empty field means “not set”.",
+      "reasonLabel": "Why this adjustment?",
+      "proposalNoteTitle": "A proposal, not a silent change",
+      "proposalNote": "The current target stays as it is. {{name}} will confirm the proposal from their own view, and you will see the answer.",
+      "mineNote": "Achievements are computed from the records. Adjusting a target changes neither the deals nor the payments.",
+      "cancel": "Cancel",
+      "saveMine": "Save my targets",
+      "sendProposal": "Send the proposal",
+      "savedMine": "Your targets are saved.",
+      "failed": "Your targets couldn’t be saved.",
+      "proposed": "Proposal sent to {{name}}. Their current target doesn’t change before they answer.",
+      "proposeFailed": "The proposal couldn’t be sent."
+    },
+    "business": {
+      "title": "Targets & deals",
+      "lead": "The month’s ambitions, the deals waiting for a decision and the account portfolio: who carries what, and what comes next.",
+      "viewsLabel": "Targets & deals views",
+      "views": {
+        "objectives": "Targets of the month",
+        "deals": "Deal review",
+        "portfolio": "Portfolios"
+      },
+      "cap": {
+        "eyebrow": "The {{month}} goal",
+        "signed": "{{amount}} of contracts won",
+        "nothingSigned": "Nothing signed yet",
+        "target": "Declared target {{amount}}",
+        "noTarget": "No target declared",
+        "percent": "{{percent}}% of the target",
+        "remaining": "{{amount}} left to sign",
+        "contributors_one": "{{count}} / {{total}} contributor with a target",
+        "contributors_other": "{{count}} / {{total}} contributors with a target",
+        "wonWithoutAmount_one": "{{count}} won deal with no amount entered",
+        "wonWithoutAmount_other": "{{count}} won deals with no amount entered",
+        "footnote": "Estimated amounts of the deals won in the month. Neither invoiced revenue nor payments received."
+      },
+      "confuse": {
+        "title": "Don’t mix up",
+        "cap": "The goal to sign",
+        "capHint": "The sum of the targets members declared for the month.",
+        "won": "Deals won",
+        "wonHint": "Their entered estimated amounts, attributed to the deal owner.",
+        "cashed": "Cash actually received",
+        "cashedHint": "Invoice payments are tracked in Missions. They are not added to the contracts won.",
+        "cashedLink": "See the payments received"
+      },
+      "chosen": {
+        "title": "A chosen target, not one imposed in silence.",
+        "lead": "Each member declares their target. Management can propose an adjustment for them to validate.",
+        "defineMine": "Set my target"
+      },
+      "member": {
+        "signed": "{{amount}} signed in {{month}}",
+        "nothingSigned": "Nothing signed in {{month}}",
+        "targetLabel": "Target of the month",
+        "targetUndeclared": "No target declared",
+        "meetingsLabel": "Meetings booked",
+        "accountsLabel": "Accounts added this month",
+        "ratio": "{{done}} / {{target}}",
+        "noTarget": "{{done}} · no target",
+        "pendingProposal": "A target is proposed · waiting for their answer",
+        "adjustMine": "Adjust my targets",
+        "propose": "Propose a target",
+        "openSheet": "Open the page"
+      },
+      "deals": {
+        "title": "Move deals forward, one decision at a time.",
+        "lead": "The same deals as in the pipeline. No signing estimate is made up.",
+        "fullPipeline": "Full pipeline",
+        "none": "No open deal for now.",
+        "summary_one": "{{count}} deal · {{amount}}",
+        "summary_other": "{{count}} deals · {{amount}}",
+        "summaryNoAmount_one": "{{count}} deal · no amount entered",
+        "summaryNoAmount_other": "{{count}} deals · no amount entered",
+        "withoutAmount_one": "{{count}} with no amount",
+        "withoutAmount_other": "{{count}} with no amount",
+        "understand": "Understand the amounts",
+        "understandBody": "Each amount is the estimate entered on the deal, unweighted: it is neither signed revenue nor invoiced. A deal with no amount stays visible and is never counted as €0.",
+        "col": {
+          "deal": "Deal & account",
+          "owner": "Owner",
+          "stage": "Stage",
+          "amount": "Estimated amount",
+          "decision": "Next decision",
+          "action": "Action"
+        },
+        "noOwner": "No owner",
+        "noAmount": "No amount",
+        "noNextDecision": "What comes next is still to decide",
+        "targetDecision": "Target decision: {{date}}",
+        "decisionToSpecify": "Decision date to be set",
+        "review": "Review",
+        "footnote": "Open amounts are not signed revenue. Deals with no amount stay visible.",
+        "byCategory": "Pipeline by declared category and signing date"
+      },
+      "portfolio": {
+        "title": "The right owner, the right next action.",
+        "lead": "Creating an account and carrying its relationship are not the same thing.",
+        "openAccounts": "Open Accounts",
+        "filterLabel": "Filter the accounts",
+        "filter": {
+          "all": "All accounts",
+          "no_action": "No open action",
+          "unassigned": "No owner"
+        },
+        "count_one": "{{count}} account",
+        "count_other": "{{count}} accounts",
+        "noOwner": "No owner",
+        "noAction": "No open action",
+        "noActionHint": "What comes next is still to decide",
+        "assignTo": "Assign to",
+        "assign": "Assign",
+        "coverageMap": "Coverage by segment and by persona"
+      }
+    },
+    "plans": {
+      "title": "Plans & actions",
+      "lead": "From plan to action. Assign, prepare and follow the work, without confusing a finished task with a sent message.",
+      "create": "Create an action",
+      "summary": "{{open}} open · {{overdue}} overdue · {{delegated}} delegated",
+      "statusLabel": "Filter actions by state",
+      "status": {
+        "todo": "To do",
+        "overdue": "Overdue",
+        "today": "Today",
+        "delegated": "Delegated",
+        "all": "All"
+      },
+      "accountFilter": "Account",
+      "allAccounts": "All accounts",
+      "layoutLabel": "Display mode",
+      "layout": {
+        "list": "List",
+        "split": "By person",
+        "week": "Week"
+      },
+      "empty": "No open action: the team is up to date.",
+      "emptyFiltered": "No action matches this filter.",
+      "badgeOverdue": "Overdue",
+      "delegatedBy": "entrusted by {{name}}",
+      "noDue": "No due date",
+      "prepare": "Prepare",
+      "edit": "Edit",
+      "splitHeading": "{{name}} · {{count}}",
+      "weekNoAction": "No dated action.",
+      "weekOther": "Outside this week / undated",
+      "dragNote": "Drag and drop proposes a change for you to confirm. You can also edit each action with the keyboard.",
+      "confirm": {
+        "close": "Close",
+        "title": "Confirm the change",
+        "holder": "Owner",
+        "due": "Due date",
+        "note": "Context note for the person you hand the action to",
+        "notice": "Nothing is written until you confirm. No message or invitation goes out.",
+        "cancel": "Cancel",
+        "apply": "Confirm",
+        "done": "The action is updated.",
+        "failed": "This action couldn’t be changed."
+      },
+      "createDialog": {
+        "close": "Close",
+        "title": "One next action, one owner",
+        "lead": "The action joins the account plan and the Actions page.",
+        "label": "Action to carry out",
+        "holder": "Owner",
+        "due": "Due date",
+        "account": "Linked account",
+        "reason": "Useful context",
+        "expectedOutcome": "Expected result",
+        "expectedOutcomeRequired": "The expected result is required: say what \"done\" looks like.",
+        "noticeTitle": "Preparing is not sending",
+        "notice": "The task will be linked to the account plan and to Actions. No message or invitation goes out.",
+        "cancel": "Cancel",
+        "submit": "Create the action",
+        "done": "Action created.",
+        "failed": "The action couldn’t be created."
+      },
+      "history": "Action history",
+      "automations": "See the automations"
+    },
+    "member": {
+      "back": "Back to the whole team",
+      "loadError": "This page can’t be opened: the member isn’t in this workspace.",
+      "pageTitle": "Member page",
+      "title": "{{name}}",
+      "summary": "{{name}}: {{accounts}} accounts followed in the portfolio · {{deals}} open deals · {{actions}} next actions.",
+      "objective": {
+        "title": "Their targets",
+        "titleMine": "My targets",
+        "target": "Target of the month: {{amount}}",
+        "proposalForYou": "A target is proposed to you",
+        "meetings_one": "{{count}} meeting",
+        "meetings_other": "{{count}} meetings",
+        "accounts_one": "{{count}} account added",
+        "accounts_other": "{{count}} accounts added",
+        "accept": "Accept",
+        "refuse": "Decline",
+        "propose": "Propose a target"
+      },
+      "plan": {
+        "title": "Work plan",
+        "lead": "The person’s action plan: their next steps, accounts and due dates.",
+        "open": "Open Plans & actions"
+      },
+      "actions": {
+        "title": "The next actions",
+        "empty": "No open action."
+      },
+      "portfolio": {
+        "title": "The portfolio",
+        "empty": "No account assigned."
+      },
+      "deals": {
+        "title": "Deals in progress",
+        "empty": "No open deal."
+      },
+      "role": {
+        "title": "The role in the team",
+        "delegationNote": "Entrusted actions are distinct from the account owner.",
+        "mailboxGuard": "Seeing their activity does not let you read their private mailbox.",
+        "handover": "Departure or portfolio handover"
+      },
+      "access": {
+        "title": "Access and integrations",
+        "none": "No integration connected in this workspace.",
+        "kind": {
+          "mailbox": "Mailbox",
+          "crm": "CRM"
+        },
+        "byMember": "connected by {{name}}",
+        "open": "See the integrations"
+      }
+    }
+  },
+  "equipe": {
+    "eyebrow": "Collective steering",
+    "tabs": {
+      "plans": "Plans & actions",
+      "searches": "Searches"
+    },
+    "plans": {
+      "title": "From plan to action",
+      "tagline": "Assign, prepare and follow the work, without mixing up a finished task and a sent message.",
+      "lensLabel": "Actions to show",
+      "lens": {
+        "todo": "To do",
+        "late": "Overdue",
+        "today": "Today",
+        "delegated": "Delegated"
+      },
+      "search": "Search an action…",
+      "accounts": "Accounts",
+      "mode": {
+        "list": "List",
+        "split": "By owner",
+        "week": "Week"
+      },
+      "today": "Today",
+      "tomorrow": "Tomorrow",
+      "weekLate": "Overdue",
+      "weekLater": "Later",
+      "prepare": "Prepare",
+      "allAccounts": "All accounts",
+      "someAccounts_one": "{{count}} account",
+      "someAccounts_other": "{{count}} accounts",
+      "modeLabel": "Display"
+    },
+    "searches": {
+      "title": "Don’t let a search sleep",
+      "tagline": "Find the explored scope, the accounts examined and the next decision.",
+      "eyebrow": "From exploration to a worked account",
+      "kept_one": "{{count}} search kept.",
+      "kept_other": "{{count}} searches kept.",
+      "none": "No search kept.",
+      "choose": "You choose what comes next.",
+      "note": "A search is not a deal. The accounts you keep and their actions stay linked to their files.",
+      "new": "New search",
+      "scope": "The searches kept by the whole team.",
+      "kind": "Discovery",
+      "examine": "Examine",
+      "news_one": "{{count}} new result since the last read",
+      "news_other": "{{count}} new results since the last read",
+      "listTitle": "Kept searches",
+      "newsShort_one": "new item since the last read",
+      "newsShort_other": "new items since the last read",
+      "examineAria": "Examine {{label}}",
+      "resume": "Resume in Discover"
+    },
+    "member": {
+      "fallback": "Team member",
+      "tagline": "{{role}} · view of their recorded work",
+      "unknown": "This person is not part of the workspace.",
+      "back": "Back to the whole team",
+      "hello": "{{name}}, in the right place.",
+      "accounts_one": "{{count}} account followed in the portfolio",
+      "accounts_other": "{{count}} accounts followed in the portfolio",
+      "deals_one": "{{count}} deal to look at",
+      "deals_other": "{{count}} deals to look at",
+      "actions_one": "{{count}} next action",
+      "actions_other": "{{count}} next actions",
+      "nextActions": "Next actions",
+      "noActions": "No open action for this person.",
+      "portfolio": "The portfolio",
+      "assign": "Assign",
+      "deals_title": "Deals to look at",
+      "roleTitle": "The role in the team",
+      "roleBody": "{{role}}. Delegated actions are distinct from the account owner.",
+      "privacy": "Seeing their work does not allow reading their private mailbox.",
+      "admin": "Access and administration",
+      "heroLabel": "At a glance",
+      "workPlan": "Work plan",
+      "nothingSigned": "Nothing signed",
+      "signed": "{{amount}} signed",
+      "target": "monthly target: {{amount}}",
+      "assignAria": "Assign {{account}}",
+      "assignTitle": "Assign {{account}}",
+      "assignHint": "The account changes owner; its actions, notes and history stay.",
+      "assignTo": "Hand over to",
+      "assignConfirm": "Assign"
+    },
+    "prepareReview": "Prepare the team review",
+    "control": {
+      "label": "Scope and objectives",
+      "scope": "Scope",
+      "allTeam": "Whole team",
+      "objectives": "Objectives"
+    },
+    "task": {
+      "open": "Open: {{label}}",
+      "owner": "Owner",
+      "due": "Due",
+      "account": "Account",
+      "openAccount": "Open the account"
+    },
+    "create": {
+      "open": "Create an action",
+      "title": "A next action, an owner",
+      "label": "Action to carry out",
+      "labelPlaceholder": "E.g. Get feedback on the profile presented",
+      "owner": "Owner",
+      "due": "Due date",
+      "account": "Linked account",
+      "channel": "Preparation type",
+      "channels": {
+        "phone": "Prepare a call",
+        "email": "Prepare an email",
+        "linkedin": "Prepare a professional-network message",
+        "meeting": "Prepare a meeting"
+      },
+      "reason": "Objective",
+      "reasonPlaceholder": "Why this action, the point to check…",
+      "expectedOutcome": "Expected result",
+      "expectedOutcomePlaceholder": "What \"done\" looks like — e.g. A meeting booked",
+      "expectedOutcomeRequired": "The expected result is required: say what \"done\" looks like.",
+      "note": "The action joins the account plan, with its owner and due date. Nothing goes out without you.",
+      "submit": "Create the action",
+      "created": "Action created.",
+      "failed": "Could not create the action.",
+      "noAccount": "No account in this view to attach an action to."
+    }
+  }
+}

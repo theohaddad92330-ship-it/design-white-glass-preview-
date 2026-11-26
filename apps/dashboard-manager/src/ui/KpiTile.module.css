@@ -1,0 +1,36 @@
+/* #1642 — KpiTile : label · valeur · delta · période. Densité 13px. */
+.tile {
+  background: var(--surface);
+  border: 1px solid var(--border);
+  border-radius: 12px;
+  padding: 20px;
+}
+
+.label {
+  color: var(--muted);
+  /* #1642.5 — 13px de base, comme `.footer` plus bas : les deux jouaient le
+     même rôle (étiquette/texte secondaire de la tuile) à des tailles
+     différentes (12 et 13px). */
+  font-size: 13px;
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+}
+
+.value {
+  font-size: 26px;
+  font-weight: 700;
+  margin-top: 6px;
+  font-variant-numeric: tabular-nums;
+}
+
+.footer {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  margin-top: 8px;
+  font-size: 13px;
+}
+
+.period {
+  color: var(--muted);
+}

@@ -1,0 +1,82 @@
+{
+  "counts": {
+    "overdue_one": "{{count}} overdue",
+    "overdue_other": "{{count}} overdue",
+    "today_one": "{{count}} due today",
+    "today_other": "{{count}} due today",
+    "clear": "Nothing urgent."
+  },
+  "buckets": {
+    "overdue": "Overdue",
+    "today": "Today",
+    "tomorrow": "Tomorrow",
+    "this_week": "This week",
+    "later": "Later"
+  },
+  "priority": {
+    "normal": "Normal",
+    "high": "Priority"
+  },
+  "actions": {
+    "add": "Add a task",
+    "complete": "Mark as done",
+    "delete": "Delete",
+    "undo": "Undo",
+    "history": "History",
+    "postponeTomorrow": "Postpone to tomorrow",
+    "postponeNextWeek": "Postpone to next week",
+    "undoPostpone": "Undo postpone"
+  },
+  "states": {
+    "empty": "No open task.",
+    "loadError": "Your tasks could not be loaded. They are still there — it is the read that failed.",
+    "more_one": "and {{count}} more task",
+    "more_other": "and {{count}} more tasks",
+    "completedNotice": "“{{title}}” marked done · no message sent",
+    "historyEmpty": "No completed task.",
+    "closedStatus": {
+      "done": "Done on {{date}}",
+      "cancelled": "Cancelled on {{date}}"
+    },
+    "postponedNotice": {
+      "tomorrow": "“{{title}}” postponed to tomorrow",
+      "next_week": "“{{title}}” postponed to next Monday"
+    }
+  },
+  "composer": {
+    "title": "New task",
+    "subtitle": "A task without a due date shows up in no view, so the date is required — and pre-filled to today.",
+    "titleLabel": "Title",
+    "titlePlaceholder": "Call the CIO back about the two profiles",
+    "detailsLabel": "Details",
+    "detailsPlaceholder": "By phone rather than email — he never answers written follow-ups.",
+    "expectedResultLabel": "Expected result (required)",
+    "expectedResultPlaceholder": "Meeting booked with the CIO",
+    "objectiveLabel": "Objective (required)",
+    "objectivePlaceholder": "Get a decision date",
+    "ownerLabel": "Who's on it",
+    "ownerMe": "Me",
+    "dueLabel": "Due date",
+    "shortcuts": {
+      "today": "Today",
+      "tomorrow": "Tomorrow",
+      "nextWeek": "In a week"
+    },
+    "missing": "To create, still missing: {{fields}}.",
+    "fieldNames": {
+      "title": "the title",
+      "due": "the due date",
+      "objective": "the objective",
+      "expectedResult": "the expected result"
+    },
+    "submit": "Create"
+  },
+  "toast": {
+    "created": "Task created.",
+    "createError": "The task could not be created.",
+    "done": "Task completed.",
+    "saveError": "The change could not be saved.",
+    "deleted": "Task deleted.",
+    "deleteError": "Deletion failed."
+  }
+}

@@ -1,0 +1,28 @@
+lot: lot-776
+issues: [5004]
+
+changelog:
+  id: 2026-11-02-lot-776
+  comment: 'Lot 776 (#5004) — Compte : comment y entrer — accès, barrières et route d’achat, sans identité'
+  fr:
+    date: 2 novembre 2026
+    title: 'Compte : comment y entrer — accès, barrières et route d’achat'
+    items:
+      - 'L’onglet « Écosystème & accès » dit comment entrer chez un compte : accessibilité, barrières, route d’achat recommandée et niveau de priorité, observés sur le marché. Un axe non établi ne fait aucune ligne.'
+      - 'Laura s’appuie sur ces mêmes faits pour préparer l’approche, sans jamais citer de personne.'
+      - 'Rien d’identifiant ne s’affiche : le nom d’un prescripteur, un e-mail, un téléphone ou un lien de profil ne sortent ni à l’écran ni vers Laura, et une fiche en doublon ne rattache aucun besoin.'
+  en:
+    date: November 2, 2026
+    title: 'Account: how to get in — access, barriers and buying route'
+    items:
+      - 'The “Ecosystem & access” tab now says how to get in at an account: accessibility, barriers, recommended buying route and priority level, observed on the market. An axis that could not be established gets no row.'
+      - 'Laura relies on the same facts to prepare the approach, without ever naming a person.'
+      - 'Nothing identifying is shown: a prescriber’s name, email, phone or profile link never reaches the screen or Laura, and a duplicate record attaches no need.'
+
+inserts:
+  - file: agent_docs/demo-mode.md
+    text: |
+
+      ## Accès au compte · Base commune (lot 776, Louis 02/11/2026)
+
+      - **Le bloc « Accès au compte » est SEMÉ sur Renault** (`demo-dataforge-access.ts`, relayé par `raw_analysis.dataforge_access` quand aucune fiche réelle ne répond) : accessibilité, barrières, route d'achat, priorité en énumérations métier, aucun code brut ni identifiant de personne. Les autres comptes n'en portent pas (une absence, jamais « 0 »). Garde : `demo-dataforge-access.spec.ts`.

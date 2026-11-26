@@ -1,0 +1,1429 @@
+{
+  "import": {
+    "title": "Importer des contacts (CSV)",
+    "description": "Colonnes reconnues : nom, titre, email, téléphone, LinkedIn. Chaque contact est classé (famille, pertinence) — les profils douteux sont conservés et signalés, jamais supprimés.",
+    "relevanceAria": "Pertinence {{value}}/5",
+    "readError": "Impossible de lire le fichier.",
+    "nonCsv": {
+      "xlsx": "J'ai détecté un classeur Excel (.xlsx), pas un CSV. Exporte-le d'abord en CSV, puis réessaie.",
+      "zip": "J'ai détecté une archive ZIP — elle contient peut-être plusieurs exports. Ouvre-la, garde un seul fichier CSV, puis réessaie."
+    },
+    "choose": "Choisir un fichier CSV",
+    "maxRows": "Jusqu'à {{max}} contacts par import",
+    "chooseAnother": "Choisir un autre fichier",
+    "rowCount_one": "— {{count}} contact",
+    "rowCount_other": "— {{count}} contacts",
+    "skippedNoName": " · {{count}} ligne(s) sans nom ignorée(s)",
+    "truncatedWarning": "Le fichier contient plus de {{max}} lignes — seules les {{max}} premières seront importées.",
+    "classifying": "Classement des contacts…",
+    "ready_one": "{{count}} prêt",
+    "ready_other": "{{count}} prêts",
+    "flagged_one": "{{count}} à vérifier (conservé)",
+    "flagged_other": "{{count}} à vérifier (conservés)",
+    "table": {
+      "name": "Nom",
+      "role": "Fonction",
+      "family": "Famille",
+      "relevance": "Pertinence",
+      "status": "Statut",
+      "title": "Titre",
+      "email": "Email",
+      "canonicalTitle": "Reconnu : {{title}}"
+    },
+    "statusOk": "OK",
+    "noneFound": "Aucun contact avec un nom n'a été trouvé dans ce fichier.",
+    "moreClassified": "+ {{count}} autre(s) contact(s) classé(s).",
+    "includeFlagged": "Importer aussi les {{count}} contact(s) à vérifier",
+    "changeFile": "Changer de fichier",
+    "importing": "Import en cours…",
+    "submit_one": "Importer {{count}} contact",
+    "submit_other": "Importer {{count}} contacts",
+    "next": {
+      "createTarget": "Créer une première cible",
+      "updateAudit": "Mettre à jour mon audit",
+      "askLaura": "Demander à {{copilot}} quoi faire de cette base",
+      "askLauraPrompt": "Que dois-je faire de la base de contacts que je viens d'importer pour {{company}} ?",
+      "thisAccount": "ce compte",
+      "exceptions": "Voir les exceptions"
+    },
+    "exceptionsPanel": {
+      "title": "Lignes non importées",
+      "reasonBlankName": "Nom manquant",
+      "reasonDuplicate": "Déjà connu (doublon)"
+    },
+    "result": {
+      "created_one": "{{count}} contact importé.",
+      "created_other": "{{count}} contacts importés.",
+      "skippedSuffix": " · {{count}} doublon(s) ignoré(s)",
+      "close": "Fermer"
+    }
+  },
+  "priorityPath": {
+    "title": "Chemin d'accès recommandé",
+    "subtitle_one": "{{count}} contact prioritaire à engager en premier.",
+    "subtitle_other": "{{count}} contacts prioritaires à engager en premier.",
+    "hint": "Enrichis d'abord 3 à 5 contacts clés.",
+    "personaLabel": "Persona",
+    "priorityLabel": "Priorité",
+    "rankedForSize_one": "Classé pour une entreprise de {{count}} personne (palier {{tier}}).",
+    "rankedForSize_other": "Classé pour une entreprise de {{count}} personnes (palier {{tier}}).",
+    "sizeTier": {
+      "small": "moins de 1 000 personnes",
+      "mid": "1 000 à 10 000 personnes",
+      "large": "plus de 10 000 personnes"
+    },
+    "rankedSummary": "Classés parmi {{total}} contacts sur huit critères nommés, la joignabilité ne départageant qu'à rôle égal — jamais sur la photo, l'âge ou la ville.",
+    "noDecisionMaker": "Aucun décideur identifié sur ce compte",
+    "perimeterLabel": "Périmètre ciblé",
+    "perimeterAccount": "Cartographie du compte",
+    "subjectLabel": "Sujet",
+    "subjectAccount": "Angles du compte",
+    "offerLabel": "Offre visée",
+    "offerPlaceholder": "ex. migration cloud",
+    "offerApply": "Reclasser",
+    "loading": "Classement en cours…",
+    "unavailable": "Classement indisponible : l'ordre de l'analyse est affiché, sans ses critères.",
+    "card": {
+      "zone": {
+        "in_zone": "En zone",
+        "out_of_zone": "Hors zone",
+        "out_of_zone_named": "Hors zone ({{zone}})",
+        "place_absent": "Lieu absent"
+      },
+      "roleToIdentify": "Rôle à identifier",
+      "rank": "N° {{position}}",
+      "rankAria": "Priorité {{position}} — 1 = à contacter en premier",
+      "orderReason": {
+        "access_referenced": "Le compte est référencé : les opérationnels et les acheteurs passent d’abord, avant les décideurs.",
+        "access_to_build": "L’accès est à bâtir : les décideurs et les sponsors passent d’abord."
+      },
+      "openRecord": "Ouvrir la fiche de {{name}}",
+      "whyRank": "Pourquoi ce rang ?",
+      "hideWhy": "Masquer les critères",
+      "passAhead": "Passe devant {{name}} (n° {{position}}) parce que « {{axis}} » : {{points}}/{{max}} contre {{otherPoints}}/{{max}}.",
+      "axesSum": "Somme des critères : {{points}} points sur {{max}} évalués, ramenés à {{score}}/100.",
+      "tiedWith": "À égalité avec {{name}} (n° {{position}}).",
+      "noScore": "Trop peu de critères évaluables pour noter cette personne",
+      "confidenceLabel": "Confiance",
+      "confidenceMissing": "à compléter : {{axes}}",
+      "scoreTooltip": "Score de classement sur 100 — ramené de {{score}} points obtenus sur {{max}} possibles (critères évalués)",
+      "confidenceTooltip": "Confiance : {{measured}} axes mesurés sur {{total}}",
+      "tieBreaker": "Départage à rôle égal — {{axis}} : {{detail}}",
+      "esnLevel": "Niveau {{level}} pour toi — {{label}}",
+      "esnLevels": {
+        "1": "signataire",
+        "2": "décideur",
+        "3": "prescripteur",
+        "4": "influenceur"
+      },
+      "accessLabel": "Voie d'accès",
+      "contactLabel": "Coordonnées",
+      "lastInteractionLabel": "Dernier échange",
+      "nothingFound": "Aucune coordonnée trouvée après recherche",
+      "buyerNamed": "Les achats interviennent ensuite : {{name}} ({{title}})",
+      "buyerSeat": "Les achats interviennent ensuite : {{title}} (nom à identifier)",
+      "buyerNoTitle": "fonction non renseignée",
+      "buyerUnknown": "Les achats interviennent ensuite : aucun acheteur identifié dans ce dossier"
+    },
+    "confidence": {
+      "high": "élevée",
+      "medium": "moyenne",
+      "low": "faible",
+      "not_measured": "non mesurée"
+    },
+    "access": {
+      "relationship": "relation déjà connue de ton espace",
+      "history": "échange déjà tracé",
+      "verified_email": "e-mail vérifié",
+      "email": "e-mail non vérifié",
+      "phone": "téléphone",
+      "professional_profile": "profil professionnel",
+      "searched_nothing_found": "aucun canal trouvé après recherche"
+    },
+    "axes": {
+      "perimeter": "Périmètre",
+      "decision_level": "Niveau de décision utile",
+      "accessibility": "Accessibilité",
+      "subject": "Sujet",
+      "offer": "Offre",
+      "buying_role": "Rôle d'achat",
+      "history": "Historique",
+      "relationship": "Relation",
+      "relevant_seniority": "Séniorité pertinente"
+    },
+    "reasons": {
+      "target_entity": "dans le périmètre choisi",
+      "other_entity": "hors du périmètre choisi",
+      "entity_unknown": "entité non renseignée",
+      "perimeter_p1": "périmètre prioritaire (P1)",
+      "perimeter_p2": "périmètre P2",
+      "perimeter_secondary": "périmètre secondaire",
+      "entity_operating": "entité opérante",
+      "entity_outside": "entité hors périmètre",
+      "no_perimeter_context": "entité non rattachée à la cartographie",
+      "level_governance": "gouvernance — arbitre en dernier",
+      "level_c_level": "comité exécutif — arbitre en dernier, pas une porte d'entrée",
+      "level_direction": "direction — bonne porte d'entrée",
+      "level_management": "management — bonne porte d'entrée",
+      "level_expert": "expert",
+      "level_operational": "opérationnel",
+      "level_purchasing": "achats",
+      "level_unknown": "fonction inconnue",
+      "verified_email": "e-mail vérifié",
+      "email": "e-mail non vérifié",
+      "phone": "téléphone",
+      "professional_profile": "profil professionnel seul",
+      "searched_nothing_found": "cherché, rien trouvé",
+      "never_searched": "jamais recherché",
+      "subject_match": "intitulé lié au sujet",
+      "subject_no_match": "intitulé sans lien avec le sujet",
+      "no_subject": "aucun sujet retenu",
+      "offer_match": "intitulé lié à l'offre",
+      "offer_no_match": "intitulé sans lien avec l'offre",
+      "no_offer": "aucune offre choisie",
+      "title_unknown": "intitulé inconnu",
+      "purchasing_role": "porte achats",
+      "not_purchasing": "hors achats",
+      "exchange_positive": "a répondu ou rendez-vous tenu",
+      "exchange_sent": "déjà contacté",
+      "declined": "a décliné",
+      "no_exchange": "aucun échange tracé",
+      "known_relationship": "relation apportée par ton espace",
+      "no_relationship": "aucune relation connue",
+      "senior_relevant": "séniorité utile au sujet",
+      "manager_relevant": "niveau utile au sujet",
+      "junior_relevant": "lié au sujet, peu senior",
+      "seniority_not_relevant": "séniorité sans lien avec le sujet",
+      "no_topic": "ni sujet ni offre pour en juger"
+    },
+    "explanation": {
+      "dimensions": {
+        "who": "Pourquoi cette personne",
+        "when": "Pourquoi maintenant",
+        "stage": "Étape servie",
+        "unlocks": "Débloque",
+        "next": "Et ensuite",
+        "limit": "Limite"
+      },
+      "notMeasured": "non mesuré — {{reason}}",
+      "codes": {
+        "who_champion": "rôle de champion interne",
+        "who_decision_maker": "niveau et séniorité pouvant trancher",
+        "who_buyer": "porte achats identifiée",
+        "who_first_door": "e-mail vérifié, entrée sûre",
+        "who_relay": "fonction opérationnelle ou experte",
+        "who_qualifier": "premier point de qualification",
+        "when_recent_positive_exchange": "a déjà répondu ou un rendez-vous est tenu",
+        "when_pending_outreach": "déjà contacté, en attente de réponse",
+        "when_declined_previously": "a décliné — à requalifier avant de relancer",
+        "when_no_recent_signal": "aucun échange tracé pour motiver un contact maintenant",
+        "stage_discovery": "prise de contact",
+        "stage_qualification": "qualification",
+        "stage_validation": "validation interne",
+        "stage_decision": "décision",
+        "stage_procurement": "achats",
+        "stage_information": "collecte d'information",
+        "unlocks_internal_access": "l'accès à d'autres décideurs internes",
+        "unlocks_final_decision": "l'arbitrage final",
+        "unlocks_budget_validation": "la validation budgétaire",
+        "unlocks_entry_confirmed": "une entrée confirmée dans le compte",
+        "unlocks_not_identified": "ce que ce contact débloque ensuite n'est pas identifié",
+        "next_first_door": "chercher une entrée vérifiée",
+        "next_qualifier": "qualifier le besoin",
+        "next_champion": "trouver un champion interne",
+        "next_decision_maker": "atteindre un décideur",
+        "next_buyer": "passer par les achats",
+        "next_relay": "passer par un relais opérationnel",
+        "next_path_end": "dernier contact du chemin recommandé",
+        "limit_no_decision_power": "ne décide pas, c'est une porte d'entrée",
+        "limit_no_budget_authority": "n'a pas la main sur le budget",
+        "limit_no_authority": "ne peut ni décider ni engager le budget",
+        "limit_not_the_signer": "soutient en interne mais ne signe pas",
+        "limit_needs_procurement": "ne conclut pas seul, les achats interviennent ensuite",
+        "limit_not_technical_decision": "ne tranche pas le choix technique"
+      }
+    },
+    "antiAdvice": {
+      "label": "Ne commence pas par",
+      "what": {
+        "dont_ask_for_decision": "lui demander de décider",
+        "dont_ask_for_budget": "lui demander un budget",
+        "dont_treat_as_authority": "le traiter comme une autorité qui décide",
+        "dont_treat_as_signer": "le traiter comme le signataire",
+        "dont_skip_procurement": "sauter l'étape achats",
+        "dont_pitch_technical_choice": "lui vendre le choix technique"
+      }
+    },
+    "groups": {
+      "first_door": "Première porte",
+      "qualifier": "Qualificateur",
+      "champion": "Champion",
+      "decision_maker": "Décideur",
+      "buyer": "Achats",
+      "relay": "Relais"
+    }
+  },
+  "row": {
+    "viewProfile": "Voir la fiche",
+    "openProfileAria": "Ouvrir la fiche de {{name}}",
+    "addFavorite": "Ajouter aux favoris",
+    "removeFavorite": "Retirer des favoris",
+    "sending": "Envoi…",
+    "sendDraft": "Envoyer l'email rédigé",
+    "prepareMessage": "Préparer un message",
+    "sentOn": "Envoyé le {{date}}",
+    "contactByEmail": "Contacter par mail",
+    "viewLinkedin": "Voir LinkedIn",
+    "addToPlan": "Ajouter au plan",
+    "hide": "Masquer",
+    "actionsAria": "Actions pour {{name}}",
+    "lastVerifiedOn": "Dernière vérification le {{date}}",
+    "neverVerified": "Jamais vérifié",
+    "correct": "Corriger",
+    "correctTitle": "Corriger {{name}}",
+    "correctDescription": "Chaque champ corrigé ici est marqué « saisi à la main » : la prochaine analyse ne l'écrasera pas."
+  },
+  "groups": {
+    "entity": {
+      "title": "Contacts par entité",
+      "description": "Regroupés par entité pour choisir le bon point d'entrée."
+    },
+    "persona": {
+      "title": "Contacts par persona",
+      "description": "Regroupés par profil de décision pour adapter le discours."
+    },
+    "contactCount_one": "{{count}} contact",
+    "contactCount_other": "{{count}} contacts",
+    "shownOf": "{{shown}} affichés sur {{count}}",
+    "showMore_one": "Afficher {{count}} de plus",
+    "showMore_other": "Afficher {{count}} de plus",
+    "totalHere": "{{count}} contact au total",
+    "totalHere_other": "{{count}} contacts au total",
+    "excludedHere": "{{count}} écarté",
+    "excludedHere_other": "{{count}} écartés",
+    "expandAll": "Tout déplier",
+    "collapseAll": "Tout replier"
+  },
+  "groupModes": {
+    "entity": "Par entité",
+    "persona": "Par persona"
+  },
+  "grouping": {
+    "personaFallback": "Persona à qualifier",
+    "entityFallback": "Entité non renseignée",
+    "leftCompany": "Ont quitté l’entreprise",
+    "known": "Connu"
+  },
+  "expansion": {
+    "title": "Étendre la recherche à l'ensemble du groupe",
+    "description_one": "{{count}} contact retenu chez {{company}}. Lance une passe d'enrichissement pour compléter les décideurs manquants dans les autres entités.",
+    "description_other": "{{count}} contacts retenus chez {{company}}. Lance une passe d'enrichissement pour compléter les décideurs manquants dans les autres entités.",
+    "excludedNote_one": "Non compté ci-dessus : {{count}} contact écarté (homonyme ou hors périmètre) — il reste au dossier et se réintègre.",
+    "excludedNote_other": "Non comptés ci-dessus : {{count}} contacts écartés (homonymes ou hors périmètre) — ils restent au dossier et se réintègrent.",
+    "searching": "Recherche en cours...",
+    "cta": "Agrandir la recherche",
+    "ctaAngle": "Chercher cet angle",
+    "angleLabel": "Cibler un angle",
+    "entityAngleAria": "Cibler une entité",
+    "levelAngleAria": "Cibler un niveau hiérarchique",
+    "geographyAngleAria": "Cibler un périmètre géographique",
+    "geographies": {
+      "France": "France",
+      "Europe": "Europe"
+    },
+    "themePlaceholder": "Thème ou technologie (ex. Data, Achats, DSI France)",
+    "themeResultFound_one": "{{count}} personne trouvée pour « {{theme}} »",
+    "themeResultFound_other": "{{count}} personnes trouvées pour « {{theme}} »",
+    "themeResultEmpty": "Aucune personne trouvée pour « {{theme}} » — synonymes essayés : {{titles}}.",
+    "themeResultOutOfTheme_one": "+ {{count}} autre personne du groupe, hors thème",
+    "themeResultOutOfTheme_other": "+ {{count}} autres personnes du groupe, hors thème",
+    "themeNoPreset": "Aucun préréglage pour ce thème : recherche sur le mot-clé seul.",
+    "leversUnavailable": {
+      "note": "Autres leviers ciblés à venir, sans axe dédié aujourd'hui : {{levers}}.",
+      "levers": {
+        "adjacent_role_family": "famille de rôles voisine (repli : le thème libre)",
+        "site": "site",
+        "operational_staff": "opérationnels"
+      }
+    }
+  },
+  "emptyState": {
+    "title": "Aucun contact dans ce dossier.",
+    "description": "Lance un enrichissement complémentaire ou ajoute un contact connu.",
+    "searching": "Recherche en cours...",
+    "cta": "Rechercher des contacts",
+    "lastSearchNone": "Je n’ai trouvé aucun contact vérifiable dans ce périmètre.",
+    "lastSearchNotAdded_one": "{{count}} contact trouvé, aucun n’est entré au dossier.",
+    "lastSearchNotAdded_other": "{{count}} contacts trouvés, aucun n’est entré au dossier.",
+    "lastSearchFailed": "Je n’ai pas pu interroger la source Contacts. Ce résultat est incomplet.",
+    "noDataTitle": "Aucune donnée trouvée",
+    "sourceUnavailableTitle": "Source indisponible",
+    "refresh": "Actualiser",
+    "changeScope": "Changer de périmètre",
+    "continueWithout": "Continuer sans cette donnée",
+    "askLauraLabel": "Demander à {{copilot}}",
+    "askLauraQuestion": "Ce dossier n’a encore aucun contact : par où commencer pour trouver le bon interlocuteur ?",
+    "noMatch": "Aucun contact ne correspond aux filtres",
+    "noMatchDescription": "La recherche et le filtre de rôle laissent le dossier vide — les contacts sont toujours là.",
+    "clearFilters": "Réinitialiser les filtres"
+  },
+  "toolbar": {
+    "searchPlaceholder": "Rechercher un contact...",
+    "allRoles": "Tous les rôles",
+    "placeLabel": "Localisation",
+    "allPlaces": "Tous les lieux",
+    "placeOption": "{{kind}} · {{label}} ({{count}})",
+    "placeKinds": {
+      "country": "Pays",
+      "region": "Région",
+      "department": "Département",
+      "city": "Ville"
+    }
+  },
+  "personalContacts": {
+    "title_one": "Mes contacts personnels ({{count}})",
+    "title_other": "Mes contacts personnels ({{count}})",
+    "hint": "Importés en portée Personnel : visibles par toi seul, absents des listes d'équipe et de l'organigramme partagé.",
+    "share": "Partager avec l'équipe",
+    "shared": "Partagé avec l'équipe : la fiche est dans les contacts d'équipe.",
+    "alreadyKnown": "Déjà connu de l'équipe : la fiche existante est reprise, sans doublon."
+  },
+  "contactsTab": {
+    "signalLeads": {
+      "title_one": "{{count}} personne citée dans un signal, sans fiche",
+      "title_other": "{{count}} personnes citées dans un signal, sans fiche",
+      "hint": "Cité dans un signal, pas encore de fiche",
+      "action": "Ajouter et enrichir"
+    },
+    "activeFilters": {
+      "count": "{{shown}} sur {{total}} contacts",
+      "list": "Filtres : {{filters}}",
+      "search": "recherche « {{value}} »",
+      "role": "rôle {{value}}",
+      "entity": "entité {{value}}",
+      "level": "niveau {{value}}",
+      "clear": "Tout effacer",
+      "place": "lieu {{value}}"
+    },
+    "importCsv": "Importer CSV",
+    "outOfScope": {
+      "title_one": "1 contact écarté (hors périmètre)",
+      "title_other": "{{count}} contacts écartés (hors périmètre)",
+      "entities": "Leur employeur est hors du périmètre choisi : {{entities}}.",
+      "reason": "Leur employeur est hors du périmètre choisi pour cette analyse."
+    },
+    "geoExcluded": {
+      "title_one": "1 contact écarté par le périmètre",
+      "title_other": "{{count}} contacts écartés par le périmètre",
+      "perimeter": "Hors du périmètre géographique choisi ({{perimeter}}).",
+      "sites": "Hors site ({{areas}})."
+    },
+    "staleCollection": {
+      "titleDated": "Contacts collectés le {{date}}, à revérifier",
+      "titleBefore": "Collecte antérieure au {{date}}, à revérifier",
+      "reason": "Ce dossier a été analysé avant une amélioration de la collecte de contacts. Le stock affiché peut être sous-évalué — utilise « Enrichir contacts » pour le rafraîchir.",
+      "action": "Enrichir les contacts",
+      "actionPending": "Enrichissement…"
+    },
+    "duplicates": {
+      "title_one": "{{count}} doublon possible sur ce compte",
+      "title_other": "{{count}} doublons possibles sur ce compte",
+      "pair": "{{left}} et {{right}} semblent être la même personne ({{reasons}}).",
+      "same": "Ce sont les mêmes",
+      "notSame": "Pas les mêmes",
+      "confirmed": "Confirmé : c’est la même personne. Rien n’est fusionné.",
+      "noMerge": "Rien n’est fusionné : ouvre les deux fiches et décide.",
+      "sharedEmail_one": "{{count}} fiche porte l’adresse {{email}}.",
+      "sharedEmail_other": "{{count}} fiches partagent l’adresse {{email}}.",
+      "sharedEmailReason": {
+        "unverified": "Cette adresse n’est pas vérifiée : elle ne prouve l’identité de personne. Vérifie-la ou vide-la sur chaque fiche.",
+        "shared_by_many": "Une adresse portée par trois fiches ou plus n’identifie personne : c’est une boîte d’équipe ou une donnée fausse. Vérifie-la ou vide-la.",
+        "generic_mailbox": "C’est une boîte générique (contact@, info@, recrutement@) : elle n’identifie pas une personne."
+      }
+    },
+    "rulesCatchup": {
+      "title": "Contacts collectés avant les règles actuelles (homonymes, zone du profil) : certains peuvent être ceux d'une autre entreprise.",
+      "action": "Remettre les contacts à jour avec les règles actuelles",
+      "actionPending": "Mise à jour des contacts…",
+      "done_zero": "Règles actuelles appliquées : aucun homonyme trouvé. Les contacts de ta zone passent devant.",
+      "done_one": "Règles actuelles appliquées : {{count}} homonyme archivé avec sa raison (rien n'est supprimé). Les contacts de ta zone passent devant.",
+      "done_other": "Règles actuelles appliquées : {{count}} homonymes archivés avec leur raison (rien n'est supprimé). Les contacts de ta zone passent devant.",
+      "error": "La mise à jour des contacts n'a pas abouti — réessaie."
+    },
+    "selection": {
+      "barAria": "Actions sur les contacts sélectionnés",
+      "selectRow": "Sélectionner {{name}}",
+      "selectAllMatching_one": "Sélectionner le contact retenu par les filtres",
+      "selectAllMatching_other": "Sélectionner les {{count}} contacts retenus par les filtres",
+      "export": "Exporter (CSV)",
+      "exportFilename": "contacts-{{company}}.csv",
+      "sequenceHint": "Une séquence prépare les messages : rien ne part sans ton clic."
+    },
+    "missingRoles": {
+      "title_one": "Rôle d’achat à couvrir : {{roles}}",
+      "title_other": "{{count}} rôles d’achat à couvrir : {{roles}}",
+      "says": "Aucun contact de ce dossier ne tient ces rôles — c’est le trou que la stratégie 5P désigne dans « Personnes »."
+    }
+  },
+  "mapEmptyState": {
+    "noGraphTitle": "Pas encore de graphe d'organigramme",
+    "noGraphDescription": "Ce dossier a des contacts, mais aucun graphe de rattachement structuré n'a encore été construit. Relance l'enrichissement pour le construire.",
+    "noGraphCta": "Relancer l'enrichissement",
+    "noEntitiesTitle": "Pas de structure d'entités à cartographier ici",
+    "noEntitiesDescription": "L'analyse a situé des personnes chez ce compte, mais aucune filiale ni entité connue pour les rattacher. Décris la structure dans le panneau plus bas, ou consulte les vues détaillées ci-dessous."
+  },
+  "orgMap": {
+    "gapExplain": {
+      "toggle": "Contact(s) à vérifier — voir pourquoi ce poste est vide",
+      "noRecord": "Aucune personne n’est identifiée sur ce poste : il n’y a donc pas de fiche à ouvrir, et {{brand}} n’en invente pas.",
+      "search": "La recherche ciblée ci-dessous part à sa recherche."
+    },
+    "search": {
+      "label": "Rechercher une personne",
+      "placeholder": "Nom d’une personne"
+    },
+    "display": {
+      "aria": "Affichage de la carte",
+      "map": "Carte",
+      "list": "Liste"
+    },
+    "zoom": {
+      "aria": "Zoom de la carte",
+      "out": "Dézoomer la carte",
+      "in": "Zoomer la carte",
+      "reset": "Réinitialiser le zoom",
+      "level": "{{value}} %"
+    },
+    "focus": {
+      "cta": "Liens directs",
+      "aria": "Mettre en avant les liens directs de {{name}}",
+      "clear": "Tout afficher"
+    },
+    "collapse": {
+      "collapse": "Replier {{name}}",
+      "expand": "Déplier {{name}}",
+      "hidden_one": "{{count}} personne repliée",
+      "hidden_other": "{{count}} personnes repliées"
+    },
+    "list": {
+      "caption": "Personnes de la carte, en liste",
+      "name": "Personne",
+      "title": "Fonction",
+      "entity": "Entité",
+      "level": "Niveau",
+      "roles": "Rôles d’achat",
+      "confidence": "Confiance"
+    },
+    "title": "Organigramme — hiérarchie, entités et influence",
+    "subtitle": "Les liens pleins sont vérifiés. Les liens pointillés sont probabilistes et affichent leur confiance.",
+    "unassigned": "Rattachement inconnu",
+    "confidence": "{{value}} %",
+    "confidenceLabel": "Confiance {{value}} sur 100",
+    "levelUnknown": "Niveau inconnu",
+    "toVerify": "Contact(s) à vérifier",
+    "viewProfile": "Voir la fiche",
+    "filtersEmpty": "Aucun nœud ne correspond à cette exploration.",
+    "levels": {
+      "L0": "Gouvernance",
+      "L1": "Exécutif",
+      "L2": "Direction",
+      "L3": "Management",
+      "L4": "Expert / opérationnel",
+      "L5": "Achats / contrôle"
+    },
+    "entityTypes": {
+      "groupe": "Groupe",
+      "filiale": "Filiale",
+      "filialeUnconfirmed": "Filiale non confirmée",
+      "bu": "Entité / BU",
+      "departement": "Département",
+      "programme": "Programme",
+      "site": "Site",
+      "spv": "Holding / SPV",
+      "equipe": "Équipe",
+      "partenaire": "Partenaire"
+    },
+    "entityStatus": {
+      "ceded": "Cédée",
+      "dormant": "Dormante",
+      "unknown": "Statut inconnu"
+    },
+    "filters": {
+      "entity": "Entité",
+      "family": "Métier",
+      "level": "Niveau",
+      "allEntities": "Toutes les entités",
+      "allFamilies": "Tous les métiers",
+      "allLevels": "Tous les niveaux",
+      "reset": "Tout afficher",
+      "role": "Rôle d'achat",
+      "allRoles": "Tous les rôles",
+      "confidenceMin": "Confiance",
+      "allConfidences": "Toutes les confiances",
+      "confidenceVerified": "Vérifié (90+)",
+      "confidenceProbable": "Probable (70+)",
+      "confidenceHypothesis": "Hypothèse (50+)",
+      "project": "Projet",
+      "allProjects": "Tous les projets"
+    },
+    "legend": {
+      "sponsor": "Budget / sponsor",
+      "entity": "Entité / BU",
+      "field": "Relais terrain",
+      "procurement": "Achats / gatekeeper",
+      "unknown": "Non situé",
+      "structure": "Trait plein entre entités : appartenance au groupe",
+      "verified": "Trait plein vers une personne : rattachement vérifié et sourcé",
+      "inferred": "Pointillé : lien inféré — jamais présenté comme une certitude"
+    },
+    "identityStatus": {
+      "seed": "Piste brute",
+      "verified_identity": "Identité vérifiée",
+      "classified": "Classé",
+      "enriched": "Enrichi",
+      "actionable": "Contactable",
+      "historical": "Ex-employé / capteur",
+      "rejected": "Écarté"
+    },
+    "importance": {
+      "critique": "Critique",
+      "importante": "Importante",
+      "secondaire": "Secondaire"
+    },
+    "estimatedStock": "{{count}} profil estimé disponible",
+    "estimatedStock_other": "{{count}} profils estimés disponibles",
+    "searches": "Recherches :",
+    "searchGap": "Lancer une recherche ciblée",
+    "searchGapPending": "Recherche en cours…",
+    "link": {
+      "verifiedOn": "vérifié le {{date}}",
+      "neverVerified": "jamais vérifié",
+      "sourced": "Rattachement sourcé",
+      "declared": "Déclaré sur le terrain",
+      "structure": "Appartenance au groupe",
+      "assumedUnsourced": "Hypothèse — aucune source",
+      "assumedSupported": "Hypothèse, appuyée sur",
+      "gap": "Emplacement présumé"
+    }
+  },
+  "legend": {
+    "title": "Lecture par rôle",
+    "classifiedCount": "{{classified}}/{{total}} contacts classifiés"
+  },
+  "trajectories": {
+    "title": "Trajectoires commerciales",
+    "help": "Plusieurs chemins pour entrer chez ce compte, jamais un seul organigramme figé.",
+    "showMore": "Voir plus ({{count}})",
+    "showLess": "Voir moins",
+    "kind": {
+      "top": "Par le haut",
+      "field": "Par le terrain",
+      "middle_manager": "Par un manager intermédiaire",
+      "parallel": "En parallèle"
+    },
+    "desiredOutcome": {
+      "top": "Obtenir un sponsor qui ouvre la porte au bon niveau, sans attendre le terrain.",
+      "field": "Faire remonter la douleur réelle et un besoin qualifié depuis l’usage quotidien.",
+      "middle_manager": "Se rapprocher suffisamment du problème sans viser trop haut trop tôt.",
+      "parallel": "Avancer sur les deux fronts à la fois, sans dépendre d’un seul relais."
+    },
+    "switchCondition": {
+      "top": "Bascule vers le terrain si le sponsor ne répond pas sous deux relances.",
+      "field": "Bascule vers un manager intermédiaire si le terrain n’a ni budget ni mandat.",
+      "middle_manager": "Bascule par le haut si le sujet dépasse le périmètre de cette personne.",
+      "parallel": "Se resserre sur la voie qui avance en premier — jamais les deux indéfiniment."
+    },
+    "risk": {
+      "single_contact": "Cette trajectoire ne repose que sur une seule personne — sans elle, il n’y a plus de porte."
+    },
+    "empty": {
+      "noContacts": "Aucune trajectoire pour l’instant : aucun contact n’est découvert sur ce compte.",
+      "unclassified_one": "Aucune trajectoire pour l’instant : le contact découvert n’a pas de rôle de décision classé.",
+      "unclassified_other": "Aucune trajectoire pour l’instant : aucun des {{count}} contacts découverts n’a de rôle de décision classé.",
+      "noEntryRole": "Aucune trajectoire pour l’instant : les contacts classés ne sont sur aucune voie d’entrée — aucun n’est sponsor, utilisateur ou manager."
+    }
+  },
+  "recommendedPath": {
+    "title": "Chemin recommandé",
+    "empty": "Aucun chemin prioritaire détecté pour le moment.",
+    "addToPlanTitle": "Ajouter ce chemin au plan d'action",
+    "addToPlan": "Ajouter au plan d'action",
+    "origin": {
+      "you": "Toi",
+      "form": {
+        "direct": "Relation directe",
+        "one_hop": "Relation à un saut",
+        "cold": "Entrée froide — personne de tes registres n’atteint cette personne"
+      },
+      "hopBasis": {
+        "same_entity": "Tu passes par la même direction",
+        "hierarchy": "Un lien hiérarchique sourcé les relie",
+        "influence": "Une influence relevée les relie"
+      },
+      "freshness": {
+        "inconnu": "Tu n’as pas noté de dernier contact : cette relation est à revérifier avant de t’en servir.",
+        "inconnuDated": "Tu n’as pas noté de dernier contact : cette relation est à revérifier avant de t’en servir.",
+        "vieillissantDated": "Relation datée du {{date}} : elle vieillit, revérifie-la avant de t’en servir.",
+        "vieillissant": "Cette relation vieillit : revérifie-la avant de t’en servir.",
+        "perimeDated": "Relation datée du {{date}} : elle est trop ancienne pour être tenue pour acquise, revalide-la.",
+        "perime": "Cette relation est trop ancienne pour être tenue pour acquise : revalide-la."
+      }
+    }
+  },
+  "organigramme": {
+    "enrichDisabledTitle": "Lance d'abord l'enrichissement des contacts.",
+    "enrichTitle": "Re-classifie les rôles et complète les informations manquantes.",
+    "enriching": "Enrichissement...",
+    "enrichingProgress_one": "Enrichissement d’1 contact… {{elapsed}} s",
+    "enrichingProgress_other": "Enrichissement de {{count}} contacts… {{elapsed}} s",
+    "enrichingElapsed": "Enrichissement… {{elapsed}} s",
+    "rebuilding": "Mise à jour de la carte en cours…",
+    "enrichCta": "Enrichir la carte",
+    "enrichLockedTitle": "Accès verrouillé : ta période d'essai est terminée.",
+    "staleCollection": {
+      "titleDated": "Organigramme collecté le {{date}}, à revérifier",
+      "titleUnknown": "Date de collecte non mesurée — à revérifier",
+      "reason": "Ce dossier a été analysé avant une amélioration de la collecte de l'organigramme. Les postes affichés peuvent être sous-évalués — utilise « Enrichir la carte » pour la rafraîchir."
+    }
+  },
+  "entitiesCard": {
+    "typedEntityAria": "Une autre entité à analyser",
+    "typedEntityPlaceholder": "Une filiale absente de la liste ? Tape son nom",
+    "typedEntityCta": "Analyser cette entité",
+    "title": "Entités associées à ces sites",
+    "othersDescription": "SPV, cédées, homonymes et entités hors périmètre — non actionnables.",
+    "actionableDescription": "Entités actionnables reliées aux régions affichées.",
+    "colEntity": "Entité",
+    "analyseEntity": "Analyser {{name}}",
+    "analyseEntityHint": "Ouvre une analyse dédiée à cette entité — son nom est déjà rempli.",
+    "colSiteCount": "Sites dans sa région",
+    "unconfirmedBadge": "À confirmer",
+    "unconfirmedFrom": "Lien déduit · source : {{host}}",
+    "unconfirmedFromWeb": "Lien déduit · nommée par le web",
+    "unconfirmedNote_one": "{{count}} à confirmer : nommée par le web, sans identifiant de registre.",
+    "unconfirmedNote_other": "{{count}} à confirmer : nommée par le web, sans identifiant de registre.",
+    "totalNote": "{{total}} entités connues : {{actionable}} actionnables, {{others}} autres (SPV, cédées, homonymes…).",
+    "siteCountNote": "Le rattachement d'un site à une entité n'est pas collecté : le nombre n'apparaît que lorsque la région de l'entité recoupe celle d'un site connu.",
+    "othersEmpty": "Aucune autre entité (SPV, cédée, homonyme) pour cette sélection.",
+    "actionableEmpty": "Aucune entité actionnable associée à cette catégorie de sites.",
+    "collapse": "Réduire",
+    "shownOfTotal": "{{shown}} sur {{total}} affichées",
+    "allShown_one": "{{count}} affichée",
+    "allShown_other": "{{count}} affichées",
+    "showAll": "Voir toutes les entités",
+    "tabsAria": "Filtre des entités",
+    "tabActionable": "Actionnables ({{count}})",
+    "tabOthers": "Autres entités ({{count}})",
+    "viewTabsAria": "Vue de la carte de périmètre",
+    "viewList": "Liste",
+    "viewMap": "Carte",
+    "colLocation": "Pays / Ville",
+    "colPotential": "Potentiel",
+    "colActions": "Actions",
+    "colRole": "Rôle",
+    "colSource": "Source",
+    "colConfidence": "Confiance",
+    "colAccessibility": "Accessibilité",
+    "colSignals": "Signaux",
+    "colContacts": "Contacts",
+    "showDetails": "Détails",
+    "hideDetails": "Masquer",
+    "chooseTarget": "Choisir ce périmètre comme cible",
+    "clearTarget": "Retirer la cible",
+    "targetActive": "Cible actuelle",
+    "locationUnknownReason": "Aucune ville n'a été rattachée à cette entité.",
+    "potentialUnknownReason": "Ce périmètre n'est pas parmi les périmètres prioritaires de ce compte.",
+    "attributeUnknownReason": "Cet attribut n'est pas mesuré pour ce périmètre.",
+    "source": {
+      "analysis": "Analyse {{brand}}",
+      "registry": "Registre légal",
+      "web": "Web — non confirmée",
+      "vocabulary": "Vocabulaire du groupe — non confirmée"
+    },
+    "confidence": {
+      "high": "Élevée",
+      "medium": "Moyenne",
+      "low": "Faible"
+    },
+    "accessibility": {
+      "high": "Élevée",
+      "medium": "Moyenne",
+      "low": "Faible"
+    },
+    "tier": {
+      "P1": "Prioritaire (P1)",
+      "P2": "Secondaire (P2)",
+      "secondaire": "À qualifier"
+    },
+    "scopeKind": {
+      "commercial": "Périmètre commercial",
+      "implantation": "Implantation",
+      "equipe": "Équipe"
+    }
+  },
+  "entityType": {
+    "groupe": "Groupe",
+    "filiale": "Filiale",
+    "filialeUnconfirmed": "Filiale non confirmée",
+    "bu": "BU",
+    "direction": "Direction",
+    "departement": "Département",
+    "jv": "JV",
+    "gie": "GIE",
+    "siege_regional": "Siège régional",
+    "operational": "Opérationnelle",
+    "marque": "Marque",
+    "filiale_strategique": "Filiale stratégique",
+    "spv": "SPV",
+    "cedee": "Cédée",
+    "homonyme": "Homonyme",
+    "bruit": "Bruit",
+    "unknown": "Autre",
+    "programme": "Programme",
+    "site": "Site",
+    "equipe": "Équipe",
+    "partenaire": "Partenaire"
+  },
+  "priority": {
+    "rankShort": "P{{rank}}",
+    "rankTitle": "Priorité {{rank}} sur 5 — 1 = à contacter en premier",
+    "explainWhy": "Classement sur le rôle, la joignabilité et la pertinence pour ce compte — jamais sur la photo, l'âge ou la ville.",
+    "explainAction_strong": "À contacter en premier.",
+    "explainAction_medium": "À solliciter après les priorités plus fortes.",
+    "explainAction_weak": "À garder en renfort, une fois les priorités fortes traitées."
+  },
+  "structure": {
+    "empty": "Structure décisionnelle non disponible",
+    "emptyDescription": "L'analyse n'a pas produit d'organigramme pour ce compte.",
+    "emptyCta": "Relancer l’enrichissement",
+    "title": "Structure décisionnelle par entité",
+    "subtitle": "Reconstituée par l'analyse à partir des contacts identifiés et des sources publiques.",
+    "knownContacts": "Contacts identifiés",
+    "missingRoles": "Rôles à couvrir (aucun contact identifié)",
+    "approachTitle": "Séquence d'approche",
+    "approachSubtitle": "Ordre tactique conseillé : chaque étape vise à débloquer la suivante.",
+    "expectedOutcome": "Attendu : {{value}}",
+    "unlocks": "Débloque : {{value}}",
+    "decisionTitle": "Processus de décision",
+    "decisionSubtitle": "Circuit d'achat probable, durée et autorité budgétaire estimées.",
+    "cycleLength": "Durée estimée du cycle : {{value}}",
+    "budgetAuthority": "Autorité budgétaire : {{value}}",
+    "stakeholdersTitle": "Positionnement des interlocuteurs",
+    "stakeholdersSubtitle": "Posture probable de chaque contact, déduite de son rôle et de ses enjeux.",
+    "stance": {
+      "advocate": "Allié",
+      "neutral": "Neutre",
+      "opponent": "Opposant",
+      "unknown": "À qualifier"
+    },
+    "committeeTitle": "Comité d'achat",
+    "committeeSubtitle": "Qui décide, qui influence — assemblé à partir des contacts identifiés (Power/Interest).",
+    "committeeMissing": "Sièges clés encore à couvrir",
+    "committeeMatrix": "Pouvoir {{power}}/4 · Intérêt {{interest}}/4",
+    "committeeCadence": "Cadence : {{value}}",
+    "committeeSource": "Source : {{value}}",
+    "committeeRole": {
+      "economic_buyer": "Décideur économique",
+      "technical_buyer": "Référent technique",
+      "user_buyer": "Utilisateur",
+      "champion": "Champion",
+      "procurement": "Acheteur"
+    }
+  },
+  "committeeScreen": {
+    "title": "Comité d'achat",
+    "subtitle": "Qui siège à chaque place du comité, et quelles places n’ont pas encore de nom. L'ordre suit les places, jamais l'ancienneté des personnes.",
+    "seats": {
+      "economic_buyer": "Décideur économique",
+      "technical_buyer": "Référent technique",
+      "user_buyer": "Utilisateur",
+      "champion": "Champion",
+      "procurement": "Achats",
+      "blocker": "Bloqueur",
+      "influencer": "Influenceur",
+      "unknown": "À qualifier"
+    },
+    "inferred": "Rôle déduit du titre",
+    "freshness": {
+      "fresh": "Vérifié le {{date}}",
+      "stale": "Vérifié le {{date}} : à revérifier",
+      "never_verified": "Jamais vérifié"
+    },
+    "relation": {
+      "known": "Relation connue"
+    },
+    "notices": {
+      "tooGlobalExecutive": "Dirigeant du groupe — une entité plus précise est déjà au comité",
+      "outOfPerimeter": "Hors du périmètre majoritaire du comité",
+      "tooHigh": "Plus haut que ton niveau d’entrée"
+    },
+    "entryLevel": {
+      "label": "Niveau d’entrée visé",
+      "hint": "L’échelon où ton offre se vend. Sans niveau choisi, personne n’est signalé « trop haut ».",
+      "none": "Non précisé",
+      "c_level": "C-level",
+      "direction": "Direction",
+      "manager": "Manager",
+      "operational": "Opérationnel",
+      "errorToast": "Impossible d’enregistrer le niveau d’entrée."
+    },
+    "contactHeld": {
+      "title": "Tenues par un contact du dossier",
+      "hint": "Ces places n'ont personne dans le comité, mais un contact du dossier peut les tenir d'après son intitulé — y compris rangé « À qualifier ». À confirmer, pas à pourvoir."
+    },
+    "vacant": {
+      "title": "Places à pourvoir",
+      "hint": "Aucun contact identifié sur ces places : on n'a trouvé personne pour l'instant — cela ne prouve pas que la place est vide.",
+      "action": "Voir qui nous manque"
+    },
+    "toVerify": {
+      "title_one": "À vérifier avant de s'en servir ({{count}} personne)",
+      "title_other": "À vérifier avant de s'en servir ({{count}} personnes)"
+    },
+    "hidden": {
+      "title_one": "Masqué(s) ({{count}} contact)",
+      "title_other": "Masqués ({{count}} contacts)",
+      "hint": "Retirés de tes listes — ils ne siègent plus tant qu'ils restent masqués.",
+      "unhide": "Réafficher"
+    },
+    "actions": {
+      "askOrientation": "Demander une orientation",
+      "askOrientationQuestion": "Comment aborder {{name}}, {{role}} chez {{company}} ?",
+      "enrich": "Enrichir",
+      "openContact": "Ouvrir la fiche contact",
+      "prepareApproach": "Préparer l'approche",
+      "createIntroduction": "Créer une introduction"
+    },
+    "empty": {
+      "title": "Comité d'achat à qualifier",
+      "description": "L'analyse n'a pas encore placé de personnes sur les places du comité.",
+      "action": "Ouvrir l'organigramme"
+    },
+    "lastAction": "Dernière action : {{date}}",
+    "nextAction": "Prochaine action : {{date}}",
+    "firstDoor": {
+      "title": "Première porte"
+    },
+    "knownRelations": {
+      "title": "Relations existantes"
+    }
+  },
+  "orgGraph": {
+    "title": "Graphe d'organisation",
+    "subtitle": "Quatre lectures du même compte : hiérarchie vérifiée, influence, comité d'achat, chemin recommandé.",
+    "verified": "Vérifié",
+    "inferred": "Inféré",
+    "tiers": {
+      "verified": "Vérifié",
+      "probable": "Probable",
+      "hypothesis": "Hypothèse"
+    },
+    "sourceKinds": {
+      "official_site": "Site officiel",
+      "org_chart": "Organigramme",
+      "registry": "Registre légal",
+      "bio": "Biographie",
+      "linkedin": "Réseau professionnel",
+      "press": "Presse",
+      "conference": "Conférence",
+      "vendor_profile": "Fiche fournisseur",
+      "crm": "CRM",
+      "llm": "Inférence IA",
+      "other": "Autre source",
+      "workspace_user": "Quelqu’un de l’équipe",
+      "workspace_import": "Import de l’espace"
+    },
+    "verifiedLines": "Lignes vérifiées",
+    "inferredLines": "Lignes probables",
+    "unlocks": "Débloque :",
+    "fallback": "Si ça ne répond pas :",
+    "weighsOn": "pèse sur",
+    "because": "Pourquoi :",
+    "emptyVerified": "Aucun lien hiérarchique établi pour l'instant.",
+    "emptyInfluence": "Aucune influence détectée.",
+    "emptyCommittee": "Comité d'achat à qualifier.",
+    "emptyPath": "Chemin recommandé à construire.",
+    "emptyTeams": "Aucune équipe identifiée pour l'instant.",
+    "emptyWorkspaceRelations": "Aucune relation workspace établie pour l'instant.",
+    "teamNoMembers": "Aucune personne rattachée pour l'instant.",
+    "recomputePath": "Recalculer le chemin",
+    "recomputePathPending": "Recalcul…",
+    "recomputePathHint": "Réordonne la séquence d’approche à partir de l’organigramme déjà connu — sans relancer de recherche.",
+    "views": {
+      "verified": "Organigramme vérifié",
+      "influence": "Carte d'influence",
+      "committee": "Comité d'achat",
+      "path": "Chemin recommandé",
+      "teams": "Équipes",
+      "workspaceRelations": "Relations workspace"
+    },
+    "relations": {
+      "reports_to": "rattaché à",
+      "member_of": "membre de",
+      "sponsors": "sponsorise",
+      "owns_budget": "porte le budget de",
+      "procures_for": "achète pour",
+      "influences": "influence",
+      "works_with": "travaille avec"
+    },
+    "relationalTypes": {
+      "works_with": "collabore avec",
+      "owns_project": "porte le projet",
+      "blocks": "bloque",
+      "introduced_by": "mis en relation par",
+      "related_workspace": "workspace lié"
+    },
+    "relationalScope": {
+      "workspace": "constaté par cet espace",
+      "market_memory": "issu des observations du marché"
+    },
+    "relationalAuthor": "affirmé par {{author}}",
+    "roles": {
+      "economic_buyer": "Décideur économique",
+      "technical_buyer": "Référent technique",
+      "user_buyer": "Utilisateur",
+      "champion": "Champion",
+      "procurement": "Achats",
+      "blocker": "Bloqueur",
+      "influencer": "Influenceur",
+      "unknown": "À qualifier"
+    },
+    "stances": {
+      "supporter": "Soutien",
+      "neutral": "Neutre",
+      "detractor": "Opposant",
+      "unknown": "Posture inconnue"
+    },
+    "dismiss": {
+      "trigger": "Écarter {{name}} du graphe",
+      "label": "Ce contact…",
+      "gone": "N'est plus en poste",
+      "irrelevant": "N'a rien à voir avec ce compte",
+      "saved": "{{name}} est écarté : le graphe a été recalculé et ne le reproposera plus.",
+      "error": "Impossible d'enregistrer ce retour."
+    },
+    "moreSources": "+{{count}} autre source",
+    "moreSources_other": "+{{count}} autre sources",
+    "access": "Accès {{value}}",
+    "meta": {
+      "version": "Graphe v{{value}}",
+      "counts": "{{entities}} entités · {{people}} personnes · {{verified}} liens vérifiés · {{inferred}} inférés",
+      "countsNoneVerified": "{{entities}} entités · {{people}} personnes · aucun lien encore vérifié · {{inferred}} inférés",
+      "rejected": "{{count}} contact écarté",
+      "rejected_other": "{{count}} contacts écartés",
+      "confidence": "Confiance {{value}}/100",
+      "mostlyInferred": "Carte majoritairement déduite — {{percent}} % des liens ne sont pas vérifiés.",
+      "noProvenHierarchy": "Aucun lien hiérarchique n’a pu être vérifié : ceci est une carte des contacts, pas un organigramme. Les paliers viennent des intitulés de poste."
+    },
+    "verifyRelation": "Vérifier ce lien",
+    "verifyRelationPending": "Vérification…",
+    "verifyRelationHint": "Cherche une preuve publique de ce lien (site officiel, LinkedIn, presse).",
+    "sourceUnknown": "source inconnue",
+    "derivedOn": "déduit le {{date}}",
+    "crmMatch": {
+      "known": "Rattaché à ce compte",
+      "knownHint": "Cette personne a déjà une fiche contact rattachée à ce compte — cela ne dit rien de ton CRM.",
+      "uncertain": "Rapprochement incertain",
+      "uncertainHint": "Plusieurs fiches contact portent ce nom : aucune n'est choisie à ta place. Vérifie dans l'onglet Contacts.",
+      "notFound": "Détectée, non retrouvée",
+      "notFoundHint": "Détectée par l'analyse, mais absente de tes contacts : rien n'est ajouté sans ton geste."
+    }
+  },
+  "focal": {
+    "knownCrm": "Déjà connu : dans ton CRM",
+    "knownMission": "Interlocuteur d’une mission passée",
+    "knownBoth": "Déjà connu : dans ton CRM · interlocuteur d’une mission passée",
+    "knownDated": "{{label}} ({{date}})",
+    "directionLabel": "Direction focale",
+    "directionAria": "Choisir la direction focale",
+    "peopleCount_one": "{{count}} personne",
+    "peopleCount_other": "{{count}} personnes",
+    "systemView": "Voir l’influence sur tout le groupe",
+    "coverage": {
+      "discovered": "découverts",
+      "attached": "rattachés",
+      "enriched": "enrichis IA",
+      "verifiedLinks": "liens vérifiés",
+      "noneVerified": "aucun lien encore vérifié",
+      "probableLinks": "liens probables",
+      "uncoveredZones": "zones à couvrir",
+      "noHierarchy": "Aucun lien hiérarchique connu pour ce compte"
+    },
+    "coverageAria": "Ce que {{brand}} connaît de ce compte",
+    "attachedUnknown": "aucune analyse ne le mesure encore",
+    "overColouredAria": "Avertissement de lecture de l’organigramme",
+    "overColoured_one": "Attention à la lecture : sur la personne que l’analyse n’a pas enrichie, {{coloured}} % porte déjà un rôle de décision, là où {{maxColoured}} % est le maximum sans enrichissement. Au-delà, une partie de ces rôles est déduite du titre, pas d’une preuve.",
+    "overColoured_other": "Attention à la lecture : sur les {{count}} personnes que l’analyse n’a pas enrichies, {{coloured}} % portent déjà un rôle de décision, là où {{maxColoured}} % est le maximum sans enrichissement. Au-delà, une partie de ces rôles est déduite du titre, pas d’une preuve.",
+    "pathTitle": "Chemin d’accès recommandé",
+    "pathAria": "Chemin d’accès recommandé",
+    "verdict": "Commence par {{name}} : {{objective}}.",
+    "verdictUnlocks": "Cela débloque {{unlocks}}.",
+    "blockersExcluded_one": "{{names}} s’oppose sur ce périmètre : jamais proposé dans le chemin, mais gardé dans la structure — le masquer falsifierait l’organigramme.",
+    "blockersExcluded_other": "{{names}} s’opposent sur ce périmètre : jamais proposés dans le chemin, mais gardés dans la structure — les masquer falsifierait l’organigramme.",
+    "treeTitle": "Organigramme de décision — {{direction}}",
+    "treeTitleUnproven": "Carte d’influence commerciale — {{direction}}",
+    "treeAria": "Organigramme de décision par niveau hiérarchique",
+    "treeSubtitle": "La position verticale vient de la hiérarchie réelle. Les badges disent le rôle commercial ; ils ne déterminent jamais un niveau.",
+    "legendLevels": "Rangées = niveaux hiérarchiques (L0 gouvernance → L4 opérationnel).",
+    "legendBadges": "Badges = rôle dans la décision d’achat. Les deux axes sont indépendants.",
+    "salesRole": "Rôle dans la vente : {{role}}",
+    "badges": {
+      "sponsor": "Sponsor",
+      "influencer": "Influenceur",
+      "operational": "Opérationnel",
+      "blocker": "Bloqueur"
+    },
+    "reportsToVerified": "Rattaché à {{name}} — lien vérifié",
+    "reportsToProbable": "Rattachement probable à {{name}} ({{confidence}}/100) — non vérifié",
+    "reportsToInferred": "N+1 probable : {{name}} — déduit des intitulés, aucune source ne l’a observé",
+    "reportsToAssumed": "N+1 supposé : {{name}} — aucune source ne l’a observé",
+    "blockerKeptInStructure": "Hors du chemin recommandé, gardé dans la structure.",
+    "procurementTitle": "Achats et contrôle",
+    "procurementAria": "Achats et contrôle — canal parallèle",
+    "procurementSubtitle": "Canal parallèle : ces personnes participent au circuit d’achat sans dépendre de la ligne hiérarchique ci-dessus.",
+    "contactsTitle": "Contacts de cette direction — top {{count}}",
+    "viewAllContacts_one": "Voir le contact du dossier →",
+    "viewAllContacts_other": "Voir tous les {{count}} contacts du dossier →",
+    "viewAllContactsUnknownTotal": "Voir tous les contacts du dossier →",
+    "columnBadge": "Rôle dans la décision",
+    "roleInferred": "déduit",
+    "roleInferredHelp": "Ce rôle est lu sur l’intitulé du poste par une règle : aucune source ne l’a observé.",
+    "noSourceReason": "Aucune provenance n’accompagne ce contact : rien ne dit d’où il vient, ni à quelle date.",
+    "moreDirections_one": "+ {{count}} autre direction cartographiée, au sélecteur ci-dessus",
+    "moreDirections_other": "+ {{count}} autres directions cartographiées, au sélecteur ci-dessus",
+    "noSource": "source inconnue",
+    "staleInfo": "Information du {{date}}, à vérifier",
+    "openPersonAria": "Ouvrir le panneau de {{name}}",
+    "openContactAria": "Ouvrir la fiche de {{name}}",
+    "verifiedOn": "Poste vérifié le {{date}}"
+  },
+  "correction": {
+    "trigger": "Corriger",
+    "gestures": {
+      "addWhatIKnow": "Ajouter ce que je sais",
+      "correctRelation": "Corriger cette relation",
+      "declareRole": "Déclarer un rôle"
+    },
+    "title": "Corriger la fiche de {{name}}",
+    "subtitle": "Une affirmation, sa raison, sa preuve. Ce que tu écris ici gagne sur ce que l’analyse a trouvé, et reste annulable.",
+    "fieldLabel": "Ce que tu corriges",
+    "fields": {
+      "title": "Le titre",
+      "entityId": "L’entité de rattachement",
+      "hierarchyLevel": "Le niveau hiérarchique",
+      "decisionRoles": "Les rôles de décision",
+      "reportsTo": "Le responsable direct",
+      "name": "Le nom de l’entité",
+      "parentId": "L’entité parente",
+      "type": "La nature du lien",
+      "verified": "La vérification du lien",
+      "presence": "La présence du lien"
+    },
+    "levels": {
+      "L0": "Gouvernance",
+      "L1": "Exécutif",
+      "L2": "Direction",
+      "L3": "Management",
+      "L4": "Expert / opérationnel",
+      "L5": "Achats / contrôle"
+    },
+    "roles": {
+      "economic_buyer": "Décideur économique",
+      "technical_buyer": "Référent technique",
+      "user_buyer": "Utilisateur",
+      "champion": "Champion",
+      "procurement": "Achats",
+      "blocker": "Bloqueur",
+      "influencer": "Influenceur",
+      "unknown": "À qualifier"
+    },
+    "currentLabel": "Aujourd’hui",
+    "currentUnknown": "non renseigné",
+    "newLabel": "Ce qui est vrai",
+    "textPlaceholder": "Ce que tu as lu, mot pour mot",
+    "choiceUnknown": "— on ne sait pas —",
+    "clearHint": "Laisser vide veut dire « on ne sait pas ». Ce n’est pas la même chose que zéro, et l’organigramme le dira ainsi.",
+    "reasonLabel": "Pourquoi",
+    "reasonPlaceholder": "Ce que tu sais, et d’où tu le tiens.",
+    "evidenceLabel": "D’où vient la preuve",
+    "evidenceRefLabel": "Référence de la preuve",
+    "evidenceRefPlaceholder": "Lien, citation, référence de registre",
+    "evidenceDateLabel": "Date de la preuve",
+    "submit": "Enregistrer la correction",
+    "cancel": "Fermer",
+    "saved": "Correction enregistrée — l’organigramme passe en version {{version}}.",
+    "unchanged": "Cette valeur était déjà celle-là : rien n’a été enregistré, et la version n’a pas bougé.",
+    "error": "La correction n’a pas pu être enregistrée.",
+    "conflict": {
+      "title": "Quelqu’un a corrigé cet organigramme pendant que tu écrivais",
+      "body": "Rien n’a été écrasé, et ta correction n’a pas été enregistrée. Tu partais de la version {{yours}} ; le dossier est à la version {{current}}.",
+      "line": "{{what}} de {{who}}, {{by}}, le {{when}}",
+      "byUnknown": "auteur inconnu",
+      "interveningUnknown": "Le détail de ce qui a changé n’a pas pu être lu — le conflit reste réel.",
+      "draftKept": "Ta saisie est conservée. Recharge, relis ce qui a changé, et renvoie-la si elle tient toujours.",
+      "reload": "Recharger le dossier"
+    },
+    "motiveLabel": "Ce que tu dis de ce fait",
+    "motives": {
+      "corrected": "Corriger",
+      "confirmed": "Confirmer",
+      "obsolete": "Obsolète",
+      "not_relevant": "Pas pertinent",
+      "unknown": "Je ne sais pas",
+      "source_added": "Ajouter une source"
+    },
+    "motiveHints": {
+      "corrected": "Tu sais ce qui est vrai : écris-le, avec ta preuve.",
+      "confirmed": "Ce que l’organigramme dit est toujours vrai. Le prochain run ne l’écrasera pas.",
+      "obsolete": "Ce fait n’est plus vrai : il redevient inconnu, et l’ancienne valeur reste lisible avec sa date.",
+      "not_relevant": "Ce fait ne compte pas pour ce compte. C’est noté, rien n’est réécrit.",
+      "unknown": "Tu ne peux ni le confirmer ni le corriger. C’est noté, rien n’est réécrit.",
+      "source_added": "Une preuve de plus pour ce que l’organigramme dit déjà. La référence est obligatoire."
+    },
+    "scopeLabel": "Pour qui",
+    "scopes": {
+      "personal": "Moi seul",
+      "workspace": "Tout l’espace",
+      "account": "Ce compte"
+    },
+    "visibility": {
+      "private": "Visible par toi seul. L’organigramme partagé ne change pas.",
+      "workspace": "Visible par tout l’espace."
+    },
+    "recorded": "Enregistré — l’organigramme partagé n’est pas réécrit.",
+    "forbiddenTitle": "Permission insuffisante",
+    "forbiddenBody": "Ton rôle ne permet pas de corriger cet organigramme. Demande à un administrateur de l’espace ; ta saisie reste là.",
+    "history": {
+      "title": "Corrections de l’organigramme",
+      "subtitle": "Ce que l’équipe a corrigé à la main, du plus récent au plus ancien. Une correction annulée reste ici.",
+      "loading": "Lecture de l’historique…",
+      "loadError": "L’historique des corrections n’a pas pu être lu. Ce n’est pas « aucune correction ».",
+      "empty": "Personne n’a encore corrigé cet organigramme.",
+      "change": "{{field}} de {{subject}} : {{from}} → {{to}}",
+      "meta": "{{source}} · version {{version}} · {{when}}",
+      "reverted": "Annulée",
+      "revert": "Annuler cette correction",
+      "revertDone": "Correction annulée — la ligne reste dans l’historique.",
+      "revertError": "L’annulation n’a pas pu être enregistrée.",
+      "byYou": "par toi",
+      "byOther": "par un autre membre de l’espace",
+      "private": "Privée",
+      "obsoleteSince": "Obsolète depuis le {{date}} — {{field}} de {{subject}} était : {{value}}",
+      "motiveLine": "{{motive}} · {{field}} de {{subject}} : {{value}}"
+    }
+  },
+  "enrichmentPlanner": {
+    "title": "Enrichir l’organigramme",
+    "subtitle": "Choisis jusqu’où aller. Aucun run ne reçoit tout le compte d’un coup.",
+    "openCta": "Planifier l’enrichissement",
+    "quickActionBadge": "Action rapide",
+    "targetPrecisely": "Ou cibler précisément",
+    "modes": {
+      "next_batch": {
+        "label": "Enrichir les {{count}} suivants",
+        "description": "{{brand}} choisit automatiquement les contacts les plus utiles selon ton contexte commercial."
+      },
+      "direction": {
+        "label": "Cette direction",
+        "description": "Cible les contacts non enrichis d’une direction précise."
+      },
+      "missing_roles": {
+        "label": "Rôles manquants",
+        "description": "Cherche les fonctions qui bloquent la compréhension du circuit de décision."
+      },
+      "hierarchy_level": {
+        "label": "Niveau hiérarchique",
+        "description": "Cible un ou plusieurs niveaux de la hiérarchie."
+      },
+      "full_account": {
+        "label": "Plan complet",
+        "description": "Tous les contacts restants, en plusieurs vagues si nécessaire."
+      }
+    },
+    "directionLabel": "Direction",
+    "directionPlaceholder": "Ex. Engineering, Direction Achats…",
+    "hierarchyLevelLabel": "Niveaux",
+    "hierarchyLevel": {
+      "L0": "L0 · Gouvernance",
+      "L1": "L1 · Exécutif",
+      "L2": "L2 · Direction",
+      "L3": "L3 · Management",
+      "L4": "L4 · Expert / opérationnel",
+      "L5": "L5 · Achats / contrôle"
+    },
+    "estimateTitle": "Estimation avant confirmation",
+    "contactsTargeted_one": "{{count}} contact ciblé",
+    "contactsTargeted_other": "{{count}} contacts ciblés",
+    "waveCount_one": "{{count}} vague",
+    "waveCount_other": "{{count}} vagues",
+    "loadingEstimate": "Calcul en cours…",
+    "estimateError": "Impossible de calculer le coût pour ce périmètre.",
+    "nothingToEnrich": "Rien à enrichir dans ce périmètre : tous les contacts connus sont déjà classés.",
+    "launch": "Lancer",
+    "launching": "Lancement…",
+    "launchSuccess_one": "{{matched}} contact reclassé. Vague terminée.",
+    "launchSuccess_other": "{{matched}} contacts reclassés. Vague terminée.",
+    "launchRemaining": "{{remaining}} contacts restent dans ce périmètre — relance le même mode pour continuer.",
+    "launchError": "Impossible de lancer cette vague.",
+    "insufficientCredits": "Tu as beaucoup utilisé {{brand}} ce mois-ci — on en parle ?",
+    "close": "Fermer"
+  },
+  "orgViews": {
+    "label": "Vue de l’organigramme",
+    "aria": "Choisir la vue de l’organigramme",
+    "focal": "Influence",
+    "group": "Entités",
+    "hierarchy": "Hiérarchie",
+    "edit": "Mode édition",
+    "system": "Carte complète",
+    "focalHint": "Par qui commencer sur une direction — la vue par défaut.",
+    "groupHint": "Comment le groupe est fait : ses entités et leurs périmètres.",
+    "hierarchyHint": "L’arbre L0-L4 d’une entité, avec les rôles bruts et les Achats en dessous.",
+    "editHint": "Réarranger les rattachements. Rien n’est écrit sans raison ni preuve.",
+    "systemHint": "Qui pèse sur quoi, sur le groupe entier."
+  },
+  "group": {
+    "title": "Organigramme du groupe",
+    "subtitle": "Ce que l’analyse a cartographié du groupe et de ses entités.",
+    "structureTitle": "Structure du groupe",
+    "structureSubtitle": "Ouvre une entité pour voir sa hiérarchie complète. Les personnes non enrichies restent visibles.",
+    "entityCounts": "{{scope}} dans le périmètre · {{direct}} rattachés directement",
+    "entityCountsNone": "Aucune personne placée dans l’organigramme",
+    "unattached_one": "{{count}} personne n’est rattachée à aucune entité : elle n’apparaît pas dans l’arbre.",
+    "unattached_other": "{{count}} personnes ne sont rattachées à aucune entité : elles n’apparaissent pas dans l’arbre.",
+    "correctEntity": "Corriger",
+    "correctEntityAria": "Corriger {{name}}",
+    "qualityTitle": "Couverture & qualité",
+    "quality": {
+      "attached": "Contacts rattachés à une entité",
+      "leveled": "Personnes rangées à un niveau",
+      "leveledUnknown": "le graphe ne porte aucune personne"
+    }
+  },
+  "personPanel": {
+    "title": "Panneau personne",
+    "noRecord": "Pas de fiche contact pour cette personne : voici ce que l’organigramme en sait.",
+    "createRecord": "Créer sa fiche"
+  },
+  "hierarchy": {
+    "scopeWithoutOrg": "« {{name}} » : aucun organigramme connu pour cette entité — la couverture manque, et aucune personne ne lui est prêtée. Vue affichée : {{shown}}.",
+    "treeTitle": "Hiérarchie — {{direction}}",
+    "treeSubtitle": "L’axe vertical est la structure réelle. Les étiquettes disent le rôle dans la décision ; elles ne déterminent jamais un niveau.",
+    "roleUnknown": "Rôle dans la décision non établi",
+    "procurementSubtitle": "Axe parallèle : ces personnes pèsent sur le circuit d’achat sans dépendre de la ligne hiérarchique.",
+    "procurementEmpty": "Aucun acheteur ni contrôle identifié sur ce périmètre.",
+    "legendTitle": "Légende",
+    "legendAria": "Légende des traits et des étiquettes",
+    "legendLevel": "Niveau hiérarchique de la personne",
+    "legendRole": "Rôle dans la décision d’achat",
+    "unenrichedAria": "Contacts découverts, non enrichis",
+    "unenrichedTitle": "Non enrichis",
+    "unenrichedSubtitle": "Découverts, pas encore analysés : ni niveau, ni rattachement, ni rôle ne leur sont prêtés — seul ce que le contact porte déjà est montré.",
+    "knownTeamAria": "Contacts déjà connus de l’équipe",
+    "knownTeamTitle": "Connus de l’équipe",
+    "knownTeamSubtitle": "Importés depuis ton CRM ou un fichier : tu les connais déjà. Ils ne sont pas rangés dans l’arbre parce que leur titre ou leur entité ne dit pas où ils se situent — rien n’est deviné.",
+    "knownBadge": "Connu",
+    "knownDuplicate": "doublon probable : {{name}}",
+    "knownDuplicateLink": "Voir les propositions de fusion",
+    "unenrichedBadge": "Non enrichi",
+    "unenrichedEmpty": "Tous les contacts découverts sur ce compte ont déjà été enrichis.",
+    "unenrichedMore_one": "+ {{count}} non enrichi de plus",
+    "unenrichedMore_other": "+ {{count}} non enrichis de plus",
+    "unplacedAria": "Personnes connues, non rattachées",
+    "unplacedTitle": "Personnes connues, non placées dans l’organigramme",
+    "unplacedBody": "Personnes connues : {{known}} · non rattachées : {{unplaced}}.",
+    "unplacedReason": "Aucun rattachement hiérarchique n’a pu être établi pour elles : aucune entité ni aucune ligne de reporting ne leur est associée, donc aucune n’est placée. Rien n’est deviné ; elles restent au dossier."
+  },
+  "edit": {
+    "title": "Mode édition",
+    "subtitle": "Réarrange les rattachements. Un déplacement PROPOSE un responsable ; c’est toi qui dis pourquoi.",
+    "treeAria": "Organigramme réarrangeable par niveau hiérarchique",
+    "keyboardHint": "À la souris : fais glisser une carte sur une autre. Au clavier : Entrée sur « Déplacer », puis Entrée sur « Rattacher ici ». Échap annule.",
+    "nothingWrittenYet": "Rien n’est écrit tant que tu n’as pas donné ta raison et ta preuve — un déplacement seul ne corrige rien.",
+    "picked": "{{name}} est saisi. Choisis son nouveau responsable, ou appuie sur Échap pour annuler.",
+    "pick": "Déplacer {{name}}",
+    "pickCancel": "Reposer {{name}}",
+    "dropHere": "Rattacher {{name}} ici",
+    "openPanel": "Voir la fiche de {{name}}",
+    "panelTitle": "Modifier une personne",
+    "panelEmpty": "Choisis une personne dans l’arbre pour voir ce que {{brand}} sait d’elle.",
+    "correctField": "Corriger — {{field}}",
+    "correctionSource": "Source de la correction : quelqu’un de ton espace l’affirme. Elle gagnera sur toute réanalyse ultérieure."
+  },
+  "signalsTab": {
+    "staleCollection": {
+      "titleDated": "Signaux collectés le {{date}}, à revérifier",
+      "titleUnknown": "Date de collecte non mesurée — à revérifier",
+      "reason": "Ce dossier a été analysé avant une amélioration de la collecte des signaux (dont le lien vers la source de chaque signal). Les informations affichées peuvent être sous-évaluées et des signaux peuvent n'avoir aucun lien — utilise « Actualiser » pour les rafraîchir."
+    }
+  },
+  "planTab": {
+    "staleCollection": {
+      "titleDated": "Plan établi le {{date}}, à revérifier",
+      "titleUnknown": "Date de collecte non mesurée — à revérifier",
+      "reason": "Ce dossier a été analysé avant une amélioration de la collecte de la stratégie. Le plan affiché peut être sous-évalué — utilise « Changer de stratégie » pour le rafraîchir."
+    }
+  },
+  "overviewTab": {
+    "staleCollection": {
+      "titleDated": "Lecture du dossier du {{date}}, à revérifier",
+      "titleUnknown": "Date de collecte non mesurée — à revérifier",
+      "reason": "Ce dossier a été analysé avant la lecture du score en sept axes. Sa décomposition peut être incomplète ou absente — utilise « Changer de stratégie » (onglet Stratégie) pour la rafraîchir."
+    },
+    "jobsHistoryStaleCollection": {
+      "titleDated": "Analyse du {{date}} : historique des offres plus court qu’aujourd’hui — actualise les signaux pour l’obtenir",
+      "titleUnknown": "Historique des offres plus court qu’aujourd’hui — actualise les signaux pour l’obtenir (date d’analyse non mesurée)",
+      "reason": "Ce compte a été analysé avant que l’historique complet des offres soit collecté : les besoins plus anciens peuvent manquer."
+    },
+    "legalNameStaleCollection": {
+      "titleDated": "Analyse du {{date}} : nom légal collecté depuis le 21/10 — actualise l’analyse pour l’obtenir",
+      "titleUnknown": "Nom légal collecté depuis le 21/10 — actualise l’analyse pour l’obtenir (date d’analyse non mesurée)",
+      "reason": "Ces comptes sociaux sont ceux de l’entité immatriculée ; son nom n’était pas encore collecté lors de cette analyse."
+    },
+    "dossierBlocksStaleCollection": {
+      "titleDated": "Blocs du dossier établis le {{date}}, à revérifier",
+      "titleUnknown": "Date de collecte non mesurée — à revérifier",
+      "reason": "Ce dossier a été analysé avant que l’analyse produise les axes de lecture, l’écosystème, les domaines d’opportunité, les indicateurs financiers et les garde-fous de fiabilité. Ces blocs peuvent manquer — relance une analyse pour les obtenir."
+    }
+  },
+  "accessTab": {
+    "staleCollection": {
+      "titleDated": "Relation calculée le {{date}}, à revérifier",
+      "titleUnknown": "Date de collecte non mesurée — à revérifier",
+      "reason": "Ce dossier a été analysé avant que l'axe Relation ne lise les missions, l'agenda, les e-mails et les corrections en plus de ton CRM. Ce qui est affiché peut être incomplet — relance une analyse pour le rafraîchir."
+    },
+    "barrierStaleCollection": {
+      "titleDated": "Signaux collectés le {{date}}, à revérifier",
+      "titleUnknown": "Date de collecte non mesurée — à revérifier",
+      "reason": "Ce dossier a été analysé avant la correction de la lecture de l'effectif : la maturité d'achat peut s'appuyer sur un effectif erroné. Rien n'est recalculé tout seul — relance une analyse pour la rafraîchir."
+    }
+  },
+  "contactsFigures": {
+    "contacts_one": "{{count}} contact",
+    "contacts_other": "{{count}} contacts",
+    "withEmail_one": "{{count}} avec e-mail",
+    "withEmail_other": "{{count}} avec e-mail",
+    "engaged_one": "{{count}} relation engagée",
+    "engaged_other": "{{count}} relations engagées"
+  },
+  "orgTheo": {
+    "title": "Lis l’organisation sans inventer les liens.",
+    "lead": "Les regroupements servent à naviguer. Une ligne hiérarchique n’apparaît que si elle est déclarée avec son contexte."
+  },
+  "absence": {
+    "view": "Organigramme non disponible",
+    "viewReason": "aucune entité du graphe n’a de personne rattachée — rien n’est deviné, les personnes connues restent au dossier."
+  },
+  "entityExclude": {
+    "action": "Écarter les contacts de cette entité",
+    "confirm": "Écarter {{count}} contacts de « {{entity}} » ? C’est réversible : « Annuler » le réintègre aussitôt, ou chaque contact depuis sa fiche.",
+    "confirmButton": "Confirmer",
+    "cancel": "Annuler",
+    "reason": "Écarté avec toute l’entité « {{entity}} » par le commercial",
+    "done": "{{count}} contacts de « {{entity}} » écartés.",
+    "failed": "{{count}} contacts n’ont pas pu être écartés.",
+    "undo": "Annuler",
+    "undone": "{{count}} contacts de « {{entity}} » réintégrés.",
+    "undoFailed": "Les contacts de « {{entity}} » n’ont pas pu être réintégrés."
+  }
+}

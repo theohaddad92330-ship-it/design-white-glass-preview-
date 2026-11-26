@@ -1,0 +1,165 @@
+ const paragraphs=strictCRM?['Le périmètre de cette conversation exclut les données de l’espace et du CRM. Choisis explicitement un autre contexte avant de préparer cette action.']:['Mon profil est désactivé pour cette demande. Laura ne consulte pas '+label+' et ne prépare aucune action dans cet outil avec ce réglage.','Tu peux fournir ici les informations utiles, ou réactiver Mon profil pour une prochaine demande. Les dossiers explicitement choisis restent disponibles.'];
+ if(kind==='email')paragraphs.push('Je peux préparer un texte à partir des éléments que tu fournis, sans lire ta boîte ni envoyer de message.');
+ append(sampleReply('method',{replyData:{paragraphs},sourceIds:[]}),t);persist();return true;
+}
+function captureRequestContext(t){return {scope:{...(t.scope||{kind:'portfolio'})},contextMode:t.contextMode||'my_activity',toolSelection:[...(t.toolSelection||[])],capturedAt:Date.now()}}
+function runContext(t,opts={}){return opts.contextSnapshot||captureRequestContext(t)}
+const runPriorityLabels={skills:'Compétences',calendar:'Disponibilité',distance:'Proximité'};
+function createRunQuestions(opts,m){
+ if(!m.guided||m.target==='contacts')return [];
+ const questions=[];
+ if(opts.askIntent!==false&&m.type==='all'&&m.finalKind!=='long')questions.push({id:'pistes',revision:1,status:'pending',required:true,multiple:false,title:'Quelles pistes veux-tu privilégier ?',help:'Je lis les sources pendant ce temps. Ton choix guidera la sélection.',options:[{id:'missions',label:'Des missions annoncées',detail:'Un besoin de prestation déjà publié.'},{id:'signals',label:'Des comptes à prospecter',detail:'Des signaux de recrutement à qualifier.'},{id:'all',label:'Les deux',detail:'Une sélection qui distingue les deux types.'}],selected:[]});
+ questions.push({id:'priorites',revision:1,status:'pending',required:false,multiple:true,title:'Un critère à regarder en priorité ?',help:'Tu peux en choisir plusieurs. Je continue avec les critères du dossier si tu passes cette étape.',options:[{id:'skills',label:'Compétences',detail:'Faire ressortir les rapprochements et les écarts.'},{id:'calendar',label:'Disponibilité',detail:'Repérer les dates de démarrage à confirmer.'},{id:'distance',label:'Proximité',detail:'Commencer par les comptes les plus proches.'}],selected:[]});
+ return questions;
+}
+function currentRunQuestion(m){return m.questions?.find(q=>q.status==='pending'||q.status==='drafting')||null}
+function pendingRunDecision(m){return (m.questions||[]).some(q=>(q.required||q.status==='drafting')&&['pending','drafting'].includes(q.status))}
+function runAnswerLabel(q){return q.status==='skipped'?'Critères du dossier':q.options.filter(o=>q.selected.includes(o.id)).map(o=>o.label).join(', ')}
+function runDecisionReceipt(m,editable=false){
+ const done=(m.questions||[]).filter(q=>['answered','skipped'].includes(q.status));if(!done.length)return '';
+ return `<div class="run-decisions" aria-label="Précisions retenues">${done.map(q=>`<div><span>${I('check')}<span>${q.id==='pistes'?'Pistes':'Priorités'} : <strong>${esc(runAnswerLabel(q))}</strong></span></span>${editable?`<button type="button" data-action="run-revise" data-message-id="${m.id}" data-run-id="${m.runId}" data-question-id="${q.id}" data-revision="${q.revision}" aria-label="Modifier ${q.id==='pistes'?'le type de pistes':'les priorités'}">Modifier</button>`:''}</div>`).join('')}</div>`;
+}
+function runQuestionMarkup(m){
+ const q=currentRunQuestion(m);if(!q||m.stage<1||!['running','waiting_input'].includes(m.status))return '';
+ const attrs=`data-message-id="${m.id}" data-run-id="${m.runId}" data-question-id="${q.id}" data-revision="${q.revision}"`;
+ const help=m.status==='waiting_input'?(q.required?'Ton choix guidera la sélection finale.':'Valide tes critères ou garde ceux du dossier.'):q.help;
+ return `<section class="run-question" aria-label="Précision pour la recherche en cours"><div class="run-question-heading"><span>${q.required?'Une précision pour la suite':m.status==='waiting_input'?'Tes critères à confirmer':'Pendant la recherche'}</span><span>${(m.questions||[]).indexOf(q)+1} / ${m.questions.length}</span></div><h3>${esc(q.title)}</h3><p>${esc(help)}</p><div class="run-question-options ${q.multiple?'is-multiple':''}" aria-label="${esc(q.title)}">${q.options.map(o=>`<button type="button" class="run-option ${q.selected.includes(o.id)?'is-selected':''}" data-action="${q.multiple?'run-toggle':'run-answer'}" data-id="${o.id}" ${attrs} aria-pressed="${q.selected.includes(o.id)}"><span class="run-option-mark">${q.selected.includes(o.id)?I('check'):''}</span><span><strong>${esc(o.label)}</strong><small>${esc(o.detail)}</small></span>${q.multiple?'':I('chevron-right')}</button>`).join('')}</div>${q.multiple?`<div class="run-question-actions"><button type="button" class="btn btn-primary" data-action="run-confirm" ${attrs} ${q.selected.length?'':'disabled'}>${q.selected.length>1?'Retenir ces priorités':'Retenir ce critère'} ${I('check')}</button><button type="button" class="btn btn-ghost" data-action="run-skip" ${attrs}>Garder les critères du dossier</button></div>`:''}<div class="run-question-status">${I(m.status==='waiting_input'?'pause':'activity')}<span>${m.status==='waiting_input'?'La lecture est terminée. Je prépare la réponse après ton choix.':'La recherche continue pendant que tu choisis.'}</span></div></section>`;
+}
+function runDuration(m){const s=Math.floor((m.workElapsedMs||0)/1000);return s>=60?Math.floor(s/60)+' min '+String(s%60).padStart(2,'0')+' s':s+' s'}
+function runEstimate(m){
+ if(m.status==='waiting_input')return 'En attente de ta précision';
+ if(m.status==='interrupted')return 'Recherche arrêtée';
+ if((m.workElapsedMs||0)>m.estimateRange[1]*1000)return 'Plus long que prévu · les éléments reçus restent disponibles';
+ if(m.afterInput)return 'Encore quelques secondes';
+ return 'Environ '+m.estimateRange[0]+'–'+m.estimateRange[1]+' s';
+}
+function runStage(m){
+ if(m.status==='interrupted')return {label:'Recherche interrompue',detail:'Les éléments reçus et tes choix restent disponibles.'};
+ if(m.status==='waiting_input')return {label:'La lecture est terminée',detail:'Une précision reste à valider pour terminer cette réponse.'};
+ const target=m.target==='contacts',name=scopeName(m.contextSnapshot?.scope||owner(m)?.scope);
+ return target?[
+ {label:'Je prépare la recherche',detail:'Je pars des comptes que tu as retenus.'},
+ {label:'Je consulte les équipes',detail:'Je recherche les fonctions data et IT documentées.'},
+ {label:'Je vérifie les rôles',detail:'Je distingue les personnes identifiées des coordonnées à confirmer.'},
+ {label:'Je prépare la sélection',detail:'Chaque interlocuteur gardera son contexte et sa source.'}
+ ][Math.min(m.stage,3)]:[
+ {label:'Je prépare la recherche',detail:(m.contextSnapshot?.scope.kind==='consultant'?'Je pars du dossier de '+name+'.':'Je reprends le périmètre de ta demande.')},
+ {label:'Je consulte le dossier',detail:'Compétences, disponibilité et zone de recherche.'},
+ {label:'Je recoupe les annonces',detail:'Je distingue les missions publiées des signaux de recrutement.'},
+ {label:'Je prépare la réponse',detail:m.finalKind==='long'?'Je structure les priorités, les points à vérifier et les prochaines actions.':'Je rapproche les pistes et les critères que tu as retenus.'}
+ ][Math.min(m.stage,3)];
+}
+function runScopeMarkup(m){const snap=m.contextSnapshot;if(!snap)return '';return `<dl class="run-scope"><div><dt>Dossier</dt><dd>${esc(scopeName(snap.scope))}</dd></div><div><dt>Mon profil</dt><dd>${snap.contextMode==='my_activity'?'Activé':snap.contextMode==='one_off_mission'?'Mission ponctuelle':'Désactivé'}</dd></div></dl>`}
+function workBody(m){
+ if(!m.estimateRange)m.estimateRange=[5,10];const stage=runStage(m),stopped=m.status==='interrupted',waiting=m.status==='waiting_input',first=filtered(m)[0];
+ return `<div class="work-block work-v7 ${!stopped&&!waiting?'is-busy':''}"><div class="work-current"><span class="work-indicator">${stopped?I('stop'):waiting?I('pause'):'<span class="activity-spinner" aria-hidden="true"></span>'}</span><div><strong class="work-label">${esc(stage.label)}</strong><p class="work-description">${esc(stage.detail)}</p></div></div><div class="run-timing" aria-live="off"><span class="run-estimate" data-run-estimate="${m.id}" title="Durée de recherche indicative, hors attente de tes réponses. Les délais sont simulés dans cet aperçu.">${I('clock')}<span>${esc(runEstimate(m))}</span></span><span data-run-elapsed="${m.id}">${runDuration(m)} de recherche</span></div><ol class="work-stages" aria-label="Étapes de la recherche">${(m.target==='contacts'?['Demande','Équipes','Rôles','Synthèse']:['Demande','Dossier','Sources','Synthèse']).map((label,i)=>`<li class="work-stage ${i<m.stage?'is-done':i===m.stage&&!waiting&&!stopped?'is-active':'is-pending'}"><span class="work-stage-mark">${i<m.stage?I('check'):String(i+1)}</span><span>${label}</span></li>`).join('')}</ol><details class="work-details" data-work-details="${m.id}" ${m.activityOpen?'open':''}><summary>Voir le détail ${I('chevron-down')}</summary>${runScopeMarkup(m)}<ol class="work-timeline">${(m.events||[]).map(e=>`<li class="work-step is-done">${I('check')}<span>${esc(e.label)}</span></li>`).join('')}</ol><p class="run-estimate-note">Durée indicative. Les étapes et les temps sont simulés dans cet aperçu.</p></details>${m.stage>=3&&first&&m.target!=='contacts'?`<div class="work-result"><span class="eyebrow">Déjà disponible</span><button class="account-preview" data-action="account-panel" data-id="${first.id}"><span class="account-monogram">${esc(first.initials)}</span><span><strong>${esc(first.name)}</strong><span class="small muted">${esc(first.headline)} · ${esc(first.city)}</span></span>${I('chevron-right')}</button></div>`:''}</div>${runDecisionReceipt(m,!stopped)}${runQuestionMarkup(m)}${stopped?`<div class="next-actions"><button class="btn btn-subtle" data-action="restart-work" data-message-id="${m.id}">${I('play')}${m.historical?'Relancer à partir d’ici':'Reprendre cette recherche'}</button></div>`:''}`;
+}
+function rankRunAccounts(m){
+ const base=(m.baseAccountIds||m.accountIds||[]).filter(byId);
+ if(!m.baseAccountIds)m.baseAccountIds=[...base];
+ m.accountIds=[...base];
+ const p=m.focusPriorities||[];if(!p.length)return;
+ const skills=new Set(D.consultant.skills.map(x=>normalizeQuestion(x)));
+ const score=a=>(p.includes('skills')?a.skills.filter(x=>skills.has(normalizeQuestion(x))).length*10:0)+(p.includes('distance')?-Number(a.distance||0)/5:0)+(p.includes('calendar')&&a.id==='trema'?-80:0);
+ m.accountIds.sort((a,b)=>score(byId(b))-score(byId(a)));
+}
+function runPriorityExplanation(m){
+ const p=m.focusPriorities||[];if(!p.length)return '';
+ const ids=new Set(filtered(m).map(a=>a.id)),notes=[];
+ if(p.includes('skills'))notes.push('Les compétences communes au profil de Camille passent en premier. Les compétences absentes de son dossier restent à vérifier.');
+ if(p.includes('calendar'))notes.push(ids.has('trema')?'Tréma est replacé après les autres pistes : le démarrage annoncé le 9 novembre précède la disponibilité de Camille le 16.':'Le calendrier reste un point de qualification : je ne suppose aucune date de démarrage absente des sources.');
+ if(p.includes('distance'))notes.push('La proximité de Nantes compte dans l’ordre de lecture. Elle ne confirme pas les modalités de télétravail.');
+ return `<div class="run-priority-note"><strong>Tes critères dans cette réponse</strong>${notes.map(x=>`<p>${esc(x)}</p>`).join('')}</div>`;
+}
+function refreshRunClock(t,run,m){
+ if(t.activeRun?.id!==run.id)return;
+ if(m.status==='running')m.workElapsedMs=Date.now()-run.startedAt-run.waitTotal;
+ if(t.id!==S.threadId)return;
+ const el=$('[data-run-elapsed="'+m.id+'"]');if(el)el.textContent=runDuration(m)+' de recherche';
+ const eta=$('[data-run-estimate="'+m.id+'"] > span');if(eta)eta.textContent=runEstimate(m);
+}
+function releaseRunTimers(run){clearTimeout(run.timer);clearInterval(run.clock)}
+function scheduleRun(t,run,m,delay){clearTimeout(run.timer);run.timer=setTimeout(()=>advanceRun(t,run,m),delay)}
+function finishRun(t,run,m){
+ if(t.activeRun?.id!==run.id||!['running','waiting_input'].includes(m.status))return;
+ if(pendingRunDecision(m)){
+  m.status='waiting_input';run.waitingAt=Date.now();refreshRunClock(t,run,m);updateMessage(m);renderThreads();persist();
+  if(t.id===S.threadId)announce('La lecture est terminée. Une précision reste à valider.');return;
+ }
+ (m.questions||[]).filter(q=>q.status==='pending').forEach(q=>{q.status='skipped';q.selected=[]});
+ refreshRunClock(t,run,m);releaseRunTimers(run);rankRunAccounts(m);
+ m.kind=m.target==='contacts'?'contacts':m.finalKind||'results';m.status='completed';m.reveal=true;m.completedAt=Date.now();m.events.push({label:'Réponse disponible',at:Date.now()});
+ m.sourceIds=m.kind==='contacts'?D.contacts.filter(c=>m.accountIds.includes(c.accountId)).map(c=>'src-contact-'+c.id):m.kind==='long'?D.strategy.sourceIds:accountSources(filtered(m).map(a=>a.id));
+ if(m.kind==='listing'){m.listView=m.focusPriorities?.length?'all':m.type==='missions'?'missions':'overview';m.previewLimit=6;m.listExpanded=false;}
+ t.activeRun=null;updateMessage(m);m.reveal=false;renderThreads();persist();
+ if(t.id===S.threadId){announce('La réponse est disponible, avec tes choix.');updateControls()}drainQueue(t);
+}
+function advanceRun(t,run,m){
+ if(t.activeRun?.id!==run.id||m.status!=='running')return;
+ if(m.stage>=3){finishRun(t,run,m);return;}
+ m.stage++;const labels=m.target==='contacts'?['','Comptes retenus consultés','Rôles documentés rapprochés','Interlocuteurs prêts à examiner']:['','Dossier et périmètre consultés','Annonces reçues et types distingués','Premières pistes disponibles'];
+ m.events.push({label:labels[m.stage],at:Date.now()});refreshRunClock(t,run,m);updateMessage(m);renderThreads();persist();
+ if(t.id===S.threadId)announce(m.stage===1&&currentRunQuestion(m)?runStage(m).label+'. '+currentRunQuestion(m).title:runStage(m).label);
+ scheduleRun(t,run,m,m.guided?[0,4200,4800,3200][m.stage]:[0,1500,1600,1400][m.stage]);
+}
+function startWork(opts={},existing=null,t=thread()){
+ const contextSnapshot=runContext(t,opts);
+ if(t.activeRun){t.queue.push({text:opts.prompt||'Poursuivre la recherche',opts:{...opts,contextSnapshot,target:opts.target||'accounts'}});if(t.id===S.threadId)updateControls();persist();toast('La demande est ajoutée à la suite.');return;}
+ let prior=null;if(existing?.status==='interrupted'&&!existing.historical){prior=existing;existing=null;opts={...opts,contextSnapshot:prior.contextSnapshot||contextSnapshot,guided:prior.guided,finalKind:prior.finalKind,askIntent:prior.questions?.some(q=>q.id==='pistes')};}
+ const m=existing||fresh('assistant','work',{}),runId=++S.runSequence;
+ const baseAccountIds=[...(prior?.baseAccountIds||opts.ids||D.accounts.map(a=>a.id))].filter(byId);
+ Object.assign(m,{kind:'work',target:opts.target||'accounts',stage:0,status:'running',events:[{label:prior?'Recherche reprise avec les choix déjà retenus':'Demande prise en compte',at:Date.now()}],activityOpen:false,area:opts.area||t.area,type:opts.type||t.kind||'all',accountIds:[...baseAccountIds],baseAccountIds:[...baseAccountIds],selected:[],filter:'',sort:'relevance',expanded:false,guided:opts.guided??(opts.target!=='contacts'&&!opts.ids),finalKind:opts.finalKind||'results',contextSnapshot:opts.contextSnapshot||contextSnapshot,requestText:opts.prompt||t.messages.findLast(x=>x.role==='user')?.text||'',runId,workElapsedMs:0,afterInput:false,focusPriorities:[...(prior?.focusPriorities||[])],relaunchOf:prior?.id||null});
+ m.estimateRange=m.guided?[12,20]:[4,8];m.questions=createRunQuestions(opts,m);
+ if(prior){for(const q of m.questions){const saved=prior.questions?.find(x=>x.id===q.id&&['answered','skipped'].includes(x.status));if(saved)Object.assign(q,{status:saved.status,selected:[...saved.selected],revision:saved.revision+1});}}
+ if(opts.choice)m.choice=opts.choice;rankRunAccounts(m);
+ const run={id:runId,threadId:t.id,messageId:m.id,timer:null,clock:null,startedAt:Date.now(),waitingAt:null,waitTotal:0,scopeSnapshot:{...m.contextSnapshot.scope},contextModeSnapshot:m.contextSnapshot.contextMode,toolSelectionSnapshot:[...m.contextSnapshot.toolSelection]};
+ t.activeRun=run;if(!existing)append(m,t);else updateMessage(m,{user:true});
+ if(t.id===S.threadId)updateControls();renderThreads();persist();
+ run.clock=setInterval(()=>refreshRunClock(t,run,m),1000);scheduleRun(t,run,m,m.guided?900:600);
+ if(t.id===S.threadId)announce('Demande prise en compte. '+runEstimate(m));
+}
+function runQuestionAction(action,el){
+ const m=message(el.dataset.messageId),t=m&&owner(m),run=t?.activeRun,q=m?.questions?.find(x=>x.id===el.dataset.questionId);
+ if(!run||run.id!==Number(el.dataset.runId)||m.runId!==run.id||!q||q.revision!==Number(el.dataset.revision)||!['running','waiting_input'].includes(m.status))return false;
+ const val=el.dataset.id;
+ if(action==='run-revise'){
+  if(!['answered','skipped'].includes(q.status))return false;q.status='drafting';q.revision++;
+ }else{
+  if(!['pending','drafting'].includes(q.status))return false;
+  if(action==='run-toggle'){
+   if(!q.multiple||!q.options.some(x=>x.id===val))return false;q.selected=q.selected.includes(val)?q.selected.filter(x=>x!==val):[...q.selected,val];q.status='drafting';
+  }else if(action==='run-answer'){
+   if(q.multiple||!q.options.some(x=>x.id===val))return false;q.selected=[val];q.status='answered';
+  }else if(action==='run-confirm'){
+   if(!q.multiple||!q.selected.length)return false;q.status='answered';
+  }else if(action==='run-skip'){
+   if(q.required)return false;q.selected=[];q.status='skipped';
+  }else return false;
+ }
+ if(['answered','skipped'].includes(q.status)){
+  if(q.id==='pistes'){m.type=q.selected[0]||'all';m.choice=null;}
+  if(q.id==='priorites')m.focusPriorities=[...q.selected];
+  m.events.push({label:'Précision retenue · '+runAnswerLabel(q),at:Date.now(),questionId:q.id,revision:q.revision});
+  rankRunAccounts(m);
+ }
+ if(m.status==='waiting_input'&&!pendingRunDecision(m)){
+  run.waitTotal+=Date.now()-run.waitingAt;run.waitingAt=null;m.status='running';m.afterInput=true;
+  scheduleRun(t,run,m,currentRunQuestion(m)?6000:1800);
+ }
+ updateMessage(m,{user:true});renderThreads();persist();
+ if(t.id===S.threadId){
+  const next=currentRunQuestion(m);announce(['answered','skipped'].includes(q.status)?'Choix pris en compte dans cette recherche.'+(next?' '+next.title:' Je termine la réponse.'):'Choix en cours de modification.');
+  if(['answered','skipped'].includes(q.status))$('#'+m.id+' .run-question button')?.focus({preventScroll:true});
+ }
+ return true;
+}
+function stopWork(){
+ const t=thread(),run=t.activeRun;if(!run)return;const m=message(run.messageId);
+ if(m)refreshRunClock(t,run,m);releaseRunTimers(run);
+ if(m){m.status='interrupted';m.events.push({label:'Recherche interrompue à ta demande',at:Date.now()});}
+ t.activeRun=null;updateMessage(m,{user:true});renderThreads();updateControls();announce('Recherche interrompue. Tes choix et les éléments reçus sont conservés.');persist();
+}
+
+
+function persist(){try{localStorage.setItem(storeKey,JSON.stringify({theme:S.theme,saved:[...S.saved],draft:S.draft,drafts:S.drafts,comments:S.comments,reduced:S.reduced,preferences:S.preferences,connectorState:S.connectorState,reviewDecisions:S.reviewDecisions,integrationEvents:S.integrationEvents,sequence:S.sequence,threads:[...S.threads.values()].map(t=>({...t,activeRun:null,messages:t.messages.map(m=>m.kind==='work'?{...m,status:'interrupted'}:m)}))}))}catch{}}
+function draftFor(id='general'){if(!S.drafts[id])S.drafts[id]={...D.draft,contactId:id,id};S.drafts[id].id=S.drafts[id].id||id;return S.drafts[id]}

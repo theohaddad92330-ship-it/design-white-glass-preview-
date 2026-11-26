@@ -1,0 +1,33 @@
+name: ia-venv
+description: >-
+  Venv Python HERMÉTIQUE pour apps/ia (lot CI C) : créé dans RUNNER_TEMP, installé depuis
+  apps/ia/requirements.lock avec uv. Aucun `pip install` dans le Python partagé du runner
+  (`_work/_tool/Python`), donc rien ne fuit d'un job à l'autre. Exporte IA_VENV ; les étapes
+  appellent "$IA_VENV/bin/python" explicitement (on ne touche pas au PATH).
+runs:
+  using: composite
+  steps:
+    - name: Installer uv (épinglé) si absent
+      shell: bash
+      env:
+        UV_VERSION: '0.12.8'
+      run: |
+        if ! command -v uv >/dev/null 2>&1; then
+          python3 -m pip install --user --quiet "uv==${UV_VERSION}"
+          echo "$HOME/.local/bin" >> "$GITHUB_PATH"
+          export PATH="$HOME/.local/bin:$PATH"
+        fi
+        uv --version
+    - name: Créer le venv et installer le lock
+      shell: bash
+      env:
+        UV_CACHE_DIR: ${{ runner.temp }}/uv-cache
+      run: |
+        set -euo pipefail
+        # `uv` vient peut-être d'être posé dans ~/.local/bin (hors PATH de CE shell).
+        export PATH="$HOME/.local/bin:$PATH"
+        venv="${RUNNER_TEMP}/ia-venv"
+        rm -rf "$venv"
+        uv venv --python 3.13 "$venv"
+        uv pip sync --python "$venv/bin/python" "${GITHUB_WORKSPACE}/apps/ia/requirements.lock"
+        echo "IA_VENV=$venv" >> "$GITHUB_ENV"

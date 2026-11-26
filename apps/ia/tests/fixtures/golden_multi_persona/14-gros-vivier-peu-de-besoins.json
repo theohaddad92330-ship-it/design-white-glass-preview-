@@ -1,0 +1,104 @@
+{
+  "id": "14-gros-vivier-peu-de-besoins",
+  "persona": "Équipe avec gros vivier mais peu de besoins",
+  "personaKind": "fictif",
+  "_source": "#2070 / #2085 — cas de référence du corpus de non-régression multi-persona",
+  "answers": {
+    "user_id": "golden-14-gros-vivier-peu-de-besoins",
+    "first_name": "Renaud",
+    "esn_name": "Vivier Staffing IT",
+    "consultant_size": "80-200",
+    "sales_team_size": "4-8 personnes",
+    "expertise_areas": [
+      "Développement applicatif (Web, Mobile, API)",
+      "SAP & ERP (S/4HANA, Oracle, Sage)"
+    ],
+    "positioning": "Régie pure - on place des profils sur demande",
+    "staffing_model": "Mix équilibré CDI / Freelances",
+    "target_sectors": [
+      "Industrie manufacturière & Automobile",
+      "Énergie & Utilities (EDF, Engie...)"
+    ],
+    "target_company_types": [
+      "ETI (500-5 000 salariés)"
+    ],
+    "geo_zones": [
+      "National (toute la France)"
+    ],
+    "main_sales_pain": "Fidéliser mes comptes existants"
+  },
+  "referenceProfile": {
+    "esnArchetype": "scaleUp",
+    "sellingPosture": "volumeFlexible",
+    "idealAccountProfile": {
+      "size": "eti",
+      "sectorsPriority": [
+        "Industrie manufacturière & Automobile",
+        "Énergie & Utilities (EDF, Engie...)"
+      ],
+      "decisionLevel": "director",
+      "entryStrategy": "referral"
+    },
+    "analysisParameters": {
+      "braveQueriesCount": 13,
+      "firecrawlPagesCount": 7,
+      "contactsTarget": 45,
+      "analysisDepth": "standard",
+      "maxTokensResearch": 13000,
+      "focusAreas": [
+        "Développement applicatif (Web, Mobile, API)",
+        "SAP & ERP (S/4HANA, Oracle, Sage)",
+        "Industrie 4.0"
+      ]
+    },
+    "messagingStyle": {
+      "tone": "relationshipFirst",
+      "messageLength": "standard",
+      "valuePropositionAngle": "On maintient un vivier de consultants disponibles en continu, prêts à intervenir dès qu'un besoin se déclare chez vos comptes historiques.",
+      "differentiationPoints": [
+        "Vivier consultants disponible en continu",
+        "Relation de long terme avec les comptes existants",
+        "Mobilisation rapide sur besoin ponctuel"
+      ],
+      "avoid": [
+        "expertise reconnue",
+        "sur-mesure"
+      ]
+    },
+    "coachingInsights": {
+      "mainWeakness": "Account-based / expansion",
+      "keyAdvice": "Le vivier est déjà là : la priorité n'est pas de trouver de nouveaux profils, mais de détecter le prochain besoin latent chez tes comptes existants avant qu'un concurrent ne le fasse.",
+      "cadenceRecommendation": {
+        "analysesPerWeek": 5,
+        "messagesPerDay": 12,
+        "followUpsPerWeek": 7
+      },
+      "kpiTargets": {
+        "accountsPerMonth": 45,
+        "rdvPerMonth": 12,
+        "conversionRateTarget": "10-20%"
+      }
+    },
+    "bellumPhrases": {
+      "welcome": "Bienvenue Renaud, on va transformer ton expertise \"Développement applicatif (Web, Mobile, API)\" en pipeline qualifié sur \"Industrie manufacturière & Automobile\".",
+      "firstAnalysisCta": "Lancer une analyse sur une ETI du secteur Énergie & Utilities (EDF, Engie...).",
+      "weeklySummaryIntro": "Cette semaine, surveille les signaux de besoin latent chez tes comptes historiques.",
+      "emptyState": "Aucun compte en pipeline — lance une analyse sur un de tes comptes existants pour détecter un besoin latent.",
+      "scoreContext": "Le score se justifie par la fraîcheur d'un signal de besoin détecté chez un compte déjà connu, jamais par un chiffre unique."
+    },
+    "welcomeSummary": {
+      "profileRecap": "Tu es une ESN \"Développement applicatif\" de 80-200 consultants, basée en \"National (toute la France)\", spécialisée \"Développement applicatif (Web, Mobile, API)\" et \"SAP & ERP (S/4HANA, Oracle, Sage)\", qui cible les \"ETI\" \"Industrie manufacturière & Automobile\". Ton équipe commerciale compte 4-8 personnes.",
+      "searchesPersonalization": "Les recherches cibleront en priorité \"besoin de staffing\", \"industrie 4.0\" et \"SAP\".",
+      "contactsPersonalization": "Les contacts identifiés seront des \"Directeur IT\" et \"Responsable Staffing\" (pas des opérationnels juniors).",
+      "messagesPersonalization": "Les messages seront rédigés sur un ton \"relationnel\" (pas à vos côtés, main dans la main).",
+      "scoringPersonalization": "Le scoring évaluera la fraîcheur d'un signal de besoin détecté chez un compte déjà connu.",
+      "firstAnalysisSuggestions": []
+    }
+  },
+  "contradictions": [
+    "Un vivier de consultants important (80-200) n'exprime aucun frein de ciblage (`main_sales_pain` porte sur la fidélisation) : l'audit ne doit pas en déduire un besoin de sourcing de comptes non exprimé, ni gonfler le volume de cibles pour occuper le vivier."
+  ],
+  "limits": [
+    "Aucune suggestion d'entreprise au premier écran : aucun compte réel n'est fourni par le questionnaire, malgré la taille du vivier."
+  ]
+}

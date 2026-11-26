@@ -1,0 +1,461 @@
+/* ================================================================
+   BELLUM AI — Design Tokens (source of truth)
+   Dark mode is the default (html.dark applied at boot).
+   Light values live on :root; dark overrides live on .dark.
+   All --bellum-* vars drive both the shadcn vars (in index.css)
+   and the Tailwind config (packages/ui/tailwind.config.ts).
+   ================================================================ */
+
+/* ── Primary scale (mode-independent) ─────────────────────────── */
+:root {
+  /* Réserve de la ligne d'amorce de Laura : 0 par défaut, posée en style inline sur <html>
+     par `useIntroBarReserve` (features/laura/bubble/intro-bar-reserve.ts) tant qu'elle est ouverte. */
+  --bellum-laura-intro-reserve: 0px;
+  --bellum-primary-50: #f4f2ff;
+  --bellum-primary-100: #e0d9ff;
+  --bellum-primary-200: #c4b8ff;
+  --bellum-primary-300: #9e87ff;
+  --bellum-primary-400: #7b5fff;
+  --bellum-primary-500: #5b3ee8;
+  --bellum-primary-600: #3a26a0;
+  --bellum-primary-700: #271b6e;
+  --bellum-primary-800: #1a1140;
+  --bellum-primary-900: #0e0a22;
+}
+
+/* ── Gabarit ──────────────────────────────────────────────────── */
+/*
+ * La hauteur de la barre d'onglets mobile, exposée à TOUT le document.
+ *
+ * Elle est ici et non sur la coque parce que ceux qui en ont besoin — le
+ * bouton de signalement, la carte de Laura — sont montés à la RACINE du
+ * routeur, donc en dehors de la coque : une variable posée sur un descendant
+ * n'atteint pas un frère. Sans elle, les deux se posent SUR le quatrième
+ * onglet, qui devient à moitié inatteignable au pouce.
+ *
+ * `0px` au-dessus de 768 px : il n'y a pas de barre d'onglets sur un écran de
+ * bureau, et les flottants y retrouvent leur place sans condition dans leur
+ * code.
+ */
+:root {
+  --bellum-mobile-nav-height: 0px;
+}
+
+@media (max-width: 767px) {
+  :root {
+    --bellum-mobile-nav-height: 3.5rem;
+  }
+}
+
+/* ── Semantic (mode-independent) ──────────────────────────────── */
+:root {
+  --bellum-success: #1ecfa0;
+  --bellum-warning: #f5a623;
+  --bellum-danger: #ff5e57;
+  --bellum-info: #3b8bd4;
+}
+
+/* ── Surfaces & text — light mode (default :root) ─────────────── */
+/*
+ * FOND BLANC ET RAMPE NEUTRE — 01/09/2026, décision « FA ».
+ *
+ * Le fond clair était un BEIGE (`#f5f4f0`), avec toute la rampe accordée
+ * dessus (`#edecea`, `#dddcd6`). Personne ne l'appelait « beige » : on le
+ * lisait comme un gris sale, et il salissait le blanc des cartes posées
+ * dessus. La rampe est désormais neutre et le fond est le blanc pur.
+ *
+ * LA RÈGLE QUI EN DÉCOULE, et qui vaut pour tout ce qu'on écrira ensuite :
+ * une CARTE se tient par sa BORDURE (fond `--bellum-surface-1`, blanc sur
+ * blanc, donc le trait est structurel et ne peut plus être oublié) ; un
+ * CONTRÔLE au repos se tient par un FOND CREUX (`--bellum-surface-2`). La
+ * raison n'est pas esthétique : le critère WCAG 1.4.11 exige 3:1 pour ce qui
+ * délimite un contrôle, et `--bellum-border` fait 1,27:1 sur le blanc. Un
+ * contour à 3:1 (#949499) serait dur à l'œil sur les ~1 200 traits du
+ * produit ; un fond creux répond à la même question sans durcir le trait,
+ * parce que la bordure cesse alors d'être la SEULE chose qui dit « contrôle ».
+ */
+:root {
+  /* Théo DS §1.1 — le fond de page redevient un gris TEINTÉ (Théo V22 `--bg`), et
+   * non plus le blanc : les cartes `#fff` se détachent du fond. La règle « une
+   * carte se tient par sa bordure » ci-dessus reste vraie. */
+  --bellum-bg: #f5f5f8;
+  --bellum-bg-lighter: #ffffff;
+  /* Le cran « enfoncé » : le survol d'un contrôle déjà creux. */
+  --bellum-bg-darker: #ebebed;
+  --bellum-sidebar: #ffffff;
+  --bellum-surface-1: #ffffff;
+  /* Le CREUX : contrôle au repos, rail de filtres, zone en retrait, survol. */
+  --bellum-surface-2: #f1f2f6; /* Théo DS §1.1 — `--surface2`, teinte bleutée */
+  --bellum-border: #e5e6ee; /* Théo DS §1.1 — `--border` */
+  /* Théo DS §1.1 — `--v22-hover` : le survol d'une ligne de tableau ou de liste. */
+  --bellum-row-hover: #f1f2f6;
+
+  /* #2212.9 — LE SPOTLIGHT DU GUIDE : un voile, un halo, et rien d'autre.
+   *
+   * Deux jetons parce qu'ils ont deux métiers opposés. Le VOILE assombrit ce qui
+   * n'est pas la cible — il reste volontairement léger : on GUIDE, on ne masque
+   * pas, et un écran qu'on ne lit plus derrière le voile empêche de comprendre
+   * OÙ la cible se trouve. Le HALO désigne la cible et doit se voir sans légende.
+   *
+   * Ils vivent ici, en jetons, et pas dans le JSX du spotlight : aucune valeur
+   * hexadécimale dans du JSX (D79, garde GA-33), et la parité clair/sombre est
+   * une promesse — le sombre les redéfinit plus bas, dans `.dark`. */
+  --bellum-guide-veil: rgb(9 9 11 / 0.38);
+  --bellum-guide-halo: var(--bellum-primary-500);
+  /* Un cran plus contrasté que `--bellum-border`, pour les traits qui doivent
+   * se voir SEULS (contour de carte, poignée de nœud d'un graphe) et non
+   * séparer deux blocs. Le nom était déjà utilisé dans le code avant d'être
+   * déclaré ici — un `var()` inconnu est ignoré en silence par le navigateur,
+   * d'où des poignées invisibles sur le graphe d'entités. */
+  --bellum-border-strong: #d4d4d8;
+
+  /* #1824 — La pastille au REPOS d'un basculeur (Kanban/Tableau, les lentilles
+   * d'une liste). Elle ne peut PAS reprendre `--bellum-surface-2` : ce creux a
+   * été calibré pour un contrôle posé sur une CARTE, et sur la page nue il
+   * donne 1,03:1 en clair et 1,3:1 en sombre — mesuré en production, le bouton
+   * « Tableau » de /projects se lisait comme un blanc.
+   *
+   * Un token plutôt qu'une nuance, pour la raison déjà payée sur
+   * `--bellum-text-accent` : AUCUNE valeur FIXE ne tient les deux thèmes. Ici
+   * les rôles s'INVERSENT d'un thème à l'autre — le fond clair devient l'encre
+   * sombre — et le rapport reste ≥ 7,8:1 des deux côtés.
+   *
+   * ⚠️ Ce qu'il ne prétend PAS : la limite du contrôle contre la page fait
+   * 1,27:1 en clair et 1,91:1 en sombre, sous les 3:1 de WCAG 1.4.11. C'est un
+   * REMPLISSAGE assumé, lu par contraste avec sa jumelle active (pleine
+   * `primary-500`) : la paire se lit comme un segmenté, pas comme un bouton
+   * isolé. Le durcir davantage ferait de la pastille au repos un objet plus
+   * lourd que la pastille active. */
+  /* Théo DS §1.1 — teinté comme la rampe de Théo, un cran plus dense que
+   * `#e4e4e7` : sur le fond gris `#f5f5f8` l'ancien remplissage ne se
+   * détachait plus assez du creux (1,17:1, garde #1824). Texte : 7,86:1. */
+  --bellum-chip-rest: #dedfe7;
+  --bellum-chip-rest-text: #3f3f46;
+
+  /* Contraste WCAG AA (>= 4.5:1) sur la PIRE surface light (--bellum-surface-2
+   * #f4f4f5) : primary 16,1:1, secondary 7,0:1, muted 4,8:1. Les trois niveaux
+   * restent distincts. Cf. src/styles/contrast.test.ts.
+   *
+   * ⚠️ `muted` vaut #6b6b73 et non #71717a, qui était la valeur « naturelle »
+   * de la rampe neutre : mesuré, #71717a passe sur le blanc (4,83) et ÉCHOUE
+   * sur le creux (4,40). Le défaut aurait été invisible sur une maquette sans
+   * creux — il est sorti du calcul, pas de l'œil. */
+  --bellum-text-primary: #1c1c28; /* Théo DS §1.1 — `--text` */
+  --bellum-text-secondary: #5d5e70; /* Théo DS §1.1 — `--secondary` */
+  /* Théo DS §1.6 — ÉCART AA : le `--muted` de Théo (#727385) fait 4,28:1 sur
+   * `--bg` et 4,17:1 sur `--surface2`. On garde SA teinte, luminance abaissée
+   * jusqu'au premier pas qui passe partout : 4,68 sur le fond, 4,55 sur le
+   * creux, 5,09 sur une carte. */
+  --bellum-text-muted: #6c6d7e;
+  /* #3973.6 (Louis 15/10/2026) — la pastille derrière un LOGO DE MARQUE. En clair, aucune :
+     le logo est dessiné pour un fond clair. En sombre, une pastille claire (voir le bloc .dark) —
+     un logo noir ou bleu nuit disparaîtrait sinon sur le fond. */
+  --bellum-brand-logo-chip: transparent;
+  /* Texte d'accent — un lien, une valeur mise en avant, une action secondaire.
+     AUCUNE nuance FIXE de la gamme primaire ne convient aux deux thèmes :
+     mesuré, `primary-500` donne 5,78:1 en clair et 2,68:1 en sombre ;
+     `primary-300` fait l'inverse (6,73 en sombre, 2,59 en clair). Il fallait
+     donc un token, pas une nuance — et c'est exactement ce qui manquait, avec
+     149 usages de `primary-500` en texte qui échouaient AA en sombre. */
+  --bellum-text-accent: #5b3ee8;
+
+  /* Théo DS §1.1 — le REMPLISSAGE primaire (bouton plein, onglet actif) et son
+   * survol, thématisés. La gamme `--bellum-primary-*` reste fixe ; Théo éclaircit
+   * le remplissage en sombre (#6545ef : blanc dessus 5,75:1) et l'éclaircit
+   * encore au survol au lieu de l'assombrir. */
+  --bellum-primary: #5b3ee8;
+  --bellum-primary-hover: #3a26a0;
+  /* Théo DS §1.1 — `--accent-bg` / `--accent-line` : l'aplat lavande d'un
+   * élément actif (entrée de navigation, onglet, bouton « soft ») et son trait. */
+  --bellum-accent-bg: #f4f2ff;
+  --bellum-accent-line: #e0d9ff;
+
+  /* GA-26 / focus — anneau de focus. Avant ce jeton, chaque écran qui en avait
+   * besoin réinventait le sien en dur (ex. le lot `/chat`, `apps/web/src/
+   * features/chat/**`) : un réglage qui ne vit pas à un seul endroit, exactement
+   * ce que GA-26 interdit. Même raison que `--bellum-text-accent` juste
+   * au-dessus : AUCUNE nuance FIXE de la gamme primaire ne passe 3:1 (WCAG
+   * 1.4.11, contraste non-textuel) dans LES DEUX thèmes — `primary-500` fait
+   * 2,68:1 en sombre. Il reprend donc les mêmes valeurs, déjà mesurées : 5,78:1
+   * en clair, 6,73:1 en sombre — les deux au-dessus du seuil. */
+  --bellum-focus-ring: #5b3ee8;
+
+  /* Le texte posé SUR un remplissage `--bellum-primary-500` (bouton plein,
+   * onglet actif, pastille pleine). Il vaut le même blanc dans les DEUX
+   * thèmes, et c'est le point : `primary-500` est calibré comme FOND, pas
+   * comme encre — le blanc dessus fait 6,37:1 des deux côtés, alors que
+   * l'accent du thème sombre (`primary-300`) sous du blanc tomberait à
+   * 2,85:1. Un token plutôt qu'un `#FFFFFF` recopié cinq fois. */
+  --bellum-on-primary: #ffffff;
+  /* #4299 — la pastille posée sur ce remplissage (« 10 crédits ») : un voile SOMBRE, qui creuse le fond
+   * sous le blanc. L'ancien voile blanc l'éclaircissait : 4,10:1. Mêmes valeurs dans les deux thèmes. */
+  --bellum-on-primary-chip: rgba(0, 0, 0, 0.22);
+
+  /* Semantic text (only meaningful on light surfaces) */
+  --bellum-success-text: #0a6b4a;
+  --bellum-warning-text: #7d5206;
+
+  /* ── Pastilles douces (badge, pilule, encadré teinté sur une carte) ──
+   * Un fond translucide + un texte pâle se lit très bien sur du noir et
+   * devient illisible sur du blanc : c'est exactement ce qui rendait les
+   * badges violets de « Découvrir » indéchiffrables en light mode. Chaque
+   * tonalité porte donc ses TROIS valeurs (fond, bordure, texte) par thème,
+   * et un test de contraste les vérifie (src/styles/contrast.test.ts).
+   * Les valeurs light sont opaques — un alpha sur blanc ne teinte rien. */
+  /* Théo DS §1.1 — badge `purple` = `--accent-bg` + `--accent` (5,76:1). */
+  --accent-soft-bg: #f4f2ff;
+  --accent-soft-border: #c3b4f5;
+  --accent-soft-text: #5b3ee8;
+  --success-soft-bg: #dbf3e9;
+  --success-soft-border: #a5ddc9;
+  --success-soft-text: #0a6b4a;
+  --warning-soft-bg: #fbeed3;
+  --warning-soft-border: #e8c689;
+  --warning-soft-text: #7d5206;
+  --danger-soft-bg: #fce5e3;
+  --danger-soft-border: #f0b3ad;
+  --danger-soft-text: #9c211a;
+  --info-soft-bg: #dfeefb;
+  --info-soft-border: #a9cfec;
+  --info-soft-text: #14568c;
+}
+
+/* ── Surfaces & text — dark mode ──────────────────────────────── */
+/*
+ * Le sombre suit la MÊME rampe neutre — il était chaud lui aussi (`#0f0f0d`,
+ * `#3a3a32`). Garder un clair neutre et un sombre chaud aurait donné deux
+ * produits qui ne se ressemblent pas selon l'heure de la journée.
+ */
+.dark {
+  /* Théo DS §1.1 — la rampe sombre de Théo V22 (`--bg`, `--sidebar`,
+   * `--surface`, `--surface2`, `--border`, `--border2`, `--v22-hover`). */
+  --bellum-bg: #0b0b0e;
+  --bellum-bg-lighter: #131316;
+  --bellum-bg-darker: #050507;
+  --bellum-sidebar: #131316;
+  --bellum-surface-1: #151518;
+  --bellum-surface-2: #1e1e23;
+  --bellum-border: #2b2b32;
+  --bellum-border-strong: #3c3c45;
+  --bellum-row-hover: #202027;
+
+  /* #2212.9 — le spotlight, côté sombre. Le voile est PLUS dense qu'en clair :
+   * sur un fond déjà sombre, 38 % ne se distinguent presque pas du fond, donc
+   * rien ne se lirait comme « mis de côté ». Le halo passe au violet clair —
+   * `primary-500` sur `#09090b` manque de tranchant, `primary-400` le retrouve. */
+  --bellum-guide-veil: rgb(0 0 0 / 0.58);
+  --bellum-guide-halo: var(--bellum-primary-400);
+
+  /* #1824 — les rôles s'inversent : le fond clair devient l'encre, l'encre
+   * sombre devient le fond. Même paire, même 8,20:1. */
+  --bellum-chip-rest: #3f3f46;
+  --bellum-chip-rest-text: #e4e4e7;
+
+  /* Idem côté dark : muted était à 2.8:1 sur --bellum-surface-2 (sous AA lui
+   * aussi, même si seul le light avait été signalé). primary 15,0:1,
+   * secondary 6,1:1, muted 4,6:1 sur la pire surface. */
+  /* Théo DS §1.1 — `--text` / `--secondary` / `--muted` sombres : tous AA
+   * (muted 5,64:1 sur le creux, la pire surface). */
+  --bellum-text-primary: #f2f2f5;
+  --bellum-text-secondary: #b2b1bd;
+  --bellum-text-muted: #9695a4;
+  /* #3973.6 — la pastille CLAIRE derrière un logo de marque en thème sombre. */
+  --bellum-brand-logo-chip: #f4f4f5;
+  /* La contrepartie sombre : `primary-300`, 6,73:1 sur le fond, 5,99 sur une
+     surface. Voir le commentaire du bloc clair. */
+  --bellum-text-accent: #9e87ff;
+
+  /* Contrepartie sombre de l'anneau de focus — voir le commentaire du bloc
+   * clair (GA-26 / focus). */
+  --bellum-focus-ring: #9e87ff;
+
+  /* Théo DS §1.1 — remplissage primaire sombre, éclairci au survol. */
+  --bellum-primary: #6545ef;
+  --bellum-primary-hover: #7556f4;
+  --bellum-accent-bg: #221b3c;
+  --bellum-accent-line: #40305f;
+
+  /* Identique en sombre : le remplissage reste `primary-500`. */
+  --bellum-on-primary: #ffffff;
+  --bellum-on-primary-chip: rgba(0, 0, 0, 0.22);
+
+  /* In dark mode semantic text = same as the base semantic color */
+  /* Théo DS §1.1 — le texte sémantique sombre de Théo (`--success`,
+   * `--warning`), plus doux que la couleur de pastille brute. */
+  --bellum-success-text: #6ee7b7;
+  --bellum-warning-text: #fcd34d;
+
+  /* Pastilles douces — dark : le fond peut rester translucide (il se pose sur
+   * une surface sombre) et le texte reprend les valeurs claires historiques. */
+  /* Théo DS §1.1 — les `-bg` sombres de Théo sont des APLATS OPAQUES (plus de
+   * mélange translucide qui change selon la surface) : texte 5,71 à 9,29:1. */
+  --accent-soft-bg: #221b3c;
+  --accent-soft-border: rgba(139, 92, 246, 0.42);
+  --accent-soft-text: #9e87ff;
+  --success-soft-bg: #15332b;
+  --success-soft-border: rgba(16, 185, 129, 0.36);
+  --success-soft-text: #6ee7b7;
+  --warning-soft-bg: #3a2d17;
+  --warning-soft-border: rgba(245, 158, 11, 0.36);
+  --warning-soft-text: #fcd34d;
+  --danger-soft-bg: #3a2024;
+  --danger-soft-border: rgba(239, 68, 68, 0.34);
+  --danger-soft-text: #fca5a5;
+  --info-soft-bg: #182e40;
+  --info-soft-border: rgba(56, 189, 248, 0.36);
+  --info-soft-text: #7dd3fc;
+}
+
+/* ── Théo DS — forme, ombre, mouvement ────────────────────────── */
+:root {
+  /* Théo DS §1.2 / §1.5 — l'échelle de rayons de Théo, par RÔLE : carte 10
+   * (maquettes APPLIQUÉES, coque du 23/10 — la strate V2 du prototype disait 18),
+   * surcouche 12 (`--v22-radius`), contrôle 8 (bouton, champ, entrée de
+   * navigation), badge 6. Exposés à Tailwind en `rounded-card` etc. */
+  --bellum-radius-card: 10px;
+  --bellum-radius-overlay: 12px;
+  --bellum-radius-control: 8px;
+  --bellum-radius-badge: 6px;
+
+  /* Théo DS §1.2 — `--shadow` (carte) et `--v22-shadow` (dialogue, menu) : des
+   * ombres DIFFUSES, sans le liseré 1 px de `--shadow-card` — c'est la bordure
+   * de la carte qui dessine son contour. */
+  --bellum-shadow-card: 0 3px 7px -5px rgba(32, 32, 57, 0.14), 0 12px 30px -24px rgba(37, 36, 65, 0.19);
+  --bellum-shadow-overlay: 0 12px 40px rgba(20, 18, 32, 0.12);
+
+  /* Théo DS §3.2 — les transitions CSS de Théo (9 durées, 2 courbes) ramenées à
+   * la grammaire de `packages/ui/src/motion.ts` (GA-25). Ces valeurs en sont
+   * DÉRIVÉES, et `theo-ds-tokens.test.ts` refuse qu'elles divergent (GA-26). */
+  --bellum-motion-immediate: 160ms;
+  --bellum-motion-perceptible: 260ms;
+  --bellum-motion-narrative: 400ms;
+  --bellum-ease-out: cubic-bezier(0.32, 0.72, 0, 1);
+
+  /* Coque Théo (23/10/2026) — la police des maquettes : la pile SYSTÈME, aucune
+   * police chargée (leur CSP pose `font-src 'none'`). Geist est retirée. Lue par
+   * Tailwind (`theoTheme.fontFamily` → `font-sans`/`font-mono`) et par les
+   * styles typographiques ci-dessous : c'est le seul endroit où elle s'écrit. */
+  --bellum-font-sans: -apple-system, BlinkMacSystemFont, 'Segoe UI', Helvetica, Arial, sans-serif;
+  --bellum-font-mono: ui-monospace, SFMono-Regular, Menlo, monospace;
+}
+
+.dark {
+  /* Théo DS §1.2 — en sombre l'ombre se lit à peine sur le fond : Théo la
+   * rend plus large et plus dense. */
+  --bellum-shadow-card: 0 16px 56px rgba(0, 0, 0, 0.53);
+  --bellum-shadow-overlay: 0 18px 58px rgba(0, 0, 0, 0.53);
+}
+
+/* ── Backward-compat aliases (old components still work) ─────── */
+:root {
+  /* Surfaces */
+  --bg-base: var(--bellum-bg);
+  --bg-base-lighter: var(--bellum-bg-lighter);
+  --bg-base-darker: var(--bellum-bg-darker);
+  --bg-sidebar: var(--bellum-sidebar);
+  --bg-surface: var(--bellum-surface-1);
+  --bg-surface-hover: var(--bellum-surface-2);
+  --bg-elevated: var(--bellum-surface-2);
+  --bg-nordic-gray: var(--bellum-surface-2);
+
+  /* Text */
+  --text-primary: var(--bellum-text-primary);
+  --text-secondary: var(--bellum-text-secondary);
+  --text-muted: var(--bellum-text-muted);
+  --text-ghost: var(--bellum-text-muted);
+
+  /* Accent — Qonto-style: use only on interactive/active elements */
+  --violet-500: var(--bellum-primary-500);
+  --violet-600: var(--bellum-primary-600);
+  --violet-700: var(--bellum-primary-700);
+  --violet-glow: rgba(91, 62, 232, 0.12);
+  /* No gradient — flat primary only (avoids AI-slop look) */
+  /* décision Louis 13/09 batch 13 — plat : le dégradé de l'accueil de Laura (#1907.9) est retiré, la règle tient (GA-328). */
+  --violet-gradient: var(--bellum-primary-500);
+
+  /* Status */
+  --green-500: var(--bellum-success);
+  --amber-500: var(--bellum-warning);
+  --red-500: var(--bellum-danger);
+  --blue-500: var(--bellum-info);
+
+  /* Borders */
+  --border-subtle: color-mix(in srgb, var(--bellum-border) 60%, transparent);
+  --border-default: var(--bellum-border);
+  --border-active: color-mix(in srgb, var(--bellum-primary-500) 40%, transparent);
+
+  /* Radius */
+  --radius-sm: 6px;
+  --radius-md: 10px;
+  --radius-lg: 14px;
+  --radius-xl: 20px;
+}
+
+.dark {
+  --bg-glass: rgba(255, 255, 255, 0.04);
+  --bg-glass-border: rgba(255, 255, 255, 0.07);
+  --shadow-card: 0 1px 3px rgba(0, 0, 0, 0.3), 0 0 0 1px var(--bellum-border);
+  --shadow-elevated: 0 4px 16px rgba(0, 0, 0, 0.4), 0 0 0 1px var(--bellum-border);
+}
+:root:not(.dark) {
+  --bg-glass: rgba(0, 0, 0, 0.03);
+  --bg-glass-border: rgba(0, 0, 0, 0.07);
+  --shadow-card: 0 1px 3px rgba(0, 0, 0, 0.08), 0 0 0 1px var(--bellum-border);
+  --shadow-elevated: 0 4px 16px rgba(0, 0, 0, 0.1), 0 0 0 1px var(--bellum-border);
+  --shadow-glow-violet: 0 0 20px rgba(91, 62, 232, 0.1);
+}
+.dark {
+  --shadow-glow-violet: 0 0 20px rgba(91, 62, 232, 0.18);
+}
+
+/* ── Typography scale ──────────────────────────────────────────── */
+.text-display {
+  font: 700 36px/1.1 var(--bellum-font-sans);
+  color: var(--bellum-text-primary);
+}
+.text-title {
+  font: 700 24px/1.2 var(--bellum-font-sans);
+  color: var(--bellum-text-primary);
+}
+.text-heading {
+  font: 600 18px/1.3 var(--bellum-font-sans);
+  color: var(--bellum-text-primary);
+}
+.text-body {
+  font: 400 14px/1.5 var(--bellum-font-sans);
+  color: var(--bellum-text-secondary);
+}
+.text-caption {
+  font: 500 12px/1.4 var(--bellum-font-sans);
+  color: var(--bellum-text-muted);
+  letter-spacing: 0.03em;
+}
+.text-label {
+  font: 500 11px/1.3 var(--bellum-font-sans);
+  color: var(--bellum-text-muted);
+  letter-spacing: 0.04em;
+}
+.text-mono {
+  font: 500 14px/1.4 var(--bellum-font-mono);
+  color: var(--bellum-primary-400);
+}
+
+/* ── Skeleton shimmer ──────────────────────────────────────────── */
+@keyframes skeleton-shimmer {
+  0% {
+    background-position: -200% 0;
+  }
+  100% {
+    background-position: 200% 0;
+  }
+}
+.skeleton {
+  background: linear-gradient(
+    90deg,
+    var(--bellum-surface-1) 25%,
+    var(--bellum-surface-2) 50%,
+    var(--bellum-surface-1) 75%
+  );
+  background-size: 200% 100%;
+  animation: skeleton-shimmer 1.5s infinite;
+}

@@ -1,0 +1,39 @@
+{
+  "slug": "sanofi",
+  "company": "Sanofi",
+  "fixture": null,
+  "_capture_status": "not_captured",
+  "_capture_note": "Aucune sortie de référence capturée pour ce compte. `python -m app.eval.strategy.run baseline` lance le pipeline réel et écrit le dossier + les tokens strategy ; ce champ passe alors à \"captured\" et `fixture` pointe le dossier produit. Tant qu'il vaut \"not_captured\", aucune donnée métier de ce compte n'existe dans le repo.",
+  "segment": "grand-compte",
+  "sector_hint": "Pharmacie / santé",
+  "registry": {
+    "_source": "https://recherche-entreprises.api.gouv.fr (Annuaire des Entreprises, DINUM — adossé à INSEE Sirene). Données publiques, vérifiables, non inventées.",
+    "fetched_at": "2026-07-19",
+    "siren": "395030844",
+    "denomination": "SANOFI",
+    "categorie_entreprise": "GE",
+    "naf_siege": "70.10Z",
+    "activite_principale": null,
+    "tranche_effectif_salarie": "11",
+    "tranche_effectif_label": "10 à 19 salariés",
+    "annee_effectif": "2023",
+    "commune_siege": "PARIS",
+    "code_postal_siege": "75017",
+    "etat_administratif": "A",
+    "_effectif_note": "Effectif de l'UNITÉ LÉGALE (ce SIREN), pas du groupe consolidé. Une holding de tête affiche donc une tranche basse — ce n'est pas la taille du groupe."
+  },
+  "expect": {
+    "siren": "395030844",
+    "sectorPresent": true,
+    "minEntities": 1,
+    "minPlays": 2,
+    "requiredFacts": [
+      "sector",
+      "siren",
+      "employees",
+      "headquarters",
+      "businessDescription"
+    ]
+  },
+  "_expect_note": "Attentes STRUCTURELLES uniquement. `siren` est la seule valeur factuelle, vérifiée via l'API publique ci-dessus. `isPublic` / `hasSubsidiaries` sont volontairement ABSENTS : non vérifiables via cette source, donc non affirmés."
+}

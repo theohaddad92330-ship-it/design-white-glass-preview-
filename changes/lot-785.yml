@@ -1,0 +1,29 @@
+lot: lot-785
+issues: [5213]
+
+changelog:
+  id: 2026-11-03-lot-785
+  comment: 'Lot 785 (#5213) — l’Historique de /signals arrive par pages de 50 comptes'
+  fr:
+    date: 3 novembre 2026
+    title: L’Historique s’ouvre tout de suite
+    items:
+      - 'L’onglet Historique charge 50 comptes à la fois : le premier écran n’attend plus tout l’historique, « Voir plus de comptes » charge la suite.'
+      - 'La recherche est faite sur tout l’historique, pas seulement sur ce qui est déjà chargé, et le compteur annonce le total de la même recherche.'
+  en:
+    date: November 3, 2026
+    title: History opens right away
+    items:
+      - 'The History tab loads 50 accounts at a time: the first screen no longer waits for the whole history, and “Show more accounts” loads the rest.'
+      - 'Search runs over the whole history, not only what is already loaded, and the counter announces the total of that same search.'
+
+inserts:
+  - file: agent_docs/chantiers-livres.md
+    text: |
+
+      - **Historique de /signals paginé** (#5213, lot 785) — `GET /accounts/signal-history?limit&offset&q` (défaut 50 comptes,
+        paramètre inconnu refusé en 400), `page.total` = comptes de la même requête, recherche faite par le serveur avec le
+        noyau partagé `packages/contracts/src/schemas/signal-search.ts` (une seule règle, écran et API). Écran : « Voir plus de
+        comptes » (`useWorkspaceSignalHistory`, `useInfiniteQuery`) ; un filtre croisé (techno × zone × période × volume)
+        charge les pages restantes avant de filtrer. Le calcul des lignes reste fait pour tous les comptes côté API : seul le
+        poids de la réponse (lignes, contacts) est paginé. Démo : même lecteur, donc rempli sans seed de plus.

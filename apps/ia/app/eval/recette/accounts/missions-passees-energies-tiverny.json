@@ -1,0 +1,201 @@
+{
+  "slug": "missions-passees-energies-tiverny",
+  "company": "Énergies Tiverny (fictif)",
+  "archetype": "missions_passees",
+  "issue": "#2130.14",
+  "nature": "fictif",
+  "as_of": "2026-09-15",
+  "_fiction": "Nom FICTIF assumé, marqué « (fictif) » : aucune entreprise réelle n'est décrite ici, aucun identifiant de registre n'est affirmé, et les sources vivent sur le domaine réservé .invalid (RFC 2606) — elles ne peuvent désigner aucune page réelle. Le cadrage #2130.1-7 laisse le choix entre un nom fictif assumé et une entreprise réelle dont chaque fait est sourcé ; faute de source vérifiable depuis ce poste sur cet archétype, c'est le nom fictif.",
+  "expected": {
+    "identite": {
+      "status": "attendu",
+      "contient": [
+        "Énergies Tiverny"
+      ]
+    },
+    "perimetre": {
+      "status": "attendu",
+      "contient": [
+        "Montaubric"
+      ]
+    },
+    "decideurs": {
+      "status": "attendu",
+      "contient": [
+        "Luc Arnaudet"
+      ]
+    },
+    "contacts_a_ne_pas_recommander": {
+      "status": "attendu",
+      "contient": [
+        "Gérard Pinson"
+      ]
+    },
+    "equipes_cles": {
+      "status": "attendu",
+      "contient": [
+        "Grenat"
+      ]
+    },
+    "signaux": {
+      "status": "attendu",
+      "contient": [
+        "Grenat"
+      ]
+    },
+    "projets": {
+      "status": "attendu",
+      "contient": [
+        "Mission passée de 2024-2025"
+      ]
+    },
+    "partenaires": {
+      "status": "attendu",
+      "contient": [
+        "Aubrac Numérique"
+      ]
+    },
+    "acces": {
+      "status": "attendu",
+      "contient": [
+        "mission de 2024-2025"
+      ]
+    },
+    "recommandations": {
+      "status": "attendu",
+      "contient": [
+        "Grenat"
+      ]
+    },
+    "gaps": {
+      "status": "attendu",
+      "contient": [
+        "mission de 2024"
+      ]
+    },
+    "sources": {
+      "status": "attendu",
+      "contient": [
+        "src-historique"
+      ]
+    },
+    "action_suivante": {
+      "status": "attendu",
+      "contient": [
+        "Sabine Roux"
+      ]
+    }
+  },
+  "dossier": {
+    "identite": {
+      "name": "Énergies Tiverny",
+      "siren": null
+    },
+    "perimetre": {
+      "scope": "groupe",
+      "entities": [
+        "Énergies Tiverny — centre de pilotage de Montaubric",
+        "Énergies Tiverny — agence réseau de Saulzac"
+      ]
+    },
+    "decideurs": [
+      {
+        "name": "Luc Arnaudet",
+        "title": "Directeur des applications métier",
+        "team": "Applications métier"
+      },
+      {
+        "name": "Sabine Roux",
+        "title": "Responsable des achats de prestations",
+        "team": "Achats"
+      }
+    ],
+    "contacts_a_ne_pas_recommander": [
+      {
+        "name": "Gérard Pinson",
+        "reason": "sponsor de la mission de 2024, a changé de société en 2025-12"
+      }
+    ],
+    "equipes_cles": [
+      "Applications de facturation Grenat",
+      "Pilotage réseau de Montaubric"
+    ],
+    "signaux": [
+      {
+        "id": "sig-grenat",
+        "text": "Fin de support du progiciel de facturation Grenat annoncée pour 2027",
+        "date": "2026-04",
+        "source": "src-rapport"
+      }
+    ],
+    "projets": [
+      {
+        "id": "mis-2024",
+        "text": "Mission passée de 2024-2025 : maintenance applicative du progiciel Grenat, douze mois, clôturée sans réserve",
+        "source": "src-historique"
+      },
+      {
+        "id": "prj-sortie",
+        "text": "Sortie du progiciel de facturation Grenat",
+        "source": "src-rapport"
+      }
+    ],
+    "partenaires": [
+      "Cabinet Aubrac Numérique (fictif)"
+    ],
+    "acces": [
+      {
+        "text": "Retour d'expérience de la mission de 2024-2025 sur Grenat, utilisable auprès des applications métier",
+        "via": "historique"
+      }
+    ],
+    "recommandations": [
+      {
+        "id": "reco-grenat",
+        "text": "Proposer la reprise de connaissance de la sortie de Grenat, adossée aux douze mois de maintenance menés en 2024-2025.",
+        "why": "La fin de support de Grenat est annoncée pour 2027, et la mission clôturée sans réserve connaît déjà ce progiciel.",
+        "target": "Luc Arnaudet",
+        "evidence": [
+          "sig-grenat",
+          "mis-2024"
+        ]
+      }
+    ],
+    "gaps": [
+      "interlocuteur de la mission de 2024 n'est plus en poste"
+    ],
+    "sources": [
+      {
+        "id": "src-rapport",
+        "url": "https://sources.fictif.invalid/missions-passees-energies-tiverny/src-rapport",
+        "date": "2026-04-11"
+      },
+      {
+        "id": "src-historique",
+        "url": "https://sources.fictif.invalid/missions-passees-energies-tiverny/src-historique",
+        "date": "2025-12-19"
+      }
+    ],
+    "action_suivante": {
+      "text": "Présenter à Sabine Roux la référence de la mission Grenat de 2024-2025",
+      "target": "Sabine Roux",
+      "evidence": [
+        "mis-2024"
+      ]
+    }
+  },
+  "cas": [
+    {
+      "id": "cas-reference",
+      "text": "Citer la mission Grenat de 2024-2025 comme référence dans la réponse sur la sortie du progiciel.",
+      "why": "Douze mois de maintenance clôturés sans réserve sur Grenat, c'est la preuve la plus proche du besoin annoncé pour 2027.",
+      "target": "Luc Arnaudet",
+      "evidence": [
+        "mis-2024",
+        "sig-grenat"
+      ],
+      "label": "useful_and_correct",
+      "_jugement": "La référence existe au dossier, elle porte sur le progiciel concerné, et elle sert l'interlocuteur qui décide."
+    }
+  ]
+}

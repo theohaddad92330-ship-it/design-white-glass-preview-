@@ -1,0 +1,132 @@
+{
+  "trigger": {
+    "ariaLabel": "Report an issue"
+  },
+  "dialog": {
+    "title": "Report an issue",
+    "description": "Describe what went wrong. Everything that goes with your message is listed below, and nothing is sent until you send it."
+  },
+  "picker": {
+    "hint": "Click the element you want to report",
+    "skip": "Skip pointing",
+    "capturing": "Capturing…",
+    "hoverRegion": "Hovered element",
+    "hovering": "Hovered element: {{element}}"
+  },
+  "context": {
+    "screenshotAlt": "Attached screenshot",
+    "noElement": "Page screenshot attached (no element pointed at).",
+    "elementAttached": "Pointed element attached to the report.",
+    "elementNamed": "“{{element}}”",
+    "removeScreenshot": "Remove the screenshot"
+  },
+  "attachments": {
+    "label": "Attachments",
+    "hint": "Paste an image (Ctrl/Cmd+V), drag it onto this panel, or choose a file — images, PDF or text, 4 MB max each, 5 total.",
+    "dropHint": "Drop the file to attach it to the report",
+    "imageAlt": "Preview of {{name}}",
+    "remove": "Remove {{name}}",
+    "errors": {
+      "type": "{{name}} — file type not accepted (images, PDF or text only).",
+      "size": "{{name}} is over the per-file size limit (4 MB).",
+      "count": "Five attachments maximum per report.",
+      "total": "The total size of the attachments is over the allowed limit."
+    }
+  },
+  "categories": {
+    "bug": "Bug",
+    "metier": "Business",
+    "autre": "Other"
+  },
+  "form": {
+    "placeholder": "What happened? What did you expect?",
+    "submit": "Send the report",
+    "remaining_one": "{{count}} character left",
+    "remaining_other": "{{count}} characters left"
+  },
+  "preview": {
+    "title": "What will be sent",
+    "intro": "Along with your message, and only when you send it:",
+    "email": "Your email address: {{email}}",
+    "emailNone": "No email address",
+    "page": "The page: {{page}}",
+    "network_one": "{{count}} failed request",
+    "network_other": "{{count}} failed requests",
+    "networkNone": "No failed request",
+    "breadcrumbs_one": "Your last action",
+    "breadcrumbs_other": "Your last {{count}} actions",
+    "breadcrumbsNone": "No recent action",
+    "console": "Recent console messages",
+    "consoleNone": "No console message",
+    "errors": "Recent errors",
+    "errorsNone": "No recent error",
+    "environment": "Your browser and the app version",
+    "online": "Online",
+    "offline": "Offline"
+  },
+  "done": {
+    "title": "Thanks for the report!",
+    "subtitleWithReference": "Report no. {{number}} saved with its context. Quote this number if you bring it up with the team.",
+    "subtitleStoredOnly": "Your report is saved, but no number could be assigned to it — the team still sees it.",
+    "follow": "Track my reports"
+  },
+  "demo": {
+    "message": "The demo does not send reports: nothing you write here would reach the team. In your own workspace, this button sends the problem with its context, and you track it in Settings › My reports."
+  },
+  "myReports": {
+    "title": "My reports",
+    "subtitle": "What you reported, and where each one stands.",
+    "legend": "“In progress”: someone is on it. “Closed without a fix”: closed with no correction.",
+    "reference": "Report no. {{number}}",
+    "noReference": "No number",
+    "sentOn": "Sent on {{date}}",
+    "status": {
+      "received": "Received",
+      "in_progress": "In progress",
+      "fixed": "Fixed",
+      "closed_unresolved": "Closed without a fix",
+      "unavailable": "Status unavailable"
+    },
+    "states": {
+      "loading": "Loading your reports…",
+      "emptyTitle": "No reports",
+      "emptyMessage": "You have not reported anything yet.",
+      "emptyDetail": "A report shows up here as soon as it is sent, with its status.",
+      "emptyAction": "Report an issue",
+      "emptyDetailDemo": "The demo does not send reports. In your own workspace, the ones you send show up here with their status.",
+      "error": "Your reports could not be loaded.",
+      "retry": "Try again",
+      "partial_one": "The status of {{count}} report could not be read right now.",
+      "partial_other": "The status of {{count}} reports could not be read right now.",
+      "partialDetail": "Try again in a minute: what you wrote stays here."
+    },
+    "reportAction": "Prepare a report",
+    "listTitle": "What you reported",
+    "note": "For useful feedback: the path you followed, what happened and what you expected.",
+    "columns": {
+      "report": "Report",
+      "category": "Category",
+      "sentOn": "Sent",
+      "status": "Status"
+    }
+  },
+  "help": {
+    "title": "Help & reports",
+    "subtitle": "Describe the expected outcome, keep a trace of what blocks you.",
+    "report": {
+      "title": "Prepare a report",
+      "body": "What you were doing, what happened, what you expected. Nothing is sent before you review it.",
+      "action": "Prepare a report"
+    },
+    "shortcuts": {
+      "title": "Shortcuts",
+      "body": "The commands that make navigation easier.",
+      "action": "View"
+    },
+    "data": {
+      "title": "Keep my work",
+      "body": "Export your data before leaving the workspace.",
+      "action": "My data"
+    }
+  }
+}

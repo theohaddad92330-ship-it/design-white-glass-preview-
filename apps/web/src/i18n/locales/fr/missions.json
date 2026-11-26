@@ -1,0 +1,3157 @@
+{
+  "page": {
+    "title": "Missions",
+    "subtitle": "Ce qui tourne aujourd’hui, et ce qui arrive à échéance. Trié par urgence, pas par date de création.",
+    "introTitle": "Tes missions, {{firstName}}.",
+    "introTitleWithoutName": "Tes missions.",
+    "introSubtitle": "Sécurise les démarrages, les échéances et les renouvellements avant qu’ils deviennent urgents.",
+    "newMission": "Nouvelle mission"
+  },
+  "filtersSection": {
+    "title": "Filtres",
+    "more": "Plus de filtres"
+  },
+  "unknownAccount": "Compte inconnu",
+  "endsOn": "Fin prévue le {{date}}",
+  "noEndDate": "Sans date de fin — aucune fenêtre de renouvellement ne s’y déclenche.",
+  "status": {
+    "onboarding": "Démarrage",
+    "active": "En cours",
+    "paused": "Suspendue",
+    "ended": "Terminée",
+    "terminated": "Interrompue",
+    "renewed": "Renouvelée",
+    "draft": "Brouillon",
+    "ready_to_start": "Prête à démarrer",
+    "at_risk": "À risque",
+    "renewal_pending": "Renouvellement en cours",
+    "ending": "En fin",
+    "completed": "Achevée",
+    "cancelled": "Annulée",
+    "archived": "Archivée"
+  },
+  "renewal": {
+    "far": "Loin",
+    "j60": "J-60",
+    "j45": "J-45",
+    "j30": "J-30",
+    "j15": "J-15",
+    "withinDays": "J-{{count}}",
+    "imminent": "Imminent",
+    "overdue": "Échue",
+    "unknown": "Sans échéance"
+  },
+  "staffing": {
+    "title": "Qui est dessus",
+    "empty": "Personne n’est affecté. La disponibilité du vivier se déduit des affectations : sans elles, elle reste celle que la fiche déclare.",
+    "unknownTalent": "Talent inconnu",
+    "until": "jusqu’au {{date}}",
+    "openEnded": "sans fin connue",
+    "loadError": "Les affectations n’ont pas pu être chargées.",
+    "assignmentStatus": {
+      "planned": "Prévue",
+      "confirmed": "Confirmée",
+      "active": "En cours",
+      "absent": "Absent",
+      "paused": "Suspendue",
+      "ending": "En fin",
+      "extended": "Prolongée",
+      "completed": "Terminée",
+      "terminated": "Interrompue",
+      "replaced": "Remplacé"
+    },
+    "loadPercentLabel": "Taux de charge (%)",
+    "startsOnLabel": "Début de l’affectation",
+    "endsOnLabel": "Fin de l’affectation",
+    "consent": "Consentement",
+    "consentGiven": "donné le {{date}}",
+    "consentDeclined": "refusé le {{date}}",
+    "consentUnknown": "non renseigné",
+    "documentsExpected": "Documents attendus",
+    "documentsReceived": "Documents reçus",
+    "documentsUnknown": "non renseignés",
+    "risks": "Risques déclarés",
+    "risksUnknown": "non déclarés"
+  },
+  "finance": {
+    "title": "Conditions commerciales",
+    "noAccess": "La marge et le coût chargé ne sont pas dans ton périmètre. Ce n’est pas une donnée manquante : c’est un droit que ton rôle n’a pas.",
+    "notMeasured": "Marge non mesurée : le coût chargé n’est pas renseigné. Aucune formule ne le devine — il dépend du statut, de la convention et de ta politique.",
+    "margin": "{{percent}} % de marge",
+    "marginAmount": "{{value}} € par jour",
+    "marginNote": "hors frais",
+    "marginWithExpenses": "{{percent}} % de marge nette",
+    "marginWithExpensesAmount": "{{value}} € par jour, frais et factures fournisseur amortis compris",
+    "expensesUnamortized": "{{value}} € de frais et factures fournisseur saisis, non encore répercutés sur la marge : la mission n’a pas de date de début connue.",
+    "costLabel": "Coût chargé journalier",
+    "costPlaceholder": "en euros",
+    "costHint": "Saisi à la main, à dessein. Un coût moyen appliqué à tout le monde produirait une marge fausse — plus dangereuse qu’une marge absente.",
+    "save": "Enregistrer",
+    "loadError": "Les conditions n’ont pas pu être chargées.",
+    "channelLabel": "Canal de la mission",
+    "channelHint": "Direct, via un intermédiaire, ou nos consultants prêtés.",
+    "quickLinks": {
+      "cra": "Voir les CRA",
+      "billing": "Voir la facturation",
+      "payments": "Voir les encaissements"
+    },
+    "noticeDaysLabel": "Préavis (jours)",
+    "noticeDaysPlaceholder": "en jours",
+    "noticeDaysSave": "Enregistrer le préavis",
+    "noticeDaysHint": "Le délai à respecter avant de mettre fin à la mission.",
+    "requiresPoLabel": "Bon de commande exigé",
+    "requiresPoHint": "Le client refuse de payer une facture sans bon de commande. Coché, le mois reste bloqué à la facturation tant que le numéro n’est pas saisi.",
+    "commissionLabel": "Commission d’intermédiation (€ par jour)",
+    "commissionPlaceholder": "en euros",
+    "commissionHint": "La part que prend l’intermédiaire, par jour travaillé. Laissée vide, elle est INCONNUE et le coût réel de la mission l’est aussi — un intermédiaire ne travaille pas gratuitement. Zéro est une réponse : un partenaire qui ne prend rien, ça existe.",
+    "commissionSave": "Enregistrer la commission",
+    "commissionStale": "Une commission d’intermédiation de {{value}} € par jour reste enregistrée sur cette mission, qui n’est pas passée par un intermédiaire. Elle est comptée dans son coût réel.",
+    "commissionClear": "Effacer la commission",
+    "engine": {
+      "title": "Marge de la mission",
+      "confidence": {
+        "measured": "Mesurée",
+        "partial": "Partielle",
+        "not_measured": "Non mesurée"
+      },
+      "levels": {
+        "commercial": "Marge commerciale",
+        "gross": "Marge brute",
+        "contribution": "Contribution (après allocations internes)",
+        "atCompletion": "À terminaison (estimation)"
+      },
+      "amountPerDay": "{{value}} par jour",
+      "amountTotal": "{{value}} sur le contrat",
+      "basis": "Mesurée sur : {{list}}.",
+      "deductions": "Retiré pour la marge brute : {{list}}.",
+      "validatedDays_one": "{{count}} jour validé",
+      "validatedDays_other": "{{count}} jours validés",
+      "period_one": "{{month}} : {{value}} de marge commerciale sur {{count}} jour validé.",
+      "period_other": "{{month}} : {{value}} de marge commerciale sur {{count}} jours validés.",
+      "periodNotMeasured": "{{month}} : aucun relevé compté, la marge de la période n’est pas mesurée.",
+      "excludes": "N’inclut pas : {{list}}.",
+      "assumes": "Hypothèses : {{list}}.",
+      "lacks": "Manque : {{list}}.",
+      "formula": "Formule {{version}} · source du coût : {{source}} · devise : {{currency}}",
+      "revenues": {
+        "daily_rate": "TJM client",
+        "partner_sale_price": "Prix de vente au partenaire",
+        "fixed_price_amount": "Montant du forfait"
+      },
+      "costs": {
+        "loaded_daily_cost": "Coût chargé saisi",
+        "supplier_daily_rate": "TJM fournisseur",
+        "supplier_commission": "Commission fournisseur",
+        "supplier_taxes": "Taxes",
+        "standard_daily_cost": "Coût standard validé",
+        "period_cost": "Coût de période réparti",
+        "hourly_cost": "Coût horaire × heures",
+        "partner_purchase_price": "Prix d’achat au partenaire",
+        "partner_fee": "Fee du partenaire",
+        "partner_split": "Part du partenaire",
+        "amortized_expenses": "Frais amortis",
+        "amortized_supplier_invoices": "Factures fournisseur amorties",
+        "specific_costs": "Coûts spécifiques",
+        "other_validated_costs": "Autres coûts validés",
+        "internal_allocations": "Allocations internes",
+        "team_time": "Temps équipe",
+        "subcontracting": "Sous-traitance",
+        "mission_expenses": "Frais",
+        "supplier_invoices": "Factures fournisseur"
+      },
+      "exclusions": {
+        "payment_delays": "les délais de paiement",
+        "invoicing_status": "l’état de facturation",
+        "internal_allocations": "les allocations internes",
+        "expenses_not_amortizable": "les frais saisis (mission sans date de début)",
+        "supplier_invoices_covered_by_supplier_rate": "les factures fournisseur (déjà couvertes par le TJM fournisseur)",
+        "supplier_taxes": "les taxes du fournisseur (non renseignées)",
+        "unvalidated_days": "les jours non validés"
+      },
+      "assumptions": {
+        "standard_cost_is_an_estimate": "le coût standard validé est une estimation",
+        "period_cost_spread_over_worked_days": "le coût de période est réparti sur les jours travaillés",
+        "hourly_cost_times_hours_per_day": "le coût horaire est multiplié par les heures par jour",
+        "expenses_amortized_over_elapsed_days": "les frais sont amortis sur les jours écoulés",
+        "expenses_counted_as_not_rebilled": "les frais sont comptés comme non refacturés",
+        "at_completion_uses_remaining_work_estimate": "la projection repose sur le reste à faire estimé",
+        "currency_not_specified_eur_by_default": "devise non renseignée, lue en euros",
+        "scenario_simulation": "simulation"
+      },
+      "missing": {
+        "revenue": "le revenu",
+        "direct_cost": "le coût direct",
+        "exchange_rate": "un taux de change (le coût est dans une autre devise)",
+        "supplier_commission": "la commission du fournisseur",
+        "partner_terms": "les conditions du partenaire (fee ou part)",
+        "fixed_price_subcontracting": "le coût de sous-traitance du forfait",
+        "expenses_start_date": "la date de début, pour amortir les frais"
+      },
+      "sources": {
+        "unspecified": "non déclarée",
+        "freelance": "freelance",
+        "employee": "salarié",
+        "partner": "partenaire",
+        "fixed_price": "forfait"
+      },
+      "alerts": {
+        "below_threshold": "Marge commerciale sous le seuil : {{percent}} pour un seuil de {{threshold}}.",
+        "cost_missing": "Le coût direct n’est pas renseigné : la marge n’est pas calculable.",
+        "rate_changed": "Tarif changé : le coût a été saisi quand le TJM valait {{previous}}, il vaut {{current}}.",
+        "unvalidated_days_one": "{{count}} jour n’est pas encore validé ce mois-ci.",
+        "unvalidated_days_other": "{{count}} jours ne sont pas encore validés ce mois-ci.",
+        "unrebilled_expenses": "{{value}} de frais comptés comme non refacturés.",
+        "partner_missing": "Mission via un intermédiaire sans fee ni part renseignés.",
+        "currency_mismatch": "Le coût est en {{costCurrency}}, le TJM en {{currency}} : aucune conversion n’est inventée."
+      },
+      "diagnostic": {
+        "title": "Le diagnostic de {{copilot}} sur la marge commerciale",
+        "costShare": "Le coût direct représente {{value}} du revenu.",
+        "deductions": "Ce qui pèse ensuite : {{list}}.",
+        "levers": "Pour atteindre {{threshold}}, il faudrait un TJM d’au moins {{rate}}, ou un coût direct d’au plus {{cost}}.",
+        "costLever": "Pour atteindre {{threshold}}, le coût direct devrait être d’au plus {{cost}}.",
+        "noAction": "Aucune renégociation n’est lancée : c’est une proposition, la décision reste la tienne."
+      },
+      "scenario": {
+        "title": "Simuler un scénario",
+        "kindLabel": "Scénario",
+        "kinds": {
+          "current_rate": "Tarif actuel",
+          "renewed_rate": "Tarif renouvelé",
+          "future_cost": "Coût futur",
+          "extension": "Prolongation",
+          "expected_days": "Jours attendus",
+          "different_volume": "Autre volume"
+        },
+        "rateLabel": "TJM envisagé (€)",
+        "costLabel": "Coût envisagé (€)",
+        "daysLabel": "Jours",
+        "run": "Simuler",
+        "result": "Marge commerciale simulée : {{percent}}.",
+        "resultWithTotal_one": "Marge commerciale simulée : {{percent}}, soit {{value}} sur {{count}} jour.",
+        "resultWithTotal_other": "Marge commerciale simulée : {{percent}}, soit {{value}} sur {{count}} jours.",
+        "notMeasured": "Simulation non mesurée : le coût direct manque.",
+        "revenueTotal_one": "Revenu simulé (facturation) : {{value}} sur {{count}} jour.",
+        "revenueTotal_other": "Revenu simulé (facturation) : {{value}} sur {{count}} jours.",
+        "poImpact": {
+          "after_one": "Bon de commande après prolongation : {{percent}}, {{count}} jour restant.",
+          "after_other": "Bon de commande après prolongation : {{percent}}, {{count}} jours restants.",
+          "overrun_one": "Bon de commande dépassé de {{count}} jour après prolongation.",
+          "overrun_other": "Bon de commande dépassé de {{count}} jours après prolongation.",
+          "unmeasured": "Impact sur le bon de commande non mesurable."
+        },
+        "disclaimer": "Simulation : rien n’est enregistré."
+      },
+      "form": {
+        "title": "Source du coût",
+        "sourceLabel": "Source du coût",
+        "currencyLabel": "Devise du TJM",
+        "costCurrencyLabel": "Devise du coût (si différente)",
+        "hint": "Chaque champ vide reste inconnu — jamais zéro. Zéro est une réponse.",
+        "noSalary": "Aucun salaire n’est demandé ni reconstruit : seul un coût chargé fourni, importé ou validé sert.",
+        "save": "Enregistrer la source du coût",
+        "fields": {
+          "supplierDailyRateCents": "TJM fournisseur (€)",
+          "supplierCommissionDailyCents": "Commission fournisseur (€/jour)",
+          "supplierTaxesDailyCents": "Taxes (€/jour)",
+          "standardDailyCostCents": "Coût standard (€/jour)",
+          "standardCostValidatedOn": "Coût standard validé le",
+          "periodCostCents": "Coût de la période (€)",
+          "periodWorkedDays": "Jours travaillés sur la période",
+          "hourlyCostCents": "Coût horaire (€)",
+          "hoursPerDay": "Heures par jour",
+          "partnerPurchaseDailyCents": "Prix d’achat (€/jour)",
+          "partnerSaleDailyCents": "Prix de vente (€/jour)",
+          "partnerSplitPercent": "Part du partenaire (%)",
+          "fixedPriceTeamTimeCostCents": "Temps équipe valorisé (€)",
+          "fixedPriceSubcontractingCostCents": "Sous-traitance (€)",
+          "fixedPriceBudgetConsumedCents": "Budget consommé (€)",
+          "fixedPriceRemainingWorkCents": "Reste à faire (€)",
+          "specificDailyCostCents": "Coûts spécifiques (€/jour)",
+          "otherValidatedDailyCostCents": "Autres coûts validés (€/jour)",
+          "internalAllocationDailyCents": "Allocations internes (€/jour)"
+        },
+        "origins": {
+          "provided": "Coût fourni",
+          "imported": "Coût importé",
+          "validated_standard": "Standard validé"
+        },
+        "originLabel": "Origine du coût chargé"
+      }
+    },
+    "channels": {
+      "direct": "Direct",
+      "partner": "Via partenaire",
+      "subcontracting": "Sous-traitance",
+      "unknown": "Non renseigné",
+      "portage": "Portage salarial"
+    },
+    "expenses": {
+      "title": "Frais",
+      "empty": "Aucun frais saisi sur cette mission.",
+      "total": "{{value}} € de frais au total",
+      "loadError": "Les frais n’ont pas pu être chargés.",
+      "labelLabel": "Libellé du frais",
+      "labelPlaceholder": "Billets de train, hôtel…",
+      "amountLabel": "Montant",
+      "amountPlaceholder": "en euros",
+      "dateLabel": "Date du frais",
+      "add": "Ajouter",
+      "edit": "Modifier",
+      "save": "Enregistrer"
+    },
+    "timesheets": {
+      "empty": "Aucun relevé sur ce mois pour cette mission.",
+      "emptyWhy": "Le mois n’est pas encore couvert, ou personne n’a encore déposé de relevé."
+    },
+    "supplierInvoices": {
+      "title": "Factures fournisseur",
+      "empty": "Aucune facture fournisseur saisie sur cette mission.",
+      "loadError": "Les factures fournisseur n’ont pas pu être chargées.",
+      "referenceLabel": "Référence de la facture",
+      "referencePlaceholder": "Numéro émis par le sous-traitant",
+      "amountLabel": "Montant de la facture",
+      "amountPlaceholder": "en euros",
+      "dateLabel": "Date de la facture",
+      "add": "Ajouter la facture",
+      "statusLabel": "Statut de la facture",
+      "statuses": {
+        "pending": "Reçue",
+        "validated": "Vérifiée",
+        "paid": "Payée",
+        "disputed": "Contestée"
+      }
+    },
+    "po": {
+      "title": "Bon de commande",
+      "numberLabel": "Numéro du bon de commande",
+      "numberPlaceholder": "ex. PO-2026-0418",
+      "issuedOnLabel": "Date du bon de commande",
+      "validUntilLabel": "Valide jusqu’au",
+      "amountLabel": "Montant du bon de commande",
+      "amountPlaceholder": "en euros",
+      "volumeLabel": "Volume de jours",
+      "volumePlaceholder": "en jours",
+      "save": "Enregistrer le bon de commande",
+      "consumedLabel": "{{percent}} % consommé",
+      "volumeUnknown": "Volume non renseigné. Sans lui, impossible de dire ce qu’il reste — saisis-le ci-dessus pour voir la consommation.",
+      "consumptionUnmeasured": "Consommation non mesurée : aucun relevé d’activité compté pour cette mission.",
+      "overrun_one": "Bon de commande dépassé de {{count}} jour.",
+      "overrun_other": "Bon de commande dépassé de {{count}} jours.",
+      "approaching_one": "Bon de commande consommé à {{threshold}} % ou plus — il reste {{count}} jour.",
+      "approaching_other": "Bon de commande consommé à {{threshold}} % ou plus — il reste {{count}} jours.",
+      "amendment": {
+        "prepare": "Demander l’avenant",
+        "hide": "Masquer la demande",
+        "hint": "{{brand}} prépare le texte ; c’est toi qui l’envoies. Rien n’est transmis d’ici.",
+        "copy": "Copier le texte",
+        "copied": "Texte copié",
+        "line1": "À date, {{consumed}} jours ont été consommés sur les {{volume}} du bon de commande, soit {{percent}} %.",
+        "line2": "Bon de commande concerné : {{poNumber}}.",
+        "line2NoNumber": "La référence du bon de commande n’est pas renseignée dans {{brand}}.",
+        "line3_one": "Il reste {{count}} jour couvert.",
+        "line3_other": "Il reste {{count}} jours couverts.",
+        "line3Overrun_one": "Le bon de commande est dépassé de {{count}} jour.",
+        "line3Overrun_other": "Le bon de commande est dépassé de {{count}} jours.",
+        "line4": "Peux-tu confirmer l’émission d’un avenant pour couvrir la suite de la mission ?"
+      },
+      "otherMissions": {
+        "title": "Ce bon de commande couvre aussi",
+        "item": "{{missionLabel}} — {{accountName}}"
+      }
+    }
+  },
+  "history": {
+    "title": "Historique du compte"
+  },
+  "documents": {
+    "title": "Documents",
+    "empty": "Aucun document suivi sur cette mission pour l’instant.",
+    "readError": "Les documents n’ont pas pu être chargés.",
+    "kind": {
+      "contract": "Contrat",
+      "amendment": "Avenant",
+      "nda": "NDA",
+      "other": "Autre document"
+    },
+    "status": {
+      "draft": "Brouillon",
+      "sent": "Envoyé",
+      "pending": "En attente",
+      "signed": "Signé",
+      "refused": "Refusé"
+    },
+    "statusAria": "Statut de {{name}}",
+    "kindAria": "Nature du document",
+    "addPlaceholder": "Nom du fichier",
+    "addAria": "Nom du document",
+    "add": "Suivre ce document",
+    "createError": "Le document n’a pas pu être suivi.",
+    "updateError": "Le statut n’a pas changé."
+  },
+  "states": {
+    "emptyTitle": "Tu n’as aucune mission active.",
+    "emptyDescription": "Les missions apparaissent ici dès qu’un projet est signé.",
+    "emptySignedDescription_one": "Une mission naît d’un projet signé. {{count}} projet est déjà signé dans ton pipe.",
+    "emptySignedDescription_other": "Une mission naît d’un projet signé. {{count}} projets sont déjà signés dans ton pipe.",
+    "emptyNoneSignedDescription": "Une mission naît d’un projet signé : elle est créée au moment où le projet passe en « Signé ». Aucun des tiens ne l’est encore.",
+    "emptyNoProjectDescription": "Une mission naît d’un projet signé, et les projets naissent des analyses de comptes. Lance une première analyse pour alimenter ton pipe.",
+    "emptyProjectsCta": "Ouvrir les projets",
+    "emptyAnalyseCta": "Lancer une analyse",
+    "emptyCreateCta": "Nouvelle mission",
+    "allFinishedTitle": "Aucune mission en cours",
+    "allFinishedDescription_one": "{{count}} mission terminée n’est pas listée ici : cet onglet ne montre que ce qui tourne.",
+    "allFinishedDescription_other": "{{count}} missions terminées ne sont pas listées ici : cet onglet ne montre que ce qui tourne.",
+    "errorTitle": "Les missions n’ont pas pu être chargées",
+    "errorDescription": "Elles sont toujours là — c’est la lecture qui a échoué."
+  },
+  "odooSales": {
+    "title": "Ventes dans {{tool}}",
+    "intro": "Les ventes confirmées de {{tool}}, lues sans rien y écrire. Une vente y correspond à une mission ou un contrat : reprends celles qui n’existent pas encore ici.",
+    "demoNote": "Démonstration — ventes fictives, aucun outil n’est lu.",
+    "unknown": "{{tool}} n’a pas répondu à temps — on ne sait pas encore ce qu’il contient.",
+    "error": "Lecture des ventes de {{tool}} impossible : {{message}}",
+    "retry": "Réessayer",
+    "reference": "Référence",
+    "client": "Client",
+    "dates": "Dates",
+    "lines": "Prestation",
+    "amount": "Montant HT",
+    "billing": "Facturation",
+    "status": "Dans {{brand}}",
+    "orderedOn": "Commandée le {{date}}",
+    "startsOn": "Début {{date}}",
+    "lineQuantity": "{{quantity}} × {{price}}",
+    "invoice": {
+      "invoiced": "Facturée",
+      "to_invoice": "À facturer",
+      "upselling": "Vente additionnelle possible",
+      "no": "Rien à facturer"
+    },
+    "alreadyMission": "Déjà une mission : {{label}}",
+    "matchBy": {
+      "link": "reprise de cette vente",
+      "reference": "rapprochée par la référence",
+      "label": "rapprochée par la prestation",
+      "dates": "rapprochée par les dates"
+    },
+    "accountNotFound": "Aucun compte {{brand}} ne porte le nom « {{name}} »",
+    "accountAmbiguous": "Plusieurs comptes {{brand}} portent ce nom — rien n’est choisi à ta place",
+    "noClient": "Client non renseigné dans {{tool}}",
+    "reprendre": "Reprendre en mission",
+    "reprendreAll": "Reprendre toutes ({{count}})",
+    "previewTitle": "Ce qui va être créé",
+    "previewDescription": "Exactement ces missions, telles qu’affichées. Rien n’est écrit dans {{tool}}.",
+    "previewAccount": "Compte : {{name}}",
+    "previewStart": "Début : {{date}}",
+    "previewRate": "TJM : {{rate}}",
+    "previewNoRate": "TJM non repris (plusieurs prix sur la vente)",
+    "previewNoStart": "Début non renseigné",
+    "skipped": {
+      "already_mission": "{{reference}} — déjà une mission",
+      "not_found": "{{reference}} — introuvable ou sans compte {{brand}}",
+      "ambiguous": "{{reference}} — plusieurs comptes portent ce nom"
+    },
+    "confirm_one": "Créer {{count}} mission",
+    "confirm_other": "Créer {{count}} missions",
+    "cancel": "Annuler",
+    "close": "Fermer",
+    "nothingToCreate": "Rien à créer : ces ventes sont déjà des missions, ou leur client n’a pas de compte.",
+    "created_one": "{{count}} mission créée depuis {{tool}}",
+    "created_other": "{{count}} missions créées depuis {{tool}}",
+    "partial": "{{count}} vente(s) non reprise(s) — relis la liste.",
+    "previewError": "La prévisualisation a échoué."
+  },
+  "crmReprisal": {
+    "title": "Reprendre depuis ton outil connecté",
+    "correspondence": "Dans {{tool}}, ces enregistrements s’appellent des « deals ».",
+    "correspondenceUnknownTool": "Dans ton outil connecté, ces enregistrements s’appellent des « deals ».",
+    "unknownName": "Nom du deal non renseigné",
+    "unknownStage": "Stade non renseigné",
+    "chooseAccount": "Choisir le compte",
+    "createCta": "Créer cette mission",
+    "fallbackLabel": "Mission reprise du CRM",
+    "createError": "La création de la mission a échoué."
+  },
+  "toast": {
+    "missionCreated": "Mission créée.",
+    "missionCreateError": "La mission n’a pas pu être créée.",
+    "assigned": "Affectation enregistrée.",
+    "assignError": "L’affectation a échoué.",
+    "termsSaved": "Conditions enregistrées.",
+    "termsError": "Les conditions n’ont pas pu être enregistrées.",
+    "expenseSaved": "Frais enregistré.",
+    "expenseError": "Le frais n’a pas pu être enregistré.",
+    "feedbackSaved": "Avis enregistré.",
+    "feedbackError": "L’avis n’a pas pu être enregistré.",
+    "supplierInvoiceSaved": "Facture fournisseur enregistrée.",
+    "supplierInvoiceError": "La facture fournisseur n’a pas pu être enregistrée.",
+    "supplierInvoiceStatusSaved": "Statut de la facture mis à jour.",
+    "invoicedMarked": "Mois marqué comme facturé ailleurs.",
+    "invoicedError": "Le marquage a échoué.",
+    "moved": "Carte déplacée",
+    "moveError": "La carte n’a pas pu être déplacée",
+    "gapExplained": "Écart expliqué",
+    "gapError": "L’explication n’a pas pu être enregistrée",
+    "clientValidated": "Validation client enregistrée",
+    "clientValidationError": "La validation n’a pas pu être enregistrée",
+    "internalReviewed": "Revue interne enregistrée",
+    "internalReviewError": "La revue interne n’a pas pu être enregistrée",
+    "timesheetRejected": "Relevé rejeté — son auteur peut le corriger et le redéposer",
+    "timesheetRejectError": "Le rejet n’a pas pu être enregistré",
+    "timesheetNotApplicable": "Mois marqué non applicable — la trace est au journal de la mission",
+    "timesheetNotApplicableError": "L’exception n’a pas pu être enregistrée",
+    "timesheetNotApplicableRevoked": "Exception annulée — le relevé est de nouveau attendu",
+    "timesheetNotApplicableRevokeError": "L’annulation n’a pas pu être enregistrée",
+    "timesheetsOpened_one": "{{count}} relevé ouvert",
+    "timesheetsOpened_other": "{{count}} relevés ouverts",
+    "timesheetReminderRecorded": "Relance consignée",
+    "timesheetReminderError": "La relance n’a pas pu être consignée",
+    "movePerformed_one": "{{count}} action exécutée",
+    "movePerformed_other": "{{count}} actions exécutées",
+    "movePending_one": "{{count}} action à faire de ton côté",
+    "movePending_other": "{{count}} actions à faire de ton côté",
+    "moveFailed_one": "{{count}} action n’a pas abouti",
+    "moveFailed_other": "{{count}} actions n’ont pas abouti"
+  },
+  "unknownMission": "Mission inconnue",
+  "lens": {
+    "running": "En cours",
+    "readiness": "Prêt à facturer"
+  },
+  "sourceFilter": {
+    "account": "Missions de {{name}}",
+    "accountUnnamed": "Missions d’un seul compte",
+    "consultant": "Missions d’un seul consultant",
+    "hint": "Cette liste est filtrée : elle ne montre pas toutes les missions de ton espace.",
+    "remove": "Retirer le filtre et voir toutes les missions",
+    "removeShort": "Retirer le filtre",
+    "emptyTitle": "Aucune mission sur ce périmètre",
+    "emptyDescription": "Le lien de source ne ramène rien ici. Ce n’est pas « aucune mission » : ton espace en a peut-être ailleurs.",
+    "emptyCta": "Voir toutes les missions",
+    "consultantNamed": "Missions de {{name}}"
+  },
+  "readiness": {
+    "title": "Facturation — {{month}}",
+    "counts": "{{ready}} prêt(s) · {{blocked}} bloqué(s) · {{invoiced}} facturé(s) ailleurs · {{invoicedDeclared}} déclaré(s) facturé(s)",
+    "prepared": "{{value}} € préparés",
+    "financeHidden": "Montants réservés — demande l’accès financier pour les voir",
+    "withoutAmount_one": "{{count}} non chiffré",
+    "withoutAmount_other": "{{count}} non chiffrés",
+    "disclaimer": "{{brand}} n’émet aucune facture. Ce montant est PRÉPARATOIRE : il est calculé à partir des jours déclarés et du TJM, ce n’est ni un dû ni une facture.",
+    "empty": "Rien à surveiller sur ce mois.",
+    "emptyWhy": "Aucune mission ne couvre ce mois : elles se sont terminées avant, n’ont pas encore commencé, ou sont encore en brouillon.",
+    "emptyCta": "Ouvrir les missions",
+    "loadError": "L’état de facturation n’a pas pu être chargé.",
+    "noTimesheet": "Aucun relevé",
+    "days_one": "{{count}} jour",
+    "days_other": "{{count}} jours",
+    "amount": "{{value}} €",
+    "rate": "{{value}} €/j",
+    "rateUnknown": "TJM non renseigné",
+    "markInvoiced": "Préparer la facture",
+    "reminders_one": "{{count}} relance consignée",
+    "reminders_other": "{{count}} relances consignées",
+    "remindersSent_one": "{{count}} relance envoyée",
+    "remindersSent_other": "{{count}} relances envoyées",
+    "states": {
+      "blocked": "Bloqué",
+      "ready": "Prêt",
+      "invoiced": "Facturé ailleurs",
+      "not_due": "Pas dû ce mois",
+      "invoiced_declared": "Déclaré facturé"
+    },
+    "declaredBy": "Déclaré facturé par {{name}} le {{date}}, non confirmé",
+    "declaredByUnknown": "Déclaré facturé, auteur non retrouvé — non confirmé",
+    "blockers": {
+      "missing_timesheet": "Aucun relevé d’activité",
+      "timesheet_not_submitted": "Relevé non soumis",
+      "timesheet_not_validated": "Relevé non validé par le client",
+      "timesheet_disputed": "Relevé contesté",
+      "timesheet_rejected": "Relevé rejeté, en attente de correction",
+      "timesheet_anomalies": "Anomalies non expliquées",
+      "missing_rate": "Aucun TJM sur la mission",
+      "missing_po": "Bon de commande manquant",
+      "missing_billing_contact": "Contact de facturation inconnu",
+      "missing_start_date": "Date de début inconnue",
+      "unexplained_gap": "Écart de jours non expliqué",
+      "missing_cost": "Coût chargé manquant",
+      "po_period_mismatch": "Bon de commande expiré pour ce mois",
+      "legal_contract_inactive": "Aucun contrat actif pour cette société"
+    },
+    "poBlockerOwner": "À faire par {{name}}",
+    "blockedAmount": "{{value}} € immobilisés",
+    "preparedInvoicesCount_one": "{{count}} facture préparée",
+    "preparedInvoicesCount_other": "{{count}} factures préparées",
+    "unexplainedGapCount_one": "{{count}} écart de période non expliqué",
+    "unexplainedGapCount_other": "{{count}} écarts de période non expliqués",
+    "amendments": {
+      "accepted_one": "{{count}} avenant accepté",
+      "accepted_other": "{{count}} avenants acceptés",
+      "simulated_one": "{{count}} avenant simulé",
+      "simulated_other": "{{count}} avenants simulés"
+    },
+    "export": "Exporter",
+    "lauraQuestion": "Sur la facturation de ce mois, qu'est-ce que je dois prioriser en premier ?",
+    "lauraCta": "Demander à {{copilot}} quoi prioriser",
+    "markInvoicedHelp": "{{brand}} n’émet rien : tu DÉCLARES qu’une facture est partie ailleurs, sans preuve de connecteur — l’écran le dira partout comme « déclaré », jamais « facturé ». Les trois champs sont facultatifs et restent vides si tu ne les remplis pas.",
+    "markInvoicedSetLegalEntity": "Renseigner la société facturante",
+    "reference": "Référence de la facture",
+    "referencePlaceholder": "FA-2026-0142",
+    "amountLabel": "Montant facturé, en euros",
+    "amountPlaceholder": "Montant en euros",
+    "dueOn": "Échéance de règlement",
+    "confirmInvoiced": "Enregistrer",
+    "recordPayment": "Vérifier le paiement",
+    "cancelInvoiced": "Annuler « facturé »",
+    "recordReminder": "Consigner une relance",
+    "paymentRecorded": "Paiement enregistré.",
+    "paymentFailed": "Le paiement n’a pas pu être enregistré.",
+    "invoiceCancelled": "Marque « facturé » annulée. Le mois revient dans les relances.",
+    "cancelFailed": "L’annulation n’a pas abouti.",
+    "reminderRecorded": "Relance consignée.",
+    "reminderFailed": "La relance n’a pas pu être consignée.",
+    "cancelInvoicedTitle": "Annuler la marque « facturé »",
+    "cancelInvoicedHint": "La marque n’est pas effacée : elle est annulée, avec sa raison. Sans motif, personne ne saura dans six mois pourquoi ce mois n’a jamais été encaissé.",
+    "cancelInvoicedPlaceholder": "Pourquoi ? (obligatoire)",
+    "cancelInvoicedConfirm": "Annuler la marque",
+    "cancelInvoicedAbort": "Ne rien changer",
+    "disputed": "En litige",
+    "disputeNote": "Litige : {{reason}}",
+    "openDispute": "Déclarer un litige",
+    "resolveDispute": "Lever le litige",
+    "disputeTitle": "Déclarer un litige sur cette facture",
+    "disputeHint": "Un litige n’est pas un retard : les relances s’arrêtent, la ligne reste, et ce délai ne compte plus dans le délai de paiement moyen. Écris ce que le client conteste — sans motif, personne ne saura de quoi il s’agissait.",
+    "disputePlaceholder": "Que conteste le client ? (obligatoire)",
+    "disputeConfirm": "Enregistrer le litige",
+    "disputeAbort": "Ne rien changer",
+    "disputeOpened": "Litige enregistré. Les relances s’arrêtent sur ce mois.",
+    "disputeFailed": "Le litige n’a pas pu être enregistré.",
+    "disputeResolved": "Litige levé. Les relances peuvent reprendre.",
+    "resolveDisputeFailed": "Le litige n’a pas pu être levé.",
+    "actions": {
+      "open_timesheet": "ouvrir le relevé",
+      "remind_consultant": "relancer le consultant",
+      "remind_client": "relancer le client",
+      "resolve_dispute": "lever le litige",
+      "resubmit_timesheet": "redéposer le relevé corrigé",
+      "explain_gap": "expliquer l’écart",
+      "set_rate": "renseigner le TJM",
+      "ask_po": "demander le bon de commande",
+      "set_billing_contact": "renseigner le contact de facturation",
+      "set_start_date": "renseigner la date de début",
+      "set_cost": "saisir le coût chargé",
+      "renew_po": "renouveler le bon de commande",
+      "review_contract": "vérifier le contrat"
+    },
+    "craStatus": {
+      "label": "Statut CRA",
+      "all": "Tous les statuts",
+      "not_submitted": "À compléter",
+      "to_validate": "À valider",
+      "validated": "Validé",
+      "conflict": "Conflit"
+    },
+    "tiles": {
+      "supplierInvoiceMissing": "Facture manquante",
+      "readyToSend": "À envoyer",
+      "craBlocked": "CRA bloqué",
+      "notMeasured": "Non mesuré"
+    },
+    "table": {
+      "mission": "Mission",
+      "client": "Client",
+      "legalEntity": "Société facturante",
+      "legalEntityUnknown": "Aucune société renseignée",
+      "period": "Période",
+      "days": "Jours",
+      "dailyRate": "TJM",
+      "amount": "Montant HT",
+      "craStatus": "Statut CRA",
+      "status": "Statut facture / Action",
+      "openDetail": "Ouvrir le dossier de la mission",
+      "selectRow": "Sélectionner cette ligne",
+      "selectAll": "Sélectionner toutes les lignes visibles",
+      "supplierInvoiceMissing": "Facture fournisseur manquante",
+      "supplierInvoiceReceived": "Facture fournisseur reçue",
+      "noResults": "Aucune ligne ne correspond à ce filtre.",
+      "financeHiddenShort": "Réservé",
+      "orderCoverage": "Couverture de commande",
+      "orderMissing": "Commande manquante",
+      "orderOutOfPeriod": "Période hors commande",
+      "orderUnknown": "Aucune commande saisie",
+      "base": "Base du mois",
+      "controls": "Contrôles",
+      "moreActions": "Autres gestes pour {{label}}"
+    },
+    "search": {
+      "placeholder": "Rechercher un freelance, client, facture…",
+      "label": "Rechercher"
+    },
+    "month": {
+      "label": "Mois"
+    },
+    "refresh": "Actualiser",
+    "bulk": {
+      "selected_one": "{{count}} ligne sélectionnée",
+      "selected_other": "{{count}} lignes sélectionnées",
+      "missingTimesheets": "CRA manquants",
+      "remindTimesheets": "Relancer la saisie/validation CRA",
+      "remindConfirm_one": "{{count}} relance consignée.",
+      "remindConfirm_other": "{{count}} relances consignées.",
+      "remindNone": "Aucune ligne sélectionnée n’a de CRA à relancer.",
+      "remindPartial": "{{done}} relance(s) consignée(s) · {{skipped}} ligne(s) sans CRA à relancer."
+    },
+    "pagination": {
+      "perPage": "{{count}} / page",
+      "page": "Page {{page}} sur {{pages}}",
+      "previous": "Page précédente",
+      "next": "Page suivante",
+      "range": "{{from}}–{{to}} sur {{total}} résultats"
+    },
+    "connector": {
+      "toolGeneric": "ton outil de gestion",
+      "cta": "Déposer un brouillon de facture dans {{tool}}",
+      "noWriteRight": "Dépôt réservé — demande le droit d’écriture financière pour le faire toi-même.",
+      "retry": "Réessaie",
+      "inProgress": "Dépôt en cours : la demande est partie, la réponse n’est pas encore là.",
+      "unknown": "Nous ne savons pas si le brouillon a été déposé — vérifie dans ton outil de gestion.",
+      "invoiced": "Brouillon déposé dans {{tool}} — référence {{reference}}. À toi de le valider dans {{tool}}.",
+      "failedDetail": "Rien n’est parti : {{detail}}",
+      "loadError": "L’état de l’écriture n’a pas pu être lu.",
+      "sendError": "L’écriture n’a pas pu être envoyée.",
+      "previewTitle": "Vérifie le brouillon avant de le déposer",
+      "previewHint": "Un clic sur « Valider » dépose un BROUILLON de facture dans {{tool}}. Rien n’est validé ni envoyé à ton client : tu le relis et tu le valides toi-même dans {{tool}}.",
+      "previewMission": "Mission",
+      "previewAccount": "Client",
+      "previewMonth": "Mois couvert",
+      "previewAmount": "Montant HT",
+      "amountUnknown": "Montant non chiffré",
+      "previewReference": "Référence",
+      "previewReferenceUnknown": "Aucune référence saisie",
+      "attachments": {
+        "title": "Pièces jointes",
+        "hint": "Bon de commande signé, relevé validé, PV : jointes à la facture préparée, jamais envoyées d’ici. {{formats}} · 10 Mo max.",
+        "empty": "Aucune pièce jointe à cette facture.",
+        "loadError": "Les pièces jointes n’ont pas pu être lues. Elles sont toujours là — c’est la lecture qui a échoué.",
+        "add": "Joindre une pièce",
+        "working": "Dépôt en cours…",
+        "open": "Ouvrir {{name}}",
+        "openShort": "Ouvrir",
+        "remove": "Retirer {{name}}",
+        "openError": "Cette pièce n’a pas pu être ouverte.",
+        "removeError": "Cette pièce n’a pas pu être retirée.",
+        "failedUnknown": "Le dépôt n’a pas abouti, et le serveur n’a pas dit pourquoi. Réessaie.",
+        "demoReadOnly": "Démonstration : les pièces se consultent, aucune ne se dépose ni ne se retire.",
+        "refusal": {
+          "empty": "Ce fichier est vide : il ne contient aucun octet, il n’y a rien à ranger.",
+          "too_large": "Ce fichier dépasse 10 Mo. Compresse-le, ou dépose une version allégée.",
+          "type_refused": "Ce type de fichier n’est pas accepté. Dépose un PDF, une image, un document ou un tableur.",
+          "name_missing": "Ce fichier n’a pas de nom : renomme-le avant de le déposer.",
+          "quota_exceeded": "L’espace de stockage est plein. Supprime des fichiers échus, ou demande une extension.",
+          "content_mismatch": "Le contenu de ce fichier ne correspond pas à son extension."
+        }
+      },
+      "previewLine": "Ligne",
+      "lineValue": "{{days}} j × {{rate}}",
+      "lineUnknown": "Ligne non chiffrée",
+      "previewTaxes": "Hors taxes : {{tool}} applique ses taxes par défaut, que tu vérifies avant de valider.",
+      "demoNotice": "Démonstration : rien n’est écrit dans aucun outil. Voici exactement ce qui partirait.",
+      "cancel": "Annuler",
+      "confirm": "Valider"
+    },
+    "theoTiles": {
+      "ready": {
+        "label": "Prêt à préparer",
+        "amount": "{{value}} € HT",
+        "hint_one": "{{count}} dossier",
+        "hint_other": "{{count}} dossiers"
+      },
+      "blocked": {
+        "label": "À débloquer",
+        "hint": "Activité, validation ou commande"
+      },
+      "prepared": {
+        "label": "Préparées",
+        "hint": "À relire avant création dans ton outil"
+      },
+      "issued": {
+        "label": "Déjà émis",
+        "hint": "Lus ou déclarés · pas de double facturation"
+      }
+    },
+    "filters": {
+      "account": "Compte",
+      "owner": "Responsable",
+      "period": "Période d’activité"
+    }
+  },
+  "billing": {
+    "title": "Jalons du forfait",
+    "empty": "Aucun jalon déclaré",
+    "emptyWhy": "Un forfait se facture aux jalons, jamais à un relevé d’activité — aucun jalon n’a encore été saisi pour cette mission.",
+    "loadError": "Les jalons n’ont pas pu être chargés.",
+    "amount": "{{value}} €"
+  },
+  "board": {
+    "title": "Board des missions",
+    "subtitle": "Douze colonnes, du besoin signé à la mission terminée. Chaque carte porte l’état de son objet d’origine.",
+    "errorTitle": "Le board n’a pas pu être chargé",
+    "errorDescription": "Réessaie dans un instant. Ce n’est pas « aucune mission » : la lecture a échoué.",
+    "emptyTitle": "Aucune carte sur le board",
+    "emptyDescription": "Les cartes apparaissent ici dès qu’un besoin est signé ou qu’une mission démarre.",
+    "intake_one": "{{count}} signal détecté, écarté du board",
+    "intake_other": "{{count}} signaux détectés, écartés du board",
+    "remaining": "{{value}} € restants",
+    "withoutEndDate_one": "{{count}} sans date de fin",
+    "withoutEndDate_other": "{{count}} sans date de fin",
+    "toStaff": "À staffer",
+    "daysInColumn_one": "{{count}} jour dans cette colonne",
+    "daysInColumn_other": "{{count}} jours dans cette colonne",
+    "moveTo": "Déplacer vers…",
+    "originScreen": "État d’origine : {{state}}",
+    "columns": {
+      "a_creer": "À créer",
+      "qualification": "Qualification",
+      "matching": "Matching",
+      "shortlist_prete": "Shortlist prête",
+      "profil_propose": "Profil proposé",
+      "validation_client": "Validation client",
+      "gagnee": "Signée",
+      "en_cours": "En cours",
+      "renouvellement": "Renouvellement",
+      "terminee": "Terminée",
+      "perdue": "Perdue",
+      "en_veille": "En veille"
+    },
+    "alerts": {
+      "invoicing_blocked": "Facturation bloquée",
+      "timesheet_missing": "Relevé manquant",
+      "renewal_due": "Renouvellement à traiter",
+      "no_end_date": "Sans date de fin",
+      "unstaffed": "Personne d’affecté",
+      "stale": "Sans mouvement"
+    },
+    "move": {
+      "title": "Déplacer vers « {{column}} »",
+      "createsMission": "Ce déplacement crée une mission. Revenir en arrière la laissera derrière soi.",
+      "proposals": "Ce que {{brand}} propose",
+      "checks": "À vérifier",
+      "reason": "Motif",
+      "confirm": "Déplacer",
+      "requires": {
+        "mailbox": "Messagerie non connectée",
+        "calendar": "Agenda non connecté",
+        "crm": "CRM non connecté"
+      },
+      "proposal": {
+        "arm_t60_alert": "Armer l’alerte à J-60",
+        "ask_client_feedback": "Demander le retour du client",
+        "ask_client_scope": "Demander le périmètre au client",
+        "ask_consultant_availability": "Demander sa disponibilité au consultant",
+        "ask_interview_date": "Demander une date d’entretien",
+        "ask_purchase_order": "Demander le bon de commande",
+        "ask_testimonial": "Demander un témoignage",
+        "check_invoicing": "Vérifier la facturation",
+        "check_last_timesheet": "Vérifier le dernier relevé d’activité",
+        "collect_loss_rex": "Recueillir le retour sur la perte",
+        "collect_rex": "Recueillir le retour d’expérience",
+        "create_mission": "Créer la mission",
+        "create_mission_from_project": "Créer la mission du projet",
+        "create_submissions": "Créer les positionnements",
+        "defence_brief": "Préparer le brief de défense",
+        "generate_dossiers": "Générer les dossiers de compétences",
+        "launch_matching": "Lancer le matching",
+        "launch_repositioning": "Lancer le repositionnement",
+        "park_account": "Écarter le compte du portefeuille",
+        "plan_j30_review": "Planifier le point à J+30",
+        "prepare_client_message": "Préparer le message au client",
+        "prepare_extension": "Préparer la prolongation",
+        "prepare_onboarding": "Préparer l’onboarding",
+        "schedule_followups": "Poser les relances",
+        "search_repositioning": "Chercher un repositionnement",
+        "set_review_date": "Poser une date de revue",
+        "set_timesheet_cadence": "Régler la cadence des relevés d’activité",
+        "structure_need": "Structurer le besoin",
+        "tell_consultant": "Prévenir le consultant",
+        "widen_external_sourcing": "Élargir la recherche"
+      },
+      "check": {
+        "amount_known": "Le montant est-il connu ?",
+        "at_most_five_profiles": "Cinq profils au maximum",
+        "billing_contact_known": "Le contact de facturation est-il connu ?",
+        "consent_valid": "Le consentement du profil est-il valide ?",
+        "dates_known": "Les dates sont-elles connues ?",
+        "decision_contact_known": "Un décideur est-il identifié ?",
+        "dossier_attached": "Un dossier de compétences est-il joint ?",
+        "end_date_known": "La date de fin est-elle connue ?",
+        "everything_invoiced": "Tout est-il facturé ?",
+        "interview_scheduled": "Un entretien est-il posé ?",
+        "need_has_one_skill": "Le besoin porte-t-il au moins une compétence ?",
+        "none_rejected_here": "Aucun profil déjà refusé chez ce client",
+        "sold_rate_known": "Le TJM vendu est-il connu ?"
+      },
+      "refused": "Ce déplacement saute une étape ou échange deux fins : le statut de la mission ne peut pas passer directement ici.",
+      "backwardReason": "Motif du retour arrière (journalisé)"
+    }
+  },
+  "cra": {
+    "notApplicable": {
+      "mark": "Marquer non applicable",
+      "title": "Ce mois n’attend pas de relevé",
+      "hint": "L’exception prime sur le contrat pour ce mois seulement. Qui, quand et pourquoi restent tracés, et « Annuler l’exception » la retire.",
+      "label": "Motif de l’exception",
+      "placeholder": "Ex. : congé sans solde tout le mois",
+      "confirm": "Confirmer l’exception",
+      "markedBy": "Marqué non applicable le {{date}} par {{name}}",
+      "markedOn": "Marqué non applicable le {{date}}",
+      "revoke": "Annuler l’exception"
+    },
+    "missionGroup": {
+      "ready": "Prêt pour la préparation de facturation",
+      "notReady": "Pas encore prêt pour la facturation"
+    },
+    "title": "Relevés d’activité",
+    "multiConsultantGroup_one": "{{count}} consultant sur cette mission ce mois",
+    "multiConsultantGroup_other": "{{count}} consultants sur cette mission ce mois",
+    "heading": "Clôturer l’activité, sans courir après les pièces",
+    "subtitle": "« Attendu » n’est pas « manquant », et « aucun relevé » n’est pas « zéro jour ».",
+    "monthLabel": "Mois",
+    "blockingOnly": "Ce qui bloque",
+    "openExpected": "Ouvrir les relevés attendus",
+    "counts": "{{awaiting}} en attente · {{validated}} validés",
+    "submittedCount_one": "{{count}} relevé reçu",
+    "submittedCount_other": "{{count}} relevés reçus",
+    "lateCount_one": "{{count}} relevé en retard",
+    "lateCount_other": "{{count}} relevés en retard",
+    "escalatedCount_one": "{{count}} relevé escaladé",
+    "escalatedCount_other": "{{count}} relevés escaladés",
+    "blockingCount_one": "{{count}} écart non expliqué",
+    "blockingCount_other": "{{count}} écarts non expliqués",
+    "declaredDays_one": "{{count}} jour déclaré",
+    "declaredDays_other": "{{count}} jours déclarés",
+    "noDeclaredDays": "Aucun jour déclaré pour l’instant",
+    "errorTitle": "Les relevés n’ont pas pu être chargés",
+    "errorDescription": "Réessaie dans un instant. Ce n’est pas « aucun relevé ».",
+    "emptyTitle": "Aucune mission sur ce mois",
+    "emptyDescription": "Aucune mission ne couvre ce mois — ou aucune n’attend de relevé.",
+    "emptyMissionsCta": "Ouvrir les missions",
+    "emptyBlockingTitle": "Aucun relevé ne bloque ce mois",
+    "emptyBlockingDescription_one": "Le filtre « Ce qui bloque » masque la seule ligne du mois.",
+    "emptyBlockingDescription_other": "Le filtre « Ce qui bloque » masque les {{count}} lignes du mois.",
+    "emptyBlockingCta": "Voir tous les relevés",
+    "noConsultant": "Personne d’affecté",
+    "days_one": "{{count}} jour",
+    "days_other": "{{count}} jours",
+    "expected_one": "{{count}} attendu",
+    "expected_other": "{{count}} attendus",
+    "gapUnknown": "Écart non mesurable",
+    "gap": {
+      "under_one": "{{count}} jour manquant",
+      "under_other": "{{count}} jours manquants",
+      "over_one": "{{count}} jour en trop",
+      "over_other": "{{count}} jours en trop"
+    },
+    "explainGap": "Expliquer l’écart",
+    "explainPlaceholder": "Congés, mission partielle, jour férié…",
+    "recordClientValidation": "Enregistrer la validation client",
+    "validatedByClient": "Validé par le client le {{date}}",
+    "approvedBy": "Enregistré par {{name}}",
+    "submittedBy": "Déclaré par {{name}}",
+    "recordInternalReview": "Marquer vérifié en interne",
+    "internalReviewedBy": "Vérifié en interne par {{name}}",
+    "reject": "Rejeter le relevé",
+    "rejectTitle": "Rejeter ce relevé",
+    "rejectHint": "Le relevé n’est pas supprimé : il est renvoyé à son auteur, qui pourra le corriger et le redéposer.",
+    "rejectLabel": "Motif du rejet",
+    "rejectPlaceholder": "Ce qui ne va pas (obligatoire) : jours imputés au mauvais mois…",
+    "rejectContestedDaysLabel": "Jours contestés (obligatoire)",
+    "rejectContestedDaysPlaceholder": "Combien de jours posent problème",
+    "rejectCorrectionDeadlineLabel": "Deadline de correction (obligatoire)",
+    "rejectConfirm": "Rejeter",
+    "rejectAbort": "Ne rien changer",
+    "rejectedCount_one": "{{count}} relevé rejeté",
+    "rejectedCount_other": "{{count}} relevés rejetés",
+    "rejectedOn": "Rejeté le {{date}}",
+    "rejectedThenResubmitted": "Rejeté le {{date}}, puis redéposé",
+    "rejectedContestedDays_one": "{{count}} jour contesté",
+    "rejectedContestedDays_other": "{{count}} jours contestés",
+    "rejectedCorrectionDeadline": "Correction attendue avant le {{date}}",
+    "states": {
+      "draft": "Brouillon",
+      "submitted": "Validé consultant",
+      "validated": "Validé",
+      "disputed": "Contesté",
+      "expected": "Attendu",
+      "missing": "Manquant",
+      "not_required": "Sans relevé",
+      "rejected": "Rejeté",
+      "escalated": "Escaladé"
+    },
+    "nextAction": {
+      "awaitingDeposit": "Relancer pour dépôt",
+      "awaitingValidation": "Valider avec le client",
+      "awaitingResubmission": "Attendre le redépôt",
+      "resolveDispute": "Clore le litige",
+      "needsHuman": "Passer par un humain"
+    },
+    "escalation": {
+      "notify": "À signaler à {{name}}",
+      "notifyManager": "Manager client : {{name}}",
+      "notifyAdv": "ADV : {{name}}",
+      "notifyPartner": "Partenaire : {{name}}",
+      "level": "Niveau d’escalade {{level}}",
+      "delay_one": "Escaladé depuis {{count}} jour",
+      "delay_other": "Escaladé depuis {{count}} jours"
+    },
+    "reminders": {
+      "prepare": "Préparer une relance",
+      "rank_one": "{{count}}ʳᵉ relance due",
+      "rank_other": "{{count}}ᵉ relance due",
+      "overdue_one": "{{count}} jour de retard",
+      "overdue_other": "{{count}} jours de retard",
+      "nothingIsSent": "Rien ne part tout seul. Tu relances le consultant depuis ton outil, puis tu consignes la relance ici.",
+      "beforeDeadline_one": "Le mois se termine dans {{count}} jour",
+      "beforeDeadline_other": "Le mois se termine dans {{count}} jours",
+      "dueToday": "Le mois se termine aujourd’hui"
+    },
+    "review": {
+      "open": "Ouvrir le dossier",
+      "eyebrow": "Relevé d’activité",
+      "loading": "Chargement du dossier…",
+      "errorTitle": "Le dossier n’a pas pu être chargé",
+      "errorDescription": "Réessaie dans un instant. Ce n’est pas « relevé vide ».",
+      "check": {
+        "title": "Vérification automatique",
+        "clean_one": "Le seul contrôle qui a pu aboutir est passé.",
+        "clean_other": "Les {{count}} contrôles qui ont pu aboutir sont passés.",
+        "found_one": "{{count}} point à vérifier.",
+        "found_other": "{{count}} points à vérifier.",
+        "nothingVerified": "Aucun contrôle n’a pu aboutir. Ce n’est pas « rien à signaler » : rien n’a été vérifié.",
+        "unverified_one": "{{count}} contrôle n’a pas pu aboutir — voir le détail ci-dessous.",
+        "unverified_other": "{{count}} contrôles n’ont pas pu aboutir — voir le détail ci-dessous."
+      },
+      "checks": {
+        "working_days": "Jours ouvrés",
+        "zero_days": "Jours déclarés",
+        "day_fraction": "Fraction de journée",
+        "overlapping_mission": "Mission en parallèle",
+        "duplicate_validated": "Doublon de relevé",
+        "public_holidays": "Jours fériés"
+      },
+      "passed": {
+        "working_days": "l’écart avec le mois est nul.",
+        "zero_days": "des jours sont déclarés.",
+        "day_fraction": "la maille est la demi-journée.",
+        "overlapping_mission": "aucune autre mission sur ce mois.",
+        "duplicate_validated": "aucun autre relevé déjà validé sur ce mois.",
+        "public_holidays": "vérifié."
+      },
+      "flagged": {
+        "workingDaysOver_one": "{{count}} jour de plus que le mois n’en compte.",
+        "workingDaysOver_other": "{{count}} jours de plus que le mois n’en compte.",
+        "workingDaysUnder_one": "{{count}} jour de moins que le mois n’en compte.",
+        "workingDaysUnder_other": "{{count}} jours de moins que le mois n’en compte.",
+        "zeroDays": "aucun jour déclaré sur la période.",
+        "dayFraction": "fraction inhabituelle — la demi-journée est la maille usuelle.",
+        "overlappingMission": "aussi affecté à « {{subject}} » sur ce mois : vérifie que les jours ne sont pas partagés.",
+        "duplicateValidated": "un autre relevé de ce mois est déjà validé ({{subject}}) : vérifie qu’il ne s’agit pas d’un doublon."
+      },
+      "notVerified": {
+        "no_declaration": "non vérifié — rien n’a été déposé.",
+        "no_expected_days": "non vérifié — la charge attendue du mois n’est pas connue.",
+        "no_consultant": "non vérifié — personne n’est affecté, on ne sait pas qui croiser.",
+        "no_holiday_calendar": "non vérifié — aucun calendrier de jours fériés n’existe dans {{brand}}.",
+        "read_failed": "non vérifié — la lecture a échoué. Ce n’est pas « rien trouvé »."
+      },
+      "days": {
+        "title": "Détail des jours",
+        "declared": "Déclarés",
+        "expected": "Attendus",
+        "gap": "Écart",
+        "noDeclaration": "Aucun relevé",
+        "noExpected": "Non connue",
+        "gapValue_one": "{{count}} jour",
+        "gapValue_other": "{{count}} jours",
+        "explained": "Écart expliqué : {{explanation}}",
+        "recordedTitle": "Relevé au dépôt (archive) :"
+      },
+      "attachments": {
+        "title": "Pièces jointes",
+        "noFiles": "{{brand}} ne stocke aucun fichier sur un relevé d’activité. Ce qui suit est ce que le produit détient.",
+        "noTraces": "Aucune trace pour l’instant : ni validation client, ni rejet, ni relance.",
+        "reminders_one": "{{count}} relance envoyée, la dernière le {{date}}.",
+        "reminders_other": "{{count}} relances envoyées, la dernière le {{date}}.",
+        "remindersUndated_one": "{{count}} relance envoyée, à une date non enregistrée.",
+        "remindersUndated_other": "{{count}} relances envoyées, à des dates non enregistrées."
+      },
+      "recommended": {
+        "title": "Action recommandée",
+        "not_required": "Ce contrat ne fonctionne pas au relevé d’activité — il n’y a rien à décider ici.",
+        "await_declaration": "Rien n’a été déposé : la suite est un dépôt, pas une décision.",
+        "not_measurable": "Aucun avis : aucun contrôle n’a pu aboutir sur ce relevé.",
+        "fix": "Fais corriger le relevé avant de le valider — les points relevés ci-dessus sont ceux à reprendre.",
+        "validate": "Tout ce qui a pu être vérifié est passé : ce relevé peut être validé.",
+        "decided": "Ce relevé est déjà décidé. On ne le re-décide pas.",
+        "blocksInvoicing": "En l’état, ce relevé empêche de facturer ce mois."
+      }
+    },
+    "stillPossible": "consulter les relevés, valider et corriger les écarts",
+    "intro": "Un relevé par consultant, mission et période. La validation client est une preuve consignée, pas une signature inventée.",
+    "export": "Exporter la sélection",
+    "notApplicableCount_one": "dont {{count}} non applicable",
+    "notApplicableCount_other": "dont {{count}} non applicables",
+    "emptyStateTitle": "Aucun relevé dans cet état",
+    "emptyStateDescription_one": "Ce filtre masque la seule ligne du mois.",
+    "emptyStateDescription_other": "Ce filtre masque les {{count}} lignes du mois.",
+    "state": {
+      "label": "État",
+      "all": "Tous les relevés",
+      "blocking": "Ce qui bloque",
+      "toReceive": "À recevoir",
+      "toCheck": "À contrôler",
+      "clientWait": "Attente client",
+      "clientValidated": "Validés client",
+      "rejected": "Rejetés"
+    },
+    "tiles": {
+      "toReceive": {
+        "label": "À recevoir",
+        "hint": "Relevé absent ou jours non renseignés"
+      },
+      "toCheck": {
+        "label": "À contrôler",
+        "hint": "Relecture interne nécessaire"
+      },
+      "clientWait": {
+        "label": "Attente client",
+        "hint": "Validation interne acquise"
+      },
+      "clientValidated": {
+        "label": "Validés client",
+        "hint": "Preuve consignée",
+        "days_one": "{{count}} jour déclaré",
+        "days_other": "{{count}} jours déclarés"
+      }
+    },
+    "exportHeader": {
+      "consultant": "Consultant",
+      "mission": "Mission",
+      "account": "Compte",
+      "period": "Période",
+      "status": "État",
+      "days": "Jours déclarés"
+    },
+    "filters": {
+      "account": "Compte",
+      "search": "Rechercher un relevé",
+      "searchPlaceholder": "Client, mission, consultant…",
+      "period": "Période d’activité"
+    },
+    "blockingGroup": "Ce qui bloque",
+    "blockingWithCount": "Ce qui bloque · {{count}}",
+    "table": {
+      "label": "Relevés d’activité",
+      "who": "Consultant / mission",
+      "activity": "Activité",
+      "internalHeader": "Validation interne",
+      "clientHeader": "Validation client",
+      "follow": "Suivi",
+      "toReceive": "À recevoir",
+      "noInvented": "Aucune activité supposée",
+      "internal": {
+        "validated": "Validée",
+        "toCheck": "À contrôler"
+      },
+      "client": {
+        "proof": "Preuve consignée",
+        "waiting": "En attente",
+        "rejected": "Rejetée"
+      },
+      "reminderToPrepare": "Relance à préparer",
+      "remindersSent_one": "{{count}} relance envoyée",
+      "remindersSent_other": "{{count}} relances envoyées",
+      "open": "Ouvrir",
+      "openLine": "Ouvrir le relevé de {{name}}",
+      "selectLine": "Sélectionner le relevé de {{name}}",
+      "selectAll": "Sélectionner les relevés affichés",
+      "dialogTitle": "Relevé · {{name}}",
+      "dialogIntro": "Déclaré, relu en interne, accord client : trois informations distinctes. Une correction après validation exige un motif et remet les validations en attente."
+    },
+    "after": {
+      "chainTitle": "Une seule chaîne de validation",
+      "chainBody1": "Les jours déclarés, la validation interne et l’accord client sont distincts. Une correction après validation exige un motif et remet les validations en attente.",
+      "chainBody2": "Une source déjà facturée reste figée. Sa correction passe par un document correctif, pas par une réécriture invisible.",
+      "nextTitle": "Après les validations",
+      "nextBody": "Le dossier passe dans les contrôles de préparation : tarif, commande, entité et preuve. Un coût manquant est signalé pour la marge, sans devenir un coût nul.",
+      "nextCta": "Contrôler le prêt à facturer"
+    }
+  },
+  "invoicing": {
+    "title": "Facturation",
+    "banner": "{{brand}} n’émet aucune facture. Cet écran dit ce qui EMPÊCHE de facturer, et prépare un montant indicatif — ni un dû, ni une facture.",
+    "overdue30": {
+      "text_one": "{{count}} facture émise a plus de {{days}} jours de retard sur son échéance et rien n’a été encaissé. Le plus ancien retard : {{oldest}} jours.",
+      "text_other": "{{count}} factures émises ont plus de {{days}} jours de retard sur leur échéance et rien n’a été encaissé. Le plus ancien retard : {{oldest}} jours.",
+      "action": "Voir les encaissements"
+    },
+    "administration": "Administration",
+    "heading": "Transformer l’activité validée en factures fiables",
+    "intro": "Traite les blocages utiles, sans confondre prêt à facturer, facture préparée et facture émise dans ton outil.",
+    "adv": {
+      "title": "Contrôle ADV",
+      "lead": "Une facture remonte à sa preuve de prestation.",
+      "body": "La facture préparée conserve la période, les jours ou jalons, le tarif et la commande. Si la source change avant la création dans ton outil, la relecture est obligatoire. « Facturé » s’écrit sur la preuve de ton outil.",
+      "cta": "Ouvrir les contrôles ADV du mois"
+    }
+  },
+  "collections": {
+    "title": "Encaissements",
+    "banner": "{{brand}} n’émet aucune facture. Cet écran suit ce qui a été facturé ailleurs et ce qui est rentré — l’échéance, le retard, le litige, le règlement.",
+    "window": "Les {{count}} derniers mois. Une facture plus ancienne n’entre dans aucun de ces totaux.",
+    "partialWindow_one": "{{count}} mois de la fenêtre n’a pas répondu : ces totaux sont partiels.",
+    "partialWindow_other": "{{count}} mois de la fenêtre n’ont pas répondu : ces totaux sont partiels.",
+    "buckets": {
+      "paid": "Encaissé",
+      "pending": "En attente",
+      "overdue": "En retard",
+      "disputed": "Contesté",
+      "invoiced": "Facturé",
+      "unmatched": "Non rapproché"
+    },
+    "unmatchedHint": "Paiements constatés, en attente de rattachement à une facture",
+    "invoiceCount_one": "{{count}} facture",
+    "invoiceCount_other": "{{count}} factures",
+    "withoutAmount_one": "{{count}} sans montant",
+    "withoutAmount_other": "{{count}} sans montant",
+    "withoutDueDate_one": "{{count}} impayée sans échéance saisie",
+    "withoutDueDate_other": "{{count}} impayées sans échéance saisie",
+    "noAmount": "aucun montant n’a été saisi sur cette facture",
+    "noDueDate": "aucune échéance de règlement n’a été saisie — la cadence de relance ne peut pas démarrer",
+    "unknownAccountReason": "la mission n’est rattachée à aucun compte lisible",
+    "unknownContactReason": "aucun contact de facturation saisi sur cette mission",
+    "unknownMissionReason": "la mission n’a pas de libellé",
+    "settledPart": "Réglé : {{value}}",
+    "outstanding": "Reste dû : {{value}}",
+    "paymentTitle": "Enregistrer un règlement",
+    "paymentHint": "Le montant est facultatif — laissé vide, le règlement est consigné sans montant mesuré, et rien ne sera deviné. Un montant inférieur au facturé laisse la facture dans la file de relance, avec son reste dû.",
+    "paymentAmount": "Montant encaissé, en euros",
+    "paymentPlaceholder": "5000",
+    "paymentConfirm": "Enregistrer le règlement",
+    "paymentAbort": "Annuler",
+    "empty": "Aucune facture émise sur cette fenêtre.",
+    "emptyWhy": "Ce qui n’est pas encore facturé se répare sur l’écran de facturation, avec ses bloqueurs. Ici ne vivent que les mois marqués comme facturés ailleurs.",
+    "filteredEmpty": "Aucune facture ne porte ce statut sur cette fenêtre.",
+    "clearStatusFilter": "Retirer le filtre",
+    "rowMenu": "Gestes sur cette facture",
+    "markPaid": "Marquer réglée",
+    "columns": {
+      "account": "Client",
+      "contact": "Interlocuteur",
+      "mission": "Mission",
+      "month": "Mois",
+      "amount": "Montant",
+      "dueOn": "Échéance",
+      "status": "Statut",
+      "overdue": "Retard",
+      "reminders": "Relances",
+      "lastAction": "Dernière action",
+      "nextAction": "Prochaine action",
+      "actions": "Gestes"
+    },
+    "status": {
+      "paid": "Réglée",
+      "pending": "À échoir",
+      "overdue": "Échue",
+      "disputed": "En litige"
+    },
+    "lastAction": {
+      "reminder": "Relance du {{date}}",
+      "paid": "Règlement du {{date}}",
+      "disputed": "Litige ouvert le {{date}}",
+      "dispute_resolved": "Litige levé le {{date}}"
+    },
+    "actions": {
+      "resolve_dispute": "Lever le litige",
+      "set_due_date": "Saisir l’échéance",
+      "escalate_to_human": "Trois relances sans réponse — à remonter",
+      "wait": "Rien à faire avant l’échéance"
+    },
+    "invoicedDeclared_one": "dont {{count}} déclarée sans preuve de l’outil branché",
+    "invoicedDeclared_other": "dont {{count}} déclarées sans preuve de l’outil branché",
+    "export": "Exporter les soldes",
+    "exportFailed": "L’export n’a pas pu être produit.",
+    "receivables": {
+      "label": "Encours",
+      "remaining": "Reste à recevoir",
+      "overdue": "Dont échus",
+      "toMatch": "À rapprocher",
+      "toMatchCount_one": "{{count}} règlement non affecté",
+      "toMatchCount_other": "{{count}} règlements non affectés",
+      "nothingToMatch": "Aucun règlement à rapprocher",
+      "disputed": "Montant litigieux",
+      "disputedNote": "inclus dans l’encours, pas ajouté",
+      "remainingNote": "Factures nettes des règlements affectés",
+      "overdueNote": "Au {{date}}"
+    },
+    "aging": {
+      "title": "Ancienneté de l’encours",
+      "hint": "Les litiges restent compris dans l’encours. Les dates ne sont pas réinitialisées par une relance.",
+      "not_due": "Non échus",
+      "d1_30": "1 à 30 jours",
+      "d31_60": "31 à 60 jours",
+      "d61_90": "61 à 90 jours",
+      "d90_plus": "Plus de 90 jours",
+      "no_due_date": "Sans échéance",
+      "count_one": "{{count}} facture",
+      "count_other": "{{count}} factures",
+      "asOf": "Au {{date}} · restant dû",
+      "toEnter_one": "{{count}} facture, échéance à saisir",
+      "toEnter_other": "{{count}} factures, échéance à saisir"
+    },
+    "rules": {
+      "title": "Les règles de suivi",
+      "sameClient": "Un règlement peut couvrir plusieurs factures du même client.",
+      "creditNote": "Un avoir corrige une pièce : il ne crée aucune entrée d’argent.",
+      "overpayment": "Un trop-perçu reste un crédit client, il n’efface pas une autre facture.",
+      "noAuto": "Aucune relance n’est envoyée automatiquement : tu la prépares et tu l’envoies.",
+      "dispute": "Un litige reste dans l’encours et demande une résolution."
+    },
+    "outgoing": {
+      "title": "Ce qui sort",
+      "hint": "Les paiements aux consultants et aux sous-traitants, et les cessions de créances, se suivent dans la vue financière.",
+      "open": "Paiements et cessions"
+    },
+    "headline": "Savoir ce qui entre. Et ce qui attend.",
+    "lede": "Règlements consignés, rapprochements et litiges. Une promesse n’est jamais un encaissement.",
+    "guide": {
+      "heading": "Savoir ce qui est encaissé, attendu ou contesté",
+      "intro": "Le solde client tient compte des règlements affectés, sans confondre promesse et entrée d’argent.",
+      "stepsTitle": "Le parcours utile",
+      "step1": "Consigne le mouvement puis rapproche-le des factures du même client.",
+      "step2": "Traite les litiges et prépare les suivis à relire.",
+      "step3": "Conserve les trop-perçus et sommes non affectées comme éléments distincts.",
+      "keepTitle": "À garder en tête",
+      "keep": "Un suivi préparé par {{copilot}} n’envoie rien : c’est toi qui envoies."
+    },
+    "record": {
+      "open": "Consigner un règlement",
+      "title": "Consigner un règlement reçu",
+      "intro": "Saisis le mouvement tel que ta banque l’a reçu. Il reste à rapprocher jusqu’à ce que tu l’affectes à une facture.",
+      "date": "Date du règlement",
+      "amount": "Montant reçu (€)",
+      "payer": "Payeur",
+      "reference": "Référence du mouvement",
+      "confirm": "Consigner le règlement"
+    },
+    "fromAccount": {
+      "title": "Filtré depuis le compte {{name}}.",
+      "body": "Seules les factures et les règlements de {{name}} sont affichés.",
+      "clear": "Voir tous les comptes"
+    },
+    "noDueNotice_one": "{{count}} facture sans échéance ({{accounts}}) n’entre dans aucune tranche échue.",
+    "noDueNotice_other": "{{count}} factures sans échéance ({{accounts}}) n’entrent dans aucune tranche échue.",
+    "noDueAmount": "Reste dû : {{value}}.",
+    "queue": {
+      "title": "Échéances à traiter",
+      "search": "Rechercher un client, une mission, un numéro, un interlocuteur",
+      "filter": "File de suivi",
+      "all": "Tous les encours",
+      "option": "{{label}} · {{count}}",
+      "keys": {
+        "overdue": "Échues",
+        "disputed": "En litige",
+        "pending": "À échoir",
+        "no_due": "Sans échéance",
+        "paid": "Réglées"
+      }
+    },
+    "followUp": {
+      "close": "Fermer",
+      "follow": "Suivre",
+      "title": "Suivi préparé par {{copilot}} · {{reference}}",
+      "draftTitle": "{{copilot}} a rédigé la relance.",
+      "draftBody": "Relis-la et corrige-la : rien ne part sans ton geste.",
+      "escalateTitle_one": "{{count}} relance sans réponse — à remonter.",
+      "escalateTitle_other": "{{count}} relances sans réponse — à remonter.",
+      "escalateBody": "{{copilot}} propose de passer par un autre interlocuteur plutôt que de relancer une fois de plus le même contact. Rien ne part sans ton geste.",
+      "to": "À",
+      "subject": "Objet",
+      "message": "Message",
+      "regenerate": "Régénérer",
+      "cancel": "Annuler",
+      "openMail": "Ouvrir dans ma messagerie",
+      "draft": {
+        "greeting": "Bonjour {{name}},",
+        "greetingNoName": "Bonjour,",
+        "overdue": "La facture {{reference}} ({{month}}) est échue depuis le {{due}}, soit {{days}} jours.",
+        "upcoming": "La facture {{reference}} ({{month}}) arrive à échéance le {{due}}.",
+        "noDue": "La facture {{reference}} ({{month}}) n’a pas encore d’échéance de règlement connue de mon côté.",
+        "amount": "Reste dû : {{amount}} HT.",
+        "ask": "Peux-tu me dire où elle en est de ton côté ?",
+        "escalate": "Mes précédentes relances sont restées sans réponse : peux-tu m’indiquer qui je dois solliciter ?",
+        "thanks": "Merci d’avance.",
+        "subject": "Facture {{reference}} — {{month}}"
+      }
+    },
+    "toMatch": {
+      "title": "Les règlements à rapprocher",
+      "columns": {
+        "payment": "Règlement",
+        "received": "Reçu le",
+        "action": "Action"
+      },
+      "unknownPayer": "payeur non renseigné",
+      "allocate": "Affecter",
+      "close": "Fermer",
+      "dialogTitle": "Rapprocher le règlement du {{date}}",
+      "dialogIntro": "{{payer}} · {{amount}} disponibles. Seules les factures dont le reste dû égale ce règlement sont proposées.",
+      "noCandidate": "Aucune facture n’a un reste dû égal à ce règlement : rien n’est proposé, et rien n’est affecté sans ton choix.",
+      "chooseInvoice": "Affecter à quelle facture ?",
+      "rule": "Un rapprochement est un geste de ta part : il n’est jamais validé seul.",
+      "cancel": "Annuler",
+      "validate": "Valider le rapprochement",
+      "credit": "Noter un trop-perçu, dû au client",
+      "creditNote": "Pourquoi ? (obligatoire) — une note interne, jamais un avoir émis",
+      "creditConfirm": "Noter la somme due au client",
+      "ambiguous": "plusieurs factures possibles"
+    },
+    "toast": {
+      "paymentRecorded": "Règlement consigné : il reste à affecter à une facture.",
+      "paymentRecordError": "Le règlement n’a pas pu être consigné.",
+      "matched": "Rapprochement validé.",
+      "matchError": "Le rapprochement a échoué.",
+      "creditNoted": "Trop-perçu noté comme somme due au client. Aucun avoir n’est émis.",
+      "creditError": "La somme due au client n’a pas pu être notée."
+    },
+    "journal": {
+      "title": "Journal des règlements",
+      "columns": {
+        "amount": "Montant reçu",
+        "date": "Date",
+        "invoice": "Facture"
+      },
+      "see": "Voir",
+      "partial": "règlement partiel"
+    },
+    "toolbar": "Filtrer les encaissements",
+    "situation": "Situation au {{date}} · toutes échéances",
+    "alerts": {
+      "reminders_one": "{{count}} rappel dû",
+      "reminders_other": "{{count}} rappels dus",
+      "remindLine": "{{account}} : relance n°{{index}} à préparer.",
+      "escalateLine": "{{account}} : relances sans réponse, à remonter.",
+      "longOverdue_one": "{{count}} facture échue depuis plus de 30 jours",
+      "longOverdue_other": "{{count}} factures échues depuis plus de 30 jours",
+      "disputedSince": "en litige depuis le {{date}}"
+    },
+    "treat": {
+      "open": "Traiter le litige",
+      "title": "Litige · {{reference}}",
+      "keep": "Ne rien changer"
+    },
+    "row": {
+      "due": "échéance {{date}}",
+      "declared": "déclarée facturée, non confirmée",
+      "contact": "Interlocuteur :",
+      "noReminder": "aucune relance consignée",
+      "reminders_one": "{{count}} relance consignée",
+      "reminders_other": "{{count}} relances consignées"
+    }
+  },
+  "renewals": {
+    "windows": {
+      "overdue": "Échues",
+      "imminent": "Imminentes",
+      "j15": "Sous 15 jours",
+      "withinDays": "Sous {{count}} jours",
+      "j30": "Sous 30 jours",
+      "j45": "Sous 45 jours",
+      "j60": "Sous 60 jours",
+      "unknown": "Sans date de fin",
+      "far": "Au-delà de 60 jours"
+    },
+    "windowHints": {
+      "overdue": "La date de fin est passée",
+      "imminent": "La fin arrive dans les dix jours",
+      "j15": "La fin arrive dans la quinzaine",
+      "withinDays": "La fin arrive sous {{count}} jours",
+      "j30": "La fin arrive dans le mois",
+      "j45": "La fin arrive dans les six semaines",
+      "j60": "La fin arrive dans les deux mois",
+      "unknown": "Aucune date de fin — la relance ne peut pas se déclencher à temps",
+      "far": "La fin dépasse la fenêtre de renouvellement — rien à préparer pour l’instant"
+    },
+    "status": {
+      "title": "Où en est la reconduction",
+      "hint": "Un constat posé à la main : ce que le client a dit, ou ce qui est acté. Jamais une chance de renouvellement — le produit n’en calcule aucune.",
+      "postedOn": "Posé le {{date}}",
+      "none": "Non renseigné",
+      "unread": "Statut non lu — l’application est plus récente que le serveur.",
+      "groups": {
+        "open": "Ce qui est engagé",
+        "close": "Clôturer"
+      },
+      "values": {
+        "non_engage": "Non engagé",
+        "feedback_demande": "Feedback demandé",
+        "discussion_en_cours": "Discussion en cours",
+        "reconduction_annoncee": "Reconduction annoncée par le client",
+        "renouvele": "Renouvelé",
+        "fin_confirmee": "Fin confirmée",
+        "repositionnement_lance": "Repositionnement lancé",
+        "bloque": "Bloqué"
+      },
+      "requestFeedback": "Demander un feedback",
+      "feedbackAlreadyAsked": "Le retour a déjà été demandé : la date ci-dessus dit depuis quand on attend. Re-cliquer la remettrait à aujourd’hui.",
+      "feedbackPointless": "Ce renouvellement est clôturé : demander un retour maintenant n’appelle plus de décision.",
+      "closeHint": "Clôturer dit LAQUELLE des deux suites a eu lieu. La ligne cesse d’être réclamée, elle ne disparaît pas.",
+      "decidedNotice": "Ce renouvellement est clôturé : il n’attend plus de décision. La ligne reste lisible.",
+      "clear": "Remettre à « non renseigné »"
+    }
+  },
+  "channel": {
+    "mailDraft": {
+      "action": "Créer les brouillons",
+      "confirmation": "Je créerai {{count}} brouillon(s) dans ta messagerie. Rien ne part : tu les relis et tu envoies."
+    },
+    "teamChat": {
+      "action": "Préparer les messages",
+      "confirmation": "J’enverrai {{count}} message(s) sur ta messagerie d’équipe. Ils partent immédiatement et c’est IRRÉVERSIBLE — une messagerie d’équipe n’a pas de brouillon."
+    },
+    "crmTask": {
+      "action": "Créer les tâches",
+      "confirmation": "Je créerai {{count}} tâche(s) dans ton CRM. Aucun message ne part."
+    },
+    "inApp": {
+      "action": "Créer les tâches",
+      "confirmation": "Aucun canal d’envoi n’est connecté : je listerai {{count}} relance(s) ici, à traiter toi-même."
+    }
+  },
+  "invoiceReadiness": {
+    "reminders": {
+      "rank": "Relance n°{{index}} due",
+      "dueSince": "due depuis le {{date}}",
+      "overdue_one": "{{count}} jour de retard",
+      "overdue_other": "{{count}} jours de retard",
+      "tones": {
+        "neutral": "Ton neutre",
+        "firm": "Ton ferme",
+        "escalate": "Escalade"
+      },
+      "escalationGap": "Escalade : {{brand}} ne connaît ni chargé d’affaires ni sponsor sur cette facture. À toi de mettre les bonnes personnes en copie — le produit ne peut pas le faire à ta place.",
+      "nothingIsSent": "Rien ne part tout seul. Tu envoies depuis ton outil, puis tu consignes la relance ici.",
+      "suspendedByDispute": "Relances suspendues : un litige court sur cette facture. La cadence reprendra quand il sera levé, et ce délai ne compte pas dans le délai de paiement moyen.",
+      "noDueDate": "Facture partie, non payée, sans échéance de règlement : aucune relance ne peut être programmée. Saisis l’échéance pour démarrer la cadence."
+    }
+  },
+  "supervisedForfait": {
+    "label": "Forfait encadré",
+    "labelWithRole": "Forfait encadré · {{role}}",
+    "roles": {
+      "framing": "Cadrage",
+      "supervision": "Supervision",
+      "both": "Cadrage et supervision"
+    }
+  },
+  "table": {
+    "mission": "Mission",
+    "account": "Compte",
+    "accountUnknown": "le compte porteur n’est pas dans ton périmètre",
+    "role": "Rôle",
+    "roleUnknown": "aucun rôle n’a été saisi sur cette mission",
+    "staffing": "Consultant",
+    "staffingUnread": "les affectations n’ont pas pu être lues",
+    "unstaffed": "Personne d’affecté",
+    "status": "Statut",
+    "endsOn": "Échéance",
+    "contractKind": "Nature",
+    "contractKinds": {
+      "regie": "Régie",
+      "forfait": "Forfait",
+      "recrutement": "Recrutement",
+      "inconnu": "Nature non dite"
+    },
+    "risks": "Risques",
+    "noRisk": "Rien à signaler",
+    "risksNotComputed": "les risques ne se calculent que sur une mission en cours ou en démarrage",
+    "billingAlert": {
+      "invoice_blocked": "Facture bloquée",
+      "invoice_overdue": "Facture échue",
+      "payment_late": "Paiement en retard"
+    },
+    "riskKinds": {
+      "renewal_not_started": "Renouvellement non engagé",
+      "timesheet_disputed": "Relevé contesté",
+      "timesheet_missing": "Relevé manquant",
+      "margin_at_risk": "Marge à risque",
+      "margin_unknown": "Marge non mesurée",
+      "no_end_date": "Sans date de fin",
+      "missing_po": "Bon de commande manquant",
+      "ending_soon": "Échéance imminente",
+      "missing_owner": "Chargé d’affaires non désigné",
+      "invoice_blocked": "Facturation bloquée ce mois-ci",
+      "low_satisfaction": "Satisfaction basse",
+      "relationship_threatened": "Relation menacée",
+      "prolonged_absence": "Absence prolongée",
+      "consultant_unsecured": "Consultant non sécurisé",
+      "action_without_owner": "Action sans porteur"
+    },
+    "startedOn": "Début",
+    "startedOnUnknown": "aucune date de début n’a été saisie",
+    "remoteKinds": {
+      "sur_site": "Sur site",
+      "hybride": "Hybride",
+      "full_remote": "Télétravail complet",
+      "indifferent": "Indifférent"
+    },
+    "remotePreferenceUnknown": "non repris du besoin",
+    "location": "Lieu",
+    "locationUnknown": "non repris du besoin",
+    "objectiveUnknown": "non renseigné",
+    "perimeterUnknown": "non renseigné",
+    "originOpportunityUnknown": "aucun besoin d’origine n’est lié à cette mission",
+    "originSubmissionUnknown": "aucun positionnement d’origine n’est lié à cette mission",
+    "stageAge": "Dans ce statut",
+    "stageAgeValue_one": "depuis {{count}} jour",
+    "stageAgeValue_other": "depuis {{count}} jours",
+    "stageAgeUnknown": "le changement de statut n’a pas été horodaté",
+    "margin": "Marge",
+    "marginValue": "{{percent}} %",
+    "marginNotMeasured": "le coût chargé n’est pas renseigné",
+    "marginNoAccess": "la marge n’est pas dans ton périmètre",
+    "columnsLabel": "Colonnes affichées",
+    "columnsCta": "Colonnes",
+    "columnsPinned": "Toujours affichée — sans le nom, on ne sait plus de quoi la ligne parle.",
+    "columnsReset": "Rétablir les colonnes par défaut",
+    "columnsCount_one": "{{count}} colonne affichée",
+    "columnsCount_other": "{{count}} colonnes affichées",
+    "daysLeft": "J-{{count}}",
+    "overdue": "Échéance dépassée",
+    "endsToday": "Fin aujourd’hui",
+    "endsOnUnreadable": "Date de fin illisible",
+    "nextAction": "Prochaine action",
+    "nextActionUnread": "la prochaine action n’a pas encore été renvoyée par le serveur",
+    "risksMore_one": "+{{count}} autre",
+    "risksMore_other": "+{{count}} autres",
+    "marginNotMeasuredTitle": "Marge non mesurée",
+    "marginNotMeasuredShort": "non mesurée",
+    "marginMissingCost": "Coût chargé manquant",
+    "marginComplete": "Compléter",
+    "marginCompleteHint": "Ouvrir les conditions commerciales de la mission",
+    "assigneesMore_one": "+{{count}} autre",
+    "assigneesMore_other": "+{{count}} autres",
+    "open": "Ouvrir",
+    "openMission": "Ouvrir la mission {{label}}",
+    "rowActions": "Actions pour {{label}}",
+    "actions": {
+      "prepareRenewal": "Préparer le renouvellement",
+      "requestCra": "Demander le CRA",
+      "prepareInvoice": "Préparer la facture",
+      "checkPayment": "Vérifier le paiement",
+      "repositionConsultant": "Repositionner le consultant",
+      "requestFeedback": "Demander un feedback",
+      "fillMissingData": "Renseigner une donnée"
+    },
+    "askLauraAboutMission": "Sur la mission « {{mission}} » : y a-t-il quelque chose à faire ?",
+    "askLauraShort": "Demander à {{copilot}}",
+    "renewalStatus": "Renouvellement",
+    "owner": "Owner",
+    "ownerUnknown": "aucun porteur renseigné",
+    "manager": "Manager",
+    "managerUnknown": "non renseigné",
+    "columnsLocked": "Cette colonne est le sujet de cet écran : elle ne se décoche pas ici.",
+    "satisfaction": "Satisfaction",
+    "legalEntity": "Société"
+  },
+  "tabs": {
+    "terms": "Conditions & finance",
+    "overview": "Synthèse",
+    "staffing": "Équipe & suite",
+    "scores": "Points d’attention",
+    "history": "Documents & suivi"
+  },
+  "overview": {
+    "title": "Ce qu’il faut savoir",
+    "role": "Rôle cherché",
+    "deliveryMode": "Réalisation",
+    "clientTeam": "Équipe côté client",
+    "clientTeamUnknown": "Non renseignée",
+    "clientTeamCount_one": "{{count}} personne",
+    "clientTeamCount_other": "{{count}} personnes",
+    "clientTeamNamed_one": "{{count}} personne · {{names}}",
+    "clientTeamNamed_other": "{{count}} personnes · {{names}}",
+    "originOpportunity": "Besoin d’origine",
+    "originSubmission": "Positionnement d’origine",
+    "contractKind": "Nature du contrat",
+    "startedOn": "Démarrée le",
+    "endsOn": "Fin prévue",
+    "remotePreference": "Télétravail",
+    "location": "Lieu",
+    "objective": "Objectif",
+    "objectiveAria": "Objectif de la mission",
+    "perimeter": "Périmètre",
+    "perimeterAria": "Périmètre de la mission",
+    "editObjectivePerimeter": "Modifier l’objectif et le périmètre",
+    "saveObjectivePerimeter": "Enregistrer",
+    "cancelObjectivePerimeter": "Annuler",
+    "risks": "Ce qui cloche",
+    "feedback": {
+      "title": "Le pouls de la mission",
+      "clientRail": "Client",
+      "consultantRail": "Consultant",
+      "empty": "Pas encore d’avis",
+      "loadError": "Les avis n’ont pas pu être chargés.",
+      "notePlaceholder": "Écrire un avis…",
+      "privateLabel": "Visible de moi seul",
+      "privateBadge": "privé",
+      "teamBadge": "visible de l’équipe",
+      "submit": "Déposer l’avis",
+      "noWriteRight": "Tu n’as pas le droit de déposer un avis sur cette mission."
+    },
+    "tracking": {
+      "title": "Suivi — points client, points consultant, décisions, problèmes, besoins adjacents, actions"
+    },
+    "businessUnit": "BU propriétaire",
+    "deliveryModeStaffed": "Avec consultants",
+    "changeDeliveryMode": "Changer le mode de réalisation",
+    "saveDeliveryMode": "Enregistrer le mode",
+    "cancelDeliveryMode": "Annuler"
+  },
+  "scores": {
+    "title": "Risque & opportunité",
+    "riskTitle": "Risque",
+    "opportunityTitle": "Opportunité",
+    "hint": "Deux notes et jamais une : « risque élevé, opportunité élevée » est une mission à travailler d’urgence, « risque élevé, opportunité faible » une mission à laisser partir.",
+    "noAccess": "Les notes de risque et d’opportunité ne sont pas dans ton périmètre. Ce n’est pas une donnée manquante : c’est un droit que ton rôle n’a pas.",
+    "notComputed": "Pas encore de note : moins de trois axes ont pu être évalués sur cette mission.",
+    "axes": {
+      "renewal": "Renouvellement",
+      "timesheets": "Relevés d’activité",
+      "margin": "Marge",
+      "payment": "Paiement",
+      "concentration": "Concentration",
+      "longevity": "Longévité",
+      "expansion": "Expansion",
+      "footprint": "Empreinte sur le compte"
+    },
+    "level": {
+      "low": "Faible",
+      "medium": "Moyen",
+      "high": "Élevé"
+    },
+    "levelLower": {
+      "low": "faible",
+      "medium": "moyen",
+      "high": "élevé"
+    },
+    "axisLevel": "{{axis}} : {{level}}",
+    "notEvaluable": "Non évaluable : {{axes}}"
+  },
+  "planning": {
+    "title": "Planification",
+    "subtitle": "Qui est sur quelle mission, et jusqu’à quand. Une fin qu’on ne connaît pas ne se dessine pas comme une fin.",
+    "previousWindow": "Fenêtre précédente",
+    "nextWindow": "Fenêtre suivante",
+    "today": "Aujourd’hui",
+    "todayMarker": "Aujourd’hui",
+    "search": "Rechercher une mission, un compte, un consultant…",
+    "includeFinished": "Inclure les missions terminées",
+    "finishedHidden_one": "{{count}} mission terminée n’est pas dessinée.",
+    "finishedHidden_other": "{{count}} missions terminées ne sont pas dessinées.",
+    "summary": {
+      "visible_one": "{{count}} mission sur la fenêtre",
+      "visible_other": "{{count}} missions sur la fenêtre",
+      "starts_one": "{{count}} démarrage",
+      "starts_other": "{{count}} démarrages",
+      "ends_one": "{{count}} échéance",
+      "ends_other": "{{count}} échéances",
+      "openEnded_one": "{{count}} sans date de fin",
+      "openEnded_other": "{{count}} sans date de fin",
+      "why": "« Sans date de fin » est compté à part : ces missions n’ont aucune échéance à anticiper, et les ranger avec les échéances en inventerait une.",
+      "endingSoon_one": "{{count}} finit sous 30 jours",
+      "endingSoon_other": "{{count}} finissent sous 30 jours",
+      "soonAvailable_one": "{{count}} consultant se libère bientôt",
+      "soonAvailable_other": "{{count}} consultants se libèrent bientôt",
+      "intercontract_one": "Vivier : {{count}} consultant en intercontrat →",
+      "intercontract_other": "Vivier : {{count}} consultants en intercontrat →",
+      "conflicts_one": "{{count}} conflit",
+      "conflicts_other": "{{count}} conflits",
+      "conflictKinds": {
+        "overlap_one": "{{count}} chevauchement",
+        "overlap_other": "{{count}} chevauchements",
+        "gap_one": "{{count}} trou",
+        "gap_other": "{{count}} trous",
+        "unstaffedStart_one": "{{count}} démarrage sans consultant",
+        "unstaffedStart_other": "{{count}} démarrages sans consultant",
+        "undated_one": "{{count}} mission sans date",
+        "undated_other": "{{count}} missions sans date",
+        "overallocation_one": "{{count}} surallocation",
+        "overallocation_other": "{{count}} surallocations"
+      }
+    },
+    "bar": {
+      "openEnd": "Sans date de fin — le bord droit de la barre n’est pas une échéance.",
+      "openStart": "Sans date de démarrage — le bord gauche de la barre n’est pas une date.",
+      "clippedStart": "Commencée avant la fenêtre.",
+      "clippedEnd": "Continue après la fenêtre.",
+      "shortOpenStart": "Début inconnu",
+      "shortClippedStart": "Début avant période",
+      "shortOpenEnd": "Fin inconnue",
+      "shortClippedEnd": "Fin après période",
+      "dragHandle": "Glisser pour déplacer {{label}}",
+      "dragBlockedHandle": "Glissement bloqué pour {{label}}",
+      "dragBlocked": "Glissement impossible : {{reason}}",
+      "dragPreview": "Nouvelles dates : {{start}} → {{end}}",
+      "confirmShift": "Déplacer",
+      "cancelShift": "Annuler",
+      "overallocated": "Suralloué · {{percent}} %"
+    },
+    "undated": {
+      "title": "Sans date exploitable",
+      "description": "Ni démarrage ni fin. Les poser à gauche de la frise leur donnerait une date que personne n’a saisie."
+    },
+    "outside": {
+      "title": "Hors de la fenêtre",
+      "description_one": "{{count}} mission est datée en dehors de ces mois.",
+      "description_other": "{{count}} missions sont datées en dehors de ces mois."
+    },
+    "inconsistent": {
+      "title": "Dates à corriger",
+      "description": "La fin précède le démarrage. Rien n’est dessiné : une barre à l’envers ne se voit pas, et ne dit rien."
+    },
+    "emptyTitle": "Rien à planifier sur ces mois",
+    "emptyDescription": "Aucune mission ne couvre la fenêtre. Elles se sont terminées avant, ou n’ont pas encore commencé.",
+    "emptyCta": "Revenir à aujourd’hui",
+    "searchEmptyTitle": "Aucune mission ne correspond",
+    "searchEmptyDescription": "La recherche porte sur le nom de la mission, le compte, le rôle et les personnes affectées. Rien ici ne dit que la fenêtre est vide — seulement que ta recherche ne trouve rien.",
+    "searchEmptyCta": "Effacer la recherche",
+    "truncated": "La lecture des missions plafonne à {{count}} lignes, les échéances les plus proches d’abord. Au-delà, une mission qui finit plus tard peut manquer à cette frise.",
+    "openRow": "Ouvrir la mission {{label}}",
+    "rowMenu": {
+      "label": "Actions sur {{label}}",
+      "title": "Actions",
+      "prepareRenewal": "Préparer le renouvellement",
+      "reverseMarket": "Trouver des missions pour {{name}}",
+      "createInternalNeed": "Créer un besoin interne"
+    },
+    "unnamedMission": "Mission sans nom",
+    "introTitle": "Ton planning missions, {{firstName}}",
+    "introTitleWithoutName": "Planification de l’équipe",
+    "listLink": "Liste des missions",
+    "newMission": "Nouvelle mission",
+    "introSubtitle": "Visualise les consultants engagés, les prochains démarrages et les disponibilités à venir.",
+    "facetsLabel": "Resserrer la frise",
+    "facets": {
+      "starts": "Démarrages",
+      "ends": "Échéances",
+      "openEnded": "Sans date de fin"
+    },
+    "facetHints": {
+      "starts": "Les missions dont le démarrage tombe dans la fenêtre affichée.",
+      "ends": "Les missions dont la fin PRÉVUE tombe dans la fenêtre. Une mission sans date de fin n’y est jamais comptée.",
+      "openEnded": "Les missions qui courent sans fin connue. Leur bord droit n’est pas une échéance."
+    },
+    "scale": {
+      "label": "Durée affichée",
+      "option_one": "{{count}} mois",
+      "option_other": "{{count}} mois"
+    },
+    "filters": {
+      "consultant": "Consultant",
+      "account": "Compte",
+      "status": "Statut",
+      "owner": "Porteur",
+      "businessUnit": "BU",
+      "skill": "Compétence",
+      "availability": "Disponibilité",
+      "availabilityOptions": {
+        "now": "Disponible maintenant",
+        "soon": "Bientôt (30 jours)",
+        "later": "Plus tard",
+        "unknown": "Inconnue"
+      },
+      "all": "{{what}} : tous"
+    },
+    "availability": {
+      "header": "Se libère",
+      "now": "Disponible maintenant",
+      "from": "Disponible à partir du {{date}}",
+      "nowUncertain": "Disponible maintenant — renouvellement non tranché",
+      "fromUncertain": "Disponible à partir du {{date}} — renouvellement non tranché",
+      "renewed": "Renouvelée — pas de disponibilité à cette date",
+      "unknown": "Fin inconnue",
+      "unreadable": "Date de fin illisible",
+      "after": "Après le {{date}}",
+      "pendingNext": "Sous réserve de la suite",
+      "confirmed": "Fin confirmée",
+      "declared": "Disponible le {{date}}",
+      "declaredHint": "Déclarée sur sa fiche — elle prime sur la fin de mission"
+    },
+    "laura": {
+      "label": "Demander à {{copilot}} sur mon planning",
+      "question": "Sur mon planning missions du {{from}} au {{to}}{{filters}} : qui se libère dans les 30 prochains jours, quelles missions n’ont pas de date de fin, et où ai-je un risque de renouvellement ?",
+      "filters": ", en ne regardant que {{list}}",
+      "onConsultant": "les missions de {{name}}",
+      "onAccount": "le compte {{name}}",
+      "onStatus": "les missions au statut « {{status}} »",
+      "onFacet": "« {{facet}} »"
+    },
+    "blocked": {
+      "kicker": "Administration des ventes",
+      "title_one": "{{count}} mission ne peut pas démarrer",
+      "title_other": "{{count}} missions ne peuvent pas démarrer",
+      "none": "Aucune mission bloquée pour le moment.",
+      "description": "Démarrages et reconductions des 60 prochains jours dont le dossier n’est pas complet. Le motif se règle dans le dossier de mission.",
+      "clear": "Retirer le filtre",
+      "countersLabel": "Compteurs par motif",
+      "notMeasured": "Non mesuré",
+      "notMeasuredHint": "contrôle pas encore calculé",
+      "dossiers_one": "{{count}} dossier",
+      "dossiers_other": "{{count}} dossiers",
+      "age_one": "{{count}} jour",
+      "age_other": "{{count}} jours",
+      "ageUnknown": "Ancienneté inconnue",
+      "open": "Ouvrir le dossier",
+      "loadFailed": "Les dossiers de démarrage n’ont pas pu être lus. La liste n’est pas vide : elle est inconnue.",
+      "footnote": "Un motif à zéro reste neutre : il n’est jamais peint en vert.",
+      "pill": "Bloquées",
+      "pillCount": "Bloquées ({{count}})",
+      "pillLabel": "Filtre des dossiers bloqués"
+    },
+    "deadlines": {
+      "tilesLabel": "Échéances du planning",
+      "toAccompany": "Missions à accompagner",
+      "endingSoon": "Fins sous 30 jours",
+      "endingSoonHint": "Préparer la suite",
+      "starting": "Démarrages prévus",
+      "startingHint": "Vérifier les prérequis",
+      "endUnset": "Fins non renseignées",
+      "endUnsetHint": "Pas de date supposée",
+      "none": "Aucune",
+      "title": "Les échéances à préparer",
+      "subtitle": "Les échéances du planning, pas un deuxième gestionnaire de tâches.",
+      "empty": "Aucune échéance à préparer dans les 30 prochains jours.",
+      "endsIn_one": "Fin dans {{count}} jour",
+      "endsIn_other": "Fin dans {{count}} jours",
+      "startsOn": "Démarrage · {{date}}",
+      "prepareNext": "Préparer la suite",
+      "checkStart": "Vérifier le démarrage",
+      "intercontract_one": "Intercontrat · {{count}} personne",
+      "intercontract_other": "Intercontrat · {{count}} personnes",
+      "intercontractHint": "Aucune mission en cours : la proposer, ou ouvrir un besoin interne.",
+      "findMissions": "Trouver des missions",
+      "endingAction": "Anticiper la suite : renouveler, repositionner la personne ou clôturer proprement.",
+      "startingAction": "Vérifier l’accord, les accès et le bon de commande avant le premier jour."
+    },
+    "legend": {
+      "label": "Légende du planning",
+      "active": "En cours",
+      "ending": "Fin à anticiper",
+      "starting": "Démarrage prévu",
+      "conflict": "Conflit de planning",
+      "conflictAria": "Conflit de planning",
+      "endIsNotAvailability": "Fin prévue ≠ disponibilité confirmée. Déplacer une mission se valide avant d’être appliqué."
+    },
+    "export": {
+      "button": "Exporter",
+      "mission": "Mission",
+      "account": "Compte",
+      "consultant": "Consultant",
+      "start": "Début",
+      "end": "Fin prévue"
+    },
+    "screen": {
+      "title": "Missions",
+      "subtitle": "Qui intervient, jusqu’à quand. Et ce qu’il faut préparer ensuite.",
+      "featureText": "Les personnes, les échéances et les prochaines étapes dans un seul planning.",
+      "facepile": "Personnes sur une mission",
+      "searchPlaceholder": "Mission, consultant, compte…",
+      "seeActions": "Voir les actions",
+      "situation": {
+        "running": "En cours",
+        "renewal": "À renouveler",
+        "starting": "Démarrage prévu",
+        "ending": "Fin proche"
+      },
+      "toolbar": {
+        "filters": "Filtres",
+        "filtersActive_one": "Filtres · {{count}}",
+        "filtersActive_other": "Filtres · {{count}}",
+        "views": "Mes vues",
+        "groupLabel": "Regrouper le planning",
+        "group": {
+          "mission": "Par mission",
+          "account": "Par compte",
+          "consultant": "Par consultant"
+        },
+        "viewLabel": "Vue du planning",
+        "view": {
+          "timeline": "Planning",
+          "table": "Tableau",
+          "board": "Board"
+        }
+      },
+      "quick": {
+        "label": "Resserrer le planning",
+        "ending": "Échéances sous 30 j",
+        "ending60": "Échéances sous 60 j",
+        "ending90": "Échéances sous 90 j",
+        "starting": "À démarrer",
+        "noEnd": "Sans date de fin",
+        "toCheck": "À vérifier",
+        "reset": "Réinitialiser",
+        "hint": {
+          "ending": "Les missions dont la fin prévue tombe dans les 30 prochains jours. Une fin absente n’y est jamais comptée.",
+          "ending60": "Les missions dont la fin prévue tombe dans les 60 prochains jours (celles de la fenêtre de 30 jours comprises). Une fin absente n’y est jamais comptée.",
+          "ending90": "Les missions dont la fin prévue tombe dans les 90 prochains jours (celles des fenêtres de 30 et 60 jours comprises). Une fin absente n’y est jamais comptée.",
+          "starting": "Les missions dont le démarrage est prévu après aujourd’hui.",
+          "noEnd": "Les missions qui courent sans fin connue. Leur bord droit n’est pas une échéance.",
+          "toCheck": "Les missions qui portent un conflit de planning : chevauchement, trou, surallocation, démarrage sans consultant."
+        }
+      },
+      "calendar": {
+        "title": "Le planning de l’équipe",
+        "range": "{{from}} — {{to}}",
+        "after": "Après la mission",
+        "detail": "Détail",
+        "detailOf": "Détail de {{label}}"
+      },
+      "filters": {
+        "title": "Filtrer le planning",
+        "intro": "La même sélection s’applique au planning, au tableau et au board. Les missions ne sont ni supprimées ni déplacées.",
+        "more": "Plus de filtres",
+        "reset": "Réinitialiser",
+        "apply": "Appliquer",
+        "selected_one": "{{count}} choisi",
+        "selected_other": "{{count}} choisis",
+        "keys": {
+          "account": "Compte",
+          "consultant": "Consultant",
+          "owner": "Responsable",
+          "situation": "Statut",
+          "skill": "Expertise",
+          "clientTeam": "Équipe chez le client",
+          "availability": "Disponibilité dérivée",
+          "businessUnit": "BU / agence"
+        }
+      },
+      "views": {
+        "title": "Vues du planning",
+        "intro": "Enregistrer les filtres et la fenêtre de dates, sans copier les missions.",
+        "listLabel": "Mes vues du planning",
+        "empty": "Aucune vue enregistrée pour le planning.",
+        "nameLabel": "Nom de la vue",
+        "close": "Fermer",
+        "save": "Enregistrer la vue courante"
+      },
+      "table": {
+        "label": "Tableau des missions",
+        "mission": "Mission / consultant",
+        "account": "Compte",
+        "dates": "Dates prévues",
+        "renewal": "Renouvellement",
+        "renewalUnknown": "Renouvellement non renseigné",
+        "situation": "Situation",
+        "owner": "Responsable",
+        "unstaffed": "Personne d’affecté",
+        "unknownOwner": "Aucun responsable renseigné"
+      },
+      "board": {
+        "emptyColumns": "Colonnes vides repliées : {{list}}. Déplacer une carte vérifie d’abord ses prérequis."
+      },
+      "create": {
+        "title": {
+          "choose": "Créer une mission",
+          "manual": "Saisir la mission",
+          "document": "À partir d’un document",
+          "odoo": "Reprendre depuis ton outil de gestion"
+        },
+        "intro": {
+          "choose": "Pars d’une affaire gagnée, d’un document ou d’une saisie courte. Aucune mission n’est créée avant la revue.",
+          "manual": "Compte, personne, dates et conditions. Le reste pourra être complété.",
+          "document": "Choisis le compte, puis dépose le contrat ou le bon de commande : les champs lus te sont proposés.",
+          "odoo": "Les ventes confirmées qui n’ont pas encore de mission : à reprendre une par une, ou toutes après relecture."
+        },
+        "manual": {
+          "title": "Saisir la mission",
+          "hint": "Compte, personne, dates et conditions. Le reste pourra être complété."
+        },
+        "document": {
+          "title": "À partir d’un document",
+          "hint": "Joindre le contrat ou le bon de commande, puis vérifier les champs lus."
+        },
+        "won": {
+          "title": "Depuis une affaire gagnée",
+          "hint": "Retrouver la mission liée, ou ouvrir le parcours Affaires existant."
+        },
+        "odoo": {
+          "title": "Reprendre depuis ton outil de gestion",
+          "hint": "Ton outil est branché : des ventes confirmées n’ont pas encore de mission. Reprendre une par une, ou toutes après relecture."
+        },
+        "back": "Retour aux choix",
+        "close": "Fermer"
+      },
+      "peek": {
+        "start": "Démarrage prévu",
+        "end": "Fin prévue",
+        "afterFrom": "Après la mission : disponible le {{date}}.",
+        "afterFromUncertain": "Après la mission : disponible le {{date}}, sous réserve de la suite. Une fin prévue n’est pas une disponibilité confirmée.",
+        "afterNow": "Après la mission : plus rien n’est engagé.",
+        "afterUnknown": "Aucune fin saisie : aucune disponibilité n’est supposée.",
+        "prepareClientReview": "Préparer le point client",
+        "editDates": "Modifier les dates",
+        "seeTimesheets": "Voir les relevés",
+        "more": "Plus de détails",
+        "back": "Revenir au planning",
+        "openDossier": "Ouvrir la mission"
+      },
+      "move": {
+        "title": "Déplacer la mission",
+        "intro": "Un déplacement se valide : l’affectation, les relevés et le bon de commande sont relus avant d’être modifiés.",
+        "start": "Début",
+        "end": "Fin",
+        "endBeforeStart": "La fin précède le début.",
+        "availabilityNote": "Une fin prévue n’est pas une disponibilité confirmée : si la personne a déclaré une disponibilité, revois-la avec elle.",
+        "cancel": "Annuler",
+        "confirm": "Valider le déplacement"
+      },
+      "eyebrow": "Delivery & suivi client"
+    },
+    "signedProjects": {
+      "title_one": "{{count}} projet signé suivi ici",
+      "title_other": "{{count}} projets signés suivis ici",
+      "subtitle": "Un projet signé se suit ici à la place d’une mission : il n’y a pas de consultant à staffer.",
+      "signedOn": "Signé le {{date}}",
+      "signedOnUnknown": "Date de signature non saisie",
+      "detailDescription": "Le suivi du projet signé : étapes, livrables et dates."
+    }
+  },
+  "chain": {
+    "title": "De la signature au cash",
+    "intro": "Les cinq étapes de cette mission, et l’écran où chacune se répare.",
+    "month": "Mois lu : {{month}}",
+    "steps": {
+      "timesheet": "Relevé d’activité",
+      "billable": "CA facturable",
+      "invoice": "Facture préparée",
+      "collection": "Encaissement",
+      "reposition": "Repositionnement"
+    },
+    "state": {
+      "done": "Franchie",
+      "pending": "En attente",
+      "blocked": "Bloquée",
+      "not_applicable": "Sans objet",
+      "not_due": "Pas encore due",
+      "in_progress": "En cours"
+    },
+    "why": {
+      "readingFailed": "La lecture du mois n’a pas abouti : cette étape n’est pas mesurée — elle n’est pas franchie pour autant.",
+      "noRowThisMonth": "Aucune ligne de facturation sur le mois lu pour cette mission.",
+      "notMonthly": "Cette mission ne se facture pas au mois : la question ne se pose pas.",
+      "craBlockedWithoutCode": "Le relevé bloque sans motif enregistré — l’écran des relevés dit lequel.",
+      "waitingOnTimesheet": "Rien ne bloque ici : c’est le relevé, à l’étape précédente.",
+      "readyToInvoice": "Prêt à facturer — aucune facture n’est encore consignée.",
+      "waitingOnBillable": "Le mois n’est pas encore facturable.",
+      "disputed": "Le client conteste cette facture : les relances sont arrêtées.",
+      "overdue": "L’échéance est passée et aucun règlement n’est enregistré.",
+      "awaitingPayment": "Facture consignée, échéance à venir.",
+      "notInvoicedYet": "Rien à encaisser : la facture n’est pas partie.",
+      "noRenewalWindow": "L’échéance de cette mission n’a pas été transmise — à revérifier dans un instant.",
+      "noEndDate": "Cette mission n’a pas de date de fin : impossible de dire quand repositionner.",
+      "tooEarly": "La fin de mission est encore loin.",
+      "window": {
+        "j60": "La fin approche : deux mois.",
+        "j45": "La fin approche : six semaines.",
+        "j30": "La fin approche : un mois.",
+        "j15": "La fin approche : quinze jours.",
+        "imminent": "La fin est imminente.",
+        "overdue": "L’échéance de renouvellement est dépassée."
+      },
+      "missionNotRead": "L’état de la mission n’a pas été transmis — à revérifier dans un instant.",
+      "onboarding": "La mission est en préparation : elle n’a pas encore démarré.",
+      "notStartedYet": "La mission n’a pas encore démarré.",
+      "paused": "La mission est suspendue : sa facturation s’arrête avec elle.",
+      "periodRunning": "La période est en cours : cette étape viendra à sa fin.",
+      "waitingOnSubmission": "Le relevé n’est pas encore soumis : rien à valider.",
+      "sendNotTracked": "{{brand}} prépare la facture, il ne l’envoie pas : l’envoi se vérifie dans l’outil de facturation.",
+      "noDueDate": "Aucune échéance n’est saisie : impossible de dire si elle est passée.",
+      "dueLater": "L’échéance est à venir : ce délai est contractuel, ce n’est pas un retard.",
+      "partialPayment": "Un règlement partiel est enregistré : le reste est encore dû.",
+      "noReconciliation": "{{brand}} ne rapproche aucun compte bancaire : le rapprochement se vérifie dans l’outil comptable.",
+      "notPaidYet": "Rien à rapprocher ni à clôturer tant que le solde n’est pas encaissé."
+    },
+    "noDoor": "Aucun écran à ouvrir depuis cette étape.",
+    "stages": {
+      "mission_created": "Mission créée",
+      "mission_ready": "Mission prête",
+      "mission_active": "Mission active",
+      "period_delivered": "Période délivrée",
+      "timesheet_submitted": "Relevé soumis",
+      "timesheet_validated": "Relevé validé",
+      "billable_computed": "CA facturable calculé",
+      "invoice_prepared": "Préparation de la facture",
+      "invoice_created": "Facture créée",
+      "invoice_sent": "Facture envoyée",
+      "invoice_due": "Échéance",
+      "payment_received": "Paiement reçu",
+      "payment_reconciled": "Paiement rapproché",
+      "period_closed": "Période clôturée"
+    },
+    "owner": {
+      "mission_owner": "Responsable : {{name}} (porteur de la mission)",
+      "consultant": "Responsable : {{name}} (consultant affecté)",
+      "missing": {
+        "mission_owner": "Aucun porteur sur cette mission — étape sans responsable",
+        "consultant": "Aucun consultant affecté — étape sans responsable"
+      },
+      "unread": "Responsable non transmis"
+    },
+    "proof": {
+      "created": "Créée le {{date}}",
+      "startedOn": "Démarrée le {{date}}",
+      "missionStatus": "Statut de la mission",
+      "periodEnded": "Période terminée le {{date}}",
+      "cra": {
+        "validated": "Relevé validé",
+        "to_validate": "Relevé soumis, en attente de validation",
+        "conflict": "Relevé soumis, en désaccord"
+      },
+      "billable": "Mois facturable",
+      "prepared": "Préparation établie",
+      "invoicedProven": "Facture lue dans l’outil branché le {{date}}",
+      "invoicedDeclared": "Facture déclarée le {{date}} par {{by}}",
+      "dueOn": "Échéance du {{date}}",
+      "paid": "Règlement enregistré le {{date}}",
+      "amount": "Montant : {{amount}}",
+      "reference": "Référence : {{reference}}",
+      "unknownAuthor": "auteur non retrouvé"
+    },
+    "since": "Depuis le {{date}} ({{count}} j)",
+    "timeline": {
+      "toggle": "Détail de la mission au cash (14 étapes)",
+      "current": "Étape actuelle : {{stage}}",
+      "noCurrent": "Aucune étape ouverte sur le mois lu.",
+      "exception": "Exception",
+      "noGo": {
+        "title": "Étape incohérente",
+        "blockedWithoutReason": "{{stage}} : bloquée sans motif enregistré.",
+        "openWithoutOwner": "{{stage}} : ouverte sans responsable ni exception.",
+        "doneWithoutProof": "{{stage}} : franchie sans preuve enregistrée."
+      }
+    }
+  },
+  "dossier": {
+    "openCta": "Ouvrir le dossier",
+    "openLabel": "Ouvrir le dossier de {{label}}",
+    "quickActions": {
+      "askLaura": {
+        "label": "Demander à {{copilot}}",
+        "question": "Que dois-je savoir ou faire sur la mission « {{mission}} » ({{account}}) ?"
+      },
+      "planPoint": {
+        "label": "Planifier un point",
+        "question": "Prépare-moi un point sur la mission « {{mission}} » ({{account}}). Dis-moi ce qui a changé depuis la dernière fois et ce qu’il reste à trancher."
+      },
+      "createAction": {
+        "label": "Créer une action",
+        "createdLabel": "Action créée",
+        "defaultLabel": "Suivre la mission — {{mission}}",
+        "defaultReason": "Garder le suivi de {{mission}} sous contrôle et repérer ce qui doit être traité",
+        "defaultExpectedOutcome": "{{mission}} suivie : chaque point à traiter est repéré et daté",
+        "created": "Action ajoutée au plan du compte.",
+        "createError": "L’action n’a pas pu être créée."
+      }
+    },
+    "loading": "Ouverture du dossier…",
+    "backToList": "Retour aux missions",
+    "createProject": "Créer un projet",
+    "retry": "Réessayer",
+    "errorTitle": "Cette mission n’a pas pu être chargée",
+    "errorBody": "Elle est toujours là — c’est la lecture qui a échoué. Réessaie.",
+    "missingTitle": "Mission introuvable",
+    "missingBody": "Cette mission n’est pas dans cet espace. Le lien vient peut-être d’un autre espace, ou la mission a été retirée depuis.",
+    "provenance": {
+      "groupLabel": "Provenance des champs principaux",
+      "client": "Client",
+      "label": "Intitulé",
+      "startedOn": "Début",
+      "endsOn": "Fin",
+      "dailyRate": "TJM"
+    },
+    "hero": {
+      "account": "Compte",
+      "status": "Statut",
+      "groupLabel": "Les acteurs de la mission",
+      "consultant": "Consultant",
+      "consultantUnknown": "aucun consultant affecté",
+      "consultantUnread": "affectations non lues",
+      "clientManager": "Manager client",
+      "clientManagerUnknown": "non désigné",
+      "period": "Période",
+      "nextAction": "Prochaine action"
+    },
+    "primaryAction": {
+      "pointer_one": "{{count}} point à compléter — le détail est dans la checklist juste en dessous.",
+      "pointer_other": "{{count}} points à compléter — le détail est dans la checklist juste en dessous.",
+      "groupLabel": "Action principale de la mission",
+      "label": "Action principale",
+      "state": {
+        "confirm_availability": "Revalider la disponibilité",
+        "complete_start": "Compléter le démarrage",
+        "complete_end_checklist": "Compléter la sortie",
+        "decide_renewal": "Décider du renouvellement",
+        "on_track": "Rien à faire"
+      }
+    },
+    "repositioning": {
+      "title": "Pourquoi repositionner",
+      "constraint": "{{name}} — {{text}}",
+      "reasons": {
+        "ending_confirmed": "Fin confirmée ou repositionnement déjà lancé — rien ne part tout seul.",
+        "tier_close": "La fin approche.",
+        "market_demand": "Une demande marché est mesurée sur le secteur d’un affecté.",
+        "profile_scarcity": "Un profil rare se replace plus difficilement.",
+        "open_needs": "Un besoin ouvert exige une compétence que porte un affecté.",
+        "partners": "Un partenaire est déjà connu sur le compte client.",
+        "relations": "Une relation déclarée existe déjà sur le compte client.",
+        "constraints": "Un affecté a déclaré une contrainte sur sa fiche.",
+        "market_memory": "Le marché observe chez le client une techno que porte un affecté.",
+        "presentation_history": "Un affecté a été présenté récemment, tous besoins confondus — le profil circule déjà sur le marché."
+      }
+    },
+    "lifecycle": {
+      "groupLabel": "Cycle de vie de la mission",
+      "current": "Étape en cours : {{stage}}",
+      "stages": {
+        "agreement": "Accord",
+        "start": "Démarrage",
+        "mission": "Mission",
+        "handover": "Passation",
+        "closure": "Clôture"
+      }
+    },
+    "backToPlanning": "Revenir au planning",
+    "eyebrow": "Dossier de mission",
+    "tabsLabel": "Vues du dossier de mission",
+    "relief": {
+      "hint": "Préparer la continuité sans modifier l’affectation en cours.",
+      "open": "Chercher une relève / un renfort",
+      "title": "Suite de mission — {{mission}}",
+      "context": "Préparer la suite de « {{mission}} » : une relève ou un renfort. L’affectation actuelle n’est pas modifiée ; le besoin créé est comparé au vivier."
+    },
+    "identity": {
+      "label": "Identité de la mission"
+    },
+    "nextStep": {
+      "title": "Prochaine étape"
+    },
+    "props": {
+      "label": "Propriétés de la mission",
+      "situation": "Situation de mission",
+      "dates": "Dates prévues",
+      "skills": "Expertises des affectés",
+      "place": "Lieu / modalité",
+      "source": "Source de la mission",
+      "laura": "Échanger avec {{copilot}}",
+      "lauraQuestion": "Que dois-je savoir ou préparer sur la mission « {{mission}} » ({{account}}) ?",
+      "owner": "Responsable {{brand}}"
+    },
+    "pointClient": {
+      "open": "Préparer le point client",
+      "title": "Préparer le point client",
+      "intro": "La préparation n’envoie aucun message : le brouillon est conservé dans ta messagerie, tu le relis et tu l’envoies toi-même.",
+      "to": "Destinataire",
+      "subject": "Objet",
+      "body": "Message à relire",
+      "regenerate": "Régénérer",
+      "shorter": "Plus court",
+      "direct": "Plus direct",
+      "cancel": "Annuler",
+      "keep": "Conserver le brouillon",
+      "kept": "Brouillon conservé dans ta messagerie. Rien n’est envoyé.",
+      "keepError": "Le brouillon n’a pas pu être conservé.",
+      "noRecipient": "Aucun interlocuteur client n’est désigné sur cette mission : désigne-le pour déposer un brouillon.",
+      "noEmail": "L’adresse e-mail de l’interlocuteur n’est pas renseignée : le texte reste à copier, aucune adresse n’est devinée."
+    },
+    "more": "Plus d’actions sur la mission",
+    "frame": {
+      "title": "Cadre de la mission",
+      "mode": "Mode de réalisation",
+      "staffed_one": "Staffé",
+      "staffed_other": "Staffé",
+      "staffedHint_one": "{{count}} consultant affecté",
+      "staffedHint_other": "{{count}} consultants affectés",
+      "forfait": "Forfait",
+      "forfaitHint": "Engagement de résultat",
+      "unstaffed": "Personne d’affecté",
+      "unstaffedHint": "Aucune affectation lue"
+    }
+  },
+  "createMission": {
+    "title": "Nouvelle mission",
+    "description": "Un compte, un intitulé, une date de début : la mission est créée et suit son cycle (en cours, prolongée, terminée).",
+    "back": "Retour à mes missions en cours",
+    "eyebrow": "Dossier de mission"
+  },
+  "noEndDateTitle": "Date de fin manquante",
+  "noEndDateConsequence": "Sans elle, aucun renouvellement ne peut être déclenché à temps.",
+  "cockpitKpis": {
+    "activeMissions": "Missions actives",
+    "securedRevenue": "Revenu sécurisé",
+    "atRiskRevenue": "Revenu à risque",
+    "periodNow": "En ce moment",
+    "periodThisMonth": "Ce mois-ci",
+    "financeHidden": "Droit finance requis",
+    "billableNotInvoiced": "CA facturable non facturé",
+    "overdueInvoices": "Factures échues",
+    "periodLastMonth": "Mois écoulé",
+    "periodWindow": "Sur 12 mois",
+    "overdueCount_one": "{{count}} facture",
+    "overdueCount_other": "{{count}} factures"
+  },
+  "toolbar": {
+    "searchPlaceholder": "Rechercher une mission, un compte…",
+    "facetsLabel": "Filtres rapides",
+    "facets": {
+      "toRenew": "À renouveler",
+      "noEndDate": "Sans date de fin",
+      "withRisk": "Avec risque",
+      "marginAtRisk": "Marge à risque",
+      "consultantsSoonAvailable": "Consultants bientôt disponibles"
+    },
+    "facetHints": {
+      "toRenew": "Échéance dépassée, imminente ou sous 30 jours",
+      "noEndDate": "Aucune fenêtre de renouvellement ne peut s’y déclencher",
+      "withRisk": "Au moins un risque calculé — renouvellement non engagé, relevé, marge",
+      "marginAtRisk": "La marge est négative ou nulle — pas simplement non mesurable",
+      "consultantsSoonAvailable": "Fin confirmée ou repositionnement lancé sous 30 jours — jamais une reconduction seulement annoncée"
+    },
+    "windowsLabel": "Répartition des échéances",
+    "statusLabel": "Statut",
+    "contractKindLabel": "Nature",
+    "ownerLabel": "Porteur",
+    "accountLabel": "Client",
+    "consultantLabel": "Consultant",
+    "channelLabel": "Canal",
+    "currencyLabel": "Devise",
+    "businessUnitLabel": "BU / agence",
+    "endWindowLabel": "Fin",
+    "clearFilters": "Retirer les filtres",
+    "filteredTitle": "Aucune mission ne répond à ce filtre",
+    "filteredDescription": "Ta recherche ou tes pastilles ne laissent rien passer. Les compteurs, eux, comptent la liste entière.",
+    "showMore_one": "Voir 1 de plus",
+    "showMore_other": "Voir {{count}} de plus",
+    "showLess": "Voir moins",
+    "legalEntityLabel": "Société",
+    "satisfactionLabel": "Satisfaction"
+  },
+  "meetingPrep": {
+    "title": "Préparer le rendez-vous",
+    "subtitle": "Pitch, déroulé du premier rendez-vous (R1) et références : prêts à lire avant d’appeler le client.",
+    "open": "Préparer le rendez-vous",
+    "hide": "Masquer"
+  },
+  "startReadiness": {
+    "title": "Ce qui bloque le démarrage",
+    "agreementsPending": "Accords à confirmer",
+    "verdict": {
+      "ready": "Prête",
+      "ready_with_reserves": "Prête avec réserves",
+      "blocked": "Bloqué",
+      "incomplete": "Incomplet"
+    },
+    "state": {
+      "done": "Confirmé",
+      "missing": "Manquant",
+      "stale": "À revalider"
+    },
+    "items": {
+      "client_agreement": "Accord du client",
+      "consultant_agreement": "Accord du consultant",
+      "contract_signed": "Contrat ou bon de commande signé",
+      "consultant_assigned": "Consultant affecté",
+      "start_date": "Date de début",
+      "daily_rate": "TJM",
+      "site_access": "Lieu et accès du premier jour"
+    },
+    "reserve": "réserve",
+    "confirm": "Confirmer",
+    "withdraw": "Retirer",
+    "save": "Enregistrer",
+    "proofLabel": "Preuve (mail, bon de commande, appel…)",
+    "proofPlaceholder": "Ex. mail du client du 20/09",
+    "confirmedOn": "Confirmé le {{date}} — preuve : {{proof}}",
+    "saved": "Prérequis de démarrage enregistré.",
+    "saveError": "Le prérequis n’a pas pu être enregistré."
+  },
+  "endChecklist": {
+    "title": "Checklist de sortie",
+    "verdict": {
+      "not_started": "Pas commencée",
+      "in_progress": "En cours",
+      "complete": "Complète"
+    },
+    "state": {
+      "done": "Fait",
+      "missing": "Manquant"
+    },
+    "groups": {
+      "client": "Client",
+      "consultant": "Consultant",
+      "internal": "Interne"
+    },
+    "items": {
+      "client_handover": "Passation",
+      "client_documents": "Documents",
+      "client_payment": "Paiement",
+      "consultant_mobility": "Mobilité",
+      "consultant_daily_rate": "TJM",
+      "consultant_preferences": "Préférences",
+      "consultant_cv_updated": "CV actualisé",
+      "consultant_consent": "Consentement",
+      "consultant_other_processes": "Autres processus en cours",
+      "internal_actions": "Actions",
+      "internal_references": "Références",
+      "internal_equipment": "Matériel",
+      "internal_documents": "Documents"
+    },
+    "confirm": "Confirmer",
+    "withdraw": "Retirer",
+    "save": "Enregistrer",
+    "noteLabel": "Note",
+    "notePlaceholder": "Ex. transmis le 20/09",
+    "confirmedOn": "Confirmé le {{date}} — {{note}}",
+    "saved": "Item de la checklist de sortie enregistré.",
+    "saveError": "L’item n’a pas pu être enregistré."
+  },
+  "deliveryMilestones": {
+    "title": "Jalons de delivery",
+    "state": {
+      "not_started": "Pas commencé",
+      "in_progress": "En cours",
+      "done": "Fait",
+      "not_evaluable": "Non évaluable",
+      "projected": "Piste connue",
+      "lead_known": "Piste connue"
+    },
+    "notStartedGroup_one": "{{count}} jalon pas commencé",
+    "notStartedGroup_other": "{{count}} jalons pas commencés",
+    "declare": "Déclarer",
+    "save": "Enregistrer",
+    "cancel": "Annuler",
+    "noteLabel": "Note",
+    "notePlaceholder": "Ex. brief envoyé le 20/09",
+    "confirmedOn": "Confirmé le {{date}} — {{note}}",
+    "saved": "Jalon de delivery enregistré.",
+    "saveError": "Le jalon n’a pas pu être enregistré.",
+    "reinjection": {
+      "consultant_terrain": "Pourrait alimenter un signal.",
+      "crm_action": "Pourrait alimenter une action."
+    }
+  },
+  "endReason": {
+    "title": "Motif de fin",
+    "reasons": {
+      "date_prevue": "Date prévue",
+      "renouvellement_refuse": "Renouvellement refusé",
+      "interruption": "Interrompue",
+      "remplacement": "Remplacement",
+      "demission": "Démission",
+      "fin_budget": "Fin de budget",
+      "mauvais_fit": "Mauvais fit",
+      "fin_projet": "Fin de projet"
+    },
+    "saved": "Motif de fin enregistré.",
+    "saveError": "Le motif de fin n’a pas pu être enregistré."
+  },
+  "interruption": {
+    "title": "Mission interrompue",
+    "responsibility": {
+      "label": "Responsabilité",
+      "client": "Client",
+      "consultant": "Consultant",
+      "esn": "Nous",
+      "partage": "Partagée"
+    },
+    "risk": {
+      "label": "Risque",
+      "faible": "Faible",
+      "moyen": "Moyen",
+      "eleve": "Élevé"
+    },
+    "confidentialityAcknowledged": "Je reconnais les obligations de confidentialité",
+    "nonSolicitationAcknowledged": "Je reconnais la clause de non-sollicitation",
+    "noteLabel": "Note (20 caractères minimum)",
+    "declare": "Déclarer l’interruption",
+    "availabilityPending": "Disponibilité non confirmée — un second geste, distinct, est requis avant de proposer le consultant ailleurs.",
+    "confirmAvailability": "Confirmer la disponibilité",
+    "availabilityConfirmed": "Disponibilité confirmée le {{date}}",
+    "saved": "Interruption enregistrée.",
+    "saveError": "L’interruption n’a pas pu être enregistrée."
+  },
+  "savedViews": {
+    "title": "Mes vues",
+    "loading": "Je charge tes vues…",
+    "loadError": "Je n’ai pas pu charger tes vues enregistrées.",
+    "empty": "Aucune vue enregistrée. Pose des filtres, puis enregistre-les.",
+    "locked": "Les vues enregistrées ne sont pas ouvertes par ton offre.",
+    "shared": "partagée",
+    "save": "Enregistrer cette vue",
+    "nameLabel": "Nom de la vue",
+    "namePlaceholder": "Ex. : CRA en retard",
+    "confirm": "Enregistrer",
+    "cancel": "Annuler",
+    "remove": "Supprimer la vue « {{name}} »",
+    "noCriteria": "Pose au moins un filtre : une vue sans critère est la liste complète, elle existe déjà.",
+    "full": "Tu as déjà {{max}} vues sur cet écran — au-delà, on ne choisit plus. Supprimes-en une.",
+    "saved": "Vue « {{name}} » enregistrée.",
+    "removed": "Vue supprimée.",
+    "error": "Je n’ai pas pu enregistrer cette vue."
+  },
+  "businessUnit": {
+    "loading": "Chargement…",
+    "inherited": "BU de son compte",
+    "none": "Aucune BU propriétaire",
+    "transfer": "Transférer",
+    "dialogTitle": "Transférer la mission vers une autre BU",
+    "dialogHint": "La mission change de BU propriétaire dans ton espace. Le transfert est journalisé (qui, quand, BU d’origine → BU cible) dans l’Historique de la mission ; rien n’est supprimé.",
+    "noTarget": "Il n’y a aucune autre BU active dans ton espace vers laquelle transférer cette mission.",
+    "target": "BU cible",
+    "confirm": "Je confirme le transfert de cette mission",
+    "submit": "Transférer la mission",
+    "transferred": "Mission transférée vers {{name}}",
+    "transferFailed": "Le transfert n’a pas pu être fait."
+  },
+  "monthPrep": {
+    "monthPicker": "Mois à préparer",
+    "title": "Préparer la facture de {{month}}",
+    "unavailable": "Rien à préparer sur ce mois, ou la facturation n’est pas accessible avec ton rôle.",
+    "alreadyInvoiced": "Ce mois est déjà déclaré facturé : il n’y a plus rien à préparer.",
+    "reusedFrom": "Reconduite de {{month}} — client : {{client}}",
+    "noPrevious": "Aucune facture du mois précédent à reconduire — client : {{client}}",
+    "noClient": "non renseigné",
+    "rate": "TJM {{value}} €",
+    "daysLabel": "Jours à facturer",
+    "daysFromCra": "{{count}} j (relevé CRA)",
+    "daysPlaceholder": "préc. : {{count}} j",
+    "manualDays": "Jours saisis, sans CRA",
+    "poLabel": "N° de bon de commande",
+    "amount": "{{days}} j = {{amount}}",
+    "alerts": {
+      "po_missing": "Aucun bon de commande saisi alors que le client en exige un.",
+      "po_expired": "Le bon de commande a expiré le {{until}} : il ne couvre pas ce mois.",
+      "po_ends_mid_period": "Le bon de commande s’arrête le {{until}}, avant la fin de ce mois.",
+      "po_not_started": "Le bon de commande ne commence que le {{from}} : il ne couvre pas ce mois.",
+      "po_volume_exceeded": "Les jours cumulés dépassent le volume du bon de commande de {{exceeded}} j."
+    },
+    "remaining_one": "Reste à consommer : {{count}} j",
+    "remaining_other": "Reste à consommer : {{count}} j",
+    "remainingAfter_one": "{{count}} j après ce mois",
+    "remainingAfter_other": "{{count}} j après ce mois",
+    "cta": "Préparer la facture de {{month}}",
+    "preparedNotSent": "Préparée — pas encore créée ni envoyée",
+    "noWriteRight": "Préparer une facture demande le droit d’écriture sur la finance.",
+    "saveError": "La préparation n’a pas pu être enregistrée.",
+    "auto": "Préparer chaque mois automatiquement",
+    "autoHint": "Le premier jour ouvré, le mois écoulé est préparé. Rien n’est créé dans l’outil connecté ni envoyé : tu gardes le geste."
+  },
+  "endingChips": {
+    "label": "Fin de mission",
+    "within": "Fin sous {{days}} j"
+  },
+  "createForm": {
+    "account": "Compte",
+    "accountPlaceholder": "Chercher un compte",
+    "changeAccount": "Changer",
+    "label": "Intitulé",
+    "startedOn": "Date de début",
+    "endsOn": "Date de fin",
+    "endBeforeStart": "La fin ne peut pas précéder le début.",
+    "dailyRate": "TJM vendu (€)",
+    "consultant": "Consultant",
+    "consultantPlaceholder": "Choisir un consultant",
+    "noConsultant": "Aucun pour l’instant",
+    "affaire": "Affaire",
+    "affairePlaceholder": "Rattacher à une affaire",
+    "noAffaire": "Aucune affaire",
+    "submit": "Créer la mission",
+    "cancel": "Annuler",
+    "sections": {
+      "client": {
+        "eyebrow": "Compte et affaire",
+        "title": "Pour quel client",
+        "lede": "Le compte porte la mission ; l’affaire signée la rattache à son pipeline."
+      },
+      "mission": {
+        "eyebrow": "La mission",
+        "title": "Ce qui démarre, et quand",
+        "lede": "Un intitulé que l’équipe reconnaît, une date de début. La fin peut attendre."
+      },
+      "conditions": {
+        "eyebrow": "Conditions et équipe",
+        "title": "Le tarif et la personne",
+        "lede": "Facultatifs à la création : ils se complètent dans le dossier."
+      }
+    },
+    "required": "obligatoire"
+  },
+  "lifecycle": {
+    "extend": "Prolonger",
+    "end": "Terminer",
+    "extendTitle": "Prolonger la mission",
+    "extendDescription": "Un avenant « changement de date de fin » est enregistré à l’historique ; la disponibilité du consultant est repoussée au lendemain.",
+    "newEndsOn": "Nouvelle date de fin",
+    "newDailyRate": "Nouveau TJM (€), si il change",
+    "proof": "Preuve (avenant signé, e-mail du client…)",
+    "extendSubmit": "Prolonger la mission",
+    "endTitle": "Terminer la mission",
+    "endDescription": "La mission passe à « terminée » ; le consultant redevient disponible le lendemain de la fin.",
+    "endedOn": "Date de fin réelle",
+    "reason": "Motif",
+    "endSubmit": "Terminer la mission",
+    "cancel": "Annuler",
+    "extended": "Mission prolongée.",
+    "ended": "Mission terminée.",
+    "error": "L’opération a échoué.",
+    "keptHuman": "{{count}} fiche(s) consultant gardent une disponibilité saisie à la main.",
+    "reasons": {
+      "date_prevue": "Date prévue atteinte",
+      "renouvellement_refuse": "Renouvellement refusé",
+      "interruption": "Interruption",
+      "remplacement": "Remplacement",
+      "demission": "Démission",
+      "fin_budget": "Fin de budget",
+      "mauvais_fit": "Mauvais fit",
+      "fin_projet": "Fin du projet"
+    }
+  },
+  "engagement": {
+    "conflict": "La fiche dit « {{availability}} » (saisi le {{date}}) ; la mission « {{mission}} » dit en mission.",
+    "align": "Aligner",
+    "aligned": "Fiche alignée sur la mission."
+  },
+  "startBlockers": {
+    "renewalTitle": "Ce qui bloque la reconduction",
+    "repair": "Réparer",
+    "repairLabel": "Réparer : {{blocker}}"
+  },
+  "after": {
+    "title": "Après la mission",
+    "distinct": "La date du planning et la disponibilité du consultant sont deux informations distinctes.",
+    "exploreNeeds": "Explorer les besoins pour ce profil",
+    "confirmAvailability": "Confirmer une disponibilité",
+    "confirmAvailabilityFor": "Confirmer une disponibilité · {{name}}"
+  },
+  "recap": {
+    "export": "Exporter le récapitulatif",
+    "mission": "Mission",
+    "account": "Compte",
+    "status": "Statut",
+    "startedOn": "Début",
+    "endsOn": "Fin",
+    "noEndDate": "Sans fin connue",
+    "consultants": "Consultants"
+  },
+  "financeChain": {
+    "label": "Chaîne de l’activité au règlement",
+    "activity": {
+      "title": "Activité",
+      "hint": "Reçue puis validée"
+    },
+    "controls": {
+      "title": "Contrôles",
+      "hint": "Commande, tarif, pièces"
+    },
+    "invoice": {
+      "title": "Facture",
+      "hint": "Préparée ici, créée dans ton outil"
+    },
+    "settlement": {
+      "title": "Règlement",
+      "hint": "Rapproché, partiel ou soldé"
+    }
+  },
+  "invoices": {
+    "title": "Factures",
+    "banner": "Les factures, de la préparation au solde. {{brand}} prépare la pièce : il ne l’émet ni ne la comptabilise — le numéro légal et les avoirs viennent de l’outil branché.",
+    "settings": "Paramètres de facturation",
+    "tiles": {
+      "drafts": "Préparées",
+      "draftsNote": "Hors créances et hors encaissements",
+      "issued": "Facturé HT",
+      "issuedNote": "Lu dans ton outil de facturation",
+      "outstanding": "Reste à recevoir",
+      "outstandingNote": "Après règlements affectés",
+      "disputed": "Factures en litige",
+      "unknown": "montant non mesuré sur ces documents",
+      "issuedNoteDeclared": "Lu dans ton outil · dont {{value}} déclarés sans preuve",
+      "disputedNote": "Ne pas relancer à l’aveugle",
+      "label": "Les chiffres des factures"
+    },
+    "filters": {
+      "label": "État",
+      "all": "Tous",
+      "drafts": "Préparées",
+      "issued": "Facturées · lues dans ton outil",
+      "with_balance": "Avec un solde",
+      "overdue": "En retard",
+      "disputed": "En litige",
+      "settled": "Soldées",
+      "periodLabel": "Période facturée",
+      "accountLabel": "Compte",
+      "ownerLabel": "Responsable",
+      "declared": "Déclarées sans preuve",
+      "more": "+{{count}} comptes",
+      "moreFilters": "Plus de filtres",
+      "less": "Moins de filtres",
+      "toolbar": "Filtrer les factures",
+      "allPeriods": "Toutes les périodes",
+      "allAccounts": "Tous les comptes",
+      "allOwners": "Tous les responsables",
+      "allStates": "Toutes les factures",
+      "searchLabel": "Recherche"
+    },
+    "search": "Client, mission, facture…",
+    "selectionCount_one": "{{count}} document dans cette sélection",
+    "selectionCount_other": "{{count}} documents dans cette sélection",
+    "empty": "Aucune facture préparée ni émise sur cette fenêtre.",
+    "filteredEmpty": "Aucun document ne porte cet état dans cette sélection.",
+    "columns": {
+      "reference": "N°",
+      "period": "Période",
+      "amount": "HT",
+      "state": "État / solde",
+      "document": "Document / client",
+      "actions": "Actions"
+    },
+    "notIssued": "Non émise",
+    "issued": "Émise",
+    "issuedOn": "Émise le {{date}}",
+    "noReference": "Numéro non renseigné",
+    "noNumberYet": "Sans numéro",
+    "ceded": "Cédée",
+    "state": {
+      "draft": "Préparée",
+      "to_receive": "À recevoir",
+      "overdue": "En retard",
+      "partial_overdue": "Partielle · en retard",
+      "disputed": "En litige",
+      "settled": "Réglée"
+    },
+    "reminders_one": "{{count}} relance consignée",
+    "reminders_other": "{{count}} relances consignées",
+    "attachments": "Pièces jointes",
+    "openPreparation": "Ouvrir la préparation",
+    "frozen": {
+      "title": "Pièce figée une fois créée",
+      "body": "La création dans ton outil de facturation fige les lignes, la TVA et les références. Une modification du tarif de la mission ne recalcule pas une ancienne facture.",
+      "correction": "Une correction se fait par un avoir lié à la facture initiale, dans ton outil ; {{brand}} le lit et l’affiche. Les préparations restent révisables tant qu’elles ne sont pas créées."
+    },
+    "accounting": {
+      "title": "Outil de facturation branché",
+      "body": "Lecture des factures, avoirs et numéros. {{brand}} suit la facturation ; il ne tient ni plan comptable, ni écritures, ni journal.",
+      "reconnect": "· à reconnecter",
+      "lastRead": "· dernière lecture le {{date}}",
+      "none": "Aucun outil de facturation n’est branché : « facturé » ne se lit alors que déclaré, sans preuve."
+    },
+    "toCollections": "Voir les encaissements",
+    "headline": "Les factures, de la préparation au solde.",
+    "lede": "Des factures reliées aux missions. {{brand}} les prépare ; ton outil de facturation les crée et les numérote. Les avoirs corrigent une pièce ; ils ne sont pas des encaissements.",
+    "export": "Exporter les factures",
+    "prepareFromActivity": "Préparer depuis l’activité",
+    "guide": {
+      "heading": "Distinguer préparée, créée et envoyée",
+      "intro": "{{brand}} prépare la facture depuis l’activité validée : jours, tarif et références. Ton outil de facturation la crée, la numérote et l’envoie à ton geste.",
+      "stepsTitle": "Le parcours utile",
+      "step1": "Vérifie le détail et les sources.",
+      "step2": "Actualise une préparation si l’activité a changé.",
+      "step3": "Une fois créée, corrige par un avoir fait dans ton outil plutôt que par une modification silencieuse.",
+      "keepTitle": "À garder en tête",
+      "keep": "« Facturé » s’affiche toujours avec sa source : la lecture de ton outil de facturation, ou une déclaration non confirmée."
+    },
+    "prepared": "Préparée",
+    "preparedNotCreated": "Préparée · pas encore créée",
+    "createdOn": "Créée le {{date}}",
+    "dueAtCreation": "À la création",
+    "dueSetByTool": "Fixée par l’outil de facturation",
+    "enterDueDate": "Saisir l’échéance",
+    "sourceRead": "Lue dans l’outil de facturation",
+    "sourceDeclared": "Déclarée · non confirmée",
+    "noReceivable": "Aucune créance",
+    "open": "Ouvrir",
+    "dialog": {
+      "close": "Fermer",
+      "preparedTitle": "Facture préparée · {{account}}",
+      "lifecycle": {
+        "label": "Les trois étapes d’une facture",
+        "prepared": "Préparée",
+        "preparedNote": "Ici, depuis l’activité validée",
+        "created": "Créée",
+        "createdNote": "Dans ton outil de facturation, qui la numérote",
+        "sent": "Envoyée",
+        "sentNote": "Par ton outil, à ton geste"
+      },
+      "sourceReadTitle": "Facturé · source : ton outil de facturation.",
+      "sourceReadBody": "Numéro, lignes et avoirs viennent de ton outil : {{brand}} les lit, il ne les réécrit pas.",
+      "sourceDeclaredTitle": "Facturé · déclaré, non confirmé.",
+      "mission": "Mission",
+      "order": "Commande",
+      "orderUnknown": "bon de commande non renseigné",
+      "calculation": "Calcul",
+      "calculationBody": "Activité validée de {{month}}",
+      "createdOn": "Création",
+      "createdUnknown": "date de création non lue",
+      "dueOn": "Échéance",
+      "days_one": "{{count}} jour",
+      "days_other": "{{count}} jours",
+      "daysUnknown": "jours non connus",
+      "rateUnknown": "tarif non renseigné",
+      "totals": "Totaux",
+      "totalHt": "Total HT",
+      "settled": "Règlements affectés",
+      "settledUnknown": "montant du règlement non mesuré",
+      "remaining": "Reste à recevoir",
+      "remainingUnknown": "reste dû non mesuré",
+      "draftWarning": "Préparée : ni créance, ni encaissement. Le tarif de la mission peut encore la faire bouger jusqu’à sa création dans ton outil.",
+      "remindersLast_one": "{{count}} relance consignée · la dernière le {{date}}",
+      "remindersLast_other": "{{count}} relances consignées · la dernière le {{date}}",
+      "noReminder": "Aucune relance consignée.",
+      "disputeTitle": "En litige",
+      "disputeNoReason": "motif non consigné",
+      "declareElsewhere": "Déclarer facturée ailleurs",
+      "recordPayment": "Consigner un règlement",
+      "recordReminder": "Consigner une relance faite",
+      "resolveDispute": "Lever le litige",
+      "openDispute": "Litige",
+      "prepareFollowUp": "Préparer un suivi",
+      "trace": "Règlements et traçabilité",
+      "paymentLine": "Règlement du {{date}}",
+      "openMission": "Mission"
+    },
+    "noDue": "Sans échéance",
+    "balance": "Solde {{value}}",
+    "balancePartial": "Réglé {{paid}} · reste dû {{left}}",
+    "remindersLast_one": "{{count}} relance · {{date}}",
+    "remindersLast_other": "{{count}} relances · la dernière le {{date}}",
+    "remindersEscalate_one": "{{count}} relance sans réponse — à remonter",
+    "remindersEscalate_other": "{{count}} relances sans réponse — à remonter",
+    "due": {
+      "title": "Saisir l’échéance · {{label}}",
+      "body": "Sans échéance, cette facture n’entre dans aucune tranche échue : elle est nommée à part (« Sans échéance »), jamais comptée « à jour ».",
+      "field": "Échéance",
+      "readOnly": "Cette facture est lue dans ton outil de facturation : son échéance se corrige là-bas, ou depuis la facturation du mois — jamais réécrite ici.",
+      "toBilling": "Ouvrir la facturation du mois",
+      "cancel": "Annuler",
+      "save": "Enregistrer"
+    }
+  },
+  "financeView": {
+    "title": "Revenu, marge et trésorerie",
+    "lede": "Une lecture financière reliée aux missions, avec les inconnues et les pièces à traiter. Ce n’est pas un grand livre comptable.",
+    "visible": "Visible avec le droit Finance",
+    "statusPending": "Vérification de ton droit…",
+    "statusFailed": "Ton droit Finance n’a pas pu être vérifié. Réessaie dans un instant.",
+    "denied": {
+      "title": "La vue financière demande le droit Finance",
+      "body": "Marges, coûts et paiements restent confidentiels. L’administrateur de l’espace peut te l’ouvrir."
+    },
+    "outgoing": {
+      "title": "Ce qui sort : paiements et cessions",
+      "body": "Les paiements aux consultants et aux sous-traitants se suivent ici, avec les cessions de créances.",
+      "open": "Ouvrir les paiements"
+    },
+    "expenses": {
+      "title": "Frais de mission",
+      "body": "Les frais se saisissent et se valident dans les notes de frais ; le barème fixe ce qui est refacturable.",
+      "reports": "Notes de frais",
+      "scale": "Barème des frais",
+      "columns": {
+        "bearer": "Consultant / mission",
+        "report": "Note",
+        "amount": "Montant",
+        "status": "État"
+      },
+      "lines_one": "{{count}} ligne",
+      "lines_other": "{{count}} lignes",
+      "overage_one": "{{count}} dépassement du barème",
+      "overage_other": "{{count}} dépassements du barème",
+      "empty": "Aucune note de frais sur cette période."
+    },
+    "atCompletion": "La marge à terminaison et la contribution après allocations internes se lisent dans le dossier de chaque mission.",
+    "missions": "Ouvrir les missions",
+    "settingsLink": "Réglages finance",
+    "guide": {
+      "heading": "Lire séparément production, marge et trésorerie",
+      "intro": "La vue financière sert à arbitrer les blocages, la rentabilité documentée et les règlements attendus.",
+      "stepsTitle": "Le parcours utile",
+      "step1": "Choisis la période d’activité, puis le périmètre des missions.",
+      "step2": "Ouvre les pièces qui expliquent un montant ou un écart.",
+      "step3": "Suis ce qui sort et ce qui rentre dans leurs écrans.",
+      "keepTitle": "À garder en tête",
+      "keep": "Marge de mission et prévision d’échéances ne sont ni résultat net ni solde bancaire. Les coûts inconnus restent inconnus."
+    },
+    "period": "Période d’activité",
+    "periodReset": "Revenir au mois courant",
+    "stats": {
+      "produced": "Production validée",
+      "producedNote": "Jours travaillés × tarif",
+      "invoiced": "Facturé sur cette activité",
+      "invoicedNote": "Ce qui est sorti vers l’outil de facturation",
+      "collected": "Encaissements du mois",
+      "collectedNote": "Ce que les clients ont réellement payé",
+      "outstanding": "Encours total",
+      "outstandingNote": "Reste dû, toutes périodes, après règlements affectés",
+      "unread": "non lu",
+      "noSource": "aucune source branchée",
+      "floor_one": "Plancher : {{count}} mission sans montant",
+      "floor_other": "Plancher : {{count}} missions sans montant",
+      "label": "Les chiffres de la période"
+    },
+    "margin": {
+      "kicker": "MARGE OPÉRATIONNELLE DOCUMENTÉE",
+      "unmeasured": "aucune mission avec activité et coût connus",
+      "coverage": "Sur {{measured}} missions mesurées · {{unmeasured}} sans coût connu. Les coûts inconnus ne valent pas zéro.",
+      "warning": "Marge de contribution, pas résultat net. Charges de structure, paie, banque, TVA exigible et comptabilité ne sont pas reconstituées.",
+      "coverageBar": "Couverture du revenu : {{value}}"
+    },
+    "decisions": {
+      "title": "Ce qui mérite une décision",
+      "activity": "Activité / facturation",
+      "activityBody": "Les relevés à valider et les dossiers à débloquer",
+      "late": "Retards clients",
+      "noneLate": "Aucun retard",
+      "lateAmount": "{{value}} échus",
+      "noneBlocked": "Aucun dossier à débloquer",
+      "blocked_one": "{{count}} dossier à débloquer",
+      "blocked_other": "{{count}} dossiers à débloquer",
+      "orders": "Commandes",
+      "ordersBody": "Les bons de commande attendus",
+      "noneMissingPo": "Aucun bon de commande manquant",
+      "missingPo_one": "{{count}} bon de commande manquant",
+      "missingPo_other": "{{count}} bons de commande manquants"
+    },
+    "weeks": {
+      "title": "Les quatre prochaines semaines",
+      "hint": "Prévision de règlements fondée sur les échéances. Pas un solde bancaire.",
+      "none": "Aucun règlement attendu",
+      "unplaced_one": "{{count}} facture à replanifier, en litige ou sans échéance ({{value}}), non placée arbitrairement dans une semaine.",
+      "unplaced_other": "{{count}} factures à replanifier, en litige ou sans échéance ({{value}}), non placées arbitrairement dans une semaine.",
+      "unplacedUnknown_one": "{{count}} facture à replanifier, en litige ou sans échéance, non placée dans une semaine.",
+      "unplacedUnknown_other": "{{count}} factures à replanifier, en litige ou sans échéance, non placées dans une semaine.",
+      "aging": "Voir l’ancienneté de l’encours"
+    },
+    "crumb": "Vue financière",
+    "toolbar": "Période de la vue financière",
+    "byMission": {
+      "title": "La rentabilité, mission par mission",
+      "filters": "Filtrer les missions",
+      "columns": {
+        "mission": "Mission",
+        "days": "Jours validés",
+        "produced": "Production HT",
+        "cost": "Coût documenté",
+        "margin": "Marge",
+        "todo": "À faire"
+      },
+      "toValidate": "À valider",
+      "toFill": "À renseigner",
+      "activityToValidate": "Activité à valider",
+      "costUnknown": "aucun coût documenté dans les conditions de la mission",
+      "notComputed": "Non calculée",
+      "marginShare": "{{value}} % du revenu",
+      "fillCost": "Renseigner le coût",
+      "terms": "Conditions",
+      "empty": "Aucune activité sur cette période.",
+      "filteredEmpty": "Aucune mission dans cette sélection."
+    },
+    "aging": {
+      "body": "Le restant dû, rangé par ancienneté d’échéance, vit dans Encaissements — avec les gestes pour le traiter."
+    },
+    "suppliers": {
+      "title": "Achats et factures fournisseurs",
+      "where": "Les pièces se tiennent dans chaque mission",
+      "body": "Les factures fournisseurs se déposent et se contrôlent dans le dossier de chaque mission, contre son relevé d’activité ; le paiement qui en découle se suit juste dessous, dans « Ce qui sort »."
+    },
+    "cessions": "Cessions à l’affacturage",
+    "review": {
+      "title": "La revue opérationnelle du mois",
+      "activity": "Activité",
+      "activityBody_one": "{{count}} relevé sans validation client",
+      "activityBody_other": "{{count}} relevés sans validation client",
+      "billing": "Facturation",
+      "billingBody": "{{blocked}} à compléter · {{ready}} prêts",
+      "cash": "Coûts et cash",
+      "costs_one": "{{count}} coût à documenter",
+      "costs_other": "{{count}} coûts à documenter",
+      "toMatch": "{{value}} à rapprocher",
+      "openQueue": "Ouvrir la file"
+    }
+  },
+  "multiSelect": {
+    "some": "{{label}} · {{count}}",
+    "clear": "Tout effacer"
+  },
+  "financeCrumb": "Missions",
+  "financeFilters": {
+    "chosen_one": "{{count}} choisi",
+    "chosen_other": "{{count}} choisis"
+  },
+  "views": {
+    "label": "Vues des missions",
+    "planning": "Planning",
+    "table": "Tableau"
+  },
+  "stats": {
+    "unmeasured": "Non mesuré",
+    "endsSoon": {
+      "label": "Fins sous 30 jours",
+      "none": "Aucune",
+      "hint": "Préparer la suite"
+    },
+    "starting": {
+      "label": "Démarrages prévus",
+      "none": "Aucun",
+      "hint": "Vérifier les prérequis"
+    },
+    "noEndDate": {
+      "label": "Fins non renseignées",
+      "none": "Aucune",
+      "hint": "Pas de date supposée"
+    }
+  },
+  "satisfaction": {
+    "title": "Satisfaction",
+    "client": "Client",
+    "consultant": "Consultant",
+    "unmeasured": "aucun niveau déclaré",
+    "levels": {
+      "low": "Basse",
+      "medium": "Moyenne",
+      "high": "Bonne"
+    },
+    "badges": {
+      "low": "Satisfaction basse",
+      "medium": "Satisfaction moyenne",
+      "high": "Satisfaction bonne"
+    },
+    "levelLabel": "Niveau (optionnel)",
+    "filterLabel": "Satisfaction",
+    "filter": {
+      "low": "Basse",
+      "medium": "Moyenne",
+      "high": "Bonne",
+      "unmeasured": "Non mesurée"
+    }
+  },
+  "presetViews": {
+    "title": "Vues prêtes",
+    "hint": "Une population nommée, en un clic — un second clic la retire.",
+    "thisWeek": "À traiter cette semaine",
+    "timesheetsMissing": "CRA manquants",
+    "invoicesBlocked": "Factures bloquées",
+    "paymentsLate": "Paiements en retard",
+    "marginUnmeasured": "Marge non mesurée"
+  }
+}

@@ -1,0 +1,354 @@
+{
+  "notes": {
+    "title": "Notes",
+    "add": "Ajouter la note",
+    "placeholder": "Ce que tu as appris : un budget, un arbitrage, un interlocuteur qui change…",
+    "aria": "Nouvelle note",
+    "sharedHint": "Visible par ton équipe. Chaque note garde son auteur et sa date.",
+    "empty": "Aucune note pour l’instant. La première ligne écrite ici sera lisible par toute l’équipe, datée.",
+    "added": "Note ajoutée",
+    "addError": "La note n’a pas pu être ajoutée",
+    "saveError": "La note n’a pas pu être modifiée",
+    "deleted": "Note supprimée",
+    "deleteError": "La note n’a pas pu être supprimée",
+    "unknownAuthor": "Auteur inconnu",
+    "pin": "Épingler en tête",
+    "unpin": "Ne plus épingler",
+    "delete": "Supprimer la note",
+    "loadError": "Les notes n’ont pas pu être chargées. Elles existent toujours — c’est la lecture qui a échoué.",
+    "sharedHintAccount": "Visible par ton équipe. Chaque note garde son auteur et sa date — et la prochaine analyse de ce compte les relira, citées telles quelles, pour ne pas te proposer une approche froide sur ce que tu sais déjà.",
+    "draftKept": "Brouillon conservé sur cet appareil jusqu’à l’enregistrement.",
+    "showAll": "Voir les {{count}} notes",
+    "editScope": "Modifier la portée",
+    "scopeEditAria": "Portée de la note",
+    "scopeSave": "Enregistrer la portée",
+    "scopeCancel": "Annuler",
+    "scopeLegend": "Cette note vaut aussi pour (même groupe) :",
+    "inheritedFrom": "Écrite sur {{name}} (même groupe)",
+    "alsoAppliesTo": "Vaut aussi pour : {{names}}"
+  },
+  "field": {
+    "empty": "Non renseigné",
+    "edit": "Corriger {{field}}",
+    "confirm": "Enregistrer",
+    "cancel": "Annuler"
+  },
+  "record": {
+    "saved": "Modification enregistrée",
+    "saveError": "La modification n’a pas pu être enregistrée",
+    "editHint": "Tes corrections sont conservées : l’analyse suivante ne les écrase pas.",
+    "complete": "Compléter la fiche",
+    "completeBenefit": "Nommer le commanditaire, les utilisateurs, l’entité juridique et le client final : {{copilot}} et le plan s’appuient dessus.",
+    "completeDone": "Terminer"
+  },
+  "history": {
+    "title": "Historique des modifications",
+    "empty": "Aucune modification enregistrée sur cette fiche.",
+    "importedFrom": "Importé le {{date}} depuis {{source}}",
+    "blank": "(vide)",
+    "scope": "Ta correction ne s’applique qu’à ce champ, sur cette fiche — jamais en cascade automatique.",
+    "protects": "Elle l’emporte désormais sur « {{source}} » pour ce champ : cette source ne pourra plus l’écraser silencieusement.",
+    "protectsNothing": "Le champ était vide avant : ta correction n’a rien fait céder.",
+    "doesNotBlock": "Elle n’empêche pas le reste de l’analyse — score, plan, {{copilot}}… — de continuer à évoluer avec de nouvelles données.",
+    "surfacesTitle": "Où ta correction est arrivée",
+    "surfacesCount": "{{reached}} surfaces sur {{total}} relisent ta correction. Les autres sont nommées ci-dessous.",
+    "surfaceReached": "relit ta correction",
+    "surfaceNotReached": "ne la relit pas",
+    "surfaceNotMeasurable": "non mesuré"
+  },
+  "correctionSurfaces": {
+    "laura": {
+      "name": "{{copilot}}",
+      "why": "Le contexte du copilote est rebâti à chaque tour depuis la fiche vivante."
+    },
+    "account_file": {
+      "name": "Dossier Compte",
+      "why": "La fiche est relue à chaque ouverture."
+    },
+    "contacts": {
+      "name": "Contacts",
+      "why": "La liste est relue à chaque ouverture, sans copie figée."
+    },
+    "influence_map": {
+      "name": "Carte d’influence",
+      "why": "Elle se construit à partir du seul graphe rangé dans l’analyse : un nom ou un titre corrigé y reste invisible jusqu’à la prochaine analyse."
+    },
+    "coverage": {
+      "name": "Couverture",
+      "why": "Elle compte des contacts relus vivants."
+    },
+    "score": {
+      "name": "Score du compte",
+      "why": "Le score n’a pas d’auteur humain : aucune correction ne le recalcule. Il reste celui de la dernière analyse."
+    },
+    "plan": {
+      "name": "Plan d’action",
+      "why": "Le plan est écrit une fois par l’analyse : une correction ne réécrit pas un texte déjà rédigé."
+    },
+    "meetings": {
+      "name": "Rendez-vous",
+      "why": "Le brief relit les contacts à chaque ouverture."
+    },
+    "future_research": {
+      "name": "Futures recherches",
+      "why": "Le nom et le SIREN repartent corrigés, mais le contexte qui oriente la recherche suivante reste celui de la dernière analyse."
+    }
+  },
+  "sources": {
+    "human": "Saisi à la main",
+    "connector": "Outil connecté",
+    "pipeline": "Analyse {{brand}}",
+    "model": "Proposition IA"
+  },
+  "fields": {
+    "business_unit_id": "BU propriétaire",
+    "companyName": "Raison sociale",
+    "account_id": "Compte",
+    "label": "Intitulé",
+    "started_on": "Date de début",
+    "ends_on": "Date de fin",
+    "daily_rate": "TJM",
+    "tradeName": "Nom commercial",
+    "sector": "Secteur",
+    "employees": "Effectif",
+    "revenue": "Chiffre d’affaires",
+    "headquarters": "Siège",
+    "website": "Site web",
+    "phone": "Téléphone",
+    "address": "Adresse",
+    "siren": "SIREN",
+    "nafCode": "Code NAF",
+    "subsidiaries": "Filiales",
+    "fullName": "Nom",
+    "title": "Fonction",
+    "entity": "Entité",
+    "email": "E-mail",
+    "linkedinUrl": "Profil professionnel",
+    "locale": "Langue",
+    "family": "Famille",
+    "declaredPersonCompanyRelation": "Relation avec l’entreprise",
+    "decisionRole": "Rôle de décision",
+    "assignedTo": "Porteur",
+    "priority": "Priorité",
+    "profileSummary": "Portrait",
+    "whyContact": "Pourquoi le contacter",
+    "careerLevers": "Leviers de carrière",
+    "implicitFears": "Craintes implicites",
+    "deletedAt": "Suppression",
+    "declaredInternalSponsor": "Commanditaire interne",
+    "declaredInternalUsers": "Utilisateurs",
+    "declaredLegalEntity": "Entité juridique",
+    "declaredEndClient": "Client final",
+    "declaredInternalClientMode": "Direction interne ou client direct",
+    "declaredRouteScope": "Périmètre de la mission",
+    "declaredRouteObjectives": "Objectifs du compte",
+    "declaredRouteAvailableRoles": "Rôles disponibles côté client",
+    "declaredRoutePartners": "Partenaires déjà identifiés",
+    "declaredRouteHistory": "Historique de la relation",
+    "declaredRouteTiming": "Fenêtre de temps",
+    "declaredRouteBudget": "Budget du client",
+    "declaredRouteAvailability": "Disponibilité (consultants, temps)",
+    "declaredRouteNetwork": "Réseau existant sur le compte",
+    "declaredRouteEvent": "Événement ou communauté",
+    "declaredRouteInbound": "Contenu à l’origine du contact"
+  },
+  "personCompanyRelations": {
+    "employee_current": "Salarié actuel",
+    "employee_former": "Ancien salarié",
+    "contractor_current": "Prestataire actuel",
+    "contractor_historical": "Ancien prestataire",
+    "freelancer": "Freelance",
+    "manager": "Manager",
+    "buyer": "Acheteur",
+    "technical_reviewer": "Relecteur technique",
+    "sponsor": "Sponsor",
+    "user": "Utilisateur",
+    "recruiter": "Recruteur",
+    "consultant_presented": "Consultant présenté"
+  },
+  "internalClientModes": {
+    "internal_service": "Direction interne servant des métiers",
+    "external_buyer": "Client direct"
+  },
+  "locales": {
+    "fr": "Français",
+    "en": "Anglais",
+    "de": "Allemand"
+  },
+  "createContact": {
+    "accountCreate": "Créer « {{name}} »",
+    "accountCreateError": "L’entreprise n’a pas pu être créée",
+    "accountCreateLabel": "Nom de l’entreprise à créer",
+    "accountCreated": "Entreprise créée",
+    "accountHint": "Pas encore dans ta liste ? Crée-la ici — aucune analyse n’est lancée.",
+    "accountLabel": "Entreprise",
+    "accountPlaceholder": "Choisis l’entreprise à laquelle le rattacher",
+    "accountSwitchToCreate": "Créer une entreprise",
+    "accountSwitchToPick": "Choisir une entreprise existante",
+    "accountUnknown": "Je ne connais pas encore l'entreprise",
+    "accountUnknownHint": "Le contact sera créé « à qualifier ». Tu pourras lui rattacher une entreprise plus tard, depuis sa fiche.",
+    "created": "Contact créé",
+    "description": "Un nom suffit. Le reste peut se compléter plus tard, ou par l’enrichissement.",
+    "error": "Le contact n’a pas pu être créé",
+    "importCta": "Importer des contacts",
+    "importDescription": "Un fichier CSV ou Excel s’importe avec sa prévisualisation, le choix des colonnes et la détection des doublons.",
+    "importTitle": "Plusieurs contacts à la fois ?",
+    "open": "Ajouter un contact",
+    "submit": "Créer le contact",
+    "title": "Ajouter un contact"
+  },
+  "delete": {
+    "action": "Supprimer le contact",
+    "done": "Contact supprimé",
+    "undo": "Annuler",
+    "restored": "Contact restauré",
+    "error": "Le contact n’a pas pu être supprimé"
+  },
+  "writeRequests": {
+    "title": "Écritures à valider",
+    "subtitle": "Ce que le produit veut écrire dans ton CRM sans que personne l’ait relu. Rien ne part avant ton accord.",
+    "movedToActionCenter": "Ces décisions se prennent maintenant au Centre d’actions, avec les autres validations →",
+    "kind": {
+      "export_contact": "Envoyer un contact",
+      "create_note": "Déposer une note",
+      "create_task": "Créer une tâche",
+      "log_meeting": "Journaliser une réunion",
+      "create_company": "Créer une société",
+      "create_list": "Créer une liste",
+      "enroll_sequence": "Inscrire dans une séquence",
+      "update_deal_stage": "Déplacer une affaire",
+      "export_need": "Déposer un besoin",
+      "send_chat_message": "Envoyer une réponse Beeper"
+    },
+    "bySystem": "Demandé automatiquement",
+    "byUser": "Demandé par un membre",
+    "noPreview": "Aucun champ n’a été enregistré pour cette demande.",
+    "expiresAt": "Expire le {{date}} — passé cette date, la demande est à refaire.",
+    "approve": "Autoriser",
+    "reject": "Refuser",
+    "approved": "Écriture autorisée",
+    "rejected": "Écriture refusée",
+    "decisionFailed": "La décision n’a pas pu être enregistrée",
+    "empty": {
+      "title": "Rien n’attend ta validation",
+      "body": "Aucune écriture automatique n’est en attente. Tes propres gestes, eux, partent sans passer par ici : le clic est la décision."
+    },
+    "notConnected": {
+      "title": "Aucun CRM branché",
+      "body": "Sans CRM branché, rien ne peut être écrit — cette file restera vide, et ce n’est pas la même chose que « tout est validé ».",
+      "cta": "Brancher mon CRM"
+    },
+    "autoWrites": {
+      "title": "Ce qui part sans clic",
+      "body": "La synchronisation remplit d’elle-même les champs vides — e-mail et téléphone — d’un contact dans ton CRM, sans clic de ta part ; elle n’écrase jamais une valeur déjà saisie. Toute autre écriture (remplacer une valeur, créer une fiche, une note, une tâche…) attend une prévisualisation et ton accord."
+    },
+    "notConfigured": {
+      "title": "Écriture CRM indisponible",
+      "body": "Cette capacité n’est pas ouverte sur cet environnement. Rien n’est en attente, et rien ne peut l’être."
+    },
+    "failed": {
+      "title": "La lecture a échoué",
+      "body": "Ce n’est pas « rien n’attend » : la file n’a pas pu être lue. Recharge l’écran dans un moment."
+    }
+  },
+  "confrontation": {
+    "button": "Confronter avec mon CRM",
+    "title": "Confronter avec le CRM",
+    "description": "Ce que ton CRM connaît déjà, comparé à ce que {{brand}} a trouvé — sur le dernier instantané en base, sans appel au CRM.",
+    "snapshotAt": "Instantané du {{date}}",
+    "snapshotUnknown": "Fraîcheur non mesurée",
+    "importedSource": "Aucun CRM n’est branché : la comparaison porte sur les contacts importés de ton CRM, déjà dans ce compte.",
+    "notConnected": {
+      "title": "Aucun CRM branché",
+      "body": "Sans CRM branché, rien ne peut être confronté — cette comparaison restera vide tant qu'aucun CRM n'est connecté à cet espace."
+    },
+    "empty": "Aucun doublon détecté avec le CRM sur cet instantané.",
+    "hint": "Une proposition, jamais une fusion automatique — choisis quelle fiche garder. Aucun champ n'est écrasé : une correction faite à la main n'est jamais remplacée.",
+    "reason": {
+      "same_email": "Même adresse",
+      "same_name": "Même nom"
+    },
+    "crmSide": "Fiche CRM",
+    "bellumSide": "Fiche trouvée par {{brand}}",
+    "keepCrm": "Garder la fiche CRM",
+    "keepBellum": "Garder la fiche trouvée par {{brand}}",
+    "loadError": "La confrontation n'a pas pu être lue. Réessaie dans un moment."
+  },
+  "provenance": {
+    "inCrm": "Déjà dans ton CRM",
+    "inCrmHint": "Ce contact était dans ton CRM avant l’analyse.",
+    "brought": "Apporté par {{brand}}",
+    "broughtHint": "Trouvé par l’analyse : ce contact n’était pas dans ton CRM.",
+    "summaryInCrm_one": "{{count}} dans ton CRM",
+    "summaryInCrm_other": "{{count}} dans ton CRM",
+    "summaryBrought_one": "{{count}} trouvé par l’analyse",
+    "summaryBrought_other": "{{count}} trouvés par l’analyse",
+    "summaryAria": "Contacts de ce compte : ce qui était dans ton CRM, ce que l’analyse a apporté",
+    "complete": {
+      "title": "Compléter le compte dans ton CRM",
+      "description": "Les contacts que l’analyse a trouvés et qui ne sont pas dans ton CRM. Décoche ceux que tu ne veux pas envoyer.",
+      "listLabel": "Contacts à ajouter à ton CRM",
+      "send_one": "Ajouter {{count}} contact à ton CRM",
+      "send_other": "Ajouter {{count}} contacts à ton CRM",
+      "sendNone": "Coche au moins un contact",
+      "sending": "Envoi en cours…",
+      "nothing": "Rien à ajouter : tous les contacts apportés par l’analyse sont déjà dans ton CRM.",
+      "impersonating": "En incarnation, rien ne part vers le CRM du client : l’écriture reste bloquée.",
+      "close": "Fermer"
+    }
+  },
+  "push": {
+    "title": "Envoyer vers ton CRM",
+    "titleTo": "Envoyer vers {{destination}}",
+    "description": "Rien ne part avant ta validation. Une fiche déjà présente dans ton CRM est retrouvée, jamais dupliquée.",
+    "withAccountContacts": "Avec tous les contacts de ces comptes",
+    "loading": "Préparation de l’aperçu…",
+    "listLabel": "Ce qui sera envoyé",
+    "entity": {
+      "account": "compte",
+      "contact": "contact"
+    },
+    "field": {
+      "name": "Nom",
+      "domain": "Site",
+      "email": "E-mail",
+      "firstName": "Prénom",
+      "lastName": "Nom de famille",
+      "company": "Entreprise",
+      "jobTitle": "Fonction",
+      "phone": "Téléphone",
+      "linkedinUrl": "Profil professionnel"
+    },
+    "fieldsLabel": "Champs écrits",
+    "fieldsNotRead": "Les valeurs déjà saisies dans ton CRM ne sont pas relues avant l’envoi : seule la fiche déjà liée est signalée.",
+    "existsInCrm": "Fiche déjà liée dans ton CRM",
+    "verdict": {
+      "create": "Sera créé",
+      "update": "Sera mis à jour",
+      "already_present": "Déjà présent",
+      "refused": "Refusé"
+    },
+    "outcome": {
+      "created": "Créé",
+      "updated": "Mis à jour",
+      "already_present": "Déjà présent",
+      "pending": "En attente de validation",
+      "refused": "Refusé",
+      "failed": "Échec",
+      "unknown": "Sans réponse — à vérifier"
+    },
+    "openRecord": "Ouvrir la fiche de {{name}} dans ton CRM",
+    "send": "Envoyer",
+    "sending": "Envoi…",
+    "done": "Fermer",
+    "close": "Fermer",
+    "inCrm": "Dans {{destination}}",
+    "yourCrm": "ton CRM",
+    "sendAccount": "Envoyer vers mon CRM",
+    "updateAccount": "Mettre à jour dans mon CRM",
+    "titleMany": "Envoyer vers {{count}} CRM",
+    "targetsLegend": "Vers quels CRM ?",
+    "noTarget": "Aucun CRM n’est branché sur ton espace : branche-le dans Réglages › Intégrations.",
+    "noAnswer": "Partie sans réponse de ce CRM : vérifie la fiche dans ton CRM avant de relancer."
+  }
+}

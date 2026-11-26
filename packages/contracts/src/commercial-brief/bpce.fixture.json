@@ -1,0 +1,72 @@
+{
+  "account_name": "BPCE",
+  "generated_at": "2026-10-01T09:00:00.000Z",
+  "scope": "france",
+  "headquarters": {
+    "label": "Tours Duo",
+    "city": "Paris",
+    "address": "Avenue Pierre Mendès France, Paris 13e"
+  },
+  "kpis": [
+    { "label": "Sites en France", "value": 2 },
+    { "label": "TJM direct observé", "value": "650 €/j", "caption": "canal direct uniquement" }
+  ],
+  "what_i_know": [
+    {
+      "rubric": "IDENTITÉ",
+      "known": "Siège à Tours Duo, Paris 13e. La filiale IT a un site à Strasbourg.",
+      "meaning": "Les décisions se prennent à Paris ; Strasbourg est un site d'exécution, pas un centre de décision."
+    }
+  ],
+  "charts": [{ "title": "Contacts par direction", "items": [{ "label": "DSI", "value": 4 }] }],
+  "entities": [
+    { "name": "BPCE IT", "nature": "filiale informatique", "status": "active", "country": "FR" },
+    { "name": "Ancienne Filiale", "status": "exited", "note": "cédée" }
+  ],
+  "sites": [
+    { "name": "Tours Duo", "city": "Paris", "country": "FR", "kind": "headquarters" },
+    {
+      "name": "BPCE IT Strasbourg",
+      "city": "Strasbourg",
+      "country": "FR",
+      "kind": "secondary",
+      "why": "site secondaire de la filiale IT"
+    }
+  ],
+  "prices": [{ "label": "Développeur senior", "amount_eur_per_day": 650, "channel": "direct" }],
+  "esn": [
+    {
+      "name": "ESN Exemple",
+      "evidence_level": "observed",
+      "proof": "offre d'emploi publiée mentionnant la mission",
+      "perimeter": "BPCE IT"
+    }
+  ],
+  "people": [
+    {
+      "name": "Camille Exemple",
+      "function": "DSI adjointe",
+      "entity": "BPCE IT",
+      "city": "Paris",
+      "role": "decision_maker",
+      "reliability": "haute"
+    }
+  ],
+  "sections": [
+    {
+      "key": "projects",
+      "title": "Projets",
+      "columns": [
+        { "key": "name", "label": "Projet" },
+        { "key": "status", "label": "Statut" }
+      ],
+      "rows": [{ "name": "Migration cloud", "status": "En cours" }]
+    }
+  ],
+  "guardrails": [
+    {
+      "point": "Siège",
+      "detail": "Le siège est Tours Duo (Paris 13e) ; Strasbourg n'est qu'un site secondaire de la filiale IT."
+    }
+  ]
+}

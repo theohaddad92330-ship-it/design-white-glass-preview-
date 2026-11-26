@@ -1,0 +1,92 @@
+{
+  "$schema": "http://json-schema.org/draft-07/schema#",
+  "title": "BellumAnalysisInput",
+  "description": "Contrat d'ENTRÉE d'une analyse : l'entreprise cible + le profil de l'ESN qui prospecte + le contexte de RELATION avec ce compte (qui change l'approche : prospection à froid, réengagement, upsell d'un client existant, déplacement d'un incumbent). companyName est requis ; le reste est optionnel.",
+  "type": "object",
+  "required": ["companyName"],
+  "additionalProperties": true,
+  "properties": {
+    "companyName": {
+      "type": "string",
+      "description": "Entreprise cible à analyser — le compte de conquête."
+    },
+    "profileData": {
+      "type": "object",
+      "additionalProperties": true,
+      "description": "Profil de l'ESN qui prospecte. Personnalise TOUTE l'analyse (recherche, contacts, plan) : chaque ESA a ses offres, secteurs et personas propres.",
+      "properties": {
+        "esnName": { "type": "string", "description": "Nom de l'ESN." },
+        "offers": {
+          "type": "array",
+          "items": { "type": "string" },
+          "description": "Offres / expertises de l'ESN (cloud, data, cyber…) — ce qu'elle vend."
+        },
+        "sectors": { "type": "array", "items": { "type": "string" }, "description": "Secteurs cibles de l'ESN." },
+        "personas": {
+          "type": "array",
+          "items": { "type": "string" },
+          "description": "Personas décideurs visés (DSI, CTO, RSSI, DG…). Pilote la recherche de contacts Apollo : sans personas, défaut = titres décideurs IT."
+        },
+        "geoZone": { "type": "string", "description": "Zone géographique d'intervention." },
+        "avgTJM": { "type": "string", "description": "TJM moyen de l'ESN." },
+        "salesCycle": { "type": "string", "description": "Durée typique du cycle de vente." },
+        "salesTeamSize": { "type": "string", "description": "Taille de l'équipe commerciale." },
+        "mainChallenge": { "type": "string", "description": "Principal défi commercial de l'ESN." },
+        "references": {
+          "type": "array",
+          "items": { "type": "string" },
+          "description": "Références clients de l'ESN (preuve sociale réutilisée dans le plan)."
+        },
+        "differentiation": {
+          "type": "string",
+          "description": "Différenciateur clé de l'ESN (ce qui la distingue des concurrents) — réutilisé dans le positionnement et les messages."
+        }
+      }
+    },
+    "userContext": {
+      "type": "object",
+      "additionalProperties": true,
+      "description": "Contexte de RELATION avec ce compte — change l'approche. Union de presets via le champ `preset`. Consommé par la recherche, la stratégie ET le plan (le plan adapte messages + séquence). Accepte aussi une simple chaîne libre.",
+      "properties": {
+        "preset": {
+          "type": "string",
+          "enum": ["push-offer", "known-account", "incumbent", "signal"],
+          "description": "Type de contexte de relation."
+        },
+        "commercialStatus": {
+          "type": "string",
+          "enum": ["active", "former", "engaged-prospect"],
+          "description": "[known-account] Statut commercial : client actif / ancien client / prospect déjà engagé."
+        },
+        "lastInteraction": {
+          "type": "string",
+          "description": "[known-account] Dernière interaction connue avec le compte."
+        },
+        "openOpportunity": { "type": "string", "description": "[known-account] Opportunité ouverte en cours." },
+        "revenueOrPipeline": {
+          "type": "string",
+          "description": "[known-account] CA déjà réalisé ou pipeline sur ce compte."
+        },
+        "offer": { "type": "string", "description": "[push-offer] Offre précise à pousser." },
+        "pricing": { "type": "string", "description": "[push-offer] Tarification de l'offre." },
+        "differentiation": { "type": "string", "description": "[push-offer] Différenciateur clé." },
+        "idealMission": { "type": "string", "description": "[push-offer] Mission idéale visée." },
+        "incumbentName": {
+          "type": "string",
+          "description": "[incumbent] Prestataire / ESN déjà en place sur le compte."
+        },
+        "incumbentScope": { "type": "string", "description": "[incumbent] Périmètre tenu par l'incumbent." },
+        "contractEndDate": {
+          "type": "string",
+          "description": "[incumbent] Échéance du contrat de l'incumbent (fenêtre d'attaque)."
+        },
+        "weakness": { "type": "string", "description": "[incumbent] Faiblesse de l'incumbent à exploiter." },
+        "signalType": {
+          "type": "string",
+          "description": "[signal] Nature du signal déclencheur (levée, recrutement, nomination…)."
+        },
+        "signalDetail": { "type": "string", "description": "[signal] Détail du signal." }
+      }
+    }
+  }
+}

@@ -1,0 +1,100 @@
+{
+  "section": {
+    "title": "My work contexts",
+    "subtitle": "Variants of your activity (market, sector, offer) that never touch your main profile.",
+    "loading": "Loading your contexts…",
+    "empty": "No saved context yet."
+  },
+  "entryPoints": {
+    "oneOffMission": "For a one-off mission",
+    "fromActivity": "Create a variant"
+  },
+  "create": {
+    "title": "New work context",
+    "description": "A variant of your profile, alongside it — your main profile never changes.",
+    "nameLabel": "Name",
+    "namePlaceholder": "Automotive Brest",
+    "sectorsLabel": "Sectors (comma-separated)",
+    "sectorsPlaceholder": "Automotive, Industry",
+    "territoriesLabel": "Territories (comma-separated)",
+    "territoriesPlaceholder": "Brittany, Loire Valley",
+    "visibilityLabel": "Visibility",
+    "profileUnchangedNotice": "Your main profile will never be changed automatically.",
+    "cancel": "Cancel",
+    "confirm": "Save",
+    "saving": "Saving…",
+    "success": "Context “{{name}}” saved.",
+    "failed": "Couldn't save this context."
+  },
+  "visibility": {
+    "personal": "Personal",
+    "bu": "My team",
+    "group": "Whole workspace"
+  },
+  "status": {
+    "temporaire": "Temporary",
+    "enregistre": "Saved",
+    "partage": "Shared",
+    "archive": "Archived"
+  },
+  "activate": {
+    "action": "Activate",
+    "success": "Context “{{name}}” active — new conversation opened.",
+    "failed": "Couldn't activate this context."
+  },
+  "archive": {
+    "action": "Archive",
+    "success": "Context archived.",
+    "failed": "Couldn't archive this context."
+  },
+  "banner": {
+    "active": "Active context: {{name}}",
+    "clear": "Back to my usual profile"
+  },
+  "profileSuggestion": {
+    "title": "Update your main profile?",
+    "none": "No sector",
+    "apply": "Apply",
+    "dismiss": "Dismiss",
+    "applied": "Main profile updated.",
+    "failed": "Couldn't update the profile."
+  },
+  "mode": {
+    "title": "Work context",
+    "triggerLabel": "Work context: {{mode}}",
+    "profileTitle": "My profile",
+    "intro": "What {{copilot}} uses to personalise her answers in this conversation.",
+    "selected": "active",
+    "profileUntouched": "Your profile is never changed: this choice only applies to this conversation.",
+    "modes": {
+      "my_activity": {
+        "label": "My activity",
+        "does": "{{copilot}} relies on your profile, company, business units, memory, portfolio and CRM. Your request always comes first.",
+        "when": "Day to day, for your accounts and priorities."
+      },
+      "one_off_mission": {
+        "label": "One-off mission",
+        "does": "{{copilot}} reasons only on your request and what you selected, without your usual sectors, territories or goals.",
+        "when": "For a brief outside your usual scope (another region, another sector)."
+      },
+      "neutral": {
+        "label": "Neutral",
+        "does": "{{copilot}} uses neither your profile, your CRM, your portfolio nor your memory: only your request and public sources.",
+        "when": "To explore a market without bias or compare with a personalised result."
+      }
+    },
+    "profileSwitch": {
+      "label": "My profile",
+      "state": {
+        "my_activity": "My activity",
+        "neutral": "Neutral",
+        "one_off_mission": "One-off mission"
+      },
+      "help": {
+        "my_activity": "{{copilot}} draws on your activity.",
+        "neutral": "{{copilot}} answers without your profile.",
+        "one_off_mission": "Set in the scope panel; switching on restores My activity."
+      }
+    }
+  }
+}

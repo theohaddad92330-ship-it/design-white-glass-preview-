@@ -1,0 +1,193 @@
+name: bellum-container
+
+services:
+  # Supabase Postgres (includes auth schema, extensions, pgvector)
+  postgres:
+    container_name: bellum-postgres
+    image: supabase/postgres:15.8.1.085
+    restart: unless-stopped
+    ports:
+      - '${BELLUM_PG_PORT:-5432}:5432'
+    command: postgres -c config_file=/etc/postgresql/postgresql.conf -c log_min_messages=fatal
+    environment:
+      POSTGRES_HOST: /var/run/postgresql
+      POSTGRES_PASSWORD: ${POSTGRES_PASSWORD:-postgres}
+      POSTGRES_DB: ${POSTGRES_DB:-postgres}
+      JWT_SECRET: ${SUPABASE_JWT_SECRET:-super-secret-jwt-token-with-at-least-32-characters-long}
+      JWT_EXP: 3600
+    volumes:
+      - postgres_data:/var/lib/postgresql/data
+      - ../infra/docker-init/roles.sql:/docker-entrypoint-initdb.d/init-scripts/99-roles.sql
+      - ../infra/docker-init/jwt.sql:/docker-entrypoint-initdb.d/init-scripts/99-jwt.sql
+      - ../infra/docker-init/auth-permissions.sql:/docker-entrypoint-initdb.d/init-scripts/99-auth-permissions.sql
+    healthcheck:
+      test: ['CMD', 'pg_isready', '-U', 'postgres', '-h', 'localhost']
+      interval: 5s
+      timeout: 5s
+      retries: 10
+    networks:
+      - bellum-network
+
+  # Supabase Auth (GoTrue — handles login, signup, OAuth, JWT)
+  supabase-auth:
+    container_name: bellum-supabase-auth
+    image: supabase/gotrue:v2.186.0
+    restart: unless-stopped
+    environment:
+      GOTRUE_API_HOST: 0.0.0.0
+      GOTRUE_API_PORT: 9999
+      # Must include the `/auth/v1` prefix so the URLs GoTrue puts in tokens
+      # (recovery/verify/oauth callback) match Kong's `/auth/v1/...` routes
+      # (see tools/kong.yml). Without this, recovery links 404 on Kong.
+      API_EXTERNAL_URL: http://localhost:54321/auth/v1
+      GOTRUE_DB_DRIVER: postgres
+      GOTRUE_DB_DATABASE_URL: postgres://supabase_auth_admin:${POSTGRES_PASSWORD:-postgres}@postgres:5432/${POSTGRES_DB:-postgres}
+      GOTRUE_SITE_URL: ${FRONTEND_URL:-http://localhost:5173}
+      GOTRUE_URI_ALLOW_LIST: ${FRONTEND_URL:-http://localhost:5173}/**
+      GOTRUE_DISABLE_SIGNUP: 'false'
+      GOTRUE_JWT_ADMIN_ROLES: service_role
+      GOTRUE_JWT_AUD: authenticated
+      GOTRUE_JWT_DEFAULT_GROUP_NAME: authenticated
+      # Session access JWT lifetime: 24 h. The refresh token keeps things
+      # alive beyond that — the JWT is just how long a cached token is
+      # considered fresh by the api before a refresh round-trip.
+      GOTRUE_JWT_EXP: 86400
+      GOTRUE_JWT_SECRET: ${SUPABASE_JWT_SECRET:-super-secret-jwt-token-with-at-least-32-characters-long}
+      # Email recovery / magic-link / invite token lifetime: 15 min.
+      # Short enough to limit the window if the mailbox is compromised,
+      # long enough for the user to open the email at their own pace.
+      GOTRUE_MAILER_OTP_EXP: 900
+      GOTRUE_EXTERNAL_EMAIL_ENABLED: 'true'
+      # OTP verification is now handled by the API service (see OtpModule).
+      # GoTrue must NOT auto-confirm — the API flips `email_confirm` once
+      # the 6-digit code is validated. Set BYPASS_EMAIL_VERIFICATION=true on
+      # the api to skip the OTP gate in local dev / E2E.
+      GOTRUE_MAILER_AUTOCONFIRM: 'false'
+      # Google OAuth — flip ENABLED to 'true' and paste the creds from
+      # https://console.cloud.google.com/apis/credentials (OAuth client ID, type
+      # Web application, authorized redirect URI = the GOOGLE_REDIRECT_URI below).
+      # After editing run:
+      #   docker compose -f tools/docker-compose.yml up -d --force-recreate supabase-auth
+      GOTRUE_EXTERNAL_GOOGLE_ENABLED: ${GOOGLE_AUTH_ENABLED:-false}
+      GOTRUE_EXTERNAL_GOOGLE_CLIENT_ID: ${GOOGLE_CLIENT_ID:-}
+      GOTRUE_EXTERNAL_GOOGLE_SECRET: ${GOOGLE_CLIENT_SECRET:-}
+      GOTRUE_EXTERNAL_GOOGLE_REDIRECT_URI: http://localhost:54321/auth/v1/callback
+    healthcheck:
+      test: ['CMD', 'wget', '--no-verbose', '--tries=1', '--spider', 'http://localhost:9999/health']
+      timeout: 5s
+      interval: 5s
+      retries: 3
+    depends_on:
+      postgres:
+        condition: service_healthy
+    networks:
+      - bellum-network
+
+  # Supabase Meta (PostgreSQL metadata API for Studio)
+  supabase-meta:
+    container_name: bellum-supabase-meta
+    image: supabase/postgres-meta:v0.68.0
+    restart: unless-stopped
+    environment:
+      PG_META_PORT: 8080
+      PG_META_DB_HOST: postgres
+      PG_META_DB_PORT: 5432
+      PG_META_DB_NAME: ${POSTGRES_DB:-postgres}
+      PG_META_DB_USER: supabase_admin
+      PG_META_DB_PASSWORD: ${POSTGRES_PASSWORD:-postgres}
+    depends_on:
+      postgres:
+        condition: service_healthy
+    networks:
+      - bellum-network
+
+  # Supabase Kong (API Gateway for Studio)
+  supabase-kong:
+    container_name: bellum-supabase-kong
+    image: kong:2.8.1
+    restart: unless-stopped
+    ports:
+      - '54321:8000'
+    environment:
+      KONG_DATABASE: 'off'
+      KONG_DECLARATIVE_CONFIG: /var/lib/kong/kong.yml
+      KONG_DNS_ORDER: LAST,A,CNAME
+      KONG_PLUGINS: request-transformer,cors,key-auth,acl
+      SUPABASE_ANON_KEY: ${SUPABASE_ANON_KEY:-eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZS1kZW1vIiwicm9sZSI6ImFub24iLCJleHAiOjE5ODM4MTI5OTZ9.CRXP1A7WOeoJeXxjNni43kdQwgnWNReilDMblYTn_I0}
+      SUPABASE_SERVICE_KEY: ${SUPABASE_SERVICE_ROLE_KEY:-eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZS1kZW1vIiwicm9sZSI6InNlcnZpY2Vfcm9sZSIsImV4cCI6MTk4MzgxMjk5Nn0.EGIM96RAZx35lJzdJsyH-qQwv8Hdp7fsn3W0YpN81IU}
+    volumes:
+      - ./kong.yml:/var/lib/kong/kong.yml:ro
+    depends_on:
+      supabase-auth:
+        condition: service_healthy
+    networks:
+      - bellum-network
+
+  # Supabase Studio (UI)
+  supabase-studio:
+    container_name: bellum-supabase-studio
+    image: supabase/studio:2026.04.08-sha-205cbe7
+    restart: unless-stopped
+    ports:
+      - '${BELLUM_STUDIO_PORT:-3001}:3000'
+    environment:
+      HOSTNAME: '0.0.0.0'
+      STUDIO_PG_META_URL: http://supabase-meta:8080
+      SUPABASE_URL: http://supabase-kong:8000
+      SUPABASE_ANON_KEY: ${SUPABASE_ANON_KEY:-eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZS1kZW1vIiwicm9sZSI6ImFub24iLCJleHAiOjE5ODM4MTI5OTZ9.CRXP1A7WOeoJeXxjNni43kdQwgnWNReilDMblYTn_I0}
+      SUPABASE_SERVICE_KEY: ${SUPABASE_SERVICE_ROLE_KEY:-eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZS1kZW1vIiwicm9sZSI6InNlcnZpY2Vfcm9sZSIsImV4cCI6MTk4MzgxMjk5Nn0.EGIM96RAZx35lJzdJsyH-qQwv8Hdp7fsn3W0YpN81IU}
+      AUTH_JWT_SECRET: ${SUPABASE_JWT_SECRET:-super-secret-jwt-token-with-at-least-32-characters-long}
+      POSTGRES_HOST: postgres
+      POSTGRES_PORT: 5432
+      POSTGRES_DB: ${POSTGRES_DB:-postgres}
+      POSTGRES_PASSWORD: ${POSTGRES_PASSWORD:-postgres}
+      DEFAULT_ORGANIZATION_NAME: BellumAI
+      DEFAULT_PROJECT_NAME: bellum-local
+      NEXT_PUBLIC_ENABLE_LOGS: 'false'
+      NEXT_ANALYTICS_BACKEND_PROVIDER: postgres
+      EDGE_FUNCTIONS_MANAGEMENT_FOLDER: /app/edge-functions
+      SNIPPETS_MANAGEMENT_FOLDER: /app/snippets
+    volumes:
+      - ./volumes/edge-functions:/app/edge-functions
+      - ./volumes/snippets:/app/snippets
+    depends_on:
+      - supabase-meta
+      - supabase-kong
+    networks:
+      - bellum-network
+
+  # Mailpit (local SMTP catch-all for transactional emails)
+  mailpit:
+    container_name: bellum-mailpit
+    image: axllent/mailpit:latest
+    restart: unless-stopped
+    ports:
+      - '1025:1025'
+      - '8025:8025'
+    networks:
+      - bellum-network
+
+  # Redis
+  redis:
+    container_name: bellum-redis
+    image: redis:7-alpine
+    restart: unless-stopped
+    ports:
+      - '6379:6379'
+    volumes:
+      - redis_data:/data
+    healthcheck:
+      test: ['CMD', 'redis-cli', 'ping']
+      interval: 5s
+      timeout: 5s
+      retries: 3
+    networks:
+      - bellum-network
+
+volumes:
+  postgres_data:
+  redis_data:
+
+networks:
+  bellum-network:
+    driver: bridge

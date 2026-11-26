@@ -1,0 +1,380 @@
+{
+  "loading": "Les missions de ce compte se chargent…",
+  "loadError": "Les missions de ce compte n’ont pas pu être chargées.",
+  "empty": {
+    "title": "Aucune mission sur ce compte",
+    "description": "Rien n’a encore été délivré ici. Ce n’est pas « zéro euro » : il n’y a simplement rien à lire tant qu’une mission n’a pas démarré.",
+    "action": "Voir toutes les missions"
+  },
+  "quickActions": {
+    "addMission": "Ajouter une mission",
+    "importHistory": "Importer mon historique",
+    "fromDocument": "Créer depuis un document"
+  },
+  "fromDocument": {
+    "title": "Créer une mission depuis un document",
+    "description": "Dépose un contrat, une fiche de poste ou un e-mail : les champs se pré-remplissent, tu vérifies et corriges avant de créer.",
+    "close": "Fermer",
+    "account": "Compte",
+    "pasteLabel": "Coller le texte du document",
+    "pastePlaceholder": "Colle ici le contrat, la fiche de poste ou l’e-mail…",
+    "readText": "Lire ce texte",
+    "or": "ou",
+    "chooseFile": "Déposer un fichier",
+    "formats": "Formats lus : PDF (avec texte), Word (.docx), ou texte collé. Un PDF scanné n’est pas lu : les champs restent à saisir à la main.",
+    "status": {
+      "unreadable": "Ce document n’a pas pu être lu — les champs restent à saisir à la main.",
+      "too_large": "Ce document est trop volumineux pour être lu automatiquement — les champs restent à saisir à la main.",
+      "unavailable": "La lecture automatique est indisponible pour l’instant — les champs restent à saisir à la main."
+    },
+    "accountHint": "Le document mentionne « {{name}} » — vérifie qu’il s’agit bien de ce compte.",
+    "label": "Libellé de la mission",
+    "roleTitle": "Rôle",
+    "startedOn": "Début",
+    "endsOn": "Fin prévue",
+    "dailyRate": "TJM (€)",
+    "days": "Jours (bon de commande)",
+    "daysValue": "{{count}} jour",
+    "daysValue_other": "{{count}} jours",
+    "daysHint": "À confirmer dans les conditions commerciales de la mission, une fois créée.",
+    "notFound": "Non trouvé dans le document",
+    "cancel": "Annuler",
+    "submit": "Créer la mission",
+    "creating": "Création…",
+    "supervisedProposed": "Proposé d’après le document : « {{excerpt}} »"
+  },
+  "source": {
+    "hint": "Ces chiffres se calculent dans les missions. Ils se corrigent là-bas, jamais ici.",
+    "link": "Ouvrir les missions de ce compte"
+  },
+  "active": {
+    "title": "Missions en cours",
+    "hint": "Ce qui tourne aujourd’hui chez ce client, et ce qu’il faut engager avant la fin.",
+    "empty": "Aucune mission en cours. Tout ce que ce compte a acheté est dans l’historique.",
+    "columns": {
+      "label": "Mission",
+      "consultants": "Qui est dessus",
+      "period": "Période",
+      "daysRemaining": "Jours restants",
+      "margin": "Marge",
+      "rate": "Tarif vendu",
+      "nextAction": "Prochaine action",
+      "renewal": "Renouvellement",
+      "risks": "Risques"
+    },
+    "days_one": "{{count}} jour",
+    "days_other": "{{count}} jours",
+    "overdue_one": "Échue depuis {{count}} jour",
+    "overdue_other": "Échue depuis {{count}} jours",
+    "since": "Depuis le {{date}}",
+    "until": "jusqu’au {{date}}",
+    "nextAction": {
+      "renewal_overdue": "La fin est passée — trancher maintenant",
+      "renew_now": "Engager le renouvellement",
+      "renew_soon": "Préparer le renouvellement",
+      "set_end_date": "Poser une date de fin",
+      "none": "Rien à engager maintenant"
+    }
+  },
+  "past": {
+    "title": "Missions passées",
+    "hint": "Ce qui s’est terminé ici, pourquoi, et ce qu’on en a rapporté.",
+    "empty": "Aucune mission terminée sur ce compte.",
+    "columns": {
+      "label": "Mission",
+      "consultants": "Qui était dessus",
+      "period": "Période",
+      "endReason": "Motif de fin",
+      "feedback": "Retour"
+    },
+    "feedbackCollected": "Retour collecté",
+    "feedbackMissing": "Retour non collecté",
+    "feedbackWhere": "Les retours se collectent dans l’onglet Preuves & REX."
+  },
+  "placed": {
+    "title": "Consultants placés",
+    "hint": "Qui est déjà entré ici, quand, et combien de fois. Une personne déjà connue du client n’est pas un profil à présenter.",
+    "empty": "Aucune affectation sur les missions de ce compte. La liste reste vide tant que personne n’y est affecté.",
+    "count_one": "{{count}} mission ici",
+    "count_other": "{{count}} missions ici",
+    "onSite": "Encore sur place",
+    "firstOn": "Première mission le {{date}}",
+    "firstUnknown": "Première mission sans date de début",
+    "lastEndedOn": "Dernière mission terminée le {{date}}",
+    "lastEndUnknown": "Dernière fin non renseignée"
+  },
+  "buying": {
+    "title": "Ce que ce client achète",
+    "hint": "Le bloc qui prépare la prochaine vente : un tarif moyen de 640 € dit tout de suite si une proposition à 750 € va passer.",
+    "rate": "Tarif vendu moyen",
+    "ratePartial_one": "Moyenne partielle — {{count}} mission sans tarif.",
+    "ratePartial_other": "Moyenne partielle — {{count}} missions sans tarif.",
+    "duration": "Durée moyenne",
+    "durationDays_one": "{{count}} jour",
+    "durationDays_other": "{{count}} jours",
+    "durationPartial_one": "Moyenne partielle — {{count}} mission sans ses deux dates.",
+    "durationPartial_other": "Moyenne partielle — {{count}} missions sans leurs deux dates.",
+    "roles": "Types de profil",
+    "rolesUnknown": "Aucun rôle renseigné sur les missions de ce compte.",
+    "rolesPartial_one": "{{count}} mission sans rôle renseigné — elle n’est comptée dans aucun profil.",
+    "rolesPartial_other": "{{count}} missions sans rôle renseigné — elles ne sont comptées dans aucun profil.",
+    "roleCount_one": "{{count}} mission",
+    "roleCount_other": "{{count}} missions",
+    "onMissions_one": "sur {{count}} mission",
+    "onMissions_other": "sur {{count}} missions",
+    "historicalRevenue": "Revenu historique",
+    "historicalRevenueRestricted": "Pas ton périmètre — le revenu historique demande le droit finance."
+  },
+  "notRenewed": {
+    "title": "Ce qu’il ne renouvelle pas",
+    "hint": "Les missions terminées dont le profil n’a pas repris. Ce n’est pas un reproche : c’est la question à poser au prochain rendez-vous.",
+    "emptyNoHistory": "Aucune mission terminée sur ce compte — il n’y a pas encore de non-renouvellement à lire.",
+    "emptyAllResumed": "Chaque mission terminée a vu son profil repris depuis.",
+    "endedOn": "Terminée le {{date}}",
+    "endedUndated": "Terminée, sans date de fin renseignée",
+    "notResumed": "Ce profil n’a pas repris depuis",
+    "unknownNoRole": "On ne sait pas si ce profil a repris : le rôle n’est pas renseigné sur cette mission.",
+    "unknownNoEndDate": "On ne sait pas si ce profil a repris : cette mission n’a pas de date de fin."
+  },
+  "unknown": {
+    "noEndDate": "Sans date de fin",
+    "noEndDateHelp": "Sans date de fin — aucune fenêtre de renouvellement ne s’y déclenche.",
+    "noStartDate": "Sans date de début",
+    "noRate": "Tarif non renseigné",
+    "noRole": "Rôle non renseigné",
+    "noConsultant": "Personne d’affecté",
+    "noEndReason": "Motif de fin non renseigné",
+    "missionLabel": "Mission sans intitulé",
+    "marginNoAccess": "Pas ton périmètre",
+    "marginNoAccessHelp": "La marge n’est pas dans ton périmètre. Ce n’est pas une donnée manquante : c’est un droit que ton rôle n’a pas.",
+    "marginNotMeasured": "Marge non mesurée",
+    "marginNotMeasuredHelp": "Marge non mesurée : le coût chargé n’est pas renseigné. Aucune formule ne le devine.",
+    "margin": "{{percent}} % de marge"
+  },
+  "planningPanel": {
+    "title": "Mission sélectionnée",
+    "close": "Fermer le panneau",
+    "openDossier": "Voir la mission",
+    "emptyTitle": "Aucune mission sélectionnée",
+    "emptyDescription": "Choisis une ligne dans la frise pour voir son détail ici.",
+    "entity": {
+      "title": "Entité cliente",
+      "siren": "SIREN",
+      "unknownName": "Raison sociale non renseignée",
+      "unknownAddress": "Adresse non renseignée",
+      "unknownSiren": "SIREN non renseigné"
+    },
+    "crmDeal": {
+      "title": "Vente CRM rattachée",
+      "correspondence": "Dans {{tool}}, cet enregistrement s’appelle « deal ».",
+      "correspondenceUnknownTool": "Dans ton outil connecté, cet enregistrement s’appelle « deal ».",
+      "unknownName": "Nom du deal non renseigné",
+      "unknownStage": "Stade non renseigné",
+      "unknownAmount": "Montant non renseigné"
+    },
+    "finance": {
+      "title": "Conditions financières",
+      "clientRate": "TJM client",
+      "freelanceRate": "TJM freelance",
+      "unknownRate": "Non renseigné",
+      "noAccess": "La marge et le coût chargé ne sont pas dans ton périmètre.",
+      "loading": "Chargement des conditions…"
+    },
+    "billing": {
+      "title": "Préférences de facturation",
+      "frequency": "Fréquence de facturation",
+      "recipient": "Envoi des factures",
+      "unknownRecipient": "Destinataire non renseigné",
+      "paymentTerms": "Conditions de règlement",
+      "unknownPaymentTerms": "Conditions de règlement non renseignées",
+      "termsValue_one": "À {{count}} jour {{basis}}",
+      "termsValue_other": "À {{count}} jours {{basis}}",
+      "basis": {
+        "invoice_date": "date de facture",
+        "end_of_month": "fin de mois"
+      },
+      "cadences": {
+        "monthly": "Mensuelle",
+        "milestone": "Aux jalons",
+        "fixed_price": "Forfaitaire"
+      }
+    },
+    "po": {
+      "title": "Bon de commande",
+      "number": "Numéro BDC",
+      "date": "Date",
+      "amount": "Montant BDC",
+      "unknownNumber": "Non renseigné",
+      "unknownDate": "Date non renseignée",
+      "unknownAmount": "Montant non renseigné"
+    },
+    "contacts": {
+      "title": "Contacts",
+      "consultant": "Consultant",
+      "businessManager": "Chargé d’affaires",
+      "craValidator": "Contact CRA",
+      "unknown": "Non désigné",
+      "unknownEmail": "E-mail non renseigné",
+      "changeCra": "Changer le contact CRA",
+      "chooseCra": "Choisir le contact CRA",
+      "noneOption": "Aucun contact désigné",
+      "noneAvailable": "Aucun contact sur ce compte.",
+      "craContactSaved": "Contact CRA mis à jour.",
+      "craContactError": "Le contact CRA n’a pas pu être enregistré.",
+      "clientManager": "Manager client",
+      "clientManagerHint": "Chez le client, qui encadre le consultant",
+      "changeClientManager": "Désigner le manager client",
+      "chooseClientManager": "Choisir le manager client",
+      "clientManagerSaved": "Manager client mis à jour.",
+      "closePicker": "Fermer le sélecteur",
+      "clientManagerError": "Le manager client n’a pas pu être enregistré.",
+      "billingContact": "Contact de facturation",
+      "billingContactHint": "À qui part la facture",
+      "changeBillingContact": "Changer le contact de facturation",
+      "chooseBillingContact": "Choisir le contact de facturation",
+      "updateSaved": "Modifications enregistrées.",
+      "updateError": "Les modifications n’ont pas pu être enregistrées.",
+      "billingEntity": "Société qui porte la mission",
+      "billingEntityHint": "L'entité juridique de ton ESN rattachée à cette mission.",
+      "chooseBillingEntity": "Choisir la société qui porte la mission",
+      "changeBillingEntity": "Changer la société porteuse"
+    },
+    "dates": {
+      "title": "Dates de la mission",
+      "startedOnLabel": "Date de début",
+      "endsOnLabel": "Date de fin prévue",
+      "startedOnUnknown": "Début non renseigné",
+      "endsOnUnknown": "Fin non renseignée",
+      "fillStartedOn": "Renseigner la date de début",
+      "fillEndsOn": "Renseigner la date de fin",
+      "save": "Enregistrer",
+      "cancel": "Annuler",
+      "saved": "Date enregistrée.",
+      "saveError": "La date n’a pas pu être enregistrée."
+    },
+    "nextStep": {
+      "title": "Prochaine étape suggérée",
+      "openCta": "Voir dans la mission",
+      "empty": "Rien à signaler sur cette mission.",
+      "severity": {
+        "information": "Information",
+        "watch": "À surveiller",
+        "at_risk": "En risque",
+        "critical": "Critique",
+        "resolved": "Résolu",
+        "unknown": "Non mesuré"
+      },
+      "risks": {
+        "renewal_not_started": "Engager le renouvellement — la fin approche et rien n’est engagé.",
+        "timesheet_disputed": "Traiter le relevé d’activité contesté.",
+        "timesheet_missing": "Relancer le relevé d’activité manquant.",
+        "margin_at_risk": "Revoir la marge — elle est nulle ou négative.",
+        "margin_unknown": "Renseigner le coût chargé — la marge n’est pas mesurable.",
+        "no_end_date": "Poser une date de fin — sans elle, le renouvellement n’est jamais anticipé.",
+        "missing_po": "Relancer le bon de commande — sans lui, la facturation bloquera.",
+        "ending_soon": "Sécuriser l’échéance — elle est proche ou déjà dépassée.",
+        "missing_owner": "Désigner un chargé d’affaires — personne ne porte cette mission aujourd’hui.",
+        "invoice_blocked": "Débloquer la facturation du mois courant.",
+        "low_satisfaction": "Faire le point avec le client ou le consultant — la satisfaction déclarée est basse.",
+        "relationship_threatened": "Reprendre contact avec le client — satisfaction basse et aucun échange récent.",
+        "prolonged_absence": "Organiser la continuité — un consultant est absent pour une longue période.",
+        "consultant_unsecured": "Sécuriser la suite du consultant — fin proche, ni renouvellement ni placement.",
+        "action_without_owner": "Désigner un porteur pour l’action ouverte sur ce compte."
+      },
+      "resolveCta": "Marquer comme traité",
+      "resolvedSaved": "Risque marqué comme traité.",
+      "resolveError": "Impossible d’enregistrer ce geste."
+    },
+    "dataQuality": {
+      "placeholder": "Pastilles de qualité de donnée — branchées par le lot ADV"
+    }
+  },
+  "payment": {
+    "title": "Comment ce client paie",
+    "noAccess": "Pas ton périmètre — le comportement de paiement demande le droit finance.",
+    "unreadable": "Les factures de ce client n’ont pas pu être lues. Ce n’est pas « pas d’historique ».",
+    "notEnoughHistory": "Pas assez d’historique pour mesurer : {{observed}} facture(s) sur les {{required}} nécessaires.",
+    "late_one": "{{count}} facture réglée en retard sur {{total}}.",
+    "late_other": "{{count}} factures réglées en retard sur {{total}}.",
+    "onTime_one": "Aucun retard sur la seule facture de la période.",
+    "onTime_other": "Aucun retard sur les {{count}} factures de la période.",
+    "window": "Compté sur les {{months}} derniers mois, sur les factures émises à échéance connue.",
+    "disputed_one": "{{count}} facture contestée sur {{total}} — un litige n’est pas un retard.",
+    "disputed_other": "{{count}} factures contestées sur {{total}} — un litige n’est pas un retard.",
+    "noDispute": "Aucune facture contestée sur la période.",
+    "withoutDueDate_one": "{{count}} facture écartée faute d’échéance connue — elle n’entre dans aucun décompte.",
+    "withoutDueDate_other": "{{count}} factures écartées faute d’échéance connue — elles n’entrent dans aucun décompte."
+  },
+  "contracts": {
+    "title": "Contrats",
+    "hint": "Les contrats juridiques rattachés à ce compte — cadre, mission, avenant, bon de commande, sous-traitance…",
+    "empty": "Aucun contrat enregistré sur ce compte.",
+    "loadError": "Les contrats n’ont pas pu être lus.",
+    "owner": "Porté par {{name}}",
+    "types": {
+      "framework": "Contrat-cadre",
+      "mission_agreement": "Contrat de mission",
+      "amendment": "Avenant",
+      "purchase_order": "Bon de commande",
+      "subcontracting_agreement": "Sous-traitance",
+      "partnership_agreement": "Partenariat",
+      "consultant_contract": "Contrat consultant",
+      "convention": "Convention",
+      "other": "Autre"
+    },
+    "lifecycle": {
+      "draft": "Brouillon",
+      "active": "Actif",
+      "expiring_soon": "Bientôt expiré",
+      "expired": "Expiré",
+      "terminated": "Résilié"
+    },
+    "noGo": {
+      "wrong_legal_entity": "{{mission}} facture sous une autre société que celle nommée par ce contrat.",
+      "partner_skipped": "{{mission}} facture en direct alors que ce contrat passe par un intermédiaire."
+    },
+    "documents": {
+      "line": "{{label}} · v{{version}}",
+      "signed": "signée le {{date}}",
+      "unsigned": "non signée",
+      "expires": "expire le {{date}}",
+      "visibility": {
+        "workspace": "ouverte à l’équipe",
+        "finance": "réservée à la finance",
+        "owner": "réservée au porteur"
+      },
+      "deposit": {
+        "open": "Déposer une pièce",
+        "label": "Libellé de la pièce",
+        "scope": "Portée de la pièce",
+        "submit": "Déposer",
+        "done": "Pièce déposée.",
+        "failed": "La pièce n’a pas pu être déposée."
+      }
+    },
+    "uploadLinks": {
+      "open": "Demander une pièce",
+      "mission": "Mission concernée",
+      "missionRequired": "Choisis une mission pour générer le lien.",
+      "generate": "Générer le lien",
+      "generateFailed": "Le lien n’a pas pu être généré.",
+      "created": "Lien généré — copie-le et envoie-le toi-même, le copilote ne l’envoie jamais.",
+      "copy": "Copier",
+      "copied": "Lien copié.",
+      "copyFailed": "Le lien n’a pas pu être copié.",
+      "list": {
+        "title": "Liens de dépôt",
+        "empty": "Aucun lien généré pour ce contrat.",
+        "forMission": "Pour {{mission}}",
+        "expires": "Expire le {{date}}",
+        "revokedOn": "Révoqué le {{date}}",
+        "deposits_zero": "Aucun dépôt reçu.",
+        "deposits_one": "{{count}} pièce reçue.",
+        "deposits_other": "{{count}} pièces reçues.",
+        "revoke": "Révoquer",
+        "revokeDone": "Lien révoqué.",
+        "revokeFailed": "Le lien n’a pas pu être révoqué."
+      }
+    }
+  }
+}

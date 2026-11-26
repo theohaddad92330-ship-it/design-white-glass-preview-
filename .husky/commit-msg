@@ -1,0 +1,6 @@
+#!/usr/bin/env sh
+
+# Ensure pnpm/node are in PATH for GUI clients (GitHub Desktop, etc.)
+export PATH="$HOME/.local/share/pnpm:$HOME/.nvm/versions/node/$(ls "$HOME/.nvm/versions/node/" 2>/dev/null | tail -1)/bin:/usr/local/bin:$PATH"
+
+pnpm commitlint --edit $1

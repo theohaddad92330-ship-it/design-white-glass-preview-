@@ -1,0 +1,49 @@
+{
+  "meta": {
+    "title": "System status",
+    "description": "Real-time status of BellumAI services: application, database, analyses and AI engine."
+  },
+  "hero": {
+    "badge": "System status",
+    "title": "BellumAI service status",
+    "subtitle": "This page reflects the live state of our services. It refreshes automatically every 30 seconds."
+  },
+  "overall": {
+    "loading": "Checking…",
+    "operational": "All systems operational",
+    "degraded": "Partial degradation in progress",
+    "down": "Major incident in progress",
+    "unreachable": "Our services cannot be reached"
+  },
+  "overallDetail": {
+    "degraded": "Some services are slow or unavailable. The application remains accessible.",
+    "down": "Our services are currently unavailable. We are working on restoring them.",
+    "unreachable": "The status check is not responding — our services may be down. Please try again in a moment."
+  },
+  "components": {
+    "api": {
+      "name": "Application & API",
+      "description": "Sign-in, accounts and conquest briefs"
+    },
+    "database": {
+      "name": "Database",
+      "description": "Storage of your accounts, contacts and analyses"
+    },
+    "redis": {
+      "name": "Processing queues & realtime",
+      "description": "Background analyses and notifications"
+    },
+    "ia_engine": {
+      "name": "AI engine",
+      "description": "Brief generation and sales intelligence"
+    }
+  },
+  "componentStatus": {
+    "operational": "Operational",
+    "down": "Unavailable",
+    "unknown": "Unknown"
+  },
+  "lastChecked": "Last checked: {time}",
+  "autoRefresh": "Refreshes automatically every 30 seconds.",
+  "historyNote": "Uptime history and incident log: coming soon. For now this page shows the live state."
+}

@@ -1,0 +1,924 @@
+{
+  "source": "apps/api/src/modules/demo/demo-dataset.ts",
+  "owner": "Maëlle Lorquin",
+  "accounts": [
+    {
+      "name": "Société Générale",
+      "sector": "Banque",
+      "city": "Puteaux",
+      "employees": "10 000 salariés et plus",
+      "score": 5,
+      "axes": [
+        { "label": "Fit", "weight": 4 },
+        { "label": "Timing", "weight": 4 },
+        { "label": "Accessibilité", "weight": 3 },
+        { "label": "Concurrence", "weight": 2 }
+      ],
+      "verdict": "PRUDENT",
+      "status": "watching",
+      "lastAnalysis": "2026-06-18",
+      "signal": "Résultats du deuxième trimestre 2026 en forte hausse, objectifs de…",
+      "contacts": 1772,
+      "nextAction": "Envoyer deux profils cloud promis en réunion"
+    },
+    {
+      "name": "Groupe BPCE",
+      "sector": "Groupe bancaire coopératif",
+      "city": "Paris",
+      "employees": null,
+      "score": 5,
+      "axes": [
+        { "label": "Fit", "weight": 4 },
+        { "label": "Timing", "weight": 4 },
+        { "label": "Accessibilité", "weight": 3 },
+        { "label": "Concurrence", "weight": 2 }
+      ],
+      "verdict": null,
+      "status": "inbox",
+      "lastAnalysis": null,
+      "signal": "Poste ouvert — Solution Architect",
+      "contacts": 469,
+      "nextAction": "Préparer l’angle renfort sur les domaines ouverts"
+    },
+    {
+      "name": "SNCF",
+      "sector": "Transport ferroviaire interurbain de voyageurs",
+      "city": "Saint-Denis",
+      "employees": "10 000 salariés et plus",
+      "score": 6,
+      "axes": [
+        { "label": "Fit", "weight": 4 },
+        { "label": "Timing", "weight": 4 },
+        { "label": "Accessibilité", "weight": 4 },
+        { "label": "Concurrence", "weight": 3 }
+      ],
+      "verdict": "PRUDENT",
+      "status": "watching",
+      "lastAnalysis": null,
+      "signal": "Partenariat de trois ans avec l’Institut Polytechnique de Paris sur…",
+      "contacts": 63,
+      "nextAction": "Obtenir le nom de l’acheteur référent"
+    },
+    {
+      "name": "ENGIE",
+      "sector": "Énergie",
+      "city": "Paris La Défense",
+      "employees": "Plus de 75 000 collaborateurs",
+      "score": 5,
+      "axes": [
+        { "label": "Fit", "weight": 4 },
+        { "label": "Timing", "weight": 4 },
+        { "label": "Accessibilité", "weight": 3 },
+        { "label": "Concurrence", "weight": 2 }
+      ],
+      "verdict": null,
+      "status": "inbox",
+      "lastAnalysis": null,
+      "signal": "12 milliards d'investissement par an",
+      "contacts": 462,
+      "nextAction": null
+    },
+    {
+      "name": "TotalEnergies",
+      "sector": "Énergie",
+      "city": null,
+      "employees": null,
+      "score": 5,
+      "axes": [
+        { "label": "Fit", "weight": 4 },
+        { "label": "Timing", "weight": 4 },
+        { "label": "Accessibilité", "weight": 3 },
+        { "label": "Concurrence", "weight": 2 }
+      ],
+      "verdict": null,
+      "status": "watching",
+      "lastAnalysis": null,
+      "signal": "Strategy and Outlook 2026–2035",
+      "contacts": 109,
+      "nextAction": null
+    },
+    {
+      "name": "Alstom",
+      "sector": "Industrie ferroviaire",
+      "city": "Saint-Ouen-sur-Seine",
+      "employees": "34 500 collaborateurs, plus de 60 pays, 70 % de la R&D en France",
+      "score": 5,
+      "axes": [
+        { "label": "Fit", "weight": 4 },
+        { "label": "Timing", "weight": 4 },
+        { "label": "Accessibilité", "weight": 3 },
+        { "label": "Concurrence", "weight": 2 }
+      ],
+      "verdict": null,
+      "status": "inbox",
+      "lastAnalysis": null,
+      "signal": "Ingénieur approvisionnement projet",
+      "contacts": 29,
+      "nextAction": null
+    }
+  ],
+  "contacts": [
+    {
+      "name": "Nicolas Ferrand",
+      "title": "Directeur des systèmes d’information",
+      "company": "Société Générale",
+      "entity": "Société Générale",
+      "role": "economic",
+      "seniority": "director",
+      "score": 92,
+      "state": "actionnable"
+    },
+    {
+      "name": "Camille Aubert",
+      "title": "Directrice de la transformation digitale",
+      "company": "Société Générale",
+      "entity": "Société Générale",
+      "role": "economic",
+      "seniority": "director",
+      "score": 88,
+      "state": "actionnable"
+    },
+    {
+      "name": "Pierre Vasseur",
+      "title": "Directeur technique",
+      "company": "Société Générale",
+      "entity": "Boursorama",
+      "role": "economic",
+      "seniority": "director",
+      "score": 85,
+      "state": "actionnable"
+    },
+    {
+      "name": "Luc Barnaud",
+      "title": "Chief AI & Data Officer du Groupe BPCE",
+      "company": "Groupe BPCE",
+      "entity": "Groupe BPCE",
+      "role": "economic",
+      "seniority": "c_suite",
+      "score": 50,
+      "state": "qualifie"
+    },
+    {
+      "name": "Catherine Mallet",
+      "title": "Présidente du conseil d'administration",
+      "company": "Groupe BPCE",
+      "entity": "Banque Populaire Occitane",
+      "role": "economic",
+      "seniority": "c_suite",
+      "score": 50,
+      "state": "qualifie"
+    },
+    {
+      "name": "Franck Delafosse",
+      "title": "Directeur général adjoint, dirigeant effectif",
+      "company": "Groupe BPCE",
+      "entity": "Banque Populaire Occitane",
+      "role": "economic",
+      "seniority": "c_suite",
+      "score": 50,
+      "state": "qualifie"
+    },
+    {
+      "name": "Philippe Marchand",
+      "title": "Directeur des systèmes d’information",
+      "company": "SNCF",
+      "entity": "SNCF Voyageurs",
+      "role": "economic",
+      "seniority": "director",
+      "score": 92,
+      "state": "actionnable"
+    },
+    {
+      "name": "Isabelle Rouault",
+      "title": "Directrice de la transformation numérique",
+      "company": "SNCF",
+      "entity": "SNCF",
+      "role": "economic",
+      "seniority": "director",
+      "score": 88,
+      "state": "actionnable"
+    },
+    {
+      "name": "Farida Benkirane",
+      "title": "Responsable programme signalisation",
+      "company": "SNCF",
+      "entity": "SNCF Réseau",
+      "role": "economic",
+      "seniority": "director",
+      "score": 83,
+      "state": "actionnable"
+    },
+    {
+      "name": "Mourad ASLI",
+      "title": "Directeur Financier",
+      "company": "ENGIE",
+      "entity": "ENGIE BtoC",
+      "role": "economic",
+      "seniority": "director",
+      "score": 50,
+      "state": "actionnable"
+    },
+    {
+      "name": "Philippe ESPOSITO",
+      "title": "DSI",
+      "company": "ENGIE",
+      "entity": "ENGIE BtoC",
+      "role": "economic",
+      "seniority": "manager",
+      "score": 50,
+      "state": "actionnable"
+    },
+    {
+      "name": "Nicolas ROLLAND",
+      "title": "Director of ENGIE Corporate HQ",
+      "company": "ENGIE",
+      "entity": "Engie CORP",
+      "role": "economic",
+      "seniority": "director",
+      "score": 50,
+      "state": "actionnable"
+    },
+    {
+      "name": "Sébastien LOUX",
+      "title": "Power & Gas Europe (PGE)",
+      "company": "TotalEnergies",
+      "entity": "Gas, Renewables & Power",
+      "role": "economic",
+      "seniority": "manager",
+      "score": 50,
+      "state": "qualifie"
+    },
+    {
+      "name": "Bernadette BAUDIER",
+      "title": "Finances (FIN)",
+      "company": "TotalEnergies",
+      "entity": "Gas, Renewables & Power",
+      "role": "economic",
+      "seniority": "manager",
+      "score": 50,
+      "state": "qualifie"
+    },
+    {
+      "name": "Laurent WOLFFSHEIM",
+      "title": "Strategy Growth & People (SGP)",
+      "company": "TotalEnergies",
+      "entity": "Gas, Renewables & Power",
+      "role": "economic",
+      "seniority": "manager",
+      "score": 50,
+      "state": "qualifie"
+    },
+    {
+      "name": "Coline Cormier",
+      "title": "Bids & Competitiveness Director",
+      "company": "Alstom",
+      "entity": "Alstom — France; rattachement organisationnel exact non publié",
+      "role": "economic",
+      "seniority": "director",
+      "score": 50,
+      "state": "qualifie"
+    },
+    {
+      "name": "Danny Di Perna",
+      "title": "Executive Vice President & Chief Operating Officer",
+      "company": "Alstom",
+      "entity": "Opérations Groupe",
+      "role": "economic",
+      "seniority": "c_suite",
+      "score": 50,
+      "state": "qualifie"
+    },
+    {
+      "name": "David Journet",
+      "title": "Directeur du site Alstom de Belfort",
+      "company": "Alstom",
+      "entity": "Belfort",
+      "role": "economic",
+      "seniority": "director",
+      "score": 50,
+      "state": "qualifie"
+    }
+  ],
+  "consultants": [
+    {
+      "name": "Camille Roussel",
+      "title": "Architecte de plateforme — conteneurs et infrastructure as code",
+      "seniority": "senior",
+      "city": "Paris",
+      "availability": "immediate",
+      "tjm": 640,
+      "remote": "hybride",
+      "contract": "cdi",
+      "stack": ["Kubernetes", "Terraform", "Observabilité", "AWS", "CI/CD"]
+    },
+    {
+      "name": "Hakim Barreau",
+      "title": "Ingénieur infrastructure — conteneurs",
+      "seniority": "confirme",
+      "city": "Paris",
+      "availability": "inconnu",
+      "tjm": 600,
+      "remote": "full_remote",
+      "contract": "freelance",
+      "stack": ["Kubernetes", "Terraform", "GitLab CI"]
+    },
+    {
+      "name": "Yanis Berthier",
+      "title": "Ingénieur plateforme — observabilité et fiabilité",
+      "seniority": "senior",
+      "city": "Paris",
+      "availability": "immediate",
+      "tjm": 620,
+      "remote": "hybride",
+      "contract": "cdi",
+      "stack": ["Kubernetes", "Observabilité", "Prometheus", "Go", "CI/CD", "Fiabilité"]
+    },
+    {
+      "name": "Salomé Dufour",
+      "title": "Ingénieure données — industrialisation de modèles",
+      "seniority": "confirme",
+      "city": "Paris",
+      "availability": "sous_1_mois",
+      "tjm": 580,
+      "remote": null,
+      "contract": "cdi",
+      "stack": ["Python", "MLOps", "Kubeflow", "Airflow", "PostgreSQL", "Gouvernance des données"]
+    },
+    {
+      "name": "Antoine Rivière",
+      "title": "Architecte cloud et intégration",
+      "seniority": "expert",
+      "city": "Paris",
+      "availability": "sous_3_mois",
+      "tjm": 780,
+      "remote": "hybride",
+      "contract": "cdi",
+      "stack": ["Kubernetes", "Terraform", "Intégration de systèmes", "Reprise de données", "AWS", "Azure"]
+    },
+    {
+      "name": "Inès Kaczmarek",
+      "title": "Consultante sécurité applicative",
+      "seniority": "senior",
+      "city": "Paris",
+      "availability": "sous_1_mois",
+      "tjm": 720,
+      "remote": "sur_site",
+      "contract": "cdi",
+      "stack": [
+        "Sécurité applicative",
+        "Revue de code",
+        "Authentification forte",
+        "Conformité",
+        "Analyse de risque",
+        "Gestion des vulnérabilités"
+      ]
+    },
+    {
+      "name": "Marc Ouedraogo",
+      "title": "Ingénieur systèmes d’information industriels",
+      "seniority": "confirme",
+      "city": "Laval",
+      "availability": "immediate",
+      "tjm": 560,
+      "remote": "sur_site",
+      "contract": "cdi",
+      "stack": [
+        "SI industriel",
+        "Supervision de production",
+        "Intégration et tests",
+        "SQL",
+        "Java",
+        "Spring",
+        "Documentation technique"
+      ]
+    },
+    {
+      "name": "Léa Fontaine",
+      "title": "Cheffe de projet SI — pilotage de programme",
+      "seniority": "confirme",
+      "city": "Paris",
+      "availability": "inconnu",
+      "tjm": 580,
+      "remote": "hybride",
+      "contract": "cdi",
+      "stack": ["Pilotage de programme", "SI", "Conduite du changement", "Planification"]
+    },
+    {
+      "name": "Anthony Vasseur",
+      "title": "Développeur d’intégration — sous-traitance",
+      "seniority": "inconnu",
+      "city": "Paris",
+      "availability": "inconnu",
+      "tjm": 540,
+      "remote": "hybride",
+      "contract": "freelance",
+      "stack": ["Support applicatif", "Intégration de flux", "SQL", "Recette"]
+    }
+  ],
+  "missions": [
+    {
+      "label": "Fiabilisation plateforme — renfort exploitation",
+      "client": "SNCF",
+      "consultant": "Yanis Berthier",
+      "status": "active",
+      "endsInDays": 55,
+      "dailyRate": 620
+    },
+    {
+      "label": "Cadrage données transport — lot 2",
+      "client": "SNCF",
+      "consultant": "Inès Kaczmarek",
+      "status": "active",
+      "endsInDays": null,
+      "dailyRate": 560
+    },
+    {
+      "label": "Refonte des applications voyageurs — forfait",
+      "client": "SNCF",
+      "consultant": "Yanis Berthier",
+      "status": "active",
+      "endsInDays": 12,
+      "dailyRate": null
+    },
+    {
+      "label": "Industrialisation d’un cas d’usage de recherche — mise en production",
+      "client": "SNCF",
+      "consultant": "Salomé Dufour",
+      "status": "active",
+      "endsInDays": 28,
+      "dailyRate": 580
+    },
+    {
+      "label": "Migration du socle applicatif vers les conteneurs — lot 1",
+      "client": "SNCF",
+      "consultant": "Camille Roussel",
+      "status": "ended",
+      "endsInDays": -76,
+      "dailyRate": 640
+    },
+    {
+      "label": "Convergence des applications temps réel — lots interfaces et reprise",
+      "client": "SNCF",
+      "consultant": "Antoine Rivière",
+      "status": "active",
+      "endsInDays": 41,
+      "dailyRate": 780
+    },
+    {
+      "label": "Cadrage du connecteur de données — lot escalade",
+      "client": "SNCF",
+      "consultant": "Antoine Rivière",
+      "status": "active",
+      "endsInDays": null,
+      "dailyRate": 620
+    },
+    {
+      "label": "Run des échanges inter-applicatifs — lot escalade partenaire",
+      "client": "SNCF",
+      "consultant": "Anthony Vasseur",
+      "status": "active",
+      "endsInDays": null,
+      "dailyRate": 590
+    },
+    {
+      "label": "Socle conteneurisé des applications terrain — run",
+      "client": "SNCF",
+      "consultant": "Hakim Barreau",
+      "status": "active",
+      "endsInDays": null,
+      "dailyRate": 600
+    },
+    {
+      "label": "Reprise de l’ordonnancement des flux — lot pilote",
+      "client": "SNCF",
+      "consultant": "Yanis Berthier",
+      "status": "terminated",
+      "endsInDays": -214,
+      "dailyRate": 590
+    },
+    {
+      "label": "Supervision applicative du socle transport — astreinte",
+      "client": "SNCF",
+      "consultant": "Hakim Barreau",
+      "status": "ended",
+      "endsInDays": -95,
+      "dailyRate": 610
+    },
+    {
+      "label": "Reprise de la volumétrie tarifaire — lot de clôture",
+      "client": "SNCF",
+      "consultant": "Inès Kaczmarek",
+      "status": "active",
+      "endsInDays": null,
+      "dailyRate": 580
+    },
+    {
+      "label": "Supervision de la chaîne de production — mission longue",
+      "client": "SNCF",
+      "consultant": "Marc Ouedraogo",
+      "status": "active",
+      "endsInDays": null,
+      "dailyRate": 560
+    },
+    {
+      "label": "Cartographie du parc applicatif — lot d’options",
+      "client": "SNCF",
+      "consultant": "Marc Ouedraogo",
+      "status": "active",
+      "endsInDays": 71,
+      "dailyRate": 610
+    },
+    {
+      "label": "Cadrage du programme de refonte SI — arrêt anticipé",
+      "client": "SNCF",
+      "consultant": "Léa Fontaine",
+      "status": "terminated",
+      "endsInDays": -12,
+      "dailyRate": 580
+    }
+  ],
+  "invoices": [
+    {
+      "reference": "F-202606-01",
+      "mission": "Migration du socle applicatif vers les conteneurs — lot 1",
+      "client": "SNCF",
+      "period": "2026-06",
+      "amountCents": 1216000,
+      "dueOn": "2026-08-04",
+      "status": "paid"
+    },
+    {
+      "reference": "F-202605-02",
+      "mission": "Migration du socle applicatif vers les conteneurs — lot 1",
+      "client": "SNCF",
+      "period": "2026-05",
+      "amountCents": 1344000,
+      "dueOn": "2026-07-05",
+      "status": "paid"
+    },
+    {
+      "reference": "F-202604-03",
+      "mission": "Migration du socle applicatif vers les conteneurs — lot 1",
+      "client": "SNCF",
+      "period": "2026-04",
+      "amountCents": 1280000,
+      "dueOn": "2026-06-04",
+      "status": "paid"
+    },
+    {
+      "reference": "F-202603-04",
+      "mission": "Migration du socle applicatif vers les conteneurs — lot 1",
+      "client": "SNCF",
+      "period": "2026-03",
+      "amountCents": 1344000,
+      "dueOn": "2026-05-05",
+      "status": "disputed"
+    },
+    {
+      "reference": "F-202602-05",
+      "mission": "Migration du socle applicatif vers les conteneurs — lot 1",
+      "client": "SNCF",
+      "period": "2026-02",
+      "amountCents": 1280000,
+      "dueOn": "2026-04-04",
+      "status": "paid"
+    },
+    {
+      "reference": "F-202601-06",
+      "mission": "Migration du socle applicatif vers les conteneurs — lot 1",
+      "client": "SNCF",
+      "period": "2026-01",
+      "amountCents": 1152000,
+      "dueOn": "2026-03-07",
+      "status": "paid"
+    },
+    {
+      "reference": "F-202607-07",
+      "mission": "Industrialisation d’un cas d’usage de recherche — mise en production",
+      "client": "SNCF",
+      "period": "2026-07",
+      "amountCents": 1160000,
+      "dueOn": "2026-09-04",
+      "status": "paid"
+    },
+    {
+      "reference": "F-202606-08",
+      "mission": "Industrialisation d’un cas d’usage de recherche — mise en production",
+      "client": "SNCF",
+      "period": "2026-06",
+      "amountCents": 1218000,
+      "dueOn": "2026-08-04",
+      "status": "paid"
+    },
+    {
+      "reference": "F-202607-09",
+      "mission": "Socle conteneurisé des applications terrain — run",
+      "client": "SNCF",
+      "period": "2026-07",
+      "amountCents": 1260000,
+      "dueOn": "2026-09-04",
+      "status": "paid"
+    },
+    {
+      "reference": "F-202606-10",
+      "mission": "Socle conteneurisé des applications terrain — run",
+      "client": "SNCF",
+      "period": "2026-06",
+      "amountCents": 1200000,
+      "dueOn": "2026-08-04",
+      "status": "paid"
+    },
+    {
+      "reference": "F-202605-11",
+      "mission": "Socle conteneurisé des applications terrain — run",
+      "client": "SNCF",
+      "period": "2026-05",
+      "amountCents": 1140000,
+      "dueOn": "2026-07-05",
+      "status": "paid"
+    },
+    {
+      "reference": "F-202607-12",
+      "mission": "Convergence des applications temps réel — lots interfaces et reprise",
+      "client": "SNCF",
+      "period": "2026-07",
+      "amountCents": 1560000,
+      "dueOn": "2026-09-04",
+      "status": "paid"
+    },
+    {
+      "reference": "F-202606-13",
+      "mission": "Convergence des applications temps réel — lots interfaces et reprise",
+      "client": "SNCF",
+      "period": "2026-06",
+      "amountCents": 1638000,
+      "dueOn": "2026-08-04",
+      "status": "paid"
+    },
+    {
+      "reference": "F-202607-14",
+      "mission": "Supervision de la chaîne de production — mission longue",
+      "client": "SNCF",
+      "period": "2026-07",
+      "amountCents": 1120000,
+      "dueOn": "2026-09-04",
+      "status": "paid"
+    },
+    {
+      "reference": "F-202606-15",
+      "mission": "Supervision de la chaîne de production — mission longue",
+      "client": "SNCF",
+      "period": "2026-06",
+      "amountCents": 1120000,
+      "dueOn": "2026-08-04",
+      "status": "paid"
+    },
+    {
+      "reference": "F-202601-16",
+      "mission": "Reprise de l’ordonnancement des flux — lot pilote",
+      "client": "SNCF",
+      "period": "2026-01",
+      "amountCents": 1062000,
+      "dueOn": "2026-03-07",
+      "status": "overdue"
+    },
+    {
+      "reference": "F-202512-17",
+      "mission": "Reprise de l’ordonnancement des flux — lot pilote",
+      "client": "SNCF",
+      "period": "2025-12",
+      "amountCents": 1180000,
+      "dueOn": "2026-02-04",
+      "status": "overdue"
+    }
+  ],
+  "tasks": [
+    {
+      "title": "Envoyer deux profils cloud promis en réunion",
+      "company": "Société Générale",
+      "contact": null,
+      "priority": "high",
+      "dueInDays": 3
+    },
+    {
+      "title": "Relancer sur les deux profils conformité",
+      "company": "Société Générale",
+      "contact": "Antoine Vasseur",
+      "priority": "high",
+      "dueInDays": -2
+    },
+    {
+      "title": "Obtenir le nom de l’acheteur référent",
+      "company": "SNCF",
+      "contact": null,
+      "priority": "normal",
+      "dueInDays": 0
+    },
+    {
+      "title": "Préparer l’angle renfort sur les domaines ouverts",
+      "company": "Groupe BPCE",
+      "contact": null,
+      "priority": "normal",
+      "dueInDays": 1
+    },
+    {
+      "title": "Mettre à jour la grille tarifaire du trimestre",
+      "company": null,
+      "contact": null,
+      "priority": "normal",
+      "dueInDays": 6
+    },
+    {
+      "title": "Préparer le format de l’atelier de 45 minutes",
+      "company": "Société Générale",
+      "contact": "Thibault Marquet",
+      "priority": "normal",
+      "dueInDays": 3
+    }
+  ],
+  "activities": [
+    {
+      "company": "SNCF",
+      "contact": null,
+      "kind": "meeting",
+      "subject": "Cadrage — renfort du programme de refonte applicative",
+      "daysAgo": 34
+    },
+    {
+      "company": "SNCF",
+      "contact": null,
+      "kind": "call",
+      "subject": "Référencement — bon de commande du renfort produit",
+      "daysAgo": 9
+    },
+    {
+      "company": "Société Générale",
+      "contact": null,
+      "kind": "meeting",
+      "subject": "Cadrage — jalons techniques du plan 2029",
+      "daysAgo": 12
+    },
+    {
+      "company": "Société Générale",
+      "contact": "Antoine Vasseur",
+      "kind": "email",
+      "subject": "RE: Cadrage — jalons techniques",
+      "daysAgo": 9
+    },
+    {
+      "company": "Société Générale",
+      "contact": "Antoine Vasseur",
+      "kind": "call",
+      "subject": "Point d’avancement — avant l’envoi des profils",
+      "daysAgo": 6
+    },
+    {
+      "company": "Société Générale",
+      "contact": "Antoine Vasseur",
+      "kind": "call",
+      "subject": "Retour sur les profils conformité",
+      "daysAgo": 2
+    },
+    {
+      "company": "Société Générale",
+      "contact": "Antoine Vasseur",
+      "kind": "email",
+      "subject": "Deux profils conformité — disponibilités",
+      "daysAgo": 4
+    },
+    { "company": "SNCF", "contact": null, "kind": "call", "subject": "Point sur le besoin publié", "daysAgo": 7 },
+    {
+      "company": "SNCF",
+      "contact": null,
+      "kind": "email",
+      "subject": "RE: Point sur le besoin publié — sponsor interne",
+      "daysAgo": 3
+    },
+    {
+      "company": "SNCF",
+      "contact": "Nadia Perrin",
+      "kind": "email",
+      "subject": "Renfort sur la refonte applicative — deux profils possibles",
+      "daysAgo": 6
+    },
+    {
+      "company": "SNCF",
+      "contact": "Nadia Perrin",
+      "kind": "email",
+      "subject": "RE: Renfort sur la refonte applicative — deux profils possibles",
+      "daysAgo": 2
+    },
+    {
+      "company": "SNCF",
+      "contact": "Julien Castaing",
+      "kind": "email",
+      "subject": "RE: Point sur le besoin — introduction auprès des achats",
+      "daysAgo": 8
+    },
+    {
+      "company": "SNCF",
+      "contact": "Mathieu Brossard",
+      "kind": "email",
+      "subject": "Panel de prestataires SI — première prise de contact",
+      "daysAgo": 5
+    },
+    {
+      "company": "Société Générale",
+      "contact": null,
+      "kind": "gate_decision",
+      "subject": "account_priority — accept",
+      "daysAgo": 2
+    },
+    { "company": "Société Générale", "contact": null, "kind": "crm_lookup", "subject": null, "daysAgo": 1 },
+    { "company": "Société Générale", "contact": null, "kind": "crm_lookup", "subject": null, "daysAgo": 1 },
+    { "company": "Société Générale", "contact": null, "kind": "crm_lookup", "subject": null, "daysAgo": 1 },
+    { "company": "Société Générale", "contact": null, "kind": "crm_lookup", "subject": null, "daysAgo": 1 },
+    { "company": "Société Générale", "contact": null, "kind": "crm_lookup", "subject": null, "daysAgo": 1 },
+    { "company": "Société Générale", "contact": null, "kind": "crm_lookup", "subject": null, "daysAgo": 1 },
+    { "company": "Société Générale", "contact": null, "kind": "crm_lookup", "subject": null, "daysAgo": 1 },
+    { "company": "Société Générale", "contact": null, "kind": "crm_lookup", "subject": null, "daysAgo": 1 },
+    { "company": "Société Générale", "contact": null, "kind": "crm_lookup", "subject": null, "daysAgo": 1 },
+    { "company": "Société Générale", "contact": null, "kind": "crm_lookup", "subject": null, "daysAgo": 1 },
+    { "company": "Société Générale", "contact": null, "kind": "crm_lookup", "subject": null, "daysAgo": 1 },
+    { "company": "Société Générale", "contact": null, "kind": "crm_lookup", "subject": null, "daysAgo": 1 },
+    {
+      "company": "Société Générale",
+      "contact": null,
+      "kind": "workflow",
+      "subject": "Préparer un message",
+      "daysAgo": 1
+    },
+    {
+      "company": "Groupe BPCE",
+      "contact": null,
+      "kind": "email",
+      "subject": "Renfort — domaines ouverts à la prestation",
+      "daysAgo": 38
+    },
+    {
+      "company": "Groupe BPCE",
+      "contact": null,
+      "kind": "meeting",
+      "subject": "Point comité — périmètre des entités et ordre d’approche",
+      "daysAgo": 3
+    },
+    {
+      "company": "Groupe BPCE",
+      "contact": null,
+      "kind": "meeting",
+      "subject": "Préparation interne — angle renfort",
+      "daysAgo": 40
+    },
+    {
+      "company": "Société Générale",
+      "contact": "Thibault Marquet",
+      "kind": "email",
+      "subject": "Trajectoire cloud 2029 — renfort borné sur les jalons",
+      "daysAgo": 14
+    },
+    {
+      "company": "Société Générale",
+      "contact": "Thibault Marquet",
+      "kind": "email",
+      "subject": "RE: Trajectoire cloud 2029 — renfort borné sur les jalons",
+      "daysAgo": 10
+    },
+    {
+      "company": "Société Générale",
+      "contact": "Thibault Marquet",
+      "kind": "email",
+      "subject": "Atelier de 45 minutes — trois créneaux proposés",
+      "daysAgo": 4
+    },
+    {
+      "company": "Société Générale",
+      "contact": "Thibault Marquet",
+      "kind": "call",
+      "subject": "Appel de qualification — personne au bureau",
+      "daysAgo": 7
+    },
+    {
+      "company": "Société Générale",
+      "contact": "Thibault Marquet",
+      "kind": "meeting",
+      "subject": "Préparation interne — angle de l’atelier avant la relance",
+      "daysAgo": 3
+    },
+    {
+      "company": "Société Générale",
+      "contact": "Thibault Marquet",
+      "kind": "call",
+      "subject": "Relance téléphonique — créneau réservé",
+      "daysAgo": -2
+    },
+    {
+      "company": "Alstom",
+      "contact": null,
+      "kind": "call",
+      "subject": "Appel de prise de contact — messagerie",
+      "daysAgo": 35
+    },
+    { "company": "ENGIE", "contact": null, "kind": "email", "subject": "Renfort — prise de contact", "daysAgo": 44 },
+    { "company": "ENGIE", "contact": null, "kind": "email", "subject": "Renfort — relance", "daysAgo": 32 }
+  ]
+}

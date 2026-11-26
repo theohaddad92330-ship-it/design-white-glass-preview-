@@ -1,0 +1,24 @@
+{
+  "$schema": "https://railway.app/railway.schema.json",
+  "build": {
+    "builder": "RAILPACK",
+    "buildCommand": "pnpm turbo build --filter=@bellum/mcp",
+    "watchPatterns": [
+      "/apps/mcp/**",
+      "/packages/**",
+      "/pnpm-lock.yaml",
+      "/pnpm-workspace.yaml",
+      "/package.json",
+      "/turbo.json"
+    ]
+  },
+  "deploy": {
+    "startCommand": "pnpm --filter @bellum/mcp start",
+    "healthcheckPath": "/health",
+    "restartPolicyType": "ON_FAILURE",
+    "restartPolicyMaxRetries": 3,
+    "multiRegionConfig": {
+      "europe-west4-drams3a": { "numReplicas": 2 }
+    }
+  }
+}

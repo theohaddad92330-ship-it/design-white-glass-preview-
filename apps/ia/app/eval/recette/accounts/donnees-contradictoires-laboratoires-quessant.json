@@ -1,0 +1,212 @@
+{
+  "slug": "donnees-contradictoires-laboratoires-quessant",
+  "company": "Laboratoires Quessant (fictif)",
+  "archetype": "donnees_contradictoires",
+  "issue": "#2130.12",
+  "nature": "fictif",
+  "as_of": "2026-09-15",
+  "_fiction": "Nom FICTIF assumé, marqué « (fictif) » : aucune entreprise réelle n'est décrite ici, aucun identifiant de registre n'est affirmé, et les sources vivent sur le domaine réservé .invalid (RFC 2606) — elles ne peuvent désigner aucune page réelle. Le cadrage #2130.1-7 laisse le choix entre un nom fictif assumé et une entreprise réelle dont chaque fait est sourcé ; faute de source vérifiable depuis ce poste sur cet archétype, c'est le nom fictif.",
+  "expected": {
+    "identite": {
+      "status": "attendu",
+      "contient": [
+        "Laboratoires Quessant"
+      ]
+    },
+    "perimetre": {
+      "status": "attendu",
+      "contient": [
+        "Plouzévet-le-Vieux"
+      ]
+    },
+    "decideurs": {
+      "status": "attendu",
+      "contient": [
+        "Karim Belhadj"
+      ]
+    },
+    "contacts_a_ne_pas_recommander": {
+      "status": "attendu",
+      "contient": [
+        "Pierre Guillou"
+      ]
+    },
+    "equipes_cles": {
+      "status": "attendu",
+      "contient": [
+        "Informatique industrielle"
+      ]
+    },
+    "signaux": {
+      "status": "attendu",
+      "contient": [
+        "250 salariés",
+        "400 salariés"
+      ]
+    },
+    "projets": {
+      "status": "attendu",
+      "contient": [
+        "Tessala"
+      ]
+    },
+    "partenaires": {
+      "status": "attendu",
+      "contient": [
+        "Mortier et Fils"
+      ]
+    },
+    "acces": {
+      "status": "attendu",
+      "contient": [
+        "Kerlouan-Vihan"
+      ]
+    },
+    "recommandations": {
+      "status": "attendu",
+      "contient": [
+        "Tessala"
+      ]
+    },
+    "gaps": {
+      "status": "attendu",
+      "contient": [
+        "250",
+        "400"
+      ]
+    },
+    "sources": {
+      "status": "attendu",
+      "contient": [
+        "src-communique"
+      ]
+    },
+    "action_suivante": {
+      "status": "attendu",
+      "contient": [
+        "confirmer l'effectif"
+      ]
+    }
+  },
+  "dossier": {
+    "identite": {
+      "name": "Laboratoires Quessant",
+      "siren": null
+    },
+    "perimetre": {
+      "scope": "groupe",
+      "entities": [
+        "Laboratoires Quessant — site de production de Kerlouan-Vihan",
+        "Laboratoires Quessant — laboratoire de contrôle de Plouzévet-le-Vieux"
+      ]
+    },
+    "decideurs": [
+      {
+        "name": "Anne Rivaud",
+        "title": "Directrice des opérations industrielles",
+        "team": "Opérations"
+      },
+      {
+        "name": "Karim Belhadj",
+        "title": "Responsable de l'informatique industrielle",
+        "team": "Informatique industrielle"
+      }
+    ],
+    "contacts_a_ne_pas_recommander": [
+      {
+        "name": "Pierre Guillou",
+        "reason": "en stage, sans rôle de décision"
+      }
+    ],
+    "equipes_cles": [
+      "Informatique industrielle de Kerlouan-Vihan",
+      "Laboratoire de contrôle de Plouzévet-le-Vieux"
+    ],
+    "signaux": [
+      {
+        "id": "sig-effectif-rapport",
+        "text": "Effectif de 250 salariés déclaré au rapport annuel",
+        "date": "2026-03",
+        "source": "src-rapport"
+      },
+      {
+        "id": "sig-effectif-communique",
+        "text": "Effectif de 400 salariés annoncé lors de l'extension du site de Kerlouan-Vihan",
+        "date": "2026-06",
+        "source": "src-communique"
+      },
+      {
+        "id": "sig-tessala",
+        "text": "Remplacement du logiciel de laboratoire Tessala prévu à Plouzévet-le-Vieux",
+        "date": "2026-06",
+        "source": "src-communique"
+      }
+    ],
+    "projets": [
+      {
+        "id": "prj-tessala",
+        "text": "Remplacement du logiciel de laboratoire Tessala",
+        "source": "src-communique"
+      }
+    ],
+    "partenaires": [
+      "Ingénierie Mortier et Fils (fictif)"
+    ],
+    "acces": [
+      {
+        "text": "Entrée par l'informatique industrielle de Kerlouan-Vihan",
+        "via": "opérationnel"
+      }
+    ],
+    "recommandations": [
+      {
+        "id": "reco-tessala",
+        "text": "Proposer un chef de projet validation pour le remplacement du logiciel Tessala, en dimensionnant l'offre seulement après confirmation de l'effectif.",
+        "why": "Le remplacement de Tessala est prévu à Plouzévet-le-Vieux, mais l'effectif diverge entre 250 et 400 selon la source : aucune des deux ne se retient à la place de l'autre.",
+        "target": "Karim Belhadj",
+        "evidence": [
+          "sig-tessala",
+          "sig-effectif-rapport",
+          "sig-effectif-communique"
+        ]
+      }
+    ],
+    "gaps": [
+      "effectif : deux sources divergent (250 contre 400 salariés), aucune n'est retenue"
+    ],
+    "sources": [
+      {
+        "id": "src-rapport",
+        "url": "https://sources.fictif.invalid/donnees-contradictoires-laboratoires-quessant/src-rapport",
+        "date": "2026-03-30"
+      },
+      {
+        "id": "src-communique",
+        "url": "https://sources.fictif.invalid/donnees-contradictoires-laboratoires-quessant/src-communique",
+        "date": "2026-06-18"
+      }
+    ],
+    "action_suivante": {
+      "text": "Faire confirmer l'effectif par Anne Rivaud avant tout chiffrage",
+      "target": "Anne Rivaud",
+      "evidence": [
+        "sig-effectif-rapport",
+        "sig-effectif-communique"
+      ]
+    }
+  },
+  "cas": [
+    {
+      "id": "cas-tranche-sans-le-dire",
+      "text": "Dimensionner l'offre Tessala pour un site de 400 salariés.",
+      "why": "Le communiqué de Kerlouan-Vihan annonce 400 salariés.",
+      "target": "Karim Belhadj",
+      "evidence": [
+        "sig-effectif-communique",
+        "sig-tessala"
+      ],
+      "label": "misleading",
+      "_jugement": "Tranche entre deux sources contradictoires sans le dire : présenté avec assurance, et peut-être faux."
+    }
+  ]
+}

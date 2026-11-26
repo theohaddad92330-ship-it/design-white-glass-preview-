@@ -1,0 +1,30 @@
+<!doctype html>
+<html lang="fr" class="dark">
+  <head>
+    <meta charset="UTF-8" />
+    <link rel="icon" type="image/svg+xml" href="./public/favicon.ico" />
+    <!-- `viewport-fit=cover` : sans lui, la zone sûre d'un iPhone à encoche
+         n'existe pas pour le CSS, et `env(safe-area-inset-bottom)` vaut 0 —
+         la barre d'onglets passerait sous la barre de geste. -->
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover" />
+    <link rel="manifest" href="/manifest.webmanifest" />
+    <!-- La barre système sur mobile : `--bellum-bg` du thème sombre. -->
+    <meta name="theme-color" content="#09090b" />
+    <!-- iOS ignore le manifeste pour l'installation : ces deux balises sont ce
+         qui fait qu'un « Sur l'écran d'accueil » ouvre en plein écran plutôt
+         que dans Safari avec sa barre d'adresse. -->
+    <meta name="apple-mobile-web-app-capable" content="yes" />
+    <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent" />
+    <meta name="apple-mobile-web-app-title" content="Bellum" />
+    <link rel="apple-touch-icon" href="/icons/icon-192.png" />
+    <!-- Le repli STATIQUE, avant que le JavaScript ne tourne. `BrandProvider`
+         le remplace par la marque de l'espace dès la première réponse ; celui-ci
+         doit donc rester aligné sur `DEFAULT_BRAND_NAME` de @bellum/contracts. -->
+    <title>Bellum</title>
+  </head>
+  <body>
+    <div id="root"></div>
+    <script src="/theme-init.js"></script>
+    <script type="module" src="/src/main.tsx"></script>
+  </body>
+</html>

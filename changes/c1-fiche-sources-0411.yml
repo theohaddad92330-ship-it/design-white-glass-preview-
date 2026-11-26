@@ -1,0 +1,36 @@
+lot: c1-fiche-sources-0411
+issues: [4743, 4734]
+
+changelog:
+  id: 2026-11-04-c1-fiche-sources
+  comment: 'Lot C1 (#4743 #4734) — les mentions légales du site deviennent des faits de la fiche compte'
+  fr:
+    date: 4 novembre 2026
+    title: La fiche compte lit les mentions légales du site
+    items:
+      - 'La fiche compte affiche désormais ce que la page de mentions légales du site publie : raison sociale, immatriculation, direction de la publication, hébergeur, tels que publiés.'
+      - Un champ que la page ne donne pas n’apparaît pas, aucune ligne vide et aucune valeur devinée.
+  en:
+    date: November 4, 2026
+    title: The account sheet reads the site's legal notice
+    items:
+      - "The account sheet now shows what the site's legal-notice page publishes: company name, registration, publication director, host, as published."
+      - A field the page does not give does not appear, with no empty line and no guessed value.
+
+inserts:
+  - file: apps/api/src/modules/demo/demo-coverage.ts
+    text: |
+
+      /**
+       * #4743.2/.6 — LES MENTIONS LÉGALES DU SITE (`raw_analysis.legal_notice`, carte « Mentions légales du site »).
+       *
+       * VIDE À DESSEIN en démonstration : les comptes de la salle sont des groupes RÉELS, et une raison sociale, un
+       * RCS ou un hébergeur semés à la main seraient présentés comme PUBLIÉS par leur site alors qu'on ne les y a
+       * pas lus. Absent ⇒ aucune carte ; le rendu est mesuré par `SiteLegalNoticeCard.test.tsx`. À reprendre avec un
+       * compte fictif DÉDIÉ, jamais en déplaçant cette entrée pour une CI.
+       */
+      export const DEMO_SITE_LEGAL_NOTICE_COVERAGE: Readonly<{ state: 'vide_a_dessein'; reason: string }> = {
+        state: 'vide_a_dessein',
+        reason:
+          "#4743.6 — en salle, aucun compte ne porte `raw_analysis.legal_notice`, et c'est voulu : les comptes de la salle sont des groupes réels, une raison sociale, une immatriculation ou un hébergeur semés à la main seraient affirmés comme publiés par leur site sans l'avoir été. Un champ absent ne fait aucune ligne. Rendu prouvé par `SiteLegalNoticeCard.test.tsx` ; extraction par `test_legal_notice_fields_4743.py`.",
+      }

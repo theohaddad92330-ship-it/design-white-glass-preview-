@@ -1,0 +1,139 @@
+[build-system]
+requires = ["setuptools>=61.0", "wheel"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "bellum-ia"
+version = "0.1.0"
+description = "BellumAI — IA Service (FastAPI + Instructor)"
+requires-python = ">=3.12"
+dependencies = [
+    "fastapi==0.162.0",
+    "uvicorn[standard]==0.54.0",
+    "httpx==0.28.1",
+    "httpcore==1.0.9",
+    "firecrawl-py==4.54.0",
+    # Gelé en 0.x (0.125.0 depuis #4938) — voir la note d'`anthropic` dans requirements.txt (#4729) :
+    # la 2.x retire `temperature` de la signature du SDK.
+    "anthropic==0.125.0",
+    "instructor==1.17.0",
+    # 1.x depuis le correctif des failles de désérialisation des checkpoints
+    # (PYSEC-2026-83) ; `langchain` / `langchain-community` n'étaient importés
+    # nulle part et ont été retirés (ils bloquaient langchain-core 1.x).
+    "langgraph==1.2.19",
+    # Durable graph checkpointer (resume a half-finished analysis). Optional at
+    # runtime — falls back to an in-memory saver when LANGGRAPH_PG_URL/DATABASE_URL
+    # is unset — but always installed so the Postgres path is import-safe.
+    "langgraph-checkpoint-postgres==3.2.0",
+    "psycopg[binary]==3.3.6",
+    "pgvector==0.5.1",
+    "python-dotenv==1.2.4",
+    "pydantic==2.14.2",
+    # pydantic's Rust core, imported directly (not just via `pydantic`) in
+    # app/models/outputs/{research,scorer}.py for PydanticCustomError. Until
+    # now only present because pydantic==2.14.2 pulls it in transitively —
+    # GA-193 requires a direct import to be a direct dependency, version
+    # matched to what that pydantic release actually resolves.
+    "pydantic-core==2.50.2",
+    "supabase==2.33.0",
+    "aiolimiter>=1.2.1",
+    # Imported directly (not just re-exported by fastapi) in every
+    # app/middleware/*.py for BaseHTTPMiddleware/Request/Response/ASGIApp.
+    # Until now only present because fastapi pulls it in
+    # transitively — GA-193 requires a direct import to be a direct
+    # dependency, version matched to what that fastapi release resolves.
+    "starlette==1.10.0",
+    # Runtime validation of pipeline output against the SHARED JSON Schemas
+    # (app/contracts/shared_schemas.py, app/graph/nodes.py). Was already
+    # imported and installed by accident — pulled in transitively by some
+    # other dependency — never declared here (GA-193).
+    "jsonschema==4.26.0",
+    # Error reporting entry point (app/sentry_init.py, app/middleware/
+    # correlation_id.py, app/services/claude_service.py) — see "Convention
+    # error reporting" above. Was already imported and installed by
+    # accident — pulled in transitively by some other dependency — never
+    # declared here (GA-193): the service could start today only because
+    # something else happened to drag it in, and the day that intermediate
+    # dependency drops it, both the import AND the means to see the crash
+    # break together.
+    "sentry-sdk==2.73.0",
+    # Distributed token-bucket rate limiter shared across IA workers via Redis
+    # (rate_limiter falls back to the in-process aiolimiter when REDIS_URL is
+    # unset or Redis is unreachable). redis.asyncio ships in the redis package.
+    "redis==8.1.0",
+    # PDF text extraction for RAG knowledge docs (Théo p.21). Pure-Python, no
+    # native deps — safe on Railway. Used only when a base64 PDF is ingested.
+    "pypdf==6.21.4",
+    "olefile==0.47",
+    # #2433.12 — remet une photo prise de côté à l'endroit (étiquette EXIF) avant lecture.
+    "Pillow==13.0.0",
+]
+
+[project.optional-dependencies]
+dev = [
+    "pytest>=9.0.3",
+    "pytest-asyncio>=1.3.0",
+    "pytest-timeout>=2.3.1",
+    "pytest-cov>=6.0.0",
+    "ruff>=0.8.0",
+    # #4118 — contrats de couches (.importlinter), `pnpm --filter @bellum/ia lint:arch`. BSD-2.
+    # <2.7 : import-linter >=2.7 exige rich>=14, or instructor (requirements.txt) fige rich<14 -> "Only one live display" en CI.
+    "import-linter>=2.0,<2.16",
+    # In-memory Redis (incl. Lua via lupa) so the distributed limiter tests run
+    # hermetically with zero real Redis.
+    "fakeredis[lua]==2.40.0",
+]
+# IA v2 LLM Gateway — optional OpenAI provider. NOT installed by default: the
+# gateway guards the import and reports the provider unavailable (→ Anthropic
+# fallback) when the SDK is absent. Install with `pip install -e .[llm-openai]`
+# on the IA image only if you route a task to OpenAI (LLM_ROUTE_*).
+llm-openai = [
+    # Plafond 3.x — voir la note d'`openai` dans requirements.txt (#4729) :
+    # `instructor==1.17.0` exige `jiter<0.15`, l'openai 3.x exige `jiter>=0.16`,
+    # et aucun `jiter` ne satisfait les deux. Sans ce plafond,
+    # `pip install -e .[llm-openai]` résout la 3.x et casse l'installation
+    # entière, alors que requirements.txt, lui, reste cohérent.
+    "openai>=1.30.0,<4",
+]
+
+# #4109 — optional FlashRank reranker (Apache-2.0), lazy-imported only when
+# RAG_RERANK_ENABLED is true. NOT installed by default; absent ⇒ RRF order.
+rag-rerank = [
+    "flashrank>=0.2.9",
+]
+
+# #4108 — lecture gratuite trafilatura (palier 1), import tardif derrière un flag.
+crawl-free = [
+    "trafilatura==2.3.1",
+]
+
+# #4108 — navigateur auto-hébergé crawl4ai (palier 2), import tardif derrière un flag.
+# 0.9.5 depuis le 15/10/2026 (pip-audit, PR #4126) : 0.8.0 et son litellm 1.80.0
+# portaient des failles ; la voie retenue (openai 2.x + instructor 1.13.0) est
+# justifiée dans le commentaire de requirements.txt.
+crawl-browser = [
+    "crawl4ai==0.9.5",
+]
+
+# #4113 — NER PII Presidio, import tardif derrière un flag ; absent ⇒ no-op.
+pii-ner = [
+    "presidio-analyzer>=2.2.0",
+]
+
+[tool.setuptools]
+packages = ["app"]
+
+[tool.pytest.ini_options]
+pythonpath = ["."]
+asyncio_mode = "auto"
+
+[tool.ruff]
+target-version = "py312"
+line-length = 120
+
+[tool.ruff.lint]
+select = ["E", "W", "F", "I", "UP", "B", "SIM"]
+ignore = ["E501"]
+
+[tool.ruff.lint.isort]
+known-first-party = ["app"]

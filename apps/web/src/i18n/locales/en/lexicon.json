@@ -1,0 +1,66 @@
+{
+  "page": {
+    "title": "Lexicon",
+    "description": "The words your firm uses for the product's objects. A term set here replaces the label everywhere the product shows that name on its own — navigation, screen titles, pickers.",
+    "loading": "Loading the lexicon…"
+  },
+  "accessDenied": {
+    "title": "Workspace managers only",
+    "description": "The lexicon changes what the whole team reads: it requires the right to manage the team."
+  },
+  "language": {
+    "label": "Language of the terms",
+    "hint": "A term is set per language. Some words have no obvious translation, and guessing one would write it wrong."
+  },
+  "terms": {
+    "title": "Your team's words",
+    "default": "Default: {{term}}",
+    "singular": "Singular",
+    "plural": "Plural",
+    "clear": "Back to the product's word for “{{concept}}”"
+  },
+  "version": {
+    "label": "Version {{version}} · last changed on {{date}} by {{who}}",
+    "unset": "Version: not measured yet — the lexicon has never been changed",
+    "unknownMember": "a member no longer on the team"
+  },
+  "concepts": {
+    "need": "The role a project is looking for",
+    "project": "The client project in the pipe",
+    "account": "The company being tracked",
+    "contact": "The person at the client",
+    "consultant": "The person your firm puts forward",
+    "talent_pool": "All of your consultants",
+    "mission": "The engagement being delivered",
+    "submission": "A consultant put forward on a need"
+  },
+  "forbidden": {
+    "title": "Words never to read",
+    "hint": "{{copilot}} stops using them in anything she drafts. And if a forbidden word is the product's own, you must also say what replaces it — otherwise it would stay on screen.",
+    "placeholder": "e.g. the word you no longer want to read",
+    "add": "Add",
+    "remove": "Remove “{{term}}”",
+    "empty": "No forbidden words."
+  },
+  "outOfScope": {
+    "title": "What the lexicon does not change",
+    "hint": "A lexicon that states what it does not do beats one that lies about half of it.",
+    "items": {
+      "sentences": "Sentences. “No account matches” keeps its word: agreeing it would need a grammar, and skipping that would write nonsense.",
+      "document_titles": "The browser tab title, which composes the product name with the screen name.",
+      "third_party_objects": "The objects of a connected tool, on that connector's own screens — renaming them would misstate what the tool reads.",
+      "pricing_grid": "The pricing grid: it is shared by every workspace.",
+      "cross_workspace_metrics": "Metrics comparable across workspaces — renaming them would break the comparison."
+    }
+  },
+  "violations": {
+    "preferred_is_forbidden": "“{{term}}” is both the word you prefer and a word you forbid.",
+    "forbidden_without_replacement": "You forbid “{{term}}”, which is the product's own word: give the term to use instead, otherwise it stays on screen."
+  },
+  "save": "Save the lexicon",
+  "saving": "Saving…",
+  "saved": "Lexicon saved",
+  "saveFailed": "Lexicon not saved",
+  "pending": "Pending lexicon changes",
+  "noPending": "No pending change"
+}

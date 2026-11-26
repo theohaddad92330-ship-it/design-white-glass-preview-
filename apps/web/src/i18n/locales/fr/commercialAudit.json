@@ -1,0 +1,762 @@
+{
+  "hero": {
+    "title": "Voici ce que {{brand}} a compris de ton activité",
+    "subtitle": "Chaque ligne vient de tes réponses. Ce qui n'a pas pu être établi est nommé, jamais compté pour zéro.",
+    "version": "Version {{version}}",
+    "versionUnknown": "Aucune version enregistrée",
+    "updatedAt": "Actualisé le {{date}}",
+    "updatedAtUnknown": "Date de dernière actualisation non enregistrée",
+    "stale": {
+      "message": "Cet audit date du {{date}}. Rien ne t'oblige à le reprendre — tes réponses actuelles restent en place tant que tu n'en changes pas.",
+      "cta": "Revoir mes réponses"
+    }
+  },
+  "actions": {
+    "correct": "Corriger une information",
+    "askCopilot": "Demander à {{copilot}}",
+    "copilotPrompt": "Reprends l'audit de mon activité et dis-moi par quoi tu commencerais.",
+    "sources": "Voir les sources et les versions",
+    "exportPdf": "Exporter en PDF",
+    "share": "Partager",
+    "shareNotice": "Les membres de ton espace pourront lire cet audit.",
+    "shareCopyAction": "Copier le lien",
+    "shareDone": "Lien copié",
+    "shareCopied": "Lien de l'audit copié",
+    "shareFailed": "Copie impossible — voici le lien : {{url}}"
+  },
+  "toast": {
+    "pdfDownloaded": "PDF téléchargé",
+    "pdfError": "Échec du téléchargement PDF"
+  },
+  "validate": {
+    "cta": "Valider",
+    "status": "Validé le {{date}}",
+    "statusWithName": "Validé le {{date}} par {{name}}",
+    "thankYou": "Merci ! J’ai maintenant suffisamment de contexte.",
+    "thankYouWithName": "Merci {{name}} ! J’ai maintenant suffisamment de contexte.",
+    "pendingReview": "Une nouvelle version de ton profil remplace la précédente — valide-la pour la confirmer.",
+    "handoff": {
+      "intro": "À ta place, je commencerais par l’un de ces mouvements.",
+      "lauraLabel": "En discuter avec {{copilot}}",
+      "lauraQuestion": "À la fin de mon audit commercial, tu recommandais : « {{action}} ». Aide-moi à avancer sur ce point.",
+      "lauraQuestionGeneric": "Mon audit commercial vient d’être validé. Par quoi devrais-je commencer ?",
+      "account": "Compte à tester : {{company}}",
+      "consultant": "Consultant à positionner"
+    }
+  },
+  "headline": {
+    "posture": "Posture de vente retenue",
+    "archetype": "Type d'ESN retenu",
+    "target": "Comptes visés",
+    "bottleneck": "Ce qui freine le plus",
+    "cadence": "Cadence recommandée"
+  },
+  "target": {
+    "value": "{{size}} · {{level}} · {{strategy}}",
+    "sectors": "Secteurs prioritaires : {{sectors}}",
+    "sectorsNone": "Aucun secteur prioritaire nommé"
+  },
+  "cadence": {
+    "analyses_one": "{{count}} analyse par semaine",
+    "analyses_other": "{{count}} analyses par semaine",
+    "messages_one": "{{count}} message par jour",
+    "messages_other": "{{count}} messages par jour",
+    "followUps_one": "{{count}} relance par semaine",
+    "followUps_other": "{{count}} relances par semaine"
+  },
+  "strategy": {
+    "topDown": "entrée par le haut",
+    "bottomUp": "entrée par le terrain",
+    "multiThread": "entrée sur plusieurs fils",
+    "referral": "entrée par recommandation"
+  },
+  "tone": {
+    "directExpert": "direct et expert",
+    "consultative": "consultatif",
+    "relationshipFirst": "la relation d'abord",
+    "challenger": "challenger"
+  },
+  "length": {
+    "concise": "court",
+    "standard": "standard",
+    "detailed": "détaillé"
+  },
+  "depth": {
+    "light": "légère",
+    "standard": "standard",
+    "deep": "approfondie"
+  },
+  "columns": {
+    "title": "Trois décisions, pas une liste de tâches",
+    "stop": "Arrêter",
+    "keep": "Garder",
+    "reinforce": "Renforcer",
+    "empty": "Ton profil n'a nommé aucun point ici.",
+    "unmeasured": "Cette partie du profil n'a pas été établie.",
+    "origin": "D'après {{origin}}",
+    "showAll_one": "Voir l'autre",
+    "showAll_other": "Voir les {{count}} autres",
+    "producedWith": "Produite avec ton audit du {{date}}",
+    "pendingReview": "Ces trois colonnes reposent sur une version qui n'a pas encore été validée."
+  },
+  "consequences": {
+    "title": "À partir de maintenant, {{brand}} va…",
+    "accounts": "Prioriser les bons comptes",
+    "contacts": "Chercher les bons niveaux de contacts",
+    "messages": "Adapter les messages",
+    "load": "Limiter la charge active",
+    "kpiTargets": "Viser un rythme mensuel",
+    "routines": "Proposer les bonnes routines",
+    "copilot": "Personnaliser {{copilot}}",
+    "edit": "Modifier",
+    "unmeasured": "Aucune règle retenue : cette partie du profil n'a pas été établie.",
+    "rule": {
+      "accounts": "Des comptes {{size}}, en {{strategy}}.",
+      "accountsSectors": "En priorité : {{sectors}}.",
+      "contacts": "Des interlocuteurs au niveau {{level}}.",
+      "messages": "Un ton {{tone}}, au format {{length}}, sur l'angle « {{angle}} ».",
+      "load": "{{analyses}}, {{messages}}, {{followUps}}.",
+      "kpiTargets": "{{accounts}} comptes actifs et {{rdv}} rendez-vous visés ce mois-ci.",
+      "kpiTargetsPartners": "{{partners}} partenaires à travailler ce mois-ci.",
+      "routines": "Une analyse {{depth}}.",
+      "routinesFocus": "Sur : {{focus}}.",
+      "copilot": "Le copilote reprend les mots de ton profil."
+    },
+    "loadHypothesis": "Une hypothèse de {{brand}}, pas une conversion démontrée : elle suppose que tu as la capacité de t'y tenir chaque semaine, rien ne prouve encore qu'elle produit les résultats attendus, et elle se recalibre à tout moment — jamais à la hausse si ton temps disponible baisse."
+  },
+  "activeLoad": {
+    "title": "Ta charge active, arbitrée",
+    "description": "Quatre repères tirés de tes seules réponses — ton temps protégé, tes plages, tes portes d’entrée —, chacun avec la règle qui le produit. Ce qui ne s’en déduit pas est dit « non établi », jamais compté pour zéro.",
+    "unmeasured": "Non établi.",
+    "missing": "À renseigner d’abord : {{answers}}.",
+    "answer": {
+      "weekly_sales_time_protected": "le temps que tu protèges vraiment chaque semaine",
+      "weekly_sales_time_slots": "les moments de la semaine où tombe ton temps commercial",
+      "go_to_market_channels": "tes portes d’entrée, nommées une à une (« Mixte » ne se compte pas)",
+      "partners_regular_count": "avec combien de partenaires réguliers tu travailles réellement aujourd’hui"
+    },
+    "partners": {
+      "title": "Les partenaires à travailler",
+      "noPartnerDoor": "Aucun partenaire dans ta charge active : aucune des portes d’entrée que tu as déclarées ({{doors}}) ne passe par un partenaire.",
+      "rule": "Règle : on ne lit que les portes d’entrée que tu as déclarées.",
+      "regular": "Partenaires réguliers à travailler : {{regular}} (par {{doors}}).",
+      "occasional": "Tes partenaires ponctuels ({{occasional}}) restent hors de ta charge active : tu les actives au besoin.",
+      "ruleRegular": "Règle : tes partenaires réguliers forment ta charge active, tels que tu les as déclarés ; les ponctuels n’y sont jamais ajoutés."
+    },
+    "slots": {
+      "title": "Tes créneaux",
+      "slots": "Tiens ceux où ton temps tombe déjà : {{slots}}.",
+      "holding": "Ce que tu en dis : « {{holding}} ».",
+      "noRegularSlot": "Tu n’as déclaré aucune plage régulière : aucun créneau ne peut être nommé à ta place.",
+      "rule": "Règle : tes créneaux sont les plages que tu as déclarées, rien d’autre."
+    },
+    "reserve": {
+      "title": "Ta réserve",
+      "reserve_one": "{{count}} front laissé libre : ne le remplis pas, c’est lui qui absorbe l’imprévu.",
+      "reserve_other": "{{count}} fronts laissés libres : ne les remplis pas, ce sont eux qui absorbent l’imprévu.",
+      "noReserve": "Aucune réserve : tes portes d’entrée remplissent déjà tout ton budget de fronts.",
+      "erosion": "Ce qui grignote déjà ton temps : {{risks}}.",
+      "rule": "Règle : ton budget de fronts ({{maxFronts}}) moins tes portes d’entrée ouvertes ({{doorCount}}), chaque porte comptant pour un front."
+    },
+    "deferred": {
+      "title": "Ce qu’il faut reporter",
+      "toDefer_one": "Reporte {{count}} de ces portes d’entrée : {{candidates}}.",
+      "toDefer_other": "Reporte {{count}} de ces portes d’entrée : {{candidates}}.",
+      "choice": "Lesquelles, c’est à toi de trancher : aucune de tes réponses ne dit laquelle rapporte le plus.",
+      "nothingToDefer": "Rien à reporter : tes portes d’entrée tiennent dans ton budget de fronts.",
+      "rule": "Règle : tes portes d’entrée ouvertes ({{doorCount}}) moins ton budget de fronts ({{maxFronts}}), chaque porte comptant pour un front."
+    }
+  },
+  "strategyOptions": {
+    "title": "Les voies possibles",
+    "pick": "À ta place, je commencerais par {{strategy}}.",
+    "unmeasured": "Aucune voie n'a pu être recommandée : ton profil de compte idéal n'a pas encore été établi.",
+    "recommended": "Recommandée",
+    "chosenBadge": "Stratégie retenue",
+    "why": "Retenue pour un compte {{size}}, décision au niveau {{level}}.",
+    "potential": "Son potentiel",
+    "prereq": "Ce qu'il faut avant de s'y engager",
+    "limits": "Ses limites",
+    "workload": "La charge",
+    "paybackDelay": "Le délai de retour",
+    "risk": "Le risque, et comment le reconnaître",
+    "firstTest": "Le premier test",
+    "stopCondition": "La condition d’arrêt",
+    "actions": {
+      "choose": "Choisir cette stratégie",
+      "compare": "Comparer",
+      "reconsider": "Modifier une hypothèse",
+      "askCopilot": "Demander à {{copilot}}",
+      "askCopilotPrompt": "Explique-moi la voie « {{strategy}} » et si elle convient à mon activité.",
+      "notNow": "Ne pas décider maintenant"
+    },
+    "comparison": {
+      "same": "Stratégie retenue : {{chosen}} — la même que la recommandation initiale.",
+      "different": "Stratégie retenue : {{chosen}} — la recommandation initiale était {{recommended}}."
+    },
+    "details": {
+      "topDown": {
+        "potential": "Un accès direct au niveau qui décide, sans repasser par un relais intermédiaire.",
+        "prereq": "Un contact identifié au niveau décideur, et une raison de lui écrire directement.",
+        "limits": "Un cycle plus long : le décideur délègue rarement une première réponse.",
+        "workload": "Peu de messages à produire, mais chacun exige une préparation soignée : un décideur ne pardonne pas une approche générique.",
+        "paybackDelay": "Le signal arrive vite ou n'arrive pas : au-delà de deux relances sans écho, la voie ne s'ouvre pas par ce chemin.",
+        "risk": "Le risque : une sollicitation perçue comme trop directe ferme durablement l'accès. Signal à observer : un message lu sans réponse ni accusé de réception.",
+        "firstTest": "Une prise de contact au niveau décideur sur un compte prioritaire, et voir si elle obtient une réponse.",
+        "stopCondition": "Aucune réponse après deux relances espacées : changer de voie plutôt que d'insister."
+      },
+      "bottomUp": {
+        "potential": "Un point d'entrée qui reste accessible même sans décideur identifié.",
+        "prereq": "Un point d'entrée opérationnel capable de remonter le besoin en interne.",
+        "limits": "Le dossier peut s'arrêter avant d'atteindre qui décide.",
+        "workload": "Des échanges supplémentaires pour faire remonter le besoin en interne, avant d'atteindre qui décide.",
+        "paybackDelay": "Le retour dépend du temps que l'interlocuteur opérationnel met à relayer en interne.",
+        "risk": "Le risque : le dossier reste au niveau opérationnel sans jamais remonter. Signal à observer : l'interlocuteur ne nomme personne au-dessus de lui après plusieurs échanges.",
+        "firstTest": "Un échange avec un interlocuteur opérationnel, et voir s'il peut nommer qui décide.",
+        "stopCondition": "Aucun nom de décideur obtenu après trois échanges : reconsidérer l'entrée par le haut."
+      },
+      "multiThread": {
+        "potential": "Plusieurs portes d'entrée sur le même compte : une porte fermée n'arrête pas le dossier.",
+        "prereq": "Plusieurs interlocuteurs identifiables chez le même compte, à des niveaux différents.",
+        "limits": "Plus de messages à personnaliser, et plus de suivi pour garder les fils cohérents entre eux.",
+        "workload": "Chaque fil se personnalise et se suit séparément, ce qui ajoute du travail de coordination.",
+        "paybackDelay": "Variable d'un fil à l'autre : certains avancent pendant que d'autres restent muets.",
+        "risk": "Le risque : des messages incohérents entre eux si les fils ne sont pas synchronisés. Signal à observer : deux interlocuteurs du même compte relatent des versions différentes.",
+        "firstTest": "Deux prises de contact sur le même compte, à deux niveaux, et voir laquelle avance.",
+        "stopCondition": "Aucun des fils n'avance après le premier échange : concentrer l'effort sur un seul."
+      },
+      "referral": {
+        "potential": "La confiance de la relation qui introduit porte le premier contact.",
+        "prereq": "Une relation existante — client, partenaire ou contact — prête à faire l'introduction.",
+        "limits": "Ne se déclenche pas à la demande : dépend d'une relation qui existe déjà.",
+        "workload": "Un seul message à préparer : celui adressé à la relation qui introduit.",
+        "paybackDelay": "Dépend du calendrier de la relation qui introduit, hors du contrôle direct du commercial.",
+        "risk": "Le risque : la relation n'a ni le temps ni l'occasion de faire l'introduction. Signal à observer : aucune nouvelle de l'introduction demandée après une relance polie.",
+        "firstTest": "Une introduction demandée à une relation existante sur un compte prioritaire.",
+        "stopCondition": "Aucune introduction faite après une relance : revenir vers une voie qui ne dépend pas d'un tiers."
+      }
+    }
+  },
+  "strategicCombination": {
+    "title": "La combinaison recommandée",
+    "description": "Les canaux que tu as toi-même déclarés, réunis en une combinaison limitée plutôt que de tout garder actif."
+  },
+  "unestablished": {
+    "title": "Ce qui n'a pas pu être établi",
+    "description": "Pas de niveau de confiance chiffré : un pourcentage mesurerait nos données et se lirait comme une chance de réussite. Voici la liste, nommée.",
+    "none": "Tout ce que cet écran affiche a pu être établi.",
+    "item": "{{label}} — {{reason}}",
+    "reason": {
+      "profileMissing": "ton profil ne le renseigne pas encore",
+      "noSourceYet": "aucune source ne le produit encore — compléter ton profil n'y changera rien",
+      "notConcludedVerdict": "aucune des {{rulesChecked}} règles de tension n'a détecté de rupture, et aucun goulot n'a été mesuré sur ton profil",
+      "notConcludedPriority": "aucune des {{rulesChecked}} règles de tension n'a détecté de rupture, et aucun conseil n'a pu être tiré de ton profil",
+      "notConcludedMoves": "aucune des {{rulesChecked}} règles de tension n'a détecté de rupture : il n'y a donc aucun geste à proposer",
+      "notConcludedHypotheses": "aucune des {{rulesChecked}} règles de tension n'a détecté de rupture portant une explication possible : il n'y a donc rien à relire",
+      "notConcludedMaturity": "{{axesEvaluated}} sur {{axesTotal}} axes évalués — il en faut au moins {{axesMinimum}} pour un score global",
+      "answerMissing": "il manque ta réponse sur {{answers}}"
+    },
+    "cta": "Compléter mon profil"
+  },
+  "origin": {
+    "sellingPosture": "ta posture de vente",
+    "esnArchetype": "le type d'ESN retenu",
+    "idealAccountProfile": "ton profil de compte idéal",
+    "coachingInsights": "la lecture de tes réponses",
+    "cadenceRecommendation": "la cadence recommandée",
+    "kpiTargets": "tes objectifs mensuels recommandés",
+    "messagingStyle": "ton style de message",
+    "analysisParameters": "tes paramètres d'analyse",
+    "bellumPhrases": "les phrases réécrites pour ton espace",
+    "thirtyDayPlan": "le plan à 4 semaines",
+    "milestones": "les paliers",
+    "productConfiguration": "ce que {{copilot}} pourra régler depuis cet audit",
+    "verdict": "le verdict",
+    "maturity": "la maturité commerciale",
+    "priority": "la priorité de la semaine",
+    "moves": "les premiers mouvements",
+    "hypotheses": "les hypothèses à vérifier",
+    "declaredSignals": "tes réponses au questionnaire",
+    "activeLoadPartners": "le nombre de partenaires à travailler",
+    "activeLoadSlots": "tes créneaux",
+    "activeLoadReserve": "ta réserve",
+    "activeLoadDeferred": "ce qu’il faut reporter"
+  },
+  "empty": {
+    "title": "Ton profil n'a pas encore été établi",
+    "description": "Réponds au questionnaire de profil : cet écran se remplit à partir de tes réponses, et de rien d'autre.",
+    "cta": "Répondre au questionnaire"
+  },
+  "loading": "Lecture de ton profil…",
+  "loadError": "Ton profil n’a pas pu être lu. Recharge la page ; si l’échec persiste, relance la génération depuis Réglages › Profil.",
+  "plan": {
+    "title": "Plan à 4 semaines",
+    "unmeasured": "Aucune action ouverte ne permet encore de produire ce plan.",
+    "createInActions": "Créer une action dans Actions",
+    "openInActions": "Ouvrir dans Actions",
+    "week": "Semaine {{number}}",
+    "noPriority": "Aucune priorité nommée cette semaine.",
+    "priority": {
+      "owner": "Responsable : {{owner}}",
+      "slot": "Créneau : {{slot}}",
+      "dependency": "Dépendance : {{dependency}}",
+      "completionProof": "Preuve de réalisation : {{proof}}",
+      "surfaceLink": "Surface : {{link}}",
+      "replacementCondition": "Condition de remplacement : {{condition}}",
+      "domain": "Domaine : {{domain}}"
+    }
+  },
+  "milestones": {
+    "title": "Paliers",
+    "unmeasured": "Aucune source ne mesure encore de palier.",
+    "horizon": {
+      "60d": "60 jours",
+      "90d": "90 jours",
+      "6m": "6 mois",
+      "12m": "12 mois"
+    },
+    "passageCondition": "Condition de passage : {{condition}}",
+    "expectedProof": "Preuve attendue : {{proof}}",
+    "decisionToMake": "Décision à prendre : {{decision}}",
+    "correctionIfNotReached": "Si le palier n’est pas atteint : {{correction}}"
+  },
+  "productConfiguration": {
+    "title": "Ce que {{copilot}} pourra régler depuis cet audit",
+    "unmeasured": "Aucun paramètre : aucune configuration effective n'est encore dérivée de l'audit.",
+    "noParameter": "Aucun paramètre nommé pour cette aire.",
+    "trace": "D’après : {{statement}}",
+    "notSet": "non réglé",
+    "noArea": "Aucune aire produit n’a pu être nommée depuis cet audit.",
+    "parameter": {
+      "prioritySectors": "Secteurs prioritaires",
+      "priorityThemes": "Thèmes prioritaires",
+      "targetDecisionLevel": "Étage visé",
+      "valueAngle": "Angle de valeur",
+      "proofPoints": "Preuves"
+    },
+    "area": {
+      "discover": "Découvrir",
+      "scoring": "Scoring",
+      "contacts": "Contacts",
+      "orgGraph": "Carte d'influence",
+      "messages": "Messages",
+      "sequences": "Séquences",
+      "reverseMarket": "Trouver des missions",
+      "routinesPilotageNotifications": "Routines · Pilotage · Notifications",
+      "matchingActionPlan": "Matching · Plan d'action"
+    }
+  },
+  "tensions": {
+    "title": "Tensions détectées",
+    "unmeasured": "Aucune tension détectée pour l'instant.",
+    "rule": {
+      "objectivesAboveCapacity": {
+        "label": "Objectifs supérieurs à la capacité"
+      },
+      "tooManySimultaneousMarkets": {
+        "label": "Trop de marchés simultanés"
+      },
+      "offerWithoutProof": {
+        "label": "Une offre sans preuve"
+      },
+      "acquisitionWithoutRoutine": {
+        "label": "De l'acquisition sans routine"
+      },
+      "poolWithoutAvailability": {
+        "label": "Un vivier sans disponibilité"
+      },
+      "needsWithoutQualification": {
+        "label": "Des besoins sans qualification"
+      },
+      "profilesWithoutCommitment": {
+        "label": "Des profils présentés sans engagement"
+      },
+      "keyAccountsWithoutAccessPath": {
+        "label": "Des grands comptes sans voie d'accès"
+      },
+      "partnersWithoutEconomicsOrFeedback": {
+        "label": "Des partenaires sans économie ni feedback"
+      },
+      "contentWithoutCommercialUse": {
+        "label": "Du contenu sans exploitation commerciale"
+      },
+      "rfpsWithoutGoNoGo": {
+        "label": "Des appels d'offres sans GO/NO-GO"
+      },
+      "missionsWithoutCapitalisation": {
+        "label": "Des missions sans capitalisation"
+      },
+      "contactWithoutFollowUpDate": {
+        "label": "Un contact sans date de reprise"
+      },
+      "needReducedToTitle": {
+        "label": "Un besoin réduit à un intitulé"
+      },
+      "profileNotSecured": {
+        "label": "Un profil non sécurisé"
+      },
+      "interviewWithoutFollowUp": {
+        "label": "Un entretien sans suite"
+      },
+      "missionWithoutRenewal": {
+        "label": "Une mission sans renouvellement"
+      },
+      "feedbackNotRecorded": {
+        "label": "Un feedback non consigné"
+      }
+    }
+  },
+  "maturity": {
+    "title": "Maturité commerciale",
+    "unmeasured": "Moins de 3 axes ont pu être évalués : pas de score global, mais chaque axe reste nommé.",
+    "chart": {
+      "title": "Vue par niveau",
+      "notEvaluable": "Axes non évaluables : {{axes}}"
+    },
+    "detail": {
+      "assets": "Actifs",
+      "constraints": "Contraintes",
+      "action": "Action"
+    },
+    "state": {
+      "measured": "Mesuré",
+      "partial": "Partiel",
+      "unknown": "Inconnu"
+    },
+    "level": {
+      "notStarted": "Pas commencé",
+      "emerging": "Émergent",
+      "structured": "Structuré",
+      "mature": "Mature"
+    },
+    "axis": {
+      "offerClarity": {
+        "label": "Clarté de l'offre"
+      },
+      "proof": {
+        "label": "Preuves"
+      },
+      "targeting": {
+        "label": "Ciblage"
+      },
+      "access": {
+        "label": "Accès"
+      },
+      "commercialCapacity": {
+        "label": "Capacité commerciale"
+      },
+      "followUpDiscipline": {
+        "label": "Discipline du suivi"
+      },
+      "clientQualification": {
+        "label": "Qualification client"
+      },
+      "candidateSecurisation": {
+        "label": "Sécurisation candidat"
+      },
+      "dataAndTools": {
+        "label": "Data et outils"
+      },
+      "measurement": {
+        "label": "Mesure"
+      },
+      "capitalisation": {
+        "label": "Capitalisation"
+      },
+      "teamAlignment": {
+        "label": "Alignement équipe"
+      },
+      "network": {
+        "label": "Réseau"
+      }
+    }
+  },
+  "verdict": {
+    "title": "Le verdict",
+    "unmeasured": "Rien n'a pu être tranché pour l'instant : ni rupture détectée, ni goulot mesuré sur ton profil."
+  },
+  "chain": {
+    "title": "La chaîne commerciale",
+    "description": "Chaque étape lit ce que les dix-huit règles de détection ont mesuré. Une rupture s'ouvre au clic.",
+    "stage": {
+      "contact": "Contact",
+      "exchange": "Échange",
+      "need": "Besoin",
+      "profile": "Profil",
+      "interview": "Entretien",
+      "agreement": "Accord",
+      "kickoff": "Démarrage",
+      "followUp": "Suivi",
+      "capitalisation": "Capitalisation"
+    },
+    "state": {
+      "rupture_one": "{{count}} rupture détectée",
+      "rupture_other": "{{count}} ruptures détectées",
+      "measured": "Rien à signaler",
+      "unknown": "Non mesuré à cette étape"
+    },
+    "openRupture": "Voir la rupture « {{label}} »",
+    "closeRupture": "Refermer",
+    "facts": "Ce qui a été observé",
+    "possibleExplanation": "Ce qui pourrait l'expliquer",
+    "questionToValidate": "À valider",
+    "consequenceIfUnaddressed": "Si rien ne change",
+    "recommendation": "Recommandation",
+    "indicator": "Indicateur à suivre",
+    "conclusion": {
+      "at": "Le problème se situe au niveau de l'étape « {{stage}} ».",
+      "between": "Le problème se situe entre l'étape « {{before}} » et l'étape « {{stage}} »."
+    }
+  },
+  "priority": {
+    "title": "Prioriser cette semaine",
+    "unmeasured": "Aucune priorité ne peut être nommée : ni rupture ni conseil mesuré cette semaine."
+  },
+  "moves": {
+    "title": "Les premiers mouvements",
+    "intro": "Trois au plus, dérivés des ruptures mesurées plus haut — jamais une liste de tâches.",
+    "unmeasured": "Aucun mouvement ne peut être proposé : aucune rupture n’a été détectée sur ce profil.",
+    "kind": {
+      "ouverture": "Une ouverture",
+      "engagement": "Un engagement à faire avancer",
+      "pilotage": "Une décision de pilotage"
+    },
+    "reason": "Pourquoi",
+    "expectedResult": "Ce qu’on regardera pour savoir que c’est fait",
+    "pageLabel": "Où cela se passe dans {{brand}}",
+    "page": {
+      "contacts": "Contacts",
+      "agenda": "Agenda",
+      "actions": "Actions",
+      "sequences": "Séquences",
+      "projets": "Projets",
+      "besoins": "Besoins",
+      "partenaires": "Partenaires",
+      "dossier": "Dossier du compte"
+    },
+    "status": {
+      "propose": "Proposé",
+      "valide": "Validé",
+      "modifie": "Modifié",
+      "ecarte": "Écarté"
+    },
+    "actions": {
+      "prompt": "Décision sur ce mouvement",
+      "valide": "Valider ce mouvement",
+      "modifie": "Modifier ce mouvement",
+      "ecarte": "Écarter ce mouvement"
+    },
+    "gate": "Valide, modifie ou écarte chaque mouvement avant qu’il devienne une action."
+  },
+  "hypotheses": {
+    "title": "Hypothèses à vérifier",
+    "intro": "Ce qui pourrait expliquer une tension mesurée plus haut — nommé comme une hypothèse, jamais comme un fait.",
+    "unmeasured": "Aucune hypothèse : les tensions détectées n’en nomment aucune pour l’instant.",
+    "question": "À vérifier"
+  },
+  "reportInterpretation": {
+    "trigger": "Préciser ou signaler une interprétation",
+    "dialogTitle": "Signaler une interprétation de l’audit",
+    "dialogDescription": "Rien n’est modifié : ta demande part directement aux administrateurs de ton espace, pour relecture.",
+    "reasonLabel": "Pourquoi cette interprétation ne te semble-t-elle pas juste ?",
+    "reasonPlaceholder": "Explique ce qui te semble incorrect…",
+    "submit": "Envoyer le signalement",
+    "cancel": "Annuler",
+    "successTitle": "Signalement envoyé aux administrateurs de ton espace.",
+    "errorBody": "Impossible d’envoyer ton signalement. Réessaie."
+  },
+  "feedback": {
+    "commentTrigger": "Commenter",
+    "refuseTrigger": "Refuser",
+    "dialogTitle": "Commenter cette conclusion",
+    "dialogDescription": "Ta note reste personnelle — elle n’est jamais partagée, jamais envoyée au modèle.",
+    "textLabel": "Ta note",
+    "submit": "Envoyer",
+    "cancel": "Annuler",
+    "errorBody": "Impossible d’enregistrer ta note. Réessaie.",
+    "refusedNote": "Refusée",
+    "commentedNote": "Ta note : {{text}}",
+    "validateTrigger": "Valider ce bloc",
+    "validatedNote": "Bloc validé."
+  },
+  "confidence": {
+    "label": "Confiance",
+    "corroborated": "Recoupé",
+    "single_source": "Source unique",
+    "deduced": "Déduit",
+    "unknown": "Non mesurée"
+  },
+  "factsAndScope": {
+    "title": "Ce qui est établi",
+    "scopeTitle": "Périmètre de l’audit",
+    "scopeUnmeasured": "Le périmètre n’a pas encore été établi — aucune cible ni profondeur d’analyse n’est encore configurée.",
+    "factsTitle": "Faits établis",
+    "factsUnmeasured": "Aucun fait n’a encore pu être établi : le profil n’a pas encore été renseigné.",
+    "factsEmpty": "Le profil est lu, aucun fait n’en ressort encore."
+  },
+  "positioning": {
+    "title": "Position",
+    "assets": "Atouts",
+    "assetsUnmeasured": "Aucun atout n’a encore été établi.",
+    "constraints": "Contraintes",
+    "constraintsUnmeasured": "Aucune contrainte n’a encore été établie."
+  },
+  "direction": {
+    "title": "Direction",
+    "recommendedTitle": "Direction recommandée",
+    "recommendedLabel": "Direction",
+    "recommendedUnmeasured": "Aucune direction n’a encore pu être recommandée : ni tension détectée, ni conseil mesuré.",
+    "roadmapTitle": "Feuille de route conditionnelle",
+    "roadmapCondition": "Si",
+    "roadmapThen": "alors",
+    "roadmapUnmeasured": "Aucune feuille de route conditionnelle : ton profil n’a pas encore été établi.",
+    "roadmapEmpty": "Aucune tension détectée pour l’instant : rien à conditionner.",
+    "questionsTitle": "Questions à revisiter",
+    "questionPrefix": "À valider",
+    "questionsUnmeasured": "Aucune question à revisiter : ton profil n’a pas encore été établi.",
+    "questionsEmpty": "Aucune tension détectée pour l’instant : aucune question à revisiter."
+  },
+  "marketMemory": {
+    "title": "Observations du marché",
+    "badge": "Observations du marché · inclus",
+    "limit": "Aperçu limité à quelques comptes du corpus — pas une recherche exhaustive.",
+    "unmeasured": "Aucune entreprise compatible n'a encore été trouvée dans le corpus.",
+    "compatible": "Compatible",
+    "toQualify": "À qualifier",
+    "observed": "Observé : {{stack}}",
+    "cta": "Voir dans Découvrir"
+  },
+  "declaredSignals": {
+    "title": "Ce que tes réponses disent",
+    "description": "Cinq lectures de ton questionnaire, et rien d’autre : aucune conversion calculée, aucun pourcentage, aucune probabilité. Ce qui n’a pas été renseigné est nommé plutôt que compté pour zéro.",
+    "unmeasured": "Tes réponses au questionnaire n’ont pas pu être lues.",
+    "funnelBreak": {
+      "title": "Où ta trace s’arrête",
+      "notDeclared": "Tu n’as pas encore dit quelles unités tu comptes — ce n’est pas « tu ne comptes rien ».",
+      "break": "Ta chaîne cesse d’être comptée à « {{stage}} » : au-delà, aucune trace en {{unit}}.",
+      "complete": "Tu comptes les onze unités de la chaîne, de bout en bout.",
+      "tracked": "{{stage}} — compté",
+      "notTracked": "{{stage}} — non compté"
+    },
+    "startingPoint": {
+      "title": "Ton point de départ",
+      "notDeclared": "Tu n’as pas encore décrit ce que tu observes aujourd’hui sur ce profil de client.",
+      "sameAsAmbition": "Ton point de départ est ton ambition : tu décris des comptes atteignables dès maintenant.",
+      "differsFromAmbition": "Ton point de départ n’est pas ton ambition — mieux vaut partir d’où tu es.",
+      "reachableToday": "Ce qui est à ta portée aujourd’hui",
+      "gaps": "Ce qui t’en éloigne",
+      "declaredStates": "Ce que tu as coché"
+    },
+    "entryAxis": {
+      "title": "Ton axe d’entrée",
+      "notDeclared": "Tu n’as pas encore dit à quel niveau les réponses t’arrivent vraiment.",
+      "source": "Lu sur « {{level}} » — le niveau où tes réponses arrivent, pas celui que tu vises.",
+      "diverges": "Tu vises {{aim}} : l’écart entre ce que tu vises et ce qui te répond est le sujet à traiter."
+    },
+    "frontsBudget": {
+      "title": "Combien de fronts tu peux tenir",
+      "notDeclared": "Tu n’as pas encore dit combien d’heures tu peux vraiment protéger.",
+      "noFront": "Aucun front : la semaine que tu décris n’en laisse pas la place.",
+      "maxFronts_one": "{{count}} front à la fois, pas deux.",
+      "maxFronts_other": "{{count}} fronts au maximum, en même temps.",
+      "notMoreTools": "Moins de fronts, pas plus d’outils : un outil de plus ne rend pas une heure.",
+      "source": {
+        "protected": "Lu sur le temps que tu protèges vraiment : {{band}}.",
+        "declared": "Lu sur le temps que tu annonces ({{band}}) — tu n’as pas dit ce qui survit à une semaine ordinaire."
+      },
+      "erosion": "Ce qui grignote ce temps, d’après tes réponses"
+    },
+    "routineSeeds": {
+      "title": "Les routines à partir de tes ruptures",
+      "notDeclared": "Tu n’as pas encore dit où tes dossiers décrochent.",
+      "notLocatedYet": "Tu as dit ne pas encore savoir où ça décroche — c’est une réponse, pas un vide. On regardera ensemble.",
+      "toConfigure": "À mettre en place : {{practice}}.",
+      "alreadyHeld": "Tu tiens déjà « {{practice}} » — la rupture vient d’ailleurs.",
+      "unrouted": "Ces ruptures-là, aucune routine du produit ne les tient aujourd’hui"
+    }
+  },
+  "collaboration": {
+    "title": "Ton collègue gère-t-il une partie de ces comptes ?",
+    "subtitle": "Avant d'inviter quelqu'un, voici ce qui change — et ce qui ne change pas.",
+    "shared": {
+      "title": "Ce qui est partagé",
+      "description": "Les comptes, les contacts, les fiches, les notes et l'historique de l'espace : chaque membre invité voit ce que tu vois."
+    },
+    "personal": {
+      "title": "Ce qui reste personnel",
+      "description": "Ta messagerie connectée, ton agenda, tes conversations avec {{copilot}} et tes préférences : jamais partagés, quel que soit le rôle du membre invité."
+    },
+    "visibility": {
+      "title": "Qui voit quoi",
+      "open": "Aujourd'hui, chaque membre de ton espace voit tout le portefeuille de l'équipe.",
+      "restricted": "Aujourd'hui, chaque commercial voit son portefeuille et les comptes libres — configurable dans Équipe."
+    },
+    "invite": "Inviter un collègue",
+    "later": "Plus tard"
+  },
+  "expertiseCredibility": {
+    "title": "Crédibilité par expertise",
+    "intro": "Pour chaque expertise : sais-tu le faire, as-tu une preuve, peux-tu la vendre maintenant ? Une preuve est un objet rattaché — une mission, un document, un compte ou un consultant de l'espace.",
+    "loadError": "Impossible de charger la crédibilité par expertise. Réessaie dans un instant.",
+    "saveError": "Enregistrement impossible — rien n'a été modifié.",
+    "noExpertise": "Aucune expertise déclarée pour l'instant : l'audit par expertise s'ouvrira dès que tes domaines seront renseignés dans le profil.",
+    "attach": "Rattacher une preuve",
+    "archive": "Archiver",
+    "axis": {
+      "knowHow": "Tu sais le faire",
+      "proof": "Tu as une preuve",
+      "sellableNow": "Tu peux le vendre maintenant"
+    },
+    "status": {
+      "established": "Oui",
+      "not_established": "Pas encore",
+      "not_evaluable": "Non évaluable"
+    },
+    "reason": {
+      "no_grounding": "Aucun fondement déclaré pour cette expertise.",
+      "development_intent_only": "Seule une volonté de développement est déclarée.",
+      "concrete_grounding": "Un fondement concret est déclaré.",
+      "proven_grounding": "Au moins un fondement est rattaché à une preuve.",
+      "no_proven_grounding": "Aucun fondement n'est encore rattaché à une preuve.",
+      "proof_and_capacity": "Une preuve montrable et un vivier disponible.",
+      "capacity_unknown": "Aucun vivier déclaré : la capacité à livrer n'est pas connue.",
+      "proof_confidential": "Toutes les preuves sont confidentielles : rien de montrable."
+    },
+    "kind": {
+      "client_reference": "Référence client",
+      "personal_experience": "Expérience personnelle",
+      "partner": "Partenaire",
+      "talent_pool": "Vivier disponible",
+      "development_intent": "Volonté de développement"
+    },
+    "state": {
+      "proven": "Prouvé",
+      "declared": "Déclaré",
+      "to_prove": "À prouver"
+    },
+    "sourceType": {
+      "account": "Compte",
+      "consultant": "Consultant",
+      "mission": "Mission",
+      "document": "Document"
+    },
+    "confidentiality": {
+      "label": "Confidentialité de la référence",
+      "unset": "Confidentialité non renseignée",
+      "citable": "Citable",
+      "anonymizable": "Anonymisable",
+      "confidential": "Confidentielle"
+    },
+    "questions": {
+      "title": "Pour la rendre évaluable, réponds à ce que tu sais :",
+      "grounding": "Sur quoi repose cette expertise ?",
+      "proof": "Quelle preuve peux-tu rattacher ?",
+      "pool": "Oui, un vivier de consultants est disponible pour cette expertise",
+      "save": "Enregistrer mes réponses"
+    }
+  },
+  "sources": {
+    "title": "Calculé à partir de :",
+    "locked": "Réservé aux administrateurs de l’espace — utilise « Préciser ou signaler » plus bas."
+  }
+}

@@ -1,0 +1,39 @@
+{
+  "uid": "bellum_crm_app",
+  "type": "app",
+  "config": {
+    "description": "BellumAI — synchronise les contacts de conquête vers HubSpot et lit sociétés, affaires, activités et propriétaires (présence CRM, rapport de pipeline, miroir CRM).",
+    "name": "BellumAI CRM",
+    "distribution": "marketplace",
+    "auth": {
+      "type": "oauth",
+      "redirectUrls": [
+        "https://belllum-backend-service-production.up.railway.app/crm/hubspot/callback",
+        "http://localhost:3012/crm/hubspot/callback"
+      ],
+      "requiredScopes": [
+        "oauth",
+        "crm.objects.owners.read",
+        "crm.objects.contacts.read",
+        "crm.objects.contacts.write",
+        "crm.objects.companies.read",
+        "crm.objects.companies.write",
+        "crm.objects.deals.read",
+        "crm.objects.deals.write"
+      ],
+      "optionalScopes": [],
+      "conditionallyRequiredScopes": []
+    },
+    "permittedUrls": {
+      "fetch": ["https://api.hubapi.com"],
+      "iframe": [],
+      "img": []
+    },
+    "support": {
+      "supportEmail": "schlegellouis2@gmail.com",
+      "documentationUrl": "https://bellum-ai.com",
+      "supportUrl": "https://bellum-ai.com",
+      "supportPhone": "+33000000000"
+    }
+  }
+}

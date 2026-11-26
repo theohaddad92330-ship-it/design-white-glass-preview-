@@ -1,0 +1,156 @@
+{
+  "_doc": "#4112.3 — jeu de référence FIGÉ de l'éval du choix d'outil de Laura. Dates en dur dans les énoncés, aucune relative ; `as_of` est la date de gel. `search_query` = ce que le modèle taperait dans chercher_un_outil (null = l'outil est dans le noyau, aucune recherche).",
+  "as_of": "2026-11-03",
+  "cases": [
+    {
+      "utterance": "Prépare-moi le briefing de SNCF avant mon rendez-vous du 12/10/2026",
+      "expected_tool": "get_account_briefing",
+      "search_query": null
+    },
+    {
+      "utterance": "Qui sont les contacts de Naval Group ?",
+      "expected_tool": "get_account_contacts",
+      "search_query": null
+    },
+    {
+      "utterance": "Quels signaux récents sur Thales depuis le 01/09/2026 ?",
+      "expected_tool": "get_account_signals",
+      "search_query": null
+    },
+    {
+      "utterance": "Rédige un message pour Nadia Perrin",
+      "expected_tool": "prepare_message_for_contact",
+      "search_query": null
+    },
+    {
+      "utterance": "Relance Julien Castaing le 20/11/2026",
+      "expected_tool": "schedule_reminder_for_contact",
+      "search_query": null
+    },
+    {
+      "utterance": "Quel est mon plan d'action sur Airbus ?",
+      "expected_tool": "get_action_plan",
+      "search_query": null
+    },
+    {
+      "utterance": "Trouve-moi des comptes qui recrutent du Java à Nantes",
+      "expected_tool": "find_accounts",
+      "search_query": null
+    },
+    {
+      "utterance": "Quels comptes dois-je activer cette semaine ?",
+      "expected_tool": "list_accounts_to_act",
+      "search_query": null
+    },
+    {
+      "utterance": "Où en est mon pipeline ?",
+      "expected_tool": "get_pipeline",
+      "search_query": null
+    },
+    {
+      "utterance": "Compare Orange et SFR",
+      "expected_tool": "compare_accounts",
+      "search_query": null
+    },
+    {
+      "utterance": "Quelles factures sont en retard ?",
+      "expected_tool": "get_overdue_payments",
+      "search_query": "factures en retard"
+    },
+    {
+      "utterance": "Quel est mon chiffre d'affaires confirmé ?",
+      "expected_tool": "get_confirmed_revenue",
+      "search_query": "chiffre d'affaires confirmé"
+    },
+    {
+      "utterance": "Quels créneaux libres jeudi 5 novembre 2026 ?",
+      "expected_tool": "find_free_slots",
+      "search_query": "créneaux libres agenda"
+    },
+    {
+      "utterance": "Cherche le mail de Dupont dans ma boîte",
+      "expected_tool": "search_mailbox",
+      "search_query": "chercher mail boîte"
+    },
+    {
+      "utterance": "Quels consultants sont disponibles sur Python ?",
+      "expected_tool": "search_talents",
+      "search_query": "talents consultants disponibles"
+    },
+    {
+      "utterance": "Y a-t-il des appels d'offres ouverts en cybersécurité ?",
+      "expected_tool": "search_rfps",
+      "search_query": "appels d'offres"
+    },
+    {
+      "utterance": "Quelles routines sont actives ?",
+      "expected_tool": "get_routines",
+      "search_query": "routines actives"
+    },
+    {
+      "utterance": "Prépare un brouillon de mail pour la DSI",
+      "expected_tool": "prepare_mail_draft",
+      "search_query": "brouillon mail"
+    },
+    {
+      "utterance": "Quelle est la capacité de l'équipe en décembre 2026 ?",
+      "expected_tool": "get_capacity",
+      "search_query": "capacité équipe"
+    },
+    {
+      "utterance": "Ajoute ce compte à mon portefeuille",
+      "expected_tool": "add_account_to_portfolio",
+      "search_query": "ajouter compte portefeuille"
+    },
+    {
+      "utterance": "Exporte ce contact dans le CRM",
+      "expected_tool": "export_contact_to_crm",
+      "search_query": "exporter contact CRM"
+    },
+    {
+      "utterance": "Quels changements de poste récents chez mes contacts ?",
+      "expected_tool": "get_job_changes",
+      "search_query": "changements de poste"
+    },
+    {
+      "utterance": "Prépare mon appel à froid",
+      "expected_tool": "prepare_cold_call",
+      "search_query": "appel à froid"
+    },
+    {
+      "utterance": "Qui puis-je réveiller dans mon réseau dormant ?",
+      "expected_tool": "search_dormant_network",
+      "search_query": "réseau dormant"
+    },
+    {
+      "utterance": "Quelles notes de frais attendent ma décision ?",
+      "expected_tool": "list_expense_reports_awaiting_decision",
+      "search_query": "notes de frais"
+    },
+    {
+      "utterance": "Montre le prévisionnel par horizon",
+      "expected_tool": "get_forecast_horizons",
+      "search_query": "prévisionnel horizons"
+    },
+    {
+      "utterance": "Planifie ma semaine",
+      "expected_tool": "propose_weekly_plan",
+      "search_query": "plan de la semaine"
+    },
+    {
+      "utterance": "Je veux signaler un bug",
+      "expected_tool": "prepare_bug_report",
+      "search_query": "signaler bug"
+    },
+    {
+      "utterance": "Quels sont mes paramètres ?",
+      "expected_tool": "get_settings_overview",
+      "search_query": "paramètres"
+    },
+    {
+      "utterance": "Quelles missions sont à risque ?",
+      "expected_tool": "get_mission_risks",
+      "search_query": "risques missions"
+    }
+  ]
+}

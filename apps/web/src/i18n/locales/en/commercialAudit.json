@@ -1,0 +1,762 @@
+{
+  "hero": {
+    "title": "Here is what {{brand}} understood about your business",
+    "subtitle": "Every line comes from your answers. Whatever could not be established is named, never counted as zero.",
+    "version": "Version {{version}}",
+    "versionUnknown": "No version recorded",
+    "updatedAt": "Updated on {{date}}",
+    "updatedAtUnknown": "Last update date not recorded",
+    "stale": {
+      "message": "This audit dates from {{date}}. Nothing forces you to redo it — your current answers stay in place until you change them.",
+      "cta": "Review my answers"
+    }
+  },
+  "actions": {
+    "correct": "Correct a fact",
+    "askCopilot": "Ask {{copilot}}",
+    "copilotPrompt": "Take my business audit and tell me where you would start.",
+    "sources": "See sources and versions",
+    "exportPdf": "Export as PDF",
+    "share": "Share",
+    "shareNotice": "Members of your workspace will be able to read this audit.",
+    "shareCopyAction": "Copy link",
+    "shareDone": "Link copied",
+    "shareCopied": "Audit link copied",
+    "shareFailed": "Copy failed — here is the link: {{url}}"
+  },
+  "toast": {
+    "pdfDownloaded": "PDF downloaded",
+    "pdfError": "PDF download failed"
+  },
+  "validate": {
+    "cta": "Validate",
+    "status": "Validated on {{date}}",
+    "statusWithName": "Validated on {{date}} by {{name}}",
+    "thankYou": "Thank you! I now have enough context.",
+    "thankYouWithName": "Thank you {{name}}! I now have enough context.",
+    "pendingReview": "A new version of your profile replaces the previous one — validate it to confirm.",
+    "handoff": {
+      "intro": "In your place, I would start with one of these moves.",
+      "lauraLabel": "Discuss it with {{copilot}}",
+      "lauraQuestion": "At the end of my sales audit, you recommended: \"{{action}}\". Help me move forward on this.",
+      "lauraQuestionGeneric": "My sales audit was just validated. Where should I start?",
+      "account": "Account to test: {{company}}",
+      "consultant": "Consultant to place"
+    }
+  },
+  "headline": {
+    "posture": "Selling posture on record",
+    "archetype": "Company type on record",
+    "target": "Accounts you target",
+    "bottleneck": "What slows you down most",
+    "cadence": "Recommended cadence"
+  },
+  "target": {
+    "value": "{{size}} · {{level}} · {{strategy}}",
+    "sectors": "Priority sectors: {{sectors}}",
+    "sectorsNone": "No priority sector named"
+  },
+  "cadence": {
+    "analyses_one": "{{count}} analysis per week",
+    "analyses_other": "{{count}} analyses per week",
+    "messages_one": "{{count}} message per day",
+    "messages_other": "{{count}} messages per day",
+    "followUps_one": "{{count}} follow-up per week",
+    "followUps_other": "{{count}} follow-ups per week"
+  },
+  "strategy": {
+    "topDown": "entering from the top",
+    "bottomUp": "entering from the field",
+    "multiThread": "entering on several threads",
+    "referral": "entering through a referral"
+  },
+  "tone": {
+    "directExpert": "direct and expert",
+    "consultative": "consultative",
+    "relationshipFirst": "relationship first",
+    "challenger": "challenger"
+  },
+  "length": {
+    "concise": "short",
+    "standard": "standard",
+    "detailed": "detailed"
+  },
+  "depth": {
+    "light": "light",
+    "standard": "standard",
+    "deep": "deep"
+  },
+  "columns": {
+    "title": "Three decisions, not a task list",
+    "stop": "Stop",
+    "keep": "Keep",
+    "reinforce": "Reinforce",
+    "empty": "Your profile named nothing here.",
+    "unmeasured": "This part of the profile was never established.",
+    "origin": "From {{origin}}",
+    "showAll_one": "See the other one",
+    "showAll_other": "See the other {{count}}",
+    "producedWith": "Produced with your audit from {{date}}",
+    "pendingReview": "These three columns rely on a version that hasn't been validated yet."
+  },
+  "consequences": {
+    "title": "From now on, {{brand}} will…",
+    "accounts": "Prioritise the right accounts",
+    "contacts": "Look for the right contact levels",
+    "messages": "Adapt the messages",
+    "load": "Cap the active workload",
+    "kpiTargets": "Aim for a monthly pace",
+    "routines": "Suggest the right routines",
+    "copilot": "Tailor {{copilot}}",
+    "edit": "Edit",
+    "unmeasured": "No rule on record: this part of the profile was never established.",
+    "rule": {
+      "accounts": "{{size}} accounts, {{strategy}}.",
+      "accountsSectors": "First of all: {{sectors}}.",
+      "contacts": "People at {{level}} level.",
+      "messages": "A {{tone}} tone, {{length}} format, on the angle “{{angle}}”.",
+      "load": "{{analyses}}, {{messages}}, {{followUps}}.",
+      "kpiTargets": "{{accounts}} active accounts and {{rdv}} meetings aimed for this month.",
+      "kpiTargetsPartners": "{{partners}} partners to work with this month.",
+      "routines": "A {{depth}} analysis.",
+      "routinesFocus": "On: {{focus}}.",
+      "copilot": "The copilot reuses the words of your profile."
+    },
+    "loadHypothesis": "A hypothesis from {{brand}}, not a demonstrated conversion: it assumes you have the capacity to keep it up every week, nothing yet proves it delivers the expected results, and it can be recalibrated at any time — never upward if your available time drops."
+  },
+  "activeLoad": {
+    "title": "Your active workload, arbitrated",
+    "description": "Four markers drawn from your answers alone — your protected time, your time slots, your entry doors — each with the rule that produces it. What cannot be derived from them is marked “not established”, never counted as zero.",
+    "unmeasured": "Not established.",
+    "missing": "To answer first: {{answers}}.",
+    "answer": {
+      "weekly_sales_time_protected": "the time you really protect each week",
+      "weekly_sales_time_slots": "the moments of the week when your sales time falls",
+      "go_to_market_channels": "your entry doors, named one by one (“Mixte” cannot be counted)",
+      "partners_regular_count": "how many regular partners you really work with today"
+    },
+    "partners": {
+      "title": "The partners to work with",
+      "noPartnerDoor": "No partner in your active workload: none of the entry doors you declared ({{doors}}) goes through a partner.",
+      "rule": "Rule: only the entry doors you declared are read.",
+      "regular": "Regular partners to work with: {{regular}} (through {{doors}}).",
+      "occasional": "Your occasional partners ({{occasional}}) stay outside your active workload: you bring them in when needed.",
+      "ruleRegular": "Rule: your regular partners make up your active workload, as you declared them; occasional ones are never added in."
+    },
+    "slots": {
+      "title": "Your time slots",
+      "slots": "Keep the ones where your time already falls: {{slots}}.",
+      "holding": "What you said about them: “{{holding}}”.",
+      "noRegularSlot": "You declared no regular time slot: no slot can be named on your behalf.",
+      "rule": "Rule: your time slots are the ones you declared, nothing else."
+    },
+    "reserve": {
+      "title": "Your reserve",
+      "reserve_one": "{{count}} front left free: do not fill it, it is what absorbs the unexpected.",
+      "reserve_other": "{{count}} fronts left free: do not fill them, they are what absorbs the unexpected.",
+      "noReserve": "No reserve: your entry doors already fill your whole budget of fronts.",
+      "erosion": "What already eats into your time: {{risks}}.",
+      "rule": "Rule: your budget of fronts ({{maxFronts}}) minus your open entry doors ({{doorCount}}), each door counting as one front."
+    },
+    "deferred": {
+      "title": "What to put on hold",
+      "toDefer_one": "Put {{count}} of these entry doors on hold: {{candidates}}.",
+      "toDefer_other": "Put {{count}} of these entry doors on hold: {{candidates}}.",
+      "choice": "Which ones is your call: none of your answers says which one brings in the most.",
+      "nothingToDefer": "Nothing to put on hold: your entry doors fit within your budget of fronts.",
+      "rule": "Rule: your open entry doors ({{doorCount}}) minus your budget of fronts ({{maxFronts}}), each door counting as one front."
+    }
+  },
+  "strategyOptions": {
+    "title": "The possible paths",
+    "pick": "In your place, I would start with {{strategy}}.",
+    "unmeasured": "No path could be recommended: your ideal account profile has not been established yet.",
+    "recommended": "Recommended",
+    "chosenBadge": "Chosen strategy",
+    "why": "Chosen for a {{size}} account, decision at {{level}} level.",
+    "potential": "Its potential",
+    "prereq": "What you need before committing",
+    "limits": "Its limits",
+    "workload": "The workload",
+    "paybackDelay": "Time to return",
+    "risk": "The risk, and how to spot it",
+    "firstTest": "The first test",
+    "stopCondition": "The stop condition",
+    "actions": {
+      "choose": "Choose this strategy",
+      "compare": "Compare",
+      "reconsider": "Revisit a hypothesis",
+      "askCopilot": "Ask {{copilot}}",
+      "askCopilotPrompt": "Explain the “{{strategy}}” path to me and whether it fits my business.",
+      "notNow": "Don't decide now"
+    },
+    "comparison": {
+      "same": "Chosen strategy: {{chosen}} — the same as the initial recommendation.",
+      "different": "Chosen strategy: {{chosen}} — the initial recommendation was {{recommended}}."
+    },
+    "details": {
+      "topDown": {
+        "potential": "Direct access to the decision-making level, without going through an intermediate relay.",
+        "prereq": "An identified contact at decision-maker level, and a reason to write to them directly.",
+        "limits": "A longer cycle: a decision-maker rarely delegates a first reply.",
+        "workload": "Few messages to prepare, but each demands careful preparation: a decision-maker won't forgive a generic approach.",
+        "paybackDelay": "The signal comes quickly or not at all: past two follow-ups with no response, this path won't open.",
+        "risk": "The risk: an approach perceived as too direct closes access for a long time. Signal to watch: a message read with no reply and no acknowledgement.",
+        "firstTest": "One outreach at decision-maker level on a priority account, and see if it gets a reply.",
+        "stopCondition": "No reply after two spaced follow-ups: switch path rather than insist."
+      },
+      "bottomUp": {
+        "potential": "An entry point that stays reachable even without an identified decision-maker.",
+        "prereq": "An operational entry point able to raise the need internally.",
+        "limits": "The deal can stall before it reaches whoever decides.",
+        "workload": "Extra exchanges needed to raise the need internally, before reaching whoever decides.",
+        "paybackDelay": "The return depends on how long the operational contact takes to relay internally.",
+        "risk": "The risk: the deal stays at operational level and never moves up. Signal to watch: the contact names no one above them after several exchanges.",
+        "firstTest": "One exchange with an operational contact, and see if they can name who decides.",
+        "stopCondition": "No decision-maker named after three exchanges: reconsider entering from the top."
+      },
+      "multiThread": {
+        "potential": "Several entry points on the same account: one closed door doesn't stop the deal.",
+        "prereq": "Several identifiable contacts at the same account, at different levels.",
+        "limits": "More messages to personalise, and more follow-up to keep the threads consistent with each other.",
+        "workload": "Each thread is personalised and followed up separately, which adds coordination work.",
+        "paybackDelay": "Varies from one thread to another: some move while others stay silent.",
+        "risk": "The risk: inconsistent messages if the threads aren't kept in sync. Signal to watch: two contacts at the same account report different versions.",
+        "firstTest": "Two outreaches on the same account, at two levels, and see which one moves.",
+        "stopCondition": "No thread moves after the first exchange: focus the effort on a single one."
+      },
+      "referral": {
+        "potential": "The trust of the relationship making the introduction carries the first contact.",
+        "prereq": "An existing relationship — client, partner or contact — ready to make the introduction.",
+        "limits": "Cannot be triggered on demand: it depends on a relationship that already exists.",
+        "workload": "A single message to prepare: the one addressed to the relationship making the introduction.",
+        "paybackDelay": "Depends on the schedule of the relationship making the introduction, outside the rep's direct control.",
+        "risk": "The risk: the relationship has neither the time nor the occasion to make the introduction. Signal to watch: no news of the requested introduction after a polite follow-up.",
+        "firstTest": "One introduction requested from an existing relationship on a priority account.",
+        "stopCondition": "No introduction made after a follow-up: return to a path that doesn't depend on a third party."
+      }
+    }
+  },
+  "strategicCombination": {
+    "title": "The recommended combination",
+    "description": "The channels you declared yourself, brought together into a limited combination rather than keeping everything active."
+  },
+  "unestablished": {
+    "title": "What could not be established",
+    "description": "No confidence percentage: a number would measure our data and would read as a chance of success. Here is the list, named.",
+    "none": "Everything this screen shows could be established.",
+    "item": "{{label}} — {{reason}}",
+    "reason": {
+      "profileMissing": "your profile does not record it yet",
+      "noSourceYet": "no source produces it yet — completing your profile will not change that",
+      "notConcludedVerdict": "none of the {{rulesChecked}} tension rules detected a rupture, and no bottleneck was measured on your profile",
+      "notConcludedPriority": "none of the {{rulesChecked}} tension rules detected a rupture, and no advice could be drawn from your profile",
+      "notConcludedMoves": "none of the {{rulesChecked}} tension rules detected a break, so there is no move to propose",
+      "notConcludedHypotheses": "none of the {{rulesChecked}} tension rules detected a rupture carrying a possible explanation, so there is nothing to review",
+      "notConcludedMaturity": "{{axesEvaluated}} of {{axesTotal}} axes evaluated — at least {{axesMinimum}} are required for an overall score",
+      "answerMissing": "your answer is missing on {{answers}}"
+    },
+    "cta": "Complete my profile"
+  },
+  "origin": {
+    "sellingPosture": "your selling posture",
+    "esnArchetype": "the company type on record",
+    "idealAccountProfile": "your ideal account profile",
+    "coachingInsights": "the reading of your answers",
+    "cadenceRecommendation": "the recommended cadence",
+    "kpiTargets": "your recommended monthly targets",
+    "messagingStyle": "your messaging style",
+    "analysisParameters": "your analysis settings",
+    "bellumPhrases": "the wording rewritten for your workspace",
+    "thirtyDayPlan": "the 4-week plan",
+    "milestones": "the milestones",
+    "productConfiguration": "what {{copilot}} could tune from this audit",
+    "verdict": "the verdict",
+    "maturity": "your commercial maturity",
+    "priority": "this week's priority",
+    "moves": "the first moves",
+    "hypotheses": "the hypotheses to verify",
+    "declaredSignals": "your questionnaire answers",
+    "activeLoadPartners": "the number of partners to work with",
+    "activeLoadSlots": "your time slots",
+    "activeLoadReserve": "your reserve",
+    "activeLoadDeferred": "what to put on hold"
+  },
+  "empty": {
+    "title": "Your profile has not been established yet",
+    "description": "Answer the profile questionnaire: this screen is filled from your answers, and from nothing else.",
+    "cta": "Answer the questionnaire"
+  },
+  "loading": "Reading your profile…",
+  "loadError": "Your profile could not be read. Reload the page; if it keeps failing, restart the generation from Settings › Profile.",
+  "plan": {
+    "title": "4-week plan",
+    "unmeasured": "No open action produces this plan yet.",
+    "createInActions": "Create an action in Actions",
+    "openInActions": "Open in Actions",
+    "week": "Week {{number}}",
+    "noPriority": "No priority named for this week.",
+    "priority": {
+      "owner": "Owner: {{owner}}",
+      "slot": "Slot: {{slot}}",
+      "dependency": "Dependency: {{dependency}}",
+      "completionProof": "Completion proof: {{proof}}",
+      "surfaceLink": "Surface: {{link}}",
+      "replacementCondition": "Replacement condition: {{condition}}",
+      "domain": "Domain: {{domain}}"
+    }
+  },
+  "milestones": {
+    "title": "Milestones",
+    "unmeasured": "No source measures a milestone yet.",
+    "horizon": {
+      "60d": "60 days",
+      "90d": "90 days",
+      "6m": "6 months",
+      "12m": "12 months"
+    },
+    "passageCondition": "Passage condition: {{condition}}",
+    "expectedProof": "Expected proof: {{proof}}",
+    "decisionToMake": "Decision to make: {{decision}}",
+    "correctionIfNotReached": "If the milestone is not reached: {{correction}}"
+  },
+  "productConfiguration": {
+    "title": "What {{copilot}} could tune from this audit",
+    "unmeasured": "No parameter: no effective configuration is derived from the audit yet.",
+    "noParameter": "No parameter named for this area.",
+    "trace": "From: {{statement}}",
+    "notSet": "not set",
+    "noArea": "No product area could be named from this audit.",
+    "parameter": {
+      "prioritySectors": "Priority sectors",
+      "priorityThemes": "Priority themes",
+      "targetDecisionLevel": "Target level",
+      "valueAngle": "Value angle",
+      "proofPoints": "Proof points"
+    },
+    "area": {
+      "discover": "Discover",
+      "scoring": "Scoring",
+      "contacts": "Contacts",
+      "orgGraph": "Influence map",
+      "messages": "Messages",
+      "sequences": "Sequences",
+      "reverseMarket": "Find assignments",
+      "routinesPilotageNotifications": "Routines · Pilotage · Notifications",
+      "matchingActionPlan": "Matching · Action plan"
+    }
+  },
+  "tensions": {
+    "title": "Detected tensions",
+    "unmeasured": "No tension detected yet.",
+    "rule": {
+      "objectivesAboveCapacity": {
+        "label": "Objectives above capacity"
+      },
+      "tooManySimultaneousMarkets": {
+        "label": "Too many simultaneous markets"
+      },
+      "offerWithoutProof": {
+        "label": "An offer without proof"
+      },
+      "acquisitionWithoutRoutine": {
+        "label": "Acquisition without a routine"
+      },
+      "poolWithoutAvailability": {
+        "label": "A pool without availability"
+      },
+      "needsWithoutQualification": {
+        "label": "Needs without qualification"
+      },
+      "profilesWithoutCommitment": {
+        "label": "Profiles presented without commitment"
+      },
+      "keyAccountsWithoutAccessPath": {
+        "label": "Key accounts without an access path"
+      },
+      "partnersWithoutEconomicsOrFeedback": {
+        "label": "Partners without economics or feedback"
+      },
+      "contentWithoutCommercialUse": {
+        "label": "Content without commercial use"
+      },
+      "rfpsWithoutGoNoGo": {
+        "label": "RFPs without a GO/NO-GO"
+      },
+      "missionsWithoutCapitalisation": {
+        "label": "Missions without capitalisation"
+      },
+      "contactWithoutFollowUpDate": {
+        "label": "A contact without a follow-up date"
+      },
+      "needReducedToTitle": {
+        "label": "A need reduced to a title"
+      },
+      "profileNotSecured": {
+        "label": "A profile not secured"
+      },
+      "interviewWithoutFollowUp": {
+        "label": "An interview without follow-up"
+      },
+      "missionWithoutRenewal": {
+        "label": "A mission without renewal"
+      },
+      "feedbackNotRecorded": {
+        "label": "Feedback not recorded"
+      }
+    }
+  },
+  "maturity": {
+    "title": "Commercial maturity",
+    "unmeasured": "Fewer than 3 axes could be evaluated: no global score, but each axis stays named.",
+    "chart": {
+      "title": "Level view",
+      "notEvaluable": "Non-evaluable axes: {{axes}}"
+    },
+    "detail": {
+      "assets": "Assets",
+      "constraints": "Constraints",
+      "action": "Action"
+    },
+    "state": {
+      "measured": "Measured",
+      "partial": "Partial",
+      "unknown": "Unknown"
+    },
+    "level": {
+      "notStarted": "Not started",
+      "emerging": "Emerging",
+      "structured": "Structured",
+      "mature": "Mature"
+    },
+    "axis": {
+      "offerClarity": {
+        "label": "Offer clarity"
+      },
+      "proof": {
+        "label": "Proof"
+      },
+      "targeting": {
+        "label": "Targeting"
+      },
+      "access": {
+        "label": "Access"
+      },
+      "commercialCapacity": {
+        "label": "Commercial capacity"
+      },
+      "followUpDiscipline": {
+        "label": "Follow-up discipline"
+      },
+      "clientQualification": {
+        "label": "Client qualification"
+      },
+      "candidateSecurisation": {
+        "label": "Candidate securisation"
+      },
+      "dataAndTools": {
+        "label": "Data and tools"
+      },
+      "measurement": {
+        "label": "Measurement"
+      },
+      "capitalisation": {
+        "label": "Capitalisation"
+      },
+      "teamAlignment": {
+        "label": "Team alignment"
+      },
+      "network": {
+        "label": "Network"
+      }
+    }
+  },
+  "verdict": {
+    "title": "The verdict",
+    "unmeasured": "Nothing could be decided yet: no rupture detected, no bottleneck measured on your profile."
+  },
+  "chain": {
+    "title": "The commercial chain",
+    "description": "Each step reads what the eighteen detection rules have measured. A rupture opens on click.",
+    "stage": {
+      "contact": "Contact",
+      "exchange": "Exchange",
+      "need": "Need",
+      "profile": "Profile",
+      "interview": "Interview",
+      "agreement": "Agreement",
+      "kickoff": "Kickoff",
+      "followUp": "Follow-up",
+      "capitalisation": "Capitalisation"
+    },
+    "state": {
+      "rupture_one": "{{count}} rupture detected",
+      "rupture_other": "{{count}} ruptures detected",
+      "measured": "Nothing to report",
+      "unknown": "Not measured at this step"
+    },
+    "openRupture": "See the rupture “{{label}}”",
+    "closeRupture": "Close",
+    "facts": "What was observed",
+    "possibleExplanation": "What could explain it",
+    "questionToValidate": "To validate",
+    "consequenceIfUnaddressed": "If nothing changes",
+    "recommendation": "Recommendation",
+    "indicator": "Indicator to track",
+    "conclusion": {
+      "at": "The problem sits right at the “{{stage}}” step.",
+      "between": "The problem sits between the “{{before}}” step and the “{{stage}}” step."
+    }
+  },
+  "priority": {
+    "title": "This week's priority",
+    "unmeasured": "No priority can be named: no rupture nor advice measured this week."
+  },
+  "moves": {
+    "title": "First moves",
+    "intro": "Three at most, derived from the breaks measured above — never a task list.",
+    "unmeasured": "No move can be proposed: no break was detected on this profile.",
+    "kind": {
+      "ouverture": "An opening",
+      "engagement": "A commitment to move forward",
+      "pilotage": "A steering decision"
+    },
+    "reason": "Why",
+    "expectedResult": "What we will watch to know it is done",
+    "pageLabel": "Where this happens in {{brand}}",
+    "page": {
+      "contacts": "Contacts",
+      "agenda": "Calendar",
+      "actions": "Actions",
+      "sequences": "Sequences",
+      "projets": "Projects",
+      "besoins": "Needs",
+      "partenaires": "Partners",
+      "dossier": "Account file"
+    },
+    "status": {
+      "propose": "Proposed",
+      "valide": "Validated",
+      "modifie": "Modified",
+      "ecarte": "Set aside"
+    },
+    "actions": {
+      "prompt": "Decision on this move",
+      "valide": "Validate this move",
+      "modifie": "Modify this move",
+      "ecarte": "Set this move aside"
+    },
+    "gate": "Validate, modify, or set aside each move before it becomes an action."
+  },
+  "hypotheses": {
+    "title": "Hypotheses to verify",
+    "intro": "What could explain a tension measured above — named as a hypothesis, never as a fact.",
+    "unmeasured": "No hypothesis: the detected tensions do not name one yet.",
+    "question": "To verify"
+  },
+  "reportInterpretation": {
+    "trigger": "Clarify or report an interpretation",
+    "dialogTitle": "Report an audit interpretation",
+    "dialogDescription": "Nothing is changed: your request goes straight to your workspace's administrators, for review.",
+    "reasonLabel": "Why does this interpretation not seem right to you?",
+    "reasonPlaceholder": "Explain what seems wrong…",
+    "submit": "Send the report",
+    "cancel": "Cancel",
+    "successTitle": "Report sent to your workspace's administrators.",
+    "errorBody": "Could not send your report. Try again."
+  },
+  "feedback": {
+    "commentTrigger": "Comment",
+    "refuseTrigger": "Refuse",
+    "dialogTitle": "Comment on this conclusion",
+    "dialogDescription": "Your note stays personal — never shared, never sent to the model.",
+    "textLabel": "Your note",
+    "submit": "Send",
+    "cancel": "Cancel",
+    "errorBody": "Could not save your note. Try again.",
+    "refusedNote": "Refused",
+    "commentedNote": "Your note: {{text}}",
+    "validateTrigger": "Validate this block",
+    "validatedNote": "Block validated."
+  },
+  "confidence": {
+    "label": "Confidence",
+    "corroborated": "Corroborated",
+    "single_source": "Single source",
+    "deduced": "Deduced",
+    "unknown": "Not measured"
+  },
+  "factsAndScope": {
+    "title": "What has been established",
+    "scopeTitle": "Audit scope",
+    "scopeUnmeasured": "The scope hasn't been established yet — no target account and no analysis depth is configured yet.",
+    "factsTitle": "Established facts",
+    "factsUnmeasured": "No fact could be established yet: the profile hasn't been filled in yet.",
+    "factsEmpty": "The profile has been read, no fact stands out yet."
+  },
+  "positioning": {
+    "title": "Position",
+    "assets": "Assets",
+    "assetsUnmeasured": "No asset has been established yet.",
+    "constraints": "Constraints",
+    "constraintsUnmeasured": "No constraint has been established yet."
+  },
+  "direction": {
+    "title": "Direction",
+    "recommendedTitle": "Recommended direction",
+    "recommendedLabel": "Direction",
+    "recommendedUnmeasured": "No direction could be recommended yet: no tension detected, no advice measured.",
+    "roadmapTitle": "Conditional roadmap",
+    "roadmapCondition": "If",
+    "roadmapThen": "then",
+    "roadmapUnmeasured": "No conditional roadmap: your profile hasn't been established yet.",
+    "roadmapEmpty": "No tension detected yet: nothing to condition.",
+    "questionsTitle": "Questions to revisit",
+    "questionPrefix": "To validate",
+    "questionsUnmeasured": "No question to revisit: your profile hasn't been established yet.",
+    "questionsEmpty": "No tension detected yet: no question to revisit."
+  },
+  "marketMemory": {
+    "title": "Market observations",
+    "badge": "Market observations · included",
+    "limit": "Preview limited to a few accounts from the corpus — not an exhaustive search.",
+    "unmeasured": "No compatible company has been found in the corpus yet.",
+    "compatible": "Compatible",
+    "toQualify": "To qualify",
+    "observed": "Observed: {{stack}}",
+    "cta": "See in Discover"
+  },
+  "declaredSignals": {
+    "title": "What your answers say",
+    "description": "Five readings of your questionnaire, and nothing else: no computed conversion, no percentage, no probability. What you have not filled in is named rather than counted as zero.",
+    "unmeasured": "Your questionnaire answers could not be read.",
+    "funnelBreak": {
+      "title": "Where your trail stops",
+      "notDeclared": "You have not said yet which units you count — that is not “you count nothing”.",
+      "break": "Your chain stops being counted at “{{stage}}”: beyond it, no trail in {{unit}}.",
+      "complete": "You count all eleven units of the chain, end to end.",
+      "tracked": "{{stage}} — counted",
+      "notTracked": "{{stage}} — not counted"
+    },
+    "startingPoint": {
+      "title": "Your starting point",
+      "notDeclared": "You have not described yet what you observe today against that client profile.",
+      "sameAsAmbition": "Your starting point is your ambition: you describe accounts you can reach right now.",
+      "differsFromAmbition": "Your starting point is not your ambition — better to start from where you are.",
+      "reachableToday": "What is within reach today",
+      "gaps": "What keeps it away",
+      "declaredStates": "What you ticked"
+    },
+    "entryAxis": {
+      "title": "Your entry axis",
+      "notDeclared": "You have not said yet at which level answers actually reach you.",
+      "source": "Read from “{{level}}” — the level that answers you, not the one you aim at.",
+      "diverges": "You aim for {{aim}}: the gap between who you aim at and who answers is the thing to work on."
+    },
+    "frontsBudget": {
+      "title": "How many fronts you can hold",
+      "notDeclared": "You have not said yet how many hours you can actually protect.",
+      "noFront": "No front: the week you describe leaves no room for one.",
+      "maxFronts_one": "{{count}} front at a time, not two.",
+      "maxFronts_other": "{{count}} fronts at most, at the same time.",
+      "notMoreTools": "Fewer fronts, not more tools: one more tool does not give back an hour.",
+      "source": {
+        "protected": "Read from the time you actually protect: {{band}}.",
+        "declared": "Read from the time you state ({{band}}) — you have not said what survives an ordinary week."
+      },
+      "erosion": "What eats into that time, from your answers"
+    },
+    "routineSeeds": {
+      "title": "Routines built from your breaks",
+      "notDeclared": "You have not said yet where your accounts drop off.",
+      "notLocatedYet": "You said you do not know yet where it drops off — that is an answer, not a blank. We will look together.",
+      "toConfigure": "To set up: {{practice}}.",
+      "alreadyHeld": "You already hold “{{practice}}” — the break comes from somewhere else.",
+      "unrouted": "For these breaks, no routine in the product holds them today"
+    }
+  },
+  "collaboration": {
+    "title": "Does a colleague manage part of these accounts?",
+    "subtitle": "Before you invite anyone, here is what changes — and what does not.",
+    "shared": {
+      "title": "What gets shared",
+      "description": "Accounts, contacts, records, notes and the workspace history: every invited member sees what you see."
+    },
+    "personal": {
+      "title": "What stays personal",
+      "description": "Your connected mailbox, your calendar, your conversations with {{copilot}} and your preferences: never shared, whatever role the invited member has."
+    },
+    "visibility": {
+      "title": "Who sees what",
+      "open": "Today, every member of your workspace sees the whole team portfolio.",
+      "restricted": "Today, each rep sees their own portfolio and the unassigned accounts — configurable in Team."
+    },
+    "invite": "Invite a colleague",
+    "later": "Later"
+  },
+  "expertiseCredibility": {
+    "title": "Credibility by expertise",
+    "intro": "For each expertise: can you do it, do you have proof, can you sell it now? Proof is an attached object — a mission, a document, an account or a consultant from this workspace.",
+    "loadError": "Could not load credibility by expertise. Try again in a moment.",
+    "saveError": "Could not save — nothing was changed.",
+    "noExpertise": "No expertise declared yet: the per-expertise audit opens as soon as your domains are filled in the profile.",
+    "attach": "Attach proof",
+    "archive": "Archive",
+    "axis": {
+      "knowHow": "You know how to do it",
+      "proof": "You have proof",
+      "sellableNow": "You can sell it now"
+    },
+    "status": {
+      "established": "Yes",
+      "not_established": "Not yet",
+      "not_evaluable": "Not assessable"
+    },
+    "reason": {
+      "no_grounding": "No grounding declared for this expertise.",
+      "development_intent_only": "Only an intent to develop it is declared.",
+      "concrete_grounding": "A concrete grounding is declared.",
+      "proven_grounding": "At least one grounding is attached to proof.",
+      "no_proven_grounding": "No grounding is attached to proof yet.",
+      "proof_and_capacity": "Showable proof and an available talent pool.",
+      "capacity_unknown": "No talent pool declared: delivery capacity is unknown.",
+      "proof_confidential": "All proof is confidential: nothing can be shown."
+    },
+    "kind": {
+      "client_reference": "Client reference",
+      "personal_experience": "Personal experience",
+      "partner": "Partner",
+      "talent_pool": "Available talent pool",
+      "development_intent": "Intent to develop"
+    },
+    "state": {
+      "proven": "Proven",
+      "declared": "Declared",
+      "to_prove": "To prove"
+    },
+    "sourceType": {
+      "account": "Account",
+      "consultant": "Consultant",
+      "mission": "Mission",
+      "document": "Document"
+    },
+    "confidentiality": {
+      "label": "Reference confidentiality",
+      "unset": "Confidentiality not set",
+      "citable": "Citable",
+      "anonymizable": "Can be anonymised",
+      "confidential": "Confidential"
+    },
+    "questions": {
+      "title": "To make it assessable, answer what you know:",
+      "grounding": "What is this expertise based on?",
+      "proof": "Which proof can you attach?",
+      "pool": "Yes, a consultant pool is available for this expertise",
+      "save": "Save my answers"
+    }
+  },
+  "sources": {
+    "title": "Computed from:",
+    "locked": "Reserved to workspace admins — use “Clarify or report” below."
+  }
+}

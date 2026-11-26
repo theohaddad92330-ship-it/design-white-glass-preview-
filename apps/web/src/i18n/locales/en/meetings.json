@@ -1,0 +1,143 @@
+{
+  "cascade": {
+    "title": "Your meeting has been processed.",
+    "titleWithName": "Your meeting with {{name}} has been processed.",
+    "subtitle_one": "{{count}} output prepared · no external action sent",
+    "subtitle_other": "{{count}} outputs prepared · no external action sent",
+    "sourcedFromTranscript": "transcript sourced",
+    "sourcedFromNotes": "notes sourced",
+    "empty": "Nothing to prepare: these notes carry no decision, no action, no signal.",
+    "dropped_one": "{{count}} output was set aside: nothing in the notes backed it up.",
+    "dropped_other": "{{count}} outputs were set aside: nothing in the notes backed them up.",
+    "excerptLabel": "Source excerpt",
+    "notesDerived": "Handwritten notes — nothing is quoted verbatim.",
+    "moreExcerpts_one": "and {{count}} other excerpt",
+    "moreExcerpts_other": "and {{count}} other excerpts",
+    "showExcerpts": "Show excerpts",
+    "hideExcerpts": "Hide excerpts",
+    "stage": {
+      "pickDeal": "Which deal should move?",
+      "placeholder": "Pick a deal",
+      "currentStage": "today: {{stage}}",
+      "unknownStage": "current stage not read",
+      "noCrm": "No CRM connected: there is nowhere to move a deal.",
+      "noDeals": "No open deal found in your CRM for this account. The proposed stage stays readable above.",
+      "pending": "What you approve here is a PROPOSAL: it waits for a decision in the Action centre, and expires after three days.",
+      "loading": "Reading your CRM stages…",
+      "pickStage": "Which stage of the “{{pipeline}}” pipeline?",
+      "stagePlaceholder": "Pick a stage",
+      "pipeline": "Pipeline: {{pipeline}}",
+      "noExactMatch": "The proposed stage (“{{stage}}”) does not exactly match any stage of this pipeline: pick it yourself.",
+      "dealPipelineUnknown": "This deal’s pipeline was not found in your CRM: no stage can be proposed for it.",
+      "unreadable": {
+        "scope": "Your CRM does not allow its stages to be read: reconnect it from Settings › Integrations. Nothing can be proposed until then.",
+        "empty": "Your CRM returned no deal pipeline: no stage can be proposed.",
+        "other": "Your CRM stages could not be read: nothing can be proposed until then."
+      }
+    },
+    "userStatement": "Your statement — not the client’s words.",
+    "depositDraft": {
+      "label": "Recipient address",
+      "placeholder": "name@company.com",
+      "done": "Draft saved to your mailbox.",
+      "openLink": "Open draft"
+    }
+  },
+  "outputs": {
+    "recap": "Structured recap",
+    "opportunity": "Opportunity detected",
+    "need": "Need expressed",
+    "contacts_one": "{{count}} contact mentioned",
+    "contacts_other": "{{count}} contacts mentioned",
+    "next_steps_one": "{{count}} next step",
+    "next_steps_other": "{{count}} next steps",
+    "follow_up_email": "Follow-up email",
+    "crm_stage": "CRM update",
+    "reminder": "Reminder",
+    "learnings_one": "Objection & commitment",
+    "learnings_other": "Objections & commitments",
+    "client_issue": "Client issue"
+  },
+  "states": {
+    "to_validate": "To validate",
+    "draft": "Draft",
+    "draft_go_no_go": "Draft GO/NO-GO",
+    "to_confirm": "To confirm",
+    "dated_and_owned": "Dated and assigned",
+    "partially_dated": "Some have no date and no owner",
+    "separate_draft": "Separate draft",
+    "stage_proposed": "Stage proposed",
+    "scheduled_draft": "Scheduled draft",
+    "account_memory": "Account memory",
+    "to_qualify": "Project to qualify",
+    "potential_need": "Potential need"
+  },
+  "bands": {
+    "a0": "A0",
+    "a1": "A1",
+    "a2": "A2",
+    "a3": "A3",
+    "a0Help": "A0 — {{brand}} reads, computes and explains. No writing.",
+    "a1Help": "A1 — {{brand}} prepares a draft. Nothing is filed.",
+    "a2Help": "A2 — internal write, once you say go.",
+    "a3Help": "A3 — this output reaches the outside. It stays a separate draft and never leaves with the batch."
+  },
+  "actions": {
+    "validate": "Validate",
+    "ignore": "Ignore",
+    "copyDraft": "Copy draft",
+    "copied": "Copied",
+    "depositDraft": "Save as draft",
+    "depositingDraft": "Saving…"
+  },
+  "panel": {
+    "title": "Before validating",
+    "internalWrites": "Internal writes: {{list}}.",
+    "noInternalWrites": "No internal write to validate.",
+    "externalDrafts_one": "External action: {{list}} stays a separate draft.",
+    "externalDrafts_other": "External actions: {{list}} stay separate drafts.",
+    "noExternalDrafts": "No external action: nothing here reaches the outside.",
+    "sources": "Sources: {{list}}",
+    "validateInternal_one": "Validate {{count}} internal write",
+    "validateInternal_other": "Validate {{count}} internal writes",
+    "externalNeverBatched": "Drafts that reach the outside are never carried by this button. You read them and send them yourself."
+  },
+  "counts": {
+    "recap": "1 recap",
+    "opportunity": "1 opportunity",
+    "need": "1 need",
+    "contacts_one": "{{count}} contact",
+    "contacts_other": "{{count}} contacts",
+    "next_steps_one": "{{count}} task",
+    "next_steps_other": "{{count}} tasks",
+    "crm_stage": "1 CRM stage",
+    "learnings_one": "{{count}} learning",
+    "learnings_other": "{{count}} learnings",
+    "client_issue": "1 client issue"
+  },
+  "sources": {
+    "transcript": "transcript",
+    "notes": "notes",
+    "crm": "CRM",
+    "calendar": "calendar",
+    "imported_report": "imported report",
+    "email": "pasted email",
+    "user_statement": "your statement"
+  },
+  "outcomes": {
+    "done": "Written.",
+    "partial": "Partly written.",
+    "failed": "Nothing was written.",
+    "skipped": "Nothing to write.",
+    "blocked": "Not wired here yet.",
+    "proposed": "Proposed — nothing is written until you approve it in the Action centre.",
+    "blockedMissing": "Not wired here yet — missing: {{capability}}.",
+    "capability": {
+      "crm": "your CRM",
+      "contacts": "the contact directory",
+      "needs": "needs",
+      "notes": "the account notebook",
+      "account_memory": "the account memory"
+    }
+  }
+}

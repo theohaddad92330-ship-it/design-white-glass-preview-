@@ -1,0 +1,13 @@
+# Registre — lot K5-FICHE-CONTACT (#4523 #4585 #4596 #4524 #4525)
+
+base : 8b6d99fc3d — 27/10/2026
+
+| Point           | Demande                                                        | État    | Preuve                                                                                                                                                                                   |
+| --------------- | -------------------------------------------------------------- | ------- | ---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
+| #4523           | Deux trous (~210 px) sous « Informations clés » et la relation | livré   | `ContactDetail.tsx` : deux flux (`data-testid="contact-main"`, gauche + centre + rangées ; dossiers à droite sur toute la hauteur). Garde `ContactDetail.layout.test.ts` (rouge d'abord) |
+| #4585           | Colonne centrale non vide à côté d'une colonne serrée          | livré   | même grille : le bloc « Rôle & périmètre » est dans le flux principal (≈ 909 px à 1512), plus jamais à côté d'une colonne étroite                                                        |
+| #4585           | « Comment est-elle calculée ? » amène au bloc                  | livré   | lien proposé seulement si le détail existe ; l'ancre `SCORE_BREAKDOWN_ID` prend le focus (`tabIndex=-1`) — `ContactScoreBreakdown.test.tsx`                                              |
+| #4585.7 / #4596 | Coordination sur `ContactDetail.tsx`                           | déjà là | bandeau `ContactAlertsBand` au-dessus de la grille, inchangé par ce lot (3125b5e7, 0396456b)                                                                                             |
+| #4524 / #4525   | Base du message, onglet Appel                                  | déjà là | 17e36f98 (`approach-call-route.test.ts`, `ApproachGrounding.test.tsx`)                                                                                                                   |
+| mesures         | Prod 1280 px clair + sombre, hauteur avant/après à 1440        | retenu  | pas de navigateur authentifié sur la prod depuis la VM ; maquette synthétique Chromium : trous 210 → 0 px                                                                                |
+| démo            | Rien de neuf à semer                                           | —       | mise en page seule, aucune donnée nouvelle                                                                                                                                               |

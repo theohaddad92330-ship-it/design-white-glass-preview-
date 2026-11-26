@@ -1,0 +1,104 @@
+{
+  "id": "15-pipeline-sans-suivi",
+  "persona": "Entreprise avec pipeline mais aucun suivi",
+  "personaKind": "fictif",
+  "_source": "#2070 / #2085 — cas de référence du corpus de non-régression multi-persona",
+  "answers": {
+    "user_id": "golden-15-pipeline-sans-suivi",
+    "first_name": "Fabien",
+    "esn_name": "Pipeline Sans Suivi SARL",
+    "consultant_size": "30-80",
+    "sales_team_size": "4-8 personnes",
+    "expertise_areas": [
+      "Développement applicatif (Web, Mobile, API)",
+      "Gestion de projet & PMO"
+    ],
+    "positioning": "Généraliste - large spectre selon les besoins client",
+    "staffing_model": "Mix équilibré CDI / Freelances",
+    "target_sectors": [
+      "Retail & Grande distribution",
+      "Luxe & Cosmétiques"
+    ],
+    "target_company_types": [
+      "PME (50-500 salariés)",
+      "ETI (500-5 000 salariés)"
+    ],
+    "geo_zones": [
+      "Paris & Île-de-France"
+    ],
+    "main_sales_pain": "Convertir mes RDV en signatures"
+  },
+  "referenceProfile": {
+    "esnArchetype": "midMarketChallenger",
+    "sellingPosture": "volumeFlexible",
+    "idealAccountProfile": {
+      "size": "all",
+      "sectorsPriority": [
+        "Retail & Grande distribution",
+        "Luxe & Cosmétiques"
+      ],
+      "decisionLevel": "director",
+      "entryStrategy": "bottomUp"
+    },
+    "analysisParameters": {
+      "braveQueriesCount": 15,
+      "firecrawlPagesCount": 8,
+      "contactsTarget": 35,
+      "analysisDepth": "standard",
+      "maxTokensResearch": 13000,
+      "focusAreas": [
+        "Développement applicatif (Web, Mobile, API)",
+        "Gestion de projet & PMO"
+      ]
+    },
+    "messagingStyle": {
+      "tone": "relationshipFirst",
+      "messageLength": "standard",
+      "valuePropositionAngle": "On développe vos plateformes retail et luxe avec un pilotage projet structuré, du cadrage à la mise en production.",
+      "differentiationPoints": [
+        "Pilotage projet structuré",
+        "Références retail et luxe",
+        "Équipe stable sur la durée du projet"
+      ],
+      "avoid": [
+        "expertise reconnue",
+        "sur-mesure"
+      ]
+    },
+    "coachingInsights": {
+      "mainWeakness": "Qualif amont (BANT/MEDDIC)",
+      "keyAdvice": "Note systématiquement la prochaine action et sa date après chaque RDV, dans Bellum plutôt que dans ta tête : un pipeline qui grossit sans relance planifiée se vide aussi vite qu'il se remplit.",
+      "cadenceRecommendation": {
+        "analysesPerWeek": 6,
+        "messagesPerDay": 15,
+        "followUpsPerWeek": 8
+      },
+      "kpiTargets": {
+        "accountsPerMonth": 25,
+        "rdvPerMonth": 15,
+        "conversionRateTarget": "15-25%"
+      }
+    },
+    "bellumPhrases": {
+      "welcome": "Bienvenue Fabien, on va transformer ton expertise \"Développement applicatif (Web, Mobile, API)\" en pipeline qualifié sur \"Retail & Grande distribution\".",
+      "firstAnalysisCta": "Lancer une analyse sur une PME du secteur Retail & Grande distribution.",
+      "weeklySummaryIntro": "Cette semaine, relance les comptes de ton pipeline dont la dernière action date de plus de 15 jours.",
+      "emptyState": "Aucun compte en pipeline — lance une analyse pour démarrer un suivi structuré dès le premier contact.",
+      "scoreContext": "Le score se justifie par la fraîcheur de la dernière interaction connue et par la correspondance sectorielle, jamais par un chiffre unique."
+    },
+    "welcomeSummary": {
+      "profileRecap": "Tu es une ESN \"Développement applicatif\" de 30-80 consultants, basée en \"Paris & Île-de-France\", spécialisée \"Développement applicatif (Web, Mobile, API)\" et \"Gestion de projet & PMO\", qui cible les \"PME\" et \"ETI\" \"Retail & Grande distribution\". Ton équipe commerciale compte 4-8 personnes.",
+      "searchesPersonalization": "Les recherches cibleront en priorité \"plateforme retail\", \"e-commerce luxe\" et \"gestion de projet\".",
+      "contactsPersonalization": "Les contacts identifiés seront des \"Directeur IT\" et \"Chef de projet digital\" (pas des opérationnels juniors).",
+      "messagesPersonalization": "Les messages seront rédigés sur un ton \"relationnel\" (pas à vos côtés, main dans la main).",
+      "scoringPersonalization": "Le scoring évaluera la fraîcheur de la dernière interaction connue avec la cible.",
+      "firstAnalysisSuggestions": []
+    }
+  },
+  "contradictions": [
+    "Un pipeline déclaré (équipe commerciale de 4-8 personnes, main_sales_pain de conversion) sans discipline de suivi : l'audit ne doit pas présumer qu'un CRM ou qu'un historique de relance existe déjà, et doit nommer l'absence de suivi plutôt que la déduire silencieusement."
+  ],
+  "limits": [
+    "Aucune suggestion d'entreprise au premier écran : le pipeline existant n'est pas transmis au profileur, donc aucun compte n'est repris par son nom."
+  ]
+}

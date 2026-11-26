@@ -1,0 +1,4861 @@
+<!doctype html>
+<html lang="fr" class="dark">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover" />
+    <meta name="color-scheme" content="light dark" />
+    <meta
+      name="description"
+      content="Maquette appliquée — Réglages › Outils &amp; administration : Imports, Accès assistants / MCP, Facturation, Journal d’activité, Aide &amp; signalements (Théo V22 + fonctionnalités gardées). Données fictives de démonstration."
+    />
+    <title>Bellum · Réglages · Outils & administration</title>
+    <style>
+      :root {
+        --primary: #5b3ee8;
+        --primary-hover: #3a26a0;
+        --accent: #5b3ee8;
+        --accent-bg: #f4f2ff;
+        --accent-line: #e0d9ff;
+        --bg: #ffffff;
+        --surface: #ffffff;
+        --surface2: #f4f4f5;
+        --sidebar: #ffffff;
+        --border: #e4e4e7;
+        --border2: #d4d4d8;
+        --text: #18181b;
+        --secondary: #52525b;
+        --muted: #6b6b73;
+        --success: #0a6b4a;
+        --success-bg: #dbf3e9;
+        --warning: #7d5206;
+        --warning-bg: #fbeed3;
+        --danger: #9c211a;
+        --danger-bg: #fce5e3;
+        --info: #14568c;
+        --info-bg: #dfeefb;
+        --sidebar-w: 224px;
+        --shadow: 0 12px 48px rgba(24, 24, 27, 0.12);
+        --r: 14px;
+        --on-primary: #fff;
+        color-scheme: light;
+      }
+      :root.dark {
+        --bg: #09090b;
+        --surface: #18181b;
+        --surface2: #232327;
+        --sidebar: #0e0e11;
+        --border: #2e2e33;
+        --border2: #3f3f46;
+        --text: #fafafa;
+        --secondary: #a1a1aa;
+        --muted: #a1a1aa;
+        --accent: #9e87ff;
+        --accent-bg: #221b3c;
+        --accent-line: #40305f;
+        --success: #6ee7b7;
+        --success-bg: #15332b;
+        --warning: #fcd34d;
+        --warning-bg: #3a2d17;
+        --danger: #fca5a5;
+        --danger-bg: #3a2024;
+        --info: #7dd3fc;
+        --info-bg: #182e40;
+        --shadow: 0 16px 56px #0008;
+        color-scheme: dark;
+      }
+      * {
+        box-sizing: border-box;
+      }
+      html,
+      body {
+        margin: 0px;
+        min-height: 100%;
+        scroll-behavior: auto;
+      }
+      body {
+        font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Helvetica, Arial, sans-serif;
+        font-size: 15px;
+        line-height: 1.5;
+        color: var(--text);
+        background: var(--bg);
+        -webkit-font-smoothing: antialiased;
+      }
+      button,
+      input,
+      select,
+      textarea {
+        font: inherit;
+      }
+      button,
+      a,
+      input,
+      select,
+      textarea {
+        -webkit-tap-highlight-color: transparent;
+      }
+      button {
+        color: inherit;
+        cursor: pointer;
+      }
+      button {
+        border: 0px;
+        background: none;
+      }
+      button:disabled {
+        opacity: 0.45;
+        cursor: not-allowed;
+      }
+      a {
+        color: inherit;
+        text-decoration: none;
+      }
+      button,
+      a {
+        touch-action: manipulation;
+      }
+      input,
+      select,
+      textarea {
+        color: var(--text);
+        background: var(--surface);
+        border: 1px solid var(--border2);
+        border-radius: 9px;
+        padding: 10px 12px;
+        min-height: 42px;
+        min-width: 0px;
+        outline: none;
+      }
+      input::placeholder,
+      textarea::placeholder {
+        color: var(--muted);
+      }
+      input[type='checkbox'] {
+        accent-color: var(--primary);
+        min-height: 0px;
+        width: 17px;
+        height: 17px;
+        padding: 0px;
+        cursor: pointer;
+      }
+      textarea {
+        resize: vertical;
+        width: 100%;
+        line-height: 1.65;
+      }
+      input:focus,
+      select:focus,
+      textarea:focus {
+        border-color: var(--accent);
+        box-shadow: 0 0 0 3px var(--accent-bg);
+      }
+      :focus-visible {
+        outline: 2px solid var(--accent);
+        outline-offset: 3px;
+      }
+      h1,
+      h2,
+      h3,
+      h4,
+      p {
+        margin: 0px;
+      }
+      h1 {
+        font-size: 30px;
+        font-weight: 650;
+        line-height: 1.2;
+        letter-spacing: -0.9px;
+      }
+      h2 {
+        font-size: 20px;
+        font-weight: 650;
+        letter-spacing: -0.35px;
+        line-height: 1.35;
+      }
+      h3 {
+        font-size: 16px;
+        font-weight: 650;
+        letter-spacing: -0.18px;
+      }
+      svg {
+        vertical-align: middle;
+      }
+      .icon {
+        width: 19px;
+        height: 19px;
+        flex: 0 0 auto;
+        display: inline-block;
+      }
+      .icon.small {
+        width: 16px;
+        height: 16px;
+      }
+      .sr-only {
+        position: absolute;
+        width: 1px;
+        height: 1px;
+        padding: 0px;
+        margin: -1px;
+        overflow: hidden;
+        clip: rect(0px, 0px, 0px, 0px);
+        white-space: nowrap;
+        border: 0px;
+      }
+      .skip {
+        position: fixed;
+        z-index: 100;
+        top: -60px;
+        left: 20px;
+        padding: 10px 20px;
+        background: var(--primary);
+        color: white;
+      }
+      .skip:focus {
+        top: 10px;
+      }
+      .small {
+        font-size: 13px;
+      }
+      .kbd {
+        font:
+          11px -apple-system,
+          BlinkMacSystemFont,
+          'Segoe UI',
+          sans-serif;
+        background: var(--surface);
+        border: 1px solid var(--border2);
+        padding: 1px 5px;
+        border-radius: 4px;
+        color: var(--muted);
+      }
+      .sidebar {
+        position: fixed;
+        inset: 0px auto 0px 0px;
+        width: var(--sidebar-w);
+        background: var(--sidebar);
+        border-right: 1px solid var(--border);
+        z-index: 25;
+        display: flex;
+        flex-direction: column;
+        padding: 24px 14px 14px;
+        transition: width 0.16s;
+      }
+      .avatar {
+        width: 34px;
+        height: 34px;
+        border-radius: 50%;
+        display: inline-flex;
+        align-items: center;
+        justify-content: center;
+        font-size: 12px;
+        font-weight: 650;
+        flex: 0 0 auto;
+        background: var(--accent-bg);
+        color: var(--accent);
+        border: 1px solid var(--border);
+        overflow: hidden;
+      }
+      .main-shell {
+        margin-left: var(--sidebar-w);
+        min-height: 100vh;
+      }
+      .topbar {
+        height: 64px;
+        border-bottom: 1px solid var(--border);
+        background: var(--bg);
+        padding: 0px 30px;
+        display: flex;
+        align-items: center;
+        gap: 14px;
+        position: sticky;
+        top: 0px;
+        z-index: 15;
+      }
+      .breadcrumb {
+        display: flex;
+        align-items: center;
+        gap: 9px;
+        font-size: 14px;
+        min-width: 0px;
+      }
+      .breadcrumb a {
+        color: var(--muted);
+      }
+      .breadcrumb span {
+        max-width: 300px;
+        white-space: nowrap;
+        overflow: hidden;
+        text-overflow: ellipsis;
+      }
+      .breadcrumb .icon {
+        width: 15px;
+        height: 15px;
+        color: var(--muted);
+      }
+      .top-right {
+        margin-left: auto;
+        display: flex;
+        align-items: center;
+        gap: 12px;
+        flex: 0 0 auto;
+      }
+      .search-trigger {
+        height: 34px;
+        display: flex;
+        align-items: center;
+        gap: 9px;
+        border: 1px solid var(--border);
+        border-radius: 8px;
+        padding: 0px 10px;
+        color: var(--muted);
+        font-size: 13px;
+      }
+      .icon-btn {
+        display: inline-grid;
+        place-items: center;
+        width: 34px;
+        height: 34px;
+        border-radius: 8px;
+        color: var(--secondary);
+        flex: 0 0 auto;
+      }
+      .icon-btn:hover {
+        background: var(--surface2);
+        color: var(--text);
+      }
+      .mobile-menu {
+        display: none;
+      }
+      .canvas {
+        max-width: 1600px;
+        margin: 0px auto;
+        padding: 32px 34px 44px;
+        min-width: 0px;
+      }
+      .btn {
+        min-height: 39px;
+        padding: 9px 14px;
+        display: inline-flex;
+        align-items: center;
+        justify-content: center;
+        gap: 7px;
+        font-size: 13px;
+        font-weight: 600;
+        line-height: 1.35;
+        border-radius: 8px;
+        border: 1px solid var(--border);
+        background: var(--surface);
+        transition: background 0.12s;
+        white-space: normal;
+        text-align: center;
+      }
+      .btn:hover {
+        background: var(--surface2);
+      }
+      .btn.primary {
+        background: var(--primary);
+        color: rgb(255, 255, 255);
+        border-color: var(--primary);
+      }
+      .btn.primary:hover {
+        background: var(--primary-hover);
+      }
+      .btn.soft {
+        color: var(--accent);
+        border-color: var(--accent-line);
+        background: var(--accent-bg);
+      }
+      .btn.plain {
+        border-color: transparent;
+        background: none;
+        padding-left: 7px;
+        padding-right: 7px;
+      }
+      .btn.sm {
+        min-height: 33px;
+        padding: 6px 10px;
+        font-size: 12px;
+      }
+      .btn .icon {
+        height: 17px;
+        width: 17px;
+      }
+      dialog {
+        border: 1px solid var(--border);
+        border-radius: 16px;
+        padding: 0px;
+        box-shadow: var(--shadow);
+        color: var(--text);
+        background: var(--surface);
+        max-height: calc(-50px + 100dvh);
+        width: min(640px, -36px + 100vw);
+        overflow: auto;
+      }
+      dialog::backdrop {
+        background: rgba(9, 9, 11, 0.33);
+      }
+      dialog.wide {
+        width: min(1010px, -46px + 100vw);
+      }
+      .dialog-head {
+        position: sticky;
+        top: 0px;
+        background: var(--surface);
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        padding: 20px 24px;
+        border-bottom: 1px solid var(--border);
+        z-index: 2;
+      }
+      .dialog-head h2 {
+        font-size: 18px;
+      }
+      .dialog-body {
+        padding: 24px;
+      }
+      .dialog-footer {
+        display: flex;
+        justify-content: flex-end;
+        align-items: center;
+        gap: 10px;
+        border-top: 1px solid var(--border);
+        padding: 16px 24px;
+        background: var(--surface);
+        position: sticky;
+        bottom: 0px;
+      }
+      .toast-container {
+        position: fixed;
+        bottom: 22px;
+        left: calc(var(--sidebar-w) + 26px);
+        z-index: 100;
+        display: grid;
+        gap: 8px;
+        max-width: 480px;
+        pointer-events: none;
+      }
+      .toast {
+        padding: 12px 17px;
+        background: var(--text);
+        color: var(--bg);
+        border-radius: 9px;
+        box-shadow: var(--shadow);
+        font-size: 13px;
+        display: flex;
+        align-items: center;
+        gap: 10px;
+        animation: 0.18s ease-out 0s 1 normal none running toast-in;
+      }
+      .toast .icon {
+        width: 17px;
+        height: 17px;
+        flex: 0 0 auto;
+      }
+      .shell-collapsed {
+        --sidebar-w: 76px;
+      }
+      .shell-collapsed .sidebar {
+        padding-left: 9px;
+        padding-right: 9px;
+      }
+      @media (min-width: 1600px) {
+        .canvas {
+          padding: 38px 45px 50px;
+        }
+        .topbar {
+          padding: 0px 40px;
+        }
+      }
+      @media (max-width: 1250px) {
+        :root {
+          --sidebar-w: 207px;
+        }
+        .canvas {
+          padding: 28px 25px 40px;
+        }
+        .topbar {
+          padding: 0px 24px;
+        }
+        .search-trigger span:not(.kbd) {
+          display: none;
+        }
+        .sidebar {
+          padding-left: 12px;
+          padding-right: 12px;
+        }
+      }
+      @media (max-width: 760px) {
+        :root {
+          --sidebar-w: 0px;
+        }
+        .sidebar {
+          width: 236px;
+          transform: translateX(-100%);
+          box-shadow: var(--shadow);
+          transition: transform 0.18s;
+        }
+        .nav-open .sidebar {
+          transform: translateX(0px);
+        }
+        .nav-open::after {
+          content: '';
+          position: fixed;
+          inset: 0px;
+          background: rgba(0, 0, 0, 0.2);
+          z-index: 20;
+          pointer-events: none;
+        }
+        .topbar {
+          height: 57px;
+          padding: 0px 16px;
+          gap: 9px;
+        }
+        .mobile-menu {
+          display: grid;
+        }
+        .top-right {
+          gap: 3px;
+        }
+        .top-right > .search-trigger {
+          width: 32px;
+          justify-content: center;
+          padding: 0px;
+          border: 0px;
+        }
+        .search-trigger .kbd {
+          display: none;
+        }
+        .top-right > .avatar {
+          display: none;
+        }
+        .breadcrumb {
+          font-size: 12px;
+        }
+        .breadcrumb span {
+          max-width: 145px;
+        }
+        .canvas {
+          padding: 23px 18px 38px;
+        }
+        h1 {
+          font-size: 27px;
+        }
+        .btn {
+          font-size: 12px;
+          min-height: 38px;
+        }
+        .toast-container {
+          left: 16px;
+          right: 16px;
+          bottom: 18px;
+          max-width: none;
+        }
+        dialog,
+        dialog.wide {
+          width: calc(-22px + 100vw);
+          max-height: calc(-24px + 100dvh);
+        }
+        .dialog-head {
+          padding: 17px;
+        }
+        .dialog-body {
+          padding: 18px;
+        }
+        .dialog-footer {
+          padding: 14px 18px;
+        }
+        .shell-collapsed {
+          --sidebar-w: 0;
+        }
+        .shell-collapsed .sidebar {
+          width: 76px;
+        }
+      }
+      @media (prefers-reduced-motion: reduce) {
+        *,
+        ::before,
+        ::after {
+          animation: auto ease 0s 1 normal none running none !important;
+          transition: none !important;
+          scroll-behavior: auto !important;
+        }
+      }
+      @media print {
+        .sidebar,
+        .topbar,
+        .feedback-fab,
+        .toast-container,
+        .page-actions,
+        button {
+          display: none !important;
+        }
+        .main-shell {
+          margin: 0px;
+        }
+        .canvas {
+          padding: 15px;
+        }
+        body {
+          font-size: 12px;
+        }
+      }
+      .btn.active {
+        background: var(--surface);
+        color: var(--text);
+      }
+      body[data-page='onboarding'] .sidebar {
+        display: none !important;
+      }
+      body[data-page='onboarding'] .main-shell {
+        margin-left: 0px !important;
+      }
+      body[data-page='onboarding'] .canvas {
+        max-width: 1460px;
+        margin: 0px auto;
+        padding: 26px 28px 60px;
+      }
+      @media (max-width: 800px) {
+        body[data-page='onboarding'] .canvas {
+          padding: 17px 14px 42px;
+        }
+      }
+      :root {
+        --bg: #f5f5f8;
+        --surface: #ffffff;
+        --surface2: #f1f2f6;
+        --border: #e5e6ee;
+        --text: #1c1c28;
+        --secondary: #5d5e70;
+        --muted: #727385;
+        --r: 18px;
+        --sidebar-w: 232px;
+        --shadow: 0 3px 7px -5px #20203924, 0 12px 30px -24px #25244130;
+        --ink: #211e39;
+        --violet-wash: #eeebff;
+      }
+      html.dark {
+        --bg: #101014;
+        --surface: #1a1a22;
+        --surface2: #24242e;
+        --border: #30303c;
+        --text: #f0eff8;
+        --secondary: #b4b3c5;
+        --muted: #9695aa;
+        --shadow: 0 10px 26px -18px #0009;
+        --ink: #211e39;
+        --violet-wash: #29233f;
+      }
+      body {
+        font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Arial, sans-serif;
+        font-size: 15px;
+        letter-spacing: -0.012em;
+        background: var(--bg);
+        color: var(--text);
+      }
+      h1 {
+        font-size: 36px;
+        line-height: 1.13;
+        letter-spacing: -1.25px;
+        font-weight: 720;
+      }
+      h2 {
+        font-size: 23px;
+        letter-spacing: -0.55px;
+      }
+      h3 {
+        font-size: 17px;
+        line-height: 1.4;
+      }
+      .small {
+        font-size: 13px;
+        line-height: 1.55;
+      }
+      .btn {
+        font-size: 14px;
+        min-height: 42px;
+        border-radius: 10px;
+        letter-spacing: -0.1px;
+      }
+      .btn.sm {
+        font-size: 13px;
+        min-height: 35px;
+      }
+      .btn.primary {
+        box-shadow: rgba(91, 62, 232, 0.5) 0px 3px 9px -5px;
+      }
+      .btn.plain {
+        box-shadow: none;
+      }
+      .icon-btn {
+        width: 36px;
+        height: 36px;
+      }
+      .icon {
+        width: 20px;
+        height: 20px;
+      }
+      .sidebar {
+        border-right: 1px solid var(--border);
+        background: var(--surface);
+        width: var(--sidebar-w);
+        padding: 22px 14px 12px;
+      }
+      .topbar {
+        height: 64px;
+        background: var(--surface);
+        padding: 0px 30px;
+        z-index: 24;
+      }
+      .breadcrumb {
+        font-size: 14px;
+      }
+      .top-right {
+        gap: 9px;
+      }
+      .search-trigger {
+        background: var(--surface2);
+        border: 0px;
+        min-width: 206px;
+        padding: 0px 13px;
+        height: 36px;
+      }
+      .search-trigger .kbd {
+        margin-left: auto;
+      }
+      .canvas {
+        max-width: 1720px;
+        padding: 34px 34px 55px;
+      }
+      body[data-page='chat'] .canvas {
+        padding: 0px;
+        max-width: none;
+        height: calc(-64px + 100vh);
+        overflow: hidden;
+      }
+      body[data-page='search'] .canvas {
+        background: var(--surface);
+        padding: 12px;
+        max-width: none;
+        min-height: calc(-64px + 100vh);
+      }
+      body[data-page='onboarding'] .canvas {
+        max-width: 1480px;
+        padding-top: 24px;
+      }
+      body[data-page='onboarding'] .sidebar {
+        padding-top: 18px;
+      }
+      body[data-page='onboarding'] .topbar {
+        background: transparent;
+        border-bottom: none;
+        box-shadow: none;
+      }
+      body[data-page='onboarding'] .top-right .search-trigger,
+      body[data-page='onboarding'] .top-right .preview-pill,
+      body[data-page='onboarding'] .top-right .feedback-header {
+        display: none;
+      }
+      @media (max-width: 760px) {
+        body[data-page='onboarding'] .canvas {
+          padding-left: 14px;
+          padding-right: 14px;
+        }
+      }
+      @media (max-width: 1320px) {
+        :root {
+          --sidebar-w: 212px;
+        }
+        .sidebar {
+          padding-left: 10px;
+          padding-right: 10px;
+        }
+        .canvas {
+          padding: 27px 25px 45px;
+        }
+        .topbar {
+          padding: 0px 23px;
+        }
+        .search-trigger {
+          min-width: 175px;
+        }
+      }
+      @media (max-width: 1140px) {
+        .search-trigger {
+          min-width: 0px;
+          width: 36px;
+          justify-content: center;
+          padding: 0px;
+        }
+        .search-trigger span,
+        .search-trigger .kbd {
+          display: none;
+        }
+      }
+      @media (max-width: 960px) {
+        :root {
+          --sidebar-w: 190px;
+        }
+        .canvas {
+          padding: 24px 19px 40px;
+        }
+        .topbar {
+          padding: 0px 18px;
+        }
+      }
+      @media (max-width: 760px) {
+        :root {
+          --sidebar-w: 0px;
+        }
+        .sidebar {
+          width: 230px;
+          padding: 20px 14px;
+          transform: translateX(-100%);
+          z-index: 80;
+        }
+        .nav-open .sidebar {
+          transform: translateX(0px);
+        }
+        .main-shell {
+          margin-left: 0px;
+        }
+        .topbar {
+          height: 56px;
+          padding: 0px 13px;
+        }
+        .canvas {
+          padding: 23px 16px 40px;
+        }
+        .top-right {
+          gap: 4px;
+        }
+        .top-right > .avatar {
+          display: none;
+        }
+        .breadcrumb {
+          font-size: 12px;
+        }
+        .breadcrumb span {
+          max-width: 130px;
+        }
+        body[data-page='chat'] .canvas {
+          height: calc(-56px + 100dvh);
+        }
+        body[data-page='search'] .canvas {
+          min-height: calc(-56px + 100dvh);
+        }
+      }
+      .btn:focus-visible,
+      .icon-btn:focus-visible,
+      button:focus-visible,
+      a:focus-visible {
+        outline: 2px solid var(--primary);
+        outline-offset: 3px;
+      }
+      body[data-page='discover'] .canvas {
+        padding-top: 30px;
+        max-width: 1800px;
+      }
+      body:has(dialog.d3-dialog[open]) {
+        overflow: hidden;
+      }
+      @media (max-width: 760px) {
+        body[data-page='discover'] .canvas {
+          padding: 23px 17px 34px;
+        }
+      }
+      body[data-page='accounts'] .canvas {
+        max-width: 1800px;
+        padding: 32px 34px 86px;
+      }
+      @media (max-width: 1024px) {
+        body[data-page='accounts'] .canvas {
+          padding-left: 24px;
+          padding-right: 24px;
+        }
+      }
+      @media (max-width: 760px) {
+        body[data-page='accounts'] .canvas {
+          padding: 24px 17px 110px;
+        }
+      }
+      html.dark {
+        color-scheme: dark;
+        --bg: #101014;
+        --surface: #1a1a22;
+        --surface2: #24242e;
+        --border: #30303c;
+        --text: #f0eff8;
+        --secondary: #b4b3c5;
+        --muted: #9695aa;
+        --primary: #6545ef;
+        --primary-hover: #7556f4;
+        --accent: #b4a0ff;
+        --accent-bg: #28223e;
+        --accent-line: #4a3b68;
+        --success: #62d4b0;
+        --success-bg: #19322c;
+        --warning: #eec07d;
+        --warning-bg: #352d21;
+        --danger: #f1a2a9;
+        --danger-bg: #38242b;
+        --info: #91beef;
+        --info-bg: #233043;
+        --shadow: 0 10px 26px -18px #0009;
+        --ink: #211e39;
+        --violet-wash: #29233f;
+      }
+      html,
+      body {
+        background: var(--bg);
+        color: var(--text);
+      }
+      html.dark body {
+        color-scheme: dark;
+      }
+      dialog {
+        background: var(--surface);
+        color: var(--text);
+        border: 1px solid var(--border);
+      }
+      dialog::backdrop {
+        background: rgba(8, 8, 11, 0.75);
+        backdrop-filter: blur(5px);
+      }
+      html.dark input,
+      html.dark textarea,
+      html.dark select {
+        color-scheme: dark;
+      }
+      input::placeholder,
+      textarea::placeholder {
+        color: var(--muted);
+        opacity: 1;
+      }
+      button:disabled {
+        opacity: 0.42;
+        cursor: not-allowed;
+      }
+      button:focus-visible,
+      a:focus-visible,
+      select:focus-visible,
+      input:focus-visible,
+      textarea:focus-visible,
+      [role='button']:focus-visible {
+        outline: 2px solid var(--accent);
+        outline-offset: 3px;
+      }
+      button,
+      a,
+      input,
+      select,
+      textarea {
+        -webkit-tap-highlight-color: transparent;
+      }
+      html.dark .source-line,
+      html.dark .dialog-head,
+      html.dark .dialog-footer {
+        border-color: var(--border);
+      }
+      html.dark .toast {
+        background: rgb(41, 40, 51);
+        color: var(--text);
+        border-color: rgb(72, 67, 84);
+      }
+      :is(#dialog, dialog[data-dlg]) .dialog-footer {
+        flex-wrap: wrap;
+      }
+      :is(#dialog, dialog[data-dlg]) .dialog-footer .btn {
+        line-height: 1.5;
+      }
+      :is(#dialog, dialog[data-dlg]):has(.d3-preview-layout) {
+        width: min(1260px, -32px + 100vw);
+      }
+      @media (max-width: 900px) {
+        .topbar .breadcrumb {
+          min-width: 0px;
+          overflow: hidden;
+        }
+        .topbar .breadcrumb > span {
+          overflow: hidden;
+          text-overflow: ellipsis;
+          white-space: nowrap;
+        }
+        .topbar {
+          padding-right: 17px;
+          padding-left: 17px;
+        }
+        .top-right {
+          flex-shrink: 0;
+        }
+      }
+      @media (max-width: 560px) {
+        .topbar .search-trigger {
+          min-width: 0px;
+          width: 34px;
+          padding: 0px;
+          justify-content: center;
+        }
+        .topbar .search-trigger > span,
+        .topbar .search-trigger > .kbd {
+          display: none;
+        }
+        .topbar .top-right > .avatar {
+          display: none;
+        }
+        .topbar .top-right {
+          gap: 3px;
+        }
+        .topbar .breadcrumb {
+          font-size: 11px;
+        }
+        .topbar .breadcrumb > .icon {
+          width: 12px;
+          flex: 0 0 auto;
+        }
+        .topbar .breadcrumb a {
+          flex-shrink: 0;
+        }
+        .btn {
+          word-break: normal;
+        }
+        dialog {
+          max-width: calc(-20px + 100vw) !important;
+          max-height: calc(-24px + 100dvh) !important;
+        }
+      }
+      @media print {
+        .sidebar,
+        .topbar,
+        .feedback-fab,
+        .a4-selection {
+          display: none !important;
+        }
+        .main-shell {
+          margin: 0px !important;
+        }
+        .canvas {
+          padding: 20px !important;
+        }
+        html {
+          print-color-adjust: exact;
+        }
+      }
+      :root.dark {
+        --secondary: #b8b6c7;
+        --muted: #a3a0b2;
+        --v7-line: #3b3947;
+        --v7-panel: #1c1b23;
+        --v7-ease: cubic-bezier(0.2, 0.7, 0.25, 1);
+      }
+      :where(button, a, input, select, textarea) {
+        scroll-margin-block: 90px;
+      }
+      :where(.btn, .icon-btn, .d3-chip, .d3-active-chip, .tag-button) {
+        transition:
+          background 140ms var(--v7-ease),
+          border-color 140ms var(--v7-ease),
+          color 140ms var(--v7-ease),
+          box-shadow 140ms var(--v7-ease),
+          transform 140ms var(--v7-ease);
+      }
+      .btn:not(:disabled):hover {
+        border-color: rgb(104, 97, 118);
+        box-shadow: rgba(255, 255, 255, 0.035) 0px 1px 0px inset;
+      }
+      .btn.primary:not(:disabled):hover {
+        background: var(--primary-hover);
+        border-color: rgb(158, 137, 255);
+        box-shadow:
+          rgba(91, 62, 232, 0.145) 0px 4px 18px,
+          rgba(255, 255, 255, 0.14) 0px 1px 0px inset;
+      }
+      :where(.btn, .icon-btn):not(:disabled):active {
+        transform: translateY(1px);
+      }
+      .icon-btn:not(:disabled):hover {
+        background: rgb(43, 39, 54);
+        color: rgb(243, 239, 255);
+        border-color: rgb(90, 80, 107);
+      }
+      :where(.btn, .icon-btn, a, [role='option'], [role='button']):focus-visible {
+        outline: 2px solid var(--accent);
+        outline-offset: 3px;
+      }
+      input::placeholder,
+      textarea::placeholder {
+        color: rgb(165, 160, 181);
+        opacity: 1;
+      }
+      input[type='checkbox'],
+      input[type='radio'] {
+        accent-color: var(--primary);
+        cursor: pointer;
+      }
+      :is(#dialog, dialog[data-dlg]) .dialog-head > h2 {
+        font-size: 18px;
+        font-weight: 650;
+        color: var(--text);
+        letter-spacing: -0.3px;
+        line-height: 1.45;
+      }
+      :is(#dialog, dialog[data-dlg]) .dialog-head {
+        padding: 19px 24px;
+        background: rgb(25, 24, 31);
+      }
+      :is(#dialog, dialog[data-dlg]) .dialog-head .icon-btn {
+        width: 38px;
+        height: 38px;
+        border-radius: 12px;
+        border: 1px solid rgb(58, 55, 69);
+        color: rgb(210, 202, 223);
+      }
+      :is(#dialog, dialog[data-dlg]) .dialog-footer {
+        z-index: 5;
+        background: rgb(25, 24, 31);
+        box-shadow: rgba(0, 0, 0, 0.063) 0px -8px 25px;
+      }
+      :is(#dialog, dialog[data-dlg]) :where(input:not([type='checkbox']):not([type='radio']), textarea) {
+        border-radius: 12px;
+        border-color: rgb(69, 64, 79);
+        background: rgb(28, 26, 34);
+        font-size: 14px;
+      }
+      :is(#dialog, dialog[data-dlg]) :where(input:not([type='checkbox']):not([type='radio']), textarea):hover {
+        border-color: rgb(114, 102, 127);
+      }
+      :is(#dialog, dialog[data-dlg]) :where(input:not([type='checkbox']):not([type='radio']), textarea):focus {
+        border-color: var(--accent);
+        box-shadow: rgba(161, 130, 255, 0.094) 0px 0px 0px 3px;
+      }
+      :is(#dialog, dialog[data-dlg]) .btn {
+        min-height: 43px;
+        font-size: 13.5px;
+        border-radius: 11px;
+      }
+      :is(#dialog, dialog[data-dlg])[open] {
+        animation: v7-dialog-in 170ms var(--v7-ease);
+      }
+      :where(.stepper a, .stepper button) {
+        min-height: 42px;
+        line-height: 1.5;
+        transition:
+          background 140ms,
+          color 140ms;
+        outline-offset: 3px;
+      }
+      :where(.stepper a, .stepper button):hover {
+        color: rgb(230, 213, 255);
+      }
+      :where(.a4-subnav a, .m5-nav-children a, .d3-dossier-tabs button) {
+        transition:
+          background 140ms,
+          color 140ms,
+          border-color 140ms;
+      }
+      @media (prefers-reduced-motion: reduce) {
+        *,
+        ::before,
+        ::after {
+          scroll-behavior: auto !important;
+          animation-duration: 0.001ms !important;
+          animation-iteration-count: 1 !important;
+          transition-duration: 0.001ms !important;
+        }
+        .btn:not(:disabled):active {
+          transform: none;
+        }
+      }
+      body[data-page='signals'] .canvas {
+        max-width: 1540px;
+        padding: 32px 34px 48px;
+      }
+      @media (max-width: 760px) {
+        body[data-page='signals'] .canvas {
+          padding: 24px 14px 35px;
+        }
+      }
+      .bo11-checks {
+        display: flex;
+        flex-direction: column;
+        gap: 0px;
+      }
+      .bo11-check {
+        display: flex;
+        gap: 10px;
+        align-items: flex-start;
+        padding: 12px 0px;
+        border-bottom: 1px solid var(--border);
+        font-size: 13px;
+      }
+      .bo11-check:last-child {
+        border: 0px;
+      }
+      .bo11-check .icon {
+        width: 16px;
+        height: 16px;
+        color: var(--accent);
+        flex: 0 0 auto;
+        margin-top: 2px;
+      }
+      .bo11-check p {
+        font-size: 12px;
+        color: var(--muted);
+        margin-top: 4px;
+      }
+      .v12 {
+        --v12-wash: color-mix(in srgb, var(--primary) 9%, var(--surface));
+        --v12-line: color-mix(in srgb, var(--primary) 22%, var(--border));
+        color: var(--text);
+        font-size: 14px;
+        line-height: 1.55;
+      }
+      .v12 a,
+      .v12 button,
+      .v12 input,
+      .v12 select {
+        touch-action: manipulation;
+      }
+      .v12 :is(button, a, input, textarea, select):focus-visible {
+        outline: 2px solid var(--primary);
+        outline-offset: 4px;
+      }
+      .v12 h1 {
+        font-size: 32px;
+        letter-spacing: -1px;
+        line-height: 1.2;
+      }
+      .v12 h2 {
+        font-size: 21px;
+        letter-spacing: -0.5px;
+        line-height: 1.35;
+      }
+      .v12 h3 {
+        font-size: 16px;
+        letter-spacing: -0.25px;
+      }
+      .v12 p {
+        margin: 0px;
+      }
+      .v12-desc {
+        color: var(--secondary);
+        font-size: 14px;
+        max-width: 780px;
+        margin-top: 8px !important;
+      }
+      .v12-eyebrow {
+        font-size: 10px;
+        font-weight: 700;
+        letter-spacing: 1.4px;
+        text-transform: uppercase;
+        color: var(--accent);
+        margin-bottom: 10px;
+      }
+      .v12-header {
+        display: flex;
+        align-items: start;
+        justify-content: space-between;
+        gap: 22px;
+        margin-bottom: 28px;
+      }
+      .v12 .btn {
+        font-size: 13px;
+        min-height: 38px;
+      }
+      .v12 .btn.primary {
+        background: var(--primary);
+        color: rgb(255, 255, 255);
+      }
+      .v12 .btn svg {
+        width: 16px;
+        height: 16px;
+      }
+      .v12-tag {
+        display: inline-flex;
+        align-items: center;
+        gap: 6px;
+        font-size: 11px;
+        line-height: 1.3;
+        padding: 5px 8px;
+        border: 1px solid var(--border);
+        border-radius: 7px;
+        color: var(--secondary);
+        background: var(--surface);
+      }
+      .v12-tag.purple {
+        color: var(--accent);
+        background: var(--v12-wash);
+        border-color: var(--v12-line);
+      }
+      .v12-tag.green {
+        color: rgb(39, 129, 99);
+        background: color-mix(in srgb, #2d9e76 9%, var(--surface));
+        border-color: color-mix(in srgb, #2d9e76 25%, var(--border));
+      }
+      .dark .v12-tag.green {
+        color: rgb(131, 212, 180);
+      }
+      .v12-tag.amber {
+        color: rgb(149, 97, 30);
+        background: color-mix(in srgb, #c4953b 9%, var(--surface));
+        border-color: color-mix(in srgb, #c4953b 25%, var(--border));
+      }
+      .dark .v12-tag.amber {
+        color: rgb(221, 187, 128);
+      }
+      .v12-note {
+        display: flex;
+        align-items: flex-start;
+        gap: 9px;
+        padding: 12px 14px;
+        border-radius: 10px;
+        background: var(--surface2);
+        color: var(--secondary);
+        font-size: 12px;
+        line-height: 1.6;
+      }
+      .v12-note svg {
+        width: 15px;
+        height: 15px;
+        flex: 0 0 auto;
+        margin-top: 2px;
+      }
+      .v12-tabs {
+        display: flex;
+        gap: 24px;
+        align-items: center;
+        border-bottom: 1px solid var(--border);
+        margin-bottom: 20px;
+        overflow-x: auto;
+        white-space: nowrap;
+      }
+      .v12-tabs a,
+      .v12-tabs button {
+        padding: 0px 0px 12px;
+        font-size: 13px;
+        color: var(--secondary);
+        border-bottom: 2px solid transparent;
+        display: inline-flex;
+        align-items: center;
+        gap: 8px;
+      }
+      .v12-tabs .on {
+        color: var(--text);
+        font-weight: 650;
+        border-bottom-color: var(--primary);
+      }
+      .v12-search {
+        display: flex;
+        gap: 9px;
+        align-items: center;
+        border: 1px solid var(--border);
+        border-radius: 10px;
+        background: var(--surface);
+        padding: 0px 12px;
+        min-height: 40px;
+        max-width: 430px;
+        flex: 1 1 0%;
+        min-width: 210px;
+      }
+      .v12-search > svg {
+        width: 16px;
+        height: 16px;
+        color: var(--muted);
+        flex: 0 0 auto;
+      }
+      .v12-search input {
+        width: 100%;
+        min-width: 0px;
+        font-size: 13px;
+        color: var(--text);
+        border: 0px !important;
+        background: transparent !important;
+        box-shadow: none !important;
+        padding: 8px 0px !important;
+        outline: 0px !important;
+      }
+      .v12-select {
+        min-height: 40px;
+        border: 1px solid var(--border);
+        border-radius: 10px;
+        background: var(--surface);
+        color: var(--text);
+        padding: 8px 30px 8px 12px;
+        font-size: 13px;
+        max-width: 260px;
+      }
+      .v12 input[type='checkbox'] {
+        accent-color: var(--primary);
+        width: 16px;
+        height: 16px;
+        cursor: pointer;
+        flex: 0 0 auto;
+      }
+      dialog.v12-dialog {
+        border: 1px solid var(--border);
+        background: var(--surface);
+        color: var(--text);
+        border-radius: 20px;
+        padding: 0px;
+        max-height: min(92dvh, 1100px);
+        width: min(760px, -32px + 100vw);
+        max-width: none;
+        box-shadow: rgba(0, 0, 0, 0.267) 0px 30px 100px;
+      }
+      dialog.v12-dialog::backdrop {
+        background: rgba(15, 14, 24, 0.42);
+        backdrop-filter: blur(7px);
+      }
+      dialog.v12-dialog.wide {
+        width: min(900px, -32px + 100vw);
+      }
+      dialog.v12-dialog .dialog-head {
+        padding: 18px 24px;
+        border-bottom: 1px solid var(--border);
+      }
+      dialog.v12-dialog .dialog-head h2 {
+        font-size: 15px !important;
+        font-weight: 600;
+      }
+      dialog.v12-dialog .dialog-body {
+        max-height: calc(-145px + 92dvh);
+        overflow: auto;
+        padding: 24px !important;
+      }
+      body.v12-settings #sidebar {
+        display: flex;
+        flex-direction: column;
+        padding: 18px 12px 10px;
+        width: var(--sidebar-w);
+        background: var(--surface);
+      }
+      .v12-settings-nav {
+        display: flex;
+        flex-direction: column;
+        min-height: 0px;
+        flex: 1 1 0%;
+        overflow: auto;
+        gap: 17px;
+        padding: 10px 4px;
+      }
+      .v12-settings-head {
+        padding: 0px 8px 12px;
+      }
+      .v12-back {
+        display: flex;
+        align-items: center;
+        gap: 7px;
+        font-size: 12px;
+        color: var(--secondary);
+        padding: 7px 0px 14px;
+      }
+      .v12-back svg {
+        width: 15px;
+        height: 15px;
+      }
+      .v12-settings-head h2 {
+        font-size: 19px;
+        letter-spacing: -0.5px;
+      }
+      .v12-settings-head .v12-search {
+        min-width: 0px;
+        margin-top: 15px;
+        min-height: 33px;
+        padding: 0px 8px;
+      }
+      .v12-settings-head .v12-search input {
+        font-size: 11px;
+      }
+      .v12-nav-group > h3 {
+        font-size: 9px;
+        font-weight: 700;
+        text-transform: uppercase;
+        letter-spacing: 1.15px;
+        color: var(--muted);
+        padding: 0px 9px;
+        margin: 0px 0px 7px;
+      }
+      .v12-nav-link {
+        display: flex;
+        gap: 9px;
+        align-items: center;
+        min-height: 31px;
+        padding: 6px 9px;
+        border-radius: 8px;
+        color: var(--secondary);
+        font-size: 12px;
+        line-height: 1.3;
+      }
+      .v12-nav-link svg {
+        width: 15px;
+        height: 15px;
+        flex: 0 0 auto;
+        color: var(--muted);
+      }
+      .v12-nav-link.on {
+        background: var(--accent-bg);
+        color: var(--accent);
+        font-weight: 600;
+      }
+      .v12-nav-link.on svg {
+        color: var(--accent);
+      }
+      .v12-nav-link:hover {
+        background: var(--surface2);
+      }
+      .v12-settings-foot {
+        padding: 12px 9px 0px;
+        border-top: 1px solid var(--border);
+        color: var(--muted);
+        font-size: 10px;
+        display: flex;
+        gap: 8px;
+        align-items: center;
+      }
+      .v12-settings-page {
+        max-width: 1000px;
+        margin: 0px auto;
+        padding: 3px 0px 28px;
+      }
+      .v12-settings-page .v12-header {
+        margin-bottom: 28px;
+      }
+      .v12-settings-page h1 {
+        font-size: 28px;
+      }
+      .v12-settings-page .v12-desc {
+        max-width: 660px;
+      }
+      .v12-setting-block {
+        border: 1px solid var(--border);
+        border-radius: 14px;
+        background: var(--surface);
+        padding: 23px 25px;
+        margin-bottom: 18px;
+      }
+      .v12-setting-block > header {
+        display: flex;
+        align-items: start;
+        justify-content: space-between;
+        gap: 12px;
+        padding-bottom: 18px;
+        border-bottom: 1px solid var(--border);
+        margin-bottom: 18px;
+      }
+      .v12-setting-block > header h2 {
+        font-size: 16px;
+      }
+      .v12-setting-block > header p {
+        font-size: 12px;
+        color: var(--muted);
+        margin-top: 5px;
+        max-width: 650px;
+      }
+      .v12-setting-row {
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        gap: 25px;
+        padding: 16px 0px;
+        border-bottom: 1px solid var(--border);
+      }
+      .v12-setting-row:last-child {
+        border-bottom: none;
+        padding-bottom: 0px;
+      }
+      .v12-setting-row:first-child {
+        padding-top: 0px;
+      }
+      .v12-setting-row h3 {
+        font-size: 13px;
+        font-weight: 600;
+      }
+      .v12-setting-row p {
+        font-size: 12px;
+        color: var(--secondary);
+        line-height: 1.65;
+        margin-top: 5px;
+        max-width: 570px;
+      }
+      .v12-form {
+        display: flex;
+        flex-direction: column;
+        gap: 18px;
+      }
+      .v12-form input:not([type='checkbox']):not([type='file']):not([type='color']):not([type='radio']),
+      .v12-form textarea,
+      .v12-form select,
+      .v12-note-form textarea {
+        border: 1px solid var(--border);
+        background: var(--surface2);
+        color: var(--text);
+        border-radius: 9px;
+        min-height: 40px;
+        padding: 10px 12px;
+        font-size: 13px;
+        line-height: 1.5;
+        width: 100%;
+        box-shadow: none;
+      }
+      .v12-field {
+        display: flex;
+        flex-direction: column;
+        gap: 7px;
+        min-width: 0px;
+      }
+      .v12-field label {
+        font-size: 12px;
+        font-weight: 550;
+      }
+      .v12-fields {
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        gap: 19px;
+      }
+      .v12-form-actions {
+        display: flex;
+        justify-content: flex-end;
+        align-items: center;
+        gap: 12px;
+        margin-top: 5px;
+      }
+      .v12-form-actions .v12-save-label {
+        font-size: 11px;
+        color: var(--muted);
+        margin-right: auto;
+      }
+      .v12-check-row {
+        display: flex;
+        align-items: start;
+        gap: 10px;
+        cursor: pointer;
+        font-size: 13px;
+        line-height: 1.6;
+      }
+      .v12-check-row input {
+        margin-top: 3px;
+      }
+      .v12-check-row small {
+        display: block;
+        color: var(--muted);
+        font-size: 11px;
+        margin-top: 3px;
+      }
+      .v12-table-wrap {
+        overflow: auto;
+        border: 1px solid var(--border);
+        border-radius: 12px;
+        background: var(--surface);
+      }
+      .v12-table {
+        width: 100%;
+        border-collapse: collapse;
+        text-align: left;
+        font-size: 12px;
+      }
+      .v12-table th {
+        font-size: 10px;
+        font-weight: 550;
+        color: var(--muted);
+        background: var(--surface2);
+        padding: 12px 15px;
+      }
+      .v12-table td {
+        padding: 15px;
+        border-top: 1px solid var(--border);
+        vertical-align: middle;
+      }
+      .v12-table td p {
+        font-size: 11px;
+        color: var(--muted);
+        margin-top: 4px;
+      }
+      .v12-table .btn {
+        font-size: 11px;
+        min-height: 30px;
+      }
+      .v12-settings-links {
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        gap: 12px;
+      }
+      .v12-settings-link {
+        display: flex;
+        gap: 14px;
+        padding: 18px;
+        border: 1px solid var(--border);
+        border-radius: 12px;
+        background: var(--surface);
+      }
+      .v12-settings-link > svg {
+        flex: 0 0 auto;
+        width: 21px;
+        height: 21px;
+        color: var(--accent);
+        margin-top: 2px;
+      }
+      .v12-settings-link h3 {
+        font-size: 13px;
+      }
+      .v12-settings-link p {
+        font-size: 12px;
+        color: var(--secondary);
+        line-height: 1.6;
+        margin-top: 5px;
+      }
+      .v12-settings-link .btn {
+        margin-top: 11px;
+      }
+      .v12-mobile-settings {
+        display: none;
+      }
+      @media (max-width: 1250px) {
+        .v12-settings-page {
+          max-width: 900px;
+        }
+      }
+      @media (max-width: 760px) {
+        .v12 h1 {
+          font-size: 27px;
+        }
+        .v12-header {
+          display: block;
+          margin-bottom: 22px;
+        }
+        .v12-select {
+          max-width: 100%;
+          width: auto;
+          flex: 1 1 0%;
+          min-width: 0px;
+        }
+        .v12-search {
+          max-width: none;
+          flex-basis: 100%;
+        }
+        .v12-tabs {
+          gap: 18px;
+        }
+        .v12-reader-facts,
+        .v12-fields,
+        .v12-rule-fields,
+        .v12-settings-links,
+        .v12-choice-grid {
+          grid-template-columns: 1fr;
+        }
+        .v12-setting-block {
+          padding: 18px;
+        }
+        .v12-setting-row {
+          gap: 12px;
+          align-items: start;
+        }
+        .v12-setting-row > .btn {
+          flex: 0 0 auto;
+        }
+        .v12-setting-block > header {
+          display: block;
+        }
+        .v12-setting-block > header .btn {
+          margin-top: 12px;
+        }
+        .v12-mobile-settings {
+          display: block;
+          margin-bottom: 18px;
+        }
+        .v12-mobile-settings select {
+          width: 100%;
+          max-width: none;
+        }
+        .v12-dialog .dialog-body {
+          padding: 18px !important;
+        }
+        .v12-settings-page .v12-header {
+          margin-bottom: 21px;
+        }
+      }
+      .v12-form input[type='radio'] {
+        width: 15px;
+        height: 15px;
+        min-height: 0px;
+        padding: 0px;
+        border: 0px;
+        display: inline-block;
+        vertical-align: middle;
+      }
+      @media (max-width: 760px) {
+        body.v12-settings #sidebar {
+          width: 230px;
+        }
+        .v12-settings-nav {
+          gap: 15px;
+        }
+      }
+      .v12 [hidden],
+      .v12-dialog [hidden] {
+        display: none !important;
+      }
+      [data-a14-task-card] {
+        cursor: pointer;
+      }
+      [data-a14-task-card]:focus-visible {
+        outline: 2px solid var(--accent);
+        outline-offset: 2px;
+      }
+      body[data-page='search'] .canvas {
+        padding: 30px 34px 46px;
+        background: var(--bg);
+        max-width: none;
+        min-height: calc(-64px + 100dvh);
+      }
+      @media (max-width: 1150px) {
+        body[data-page='search'] .canvas {
+          padding: 26px 25px 40px;
+        }
+      }
+      @media (max-width: 600px) {
+        body[data-page='search'] .canvas {
+          padding: 17px 14px 35px;
+        }
+      }
+      html:not(.dark)
+        :is(
+          .a4-focus,
+          .a4-account-card.is-focus,
+          .a4-selection,
+          .m5-finance-hero,
+          .m5-collections-hero,
+          .t8-research-hero,
+          .t8-member-hero
+        ) {
+        --text: #f0eff8;
+        --secondary: #c7c4d7;
+        --muted: #b2afc3;
+        --surface: #1a1a22;
+        --surface2: #292632;
+        --border: #45404f;
+        --border2: #5b526b;
+        --accent: #c0aaff;
+        --accent-bg: #302541;
+        --accent-line: #514063;
+        color: var(--text);
+      }
+      html:not(.dark) :is(#dialog, dialog[data-dlg]) .dialog-head,
+      html:not(.dark) :is(#dialog, dialog[data-dlg]) .dialog-footer {
+        background: var(--surface);
+        border-color: var(--border);
+      }
+      html:not(.dark) :is(#dialog, dialog[data-dlg]) .dialog-head .icon-btn {
+        color: var(--secondary);
+        border-color: var(--border);
+      }
+      html:not(.dark)
+        :is(#dialog, dialog[data-dlg])
+        :is(
+          input:not([type='checkbox']):not([type='radio']):not([type='range']):not([type='file']):not([type='hidden']),
+          textarea,
+          select
+        ) {
+        color: var(--text);
+        background: var(--surface);
+        border-color: var(--border);
+        color-scheme: light;
+      }
+      body[data-page='search'] .canvas {
+        padding: 22px 28px 20px;
+        min-height: calc(-64px + 100dvh);
+      }
+      @media (min-width: 1600px) and (min-height: 850px) {
+        body[data-page='search'] .canvas {
+          padding-top: 28px;
+        }
+      }
+      @media (max-height: 780px) and (min-width: 1000px) {
+        body[data-page='search'] .canvas {
+          padding-top: 15px;
+          padding-bottom: 15px;
+        }
+      }
+      @media (max-width: 1190px) and (min-width: 901px) {
+        body[data-page='search'] .canvas {
+          padding-left: 22px;
+          padding-right: 22px;
+        }
+      }
+      @media (max-width: 900px) {
+        body[data-page='search'] .canvas {
+          padding: 18px 20px 26px;
+        }
+      }
+      @media (max-width: 700px) {
+        body[data-page='search'] .canvas {
+          padding: 17px 14px 28px;
+        }
+      }
+      :root {
+        --v22-line: var(--border);
+        --v22-panel: var(--surface);
+        --v22-hover: var(--surface2);
+        --v22-ease: cubic-bezier(0.2, 0.7, 0.3, 1);
+        --v22-radius: 12px;
+        --v22-shadow: 0 12px 40px rgba(20, 18, 32, 0.12);
+      }
+      :root.dark {
+        --bg: #0b0b0e;
+        --surface: #151518;
+        --surface2: #1e1e23;
+        --sidebar: #131316;
+        --border: #2b2b32;
+        --border2: #3c3c45;
+        --text: #f2f2f5;
+        --secondary: #b2b1bd;
+        --muted: #9695a4;
+        --v22-panel: #151518;
+        --v22-hover: #202027;
+        --v22-shadow: 0 18px 58px #0008;
+      }
+      body.v22-design {
+        font-size: 14px;
+        letter-spacing: -0.08px;
+      }
+      .v22-design h1 {
+        font-weight: 650;
+        letter-spacing: -1px;
+        line-height: 1.17;
+      }
+      .v22-design h2 {
+        font-weight: 620;
+        letter-spacing: -0.5px;
+        line-height: 1.3;
+      }
+      .v22-design h3 {
+        font-weight: 620;
+        letter-spacing: -0.18px;
+      }
+      .v22-design .btn {
+        border-radius: 8px;
+        box-shadow: none;
+        transition:
+          background-color 130ms,
+          border-color 130ms,
+          color 130ms;
+        min-height: 36px;
+        font-weight: 560;
+      }
+      .v22-design .btn.primary,
+      .v22-design .laura-nav {
+        background: var(--primary);
+        color: rgb(255, 255, 255);
+        box-shadow: none;
+      }
+      .v22-design .btn.primary:hover,
+      .v22-design .laura-nav:hover {
+        background: var(--primary-hover);
+      }
+      .v22-design .btn.soft {
+        background: var(--accent-bg);
+        border: 1px solid var(--accent-line);
+        color: var(--accent);
+      }
+      .v22-design .btn.plain {
+        background: transparent;
+      }
+      .v22-design .btn.plain:hover {
+        background: var(--surface2);
+      }
+      .v22-design .icon-btn {
+        border-radius: 7px;
+        transition:
+          background-color 130ms,
+          color 130ms;
+      }
+      .v22-design .icon-btn:hover {
+        background: var(--surface2);
+      }
+      .v22-design .canvas {
+        padding-top: 28px;
+      }
+      .v22-design input:not([type='checkbox']):not([type='radio']),
+      .v22-design select,
+      .v22-design textarea {
+        border-radius: 8px;
+      }
+      .v22-design :where(button, a, input, textarea, select, summary):focus-visible {
+        outline: 2px solid var(--accent);
+        outline-offset: 3px;
+      }
+      .v22-design :where(button, a, input, textarea, select, summary) {
+        scroll-margin-top: 82px;
+        scroll-margin-bottom: 80px;
+      }
+      .v22-design .sidebar {
+        background: var(--sidebar);
+        border-right: 1px solid var(--border);
+      }
+      .v22-design .topbar {
+        background: var(--sidebar);
+        border-bottom: 1px solid var(--border);
+      }
+      .v22-design .breadcrumb {
+        font-size: 12px;
+      }
+      .v22-design .search-trigger {
+        background: transparent;
+        border: 0px;
+        box-shadow: none;
+        font-size: 12px;
+      }
+      .v22-design :is(#dialog, dialog[data-dlg]) {
+        border-radius: 14px;
+        border: 1px solid var(--border2);
+        box-shadow: var(--v22-shadow);
+        background: var(--surface);
+        color: var(--text);
+      }
+      .v22-design :is(#dialog, dialog[data-dlg])::backdrop {
+        background: rgba(8, 8, 12, 0.62);
+        backdrop-filter: blur(3px);
+      }
+      .v22-design :is(#dialog, dialog[data-dlg]) .dialog-head,
+      .v22-design :is(#dialog, dialog[data-dlg]) .dialog-footer {
+        background: var(--surface);
+        box-shadow: none;
+      }
+      .v22-design :is(#dialog, dialog[data-dlg]) .dialog-head {
+        border-bottom: 1px solid var(--border);
+        padding: 20px 24px;
+      }
+      .v22-design :is(#dialog, dialog[data-dlg]) .dialog-head h2 {
+        font-size: 18px;
+        letter-spacing: -0.4px;
+      }
+      .v22-design :is(#dialog, dialog[data-dlg]) .dialog-head .icon-btn {
+        background: transparent;
+        border: 0px;
+        border-radius: 7px;
+        color: var(--secondary);
+        width: 32px;
+        height: 32px;
+      }
+      .v22-design :is(#dialog, dialog[data-dlg]) .dialog-body {
+        background: var(--surface);
+      }
+      .v22-design :is(#dialog, dialog[data-dlg]) .dialog-footer {
+        border-top: 1px solid var(--border);
+        padding: 14px 24px;
+      }
+      .v22-design :is(#dialog, dialog[data-dlg]) .btn {
+        border-radius: 8px;
+        min-height: 38px;
+        font-size: 13px;
+      }
+      .v22-design
+        :is(#dialog, dialog[data-dlg])
+        :where(input:not([type='checkbox']):not([type='radio']), select, textarea) {
+        background: var(--bg);
+        border-color: var(--border2);
+        color: var(--text);
+        border-radius: 8px;
+        font-size: 13px;
+      }
+      @media (max-width: 760px) {
+        .v22-design .canvas {
+          padding: 20px 17px 36px;
+        }
+        .v22-design :is(#dialog, dialog[data-dlg]) .dialog-head {
+          padding: 17px 18px;
+        }
+        .v22-design :is(#dialog, dialog[data-dlg]) .dialog-footer {
+          padding: 14px 18px;
+        }
+      }
+      @media (prefers-reduced-motion: reduce) {
+        .v22-design *,
+        .v22-design ::before,
+        .v22-design ::after {
+          animation: auto ease 0s 1 normal none running none !important;
+          transition: none !important;
+          scroll-behavior: auto !important;
+        }
+      }
+      @keyframes toast-in {
+        0% {
+          opacity: 0;
+          transform: translateY(8px);
+        }
+        100% {
+          opacity: 1;
+          transform: none;
+        }
+      }
+      @keyframes v7-dialog-in {
+        0% {
+          opacity: 0.7;
+          transform: translateY(6px);
+        }
+        100% {
+          opacity: 1;
+          transform: translateY(0px);
+        }
+      }
+    </style>
+    <style>
+      :root {
+        --add: #b45309;
+        --add-ink: #fff;
+      }
+      :root.dark {
+        --add: #f59e0b;
+        --add-ink: #1c1917;
+      }
+      .t-banner {
+        display: flex;
+        align-items: center;
+        gap: 12px;
+        border: 1px solid var(--border);
+        background: var(--surface);
+        border-radius: var(--r);
+        padding: 12px 16px;
+        margin: 0px 0px 16px;
+      }
+      .t-banner.warn {
+        border-color: color-mix(in srgb, var(--warning) 40%, var(--border));
+        background: var(--warning-bg);
+        color: var(--text);
+      }
+      .t-banner .icon {
+        flex: 0 0 auto;
+      }
+      .t-banner .grow {
+        flex: 1 1 0%;
+        min-width: 0px;
+      }
+      .t-banner p {
+        font-size: 13px;
+        color: var(--secondary);
+        margin-top: 2px;
+      }
+      .t-axes {
+        display: grid;
+        gap: 8px;
+        margin-top: 8px;
+      }
+      .t-axis {
+        display: grid;
+        grid-template-columns: 1fr auto;
+        gap: 4px 10px;
+        font-size: 13px;
+      }
+      .t-axis .bar {
+        grid-column: 1 / -1;
+        height: 6px;
+        border-radius: 4px;
+        background: var(--surface2);
+        overflow: hidden;
+      }
+      .t-axis .bar i {
+        display: block;
+        height: 100%;
+        background: var(--accent);
+      }
+      [hidden] {
+        display: none !important;
+      }
+      .rv {
+        position: fixed;
+        top: 6px;
+        right: 62px;
+        z-index: 200;
+        display: flex;
+        flex-direction: column;
+        align-items: flex-end;
+        gap: 8px;
+        font-family: inherit;
+        max-width: calc(-28px + 100vw);
+      }
+      .rv-bar {
+        display: flex;
+        gap: 6px;
+        align-items: center;
+        background: var(--surface);
+        border: 1px solid var(--border2);
+        border-radius: 999px;
+        padding: 4px;
+        box-shadow: var(--shadow);
+      }
+      .rv-switch {
+        display: inline-flex;
+        align-items: center;
+        gap: 8px;
+        min-height: 44px;
+        padding: 0px 14px 0px 8px;
+        border-radius: 999px;
+        border: 0px;
+        background: none;
+        color: var(--text);
+        font-style: inherit;
+        font-variant: inherit;
+        font-stretch: inherit;
+        line-height: inherit;
+        font-family: inherit;
+        font-optical-sizing: inherit;
+        font-size-adjust: inherit;
+        font-kerning: inherit;
+        font-feature-settings: inherit;
+        font-variation-settings: inherit;
+        font-size: 13px;
+        font-weight: 650;
+        cursor: pointer;
+      }
+      .rv-switch .knob {
+        width: 34px;
+        height: 20px;
+        border-radius: 999px;
+        background: var(--border2);
+        position: relative;
+        transition: background 0.15s;
+      }
+      .rv-switch .knob::after {
+        content: '';
+        position: absolute;
+        top: 3px;
+        left: 3px;
+        width: 14px;
+        height: 14px;
+        border-radius: 50%;
+        background: rgb(255, 255, 255);
+        transition: transform 0.15s;
+      }
+      .rv-switch[aria-pressed='true'] .knob {
+        background: var(--add);
+      }
+      .rv-switch[aria-pressed='true'] .knob::after {
+        transform: translateX(14px);
+      }
+      .rv-theme {
+        width: 44px;
+        height: 44px;
+        border-radius: 50%;
+        border: 0px;
+        background: none;
+        color: var(--secondary);
+        display: grid;
+        place-items: center;
+        cursor: pointer;
+      }
+      .rv-panel {
+        position: fixed;
+        right: 14px;
+        bottom: 14px;
+        width: min(340px, -28px + 100vw);
+        max-height: min(58dvh, 560px);
+        overflow: auto;
+        background: var(--surface);
+        border: 1px solid var(--border2);
+        border-radius: 14px;
+        box-shadow: var(--shadow);
+        padding: 14px 16px;
+        font-size: 13px;
+        color: var(--text);
+      }
+      .rv-panel h3 {
+        font-size: 12px;
+        letter-spacing: 0.06em;
+        text-transform: uppercase;
+        color: var(--muted);
+        margin: 12px 0px 6px;
+      }
+      .rv-panel h3:first-child {
+        margin-top: 0px;
+      }
+      .rv-panel ul {
+        list-style: none;
+        margin: 0px;
+        padding: 0px;
+        display: grid;
+        gap: 6px;
+      }
+      .rv-panel li {
+        line-height: 1.45;
+      }
+      .rv-panel li b {
+        color: var(--add);
+        font-weight: 700;
+      }
+      .rv-panel .rv-count {
+        font-size: 13px;
+        color: var(--secondary);
+      }
+      body.show-adds [data-add] {
+        outline: 2px dashed var(--add);
+        outline-offset: 3px;
+        position: relative;
+      }
+      body.show-adds [data-add]::after {
+        content: attr(data-add);
+        position: absolute;
+        top: -4px;
+        left: 4px;
+        transform: translateY(-100%);
+        z-index: 30;
+        background: var(--add);
+        color: var(--add-ink);
+        font:
+          700 12px / 1.35 ui-monospace,
+          SFMono-Regular,
+          Menlo,
+          monospace;
+        padding: 1px 6px;
+        border-radius: 5px;
+        pointer-events: none;
+        white-space: nowrap;
+      }
+      body.show-adds dialog[data-add] {
+        position: fixed;
+      }
+      body.show-adds .rv-r::after {
+        left: auto;
+        right: 4px;
+      }
+      .rv-notes {
+        margin: 48px 0px 24px;
+        border-top: 1px dashed var(--border2);
+        padding-top: 24px;
+      }
+      .rv-notes h2 {
+        font-size: 18px;
+        margin-bottom: 4px;
+      }
+      .rv-notes > p {
+        font-size: 13px;
+        color: var(--muted);
+        margin-bottom: 16px;
+      }
+      .rv-notes ol {
+        display: grid;
+        gap: 12px;
+        padding-left: 20px;
+        max-width: 900px;
+      }
+      .rv-notes li {
+        font-size: 14px;
+        line-height: 1.6;
+        color: var(--secondary);
+      }
+      .rv-notes li strong {
+        color: var(--text);
+      }
+      body .topbar .top-right {
+        margin-right: 330px;
+      }
+      @media (max-width: 767px) {
+        .rv {
+          top: 6px;
+          right: 48px;
+        }
+        .rv-bar {
+          padding: 2px;
+        }
+        .rv-switch .lbl {
+          display: none;
+        }
+        .rv-switch {
+          padding: 0px 8px;
+        }
+        body .topbar .top-right {
+          margin-right: 146px;
+        }
+        body .topbar .top-right .search-trigger {
+          display: none;
+        }
+      }
+      .v12-tag,
+      .bo11-badge,
+      .bo11-mini,
+      .bo11-count,
+      .v12-nav-group h3,
+      .v12-eyebrow,
+      .v12-local-setting,
+      .v12-save-label,
+      .v12-setting-row p,
+      .kbd,
+      kbd {
+        font-size: max(12px, 0.75rem);
+      }
+      .v12-save-label.is-dirty {
+        color: var(--text);
+        font-weight: 600;
+      }
+      .v12-settings-foot .avatar {
+        width: 30px;
+        height: 30px;
+        font-size: 12px;
+        flex: 0 0 auto;
+      }
+      .t-foot-id {
+        display: grid;
+        line-height: 1.3;
+        min-width: 0px;
+      }
+      .t-foot-id b {
+        font-size: 13px;
+        font-weight: 600;
+        color: var(--text);
+      }
+      .t-foot-id small {
+        font-size: 12px;
+        color: var(--muted);
+      }
+      .v12-search {
+        position: relative;
+      }
+      .t-search-res {
+        position: absolute;
+        left: 0px;
+        right: 0px;
+        top: calc(100% + 6px);
+        z-index: 60;
+        background: var(--surface);
+        border: 1px solid var(--border2);
+        border-radius: 12px;
+        box-shadow: var(--shadow);
+        padding: 6px;
+        display: grid;
+      }
+      body.t-compact .v12-setting-block {
+        padding-top: 18px;
+        padding-bottom: 18px;
+      }
+      body.t-compact .v12-setting-row {
+        padding: 10px 0px;
+      }
+      body.t-compact .v12-settings-page {
+        gap: 14px;
+      }
+      .t-ctl {
+        display: flex;
+        align-items: center;
+        gap: 8px;
+        flex: 0 0 auto;
+      }
+      .t-sub {
+        font-size: 12px;
+        color: var(--muted);
+      }
+      .t-sidebar-list {
+        display: grid;
+        gap: 2px;
+      }
+      .t-sidebar-list label {
+        display: flex;
+        align-items: center;
+        gap: 12px;
+        min-height: 44px;
+        padding: 0px 4px;
+        border-bottom: 1px solid var(--border);
+        font-size: 14px;
+      }
+      .t-sidebar-list label:last-child {
+        border-bottom: 0px;
+      }
+      .t-sidebar-list input {
+        width: 18px;
+        height: 18px;
+        accent-color: var(--primary);
+      }
+      .t-sidebar-list .grow {
+        flex: 1 1 0%;
+      }
+      @media (max-width: 767px) {
+        .v12-setting-row {
+          flex-wrap: wrap;
+          gap: 12px;
+        }
+        .v12-setting-row > .t-ctl,
+        .v12-setting-row > .btn {
+          width: 100%;
+        }
+        .v12-setting-row > .btn {
+          justify-content: center;
+        }
+        .v12-form-actions {
+          flex-wrap: wrap;
+        }
+      }
+      body .v12 select,
+      body .v12 input:not([type='checkbox']):not([type='radio']):not([type='file']),
+      body dialog select,
+      body dialog input[type='text'],
+      body dialog input[type='number'],
+      body .btn,
+      body .v12-tabs a,
+      body .bo11-tabs a,
+      body .v18-guide > summary,
+      body .v12-select {
+        min-height: 44px !important;
+      }
+      body .v12-tabs a,
+      body .bo11-tabs a,
+      body .v18-guide > summary {
+        display: inline-flex;
+        align-items: center;
+      }
+      body .btn {
+        display: inline-flex;
+        align-items: center;
+      }
+      body .v12 small,
+      body .v12-check-row small,
+      body .v12-save-label,
+      body .t-sub,
+      body dialog small {
+        font-size: max(12px, 0.75rem) !important;
+      }
+      .sr-only {
+        position: absolute;
+        width: 1px;
+        height: 1px;
+        overflow: hidden;
+        clip: rect(0px, 0px, 0px, 0px);
+        white-space: nowrap;
+      }
+      .v12-setting-row .t-ctl .v12-tag {
+        white-space: nowrap;
+      }
+      body .v12-table th,
+      body .v12-table td,
+      body .bo11-table th,
+      body .btn.sm {
+        font-size: max(12px, 0.75rem) !important;
+      }
+      @media (max-width: 767px) {
+        .v12-tabs {
+          overflow-x: auto;
+          flex-wrap: nowrap;
+        }
+        .v12-tabs a {
+          flex: 0 0 auto;
+        }
+      }
+      body .v12-table td p,
+      body .ob20-profile-themes p {
+        font-size: max(12px, 0.75rem) !important;
+      }
+      @media (max-width: 767px) {
+        body .v12-tabs,
+        body .bo11-tabs {
+          max-width: 100%;
+          scrollbar-width: none;
+          overflow-x: auto !important;
+          flex-wrap: nowrap !important;
+        }
+      }
+      [data-view],
+      [data-tabpanel],
+      .v12-settings-page > *,
+      .v12-form {
+        min-width: 0px;
+        max-width: 100%;
+      }
+      .v12-table-wrap,
+      .bo11-table-wrap {
+        position: relative;
+      }
+      .t-plans {
+        display: grid;
+        grid-template-columns: repeat(3, minmax(0px, 1fr));
+        gap: 14px;
+      }
+      .t-plan {
+        border: 1px solid var(--border);
+        border-radius: 12px;
+        padding: 18px;
+        display: grid;
+        gap: 8px;
+        align-content: start;
+        background: var(--surface);
+      }
+      .t-plan.on {
+        border-color: var(--primary);
+        background: var(--accent-bg);
+      }
+      .t-plan h3 {
+        font-size: 15px;
+        font-weight: 650;
+      }
+      .t-plan p {
+        font-size: 13px;
+        color: var(--secondary);
+      }
+      .t-plan .t-price {
+        font-size: 20px;
+        font-weight: 700;
+        color: var(--text);
+      }
+      .t-plan .t-price small {
+        font-size: 12px;
+        font-weight: 400;
+        color: var(--muted);
+      }
+      .t-plan .btn,
+      .t-plan .v12-tag {
+        justify-self: start;
+      }
+      .t-filters {
+        display: grid;
+        grid-template-columns: repeat(3, minmax(0px, 1fr));
+        gap: 12px;
+        margin-bottom: 14px;
+      }
+      .v12-settings-links {
+        margin-bottom: 20px;
+      }
+      @media (max-width: 767px) {
+        .t-plans,
+        .t-filters {
+          grid-template-columns: 1fr;
+        }
+      }
+      :root:not(.dark) {
+        --muted: #5c5c64;
+      }
+      :root:not(.dark) .v12-tag.green {
+        color: var(--success);
+      }
+      :root:not(.dark) .v12-tag.amber {
+        color: var(--warning);
+      }
+      :root:not(.dark) .v12-tag.purple {
+        color: var(--primary-hover);
+      }
+    </style>
+  </head>
+  <body
+    data-page="settings"
+    data-v13page="settings"
+    class="bellum-v18 v22-design v12-settings"
+    data-v22-view="settings"
+    data-screen="settings-outils"
+  >
+    <a class="skip" href="#content">Aller au contenu</a>
+    <aside class="sidebar" id="sidebar">
+      <div class="v12-settings-head">
+        <a class="v12-back" href="#bellum" data-toast="Retour à Ma journée."
+          ><svg
+            class="icon"
+            viewBox="0 0 24 24"
+            fill="none"
+            stroke="currentColor"
+            stroke-width="1.6"
+            stroke-linecap="round"
+            stroke-linejoin="round"
+            aria-hidden="true"
+          >
+            <path d="M19 12H5m6-6-6 6 6 6"></path></svg
+          >Revenir à Bellum</a
+        >
+        <h2>Paramètres</h2>
+        <label class="v12-search"
+          ><svg
+            class="icon"
+            viewBox="0 0 24 24"
+            fill="none"
+            stroke="currentColor"
+            stroke-width="1.6"
+            stroke-linecap="round"
+            stroke-linejoin="round"
+            aria-hidden="true"
+          >
+            <circle cx="10.5" cy="10.5" r="6.5"></circle>
+            <path d="m16 16 4 4"></path></svg
+          ><input
+            id="v12-settings-search"
+            aria-label="Rechercher un réglage"
+            placeholder="Rechercher un réglage…"
+            value=""
+            autocomplete="off"
+            aria-controls="t-search-res"
+            aria-expanded="false" />
+          <div class="t-search-res" id="t-search-res" role="listbox" hidden></div
+        ></label>
+      </div>
+      <nav class="v12-settings-nav" aria-label="Paramètres">
+        <section class="v12-nav-group">
+          <h3>Mon compte</h3>
+          <a class="v12-nav-link" href="settings-prefs.html" data-nav="settings-prefs:"
+            ><svg
+              class="icon"
+              viewBox="0 0 24 24"
+              fill="none"
+              stroke="currentColor"
+              stroke-width="1.6"
+              stroke-linecap="round"
+              stroke-linejoin="round"
+              aria-hidden="true"
+            >
+              <path d="M3 6h7m4 0h7M3 12h3m4 0h11M3 18h11m4 0h3"></path>
+              <circle cx="12" cy="6" r="2"></circle>
+              <circle cx="8" cy="12" r="2"></circle>
+              <circle cx="16" cy="18" r="2"></circle></svg
+            ><span>Préférences</span></a
+          ><a class="v12-nav-link" href="settings-compte.html#notifications" data-nav="settings-compte:notifications"
+            ><svg
+              class="icon"
+              viewBox="0 0 24 24"
+              fill="none"
+              stroke="currentColor"
+              stroke-width="1.6"
+              stroke-linecap="round"
+              stroke-linejoin="round"
+              aria-hidden="true"
+            >
+              <path d="M18 8a6 6 0 0 0-12 0c0 7-3 7-3 9h18c0-2-3-2-3-9m-12 9 1 3h4l1-3"></path></svg
+            ><span>Notifications</span></a
+          ><a class="v12-nav-link" href="settings-compte.html#securite" data-nav="settings-compte:securite"
+            ><svg
+              class="icon"
+              viewBox="0 0 24 24"
+              fill="none"
+              stroke="currentColor"
+              stroke-width="1.6"
+              stroke-linecap="round"
+              stroke-linejoin="round"
+              aria-hidden="true"
+            >
+              <path d="m12 2 9 4v6c0 5-9 10-9 10S3 17 3 12V6Z"></path>
+              <path d="m8 12 3 3 5-6"></path></svg
+            ><span>Sécurité</span></a
+          ><a class="v12-nav-link" href="settings-compte.html#donnees" data-nav="settings-compte:donnees"
+            ><svg
+              class="icon"
+              viewBox="0 0 24 24"
+              fill="none"
+              stroke="currentColor"
+              stroke-width="1.6"
+              stroke-linecap="round"
+              stroke-linejoin="round"
+              aria-hidden="true"
+            >
+              <path d="M12 3v12m-5-5 5 5 5-5M4 16v5h16v-5"></path></svg
+            ><span>Mes données</span></a
+          >
+        </section>
+        <section class="v12-nav-group">
+          <h3>Mon espace</h3>
+          <a class="v12-nav-link" href="settings-espace.html#profil" data-nav="settings-espace:profil"
+            ><svg
+              class="icon"
+              viewBox="0 0 24 24"
+              fill="none"
+              stroke="currentColor"
+              stroke-width="1.6"
+              stroke-linecap="round"
+              stroke-linejoin="round"
+              aria-hidden="true"
+            >
+              <rect x="4" y="3" width="12" height="18" rx="2"></rect>
+              <path d="M16 9h4v12H7M8 7h4M8 11h4M8 15h4M9 21v-3h3v3"></path></svg
+            ><span>Profil commercial</span></a
+          ><a
+            class="v12-nav-link"
+            href="#equipe"
+            data-toast="Équipe &amp; accès se règle à un seul endroit : Équipe › Administration (maquette du lot Équipe)."
+            ><svg
+              class="icon"
+              viewBox="0 0 24 24"
+              fill="none"
+              stroke="currentColor"
+              stroke-width="1.6"
+              stroke-linecap="round"
+              stroke-linejoin="round"
+              aria-hidden="true"
+            >
+              <circle cx="9" cy="8" r="3"></circle>
+              <path d="M3 21v-3a6 6 0 0 1 12 0v3m2-17a3 3 0 0 1 0 6m2 4a5 5 0 0 1 3 4v3"></path></svg
+            ><span>Équipe &amp; accès</span></a
+          ><a class="v12-nav-link" href="settings-espace.html#perimetres" data-nav="settings-espace:perimetres"
+            ><svg
+              class="icon"
+              viewBox="0 0 24 24"
+              fill="none"
+              stroke="currentColor"
+              stroke-width="1.6"
+              stroke-linecap="round"
+              stroke-linejoin="round"
+              aria-hidden="true"
+            >
+              <path d="m12 3 10 6-10 6L2 9l10-6ZM3 13l9 6 9-6M3 17l9 5 9-5"></path></svg
+            ><span>Périmètres &amp; sociétés</span></a
+          ><a class="v12-nav-link" href="settings-espace.html#regles" data-nav="settings-espace:regles"
+            ><svg
+              class="icon"
+              viewBox="0 0 24 24"
+              fill="none"
+              stroke="currentColor"
+              stroke-width="1.6"
+              stroke-linecap="round"
+              stroke-linejoin="round"
+              aria-hidden="true"
+            >
+              <path d="m3 6 1 1 2-2m-3 7 1 1 2-2m-3 7 1 1 2-2M10 6h11M10 12h11M10 18h11"></path></svg
+            ><span>Règles métier</span></a
+          ><a class="v12-nav-link" href="settings-espace.html#catalogues" data-nav="settings-espace:catalogues"
+            ><svg
+              class="icon"
+              viewBox="0 0 24 24"
+              fill="none"
+              stroke="currentColor"
+              stroke-width="1.6"
+              stroke-linecap="round"
+              stroke-linejoin="round"
+              aria-hidden="true"
+            >
+              <path d="M8 6h13M8 12h13M8 18h13M3 6h.01M3 12h.01M3 18h.01"></path></svg
+            ><span>Catalogues &amp; vocabulaire</span></a
+          ><a class="v12-nav-link" href="settings-espace.html#marque" data-nav="settings-espace:marque"
+            ><svg
+              class="icon"
+              viewBox="0 0 24 24"
+              fill="none"
+              stroke="currentColor"
+              stroke-width="1.6"
+              stroke-linecap="round"
+              stroke-linejoin="round"
+              aria-hidden="true"
+            >
+              <circle cx="12" cy="12" r="9"></circle>
+              <circle cx="8" cy="9" r="1"></circle>
+              <circle cx="13" cy="7" r="1"></circle>
+              <circle cx="17" cy="11" r="1"></circle>
+              <path d="M6 17h5"></path></svg
+            ><span>Marque &amp; documents</span></a
+          >
+        </section>
+        <section class="v12-nav-group">
+          <h3>Laura</h3>
+          <a class="v12-nav-link" href="settings-laura.html#comportement" data-nav="settings-laura:comportement"
+            ><svg
+              class="icon"
+              viewBox="0 0 24 24"
+              fill="none"
+              stroke="currentColor"
+              stroke-width="1.6"
+              stroke-linecap="round"
+              stroke-linejoin="round"
+              aria-hidden="true"
+            >
+              <path d="m12 3 2.5 6.5L21 12l-6.5 2.5L12 21l-2.5-6.5L3 12l6.5-2.5L12 3Z"></path>
+              <path d="m21 2 .5 1.5L23 4l-1.5.5L21 6l-.5-1.5L19 4l1.5-.5L21 2Z"></path></svg
+            ><span>Comportement</span></a
+          ><a class="v12-nav-link" href="settings-laura.html#memoire" data-nav="settings-laura:memoire"
+            ><svg
+              class="icon"
+              viewBox="0 0 24 24"
+              fill="none"
+              stroke="currentColor"
+              stroke-width="1.6"
+              stroke-linecap="round"
+              stroke-linejoin="round"
+              aria-hidden="true"
+            >
+              <path
+                d="M12 4c-4-3-8 0-7 4-4 2-3 7 0 8-1 4 4 7 7 3m0-15c4-3 8 0 7 4 4 2 3 7 0 8 1 4-4 7-7 3V4Z"
+              ></path></svg
+            ><span>Mémoire</span></a
+          ><a class="v12-nav-link" href="settings-laura.html#documents" data-nav="settings-laura:documents"
+            ><svg
+              class="icon"
+              viewBox="0 0 24 24"
+              fill="none"
+              stroke="currentColor"
+              stroke-width="1.6"
+              stroke-linecap="round"
+              stroke-linejoin="round"
+              aria-hidden="true"
+            >
+              <path d="M12 5c-3-2-6-2-9-1v15c3-1 6-1 9 1m0-15c3-2 6-2 9-1v15c-3-1-6-1-9 1V5Z"></path></svg
+            ><span>Documents &amp; références</span></a
+          ><a class="v12-nav-link" href="settings-laura.html#routines" data-nav="settings-laura:routines"
+            ><svg
+              class="icon"
+              viewBox="0 0 24 24"
+              fill="none"
+              stroke="currentColor"
+              stroke-width="1.6"
+              stroke-linecap="round"
+              stroke-linejoin="round"
+              aria-hidden="true"
+            >
+              <circle cx="12" cy="12" r="9"></circle>
+              <path d="m12 12 7-7M12 3v2M21 12h-2M12 21v-2M3 12h2"></path>
+              <circle cx="12" cy="12" r="4"></circle></svg
+            ><span>Routines &amp; veilles</span></a
+          >
+        </section>
+        <section class="v12-nav-group">
+          <h3>Outils &amp; administration</h3>
+          <a class="v12-nav-link" href="settings-integrations.html" data-nav="settings-integrations:"
+            ><svg
+              class="icon"
+              viewBox="0 0 24 24"
+              fill="none"
+              stroke="currentColor"
+              stroke-width="1.6"
+              stroke-linecap="round"
+              stroke-linejoin="round"
+              aria-hidden="true"
+            >
+              <path
+                d="m10 13 4-4m-6 6-2 2a4 4 0 0 1-6-6l5-5a4 4 0 0 1 6 0m2 3 2-2a4 4 0 0 1 6 6l-5 5a4 4 0 0 1-6 0"
+                transform="translate(1 0)"
+              ></path></svg
+            ><span>Connecteurs</span></a
+          ><a class="v12-nav-link" href="#imports" data-nav="settings-outils:imports"
+            ><svg
+              class="icon"
+              viewBox="0 0 24 24"
+              fill="none"
+              stroke="currentColor"
+              stroke-width="1.6"
+              stroke-linecap="round"
+              stroke-linejoin="round"
+              aria-hidden="true"
+            >
+              <path d="M12 15V3m-5 5 5-5 5 5M4 16v5h16v-5"></path></svg
+            ><span>Imports</span></a
+          ><a class="v12-nav-link" href="#mcp" data-nav="settings-outils:mcp"
+            ><svg
+              class="icon"
+              viewBox="0 0 24 24"
+              fill="none"
+              stroke="currentColor"
+              stroke-width="1.6"
+              stroke-linecap="round"
+              stroke-linejoin="round"
+              aria-hidden="true"
+            >
+              <circle cx="8" cy="8" r="5"></circle>
+              <path d="m12 12 9 9m-4-4 2-2m-5-1 2-2"></path></svg
+            ><span>Accès assistants / MCP</span></a
+          ><a class="v12-nav-link" href="#facturation" data-nav="settings-outils:facturation"
+            ><svg
+              class="icon"
+              viewBox="0 0 24 24"
+              fill="none"
+              stroke="currentColor"
+              stroke-width="1.6"
+              stroke-linecap="round"
+              stroke-linejoin="round"
+              aria-hidden="true"
+            >
+              <ellipse cx="9" cy="5" rx="6" ry="3"></ellipse>
+              <path
+                d="M3 5v5c0 4 12 4 12 0V5M3 10v5c0 4 12 4 12 0v-5m0 0c5 0 6 2 6 4s-1 4-6 4m6-4v5c0 2-5 4-10 2"
+              ></path></svg
+            ><span>Facturation</span></a
+          ><a class="v12-nav-link" href="#journal" data-nav="settings-outils:journal"
+            ><svg
+              class="icon"
+              viewBox="0 0 24 24"
+              fill="none"
+              stroke="currentColor"
+              stroke-width="1.6"
+              stroke-linecap="round"
+              stroke-linejoin="round"
+              aria-hidden="true"
+            >
+              <path d="M3 3v6h6M3.8 8a9 9 0 1 1-.6 8M12 7v5l4 2"></path></svg
+            ><span>Journal d’activité</span></a
+          ><a class="v12-nav-link" href="#aide" data-nav="settings-outils:aide"
+            ><svg
+              class="icon"
+              viewBox="0 0 24 24"
+              fill="none"
+              stroke="currentColor"
+              stroke-width="1.6"
+              stroke-linecap="round"
+              stroke-linejoin="round"
+              aria-hidden="true"
+            >
+              <circle cx="12" cy="12" r="9"></circle>
+              <path d="M9 9a3 3 0 1 1 4 3c-1 .5-1 1-1 2m0 3h.01"></path></svg
+            ><span>Aide &amp; signalements</span></a
+          >
+        </section>
+      </nav>
+      <footer class="v12-settings-foot">
+        <span class="avatar">TH</span><span class="t-foot-id"><b>Théo Haddad</b><small>Altaïs Conseil</small></span>
+      </footer>
+    </aside>
+    <div class="main-shell">
+      <header class="topbar" id="topbar">
+        <button class="icon-btn mobile-menu" data-act="mobile-menu" aria-label="Ouvrir le menu">
+          <svg
+            class="icon"
+            viewBox="0 0 24 24"
+            fill="none"
+            stroke="currentColor"
+            stroke-width="1.6"
+            stroke-linecap="round"
+            stroke-linejoin="round"
+            aria-hidden="true"
+          >
+            <path d="M3 6h18M3 12h18M3 18h18" />
+          </svg>
+        </button>
+        <div class="breadcrumb">
+          <a href="settings-prefs.html">Paramètres</a
+          ><svg
+            class="icon"
+            viewBox="0 0 24 24"
+            fill="none"
+            stroke="currentColor"
+            stroke-width="1.6"
+            stroke-linecap="round"
+            stroke-linejoin="round"
+            aria-hidden="true"
+          >
+            <path d="m9 5 7 7-7 7" /></svg
+          ><span id="t-crumb">Imports</span>
+        </div>
+        <div class="top-right">
+          <button
+            class="search-trigger"
+            data-toast="Recherche globale : comptes, contacts, affaires, réglages."
+            aria-label="Rechercher"
+          >
+            <svg
+              class="icon"
+              viewBox="0 0 24 24"
+              fill="none"
+              stroke="currentColor"
+              stroke-width="1.6"
+              stroke-linecap="round"
+              stroke-linejoin="round"
+              aria-hidden="true"
+            >
+              <circle cx="10.5" cy="10.5" r="6.5" />
+              <path d="m16 16 4 4" /></svg
+            ><span>Rechercher</span><kbd class="kbd">⌘ K</kbd></button
+          ><span class="avatar">TH</span>
+        </div>
+      </header>
+      <main id="content" class="canvas" tabindex="-1">
+        <div class="v12 v12-settings-page">
+          <div class="v12-mobile-settings">
+            <select data-v7-skip="1" class="v12-select" id="v12-settings-mobile" aria-label="Page de paramètres">
+              <optgroup label="Mon compte">
+                <option value="settings-prefs.html" data-nav="settings-prefs:">Préférences</option>
+                <option value="settings-compte.html#notifications" data-nav="settings-compte:notifications">
+                  Notifications
+                </option>
+                <option value="settings-compte.html#securite" data-nav="settings-compte:securite">Sécurité</option>
+                <option value="settings-compte.html#donnees" data-nav="settings-compte:donnees">Mes données</option>
+              </optgroup>
+              <optgroup label="Mon espace">
+                <option value="settings-espace.html#profil" data-nav="settings-espace:profil">Profil commercial</option>
+                <option value="settings-espace.html#perimetres" data-nav="settings-espace:perimetres">
+                  Périmètres &amp; sociétés
+                </option>
+                <option value="settings-espace.html#regles" data-nav="settings-espace:regles">Règles métier</option>
+                <option value="settings-espace.html#catalogues" data-nav="settings-espace:catalogues">
+                  Catalogues &amp; vocabulaire
+                </option>
+                <option value="settings-espace.html#marque" data-nav="settings-espace:marque">
+                  Marque &amp; documents
+                </option>
+              </optgroup>
+              <optgroup label="Laura">
+                <option value="settings-laura.html#comportement" data-nav="settings-laura:comportement">
+                  Comportement
+                </option>
+                <option value="settings-laura.html#memoire" data-nav="settings-laura:memoire">Mémoire</option>
+                <option value="settings-laura.html#documents" data-nav="settings-laura:documents">
+                  Documents &amp; références
+                </option>
+                <option value="settings-laura.html#routines" data-nav="settings-laura:routines">
+                  Routines &amp; veilles
+                </option>
+              </optgroup>
+              <optgroup label="Outils &amp; administration">
+                <option value="settings-integrations.html" data-nav="settings-integrations:">Connecteurs</option>
+                <option value="settings-outils.html#imports" data-nav="settings-outils:imports">Imports</option>
+                <option value="settings-outils.html#mcp" data-nav="settings-outils:mcp">Accès assistants / MCP</option>
+                <option value="settings-outils.html#facturation" data-nav="settings-outils:facturation">
+                  Facturation
+                </option>
+                <option value="settings-outils.html#journal" data-nav="settings-outils:journal">
+                  Journal d’activité
+                </option>
+                <option value="settings-outils.html#aide" data-nav="settings-outils:aide">
+                  Aide &amp; signalements
+                </option>
+              </optgroup>
+            </select>
+          </div>
+          <!-- ================= IMPORTS ================= -->
+          <section data-view="imports" data-crumb="Imports" data-title="Bellum · Réglages · Imports">
+            <header class="v12-header">
+              <div>
+                <div class="v12-eyebrow">Paramètres · Espace</div>
+                <h1>Imports</h1>
+                <p class="v12-desc">Prévisualiser et rapprocher avant de créer.</p>
+              </div>
+            </header>
+            <div class="v12-settings-links">
+              <article class="v12-settings-link">
+                <svg
+                  class="icon"
+                  viewBox="0 0 24 24"
+                  fill="none"
+                  stroke="currentColor"
+                  stroke-width="1.6"
+                  stroke-linecap="round"
+                  stroke-linejoin="round"
+                  aria-hidden="true"
+                >
+                  <circle cx="9" cy="8" r="3" />
+                  <path d="M3 21v-3a6 6 0 0 1 12 0v3m2-17a3 3 0 0 1 0 6m2 4a5 5 0 0 1 3 4v3" />
+                </svg>
+                <div>
+                  <h3>Vivier / consultants</h3>
+                  <p>Texte ou CSV : prévisualisation des profils, données absentes et doublons.</p>
+                  <button class="btn soft" type="button" data-open="dlg-import">
+                    Importer dans le vivier
+                    <svg
+                      class="icon small"
+                      viewBox="0 0 24 24"
+                      fill="none"
+                      stroke="currentColor"
+                      stroke-width="1.6"
+                      stroke-linecap="round"
+                      stroke-linejoin="round"
+                      aria-hidden="true"
+                    >
+                      <path d="M5 12h14m-6-6 6 6-6 6" />
+                    </svg>
+                  </button>
+                </div>
+              </article>
+              <article class="v12-settings-link">
+                <svg
+                  class="icon"
+                  viewBox="0 0 24 24"
+                  fill="none"
+                  stroke="currentColor"
+                  stroke-width="1.6"
+                  stroke-linecap="round"
+                  stroke-linejoin="round"
+                  aria-hidden="true"
+                >
+                  <path
+                    d="m10 13 4-4m-6 6-2 2a4 4 0 0 1-6-6l5-5a4 4 0 0 1 6 0m2 3 2-2a4 4 0 0 1 6 6l-5 5a4 4 0 0 1-6 0"
+                    transform="translate(1 0)"
+                  />
+                </svg>
+                <div>
+                  <h3>Depuis un outil connecté</h3>
+                  <p>Conserver l’identité des objets et relire les changements proposés.</p>
+                  <a href="settings-integrations.html" class="btn"
+                    ><svg
+                      class="icon small"
+                      viewBox="0 0 24 24"
+                      fill="none"
+                      stroke="currentColor"
+                      stroke-width="1.6"
+                      stroke-linecap="round"
+                      stroke-linejoin="round"
+                      aria-hidden="true"
+                    >
+                      <path
+                        d="m10 13 4-4m-6 6-2 2a4 4 0 0 1-6-6l5-5a4 4 0 0 1 6 0m2 3 2-2a4 4 0 0 1 6 6l-5 5a4 4 0 0 1-6 0"
+                        transform="translate(1 0)"
+                      /></svg
+                    >Ouvrir les connecteurs</a
+                  >
+                </div>
+              </article>
+              <article class="v12-settings-link" data-add="settings-espace.A2">
+                <svg
+                  class="icon"
+                  viewBox="0 0 24 24"
+                  fill="none"
+                  stroke="currentColor"
+                  stroke-width="1.6"
+                  stroke-linecap="round"
+                  stroke-linejoin="round"
+                  aria-hidden="true"
+                >
+                  <path d="M12 3v12m-5-5 5 5 5-5M4 16v5h16v-5" />
+                </svg>
+                <div>
+                  <h3>Exporter le vivier</h3>
+                  <p>
+                    Les 186 consultants, au format CSV ou Excel, avec leurs compétences et disponibilités. Les notes
+                    privées sont exclues.
+                  </p>
+                  <button class="btn" type="button" data-open="dlg-vivier-export">
+                    <svg
+                      class="icon small"
+                      viewBox="0 0 24 24"
+                      fill="none"
+                      stroke="currentColor"
+                      stroke-width="1.6"
+                      stroke-linecap="round"
+                      stroke-linejoin="round"
+                      aria-hidden="true"
+                    >
+                      <path d="M12 3v12m-5-5 5 5 5-5M4 16v5h16v-5" /></svg
+                    >Préparer l’export
+                  </button>
+                </div>
+              </article>
+            </div>
+            <section class="v12-setting-block">
+              <header>
+                <div>
+                  <h2>Ce qui sera vérifié</h2>
+                  <p>Une importation n’est pas une synchronisation permanente.</p>
+                </div>
+              </header>
+              <div class="v12-setting-row">
+                <div>
+                  <h3>Correspondance des champs</h3>
+                  <p>L’aperçu montre ce qui sera créé, rapproché ou laissé incomplet.</p>
+                </div>
+              </div>
+              <div class="v12-setting-row">
+                <div>
+                  <h3>Doublons et corrections</h3>
+                  <p>
+                    Une identité ambiguë ne se fusionne pas par nom seulement. Une valeur corrigée ne s’écrase pas sans
+                    revue.
+                  </p>
+                </div>
+              </div>
+              <div class="v12-setting-row">
+                <div>
+                  <h3>Historique</h3>
+                  <p>Dernier import : 42 profils le 17 oct. 2026 — 38 créés, 3 rapprochés, 1 laissé à relire.</p>
+                </div>
+                <a href="#journal" class="btn plain sm"
+                  ><svg
+                    class="icon small"
+                    viewBox="0 0 24 24"
+                    fill="none"
+                    stroke="currentColor"
+                    stroke-width="1.6"
+                    stroke-linecap="round"
+                    stroke-linejoin="round"
+                    aria-hidden="true"
+                  >
+                    <path d="M5 12h14m-6-6 6 6-6 6" /></svg
+                  >Voir le journal</a
+                >
+              </div>
+            </section>
+          </section>
+
+          <!-- ================= MCP ================= -->
+          <section
+            data-view="mcp"
+            data-crumb="Accès assistants / MCP"
+            data-title="Bellum · Réglages · Accès assistants / MCP"
+            hidden
+          >
+            <header class="v12-header">
+              <div>
+                <div class="v12-eyebrow">Paramètres · Espace</div>
+                <h1>Accès assistants / MCP</h1>
+                <p class="v12-desc">Donner un accès précis à un assistant, jamais tout l’espace par défaut.</p>
+              </div>
+            </header>
+            <section class="v12-setting-block">
+              <header>
+                <div>
+                  <h2>1 accès actif</h2>
+                  <p>Chaque accès a un propriétaire, un périmètre et une révocation.</p>
+                </div>
+              </header>
+              <div class="v12-setting-row">
+                <div>
+                  <h3>Assistant de Théo · poste de travail</h3>
+                  <p>Ouvert le 9 oct. 2026 · utilisé il y a 2 heures · lecture de mes dossiers autorisés.</p>
+                </div>
+                <div class="t-ctl">
+                  <span class="v12-tag green">Actif</span
+                  ><button type="button" class="btn plain sm" data-toast="Accès révoqué. L’assistant ne lit plus rien.">
+                    Révoquer
+                  </button>
+                </div>
+              </div>
+              <div class="v12-setting-row">
+                <div>
+                  <h3>Lecture et préparation</h3>
+                  <p>Comptes, contacts, signaux et affaires de ton périmètre. Rien en dehors.</p>
+                </div>
+                <span class="v12-tag purple">Autorisé</span>
+              </div>
+              <div class="v12-setting-row">
+                <div>
+                  <h3>Écritures sensibles</h3>
+                  <p>Les validations d’envoi, de publication ou de modification restent actives.</p>
+                </div>
+                <span class="v12-tag amber">Validation requise</span>
+              </div>
+            </section>
+            <section class="v12-setting-block">
+              <header>
+                <div>
+                  <h2>Cadre d’un nouvel accès</h2>
+                  <p>Préparer la configuration ; le jeton n’est délivré qu’après validation d’un administrateur.</p>
+                </div>
+              </header>
+              <form class="v12-form" novalidate data-saved="Demande d’accès envoyée à l’administrateur.">
+                <div class="v12-field">
+                  <label for="mc1">Nom de l’accès envisagé</label
+                  ><input id="mc1" type="text" value="Mon assistant commercial" />
+                </div>
+                <div class="v12-field">
+                  <label for="mc2">Périmètre demandé</label
+                  ><select id="mc2">
+                    <option selected>Mes dossiers autorisés</option>
+                    <option>Dossiers partagés autorisés</option>
+                  </select>
+                </div>
+                <label class="v12-check-row"
+                  ><input type="checkbox" checked /><span
+                    >Lecture uniquement<small>Aucun droit d’écriture délivré par ce formulaire.</small></span
+                  ></label
+                >
+                <div class="v12-form-actions">
+                  <span class="v12-save-label">Aucune modification en attente</span
+                  ><button type="submit" class="btn primary">Demander l’accès</button>
+                </div>
+              </form>
+            </section>
+            <section
+              class="v12-setting-block"
+              data-add="settings-outils.A2 · settings-integrations.A6"
+              data-anchor="cles"
+            >
+              <header>
+                <div>
+                  <h2>Clés d’API</h2>
+                  <p>
+                    Pour brancher un outil maison. Une clé n’est jamais réaffichée : elle se copie une fois, à sa
+                    création.
+                  </p>
+                </div>
+                <button type="button" class="btn" data-open="dlg-key">
+                  <svg
+                    class="icon"
+                    viewBox="0 0 24 24"
+                    fill="none"
+                    stroke="currentColor"
+                    stroke-width="1.6"
+                    stroke-linecap="round"
+                    stroke-linejoin="round"
+                    aria-hidden="true"
+                  >
+                    <path d="M12 5v14M5 12h14" /></svg
+                  >Créer une clé
+                </button>
+              </header>
+              <div class="v12-table-wrap">
+                <table class="v12-table">
+                  <thead>
+                    <tr>
+                      <th>Clé</th>
+                      <th>Droits</th>
+                      <th>Créée par</th>
+                      <th>Dernière utilisation</th>
+                      <th><span class="sr-only">Actions</span></th>
+                    </tr>
+                  </thead>
+                  <tbody>
+                    <tr>
+                      <td>
+                        <strong>Reporting mensuel</strong>
+                        <p>créée le 2 sept. 2026</p>
+                      </td>
+                      <td>Lecture</td>
+                      <td>Louis Schlegel</td>
+                      <td>Hier, 23 h 00</td>
+                      <td>
+                        <button type="button" class="btn plain sm" data-toast="Clé « Reporting mensuel » révoquée.">
+                          Révoquer
+                        </button>
+                      </td>
+                    </tr>
+                    <tr>
+                      <td>
+                        <strong>Import des candidatures</strong>
+                        <p>créée le 18 juil. 2026</p>
+                      </td>
+                      <td>Écriture · vivier</td>
+                      <td>Louis Schlegel</td>
+                      <td>Il y a 3 jours</td>
+                      <td>
+                        <button
+                          type="button"
+                          class="btn plain sm"
+                          data-toast="Clé « Import des candidatures » révoquée."
+                        >
+                          Révoquer
+                        </button>
+                      </td>
+                    </tr>
+                  </tbody>
+                </table>
+              </div>
+            </section>
+            <section class="v12-setting-block" data-add="settings-outils.A3">
+              <header>
+                <div>
+                  <h2>Garde-fous non négociables</h2>
+                  <p>Valables pour tout assistant, quel que soit l’accès accordé.</p>
+                </div>
+              </header>
+              <div class="bo11-checks">
+                <div class="bo11-check">
+                  <svg
+                    class="icon"
+                    viewBox="0 0 24 24"
+                    fill="none"
+                    stroke="currentColor"
+                    stroke-width="1.6"
+                    stroke-linecap="round"
+                    stroke-linejoin="round"
+                    aria-hidden="true"
+                  >
+                    <path d="m12 2 9 4v6c0 5-9 10-9 10S3 17 3 12V6Z" />
+                    <path d="m8 12 3 3 5-6" />
+                  </svg>
+                  <div>
+                    <strong>Aucun envoi</strong>
+                    <p>Un assistant prépare un message ; il ne l’envoie jamais.</p>
+                  </div>
+                </div>
+                <div class="bo11-check">
+                  <svg
+                    class="icon"
+                    viewBox="0 0 24 24"
+                    fill="none"
+                    stroke="currentColor"
+                    stroke-width="1.6"
+                    stroke-linecap="round"
+                    stroke-linejoin="round"
+                    aria-hidden="true"
+                  >
+                    <path d="m12 2 9 4v6c0 5-9 10-9 10S3 17 3 12V6Z" />
+                    <path d="m8 12 3 3 5-6" />
+                  </svg>
+                  <div>
+                    <strong>Pas de corps de message</strong>
+                    <p>Le contenu de tes e-mails ne sort pas vers un assistant.</p>
+                  </div>
+                </div>
+                <div class="bo11-check">
+                  <svg
+                    class="icon"
+                    viewBox="0 0 24 24"
+                    fill="none"
+                    stroke="currentColor"
+                    stroke-width="1.6"
+                    stroke-linecap="round"
+                    stroke-linejoin="round"
+                    aria-hidden="true"
+                  >
+                    <path d="m12 2 9 4v6c0 5-9 10-9 10S3 17 3 12V6Z" />
+                    <path d="m8 12 3 3 5-6" />
+                  </svg>
+                  <div>
+                    <strong>Coût annoncé</strong>
+                    <p>Une recherche payante affiche son coût en crédits avant de partir.</p>
+                  </div>
+                </div>
+              </div>
+            </section>
+          </section>
+
+          <!-- ================= FACTURATION ================= -->
+          <section data-view="facturation" data-crumb="Facturation" data-title="Bellum · Réglages · Facturation" hidden>
+            <header class="v12-header">
+              <div>
+                <div class="v12-eyebrow">Paramètres · Espace</div>
+                <h1>Crédits &amp; abonnement</h1>
+                <p class="v12-desc">Comprendre l’usage et le coût avant chaque opération.</p>
+              </div>
+            </header>
+            <div data-add="settings-outils.A1">
+              <nav class="v12-tabs" aria-label="Rubriques" data-tabs="bill">
+                <a href="#facturation" class="on" aria-current="page" data-tab="sub">Abonnement</a>
+                <a href="#credits" data-tab="cred" data-anchor="credits">Crédits</a>
+                <a href="#factures" data-tab="inv" data-anchor="factures">Factures &amp; paiement</a>
+                <a href="#rentabilite" data-tab="roi" data-anchor="rentabilite">Rentabilité</a>
+              </nav>
+            </div>
+            <div data-tabpanel="bill:sub">
+              <section class="v12-setting-block">
+                <header>
+                  <div>
+                    <h2>Ton abonnement</h2>
+                    <p>Altaïs Conseil · facturé à Altaïs Conseil SAS.</p>
+                  </div>
+                </header>
+                <div class="v12-setting-row">
+                  <div>
+                    <h3>Plan Équipe · 6 sièges</h3>
+                    <p>89 € HT par siège et par mois · 534 € HT · renouvellement le 1ᵉʳ nov. 2026.</p>
+                  </div>
+                  <span class="v12-tag green">Actif</span>
+                </div>
+                <div class="v12-setting-row">
+                  <div>
+                    <h3>Crédits disponibles</h3>
+                    <p>1 240 crédits sur 3 000 ce mois-ci · remise à niveau le 1ᵉʳ nov.</p>
+                  </div>
+                  <a href="#credits" class="btn plain sm"
+                    ><svg
+                      class="icon small"
+                      viewBox="0 0 24 24"
+                      fill="none"
+                      stroke="currentColor"
+                      stroke-width="1.6"
+                      stroke-linecap="round"
+                      stroke-linejoin="round"
+                      aria-hidden="true"
+                    >
+                      <path d="M5 12h14m-6-6 6 6-6 6" /></svg
+                    >Détail</a
+                  >
+                </div>
+                <div class="v12-setting-row">
+                  <div>
+                    <h3>Enrichissements et analyses</h3>
+                    <p>
+                      Le coût est confirmé au lancement de chaque opération payante : analyse de compte 20 crédits,
+                      ligne directe vérifiée 5 crédits.
+                    </p>
+                  </div>
+                  <span class="v12-tag purple">Coût annoncé</span>
+                </div>
+              </section>
+              <section class="v12-setting-block" data-add="settings-outils.A1">
+                <header>
+                  <div>
+                    <h2>Changer de plan</h2>
+                    <p>Le changement prend effet au prochain renouvellement ; un ajout de sièges, tout de suite.</p>
+                  </div>
+                </header>
+                <div class="t-plans">
+                  <div class="t-plan">
+                    <h3>Solo</h3>
+                    <p class="t-price">49 € <small>HT / mois</small></p>
+                    <p>1 siège · 800 crédits</p>
+                    <button type="button" class="btn sm" data-toast="Passage au plan Solo programmé au 1ᵉʳ nov.">
+                      Choisir
+                    </button>
+                  </div>
+                  <div class="t-plan on">
+                    <h3>Équipe</h3>
+                    <p class="t-price">89 € <small>HT / siège / mois</small></p>
+                    <p>2 à 20 sièges · 500 crédits par siège · pilotage d’équipe</p>
+                    <span class="v12-tag purple">Ton plan</span>
+                  </div>
+                  <div class="t-plan">
+                    <h3>Entreprise</h3>
+                    <p class="t-price">Sur devis</p>
+                    <p>Au-delà de 20 sièges · domaine personnalisé · accompagnement</p>
+                    <button type="button" class="btn sm" data-toast="Demande de devis envoyée à l’équipe BellumAI.">
+                      Nous écrire
+                    </button>
+                  </div>
+                </div>
+              </section>
+            </div>
+            <div data-tabpanel="bill:cred" hidden>
+              <div class="t-banner warn" data-add="settings-outils.A1">
+                <svg
+                  class="icon"
+                  viewBox="0 0 24 24"
+                  fill="none"
+                  stroke="currentColor"
+                  stroke-width="1.6"
+                  stroke-linecap="round"
+                  stroke-linejoin="round"
+                  aria-hidden="true"
+                >
+                  <circle cx="12" cy="12" r="9" />
+                  <path d="M12 11v6m0-10h.01" />
+                </svg>
+                <div class="grow">
+                  <strong>À ce rythme, tes crédits seront épuisés vers le 27 octobre.</strong>
+                  <p>Les analyses continuent d’afficher leur coût ; une recharge les rend disponibles tout de suite.</p>
+                </div>
+                <button type="button" class="btn" data-open="dlg-recharge">Recharger</button>
+              </div>
+              <section class="v12-setting-block">
+                <header>
+                  <div>
+                    <h2>Crédits disponibles</h2>
+                    <p>1 240 sur 3 000 · 59 % consommés depuis le 1ᵉʳ octobre.</p>
+                  </div>
+                </header>
+                <div class="t-axes">
+                  <div class="t-axis">
+                    <span>Consommés ce mois</span><span>1 760 / 3 000</span
+                    ><span class="bar"><i style="width: 59%"></i></span>
+                  </div>
+                </div>
+              </section>
+              <section class="v12-setting-block">
+                <header>
+                  <div>
+                    <h2>Historique d’usage</h2>
+                    <p>Chaque débit, avec l’opération qui l’a déclenché.</p>
+                  </div>
+                </header>
+                <div class="v12-table-wrap">
+                  <table class="v12-table">
+                    <thead>
+                      <tr>
+                        <th>Opération</th>
+                        <th>Par</th>
+                        <th>Date</th>
+                        <th>Crédits</th>
+                      </tr>
+                    </thead>
+                    <tbody>
+                      <tr>
+                        <td>Analyse de compte · Groupe Hélios</td>
+                        <td>Maëva Coet</td>
+                        <td>22 oct., 09 h 14</td>
+                        <td>−20</td>
+                      </tr>
+                      <tr>
+                        <td>Ligne directe vérifiée · Paul Ferrer</td>
+                        <td>Théo Haddad</td>
+                        <td>21 oct., 17 h 02</td>
+                        <td>−5</td>
+                      </tr>
+                      <tr>
+                        <td>Analyse de compte · NovaSanté · échec de collecte</td>
+                        <td>Sarah Benali</td>
+                        <td>20 oct., 11 h 40</td>
+                        <td>−20</td>
+                      </tr>
+                      <tr>
+                        <td>Remboursement automatique de la nuit · analyse NovaSanté en échec</td>
+                        <td>BellumAI</td>
+                        <td>21 oct., 03 h 00</td>
+                        <td>+20</td>
+                      </tr>
+                    </tbody>
+                  </table>
+                </div>
+                <small class="t-sub"
+                  >Un crédit débité pour une opération en échec est rendu chaque nuit, sans demande de ta part.</small
+                >
+              </section>
+            </div>
+            <div data-tabpanel="bill:inv" hidden data-add="settings-outils.A1">
+              <section class="v12-setting-block">
+                <header>
+                  <div>
+                    <h2>Moyen de paiement</h2>
+                    <p>Prélevé à chaque renouvellement.</p>
+                  </div>
+                </header>
+                <div class="v12-setting-row">
+                  <div>
+                    <h3>Carte Visa se terminant par 4821</h3>
+                    <p>Expire en 09/2028 · au nom d’Altaïs Conseil SAS.</p>
+                  </div>
+                  <button type="button" class="btn" data-toast="Le formulaire de paiement sécurisé s’ouvre.">
+                    Remplacer
+                  </button>
+                </div>
+                <div class="v12-setting-row">
+                  <div>
+                    <h3>Adresse de facturation</h3>
+                    <p>Altaïs Conseil SAS · 18 rue de la République, 69002 Lyon · TVA FR 41 812457309</p>
+                  </div>
+                  <button type="button" class="btn plain" data-toast="Adresse de facturation modifiable.">
+                    Modifier
+                  </button>
+                </div>
+              </section>
+              <section class="v12-setting-block">
+                <header>
+                  <div>
+                    <h2>Factures</h2>
+                    <p>Les factures de BellumAI à ton espace.</p>
+                  </div>
+                </header>
+                <div class="v12-table-wrap">
+                  <table class="v12-table">
+                    <thead>
+                      <tr>
+                        <th>Facture</th>
+                        <th>Période</th>
+                        <th>Montant TTC</th>
+                        <th>État</th>
+                        <th><span class="sr-only">Télécharger</span></th>
+                      </tr>
+                    </thead>
+                    <tbody>
+                      <tr>
+                        <td>F-2026-10-0418</td>
+                        <td>Octobre 2026</td>
+                        <td>640,80 €</td>
+                        <td><span class="v12-tag green">Payée</span></td>
+                        <td>
+                          <button type="button" class="btn plain sm" data-toast="Facture téléchargée (PDF).">
+                            <svg
+                              class="icon small"
+                              viewBox="0 0 24 24"
+                              fill="none"
+                              stroke="currentColor"
+                              stroke-width="1.6"
+                              stroke-linecap="round"
+                              stroke-linejoin="round"
+                              aria-hidden="true"
+                            >
+                              <path d="M12 3v12m-5-5 5 5 5-5M4 16v5h16v-5" /></svg
+                            >PDF
+                          </button>
+                        </td>
+                      </tr>
+                      <tr>
+                        <td>F-2026-09-0377</td>
+                        <td>Septembre 2026</td>
+                        <td>640,80 €</td>
+                        <td><span class="v12-tag green">Payée</span></td>
+                        <td>
+                          <button type="button" class="btn plain sm" data-toast="Facture téléchargée (PDF).">
+                            <svg
+                              class="icon small"
+                              viewBox="0 0 24 24"
+                              fill="none"
+                              stroke="currentColor"
+                              stroke-width="1.6"
+                              stroke-linecap="round"
+                              stroke-linejoin="round"
+                              aria-hidden="true"
+                            >
+                              <path d="M12 3v12m-5-5 5 5 5-5M4 16v5h16v-5" /></svg
+                            >PDF
+                          </button>
+                        </td>
+                      </tr>
+                      <tr>
+                        <td>F-2026-09-0352</td>
+                        <td>Recharge 1 000 crédits</td>
+                        <td>180,00 €</td>
+                        <td><span class="v12-tag green">Payée</span></td>
+                        <td>
+                          <button type="button" class="btn plain sm" data-toast="Facture téléchargée (PDF).">
+                            <svg
+                              class="icon small"
+                              viewBox="0 0 24 24"
+                              fill="none"
+                              stroke="currentColor"
+                              stroke-width="1.6"
+                              stroke-linecap="round"
+                              stroke-linejoin="round"
+                              aria-hidden="true"
+                            >
+                              <path d="M12 3v12m-5-5 5 5 5-5M4 16v5h16v-5" /></svg
+                            >PDF
+                          </button>
+                        </td>
+                      </tr>
+                    </tbody>
+                  </table>
+                </div>
+              </section>
+            </div>
+            <div data-tabpanel="bill:roi" hidden data-add="settings-outils.A1">
+              <section class="v12-setting-block">
+                <header>
+                  <div>
+                    <h2>Ce que BellumAI doit rapporter</h2>
+                    <p>Un calcul à partir de tes chiffres, pas une promesse.</p>
+                  </div>
+                </header>
+                <div class="v12-fields">
+                  <div class="v12-field">
+                    <label for="ro1">TJM moyen de tes missions · € HT</label
+                    ><input id="ro1" type="number" value="620" />
+                  </div>
+                  <div class="v12-field">
+                    <label for="ro2">Marge moyenne · %</label><input id="ro2" type="number" value="28" />
+                  </div>
+                  <div class="v12-field">
+                    <label for="ro3">Durée moyenne d’une mission · jours</label
+                    ><input id="ro3" type="number" value="140" />
+                  </div>
+                  <div class="v12-field">
+                    <label for="ro4">Coût annuel de BellumAI · € HT</label><input id="ro4" type="number" value="6408" />
+                  </div>
+                </div>
+                <div class="t-banner">
+                  <div class="grow">
+                    <strong>Une mission signée couvre 3,8 années d’abonnement.</strong>
+                    <p>
+                      620 € × 140 jours × 28 % = 24 304 € de marge par mission, pour 6 408 € HT d’abonnement annuel.
+                    </p>
+                  </div>
+                </div>
+              </section>
+            </div>
+          </section>
+
+          <!-- ================= JOURNAL ================= -->
+          <section
+            data-view="journal"
+            data-crumb="Journal d’activité"
+            data-title="Bellum · Réglages · Journal d’activité"
+            hidden
+          >
+            <header class="v12-header">
+              <div>
+                <div class="v12-eyebrow">Paramètres · Espace</div>
+                <h1>Journal d’activité</h1>
+                <p class="v12-desc">
+                  Les modifications vérifiables de l’espace. Aucune conversation privée n’est exposée.
+                </p>
+              </div>
+              <button
+                type="button"
+                class="btn"
+                data-toast="Journal exporté (CSV, 30 derniers jours)."
+                data-add="settings-outils.A4"
+              >
+                <svg
+                  class="icon"
+                  viewBox="0 0 24 24"
+                  fill="none"
+                  stroke="currentColor"
+                  stroke-width="1.6"
+                  stroke-linecap="round"
+                  stroke-linejoin="round"
+                  aria-hidden="true"
+                >
+                  <path d="M12 3v12m-5-5 5 5 5-5M4 16v5h16v-5" /></svg
+                >Exporter
+              </button>
+            </header>
+            <div data-add="settings-outils.A4">
+              <div class="t-filters">
+                <div class="v12-field">
+                  <label for="jf1">Type</label
+                  ><select id="jf1">
+                    <option>Tous les changements</option>
+                    <option>Membres &amp; rôles</option>
+                    <option>Connecteurs</option>
+                    <option>Règles de l’espace</option>
+                    <option>Exports</option>
+                  </select>
+                </div>
+                <div class="v12-field">
+                  <label for="jf2">Membre</label
+                  ><select id="jf2">
+                    <option>Tous</option>
+                    <option>Théo Haddad</option>
+                    <option>Louis Schlegel</option>
+                    <option>Maëva Coet</option>
+                    <option>Sarah Benali</option>
+                  </select>
+                </div>
+                <div class="v12-field">
+                  <label for="jf3">Période</label
+                  ><select id="jf3">
+                    <option>30 derniers jours</option>
+                    <option>7 derniers jours</option>
+                    <option>12 mois</option>
+                  </select>
+                </div>
+              </div>
+              <div class="v12-table-wrap">
+                <table class="v12-table">
+                  <thead>
+                    <tr>
+                      <th>Changement</th>
+                      <th>Par</th>
+                      <th>Date</th>
+                    </tr>
+                  </thead>
+                  <tbody>
+                    <tr>
+                      <td>
+                        <strong>Invitation envoyée</strong>
+                        <p>claire.fontaine@altais-conseil.fr · rôle Commercial</p>
+                      </td>
+                      <td>Théo Haddad</td>
+                      <td>21 oct., 16 h 20</td>
+                    </tr>
+                    <tr>
+                      <td>
+                        <strong>Règle modifiée</strong>
+                        <p>Pipeline · « Proposition » : 14 → 21 jours</p>
+                      </td>
+                      <td>Théo Haddad</td>
+                      <td>20 oct., 10 h 05</td>
+                    </tr>
+                    <tr>
+                      <td>
+                        <strong>Connecteur branché</strong>
+                        <p>HubSpot · lecture des comptes, contacts et affaires</p>
+                      </td>
+                      <td>Louis Schlegel</td>
+                      <td>17 oct., 14 h 48</td>
+                    </tr>
+                    <tr>
+                      <td>
+                        <strong>Rôle changé</strong>
+                        <p>Sarah Benali : Commerciale → Responsable d’agence</p>
+                      </td>
+                      <td>Théo Haddad</td>
+                      <td>12 oct., 09 h 31</td>
+                    </tr>
+                    <tr>
+                      <td>
+                        <strong>Export de l’espace</strong>
+                        <p>Comptes, signaux, affaires et vivier · ZIP</p>
+                      </td>
+                      <td>Théo Haddad</td>
+                      <td>30 sept., 18 h 02</td>
+                    </tr>
+                  </tbody>
+                </table>
+              </div>
+            </div>
+            <div class="v12-note">
+              <svg
+                class="icon"
+                viewBox="0 0 24 24"
+                fill="none"
+                stroke="currentColor"
+                stroke-width="1.6"
+                stroke-linecap="round"
+                stroke-linejoin="round"
+                aria-hidden="true"
+              >
+                <circle cx="12" cy="12" r="9" />
+                <path d="M12 11v6m0-10h.01" />
+              </svg>
+              <div>Réservé au propriétaire et aux administrateurs. Conservé 12 mois.</div>
+            </div>
+          </section>
+
+          <!-- ================= AIDE ================= -->
+          <section
+            data-view="aide"
+            data-crumb="Aide &amp; signalements"
+            data-title="Bellum · Réglages · Aide & signalements"
+            hidden
+          >
+            <header class="v12-header">
+              <div>
+                <div class="v12-eyebrow">Paramètres · Personnel</div>
+                <h1>Aide &amp; signalements</h1>
+                <p class="v12-desc">Décrire le résultat attendu, garder une trace de ce qui bloque.</p>
+              </div>
+              <button type="button" class="btn primary" data-open="dlg-report">
+                <svg
+                  class="icon"
+                  viewBox="0 0 24 24"
+                  fill="none"
+                  stroke="currentColor"
+                  stroke-width="1.6"
+                  stroke-linecap="round"
+                  stroke-linejoin="round"
+                  aria-hidden="true"
+                >
+                  <path d="M12 5v14M5 12h14" /></svg
+                >Préparer un signalement
+              </button>
+            </header>
+            <div class="v12-settings-links">
+              <article class="v12-settings-link">
+                <svg
+                  class="icon"
+                  viewBox="0 0 24 24"
+                  fill="none"
+                  stroke="currentColor"
+                  stroke-width="1.6"
+                  stroke-linecap="round"
+                  stroke-linejoin="round"
+                  aria-hidden="true"
+                >
+                  <path d="M8 6h13M8 12h13M8 18h13M3 6h.01M3 12h.01M3 18h.01" />
+                </svg>
+                <div>
+                  <h3>Raccourcis</h3>
+                  <p>Les commandes qui facilitent la navigation.</p>
+                  <a href="settings-prefs.html#raccourcis" class="btn plain sm"
+                    ><svg
+                      class="icon small"
+                      viewBox="0 0 24 24"
+                      fill="none"
+                      stroke="currentColor"
+                      stroke-width="1.6"
+                      stroke-linecap="round"
+                      stroke-linejoin="round"
+                      aria-hidden="true"
+                    >
+                      <path d="M5 12h14m-6-6 6 6-6 6" /></svg
+                    >Consulter</a
+                  >
+                </div>
+              </article>
+              <article class="v12-settings-link">
+                <svg
+                  class="icon"
+                  viewBox="0 0 24 24"
+                  fill="none"
+                  stroke="currentColor"
+                  stroke-width="1.6"
+                  stroke-linecap="round"
+                  stroke-linejoin="round"
+                  aria-hidden="true"
+                >
+                  <path d="M12 3v12m-5-5 5 5 5-5M4 16v5h16v-5" />
+                </svg>
+                <div>
+                  <h3>Conserver mon travail</h3>
+                  <p>Exporter tes données avant de quitter l’espace.</p>
+                  <a href="settings-compte.html#donnees" class="btn plain sm"
+                    ><svg
+                      class="icon small"
+                      viewBox="0 0 24 24"
+                      fill="none"
+                      stroke="currentColor"
+                      stroke-width="1.6"
+                      stroke-linecap="round"
+                      stroke-linejoin="round"
+                      aria-hidden="true"
+                    >
+                      <path d="M5 12h14m-6-6 6 6-6 6" /></svg
+                    >Mes données</a
+                  >
+                </div>
+              </article>
+            </div>
+            <section class="v12-setting-block" data-add="settings-prefs.A2">
+              <header>
+                <div>
+                  <h2>Revoir les débuts</h2>
+                  <p>Rien n’est redemandé, rien n’est écrit à ta place.</p>
+                </div>
+              </header>
+              <div class="v12-setting-row">
+                <div>
+                  <h3>Relancer le tutoriel de démarrage</h3>
+                  <p>Réaffiche la liste de démarrage dans Ma journée. Tes réponses au questionnaire sont conservées.</p>
+                </div>
+                <button type="button" class="btn" data-toast="La liste de démarrage réapparaît dans Ma journée.">
+                  Réafficher
+                </button>
+              </div>
+              <div class="v12-setting-row">
+                <div>
+                  <h3>Revoir la visite guidée</h3>
+                  <p>Repart du premier écran, comme la première fois.</p>
+                </div>
+                <button type="button" class="btn" data-toast="La visite guidée démarre.">Revoir</button>
+              </div>
+              <div class="v12-setting-row">
+                <div>
+                  <h3>Revoir le scénario commercial</h3>
+                  <p>
+                    Rejoue « préparer un premier contact » sur ton dernier compte analysé et son interlocuteur classé
+                    premier.
+                  </p>
+                </div>
+                <button type="button" class="btn" data-toast="Le scénario démarre sur Altiver Industries.">
+                  Revoir le scénario
+                </button>
+              </div>
+            </section>
+            <section class="v12-setting-block">
+              <header>
+                <div>
+                  <h2>Mes signalements</h2>
+                  <p>Ce que tu as transmis à l’équipe BellumAI, et où ça en est.</p>
+                </div>
+              </header>
+              <div class="v12-setting-row">
+                <div>
+                  <h3>L’export du vivier ignore la disponibilité</h3>
+                  <p>Transmis le 15 oct. · réponse de l’équipe le 16 oct.</p>
+                </div>
+                <span class="v12-tag green">Corrigé</span>
+              </div>
+              <div class="v12-setting-row">
+                <div>
+                  <h3>Le rappel de relance arrive deux fois</h3>
+                  <p>Transmis le 20 oct.</p>
+                </div>
+                <span class="v12-tag amber">En cours d’analyse</span>
+              </div>
+            </section>
+            <div class="v12-note">
+              <svg
+                class="icon"
+                viewBox="0 0 24 24"
+                fill="none"
+                stroke="currentColor"
+                stroke-width="1.6"
+                stroke-linecap="round"
+                stroke-linejoin="round"
+                aria-hidden="true"
+              >
+                <circle cx="12" cy="12" r="9" />
+                <path d="M12 11v6m0-10h.01" />
+              </svg>
+              <div>Pour un retour utile : le parcours suivi, ce qui s’est passé et ce que tu attendais.</div>
+            </div>
+          </section>
+        </div>
+        <section class="rv-notes" aria-labelledby="rv-notes-t">
+          <h2 id="rv-notes-t">Points à discuter</h2>
+          <p>Notes de conception pour Louis — hors produit. 7 ajouts, 6 retraits sur cet écran.</p>
+          <ol>
+            <li>
+              <strong>Facturation est le seul écran de Théo entièrement vide.</strong> On le remplit sous sa forme
+              (lignes + étiquettes) et on range le reste du produit en quatre onglets : Abonnement · Crédits · Factures
+              &amp; paiement · Rentabilité. Le libellé de menu passe à « Facturation » (décision du 22/10) ; titre de
+              page à aligner : « Facturation » ou « Crédits &amp; abonnement » ?
+            </li>
+            <li>
+              <strong>Le calculateur de rentabilité</strong> est un argument d’achat plus qu’un réglage. Gardé en 4ᵉ
+              onglet ; alternative : le sortir vers la page de plan publique et ne garder ici que l’usage.
+            </li>
+            <li>
+              <strong>Clés d’API sous MCP.</strong> Deux familles d’accès techniques au même endroit. La clé n’est
+              jamais affichée : ni préfixe, ni fin, ni « afficher ».
+            </li>
+            <li>
+              <strong>Journal (A4).</strong> Filtres en tête, export à droite, réservé aux gestionnaires. Pour un
+              commercial, l’entrée de menu disparaît plutôt que d’afficher une page vide.
+            </li>
+            <li>
+              <strong>« Accès assistants » : Théo ne montre qu’un formulaire d’intention.</strong> On garde ce
+              formulaire pour un nouvel accès, mais l’écran commence par les accès réels, révocables.
+            </li>
+          </ol>
+        </section>
+      </main>
+    </div>
+    <dialog class="v12-dialog wide" data-dlg id="dlg-import" aria-labelledby="dlg-import-t">
+      <div class="dialog-head">
+        <h2 id="dlg-import-t">Importer dans le vivier</h2>
+        <button class="icon-btn" data-close aria-label="Fermer">
+          <svg
+            class="icon"
+            viewBox="0 0 24 24"
+            fill="none"
+            stroke="currentColor"
+            stroke-width="1.6"
+            stroke-linecap="round"
+            stroke-linejoin="round"
+            aria-hidden="true"
+          >
+            <path d="m6 6 12 12M6 18 18 6" />
+          </svg>
+        </button>
+      </div>
+      <div class="dialog-body">
+        <div class="v12">
+          <div class="v12-field"><label for="im1">Fichier CSV ou Excel</label><input id="im1" type="file" /></div>
+          <div class="v12-field" style="margin-top: 12px">
+            <label for="im2">Ou coller du texte</label
+            ><textarea id="im2" rows="4" placeholder="Un profil par ligne : nom, poste, compétences…"></textarea>
+          </div>
+          <div class="v12-note" style="margin-top: 12px">
+            <svg
+              class="icon"
+              viewBox="0 0 24 24"
+              fill="none"
+              stroke="currentColor"
+              stroke-width="1.6"
+              stroke-linecap="round"
+              stroke-linejoin="round"
+              aria-hidden="true"
+            >
+              <circle cx="12" cy="12" r="9" />
+              <path d="M12 11v6m0-10h.01" />
+            </svg>
+            <div>Rien n’est créé avant l’aperçu : tu verras ce qui sera créé, rapproché ou laissé incomplet.</div>
+          </div>
+        </div>
+      </div>
+      <div class="dialog-footer">
+        <button type="button" class="btn plain" data-close>Annuler</button
+        ><button
+          type="button"
+          class="btn primary"
+          data-close
+          data-toast="Aperçu prêt : 24 profils, 2 doublons possibles."
+        >
+          Voir l’aperçu
+        </button>
+      </div>
+    </dialog>
+    <dialog class="v12-dialog" data-dlg id="dlg-vivier-export" aria-labelledby="dlg-vx-t" data-add="settings-espace.A2">
+      <div class="dialog-head">
+        <h2 id="dlg-vx-t">Exporter le vivier</h2>
+        <button class="icon-btn" data-close aria-label="Fermer">
+          <svg
+            class="icon"
+            viewBox="0 0 24 24"
+            fill="none"
+            stroke="currentColor"
+            stroke-width="1.6"
+            stroke-linecap="round"
+            stroke-linejoin="round"
+            aria-hidden="true"
+          >
+            <path d="m6 6 12 12M6 18 18 6" />
+          </svg>
+        </button>
+      </div>
+      <div class="dialog-body">
+        <div class="v12">
+          <div class="v12-field">
+            <label for="vx1">Format</label
+            ><select id="vx1">
+              <option>CSV</option>
+              <option>Excel</option>
+            </select>
+          </div>
+          <label class="v12-check-row"><input type="checkbox" checked /><span>Inclure les disponibilités</span></label>
+          <label class="v12-check-row"
+            ><input type="checkbox" checked /><span>Inclure les compétences rapprochées</span></label
+          >
+          <small>Les notes privées et les données de contact personnelles sont exclues.</small>
+        </div>
+      </div>
+      <div class="dialog-footer">
+        <button type="button" class="btn plain" data-close>Annuler</button
+        ><button type="button" class="btn primary" data-close data-toast="Export du vivier prêt : 186 consultants.">
+          <svg
+            class="icon"
+            viewBox="0 0 24 24"
+            fill="none"
+            stroke="currentColor"
+            stroke-width="1.6"
+            stroke-linecap="round"
+            stroke-linejoin="round"
+            aria-hidden="true"
+          >
+            <path d="M12 3v12m-5-5 5 5 5-5M4 16v5h16v-5" /></svg
+          >Exporter
+        </button>
+      </div>
+    </dialog>
+    <dialog class="v12-dialog" data-dlg id="dlg-key" aria-labelledby="dlg-key-t" data-add="settings-outils.A2">
+      <div class="dialog-head">
+        <h2 id="dlg-key-t">Créer une clé d’API</h2>
+        <button class="icon-btn" data-close aria-label="Fermer">
+          <svg
+            class="icon"
+            viewBox="0 0 24 24"
+            fill="none"
+            stroke="currentColor"
+            stroke-width="1.6"
+            stroke-linecap="round"
+            stroke-linejoin="round"
+            aria-hidden="true"
+          >
+            <path d="m6 6 12 12M6 18 18 6" />
+          </svg>
+        </button>
+      </div>
+      <div class="dialog-body">
+        <div class="v12">
+          <div class="v12-field">
+            <label for="ky1">Nom de la clé</label
+            ><input id="ky1" type="text" placeholder="Ex. Tableau de bord interne" />
+          </div>
+          <div class="v12-field" style="margin-top: 12px">
+            <label for="ky2">Droits</label
+            ><select id="ky2">
+              <option>Lecture</option>
+              <option>Écriture · vivier</option>
+            </select>
+          </div>
+          <div class="v12-note" style="margin-top: 12px">
+            <svg
+              class="icon"
+              viewBox="0 0 24 24"
+              fill="none"
+              stroke="currentColor"
+              stroke-width="1.6"
+              stroke-linecap="round"
+              stroke-linejoin="round"
+              aria-hidden="true"
+            >
+              <rect x="5" y="10" width="14" height="11" rx="2" />
+              <path d="M8 10V7a4 4 0 0 1 8 0v3m-4 5v2" />
+            </svg>
+            <div>
+              La clé est copiée dans ton presse-papiers une seule fois, à la création. Bellum ne l’affiche ni ne la
+              réaffiche jamais.
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="dialog-footer">
+        <button type="button" class="btn plain" data-close>Annuler</button
+        ><button type="button" class="btn primary" data-close data-toast="Clé créée et copiée dans ton presse-papiers.">
+          Créer et copier
+        </button>
+      </div>
+    </dialog>
+    <dialog class="v12-dialog" data-dlg id="dlg-recharge" aria-labelledby="dlg-re-t" data-add="settings-outils.A1">
+      <div class="dialog-head">
+        <h2 id="dlg-re-t">Recharger des crédits</h2>
+        <button class="icon-btn" data-close aria-label="Fermer">
+          <svg
+            class="icon"
+            viewBox="0 0 24 24"
+            fill="none"
+            stroke="currentColor"
+            stroke-width="1.6"
+            stroke-linecap="round"
+            stroke-linejoin="round"
+            aria-hidden="true"
+          >
+            <path d="m6 6 12 12M6 18 18 6" />
+          </svg>
+        </button>
+      </div>
+      <div class="dialog-body">
+        <div class="v12">
+          <div class="t-sidebar-list">
+            <label><input type="radio" name="pack" /><span class="grow">500 crédits</span><span>95 € HT</span></label>
+            <label
+              ><input type="radio" name="pack" checked /><span class="grow">1 000 crédits</span
+              ><span>180 € HT</span></label
+            >
+            <label
+              ><input type="radio" name="pack" /><span class="grow">3 000 crédits</span><span>480 € HT</span></label
+            >
+          </div>
+          <small>Prélevé sur la carte se terminant par 4821. Les crédits rechargés n’expirent pas.</small>
+        </div>
+      </div>
+      <div class="dialog-footer">
+        <button type="button" class="btn plain" data-close>Annuler</button
+        ><button type="button" class="btn primary" data-close data-toast="1 000 crédits ajoutés. Facture disponible.">
+          Payer 216 € TTC
+        </button>
+      </div>
+    </dialog>
+    <dialog class="v12-dialog wide" data-dlg id="dlg-report" aria-labelledby="dlg-report-t">
+      <div class="dialog-head">
+        <h2 id="dlg-report-t">Préparer un signalement</h2>
+        <button class="icon-btn" data-close aria-label="Fermer">
+          <svg
+            class="icon"
+            viewBox="0 0 24 24"
+            fill="none"
+            stroke="currentColor"
+            stroke-width="1.6"
+            stroke-linecap="round"
+            stroke-linejoin="round"
+            aria-hidden="true"
+          >
+            <path d="m6 6 12 12M6 18 18 6" />
+          </svg>
+        </button>
+      </div>
+      <div class="dialog-body">
+        <div class="v12">
+          <div class="v12-field">
+            <label for="rp1">Ce que tu faisais</label
+            ><input id="rp1" type="text" placeholder="Ex. j’exportais le vivier depuis Imports" />
+          </div>
+          <div class="v12-field" style="margin-top: 12px">
+            <label for="rp2">Ce qui s’est passé</label><textarea id="rp2" rows="3"></textarea>
+          </div>
+          <div class="v12-field" style="margin-top: 12px">
+            <label for="rp3">Ce que tu attendais</label><textarea id="rp3" rows="2"></textarea>
+          </div>
+        </div>
+      </div>
+      <div class="dialog-footer">
+        <button type="button" class="btn plain" data-close>Annuler</button
+        ><button type="button" class="btn primary" data-close data-toast="Signalement transmis à l’équipe BellumAI.">
+          Transmettre
+        </button>
+      </div>
+    </dialog>
+    <div id="toasts" class="toast-container" role="status" aria-live="polite"></div>
+    <div class="rv" id="rv">
+      <div class="rv-bar">
+        <button
+          type="button"
+          class="rv-theme"
+          id="rv-theme"
+          aria-label="Passer en thème clair"
+          data-sun='<svg class="icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="12" cy="12" r="4"/><path d="M12 2v2m0 16v2M2 12h2m16 0h2M5 5l1.5 1.5m11 11L19 19M5 19l1.5-1.5m11-11L19 5"/></svg>'
+          data-moon='<svg class="icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M20.5 13A8.5 8.5 0 0 1 11 3.5 8.5 8.5 0 1 0 20.5 13Z"/></svg>'
+        >
+          <svg
+            class="icon"
+            viewBox="0 0 24 24"
+            fill="none"
+            stroke="currentColor"
+            stroke-width="1.6"
+            stroke-linecap="round"
+            stroke-linejoin="round"
+            aria-hidden="true"
+          >
+            <circle cx="12" cy="12" r="4" />
+            <path d="M12 2v2m0 16v2M2 12h2m16 0h2M5 5l1.5 1.5m11 11L19 19M5 19l1.5-1.5m11-11L19 5" />
+          </svg>
+        </button>
+        <button
+          type="button"
+          class="rv-theme"
+          id="rv-info"
+          aria-expanded="false"
+          aria-controls="rv-panel"
+          aria-label="Détail des ajouts, retraits et corrections"
+        >
+          <svg
+            class="icon"
+            viewBox="0 0 24 24"
+            fill="none"
+            stroke="currentColor"
+            stroke-width="1.6"
+            stroke-linecap="round"
+            stroke-linejoin="round"
+            aria-hidden="true"
+          >
+            <circle cx="12" cy="12" r="9" />
+            <path d="M12 11v6m0-10h.01" />
+          </svg>
+        </button>
+        <button type="button" class="rv-switch" id="rv-switch" aria-pressed="false">
+          <span class="knob"></span><span class="lbl">Montrer les ajouts</span>
+        </button>
+      </div>
+      <div class="rv-panel" id="rv-panel" hidden>
+        <p class="rv-count"><strong>7 ajouts</strong> par rapport à Théo, entourés en pointillé et étiquetés.</p>
+        <h3>Retiré</h3>
+        <ul>
+          <li>
+            <b>D-8</b> « Aucune facturation réelle dans cet aperçu », « Non connecté », « Non consulté », « Simulation
+            uniquement », « Voir le journal local ».
+          </li>
+          <li>
+            <b>D-8</b> « Ne saisissez pas de clé API ou de secret dans ce fichier », « Il ne crée aucun jeton… » :
+            remplacés par la règle réelle (clé copiée une fois, jamais réaffichée).
+          </li>
+          <li>
+            <b>D-8</b> « Aucune modification à afficher · La liste ne simule pas un audit » : remplacé par le journal
+            réel (A4).
+          </li>
+          <li>
+            <b>D-8</b> « Dans cette version, le parcours interactif d’import… », « Le prototype ne transmet rien au
+            support », « brouillon local ».
+          </li>
+          <li><b>D-8</b> Pied « Aperçu local » et « sauvegarde locale ».</li>
+          <li><b>T7</b> Barre « Paramètres de matching » répétée (GA-26).</li>
+        </ul>
+        <h3>Décisions du domaine (Louis 22/10)</h3>
+        <ul>
+          <li>
+            Plan et paiement → Réglages › Facturation : l’entrée de menu « Crédits &amp; abonnement » devient «
+            Facturation » ; la page garde le titre de Théo.
+          </li>
+        </ul>
+        <h3>Reçu d’un autre écran</h3>
+        <ul>
+          <li>
+            <b>settings-espace.A2</b> Export du vivier, dans Imports. <b>settings-prefs.A2</b> Tutoriel, visite et
+            scénario, dans Aide. <b>settings-integrations.A6</b> Clés d’API, sous MCP.
+          </li>
+        </ul>
+        <h3>Corrigé (doctrine)</h3>
+        <ul>
+          <li>
+            <b>D-1</b> Tutoiement. <b>GA-51</b> Coût en crédits affiché par opération. <b>c78</b> Remboursement nocturne
+            visible dans l’historique. Une valeur de clé n’est jamais affichée.
+          </li>
+        </ul>
+      </div>
+    </div>
+    <script>
+      ;(function () {
+        var d = document,
+          b = d.body
+        var INDEX = [
+          { l: 'Apparence · clair, sombre, système', w: 'Préférences', u: 'settings-prefs.html#affichage' },
+          { l: 'Densité', w: 'Préférences', u: 'settings-prefs.html#affichage' },
+          { l: 'Taille du texte', w: 'Préférences', u: 'settings-prefs.html#affichage' },
+          { l: 'Page de démarrage préférée', w: 'Préférences', u: 'settings-prefs.html#affichage' },
+          { l: 'Barre latérale', w: 'Préférences', u: 'settings-prefs.html#affichage' },
+          { l: 'Langue & fuseau horaire', w: 'Préférences', u: 'settings-prefs.html#affichage' },
+          { l: 'Affichage des noms', w: 'Préférences', u: 'settings-prefs.html#affichage' },
+          { l: 'Envoi des commentaires (Entrée / ⌘ Entrée)', w: 'Préférences', u: 'settings-prefs.html#affichage' },
+          { l: 'Version et à propos', w: 'Préférences', u: 'settings-prefs.html#affichage' },
+          { l: 'Nom, fonction, signature', w: 'Préférences › Mon identité', u: 'settings-prefs.html#identite' },
+          { l: 'Raccourcis clavier', w: 'Préférences › Raccourcis', u: 'settings-prefs.html#raccourcis' },
+          { l: 'Notifications', w: 'Mon compte', u: 'settings-compte.html#notifications' },
+          { l: 'Plage de tranquillité', w: 'Notifications', u: 'settings-compte.html#notifications' },
+          { l: 'SMS d’alerte urgente', w: 'Notifications', u: 'settings-compte.html#notifications' },
+          { l: 'Laura peut te parler en premier', w: 'Notifications', u: 'settings-compte.html#notifications' },
+          { l: 'Double authentification', w: 'Sécurité', u: 'settings-compte.html#securite' },
+          { l: 'Sessions actives', w: 'Sécurité', u: 'settings-compte.html#securite' },
+          { l: 'Supprimer mon compte', w: 'Sécurité', u: 'settings-compte.html#securite' },
+          { l: 'Exporter mes données', w: 'Mes données', u: 'settings-compte.html#donnees' },
+          { l: 'Confidentialité & durées de conservation', w: 'Mes données', u: 'settings-compte.html#donnees' },
+          { l: 'Profil commercial · cadrage', w: 'Mon espace', u: 'settings-espace.html#profil' },
+          { l: 'Maturité commerciale', w: 'Profil commercial', u: 'settings-espace.html#profil' },
+          { l: 'Périmètres, agences, sociétés', w: 'Mon espace', u: 'settings-espace.html#perimetres' },
+          { l: 'Durées cibles du pipeline', w: 'Règles métier', u: 'settings-espace.html#regles' },
+          { l: 'Ne pas contacter', w: 'Règles métier › Accès', u: 'settings-espace.html#regles' },
+          { l: 'Grille de qualification', w: 'Règles métier › Qualité', u: 'settings-espace.html#regles' },
+          { l: 'Seuil d’alerte de marge', w: 'Règles métier', u: 'settings-espace.html#regles' },
+          { l: 'Motifs de perte, comptes écartés', w: 'Catalogues', u: 'settings-espace.html#catalogues' },
+          { l: 'Vocabulaire & mots à ne jamais lire', w: 'Catalogues', u: 'settings-espace.html#catalogues' },
+          { l: 'Logo, couleur, domaine d’expédition', w: 'Marque & documents', u: 'settings-espace.html#marque' },
+          { l: 'Comportement de Laura', w: 'Laura', u: 'settings-laura.html#comportement' },
+          { l: 'Mémoire de Laura · tout oublier', w: 'Laura', u: 'settings-laura.html#memoire' },
+          { l: 'Documents, styles appris, exemples de messages', w: 'Laura', u: 'settings-laura.html#documents' },
+          { l: 'Routines & veilles', w: 'Laura', u: 'settings-laura.html#routines' },
+          { l: 'Connecteurs · CRM, messagerie, agenda', w: 'Outils', u: 'settings-integrations.html' },
+          { l: 'Réponse d’absence', w: 'Connecteurs › Outlook', u: 'settings-integrations.html#outlook' },
+          { l: 'Imports & export du vivier', w: 'Outils', u: 'settings-outils.html#imports' },
+          { l: 'Accès assistants / MCP · clés d’API', w: 'Outils', u: 'settings-outils.html#mcp' },
+          { l: 'Plan, paiement, factures, crédits', w: 'Facturation', u: 'settings-outils.html#facturation' },
+          { l: 'Journal d’activité', w: 'Outils', u: 'settings-outils.html#journal' },
+          { l: 'Relancer la visite guidée', w: 'Aide & signalements', u: 'settings-outils.html#aide' },
+        ]
+        var SCREEN = b.getAttribute('data-screen')
+        function $(s, r) {
+          return (r || d).querySelector(s)
+        }
+        function $$(s, r) {
+          return Array.prototype.slice.call((r || d).querySelectorAll(s))
+        }
+        var toasts = $('#toasts')
+        function toast(t) {
+          var e = d.createElement('div')
+          e.className = 'toast'
+          e.textContent = t
+          toasts.appendChild(e)
+          setTimeout(function () {
+            e.remove()
+          }, 3200)
+        }
+        // ---- vues d'un écran (les rubriques de la barre latérale qu'il porte) ----
+        var views = $$('[data-view]')
+        function showView(id) {
+          if (!views.length) return
+          var v = views.filter(function (x) {
+            return x.getAttribute('data-view') === id
+          })[0]
+          if (!v) v = views[0]
+          views.forEach(function (x) {
+            x.hidden = x !== v
+          })
+          var nk = v.getAttribute('data-nav-key')
+          var key = SCREEN + ':' + (nk !== null ? nk : v.getAttribute('data-view'))
+          $$('.v12-nav-link[data-nav]').forEach(function (a) {
+            var on = a.getAttribute('data-nav') === key
+            a.classList.toggle('on', on)
+            if (on) a.setAttribute('aria-current', 'page')
+            else a.removeAttribute('aria-current')
+          })
+          var ms = $('#v12-settings-mobile')
+          if (ms)
+            $$('option', ms).forEach(function (o) {
+              o.selected = o.getAttribute('data-nav') === key
+            })
+          var c = $('#t-crumb')
+          if (c && v.getAttribute('data-crumb')) c.textContent = v.getAttribute('data-crumb')
+          if (v.getAttribute('data-title')) d.title = v.getAttribute('data-title')
+        }
+        function route() {
+          var h = location.hash.replace('#', '')
+          var sub = $('[data-anchor="' + h + '"]')
+          if (sub) {
+            var host = sub.closest('[data-view]')
+            if (host) showView(host.getAttribute('data-view'))
+            if (sub.matches('[data-tab]')) sub.click()
+            else if (sub.tagName === 'DETAILS') sub.open = true
+            else if (sub.tagName === 'DIALOG') sub.showModal()
+            else if (sub.hasAttribute('data-open')) sub.click()
+            return
+          }
+          showView(h)
+        }
+        addEventListener('hashchange', function () {
+          route()
+          var m = $('#content')
+          if (m) m.scrollTop = 0
+          scrollTo(0, 0)
+        })
+        // ---- onglets internes ----
+        $$('[data-tabs]').forEach(function (nav) {
+          var g = nav.getAttribute('data-tabs')
+          $$('[data-tab]', nav).forEach(function (a) {
+            a.addEventListener('click', function (e) {
+              e.preventDefault()
+              var t = a.getAttribute('data-tab')
+              $$('[data-tab]', nav).forEach(function (x) {
+                var on = x === a
+                x.classList.toggle('on', on)
+                if (on) x.setAttribute('aria-current', 'page')
+                else x.removeAttribute('aria-current')
+              })
+              $$('[data-tabpanel^="' + g + ':"]').forEach(function (p) {
+                p.hidden = p.getAttribute('data-tabpanel') !== g + ':' + t
+              })
+            })
+          })
+        })
+        // ---- fenêtres, tiroirs ----
+        $$('[data-open]').forEach(function (x) {
+          x.addEventListener('click', function (e) {
+            e.preventDefault()
+            var dl = d.getElementById(x.getAttribute('data-open'))
+            if (dl) {
+              closeMenus()
+              ;['title', 'desc', 'cat'].forEach(function (k) {
+                var v = x.getAttribute('data-' + k)
+                if (v !== null)
+                  $$('[data-slot="' + k + '"]', dl).forEach(function (t) {
+                    t.textContent = v
+                  })
+              })
+              dl.showModal()
+            }
+          })
+        })
+        $$('dialog').forEach(function (dl) {
+          dl.addEventListener('click', function (e) {
+            if (e.target === dl) dl.close()
+            var c = e.target.closest('[data-close]')
+            if (c) {
+              dl.close()
+              if (c.getAttribute('data-toast')) toast(c.getAttribute('data-toast'))
+            }
+          })
+        })
+        // ---- menus ----
+        function closeMenus() {
+          $$('.t-menu').forEach(function (m) {
+            m.hidden = true
+          })
+          $$('[data-menu][aria-expanded="true"]').forEach(function (x) {
+            x.setAttribute('aria-expanded', 'false')
+          })
+        }
+        function place(m, anchor) {
+          m.hidden = false
+          var r = anchor.getBoundingClientRect(),
+            w = m.offsetWidth,
+            h = m.offsetHeight
+          var left = Math.min(Math.max(8, r.right - w), innerWidth - w - 8)
+          var top = r.bottom + 6
+          if (top + h > innerHeight - 8) top = Math.max(8, r.top - h - 6)
+          m.style.left = left + 'px'
+          m.style.top = top + 'px'
+        }
+        $$('[data-menu]').forEach(function (x) {
+          x.addEventListener('click', function (e) {
+            e.preventDefault()
+            e.stopPropagation()
+            var m = d.getElementById(x.getAttribute('data-menu'))
+            var open = !m.hidden
+            closeMenus()
+            if (!open) {
+              place(m, x)
+              x.setAttribute('aria-expanded', 'true')
+              var f = $('button,a', m)
+              if (f) f.focus()
+            }
+          })
+        })
+        d.addEventListener('click', function (e) {
+          if (!e.target.closest('.t-menu')) closeMenus()
+          var t = e.target.closest('[data-toast]')
+          if (t && !t.closest('dialog [data-close]')) {
+            if (t.tagName === 'A') e.preventDefault()
+            toast(t.getAttribute('data-toast'))
+            if (t.closest('.t-menu')) closeMenus()
+          }
+          var sr = e.target.closest('.t-search-res a')
+          if (sr) {
+            $('#t-search-res').hidden = true
+          }
+        })
+        d.addEventListener('keydown', function (e) {
+          if (e.key === 'Escape') closeMenus()
+        })
+        // ---- états segmentés (data-seg) et révélations (data-when) ----
+        $$('[data-seg]').forEach(function (g) {
+          $$('button', g).forEach(function (bt) {
+            bt.addEventListener('click', function () {
+              $$('button', g).forEach(function (x) {
+                x.classList.toggle('on', x === bt)
+                x.setAttribute('aria-pressed', x === bt ? 'true' : 'false')
+              })
+              var key = g.getAttribute('data-seg')
+              $$('[data-when^="' + key + ':"]').forEach(function (w) {
+                w.hidden = w.getAttribute('data-when') !== key + ':' + bt.getAttribute('data-value')
+              })
+            })
+          })
+        })
+        $$('[data-reveal]').forEach(function (inp) {
+          function upd() {
+            var t = d.getElementById(inp.getAttribute('data-reveal'))
+            if (t) t.hidden = !inp.checked
+          }
+          inp.addEventListener('change', upd)
+          upd()
+        })
+        // ---- formulaires : « Modifications à enregistrer » (N5) ----
+        $$('form.v12-form').forEach(function (f) {
+          var lab = $('.v12-save-label', f)
+          f.addEventListener('input', function () {
+            if (lab) {
+              lab.textContent = 'Modifications à enregistrer'
+              lab.classList.add('is-dirty')
+            }
+          })
+          f.addEventListener('submit', function (e) {
+            e.preventDefault()
+            if (lab) {
+              lab.textContent = 'Enregistré à l’instant'
+              lab.classList.remove('is-dirty')
+            }
+            toast(f.getAttribute('data-saved') || 'Modifications enregistrées.')
+          })
+        })
+        // ---- vignettes de thème : elles pilotent vraiment le thème de la page ----
+        $$('input[name="theme"]').forEach(function (r) {
+          r.addEventListener('change', function () {
+            if (r.value === 'light') theme(false)
+            else if (r.value === 'dark') theme(true)
+            else theme(matchMedia('(prefers-color-scheme: dark)').matches)
+          })
+        })
+        // ---- densité : appliquée à la page, cibles ≥ 44 px conservées ----
+        var dens = $('#t-density')
+        if (dens)
+          dens.addEventListener('change', function () {
+            b.classList.toggle('t-compact', dens.value === 'compact')
+          })
+        // ---- recherche d'un réglage (N2) ----
+        var si = $('#v12-settings-search'),
+          sres = $('#t-search-res')
+        function norm(s) {
+          return s.toLowerCase().normalize('NFD').replace(/[̀-ͯ]/g, '')
+        }
+        if (si)
+          si.addEventListener('input', function () {
+            var q = norm(si.value.trim())
+            if (!q) {
+              sres.hidden = true
+              si.setAttribute('aria-expanded', 'false')
+              return
+            }
+            var hits = INDEX.filter(function (x) {
+              return norm(x.l + ' ' + x.w).indexOf(q) >= 0
+            }).slice(0, 7)
+            sres.innerHTML = hits.length
+              ? hits
+                  .map(function (x) {
+                    var u = x.u.indexOf(SCREEN + '.html') === 0 ? x.u.slice(SCREEN.length + 5) || '#' : x.u
+                    return '<a role="option" href="' + u + '"><b>' + x.l + '</b><small>' + x.w + '</small></a>'
+                  })
+                  .join('')
+              : '<p>Aucun réglage ne correspond. Essaie « signature », « export » ou « crédits ».</p>'
+            sres.hidden = false
+            si.setAttribute('aria-expanded', 'true')
+          })
+        var ms = $('#v12-settings-mobile')
+        if (ms)
+          ms.addEventListener('change', function () {
+            var u = ms.value
+            if (u.indexOf(SCREEN + '.html') === 0) location.hash = u.slice(SCREEN.length + 5) || '#'
+            else location.href = u
+          })
+        var mm = $('[data-act="mobile-menu"]')
+        if (mm)
+          mm.addEventListener('click', function () {
+            b.classList.toggle('nav-open')
+          })
+        // ---- relecture : « Montrer les ajouts » ----
+        var sw = $('#rv-switch'),
+          pn = $('#rv-panel')
+        function rv(on) {
+          b.classList.toggle('show-adds', on)
+          if (on)
+            $$('[data-add]').forEach(function (x) {
+              var r = x.getBoundingClientRect()
+              x.classList.toggle(
+                'rv-r',
+                r.left + x.getAttribute('data-add').length * 8 + 24 > d.documentElement.clientWidth,
+              )
+            })
+          sw.setAttribute('aria-pressed', on ? 'true' : 'false')
+          pn.hidden = !on || innerWidth < 768
+          try {
+            localStorage.setItem('rv-adds', on ? '1' : '0')
+          } catch (_) {}
+        }
+        sw.addEventListener('click', function () {
+          rv(sw.getAttribute('aria-pressed') !== 'true')
+        })
+        var inf = $('#rv-info')
+        inf.addEventListener('click', function () {
+          pn.hidden = !pn.hidden
+          inf.setAttribute('aria-expanded', pn.hidden ? 'false' : 'true')
+        })
+        var th = $('#rv-theme')
+        function theme(dark) {
+          d.documentElement.classList.toggle('dark', dark)
+          d.documentElement.style.colorScheme = dark ? 'dark' : 'light'
+          th.innerHTML = dark ? th.dataset.sun : th.dataset.moon
+          th.setAttribute('aria-label', dark ? 'Passer en thème clair' : 'Passer en thème sombre')
+          $$('input[name="theme"]').forEach(function (r) {
+            if (r.value !== 'system') r.checked = (r.value === 'dark') === dark
+          })
+          try {
+            localStorage.setItem('rv-theme', dark ? 'dark' : 'light')
+          } catch (_) {}
+        }
+        th.addEventListener('click', function () {
+          theme(!d.documentElement.classList.contains('dark'))
+        })
+        try {
+          if (localStorage.getItem('rv-adds') === '1') rv(true)
+          var st = localStorage.getItem('rv-theme')
+          theme(st ? st === 'dark' : true)
+        } catch (_) {
+          theme(true)
+        }
+        route()
+        var q = new URLSearchParams(location.search)
+        if (q.get('adds') === '1') rv(true)
+        if (q.get('adds') === '0') rv(false)
+        if (q.get('theme')) theme(q.get('theme') === 'dark')
+        if (q.get('open')) {
+          var od = d.getElementById(q.get('open'))
+          if (od) od.showModal()
+        }
+      })()
+    </script>
+  </body>
+</html>

@@ -1,0 +1,101 @@
+{
+  "fields": {
+    "title": "Champs personnalisés",
+    "counter": "{{used}} / {{max}} utilisés",
+    "hint": "Dix au maximum par objet, et c’est une décision : un système illimité produit en un an quarante colonnes que personne ne documente, dont douze disent la même chose — et plus aucun rapport n’est lisible.",
+    "label": "Libellé du champ",
+    "placeholder": "Référence marché, Segment…",
+    "add": "Ajouter",
+    "archive": "Archiver",
+    "archiveHint": "Archiver : le champ cesse d’être proposé, ses valeurs restent lisibles.",
+    "empty": "Aucun champ personnalisé.",
+    "created": "Champ créé.",
+    "archived": "Champ archivé — ses valeurs restent lisibles.",
+    "error": "Le champ n’a pas pu être enregistré.",
+    "loadError": "Les champs n’ont pas pu être chargés.",
+    "types": {
+      "text": "Texte",
+      "number": "Nombre",
+      "date": "Date",
+      "boolean": "Oui / non",
+      "select": "Liste"
+    }
+  },
+  "duplicates": {
+    "title": "Doublons repérés",
+    "hint": "{{brand}} fusionne seul les doublons quasi certains (même adresse et même nom), dans {{brand}} seulement — jamais dans ton CRM — et tu peux annuler. Les autres, il les PROPOSE : c’est toi qui tranches.",
+    "confidence": "{{value}} % de confiance",
+    "merged": "J’ai fusionné",
+    "dismissed": "Ce ne sont pas les mêmes",
+    "empty": "Aucun doublon en attente.",
+    "decided": "Décision enregistrée — cette paire ne reviendra plus.",
+    "error": "La décision n’a pas pu être enregistrée.",
+    "entity": {
+      "account": "Compte",
+      "contact": "Contact"
+    },
+    "examined": "{{accounts}} comptes et {{contacts}} contacts examinés.",
+    "alreadyDecided_one": "{{count}} paire déjà tranchée.",
+    "alreadyDecided_other": "{{count}} paires déjà tranchées.",
+    "setAside_one": "{{count}} compte archivé ou rattaché n’entre pas dans la comparaison.",
+    "setAside_other": "{{count}} comptes archivés ou rattachés n’entrent pas dans la comparaison.",
+    "noReport": "Le dernier balayage n’a rien rapporté : ce n’est pas une mesure.",
+    "skipped_disabled": "Aucun balayage n’a eu lieu : la recherche est coupée par l’opérateur.",
+    "skipped_demo": "Aucun balayage n’a eu lieu : la recherche de doublons ne tourne pas sur un espace de démonstration.",
+    "scanFailed": "La recherche de doublons n’a pas abouti : ce n’est pas « aucun doublon ». Elle reprend à la prochaine ouverture.",
+    "loadError": "Les doublons n’ont pas pu être chargés.",
+    "setAsideTitle": "Comptes laissés de côté",
+    "setAsidePair": "« {{left}} » ({{leftStatus}}) et « {{right}} » ({{rightStatus}}) portent le même nom, mais l’un des deux est écarté : la paire n’est pas proposée.",
+    "restore": "Désarchiver",
+    "restored": "Dossier désarchivé : il rejoint la comparaison.",
+    "restoreError": "Le dossier n’a pas pu être désarchivé.",
+    "status": {
+      "active": "actif",
+      "archived": "archivé",
+      "merged": "rattaché"
+    },
+    "autoMerged": {
+      "title": "Fusionnés par {{brand}}",
+      "line": "« {{absorbed}} » a rejoint « {{kept}} ».",
+      "lineSameName": "« {{name}} » (doublon) a été fusionné dans la fiche gardée.",
+      "why": "{{reason}} — {{value}} % de confiance. Fusion faite dans {{brand}} seulement : ton CRM n’a pas été touché.",
+      "undo": "Annuler la fusion",
+      "undone": "Fusion annulée : la fiche est revenue, et cette paire ne sera plus rapprochée.",
+      "undoError": "La fusion n’a pas pu être annulée."
+    },
+    "sectionTitle": "Doublons à trancher",
+    "sectionTitleAutoMerged": "Doublons fusionnés",
+    "bannerOpen_one": "{{count}} doublon à relire",
+    "bannerOpen_other": "{{count}} doublons à relire",
+    "bannerOpenHint": "{{brand}} propose la fusion ; rien n’est fusionné sans toi, sauf une identité certaine (≥ 0,99), toujours réversible.",
+    "bannerAutoHint": "Une identité certaine a été fusionnée dans {{brand}} seulement ; tu peux annuler chaque fusion.",
+    "reviewAction": "Relire les doublons",
+    "autoMergedAction": "Voir les fusions",
+    "closeLabel": "Fermer",
+    "reasonCodes": {
+      "same_email": "Même adresse e-mail",
+      "same_name": "Même nom",
+      "same_name_same_company": "Même nom, même entreprise",
+      "same_name_no_company": "Même nom, entreprise inconnue",
+      "same_local_part": "Même début d’adresse",
+      "unknown": "Rapprochement proposé"
+    }
+  },
+  "placeholderEmails": {
+    "title": "Adresses gabarit",
+    "hint": "Une adresse du type « prenom.nom@… » ne joint personne. Compte d’abord : rien n’est écrit tant que tu n’as pas validé. L’ancienne valeur reste au journal de la fiche, et une adresse posée à la main n’est jamais touchée.",
+    "simulate": "Compter les adresses gabarit",
+    "simulated_one": "{{count}} adresse gabarit à vider",
+    "simulated_other": "{{count}} adresses gabarit à vider",
+    "kept_one": " ({{count}} gardée à la main, laissée telle quelle)",
+    "kept_other": " ({{count}} gardées à la main, laissées telles quelles)",
+    "none": "Aucune adresse gabarit dans cet espace.",
+    "execute_one": "Vider {{count}} adresse",
+    "execute_other": "Vider {{count}} adresses",
+    "executeBounded": "Vider {{limit}} adresses sur {{count}}",
+    "done_one": "{{count}} adresse vidée, l’ancienne valeur est au journal de la fiche.",
+    "done_other": "{{count}} adresses vidées, l’ancienne valeur est au journal de chaque fiche.",
+    "remaining": "Il en reste : comptez à nouveau pour le lot suivant.",
+    "error": "Le comptage n’a pas abouti. Réessaie."
+  }
+}

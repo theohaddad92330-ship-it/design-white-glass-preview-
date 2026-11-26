@@ -1,0 +1,186 @@
+{
+  "fallback": {
+    "userName": "Utilisateur"
+  },
+  "notificationsLink": {
+    "label": "Les préférences de notification se règlent dans Paramètres.",
+    "cta": "Ouvrir les notifications"
+  },
+  "sections": {
+    "trajectory": "Ma trajectoire & mon portefeuille",
+    "opportunities": "Mes opportunités & ma dynamique relationnelle",
+    "priorities": "Mes prochaines étapes"
+  },
+  "personal": {
+    "headerTitle": "Ta trajectoire commerciale, {{firstName}}.",
+    "kpiTasks": "Tâches ouvertes",
+    "kpiAccounts": "Mon portefeuille",
+    "kpiAccountsHint": "Les comptes dont tu es responsable dans cet espace",
+    "kpiRelances": "Relances à faire",
+    "kpiOverdue": "En retard",
+    "kpiMessages": "Messages envoyés",
+    "prioritiesTitle": "Mes priorités",
+    "prioritiesEmpty": "Aucune priorité pour le moment. Lance une analyse ou planifie une relance sur tes comptes.",
+    "overdueBadge": "En retard",
+    "kpiOverdueHint": "Ouvre tes relances en retard dans le Centre d'actions.",
+    "kpiGoTo": "{{label}} : {{value}} — voir le détail",
+    "kpiListLabel": "Mes chiffres",
+    "headerSubtitle": "Prends du recul sur ton portefeuille, tes relations et les dossiers que tu laisses dormir.",
+    "headerSummary_one": "{{count}} compte reste sans prochaine action.",
+    "headerSummary_other": "{{count}} comptes restent sans prochaine action.",
+    "headerCta_one": "Voir l’écart",
+    "headerCta_other": "Voir les {{count}} écarts",
+    "loadError": "Ton cockpit n'a pas pu être calculé. Ce n'est pas « rien à faire » — c'est la lecture qui a échoué. Réessaie dans un instant.",
+    "agendaLink": "Ouvrir l’agenda du jour"
+  },
+  "perspective": {
+    "open": "Ouvrir",
+    "unnamedAccount": "Compte sans nom",
+    "askLabel": "Analyser mon activité",
+    "askQuestion": "Analyse mon activité : où est-ce que je laisse du revenu dormir, quels comptes ai-je négligés, et quelles anciennes relations devrais-je réactiver ?",
+    "reviewLabel": "Préparer une revue",
+    "reviewQuestion": "Prépare ma revue : où en est mon portefeuille ce mois-ci — mes objectifs commerciaux, ma couverture de comptes, et les opportunités dormantes à ne pas oublier ?",
+    "sources": {
+      "bellum": "actions {{brand}}",
+      "crm": "ton CRM",
+      "mailbox": "ta messagerie",
+      "calendar": "ton agenda",
+      "public_registry": "registres publics"
+    },
+    "sourcesLine": "Sources : {{list}}",
+    "sourcesNone": "Aucune source lisible",
+    "window": "sur {{days}} jours",
+    "population_one": "sur {{count}} compte",
+    "population_other": "sur {{count}} comptes",
+    "verdict": {
+      "notMeasurable": "Je ne peux pas encore mesurer ta trajectoire commerciale — fixe un objectif de chiffre d'affaires pour {{month}}.",
+      "notMeasurableCta": "Fixer un objectif",
+      "measured": "{{achieved}} facturés sur un objectif de {{target}} en {{month}}.",
+      "achievedNotMeasured": "Réalisé pas encore mesuré sur un objectif de {{target}} en {{month}}."
+    },
+    "trajectory": {
+      "title": "Ma trajectoire",
+      "pipeline": "Pipe personnel",
+      "pipelineScope": "{{valued}} affaires chiffrées sur {{open}} ouvertes",
+      "pipelineUnknown": "Aucune affaire ouverte ne porte de montant",
+      "missions": "Missions actives",
+      "missionsUnknown": "Missions non lisibles",
+      "invoiced": "Facturé",
+      "collected": "Encaissé : {{amount}}",
+      "invoicedUnknown": "Facturation non lisible",
+      "invoicedForbidden": "Réservé au périmètre financier"
+    },
+    "objectives": {
+      "title": "Mes objectifs commerciaux",
+      "target": "Objectif",
+      "targetNotSet": "Objectif non fixé",
+      "achieved": "Réalisé",
+      "coverageFull": "Donnée complète",
+      "coveragePartial": "{{measured}} sur {{total}} mesurés",
+      "achievedUnknownMargin": "Aucune mission active ne porte à la fois un TJM et un coût ce mois-ci",
+      "axis": {
+        "meetings": "Rendez-vous",
+        "qualified_needs": "Besoins qualifiés",
+        "placements": "Démarrages",
+        "revenue": "Chiffre d'affaires",
+        "margin": "Marge",
+        "new_accounts": "Comptes",
+        "consultants_on_mission": "Consultants en mission"
+      },
+      "unit": {
+        "meetings": "{{count}} RDV",
+        "qualified_needs": "{{count}} besoins",
+        "placements": "{{count}} démarrages",
+        "revenue": "{{amount}}",
+        "margin": "{{percent}} %",
+        "new_accounts_one": "{{count}} compte",
+        "new_accounts_other": "{{count}} comptes",
+        "consultants_on_mission": "{{count}} consultants"
+      }
+    },
+    "coverage": {
+      "title": "Ma couverture",
+      "cta": "Voir mon portefeuille",
+      "followed": "Suivis",
+      "withoutNextAction": "Sans prochaine action",
+      "silent": "Sans échange 30 j",
+      "newSignals": "Nouveau signal",
+      "neverWorked": "Jamais travaillés",
+      "noAnomaly": "Aucune anomalie de couverture : chaque compte suivi a été travaillé et porte une prochaine action.",
+      "reason": {
+        "new_signal_untouched": "Un signal est apparu et personne n'a encore bougé",
+        "new_signal_untouchedSince": "Signal apparu le {{date}}, personne n'a encore bougé",
+        "never_worked": "Au portefeuille, jamais réellement travaillé",
+        "never_workedSince": "Au portefeuille depuis le {{date}}, jamais réellement travaillé",
+        "no_recent_interaction": "Aucun échange récent",
+        "no_recent_interactionSince": "Dernier échange le {{date}}",
+        "neverExchanged": "Aucun échange enregistré",
+        "without_next_action": "Suivi, mais rien n'est programmé dessus",
+        "without_next_actionSince": "Suivi depuis le {{date}}, rien n'est programmé dessus"
+      },
+      "withMarketPaths": "{{detail}} · {{paths}} parcours observés",
+      "structuralPotential": {
+        "badge": "Potentiel structurel fort",
+        "trigger": "Potentiel structurel fort pour {{company}}",
+        "title": "Potentiel structurel",
+        "detail_one": "{{brand}} a observé {{count}} parcours professionnel en lien avec {{company}}.",
+        "detail_other": "{{brand}} a observé {{count}} parcours professionnels en lien avec {{company}}.",
+        "caveat": "Ce potentiel ne dit rien de la situation actuelle de {{company}} : à qualifier avant d'agir."
+      }
+    },
+    "relationship": {
+      "title": "Ma dynamique relationnelle",
+      "activeThreads": "Comptes actifs",
+      "awaitingReply": "En attente de réponse",
+      "replies": "Réponses reçues",
+      "silent": "Sans échange 30 j",
+      "headline_one": "{{count}} compte n'a eu aucun échange depuis 30 jours.",
+      "headline_other": "{{count}} comptes n'ont eu aucun échange depuis 30 jours.",
+      "cta": "Voir dans Messagerie",
+      "askLabel": "Lesquels relancer ?",
+      "askQuestion": "Parmi mes comptes sans échange depuis 30 jours, lesquels devrais-je relancer en priorité, et pourquoi ?"
+    },
+    "dormant": {
+      "title": "Des opportunités à réveiller",
+      "reasonSignal": "{{signal}} — repéré en {{date}}",
+      "reasonSilence": "Aucun échange depuis {{date}}",
+      "reasonNeverExchanged": "Une relation existe, aucun échange n'a jamais été enregistré",
+      "why": "Voir pourquoi",
+      "prepare": "Préparer la reprise",
+      "prepareQuestion": "Prépare la reprise de contact avec {{company}} : rappelle-moi ce qu'on a déjà fait ensemble et propose un angle.",
+      "verify": "Vérifier maintenant",
+      "verifyQuestion": "Avant de reprendre contact avec {{company}}, aide-moi à qualifier le signal « {{signal}} » : que peut-on en déduire, et est-ce que ça justifie une relance maintenant ?",
+      "evidence": {
+        "proposal_sent": "Profil poussé · {{label}} · {{date}}",
+        "contact_known": "Contact connu · {{label}} · {{date}}",
+        "message_exchanged": "Échange · {{date}}",
+        "need_open": "Besoin ouvert · {{label}} · {{date}}",
+        "analysis_run": "Analyse menée · {{date}}"
+      }
+    },
+    "series": {
+      "title": "Mon évolution",
+      "rangeLabel": "Période",
+      "range": "{{days}} j",
+      "coverage": "Couverture de mon portefeuille",
+      "coverageHint": "Comptes ayant eu une interaction, par semaine",
+      "outreach": "Ma dynamique commerciale",
+      "outreachHint": "Échanges sortants, par semaine",
+      "tooltip": "Semaine du {{week}} · {{count}} {{unit}}",
+      "tooltipUnknown": "Semaine du {{week}} · non mesurée",
+      "notMeasured": "non mesurée",
+      "unitAccounts_one": "compte",
+      "unitAccounts_other": "comptes",
+      "unitMessages_one": "échange",
+      "unitMessages_other": "échanges"
+    },
+    "teamLink": "Mon équipe",
+    "scopeLabel": "Portée du tableau de bord",
+    "scopeMe": "Moi"
+  },
+  "guided": {
+    "label": "Parcours de mon cockpit",
+    "step": "Étape {{index}} sur {{total}}",
+    "next": "Étape suivante : {{title}}"
+  }
+}

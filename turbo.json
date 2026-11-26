@@ -1,0 +1,30 @@
+{
+  "$schema": "https://turbo.build/schema.json",
+  "ui": "tui",
+  "globalPassThroughEnv": ["JEST_MAX_WORKERS", "VITEST_MAX_FORKS", "VITEST_MAX_THREADS"],
+  "tasks": {
+    "dev": {
+      "dependsOn": ["^build"],
+      "cache": false,
+      "persistent": true
+    },
+    "build": {
+      "dependsOn": ["^build"],
+      "outputs": ["dist/**", "build/**", ".next/**", "!.next/cache/**"],
+      "env": ["VITE_*", "API_URL"],
+      "passThroughEnv": ["NODE_OPTIONS", "CI_TYPES_VERIFIES"]
+    },
+    "test": {
+      "dependsOn": ["^build"]
+    },
+    "lint": {},
+    "check-types": {
+      "dependsOn": ["^build"],
+      "outputs": []
+    },
+    "lint:exports": {
+      "inputs": ["src/**/*.{ts,tsx}", "../../knip.json", "package.json"],
+      "outputs": []
+    }
+  }
+}

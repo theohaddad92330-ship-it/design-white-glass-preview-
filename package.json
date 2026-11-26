@@ -1,0 +1,97 @@
+{
+  "name": "bellum-ai",
+  "private": true,
+  "scripts": {
+    "setup": "./tools/setup.sh",
+    "dev": "./tools/dev.sh",
+    "dev:start": "./tools/dev.sh dev",
+    "build": "turbo build",
+    "test": "turbo test",
+    "test:changed": "node tools/ci/test-changed.mjs",
+    "ci:local": "node tools/ci/local.mjs",
+    "e2e": "pnpm --filter @bellum/e2e e2e",
+    "eval:gate": "pnpm --filter @bellum/ia eval:gate",
+    "eval:gate:chat": "pnpm --filter @bellum/ia eval:gate:chat",
+    "lint": "turbo lint",
+    "check-types": "turbo check-types",
+    "lint:exports": "knip --include exports,types,nsExports,nsTypes",
+    "lint:exports:types": "knip --include types,nsTypes",
+    "lint:exports:fix": "knip --include exports,types,nsExports,nsTypes --fix",
+    "format": "prettier --write .",
+    "format:check": "prettier --check .",
+    "prepare": "husky",
+    "db:types": "./tools/db-types.sh",
+    "db:reset": "./tools/db-reset.sh",
+    "db:migration:new": "pnpm --filter api migration:create",
+    "db:migration:run": "pnpm --filter api migration:run",
+    "db:migration:revert": "pnpm --filter api migration:revert",
+    "db:migration:show": "pnpm --filter api migration:show",
+    "infra:start": "./tools/dev.sh infra",
+    "infra:stop": "./tools/dev.sh stop",
+    "docker:up": "docker compose -f tools/docker-compose.yml up -d",
+    "docker:down": "docker compose -f tools/docker-compose.yml down",
+    "docker:ps": "docker compose -f tools/docker-compose.yml ps",
+    "docker:logs": "docker compose -f tools/docker-compose.yml logs -f"
+  },
+  "devDependencies": {
+    "@bellum/tooling": "workspace:^",
+    "@commitlint/cli": "^19.0.0",
+    "eslint": "^9.32.0",
+    "husky": "^9.0.0",
+    "knip": "^6.43.0",
+    "lint-staged": "^15.0.0",
+    "prettier": "^3.9.10",
+    "railway": "^3.16.0",
+    "turbo": "^2.11.10"
+  },
+  "lint-staged": {
+    "*.{ts,tsx,js,jsx,mjs,cjs,css,json,md,yml,yaml}": [
+      "prettier --write"
+    ]
+  },
+  "packageManager": "pnpm@10.6.0",
+  "engines": {
+    "node": ">=22.19.0 <25"
+  },
+  "pnpm": {
+    "overrides": {
+      "@types/react": "^19.2.18",
+      "@types/react-dom": "^19.2.7",
+      "@modelcontextprotocol/sdk@<1.31.0": "^1.32.1",
+      "brace-expansion@^1.0.0": "^1.1.21",
+      "brace-expansion@^2.0.0": "^2.1.7",
+      "brace-expansion@^5.0.0": "^5.0.12",
+      "browserslist@<4.28.7": "^4.29.3",
+      "engine.io@<6.6.10": "^6.6.11",
+      "fast-uri@<3.1.7": "^3.1.8",
+      "form-data@<4.0.6": "^4.0.6",
+      "handlebars@<4.7.10": "^4.7.10",
+      "image-size@<2.0.3": "^2.0.4",
+      "tinypool@^1.0.0": "^2.1.2",
+      "vite@^5.0.0": "^6.4.3",
+      "ip-address@<10.3.1": "^10.7.4",
+      "js-yaml@^3.0.0": "^3.15.2",
+      "js-yaml@^4.0.0": "^4.3.2",
+      "body-parser@<2.4.0": "^2.4.0",
+      "multer@<2.5.0": "^2.5.0",
+      "nanoid@^3.0.0": "^3.3.20",
+      "next@>=15 <15.5.28": "15.5.28",
+      "next@>=16 <16.4.1": "16.4.1",
+      "postcss@<8.5.18": "^8.5.30",
+      "proxy-addr@<2.0.8": "^2.0.8",
+      "seroval@<1.6.3": "^1.6.9",
+      "seroval-plugins@<1.6.3": "^1.6.9",
+      "sharp@<0.35.5": "^0.35.5",
+      "smol-toml@<1.7.1": "^1.9.1",
+      "socket.io-parser@<4.2.7": "^4.2.7",
+      "source-map-js@<1.2.2": "^1.2.2",
+      "ws@^8.0.0": "^8.22.0"
+    },
+    "auditConfig": {
+      "ignoreGhsas": [
+        "GHSA-vfj7-8cjw-p6xm",
+        "GHSA-mrhx-c7xc-m3w5"
+      ]
+    }
+  }
+}

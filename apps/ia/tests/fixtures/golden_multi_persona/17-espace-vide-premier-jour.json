@@ -1,0 +1,81 @@
+{
+  "id": "17-espace-vide-premier-jour",
+  "persona": "Espace vide — premier jour, questionnaire non rempli",
+  "personaKind": "fictif",
+  "_source": "#2070 — le cas « espace vide ». Seize cas qui ont tous leur donnée ne peuvent pas exercer « non mesuré n'est jamais 0 » : c'est celui-ci qui le fait. Aucune ESN n'est nommée, donc aucun fait n'est attribué à personne — et tout champ que le questionnaire n'a pas renseigné reste à son DÉFAUT de schéma, jamais à zéro.",
+  "answers": {
+    "user_id": "golden-17-espace-vide-premier-jour"
+  },
+  "referenceProfile": {
+    "esnArchetype": "soloHunter",
+    "sellingPosture": "volumeFlexible",
+    "idealAccountProfile": {
+      "size": "all",
+      "sectorsPriority": [],
+      "decisionLevel": "manager",
+      "entryStrategy": "bottomUp"
+    },
+    "analysisParameters": {
+      "braveQueriesCount": 8,
+      "firecrawlPagesCount": 5,
+      "contactsTarget": 15,
+      "analysisDepth": "standard",
+      "maxTokensResearch": 10000,
+      "focusAreas": []
+    },
+    "messagingStyle": {
+      "tone": "consultative",
+      "messageLength": "standard",
+      "valuePropositionAngle": "Aucun angle de valeur n'est encore établi : le questionnaire n'a pas été renseigné. Il sera écrit à partir des réponses, pas deviné.",
+      "differentiationPoints": [
+        "Aucun différenciateur n'est renseigné : le questionnaire n'a pas été rempli.",
+        "Aucune expertise n'est déclarée, donc aucune spécialisation à mettre en avant.",
+        "Aucun secteur cible n'est déclaré, donc aucun ancrage sectoriel à revendiquer."
+      ],
+      "avoid": [
+        "expertise reconnue",
+        "leader du marché",
+        "sur-mesure",
+        "partenaire de confiance"
+      ]
+    },
+    "coachingInsights": {
+      "mainWeakness": "Rien n'est encore mesurable : aucune réponse au questionnaire, donc aucun point faible établi.",
+      "keyAdvice": "Renseigne le questionnaire de profil : tant qu'il est vide, les réglages ci-dessous sont les bornes les plus prudentes du schéma, pas une lecture de ton activité.",
+      "cadenceRecommendation": {
+        "analysesPerWeek": 2,
+        "messagesPerDay": 6,
+        "followUpsPerWeek": 3
+      },
+      "kpiTargets": {
+        "accountsPerMonth": 5,
+        "rdvPerMonth": 5,
+        "conversionRateTarget": "15-25%"
+      }
+    },
+    "bellumPhrases": {
+      "welcome": "Bienvenue. Ton espace est vide pour l'instant — dis-nous qui tu es et ce que tu vends, et tout ce qui suit s'ajuste.",
+      "firstAnalysisCta": "Lancer une première analyse sur une entreprise que tu as déjà en tête.",
+      "weeklySummaryIntro": "Rien à résumer cette semaine : aucune analyse n'a encore été lancée.",
+      "emptyState": "Aucun compte en pipeline pour l'instant — lance ta première analyse pour voir arriver des cibles.",
+      "scoreContext": "Un score s'explique par ses axes, et un axe qui n'a pas pu être évalué est nommé plutôt que compté. Tant que le profil est vide, il manque des axes et le score le dira."
+    },
+    "welcomeSummary": {
+      "profileRecap": "Ton profil n'est pas encore renseigné : ni taille, ni expertises, ni secteurs cibles, ni zone. Rien n'est donc affirmé ici à ta place — les réglages ci-dessous sont des bornes prudentes, et non une lecture de ton activité.",
+      "searchesPersonalization": "Les recherches ne sont pas encore orientées : aucun domaine d'expertise n'a été renseigné.",
+      "contactsPersonalization": "Les contacts ne sont pas encore filtrés par niveau de décision : aucune cible n'a été renseignée.",
+      "messagesPersonalization": "Les messages partent sur un ton neutre tant que le positionnement n'est pas renseigné.",
+      "scoringPersonalization": "Le scoring nommera les axes qu'il n'a pas pu évaluer plutôt que de les compter comme nuls.",
+      "firstAnalysisSuggestions": []
+    }
+  },
+  "contradictions": [
+    "Un espace vide n'est pas une ESN sans activité : l'audit ne doit rien déduire de l'absence de réponses, ni conclure que l'équipe est seule, sans clients ou sans pipeline."
+  ],
+  "limits": [
+    "Aucune suggestion d'entreprise au premier écran : sans réponse ni compte, la liste reste vide plutôt qu'inventée.",
+    "L'archétype (soloHunter) et la posture (volumeFlexible) sont les valeurs les MOINS engageantes du schéma, choisies parce qu'il en faut une — ce ne sont pas des mesures, et le récapitulatif le dit à l'écran.",
+    "Les cibles chiffrées (5 comptes, 5 RDV, cadence 2/6/3) sont les planchers documentés du schéma pour l'archétype le plus prudent. Elles ne valent surtout pas zéro : « non mesuré » n'est pas « mesuré à zéro ».",
+    "⚠️ `messagingStyle.differentiationPoints` ne peut PAS être vide ici : le schéma lui impose `min_length=3` (app/models/profile_context.py:226) alors que sa source documentée — expertise_areas + positioning + target_sectors — est vide. Le dépôt a déjà écrit la règle deux cents lignes plus bas en retirant le `min_length` de `first_analysis_suggestions` (#2069, lignes 439-440) : « Un min_length sur un champ dont la source est absente du contexte EST la consigne d'inventer. » Les trois entrées NOMMENT donc l'absence au lieu d'affirmer quoi que ce soit."
+  ]
+}

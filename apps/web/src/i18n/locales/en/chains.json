@@ -1,0 +1,202 @@
+{
+  "page": {
+    "title": "Journeys",
+    "heading": "Your journeys, {{name}}",
+    "headingNoName": "Your journeys",
+    "subtitle": "{{brand}} tracks the key steps of your files and flags the ones that have stopped moving."
+  },
+  "states": {
+    "errorTitle": "Journeys could not be loaded",
+    "errorDescription": "Try again in a moment. This is not « no journey ».",
+    "nothingBlocked": "Nothing is blocked right now. Switch to « All journeys » to see everything.",
+    "nothingTracked": "No file sits in a journey yet. Create a need, a deal or an assignment: the journey follows on its own.",
+    "nothingTrackedCta": "Open the deals pipeline"
+  },
+  "kpis": {
+    "tracked": "Files tracked",
+    "awaitingDecision": "Decisions pending",
+    "stalled": "No movement for 7 days",
+    "slowest": "Step where files wait longest",
+    "slowestDays_one": "{{count}} day with no movement, median",
+    "slowestDays_other": "{{count}} days with no movement, median",
+    "notMeasured": "Not measured"
+  },
+  "scope": {
+    "aria": "Filter journeys",
+    "blocked": "Blocked ({{count}})",
+    "all": "All journeys ({{count}})"
+  },
+  "lane": {
+    "inProgress_one": "{{count}} file in progress",
+    "inProgress_other": "{{count}} files in progress",
+    "waiting_one": "{{count}} decision pending",
+    "waiting_other": "{{count}} decisions pending",
+    "gate": "Gate",
+    "stalled_one": "{{count}} with no movement",
+    "stalled_other": "{{count}} with no movement",
+    "stepEmpty": "none",
+    "stepCount_one": "{{count}} file",
+    "stepCount_other": "{{count}} files",
+    "stepCountAndDays_one": "{{count}} file · {{days}} d",
+    "stepCountAndDays_other": "{{count}} files · {{days}} d",
+    "undetermined_one": "{{count}} undetermined",
+    "undetermined_other": "{{count}} undetermined"
+  },
+  "flow": {
+    "why": "Why?",
+    "factUnknown": "recorded fact",
+    "gateReason": "Reason given: {{reason}}",
+    "undetermined": "Step undetermined",
+    "undeterminedReason": {
+      "unmapped_status": "This file carries a state no journey step describes. That is data to fix, not a business move to make."
+    },
+    "state": {
+      "done": "done",
+      "skipped": "not recorded",
+      "current": "current step",
+      "upcoming": "upcoming",
+      "blocked": "decision pending"
+    }
+  },
+  "panel": {
+    "title": "Position {{position}}",
+    "empty": "No file at this step.",
+    "unknownSubject": "File removed",
+    "days_one": "{{count}} day with no movement",
+    "days_other": "{{count}} days with no movement",
+    "subjects": {
+      "account": "Account",
+      "project": "Opportunity",
+      "need": "Need",
+      "mission": "Assignment",
+      "consultant": "Consultant"
+    }
+  },
+  "checklist": {
+    "title": "Steps taken elsewhere",
+    "progress": "{{done}} / {{total}}"
+  },
+  "subject": {
+    "since_one": "{{count}} day with no movement",
+    "since_other": "{{count}} days with no movement",
+    "currentStep": "Current step: {{step}}",
+    "blockedAt": "Blocked at « {{step}} » — a decision is pending.",
+    "blockedAtShort": "Blocked at « {{step}} »",
+    "close": "Close",
+    "dialogDescription": "Where this record stands, what blocks it, what is left to do.",
+    "nextStep": "Next step: {{step}}"
+  },
+  "blockers": {
+    "title": "What is blocked",
+    "empty": "Nothing is blocked in your journeys.",
+    "decision": "Decision pending",
+    "open": "Open",
+    "awaiting_one": "{{count}} file awaits a decision at « {{step}} » ({{chain}})",
+    "awaiting_other": "{{count}} files await a decision at « {{step}} » ({{chain}})",
+    "stalled_one": "{{count}} file has not moved at « {{step}} » for {{days}} days ({{chain}})",
+    "stalled_other": "{{count}} files have not moved at « {{step}} » for {{days}} days ({{chain}})"
+  },
+  "fact": {
+    "ouverture_compte": {
+      "1": "the account exists in your portfolio",
+      "2": "an analysis was run",
+      "3_one": "{{count}} signal collected",
+      "3_other": "{{count}} signals collected",
+      "4_one": "a priority score is computed ({{count}}/10)",
+      "4_other": "a priority score is computed ({{count}}/10)",
+      "5_one": "{{count}} entity mapped",
+      "5_other": "{{count}} entities mapped",
+      "6_one": "{{count}} decision-maker identified",
+      "6_other": "{{count}} decision-makers identified",
+      "7_one": "{{count}} contact with details",
+      "7_other": "{{count}} contacts with details",
+      "8": "an account plan exists",
+      "9_one": "{{count}} angle chosen",
+      "9_other": "{{count}} angles chosen",
+      "10": "the account is tracked in the portfolio"
+    },
+    "acquisition": {
+      "1_one": "{{count}} reachable contact",
+      "1_other": "{{count}} reachable contacts",
+      "2": "an angle is recommended",
+      "3": "a message is drafted",
+      "4_one": "{{count}} message sent",
+      "4_other": "{{count}} messages sent",
+      "5": "a follow-up sequence exists",
+      "6": "a reply came in",
+      "7": "a meeting is booked",
+      "8_one": "{{count}} need expressed",
+      "8_other": "{{count}} needs expressed"
+    },
+    "prospection_inversee": {
+      "1": "availability is declared",
+      "2_one": "{{count}} skill retained",
+      "2_other": "{{count}} skills retained",
+      "3_one": "{{count}} account targeted",
+      "3_other": "{{count}} accounts targeted",
+      "4_one": "{{count}} push linked to a deal",
+      "4_other": "{{count}} pushes linked to a deal",
+      "5": "a message went out",
+      "6": "the client replied",
+      "7": "a profile was retained"
+    },
+    "sourcing_matching": {
+      "1": "the need is open",
+      "2_one": "{{count}} required skill",
+      "2_other": "{{count}} required skills",
+      "3_one": "{{count}} matching run",
+      "3_other": "{{count}} matching runs",
+      "4_one": "{{count}} profile retained",
+      "4_other": "{{count}} profiles retained",
+      "5": "a shortlist is frozen",
+      "6_one": "{{count}} dossier generated",
+      "6_other": "{{count}} dossiers generated",
+      "7_one": "{{count}} profile submitted",
+      "7_other": "{{count}} profiles submitted",
+      "8": "the client gave feedback",
+      "9": "an interview took place",
+      "10": "a client decision is recorded",
+      "11": "commercial terms are set"
+    },
+    "push_ao_conversion": {
+      "1": "a tender came in",
+      "2_one": "{{count}} requirement extracted",
+      "2_other": "{{count}} requirements extracted",
+      "3": "a go / no-go is decided",
+      "4_one": "{{count}} profile identified",
+      "4_other": "{{count}} profiles identified",
+      "5_one": "{{count}} proof available",
+      "5_other": "{{count}} proofs available",
+      "6_one": "{{count}} dossier sent",
+      "6_other": "{{count}} dossiers sent",
+      "7": "an interview took place",
+      "8": "the outcome is recorded"
+    },
+    "rang2_rang1": {
+      "1_one": "{{count}} deal with a known access mode",
+      "1_other": "{{count}} deals with a known access mode",
+      "2_one": "{{count}} assignment delivered",
+      "2_other": "{{count}} assignments delivered",
+      "3_one": "{{count}} retrospective collected",
+      "3_other": "{{count}} retrospectives collected",
+      "4_one": "{{count}} strong proof",
+      "4_other": "{{count}} strong proofs",
+      "5_one": "{{count}} publishable testimonial",
+      "5_other": "{{count}} publishable testimonials",
+      "6": "a deal is reachable directly"
+    },
+    "onboarding_delivery": {
+      "1": "the assignment is created",
+      "2": "a daily rate is set",
+      "3_one": "{{count}} consultant assigned",
+      "3_other": "{{count}} consultants assigned",
+      "4": "the assignment is onboarding",
+      "5": "the assignment has started",
+      "6_one": "{{count}} timesheet tracked",
+      "6_other": "{{count}} timesheets tracked",
+      "7_one": "{{count}} month prepared for invoicing",
+      "7_other": "{{count}} months prepared for invoicing",
+      "8": "the renewal is open"
+    }
+  }
+}

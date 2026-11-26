@@ -1,0 +1,568 @@
+{
+  "page": {
+    "title": "Mailbox",
+    "subtitle": "Reply, review, follow up. Every thread stays linked to the right file.",
+    "resolvedQuery": "Query sent to your mailbox",
+    "truncated": "The list is truncated: narrow the search to see everything.",
+    "results_one": "{{count}} thread",
+    "results_other": "{{count}} threads",
+    "askLaura": "Which emails should I handle first?",
+    "askLauraLabel": "Ask {{copilot}}",
+    "kicker": "Conversations & approvals"
+  },
+  "hero": {
+    "summary": {
+      "toTreat_one": "{{count}} reply to handle",
+      "toTreat_other": "{{count}} replies to handle",
+      "followUps_one": "{{count}} follow-up due",
+      "followUps_other": "{{count}} follow-ups due"
+    },
+    "treatFirst": "Handle the first reply"
+  },
+  "intents": {
+    "unread": "Unread",
+    "no_reply": "Awaiting reply",
+    "budget": "Budget",
+    "tjm": "Day rate",
+    "cv": "CVs received",
+    "job_description": "Job descriptions",
+    "contract": "Contracts & signatures",
+    "tender": "Tenders",
+    "invoice": "Invoices",
+    "meeting": "Calls & meetings",
+    "positive_reply": "Positive replies",
+    "out_of_office": "Out of office",
+    "attachments": "With attachment",
+    "free": "Free search"
+  },
+  "filters": {
+    "query": "Keyword, company…",
+    "counterpart": "Contact or domain",
+    "silenceDays": "Minimum silence",
+    "days_one": "{{count}} day",
+    "days_other": "{{count}} days",
+    "apply": "Search",
+    "searchToggle": "Search my inbox"
+  },
+  "contactCompose": {
+    "title": "Write to {{name}}",
+    "titleFallback": "Write to this contact",
+    "route": "From {{from}} to {{to}}",
+    "routeUnknownSender": "From your connected mailbox to {{to}}",
+    "to": "Recipient",
+    "subject": "Subject",
+    "body": "Message",
+    "draft": "Save a draft",
+    "send": "Send now",
+    "draftExplain": "The draft lands in your mailbox: you review it and send it yourself.",
+    "sendExplain": "The message goes out from your mailbox, to this recipient only. An unsubscribed contact is refused.",
+    "draftSuccess": "Draft saved to your mailbox.",
+    "openDraft": "Open the draft",
+    "sendSuccess": "Message sent from your mailbox.",
+    "skippedSuppressed": "This recipient unsubscribed: nothing was sent.",
+    "skippedOther": "The message was not sent.",
+    "failed": "Sending failed: {{error}}",
+    "cancel": "Cancel",
+    "close": "Close"
+  },
+  "thread": {
+    "noSubject": "(no subject)",
+    "unread": "Unread",
+    "attachment": "Attachment",
+    "awaiting": "Awaiting reply",
+    "esn": "ESN",
+    "silentFor_one": "Silent for {{count}} day",
+    "silentFor_other": "Silent for {{count}} days",
+    "messages_one": "{{count}} message",
+    "messages_other": "{{count}} messages",
+    "prepareDraft": "Prepare a draft",
+    "reply": "Prepare the reply",
+    "followUp": "Follow up",
+    "moreActions": "More actions on this thread",
+    "accountTooltip": "Open the {{name}} account",
+    "contactTooltip": "Open {{name}}'s profile",
+    "noCounterpart": "Unknown correspondent"
+  },
+  "draft": {
+    "generating": "{{copilot}} is writing your reply…",
+    "generateFailed": "{{copilot}} couldn’t write the reply. You can write it yourself below.",
+    "replyTitle": "Reply to this thread",
+    "followUpTitle": "Follow up on this thread",
+    "description": "The draft lands in your mailbox. Nothing is sent: you send it.",
+    "followUpDescription": "A follow-up, prepared as a new draft in this thread. Nothing is sent: you send it.",
+    "to": "Recipient",
+    "subject": "Subject",
+    "body": "Message",
+    "signatureNotice": "Your real signature is appended automatically when we were able to read it.",
+    "noSignatureNotice": "No signature found: the draft will go unsigned, add yours before sending.",
+    "submit": "Save the draft",
+    "submitting": "Saving…",
+    "copy": "Copy",
+    "copied": "Draft copied to clipboard",
+    "success": "Draft saved to your mailbox.",
+    "openDraft": "Open the draft",
+    "cancel": "Cancel",
+    "close": "Close",
+    "sendFrom": "Send from",
+    "sendsFrom": "Sent from {{address}}",
+    "senderUnnamed": "Mailbox {{n}}",
+    "sendExplain": "Sending goes out from your mailbox, on your click. An unsubscribed contact is refused.",
+    "send": "Send",
+    "sending": "Sending…",
+    "sendSuccess": "Message sent from your mailbox.",
+    "skippedSuppressed": "This recipient unsubscribed: nothing was sent.",
+    "skippedOther": "The message was not sent.",
+    "sendFailed": "Sending failed: {{error}}",
+    "regenerate": "Regenerate"
+  },
+  "empty": {
+    "title": "No thread for this search",
+    "subtitle": "Change the intent or widen the window."
+  },
+  "notConnected": {
+    "title": "No mailbox connected",
+    "subtitle": "Connect your mailbox to search your threads, spot silences and prepare your replies here.",
+    "cta": "Connect my mailbox"
+  },
+  "missingScope": {
+    "title": "Read permission missing",
+    "subtitle": "Your mailbox is connected but does not grant us read access. Reconnect it to enable this screen.",
+    "cta": "Reconnect"
+  },
+  "authorizationExpired": {
+    "title": "Authorisation expired",
+    "subtitle": "Your mailbox is still connected, but its authorisation has expired. Reconnect it so reading resumes."
+  },
+  "error": {
+    "title": "The search failed",
+    "subtitle": "This is not “no thread”: the read failed.",
+    "retry": "Try again"
+  },
+  "signature": {
+    "title": "Your signature",
+    "label": "Your signature",
+    "willBeAdded": "It will be appended to your drafts.",
+    "none": "No signature: your drafts will go out without one.",
+    "placeholder": "First name Last name — Role, Company",
+    "save": "Save the signature",
+    "emptyMeaning": "Leave it empty and your mailbox's own signature takes over again.",
+    "saved": "Signature saved",
+    "failed": "The signature could not be saved",
+    "checking": "Signature: checking…",
+    "detected": "Signature detected: it will be added to your drafts.",
+    "toConfigure": "Signature to set up: your drafts will go out without one.",
+    "manage": "Manage"
+  },
+  "intentsAria": "Filter by intent",
+  "capabilities": {
+    "title": "Your mailbox is connected, but not fully authorised",
+    "granted": "What I can do here: {{list}}.",
+    "cta": "Review permissions",
+    "read": "read your threads",
+    "draft": "prepare drafts",
+    "send": "send after your click",
+    "labels": "apply labels",
+    "outOfOffice": "see your out-of-office reply"
+  },
+  "connector": {
+    "connected": "Your inbox is connected",
+    "connectedAs": "Your inbox is connected · {{address}}",
+    "fetchedAt": "Threads read at {{time}}",
+    "otherConnected_one": "+ {{count}} other mailbox connected",
+    "otherConnected_other": "+ {{count}} other mailboxes connected",
+    "manage": "Manage the connection"
+  },
+  "searchIntentsAria": "Filter by search type",
+  "drawer": {
+    "unknownCounterpart": "Unknown contact",
+    "openAccount": "Open the {{name}} account",
+    "noAccount": "No account is confidently linked to this thread.",
+    "history": "Recent exchanges",
+    "historyUnavailable": "Message details are not available for this thread.",
+    "fromMe": "You",
+    "unknownSender": "Unknown sender",
+    "askLaura": "Draft me a reply to the \"{{subject}}\" thread",
+    "askLauraLabel": "Ask {{copilot}}"
+  },
+  "linkAccount": {
+    "title": "Link this thread to an account",
+    "description": "No account could be determined with certainty for \"{{subject}}\". Pick one — this link will stay visible for this thread.",
+    "selectAria": "Choose an account",
+    "placeholder": "Choose an account…",
+    "confirm": "Link",
+    "submitting": "Linking…",
+    "failed": "The link failed."
+  },
+  "state": {
+    "unread": "Unread",
+    "awaiting_reply": "Awaiting reply",
+    "treated": "Treated",
+    "irrelevant": "Not relevant"
+  },
+  "priorityReason": {
+    "positive_reply_unread": "Favourable reply, unread",
+    "positive_reply": "Favourable reply",
+    "unread": "Unread message",
+    "awaiting_reply_late": "No reply for a while — a follow-up would help",
+    "awaiting_reply": "Awaiting a reply",
+    "treated": "Marked as treated",
+    "irrelevant": "Flagged as not relevant",
+    "none": "Nothing in particular"
+  },
+  "actions": {
+    "markTreated": "Mark as treated",
+    "unmarkTreated": "Remove \"treated\"",
+    "markIrrelevant": "Flag as not relevant",
+    "unmarkIrrelevant": "Remove \"not relevant\"",
+    "linkAccount": "Link to an account",
+    "snooze": "Snooze",
+    "createTask": "Create a task"
+  },
+  "bridge": {
+    "title": "This email can become something you work on",
+    "positiveReply": "A favourable reply turns into a tracked deal — or moves the existing one forward.",
+    "positiveReplyCta": "Open the pipeline",
+    "jobDescription": "A job description becomes a need to qualify, then to staff.",
+    "jobDescriptionCta": "Open needs",
+    "cv": "A CV joins the pool, with its skills and availability.",
+    "cvCta": "Open the pool",
+    "tender": "A tender is handled where the bid/no-bid decision is made.",
+    "tenderCta": "Open tenders",
+    "invoice": "An invoice belongs next to the engagement it concerns.",
+    "invoiceCta": "Open invoicing",
+    "meeting": "An invitation gets prepared — the meeting and what to know beforehand.",
+    "meetingCta": "Open today"
+  },
+  "beeper": {
+    "title": "Beeper conversations",
+    "pending": "Beeper is waiting for your approval: finish connecting it in Integrations.",
+    "unreachable": "Beeper is unreachable — {{reason}}",
+    "empty": "No recent conversation in Beeper.",
+    "failed": "Reading Beeper failed.",
+    "untitled": "Conversation",
+    "unread_one": "{{count}} unread",
+    "unread_other": "{{count}} unread",
+    "contactMatch": "Known contact: {{name}} (by {{on}})",
+    "matchedOn": {
+      "email": "email",
+      "phone": "phone",
+      "handle": "handle"
+    },
+    "prepareReply": "Prepare the reply",
+    "replyTitle": "Reply to {{name}}",
+    "replyDescription": "On {{network}}, through your Beeper Desktop. Nothing is sent without your click.",
+    "you": "You",
+    "them": "Contact",
+    "noText": "(attachment or message without text)",
+    "replyLabel": "Your reply",
+    "neverAlone": "{{copilot}} can draft it; you send it. {{brand}} does not keep the conversation.",
+    "prepareWithLaura": "Draft with {{copilot}}",
+    "askLaura": "Draft my reply to {{name}} on {{network}} (Beeper conversation {{chatId}}), in the tone of the exchange.",
+    "send": "Send on Beeper",
+    "sent": "Sent through Beeper.",
+    "alreadySent": "This message had already been sent: it is not sent again.",
+    "sendFailed": "Sending failed: {{error}}"
+  },
+  "scheduled": {
+    "title": "Upcoming",
+    "subtitle": "Your scheduled sends leave on their own, from your mailbox, at the time you chose.",
+    "noSubject": "(no subject)",
+    "listAria": "Scheduled sends",
+    "toScheduleTitle": "Approved drafts to schedule",
+    "state": {
+      "scheduled": "Scheduled for {{date}}",
+      "sent_proven": "Sent on {{date}}",
+      "sent_unproven": "Left, not yet found in your sent items",
+      "unknown": "Unknown outcome: check your sent items. No new attempt will be made.",
+      "cancelled": "Send cancelled",
+      "failed": "Not sent: {{reason}}"
+    },
+    "failure": {
+      "mailbox_unavailable": "your mailbox did not allow sending",
+      "suppressed": "this contact unsubscribed",
+      "already_sent": "an email was already sent to them",
+      "validation_mismatch": "the draft changed since you approved it",
+      "validation_missing": "the draft approval could not be found",
+      "workspace_changed": "you had switched workspace",
+      "demo_send_blocked": "nothing is sent in the demo",
+      "no_email": "this contact has no email address",
+      "other": "the send was refused"
+    },
+    "actions": {
+      "schedule": "Schedule send",
+      "reschedule": "Change time",
+      "cancel": "Cancel send",
+      "confirm": "Schedule",
+      "confirmReschedule": "Save time",
+      "close": "Close"
+    },
+    "picker": {
+      "label": "Send date and time",
+      "hint": "Time in your time zone ({{timeZone}})."
+    },
+    "error": "Could not save: {{message}}",
+    "empty": {
+      "title": "No scheduled send",
+      "subtitle": "Approve a draft, then pick the time: it leaves on its own, from your mailbox, and you can cancel it before it goes."
+    }
+  },
+  "tabs": {
+    "aria": "Mailbox handling states",
+    "todo": "To handle",
+    "drafts": "Drafts",
+    "upcoming": "Upcoming",
+    "history": "History",
+    "treated": "Handled"
+  },
+  "header": {
+    "sources": "Sources",
+    "newMessage": "New message"
+  },
+  "absence": {
+    "link": "Out-of-office reply: set it in Settings › Integrations"
+  },
+  "drafts": {
+    "listAria": "Drafts to review",
+    "toReview": "To review",
+    "noSubject": "(no subject)",
+    "empty": {
+      "title": "No draft to review",
+      "subtitle": "The messages {{copilot}} prepares for you show up here; once approved, you schedule them in “Upcoming”."
+    }
+  },
+  "history": {
+    "empty": {
+      "title": "Nothing in history",
+      "subtitle": "Threads you mark as handled or not relevant end up here."
+    }
+  },
+  "todo": {
+    "empty": {
+      "title": "Nothing to handle for this search"
+    }
+  },
+  "m2": {
+    "tabsAria": "Mailbox views",
+    "tabs": {
+      "inbox": "To handle",
+      "drafts": "Drafts",
+      "scheduled": "Upcoming",
+      "history": "History"
+    },
+    "drafts": {
+      "title": "Messages to review",
+      "subtitle": "{{copilot}} prepares, you review, you decide. These are the same drafts as in Contacts.",
+      "sequenceTitle": "Sequence messages",
+      "sequenceSubtitle": "This sequence’s sends waiting for your review before they go out.",
+      "backToAll": "All drafts",
+      "filtersAria": "Draft origin",
+      "listAria": "Messages to review",
+      "badge": "Draft",
+      "filters": {
+        "all": "All",
+        "contact": "Contacts",
+        "reply": "Replies",
+        "sequence": "Sequence · sends to approve"
+      },
+      "origin": {
+        "contact": "Contact",
+        "reply": "Reply",
+        "sequence": "Sequence"
+      },
+      "status": {
+        "toReview": "To review",
+        "validated": "Validated"
+      },
+      "originLegend": "Origin"
+    },
+    "detail": {
+      "unknownContact": "Unknown contact",
+      "to": "To: {{address}}",
+      "noAddress": "This contact has no email address.",
+      "edit": "Edit",
+      "contactCard": "Contact card",
+      "sequenceLine": "Sequence message · version {{version}}.",
+      "sequenceAll": "See all messages of this sequence",
+      "blockedTitle": "This message cannot go out",
+      "blockedHint": "You can keep the draft for reference or archive it.",
+      "confirm": "I have reviewed the message, its recipient and its attachments.",
+      "validate": "Validate the draft",
+      "validateNote": "Validating sends nothing: you send afterwards, on your click.",
+      "validatedAt": "Validated by you on {{date}}",
+      "sendNow": "Send",
+      "deposit": "Put in my mailbox",
+      "sendNote": "One message per recipient, from {{address}}, on your click. “Put in my mailbox” stores it as a draft there.",
+      "copy": "Copy the text",
+      "copied": "Text copied to the clipboard",
+      "archive": "Archive the draft",
+      "reject": "Refuse this send",
+      "aria": "Draft",
+      "copyMessage": "Copy the message",
+      "review": "Review & validate"
+    },
+    "trace": {
+      "title": "Sender, version & history",
+      "sender": "Sender: {{address}}",
+      "senderUnknown": "your connected mailbox",
+      "version": "Version {{n}}",
+      "kind": {
+        "edited": "edited by you",
+        "styled": "prepared with your template",
+        "prepared": "prepared from the contact card",
+        "rephrased": "rephrased with {{copilot}}",
+        "sequence": "prepared by the sequence"
+      },
+      "personalDraft": "Personal draft: the same as on the contact’s card.",
+      "sequenceDraft": "Sequence message: nothing goes out before you validate it."
+    },
+    "upcoming": {
+      "title": "Coming up",
+      "listAria": "Postponed conversations",
+      "badge": "Postponed",
+      "returns": "Comes back to “To handle” on {{date}}",
+      "noExternal": "No email or external reminder is sent.",
+      "changeDate": "Change the date",
+      "putBack": "Put back to handle",
+      "fromDate": "From",
+      "save": "Save the date"
+    },
+    "history": {
+      "title": "Conversation log",
+      "listAria": "Handled conversations and sent messages",
+      "treated": "Handled",
+      "sent": "Sent",
+      "sentOn": "Sent on {{date}}",
+      "proof": "Found in your sent items: the linked sequence step moves to “sent”.",
+      "putBack": "Put back to handle",
+      "visibility": "Read from your mailbox, never stored. Personal to you: never visible to a colleague or your manager.",
+      "sentAria": "Sent message"
+    },
+    "empty": {
+      "title": "Nothing in this view.",
+      "description": "The other views remain available.",
+      "clear": "Clear filters",
+      "inviteTitle": "Your next conversation starts here.",
+      "inviteBody": "Select a conversation, or prepare a message from a contact.",
+      "newMessage": "New message"
+    },
+    "validate": {
+      "title": "Review before validating",
+      "to": "To",
+      "from": "From",
+      "note": "This validation covers this recipient and this version. Changing the content will require a new review.",
+      "back": "Back to the draft"
+    },
+    "bulk": {
+      "select": "Select",
+      "stop": "Stop selecting",
+      "count_one": "{{count}} selected",
+      "count_other": "{{count}} selected",
+      "review": "Review & validate the selection",
+      "pickAria": "Select the draft for {{name}}",
+      "title_one": "Review and validate {{count}} draft",
+      "title_other": "Review and validate {{count}} drafts",
+      "skipped": "Set aside, their recipient is refused: {{names}}.",
+      "confirm_one": "I reviewed this draft, its recipient and its attachments.",
+      "confirm_other": "I reviewed these {{count}} drafts, their recipients and their attachments.",
+      "validate_one": "Validate the draft",
+      "validate_other": "Validate the {{count}} drafts",
+      "failed": "Validation did not go through: nothing was sent, try again."
+    },
+    "declare": {
+      "action": "Mark as sent",
+      "sentOn": "Sent on",
+      "hint": "Sent it yourself? Give the day: your J+3, J+6 and J+9 follow-ups start from that date.",
+      "cadence": "Follow-ups scheduled: {{steps}}.",
+      "note": "Declared by you, on {{date}}: {{brand}} sent nothing and cannot verify it. Your follow-ups start from the date you gave. Only “Done” closes an action, and it is never proof of sending.",
+      "noteUnscheduled": "Declared by you, not verified. No follow-up could be scheduled for now."
+    }
+  },
+  "snooze": {
+    "title": "Pick this thread up later",
+    "behavior": "You will find it under Upcoming.",
+    "confirm": "Snooze",
+    "failed": "Snoozing failed."
+  },
+  "task": {
+    "title": "Create a linked task",
+    "action": "Action to do",
+    "dueOn": "Due date",
+    "context": "Context (optional)",
+    "confirm": "Create the task",
+    "objective": "Follow up on the thread “{{subject}}”",
+    "expectedResult": "The thread is handled and the next step is agreed."
+  },
+  "reader": {
+    "aria": "Reading the thread",
+    "back": "Back to messages",
+    "archive": "Archive this thread",
+    "contactCard": "Contact card",
+    "associate": "Link",
+    "liveNote": "Read from your mailbox, never stored",
+    "noReplyNote": "Automated thread (no-reply): there is nobody to reply to.",
+    "prepareReply": "Prepare the reply",
+    "markTreated": "Mark as handled",
+    "origin": "Origin & visibility",
+    "originLine": "Mailbox {{address}} · last message on {{date}}.",
+    "originAddress": "Mailbox {{address}}.",
+    "visibility": "Personal to you: never visible to a colleague or your manager. A read status does not close the sales follow-up."
+  },
+  "list": {
+    "title": "Threads to follow",
+    "aria": "Threads to follow",
+    "foot": "Only threads from the last 30 days are listed. Refine the search to go further back."
+  },
+  "status": {
+    "capsLink": "What {{copilot}} can do there",
+    "capsTitle": "Your connected mailbox",
+    "granted": "Allowed",
+    "notGranted": "Not allowed"
+  },
+  "filtersDialog": {
+    "title": "Filter threads",
+    "silenceAny": "Any",
+    "silenceChoice_one": "{{count}} day without reply",
+    "silenceChoice_other": "{{count}} days without reply",
+    "unreadOnly": "Only show unread threads",
+    "apply": "Apply",
+    "description": "Intent, account and keyword are chosen above the list; here, what complements them."
+  },
+  "newMessage": {
+    "title": "Who do you want to write to?",
+    "description": "Preparing uses the same contact card and the same draft as the Mailbox.",
+    "searchAria": "Search for a recipient",
+    "searchPlaceholder": "Name, account or role…",
+    "failed": "The directory could not be read.",
+    "empty": "No contact matches.",
+    "choose": "Choose"
+  },
+  "toolbar": {
+    "searchAria": "Search the mailbox",
+    "searchPlaceholder": "A person, an account, a topic…",
+    "filters": "Filters",
+    "filtersCount_one": "Filters · {{count}}",
+    "filtersCount_other": "Filters · {{count}}",
+    "intentLegend": "Intent",
+    "moreIntents_one": "+ {{count}} intent",
+    "moreIntents_other": "+ {{count}} intents",
+    "lessIntents": "Fewer intents",
+    "allAccounts": "All accounts",
+    "accounts_one": "{{count}} account",
+    "accounts_other": "{{count}} accounts",
+    "accountsAria": "Filter messages by account: {{value}}"
+  },
+  "outOfOffice": {
+    "title": "Out-of-office reply",
+    "subtitle": "Your automatic reply at your mail provider. {{brand}} sends nothing itself.",
+    "enable": "Turn on the out-of-office reply",
+    "from": "From",
+    "to": "To",
+    "message": "Message",
+    "contactsOnly": "Only reply to known contacts",
+    "endRequired": "Choose an end date.",
+    "save": "Save",
+    "saved": "Out-of-office reply saved.",
+    "failed": "The out-of-office reply could not be saved.",
+    "missingScope": "To set your out-of-office reply here, reconnect your mailbox allowing it to manage that reply."
+  }
+}

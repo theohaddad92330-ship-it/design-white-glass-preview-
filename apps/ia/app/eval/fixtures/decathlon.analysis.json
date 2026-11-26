@@ -1,0 +1,124 @@
+{
+  "_synthetic": true,
+  "_note": "Dossier de test SYNTHÉTIQUE pour le banc d'éval. UN SEUL fait firmographique est vérifiable dans ce dépôt — le SIREN, apps/ia/tests/contracts/test_open_data_contract.py:22, celui que la suite de contrats interroge réellement chez BODACC / DECP / France Travail. Secteur, effectif, siège et chiffre d'affaires sont donc ABSENTS, pas devinés : ce dossier garde la FORME du livrable (entités, contacts, plays, absence de fabrication) et l'identifiant, rien d'autre. Les entités et les contacts sont des données de TEST.",
+  "company": "Decathlon",
+  "research": {
+    "companyName": "Decathlon",
+    "siren": "500569405",
+    "subsidiaries": [
+      {
+        "name": "Decathlon — entité de test A"
+      },
+      {
+        "name": "Decathlon — entité de test B"
+      }
+    ],
+    "entitiesExhaustive": [
+      {
+        "name": "Decathlon — direction de test",
+        "type": "direction"
+      },
+      {
+        "name": "Decathlon — hub IT de test",
+        "type": "hub it",
+        "isItEntity": true
+      }
+    ],
+    "angles": [
+      {
+        "title": "Renfort e-commerce",
+        "strategy": "Renforcer les équipes de la plateforme e-commerce."
+      }
+    ],
+    "recentSignals": [
+      {
+        "signal": "Recrutements plateforme e-commerce",
+        "type": "recrutement",
+        "date": "2026"
+      }
+    ],
+    "budgetSignals": [
+      {
+        "signal": "Recrutements plateforme e-commerce",
+        "source": "offres d'emploi"
+      }
+    ],
+    "confidence": {
+      "score": 62,
+      "tier": "medium",
+      "factors": {
+        "sourceCoverage": 0.5
+      }
+    },
+    "sources": {
+      "tags": {
+        "siren": "PUBLIC"
+      },
+      "citations": {}
+    }
+  },
+  "gate": {
+    "decision": "go",
+    "score": 2
+  },
+  "classified_contacts": [
+    {
+      "fullName": "Nadia Rossi",
+      "title": "Chief Technology Officer",
+      "decisionRole": "technical",
+      "is_c_level": true
+    },
+    {
+      "fullName": "Thomas Girard",
+      "title": "Engineering Manager",
+      "decisionRole": "user"
+    },
+    {
+      "fullName": "Léa Fontaine",
+      "title": "Responsable Achats IT",
+      "decisionRole": "procurement"
+    }
+  ],
+  "plan": {
+    "actionPlan": {
+      "phases": [
+        {
+          "name": "Prise de contact",
+          "actions": [
+            {
+              "contact": "Nadia Rossi",
+              "action": "Discuter renfort e-commerce."
+            }
+          ]
+        }
+      ]
+    },
+    "quick_wins": [
+      {
+        "contact": "Thomas Girard",
+        "action": "Partager un retour d'expérience staffing."
+      }
+    ],
+    "contactMessages": [
+      {
+        "contact": "Nadia Rossi",
+        "linkedinMessage": "Sujet renfort e-commerce."
+      }
+    ],
+    "plays": [
+      {
+        "painSignal": "Recrutements plateforme e-commerce",
+        "preuve": {
+          "source": "offres d'emploi",
+          "signal": "Recrutements plateforme e-commerce"
+        },
+        "targetContact": "Nadia Rossi",
+        "esnOffer": "Renfort e-commerce",
+        "angle": "Renfort e-commerce",
+        "firstAction": "Discuter renfort e-commerce.",
+        "readyMessage": "Sujet renfort e-commerce.",
+        "risk": "Concurrence ESN installées."
+      }
+    ]
+  }
+}
